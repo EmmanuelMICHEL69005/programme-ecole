@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fiche 1 — Je découpe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <span class="emoji-header">✂️</span>
+  <h1>Fiche 1 — Je découpe</h1>
+  <p>Comprendre le partage en parts égales</p>
+  <a href="index.html" class="nav-back">← Retour à l'accueil</a>
+</header>
+
+<main>
+
+  <span class="badge-niveau">⭐ Facile — CE2</span>
+
+  <!-- JE RETIENS -->
+  <div class="retiens-box">
+    <div class="retiens-title">📌 Je retiens</div>
+    <p>Quand on partage en parts <strong>égales</strong>, chaque part s'appelle une <strong>fraction</strong>.</p>
+    <div class="fraction-cards">
+      <div class="frac-pill"><div class="sym">½</div><div class="nom">un demi<br>1 sur 2</div></div>
+      <div class="frac-pill"><div class="sym">¼</div><div class="nom">un quart<br>1 sur 4</div></div>
+      <div class="frac-pill"><div class="sym">⅓</div><div class="nom">un tiers<br>1 sur 3</div></div>
+    </div>
+  </div>
+
+  <!-- EXERCICE 1 -->
+  <div class="exercice-block">
+    <div class="ex-title">
+      <span class="ex-badge">Ex 1</span>
+      Colorie la bonne part
+    </div>
+    <p style="font-size:0.9rem;color:#666;margin-bottom:14px">Colorie le bon nombre de cases dans chaque figure.</p>
+    <div class="figures-grid">
+
+      <div class="figure-card">
+        <div class="frac-big">½</div>
+        <div class="squares-row">
+          <div class="sq"></div>
+          <div class="sq"></div>
+        </div>
+        <div class="hint">1 case sur 2</div>
+      </div>
+
+      <div class="figure-card">
+        <div class="frac-big">¼</div>
+        <div class="squares-row">
+          <div class="sq"></div><div class="sq"></div>
+          <div class="sq"></div><div class="sq"></div>
+        </div>
+        <div class="hint">1 case sur 4</div>
+      </div>
+
+      <div class="figure-card">
+        <div class="frac-big">⅓</div>
+        <div class="squares-row">
+          <div class="sq"></div><div class="sq"></div><div class="sq"></div>
+        </div>
+        <div class="hint">1 case sur 3</div>
+      </div>
+
+      <div class="figure-card">
+        <div class="frac-big">2/4</div>
+        <div class="squares-row">
+          <div class="sq"></div><div class="sq"></div>
+          <div class="sq"></div><div class="sq"></div>
+        </div>
+        <div class="hint">2 cases sur 4</div>
+      </div>
+
+      <div class="figure-card">
+        <div class="frac-big">2/3</div>
+        <div class="squares-row">
+          <div class="sq"></div><div class="sq"></div><div class="sq"></div>
+        </div>
+        <div class="hint">2 cases sur 3</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- EXERCICE 2 -->
+  <div class="exercice-block">
+    <div class="ex-title">
+      <span class="ex-badge">Ex 2</span>
+      Écris la fraction
+    </div>
+    <ul class="q-list">
+      <li>Un rectangle coupé en <strong>2</strong> parts égales, <strong>1</strong> part coloriée → <span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+      <li>Un carré coupé en <strong>4</strong> parts égales, <strong>1</strong> part coloriée → <span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+      <li>Un rectangle coupé en <strong>3</strong> parts égales, <strong>2</strong> parts coloriées → <span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+      <li>Un carré coupé en <strong>4</strong> parts égales, <strong>3</strong> parts coloriées → <span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+    </ul>
+  </div>
+
+  <!-- EXERCICE 3 -->
+  <div class="exercice-block">
+    <div class="ex-title">
+      <span class="ex-badge">Ex 3</span>
+      Vrai ou Faux ?
+    </div>
+
+    <div class="vf-item" id="vf1">
+      <span>½ veut dire 1 part sur 2 parts égales.</span>
+      <div class="vf-btns">
+        <button class="btn-v" onclick="checkVF(this,'vrai','vf1')">VRAI</button>
+        <button class="btn-f" onclick="checkVF(this,'faux','vf1')">FAUX</button>
+      </div>
+    </div>
+    <div class="vf-item" id="vf2">
+      <span>¼ est plus grand que ½.</span>
+      <div class="vf-btns">
+        <button class="btn-v" onclick="checkVF(this,'vrai','vf2')">VRAI</button>
+        <button class="btn-f" onclick="checkVF(this,'faux','vf2')">FAUX</button>
+      </div>
+    </div>
+    <div class="vf-item" id="vf3">
+      <span>Quand on partage en 3 parts égales, chaque part est ⅓.</span>
+      <div class="vf-btns">
+        <button class="btn-v" onclick="checkVF(this,'vrai','vf3')">VRAI</button>
+        <button class="btn-f" onclick="checkVF(this,'faux','vf3')">FAUX</button>
+      </div>
+    </div>
+    <div class="vf-item" id="vf4">
+      <span>2/4 c'est la même chose que ½.</span>
+      <div class="vf-btns">
+        <button class="btn-v" onclick="checkVF(this,'vrai','vf4')">VRAI</button>
+        <button class="btn-f" onclick="checkVF(this,'faux','vf4')">FAUX</button>
+      </div>
+    </div>
+    <div class="vf-item" id="vf5">
+      <span>¼ veut dire 1 part sur 4 parts égales.</span>
+      <div class="vf-btns">
+        <button class="btn-v" onclick="checkVF(this,'vrai','vf5')">VRAI</button>
+        <button class="btn-f" onclick="checkVF(this,'faux','vf5')">FAUX</button>
+      </div>
+    </div>
+
+    <!-- réponses cachées -->
+    <div id="answers-vf" style="display:none">vrai,faux,vrai,vrai,vrai</div>
+  </div>
+
+  <!-- EXERCICE 4 -->
+  <div class="exercice-block">
+    <div class="ex-title">
+      <span class="ex-badge">Ex 4</span>
+      Problème 🎂
+    </div>
+    <div class="probleme-box">
+      <p class="pb-enonce">Un gâteau est coupé en <strong>4 parts égales</strong>.<br>Clémence mange <strong>1 part</strong>.</p>
+      <div class="pb-q">1. Quelle fraction a mangée Clémence ? <span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      <div class="pb-q">2. Quelle fraction reste-t-il ? <span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <a href="index.html">← Accueil</a> &nbsp;·&nbsp; <a href="fiche2.html">Fiche 2 →</a>
+</footer>
+
+<script>
+const correctAnswers = { vf1:'vrai', vf2:'faux', vf3:'vrai', vf4:'vrai', vf5:'vrai' };
+
+function checkVF(btn, chosen, id) {
+  const item = document.getElementById(id);
+  const btns = item.querySelectorAll('button');
+  btns.forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  if (chosen === correctAnswers[id]) {
+    item.style.background = '#f0fdf4';
+    item.style.borderColor = '#86efac';
+    showFeedback(item, '✅ Bonne réponse !', '#166534');
+  } else {
+    item.style.background = '#fff1f2';
+    item.style.borderColor = '#fca5a5';
+    showFeedback(item, '❌ Essaie encore !', '#991b1b');
+  }
+}
+
+function showFeedback(item, msg, color) {
+  let fb = item.querySelector('.feedback');
+  if (!fb) {
+    fb = document.createElement('div');
+    fb.className = 'feedback';
+    fb.style.cssText = 'font-size:0.85rem;font-weight:800;margin-top:6px;width:100%';
+    item.appendChild(fb);
+  }
+  fb.textContent = msg;
+  fb.style.color = color;
+}
+</script>
+
+</body>
+</html>
