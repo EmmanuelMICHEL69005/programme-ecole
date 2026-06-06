@@ -41,47 +41,52 @@
     <p style="font-size:0.9rem;color:#666;margin-bottom:14px">Colorie le bon nombre de cases dans chaque figure.</p>
     <div class="figures-grid">
 
-      <div class="figure-card">
+      <div class="figure-card" data-correct="1">
         <div class="frac-big">½</div>
         <div class="squares-row">
-          <div class="sq"></div>
-          <div class="sq"></div>
+          <div class="sq" onclick="toggleSq(this)"></div>
+          <div class="sq" onclick="toggleSq(this)"></div>
         </div>
         <div class="hint">1 case sur 2</div>
+        <div class="figure-feedback"></div>
       </div>
 
-      <div class="figure-card">
+      <div class="figure-card" data-correct="1">
         <div class="frac-big">¼</div>
         <div class="squares-row">
-          <div class="sq"></div><div class="sq"></div>
-          <div class="sq"></div><div class="sq"></div>
+          <div class="sq" onclick="toggleSq(this)"></div><div class="sq" onclick="toggleSq(this)"></div>
+          <div class="sq" onclick="toggleSq(this)"></div><div class="sq" onclick="toggleSq(this)"></div>
         </div>
         <div class="hint">1 case sur 4</div>
+        <div class="figure-feedback"></div>
       </div>
 
-      <div class="figure-card">
+      <div class="figure-card" data-correct="1">
         <div class="frac-big">⅓</div>
         <div class="squares-row">
-          <div class="sq"></div><div class="sq"></div><div class="sq"></div>
+          <div class="sq" onclick="toggleSq(this)"></div><div class="sq" onclick="toggleSq(this)"></div><div class="sq" onclick="toggleSq(this)"></div>
         </div>
         <div class="hint">1 case sur 3</div>
+        <div class="figure-feedback"></div>
       </div>
 
-      <div class="figure-card">
+      <div class="figure-card" data-correct="2">
         <div class="frac-big">2/4</div>
         <div class="squares-row">
-          <div class="sq"></div><div class="sq"></div>
-          <div class="sq"></div><div class="sq"></div>
+          <div class="sq" onclick="toggleSq(this)"></div><div class="sq" onclick="toggleSq(this)"></div>
+          <div class="sq" onclick="toggleSq(this)"></div><div class="sq" onclick="toggleSq(this)"></div>
         </div>
         <div class="hint">2 cases sur 4</div>
+        <div class="figure-feedback"></div>
       </div>
 
-      <div class="figure-card">
+      <div class="figure-card" data-correct="2">
         <div class="frac-big">2/3</div>
         <div class="squares-row">
-          <div class="sq"></div><div class="sq"></div><div class="sq"></div>
+          <div class="sq" onclick="toggleSq(this)"></div><div class="sq" onclick="toggleSq(this)"></div><div class="sq" onclick="toggleSq(this)"></div>
         </div>
         <div class="hint">2 cases sur 3</div>
+        <div class="figure-feedback"></div>
       </div>
 
     </div>
@@ -168,6 +173,32 @@
 </footer>
 
 <script>
+// ---- Cases à colorier ----
+function toggleSq(sq) {
+  sq.classList.toggle('filled');
+  const card = sq.closest('.figure-card');
+  const total  = card.querySelectorAll('.sq').length;
+  const filled = card.querySelectorAll('.sq.filled').length;
+  const correct = parseInt(card.dataset.correct);
+  const fb = card.querySelector('.figure-feedback');
+
+  // Reset couleurs
+  card.querySelectorAll('.sq').forEach(s => s.classList.remove('correct','wrong'));
+
+  if (filled === correct) {
+    card.querySelectorAll('.sq.filled').forEach(s => s.classList.add('correct'));
+    fb.textContent = '✅ Bravo !';
+    fb.style.color = '#166534';
+  } else if (filled > correct) {
+    fb.textContent = `❌ Trop de cases ! (${filled} cochées, il en faut ${correct})`;
+    fb.style.color = '#991b1b';
+  } else {
+    fb.textContent = filled > 0 ? `Continue… (${filled}/${correct})` : '';
+    fb.style.color = '#92400e';
+  }
+}
+
+// ---- Vrai / Faux ----
 const correctAnswers = { vf1:'vrai', vf2:'faux', vf3:'vrai', vf4:'vrai', vf5:'vrai' };
 
 function checkVF(btn, chosen, id) {

@@ -199,7 +199,27 @@ main { max-width: 720px; margin: 0 auto; padding: 30px 20px 60px; }
 }
 .figure-card .frac-big { font-size: 1.5rem; font-weight: 900; color: var(--violet); margin-bottom: 8px; }
 .squares-row { display: flex; flex-wrap: wrap; gap: 5px; justify-content: center; margin: 8px 0; }
-.sq { width: 34px; height: 34px; border: 2px solid var(--violet); border-radius: 6px; background: white; }
+.sq {
+  width: 34px; height: 34px;
+  border: 2px solid var(--violet);
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  user-select: none;
+}
+.sq:hover { background: #ede9fe; transform: scale(1.08); }
+.sq.filled { background: var(--violet); }
+.sq.filled:hover { background: #5b21b6; }
+.sq.correct { background: var(--vert); border-color: #16a34a; }
+.sq.wrong   { background: var(--rouge); border-color: #b91c1c; }
+.figure-feedback {
+  font-size: 0.82rem;
+  font-weight: 800;
+  margin-top: 8px;
+  min-height: 18px;
+  transition: color 0.2s;
+}
 .figure-card .hint { font-size: 0.75rem; color: #888; }
 
 /* Questions liste */
