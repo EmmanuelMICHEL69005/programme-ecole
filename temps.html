@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le temps et la monnaie — CE2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #bbf7d0; border-radius: 22px;
+    padding: 9px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #166534;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #dcfce7; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #f0fdf4; border: 2px solid #bbf7d0; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .score-bar {
+    background: #dcfce7; border-radius: 12px;
+    padding: 10px 18px; font-size: 1rem; font-weight: 800;
+    color: #166534; margin-bottom: 14px; text-align: center;
+  }
+  /* Horloge SVG */
+  .horloge-wrap { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; margin: 10px 0; }
+  .horloge-svg { flex-shrink: 0; }
+  /* Monnaie */
+  .pieces-grid { display: flex; gap: 10px; flex-wrap: wrap; margin: 10px 0; }
+  .piece {
+    width: 56px; height: 56px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.8rem; font-weight: 900; flex-direction: column;
+    border: 3px solid;
+  }
+  .piece.or  { background: #fef3c7; border-color: #f59e0b; color: #92400e; }
+  .piece.arg { background: #f1f5f9; border-color: #94a3b8; color: #334155; }
+  .piece.billet { width: 80px; height: 40px; border-radius: 8px; background: #dcfce7; border-color: #22c55e; color: #166534; font-size: 0.75rem; }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: linear-gradient(135deg, #166534, #22c55e);">
+  <span class="emoji-header">🕐</span>
+  <h1>Le temps et la monnaie</h1>
+  <p>Lire l'heure, durées et euros</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">CE2 — Grandeurs et mesures</div>
+
+  <!-- JE RETIENS -->
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:10px; font-size:0.9rem; color:#555;">
+      <div>
+        <strong style="color:#166534;">⏰ Durées</strong><br>
+        1 min = 60 s<br>
+        1 h = 60 min<br>
+        1 jour = 24 h<br>
+        1 semaine = 7 jours<br>
+        1 an = 12 mois = 365 jours
+      </div>
+      <div>
+        <strong style="color:#166534;">💶 Monnaie</strong><br>
+        1 € = 100 centimes<br>
+        Billets : 5 €, 10 €, 20 €, 50 €<br>
+        Pièces : 1 c, 2 c, 5 c, 10 c, 20 c, 50 c, 1 €, 2 €
+      </div>
+    </div>
+  </div>
+
+  <!-- EXERCICE 1 : lire l'heure -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#166534;">Ex 1</span> Lis l'heure sur l'horloge</div>
+    <div class="score-bar" id="score-heure">Score : 0 / 5</div>
+    <div id="ex1-container"></div>
+  </div>
+
+  <!-- EXERCICE 2 : calcul de durées -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#166534;">Ex 2</span> Calcul de durées</div>
+    <div class="score-bar" id="score-duree">Score : 0 / 5</div>
+    <div id="ex2-container"></div>
+  </div>
+
+  <!-- EXERCICE 3 : calendrier -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#166534;">Ex 3</span> Le calendrier</div>
+    <div id="ex3-container"></div>
+  </div>
+
+  <!-- EXERCICE 4 : monnaie -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#166534;">Ex 4</span> La monnaie — combien ça fait ?</div>
+    <div class="score-bar" id="score-monnaie">Score : 0 / 5</div>
+    <div id="ex4-container"></div>
+  </div>
+
+  <!-- EXERCICE 5 : problèmes temps/monnaie -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#166534;">Ex 5</span> Problèmes</div>
+    <div id="ex5-container"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CE2</footer>
+
+<script>
+function shuffle(arr) { return [...arr].sort(() => Math.random() - 0.5); }
+
+// ======== HORLOGE SVG ========
+function buildHorloge(h, m) {
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('viewBox', '0 0 120 120');
+  svg.setAttribute('width', '110');
+  svg.setAttribute('height', '110');
+  svg.setAttribute('class', 'horloge-svg');
+
+  // Fond
+  const cercle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+  cercle.setAttribute('cx', 60); cercle.setAttribute('cy', 60); cercle.setAttribute('r', 54);
+  cercle.setAttribute('fill', '#f0fdf4'); cercle.setAttribute('stroke', '#22c55e'); cercle.setAttribute('stroke-width', 4);
+  svg.appendChild(cercle);
+
+  // Chiffres
+  const nums = [12,1,2,3,4,5,6,7,8,9,10,11];
+  nums.forEach((n, i) => {
+    const angle = (i * 30 - 90) * Math.PI / 180;
+    const x = 60 + 42 * Math.cos(angle);
+    const y = 60 + 42 * Math.sin(angle) + 4;
+    const t = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    t.setAttribute('x', x); t.setAttribute('y', y);
+    t.setAttribute('text-anchor', 'middle'); t.setAttribute('font-size', '11');
+    t.setAttribute('font-weight', '900'); t.setAttribute('fill', '#166534');
+    t.textContent = n;
+    svg.appendChild(t);
+  });
+
+  // Aiguille heures
+  const hAngle = ((h % 12) + m / 60) * 30 - 90;
+  const hRad = hAngle * Math.PI / 180;
+  const hLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+  hLine.setAttribute('x1', 60); hLine.setAttribute('y1', 60);
+  hLine.setAttribute('x2', 60 + 28 * Math.cos(hRad)); hLine.setAttribute('y2', 60 + 28 * Math.sin(hRad));
+  hLine.setAttribute('stroke', '#166534'); hLine.setAttribute('stroke-width', 5); hLine.setAttribute('stroke-linecap', 'round');
+  svg.appendChild(hLine);
+
+  // Aiguille minutes
+  const mAngle = m * 6 - 90;
+  const mRad = mAngle * Math.PI / 180;
+  const mLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+  mLine.setAttribute('x1', 60); mLine.setAttribute('y1', 60);
+  mLine.setAttribute('x2', 60 + 40 * Math.cos(mRad)); mLine.setAttribute('y2', 60 + 40 * Math.sin(mRad));
+  mLine.setAttribute('stroke', '#16a34a'); mLine.setAttribute('stroke-width', 3); mLine.setAttribute('stroke-linecap', 'round');
+  svg.appendChild(mLine);
+
+  // Centre
+  const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+  dot.setAttribute('cx', 60); dot.setAttribute('cy', 60); dot.setAttribute('r', 4);
+  dot.setAttribute('fill', '#166534');
+  svg.appendChild(dot);
+
+  return svg;
+}
+
+// EXERCICE 1 : lire l'heure
+const heureData = [
+  { h: 3, m: 0,  correct: '3 h 00', choices: ['3 h 00', '9 h 00', '12 h 15', '3 h 30'] },
+  { h: 7, m: 30, correct: '7 h 30', choices: ['6 h 30', '7 h 30', '7 h 00', '7 h 15'] },
+  { h: 10, m: 15, correct: '10 h 15', choices: ['10 h 00', '10 h 30', '10 h 15', '9 h 15'] },
+  { h: 12, m: 45, correct: '12 h 45', choices: ['12 h 45', '12 h 15', '11 h 45', '1 h 45'] },
+  { h: 8, m: 20, correct: '8 h 20', choices: ['8 h 20', '8 h 40', '4 h 20', '8 h 00'] },
+];
+
+let scoreHeure = 0;
+const ex1Container = document.getElementById('ex1-container');
+heureData.forEach((item, idx) => {
+  const div = document.createElement('div');
+  div.className = 'q-block';
+  const shuffled = shuffle(item.choices);
+  div.innerHTML = `<div class="q-text">Quelle heure est-il ?</div>`;
+  const wrap = document.createElement('div');
+  wrap.className = 'horloge-wrap';
+  wrap.appendChild(buildHorloge(item.h, item.m));
+  const right = document.createElement('div');
+  right.innerHTML = `
+    <div class="qcm-row" id="heure-choices-${idx}">
+      ${shuffled.map(c => `<button class="btn-choice" onclick="checkHeure(this,'${c}','${item.correct}',${idx})">${c}</button>`).join('')}
+    </div>
+    <div class="feedback-line" id="heure-fb-${idx}"></div>
+  `;
+  wrap.appendChild(right);
+  div.appendChild(wrap);
+  ex1Container.appendChild(div);
+});
+
+function checkHeure(btn, chosen, correct, idx) {
+  document.getElementById(`heure-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  if (chosen === correct) {
+    btn.classList.add('correct');
+    document.getElementById(`heure-fb-${idx}`).textContent = '✅ Bravo !'; document.getElementById(`heure-fb-${idx}`).style.color = '#166534';
+    scoreHeure++; document.getElementById('score-heure').textContent = `Score : ${scoreHeure} / 5`;
+  } else {
+    btn.classList.add('wrong');
+    document.getElementById(`heure-fb-${idx}`).textContent = `❌ C'était ${correct}`; document.getElementById(`heure-fb-${idx}`).style.color = '#991b1b';
+    document.getElementById(`heure-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+// EXERCICE 2 : durées
+const dureeData = [
+  { q: 'Le film commence à <strong>14 h 00</strong> et dure <strong>1 h 30</strong>. À quelle heure se termine-t-il ?', correct: '15 h 30', choices: ['15 h 00', '15 h 30', '16 h 00', '14 h 30'] },
+  { q: 'L\'école commence à <strong>8 h 30</strong> et finit à <strong>11 h 30</strong>. Combien de temps dure la matinée ?', correct: '3 h', choices: ['2 h', '3 h', '4 h', '2 h 30'] },
+  { q: 'Paul commence ses devoirs à <strong>17 h 15</strong>. Il en a pour <strong>45 min</strong>. À quelle heure a-t-il fini ?', correct: '18 h 00', choices: ['17 h 45', '18 h 00', '18 h 15', '17 h 60'] },
+  { q: 'Combien y a-t-il de minutes en <strong>2 heures</strong> ?', correct: '120 min', choices: ['60 min', '100 min', '120 min', '200 min'] },
+  { q: 'Combien y a-t-il de secondes en <strong>3 minutes</strong> ?', correct: '180 s', choices: ['60 s', '120 s', '180 s', '300 s'] },
+];
+
+let scoreDuree = 0;
+const ex2Container = document.getElementById('ex2-container');
+dureeData.forEach((item, idx) => {
+  const div = document.createElement('div');
+  div.className = 'q-block';
+  const shuffled = shuffle(item.choices);
+  div.innerHTML = `
+    <div class="q-text">${item.q}</div>
+    <div class="qcm-row" id="duree-choices-${idx}">
+      ${shuffled.map(c => `<button class="btn-choice" onclick="checkDuree(this,'${c}','${item.correct}',${idx})">${c}</button>`).join('')}
+    </div>
+    <div class="feedback-line" id="duree-fb-${idx}"></div>
+  `;
+  ex2Container.appendChild(div);
+});
+
+function checkDuree(btn, chosen, correct, idx) {
+  document.getElementById(`duree-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  if (chosen === correct) {
+    btn.classList.add('correct');
+    document.getElementById(`duree-fb-${idx}`).textContent = '✅ Bravo !'; document.getElementById(`duree-fb-${idx}`).style.color = '#166534';
+    scoreDuree++; document.getElementById('score-duree').textContent = `Score : ${scoreDuree} / 5`;
+  } else {
+    btn.classList.add('wrong');
+    document.getElementById(`duree-fb-${idx}`).textContent = `❌ C'était ${correct}`; document.getElementById(`duree-fb-${idx}`).style.color = '#991b1b';
+    document.getElementById(`duree-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+// EXERCICE 3 : calendrier
+const calData = [
+  { q: 'Combien y a-t-il de jours en une semaine ?', correct: '7', choices: ['5', '7', '10', '12'] },
+  { q: 'Quel est le 6ème mois de l\'année ?', correct: 'Juin', choices: ['Mai', 'Juin', 'Juillet', 'Août'] },
+  { q: 'Combien de mois y a-t-il dans une année ?', correct: '12', choices: ['10', '11', '12', '13'] },
+  { q: 'Quel mois vient après octobre ?', correct: 'Novembre', choices: ['Décembre', 'Septembre', 'Novembre', 'Août'] },
+  { q: 'Combien y a-t-il de jours dans une année (normale) ?', correct: '365', choices: ['300', '360', '365', '366'] },
+];
+
+const ex3Container = document.getElementById('ex3-container');
+calData.forEach((item, idx) => {
+  const div = document.createElement('div');
+  div.className = 'q-block';
+  const shuffled = shuffle(item.choices);
+  div.innerHTML = `
+    <div class="q-text">${item.q}</div>
+    <div class="qcm-row" id="cal-choices-${idx}">
+      ${shuffled.map(c => `<button class="btn-choice" onclick="checkCal(this,'${c}','${item.correct}',${idx})">${c}</button>`).join('')}
+    </div>
+    <div class="feedback-line" id="cal-fb-${idx}"></div>
+  `;
+  ex3Container.appendChild(div);
+});
+
+function checkCal(btn, chosen, correct, idx) {
+  document.getElementById(`cal-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  if (chosen === correct) {
+    btn.classList.add('correct');
+    document.getElementById(`cal-fb-${idx}`).textContent = '✅ Bravo !'; document.getElementById(`cal-fb-${idx}`).style.color = '#166534';
+  } else {
+    btn.classList.add('wrong');
+    document.getElementById(`cal-fb-${idx}`).textContent = `❌ C'était ${correct}`; document.getElementById(`cal-fb-${idx}`).style.color = '#991b1b';
+    document.getElementById(`cal-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+// EXERCICE 4 : monnaie
+const monnaieData = [
+  { q: 'J\'ai 1 billet de 5 €, 1 pièce de 2 € et 1 pièce de 50 c. Combien ai-je ?', correct: '7,50 €', choices: ['6,50 €', '7,00 €', '7,50 €', '8,00 €'] },
+  { q: 'Je paie <strong>3,80 €</strong> avec un billet de 5 €. Quelle monnaie je reçois ?', correct: '1,20 €', choices: ['0,80 €', '1,00 €', '1,20 €', '2,20 €'] },
+  { q: 'Un livre coûte <strong>6,50 €</strong>. J\'en achète 2. Combien je paie ?', correct: '13,00 €', choices: ['12,00 €', '13,00 €', '13,50 €', '14,00 €'] },
+  { q: '2 pièces de 20 c + 3 pièces de 10 c = ?', correct: '0,70 €', choices: ['0,50 €', '0,60 €', '0,70 €', '1,00 €'] },
+  { q: 'Léa a <strong>10 €</strong>. Elle dépense <strong>4,25 €</strong>. Il lui reste ?', correct: '5,75 €', choices: ['5,25 €', '5,50 €', '5,75 €', '6,25 €'] },
+];
+
+let scoreMonnaie = 0;
+const ex4Container = document.getElementById('ex4-container');
+monnaieData.forEach((item, idx) => {
+  const div = document.createElement('div');
+  div.className = 'q-block';
+  const shuffled = shuffle(item.choices);
+  div.innerHTML = `
+    <div class="q-text">${item.q}</div>
+    <div class="qcm-row" id="mon-choices-${idx}">
+      ${shuffled.map(c => `<button class="btn-choice" onclick="checkMonnaie(this,'${c}','${item.correct}',${idx})">${c}</button>`).join('')}
+    </div>
+    <div class="feedback-line" id="mon-fb-${idx}"></div>
+  `;
+  ex4Container.appendChild(div);
+});
+
+function checkMonnaie(btn, chosen, correct, idx) {
+  document.getElementById(`mon-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  if (chosen === correct) {
+    btn.classList.add('correct');
+    document.getElementById(`mon-fb-${idx}`).textContent = '✅ Bravo !'; document.getElementById(`mon-fb-${idx}`).style.color = '#166534';
+    scoreMonnaie++; document.getElementById('score-monnaie').textContent = `Score : ${scoreMonnaie} / 5`;
+  } else {
+    btn.classList.add('wrong');
+    document.getElementById(`mon-fb-${idx}`).textContent = `❌ C'était ${correct}`; document.getElementById(`mon-fb-${idx}`).style.color = '#991b1b';
+    document.getElementById(`mon-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+// EXERCICE 5 : problèmes
+const pbData = [
+  { q: 'Le train part à <strong>9 h 15</strong> et arrive à <strong>11 h 45</strong>. Quelle est la durée du trajet ?', correct: '2 h 30 min', choices: ['2 h', '2 h 30 min', '3 h', '2 h 15 min'] },
+  { q: 'Hugo a économisé <strong>12,50 €</strong>. Il reçoit <strong>5 €</strong> pour son anniversaire. Il veut un jouet à <strong>16 €</strong>. A-t-il assez ?', correct: 'Oui, il a 17,50 €', choices: ['Non, il manque 3,50 €', 'Oui, il a 17,50 €', 'Non, il manque 5 €', 'Oui, il a 16 €'] },
+];
+
+const ex5Container = document.getElementById('ex5-container');
+pbData.forEach((item, idx) => {
+  const div = document.createElement('div');
+  div.className = 'q-block';
+  const shuffled = shuffle(item.choices);
+  div.innerHTML = `
+    <div class="q-text" style="font-style:italic; color:#555;">${item.q}</div>
+    <div class="qcm-row" id="pb2-choices-${idx}">
+      ${shuffled.map(c => `<button class="btn-choice" onclick="checkPb2(this,'${c}','${item.correct}',${idx})">${c}</button>`).join('')}
+    </div>
+    <div class="feedback-line" id="pb2-fb-${idx}"></div>
+  `;
+  ex5Container.appendChild(div);
+});
+
+function checkPb2(btn, chosen, correct, idx) {
+  document.getElementById(`pb2-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  if (chosen === correct) {
+    btn.classList.add('correct');
+    document.getElementById(`pb2-fb-${idx}`).textContent = '✅ Bravo !'; document.getElementById(`pb2-fb-${idx}`).style.color = '#166534';
+  } else {
+    btn.classList.add('wrong');
+    document.getElementById(`pb2-fb-${idx}`).textContent = `❌ C'était : ${correct}`; document.getElementById(`pb2-fb-${idx}`).style.color = '#991b1b';
+    document.getElementById(`pb2-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

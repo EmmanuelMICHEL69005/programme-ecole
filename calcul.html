@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les opérations — CE2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .op-posee {
+    display: inline-block;
+    background: #f5f3ff;
+    border: 2px solid #ddd6fe;
+    border-radius: 14px;
+    padding: 16px 24px;
+    font-family: 'Courier New', monospace;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #5b21b6;
+    text-align: right;
+    margin: 10px 0;
+    min-width: 140px;
+  }
+  .op-posee .op-sign { color: #f97316; }
+  .op-posee hr { border: 2px solid #c4b5fd; margin: 6px 0; }
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white;
+    border: 2px solid #c4b5fd;
+    border-radius: 22px;
+    padding: 9px 22px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    cursor: pointer;
+    color: #5b21b6;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+  .btn-choice:hover { background: #ede9fe; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #f5f3ff; border: 2px solid #ddd6fe; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 0.95rem; font-weight: 700; margin-bottom: 10px; }
+  .score-bar {
+    background: #ede9fe; border-radius: 12px;
+    padding: 10px 18px; font-size: 1rem; font-weight: 800;
+    color: #5b21b6; margin-bottom: 14px; text-align: center;
+  }
+  .op-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+  .op-card { background: white; border: 2px solid #ddd6fe; border-radius: 14px; padding: 16px; text-align: center; }
+  .vf-item {
+    background: #f5f3ff; border: 2px solid #ddd6fe; border-radius: 12px;
+    padding: 14px 16px; margin-bottom: 10px;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
+  }
+  .vf-btns { display: flex; gap: 8px; }
+  .btn-v, .btn-f {
+    border-radius: 20px; padding: 5px 16px; font-weight: 800; font-size: 0.85rem;
+    border: 2px solid; cursor: pointer; transition: background 0.15s;
+  }
+  .btn-v { border-color: #22c55e; color: #22c55e; background: white; }
+  .btn-f { border-color: #ef4444; color: #ef4444; background: white; }
+  .btn-v:hover { background: #22c55e; color: white; }
+  .btn-f:hover { background: #ef4444; color: white; }
+  .btn-v.active { background: #22c55e; color: white; }
+  .btn-f.active { background: #ef4444; color: white; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <span class="emoji-header">➕</span>
+  <h1>Les opérations</h1>
+  <p>Addition, soustraction, multiplication posées</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">CE2 — Nombres et calculs</div>
+
+  <!-- JE RETIENS -->
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="display:flex; gap:20px; flex-wrap:wrap; font-size:0.9rem; color:#555; margin-top:8px;">
+      <div>➕ <strong>Addition</strong> : je pose, j'additionne colonne par colonne, je retiens si besoin.</div>
+      <div>➖ <strong>Soustraction</strong> : je pose, je soustrait colonne par colonne, j'emprunte si besoin.</div>
+      <div>✖️ <strong>Multiplication</strong> : je multiplie chaque chiffre par le multiplicateur.</div>
+      <div>➗ <strong>Division</strong> : ÷ est le signe de la division. 12 ÷ 4 = 3</div>
+    </div>
+  </div>
+
+  <!-- EXERCICE 1 : additions -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge">Ex 1</span> Additions posées</div>
+    <div class="score-bar" id="score-add">Score : 0 / 5</div>
+    <div class="op-grid" id="ex1-container"></div>
+  </div>
+
+  <!-- EXERCICE 2 : soustractions -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge">Ex 2</span> Soustractions posées</div>
+    <div class="score-bar" id="score-sub">Score : 0 / 5</div>
+    <div class="op-grid" id="ex2-container"></div>
+  </div>
+
+  <!-- EXERCICE 3 : multiplications -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge">Ex 3</span> Multiplications posées</div>
+    <div class="score-bar" id="score-mul">Score : 0 / 5</div>
+    <div class="op-grid" id="ex3-container"></div>
+  </div>
+
+  <!-- EXERCICE 4 : division sens -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge">Ex 4</span> Le sens de la division</div>
+    <div id="ex4-container"></div>
+  </div>
+
+  <!-- EXERCICE 5 : vrai/faux -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge">Ex 5</span> Vrai ou Faux ?</div>
+    <div id="ex5-container"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CE2</footer>
+
+<script>
+function shuffle(arr) { return [...arr].sort(() => Math.random() - 0.5); }
+
+// ======== EXERCICE 1 : additions ========
+const addData = [
+  { a: 347,  b: 285,  result: 632  },
+  { a: 1254, b: 738,  result: 1992 },
+  { a: 4567, b: 2348, result: 6915 },
+  { a: 906,  b: 394,  result: 1300 },
+  { a: 3089, b: 1711, result: 4800 },
+];
+
+let scoreAdd = 0, scoreSub = 0, scoreMul = 0;
+
+function buildOpCards(data, containerId, scoreId, scoreVar, type) {
+  const container = document.getElementById(containerId);
+  data.forEach((item, idx) => {
+    const id = `${type}-${idx}`;
+    const wrong1 = item.result + Math.floor(Math.random()*20+5);
+    const wrong2 = item.result - Math.floor(Math.random()*20+5);
+    const wrong3 = item.result + Math.floor(Math.random()*50+30);
+    const choices = shuffle([item.result, wrong1, wrong2, wrong3]);
+    const card = document.createElement('div');
+    card.className = 'op-card';
+    const sign = type === 'add' ? '+' : type === 'sub' ? '−' : '×';
+    card.innerHTML = `
+      <div class="op-posee">
+        ${item.a.toLocaleString('fr')}<br>
+        <span class="op-sign">${sign}</span> ${item.b.toLocaleString('fr')}
+        <hr>
+        <span style="color:#bbb;">?</span>
+      </div>
+      <div class="qcm-row" id="${id}-choices" style="justify-content:center;">
+        ${choices.map(c => `<button class="btn-choice" onclick="checkOp(this,${c},${item.result},'${id}-choices','${id}-fb','${scoreId}','${type}')">${c.toLocaleString('fr')}</button>`).join('')}
+      </div>
+      <div class="feedback-line" id="${id}-fb"></div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+buildOpCards(addData, 'ex1-container', 'score-add', 'add', 'add');
+
+const subData = [
+  { a: 843,  b: 267, result: 576  },
+  { a: 1500, b: 348, result: 1152 },
+  { a: 3000, b: 875, result: 2125 },
+  { a: 7420, b: 2865, result: 4555 },
+  { a: 4001, b: 1234, result: 2767 },
+];
+buildOpCards(subData, 'ex2-container', 'score-sub', 'sub', 'sub');
+
+const mulData = [
+  { a: 234,  b: 3, result: 702  },
+  { a: 156,  b: 4, result: 624  },
+  { a: 283,  b: 5, result: 1415 },
+  { a: 147,  b: 6, result: 882  },
+  { a: 208,  b: 7, result: 1456 },
+];
+buildOpCards(mulData, 'ex3-container', 'score-mul', 'mul', 'mul');
+
+const scores = { add: 0, sub: 0, mul: 0 };
+function checkOp(btn, chosen, correct, rowId, fbId, scoreId, type) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct');
+    fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+    scores[type]++;
+    document.getElementById(scoreId).textContent = `Score : ${scores[type]} / 5`;
+  } else {
+    btn.classList.add('wrong');
+    fb.textContent = `❌ C'était ${correct.toLocaleString('fr')}`; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => {
+      if (parseInt(b.textContent.replace(/\s/g,'')) === correct) b.classList.add('correct');
+    });
+  }
+}
+
+// ======== EXERCICE 4 : sens division ========
+const divData = [
+  { q: '24 ÷ 6 = ?', correct: 4, choices: [3, 4, 5, 6] },
+  { q: '35 ÷ 7 = ?', correct: 5, choices: [4, 5, 6, 7] },
+  { q: '48 ÷ 8 = ?', correct: 6, choices: [5, 6, 7, 8] },
+  { q: '36 ÷ 4 = ?', correct: 9, choices: [7, 8, 9, 12] },
+  { q: 'Si je partage 30 bonbons en 5 parts égales, chaque part = ?', correct: 6, choices: [5, 6, 7, 25] },
+  { q: 'J\'ai 56 images, je les range en groupes de 8. Combien de groupes ?', correct: 7, choices: [6, 7, 8, 9] },
+];
+
+const ex4Container = document.getElementById('ex4-container');
+divData.forEach((item, idx) => {
+  const div = document.createElement('div');
+  div.className = 'q-block';
+  const choices = shuffle(item.choices);
+  div.innerHTML = `
+    <div class="q-text">${item.q}</div>
+    <div class="qcm-row" id="div-choices-${idx}">
+      ${choices.map(c => `<button class="btn-choice" onclick="checkBasic(this,${c},${item.correct},'div-choices-${idx}','div-fb-${idx}')">${c}</button>`).join('')}
+    </div>
+    <div class="feedback-line" id="div-fb-${idx}"></div>
+  `;
+  ex4Container.appendChild(div);
+});
+
+// ======== EXERCICE 5 : vrai/faux ========
+const vfData = [
+  { txt: '365 + 135 = 500', correct: true },
+  { txt: '800 − 450 = 360', correct: false, exp: '350' },
+  { txt: '124 × 3 = 372', correct: true },
+  { txt: '5 × 8 = 38', correct: false, exp: '40' },
+  { txt: '100 − 47 = 53', correct: true },
+  { txt: '6 × 7 = 48', correct: false, exp: '42' },
+];
+
+const ex5Container = document.getElementById('ex5-container');
+vfData.forEach((item, idx) => {
+  const div = document.createElement('div');
+  div.className = 'vf-item';
+  div.innerHTML = `
+    <span>${item.txt}</span>
+    <div style="display:flex; flex-direction:column; align-items:flex-end; gap:4px;">
+      <div class="vf-btns">
+        <button class="btn-v" onclick="checkVF(this, true, ${item.correct}, 'vf-fb-${idx}', ${JSON.stringify(item.exp || '')})">Vrai</button>
+        <button class="btn-f" onclick="checkVF(this, false, ${item.correct}, 'vf-fb-${idx}', ${JSON.stringify(item.exp || '')})">Faux</button>
+      </div>
+      <div class="feedback-line" id="vf-fb-${idx}"></div>
+    </div>
+  `;
+  ex5Container.appendChild(div);
+});
+
+function checkVF(btn, chosen, correct, fbId, exp) {
+  const row = btn.parentElement;
+  row.querySelectorAll('button').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('active');
+    fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('active');
+    btn.style.background = '#ef4444'; btn.style.color = 'white'; btn.style.borderColor = '#b91c1c';
+    const msg = exp ? `❌ Faux — c'est ${exp}` : '❌ Pas tout à fait !';
+    fb.textContent = msg; fb.style.color = '#991b1b';
+  }
+}
+
+function checkBasic(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  if (chosen === correct) {
+    btn.classList.add('correct');
+    document.getElementById(fbId).textContent = '✅ Bravo !';
+    document.getElementById(fbId).style.color = '#166534';
+  } else {
+    btn.classList.add('wrong');
+    document.getElementById(fbId).textContent = `❌ C'était ${correct}`;
+    document.getElementById(fbId).style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => {
+      if (parseInt(b.textContent.replace(/\s/g,'')) === correct) b.classList.add('correct');
+    });
+  }
+}
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

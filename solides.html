@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les solides — CE2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #fed7aa; border-radius: 22px;
+    padding: 9px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #c2410c;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #ffedd5; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #fff7ed; border: 2px solid #fed7aa; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .score-bar {
+    background: #ffedd5; border-radius: 12px;
+    padding: 10px 18px; font-size: 1rem; font-weight: 800;
+    color: #c2410c; margin-bottom: 14px; text-align: center;
+  }
+  .solides-gallery {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(120px,1fr)); gap: 14px; margin: 14px 0;
+  }
+  .solide-card {
+    background: white; border: 2px solid #fed7aa; border-radius: 14px;
+    padding: 14px 10px; text-align: center;
+  }
+  .solide-card .solide-emoji { font-size: 2.5rem; display: block; margin-bottom: 6px; }
+  .solide-card .solide-name { font-size: 0.85rem; font-weight: 900; color: #c2410c; }
+  .vf-item {
+    background: #fff7ed; border: 2px solid #fed7aa; border-radius: 12px;
+    padding: 14px 16px; margin-bottom: 10px;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
+  }
+  .vf-btns { display: flex; gap: 8px; }
+  .btn-v { border-radius: 20px; padding: 5px 16px; font-weight: 800; font-size: 0.85rem; border: 2px solid #22c55e; color: #22c55e; background: white; cursor: pointer; }
+  .btn-f { border-radius: 20px; padding: 5px 16px; font-weight: 800; font-size: 0.85rem; border: 2px solid #ef4444; color: #ef4444; background: white; cursor: pointer; }
+  .btn-v:hover { background: #22c55e; color: white; }
+  .btn-f:hover { background: #ef4444; color: white; }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: linear-gradient(135deg, #c2410c, #f97316);">
+  <span class="emoji-header">🎲</span>
+  <h1>Les solides</h1>
+  <p>Cube, pavé, pyramide, cylindre, boule, cône</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">CE2 — Espace et géométrie</div>
+
+  <!-- JE RETIENS -->
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div class="solides-gallery" style="margin-top:12px;">
+      <div class="solide-card">
+        <span class="solide-emoji">🧊</span>
+        <div class="solide-name">Cube</div>
+        <div style="font-size:0.75rem; color:#888; margin-top:4px;">6 faces carrées<br>8 sommets<br>12 arêtes</div>
+      </div>
+      <div class="solide-card">
+        <span class="solide-emoji">📦</span>
+        <div class="solide-name">Pavé droit</div>
+        <div style="font-size:0.75rem; color:#888; margin-top:4px;">6 faces rectangles<br>8 sommets<br>12 arêtes</div>
+      </div>
+      <div class="solide-card">
+        <span class="solide-emoji">🔺</span>
+        <div class="solide-name">Pyramide</div>
+        <div style="font-size:0.75rem; color:#888; margin-top:4px;">1 base polygonale<br>faces triangulaires<br>1 sommet</div>
+      </div>
+      <div class="solide-card">
+        <span class="solide-emoji">🥫</span>
+        <div class="solide-name">Cylindre</div>
+        <div style="font-size:0.75rem; color:#888; margin-top:4px;">2 faces circulaires<br>1 face courbée<br>0 sommet</div>
+      </div>
+      <div class="solide-card">
+        <span class="solide-emoji">⚽</span>
+        <div class="solide-name">Boule/Sphère</div>
+        <div style="font-size:0.75rem; color:#888; margin-top:4px;">1 face courbée<br>0 arête<br>0 sommet</div>
+      </div>
+      <div class="solide-card">
+        <span class="solide-emoji">🍦</span>
+        <div class="solide-name">Cône</div>
+        <div style="font-size:0.75rem; color:#888; margin-top:4px;">1 base circulaire<br>1 face courbée<br>1 sommet</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXERCICE 1 : identifier un solide -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#c2410c;">Ex 1</span> Quel solide est décrit ?</div>
+    <div class="score-bar" id="score-sol">Score : 0 / 6</div>
+    <div id="ex1-container"></div>
+  </div>
+
+  <!-- EXERCICE 2 : objets du quotidien -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#c2410c;">Ex 2</span> Quel solide ressemble à cet objet ?</div>
+    <div id="ex2-container"></div>
+  </div>
+
+  <!-- EXERCICE 3 : faces, sommets, arêtes -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#c2410c;">Ex 3</span> Faces, sommets et arêtes</div>
+    <div id="ex3-container"></div>
+  </div>
+
+  <!-- EXERCICE 4 : VF propriétés -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#c2410c;">Ex 4</span> Vrai ou Faux ?</div>
+    <div id="ex4-container"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CE2</footer>
+
+<script>
+function shuffle(arr) { return [...arr].sort(() => Math.random() - 0.5); }
+
+// EXERCICE 1
+const solData = [
+  { q: 'J\'ai 6 faces carrées, 8 sommets et 12 arêtes.', correct: 'Cube', choices: ['Cube', 'Pavé droit', 'Pyramide', 'Cylindre'] },
+  { q: 'J\'ai 2 faces circulaires et une face courbée. Pas de sommet.', correct: 'Cylindre', choices: ['Cylindre', 'Boule', 'Cône', 'Cube'] },
+  { q: 'J\'ai 1 seule face courbée, 0 arête, 0 sommet.', correct: 'Boule', choices: ['Boule', 'Cylindre', 'Cône', 'Cube'] },
+  { q: 'J\'ai une base carrée et 4 faces triangulaires.', correct: 'Pyramide', choices: ['Pyramide', 'Cube', 'Pavé droit', 'Prisme'] },
+  { q: 'J\'ai 6 faces rectangulaires (pas toutes égales), 8 sommets.', correct: 'Pavé droit', choices: ['Cube', 'Pavé droit', 'Prisme', 'Pyramide'] },
+  { q: 'J\'ai 1 base circulaire, 1 face courbée et 1 sommet.', correct: 'Cône', choices: ['Cône', 'Pyramide', 'Cylindre', 'Boule'] },
+];
+
+let scoreSol = 0;
+const ex1Container = document.getElementById('ex1-container');
+solData.forEach((item, idx) => {
+  const div = document.createElement('div');
+  div.className = 'q-block';
+  const shuffled = shuffle(item.choices);
+  div.innerHTML = `
+    <div class="q-text">${item.q}</div>
+    <div class="qcm-row" id="sol-choices-${idx}">
+      ${shuffled.map(c => `<button class="btn-choice" onclick="checkSol(this,'${c}','${item.correct}',${idx})">${c}</button>`).join('')}
+    </div>
+    <div class="feedback-line" id="sol-fb-${idx}"></div>
+  `;
+  ex1Container.appendChild(div);
+});
+
+function checkSol(btn, chosen, correct, idx) {
+  document.getElementById(`sol-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  if (chosen === correct) {
+    btn.classList.add('correct');
+    document.getElementById(`sol-fb-${idx}`).textContent = '✅ Bravo !'; document.getElementById(`sol-fb-${idx}`).style.color = '#166534';
+    scoreSol++; document.getElementById('score-sol').textContent = `Score : ${scoreSol} / 6`;
+  } else {
+    btn.classList.add('wrong');
+    document.getElementById(`sol-fb-${idx}`).textContent = `❌ C'était ${correct}`; document.getElementById(`sol-fb-${idx}`).style.color = '#991b1b';
+    document.getElementById(`sol-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+// EXERCICE 2 : objets du quotidien
+const objData = [
+  { q: '🎁 Une boîte cadeau ressemble à…', correct: 'Pavé droit', choices: ['Cube', 'Pavé droit', 'Pyramide', 'Cylindre'] },
+  { q: '🥫 Une boîte de conserve ressemble à…', correct: 'Cylindre', choices: ['Cylindre', 'Boule', 'Prisme', 'Cône'] },
+  { q: '⚽ Un ballon ressemble à…', correct: 'Boule', choices: ['Boule', 'Cube', 'Cylindre', 'Cône'] },
+  { q: '🍦 Un cornet de glace ressemble à…', correct: 'Cône', choices: ['Cône', 'Cylindre', 'Pyramide', 'Cube'] },
+  { q: '🎲 Un dé ressemble à…', correct: 'Cube', choices: ['Cube', 'Pavé droit', 'Sphère', 'Pyramide'] },
+];
+
+const ex2Container = document.getElementById('ex2-container');
+objData.forEach((item, idx) => {
+  const div = document.createElement('div');
+  div.className = 'q-block';
+  const shuffled = shuffle(item.choices);
+  div.innerHTML = `
+    <div class="q-text">${item.q}</div>
+    <div class="qcm-row" id="obj-choices-${idx}">
+      ${shuffled.map(c => `<button class="btn-choice" onclick="checkObj(this,'${c}','${item.correct}',${idx})">${c}</button>`).join('')}
+    </div>
+    <div class="feedback-line" id="obj-fb-${idx}"></div>
+  `;
+  ex2Container.appendChild(div);
+});
+
+function checkObj(btn, chosen, correct, idx) {
+  document.getElementById(`obj-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  if (chosen === correct) {
+    btn.classList.add('correct');
+    document.getElementById(`obj-fb-${idx}`).textContent = '✅ Bravo !'; document.getElementById(`obj-fb-${idx}`).style.color = '#166534';
+  } else {
+    btn.classList.add('wrong');
+    document.getElementById(`obj-fb-${idx}`).textContent = `❌ C'était ${correct}`; document.getElementById(`obj-fb-${idx}`).style.color = '#991b1b';
+    document.getElementById(`obj-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+// EXERCICE 3 : faces sommets arêtes
+const fsaData = [
+  { q: 'Combien de faces a un cube ?', correct: '6', choices: ['4', '6', '8', '12'] },
+  { q: 'Combien d\'arêtes a un cube ?', correct: '12', choices: ['6', '8', '10', '12'] },
+  { q: 'Combien de sommets a un pavé droit ?', correct: '8', choices: ['4', '6', '8', '10'] },
+  { q: 'Combien de faces a une pyramide à base carrée ?', correct: '5', choices: ['4', '5', '6', '8'] },
+  { q: 'Combien de sommets a une pyramide à base carrée ?', correct: '5', choices: ['4', '5', '6', '8'] },
+];
+
+const ex3Container = document.getElementById('ex3-container');
+fsaData.forEach((item, idx) => {
+  const div = document.createElement('div');
+  div.className = 'q-block';
+  const shuffled = shuffle(item.choices);
+  div.innerHTML = `
+    <div class="q-text">${item.q}</div>
+    <div class="qcm-row" id="fsa-choices-${idx}">
+      ${shuffled.map(c => `<button class="btn-choice" onclick="checkFsa(this,'${c}','${item.correct}',${idx})">${c}</button>`).join('')}
+    </div>
+    <div class="feedback-line" id="fsa-fb-${idx}"></div>
+  `;
+  ex3Container.appendChild(div);
+});
+
+function checkFsa(btn, chosen, correct, idx) {
+  document.getElementById(`fsa-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  if (chosen === correct) {
+    btn.classList.add('correct');
+    document.getElementById(`fsa-fb-${idx}`).textContent = '✅ Bravo !'; document.getElementById(`fsa-fb-${idx}`).style.color = '#166534';
+  } else {
+    btn.classList.add('wrong');
+    document.getElementById(`fsa-fb-${idx}`).textContent = `❌ C'était ${correct}`; document.getElementById(`fsa-fb-${idx}`).style.color = '#991b1b';
+    document.getElementById(`fsa-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+// EXERCICE 4 : VF
+const vfData = [
+  { txt: 'Un cube est un cas particulier de pavé droit.', correct: true },
+  { txt: 'Une boule a des arêtes.', correct: false, exp: '0 arête' },
+  { txt: 'Un cylindre a 2 faces circulaires.', correct: true },
+  { txt: 'Une pyramide a des faces triangulaires.', correct: true },
+  { txt: 'Un cône a 2 sommets.', correct: false, exp: '1 seul sommet' },
+];
+
+const ex4Container = document.getElementById('ex4-container');
+vfData.forEach((item, idx) => {
+  const div = document.createElement('div');
+  div.className = 'vf-item';
+  div.innerHTML = `
+    <span>${item.txt}</span>
+    <div style="display:flex; flex-direction:column; align-items:flex-end; gap:4px;">
+      <div class="vf-btns">
+        <button class="btn-v" onclick="checkVF(this, true, ${item.correct}, 'vf4-fb-${idx}', '${item.exp || ''}')">Vrai</button>
+        <button class="btn-f" onclick="checkVF(this, false, ${item.correct}, 'vf4-fb-${idx}', '${item.exp || ''}')">Faux</button>
+      </div>
+      <div class="feedback-line" id="vf4-fb-${idx}"></div>
+    </div>
+  `;
+  ex4Container.appendChild(div);
+});
+
+function checkVF(btn, chosen, correct, fbId, exp) {
+  const row = btn.parentElement;
+  row.querySelectorAll('button').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.style.background = '#22c55e'; btn.style.color = 'white';
+    fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.style.background = '#ef4444'; btn.style.color = 'white'; btn.style.borderColor = '#b91c1c';
+    fb.textContent = exp ? `❌ Faux — ${exp}` : '❌ Pas tout à fait !'; fb.style.color = '#991b1b';
+  }
+}
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

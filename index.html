@@ -10,7 +10,7 @@
 <style>
   .welcome {
     text-align: center;
-    margin-bottom: 28px;
+    margin-bottom: 30px;
   }
   .welcome .bonjour {
     font-size: 1.5rem;
@@ -21,39 +21,58 @@
     font-size: 1rem;
     color: #666;
   }
-  .section-title {
-    font-size: 1rem;
-    font-weight: 800;
+  .domain-title {
+    font-size: 0.85rem;
+    font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #888;
-    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    margin: 28px 0 12px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: inline-block;
   }
+  .domain-title.violet { background: #ede9fe; color: #5b21b6; }
+  .domain-title.bleu   { background: #dbeafe; color: #1d4ed8; }
+  .domain-title.vert   { background: #dcfce7; color: #166534; }
+  .domain-title.orange { background: #ffedd5; color: #c2410c; }
+
+  .card.violet  { border-color: #ddd6fe; }
+  .card.violet .icon { background: #f5f3ff; }
 </style>
 </head>
 <body>
 
 <header class="site-header">
-  <span class="emoji-header">📐</span>
+  <span class="emoji-header">🌟</span>
   <h1>Les Maths de Clémence</h1>
-  <p>CE2 — Les Fractions</p>
+  <p>Programme complet CE2</p>
 </header>
 
 <main>
 
   <div class="welcome">
     <div class="bonjour">Bonjour Clémence ! 👋</div>
-    <p>Choisis une fiche pour t'entraîner.</p>
+    <p>Choisis un thème pour t'entraîner.</p>
   </div>
 
-  <div class="section-title">📚 Mes fiches d'exercices</div>
-
+  <!-- DOMAINE 1 : Nombres et calculs -->
+  <div class="domain-title violet">🔢 Nombres et calculs</div>
   <div class="cards-grid">
+
+    <a href="nombres.html" class="card violet">
+      <div class="icon">🔢</div>
+      <div class="card-body">
+        <h2>Les nombres entiers</h2>
+        <p>Lire, écrire, comparer jusqu'à 10 000</p>
+        <div class="stars">⭐ Facile</div>
+      </div>
+      <span class="arrow">›</span>
+    </a>
 
     <a href="fiche1.html" class="card bleu">
       <div class="icon">✂️</div>
       <div class="card-body">
-        <h2>Fiche 1 — Je découpe</h2>
+        <h2>Fractions — Je découpe</h2>
         <p>Comprendre le partage en parts égales</p>
         <div class="stars">⭐ Facile</div>
       </div>
@@ -63,7 +82,7 @@
     <a href="fiche2.html" class="card vert">
       <div class="icon">📏</div>
       <div class="card-body">
-        <h2>Fiche 2 — Je compare</h2>
+        <h2>Fractions — Je compare</h2>
         <p>Placer les fractions sur une droite</p>
         <div class="stars">⭐⭐ Moyen</div>
       </div>
@@ -73,9 +92,107 @@
     <a href="fiche3.html" class="card orange">
       <div class="icon">🍎</div>
       <div class="card-body">
-        <h2>Fiche 3 — Je calcule</h2>
+        <h2>Fractions — Je calcule</h2>
         <p>Trouver la fraction d'une collection</p>
         <div class="stars">⭐⭐⭐ Difficile</div>
+      </div>
+      <span class="arrow">›</span>
+    </a>
+
+    <a href="calcul.html" class="card violet">
+      <div class="icon">➕</div>
+      <div class="card-body">
+        <h2>Les opérations</h2>
+        <p>Addition, soustraction, multiplication posées</p>
+        <div class="stars">⭐⭐ Moyen</div>
+      </div>
+      <span class="arrow">›</span>
+    </a>
+
+    <a href="calcul-mental.html" class="card bleu">
+      <div class="icon">⚡</div>
+      <div class="card-body">
+        <h2>Calcul mental</h2>
+        <p>Tables, doubles, compléments à 100</p>
+        <div class="stars">⭐⭐ Moyen</div>
+      </div>
+      <span class="arrow">›</span>
+    </a>
+
+    <a href="problemes.html" class="card orange">
+      <div class="icon">🧩</div>
+      <div class="card-body">
+        <h2>Problèmes</h2>
+        <p>Résoudre des problèmes de la vie courante</p>
+        <div class="stars">⭐⭐⭐ Difficile</div>
+      </div>
+      <span class="arrow">›</span>
+    </a>
+
+  </div>
+
+  <!-- DOMAINE 2 : Grandeurs et mesures -->
+  <div class="domain-title bleu">📐 Grandeurs et mesures</div>
+  <div class="cards-grid">
+
+    <a href="mesures.html" class="card bleu">
+      <div class="icon">📏</div>
+      <div class="card-body">
+        <h2>Longueurs, masses, contenances</h2>
+        <p>Conversions et comparaisons d'unités</p>
+        <div class="stars">⭐⭐ Moyen</div>
+      </div>
+      <span class="arrow">›</span>
+    </a>
+
+    <a href="temps.html" class="card vert">
+      <div class="icon">🕐</div>
+      <div class="card-body">
+        <h2>Le temps et la monnaie</h2>
+        <p>Lire l'heure, calculer des durées, l'argent</p>
+        <div class="stars">⭐⭐ Moyen</div>
+      </div>
+      <span class="arrow">›</span>
+    </a>
+
+  </div>
+
+  <!-- DOMAINE 3 : Espace et géométrie -->
+  <div class="domain-title vert">📐 Espace et géométrie</div>
+  <div class="cards-grid">
+
+    <a href="geometrie.html" class="card vert">
+      <div class="icon">🔷</div>
+      <div class="card-body">
+        <h2>Géométrie plane</h2>
+        <p>Figures, angles droits, périmètre, symétrie</p>
+        <div class="stars">⭐⭐ Moyen</div>
+      </div>
+      <span class="arrow">›</span>
+    </a>
+
+    <a href="solides.html" class="card orange">
+      <div class="icon">🎲</div>
+      <div class="card-body">
+        <h2>Les solides</h2>
+        <p>Cube, pavé, pyramide, sphère…</p>
+        <div class="stars">⭐ Facile</div>
+      </div>
+      <span class="arrow">›</span>
+    </a>
+
+  </div>
+
+  <!-- DOMAINE 4 : Organisation et gestion de données -->
+  <div class="domain-title orange">📊 Organisation des données</div>
+  <div class="cards-grid">
+
+    <a href="donnees.html" class="card orange">
+      <div class="icon">📊</div>
+      <div class="card-body">
+        <h2>Tableaux et graphiques</h2>
+        <p>Lire et compléter des tableaux et diagrammes</p>
+        <div class="stars">⭐ Facile</div>
       </div>
       <span class="arrow">›</span>
     </a>
@@ -88,5 +205,7 @@
   Fait avec ❤️ pour Clémence — CE2
 </footer>
 
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
 </body>
 </html>

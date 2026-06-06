@@ -7,10 +7,83 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+  /* Ex 1 — place sur la droite */
+  .droite-interactive { background:#f0fdf4; border:2px solid #86efac; border-radius:14px; padding:20px; margin:14px 0; }
+  .droite-svg-wrap { position:relative; margin:20px 0 10px; height:60px; }
+  .droite-svg-wrap svg { width:100%; height:60px; }
+  .droite-chips { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:14px; }
+  .chip {
+    border:2px solid #059669; border-radius:20px; padding:8px 20px;
+    font-size:1.1rem; font-weight:900; background:white; color:#059669;
+    cursor:pointer; font-family:inherit; transition:all 0.15s; user-select:none;
+  }
+  .chip:hover { background:#dcfce7; }
+  .chip.selected { background:#059669; color:white; transform:scale(1.1); }
+  .chip.placed { opacity:0.3; pointer-events:none; }
+  .droite-slot {
+    cursor:pointer; transition:all 0.2s;
+  }
+  .droite-slot:hover .slot-rect { fill:#dcfce7; }
+  .droite-feedback { text-align:center; font-size:0.9rem; font-weight:800; min-height:22px; margin-top:8px; }
+
+  /* Ex 2 — choix */
+  .choix-item { background:#f0fdf4; border:2px solid #bbf7d0; border-radius:12px; padding:14px 16px; margin-bottom:10px; }
+  .choix-num { font-weight:800; color:#059669; }
+  .choix-btns { display:flex; gap:10px; margin-top:8px; flex-wrap:wrap; }
+  .btn-choix { border:2px solid #059669; border-radius:12px; padding:8px 20px; font-size:1.1rem; font-weight:900; background:white; color:#059669; cursor:pointer; font-family:inherit; transition:background 0.15s; }
+  .btn-choix:hover { background:#dcfce7; }
+  .btn-choix.correct { background:#22c55e; color:white; border-color:#16a34a; }
+  .btn-choix.wrong   { background:#fca5a5; color:#7f1d1d; border-color:#ef4444; }
+  .choix-feedback { font-size:0.82rem; font-weight:800; margin-top:6px; min-height:16px; }
+
+  /* Ex 3 — tri par clic */
+  .tri-container { background:#f0fdf4; border:2px solid #bbf7d0; border-radius:14px; padding:18px; margin-bottom:14px; }
+  .tri-chips { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin:12px 0; }
+  .tri-chip {
+    border:2px solid #059669; border-radius:20px; padding:8px 18px;
+    font-size:1.1rem; font-weight:900; background:white; color:#059669;
+    cursor:pointer; font-family:inherit; transition:all 0.15s;
+  }
+  .tri-chip:hover:not(.done):not(.wrong-flash) { background:#dcfce7; }
+  .tri-chip.done { background:#22c55e; color:white; border-color:#16a34a; cursor:default; }
+  .tri-chip.wrong-flash { background:#fca5a5; border-color:#ef4444; animation:shake 0.3s; }
+  .tri-sequence { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; min-height:44px; align-items:center; margin-top:10px; border-top:2px dashed #bbf7d0; padding-top:10px; }
+  .tri-slot { border:2px dashed #059669; border-radius:12px; padding:6px 14px; font-size:1rem; font-weight:800; color:#059669; min-width:40px; text-align:center; }
+  .tri-slot.filled { background:#22c55e; color:white; border-color:#16a34a; }
+  .tri-feedback { text-align:center; font-size:0.9rem; font-weight:800; min-height:20px; margin-top:8px; }
+  @keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)} }
+
+  /* Ex 4 — signes */
+  .sign-interactive { background:#f0fdf4; border:2px solid #bbf7d0; border-radius:12px; padding:12px 16px; margin-bottom:10px; display:flex; align-items:center; gap:10px; flex-wrap:wrap; font-size:1.1rem; font-weight:700; }
+  .sign-btns { display:flex; gap:6px; }
+  .btn-sign { border:2px solid #059669; border-radius:8px; padding:4px 12px; font-size:1rem; font-weight:900; background:white; color:#059669; cursor:pointer; font-family:inherit; transition:background 0.15s; min-width:36px; }
+  .btn-sign:hover { background:#dcfce7; }
+  .btn-sign.correct { background:#22c55e; color:white; border-color:#16a34a; }
+  .btn-sign.wrong   { background:#fca5a5; color:#7f1d1d; border-color:#ef4444; }
+
+  /* Ex 5 — QCM problèmes */
+  .pb-qcm { margin-bottom:16px; }
+  .pb-qcm .enonce { font-style:italic; color:#555; margin-bottom:10px; font-size:0.93rem; line-height:1.6; }
+  .pb-qcm .question { font-size:0.95rem; font-weight:700; margin-bottom:8px; }
+  .pb-qcm-btns { display:flex; gap:8px; flex-wrap:wrap; }
+  .btn-qcm { border:2px solid #059669; border-radius:10px; padding:8px 18px; font-size:0.95rem; font-weight:800; background:white; color:#059669; cursor:pointer; font-family:inherit; transition:background 0.15s; }
+  .btn-qcm:hover { background:#dcfce7; }
+  .btn-qcm.correct { background:#22c55e; color:white; border-color:#16a34a; }
+  .btn-qcm.wrong   { background:#fca5a5; color:#7f1d1d; border-color:#ef4444; }
+  .pb-qcm-fb { font-size:0.85rem; font-weight:800; margin-top:6px; min-height:16px; }
+
+  /* Comparaison pizza */
+  .pizza-compare-row { display:flex; align-items:center; gap:16px; justify-content:center; flex-wrap:wrap; margin-top:14px; }
+  .pizza-compare-item { text-align:center; }
+  .pizza-compare-item .lbl { font-size:1.3rem; font-weight:900; color:#059669; margin-bottom:4px; }
+  .pizza-compare-item .sublbl { font-size:0.78rem; color:#555; margin-top:4px; }
+  .vs-sign { font-size:2rem; font-weight:900; color:#059669; }
+</style>
 </head>
 <body>
 
-<header class="site-header" style="background: linear-gradient(135deg, #059669, #0891b2);">
+<header class="site-header" style="background:linear-gradient(135deg,#059669,#0891b2)">
   <span class="emoji-header">📏</span>
   <h1>Fiche 2 — Je compare</h1>
   <p>Placer les fractions sur une droite</p>
@@ -18,123 +91,157 @@
 </header>
 
 <main>
-
-  <span class="badge-niveau" style="background: linear-gradient(135deg,#059669,#0891b2)">⭐⭐ Moyen — CE2</span>
+  <span class="badge-niveau" style="background:linear-gradient(135deg,#059669,#0891b2)">⭐⭐ Moyen — CE2</span>
 
   <!-- JE RETIENS -->
-  <div class="retiens-box" style="border-color:#86efac">
-    <div class="retiens-title" style="color:#065f46">📌 Je retiens</div>
-    <p>Sur une droite, les fractions vont de <strong>0</strong> à <strong>1</strong>. Plus c'est à droite, plus c'est <strong>grand</strong>.</p>
+  <div class="retiens-box">
+    <div class="retiens-title">📌 Je retiens</div>
+    <p>Une plus <strong>grande</strong> fraction = une plus grande part. Sur la droite, plus c'est à droite, plus c'est grand.</p>
+    <div class="pizza-compare-row">
+      <div class="pizza-compare-item">
+        <div class="lbl">½</div>
+        <div id="pz-cmp1"></div>
+        <div class="sublbl">grande part</div>
+      </div>
+      <div class="vs-sign">›</div>
+      <div class="pizza-compare-item">
+        <div class="lbl">¼</div>
+        <div id="pz-cmp2"></div>
+        <div class="sublbl">petite part</div>
+      </div>
+    </div>
     <div class="droite-vis" style="margin-top:14px">
-      <div class="labels">
-        <span>0</span><span>¼</span><span>½</span><span>¾</span><span>1</span>
-      </div>
+      <div class="labels"><span>0</span><span>¼</span><span>½</span><span>¾</span><span>1</span></div>
       <div class="ligne"></div>
-      <p style="font-size:0.8rem;color:#888;text-align:center">½ est plus grand que ¼ car il est plus à droite</p>
+      <p style="font-size:0.8rem;color:#888;text-align:center;margin-top:4px">Plus c'est à droite → plus c'est grand</p>
     </div>
   </div>
 
-  <!-- EXERCICE 1 -->
+  <!-- EXERCICE 1 — place sur la droite -->
   <div class="exercice-block">
-    <div class="ex-title" style="border-color:#bbf7d0">
-      <span class="ex-badge" style="background:#059669">Ex 1</span>
-      Place les fractions sur la droite
-    </div>
-    <p style="font-size:0.9rem;color:#666;margin-bottom:12px">Écris <strong>½ , ¼ , ¾</strong> au bon endroit sur la droite :</p>
-    <div class="droite-vis">
-      <div style="height:36px"></div>
-      <div class="ligne"></div>
-      <div style="display:flex;justify-content:space-between;font-weight:800;color:#059669">
-        <span>0</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>1</span>
+    <div class="ex-title" style="border-color:#bbf7d0"><span class="ex-badge" style="background:#059669">Ex 1</span> Place les fractions sur la droite</div>
+    <p style="font-size:0.9rem;color:#666;margin-bottom:8px">Clique d'abord sur une fraction, puis clique à sa place sur la droite.</p>
+    <div class="droite-interactive">
+      <div class="droite-chips">
+        <button class="chip" data-val="¼" onclick="selectChip(this)">¼</button>
+        <button class="chip" data-val="½" onclick="selectChip(this)">½</button>
+        <button class="chip" data-val="¾" onclick="selectChip(this)">¾</button>
       </div>
+      <div class="droite-svg-wrap">
+        <svg id="droite-svg" viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg">
+          <!-- Ligne -->
+          <line x1="20" y1="30" x2="380" y2="30" stroke="#059669" stroke-width="3" stroke-linecap="round"/>
+          <!-- Flèche droite -->
+          <polygon points="380,30 370,24 370,36" fill="#059669"/>
+          <!-- Borne 0 -->
+          <line x1="20" y1="22" x2="20" y2="38" stroke="#059669" stroke-width="2.5"/>
+          <text x="20" y="55" text-anchor="middle" font-family="Nunito,sans-serif" font-weight="800" font-size="14" fill="#059669">0</text>
+          <!-- Borne 1 -->
+          <line x1="360" y1="22" x2="360" y2="38" stroke="#059669" stroke-width="2.5"/>
+          <text x="360" y="55" text-anchor="middle" font-family="Nunito,sans-serif" font-weight="800" font-size="14" fill="#059669">1</text>
+          <!-- Slot ¼ -->
+          <g class="droite-slot" onclick="placeOnDroite('slot-25', 0.25)" id="slot-25">
+            <rect class="slot-rect" x="75" y="18" width="50" height="24" rx="8" fill="white" stroke="#059669" stroke-width="2" stroke-dasharray="4"/>
+            <line x1="100" y1="22" x2="100" y2="38" stroke="#059669" stroke-width="2" stroke-dasharray="3"/>
+            <text id="slot-25-text" x="100" y="50" text-anchor="middle" font-family="Nunito,sans-serif" font-size="13" fill="#888">?</text>
+          </g>
+          <!-- Slot ½ -->
+          <g class="droite-slot" onclick="placeOnDroite('slot-50', 0.5)" id="slot-50">
+            <rect class="slot-rect" x="165" y="18" width="50" height="24" rx="8" fill="white" stroke="#059669" stroke-width="2" stroke-dasharray="4"/>
+            <line x1="190" y1="22" x2="190" y2="38" stroke="#059669" stroke-width="2" stroke-dasharray="3"/>
+            <text id="slot-50-text" x="190" y="50" text-anchor="middle" font-family="Nunito,sans-serif" font-size="13" fill="#888">?</text>
+          </g>
+          <!-- Slot ¾ -->
+          <g class="droite-slot" onclick="placeOnDroite('slot-75', 0.75)" id="slot-75">
+            <rect class="slot-rect" x="255" y="18" width="50" height="24" rx="8" fill="white" stroke="#059669" stroke-width="2" stroke-dasharray="4"/>
+            <line x1="280" y1="22" x2="280" y2="38" stroke="#059669" stroke-width="2" stroke-dasharray="3"/>
+            <text id="slot-75-text" x="280" y="50" text-anchor="middle" font-family="Nunito,sans-serif" font-size="13" fill="#888">?</text>
+          </g>
+        </svg>
+      </div>
+      <div class="droite-feedback" id="droite-fb"></div>
     </div>
   </div>
 
-  <!-- EXERCICE 2 -->
+  <!-- EXERCICE 2 — plus grande fraction -->
   <div class="exercice-block">
-    <div class="ex-title" style="border-color:#bbf7d0">
-      <span class="ex-badge" style="background:#059669">Ex 2</span>
-      Entoure la plus grande fraction
+    <div class="ex-title" style="border-color:#bbf7d0"><span class="ex-badge" style="background:#059669">Ex 2</span> Clique sur la plus grande fraction</div>
+    <div id="ex2-container"></div>
+  </div>
+
+  <!-- EXERCICE 3 — tri par clic -->
+  <div class="exercice-block">
+    <div class="ex-title" style="border-color:#bbf7d0"><span class="ex-badge" style="background:#059669">Ex 3</span> Range du plus petit au plus grand</div>
+    <p style="font-size:0.9rem;color:#666;margin-bottom:14px">Clique sur les fractions dans l'ordre, du plus petit au plus grand.</p>
+
+    <div class="tri-container" id="triA">
+      <strong style="color:#059669">Série A :</strong>
+      <div class="tri-chips" id="chips-A"></div>
+      <div style="font-size:0.82rem;color:#777;margin-top:4px;text-align:center">→ Clique dans l'ordre croissant</div>
+      <div class="tri-sequence" id="seq-A"></div>
+      <div class="tri-feedback" id="fb-A"></div>
     </div>
-    <div class="compare-grid">
-      <div class="compare-item" style="border-color:#bbf7d0;background:#f0fdf4">
-        <span>1.</span> <strong>½</strong> <span style="color:#888">ou</span> <strong>¼</strong>
-        <div class="rep-circle" style="border-color:#059669"></div>
-      </div>
-      <div class="compare-item" style="border-color:#bbf7d0;background:#f0fdf4">
-        <span>2.</span> <strong>¾</strong> <span style="color:#888">ou</span> <strong>½</strong>
-        <div class="rep-circle" style="border-color:#059669"></div>
-      </div>
-      <div class="compare-item" style="border-color:#bbf7d0;background:#f0fdf4">
-        <span>3.</span> <strong>⅓</strong> <span style="color:#888">ou</span> <strong>¼</strong>
-        <div class="rep-circle" style="border-color:#059669"></div>
-      </div>
-      <div class="compare-item" style="border-color:#bbf7d0;background:#f0fdf4">
-        <span>4.</span> <strong>¼</strong> <span style="color:#888">ou</span> <strong>¾</strong>
-        <div class="rep-circle" style="border-color:#059669"></div>
-      </div>
-      <div class="compare-item" style="border-color:#bbf7d0;background:#f0fdf4">
-        <span>5.</span> <strong>1</strong> <span style="color:#888">ou</span> <strong>½</strong>
-        <div class="rep-circle" style="border-color:#059669"></div>
-      </div>
+
+    <div class="tri-container" id="triB">
+      <strong style="color:#059669">Série B :</strong>
+      <div class="tri-chips" id="chips-B"></div>
+      <div style="font-size:0.82rem;color:#777;margin-top:4px;text-align:center">→ Clique dans l'ordre croissant</div>
+      <div class="tri-sequence" id="seq-B"></div>
+      <div class="tri-feedback" id="fb-B"></div>
     </div>
   </div>
 
-  <!-- EXERCICE 3 -->
+  <!-- EXERCICE 4 — signes -->
   <div class="exercice-block">
-    <div class="ex-title" style="border-color:#bbf7d0">
-      <span class="ex-badge" style="background:#059669">Ex 3</span>
-      Range du plus petit au plus grand
-    </div>
-    <div style="background:#f0fdf4;border:2px solid #bbf7d0;border-radius:12px;padding:16px 18px;margin-bottom:12px">
-      <strong style="color:#059669">Série A :</strong> ½ , ¼ , 1 , 0 , ¾
-      <div style="margin-top:10px;font-size:0.95rem">
-        Réponse : <span class="line">&nbsp;&nbsp;&nbsp;</span> &lt; <span class="line">&nbsp;&nbsp;&nbsp;</span> &lt; <span class="line">&nbsp;&nbsp;&nbsp;</span> &lt; <span class="line">&nbsp;&nbsp;&nbsp;</span> &lt; <span class="line">&nbsp;&nbsp;&nbsp;</span>
-      </div>
-    </div>
-    <div style="background:#f0fdf4;border:2px solid #bbf7d0;border-radius:12px;padding:16px 18px">
-      <strong style="color:#059669">Série B :</strong> ⅓ , 1 , 0 , ⅔
-      <div style="margin-top:10px;font-size:0.95rem">
-        Réponse : <span class="line">&nbsp;&nbsp;&nbsp;</span> &lt; <span class="line">&nbsp;&nbsp;&nbsp;</span> &lt; <span class="line">&nbsp;&nbsp;&nbsp;</span> &lt; <span class="line">&nbsp;&nbsp;&nbsp;</span>
-      </div>
-    </div>
+    <div class="ex-title" style="border-color:#bbf7d0"><span class="ex-badge" style="background:#059669">Ex 4</span> Clique sur &lt; , &gt; ou =</div>
+    <div class="sign-interactive" id="s1"><span>½</span><div class="sign-btns"><button class="btn-sign" onclick="checkSign(this,'<','>','s1')">&lt;</button><button class="btn-sign" onclick="checkSign(this,'>','>','s1')">&gt;</button><button class="btn-sign" onclick="checkSign(this,'=','>','s1')">=</button></div><span>¼</span></div>
+    <div class="sign-interactive" id="s2"><span>¾</span><div class="sign-btns"><button class="btn-sign" onclick="checkSign(this,'<','>','s2')">&lt;</button><button class="btn-sign" onclick="checkSign(this,'>','>','s2')">&gt;</button><button class="btn-sign" onclick="checkSign(this,'=','>','s2')">=</button></div><span>½</span></div>
+    <div class="sign-interactive" id="s3"><span>2/4</span><div class="sign-btns"><button class="btn-sign" onclick="checkSign(this,'<','=','s3')">&lt;</button><button class="btn-sign" onclick="checkSign(this,'>','=','s3')">&gt;</button><button class="btn-sign" onclick="checkSign(this,'=','=','s3')">=</button></div><span>½</span></div>
+    <div class="sign-interactive" id="s4"><span>⅓</span><div class="sign-btns"><button class="btn-sign" onclick="checkSign(this,'<','<','s4')">&lt;</button><button class="btn-sign" onclick="checkSign(this,'>','<','s4')">&gt;</button><button class="btn-sign" onclick="checkSign(this,'=','<','s4')">=</button></div><span>⅔</span></div>
+    <div class="sign-interactive" id="s5"><span>¼</span><div class="sign-btns"><button class="btn-sign" onclick="checkSign(this,'<','=','s5')">&lt;</button><button class="btn-sign" onclick="checkSign(this,'>','=','s5')">&gt;</button><button class="btn-sign" onclick="checkSign(this,'=','=','s5')">=</button></div><span>¼</span></div>
   </div>
 
-  <!-- EXERCICE 4 -->
+  <!-- EXERCICE 5 — QCM problèmes -->
   <div class="exercice-block">
-    <div class="ex-title" style="border-color:#bbf7d0">
-      <span class="ex-badge" style="background:#059669">Ex 4</span>
-      Complète avec &lt; , &gt; ou =
-    </div>
-    <div class="sign-grid">
-      <div class="sign-item" style="border-color:#bbf7d0;background:#f0fdf4">1. ½ <div class="sign-box" style="border-color:#059669"></div> ¼</div>
-      <div class="sign-item" style="border-color:#bbf7d0;background:#f0fdf4">2. ¾ <div class="sign-box" style="border-color:#059669"></div> ½</div>
-      <div class="sign-item" style="border-color:#bbf7d0;background:#f0fdf4">3. 2/4 <div class="sign-box" style="border-color:#059669"></div> ½</div>
-      <div class="sign-item" style="border-color:#bbf7d0;background:#f0fdf4">4. ⅓ <div class="sign-box" style="border-color:#059669"></div> ⅔</div>
-      <div class="sign-item" style="border-color:#bbf7d0;background:#f0fdf4">5. ¼ <div class="sign-box" style="border-color:#059669"></div> ¼</div>
-    </div>
-  </div>
+    <div class="ex-title" style="border-color:#bbf7d0"><span class="ex-badge" style="background:#059669">Ex 5</span> Problèmes</div>
 
-  <!-- EXERCICE 5 -->
-  <div class="exercice-block">
-    <div class="ex-title" style="border-color:#bbf7d0">
-      <span class="ex-badge" style="background:#059669">Ex 5</span>
-      Problèmes
+    <div class="probleme-box" style="border-color:#86efac;background:#f0fdf4;margin-bottom:14px">
+      <div class="pb-qcm">
+        <p class="enonce">🍕 Pierre a mangé <strong>¼</strong> de pizza. Léa a mangé <strong>½</strong> de pizza.</p>
+        <div class="question">Qui a mangé le plus ?</div>
+        <div class="pb-qcm-btns">
+          <button class="btn-qcm" onclick="checkQCM(this,'Pierre','Léa','fb-p1')">Pierre</button>
+          <button class="btn-qcm" onclick="checkQCM(this,'Léa','Léa','fb-p1')">Léa</button>
+          <button class="btn-qcm" onclick="checkQCM(this,'Pareil','Léa','fb-p1')">Pareil</button>
+        </div>
+        <div class="pb-qcm-fb" id="fb-p1"></div>
+      </div>
     </div>
 
     <div class="probleme-box" style="border-color:#86efac;background:#f0fdf4;margin-bottom:14px">
-      <p class="pb-enonce">🍕 Pierre a mangé <strong>¼</strong> de pizza.<br>Léa a mangé <strong>½</strong> de pizza.</p>
-      <div class="pb-q">Qui a mangé le plus ? <span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
-    </div>
-
-    <div class="probleme-box" style="border-color:#86efac;background:#f0fdf4;margin-bottom:14px">
-      <p class="pb-enonce">💧 Une bouteille est remplie aux <strong>¾</strong>.<br>Une autre est remplie à <strong>½</strong>.</p>
-      <div class="pb-q">Laquelle contient le plus d'eau ? <span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      <div class="pb-qcm">
+        <p class="enonce">💧 Bouteille A remplie aux <strong>¾</strong>. Bouteille B remplie à <strong>½</strong>.</p>
+        <div class="question">Laquelle contient le plus d'eau ?</div>
+        <div class="pb-qcm-btns">
+          <button class="btn-qcm" onclick="checkQCM(this,'A','A','fb-p2')">Bouteille A (¾)</button>
+          <button class="btn-qcm" onclick="checkQCM(this,'B','A','fb-p2')">Bouteille B (½)</button>
+          <button class="btn-qcm" onclick="checkQCM(this,'Pareil','A','fb-p2')">Pareil</button>
+        </div>
+        <div class="pb-qcm-fb" id="fb-p2"></div>
+      </div>
     </div>
 
     <div class="probleme-box" style="border-color:#86efac;background:#f0fdf4">
-      <p class="pb-enonce">📖 Clémence a lu <strong>⅓</strong> de son livre lundi<br>et <strong>⅔</strong> de son livre mardi.</p>
-      <div class="pb-q">Quel jour a-t-elle lu le plus ? <span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      <div class="pb-qcm">
+        <p class="enonce">📖 Clémence a lu <strong>⅓</strong> de son livre lundi et <strong>⅔</strong> mardi.</p>
+        <div class="question">Quel jour a-t-elle lu le plus ?</div>
+        <div class="pb-qcm-btns">
+          <button class="btn-qcm" onclick="checkQCM(this,'Lundi','Mardi','fb-p3')">Lundi</button>
+          <button class="btn-qcm" onclick="checkQCM(this,'Mardi','Mardi','fb-p3')">Mardi</button>
+          <button class="btn-qcm" onclick="checkQCM(this,'Pareil','Mardi','fb-p3')">Pareil</button>
+        </div>
+        <div class="pb-qcm-fb" id="fb-p3"></div>
+      </div>
     </div>
   </div>
 
@@ -144,5 +251,171 @@
   <a href="fiche1.html">← Fiche 1</a> &nbsp;·&nbsp; <a href="index.html">Accueil</a> &nbsp;·&nbsp; <a href="fiche3.html">Fiche 3 →</a>
 </footer>
 
+<script src="pizza.js"></script>
+<script>
+  pizzaStatic('pz-cmp1', 2, 1);
+  pizzaStatic('pz-cmp2', 4, 1);
+
+  // ---- Ex 1 : place sur la droite ----
+  const slotMap = { 'slot-25':'¼', 'slot-50':'½', 'slot-75':'¾' };
+  let selectedChip = null;
+  const placed = {};
+
+  function selectChip(btn) {
+    document.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
+    if (selectedChip === btn) { selectedChip = null; return; }
+    btn.classList.add('selected');
+    selectedChip = btn;
+  }
+
+  function placeOnDroite(slotId, pos) {
+    if (!selectedChip) {
+      document.getElementById('droite-fb').textContent = '👆 Clique d\'abord sur une fraction !';
+      document.getElementById('droite-fb').style.color = '#92400e';
+      return;
+    }
+    if (placed[slotId]) return;
+
+    const val = selectedChip.dataset.val;
+    const correct = slotMap[slotId];
+    const textEl = document.getElementById(slotId + '-text');
+    const slotEl = document.getElementById(slotId);
+
+    if (val === correct) {
+      textEl.textContent = val;
+      textEl.setAttribute('fill', '#059669');
+      textEl.setAttribute('font-weight', '900');
+      slotEl.querySelector('.slot-rect').setAttribute('fill', '#dcfce7');
+      slotEl.querySelector('.slot-rect').setAttribute('stroke', '#059669');
+      slotEl.querySelector('.slot-rect').removeAttribute('stroke-dasharray');
+      placed[slotId] = true;
+      selectedChip.classList.add('placed');
+      selectedChip.classList.remove('selected');
+      selectedChip = null;
+      const fb = document.getElementById('droite-fb');
+      const total = Object.keys(placed).length;
+      if (total === 3) { fb.textContent = '🎉 Parfait ! Toutes les fractions sont bien placées !'; fb.style.color = '#166534'; }
+      else { fb.textContent = '✅ Bonne place !'; fb.style.color = '#166534'; }
+    } else {
+      const fb = document.getElementById('droite-fb');
+      fb.textContent = `❌ ${val} ne va pas ici ! Essaie une autre place.`;
+      fb.style.color = '#991b1b';
+      slotEl.querySelector('.slot-rect').setAttribute('fill', '#fee2e2');
+      setTimeout(() => slotEl.querySelector('.slot-rect').setAttribute('fill', 'white'), 600);
+    }
+  }
+
+  // ---- Ex 2 : plus grande fraction ----
+  const ex2Data = [
+    { q:'1', a:'½', b:'¼', correct:'½' },
+    { q:'2', a:'¾', b:'½', correct:'¾' },
+    { q:'3', a:'⅓', b:'¼', correct:'⅓' },
+    { q:'4', a:'¼', b:'¾', correct:'¾' },
+    { q:'5', a:'1', b:'½', correct:'1'  },
+  ];
+  const ex2c = document.getElementById('ex2-container');
+  ex2Data.forEach(d => {
+    const div = document.createElement('div');
+    div.className = 'choix-item';
+    div.id = 'c' + d.q;
+    div.innerHTML = `<span class="choix-num">${d.q}.</span>
+      <div class="choix-btns">
+        <button class="btn-choix" onclick="checkChoix(this,'${d.a}','${d.correct}','c${d.q}')">${d.a}</button>
+        <button class="btn-choix" onclick="checkChoix(this,'${d.b}','${d.correct}','c${d.q}')">${d.b}</button>
+      </div>
+      <div class="choix-feedback"></div>`;
+    ex2c.appendChild(div);
+  });
+
+  function checkChoix(btn, chosen, correct, id) {
+    const item = document.getElementById(id);
+    item.querySelectorAll('.btn-choix').forEach(b => b.classList.remove('correct','wrong'));
+    const ok = chosen === correct;
+    btn.classList.add(ok ? 'correct' : 'wrong');
+    item.style.background = ok ? '#f0fdf4' : '#fff1f2';
+    item.style.borderColor = ok ? '#86efac' : '#fca5a5';
+    const fb = item.querySelector('.choix-feedback');
+    fb.textContent = ok ? '✅ Bravo !' : `❌ C'est ${correct} la plus grande !`;
+    fb.style.color = ok ? '#166534' : '#991b1b';
+  }
+
+  // ---- Ex 3 : tri par clic ----
+  function buildTri(chipsId, seqId, fbId, items, order) {
+    const chipsEl = document.getElementById(chipsId);
+    const seqEl   = document.getElementById(seqId);
+    const fbEl    = document.getElementById(fbId);
+    let nextIdx = 0;
+
+    // Créer les slots de séquence
+    order.forEach(() => {
+      const slot = document.createElement('div');
+      slot.className = 'tri-slot';
+      slot.textContent = '?';
+      seqEl.appendChild(slot);
+    });
+    const slots = seqEl.querySelectorAll('.tri-slot');
+
+    // Créer les chips (ordre mélangé)
+    items.forEach(val => {
+      const chip = document.createElement('button');
+      chip.className = 'tri-chip';
+      chip.textContent = val;
+      chip.addEventListener('click', () => {
+        if (chip.classList.contains('done')) return;
+        if (val === order[nextIdx]) {
+          chip.classList.add('done');
+          slots[nextIdx].textContent = val;
+          slots[nextIdx].classList.add('filled');
+          nextIdx++;
+          if (nextIdx === order.length) {
+            fbEl.textContent = '🎉 Parfait ! Tu as tout bien classé !';
+            fbEl.style.color = '#166534';
+          } else {
+            fbEl.textContent = '✅ Bonne réponse ! Continue…';
+            fbEl.style.color = '#166534';
+          }
+        } else {
+          chip.classList.add('wrong-flash');
+          fbEl.textContent = `❌ Pas encore… lequel est le plus petit ?`;
+          fbEl.style.color = '#991b1b';
+          setTimeout(() => chip.classList.remove('wrong-flash'), 400);
+        }
+      });
+      chipsEl.appendChild(chip);
+    });
+  }
+
+  buildTri('chips-A','seq-A','fb-A', ['½','0','¾','¼','1'],   ['0','¼','½','¾','1']);
+  buildTri('chips-B','seq-B','fb-B', ['⅓','1','⅔','0'],       ['0','⅓','⅔','1']);
+
+  // ---- Ex 4 : signes ----
+  function checkSign(btn, chosen, correct, id) {
+    const item = document.getElementById(id);
+    item.querySelectorAll('.btn-sign').forEach(b => { b.classList.remove('correct','wrong'); b.style.outline=''; });
+    const ok = chosen === correct;
+    btn.classList.add(ok ? 'correct' : 'wrong');
+    item.style.background = ok ? '#f0fdf4' : '#fff1f2';
+    item.style.borderColor = ok ? '#86efac' : '#fca5a5';
+    if (!ok) {
+      item.querySelectorAll('.btn-sign').forEach(b => {
+        if (b.textContent === correct) b.style.outline = '3px solid #22c55e';
+      });
+    }
+  }
+
+  // ---- Ex 5 : QCM problèmes ----
+  function checkQCM(btn, chosen, correct, fbId) {
+    const group = btn.parentElement;
+    group.querySelectorAll('.btn-qcm').forEach(b => b.classList.remove('correct','wrong'));
+    const ok = chosen === correct;
+    btn.classList.add(ok ? 'correct' : 'wrong');
+    const fb = document.getElementById(fbId);
+    fb.textContent = ok ? '✅ Bonne réponse !' : `❌ Pas tout à fait… réessaie !`;
+    fb.style.color = ok ? '#166534' : '#991b1b';
+  }
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
 </body>
 </html>

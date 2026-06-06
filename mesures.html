@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Longueurs, masses et contenances — CE2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #bfdbfe; border-radius: 22px;
+    padding: 9px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #1d4ed8;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #dbeafe; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #eff6ff; border: 2px solid #bfdbfe; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .score-bar {
+    background: #dbeafe; border-radius: 12px;
+    padding: 10px 18px; font-size: 1rem; font-weight: 800;
+    color: #1d4ed8; margin-bottom: 14px; text-align: center;
+  }
+  .tableau-unites {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin: 12px 0;
+  }
+  .unite-card {
+    background: white; border: 2px solid #bfdbfe; border-radius: 10px;
+    padding: 8px 14px; text-align: center;
+  }
+  .unite-card .val { font-size: 1.2rem; font-weight: 900; color: #1d4ed8; }
+  .unite-card .equ { font-size: 0.8rem; color: #555; margin-top: 2px; }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: linear-gradient(135deg, #1d4ed8, #0ea5e9);">
+  <span class="emoji-header">📏</span>
+  <h1>Longueurs, masses et contenances</h1>
+  <p>Conversions et comparaisons</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">CE2 — Grandeurs et mesures</div>
+
+  <!-- JE RETIENS -->
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <p style="font-size:0.85rem; font-weight:800; color:#1d4ed8; margin-bottom:6px;">📏 Longueurs</p>
+    <div class="tableau-unites">
+      <div class="unite-card"><div class="val">1 km</div><div class="equ">= 1 000 m</div></div>
+      <div class="unite-card"><div class="val">1 m</div><div class="equ">= 10 dm</div></div>
+      <div class="unite-card"><div class="val">1 dm</div><div class="equ">= 10 cm</div></div>
+      <div class="unite-card"><div class="val">1 cm</div><div class="equ">= 10 mm</div></div>
+    </div>
+    <p style="font-size:0.85rem; font-weight:800; color:#1d4ed8; margin-bottom:6px;">⚖️ Masses</p>
+    <div class="tableau-unites">
+      <div class="unite-card"><div class="val">1 t</div><div class="equ">= 1 000 kg</div></div>
+      <div class="unite-card"><div class="val">1 kg</div><div class="equ">= 1 000 g</div></div>
+    </div>
+    <p style="font-size:0.85rem; font-weight:800; color:#1d4ed8; margin:8px 0 6px;">💧 Contenances</p>
+    <div class="tableau-unites">
+      <div class="unite-card"><div class="val">1 L</div><div class="equ">= 10 dL</div></div>
+      <div class="unite-card"><div class="val">1 dL</div><div class="equ">= 10 cL</div></div>
+    </div>
+  </div>
+
+  <!-- EXERCICE 1 : longueurs conversions -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 1</span> Longueurs — Conversions</div>
+    <div class="score-bar" id="score-long">Score : 0 / 6</div>
+    <div id="ex1-container"></div>
+  </div>
+
+  <!-- EXERCICE 2 : masses conversions -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 2</span> Masses — Conversions</div>
+    <div class="score-bar" id="score-masse">Score : 0 / 5</div>
+    <div id="ex2-container"></div>
+  </div>
+
+  <!-- EXERCICE 3 : contenances -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 3</span> Contenances</div>
+    <div class="score-bar" id="score-cont">Score : 0 / 4</div>
+    <div id="ex3-container"></div>
+  </div>
+
+  <!-- EXERCICE 4 : comparer -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 4</span> Compare avec &lt; &gt; ou =</div>
+    <div id="ex4-container"></div>
+  </div>
+
+  <!-- EXERCICE 5 : problèmes de mesures -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 5</span> Problèmes de mesures</div>
+    <div id="ex5-container"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CE2</footer>
+
+<script>
+function shuffle(arr) { return [...arr].sort(() => Math.random() - 0.5); }
+
+const scores = { long: 0, masse: 0, cont: 0 };
+
+function checkQ(btn, chosen, correct, rowId, fbId, scoreKey, total) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  if (chosen === correct) {
+    btn.classList.add('correct');
+    document.getElementById(fbId).textContent = '✅ Bravo !'; document.getElementById(fbId).style.color = '#166534';
+    scores[scoreKey]++;
+    document.getElementById(`score-${scoreKey}`).textContent = `Score : ${scores[scoreKey]} / ${total}`;
+  } else {
+    btn.classList.add('wrong');
+    document.getElementById(fbId).textContent = `❌ C'était ${correct}`; document.getElementById(fbId).style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => {
+      if (b.textContent.trim() === String(correct)) b.classList.add('correct');
+    });
+  }
+}
+
+function buildQCM(container, data, prefix, scoreKey, total) {
+  data.forEach((item, idx) => {
+    const div = document.createElement('div');
+    div.className = 'q-block';
+    const shuffled = shuffle(item.choices);
+    div.innerHTML = `
+      <div class="q-text">${item.q}</div>
+      <div class="qcm-row" id="${prefix}-${idx}">
+        ${shuffled.map(c => `<button class="btn-choice" onclick="checkQ(this,'${c}','${item.correct}','${prefix}-${idx}','${prefix}-fb-${idx}','${scoreKey}',${total})">${c}</button>`).join('')}
+      </div>
+      <div class="feedback-line" id="${prefix}-fb-${idx}"></div>
+    `;
+    container.appendChild(div);
+  });
+}
+
+// LONGUEURS
+const longData = [
+  { q: '2 m = __ cm', correct: '200 cm', choices: ['20 cm', '200 cm', '2 000 cm', '20 cm'] },
+  { q: '3 km = __ m', correct: '3 000 m', choices: ['300 m', '3 000 m', '30 m', '30 000 m'] },
+  { q: '5 dm = __ cm', correct: '50 cm', choices: ['5 cm', '500 cm', '50 cm', '0,5 cm'] },
+  { q: '40 mm = __ cm', correct: '4 cm', choices: ['40 cm', '4 cm', '0,4 cm', '400 cm'] },
+  { q: '150 cm = __ m __ cm', correct: '1 m 50 cm', choices: ['1 m 50 cm', '15 m 0 cm', '0 m 150 cm', '1 m 5 cm'] },
+  { q: 'Quelle est la longueur d\'une table de classe environ ?', correct: '120 cm', choices: ['12 cm', '1 200 cm', '120 cm', '12 m'] },
+];
+buildQCM(document.getElementById('ex1-container'), longData, 'long', 'long', 6);
+
+// MASSES
+const masseData = [
+  { q: '2 kg = __ g', correct: '2 000 g', choices: ['200 g', '2 000 g', '20 g', '20 000 g'] },
+  { q: '500 g = __ kg', correct: '0,5 kg', choices: ['5 kg', '50 kg', '0,5 kg', '0,05 kg'] },
+  { q: '3 t = __ kg', correct: '3 000 kg', choices: ['300 kg', '3 000 kg', '30 000 kg', '30 kg'] },
+  { q: 'Un sac de pommes pèse environ…', correct: '2 kg', choices: ['2 g', '2 kg', '200 kg', '2 t'] },
+  { q: '1 500 g = __ kg __ g', correct: '1 kg 500 g', choices: ['15 kg 0 g', '1 kg 500 g', '1 kg 50 g', '0 kg 150 g'] },
+];
+buildQCM(document.getElementById('ex2-container'), masseData, 'masse', 'masse', 5);
+
+// CONTENANCES
+const contData = [
+  { q: '2 L = __ dL', correct: '20 dL', choices: ['2 dL', '20 dL', '200 dL', '0,2 dL'] },
+  { q: '5 dL = __ cL', correct: '50 cL', choices: ['5 cL', '50 cL', '500 cL', '0,5 cL'] },
+  { q: '150 cL = __ L', correct: '1,5 L', choices: ['150 L', '15 L', '1,5 L', '0,15 L'] },
+  { q: 'Une bouteille d\'eau fait environ…', correct: '1,5 L', choices: ['1,5 L', '15 L', '150 L', '0,15 L'] },
+];
+buildQCM(document.getElementById('ex3-container'), contData, 'cont', 'cont', 4);
+
+// COMPARER
+const compareData = [
+  { a: '3 km', b: '300 m', correct: '>' },
+  { a: '200 cm', b: '2 m', correct: '=' },
+  { a: '500 g', b: '1 kg', correct: '<' },
+  { a: '1 500 g', b: '2 kg', correct: '<' },
+  { a: '10 dL', b: '1 L', correct: '=' },
+  { a: '3 dm', b: '40 cm', correct: '<' },
+];
+
+const ex4Container = document.getElementById('ex4-container');
+compareData.forEach((item, idx) => {
+  const div = document.createElement('div');
+  div.className = 'q-block';
+  div.innerHTML = `
+    <div class="q-text" style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+      <span style="font-size:1.1rem; font-weight:900;">${item.a}</span>
+      <div style="display:flex; gap:8px;" id="cmp-signs-${idx}">
+        ${['<','>','='].map(s => `<button style="background:white;border:2px solid #bfdbfe;border-radius:10px;padding:6px 14px;font-size:1.1rem;font-weight:900;cursor:pointer;color:#1d4ed8;transition:background 0.15s;" onclick="checkSign(this,'${s}','${item.correct}','cmp-signs-${idx}','cmp-fb-${idx}')">${s}</button>`).join('')}
+      </div>
+      <span style="font-size:1.1rem; font-weight:900;">${item.b}</span>
+    </div>
+    <div class="feedback-line" id="cmp-fb-${idx}"></div>
+  `;
+  ex4Container.appendChild(div);
+});
+
+function checkSign(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('button').forEach(b => b.disabled = true);
+  if (chosen === correct) {
+    btn.style.background = '#22c55e'; btn.style.color = 'white'; btn.style.borderColor = '#16a34a';
+    document.getElementById(fbId).textContent = '✅ Bravo !'; document.getElementById(fbId).style.color = '#166534';
+  } else {
+    btn.style.background = '#ef4444'; btn.style.color = 'white'; btn.style.borderColor = '#b91c1c';
+    document.getElementById(fbId).textContent = `❌ C'était ${correct}`; document.getElementById(fbId).style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('button').forEach(b => { if (b.textContent === correct) { b.style.background='#22c55e'; b.style.color='white'; b.style.borderColor='#16a34a'; } });
+  }
+}
+
+// PROBLÈMES DE MESURES
+const pbData = [
+  { q: 'Lucie a un ruban de <strong>3 m</strong>. Elle en utilise <strong>120 cm</strong>. Combien de cm lui reste-t-il ?', correct: '180 cm', choices: ['80 cm', '120 cm', '180 cm', '300 cm'] },
+  { q: 'Un colis pèse <strong>2 kg 500 g</strong>. Un autre pèse <strong>1 kg 800 g</strong>. Quel est leur poids total ?', correct: '4 kg 300 g', choices: ['3 kg 300 g', '4 kg 300 g', '4 kg 700 g', '3 kg 700 g'] },
+  { q: 'Une bouteille contient <strong>1,5 L</strong> de jus. On verse <strong>75 cL</strong>. Combien reste-t-il en cL ?', correct: '75 cL', choices: ['25 cL', '75 cL', '125 cL', '150 cL'] },
+  { q: 'Le tour du jardin mesure <strong>24 m</strong>. Chaque côté fait la même longueur. Si c\'est un carré, quel est le côté ?', correct: '6 m', choices: ['4 m', '5 m', '6 m', '8 m'] },
+];
+
+const ex5Container = document.getElementById('ex5-container');
+pbData.forEach((item, idx) => {
+  const div = document.createElement('div');
+  div.className = 'q-block';
+  const shuffled = shuffle(item.choices);
+  div.innerHTML = `
+    <div class="q-text" style="font-style:italic; color:#555; margin-bottom:10px;">${item.q}</div>
+    <div class="qcm-row" id="pb-choices-${idx}">
+      ${shuffled.map(c => `<button class="btn-choice" onclick="checkPb(this,'${c}','${item.correct}','pb-choices-${idx}','pb-fb-${idx}')">${c}</button>`).join('')}
+    </div>
+    <div class="feedback-line" id="pb-fb-${idx}"></div>
+  `;
+  ex5Container.appendChild(div);
+});
+
+function checkPb(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  if (chosen === correct) {
+    btn.classList.add('correct');
+    document.getElementById(fbId).textContent = '✅ Bravo !'; document.getElementById(fbId).style.color = '#166534';
+  } else {
+    btn.classList.add('wrong');
+    document.getElementById(fbId).textContent = `❌ C'était ${correct}`; document.getElementById(fbId).style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

@@ -85,6 +85,7 @@ main { max-width: 720px; margin: 0 auto; padding: 30px 20px 60px; }
 .card.bleu   { border-color: #bfdbfe; }
 .card.vert   { border-color: #bbf7d0; }
 .card.orange { border-color: #fed7aa; }
+.card.violet { border-color: #ddd6fe; }
 
 .card .icon {
   font-size: 2.8rem;
@@ -97,6 +98,7 @@ main { max-width: 720px; margin: 0 auto; padding: 30px 20px 60px; }
 .card.bleu   .icon { background: #eff6ff; }
 .card.vert   .icon { background: #f0fdf4; }
 .card.orange .icon { background: #fff7ed; }
+.card.violet .icon { background: #f5f3ff; }
 
 .card .card-body { flex: 1; }
 .card .card-body h2 { font-size: 1.15rem; font-weight: 800; margin-bottom: 3px; }
@@ -124,11 +126,12 @@ main { max-width: 720px; margin: 0 auto; padding: 30px 20px 60px; }
 
 /* ===== SECTION FICHE ===== */
 .retiens-box {
-  background: white;
+  background: linear-gradient(135deg, #fef9c3, #fef3c7);
   border-radius: var(--rayon);
-  border: 3px solid var(--jaune);
+  border: 3px solid #f59e0b;
   padding: 22px 24px;
   margin-bottom: 28px;
+  box-shadow: 0 2px 0 #f59e0b33;
 }
 .retiens-box .retiens-title {
   font-size: 1rem;
@@ -163,6 +166,7 @@ main { max-width: 720px; margin: 0 auto; padding: 30px 20px 60px; }
   padding: 24px;
   margin-bottom: 22px;
   box-shadow: 0 2px 12px #0001;
+  border: 2px solid #f0f0f0;
 }
 .exercice-block .ex-title {
   font-size: 1.05rem;

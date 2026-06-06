@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Résolution de problèmes — CE2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+  .btn-choice {
+    background: white; border: 2px solid #ddd6fe; border-radius: 22px;
+    padding: 10px 24px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #5b21b6;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #ede9fe; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .pb-block {
+    background: #fffbf0; border: 3px solid #ffd84d; border-radius: 16px;
+    padding: 20px 22px; margin-bottom: 18px;
+  }
+  .pb-enonce {
+    font-size: 1rem; line-height: 1.7; color: #333; margin-bottom: 14px;
+  }
+  .pb-question { font-size: 0.95rem; font-weight: 800; color: #5b21b6; margin-bottom: 4px; }
+  .score-bar {
+    background: #ede9fe; border-radius: 12px;
+    padding: 10px 18px; font-size: 1rem; font-weight: 800;
+    color: #5b21b6; margin-bottom: 14px; text-align: center;
+  }
+  .hint-op {
+    display: inline-block; background: #f5f3ff; border: 1.5px solid #ddd6fe;
+    border-radius: 8px; padding: 3px 10px; font-size: 0.82rem; color: #7c3aed;
+    font-weight: 700; margin-left: 6px;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <span class="emoji-header">🧩</span>
+  <h1>Résolution de problèmes</h1>
+  <p>Problèmes additifs, multiplicatifs et mixtes</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">CE2 — Nombres et calculs</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Comment résoudre un problème</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
+      1️⃣ <strong>Je lis</strong> l'énoncé attentivement<br>
+      2️⃣ <strong>J'identifie</strong> ce que je cherche<br>
+      3️⃣ <strong>Je choisis</strong> l'opération (+, −, ×, ÷)<br>
+      4️⃣ <strong>Je calcule</strong> et je vérifie
+    </div>
+  </div>
+
+  <!-- EXERCICE 1 : additifs simples -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge">Ex 1</span> Problèmes additifs simples</div>
+    <div class="score-bar" id="score-add">Score : 0 / 3</div>
+    <div id="ex1-container"></div>
+  </div>
+
+  <!-- EXERCICE 2 : soustractifs -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge">Ex 2</span> Problèmes soustractifs</div>
+    <div class="score-bar" id="score-sub">Score : 0 / 3</div>
+    <div id="ex2-container"></div>
+  </div>
+
+  <!-- EXERCICE 3 : multiplicatifs -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge">Ex 3</span> Problèmes multiplicatifs</div>
+    <div class="score-bar" id="score-mul">Score : 0 / 3</div>
+    <div id="ex3-container"></div>
+  </div>
+
+  <!-- EXERCICE 4 : à 2 étapes -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge">Ex 4</span> Problèmes à 2 étapes</div>
+    <div id="ex4-container"></div>
+  </div>
+
+  <!-- EXERCICE 5 : trouver l'opération -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge">Ex 5</span> Quelle opération faut-il utiliser ?</div>
+    <div id="ex5-container"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CE2</footer>
+
+<script>
+function shuffle(arr) { return [...arr].sort(() => Math.random() - 0.5); }
+
+const scores = { add: 0, sub: 0, mul: 0 };
+
+function buildPbBlocks(data, containerId, scoreKey, total) {
+  const container = document.getElementById(containerId);
+  data.forEach((item, idx) => {
+    const div = document.createElement('div');
+    div.className = 'pb-block';
+    const shuffled = shuffle(item.choices);
+    div.innerHTML = `
+      <div class="pb-enonce">${item.enonce}</div>
+      <div class="pb-question">➡️ ${item.question}</div>
+      <div class="qcm-row" id="${scoreKey}-choices-${idx}">
+        ${shuffled.map(c => `<button class="btn-choice" onclick="checkPb(this,'${c}','${item.correct}','${scoreKey}-choices-${idx}','${scoreKey}-fb-${idx}','${scoreKey}',${total})">${c}</button>`).join('')}
+      </div>
+      <div class="feedback-line" id="${scoreKey}-fb-${idx}"></div>
+    `;
+    container.appendChild(div);
+  });
+}
+
+function checkPb(btn, chosen, correct, rowId, fbId, key, total) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct');
+    fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+    scores[key]++;
+    document.getElementById(`score-${key}`).textContent = `Score : ${scores[key]} / ${total}`;
+  } else {
+    btn.classList.add('wrong');
+    fb.textContent = `❌ C'était ${correct}`; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+// PROBLÈMES ADDITIFS
+buildPbBlocks([
+  {
+    enonce: 'Lola a lu <strong>124 pages</strong> de son livre. Demain elle lit <strong>37 pages</strong> de plus.',
+    question: 'Combien de pages aura-t-elle lues en tout ?',
+    correct: '161 pages', choices: ['151 pages', '161 pages', '167 pages', '148 pages'],
+  },
+  {
+    enonce: 'Dans une classe, il y a <strong>15 filles</strong> et <strong>14 garçons</strong>.',
+    question: 'Combien d\'élèves y a-t-il en tout ?',
+    correct: '29 élèves', choices: ['27 élèves', '28 élèves', '29 élèves', '30 élèves'],
+  },
+  {
+    enonce: 'Le matin il y a <strong>1 350</strong> voitures sur le parking. L\'après-midi <strong>480</strong> voitures de plus arrivent.',
+    question: 'Combien de voitures y a-t-il ?',
+    correct: '1 830 voitures', choices: ['1 730 voitures', '1 830 voitures', '1 880 voitures', '1 800 voitures'],
+  },
+], 'ex1-container', 'add', 3);
+
+// PROBLÈMES SOUSTRACTIFS
+buildPbBlocks([
+  {
+    enonce: 'La bibliothèque avait <strong>540 livres</strong>. Les enfants ont emprunté <strong>127 livres</strong>.',
+    question: 'Combien de livres reste-t-il ?',
+    correct: '413 livres', choices: ['403 livres', '413 livres', '423 livres', '437 livres'],
+  },
+  {
+    enonce: 'Paul avait <strong>8,50 €</strong>. Il a acheté un stylo qui coûtait <strong>2,30 €</strong>.',
+    question: 'Combien lui reste-t-il ?',
+    correct: '6,20 €', choices: ['5,80 €', '6,00 €', '6,20 €', '6,30 €'],
+  },
+  {
+    enonce: 'Une corde mesure <strong>4 m</strong>. On coupe <strong>155 cm</strong>.',
+    question: 'Quelle longueur reste-t-il ? (en cm)',
+    correct: '245 cm', choices: ['235 cm', '245 cm', '255 cm', '265 cm'],
+  },
+], 'ex2-container', 'sub', 3);
+
+// PROBLÈMES MULTIPLICATIFS
+buildPbBlocks([
+  {
+    enonce: 'Il y a <strong>6 tables</strong> dans la classe. Chaque table a <strong>4 chaises</strong>.',
+    question: 'Combien de chaises y a-t-il en tout ?',
+    correct: '24 chaises', choices: ['20 chaises', '22 chaises', '24 chaises', '28 chaises'],
+  },
+  {
+    enonce: 'Un paquet contient <strong>8 biscuits</strong>. Clémence achète <strong>5 paquets</strong>.',
+    question: 'Combien de biscuits a-t-elle ?',
+    correct: '40 biscuits', choices: ['35 biscuits', '38 biscuits', '40 biscuits', '45 biscuits'],
+  },
+  {
+    enonce: 'Un livre coûte <strong>7 €</strong>. La maîtresse en commande <strong>24</strong>.',
+    question: 'Combien coûtent-ils en tout ?',
+    correct: '168 €', choices: ['148 €', '158 €', '168 €', '178 €'],
+  },
+], 'ex3-container', 'mul', 3);
+
+// PROBLÈMES À 2 ÉTAPES
+const pb2Data = [
+  {
+    enonce: 'Léa a <strong>45 images</strong>. Elle en donne <strong>12</strong> à sa sœur et <strong>8</strong> à son frère.',
+    question: 'Combien d\'images lui reste-t-il ?',
+    correct: '25 images', choices: ['20 images', '25 images', '30 images', '35 images'],
+  },
+  {
+    enonce: 'Une boîte contient <strong>6 rangées de 8 chocolats</strong>. Noah a déjà mangé <strong>14 chocolats</strong>.',
+    question: 'Combien de chocolats reste-t-il dans la boîte ?',
+    correct: '34 chocolats', choices: ['30 chocolats', '32 chocolats', '34 chocolats', '38 chocolats'],
+  },
+  {
+    enonce: 'Ce matin, <strong>3 cars de 32 enfants</strong> arrivent au zoo. À midi, <strong>17 enfants</strong> repartent.',
+    question: 'Combien d\'enfants restent au zoo ?',
+    correct: '79 enfants', choices: ['75 enfants', '77 enfants', '79 enfants', '83 enfants'],
+  },
+];
+
+const ex4Container = document.getElementById('ex4-container');
+pb2Data.forEach((item, idx) => {
+  const div = document.createElement('div');
+  div.className = 'pb-block';
+  const shuffled = shuffle(item.choices);
+  div.innerHTML = `
+    <div class="pb-enonce">${item.enonce}</div>
+    <div class="pb-question">➡️ ${item.question}</div>
+    <div class="qcm-row" id="pb2-choices-${idx}">
+      ${shuffled.map(c => `<button class="btn-choice" onclick="checkSimple(this,'${c}','${item.correct}','pb2-choices-${idx}','pb2-fb-${idx}')">${c}</button>`).join('')}
+    </div>
+    <div class="feedback-line" id="pb2-fb-${idx}"></div>
+  `;
+  ex4Container.appendChild(div);
+});
+
+function checkSimple(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  if (chosen === correct) {
+    btn.classList.add('correct');
+    document.getElementById(fbId).textContent = '✅ Bravo !'; document.getElementById(fbId).style.color = '#166534';
+  } else {
+    btn.classList.add('wrong');
+    document.getElementById(fbId).textContent = `❌ C'était ${correct}`; document.getElementById(fbId).style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+// EXERCICE 5 : quelle opération ?
+const opData = [
+  { q: 'J\'ai 24 bonbons à partager en 4 parts égales. Je dois faire…', correct: 'une division', choices: ['une addition', 'une soustraction', 'une multiplication', 'une division'] },
+  { q: 'J\'ai 35 billes et j\'en reçois 18. Je dois faire…', correct: 'une addition', choices: ['une addition', 'une soustraction', 'une multiplication', 'une division'] },
+  { q: '3 enfants ont chacun 7 crayons. Je veux savoir le total. Je dois faire…', correct: 'une multiplication', choices: ['une addition', 'une soustraction', 'une multiplication', 'une division'] },
+  { q: 'J\'avais 50 €, j\'en ai dépensé 17 €. Je veux savoir ce qu\'il reste. Je dois faire…', correct: 'une soustraction', choices: ['une addition', 'une soustraction', 'une multiplication', 'une division'] },
+];
+
+const ex5Container = document.getElementById('ex5-container');
+opData.forEach((item, idx) => {
+  const div = document.createElement('div');
+  div.className = 'pb-block';
+  const shuffled = shuffle(item.choices);
+  div.innerHTML = `
+    <div class="pb-enonce">${item.q}</div>
+    <div class="qcm-row" id="op-choices-${idx}">
+      ${shuffled.map(c => `<button class="btn-choice" onclick="checkSimple(this,'${c}','${item.correct}','op-choices-${idx}','op-fb-${idx}')">${c}</button>`).join('')}
+    </div>
+    <div class="feedback-line" id="op-fb-${idx}"></div>
+  `;
+  ex5Container.appendChild(div);
+});
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

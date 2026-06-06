@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les nombres entiers — CE2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .decomp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .decomp-item {
+    background: #f5f3ff;
+    border: 2px solid #ddd6fe;
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+  .decomp-item .number-big { font-size: 2rem; font-weight: 900; color: #5b21b6; text-align: center; margin-bottom: 10px; }
+  .tableau-pos {
+    display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; margin: 8px 0;
+  }
+  .pos-cell {
+    background: white;
+    border: 2px solid #c4b5fd;
+    border-radius: 8px;
+    padding: 6px 10px;
+    text-align: center;
+    min-width: 54px;
+  }
+  .pos-cell .pos-label { font-size: 0.65rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
+  .pos-cell .pos-val { font-size: 1.2rem; font-weight: 900; color: #7c3aed; }
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white;
+    border: 2px solid #c4b5fd;
+    border-radius: 22px;
+    padding: 8px 20px;
+    font-size: 1rem;
+    font-weight: 800;
+    cursor: pointer;
+    color: #5b21b6;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+  .btn-choice:hover { background: #ede9fe; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #f5f3ff; border: 2px solid #ddd6fe; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-block .q-text { font-size: 0.95rem; font-weight: 700; margin-bottom: 10px; }
+  .sign-btns { display: flex; gap: 8px; }
+  .btn-sign {
+    background: white;
+    border: 2px solid #c4b5fd;
+    border-radius: 10px;
+    padding: 6px 14px;
+    font-size: 1.1rem;
+    font-weight: 900;
+    cursor: pointer;
+    color: #5b21b6;
+    transition: background 0.15s;
+  }
+  .btn-sign:hover { background: #ede9fe; }
+  .btn-sign.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-sign.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-sign:disabled { opacity: 0.6; cursor: default; }
+  .ordre-chips { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
+  .chip-nb {
+    background: white;
+    border: 2px solid #c4b5fd;
+    border-radius: 12px;
+    padding: 10px 18px;
+    font-size: 1rem;
+    font-weight: 800;
+    cursor: pointer;
+    color: #5b21b6;
+    transition: background 0.15s, opacity 0.15s;
+  }
+  .chip-nb:hover { background: #ede9fe; }
+  .chip-nb.used { opacity: 0.3; cursor: default; pointer-events: none; }
+  .sequence-slots { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .slot-nb {
+    background: #f5f3ff;
+    border: 2px dashed #c4b5fd;
+    border-radius: 12px;
+    width: 80px; height: 48px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; font-weight: 800; color: #7c3aed;
+  }
+  .slot-nb.filled { background: #ede9fe; border-style: solid; cursor: pointer; }
+  .slot-nb.ok  { background: #dcfce7; border-color: #22c55e; color: #166534; }
+  .slot-nb.bad { background: #fee2e2; border-color: #ef4444; color: #991b1b; }
+  .arrow-order { font-size: 1.2rem; color: #c4b5fd; }
+  .score-bar {
+    background: #ede9fe;
+    border-radius: 12px;
+    padding: 10px 18px;
+    font-size: 1rem;
+    font-weight: 800;
+    color: #5b21b6;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <span class="emoji-header">🔢</span>
+  <h1>Les nombres entiers</h1>
+  <p>Lire, écrire, comparer jusqu'à 10 000</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">CE2 — Nombres et calculs</div>
+
+  <!-- JE RETIENS -->
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <p style="font-size:0.95rem; margin-bottom:12px;">Un nombre peut avoir jusqu'à 4 chiffres :</p>
+    <div class="tableau-pos" style="margin-bottom:10px;">
+      <div class="pos-cell"><div class="pos-label">Milliers</div><div class="pos-val">M</div></div>
+      <div class="pos-cell"><div class="pos-label">Centaines</div><div class="pos-val">C</div></div>
+      <div class="pos-cell"><div class="pos-label">Dizaines</div><div class="pos-val">D</div></div>
+      <div class="pos-cell"><div class="pos-label">Unités</div><div class="pos-val">U</div></div>
+    </div>
+    <p style="font-size:0.9rem; color:#555;">Exemple : <strong>4 285</strong> = 4 milliers + 2 centaines + 8 dizaines + 5 unités</p>
+  </div>
+
+  <!-- EXERCICE 1 -->
+  <div class="exercice-block">
+    <div class="ex-title">
+      <span class="ex-badge">Ex 1</span>
+      Quel est le chiffre des dizaines ?
+    </div>
+    <div class="score-bar" id="score1">Score : 0 / 5</div>
+    <div id="ex1-container"></div>
+  </div>
+
+  <!-- EXERCICE 2 -->
+  <div class="exercice-block">
+    <div class="ex-title">
+      <span class="ex-badge">Ex 2</span>
+      Quel nombre est écrit en lettres ?
+    </div>
+    <div id="ex2-container"></div>
+  </div>
+
+  <!-- EXERCICE 3 -->
+  <div class="exercice-block">
+    <div class="ex-title">
+      <span class="ex-badge">Ex 3</span>
+      Compare avec &lt; &gt; ou =
+    </div>
+    <div id="ex3-container"></div>
+  </div>
+
+  <!-- EXERCICE 4 -->
+  <div class="exercice-block">
+    <div class="ex-title">
+      <span class="ex-badge">Ex 4</span>
+      Range dans l'ordre croissant (clique dans l'ordre)
+    </div>
+    <div id="ex4-container"></div>
+  </div>
+
+  <!-- EXERCICE 5 -->
+  <div class="exercice-block">
+    <div class="ex-title">
+      <span class="ex-badge">Ex 5</span>
+      Encadrement — Quel nombre peut se placer entre ?
+    </div>
+    <div id="ex5-container"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  Fait avec ❤️ pour Clémence — CE2
+</footer>
+
+<script>
+// ======== EXERCICE 1 : chiffre des dizaines ========
+const ex1Data = [
+  { nb: 3462, pos: 'dizaines', correct: 6, choices: [3,4,6,2] },
+  { nb: 7819, pos: 'centaines', correct: 8, choices: [7,8,1,9] },
+  { nb: 5034, pos: 'unités', correct: 4, choices: [5,0,3,4] },
+  { nb: 2907, pos: 'milliers', correct: 2, choices: [2,9,0,7] },
+  { nb: 6540, pos: 'dizaines', correct: 4, choices: [6,5,4,0] },
+];
+
+let score1 = 0;
+const ex1Container = document.getElementById('ex1-container');
+
+function shuffle(arr) { return [...arr].sort(() => Math.random() - 0.5); }
+
+ex1Data.forEach((item, idx) => {
+  const div = document.createElement('div');
+  div.className = 'q-block';
+  const shuffled = shuffle(item.choices);
+  div.innerHTML = `
+    <div class="q-text">Quel est le chiffre des <strong>${item.pos}</strong> dans <strong>${item.nb.toLocaleString('fr')}</strong> ?</div>
+    <div class="qcm-row" id="ex1-choices-${idx}">
+      ${shuffled.map(c => `<button class="btn-choice" onclick="checkEx1(this, ${c}, ${item.correct}, ${idx})">${c}</button>`).join('')}
+    </div>
+    <div class="feedback-line" id="ex1-fb-${idx}"></div>
+  `;
+  ex1Container.appendChild(div);
+});
+
+function checkEx1(btn, chosen, correct, idx) {
+  const row = document.getElementById(`ex1-choices-${idx}`);
+  row.querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  if (chosen === correct) {
+    btn.classList.add('correct');
+    document.getElementById(`ex1-fb-${idx}`).textContent = '✅ Bravo !';
+    document.getElementById(`ex1-fb-${idx}`).style.color = '#166534';
+    score1++;
+    document.getElementById('score1').textContent = `Score : ${score1} / 5`;
+  } else {
+    btn.classList.add('wrong');
+    document.getElementById(`ex1-fb-${idx}`).textContent = `❌ C'était ${correct}`;
+    document.getElementById(`ex1-fb-${idx}`).style.color = '#991b1b';
+    row.querySelectorAll('.btn-choice').forEach(b => { if (parseInt(b.textContent) === correct) b.classList.add('correct'); });
+  }
+}
+
+// ======== EXERCICE 2 : nombre en lettres ========
+const ex2Data = [
+  { lettres: 'deux mille trois cents', correct: 2300, choices: [2300, 2030, 203, 2003] },
+  { lettres: 'quatre mille soixante', correct: 4060, choices: [460, 4600, 4060, 406] },
+  { lettres: 'sept cent cinquante', correct: 750, choices: [7500, 750, 705, 570] },
+  { lettres: 'neuf mille neuf', correct: 9009, choices: [9900, 990, 9009, 9090] },
+];
+
+const ex2Container = document.getElementById('ex2-container');
+ex2Data.forEach((item, idx) => {
+  const div = document.createElement('div');
+  div.className = 'q-block';
+  const shuffled = shuffle(item.choices);
+  div.innerHTML = `
+    <div class="q-text">« <em>${item.lettres}</em> » s'écrit…</div>
+    <div class="qcm-row" id="ex2-choices-${idx}">
+      ${shuffled.map(c => `<button class="btn-choice" onclick="checkBasic(this, ${c}, ${item.correct}, 'ex2-choices-${idx}', 'ex2-fb-${idx}')">${c.toLocaleString('fr')}</button>`).join('')}
+    </div>
+    <div class="feedback-line" id="ex2-fb-${idx}"></div>
+  `;
+  ex2Container.appendChild(div);
+});
+
+// ======== EXERCICE 3 : comparer ========
+const ex3Data = [
+  { a: 3450, b: 3540, correct: '<' },
+  { a: 7200, b: 720,  correct: '>' },
+  { a: 5005, b: 5005, correct: '=' },
+  { a: 9810, b: 9901, correct: '<' },
+  { a: 4299, b: 4300, correct: '<' },
+  { a: 6070, b: 607,  correct: '>' },
+];
+
+const ex3Container = document.getElementById('ex3-container');
+ex3Data.forEach((item, idx) => {
+  const div = document.createElement('div');
+  div.className = 'q-block';
+  div.innerHTML = `
+    <div class="q-text" style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+      <span style="font-size:1.3rem; font-weight:900;">${item.a.toLocaleString('fr')}</span>
+      <div class="sign-btns" id="ex3-signs-${idx}">
+        ${['<','>','='].map(s => `<button class="btn-sign" onclick="checkSign(this, '${s}', '${item.correct}', 'ex3-signs-${idx}', 'ex3-fb-${idx}')">${s}</button>`).join('')}
+      </div>
+      <span style="font-size:1.3rem; font-weight:900;">${item.b.toLocaleString('fr')}</span>
+    </div>
+    <div class="feedback-line" id="ex3-fb-${idx}"></div>
+  `;
+  ex3Container.appendChild(div);
+});
+
+function checkSign(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-sign').forEach(b => b.disabled = true);
+  if (chosen === correct) {
+    btn.classList.add('correct');
+    document.getElementById(fbId).textContent = '✅ Bravo !';
+    document.getElementById(fbId).style.color = '#166534';
+  } else {
+    btn.classList.add('wrong');
+    document.getElementById(fbId).textContent = `❌ C'était ${correct}`;
+    document.getElementById(fbId).style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-sign').forEach(b => { if (b.textContent === correct) b.classList.add('correct'); });
+  }
+}
+
+// ======== EXERCICE 4 : ordre croissant ========
+function buildOrdre(containerId, numbers, correct) {
+  const container = document.getElementById(containerId);
+  const fbId = containerId + '-fb';
+  let sequence = [];
+  let usedIndices = new Set();
+
+  const chipsDiv = document.createElement('div');
+  chipsDiv.className = 'ordre-chips';
+  chipsDiv.id = containerId + '-chips';
+
+  const seqDiv = document.createElement('div');
+  seqDiv.className = 'sequence-slots';
+  seqDiv.id = containerId + '-seq';
+
+  const fbDiv = document.createElement('div');
+  fbDiv.className = 'feedback-line';
+  fbDiv.id = fbId;
+
+  numbers.forEach((n, i) => {
+    const chip = document.createElement('button');
+    chip.className = 'chip-nb';
+    chip.textContent = n.toLocaleString('fr');
+    chip.dataset.val = n;
+    chip.dataset.idx = i;
+    chip.addEventListener('click', function() {
+      if (this.classList.contains('used')) return;
+      sequence.push(parseInt(this.dataset.val));
+      this.classList.add('used');
+
+      const slot = document.createElement('div');
+      slot.className = 'slot-nb filled';
+      slot.textContent = parseInt(this.dataset.val).toLocaleString('fr');
+      slot.dataset.val = this.dataset.val;
+      slot.addEventListener('click', function() {
+        if (!document.getElementById(containerId + '-chips').querySelector('.used')) return;
+        sequence = sequence.filter(v => v !== parseInt(this.dataset.val));
+        document.getElementById(containerId + '-chips').querySelectorAll('.chip-nb').forEach(c => {
+          if (parseInt(c.dataset.val) === parseInt(this.dataset.val)) c.classList.remove('used');
+        });
+        this.remove();
+        fbDiv.textContent = '';
+      });
+      seqDiv.appendChild(slot);
+
+      if (sequence.length === numbers.length) {
+        checkOrdre(seqDiv, sequence, correct, fbDiv, containerId + '-chips');
+      }
+    });
+    chipsDiv.appendChild(chip);
+  });
+
+  for (let i = 0; i < numbers.length; i++) {
+    if (i > 0) {
+      const arr = document.createElement('span');
+      arr.className = 'arrow-order';
+      arr.textContent = '→';
+      seqDiv.appendChild(arr);
+    }
+    const slot = document.createElement('div');
+    slot.className = 'slot-nb';
+    seqDiv.appendChild(slot);
+  }
+  // rebuild slots dynamically — actually replace approach: start empty
+  seqDiv.innerHTML = '';
+
+  container.appendChild(chipsDiv);
+  container.appendChild(seqDiv);
+  container.appendChild(fbDiv);
+}
+
+function checkOrdre(seqDiv, sequence, correct, fbDiv, chipsId) {
+  const ok = sequence.every((v, i) => v === correct[i]);
+  if (ok) {
+    fbDiv.textContent = '✅ Parfait, dans l\'ordre croissant !';
+    fbDiv.style.color = '#166534';
+    seqDiv.querySelectorAll('.slot-nb').forEach(s => s.classList.add('ok'));
+  } else {
+    fbDiv.textContent = `❌ Pas tout à fait — réessaie !`;
+    fbDiv.style.color = '#991b1b';
+    seqDiv.querySelectorAll('.slot-nb').forEach(s => s.classList.add('bad'));
+    setTimeout(() => {
+      seqDiv.innerHTML = '';
+      fbDiv.textContent = '';
+      sequence.length = 0;
+      document.getElementById(chipsId).querySelectorAll('.chip-nb').forEach(c => c.classList.remove('used'));
+    }, 1200);
+  }
+}
+
+const ex4Container = document.getElementById('ex4-container');
+
+function buildOrdreSets(sets) {
+  sets.forEach((s, idx) => {
+    const wrap = document.createElement('div');
+    wrap.className = 'q-block';
+    wrap.style.marginBottom = '14px';
+    const label = document.createElement('div');
+    label.className = 'q-text';
+    label.textContent = `Range du plus petit au plus grand :`;
+    wrap.appendChild(label);
+    const id = `ordre-${idx}`;
+    const inner = document.createElement('div');
+    inner.id = id;
+    wrap.appendChild(inner);
+    ex4Container.appendChild(wrap);
+    buildOrdre(id, s.numbers, s.correct);
+  });
+}
+
+buildOrdreSets([
+  { numbers: [3500, 1200, 4800, 900], correct: [900, 1200, 3500, 4800] },
+  { numbers: [7630, 763, 7036, 7360], correct: [763, 7036, 7360, 7630] },
+  { numbers: [5010, 5100, 510, 5001], correct: [510, 5001, 5010, 5100] },
+]);
+
+// ======== EXERCICE 5 : encadrement ========
+const ex5Data = [
+  { question: 'Entre 3 000 et 4 000', correct: 3750, choices: [2800, 3750, 4200, 1500] },
+  { question: 'Entre 5 900 et 6 000', correct: 5950, choices: [5099, 6100, 5950, 4999] },
+  { question: 'Entre 700 et 800', correct: 745, choices: [745, 845, 690, 810] },
+  { question: 'Entre 9 990 et 10 000', correct: 9997, choices: [9977, 9997, 10010, 9909] },
+];
+
+const ex5Container = document.getElementById('ex5-container');
+ex5Data.forEach((item, idx) => {
+  const div = document.createElement('div');
+  div.className = 'q-block';
+  const shuffled = shuffle(item.choices);
+  div.innerHTML = `
+    <div class="q-text">${item.question}</div>
+    <div class="qcm-row" id="ex5-choices-${idx}">
+      ${shuffled.map(c => `<button class="btn-choice" onclick="checkBasic(this, ${c}, ${item.correct}, 'ex5-choices-${idx}', 'ex5-fb-${idx}')">${c.toLocaleString('fr')}</button>`).join('')}
+    </div>
+    <div class="feedback-line" id="ex5-fb-${idx}"></div>
+  `;
+  ex5Container.appendChild(div);
+});
+
+// ======== GENERIC CHECK ========
+function checkBasic(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  if (chosen === correct) {
+    btn.classList.add('correct');
+    document.getElementById(fbId).textContent = '✅ Bravo !';
+    document.getElementById(fbId).style.color = '#166534';
+  } else {
+    btn.classList.add('wrong');
+    document.getElementById(fbId).textContent = `❌ C'était ${correct.toLocaleString ? correct.toLocaleString('fr') : correct}`;
+    document.getElementById(fbId).style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => {
+      if (parseInt(b.textContent.replace(/\s/g,'')) === correct) b.classList.add('correct');
+    });
+  }
+}
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

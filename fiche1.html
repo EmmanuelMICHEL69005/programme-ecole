@@ -7,112 +7,127 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+  .pizza-retiens { display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:14px; }
+  .pizza-retiens-item { background:white; border-radius:12px; padding:12px 14px; text-align:center; box-shadow:0 2px 8px #0001; flex:1; min-width:90px; }
+  .pizza-retiens-item .frac-sym { font-size:1.5rem; font-weight:900; color:var(--violet); margin-bottom:2px; }
+  .pizza-retiens-item .frac-nom { font-size:0.78rem; color:#555; margin-top:4px; }
+  .pizza-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:16px; margin:10px 0; }
+  .pizza-card { background:#f8f7ff; border:2px solid #ede9fe; border-radius:14px; padding:14px 10px; text-align:center; }
+  .pizza-card .frac-big { font-size:1.5rem; font-weight:900; color:var(--violet); margin-bottom:4px; }
+  .pizza-card .hint { font-size:0.78rem; color:#888; margin-top:2px; }
+  .pizza-feedback { font-size:0.82rem; font-weight:800; min-height:18px; margin-top:4px; }
+
+  /* Ex 2 — mini quiz fraction */
+  .frac-quiz { display:flex; flex-direction:column; gap:14px; }
+  .frac-quiz-item { background:#f8f7ff; border:2px solid #ede9fe; border-radius:14px; padding:16px; display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
+  .frac-quiz-item .pizza-vis { flex-shrink:0; }
+  .frac-quiz-item .quiz-right { flex:1; min-width:160px; }
+  .frac-quiz-item .question { font-size:0.92rem; color:#444; margin-bottom:10px; }
+  .frac-btns { display:flex; gap:8px; flex-wrap:wrap; }
+  .btn-frac {
+    border:2px solid var(--violet); border-radius:10px; padding:7px 16px;
+    font-size:1rem; font-weight:900; background:white; color:var(--violet);
+    cursor:pointer; font-family:inherit; transition:background 0.15s;
+  }
+  .btn-frac:hover { background:#ede9fe; }
+  .btn-frac.correct { background:var(--vert); color:white; border-color:#16a34a; }
+  .btn-frac.wrong   { background:var(--rouge); color:white; border-color:#b91c1c; }
+  .quiz-feedback { font-size:0.82rem; font-weight:800; margin-top:8px; min-height:16px; }
+
+  /* Ex 4 — problème avec boutons */
+  .pb-choix { margin-bottom:14px; }
+  .pb-choix p { font-size:0.93rem; margin-bottom:8px; }
+  .pb-choix .question { font-size:0.95rem; margin-bottom:8px; }
+  .pb-choix .btn-rep {
+    border:2px solid var(--jaune); border-radius:10px; padding:7px 18px;
+    font-size:0.95rem; font-weight:800; background:white; color:#92400e;
+    cursor:pointer; font-family:inherit; margin:4px; transition:background 0.15s;
+  }
+  .pb-choix .btn-rep:hover { background:#fef9c3; }
+  .pb-choix .btn-rep.correct { background:var(--vert); color:white; border-color:#16a34a; }
+  .pb-choix .btn-rep.wrong   { background:var(--rouge); color:white; border-color:#b91c1c; }
+  .pb-fb { font-size:0.85rem; font-weight:800; min-height:16px; margin-top:4px; }
+</style>
 </head>
 <body>
 
 <header class="site-header">
-  <span class="emoji-header">✂️</span>
+  <span class="emoji-header">🍕</span>
   <h1>Fiche 1 — Je découpe</h1>
   <p>Comprendre le partage en parts égales</p>
   <a href="index.html" class="nav-back">← Retour à l'accueil</a>
 </header>
 
 <main>
-
   <span class="badge-niveau">⭐ Facile — CE2</span>
 
   <!-- JE RETIENS -->
   <div class="retiens-box">
     <div class="retiens-title">📌 Je retiens</div>
-    <p>Quand on partage en parts <strong>égales</strong>, chaque part s'appelle une <strong>fraction</strong>.</p>
-    <div class="fraction-cards">
-      <div class="frac-pill"><div class="sym">½</div><div class="nom">un demi<br>1 sur 2</div></div>
-      <div class="frac-pill"><div class="sym">¼</div><div class="nom">un quart<br>1 sur 4</div></div>
-      <div class="frac-pill"><div class="sym">⅓</div><div class="nom">un tiers<br>1 sur 3</div></div>
+    <p>Quand on partage une pizza en parts <strong>égales</strong>, chaque part s'appelle une <strong>fraction</strong>.</p>
+    <div class="pizza-retiens">
+      <div class="pizza-retiens-item">
+        <div class="frac-sym">½</div>
+        <div id="pz-r1"></div>
+        <div class="frac-nom">un demi — 1 part sur 2</div>
+      </div>
+      <div class="pizza-retiens-item">
+        <div class="frac-sym">¼</div>
+        <div id="pz-r2"></div>
+        <div class="frac-nom">un quart — 1 part sur 4</div>
+      </div>
+      <div class="pizza-retiens-item">
+        <div class="frac-sym">⅓</div>
+        <div id="pz-r3"></div>
+        <div class="frac-nom">un tiers — 1 part sur 3</div>
+      </div>
     </div>
   </div>
 
   <!-- EXERCICE 1 -->
   <div class="exercice-block">
-    <div class="ex-title">
-      <span class="ex-badge">Ex 1</span>
-      Colorie la bonne part
-    </div>
-    <p style="font-size:0.9rem;color:#666;margin-bottom:14px">Colorie le bon nombre de cases dans chaque figure.</p>
-    <div class="figures-grid">
-
-      <div class="figure-card" data-correct="1">
+    <div class="ex-title"><span class="ex-badge">Ex 1</span> Colorie la bonne part de pizza 🍕</div>
+    <p style="font-size:0.9rem;color:#666;margin-bottom:14px">Clique sur le bon nombre de parts.</p>
+    <div class="pizza-grid">
+      <div class="pizza-card">
         <div class="frac-big">½</div>
-        <div class="squares-row">
-          <div class="sq" onclick="toggleSq(this)"></div>
-          <div class="sq" onclick="toggleSq(this)"></div>
-        </div>
-        <div class="hint">1 case sur 2</div>
-        <div class="figure-feedback"></div>
+        <div id="pz-1a" class="pizza-container"><div class="pizza-feedback"></div></div>
+        <div class="hint">1 part sur 2</div>
       </div>
-
-      <div class="figure-card" data-correct="1">
+      <div class="pizza-card">
         <div class="frac-big">¼</div>
-        <div class="squares-row">
-          <div class="sq" onclick="toggleSq(this)"></div><div class="sq" onclick="toggleSq(this)"></div>
-          <div class="sq" onclick="toggleSq(this)"></div><div class="sq" onclick="toggleSq(this)"></div>
-        </div>
-        <div class="hint">1 case sur 4</div>
-        <div class="figure-feedback"></div>
+        <div id="pz-1b" class="pizza-container"><div class="pizza-feedback"></div></div>
+        <div class="hint">1 part sur 4</div>
       </div>
-
-      <div class="figure-card" data-correct="1">
+      <div class="pizza-card">
         <div class="frac-big">⅓</div>
-        <div class="squares-row">
-          <div class="sq" onclick="toggleSq(this)"></div><div class="sq" onclick="toggleSq(this)"></div><div class="sq" onclick="toggleSq(this)"></div>
-        </div>
-        <div class="hint">1 case sur 3</div>
-        <div class="figure-feedback"></div>
+        <div id="pz-1c" class="pizza-container"><div class="pizza-feedback"></div></div>
+        <div class="hint">1 part sur 3</div>
       </div>
-
-      <div class="figure-card" data-correct="2">
+      <div class="pizza-card">
         <div class="frac-big">2/4</div>
-        <div class="squares-row">
-          <div class="sq" onclick="toggleSq(this)"></div><div class="sq" onclick="toggleSq(this)"></div>
-          <div class="sq" onclick="toggleSq(this)"></div><div class="sq" onclick="toggleSq(this)"></div>
-        </div>
-        <div class="hint">2 cases sur 4</div>
-        <div class="figure-feedback"></div>
+        <div id="pz-1d" class="pizza-container"><div class="pizza-feedback"></div></div>
+        <div class="hint">2 parts sur 4</div>
       </div>
-
-      <div class="figure-card" data-correct="2">
+      <div class="pizza-card">
         <div class="frac-big">2/3</div>
-        <div class="squares-row">
-          <div class="sq" onclick="toggleSq(this)"></div><div class="sq" onclick="toggleSq(this)"></div><div class="sq" onclick="toggleSq(this)"></div>
-        </div>
-        <div class="hint">2 cases sur 3</div>
-        <div class="figure-feedback"></div>
+        <div id="pz-1e" class="pizza-container"><div class="pizza-feedback"></div></div>
+        <div class="hint">2 parts sur 3</div>
       </div>
-
     </div>
   </div>
 
   <!-- EXERCICE 2 -->
   <div class="exercice-block">
-    <div class="ex-title">
-      <span class="ex-badge">Ex 2</span>
-      Écris la fraction
-    </div>
-    <ul class="q-list">
-      <li>Un rectangle coupé en <strong>2</strong> parts égales, <strong>1</strong> part coloriée → <span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
-      <li>Un carré coupé en <strong>4</strong> parts égales, <strong>1</strong> part coloriée → <span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
-      <li>Un rectangle coupé en <strong>3</strong> parts égales, <strong>2</strong> parts coloriées → <span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
-      <li>Un carré coupé en <strong>4</strong> parts égales, <strong>3</strong> parts coloriées → <span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
-    </ul>
+    <div class="ex-title"><span class="ex-badge">Ex 2</span> C'est quelle fraction ?</div>
+    <p style="font-size:0.9rem;color:#666;margin-bottom:14px">Regarde la pizza et clique sur la bonne fraction.</p>
+    <div class="frac-quiz" id="quiz2"></div>
   </div>
 
   <!-- EXERCICE 3 -->
   <div class="exercice-block">
-    <div class="ex-title">
-      <span class="ex-badge">Ex 3</span>
-      Vrai ou Faux ?
-    </div>
-
+    <div class="ex-title"><span class="ex-badge">Ex 3</span> Vrai ou Faux ?</div>
     <div class="vf-item" id="vf1">
       <span>½ veut dire 1 part sur 2 parts égales.</span>
       <div class="vf-btns">
@@ -148,21 +163,31 @@
         <button class="btn-f" onclick="checkVF(this,'faux','vf5')">FAUX</button>
       </div>
     </div>
-
-    <!-- réponses cachées -->
-    <div id="answers-vf" style="display:none">vrai,faux,vrai,vrai,vrai</div>
   </div>
 
   <!-- EXERCICE 4 -->
   <div class="exercice-block">
-    <div class="ex-title">
-      <span class="ex-badge">Ex 4</span>
-      Problème 🎂
-    </div>
+    <div class="ex-title"><span class="ex-badge">Ex 4</span> Problème 🍕</div>
     <div class="probleme-box">
-      <p class="pb-enonce">Un gâteau est coupé en <strong>4 parts égales</strong>.<br>Clémence mange <strong>1 part</strong>.</p>
-      <div class="pb-q">1. Quelle fraction a mangée Clémence ? <span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
-      <div class="pb-q">2. Quelle fraction reste-t-il ? <span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      <p class="pb-enonce">Une pizza est coupée en <strong>4 parts égales</strong>. Clémence mange <strong>1 part</strong>.</p>
+
+      <div class="pb-choix">
+        <div class="question">1. Quelle fraction Clémence a-t-elle mangée ?</div>
+        <button class="btn-rep" onclick="checkRep(this,'¼','¼','rep1')">¼</button>
+        <button class="btn-rep" onclick="checkRep(this,'½','¼','rep1')">½</button>
+        <button class="btn-rep" onclick="checkRep(this,'⅓','¼','rep1')">⅓</button>
+        <button class="btn-rep" onclick="checkRep(this,'¾','¼','rep1')">¾</button>
+        <div class="pb-fb" id="rep1"></div>
+      </div>
+
+      <div class="pb-choix">
+        <div class="question">2. Quelle fraction de pizza reste-t-il ?</div>
+        <button class="btn-rep" onclick="checkRep(this,'¼','¾','rep2')">¼</button>
+        <button class="btn-rep" onclick="checkRep(this,'½','¾','rep2')">½</button>
+        <button class="btn-rep" onclick="checkRep(this,'⅓','¾','rep2')">⅓</button>
+        <button class="btn-rep" onclick="checkRep(this,'¾','¾','rep2')">¾</button>
+        <div class="pb-fb" id="rep2"></div>
+      </div>
     </div>
   </div>
 
@@ -172,64 +197,102 @@
   <a href="index.html">← Accueil</a> &nbsp;·&nbsp; <a href="fiche2.html">Fiche 2 →</a>
 </footer>
 
+<script src="pizza.js"></script>
 <script>
-// ---- Cases à colorier ----
-function toggleSq(sq) {
-  sq.classList.toggle('filled');
-  const card = sq.closest('.figure-card');
-  const total  = card.querySelectorAll('.sq').length;
-  const filled = card.querySelectorAll('.sq.filled').length;
-  const correct = parseInt(card.dataset.correct);
-  const fb = card.querySelector('.figure-feedback');
+  // Pizzas statiques Je retiens
+  pizzaStatic('pz-r1', 2, 1);
+  pizzaStatic('pz-r2', 4, 1);
+  pizzaStatic('pz-r3', 3, 1);
 
-  // Reset couleurs
-  card.querySelectorAll('.sq').forEach(s => s.classList.remove('correct','wrong'));
+  // Pizzas interactives Ex 1
+  pizzaInteractive('pz-1a', 2, 1);
+  pizzaInteractive('pz-1b', 4, 1);
+  pizzaInteractive('pz-1c', 3, 1);
+  pizzaInteractive('pz-1d', 4, 2);
+  pizzaInteractive('pz-1e', 3, 2);
 
-  if (filled === correct) {
-    card.querySelectorAll('.sq.filled').forEach(s => s.classList.add('correct'));
-    fb.textContent = '✅ Bravo !';
-    fb.style.color = '#166534';
-  } else if (filled > correct) {
-    fb.textContent = `❌ Trop de cases ! (${filled} cochées, il en faut ${correct})`;
-    fb.style.color = '#991b1b';
-  } else {
-    fb.textContent = filled > 0 ? `Continue… (${filled}/${correct})` : '';
-    fb.style.color = '#92400e';
+  // Ex 2 — quiz fraction (pizza statique + choix)
+  const quizData = [
+    { n:2, filled:1, correct:'½',  choices:['½','¼','⅓','2/3'],  label:'Pizza coupée en 2, 1 part coloriée' },
+    { n:4, filled:1, correct:'¼',  choices:['½','¼','⅓','3/4'],  label:'Pizza coupée en 4, 1 part coloriée' },
+    { n:3, filled:2, correct:'2/3',choices:['½','⅓','2/3','3/4'], label:'Pizza coupée en 3, 2 parts coloriées' },
+    { n:4, filled:3, correct:'3/4',choices:['½','¼','2/4','3/4'], label:'Pizza coupée en 4, 3 parts coloriées' },
+  ];
+
+  const quizContainer = document.getElementById('quiz2');
+  quizData.forEach((q, qi) => {
+    const item = document.createElement('div');
+    item.className = 'frac-quiz-item';
+
+    const vis = document.createElement('div');
+    vis.className = 'pizza-vis';
+    vis.appendChild(pizzaStaticEl(q.n, q.filled, '90'));
+
+    const right = document.createElement('div');
+    right.className = 'quiz-right';
+    right.innerHTML = `<div class="question">${q.label} →</div>`;
+
+    const btns = document.createElement('div');
+    btns.className = 'frac-btns';
+    const fb = document.createElement('div');
+    fb.className = 'quiz-feedback';
+
+    q.choices.forEach(ch => {
+      const btn = document.createElement('button');
+      btn.className = 'btn-frac';
+      btn.textContent = ch;
+      btn.addEventListener('click', () => {
+        btns.querySelectorAll('button').forEach(b => b.classList.remove('correct','wrong'));
+        const ok = ch === q.correct;
+        btn.classList.add(ok ? 'correct' : 'wrong');
+        fb.textContent = ok ? '✅ Bravo !' : `❌ Ce n'est pas ${ch}… réessaie !`;
+        fb.style.color = ok ? '#166534' : '#991b1b';
+      });
+      btns.appendChild(btn);
+    });
+
+    right.appendChild(btns);
+    right.appendChild(fb);
+    item.appendChild(vis);
+    item.appendChild(right);
+    quizContainer.appendChild(item);
+  });
+
+  // Ex 3 — Vrai/Faux
+  const correctVF = { vf1:'vrai', vf2:'faux', vf3:'vrai', vf4:'vrai', vf5:'vrai' };
+  function checkVF(btn, chosen, id) {
+    const item = document.getElementById(id);
+    item.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const ok = chosen === correctVF[id];
+    item.style.background = ok ? '#f0fdf4' : '#fff1f2';
+    item.style.borderColor = ok ? '#86efac' : '#fca5a5';
+    let fb = item.querySelector('.feedback');
+    if (!fb) { fb = document.createElement('div'); fb.className='feedback'; fb.style.cssText='font-size:0.85rem;font-weight:800;margin-top:6px;width:100%'; item.appendChild(fb); }
+    fb.textContent = ok ? '✅ Bonne réponse !' : '❌ Essaie encore !';
+    fb.style.color = ok ? '#166534' : '#991b1b';
   }
-}
 
-// ---- Vrai / Faux ----
-const correctAnswers = { vf1:'vrai', vf2:'faux', vf3:'vrai', vf4:'vrai', vf5:'vrai' };
-
-function checkVF(btn, chosen, id) {
-  const item = document.getElementById(id);
-  const btns = item.querySelectorAll('button');
-  btns.forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-
-  if (chosen === correctAnswers[id]) {
-    item.style.background = '#f0fdf4';
-    item.style.borderColor = '#86efac';
-    showFeedback(item, '✅ Bonne réponse !', '#166534');
-  } else {
-    item.style.background = '#fff1f2';
-    item.style.borderColor = '#fca5a5';
-    showFeedback(item, '❌ Essaie encore !', '#991b1b');
+  // Ex 4 — choix multiple problème
+  function checkRep(btn, chosen, correct, fbId) {
+    const group = btn.parentElement;
+    group.querySelectorAll('.btn-rep').forEach(b => b.classList.remove('correct','wrong'));
+    const ok = chosen === correct;
+    btn.classList.add(ok ? 'correct' : 'wrong');
+    const fb = document.getElementById(fbId);
+    fb.textContent = ok ? '✅ Bravo !' : `❌ Pas tout à fait… réessaie !`;
+    fb.style.color = ok ? '#166534' : '#991b1b';
+    if (!ok) {
+      // Après 1 seconde, montrer la bonne réponse
+      setTimeout(() => {
+        group.querySelectorAll('.btn-rep').forEach(b => {
+          if (b.textContent === correct) b.style.outline = '3px solid #22c55e';
+        });
+      }, 800);
+    }
   }
-}
-
-function showFeedback(item, msg, color) {
-  let fb = item.querySelector('.feedback');
-  if (!fb) {
-    fb = document.createElement('div');
-    fb.className = 'feedback';
-    fb.style.cssText = 'font-size:0.85rem;font-weight:800;margin-top:6px;width:100%';
-    item.appendChild(fb);
-  }
-  fb.textContent = msg;
-  fb.style.color = color;
-}
 </script>
-
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
 </body>
 </html>

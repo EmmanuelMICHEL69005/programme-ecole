@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tableaux et graphiques — CE2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #fed7aa; border-radius: 22px;
+    padding: 9px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #c2410c;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #ffedd5; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #fff7ed; border: 2px solid #fed7aa; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  /* Tableau */
+  .data-table {
+    width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.9rem;
+  }
+  .data-table th {
+    background: #f97316; color: white; padding: 10px 12px;
+    font-weight: 900; text-align: center; border: 2px solid #ea580c;
+  }
+  .data-table td {
+    background: white; padding: 10px 12px;
+    text-align: center; border: 2px solid #fed7aa; font-weight: 700;
+  }
+  .data-table tr:nth-child(even) td { background: #fff7ed; }
+  /* Diagramme */
+  .barchart-wrap {
+    background: #fff7ed; border: 2px solid #fed7aa; border-radius: 14px;
+    padding: 20px; margin: 14px 0; overflow-x: auto;
+  }
+  .barchart {
+    display: flex; align-items: flex-end; gap: 16px;
+    height: 180px; padding: 0 8px;
+    border-bottom: 3px solid #f97316;
+    position: relative;
+  }
+  .bar-col { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .bar {
+    width: 44px; border-radius: 6px 6px 0 0;
+    background: #f97316; transition: opacity 0.15s;
+    display: flex; align-items: flex-start; justify-content: center;
+    padding-top: 4px;
+  }
+  .bar:hover { opacity: 0.8; }
+  .bar .bar-val { font-size: 0.8rem; font-weight: 900; color: white; }
+  .bar-label { font-size: 0.8rem; font-weight: 800; color: #c2410c; text-align: center; max-width: 54px; }
+  .y-label { font-size: 0.75rem; color: #888; }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: linear-gradient(135deg, #c2410c, #f97316);">
+  <span class="emoji-header">📊</span>
+  <h1>Tableaux et graphiques</h1>
+  <p>Lire et interpréter des données</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">CE2 — Organisation et gestion de données</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
+      📋 Un <strong>tableau</strong> organise des données en lignes et colonnes.<br>
+      📊 Un <strong>diagramme en barres</strong> permet de comparer des quantités visuellement.<br>
+      🔍 Pour lire un graphique : je regarde les étiquettes, les axes et les valeurs.
+    </div>
+  </div>
+
+  <!-- EXERCICE 1 : lire un tableau simple -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#c2410c;">Ex 1</span> Lis le tableau des sports préférés</div>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Sport</th>
+          <th>Football</th>
+          <th>Natation</th>
+          <th>Judo</th>
+          <th>Tennis</th>
+          <th>Vélo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Nombre d'élèves</td>
+          <td>12</td>
+          <td>8</td>
+          <td>5</td>
+          <td>7</td>
+          <td>3</td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="ex1-container"></div>
+  </div>
+
+  <!-- EXERCICE 2 : diagramme en barres sport -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#c2410c;">Ex 2</span> Lis le diagramme en barres</div>
+    <div class="barchart-wrap">
+      <div class="barchart" id="chart1">
+        <div class="bar-col"><div class="bar" style="height:120px;"><span class="bar-val">12</span></div><div class="bar-label">Football</div></div>
+        <div class="bar-col"><div class="bar" style="height:80px; background:#3b82f6;"><span class="bar-val">8</span></div><div class="bar-label">Natation</div></div>
+        <div class="bar-col"><div class="bar" style="height:50px; background:#7c3aed;"><span class="bar-val">5</span></div><div class="bar-label">Judo</div></div>
+        <div class="bar-col"><div class="bar" style="height:70px; background:#22c55e;"><span class="bar-val">7</span></div><div class="bar-label">Tennis</div></div>
+        <div class="bar-col"><div class="bar" style="height:30px; background:#ef4444;"><span class="bar-val">3</span></div><div class="bar-label">Vélo</div></div>
+      </div>
+    </div>
+    <div id="ex2-container"></div>
+  </div>
+
+  <!-- EXERCICE 3 : tableau à double entrée -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#c2410c;">Ex 3</span> Tableau à double entrée — Animaux de compagnie</div>
+    <table class="data-table">
+      <thead>
+        <tr><th></th><th>CE2 A</th><th>CE2 B</th><th>CE2 C</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Chien</td><td>6</td><td>4</td><td>7</td></tr>
+        <tr><td>Chat</td><td>5</td><td>8</td><td>3</td></tr>
+        <tr><td>Lapin</td><td>2</td><td>1</td><td>4</td></tr>
+      </tbody>
+    </table>
+    <div id="ex3-container"></div>
+  </div>
+
+  <!-- EXERCICE 4 : diagramme températures -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#c2410c;">Ex 4</span> Températures moyennes — Lis le graphique</div>
+    <div class="barchart-wrap">
+      <div class="barchart">
+        <div class="bar-col"><div class="bar" style="height:40px; background:#3b82f6;"><span class="bar-val">4</span></div><div class="bar-label">Jan.</div></div>
+        <div class="bar-col"><div class="bar" style="height:50px; background:#3b82f6;"><span class="bar-val">5</span></div><div class="bar-label">Fév.</div></div>
+        <div class="bar-col"><div class="bar" style="height:80px; background:#22c55e;"><span class="bar-val">8</span></div><div class="bar-label">Mars</div></div>
+        <div class="bar-col"><div class="bar" style="height:120px; background:#22c55e;"><span class="bar-val">12</span></div><div class="bar-label">Avr.</div></div>
+        <div class="bar-col"><div class="bar" style="height:160px; background:#f97316;"><span class="bar-val">16</span></div><div class="bar-label">Mai</div></div>
+        <div class="bar-col"><div class="bar" style="height:170px; background:#ef4444;"><span class="bar-val">17</span></div><div class="bar-label">Juin</div></div>
+      </div>
+    </div>
+    <div id="ex4-container"></div>
+  </div>
+
+  <!-- EXERCICE 5 : compléter un tableau -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#c2410c;">Ex 5</span> Complète le tableau</div>
+    <p style="font-size:0.9rem; color:#555; margin-bottom:12px;">
+      Dans une classe de 30 élèves, 12 ont un chien, 9 ont un chat, 4 ont un poisson et 5 n'ont pas d'animal.
+    </p>
+    <div id="ex5-container"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CE2</footer>
+
+<script>
+function shuffle(arr) { return [...arr].sort(() => Math.random() - 0.5); }
+
+// EXERCICE 1
+const ex1Data = [
+  { q: 'Quel sport est le plus populaire dans la classe ?', correct: 'Football', choices: ['Natation', 'Football', 'Judo', 'Tennis'] },
+  { q: 'Combien d\'élèves préfèrent la natation ou le tennis ?', correct: '15 élèves', choices: ['12 élèves', '15 élèves', '17 élèves', '13 élèves'] },
+  { q: 'Combien d\'élèves ont été interrogés au total ?', correct: '35 élèves', choices: ['30 élèves', '33 élèves', '35 élèves', '40 élèves'] },
+  { q: 'Quel est le sport le moins populaire ?', correct: 'Vélo', choices: ['Judo', 'Vélo', 'Tennis', 'Natation'] },
+];
+
+const ex1Container = document.getElementById('ex1-container');
+ex1Data.forEach((item, idx) => buildQBlock(item, ex1Container, `tab1-${idx}`, null));
+
+// EXERCICE 2
+const ex2Data = [
+  { q: 'Quel sport a la barre la plus haute ?', correct: 'Football', choices: ['Natation', 'Tennis', 'Football', 'Vélo'] },
+  { q: 'Combien d\'élèves pratiquent le judo ou le vélo ?', correct: '8 élèves', choices: ['5 élèves', '7 élèves', '8 élèves', '10 élèves'] },
+  { q: 'Quelle est la différence entre Football et Natation ?', correct: '4 élèves', choices: ['3 élèves', '4 élèves', '5 élèves', '6 élèves'] },
+];
+const ex2Container = document.getElementById('ex2-container');
+ex2Data.forEach((item, idx) => buildQBlock(item, ex2Container, `tab2-${idx}`, null));
+
+// EXERCICE 3
+const ex3Data = [
+  { q: 'Combien d\'élèves de CE2 B ont un chat ?', correct: '8', choices: ['3', '5', '8', '6'] },
+  { q: 'Dans quelle classe y a-t-il le plus de chiens ?', correct: 'CE2 C', choices: ['CE2 A', 'CE2 B', 'CE2 C'] },
+  { q: 'Combien d\'élèves ont un lapin en tout (les 3 classes) ?', correct: '7', choices: ['5', '6', '7', '8'] },
+  { q: 'Combien d\'animaux y a-t-il en tout dans CE2 A ?', correct: '13', choices: ['11', '12', '13', '14'] },
+];
+const ex3Container = document.getElementById('ex3-container');
+ex3Data.forEach((item, idx) => buildQBlock(item, ex3Container, `tab3-${idx}`, null));
+
+// EXERCICE 4
+const ex4Data = [
+  { q: 'Quel mois a la température la plus élevée sur ce graphique ?', correct: 'Juin', choices: ['Mai', 'Juin', 'Avril', 'Mars'] },
+  { q: 'Quelle est la température en janvier ?', correct: '4°C', choices: ['2°C', '4°C', '5°C', '6°C'] },
+  { q: 'De combien de degrés la température monte-t-elle entre Mars et Mai ?', correct: '8°C', choices: ['4°C', '6°C', '8°C', '10°C'] },
+  { q: 'Quel est le mois le plus froid de ce graphique ?', correct: 'Janvier', choices: ['Janvier', 'Février', 'Mars', 'Avril'] },
+];
+const ex4Container = document.getElementById('ex4-container');
+ex4Data.forEach((item, idx) => buildQBlock(item, ex4Container, `tab4-${idx}`, null));
+
+// EXERCICE 5
+const ex5Data = [
+  { q: 'Combien d\'élèves ont un chien ou un chat ?', correct: '21 élèves', choices: ['18 élèves', '19 élèves', '21 élèves', '23 élèves'] },
+  { q: 'Combien d\'élèves ont un animal de compagnie (n\'importe lequel) ?', correct: '25 élèves', choices: ['20 élèves', '25 élèves', '27 élèves', '30 élèves'] },
+  { q: 'Quel animal est le plus répandu dans la classe ?', correct: 'Chien', choices: ['Chat', 'Chien', 'Poisson', 'Lapin'] },
+  { q: 'Quelle fraction des élèves a un chat ?', correct: '9/30', choices: ['9/10', '9/30', '1/3', '3/10'] },
+];
+const ex5Container = document.getElementById('ex5-container');
+ex5Data.forEach((item, idx) => buildQBlock(item, ex5Container, `tab5-${idx}`, null));
+
+function buildQBlock(item, container, id, scoreEl) {
+  const div = document.createElement('div');
+  div.className = 'q-block';
+  const shuffled = shuffle(item.choices);
+  div.innerHTML = `
+    <div class="q-text">${item.q}</div>
+    <div class="qcm-row" id="${id}-choices">
+      ${shuffled.map(c => `<button class="btn-choice" onclick="checkQ(this,'${c}','${item.correct}','${id}-choices','${id}-fb')">${c}</button>`).join('')}
+    </div>
+    <div class="feedback-line" id="${id}-fb"></div>
+  `;
+  container.appendChild(div);
+}
+
+function checkQ(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct');
+    fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong');
+    fb.textContent = `❌ C'était ${correct}`; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

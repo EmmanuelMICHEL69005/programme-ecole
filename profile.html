@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mon Profil — Les Maths de Clémence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ── Profile switcher bar ── */
+  .profiles-bar {
+    background: linear-gradient(135deg, #1e1b4b, #312e81);
+    padding: 16px 16px 14px;
+    overflow-x: auto;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    scrollbar-width: none;
+  }
+  .profiles-bar::-webkit-scrollbar { display: none; }
+  .profiles-bar-label {
+    font-size: 0.7rem; font-weight: 900; text-transform: uppercase;
+    letter-spacing: 0.8px; color: rgba(255,255,255,0.45);
+    flex-shrink: 0; margin-right: 4px;
+  }
+  .profile-chip {
+    display: flex; align-items: center; gap: 7px;
+    background: rgba(255,255,255,0.08);
+    border: 2px solid rgba(255,255,255,0.15);
+    border-radius: 30px; padding: 7px 14px 7px 8px;
+    color: white; font-family: inherit; font-weight: 800;
+    cursor: pointer; white-space: nowrap;
+    transition: background 0.15s, border-color 0.15s;
+    flex-shrink: 0;
+  }
+  .profile-chip:hover { background: rgba(255,255,255,0.16); }
+  .profile-chip.active { border-color: #a78bfa; background: rgba(167,139,250,0.2); }
+  .profile-chip-avatar { font-size: 1.4rem; line-height: 1; }
+  .profile-chip-info { display: flex; flex-direction: column; line-height: 1.3; }
+  .profile-chip-name  { font-size: 0.82rem; font-weight: 900; }
+  .profile-chip-meta  { font-size: 0.65rem; font-weight: 700; color: rgba(255,255,255,0.55); }
+  .profile-add-btn {
+    display: flex; align-items: center; justify-content: center;
+    width: 42px; height: 42px; background: rgba(255,255,255,0.08);
+    border: 2px dashed rgba(255,255,255,0.25); border-radius: 50%;
+    color: rgba(255,255,255,0.6); font-size: 1.4rem; cursor: pointer;
+    font-family: inherit; flex-shrink: 0; transition: background 0.15s;
+  }
+  .profile-add-btn:hover { background: rgba(255,255,255,0.2); color: white; }
+
+  /* ── Profile hero ── */
+  .profile-hero {
+    background: linear-gradient(150deg, #1e1b4b, #4c1d95 50%, #1e3a5f);
+    color: white; padding: 36px 24px 48px; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .profile-hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(167,139,250,0.25), transparent 65%);
+    pointer-events: none;
+  }
+  .avatar-wrap { position: relative; display: inline-block; margin-bottom: 14px; }
+  .avatar-circle {
+    width: 96px; height: 96px;
+    background: rgba(255,255,255,0.15); border: 3px solid rgba(255,255,255,0.35);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 3.2rem; cursor: pointer; transition: background 0.2s;
+    backdrop-filter: blur(4px); margin: 0 auto;
+  }
+  .avatar-circle:hover { background: rgba(255,255,255,0.25); }
+  .avatar-edit-hint { font-size: 0.72rem; opacity: 0.6; margin-top: 4px; }
+  .profile-name-wrap {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    margin-bottom: 4px;
+  }
+  .profile-name { font-size: 1.9rem; font-weight: 900; }
+  .profile-classe-tag {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1.5px solid rgba(255,255,255,0.3); border-radius: 20px;
+    padding: 3px 12px; font-size: 0.8rem; font-weight: 900;
+    color: rgba(255,255,255,0.9); margin-bottom: 8px; cursor: pointer;
+    transition: background 0.15s;
+  }
+  .profile-classe-tag:hover { background: rgba(255,255,255,0.25); }
+  .btn-edit-name {
+    background: rgba(255,255,255,0.15); border: 1.5px solid rgba(255,255,255,0.3);
+    color: white; border-radius: 8px; padding: 4px 10px;
+    font-size: 0.8rem; font-weight: 700; cursor: pointer; font-family: inherit;
+    transition: background 0.15s;
+  }
+  .btn-edit-name:hover { background: rgba(255,255,255,0.28); }
+  .profile-level-label { font-size: 1rem; color: #c4b5fd; font-weight: 700; margin-bottom: 20px; }
+  .xp-hero-bar-wrap { max-width: 340px; margin: 0 auto; }
+  .xp-hero-labels {
+    display: flex; justify-content: space-between;
+    font-size: 0.78rem; font-weight: 700; color: rgba(255,255,255,0.7); margin-bottom: 5px;
+  }
+  .xp-hero-bar { height: 12px; background: rgba(255,255,255,0.18); border-radius: 8px; overflow: hidden; }
+  .xp-hero-fill {
+    height: 100%; background: linear-gradient(90deg, #a78bfa, #e879f9);
+    border-radius: 8px; transition: width 0.8s cubic-bezier(0.22,1,0.36,1);
+  }
+
+  /* ── Stats cards ── */
+  .stats-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+    margin: -28px 16px 0; position: relative; z-index: 10;
+  }
+  .stat-card {
+    background: white; border-radius: 18px; padding: 14px 10px;
+    text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  }
+  .stat-card .stat-val { font-size: 1.7rem; font-weight: 900; color: #5b21b6; display: block; }
+  .stat-card .stat-lbl { font-size: 0.72rem; font-weight: 700; color: #888; margin-top: 2px; }
+
+  /* ── Section titles ── */
+  .section-label {
+    font-size: 0.8rem; font-weight: 900; text-transform: uppercase;
+    letter-spacing: 1.2px; color: #888; margin: 28px 0 12px;
+  }
+
+  /* ── Classe selector ── */
+  .classe-selector { display: flex; gap: 8px; flex-wrap: wrap; }
+  .classe-opt {
+    flex: 1; min-width: 56px; padding: 10px 6px; font-size: 0.9rem; font-weight: 900;
+    background: #f5f3ff; border: 2px solid #ddd6fe; border-radius: 12px;
+    color: #5b21b6; cursor: pointer; transition: all 0.15s; font-family: inherit; text-align: center;
+  }
+  .classe-opt:hover { background: #ede9fe; border-color: #a78bfa; }
+  .classe-opt.active { background: #7c3aed; border-color: #7c3aed; color: white; }
+
+  /* ── Badges ── */
+  .badges-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+  .badge-card {
+    background: white; border-radius: 18px; padding: 16px 12px;
+    text-align: center; border: 2px solid #f0f0f0;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .badge-card.earned { border-color: #ddd6fe; box-shadow: 0 3px 12px rgba(124,58,237,0.12); }
+  .badge-card.earned:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(124,58,237,0.2); }
+  .badge-card.locked { opacity: 0.4; filter: grayscale(1); }
+  .badge-emoji { font-size: 2.2rem; display: block; margin-bottom: 8px; }
+  .badge-name  { font-size: 0.82rem; font-weight: 900; color: #5b21b6; margin-bottom: 3px; }
+  .badge-desc  { font-size: 0.72rem; color: #888; line-height: 1.3; }
+  .badge-unlocked-tag {
+    display: inline-block; background: #dcfce7; color: #166534;
+    border-radius: 8px; font-size: 0.65rem; font-weight: 800;
+    padding: 2px 7px; margin-top: 5px;
+  }
+
+  /* ── Topics ── */
+  .topics-list { display: flex; flex-direction: column; gap: 10px; }
+  .topic-row {
+    background: white; border-radius: 14px; padding: 12px 16px;
+    display: flex; align-items: center; gap: 14px; border: 2px solid #f0f0f0;
+  }
+  .topic-emoji { font-size: 1.5rem; flex-shrink: 0; }
+  .topic-info  { flex: 1; min-width: 0; }
+  .topic-title { font-size: 0.9rem; font-weight: 800; color: #1e1b4b; }
+  .topic-count { font-size: 0.75rem; color: #888; margin-top: 1px; }
+  .topic-stars { font-size: 1.2rem; flex-shrink: 0; }
+
+  /* ── Levels roadmap ── */
+  .levels-road { display: flex; flex-direction: column; }
+  .level-row {
+    display: flex; align-items: center; gap: 14px;
+    padding: 10px 0; border-left: 3px solid #e5e7eb;
+    margin-left: 18px; padding-left: 20px; position: relative;
+  }
+  .level-row::before {
+    content: ''; position: absolute; left: -8px; top: 50%;
+    transform: translateY(-50%); width: 14px; height: 14px;
+    border-radius: 50%; background: #e5e7eb; border: 3px solid white; box-shadow: 0 0 0 2px #e5e7eb;
+  }
+  .level-row.done    { border-color: #7c3aed; }
+  .level-row.done::before { background: #7c3aed; box-shadow: 0 0 0 2px #ede9fe; }
+  .level-row.current { border-color: #a855f7; }
+  .level-row.current::before { background: #a855f7; box-shadow: 0 0 0 2px #e9d5ff; width: 18px; height: 18px; left: -10px; }
+  .level-row:last-child { border-color: transparent; }
+  .lr-emoji { font-size: 1.6rem; flex-shrink: 0; }
+  .lr-info  { flex: 1; }
+  .lr-title { font-size: 0.9rem; font-weight: 900; color: #1e1b4b; }
+  .lr-xp    { font-size: 0.75rem; color: #888; }
+  .lr-done  { font-size: 0.75rem; color: #7c3aed; font-weight: 700; }
+
+  /* ── Avatar picker ── */
+  .avatar-picker-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 5000;
+    display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px);
+  }
+  .avatar-picker-card {
+    background: white; border-radius: 24px; padding: 28px 24px;
+    max-width: 340px; width: 90%; box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+  .avatar-picker-title { font-size: 1.1rem; font-weight: 900; color: #1e1b4b; text-align: center; margin-bottom: 16px; }
+  .avatar-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 16px; }
+  .avatar-opt {
+    font-size: 1.8rem; text-align: center; cursor: pointer; border-radius: 12px;
+    padding: 8px; border: 3px solid transparent; transition: border-color 0.15s, background 0.15s;
+  }
+  .avatar-opt:hover { background: #ede9fe; }
+  .avatar-opt.selected { border-color: #7c3aed; background: #ede9fe; }
+  .btn-close-picker {
+    display: block; width: 100%; background: #7c3aed; color: white;
+    border: none; border-radius: 16px; padding: 11px; font-size: 1rem;
+    font-weight: 800; cursor: pointer; font-family: inherit; transition: background 0.15s;
+  }
+  .btn-close-picker:hover { background: #5b21b6; }
+
+  /* ── Name editor ── */
+  .name-input {
+    font-size: 1.9rem; font-weight: 900; background: transparent; border: none;
+    border-bottom: 3px solid rgba(255,255,255,0.5); color: white; font-family: inherit;
+    text-align: center; outline: none; width: 200px; max-width: 80vw;
+  }
+  .name-input::placeholder { color: rgba(255,255,255,0.4); }
+
+  /* ── Danger zone ── */
+  .danger-zone {
+    background: #fef2f2; border: 2px solid #fecaca; border-radius: 18px;
+    padding: 18px 20px; margin-top: 16px;
+  }
+  .danger-zone h3 { font-size: 0.85rem; font-weight: 900; color: #dc2626; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .danger-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+  .btn-danger {
+    background: none; border: 2px solid #fca5a5; color: #dc2626; border-radius: 12px;
+    padding: 8px 16px; font-size: 0.85rem; font-weight: 800; cursor: pointer;
+    font-family: inherit; transition: background 0.15s;
+  }
+  .btn-danger:hover { background: #fee2e2; }
+
+  @media (max-width: 400px) {
+    .badges-grid { grid-template-columns: repeat(2, 1fr); }
+    .stats-grid  { grid-template-columns: repeat(3, 1fr); }
+    .stat-card .stat-val { font-size: 1.3rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Profiles switcher bar -->
+<div class="profiles-bar" id="profilesBar">
+  <span class="profiles-bar-label">Profils</span>
+  <!-- Chips injected by JS -->
+  <button class="profile-add-btn" title="Nouveau profil" onclick="GS.showCreateProfileModal(function(){ location.reload(); })">+</button>
+</div>
+
+<!-- Hero header -->
+<div class="profile-hero">
+  <div class="avatar-wrap">
+    <div class="avatar-circle" id="avatarCircle" title="Changer l'avatar"></div>
+    <div class="avatar-edit-hint">Appuie pour changer</div>
+  </div>
+
+  <div class="profile-name-wrap">
+    <span class="profile-name" id="profileNameDisplay"></span>
+    <button class="btn-edit-name" id="btnEditName">✏️ Modifier</button>
+  </div>
+  <div id="profileClasseTag" class="profile-classe-tag" title="Changer de classe"></div>
+  <div class="profile-level-label" id="profileLevelLabel"></div>
+
+  <div class="xp-hero-bar-wrap">
+    <div class="xp-hero-labels">
+      <span id="xpCurrent"></span>
+      <span id="xpNext"></span>
+    </div>
+    <div class="xp-hero-bar">
+      <div class="xp-hero-fill" id="xpFill" style="width:0%"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Stats cards -->
+<div class="stats-grid">
+  <div class="stat-card">
+    <span class="stat-val" id="statCorrect">0</span>
+    <span class="stat-lbl">Bonnes<br>réponses</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-val" id="statBadges">0</span>
+    <span class="stat-lbl">Badges<br>débloqués</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-val" id="statStreak">0</span>
+    <span class="stat-lbl">Meilleure<br>série 🔥</span>
+  </div>
+</div>
+
+<main>
+
+  <!-- Badges -->
+  <div class="section-label">🏅 Mes badges</div>
+  <div class="badges-grid" id="badgesGrid"></div>
+
+  <!-- Topics -->
+  <div class="section-label">📚 Mes matières</div>
+  <div class="topics-list" id="topicsList"></div>
+
+  <!-- Levels roadmap -->
+  <div class="section-label">🗺️ Ma progression</div>
+  <div class="levels-road" id="levelsRoad"></div>
+
+  <!-- Settings -->
+  <div class="section-label">⚙️ Paramètres</div>
+  <div id="classeSection">
+    <p style="font-size:0.85rem;color:#888;margin-bottom:10px;">Ma classe :</p>
+    <div class="classe-selector" id="classeSelector"></div>
+  </div>
+
+  <!-- Sauvegarde / Restauration -->
+  <div class="section-label">💾 Sauvegarde des données</div>
+  <div style="background:white;border-radius:18px;padding:18px 20px;border:2px solid #e0e7ff;margin-bottom:8px;">
+    <p style="font-size:0.85rem;color:#555;margin-bottom:14px;line-height:1.6;">
+      Les profils et scores sont sauvegardés automatiquement dans ce navigateur.<br>
+      Exporte une sauvegarde pour ne rien perdre si tu changes d'appareil.
+    </p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <button onclick="exportData()" style="flex:1;padding:11px 14px;font-size:0.9rem;font-weight:800;background:linear-gradient(135deg,#7c3aed,#a855f7);color:white;border:none;border-radius:14px;cursor:pointer;font-family:inherit;">
+        📥 Exporter la sauvegarde
+      </button>
+      <label style="flex:1;display:block;">
+        <span style="display:block;padding:11px 14px;font-size:0.9rem;font-weight:800;background:#f5f3ff;border:2px solid #ddd6fe;color:#7c3aed;border-radius:14px;cursor:pointer;text-align:center;">
+          📤 Importer une sauvegarde
+        </span>
+        <input type="file" accept=".json" id="importInput" style="display:none;" onchange="importData(this)">
+      </label>
+    </div>
+  </div>
+
+  <!-- Danger zone -->
+  <div class="danger-zone">
+    <h3>Zone danger</h3>
+    <div class="danger-btns">
+      <button class="btn-danger" onclick="confirmReset()">🔄 Remettre ce profil à zéro</button>
+      <button class="btn-danger" onclick="confirmDelete()">🗑️ Supprimer ce profil</button>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CE2</footer>
+
+<!-- Avatar picker -->
+<div class="avatar-picker-overlay" id="avatarPicker" style="display:none;">
+  <div class="avatar-picker-card">
+    <div class="avatar-picker-title">Choisis ton avatar</div>
+    <div class="avatar-grid" id="avatarGrid"></div>
+    <button class="btn-close-picker" onclick="closePicker()">Valider ✓</button>
+  </div>
+</div>
+
+<!-- Classe picker (inline in hero) -->
+<div class="avatar-picker-overlay" id="classePicker" style="display:none;">
+  <div class="avatar-picker-card">
+    <div class="avatar-picker-title">Quelle est ta classe ?</div>
+    <div id="classePicker-grid" style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;justify-content:center;"></div>
+    <button class="btn-close-picker" onclick="document.getElementById('classePicker').style.display='none'">Fermer</button>
+  </div>
+</div>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script>
+  function render() {
+    const P   = GS.profile();
+    if (!P) return;
+    const lvl = GS.getLevel(P.xp);
+    const nxt = GS.getNextLevel(P.xp);
+    const p   = GS.pct(P.xp);
+
+    // Profiles bar
+    const bar = document.getElementById('profilesBar');
+    const addBtn = bar.querySelector('.profile-add-btn');
+    bar.querySelectorAll('.profile-chip').forEach(el => el.remove());
+    const st = GS.store();
+    Object.values(st.profiles||{}).forEach(prof => {
+      const lv = GS.getLevel(prof.xp);
+      const chip = document.createElement('button');
+      chip.className = 'profile-chip' + (prof.id === st.active ? ' active' : '');
+      chip.innerHTML = `
+        <span class="profile-chip-avatar">${prof.avatar}</span>
+        <div class="profile-chip-info">
+          <span class="profile-chip-name">${prof.name}</span>
+          <span class="profile-chip-meta">${prof.classe} · ${lv.emoji} Niv.${prof.level}</span>
+        </div>
+      `;
+      chip.addEventListener('click', () => {
+        if (prof.id === st.active) return;
+        st.active = prof.id;
+        GS.save();
+        location.reload();
+      });
+      bar.insertBefore(chip, addBtn);
+    });
+
+    // Hero
+    document.getElementById('avatarCircle').textContent = P.avatar;
+    document.getElementById('profileNameDisplay').textContent = P.name;
+    document.getElementById('profileClasseTag').textContent = '📚 ' + (P.classe || 'CE2');
+    document.getElementById('profileLevelLabel').textContent = `${lvl.emoji} Niveau ${lvl.n} — ${lvl.title}`;
+    document.getElementById('xpCurrent').textContent = `${P.xp} XP`;
+    document.getElementById('xpNext').textContent    = nxt ? `Prochain : ${nxt.xp} XP` : '🌟 Niveau max !';
+    setTimeout(() => { document.getElementById('xpFill').style.width = p + '%'; }, 100);
+
+    // Stats
+    document.getElementById('statCorrect').textContent = P.tot;
+    document.getElementById('statBadges').textContent  = P.badges.length;
+    document.getElementById('statStreak').textContent  = P.maxStreak;
+
+    // Badges
+    const grid = document.getElementById('badgesGrid');
+    grid.innerHTML = '';
+    GS.BADGES.forEach(b => {
+      const earned = P.badges.includes(b.id);
+      const card = document.createElement('div');
+      card.className = `badge-card ${earned ? 'earned' : 'locked'}`;
+      card.innerHTML = `
+        <span class="badge-emoji">${b.emoji}</span>
+        <div class="badge-name">${b.name}</div>
+        <div class="badge-desc">${b.desc}</div>
+        ${earned ? '<span class="badge-unlocked-tag">✓ Débloqué</span>' : ''}
+      `;
+      grid.appendChild(card);
+    });
+
+    // Topics
+    const topicsList = document.getElementById('topicsList');
+    topicsList.innerHTML = '';
+    Object.entries(GS.PAGE_LABELS).filter(([k]) => k !== 'index.html').forEach(([href, info]) => {
+      const count = P.pages[href] || 0;
+      const stars = count >= 20 ? '⭐⭐⭐' : count >= 8 ? '⭐⭐' : count >= 2 ? '⭐' : '☆';
+      const row = document.createElement('div');
+      row.className = 'topic-row';
+      row.style.cursor = 'pointer';
+      row.addEventListener('click', () => { window.location.href = href; });
+      row.innerHTML = `
+        <span class="topic-emoji">${info.emoji}</span>
+        <div class="topic-info">
+          <div class="topic-title">${info.title}</div>
+          <div class="topic-count">${count === 0 ? 'Pas encore visité' : count + ' bonne' + (count > 1 ? 's' : '') + ' réponse' + (count > 1 ? 's' : '')}</div>
+        </div>
+        <div class="topic-stars">${stars}</div>
+      `;
+      topicsList.appendChild(row);
+    });
+
+    // Levels roadmap
+    const road = document.getElementById('levelsRoad');
+    road.innerHTML = '';
+    GS.LEVELS.forEach(l => {
+      const done    = P.xp >= l.xp && l.n < lvl.n;
+      const current = l.n === lvl.n;
+      const row = document.createElement('div');
+      row.className = `level-row${done ? ' done' : current ? ' current' : ''}`;
+      row.innerHTML = `
+        <span class="lr-emoji">${l.emoji}</span>
+        <div class="lr-info">
+          <div class="lr-title">Niveau ${l.n} — ${l.title}</div>
+          <div class="lr-xp">${l.xp} XP requis</div>
+        </div>
+        <span class="lr-done">${done ? '✓' : current ? '← ici !' : ''}</span>
+      `;
+      road.appendChild(row);
+    });
+
+    // Classe selector
+    const cs = document.getElementById('classeSelector');
+    cs.innerHTML = '';
+    GS.CLASSE_LIST.forEach(c => {
+      const btn = document.createElement('button');
+      btn.className = 'classe-opt' + (P.classe === c ? ' active' : '');
+      btn.textContent = c;
+      btn.addEventListener('click', () => {
+        GS.setClasse(c);
+        document.querySelectorAll('.classe-opt').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('profileClasseTag').textContent = '📚 ' + c;
+      });
+      cs.appendChild(btn);
+    });
+
+    // Avatar grid
+    const ag = document.getElementById('avatarGrid');
+    ag.innerHTML = '';
+    GS.AVATARS.forEach(a => {
+      const el = document.createElement('div');
+      el.className = `avatar-opt${P.avatar === a ? ' selected' : ''}`;
+      el.textContent = a;
+      el.addEventListener('click', () => {
+        GS.setAvatar(a);
+        document.querySelectorAll('.avatar-opt').forEach(o => o.classList.remove('selected'));
+        el.classList.add('selected');
+        document.getElementById('avatarCircle').textContent = a;
+        render();
+      });
+      ag.appendChild(el);
+    });
+  }
+
+  // ── Name editing ──────────────────────────────────────────────────
+  document.getElementById('btnEditName').addEventListener('click', function handler() {
+    const display = document.getElementById('profileNameDisplay');
+    const current = GS.profile().name;
+    const input = document.createElement('input');
+    input.className = 'name-input';
+    input.value = current;
+    input.placeholder = 'Ton prénom';
+    display.replaceWith(input);
+    input.focus();
+    const btn = document.getElementById('btnEditName');
+    btn.textContent = '✓ OK';
+    const confirm = () => {
+      const name = input.value.trim() || GS.profile().name;
+      GS.setName(name);
+      const newSpan = document.createElement('span');
+      newSpan.className = 'profile-name';
+      newSpan.id = 'profileNameDisplay';
+      newSpan.textContent = name;
+      input.replaceWith(newSpan);
+      btn.textContent = '✏️ Modifier';
+      btn.removeEventListener('click', confirm);
+      btn.addEventListener('click', handler);
+      render();
+    };
+    btn.removeEventListener('click', handler);
+    btn.addEventListener('click', confirm);
+    input.addEventListener('keydown', e => { if (e.key === 'Enter') confirm(); });
+  });
+
+  // ── Avatar picker ─────────────────────────────────────────────────
+  document.getElementById('avatarCircle').addEventListener('click', () => {
+    document.getElementById('avatarPicker').style.display = 'flex';
+  });
+  function closePicker() { document.getElementById('avatarPicker').style.display = 'none'; }
+  document.getElementById('avatarPicker').addEventListener('click', e => {
+    if (e.target === document.getElementById('avatarPicker')) closePicker();
+  });
+
+  // ── Classe picker ─────────────────────────────────────────────────
+  document.getElementById('profileClasseTag').addEventListener('click', () => {
+    const grid = document.getElementById('classePicker-grid');
+    grid.innerHTML = '';
+    GS.CLASSE_LIST.forEach(c => {
+      const btn = document.createElement('button');
+      btn.style.cssText = 'flex:1;min-width:64px;padding:12px 8px;font-size:1rem;font-weight:900;background:' + (GS.profile().classe===c?'#7c3aed':'#f5f3ff') + ';border:2px solid ' + (GS.profile().classe===c?'#7c3aed':'#ddd6fe') + ';border-radius:12px;color:' + (GS.profile().classe===c?'white':'#5b21b6') + ';cursor:pointer;font-family:inherit;';
+      btn.textContent = c;
+      btn.addEventListener('click', () => {
+        GS.setClasse(c);
+        document.getElementById('classePicker').style.display = 'none';
+        render();
+      });
+      grid.appendChild(btn);
+    });
+    document.getElementById('classePicker').style.display = 'flex';
+  });
+
+  // ── Danger zone ───────────────────────────────────────────────────
+  function confirmReset() {
+    if (confirm('Veux-tu vraiment remettre ce profil à zéro ?\nTes points et badges seront perdus.')) {
+      GS.resetAll();
+    }
+  }
+  function confirmDelete() {
+    const P = GS.profile();
+    if (confirm('Supprimer le profil de ' + P.name + ' ?\nCette action est irréversible.')) {
+      GS.deleteProfile(P.id);
+    }
+  }
+
+  // ── Export / Import ───────────────────────────────────────────────
+  function exportData() {
+    const st = GS.store();
+    const json = JSON.stringify(st, null, 2);
+    const blob = new Blob([json], { type: 'application/json' });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    const date = new Date().toISOString().slice(0,10);
+    a.href = url;
+    a.download = `maths-clemence-sauvegarde-${date}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  function importData(input) {
+    const file = input.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = e => {
+      try {
+        const data = JSON.parse(e.target.result);
+        if (!data.profiles || !data.active) throw new Error('Format invalide');
+        if (!confirm(`Importer ${Object.keys(data.profiles).length} profil(s) ?\nCela remplacera les données actuelles.`)) return;
+        localStorage.setItem('clemence_maths_v2', JSON.stringify(data));
+        location.reload();
+      } catch(err) {
+        alert('❌ Fichier invalide ou corrompu.');
+      }
+    };
+    reader.readAsText(file);
+    input.value = '';
+  }
+
+  // Init
+  render();
+</script>
+</body>
+</html>

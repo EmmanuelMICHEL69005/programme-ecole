@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Géométrie plane — CE2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #bbf7d0; border-radius: 22px;
+    padding: 9px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #166534;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #dcfce7; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #f0fdf4; border: 2px solid #bbf7d0; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .score-bar {
+    background: #dcfce7; border-radius: 12px;
+    padding: 10px 18px; font-size: 1rem; font-weight: 800;
+    color: #166534; margin-bottom: 14px; text-align: center;
+  }
+  /* Figures SVG grid */
+  .figures-svg-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; margin: 10px 0;
+  }
+  .figure-svg-card {
+    background: white; border: 2px solid #bbf7d0; border-radius: 14px;
+    padding: 14px; text-align: center; cursor: pointer; transition: border-color 0.15s, background 0.15s;
+  }
+  .figure-svg-card:hover { background: #dcfce7; border-color: #22c55e; }
+  .figure-svg-card.selected { background: #dcfce7; border-color: #16a34a; }
+  .figure-svg-card.correct  { background: #dcfce7; border-color: #16a34a; }
+  .figure-svg-card.wrong    { background: #fee2e2; border-color: #ef4444; }
+  .fig-name { font-size: 0.85rem; font-weight: 800; margin-top: 8px; color: #166534; }
+  .vf-item {
+    background: #f0fdf4; border: 2px solid #bbf7d0; border-radius: 12px;
+    padding: 14px 16px; margin-bottom: 10px;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
+  }
+  .vf-btns { display: flex; gap: 8px; }
+  .btn-v { border-radius: 20px; padding: 5px 16px; font-weight: 800; font-size: 0.85rem; border: 2px solid #22c55e; color: #22c55e; background: white; cursor: pointer; transition: background 0.15s; }
+  .btn-f { border-radius: 20px; padding: 5px 16px; font-weight: 800; font-size: 0.85rem; border: 2px solid #ef4444; color: #ef4444; background: white; cursor: pointer; transition: background 0.15s; }
+  .btn-v:hover { background: #22c55e; color: white; }
+  .btn-f:hover { background: #ef4444; color: white; }
+  .perimetre-item { background: #f0fdf4; border: 2px solid #bbf7d0; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: linear-gradient(135deg, #16a34a, #0d9488);">
+  <span class="emoji-header">🔷</span>
+  <h1>Géométrie plane</h1>
+  <p>Figures, angles droits, périmètre, symétrie</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">CE2 — Espace et géométrie</div>
+
+  <!-- JE RETIENS -->
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; font-size:0.88rem; color:#555; margin-top:10px;">
+      <div>
+        <strong style="color:#166534;">Figures planes</strong><br>
+        ▪️ Carré : 4 côtés égaux, 4 angles droits<br>
+        ▪️ Rectangle : 4 angles droits, côtés opposés égaux<br>
+        ▪️ Triangle : 3 côtés<br>
+        ▪️ Cercle : pas de côté<br>
+        ▪️ Losange : 4 côtés égaux
+      </div>
+      <div>
+        <strong style="color:#166534;">Propriétés</strong><br>
+        ▪️ Angle droit = coin d'un carré<br>
+        ▪️ Périmètre = somme des côtés<br>
+        ▪️ Axe de symétrie = pliage qui superpose les 2 parties<br>
+        ▪️ Carré périmètre = 4 × côté
+      </div>
+    </div>
+  </div>
+
+  <!-- EXERCICE 1 : reconnaître les figures -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 1</span> Quel est le nom de cette figure ? (clique sur la bonne réponse)</div>
+    <div class="score-bar" id="score-fig">Score : 0 / 5</div>
+    <div id="ex1-container"></div>
+  </div>
+
+  <!-- EXERCICE 2 : propriétés VF -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 2</span> Vrai ou Faux sur les figures ?</div>
+    <div id="ex2-container"></div>
+  </div>
+
+  <!-- EXERCICE 3 : périmètre -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 3</span> Calcule le périmètre</div>
+    <div class="score-bar" id="score-perim">Score : 0 / 5</div>
+    <div id="ex3-container"></div>
+  </div>
+
+  <!-- EXERCICE 4 : angles droits -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 4</span> Combien d'angles droits ?</div>
+    <div id="ex4-container"></div>
+  </div>
+
+  <!-- EXERCICE 5 : symétrie VF -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 5</span> La symétrie</div>
+    <div id="ex5-container"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CE2</footer>
+
+<script>
+function shuffle(arr) { return [...arr].sort(() => Math.random() - 0.5); }
+
+// ======== SVG FIGURES ========
+function makeSVG(type, size) {
+  const ns = 'http://www.w3.org/2000/svg';
+  const s = size || 80;
+  const svg = document.createElementNS(ns, 'svg');
+  svg.setAttribute('viewBox', `0 0 ${s} ${s}`);
+  svg.setAttribute('width', s); svg.setAttribute('height', s);
+  const fill = '#dcfce7'; const stroke = '#16a34a'; const sw = '2.5';
+
+  const path = document.createElementNS(ns, 'path');
+  path.setAttribute('fill', fill); path.setAttribute('stroke', stroke); path.setAttribute('stroke-width', sw);
+
+  if (type === 'carré') {
+    path.setAttribute('d', 'M 15 15 L 65 15 L 65 65 L 15 65 Z');
+  } else if (type === 'rectangle') {
+    path.setAttribute('d', 'M 8 22 L 72 22 L 72 58 L 8 58 Z');
+  } else if (type === 'triangle') {
+    path.setAttribute('d', 'M 40 10 L 70 70 L 10 70 Z');
+  } else if (type === 'losange') {
+    path.setAttribute('d', 'M 40 8 L 72 40 L 40 72 L 8 40 Z');
+  } else if (type === 'cercle') {
+    path.setAttribute('d', 'M 40 10 A 30 30 0 1 1 39.9 10 Z');
+    const circ = document.createElementNS(ns, 'circle');
+    circ.setAttribute('cx', 40); circ.setAttribute('cy', 40); circ.setAttribute('r', 30);
+    circ.setAttribute('fill', fill); circ.setAttribute('stroke', stroke); circ.setAttribute('stroke-width', sw);
+    svg.appendChild(circ);
+    return svg;
+  }
+  svg.appendChild(path);
+  return svg;
+}
+
+// EXERCICE 1
+const figData = [
+  { type: 'carré', choices: ['Carré', 'Rectangle', 'Losange', 'Triangle'], correct: 'Carré' },
+  { type: 'rectangle', choices: ['Carré', 'Rectangle', 'Triangle', 'Losange'], correct: 'Rectangle' },
+  { type: 'triangle', choices: ['Triangle', 'Losange', 'Cercle', 'Rectangle'], correct: 'Triangle' },
+  { type: 'losange', choices: ['Carré', 'Losange', 'Rectangle', 'Triangle'], correct: 'Losange' },
+  { type: 'cercle', choices: ['Ovale', 'Disque', 'Cercle', 'Triangle'], correct: 'Cercle' },
+];
+
+let scoreFig = 0;
+const ex1Container = document.getElementById('ex1-container');
+figData.forEach((item, idx) => {
+  const div = document.createElement('div');
+  div.className = 'q-block';
+  div.style.display = 'flex'; div.style.alignItems = 'center'; div.style.gap = '20px'; div.style.flexWrap = 'wrap';
+  const svgEl = makeSVG(item.type, 80);
+  div.appendChild(svgEl);
+  const right = document.createElement('div');
+  const shuffled = shuffle(item.choices);
+  right.innerHTML = `
+    <div class="qcm-row" id="fig-choices-${idx}">
+      ${shuffled.map(c => `<button class="btn-choice" onclick="checkFig(this,'${c}','${item.correct}',${idx})">${c}</button>`).join('')}
+    </div>
+    <div class="feedback-line" id="fig-fb-${idx}"></div>
+  `;
+  div.appendChild(right);
+  ex1Container.appendChild(div);
+});
+
+function checkFig(btn, chosen, correct, idx) {
+  document.getElementById(`fig-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  if (chosen === correct) {
+    btn.classList.add('correct');
+    document.getElementById(`fig-fb-${idx}`).textContent = '✅ Bravo !'; document.getElementById(`fig-fb-${idx}`).style.color = '#166534';
+    scoreFig++; document.getElementById('score-fig').textContent = `Score : ${scoreFig} / 5`;
+  } else {
+    btn.classList.add('wrong');
+    document.getElementById(`fig-fb-${idx}`).textContent = `❌ C'était ${correct}`; document.getElementById(`fig-fb-${idx}`).style.color = '#991b1b';
+    document.getElementById(`fig-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+// EXERCICE 2 : VF propriétés
+const vfData = [
+  { txt: 'Un carré a 4 côtés égaux.', correct: true },
+  { txt: 'Un rectangle a 3 angles droits.', correct: false, exp: '4 angles droits' },
+  { txt: 'Un triangle a 4 côtés.', correct: false, exp: '3 côtés' },
+  { txt: 'Un losange a 4 côtés égaux.', correct: true },
+  { txt: 'Un carré est aussi un rectangle.', correct: true },
+  { txt: 'Le cercle a des côtés droits.', correct: false, exp: 'pas de côté droit' },
+];
+
+const ex2Container = document.getElementById('ex2-container');
+vfData.forEach((item, idx) => {
+  const div = document.createElement('div');
+  div.className = 'vf-item';
+  div.innerHTML = `
+    <span>${item.txt}</span>
+    <div style="display:flex; flex-direction:column; align-items:flex-end; gap:4px;">
+      <div class="vf-btns">
+        <button class="btn-v" onclick="checkVF(this, true, ${item.correct}, 'vf2-fb-${idx}', '${item.exp || ''}')">Vrai</button>
+        <button class="btn-f" onclick="checkVF(this, false, ${item.correct}, 'vf2-fb-${idx}', '${item.exp || ''}')">Faux</button>
+      </div>
+      <div class="feedback-line" id="vf2-fb-${idx}"></div>
+    </div>
+  `;
+  ex2Container.appendChild(div);
+});
+
+function checkVF(btn, chosen, correct, fbId, exp) {
+  const row = btn.parentElement;
+  row.querySelectorAll('button').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.style.background = '#22c55e'; btn.style.color = 'white';
+    fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.style.background = '#ef4444'; btn.style.color = 'white'; btn.style.borderColor = '#b91c1c';
+    const msg = exp ? `❌ Faux — ${exp}` : '❌ Pas tout à fait !';
+    fb.textContent = msg; fb.style.color = '#991b1b';
+  }
+}
+
+// EXERCICE 3 : périmètre
+const perimData = [
+  { desc: 'Carré de côté <strong>5 cm</strong>', correct: '20 cm', choices: ['10 cm', '15 cm', '20 cm', '25 cm'] },
+  { desc: 'Rectangle : longueur <strong>8 cm</strong>, largeur <strong>3 cm</strong>', correct: '22 cm', choices: ['24 cm', '22 cm', '11 cm', '18 cm'] },
+  { desc: 'Triangle équilatéral de côté <strong>6 cm</strong>', correct: '18 cm', choices: ['12 cm', '18 cm', '24 cm', '36 cm'] },
+  { desc: 'Rectangle : longueur <strong>10 cm</strong>, largeur <strong>4 cm</strong>', correct: '28 cm', choices: ['28 cm', '40 cm', '14 cm', '20 cm'] },
+  { desc: 'Carré de côté <strong>9 cm</strong>', correct: '36 cm', choices: ['18 cm', '27 cm', '36 cm', '81 cm'] },
+];
+
+let scorePerim = 0;
+const ex3Container = document.getElementById('ex3-container');
+perimData.forEach((item, idx) => {
+  const div = document.createElement('div');
+  div.className = 'q-block';
+  const shuffled = shuffle(item.choices);
+  div.innerHTML = `
+    <div class="q-text">${item.desc} → Périmètre = ?</div>
+    <div class="qcm-row" id="per-choices-${idx}">
+      ${shuffled.map(c => `<button class="btn-choice" onclick="checkPerim(this,'${c}','${item.correct}',${idx})">${c}</button>`).join('')}
+    </div>
+    <div class="feedback-line" id="per-fb-${idx}"></div>
+  `;
+  ex3Container.appendChild(div);
+});
+
+function checkPerim(btn, chosen, correct, idx) {
+  document.getElementById(`per-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  if (chosen === correct) {
+    btn.classList.add('correct');
+    document.getElementById(`per-fb-${idx}`).textContent = '✅ Bravo !'; document.getElementById(`per-fb-${idx}`).style.color = '#166534';
+    scorePerim++; document.getElementById('score-perim').textContent = `Score : ${scorePerim} / 5`;
+  } else {
+    btn.classList.add('wrong');
+    document.getElementById(`per-fb-${idx}`).textContent = `❌ C'était ${correct}`; document.getElementById(`per-fb-${idx}`).style.color = '#991b1b';
+    document.getElementById(`per-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+// EXERCICE 4 : angles droits
+const angData = [
+  { q: 'Combien d\'angles droits a un carré ?', correct: '4', choices: ['1', '2', '3', '4'] },
+  { q: 'Combien d\'angles droits a un rectangle ?', correct: '4', choices: ['2', '3', '4', '0'] },
+  { q: 'Combien d\'angles droits a un triangle quelconque ?', correct: '0', choices: ['0', '1', '2', '3'] },
+  { q: 'Combien d\'angles droits a un triangle rectangle ?', correct: '1', choices: ['0', '1', '2', '3'] },
+  { q: 'Combien d\'angles droits a un losange (non carré) ?', correct: '0', choices: ['0', '2', '4', '1'] },
+];
+
+const ex4Container = document.getElementById('ex4-container');
+angData.forEach((item, idx) => {
+  const div = document.createElement('div');
+  div.className = 'q-block';
+  const shuffled = shuffle(item.choices);
+  div.innerHTML = `
+    <div class="q-text">${item.q}</div>
+    <div class="qcm-row" id="ang-choices-${idx}">
+      ${shuffled.map(c => `<button class="btn-choice" onclick="checkAng(this,'${c}','${item.correct}',${idx})">${c}</button>`).join('')}
+    </div>
+    <div class="feedback-line" id="ang-fb-${idx}"></div>
+  `;
+  ex4Container.appendChild(div);
+});
+
+function checkAng(btn, chosen, correct, idx) {
+  document.getElementById(`ang-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  if (chosen === correct) {
+    btn.classList.add('correct');
+    document.getElementById(`ang-fb-${idx}`).textContent = '✅ Bravo !'; document.getElementById(`ang-fb-${idx}`).style.color = '#166534';
+  } else {
+    btn.classList.add('wrong');
+    document.getElementById(`ang-fb-${idx}`).textContent = `❌ C'était ${correct}`; document.getElementById(`ang-fb-${idx}`).style.color = '#991b1b';
+    document.getElementById(`ang-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+// EXERCICE 5 : symétrie
+const symData = [
+  { txt: 'Un carré a au moins un axe de symétrie.', correct: true },
+  { txt: 'Un rectangle a exactement 2 axes de symétrie.', correct: true },
+  { txt: 'Un triangle quelconque a toujours un axe de symétrie.', correct: false, exp: 'Pas forcément !' },
+  { txt: 'Un cercle a une infinité d\'axes de symétrie.', correct: true },
+  { txt: 'Pour vérifier la symétrie, on peut plier la figure.', correct: true },
+];
+
+const ex5Container = document.getElementById('ex5-container');
+symData.forEach((item, idx) => {
+  const div = document.createElement('div');
+  div.className = 'vf-item';
+  div.innerHTML = `
+    <span>${item.txt}</span>
+    <div style="display:flex; flex-direction:column; align-items:flex-end; gap:4px;">
+      <div class="vf-btns">
+        <button class="btn-v" onclick="checkVF(this, true, ${item.correct}, 'sym-fb-${idx}', '${item.exp || ''}')">Vrai</button>
+        <button class="btn-f" onclick="checkVF(this, false, ${item.correct}, 'sym-fb-${idx}', '${item.exp || ''}')">Faux</button>
+      </div>
+      <div class="feedback-line" id="sym-fb-${idx}"></div>
+    </div>
+  `;
+  ex5Container.appendChild(div);
+});
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>
