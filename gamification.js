@@ -207,6 +207,7 @@
   // ── Core: award XP ───────────────────────────────────────────────
   const page = window.location.pathname.split('/').pop() || 'index.html';
   let pageSessionCorrect = 0;
+  let pageSessionAnswered = 0;
   let nextLessonShown = false;
 
   function award(xp) {
@@ -219,6 +220,7 @@
     P.pages[page] = (P.pages[page] || 0) + 1;
     P.level = getLevel(P.xp).n;
     pageSessionCorrect++;
+    pageSessionAnswered++;
 
     save();
     const newBadges = checkBadges();
@@ -230,15 +232,11 @@
     if (newLevel.n > oldLevel.n) setTimeout(() => showLevelUp(newLevel), 900);
     if ([3,5,10,20].includes(P.streak)) setTimeout(() => showStreakToast(P.streak), 500);
     newBadges.forEach((b, i) => setTimeout(() => showBadgeToast(b), 1400 + i * 2200));
-
-    if (pageSessionCorrect >= NEXT_LESSON_THRESHOLD && !nextLessonShown && PAGE_SEQUENCE.includes(page)) {
-      nextLessonShown = true;
-      setTimeout(showNextLessonPanel, 1200);
-    }
   }
 
   function wrongAnswer() {
     if (!P) return;
+    pageSessionAnswered++;
     P.streak = 0;
     save();
     renderHeaderChip();
@@ -796,8 +794,11 @@
     const curIdx   = PAGE_SEQUENCE.indexOf(page);
     const nextPage = curIdx >= 0 && curIdx < PAGE_SEQUENCE.length - 1 ? PAGE_SEQUENCE[curIdx + 1] : null;
     const nextInfo = nextPage ? PAGE_LABELS[nextPage] : null;
-    const stars    = pageSessionCorrect >= 10 ? 3 : pageSessionCorrect >= 7 ? 2 : 1;
+    const totalQ   = document.querySelectorAll('.feedback-line').length || pageSessionAnswered;
+    const pct      = totalQ > 0 ? Math.round((pageSessionCorrect / totalQ) * 100) : 0;
+    const stars    = pct === 100 ? 3 : pct >= 70 ? 2 : 1;
     const xpEarned = pageSessionCorrect * XP_CORRECT;
+    const bravoMsg = pct === 100 ? 'Parfait ! 🎯' : pct >= 70 ? 'Très bien !' : 'Continue comme ça !';
 
     spawnConfetti();
 
@@ -809,8 +810,8 @@
         <div class="gs-next-stars">
           ${'⭐'.repeat(stars)}<span class="gs-next-star-empty">${'☆'.repeat(3 - stars)}</span>
         </div>
-        <div class="gs-next-bravo">Bravo ${P ? P.name : ''} !</div>
-        <div class="gs-next-sub">${pageSessionCorrect} bonnes réponses sur cette leçon</div>
+        <div class="gs-next-bravo">${bravoMsg}</div>
+        <div class="gs-next-sub">${pageSessionCorrect} / ${totalQ} bonnes réponses</div>
         <div class="gs-next-xp-badge">+${xpEarned} XP 🎉</div>
         ${P && P.streak >= 3 ? `<div class="gs-next-streak">🔥 Série de ${P.streak} bonnes réponses !</div>` : ''}
         ${nextPage ? `
@@ -855,6 +856,19 @@
     }
   }
 
+  // ── Page complete detection ───────────────────────────────────────
+  function checkPageComplete() {
+    if (nextLessonShown) return;
+    if (!PAGE_SEQUENCE.includes(page)) return;
+    const lines = [...document.querySelectorAll('.feedback-line')];
+    if (lines.length === 0) return;
+    const answered = lines.filter(el => el.textContent.trim() !== '');
+    if (answered.length >= lines.length) {
+      nextLessonShown = true;
+      setTimeout(showNextLessonPanel, 800);
+    }
+  }
+
   // ── Observer: detect correct/wrong answers on any page ───────────
   function setupObserver() {
     const FEEDBACK_CLASSES = new Set([
@@ -890,6 +904,7 @@
           if (m.type === 'childList') handleNode(m.target);
         }
       });
+      checkPageComplete();
     });
     obs.observe(document.body, { subtree: true, characterData: true, childList: true });
   }
