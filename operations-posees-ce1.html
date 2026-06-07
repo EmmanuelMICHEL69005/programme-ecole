@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="Les Maths de Clémence">
+<meta name="application-name" content="Les Maths de Clémence">
+<meta property="og:site_name" content="Les Maths de Clémence">
+<link rel="manifest" href="manifest.json">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opérations posées — CE1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #6ee7b7; border-radius: 22px;
+    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #065f46;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #f0fdf4; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #f0fdf4; border: 2px solid #6ee7b7; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .op-col {
+    font-family: 'Courier New', monospace;
+    font-size: 1.6rem; font-weight: 900;
+    background: #d1fae5; border-radius: 10px;
+    padding: 14px 24px 10px; margin-bottom: 14px;
+    color: #064e3b; text-align: right; line-height: 2;
+    border-bottom: 4px solid #0d9488; display: inline-block; min-width: 160px;
+  }
+  .op-col-wrap { margin-bottom: 12px; }
+  .cmp-card {
+    font-size: 1.5rem; font-weight: 900; color: #065f46;
+    text-align: center; padding: 12px; background: #d1fae5;
+    border-radius: 14px; margin-bottom: 14px; letter-spacing: 2px;
+  }
+  .pb-enonce {
+    background: #d1fae5; border-radius: 10px; padding: 12px; margin-bottom: 12px;
+    font-size: 0.95rem; color: #064e3b; line-height: 1.6; font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: linear-gradient(135deg, #065f46, #0d9488);">
+  <span class="emoji-header">🖊️</span>
+  <h1>Opérations posées</h1>
+  <p>Additions et soustractions en colonnes</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">CE1 — Opérations posées</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
+      ➕ <strong>Addition</strong> : on commence par les unités, on retient si besoin<br>
+      ➖ <strong>Soustraction</strong> : si on ne peut pas soustraire, on emprunte une dizaine<br>
+      📏 <strong>Poser</strong> : unités sous unités, dizaines sous dizaines, centaines sous centaines
+    </div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#065f46;">Ex 1</span> Additions en colonnes — 2 chiffres</div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#065f46;">Ex 2</span> Additions en colonnes — 3 chiffres</div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#065f46;">Ex 3</span> Soustractions en colonnes — 2 chiffres</div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#065f46;">Ex 4</span> Soustractions en colonnes — 3 chiffres</div>
+    <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#065f46;">Ex 5</span> Comparer et problèmes posés</div>
+    <div id="ex5"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CE1</footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    let html = '';
+    if (item.opCol) html += `<div class="op-col-wrap"><div class="op-col">${item.opCol}</div></div>`;
+    if (item.cmpCard) html += `<div class="cmp-card">${item.cmpCard}</div>`;
+    if (item.enonce) html += `<div class="pb-enonce">${item.enonce}</div>`;
+    html += `<div class="q-text">${item.q}</div>`;
+    html += `<div class="qcm-row" id="${id}-r${i}">
+      ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+    </div>
+    <div class="feedback-line" id="${id}-f${i}"></div>`;
+    d.innerHTML = html;
+    c.appendChild(d);
+  });
+}
+
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([
+  { opCol: '47<br>+ 26', q: '47 + 26 = ?', correct: '73', choices: ['63','73','83','93'] },
+  { opCol: '38<br>+ 42', q: '38 + 42 = ?', correct: '80', choices: ['70','80','90','100'] },
+  { opCol: '54<br>+ 29', q: '54 + 29 = ?', correct: '83', choices: ['73','83','93','103'] },
+  { opCol: '65<br>+ 18', q: '65 + 18 = ?', correct: '83', choices: ['73','83','93','103'] },
+  { opCol: '76<br>+  7', q: '76 + 7 = ?', correct: '83', choices: ['73','80','83','87'] },
+], 'ex1');
+
+buildQ([
+  { opCol: '357<br>+ 265', q: '357 + 265 = ?', correct: '622', choices: ['612','622','632','642'] },
+  { opCol: '248<br>+ 135', q: '248 + 135 = ?', correct: '383', choices: ['363','373','383','393'] },
+  { opCol: '469<br>+ 254', q: '469 + 254 = ?', correct: '723', choices: ['703','713','723','733'] },
+  { opCol: '573<br>+ 149', q: '573 + 149 = ?', correct: '722', choices: ['712','722','732','742'] },
+], 'ex2');
+
+buildQ([
+  { opCol: '78<br>− 32', q: '78 − 32 = ?', correct: '46', choices: ['36','46','56','66'] },
+  { opCol: '91<br>− 47', q: '91 − 47 = ?', correct: '44', choices: ['34','44','54','64'] },
+  { opCol: '86<br>− 59', q: '86 − 59 = ?', correct: '27', choices: ['17','27','37','47'] },
+  { opCol: '75<br>− 38', q: '75 − 38 = ?', correct: '37', choices: ['27','37','47','57'] },
+], 'ex3');
+
+buildQ([
+  { opCol: '685<br>− 279', q: '685 − 279 = ?', correct: '406', choices: ['396','406','416','426'] },
+  { opCol: '735<br>− 392', q: '735 − 392 = ?', correct: '343', choices: ['333','343','353','363'] },
+  { opCol: '500<br>− 273', q: '500 − 273 = ?', correct: '227', choices: ['217','227','237','247'] },
+  { opCol: '847<br>− 264', q: '847 − 264 = ?', correct: '583', choices: ['563','573','583','593'] },
+], 'ex4');
+
+buildQ([
+  { cmpCard: 'FRANCE 92 — JAPON 74', q: 'Combien de points l\'équipe de France a-t-elle marqués de plus ?', correct: '18 points', choices: ['16 points','18 points','20 points','22 points'] },
+  { enonce: 'Samedi, au cinéma, le caissier a vendu 57 entrées adultes et 36 entrées enfants.', q: 'Combien d\'entrées le caissier a-t-il vendues en tout ?', correct: '93 entrées', choices: ['83 entrées','93 entrées','103 entrées','113 entrées'] },
+  { enonce: 'Aujourd\'hui, la fleuriste a vendu 145 roses rouges, 124 roses blanches et 52 roses jaunes.', q: 'Combien de roses la fleuriste a-t-elle vendues ?', correct: '321 roses', choices: ['311 roses','321 roses','331 roses','341 roses'] },
+  { enonce: 'L\'ordinateur de Tom coûte 428 €. Celui de Léo coûte 376 €.', q: 'Quelle est la différence de prix ?', correct: '52 €', choices: ['42 €','52 €','62 €','72 €'] },
+], 'ex5');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

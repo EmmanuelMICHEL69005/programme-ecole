@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="Les Maths de Clémence">
+<meta name="application-name" content="Les Maths de Clémence">
+<meta property="og:site_name" content="Les Maths de Clémence">
+<link rel="manifest" href="manifest.json">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sens de la multiplication — CE1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #6ee7b7; border-radius: 22px;
+    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #065f46;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #f0fdf4; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #f0fdf4; border: 2px solid #6ee7b7; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .calcul-card {
+    font-size: 2rem; font-weight: 900; color: #065f46; text-align: center;
+    padding: 14px; background: #d1fae5; border-radius: 14px; margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+  .schema-card {
+    font-size: 1.15rem; font-weight: 800; color: #064e3b; text-align: center;
+    padding: 14px 20px; background: #d1fae5; border-radius: 14px; margin-bottom: 14px;
+    line-height: 2;
+  }
+  .pb-enonce {
+    background: #d1fae5; border-radius: 10px; padding: 12px; margin-bottom: 12px;
+    font-size: 0.95rem; color: #064e3b; line-height: 1.6; font-weight: 700;
+  }
+  .group-display {
+    display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+    background: #d1fae5; border-radius: 12px; padding: 14px; margin-bottom: 14px;
+  }
+  .group-box {
+    background: white; border: 2px solid #6ee7b7; border-radius: 10px;
+    padding: 10px 14px; font-size: 1.3rem; font-weight: 900; color: #065f46;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: linear-gradient(135deg, #065f46, #0d9488);">
+  <span class="emoji-header">✖️</span>
+  <h1>Sens de la multiplication</h1>
+  <p>Additions répétées, tables et problèmes</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">CE1 — Multiplication</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.9;">
+      🔁 <strong>Multiplication = addition répétée</strong> : 3 × 4 = 4 + 4 + 4 = 12<br>
+      🔄 <strong>Commutativité</strong> : 3 × 4 = 4 × 3 (on peut changer l'ordre !)<br>
+      🔟 <strong>× 10</strong> : j'ajoute un zéro → 7 × 10 = <strong>70</strong><br>
+      📦 <strong>Partage</strong> : 20 billes ÷ 4 enfants = 5 billes chacun
+    </div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#065f46;">Ex 1</span> Comprendre la multiplication (addition répétée)</div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#065f46;">Ex 2</span> Tables de multiplication (×2, ×3, ×5, ×10)</div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#065f46;">Ex 3</span> Commutativité et calcul en ligne</div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#065f46;">Ex 4</span> Problèmes multiplicatifs et de partage</div>
+    <div id="ex4"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CE1</footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    let html = '';
+    if (item.card) html += `<div class="calcul-card">${item.card}</div>`;
+    if (item.schema) html += `<div class="schema-card">${item.schema}</div>`;
+    if (item.enonce) html += `<div class="pb-enonce">${item.enonce}</div>`;
+    html += `<div class="q-text">${item.q}</div>`;
+    html += `<div class="qcm-row" id="${id}-r${i}">
+      ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+    </div>
+    <div class="feedback-line" id="${id}-f${i}"></div>`;
+    d.innerHTML = html;
+    c.appendChild(d);
+  });
+}
+
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([
+  { schema: '🌷🌷🌷  🌷🌷🌷  🌷🌷🌷  🌷🌷🌷', q: 'Il y a 4 bouquets de 3 tulipes. Quelle multiplication correspond ?', correct: '4 × 3', choices: ['3 + 4','4 × 3','3 × 3','4 + 3'] },
+  { schema: '5 + 5 + 5 = ?', q: '5 + 5 + 5, c\'est le même calcul que…', correct: '3 × 5', choices: ['5 × 5','3 + 5','3 × 5','5 × 3 = 5 + 3'] },
+  { schema: '2 + 2 + 2 + 2 + 2 + 2 = ?', q: '2 additionné 6 fois, c\'est le même calcul que…', correct: '6 × 2', choices: ['2 × 2','6 + 2','6 × 2','6 × 6'] },
+  { schema: '4 × 6 = ?', q: 'Calcule 4 × 6 (pense : 6 + 6 + 6 + 6)', correct: '24', choices: ['20','22','24','28'] },
+  { enonce: 'Chaque enfant reçoit 5 images. Il y a 3 enfants.', q: 'Combien d\'images en tout ?', correct: '15', choices: ['8','10','15','20'] },
+], 'ex1');
+
+buildQ([
+  { card: '4 × 2 = ?', q: 'Calcule 4 × 2', correct: '8', choices: ['6','8','10','12'] },
+  { card: '7 × 2 = ?', q: 'Calcule 7 × 2', correct: '14', choices: ['12','14','16','18'] },
+  { card: '6 × 3 = ?', q: 'Calcule 6 × 3', correct: '18', choices: ['15','18','21','24'] },
+  { card: '4 × 5 = ?', q: 'Calcule 4 × 5', correct: '20', choices: ['15','20','25','30'] },
+  { card: '7 × 5 = ?', q: 'Calcule 7 × 5', correct: '35', choices: ['30','35','40','45'] },
+  { card: '6 × 10 = ?', q: 'Calcule 6 × 10', correct: '60', choices: ['16','60','66','106'] },
+  { card: '9 × 10 = ?', q: 'Calcule 9 × 10', correct: '90', choices: ['19','80','90','100'] },
+  { card: '3 × 3 = ?', q: 'Calcule 3 × 3', correct: '9', choices: ['6','9','12','15'] },
+], 'ex2');
+
+buildQ([
+  { schema: 'Si 3 × 7 = 21, alors 7 × 3 = ?', q: 'Utilise la commutativité pour répondre', correct: '21', choices: ['17','18','21','73'] },
+  { schema: 'Si 5 × 4 = 20, alors 4 × 5 = ?', q: 'Utilise la commutativité pour répondre', correct: '20', choices: ['9','20','45','54'] },
+  { card: '2 × 9 = ?', q: 'Calcule 2 × 9 (tu peux utiliser 9 × 2)', correct: '18', choices: ['11','16','18','20'] },
+  { card: '5 × 6 = ?', q: 'Calcule 5 × 6', correct: '30', choices: ['25','28','30','35'] },
+  { enonce: 'Je connais 3 × 8 = 24.', q: 'Que vaut 8 × 3 ?', correct: '24', choices: ['11','21','24','32'] },
+], 'ex3');
+
+buildQ([
+  { enonce: 'La fleuriste fait 6 bouquets de 5 roses.', q: 'Combien de roses a-t-elle utilisées ?', correct: '30 roses', choices: ['25 roses','30 roses','35 roses','40 roses'] },
+  { enonce: 'Tom a 7 boîtes. Chaque boîte contient 10 œufs.', q: 'Combien d\'œufs Tom a-t-il en tout ?', correct: '70 œufs', choices: ['17 œufs','60 œufs','70 œufs','80 œufs'] },
+  { enonce: 'Il y a 4 tables dans la classe. Chaque table a 5 places.', q: 'Combien d\'élèves peuvent s\'asseoir ?', correct: '20 élèves', choices: ['9 élèves','15 élèves','20 élèves','25 élèves'] },
+  { enonce: 'Léa a 20 perles. Elle les partage entre 4 amies.', q: 'Combien de perles chaque amie reçoit-elle ?', correct: '5 perles', choices: ['4 perles','5 perles','6 perles','8 perles'] },
+  { enonce: 'Un boulanger fait 30 croissants. Il les met dans des sacs de 5.', q: 'Combien de sacs peut-il remplir ?', correct: '6 sacs', choices: ['5 sacs','6 sacs','7 sacs','8 sacs'] },
+  { enonce: 'Chaque enfant reçoit 3 gâteaux. Il y a 8 enfants à la fête.', q: 'Combien de gâteaux faut-il préparer ?', correct: '24 gâteaux', choices: ['11 gâteaux','21 gâteaux','24 gâteaux','28 gâteaux'] },
+], 'ex4');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

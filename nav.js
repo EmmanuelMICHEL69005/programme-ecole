@@ -28,6 +28,8 @@
           { emoji: '✂️', title: 'Introduction aux fractions',  href: 'fractions-ce1.html' },
           { emoji: '➕', title: 'Les opérations',              href: 'calcul-ce1.html' },
           { emoji: '⚡', title: 'Calcul mental',               href: 'calcul-mental-ce1.html' },
+          { emoji: '🖊️', title: 'Opérations posées',           href: 'operations-posees-ce1.html' },
+          { emoji: '✖️', title: 'Sens de la multiplication',   href: 'multiplication-ce1.html' },
         ]},
         { label: '📐 Mesures & géométrie', color: '#6ee7b7', pages: [
           { emoji: '📏', title: 'Mesures',                     href: 'mesures-ce1.html' },
