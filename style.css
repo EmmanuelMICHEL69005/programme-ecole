@@ -158,6 +158,9 @@ main { max-width: 720px; margin: 0 auto; padding: 30px 20px 60px; }
 }
 .frac-pill .sym { font-size: 2rem; font-weight: 900; color: var(--violet); }
 .frac-pill .nom { font-size: 0.8rem; color: #555; margin-top: 2px; }
+.f { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; margin: 0 2px; line-height: 1.1; }
+.fn { border-bottom: 2.5px solid currentColor; padding: 0 4px 2px; text-align: center; min-width: 0.8em; }
+.fd { padding: 2px 4px 0; text-align: center; min-width: 0.8em; }
 
 /* ===== EXERCICE ===== */
 .exercice-block {

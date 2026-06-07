@@ -82,6 +82,9 @@
 
 <script>
 function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+function formatFrac(s) {
+  return String(s).replace(/(\d+)\/(\d+)/g, '<span class="f"><span class="fn">$1</span><span class="fd">$2</span></span>');
+}
 
 function buildQ(data, id) {
   const c = document.getElementById(id);
@@ -90,11 +93,11 @@ function buildQ(data, id) {
     d.className = 'q-block';
     const sh = shuffle(item.choices);
     let html = '';
-    if (item.card) html += `<div class="calcul-card">${item.card}</div>`;
+    if (item.card) html += `<div class="calcul-card">${formatFrac(item.card)}</div>`;
     if (item.enonce) html += `<div class="pb-enonce">${item.enonce}</div>`;
-    html += `<div class="q-text">${item.q}</div>`;
+    html += `<div class="q-text">${formatFrac(item.q)}</div>`;
     html += `<div class="qcm-row" id="${id}-r${i}">
-      ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+      ${sh.map(c => `<button class="btn-choice" data-val="${c.replace(/"/g,'&quot;')}" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${formatFrac(c)}</button>`).join('')}
     </div>
     <div class="feedback-line" id="${id}-f${i}"></div>`;
     d.innerHTML = html;
@@ -106,10 +109,10 @@ function check(btn, chosen, correct, rowId, fbId) {
   document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
   const fb = document.getElementById(fbId);
   if (chosen === correct) {
-    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+    btn.classList.add('correct'); fb.innerHTML = '✅ Bravo !'; fb.style.color = '#166534';
   } else {
-    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
-    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+    btn.classList.add('wrong'); fb.innerHTML = '❌ C\'était ' + formatFrac(correct); fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.dataset.val === correct) b.classList.add('correct'); });
   }
 }
 
