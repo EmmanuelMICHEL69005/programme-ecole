@@ -16,6 +16,7 @@
           { emoji: '📏', title: 'Mesures & monnaie',          href: 'mesures-cp.html' },
           { emoji: '🔷', title: 'Les formes',                 href: 'geometrie-cp.html' },
           { emoji: '📊', title: 'Données',                    href: 'donnees-cp.html' },
+          { emoji: '🧩', title: 'Résolution de problèmes',   href: 'problemes-cp.html' },
         ]},
       ],
     },
@@ -35,6 +36,7 @@
           { emoji: '📏', title: 'Mesures',                     href: 'mesures-ce1.html' },
           { emoji: '🔷', title: 'Géométrie',                   href: 'geometrie-ce1.html' },
           { emoji: '📊', title: 'Données',                     href: 'donnees-ce1.html' },
+          { emoji: '🧩', title: 'Résolution de problèmes',    href: 'problemes-ce1.html' },
         ]},
       ],
     },
@@ -44,6 +46,7 @@
       cats: [
         { label: '🔢 Nombres et calculs', color: '#a78bfa', pages: [
           { emoji: '🔢', title: 'Les nombres entiers',        href: 'nombres.html' },
+          { emoji: '🔣', title: 'Nombres décimaux',           href: 'decimaux-ce2.html' },
           { emoji: '✂️', title: 'Fractions — Je découpe',     href: 'fiche1.html' },
           { emoji: '📏', title: 'Fractions — Je compare',     href: 'fiche2.html' },
           { emoji: '🍎', title: 'Fractions — Je calcule',     href: 'fiche3.html' },
@@ -80,9 +83,12 @@
         ]},
         { label: '📐 Mesures & géométrie', color: '#93c5fd', pages: [
           { emoji: '📐', title: 'Périmètres et aires',        href: 'mesures-cm1.html' },
+          { emoji: '⏱️', title: 'Durées et conversions',      href: 'temps-cm1.html' },
           { emoji: '🔷', title: 'Géométrie — angles',         href: 'geometrie-cm1.html' },
+          { emoji: '🧊', title: 'Les solides',                href: 'solides-cm1.html' },
           { emoji: '📊', title: 'Données & statistiques',     href: 'donnees-cm1.html' },
           { emoji: '⚖️', title: 'Proportionnalité',           href: 'proportionnalite-cm1.html' },
+          { emoji: '🧩', title: 'Résolution de problèmes',   href: 'problemes-cm1.html' },
         ]},
       ],
     },
@@ -101,6 +107,7 @@
         ]},
         { label: '📐 Mesures & géométrie', color: '#fcd34d', pages: [
           { emoji: '📐', title: 'Aires et volumes',            href: 'mesures-cm2.html' },
+          { emoji: '⏳', title: 'Durées et conversions',      href: 'temps-cm2.html' },
           { emoji: '🔷', title: 'Géométrie avancée',           href: 'geometrie-cm2.html' },
           { emoji: '📊', title: 'Statistiques & probabilités', href: 'donnees-cm2.html' },
           { emoji: '⚖️', title: 'Proportionnalité & %',        href: 'proportionnalite-cm2.html' },
@@ -115,6 +122,8 @@
           { emoji: '🔢', title: 'Nombres et relatifs',         href: 'nombres-6e.html' },
           { emoji: '✂️', title: 'Fractions & quotients',        href: 'fractions-6e.html' },
           { emoji: '📘', title: 'Algèbre — introduction',       href: 'algebre-6e.html' },
+          { emoji: '⚡', title: 'Calcul mental',               href: 'calcul-mental-6e.html' },
+          { emoji: '🎲', title: 'Probabilités',                href: 'probabilites-6e.html' },
         ]},
         { label: '📐 Mesures & géométrie', color: '#f9a8d4', pages: [
           { emoji: '🔷', title: 'Géométrie',                   href: 'geometrie-6e.html' },

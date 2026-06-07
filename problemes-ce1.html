@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="Les Maths de Clémence">
+<meta name="application-name" content="Les Maths de Clémence">
+<meta property="og:site_name" content="Les Maths de Clémence">
+<link rel="manifest" href="manifest.json">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Résolution de problèmes — CE1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #6ee7b7; border-radius: 22px;
+    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #065f46;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #f0fdf4; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #f0fdf4; border: 2px solid #6ee7b7; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .pb-enonce {
+    background: #d1fae5; border-radius: 10px; padding: 14px 16px; margin-bottom: 12px;
+    font-size: 0.95rem; color: #064e3b; line-height: 1.7; font-weight: 700;
+  }
+  .etape-badge {
+    display: inline-block; background: #065f46; color: white; border-radius: 14px;
+    padding: 2px 10px; font-size: 0.75rem; font-weight: 900; margin-bottom: 8px;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: linear-gradient(135deg, #065f46, #0d9488);">
+  <span class="emoji-header">🧩</span>
+  <h1>Résolution de problèmes</h1>
+  <p>Additionner, soustraire, multiplier en contexte</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+  <div class="badge-niveau">CE1 — Résolution de problèmes</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Ma méthode</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.9;">
+      📖 <strong>1. Je lis</strong> le problème en entier<br>
+      ❓ <strong>2. Je repère</strong> ce que l'on cherche<br>
+      🔢 <strong>3. Je choisis</strong> l'opération (+ − ×)<br>
+      ✅ <strong>4. Je vérifie</strong> que ma réponse est sensée
+    </div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#065f46;">Ex 1</span> Problèmes d'addition</div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#065f46;">Ex 2</span> Problèmes de soustraction</div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#065f46;">Ex 3</span> Problèmes multiplicatifs et de partage</div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#065f46;">Ex 4</span> Problèmes à 2 étapes ⭐</div>
+    <div id="ex4"></div>
+  </div>
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CE1</footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    let html = '';
+    if (item.etapes) html += `<span class="etape-badge">📋 ${item.etapes} étape${item.etapes>1?'s':''}</span>`;
+    if (item.enonce) html += `<div class="pb-enonce">${item.enonce}</div>`;
+    html += `<div class="q-text">${item.q}</div>`;
+    html += `<div class="qcm-row" id="${id}-r${i}">
+      ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+    </div>
+    <div class="feedback-line" id="${id}-f${i}"></div>`;
+    d.innerHTML = html;
+    c.appendChild(d);
+  });
+}
+
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([
+  { enonce: '📚 La bibliothèque a 145 livres pour enfants et 236 livres pour adultes.', q: 'Combien de livres y a-t-il en tout dans la bibliothèque ?', correct: '381 livres', choices: ['371 livres','381 livres','391 livres','401 livres'] },
+  { enonce: '🍓 Le matin, la marchande a vendu 67 fraises. L\'après-midi, elle en a vendu 58.', q: 'Combien de fraises a-t-elle vendues en tout ?', correct: '125 fraises', choices: ['115 fraises','125 fraises','135 fraises','145 fraises'] },
+  { enonce: '🏃 Lou a parcouru 350 m le matin et 475 m l\'après-midi.', q: 'Quelle distance Lou a-t-elle parcourue en tout ?', correct: '825 m', choices: ['795 m','815 m','825 m','835 m'] },
+  { enonce: '🐑 Un éleveur a 124 moutons blancs et 98 moutons noirs.', q: 'Combien l\'éleveur a-t-il de moutons au total ?', correct: '222 moutons', choices: ['212 moutons','222 moutons','232 moutons','242 moutons'] },
+], 'ex1');
+
+buildQ([
+  { enonce: '🎟️ Dans un spectacle, il y a 348 places. 125 sont déjà réservées.', q: 'Combien reste-t-il de places libres ?', correct: '223 places', choices: ['213 places','223 places','233 places','243 places'] },
+  { enonce: '💰 Théo a économisé 275 €. Il achète un jeu vidéo à 89 €.', q: 'Combien d\'argent lui reste-t-il ?', correct: '186 €', choices: ['176 €','186 €','196 €','206 €'] },
+  { enonce: '🏊 La piscine peut accueillir 500 baigneurs. Il y en a déjà 347.', q: 'Combien de baigneurs peuvent encore entrer ?', correct: '153 baigneurs', choices: ['143 baigneurs','153 baigneurs','163 baigneurs','173 baigneurs'] },
+  { enonce: '🌡️ La température était de 28 °C à midi. Le soir, elle a baissé de 11 °C.', q: 'Quelle est la température le soir ?', correct: '17 °C', choices: ['15 °C','17 °C','19 °C','21 °C'] },
+], 'ex2');
+
+buildQ([
+  { enonce: '🌸 La fleuriste confectionne 8 bouquets de 5 tulipes chacun.', q: 'Combien de tulipes utilise-t-elle au total ?', correct: '40 tulipes', choices: ['35 tulipes','40 tulipes','45 tulipes','50 tulipes'] },
+  { enonce: '🍫 Un paquet contient 6 chocolats. Mia achète 5 paquets.', q: 'Combien de chocolats Mia a-t-elle en tout ?', correct: '30 chocolats', choices: ['25 chocolats','30 chocolats','35 chocolats','40 chocolats'] },
+  { enonce: '🎀 Tom a 24 perles. Il les répartit également dans 3 boîtes.', q: 'Combien de perles y a-t-il dans chaque boîte ?', correct: '8 perles', choices: ['6 perles','7 perles','8 perles','9 perles'] },
+  { enonce: '🚌 4 cars emmènent des enfants en sortie scolaire. Chaque car peut transporter 30 enfants.', q: 'Combien d\'enfants peuvent partir en sortie ?', correct: '120 enfants', choices: ['100 enfants','110 enfants','120 enfants','130 enfants'] },
+], 'ex3');
+
+buildQ([
+  { etapes: 2, enonce: 'Lucie avait 50 images. Elle en a acheté 35, puis en a donné 20 à son frère.', q: 'Combien d\'images Lucie a-t-elle maintenant ?', correct: '65 images', choices: ['55 images','60 images','65 images','70 images'] },
+  { etapes: 2, enonce: 'Le boulanger a fabriqué 150 pains le matin. Il en a vendu 87 le matin et 43 l\'après-midi.', q: 'Combien de pains lui reste-t-il en fin de journée ?', correct: '20 pains', choices: ['15 pains','20 pains','25 pains','30 pains'] },
+  { etapes: 2, enonce: 'Un train a 248 voyageurs. À la 1ère gare, 56 descendent et 34 montent. À la 2ème gare, 70 descendent.', q: 'Combien de voyageurs restent dans le train ?', correct: '156 voyageurs', choices: ['146 voyageurs','156 voyageurs','166 voyageurs','176 voyageurs'] },
+  { etapes: 2, enonce: 'Zoé a économisé 3 € par semaine pendant 10 semaines. Elle veut acheter un livre à 25 €.', q: 'Combien d\'argent lui manque-t-il ?', correct: '5 €', choices: ['3 €','5 €','7 €','10 €'] },
+], 'ex4');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

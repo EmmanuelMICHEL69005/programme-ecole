@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="Les Maths de Clémence">
+<meta name="application-name" content="Les Maths de Clémence">
+<meta property="og:site_name" content="Les Maths de Clémence">
+<link rel="manifest" href="manifest.json">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introduction aux probabilités — 6e</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #fbcfe8; border-radius: 22px;
+    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #9d174d;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #fdf2f8; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #fdf2f8; border: 2px solid #fbcfe8; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .pb-enonce {
+    background: #fce7f3; border-radius: 10px; padding: 12px; margin-bottom: 12px;
+    font-size: 0.95rem; color: #831843; line-height: 1.6; font-weight: 700;
+  }
+  .exp-card {
+    font-size: 1.5rem; font-weight: 900; color: #9d174d; text-align: center;
+    padding: 14px; background: #fce7f3; border-radius: 14px; margin-bottom: 14px; line-height: 1.7;
+  }
+  .echelle {
+    background: #fce7f3; border-radius: 10px; padding: 14px; margin-bottom: 12px;
+    text-align: center; font-weight: 900; color: #831843; font-size: 0.9rem;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: linear-gradient(135deg, #831843, #db2777);">
+  <span class="emoji-header">🎲</span>
+  <h1>Introduction aux probabilités</h1>
+  <p>Évènements, chances et fréquences</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+  <div class="badge-niveau">6ème — Probabilités</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.9;">
+      ✅ <strong>Évènement certain</strong> : il se produit toujours (prob = 1)<br>
+      ❌ <strong>Évènement impossible</strong> : il ne peut pas se produire (prob = 0)<br>
+      🎲 <strong>Évènement aléatoire</strong> : on ne sait pas à l'avance (0 &lt; prob &lt; 1)<br>
+      📐 <strong>Probabilité</strong> = nombre de cas favorables / nombre de cas possibles<br>
+      🔁 <strong>Fréquence</strong> = nombre d'occurrences / nombre total d'expériences
+    </div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#9d174d;">Ex 1</span> Certain, possible ou impossible ?</div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#9d174d;">Ex 2</span> Probabilité — dé et pièce de monnaie</div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#9d174d;">Ex 3</span> Calculer une probabilité (fraction)</div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#9d174d;">Ex 4</span> Comparer et estimer des probabilités</div>
+    <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#9d174d;">Ex 5</span> Fréquence et probabilité</div>
+    <div id="ex5"></div>
+  </div>
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — 6e</footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    let html = '';
+    if (item.card) html += `<div class="exp-card">${item.card}</div>`;
+    if (item.enonce) html += `<div class="pb-enonce">${item.enonce}</div>`;
+    html += `<div class="q-text">${item.q}</div>`;
+    html += `<div class="qcm-row" id="${id}-r${i}">
+      ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+    </div>
+    <div class="feedback-line" id="${id}-f${i}"></div>`;
+    d.innerHTML = html;
+    c.appendChild(d);
+  });
+}
+
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([
+  { enonce: '🎲 On lance un dé à 6 faces numérotées de 1 à 6.', q: 'Obtenir un nombre entre 1 et 6, c\'est…', correct: 'Certain', choices: ['Certain','Impossible','Possible mais pas certain','Très probable'] },
+  { enonce: '🎲 On lance un dé à 6 faces numérotées de 1 à 6.', q: 'Obtenir le chiffre 8, c\'est…', correct: 'Impossible', choices: ['Certain','Impossible','Possible','Très rare'] },
+  { enonce: '🎲 On lance un dé à 6 faces numérotées de 1 à 6.', q: 'Obtenir un nombre impair, c\'est…', correct: 'Possible mais pas certain', choices: ['Certain','Impossible','Possible mais pas certain','Très probable'] },
+  { enonce: '👜 Un sac contient 5 boules rouges. On tire une boule au hasard.', q: 'Obtenir une boule rouge, c\'est…', correct: 'Certain', choices: ['Certain','Impossible','Possible','Très probable'] },
+  { enonce: '👜 Un sac contient 3 boules rouges et 2 boules bleues.', q: 'Tirer une boule verte, c\'est…', correct: 'Impossible', choices: ['Certain','Impossible','Possible','Peu probable'] },
+], 'ex1');
+
+buildQ([
+  { enonce: '🎲 On lance un dé équilibré à 6 faces (de 1 à 6).', q: 'Quelle est la probabilité d\'obtenir le 6 ?', correct: '1/6', choices: ['1/3','1/4','1/6','6/6'] },
+  { enonce: '🎲 On lance un dé équilibré à 6 faces (de 1 à 6).', q: 'Quelle est la probabilité d\'obtenir un nombre pair ?', correct: '1/2', choices: ['1/6','1/3','1/2','2/3'] },
+  { enonce: '🪙 On lance une pièce de monnaie équilibrée (face/pile).', q: 'Quelle est la probabilité d\'obtenir « pile » ?', correct: '1/2', choices: ['1/3','1/2','2/3','3/4'] },
+  { enonce: '🎲 On lance un dé à 6 faces.', q: 'Quelle est la probabilité d\'obtenir un nombre supérieur à 4 ?', correct: '1/3', choices: ['1/6','1/4','1/3','1/2'] },
+], 'ex2');
+
+buildQ([
+  { enonce: '👜 Un sac contient 10 boules : 4 rouges, 3 bleues, 2 vertes et 1 jaune. On tire une boule au hasard.', q: 'Quelle est la probabilité de tirer une boule rouge ?', correct: '4/10 = 2/5', choices: ['1/10','3/10','4/10 = 2/5','5/10'] },
+  { enonce: '👜 Dans ce même sac (4 rouges, 3 bleues, 2 vertes, 1 jaune).', q: 'Quelle est la probabilité de NE PAS tirer une boule verte ?', correct: '8/10 = 4/5', choices: ['2/10','4/10','6/10','8/10 = 4/5'] },
+  { enonce: '🃏 Dans un jeu de 32 cartes, il y a 8 as (1 par couleur × 2 jeux de 4). On tire une carte au hasard.', q: 'Quelle est la probabilité de tirer un as ?', correct: '1/4', choices: ['1/8','1/4','1/32','8/32'] },
+  { enonce: '🎲 On lance deux dés à 6 faces et on additionne les résultats.', q: 'Quelle probabilité a-t-on d\'obtenir un total de 2 ? (obtenir 1+1)', correct: '1/36', choices: ['1/6','1/12','1/36','2/36'] },
+], 'ex3');
+
+buildQ([
+  { enonce: '👜 Sac A : 3 boules rouges sur 10. Sac B : 2 boules rouges sur 6.', q: 'Dans quel sac la probabilité de tirer une boule rouge est-elle plus grande ?', correct: 'Sac B (2/6 = 1/3 > 3/10)', choices: ['Sac A (3/10)','Sac B (2/6 = 1/3 > 3/10)','Ils sont équivalents','Impossible à comparer'] },
+  { enonce: '🎲 On lance un dé à 6 faces.', q: 'Quel évènement est le plus probable ?', correct: 'Obtenir un nombre ≤ 4 (prob = 2/3)', choices: ['Obtenir le 6 (prob = 1/6)','Obtenir un nombre pair (prob = 1/2)','Obtenir un nombre ≤ 4 (prob = 2/3)','Obtenir un multiple de 3 (prob = 1/3)'] },
+  { enonce: 'On place 0, 1/4, 1/2, 3/4 et 1 sur une échelle de probabilité.', q: 'Un évènement "très probable mais pas certain" correspond à une probabilité proche de…', correct: 'proche de 1', choices: ['proche de 0','proche de 1/4','proche de 1/2','proche de 1'] },
+], 'ex4');
+
+buildQ([
+  { enonce: '🎲 On lance un dé 60 fois. Le 3 sort 12 fois.', q: 'Quelle est la fréquence d\'apparition du 3 ?', correct: '1/5 = 20%', choices: ['1/6','1/5 = 20%','1/3','12%'] },
+  { enonce: '🪙 On lance une pièce 200 fois. « Face » apparaît 97 fois.', q: 'Cette fréquence est-elle proche de la probabilité théorique ?', correct: 'Oui, 97/200 = 48,5% ≈ 50%', choices: ['Non, le résultat devrait être exactement 100/200','Oui, 97/200 = 48,5% ≈ 50%','Non, la probabilité est 1/6','Oui, mais seulement si on relance'] },
+  { enonce: '📊 Dans une classe de 25 élèves, 10 ont les yeux bleus.', q: 'Quelle est la fréquence d\'élèves aux yeux bleus dans cette classe ?', correct: '2/5 = 40%', choices: ['1/5','2/5 = 40%','1/2','10%'] },
+  { enonce: 'On tire au hasard une lettre du mot MATHEMATIQUES (13 lettres).', q: 'Quelle est la probabilité de tirer la lettre M ? (il y a 2 M)', correct: '2/13', choices: ['1/13','2/13','1/12','1/6'] },
+], 'ex5');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

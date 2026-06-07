@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="Les Maths de Clémence">
+<meta name="application-name" content="Les Maths de Clémence">
+<meta property="og:site_name" content="Les Maths de Clémence">
+<link rel="manifest" href="manifest.json">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calcul mental — 6e</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #fbcfe8; border-radius: 22px;
+    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #9d174d;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #fdf2f8; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #fdf2f8; border: 2px solid #fbcfe8; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .calcul-card {
+    font-size: 2rem; font-weight: 900; color: #9d174d; text-align: center;
+    padding: 14px; background: #fce7f3; border-radius: 14px; margin-bottom: 14px; letter-spacing: 2px;
+  }
+  .pb-enonce {
+    background: #fce7f3; border-radius: 10px; padding: 12px; margin-bottom: 12px;
+    font-size: 0.95rem; color: #831843; line-height: 1.6; font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: linear-gradient(135deg, #831843, #db2777);">
+  <span class="emoji-header">⚡</span>
+  <h1>Calcul mental</h1>
+  <p>Relatifs, puissances, fractions et pourcentages</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+  <div class="badge-niveau">6ème — Calcul mental</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.9;">
+      ➕➖ <strong>Relatifs</strong> : (+) + (−) = signe du plus grand abs. · (−) × (−) = (+)<br>
+      🔢 <strong>Puissances</strong> : 10² = 100 · 10³ = 1 000 · 2³ = 8 · 3² = 9<br>
+      🍕 <strong>Fractions</strong> : 1/4 de 200 = 50 · 3/4 de 200 = 150<br>
+      💯 <strong>Pourcentages</strong> : 10% = ÷10 · 25% = ÷4 · 50% = ÷2
+    </div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#9d174d;">Ex 1</span> Opérations avec les entiers relatifs</div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#9d174d;">Ex 2</span> Puissances et calculs rapides</div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#9d174d;">Ex 3</span> Fractions d'une quantité</div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#9d174d;">Ex 4</span> Pourcentages mentaux</div>
+    <div id="ex4"></div>
+  </div>
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — 6e</footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    let html = '';
+    if (item.card) html += `<div class="calcul-card">${item.card}</div>`;
+    if (item.enonce) html += `<div class="pb-enonce">${item.enonce}</div>`;
+    html += `<div class="q-text">${item.q}</div>`;
+    html += `<div class="qcm-row" id="${id}-r${i}">
+      ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+    </div>
+    <div class="feedback-line" id="${id}-f${i}"></div>`;
+    d.innerHTML = html;
+    c.appendChild(d);
+  });
+}
+
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([
+  { card: '(+5) + (−8) = ?', q: 'Calcule (+5) + (−8)', correct: '−3', choices: ['−3','3','−13','13'] },
+  { card: '(−4) + (−6) = ?', q: 'Calcule (−4) + (−6)', correct: '−10', choices: ['−2','2','−10','10'] },
+  { card: '(−7) + (+12) = ?', q: 'Calcule (−7) + (+12)', correct: '+5', choices: ['−5','+5','−19','+19'] },
+  { card: '(−3) × (−4) = ?', q: 'Calcule (−3) × (−4)', correct: '+12', choices: ['−12','+12','+7','−7'] },
+  { card: '(+6) × (−5) = ?', q: 'Calcule (+6) × (−5)', correct: '−30', choices: ['−30','+30','−11','+1'] },
+  { card: '(−18) ÷ (+3) = ?', q: 'Calcule (−18) ÷ (+3)', correct: '−6', choices: ['−6','+6','−15','+15'] },
+  { enonce: 'La température est de −5 °C. Elle monte de 8 °C.', q: 'Quelle est la nouvelle température ?', correct: '+3 °C', choices: ['−13 °C','−3 °C','+3 °C','+13 °C'] },
+], 'ex1');
+
+buildQ([
+  { card: '10² = ?', q: 'Calcule 10²', correct: '100', choices: ['20','100','1 000','10 000'] },
+  { card: '10³ = ?', q: 'Calcule 10³', correct: '1 000', choices: ['30','100','1 000','10 000'] },
+  { card: '2⁴ = ?', q: 'Calcule 2⁴', correct: '16', choices: ['8','16','32','64'] },
+  { card: '3³ = ?', q: 'Calcule 3³', correct: '27', choices: ['9','18','27','81'] },
+  { card: '5² = ?', q: 'Calcule 5²', correct: '25', choices: ['10','25','50','125'] },
+  { enonce: '10⁴ × 10² = 10⁶ car on ajoute les exposants.', q: 'Calcule 10⁵ × 10³', correct: '10⁸ = 100 000 000', choices: ['10¹⁵','10⁸ = 100 000 000','10² = 100','10¹⁵ = 1 000 000 000 000 000'] },
+], 'ex2');
+
+buildQ([
+  { card: '1/4 de 200 = ?', q: 'Calcule 1/4 de 200', correct: '50', choices: ['25','50','75','100'] },
+  { card: '3/4 de 200 = ?', q: 'Calcule 3/4 de 200', correct: '150', choices: ['100','125','150','175'] },
+  { card: '2/3 de 300 = ?', q: 'Calcule 2/3 de 300', correct: '200', choices: ['100','150','200','250'] },
+  { card: '1/5 de 80 = ?', q: 'Calcule 1/5 de 80', correct: '16', choices: ['8','16','20','40'] },
+  { enonce: '🍕 Une pizza coûte 12 €. Léa paie 3/4 du prix.', q: 'Combien paie Léa ?', correct: '9 €', choices: ['3 €','6 €','9 €','12 €'] },
+  { enonce: '🎮 Un jeu coûte 48 €. Après réduction, il coûte les 5/6 du prix.', q: 'Quel est le nouveau prix ?', correct: '40 €', choices: ['36 €','40 €','42 €','44 €'] },
+], 'ex3');
+
+buildQ([
+  { card: '10% de 350 = ?', q: 'Calcule 10% de 350', correct: '35', choices: ['3,5','35','105','350'] },
+  { card: '25% de 80 = ?', q: 'Calcule 25% de 80', correct: '20', choices: ['8','20','25','40'] },
+  { card: '50% de 1 400 = ?', q: 'Calcule 50% de 1 400', correct: '700', choices: ['70','700','750','1 400'] },
+  { enonce: '🏬 Un article coûte 120 €. Il est soldé à −20%.', q: 'Quel est le prix soldé ?', correct: '96 €', choices: ['80 €','96 €','100 €','110 €'] },
+  { enonce: '📈 Une population de 2 500 habitants augmente de 4%.', q: 'Combien d\'habitants y a-t-il après l\'augmentation ?', correct: '2 600 habitants', choices: ['2 400 habitants','2 504 habitants','2 600 habitants','2 650 habitants'] },
+  { enonce: '💰 Un livre est vendu 15 €. La TVA est de 20%.', q: 'Quel est le montant de la TVA ?', correct: '3 €', choices: ['1,5 €','2 €','3 €','5 €'] },
+], 'ex4');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

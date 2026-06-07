@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="Les Maths de Clémence">
+<meta name="application-name" content="Les Maths de Clémence">
+<meta property="og:site_name" content="Les Maths de Clémence">
+<link rel="manifest" href="manifest.json">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Résolution de problèmes — CM1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #bae6fd; border-radius: 22px;
+    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #0c4a6e;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #f0f9ff; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #f0f9ff; border: 2px solid #bae6fd; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .pb-enonce {
+    background: #dbeafe; border-radius: 10px; padding: 14px 16px; margin-bottom: 12px;
+    font-size: 0.95rem; color: #1e3a8a; line-height: 1.7; font-weight: 700;
+  }
+  .difficulte {
+    display: inline-block; border-radius: 14px; padding: 2px 10px;
+    font-size: 0.75rem; font-weight: 900; margin-bottom: 8px;
+  }
+  .diff-facile  { background: #dcfce7; color: #166534; }
+  .diff-moyen   { background: #fef9c3; color: #713f12; }
+  .diff-difficile { background: #fee2e2; color: #991b1b; }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: linear-gradient(135deg, #1e3a8a, #2563eb);">
+  <span class="emoji-header">🧩</span>
+  <h1>Résolution de problèmes</h1>
+  <p>Problèmes à 1 et 2 étapes, avec décimaux et proportionnalité</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+  <div class="badge-niveau">CM1 — Résolution de problèmes</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Ma méthode</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.9;">
+      📖 <strong>Je comprends</strong> ce qu'on me demande<br>
+      🔢 <strong>J'identifie</strong> les données utiles<br>
+      ✏️ <strong>Je pose</strong> le calcul (et j'indique l'unité)<br>
+      ✅ <strong>Je vérifie</strong> que le résultat est raisonnable<br>
+      📝 <strong>Je rédige</strong> : « Le résultat est… »
+    </div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#1e3a8a;">Ex 1</span> Les 4 opérations en contexte</div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#1e3a8a;">Ex 2</span> Problèmes avec les nombres décimaux</div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#1e3a8a;">Ex 3</span> Proportionnalité et tableau de valeurs</div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#1e3a8a;">Ex 4</span> Problèmes à 2 étapes ⭐</div>
+    <div id="ex4"></div>
+  </div>
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CM1</footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    let html = '';
+    if (item.diff) html += `<span class="difficulte diff-${item.diff}">${item.diff === 'facile' ? '⭐ Facile' : item.diff === 'moyen' ? '⭐⭐ Moyen' : '⭐⭐⭐ Difficile'}</span>`;
+    if (item.enonce) html += `<div class="pb-enonce">${item.enonce}</div>`;
+    html += `<div class="q-text">${item.q}</div>`;
+    html += `<div class="qcm-row" id="${id}-r${i}">
+      ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+    </div>
+    <div class="feedback-line" id="${id}-f${i}"></div>`;
+    d.innerHTML = html;
+    c.appendChild(d);
+  });
+}
+
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([
+  { diff: 'facile', enonce: '📚 Une école a 483 élèves. L\'année suivante, 57 élèves de plus sont inscrits.', q: 'Combien y a-t-il d\'élèves la 2ème année ?', correct: '540 élèves', choices: ['430 élèves','520 élèves','540 élèves','560 élèves'] },
+  { diff: 'facile', enonce: '🎫 Un cinéma a vendu 1 245 tickets en une semaine. Le suivant, il en a vendu 987.', q: 'Combien de tickets de plus a-t-il vendu la première semaine ?', correct: '258 tickets', choices: ['248 tickets','258 tickets','268 tickets','278 tickets'] },
+  { diff: 'moyen', enonce: '🚌 Un voyage en bus coûte 12 € par personne. Il y a 24 personnes dans le groupe.', q: 'Quel est le coût total du voyage ?', correct: '288 €', choices: ['240 €','264 €','288 €','312 €'] },
+  { diff: 'moyen', enonce: '🍫 Un carton contient 36 tablettes de chocolat. On dispose de 15 cartons.', q: 'Combien de tablettes y a-t-il en tout ?', correct: '540 tablettes', choices: ['480 tablettes','510 tablettes','540 tablettes','570 tablettes'] },
+  { diff: 'difficile', enonce: '📦 375 crayons sont répartis dans des boîtes de 12. On remplit autant de boîtes que possible.', q: 'Combien de boîtes complètes obtient-on et combien reste-t-il de crayons ?', correct: '31 boîtes et 3 crayons', choices: ['30 boîtes et 15 crayons','31 boîtes et 3 crayons','31 boîtes et 12 crayons','32 boîtes et 0 crayon'] },
+], 'ex1');
+
+buildQ([
+  { diff: 'facile', enonce: '🛒 Emma achète 3 yaourts à 0,85 € chacun.', q: 'Combien dépense-t-elle en tout ?', correct: '2,55 €', choices: ['2,45 €','2,55 €','2,65 €','3,85 €'] },
+  { diff: 'moyen', enonce: '⛽ Un plein d\'essence coûte 1,75 € par litre. La voiture prend 45 litres.', q: 'Quel est le prix du plein ?', correct: '78,75 €', choices: ['72,50 €','75,25 €','78,75 €','82,50 €'] },
+  { diff: 'moyen', enonce: '🏃 Jules court 2,4 km le lundi et 1,85 km le mercredi.', q: 'Quelle distance totale a-t-il parcourue ?', correct: '4,25 km', choices: ['3,85 km','4,15 km','4,25 km','4,35 km'] },
+  { diff: 'difficile', enonce: '🍕 Une pizza coûte 8,50 €. 4 amis se partagent le prix équitablement.', q: 'Combien chaque ami paie-t-il ?', correct: '2,125 € soit 2,13 €', choices: ['2,00 €','2,05 €','2,125 € soit 2,13 €','2,50 €'] },
+], 'ex2');
+
+buildQ([
+  { diff: 'facile', enonce: '⚽ Dans une rencontre sportive, 1 équipe marque 3 buts en 45 min. La rencontre dure 90 min.', q: 'Si le rythme est le même, combien de buts l\'équipe marque-t-elle en 90 min ?', correct: '6 buts', choices: ['3 buts','6 buts','9 buts','12 buts'] },
+  { diff: 'moyen', enonce: '🚗 Une voiture consomme 6 L d\'essence pour 100 km.', q: 'Combien de litres faut-il pour parcourir 350 km ?', correct: '21 L', choices: ['18 L','21 L','24 L','30 L'] },
+  { diff: 'moyen', enonce: '🧃 Un pack de 6 jus de fruit coûte 4,80 €.', q: 'Quel est le prix d\'un jus à l\'unité ?', correct: '0,80 €', choices: ['0,60 €','0,75 €','0,80 €','0,90 €'] },
+  { diff: 'difficile', enonce: '🗺️ Sur une carte, 1 cm représente 5 km. La distance entre deux villes est de 7,5 cm sur la carte.', q: 'Quelle est la distance réelle entre les deux villes ?', correct: '37,5 km', choices: ['30 km','35 km','37,5 km','40 km'] },
+], 'ex3');
+
+buildQ([
+  { diff: 'moyen', enonce: '🎂 Emma a 120 € d\'économies. Elle achète un livre à 14,50 € et 3 jeux à 18,75 € chacun.', q: 'Combien lui reste-t-il d\'argent ?', correct: '48,75 €', choices: ['42,25 €','48,75 €','51,25 €','55,50 €'] },
+  { diff: 'moyen', enonce: '🚂 Un train part à 8 h 15, fait un arrêt de 10 min à 9 h 30, puis arrive à destination à 11 h 05.', q: 'Quelle est la durée totale du trajet (y compris l\'arrêt) ?', correct: '2 h 50 min', choices: ['2 h 30 min','2 h 40 min','2 h 50 min','3 h 00 min'] },
+  { diff: 'difficile', enonce: '🏗️ Pour construire un mur, 3 ouvriers travaillent 8 h par jour pendant 5 jours.', q: 'Combien d\'heures de travail ont-ils effectuées au total ?', correct: '120 h', choices: ['40 h','80 h','120 h','160 h'] },
+  { diff: 'difficile', enonce: '🛍️ Un marchand achète des objets à 12 € l\'unité et les revend à 18,50 €. Il en vend 24.', q: 'Quel est son bénéfice total ?', correct: '156 €', choices: ['96 €','144 €','156 €','180 €'] },
+], 'ex4');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

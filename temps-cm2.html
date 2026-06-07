@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="Les Maths de Clémence">
+<meta name="application-name" content="Les Maths de Clémence">
+<meta property="og:site_name" content="Les Maths de Clémence">
+<link rel="manifest" href="manifest.json">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Durées et conversions — CM2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #fde68a; border-radius: 22px;
+    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #78350f;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #fffbeb; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #fffbeb; border: 2px solid #fde68a; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .pb-enonce {
+    background: #fef9c3; border-radius: 10px; padding: 12px; margin-bottom: 12px;
+    font-size: 0.95rem; color: #713f12; line-height: 1.6; font-weight: 700;
+  }
+  .num-card {
+    font-size: 1.9rem; font-weight: 900; color: #78350f; text-align: center;
+    padding: 14px; background: #fef9c3; border-radius: 14px; margin-bottom: 14px;
+  }
+  .tableau-conv {
+    background: #fef9c3; border-radius: 10px; padding: 12px; margin-bottom: 12px;
+    font-size: 0.9rem; font-weight: 800; color: #713f12; line-height: 2;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: linear-gradient(135deg, #78350f, #d97706);">
+  <span class="emoji-header">⏳</span>
+  <h1>Durées et conversions</h1>
+  <p>Conversions complexes, opérations sur les durées</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+  <div class="badge-niveau">CM2 — Durées et conversions</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.9;">
+      ⏱️ <strong>1 h = 60 min = 3 600 s</strong><br>
+      📅 <strong>1 jour = 24 h = 1 440 min = 86 400 s</strong><br>
+      🗓️ <strong>1 semaine = 7 jours · 1 an = 365 j (ou 366) · 1 siècle = 100 ans</strong><br>
+      🔢 <strong>Durée en décimal</strong> : 2 h 30 min = 2,5 h (car 30 min = 0,5 h)<br>
+      ⚠️ <strong>Attention</strong> : 1 h 45 min ≠ 1,45 h ! (45 min = 0,75 h)
+    </div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#78350f;">Ex 1</span> Conversions d'unités de temps</div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#78350f;">Ex 2</span> Additions et soustractions de durées</div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#78350f;">Ex 3</span> Durées en écriture décimale</div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#78350f;">Ex 4</span> Problèmes complexes de durée</div>
+    <div id="ex4"></div>
+  </div>
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CM2</footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    let html = '';
+    if (item.card) html += `<div class="num-card">${item.card}</div>`;
+    if (item.enonce) html += `<div class="pb-enonce">${item.enonce}</div>`;
+    if (item.tableau) html += `<div class="tableau-conv">${item.tableau}</div>`;
+    html += `<div class="q-text">${item.q}</div>`;
+    html += `<div class="qcm-row" id="${id}-r${i}">
+      ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+    </div>
+    <div class="feedback-line" id="${id}-f${i}"></div>`;
+    d.innerHTML = html;
+    c.appendChild(d);
+  });
+}
+
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([
+  { card: '2 jours = ? h', q: 'Convertis 2 jours en heures', correct: '48 h', choices: ['24 h','36 h','48 h','72 h'] },
+  { card: '3 h 20 min = ? min', q: 'Convertis 3 h 20 min en minutes', correct: '200 min', choices: ['180 min','190 min','200 min','320 min'] },
+  { card: '7 200 s = ? h', q: 'Convertis 7 200 secondes en heures', correct: '2 h', choices: ['1 h','1 h 30','2 h','2 h 30'] },
+  { card: '1 siècle = ? années', q: 'Combien d\'années y a-t-il dans un siècle ?', correct: '100 ans', choices: ['10 ans','50 ans','100 ans','1 000 ans'] },
+  { card: '3 semaines = ? jours', q: 'Convertis 3 semaines en jours', correct: '21 jours', choices: ['14 jours','18 jours','21 jours','28 jours'] },
+  { card: '86 400 s = ? jours', q: 'Combien de jours correspondent à 86 400 secondes ?', correct: '1 jour', choices: ['10 heures','1 jour','2 jours','24 minutes'] },
+], 'ex1');
+
+buildQ([
+  { enonce: '🚂 Un train part à 7 h 45 et fait deux trajets : le premier dure 1 h 35 min, le second 2 h 50 min.', q: 'Quelle est la durée totale des deux trajets ?', correct: '4 h 25 min', choices: ['3 h 85 min','4 h 25 min','4 h 35 min','5 h 05 min'] },
+  { enonce: '🏋️ Emma s\'entraîne 1 h 45 min le lundi, 2 h 10 min le mercredi et 1 h 30 min le vendredi.', q: 'Quelle est la durée totale d\'entraînement de la semaine ?', correct: '5 h 25 min', choices: ['4 h 85 min','5 h 25 min','5 h 35 min','6 h 05 min'] },
+  { enonce: '🎬 Un film dure 2 h 18 min. Il a commencé à 20 h 35.', q: 'À quelle heure se termine le film ?', correct: '22 h 53', choices: ['22 h 43','22 h 53','23 h 03','23 h 13'] },
+  { enonce: '🏊 Lucas nage 5 longueurs en 4 min 35 s, puis 3 longueurs en 3 min 50 s.', q: 'Quelle est la durée totale de sa séance de natation ?', correct: '8 min 25 s', choices: ['7 min 85 s','8 min 15 s','8 min 25 s','8 min 35 s'] },
+], 'ex2');
+
+buildQ([
+  { card: '1 h 30 min = ? h (décimal)', q: 'Écris 1 h 30 min en heures (notation décimale)', correct: '1,5 h', choices: ['1,30 h','1,3 h','1,5 h','1,50 h'] },
+  { card: '2 h 45 min = ? h (décimal)', q: 'Écris 2 h 45 min en heures (notation décimale)', correct: '2,75 h', choices: ['2,45 h','2,7 h','2,75 h','2,8 h'] },
+  { card: '3,25 h = ? h ? min', q: 'Convertis 3,25 h en heures et minutes', correct: '3 h 15 min', choices: ['3 h 25 min','3 h 15 min','3 h 20 min','3 h 30 min'] },
+  { card: '0,5 h = ? min', q: 'Combien de minutes font 0,5 heure ?', correct: '30 min', choices: ['5 min','15 min','30 min','50 min'] },
+  { q: 'Un sportif court pendant 1,75 h. En minutes, cela fait…', correct: '105 min', choices: ['75 min','90 min','105 min','175 min'] },
+], 'ex3');
+
+buildQ([
+  { enonce: '✈️ Un vol Paris–New York dure 8 h 35 min. L\'avion décolle à 10 h 20 (heure de Paris). L\'heure locale de New York a 6 h de retard.', q: 'À quelle heure locale arrive-t-on à New York ?', correct: '12 h 55 (heure de New York)', choices: ['18 h 55 (heure de Paris)','12 h 55 (heure de New York)','14 h 55 (heure de New York)','12 h 55 (heure de Paris)'] },
+  { enonce: '🗓️ Nora est née le 15 mars 2014. Aujourd\'hui, nous sommes le 7 juin 2026.', q: 'Quel âge a Nora (en années et mois complets) ?', correct: '12 ans et 2 mois', choices: ['11 ans et 11 mois','12 ans et 2 mois','12 ans et 3 mois','12 ans et 9 mois'] },
+  { enonce: '🔋 Une batterie se décharge en 4 h 48 min. On la recharge en 1 h 15 min.', q: 'Si on commence à recharger à 22 h 00, à quelle heure est-elle complètement rechargée ?', correct: '23 h 15', choices: ['23 h 00','23 h 15','23 h 45','00 h 03'] },
+  { enonce: '📡 Un satellite effectue le tour de la Terre en 1 h 28 min. En 24 h, combien de tours effectue-t-il ?', q: 'Environ combien de tours complets effectue-t-il en 24 h ?', correct: '16 tours', choices: ['12 tours','14 tours','16 tours','18 tours'] },
+], 'ex4');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>
