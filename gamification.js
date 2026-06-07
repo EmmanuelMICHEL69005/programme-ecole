@@ -225,6 +225,7 @@
   let pageSessionCorrect = 0;
   let pageSessionAnswered = 0;
   let nextLessonShown = false;
+  let feedbackChanged = false;
 
   function award(xp) {
     if (!P) return;
@@ -1244,9 +1245,11 @@
       const txt = el.textContent || '';
       if (txt.includes('✅') && !el.dataset.gsOk) {
         el.dataset.gsOk = '1'; delete el.dataset.gsWrong;
+        feedbackChanged = true;
         award(XP_CORRECT);
       } else if (txt.includes('❌') && !el.dataset.gsWrong) {
         el.dataset.gsWrong = '1'; delete el.dataset.gsOk;
+        feedbackChanged = true;
         wrongAnswer();
       }
     }
@@ -1259,6 +1262,7 @@
     }
 
     const obs = new MutationObserver(muts => {
+      feedbackChanged = false;
       muts.forEach(m => {
         if (m.type === 'characterData') handleNode(m.target.parentElement);
         else {
@@ -1266,8 +1270,10 @@
           if (m.type === 'childList') handleNode(m.target);
         }
       });
-      checkPageComplete();
-      updateAllProgress();
+      if (feedbackChanged) {
+        checkPageComplete();
+        updateAllProgress();
+      }
     });
     obs.observe(document.body, { subtree: true, characterData: true, childList: true });
   }
