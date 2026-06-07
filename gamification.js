@@ -151,7 +151,7 @@
     return {
       id, name: name||'', avatar: avatar||'🌟', classe: classe||'CE2',
       xp:0, level:1, badges:[], tot:0, streak:0, maxStreak:0,
-      pages:{}, days:[], createdAt: Date.now()
+      pages:{}, days:[], completedPages:{}, createdAt: Date.now()
     };
   }
 
@@ -760,6 +760,63 @@
       .gs-score-sec-pip.done-ok  { background: #22c55e; }
       .gs-score-sec-pip.done-mix { background: #f59e0b; }
 
+      /* ===== INDEX CARD STATUS ===== */
+      .gs-card-status {
+        margin-top: 6px;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 0.72rem;
+        font-weight: 900;
+        border-radius: 20px;
+        padding: 3px 10px;
+        letter-spacing: 0.2px;
+      }
+      .gs-card-done { background: #dcfce7; color: #15803d; }
+      .gs-card-wip  { background: #fef9c3; color: #92400e; }
+      a.card.gs-done { position: relative; }
+      a.card.gs-done::after {
+        content: '✓';
+        position: absolute;
+        top: 10px; right: 36px;
+        width: 22px; height: 22px;
+        background: #22c55e;
+        color: white;
+        border-radius: 50%;
+        font-size: 0.75rem;
+        font-weight: 900;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 22px;
+        text-align: center;
+      }
+
+      /* ===== LEVEL PROGRESS SUMMARY ===== */
+      .gs-level-summary {
+        font-size: 0.78rem;
+        font-weight: 800;
+        color: rgba(0,0,0,0.45);
+        margin: -6px 0 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .gs-level-bar {
+        flex: 1;
+        height: 5px;
+        background: rgba(0,0,0,0.08);
+        border-radius: 3px;
+        overflow: hidden;
+        max-width: 120px;
+      }
+      .gs-level-bar-fill {
+        height: 100%;
+        border-radius: 3px;
+        background: #22c55e;
+        transition: width 0.5s ease;
+      }
+
       /* ===== RELATED PAGES ===== */
       .gs-related {
         padding: 24px 16px 8px;
@@ -1194,6 +1251,60 @@
     updateGlobalScore();
   }
 
+  // ── Index page completion indicators ─────────────────────────────
+  function initIndexProgress() {
+    if (page !== 'index.html') return;
+    if (!P) return;
+
+    const completed = P.completedPages || {};
+    const pageScores = P.pages || {};
+
+    // Badge on each card
+    document.querySelectorAll('a.card[href]').forEach(card => {
+      const href = card.getAttribute('href');
+      if (!href || href.startsWith('#') || href.startsWith('http')) return;
+
+      const done  = completed[href];
+      const score = pageScores[href] || 0;
+
+      const body = card.querySelector('.card-body');
+      if (!body) return;
+
+      if (done) {
+        card.classList.add('gs-done');
+        const s = document.createElement('div');
+        s.className = 'gs-card-status gs-card-done';
+        s.textContent = `✅ Terminé — ${done.pct}%`;
+        body.appendChild(s);
+      } else if (score > 0) {
+        const s = document.createElement('div');
+        s.className = 'gs-card-status gs-card-wip';
+        s.textContent = `⚡ En cours — ${score} ✅`;
+        body.appendChild(s);
+      }
+    });
+
+    // Progress summary per level section
+    document.querySelectorAll('.level-section').forEach(section => {
+      const cards  = [...section.querySelectorAll('a.card[href]')];
+      const total  = cards.length;
+      if (!total) return;
+      const doneCnt = cards.filter(c => completed[c.getAttribute('href')]).length;
+      const heading = section.querySelector('.level-heading');
+      if (!heading || doneCnt === 0) return;
+
+      const pct = Math.round(doneCnt / total * 100);
+      const summary = document.createElement('div');
+      summary.className = 'gs-level-summary';
+      summary.innerHTML = `
+        <span>${doneCnt} / ${total} terminé${doneCnt > 1 ? 's' : ''}</span>
+        <div class="gs-level-bar"><div class="gs-level-bar-fill" style="width:${pct}%"></div></div>
+        <span>${pct}%</span>
+      `;
+      heading.insertAdjacentElement('afterend', summary);
+    });
+  }
+
   // ── Related pages ─────────────────────────────────────────────────
   function renderRelatedPages() {
     const lvl = getPageLevel();
@@ -1228,6 +1339,12 @@
     const answered = lines.filter(el => el.textContent.trim() !== '');
     if (answered.length >= lines.length) {
       nextLessonShown = true;
+      if (P) {
+        if (!P.completedPages) P.completedPages = {};
+        const correct = lines.filter(el => el.textContent.includes('✅')).length;
+        P.completedPages[page] = { pct: Math.round(correct / lines.length * 100), correct, total: lines.length, date: Date.now() };
+        save();
+      }
       setTimeout(showNextLessonPanel, 800);
     }
   }
@@ -1291,12 +1408,14 @@
         setupObserver();
         checkBadges();
         save();
+        initIndexProgress();
       });
     } else {
       createHeaderProfile();
       setupObserver();
       checkBadges();
       save();
+      initIndexProgress();
     }
   }
 
