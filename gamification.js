@@ -125,6 +125,22 @@
     'proportionnalite-6e.html':    { title:'Proportionnalité 6e',          emoji:'⚖️' },
   };
 
+  const LEVEL_PAGES = {
+    CP:  ['nombres-cp.html','calcul-cp.html','calcul-mental-cp.html','mesures-cp.html','geometrie-cp.html','donnees-cp.html'],
+    CE1: ['nombres-ce1.html','fractions-ce1.html','calcul-ce1.html','calcul-mental-ce1.html','mesures-ce1.html','geometrie-ce1.html','donnees-ce1.html'],
+    CE2: ['nombres.html','fiche1.html','fiche2.html','fiche3.html','calcul.html','calcul-mental.html','problemes.html','mesures.html','temps.html','geometrie.html','solides.html','donnees.html'],
+    CM1: ['nombres-cm1.html','decimaux-cm1.html','fractions-cm1.html','calcul-cm1.html','calcul-mental-cm1.html','calcul-pose-cm1.html','mesures-cm1.html','geometrie-cm1.html','donnees-cm1.html','proportionnalite-cm1.html'],
+    CM2: ['nombres-cm2.html','decimaux-cm2.html','fractions-cm2.html','calcul-cm2.html','calcul-mental-cm2.html','calcul-pose-cm2.html','mesures-cm2.html','geometrie-cm2.html','donnees-cm2.html','proportionnalite-cm2.html','problemes-cm2.html'],
+    '6e': ['nombres-6e.html','fractions-6e.html','algebre-6e.html','geometrie-6e.html','mesures-6e.html','donnees-6e.html','proportionnalite-6e.html'],
+  };
+
+  function getPageLevel() {
+    for (const [lvl, pages] of Object.entries(LEVEL_PAGES)) {
+      if (pages.includes(page)) return lvl;
+    }
+    return null;
+  }
+
   // ── Store helpers ────────────────────────────────────────────────
   function genId() {
     return 'p' + Date.now().toString(36) + Math.random().toString(36).slice(2,6);
@@ -582,6 +598,207 @@
         padding: 6px; transition: color 0.15s;
       }
       .gs-picker-full:hover { color: rgba(255,255,255,0.85); }
+
+      /* ===== SECTION PROGRESS ===== */
+      .gs-sec-prog {
+        margin: 0 0 14px;
+        padding: 0 2px;
+      }
+      .gs-sec-prog-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 7px;
+        gap: 10px;
+      }
+      .gs-sec-dots {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        flex: 1;
+      }
+      .gs-sec-dot {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: rgba(0,0,0,0.12);
+        border: 2px solid rgba(0,0,0,0.08);
+        transition: background 0.35s, transform 0.2s, border-color 0.35s;
+        flex-shrink: 0;
+      }
+      .gs-sec-dot.ok    { background: #22c55e; border-color: #16a34a; transform: scale(1.15); }
+      .gs-sec-dot.wrong { background: #ef4444; border-color: #b91c1c; }
+      .gs-sec-count {
+        font-size: 0.78rem;
+        font-weight: 900;
+        color: rgba(0,0,0,0.38);
+        white-space: nowrap;
+        flex-shrink: 0;
+        min-width: 36px;
+        text-align: right;
+      }
+      .gs-sec-count.done { color: #16a34a; }
+      .gs-sec-bar-wrap {
+        height: 5px;
+        background: rgba(0,0,0,0.08);
+        border-radius: 3px;
+        overflow: hidden;
+      }
+      .gs-sec-bar-fill {
+        height: 100%;
+        border-radius: 3px;
+        background: #7c3aed;
+        transition: width 0.5s ease, background 0.4s;
+        width: 0%;
+      }
+      .gs-sec-bar-fill.all-ok   { background: #22c55e; }
+      .gs-sec-bar-fill.has-err  { background: linear-gradient(90deg, #22c55e 50%, #ef4444); }
+
+      /* ===== SCORE PANEL (bottom fixed) ===== */
+      .gs-score-panel {
+        position: fixed;
+        bottom: 0; left: 0; right: 0;
+        z-index: 490;
+        background: rgba(255,255,255,0.97);
+        border-top: 2px solid rgba(0,0,0,0.07);
+        padding: 8px 16px 12px;
+        box-shadow: 0 -4px 24px rgba(0,0,0,0.1);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        transform: translateY(100%);
+        transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+      }
+      .gs-score-panel.visible { transform: translateY(0); }
+      .gs-score-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 7px;
+        gap: 12px;
+      }
+      .gs-score-left {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        flex: 1;
+      }
+      .gs-score-headline {
+        font-size: 0.9rem;
+        font-weight: 900;
+        color: #1e1b4b;
+        white-space: nowrap;
+      }
+      .gs-score-sub {
+        font-size: 0.65rem;
+        font-weight: 700;
+        color: rgba(0,0,0,0.35);
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+      }
+      .gs-score-right {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-shrink: 0;
+      }
+      .gs-score-correct {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1px;
+      }
+      .gs-score-correct-val {
+        font-size: 1.05rem;
+        font-weight: 900;
+        color: #16a34a;
+      }
+      .gs-score-correct-lbl {
+        font-size: 0.6rem;
+        font-weight: 700;
+        color: rgba(0,0,0,0.35);
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+      }
+      .gs-score-pct {
+        font-size: 1.55rem;
+        font-weight: 900;
+        color: #7c3aed;
+        min-width: 54px;
+        text-align: right;
+      }
+      .gs-score-pct.perfect { color: #16a34a; }
+      .gs-score-bar-wrap {
+        height: 6px;
+        background: rgba(0,0,0,0.07);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .gs-score-bar-fill {
+        height: 100%;
+        border-radius: 4px;
+        background: linear-gradient(90deg, #7c3aed, #a855f7);
+        transition: width 0.55s ease, background 0.4s;
+        width: 0%;
+      }
+      .gs-score-bar-fill.complete { background: linear-gradient(90deg, #16a34a, #22c55e); }
+      .gs-score-sections {
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+        margin-top: 5px;
+      }
+      .gs-score-sec-pip {
+        flex: 1;
+        height: 4px;
+        border-radius: 2px;
+        background: rgba(0,0,0,0.1);
+        transition: background 0.3s;
+        max-width: 60px;
+      }
+      .gs-score-sec-pip.started  { background: #a855f7; }
+      .gs-score-sec-pip.done-ok  { background: #22c55e; }
+      .gs-score-sec-pip.done-mix { background: #f59e0b; }
+
+      /* ===== RELATED PAGES ===== */
+      .gs-related {
+        padding: 24px 16px 8px;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      .gs-related-title {
+        font-size: 0.75rem;
+        font-weight: 900;
+        color: rgba(0,0,0,0.38);
+        text-transform: uppercase;
+        letter-spacing: 0.7px;
+        margin-bottom: 12px;
+      }
+      .gs-related-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(138px, 1fr));
+        gap: 10px;
+      }
+      .gs-related-card {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: white;
+        border: 2px solid rgba(0,0,0,0.08);
+        border-radius: 14px;
+        padding: 11px 13px;
+        text-decoration: none;
+        color: #1e1b4b;
+        font-weight: 800;
+        font-size: 0.82rem;
+        transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+        line-height: 1.3;
+      }
+      .gs-related-card:hover {
+        border-color: #7c3aed;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px rgba(124,58,237,0.15);
+      }
+      .gs-related-emoji { font-size: 1.2rem; flex-shrink: 0; }
     `;
     document.head.appendChild(s);
   }
@@ -856,6 +1073,151 @@
     }
   }
 
+  // ── Section progress bars ────────────────────────────────────────
+  function initPageProgress() {
+    const blocks = [...document.querySelectorAll('.exercice-block')];
+    if (!blocks.length) return;
+
+    blocks.forEach(block => {
+      const lines = [...block.querySelectorAll('.feedback-line')];
+      if (!lines.length) return;
+      const n = lines.length;
+      const prog = document.createElement('div');
+      prog.className = 'gs-sec-prog';
+      prog.innerHTML = `
+        <div class="gs-sec-prog-top">
+          <div class="gs-sec-dots">${Array.from({length: n}, () => '<span class="gs-sec-dot"></span>').join('')}</div>
+          <span class="gs-sec-count">0 / ${n}</span>
+        </div>
+        <div class="gs-sec-bar-wrap"><div class="gs-sec-bar-fill"></div></div>
+      `;
+      const title = block.querySelector('.ex-title');
+      if (title) title.insertAdjacentElement('afterend', prog);
+      else block.prepend(prog);
+    });
+
+    const totalQ = document.querySelectorAll('.feedback-line').length;
+    const panel = document.createElement('div');
+    panel.className = 'gs-score-panel';
+    panel.id = 'gs-score-panel';
+    panel.innerHTML = `
+      <div class="gs-score-inner">
+        <div class="gs-score-left">
+          <span class="gs-score-headline" id="gs-score-headline">0 / ${totalQ} réponses</span>
+          <span class="gs-score-sub">Note en cours</span>
+        </div>
+        <div class="gs-score-right">
+          <div class="gs-score-correct">
+            <span class="gs-score-correct-val" id="gs-score-correct">✅ 0</span>
+            <span class="gs-score-correct-lbl">correctes</span>
+          </div>
+          <span class="gs-score-pct" id="gs-score-pct">—</span>
+        </div>
+      </div>
+      <div class="gs-score-bar-wrap"><div class="gs-score-bar-fill" id="gs-score-bar"></div></div>
+      <div class="gs-score-sections" id="gs-score-sections">
+        ${blocks.filter(b => b.querySelectorAll('.feedback-line').length).map((_, i) => `<div class="gs-score-sec-pip" id="gs-pip-${i}"></div>`).join('')}
+      </div>
+    `;
+    document.body.appendChild(panel);
+
+    const mainEl = document.querySelector('main');
+    if (mainEl) mainEl.style.paddingBottom = '80px';
+  }
+
+  function updateBlockProgress(block, blockIdx) {
+    const prog = block.querySelector('.gs-sec-prog');
+    if (!prog) return;
+    const lines = [...block.querySelectorAll('.feedback-line')];
+    const total    = lines.length;
+    const answered = lines.filter(l => l.textContent.trim() !== '');
+    const correct  = lines.filter(l => l.textContent.includes('✅'));
+    const wrong    = lines.filter(l => l.textContent.includes('❌'));
+
+    const dots = [...prog.querySelectorAll('.gs-sec-dot')];
+    lines.forEach((l, i) => {
+      if (!dots[i]) return;
+      dots[i].classList.toggle('ok',    l.textContent.includes('✅'));
+      dots[i].classList.toggle('wrong', l.textContent.includes('❌'));
+    });
+
+    const countEl = prog.querySelector('.gs-sec-count');
+    if (countEl) {
+      countEl.textContent = `${answered.length} / ${total}`;
+      countEl.classList.toggle('done', answered.length >= total);
+    }
+
+    const bar = prog.querySelector('.gs-sec-bar-fill');
+    if (bar) {
+      bar.style.width = Math.round(answered.length / total * 100) + '%';
+      bar.classList.toggle('all-ok',  answered.length >= total && wrong.length === 0);
+      bar.classList.toggle('has-err', answered.length >= total && wrong.length > 0);
+    }
+
+    const pip = document.getElementById('gs-pip-' + blockIdx);
+    if (pip) {
+      pip.classList.toggle('started',  answered.length > 0 && answered.length < total);
+      pip.classList.toggle('done-ok',  answered.length >= total && wrong.length === 0);
+      pip.classList.toggle('done-mix', answered.length >= total && wrong.length > 0);
+    }
+  }
+
+  function updateGlobalScore() {
+    const panel = document.getElementById('gs-score-panel');
+    if (!panel) return;
+    const allLines = [...document.querySelectorAll('.feedback-line')];
+    const total    = allLines.length;
+    const answered = allLines.filter(l => l.textContent.trim() !== '').length;
+    const correct  = allLines.filter(l => l.textContent.includes('✅')).length;
+    if (answered === 0) return;
+
+    panel.classList.add('visible');
+    const headEl = document.getElementById('gs-score-headline');
+    const corrEl = document.getElementById('gs-score-correct');
+    const pctEl  = document.getElementById('gs-score-pct');
+    const barEl  = document.getElementById('gs-score-bar');
+
+    if (headEl) headEl.textContent = `${answered} / ${total} réponses`;
+    if (corrEl) corrEl.textContent = `✅ ${correct}`;
+    const pct = Math.round(correct / answered * 100);
+    if (pctEl) { pctEl.textContent = pct + '%'; pctEl.classList.toggle('perfect', pct === 100 && answered === total); }
+    if (barEl) {
+      barEl.style.width = Math.round(answered / total * 100) + '%';
+      barEl.classList.toggle('complete', answered >= total);
+    }
+  }
+
+  function updateAllProgress() {
+    const blocks = [...document.querySelectorAll('.exercice-block')];
+    blocks.forEach((b, i) => updateBlockProgress(b, i));
+    updateGlobalScore();
+  }
+
+  // ── Related pages ─────────────────────────────────────────────────
+  function renderRelatedPages() {
+    const lvl = getPageLevel();
+    if (!lvl) return;
+    const peers = (LEVEL_PAGES[lvl] || []).filter(p => p !== page);
+    if (!peers.length) return;
+
+    const shuffled = [...peers].sort(() => Math.random() - 0.5).slice(0, 4);
+    const footer = document.querySelector('footer.site-footer');
+    if (!footer) return;
+
+    const relDiv = document.createElement('div');
+    relDiv.className = 'gs-related';
+    relDiv.innerHTML = `
+      <div class="gs-related-title">📚 Autres exercices — ${lvl === '6e' ? '6ème' : lvl}</div>
+      <div class="gs-related-grid">
+        ${shuffled.map(p => {
+          const info = PAGE_LABELS[p];
+          return info ? `<a href="${p}" class="gs-related-card"><span class="gs-related-emoji">${info.emoji}</span><span>${info.title}</span></a>` : '';
+        }).join('')}
+      </div>
+    `;
+    footer.insertAdjacentElement('beforebegin', relDiv);
+  }
+
   // ── Page complete detection ───────────────────────────────────────
   function checkPageComplete() {
     if (nextLessonShown) return;
@@ -905,6 +1267,7 @@
         }
       });
       checkPageComplete();
+      updateAllProgress();
     });
     obs.observe(document.body, { subtree: true, characterData: true, childList: true });
   }
@@ -914,6 +1277,8 @@
 
   function init() {
     injectCSS();
+    initPageProgress();
+    renderRelatedPages();
     if (!P) {
       showCreateProfileModal(() => {
         createHeaderProfile();
