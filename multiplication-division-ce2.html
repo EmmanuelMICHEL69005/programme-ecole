@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="Les Maths de Clémence">
+<meta name="application-name" content="Les Maths de Clémence">
+<meta property="og:site_name" content="Les Maths de Clémence">
+<link rel="manifest" href="manifest.json">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multiplication et division — CE2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #ddd6fe; border-radius: 22px;
+    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #5b21b6;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #f5f3ff; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #f5f3ff; border: 2px solid #ddd6fe; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .calcul-card {
+    font-size: 2rem; font-weight: 900; color: #5b21b6; text-align: center;
+    padding: 14px; background: #ede9fe; border-radius: 14px; margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+  .pb-enonce {
+    background: #ede9fe; border-radius: 10px; padding: 12px; margin-bottom: 12px;
+    font-size: 0.95rem; color: #4c1d95; line-height: 1.6; font-weight: 700;
+  }
+  .table-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin: 14px 0;
+  }
+  .table-cell {
+    background: #ede9fe; border-radius: 8px; padding: 8px; text-align: center;
+    font-weight: 900; font-size: 0.9rem; color: #4c1d95;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: linear-gradient(135deg, #4c1d95, #7c3aed);">
+  <span class="emoji-header">✖️</span>
+  <h1>Multiplication et division</h1>
+  <p>Tables, ×10 ×100, partage équitable</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">CE2 — Multiplication et division</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.9;">
+      ✖️ <strong>Multiplication</strong> : 4 × 3 = 4 + 4 + 4 = 12 (4 groupes de 3)<br>
+      🔟 <strong>× 10</strong> : j'ajoute un 0 → 45 × 10 = <strong>450</strong><br>
+      💯 <strong>× 100</strong> : j'ajoute deux zéros → 23 × 100 = <strong>2 300</strong><br>
+      ➗ <strong>Division</strong> : partager en parts égales → 20 ÷ 4 = <strong>5</strong><br>
+      🔢 <strong>Tables à connaître</strong> : ×2, ×3, ×4, ×5, ×6, ×7, ×8, ×9, ×10
+    </div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#5b21b6;">Ex 1</span> Tables de multiplication</div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#5b21b6;">Ex 2</span> Multiplier par 10, 100, 1 000</div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#5b21b6;">Ex 3</span> Division — partager en parts égales</div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#5b21b6;">Ex 4</span> Problèmes multiplicatifs et de partage</div>
+    <div id="ex4"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CE2</footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    let html = '';
+    if (item.card) html += `<div class="calcul-card">${item.card}</div>`;
+    if (item.enonce) html += `<div class="pb-enonce">${item.enonce}</div>`;
+    html += `<div class="q-text">${item.q}</div>`;
+    html += `<div class="qcm-row" id="${id}-r${i}">
+      ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+    </div>
+    <div class="feedback-line" id="${id}-f${i}"></div>`;
+    d.innerHTML = html;
+    c.appendChild(d);
+  });
+}
+
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([
+  { card: '7 × 3 = ?', q: 'Calcule 7 × 3', correct: '21', choices: ['18','21','24','28'] },
+  { card: '6 × 4 = ?', q: 'Calcule 6 × 4', correct: '24', choices: ['20','22','24','28'] },
+  { card: '8 × 5 = ?', q: 'Calcule 8 × 5', correct: '40', choices: ['35','40','45','50'] },
+  { card: '9 × 3 = ?', q: 'Calcule 9 × 3', correct: '27', choices: ['24','27','30','33'] },
+  { card: '7 × 8 = ?', q: 'Calcule 7 × 8', correct: '56', choices: ['48','54','56','63'] },
+  { card: '6 × 9 = ?', q: 'Calcule 6 × 9', correct: '54', choices: ['42','48','54','60'] },
+  { card: '4 × 7 = ?', q: 'Calcule 4 × 7', correct: '28', choices: ['24','28','32','35'] },
+  { card: '9 × 8 = ?', q: 'Calcule 9 × 8', correct: '72', choices: ['63','64','72','81'] },
+], 'ex1');
+
+buildQ([
+  { card: '45 × 10 = ?', q: 'Calcule 45 × 10', correct: '450', choices: ['45','405','450','4 500'] },
+  { card: '23 × 100 = ?', q: 'Calcule 23 × 100', correct: '2 300', choices: ['23','230','2 300','23 000'] },
+  { card: '6 × 1 000 = ?', q: 'Calcule 6 × 1 000', correct: '6 000', choices: ['60','600','6 000','60 000'] },
+  { card: '37 × 10 = ?', q: 'Calcule 37 × 10', correct: '370', choices: ['37','307','370','3 700'] },
+  { card: '50 × 100 = ?', q: 'Calcule 50 × 100', correct: '5 000', choices: ['500','5 000','50 000','500 000'] },
+  { enonce: 'Un magasin commande 100 boîtes. Chaque boîte coûte 8 €.', q: 'Quel est le montant total ?', correct: '800 €', choices: ['80 €','800 €','8 000 €','8 €'] },
+], 'ex2');
+
+buildQ([
+  { card: '20 ÷ 4 = ?', q: 'Je partage 20 bonbons en 4 parts égales. Combien y en a-t-il par part ?', correct: '5', choices: ['4','5','6','8'] },
+  { enonce: 'Leïla a 18 images. Elle les partage entre 3 amies.', q: 'Combien d\'images chaque amie reçoit-elle ?', correct: '6', choices: ['5','6','7','9'] },
+  { card: '35 ÷ 5 = ?', q: 'Calcule 35 ÷ 5', correct: '7', choices: ['5','6','7','8'] },
+  { card: '24 ÷ 3 = ?', q: 'Calcule 24 ÷ 3', correct: '8', choices: ['6','7','8','9'] },
+  { enonce: 'Un jardinier plante 27 fleurs en rangées de 9.', q: 'Combien de rangées fait-il ?', correct: '3', choices: ['2','3','4','5'] },
+  { enonce: 'Tom range 42 billes dans des boîtes de 6.', q: 'Combien de boîtes peut-il remplir ?', correct: '7', choices: ['5','6','7','8'] },
+  { card: '56 ÷ 8 = ?', q: 'Calcule 56 ÷ 8', correct: '7', choices: ['6','7','8','9'] },
+], 'ex3');
+
+buildQ([
+  { enonce: 'Dans un restaurant, il y a 4 tables de 6 places.', q: 'Combien de personnes peuvent s\'asseoir en tout ?', correct: '24 personnes', choices: ['20 personnes','22 personnes','24 personnes','28 personnes'] },
+  { enonce: 'Un paquet contient 8 crayons. La maîtresse achète 7 paquets.', q: 'Combien de crayons a-t-elle achetés ?', correct: '56 crayons', choices: ['48 crayons','54 crayons','56 crayons','64 crayons'] },
+  { enonce: 'Une boîte de 36 chocolats est partagée entre 4 enfants.', q: 'Combien de chocolats chaque enfant reçoit-il ?', correct: '9 chocolats', choices: ['7 chocolats','8 chocolats','9 chocolats','10 chocolats'] },
+  { enonce: 'Nassim a gagné 5 fois plus de points que Léa. Léa a 9 points.', q: 'Combien de points Nassim a-t-il gagnés ?', correct: '45 points', choices: ['35 points','40 points','45 points','50 points'] },
+  { enonce: 'Une ferme a 6 enclos avec 8 moutons dans chaque enclos.', q: 'Combien y a-t-il de moutons en tout ?', correct: '48 moutons', choices: ['42 moutons','48 moutons','54 moutons','56 moutons'] },
+  { enonce: 'Un photographe a pris 63 photos. Il en met 9 par page dans son album.', q: 'Combien de pages son album contient-il ?', correct: '7 pages', choices: ['6 pages','7 pages','8 pages','9 pages'] },
+], 'ex4');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

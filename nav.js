@@ -48,6 +48,8 @@
           { emoji: '➕', title: 'Les opérations',             href: 'calcul.html' },
           { emoji: '⚡', title: 'Calcul mental',              href: 'calcul-mental.html' },
           { emoji: '🧩', title: 'Problèmes',                  href: 'problemes.html' },
+          { emoji: '🖊️', title: 'Opérations posées',          href: 'operations-posees-ce2.html' },
+          { emoji: '✖️', title: 'Multiplication et division',  href: 'multiplication-division-ce2.html' },
         ]},
         { label: '📐 Grandeurs et mesures', color: '#93c5fd', pages: [
           { emoji: '📏', title: 'Longueurs, masses, contenances', href: 'mesures.html' },

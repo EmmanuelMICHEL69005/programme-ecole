@@ -19,6 +19,7 @@
     // CE2
     'nombres.html','fiche1.html','fiche2.html','fiche3.html',
     'calcul.html','calcul-mental.html','problemes.html',
+    'operations-posees-ce2.html','multiplication-division-ce2.html',
     'mesures.html','temps.html','geometrie.html','solides.html','donnees.html',
     // CM1
     'nombres-cm1.html','decimaux-cm1.html','fractions-cm1.html','calcul-cm1.html','calcul-mental-cm1.html','calcul-pose-cm1.html','mesures-cm1.html','geometrie-cm1.html','donnees-cm1.html','proportionnalite-cm1.html',
@@ -87,6 +88,8 @@
     'calcul.html':                 { title:'Les opérations CE2',           emoji:'➕' },
     'calcul-mental.html':          { title:'Calcul mental CE2',            emoji:'⚡' },
     'problemes.html':              { title:'Problèmes CE2',                emoji:'🧩' },
+    'operations-posees-ce2.html':  { title:'Opérations posées CE2',        emoji:'🖊️' },
+    'multiplication-division-ce2.html': { title:'Multiplication & division CE2', emoji:'✖️' },
     'mesures.html':                { title:'Mesures CE2',                  emoji:'📏' },
     'temps.html':                  { title:'Temps & monnaie CE2',          emoji:'🕐' },
     'geometrie.html':              { title:'Géométrie plane CE2',          emoji:'🔷' },
@@ -128,7 +131,7 @@
   const LEVEL_PAGES = {
     CP:  ['nombres-cp.html','calcul-cp.html','calcul-mental-cp.html','mesures-cp.html','geometrie-cp.html','donnees-cp.html'],
     CE1: ['nombres-ce1.html','fractions-ce1.html','calcul-ce1.html','calcul-mental-ce1.html','mesures-ce1.html','geometrie-ce1.html','donnees-ce1.html'],
-    CE2: ['nombres.html','fiche1.html','fiche2.html','fiche3.html','calcul.html','calcul-mental.html','problemes.html','mesures.html','temps.html','geometrie.html','solides.html','donnees.html'],
+    CE2: ['nombres.html','fiche1.html','fiche2.html','fiche3.html','calcul.html','calcul-mental.html','problemes.html','operations-posees-ce2.html','multiplication-division-ce2.html','mesures.html','temps.html','geometrie.html','solides.html','donnees.html'],
     CM1: ['nombres-cm1.html','decimaux-cm1.html','fractions-cm1.html','calcul-cm1.html','calcul-mental-cm1.html','calcul-pose-cm1.html','mesures-cm1.html','geometrie-cm1.html','donnees-cm1.html','proportionnalite-cm1.html'],
     CM2: ['nombres-cm2.html','decimaux-cm2.html','fractions-cm2.html','calcul-cm2.html','calcul-mental-cm2.html','calcul-pose-cm2.html','mesures-cm2.html','geometrie-cm2.html','donnees-cm2.html','proportionnalite-cm2.html','problemes-cm2.html'],
     '6e': ['nombres-6e.html','fractions-6e.html','algebre-6e.html','geometrie-6e.html','mesures-6e.html','donnees-6e.html','proportionnalite-6e.html'],
