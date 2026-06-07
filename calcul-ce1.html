@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les opérations — CE1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #a7f3d0; border-radius: 22px;
+    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #065f46;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #d1fae5; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #ecfdf5; border: 2px solid #a7f3d0; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .operation-posee {
+    font-family: 'Courier New', monospace; background: #d1fae5; border-radius: 10px;
+    padding: 12px 20px; font-size: 1.3rem; font-weight: 900; color: #065f46;
+    text-align: right; margin-bottom: 12px; display: inline-block;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: linear-gradient(135deg, #059669, #6ee7b7);">
+  <span class="emoji-header">➕</span>
+  <h1>Les opérations</h1>
+  <p>Addition, soustraction et début de multiplication</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">CE1 — Nombres et calculs</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
+      ➕ <strong>Addition posée</strong> : on aligne unités sous unités, dizaines sous dizaines<br>
+      ➖ <strong>Soustraction posée</strong> : retenue = emprunter à la colonne suivante<br>
+      ✖️ <strong>Multiplication</strong> = additions répétées → 3 × 4 = 4+4+4 = 12<br>
+      ✅ Tables à mémoriser : ×2, ×3, ×4, ×5
+    </div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 1</span> Additions posées</div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 2</span> Soustractions posées</div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 3</span> Initiation à la multiplication</div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 4</span> Problèmes mêlés</div>
+    <div id="ex4"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CE1</footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    d.innerHTML = `
+      <div class="q-text">${item.q}</div>
+      <div class="qcm-row" id="${id}-r${i}">
+        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+      </div>
+      <div class="feedback-line" id="${id}-f${i}"></div>
+    `;
+    c.appendChild(d);
+  });
+}
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([
+  { q: '147 + 85 = ?', correct: '232', choices: ['222','231','232','242'] },
+  { q: '364 + 27 = ?', correct: '391', choices: ['381','391','394','401'] },
+  { q: '225 + 135 = ?', correct: '360', choices: ['350','360','365','370'] },
+  { q: '456 + 244 = ?', correct: '700', choices: ['690','700','710','696'] },
+], 'ex1');
+
+buildQ([
+  { q: '253 − 47 = ?', correct: '206', choices: ['196','200','206','216'] },
+  { q: '400 − 156 = ?', correct: '244', choices: ['234','244','254','244'] },
+  { q: '632 − 89 = ?', correct: '543', choices: ['533','542','543','553'] },
+  { q: '500 − 325 = ?', correct: '175', choices: ['165','175','185','195'] },
+], 'ex2');
+
+buildQ([
+  { q: '3 × 4 = ?', correct: '12', choices: ['9','10','12','14'] },
+  { q: '5 × 6 = ?', correct: '30', choices: ['25','28','30','35'] },
+  { q: '4 × 7 = ?', correct: '28', choices: ['24','27','28','32'] },
+  { q: '2 × 9 = ?', correct: '18', choices: ['16','17','18','19'] },
+], 'ex3');
+
+buildQ([
+  { q: 'Il y a 3 boîtes avec 8 crayons chacune. Combien de crayons en tout ?', correct: '24', choices: ['21','22','24','26'] },
+  { q: 'Léo a 235 images. Il en donne 87. Combien lui en reste-t-il ?', correct: '148', choices: ['138','148','158','168'] },
+  { q: '4 enfants ont chacun 9 billes. Combien au total ?', correct: '36', choices: ['32','34','36','40'] },
+  { q: 'Une bibliothèque a 145 livres. Elle en achète 38. Combien a-t-elle de livres ?', correct: '183', choices: ['173','183','193','180'] },
+], 'ex4');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

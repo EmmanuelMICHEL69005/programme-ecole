@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Addition et soustraction — CP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #bbf7d0; border-radius: 22px;
+    padding: 10px 22px; font-size: 1.05rem; font-weight: 800; cursor: pointer; color: #166534;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #dcfce7; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #f0fdf4; border: 2px solid #bbf7d0; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; }
+  .operation-big { font-size: 2rem; font-weight: 900; color: #166534; text-align: center; padding: 12px; background: #dcfce7; border-radius: 12px; margin-bottom: 12px; }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: linear-gradient(135deg, #16a34a, #86efac);">
+  <span class="emoji-header">➕</span>
+  <h1>Addition et soustraction</h1>
+  <p>Calculer avec des petits nombres</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">CP — Nombres et calculs</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
+      ➕ <strong>Addition</strong> : mettre ensemble → 5 + 3 = 8<br>
+      ➖ <strong>Soustraction</strong> : enlever → 8 − 3 = 5<br>
+      🔄 Complément à 10 : 6 + <strong>4</strong> = 10 | 7 + <strong>3</strong> = 10<br>
+      ✅ Vérifier : 5 + 3 = 8 ↔ 8 − 3 = 5
+    </div>
+  </div>
+
+  <!-- EX 1 : Additions simples -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 1</span> Petites additions</div>
+    <div id="ex1"></div>
+  </div>
+
+  <!-- EX 2 : Soustractions simples -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 2</span> Petites soustractions</div>
+    <div id="ex2"></div>
+  </div>
+
+  <!-- EX 3 : Additions avec des dizaines -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 3</span> Additions avec dizaines</div>
+    <div id="ex3"></div>
+  </div>
+
+  <!-- EX 4 : Problèmes simples -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 4</span> Mini-problèmes</div>
+    <div id="ex4"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CP</footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    d.innerHTML = `
+      <div class="q-text">${item.q}</div>
+      <div class="qcm-row" id="${id}-r${i}">
+        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+      </div>
+      <div class="feedback-line" id="${id}-f${i}"></div>
+    `;
+    c.appendChild(d);
+  });
+}
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([
+  { q: '3 + 4 = ?', correct: '7', choices: ['6','7','8','9'] },
+  { q: '6 + 5 = ?', correct: '11', choices: ['10','11','12','13'] },
+  { q: '8 + 7 = ?', correct: '15', choices: ['13','14','15','16'] },
+  { q: 'Quel nombre manque ? 4 + ☐ = 9', correct: '5', choices: ['3','4','5','6'] },
+], 'ex1');
+
+buildQ([
+  { q: '9 − 4 = ?', correct: '5', choices: ['3','4','5','6'] },
+  { q: '12 − 5 = ?', correct: '7', choices: ['6','7','8','9'] },
+  { q: '15 − 8 = ?', correct: '7', choices: ['5','6','7','8'] },
+  { q: 'Quel nombre manque ? ☐ − 3 = 6', correct: '9', choices: ['7','8','9','10'] },
+], 'ex2');
+
+buildQ([
+  { q: '20 + 30 = ?', correct: '50', choices: ['40','50','60','23'] },
+  { q: '45 + 10 = ?', correct: '55', choices: ['46','54','55','56'] },
+  { q: '60 − 20 = ?', correct: '40', choices: ['30','40','42','80'] },
+  { q: '30 + 17 = ?', correct: '47', choices: ['37','47','48','57'] },
+], 'ex3');
+
+buildQ([
+  { q: 'Il y a 6 pommes dans le panier et Tom en ajoute 4. Combien y en a-t-il maintenant ?', correct: '10', choices: ['8','9','10','11'] },
+  { q: 'Léa a 13 billes. Elle en perd 5. Combien lui en reste-t-il ?', correct: '8', choices: ['7','8','9','18'] },
+  { q: 'Dans la classe, il y a 11 filles et 9 garçons. Combien d\'élèves y a-t-il en tout ?', correct: '20', choices: ['18','19','20','21'] },
+  { q: 'Un bus a 15 passagers. 6 descendent. Combien reste-t-il de passagers ?', correct: '9', choices: ['7','8','9','10'] },
+], 'ex4');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

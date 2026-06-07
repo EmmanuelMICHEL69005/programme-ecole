@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Géométrie — Angles — CM1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #bfdbfe; border-radius: 22px;
+    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #1e3a8a;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #dbeafe; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #eff6ff; border: 2px solid #bfdbfe; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .angle-visual { display: flex; justify-content: center; margin: 12px 0; }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: linear-gradient(135deg, #1d4ed8, #60a5fa);">
+  <span class="emoji-header">🔷</span>
+  <h1>Géométrie</h1>
+  <p>Angles, parallèles, perpendiculaires, cercle</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">CM1 — Espace et géométrie</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
+      📐 <strong>Angle droit</strong> = 90° | <strong>Angle aigu</strong> &lt; 90° | <strong>Angle obtus</strong> &gt; 90°<br>
+      ⊥ Deux droites sont <strong>perpendiculaires</strong> si elles forment un angle droit<br>
+      ∥ Deux droites sont <strong>parallèles</strong> si elles ne se croisent jamais<br>
+      ⭕ <strong>Cercle</strong> : centre O, rayon r, diamètre = 2r
+    </div>
+  </div>
+
+  <!-- Visualisation des angles -->
+  <div class="retiens-box" style="background:#dbeafe; border-color:#60a5fa;">
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+      <div style="text-align:center;">
+        <svg width="70" height="60" viewBox="0 0 70 60">
+          <line x1="10" y1="50" x2="60" y2="50" stroke="#1d4ed8" stroke-width="3"/>
+          <line x1="10" y1="50" x2="10" y2="10" stroke="#1d4ed8" stroke-width="3"/>
+          <rect x="10" y="40" width="10" height="10" fill="none" stroke="#ef4444" stroke-width="2"/>
+        </svg>
+        <div style="font-size:0.75rem; font-weight:800; color:#1e3a8a;">Angle droit (90°)</div>
+      </div>
+      <div style="text-align:center;">
+        <svg width="70" height="60" viewBox="0 0 70 60">
+          <line x1="10" y1="50" x2="60" y2="50" stroke="#1d4ed8" stroke-width="3"/>
+          <line x1="10" y1="50" x2="40" y2="15" stroke="#1d4ed8" stroke-width="3"/>
+          <path d="M10,50 Q22,42 25,50" fill="none" stroke="#ef4444" stroke-width="2"/>
+        </svg>
+        <div style="font-size:0.75rem; font-weight:800; color:#1e3a8a;">Angle aigu (&lt;90°)</div>
+      </div>
+      <div style="text-align:center;">
+        <svg width="70" height="60" viewBox="0 0 70 60">
+          <line x1="10" y1="50" x2="60" y2="50" stroke="#1d4ed8" stroke-width="3"/>
+          <line x1="10" y1="50" x2="55" y2="15" stroke="#1d4ed8" stroke-width="3"/>
+          <path d="M10,50 Q30,48 33,40" fill="none" stroke="#ef4444" stroke-width="2"/>
+        </svg>
+        <div style="font-size:0.75rem; font-weight:800; color:#1e3a8a;">Angle obtus (&gt;90°)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 1</span> Types d'angles</div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 2</span> Droites parallèles et perpendiculaires</div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 3</span> Le cercle</div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 4</span> Triangles et quadrilatères</div>
+    <div id="ex4"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CM1</footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    d.innerHTML = `
+      <div class="q-text">${item.q}</div>
+      <div class="qcm-row" id="${id}-r${i}">
+        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+      </div>
+      <div class="feedback-line" id="${id}-f${i}"></div>
+    `;
+    c.appendChild(d);
+  });
+}
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([
+  { q: 'Un angle de 45° est…', correct: 'Un angle aigu (< 90°)', choices: ['Un angle droit (90°)','Un angle aigu (< 90°)','Un angle obtus (> 90°)','Un angle plat (180°)'] },
+  { q: 'Un angle de 130° est…', correct: 'Un angle obtus (> 90°)', choices: ['Un angle droit (90°)','Un angle aigu (< 90°)','Un angle obtus (> 90°)','Un angle plat (180°)'] },
+  { q: 'La somme des angles d\'un triangle est toujours…', correct: '180°', choices: ['90°','180°','270°','360°'] },
+  { q: 'Un angle plat mesure…', correct: '180°', choices: ['90°','120°','180°','360°'] },
+], 'ex1');
+
+buildQ([
+  { q: 'Deux droites sont perpendiculaires si elles forment…', correct: 'Un angle droit (90°)', choices: ['Un angle de 45°','Un angle droit (90°)','Un angle obtus','Un angle nul'] },
+  { q: 'Deux droites parallèles…', correct: 'Ne se croisent jamais', choices: ['Se croisent en un point','Forment un angle droit','Ne se croisent jamais','Sont confondues'] },
+  { q: 'Les deux rails d\'une voie ferrée sont…', correct: 'Parallèles', choices: ['Perpendiculaires','Parallèles','Sécants','Confondus'] },
+  { q: 'Le bord d\'une table et une patte de table sont…', correct: 'Perpendiculaires', choices: ['Parallèles','Perpendiculaires','Sécants en 45°','Identiques'] },
+], 'ex2');
+
+buildQ([
+  { q: 'Le rayon d\'un cercle est de 5 cm. Quel est son diamètre ?', correct: '10 cm', choices: ['5 cm','10 cm','15 cm','25 cm'] },
+  { q: 'Le diamètre d\'un cercle est de 14 cm. Quel est son rayon ?', correct: '7 cm', choices: ['7 cm','14 cm','28 cm','7 cm²'] },
+  { q: 'Le rayon d\'un cercle mesure toujours…', correct: 'La même longueur (du centre à tout point du cercle)', choices: ['La même longueur (du centre à tout point du cercle)','La moitié de la corde','Le double du diamètre','Une valeur variable'] },
+  { q: 'La circonférence est…', correct: 'Le périmètre du cercle', choices: ['Le rayon','L\'aire du cercle','Le périmètre du cercle','Le diamètre'] },
+], 'ex3');
+
+buildQ([
+  { q: 'Un triangle équilatéral a ses 3 côtés…', correct: 'Tous égaux', choices: ['Tous égaux','Deux égaux','Tous différents','Aucun égal'] },
+  { q: 'Un losange a…', correct: '4 côtés égaux (mais pas forcément des angles droits)', choices: ['4 angles droits','4 côtés égaux (mais pas forcément des angles droits)','2 paires de côtés parallèles seulement','3 côtés égaux'] },
+  { q: 'Un trapèze a…', correct: 'Une seule paire de côtés parallèles', choices: ['2 paires de côtés parallèles','Une seule paire de côtés parallèles','4 angles droits','4 côtés égaux'] },
+  { q: 'Combien d\'axes de symétrie a un triangle équilatéral ?', correct: '3', choices: ['0','1','2','3'] },
+], 'ex4');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

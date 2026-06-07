@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Données — CE1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #a7f3d0; border-radius: 22px;
+    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #065f46;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #d1fae5; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #ecfdf5; border: 2px solid #a7f3d0; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .data-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.9rem; }
+  .data-table th { background: #059669; color: white; padding: 9px; font-weight: 900; text-align: center; border: 2px solid #047857; }
+  .data-table td { background: white; padding: 9px; text-align: center; border: 2px solid #a7f3d0; font-weight: 700; }
+  .data-table tr:nth-child(even) td { background: #ecfdf5; }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: linear-gradient(135deg, #059669, #6ee7b7);">
+  <span class="emoji-header">📊</span>
+  <h1>Données</h1>
+  <p>Tableaux à double entrée et graphiques</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">CE1 — Organisation des données</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
+      📋 Un <strong>tableau à double entrée</strong> : les lignes ET les colonnes ont des étiquettes.<br>
+      📊 Un <strong>diagramme en barres</strong> : les barres montrent des quantités à comparer.<br>
+      🔍 Pour lire un tableau : je lis <strong>le nom de la ligne ET le nom de la colonne</strong>.
+    </div>
+  </div>
+
+  <!-- EX 1 -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 1</span> Tableau des sports — CE1 A et CE1 B</div>
+    <table class="data-table">
+      <thead><tr><th></th><th>CE1 A</th><th>CE1 B</th></tr></thead>
+      <tbody>
+        <tr><td>Football</td><td>9</td><td>6</td></tr>
+        <tr><td>Natation</td><td>5</td><td>8</td></tr>
+        <tr><td>Judo</td><td>4</td><td>3</td></tr>
+        <tr><td>Danse</td><td>7</td><td>9</td></tr>
+      </tbody>
+    </table>
+    <div id="ex1"></div>
+  </div>
+
+  <!-- EX 2 : diagramme -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 2</span> Diagramme en barres — transports</div>
+    <div style="background:#d1fae5; border-radius:10px; padding:16px; margin-bottom:12px; overflow-x:auto;">
+      <div style="display:flex; align-items:flex-end; gap:18px; height:140px; border-bottom:3px solid #059669; padding:0 8px; min-width:280px;">
+        <div style="display:flex; flex-direction:column; align-items:center; gap:4px;">
+          <div style="width:44px; height:100px; background:#4ade80; border-radius:6px 6px 0 0; display:flex; align-items:flex-start; justify-content:center; padding-top:4px;"><span style="font-size:0.8rem; font-weight:900; color:white;">10</span></div>
+          <div style="font-size:0.75rem; font-weight:800; color:#065f46; text-align:center;">🚌 Bus</div>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:4px;">
+          <div style="width:44px; height:70px; background:#34d399; border-radius:6px 6px 0 0; display:flex; align-items:flex-start; justify-content:center; padding-top:4px;"><span style="font-size:0.8rem; font-weight:900; color:white;">7</span></div>
+          <div style="font-size:0.75rem; font-weight:800; color:#065f46; text-align:center;">🚲 Vélo</div>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:4px;">
+          <div style="width:44px; height:120px; background:#059669; border-radius:6px 6px 0 0; display:flex; align-items:flex-start; justify-content:center; padding-top:4px;"><span style="font-size:0.8rem; font-weight:900; color:white;">12</span></div>
+          <div style="font-size:0.75rem; font-weight:800; color:#065f46; text-align:center;">🚗 Voiture</div>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:4px;">
+          <div style="width:44px; height:50px; background:#6ee7b7; border-radius:6px 6px 0 0; display:flex; align-items:flex-start; justify-content:center; padding-top:4px;"><span style="font-size:0.8rem; font-weight:900; color:#065f46;">5</span></div>
+          <div style="font-size:0.75rem; font-weight:800; color:#065f46; text-align:center;">🚶 Pied</div>
+        </div>
+      </div>
+    </div>
+    <div id="ex2"></div>
+  </div>
+
+  <!-- EX 3 : collecter des données -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 3</span> Interpréter des données</div>
+    <div id="ex3"></div>
+  </div>
+
+  <!-- EX 4 -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 4</span> Créer et compléter un tableau</div>
+    <div id="ex4"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CE1</footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    d.innerHTML = `
+      <div class="q-text">${item.q}</div>
+      <div class="qcm-row" id="${id}-r${i}">
+        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+      </div>
+      <div class="feedback-line" id="${id}-f${i}"></div>
+    `;
+    c.appendChild(d);
+  });
+}
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([
+  { q: 'Combien d\'élèves de CE1 B font de la natation ?', correct: '8', choices: ['5','7','8','9'] },
+  { q: 'Quel sport est le plus pratiqué dans CE1 A ?', correct: 'Football (9)', choices: ['Natation (5)','Football (9)','Judo (4)','Danse (7)'] },
+  { q: 'Combien d\'élèves font du judo en tout (les deux classes) ?', correct: '7', choices: ['3','4','7','8'] },
+  { q: 'Dans quelle classe la danse est-elle la plus populaire ?', correct: 'CE1 B (9)', choices: ['CE1 A (7)','CE1 B (9)','Dans les deux pareil'] },
+], 'ex1');
+
+buildQ([
+  { q: 'Quel moyen de transport est le plus utilisé ?', correct: '🚗 Voiture (12)', choices: ['🚌 Bus (10)','🚗 Voiture (12)','🚲 Vélo (7)','🚶 Pied (5)'] },
+  { q: 'Combien d\'élèves viennent à pied ou à vélo ?', correct: '12', choices: ['7','10','12','14'] },
+  { q: 'Quel moyen de transport est le moins utilisé ?', correct: '🚶 Pied (5)', choices: ['🚌 Bus (10)','🚗 Voiture (12)','🚲 Vélo (7)','🚶 Pied (5)'] },
+], 'ex2');
+
+buildQ([
+  { q: 'Dans une enquête, 15 enfants aiment les chats, 20 aiment les chiens, 5 aiment les lapins. Combien d\'enfants ont répondu en tout ?', correct: '40', choices: ['35','38','40','42'] },
+  { q: 'Sur 40 enfants, 15 aiment les chats. Combien N\'aiment PAS les chats ?', correct: '25', choices: ['15','20','25','30'] },
+  { q: 'Si on agrandit le tableau pour ajouter "oiseaux" avec 8 réponses, combien y a-t-il d\'enfants en tout maintenant ?', correct: '48', choices: ['40','45','48','52'] },
+], 'ex3');
+
+buildQ([
+  { q: 'Dans une classe de 25 élèves, 12 ont un chien, 7 ont un chat, 4 ont un poisson, 2 n\'ont pas d\'animal. Combien ont un animal ?', correct: '23', choices: ['21','22','23','25'] },
+  { q: 'Quelle information est la plus fréquente ?', correct: 'Chien (12)', choices: ['Chat (7)','Chien (12)','Poisson (4)','Aucun (2)'] },
+  { q: 'Quelle fraction de la classe n\'a pas d\'animal ?', correct: '2/25', choices: ['2/25','4/25','12/25','2/23'] },
+], 'ex4');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

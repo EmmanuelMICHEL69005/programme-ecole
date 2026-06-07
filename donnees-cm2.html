@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Statistiques et probabilités — CM2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #fef08a; border-radius: 22px;
+    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #713f12;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #fef9c3; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #fefce8; border: 2px solid #fef08a; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: linear-gradient(135deg, #b45309, #fcd34d);">
+  <span class="emoji-header">📊</span>
+  <h1>Statistiques et probabilités</h1>
+  <p>Moyenne, médiane, fréquences, probabilités</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">CM2 — Organisation des données</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
+      🧮 <strong>Moyenne</strong> = somme ÷ nombre de valeurs<br>
+      📊 <strong>Médiane</strong> = valeur centrale après avoir rangé dans l'ordre<br>
+      📈 <strong>Mode</strong> = valeur qui apparaît le plus souvent<br>
+      🎲 <strong>Probabilité</strong> : entre 0 (impossible) et 1 (certain)
+    </div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 1</span> Moyenne, médiane et mode</div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 2</span> Fréquences et pourcentages</div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 3</span> Probabilités avancées</div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 4</span> Interpréter des données statistiques</div>
+    <div id="ex4"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CM2</footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    d.innerHTML = `
+      <div class="q-text">${item.q}</div>
+      <div class="qcm-row" id="${id}-r${i}">
+        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+      </div>
+      <div class="feedback-line" id="${id}-f${i}"></div>
+    `;
+    c.appendChild(d);
+  });
+}
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([
+  { q: 'Série : 8, 12, 10, 15, 10, 9. Quelle est la moyenne ?', correct: '10,67', choices: ['10','10,5','10,67','11'] },
+  { q: 'Série rangée dans l\'ordre : 5, 7, 9, 12, 14. Quelle est la médiane ?', correct: '9', choices: ['7','9','10','12'] },
+  { q: 'Série : 3, 5, 3, 7, 5, 3, 8. Quel est le mode ?', correct: '3', choices: ['3','5','7','8'] },
+  { q: 'Pour la série 4, 6, 8, 10, la médiane est…', correct: '7 (entre 6 et 8)', choices: ['6','7 (entre 6 et 8)','8','6 et 8'] },
+], 'ex1');
+
+buildQ([
+  { q: 'Dans une classe de 30 élèves, 12 ont les yeux bleus. Quelle est la fréquence (%) ?', correct: '40%', choices: ['30%','40%','42%','50%'] },
+  { q: 'Sur 200 personnes sondées, 150 aiment le cinéma. Quelle est la fréquence (%) ?', correct: '75%', choices: ['50%','60%','75%','80%'] },
+  { q: 'Si 35% d\'une population de 400 personnes sont des enfants, combien sont des enfants ?', correct: '140', choices: ['35','100','140','175'] },
+  { q: 'Un diagramme circulaire montre 25% pour "sciences" sur une classe de 32. Combien d\'élèves préfèrent les sciences ?', correct: '8', choices: ['4','6','8','10'] },
+], 'ex2');
+
+buildQ([
+  { q: 'On lance 2 dés. Quelle est la probabilité de faire un total de 12 (double 6) ?', correct: '1/36', choices: ['1/6','1/12','1/36','2/36'] },
+  { q: 'Un sac contient 4 billes rouges, 3 bleues, 3 vertes. Probabilité de tirer une bille verte ?', correct: '3/10', choices: ['1/3','3/10','3/7','1/10'] },
+  { q: 'En lançant un dé, quelle est la probabilité d\'obtenir un nombre pair ?', correct: '1/2', choices: ['1/3','1/2','2/3','3/6'] },
+  { q: 'Quelle expression décrit un événement impossible ?', correct: 'Obtenir un 7 avec un dé à 6 faces', choices: ['Obtenir un 6 avec un dé','Obtenir un 7 avec un dé à 6 faces','Tirer une bille d\'un sac qui en contient','Pluie en novembre'] },
+], 'ex3');
+
+buildQ([
+  { q: 'Les ventes d\'un magasin sur 4 mois : 2 400 — 3 100 — 2 800 — 3 500. Quelle est la moyenne mensuelle ?', correct: '2 950', choices: ['2 800','2 950','3 000','3 100'] },
+  { q: 'Le nombre de points de l\'équipe : 15, 18, 12, 20, 15, 18. Quel est le mode ?', correct: '15 et 18 (2 modes)', choices: ['15 seulement','18 seulement','15 et 18 (2 modes)','12'] },
+  { q: 'Les températures en juillet : 28°, 32°, 30°, 35°, 31°, 29°, 33°. Médiane ?', correct: '31°', choices: ['29°','30°','31°','32°'] },
+], 'ex4');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

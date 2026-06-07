@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calcul avancé — CM2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #fef08a; border-radius: 22px;
+    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #713f12;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #fef9c3; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #fefce8; border: 2px solid #fef08a; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .pb-enonce { background: #fef9c3; border-radius: 10px; padding: 12px; margin-bottom: 12px; font-size: 0.95rem; color: #713f12; line-height: 1.6; }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: linear-gradient(135deg, #b45309, #fcd34d);">
+  <span class="emoji-header">➕</span>
+  <h1>Les 4 opérations avancées</h1>
+  <p>Division décimale, priorités, parenthèses</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">CM2 — Nombres et calculs</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
+      ÷ <strong>Division décimale</strong> : on peut continuer après la virgule → 7 ÷ 4 = 1,75<br>
+      📏 <strong>Priorités</strong> : ( ) d'abord, puis × et ÷, puis + et −<br>
+      🔢 <strong>Distributivité</strong> : 6 × 13 = 6 × 10 + 6 × 3 = 60 + 18 = 78<br>
+      ✅ <strong>Estimation</strong> : arrondir pour vérifier l'ordre de grandeur
+    </div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 1</span> Division décimale</div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 2</span> Priorité des opérations</div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 3</span> Calculs avec grands nombres</div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 4</span> Problèmes complexes</div>
+    <div id="ex4"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CM2</footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    d.innerHTML = `
+      ${item.enonce ? `<div class="pb-enonce">${item.enonce}</div>` : ''}
+      <div class="q-text">${item.q}</div>
+      <div class="qcm-row" id="${id}-r${i}">
+        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+      </div>
+      <div class="feedback-line" id="${id}-f${i}"></div>
+    `;
+    c.appendChild(d);
+  });
+}
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([
+  { q: '15 ÷ 4 = ? (résultat décimal)', correct: '3,75', choices: ['3 reste 3','3,5','3,75','4'] },
+  { q: '7 ÷ 8 = ?', correct: '0,875', choices: ['0,75','0,875','0,9','1,14'] },
+  { q: '23,4 ÷ 6 = ?', correct: '3,9', choices: ['3,6','3,9','4,0','4,2'] },
+  { q: 'Si 1 litre d\'essence coûte 1,89 €, quel est le prix de 30 litres ?', correct: '56,70 €', choices: ['56,00 €','56,70 €','57,00 €','58,90 €'] },
+], 'ex1');
+
+buildQ([
+  { q: '3 + 4 × 5 = ?', correct: '23', choices: ['35','20','23','60'] },
+  { q: '(3 + 4) × 5 = ?', correct: '35', choices: ['23','35','20','12'] },
+  { q: '48 ÷ (8 − 2) = ?', correct: '8', choices: ['4','6','8','24'] },
+  { q: '2 × 6 + 3 × 4 = ?', correct: '24', choices: ['12','20','24','60'] },
+], 'ex2');
+
+buildQ([
+  { q: '35 648 × 12 = ?', correct: '427 776', choices: ['357 776','427 776','435 776','450 000'] },
+  { q: '7 245 ÷ 15 = ?', correct: '483', choices: ['483','485','493','500'] },
+  { q: '1 250 000 + 750 000 = ?', correct: '2 000 000', choices: ['1 750 000','2 000 000','2 000 500','12 500 000'] },
+  { q: 'Arrondi pour estimer : 4 970 × 22 ≈ ?', correct: '≈ 110 000', choices: ['≈ 90 000','≈ 100 000','≈ 110 000','≈ 1 000 000'] },
+], 'ex3');
+
+buildQ([
+  { enonce: 'Un magasin a vendu 248 articles à 34,50 € chacun. Il paie ses charges : 2 450 €.', q: 'Quel est le bénéfice net du magasin ?', correct: '6 106 €', choices: ['5 000 €','5 756 €','6 106 €','8 556 €'] },
+  { enonce: 'Une école a 480 élèves. 3/8 des élèves vont au restaurant scolaire. Le repas coûte 3,20 €.', q: 'Quel est le montant total des repas par jour ?', correct: '576 €', choices: ['480 €','512 €','576 €','614 €'] },
+  { enonce: 'Un train roule à 220 km/h. Un autre à 180 km/h. Ils partent de la même ville, en sens opposés.', q: 'Après 3 heures, quelle distance les sépare-t-il ?', correct: '1 200 km', choices: ['660 km','780 km','1 200 km','1 320 km'] },
+], 'ex4');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

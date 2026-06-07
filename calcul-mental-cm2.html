@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calcul mental — CM2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #fef08a; border-radius: 22px;
+    padding: 11px 26px; font-size: 1.05rem; font-weight: 900; cursor: pointer; color: #713f12;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #fef9c3; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #fefce8; border: 2px solid #fef08a; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .calcul-card { font-size: 2rem; font-weight: 900; color: #713f12; text-align: center; padding: 14px; background: #fef9c3; border-radius: 14px; margin-bottom: 14px; }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: linear-gradient(135deg, #b45309, #f59e0b);">
+  <span class="emoji-header">⚡</span>
+  <h1>Calcul mental</h1>
+  <p>Automatismes CM2</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">CM2 — Calcul mental</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Mes astuces CM2</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
+      ⚡ <strong>×11</strong> : recopier le chiffre → 35 × 11 = 385 (3+5=8)<br>
+      💡 <strong>Carrés parfaits</strong> : 11²=121, 12²=144, 13²=169, 14²=196, 15²=225<br>
+      🎯 <strong>Divisibilité</strong> : par 2 (pair), par 5 (finit en 0 ou 5), par 3 (somme des chiffres divisible)<br>
+      🔢 <strong>Compléments à 100 et 1 000</strong>
+    </div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 1</span> Multiplications rapides</div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 2</span> Divisibilité</div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 3</span> Pourcentages mentaux (10%, 25%, 50%)</div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 4</span> Compléments et estimation</div>
+    <div id="ex4"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CM2</footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    d.innerHTML = `
+      <div class="calcul-card">${item.q}</div>
+      <div class="qcm-row" id="${id}-r${i}">
+        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+      </div>
+      <div class="feedback-line" id="${id}-f${i}"></div>
+    `;
+    c.appendChild(d);
+  });
+}
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([
+  { q: '25 × 4 = ?', correct: '100', choices: ['80','90','100','120'] },
+  { q: '125 × 8 = ?', correct: '1 000', choices: ['800','900','1 000','1 200'] },
+  { q: '45 × 20 = ?', correct: '900', choices: ['700','800','900','1 000'] },
+  { q: '15² = ?', correct: '225', choices: ['180','200','225','250'] },
+], 'ex1');
+
+buildQ([
+  { q: '534 est-il divisible par 3 ?', correct: 'Oui (5+3+4=12, 12÷3=4)', choices: ['Oui (5+3+4=12, 12÷3=4)','Non','On ne peut pas savoir'] },
+  { q: 'Lequel de ces nombres est divisible par 4 ?', correct: '324', choices: ['322','323','324','325'] },
+  { q: '720 est divisible par…', correct: '2, 3, 4, 5 et 9', choices: ['2 seulement','2 et 5 seulement','2, 3, 5 seulement','2, 3, 4, 5 et 9'] },
+  { q: 'Un nombre divisible à la fois par 2 et par 3 est divisible par…', correct: '6', choices: ['4','5','6','9'] },
+], 'ex2');
+
+buildQ([
+  { q: '10% de 340 = ?', correct: '34', choices: ['3,4','34','340','3 400'] },
+  { q: '25% de 80 = ?', correct: '20', choices: ['8','10','20','40'] },
+  { q: '50% de 450 = ?', correct: '225', choices: ['45','175','225','250'] },
+  { q: '15% de 200 = ?', correct: '30', choices: ['15','20','30','45'] },
+], 'ex3');
+
+buildQ([
+  { q: '750 + ☐ = 1 000', correct: '250', choices: ['150','200','250','350'] },
+  { q: '3 200 ÷ 8 = ?', correct: '400', choices: ['300','350','400','450'] },
+  { q: 'Estime : 498 × 12 ≈ ?', correct: '≈ 6 000', choices: ['≈ 4 000','≈ 5 000','≈ 6 000','≈ 8 000'] },
+  { q: 'Complément à 10 000 : 6 450 + ☐ = 10 000', correct: '3 550', choices: ['3 450','3 550','3 650','4 550'] },
+], 'ex4');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

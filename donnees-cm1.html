@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Données et statistiques — CM1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #bfdbfe; border-radius: 22px;
+    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #1e3a8a;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #dbeafe; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #eff6ff; border: 2px solid #bfdbfe; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .data-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.9rem; }
+  .data-table th { background: #1d4ed8; color: white; padding: 9px; font-weight: 900; border: 2px solid #1e3a8a; text-align: center; }
+  .data-table td { background: white; padding: 9px; text-align: center; border: 2px solid #bfdbfe; font-weight: 700; }
+  .data-table tr:nth-child(even) td { background: #eff6ff; }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: linear-gradient(135deg, #1d4ed8, #60a5fa);">
+  <span class="emoji-header">📊</span>
+  <h1>Données et statistiques</h1>
+  <p>Moyennes, diagrammes, probabilités</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">CM1 — Organisation des données</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
+      🧮 <strong>Moyenne</strong> = somme des valeurs ÷ nombre de valeurs<br>
+      📊 <strong>Diagramme circulaire</strong> (camembert) : chaque secteur = une partie du tout<br>
+      🎲 <strong>Probabilité</strong> : chance qu'un événement se produise (0 = impossible, 1 = certain)<br>
+      📈 <strong>Médiane</strong> : valeur qui partage en 2 groupes égaux
+    </div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 1</span> Calculer une moyenne</div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 2</span> Lire un tableau de données</div>
+    <table class="data-table">
+      <thead><tr><th>Élève</th><th>Lundi</th><th>Mardi</th><th>Mercredi</th><th>Jeudi</th><th>Vendredi</th></tr></thead>
+      <tbody>
+        <tr><td>Alice</td><td>14</td><td>16</td><td>12</td><td>18</td><td>10</td></tr>
+        <tr><td>Théo</td><td>12</td><td>14</td><td>16</td><td>10</td><td>8</td></tr>
+        <tr><td>Léa</td><td>18</td><td>16</td><td>14</td><td>20</td><td>12</td></tr>
+      </tbody>
+    </table>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 3</span> Probabilités — chance d'un événement</div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 4</span> Interpréter un diagramme</div>
+    <div id="ex4"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CM1</footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    d.innerHTML = `
+      <div class="q-text">${item.q}</div>
+      <div class="qcm-row" id="${id}-r${i}">
+        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+      </div>
+      <div class="feedback-line" id="${id}-f${i}"></div>
+    `;
+    c.appendChild(d);
+  });
+}
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([
+  { q: 'Les notes de Paul sont : 12, 15, 14, 13, 16. Quelle est sa moyenne ?', correct: '14', choices: ['12','13','14','15'] },
+  { q: 'La température sur 4 jours est : 18°C, 20°C, 16°C, 22°C. Quelle est la moyenne ?', correct: '19°C', choices: ['18°C','19°C','20°C','21°C'] },
+  { q: 'Léa a des notes de 10, 14, 18. Quelle est sa moyenne ?', correct: '14', choices: ['12','13','14','16'] },
+  { q: 'Pour avoir une moyenne de 14 sur 3 notes dont on connaît 12 et 15, quelle doit être la 3e note ?', correct: '15', choices: ['13','14','15','16'] },
+], 'ex1');
+
+buildQ([
+  { q: 'Quelle est la moyenne d\'Alice sur la semaine ?', correct: '14', choices: ['12','13','14','15'] },
+  { q: 'Quel jour Léa a-t-elle eu sa meilleure note ?', correct: 'Jeudi (20)', choices: ['Lundi (18)','Mardi (16)','Jeudi (20)','Vendredi (12)'] },
+  { q: 'Quel élève a la plus basse note du tableau ?', correct: 'Théo - Vendredi (8)', choices: ['Alice - Vendredi (10)','Théo - Vendredi (8)','Léa - Vendredi (12)','Théo - Lundi (12)'] },
+  { q: 'Quelle est la somme des notes de Théo sur la semaine ?', correct: '60', choices: ['55','58','60','62'] },
+], 'ex2');
+
+buildQ([
+  { q: 'On lance un dé à 6 faces. Quelle est la probabilité d\'obtenir le 3 ?', correct: '1/6', choices: ['1/3','1/6','1/2','3/6'] },
+  { q: 'On tire une carte dans un jeu de 4 cartes (1, 2, 3, 4). Probabilité de tirer un chiffre pair ?', correct: '2/4 = 1/2', choices: ['1/4','2/4 = 1/2','3/4','1/2'] },
+  { q: 'Un sac contient 3 billes rouges et 2 bleues. Quelle est la probabilité de tirer une bille rouge ?', correct: '3/5', choices: ['1/5','2/5','3/5','3/2'] },
+  { q: 'Quelle probabilité est CERTAINE (= 1) ?', correct: 'Obtenir un nombre ≤ 6 en lançant un dé à 6 faces', choices: ['Obtenir un 7 avec un dé','Avoir de la pluie en été','Obtenir un nombre ≤ 6 en lançant un dé à 6 faces','Tirer le Joker dans un jeu de 52 cartes'] },
+], 'ex3');
+
+buildQ([
+  { q: 'Dans un sondage, 50% préfèrent le chocolat, 30% la vanille, 20% la fraise. Quelle parfum est le préféré ?', correct: 'Chocolat (50%)', choices: ['Vanille (30%)','Fraise (20%)','Chocolat (50%)','Ils sont pareils'] },
+  { q: 'Dans une enquête sur 100 élèves, 45 font du sport le soir. Combien n\'en font pas ?', correct: '55', choices: ['45','50','55','60'] },
+  { q: 'Un graphique montre les ventes mensuelles : Jan 1 200, Fév 1 450, Mar 1 100. Quel mois a eu le plus de ventes ?', correct: 'Février (1 450)', choices: ['Janvier (1 200)','Février (1 450)','Mars (1 100)','Tous pareil'] },
+], 'ex4');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

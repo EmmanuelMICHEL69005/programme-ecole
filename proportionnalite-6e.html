@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proportionnalité — 6ème</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #fbcfe8; border-radius: 22px;
+    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #831843;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #fdf2f8; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #fdf2f8; border: 2px solid #fbcfe8; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .tableau-prop { border-collapse: collapse; margin: 10px auto; }
+  .tableau-prop td, .tableau-prop th { border: 2px solid #f9a8d4; padding: 10px 20px; text-align: center; font-weight: 800; font-size: 1rem; }
+  .tableau-prop th { background: #fce7f3; color: #831843; }
+  .pb-enonce { background: #fce7f3; border-radius: 10px; padding: 12px; margin-bottom: 12px; font-size: 0.95rem; color: #831843; line-height: 1.6; }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: linear-gradient(135deg, #9d174d, #db2777);">
+  <span class="emoji-header">⚖️</span>
+  <h1>Proportionnalité</h1>
+  <p>Tableaux, coefficient, règle de 3</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">6ème — Proportionnalité</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
+      ⚖️ Un tableau est proportionnel si on multiplie toujours par le même coefficient<br>
+      🔢 <strong>Coefficient de proportionnalité</strong> = valeur B ÷ valeur A<br>
+      📏 <strong>Règle de 3</strong> : si A → B, alors kA → kB<br>
+      💯 <strong>Pourcentages</strong> : p% de N = p/100 × N<br>
+      🗺️ <strong>Échelle</strong> = longueur carte ÷ longueur réelle
+    </div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#9d174d;">Ex 1</span> Reconnaître et compléter un tableau proportionnel</div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#9d174d;">Ex 2</span> Règle de 3</div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#9d174d;">Ex 3</span> Pourcentages</div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#9d174d;">Ex 4</span> Vitesse, échelles, problèmes</div>
+    <div id="ex4"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — 6ème</footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    d.innerHTML = `
+      ${item.tableau ? item.tableau : ''}
+      ${item.enonce ? `<div class="pb-enonce">${item.enonce}</div>` : ''}
+      <div class="q-text">${item.q}</div>
+      <div class="qcm-row" id="${id}-r${i}">
+        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+      </div>
+      <div class="feedback-line" id="${id}-f${i}"></div>
+    `;
+    c.appendChild(d);
+  });
+}
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([
+  {
+    tableau: `<table class="tableau-prop"><tr><th>Nombre de cahiers</th><td>1</td><td>3</td><td>5</td><td>?</td></tr><tr><th>Prix en €</th><td>2,50</td><td>7,50</td><td>12,50</td><td>?</td></tr></table>`,
+    q: 'Quel est le coefficient de proportionnalité (prix par cahier) ?',
+    correct: '2,50', choices: ['1,50','2,50','3','5']
+  },
+  {
+    tableau: `<table class="tableau-prop"><tr><th>Distance (km)</th><td>50</td><td>100</td><td>?</td></tr><tr><th>Carburant (L)</th><td>4</td><td>8</td><td>20</td></tr></table>`,
+    q: 'Quelle distance correspond à 20 L de carburant ?',
+    correct: '250 km', choices: ['200 km','250 km','300 km','160 km']
+  },
+  { q: 'Un tableau est proportionnel si : 1→5, 2→10, 3→15. Quelle est la valeur pour 7 ?', correct: '35', choices: ['21','28','35','42'] },
+], 'ex1');
+
+buildQ([
+  { enonce: '5 pizzas coûtent 37,50 €.', q: 'Combien coûtent 8 pizzas ?', correct: '60 €', choices: ['45 €','50 €','60 €','75 €'] },
+  { enonce: 'Un robinet remplit 15 L en 3 minutes.', q: 'En combien de minutes remplit-il 45 L ?', correct: '9 minutes', choices: ['6 minutes','9 minutes','12 minutes','15 minutes'] },
+  { enonce: '8 ouvriers font un travail en 6 jours.', q: 'Combien de jours faut-il à 12 ouvriers ?', correct: '4 jours', choices: ['3 jours','4 jours','5 jours','8 jours'] },
+], 'ex2');
+
+buildQ([
+  { q: '20% de 150 = ?', correct: '30', choices: ['15','20','30','50'] },
+  { q: 'Un vêtement de 80 € est soldé à −30%. Prix soldé ?', correct: '56 €', choices: ['50 €','56 €','60 €','24 €'] },
+  { q: '40 élèves sur 200 ont les yeux verts. Quel pourcentage est-ce ?', correct: '20%', choices: ['15%','20%','25%','40%'] },
+  { q: 'Le prix d\'un article passe de 50 € à 60 €. Quelle est l\'augmentation en % ?', correct: '20%', choices: ['10%','20%','25%','60%'] },
+], 'ex3');
+
+buildQ([
+  { enonce: 'Une voiture roule à 90 km/h.', q: 'Quelle distance parcourt-elle en 2h30 min ?', correct: '225 km', choices: ['180 km','200 km','225 km','270 km'] },
+  { enonce: 'Sur une carte à l\'échelle 1/50 000, une route mesure 4 cm.', q: 'Quelle est la longueur réelle ?', correct: '2 km', choices: ['200 m','1 km','2 km','4 km'] },
+  { enonce: 'Un coureur fait 10 km en 50 minutes.', q: 'À quelle vitesse court-il (km/h) ?', correct: '12 km/h', choices: ['10 km/h','12 km/h','15 km/h','20 km/h'] },
+], 'ex4');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les formes géométriques — CP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #bbf7d0; border-radius: 22px;
+    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #166534;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #dcfce7; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #f0fdf4; border: 2px solid #bbf7d0; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .shapes-row { display: flex; gap: 16px; justify-content: center; margin: 14px 0; flex-wrap: wrap; }
+  .shape-svg { text-align: center; }
+  .shape-svg svg { display: block; margin: 0 auto; }
+  .shape-label { font-size: 0.75rem; font-weight: 800; color: #166534; margin-top: 4px; }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: linear-gradient(135deg, #16a34a, #86efac);">
+  <span class="emoji-header">🔷</span>
+  <h1>Les formes géométriques</h1>
+  <p>Reconnaître et nommer les formes</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">CP — Espace et géométrie</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
+      🟦 <strong>Carré</strong> : 4 côtés égaux, 4 angles droits<br>
+      🟥 <strong>Rectangle</strong> : 4 angles droits, 2 paires de côtés égaux<br>
+      🔺 <strong>Triangle</strong> : 3 côtés, 3 angles<br>
+      ⭕ <strong>Cercle</strong> : une courbe fermée, pas de côtés<br>
+      📐 <strong>Angle droit</strong> : comme le coin d'une feuille de papier
+    </div>
+  </div>
+
+  <!-- Galerie de formes -->
+  <div class="retiens-box" style="background:#dcfce7; border-color:#4ade80;">
+    <div class="shapes-row">
+      <div class="shape-svg">
+        <svg width="60" height="60"><rect x="5" y="5" width="50" height="50" fill="#86efac" stroke="#16a34a" stroke-width="3" rx="2"/></svg>
+        <div class="shape-label">Carré</div>
+      </div>
+      <div class="shape-svg">
+        <svg width="90" height="60"><rect x="5" y="10" width="80" height="40" fill="#6ee7b7" stroke="#16a34a" stroke-width="3" rx="2"/></svg>
+        <div class="shape-label">Rectangle</div>
+      </div>
+      <div class="shape-svg">
+        <svg width="70" height="60"><polygon points="35,5 65,55 5,55" fill="#bbf7d0" stroke="#16a34a" stroke-width="3"/></svg>
+        <div class="shape-label">Triangle</div>
+      </div>
+      <div class="shape-svg">
+        <svg width="60" height="60"><circle cx="30" cy="30" r="25" fill="#a7f3d0" stroke="#16a34a" stroke-width="3"/></svg>
+        <div class="shape-label">Cercle</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EX 1 : Reconnaître les formes -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 1</span> Reconnaître les formes</div>
+    <div id="ex1"></div>
+  </div>
+
+  <!-- EX 2 : Propriétés des formes -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 2</span> Propriétés des formes</div>
+    <div id="ex2"></div>
+  </div>
+
+  <!-- EX 3 : Compter les côtés -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 3</span> Compter les côtés et les angles</div>
+    <div id="ex3"></div>
+  </div>
+
+  <!-- EX 4 : Dans la vie -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 4</span> Ces formes dans la vie</div>
+    <div id="ex4"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CP</footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    d.innerHTML = `
+      <div class="q-text">${item.q}</div>
+      <div class="qcm-row" id="${id}-r${i}">
+        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+      </div>
+      <div class="feedback-line" id="${id}-f${i}"></div>
+    `;
+    c.appendChild(d);
+  });
+}
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([
+  { q: 'Une forme a 4 côtés tous égaux et 4 angles droits. C\'est…', correct: 'un carré', choices: ['un cercle','un triangle','un rectangle','un carré'] },
+  { q: 'Une forme ronde sans côtés, c\'est…', correct: 'un cercle', choices: ['un carré','un triangle','un cercle','un losange'] },
+  { q: 'Une forme avec 3 côtés et 3 angles, c\'est…', correct: 'un triangle', choices: ['un carré','un triangle','un cercle','un rectangle'] },
+  { q: 'Une forme avec 4 angles droits mais dont les côtés ne sont pas tous égaux, c\'est…', correct: 'un rectangle', choices: ['un carré','un triangle','un rectangle','un cercle'] },
+], 'ex1');
+
+buildQ([
+  { q: 'Combien de côtés a un carré ?', correct: '4', choices: ['3','4','5','6'] },
+  { q: 'Est-ce qu\'un rectangle a des angles droits ?', correct: 'Oui, 4 angles droits', choices: ['Non','Oui, 2 angles droits','Oui, 4 angles droits','Oui, 1 angle droit'] },
+  { q: 'Un triangle a combien d\'angles ?', correct: '3', choices: ['2','3','4','6'] },
+  { q: 'Quelle figure n\'a pas de côtés ?', correct: 'Le cercle', choices: ['Le carré','Le triangle','Le rectangle','Le cercle'] },
+], 'ex2');
+
+buildQ([
+  { q: 'J\'ai 3 côtés. Qui suis-je ?', correct: 'Triangle', choices: ['Carré','Triangle','Rectangle','Cercle'] },
+  { q: 'J\'ai 4 côtés égaux. Qui suis-je ?', correct: 'Carré', choices: ['Carré','Triangle','Rectangle','Cercle'] },
+  { q: 'Un pentagone a combien de côtés ?', correct: '5', choices: ['3','4','5','6'] },
+  { q: 'Quelle figure a 4 côtés mais pas tous égaux ?', correct: 'Rectangle', choices: ['Carré','Triangle','Rectangle','Cercle'] },
+], 'ex3');
+
+buildQ([
+  { q: 'La façade d\'une maison ressemble souvent à quelle forme ?', correct: 'Un rectangle', choices: ['Un triangle','Un rectangle','Un cercle','Un hexagone'] },
+  { q: 'Le toit d\'une maison ressemble à quelle forme ?', correct: 'Un triangle', choices: ['Un carré','Un cercle','Un triangle','Un rectangle'] },
+  { q: 'Une roue de vélo ressemble à quelle forme ?', correct: 'Un cercle', choices: ['Un carré','Un triangle','Un cercle','Un rectangle'] },
+  { q: 'Un plateau de cuisine ressemble à quelle forme ?', correct: 'Un rectangle', choices: ['Un triangle','Un rectangle','Un cercle','Un pentagone'] },
+], 'ex4');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

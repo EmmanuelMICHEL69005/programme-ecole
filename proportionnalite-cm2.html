@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proportionnalité et pourcentages — CM2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #fef08a; border-radius: 22px;
+    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #713f12;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #fef9c3; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #fefce8; border: 2px solid #fef08a; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .pb-enonce { background: #fef9c3; border-radius: 10px; padding: 12px; margin-bottom: 12px; font-size: 0.95rem; color: #713f12; line-height: 1.6; }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: linear-gradient(135deg, #b45309, #f59e0b);">
+  <span class="emoji-header">⚖️</span>
+  <h1>Proportionnalité & %</h1>
+  <p>Règle de trois, échelles, pourcentages</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">CM2 — Nombres et calculs</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
+      ⚖️ <strong>Règle de 3</strong> : si 3 → 7,50 € alors 8 → 8 × 7,50 ÷ 3 = 20 €<br>
+      🗺️ <strong>Échelle</strong> : 1/25 000 signifie 1 cm sur la carte = 25 000 cm = 250 m en réel<br>
+      💯 <strong>Augmentation de x%</strong> : × (1 + x/100) → +20% = ×1,20<br>
+      💯 <strong>Réduction de x%</strong> : × (1 − x/100) → −15% = ×0,85
+    </div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 1</span> Règle de 3</div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 2</span> Échelles</div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 3</span> Augmentations et réductions en %</div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 4</span> Problèmes de proportionnalité</div>
+    <div id="ex4"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CM2</footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    d.innerHTML = `
+      ${item.enonce ? `<div class="pb-enonce">${item.enonce}</div>` : ''}
+      <div class="q-text">${item.q}</div>
+      <div class="qcm-row" id="${id}-r${i}">
+        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+      </div>
+      <div class="feedback-line" id="${id}-f${i}"></div>
+    `;
+    c.appendChild(d);
+  });
+}
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([
+  { q: 'Si 4 m de tissu coûtent 28 €, combien coûtent 7 m ?', correct: '49 €', choices: ['35 €','42 €','49 €','56 €'] },
+  { q: 'Une voiture consomme 8 L aux 100 km. Pour 350 km, il faut ?', correct: '28 L', choices: ['24 L','28 L','32 L','35 L'] },
+  { q: 'Si 6 ouvriers finissent un travail en 4 jours, 8 ouvriers le finissent en ?', correct: '3 jours', choices: ['2 jours','3 jours','4,5 jours','6 jours'] },
+  { q: 'Un robinet remplit un seau de 10 L en 4 minutes. En combien de temps remplit-il 35 L ?', correct: '14 minutes', choices: ['10 minutes','12 minutes','14 minutes','16 minutes'] },
+], 'ex1');
+
+buildQ([
+  { q: 'Sur une carte à l\'échelle 1/50 000, 2 cm représentent quelle distance réelle ?', correct: '1 km', choices: ['500 m','1 km','2 km','5 km'] },
+  { q: 'À l\'échelle 1/25 000, la distance réelle de 5 km correspond à combien sur la carte ?', correct: '20 cm', choices: ['5 cm','10 cm','20 cm','50 cm'] },
+  { q: 'Sur un plan de ville à 1/1 000, une rue mesure 8 cm sur le plan. Longueur réelle ?', correct: '80 m', choices: ['8 m','80 m','800 m','8 km'] },
+  { q: 'Sur une carte à l\'échelle 1/100 000, une distance de 4,5 cm représente…', correct: '4,5 km', choices: ['450 m','4,5 km','45 km','450 km'] },
+], 'ex2');
+
+buildQ([
+  { q: 'Un article de 120 € est augmenté de 15%. Nouveau prix ?', correct: '138 €', choices: ['122 €','135 €','138 €','140 €'] },
+  { q: 'Un article de 80 € est soldé à −25%. Prix soldé ?', correct: '60 €', choices: ['55 €','60 €','65 €','75 €'] },
+  { q: 'Les prix ont augmenté de 3% cette année. Si un produit coûtait 50 €, combien coûte-t-il maintenant ?', correct: '51,50 €', choices: ['50,30 €','51,50 €','53 €','51 €'] },
+  { q: 'Après une réduction de 20% puis encore de 10%, le prix initial de 100 € devient ?', correct: '72 €', choices: ['70 €','72 €','75 €','80 €'] },
+], 'ex3');
+
+buildQ([
+  { enonce: 'Un fabricant de jus de fruit mélange 3 L de jus d\'orange pour 2 L de jus de pomme.', q: 'Pour préparer 20 L du mélange, combien de litres d\'orange faut-il ?', correct: '12 L', choices: ['6 L','8 L','12 L','15 L'] },
+  { enonce: 'Le prix du carburant a augmenté de 8%. Il coûtait 1,75 €/L.', q: 'Quel est le nouveau prix au litre ?', correct: '1,89 €', choices: ['1,83 €','1,89 €','1,83 €','1,91 €'] },
+  { enonce: 'Dans une recette pour 6 personnes : 450 g de farine, 3 œufs, 20 cL de lait.', q: 'Pour 10 personnes, combien de cL de lait faut-il ?', correct: '33 cL (environ)', choices: ['25 cL','30 cL','33 cL (environ)','40 cL'] },
+], 'ex4');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

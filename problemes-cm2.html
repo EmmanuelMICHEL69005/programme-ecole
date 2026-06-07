@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Problèmes complexes — CM2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #fef08a; border-radius: 22px;
+    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #713f12;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #fef9c3; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #fefce8; border: 2px solid #fef08a; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .pb-enonce { background: #fef9c3; border-radius: 10px; padding: 14px 16px; margin-bottom: 12px; font-size: 0.95rem; color: #713f12; line-height: 1.7; border-left: 4px solid #f59e0b; }
+  .pb-etape { font-size: 0.88rem; background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 6px 12px; margin-bottom: 10px; color: #78350f; }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: linear-gradient(135deg, #92400e, #f59e0b);">
+  <span class="emoji-header">🧩</span>
+  <h1>Problèmes complexes</h1>
+  <p>Problèmes à plusieurs étapes — CM2</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">CM2 — Résolution de problèmes</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Ma méthode</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
+      1️⃣ <strong>Je lis</strong> l'énoncé 2 fois en repérant les données<br>
+      2️⃣ <strong>Je cherche</strong> ce qu'on me demande<br>
+      3️⃣ <strong>Je décompose</strong> en petites étapes<br>
+      4️⃣ <strong>Je vérifie</strong> que la réponse est cohérente
+    </div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#92400e;">Ex 1</span> Problèmes d'argent</div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#92400e;">Ex 2</span> Problèmes de mesures</div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#92400e;">Ex 3</span> Problèmes de durées et distances</div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#92400e;">Ex 4</span> Problèmes multi-étapes</div>
+    <div id="ex4"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CM2</footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    d.innerHTML = `
+      <div class="pb-enonce">${item.enonce}</div>
+      ${item.etape ? `<div class="pb-etape">🔍 Étape : ${item.etape}</div>` : ''}
+      <div class="q-text">${item.q}</div>
+      <div class="qcm-row" id="${id}-r${i}">
+        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+      </div>
+      <div class="feedback-line" id="${id}-f${i}"></div>
+    `;
+    c.appendChild(d);
+  });
+}
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([
+  {
+    enonce: 'Une famille achète 3 billets adultes à 12,50 € et 2 billets enfants à 7,80 €. Elle paie avec un billet de 100 €.',
+    q: 'Combien rend-on à la caisse ?',
+    correct: '46,90 €', choices: ['46,90 €','47,10 €','53,10 €','42,90 €']
+  },
+  {
+    enonce: 'Jules économise 15 € par semaine. Son objectif est d\'acheter un jeu vidéo à 59,99 €.',
+    etape: 'Calcule le nombre de semaines (à l\'entier supérieur)',
+    q: 'Combien de semaines lui faut-il minimum ?',
+    correct: '4 semaines', choices: ['3 semaines','4 semaines','5 semaines','2 semaines']
+  },
+  {
+    enonce: 'Un magasin vend un vélo 280 € et propose une réduction de 15% en période de soldes. En plus, les clients fidèles ont droit à 5 € supplémentaires.',
+    q: 'Quel est le prix final pour un client fidèle ?',
+    correct: '233 €', choices: ['228 €','233 €','237 €','252 €']
+  },
+], 'ex1');
+
+buildQ([
+  {
+    enonce: 'Une piscine rectangulaire fait 8 m × 4 m × 1,5 m. On veut la remplir entièrement.',
+    q: 'Combien de litres d\'eau sont nécessaires ?',
+    correct: '48 000 litres', choices: ['4 800 litres','48 000 litres','480 litres','480 000 litres']
+  },
+  {
+    enonce: 'Un jardin rectangulaire de 12 m × 8 m est entouré d\'une allée de 1 m de large.',
+    etape: 'Calcule d\'abord les dimensions totales avec l\'allée',
+    q: 'Quelle est l\'aire totale (jardin + allée) ?',
+    correct: '140 m²', choices: ['96 m²','120 m²','140 m²','156 m²']
+  },
+  {
+    enonce: 'Pour recouvrir une terrasse carrée de 6 m de côté avec des carreaux de 30 cm × 30 cm.',
+    etape: 'Convertis 6 m en cm, calcule le nombre de carreaux sur chaque côté',
+    q: 'Combien de carreaux faut-il au total ?',
+    correct: '400 carreaux', choices: ['100 carreaux','200 carreaux','400 carreaux','1 200 carreaux']
+  },
+], 'ex2');
+
+buildQ([
+  {
+    enonce: 'Un train part à 8h15 et arrive à 11h42. Il a eu 12 minutes d\'arrêt en cours de route.',
+    q: 'Quelle est la durée effective de roulage ?',
+    correct: '3 h 15 min', choices: ['3 h','3 h 15 min','3 h 27 min','3 h 42 min']
+  },
+  {
+    enonce: 'Une voiture roule en moyenne à 90 km/h sur autoroute. Le trajet fait 315 km.',
+    q: 'Combien de temps dure le trajet ?',
+    correct: '3 h 30 min', choices: ['3 h','3 h 15 min','3 h 30 min','3 h 45 min']
+  },
+  {
+    enonce: 'Lucas fait du vélo à 15 km/h. Il part à 9h00 et doit arriver à 12h00. Des pauses de 20 min sont prévues.',
+    etape: 'Temps de roulage disponible = 3h − 20min = 2h40min',
+    q: 'Quelle distance maximum peut-il parcourir ?',
+    correct: '40 km', choices: ['35 km','40 km','45 km','60 km']
+  },
+], 'ex3');
+
+buildQ([
+  {
+    enonce: 'Une école organise un voyage. Il y a 124 élèves et 8 accompagnateurs. Chaque car peut transporter 45 personnes.',
+    q: 'Combien de cars sont nécessaires ?',
+    correct: '3 cars', choices: ['2 cars','3 cars','4 cars','5 cars']
+  },
+  {
+    enonce: 'Un marchand achète 200 kg de pommes à 0,85 €/kg. Il revend 150 kg à 1,60 €/kg et le reste en jus (par lot de 5 kg à 3 €/lot).',
+    etape: 'Calcule séparément : coût d\'achat, recette pommes, recette jus',
+    q: 'Quel est le bénéfice total ?',
+    correct: '147 €', choices: ['107 €','127 €','147 €','170 €']
+  },
+  {
+    enonce: '3 robinets identiques remplissent une cuve de 1 200 litres en 4 heures.',
+    q: 'En combien de temps 5 robinets identiques rempliraient-ils la même cuve ?',
+    correct: '2 h 24 min', choices: ['2 heures','2 h 24 min','3 heures','1 h 20 min']
+  },
+], 'ex4');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

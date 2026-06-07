@@ -12,12 +12,23 @@
   const XP_CORRECT = 10;
 
   const PAGE_SEQUENCE = [
+    // CP
+    'nombres-cp.html','calcul-cp.html','calcul-mental-cp.html','mesures-cp.html','geometrie-cp.html','donnees-cp.html',
+    // CE1
+    'nombres-ce1.html','fractions-ce1.html','calcul-ce1.html','calcul-mental-ce1.html','mesures-ce1.html','geometrie-ce1.html','donnees-ce1.html',
+    // CE2
     'nombres.html','fiche1.html','fiche2.html','fiche3.html',
     'calcul.html','calcul-mental.html','problemes.html',
     'mesures.html','temps.html','geometrie.html','solides.html','donnees.html',
+    // CM1
+    'nombres-cm1.html','decimaux-cm1.html','fractions-cm1.html','calcul-cm1.html','calcul-mental-cm1.html','calcul-pose-cm1.html','mesures-cm1.html','geometrie-cm1.html','donnees-cm1.html','proportionnalite-cm1.html',
+    // CM2
+    'nombres-cm2.html','decimaux-cm2.html','fractions-cm2.html','calcul-cm2.html','calcul-mental-cm2.html','calcul-pose-cm2.html','mesures-cm2.html','geometrie-cm2.html','donnees-cm2.html','proportionnalite-cm2.html','problemes-cm2.html',
+    // 6e
+    'nombres-6e.html','fractions-6e.html','algebre-6e.html','geometrie-6e.html','mesures-6e.html','donnees-6e.html','proportionnalite-6e.html',
   ];
   const NEXT_LESSON_THRESHOLD = 5;
-  const CLASSE_LIST = ['CP','CE1','CE2','CM1','CM2'];
+  const CLASSE_LIST = ['CP','CE1','CE2','CM1','CM2','6e'];
   const AVATARS = ['🌟','⭐','🦋','🌈','🦄','🐱','🐼','🐸','🦊','🐢','🌺','🍭','🎀','🚀','⚡','🎯','🏆','💎','🌙','🦸‍♀️'];
 
   const LEVELS = [
@@ -52,19 +63,66 @@
   ];
 
   const PAGE_LABELS = {
-    'index.html':         { title:'Accueil',             emoji:'🏠' },
-    'nombres.html':       { title:'Nombres entiers',     emoji:'🔢' },
-    'fiche1.html':        { title:'Fractions — découpe', emoji:'✂️' },
-    'fiche2.html':        { title:'Fractions — compare', emoji:'📏' },
-    'fiche3.html':        { title:'Fractions — calcule', emoji:'🍎' },
-    'calcul.html':        { title:'Les opérations',      emoji:'➕' },
-    'calcul-mental.html': { title:'Calcul mental',       emoji:'⚡' },
-    'problemes.html':     { title:'Problèmes',           emoji:'🧩' },
-    'mesures.html':       { title:'Mesures',             emoji:'📏' },
-    'temps.html':         { title:'Temps & monnaie',     emoji:'🕐' },
-    'geometrie.html':     { title:'Géométrie plane',     emoji:'🔷' },
-    'solides.html':       { title:'Les solides',         emoji:'🎲' },
-    'donnees.html':       { title:'Données',             emoji:'📊' },
+    'index.html':                  { title:'Accueil',                      emoji:'🏠' },
+    // CP
+    'nombres-cp.html':             { title:'Nombres CP',                   emoji:'🔢' },
+    'calcul-cp.html':              { title:'Calcul CP',                    emoji:'➕' },
+    'calcul-mental-cp.html':       { title:'Calcul mental CP',             emoji:'⚡' },
+    'mesures-cp.html':             { title:'Mesures CP',                   emoji:'📏' },
+    'geometrie-cp.html':           { title:'Géométrie CP',                 emoji:'🔷' },
+    'donnees-cp.html':             { title:'Données CP',                   emoji:'📊' },
+    // CE1
+    'nombres-ce1.html':            { title:'Nombres CE1',                  emoji:'🔢' },
+    'fractions-ce1.html':          { title:'Fractions CE1',                emoji:'✂️' },
+    'calcul-ce1.html':             { title:'Calcul CE1',                   emoji:'➕' },
+    'calcul-mental-ce1.html':      { title:'Calcul mental CE1',            emoji:'⚡' },
+    'mesures-ce1.html':            { title:'Mesures CE1',                  emoji:'📏' },
+    'geometrie-ce1.html':          { title:'Géométrie CE1',                emoji:'🔷' },
+    'donnees-ce1.html':            { title:'Données CE1',                  emoji:'📊' },
+    // CE2
+    'nombres.html':                { title:'Nombres entiers CE2',          emoji:'🔢' },
+    'fiche1.html':                 { title:'Fractions — découpe',          emoji:'✂️' },
+    'fiche2.html':                 { title:'Fractions — compare',          emoji:'📏' },
+    'fiche3.html':                 { title:'Fractions — calcule',          emoji:'🍎' },
+    'calcul.html':                 { title:'Les opérations CE2',           emoji:'➕' },
+    'calcul-mental.html':          { title:'Calcul mental CE2',            emoji:'⚡' },
+    'problemes.html':              { title:'Problèmes CE2',                emoji:'🧩' },
+    'mesures.html':                { title:'Mesures CE2',                  emoji:'📏' },
+    'temps.html':                  { title:'Temps & monnaie CE2',          emoji:'🕐' },
+    'geometrie.html':              { title:'Géométrie plane CE2',          emoji:'🔷' },
+    'solides.html':                { title:'Les solides CE2',              emoji:'🎲' },
+    'donnees.html':                { title:'Données CE2',                  emoji:'📊' },
+    // CM1
+    'nombres-cm1.html':            { title:'Nombres CM1',                  emoji:'🔢' },
+    'decimaux-cm1.html':           { title:'Décimaux CM1',                 emoji:'🔣' },
+    'fractions-cm1.html':          { title:'Fractions CM1',                emoji:'✂️' },
+    'calcul-cm1.html':             { title:'Calcul CM1',                   emoji:'➕' },
+    'calcul-mental-cm1.html':      { title:'Calcul mental CM1',            emoji:'⚡' },
+    'calcul-pose-cm1.html':        { title:'Opérations posées CM1',        emoji:'🖊️' },
+    'mesures-cm1.html':            { title:'Périmètres & Aires CM1',       emoji:'📐' },
+    'geometrie-cm1.html':          { title:'Géométrie CM1',                emoji:'🔷' },
+    'donnees-cm1.html':            { title:'Données CM1',                  emoji:'📊' },
+    'proportionnalite-cm1.html':   { title:'Proportionnalité CM1',         emoji:'⚖️' },
+    // CM2
+    'nombres-cm2.html':            { title:'Nombres CM2',                  emoji:'🔢' },
+    'decimaux-cm2.html':           { title:'Décimaux CM2',                 emoji:'🔣' },
+    'fractions-cm2.html':          { title:'Fractions CM2',                emoji:'✂️' },
+    'calcul-cm2.html':             { title:'Calcul CM2',                   emoji:'➕' },
+    'calcul-mental-cm2.html':      { title:'Calcul mental CM2',            emoji:'⚡' },
+    'calcul-pose-cm2.html':        { title:'Opérations posées CM2',        emoji:'🖊️' },
+    'mesures-cm2.html':            { title:'Aires & Volumes CM2',          emoji:'📐' },
+    'geometrie-cm2.html':          { title:'Géométrie CM2',                emoji:'🔷' },
+    'donnees-cm2.html':            { title:'Statistiques CM2',             emoji:'📊' },
+    'proportionnalite-cm2.html':   { title:'Proportionnalité CM2',         emoji:'⚖️' },
+    'problemes-cm2.html':          { title:'Problèmes CM2',                emoji:'🧩' },
+    // 6e
+    'nombres-6e.html':             { title:'Nombres 6e',                   emoji:'🔢' },
+    'fractions-6e.html':           { title:'Fractions 6e',                 emoji:'✂️' },
+    'algebre-6e.html':             { title:'Algèbre 6e',                   emoji:'📘' },
+    'geometrie-6e.html':           { title:'Géométrie 6e',                 emoji:'🔷' },
+    'mesures-6e.html':             { title:'Aires & Volumes 6e',           emoji:'📐' },
+    'donnees-6e.html':             { title:'Statistiques 6e',              emoji:'📊' },
+    'proportionnalite-6e.html':    { title:'Proportionnalité 6e',          emoji:'⚖️' },
   };
 
   // ── Store helpers ────────────────────────────────────────────────

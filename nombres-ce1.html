@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les nombres — CE1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #a7f3d0; border-radius: 22px;
+    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #065f46;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #d1fae5; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #ecfdf5; border: 2px solid #a7f3d0; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: linear-gradient(135deg, #059669, #6ee7b7);">
+  <span class="emoji-header">🔢</span>
+  <h1>Les nombres</h1>
+  <p>Jusqu'à 1 000 — centaines, dizaines, unités</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">CE1 — Nombres et calculs</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
+      🔢 <strong>347</strong> = <strong>3 centaines</strong> + <strong>4 dizaines</strong> + <strong>7 unités</strong><br>
+      📊 Pour comparer : centaines d'abord, puis dizaines, puis unités<br>
+      🔢 <strong>999</strong> + 1 = <strong>1 000</strong> (mille)<br>
+      🔄 <strong>Encadrer</strong> : 340 &lt; 347 &lt; 350 (entre dizaines)
+    </div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 1</span> Centaines, dizaines, unités</div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 2</span> Écrire et lire les nombres</div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 3</span> Comparer et ordonner</div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 4</span> Encadrer et intercaler</div>
+    <div id="ex4"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CE1</footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    d.innerHTML = `
+      <div class="q-text">${item.q}</div>
+      <div class="qcm-row" id="${id}-r${i}">
+        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+      </div>
+      <div class="feedback-line" id="${id}-f${i}"></div>
+    `;
+    c.appendChild(d);
+  });
+}
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([
+  { q: 'Dans 356, combien y a-t-il de centaines ?', correct: '3 centaines', choices: ['5 centaines','6 centaines','3 centaines','1 centaine'] },
+  { q: 'Dans 472, quel chiffre est au rang des dizaines ?', correct: '7', choices: ['4','7','2','47'] },
+  { q: '5 centaines + 0 dizaine + 8 unités = ?', correct: '508', choices: ['58','580','508','50 008'] },
+  { q: 'Dans 703, combien y a-t-il d\'unités ?', correct: '3 unités', choices: ['7 unités','0 unités','3 unités','10 unités'] },
+], 'ex1');
+
+buildQ([
+  { q: 'Comment s\'écrit "deux cent trente-six" ?', correct: '236', choices: ['200360','236','2036','2360'] },
+  { q: 'Comment se lit le nombre 819 ?', correct: 'huit cent dix-neuf', choices: ['huit dix-neuf','huit cent dix-neuf','huit cent quatre-vingt-dix','huit mille dix-neuf'] },
+  { q: 'Quel est le nombre juste avant 500 ?', correct: '499', choices: ['498','499','500','501'] },
+  { q: 'Quel est le nombre juste après 999 ?', correct: '1 000', choices: ['998','1 000','9 999','100'] },
+], 'ex2');
+
+buildQ([
+  { q: 'Lequel est le plus grand : 487 ou 478 ?', correct: '487', choices: ['487','478','Ils sont égaux'] },
+  { q: 'Range du plus petit au plus grand : 521, 251, 512', correct: '251 < 512 < 521', choices: ['251 < 512 < 521','521 < 512 < 251','512 < 251 < 521'] },
+  { q: 'Entre 200 et 300, lequel se place : 256 ou 562 ?', correct: '256', choices: ['256','562','Les deux','Aucun'] },
+  { q: 'Quel nombre est entre 340 et 360 ?', correct: '350', choices: ['330','350','370','380'] },
+], 'ex3');
+
+buildQ([
+  { q: 'Encadre 347 entre deux centaines : ___ < 347 < ___', correct: '300 < 347 < 400', choices: ['200 < 347 < 300','300 < 347 < 400','400 < 347 < 500','340 < 347 < 350'] },
+  { q: 'Quel nombre est à mi-chemin entre 200 et 300 ?', correct: '250', choices: ['220','240','250','260'] },
+  { q: 'Compte de 100 en 100 : 100, 200, ___, 400. Que manque-t-il ?', correct: '300', choices: ['250','300','350','400'] },
+  { q: 'Encadre 875 entre deux dizaines : ___ < 875 < ___', correct: '870 < 875 < 880', choices: ['860 < 875 < 870','870 < 875 < 880','880 < 875 < 890','800 < 875 < 900'] },
+], 'ex4');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opérations posées décimaux — CM2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #fef08a; border-radius: 22px;
+    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #713f12;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #fefce8; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #fefce8; border: 2px solid #fef08a; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .op-pose {
+    font-family: 'Courier New', monospace;
+    font-size: 1.5rem;
+    font-weight: 900;
+    background: #fef9c3;
+    border: 2px solid #fde047;
+    border-radius: 10px;
+    padding: 14px 24px;
+    display: inline-block;
+    margin-bottom: 14px;
+    color: #713f12;
+    text-align: right;
+    line-height: 1.7;
+    white-space: pre;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: linear-gradient(135deg, #b45309, #f59e0b);">
+  <span class="emoji-header">🖊️</span>
+  <h1>Opérations posées — décimaux</h1>
+  <p>Calculs avec décimaux, division décimale</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">CM2 — Calcul posé</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
+      🔣 <strong>Décimaux</strong> : aligner les virgules dans la colonne avant de calculer<br>
+      ✖️ <strong>Multiplication × décimal</strong> : calculer comme des entiers, puis placer la virgule<br>
+      ÷ <strong>Division décimale</strong> : si le reste ≠ 0, on continue en ajoutant des zéros au dividende<br>
+      🔍 <strong>Vérification</strong> : résultat × diviseur = dividende
+    </div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 1</span> Additions et soustractions de décimaux posées</div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 2</span> Multiplications avec décimaux</div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 3</span> Divisions décimales</div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 4</span> Trouver le terme manquant</div>
+    <div id="ex4"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CM2</footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    const opHtml = item.op ? `
+      <div style="text-align:center; margin-bottom:4px;">
+        <div class="op-pose">${item.op}</div>
+      </div>
+    ` : '';
+    d.innerHTML = `
+      ${opHtml}
+      <div class="q-text">${item.q}</div>
+      <div class="qcm-row" id="${id}-r${i}">
+        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+      </div>
+      <div class="feedback-line" id="${id}-f${i}"></div>
+    `;
+    c.appendChild(d);
+  });
+}
+
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([
+  { op: '   47,35\n+  18,09\n————————', q: '47,35 + 18,09 = ?', correct: '65,44', choices: ['65,34','65,44','65,54','64,44'] },
+  { op: '  125,8\n+   47,35\n—————————', q: '125,8 + 47,35 = ?', correct: '173,15', choices: ['172,15','173,05','173,15','174,15'] },
+  { op: '   84,20\n-  37,65\n—————————', q: '84,20 − 37,65 = ?', correct: '46,55', choices: ['46,45','46,55','47,45','47,55'] },
+  { op: '  300,00\n-  184,75\n——————————', q: '300,00 − 184,75 = ?', correct: '115,25', choices: ['114,25','115,25','115,35','116,25'] },
+], 'ex1');
+
+buildQ([
+  { op: '  3,14\n×    5\n———————', q: '3,14 × 5 = ?', correct: '15,70', choices: ['15,7','16,7','15,70','14,70'] },
+  { op: '  2,45\n×   12\n———————', q: '2,45 × 12 = ?', correct: '29,40', choices: ['28,40','29,40','30,40','28,60'] },
+  { op: '  7,8\n×  3,5\n———————', q: '7,8 × 3,5 = ?', correct: '27,3', choices: ['25,3','26,3','27,3','28,3'] },
+  { q: 'Dans une multiplication : 4,25 × 8. Combien de chiffres après la virgule dans le résultat ?', correct: '2 chiffres après la virgule', choices: ['0 chiffre','1 chiffre','2 chiffres après la virgule','3 chiffres'] },
+], 'ex2');
+
+buildQ([
+  { q: '8,4 ÷ 4 = ?', correct: '2,1', choices: ['2,01','2,1','21','2,4'] },
+  { q: '15,6 ÷ 3 = ?', correct: '5,2', choices: ['4,2','5,2','5,02','52'] },
+  { q: '48,0 ÷ 8 = ?', correct: '6', choices: ['0,6','6','60','6,8'] },
+  { q: '12,5 ÷ 5 = ?', correct: '2,5', choices: ['2,05','2,5','25','3,5'] },
+], 'ex3');
+
+buildQ([
+  { q: '□ + 14,75 = 30,00. Que vaut □ ?', correct: '15,25', choices: ['14,75','15,25','15,75','16,25'] },
+  { q: '76,4 − □ = 28,9. Que vaut □ ?', correct: '47,5', choices: ['47,5','48,5','105,3','107,3'] },
+  { q: '□ × 6 = 43,2. Que vaut □ ?', correct: '7,2', choices: ['6,2','7,2','7,8','8,2'] },
+  { q: '45,0 ÷ □ = 9. Que vaut □ ?', correct: '5', choices: ['4','5','6','9'] },
+], 'ex4');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

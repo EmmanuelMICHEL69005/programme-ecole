@@ -2,46 +2,151 @@
   'use strict';
 
   // ── Navigation data ──────────────────────────────────────────────
-  const NAV = [
-    {
-      label: '🔢 Nombres et calculs',
-      color: '#a78bfa',
-      pages: [
-        { emoji: '🔢', title: 'Les nombres entiers',        href: 'nombres.html' },
-        { emoji: '✂️', title: 'Fractions — Je découpe',     href: 'fiche1.html' },
-        { emoji: '📏', title: 'Fractions — Je compare',     href: 'fiche2.html' },
-        { emoji: '🍎', title: 'Fractions — Je calcule',     href: 'fiche3.html' },
-        { emoji: '➕', title: 'Les opérations',             href: 'calcul.html' },
-        { emoji: '⚡', title: 'Calcul mental',              href: 'calcul-mental.html' },
-        { emoji: '🧩', title: 'Problèmes',                  href: 'problemes.html' },
+  const NAV_LEVELS = {
+    CP: {
+      label: '🌱 CP',
+      color: '#86efac',
+      cats: [
+        { label: '🔢 Nombres et calculs', color: '#86efac', pages: [
+          { emoji: '🔢', title: 'Les nombres (jusqu\'à 100)', href: 'nombres-cp.html' },
+          { emoji: '➕', title: 'Addition et soustraction',   href: 'calcul-cp.html' },
+          { emoji: '⚡', title: 'Calcul mental',              href: 'calcul-mental-cp.html' },
+        ]},
+        { label: '📐 Mesures & géométrie', color: '#86efac', pages: [
+          { emoji: '📏', title: 'Mesures & monnaie',          href: 'mesures-cp.html' },
+          { emoji: '🔷', title: 'Les formes',                 href: 'geometrie-cp.html' },
+          { emoji: '📊', title: 'Données',                    href: 'donnees-cp.html' },
+        ]},
       ],
     },
-    {
-      label: '📐 Grandeurs et mesures',
-      color: '#93c5fd',
-      pages: [
-        { emoji: '📏', title: 'Longueurs, masses, contenances', href: 'mesures.html' },
-        { emoji: '🕐', title: 'Le temps et la monnaie',         href: 'temps.html' },
-      ],
-    },
-    {
-      label: '🔷 Espace et géométrie',
+    CE1: {
+      label: '🌿 CE1',
       color: '#6ee7b7',
-      pages: [
-        { emoji: '🔷', title: 'Géométrie plane', href: 'geometrie.html' },
-        { emoji: '🎲', title: 'Les solides',     href: 'solides.html' },
+      cats: [
+        { label: '🔢 Nombres et calculs', color: '#6ee7b7', pages: [
+          { emoji: '🔢', title: 'Les nombres (jusqu\'à 1000)', href: 'nombres-ce1.html' },
+          { emoji: '✂️', title: 'Introduction aux fractions',  href: 'fractions-ce1.html' },
+          { emoji: '➕', title: 'Les opérations',              href: 'calcul-ce1.html' },
+          { emoji: '⚡', title: 'Calcul mental',               href: 'calcul-mental-ce1.html' },
+        ]},
+        { label: '📐 Mesures & géométrie', color: '#6ee7b7', pages: [
+          { emoji: '📏', title: 'Mesures',                     href: 'mesures-ce1.html' },
+          { emoji: '🔷', title: 'Géométrie',                   href: 'geometrie-ce1.html' },
+          { emoji: '📊', title: 'Données',                     href: 'donnees-ce1.html' },
+        ]},
       ],
     },
-    {
-      label: '📊 Organisation des données',
+    CE2: {
+      label: '📚 CE2',
+      color: '#a78bfa',
+      cats: [
+        { label: '🔢 Nombres et calculs', color: '#a78bfa', pages: [
+          { emoji: '🔢', title: 'Les nombres entiers',        href: 'nombres.html' },
+          { emoji: '✂️', title: 'Fractions — Je découpe',     href: 'fiche1.html' },
+          { emoji: '📏', title: 'Fractions — Je compare',     href: 'fiche2.html' },
+          { emoji: '🍎', title: 'Fractions — Je calcule',     href: 'fiche3.html' },
+          { emoji: '➕', title: 'Les opérations',             href: 'calcul.html' },
+          { emoji: '⚡', title: 'Calcul mental',              href: 'calcul-mental.html' },
+          { emoji: '🧩', title: 'Problèmes',                  href: 'problemes.html' },
+        ]},
+        { label: '📐 Grandeurs et mesures', color: '#93c5fd', pages: [
+          { emoji: '📏', title: 'Longueurs, masses, contenances', href: 'mesures.html' },
+          { emoji: '🕐', title: 'Le temps et la monnaie',         href: 'temps.html' },
+        ]},
+        { label: '🔷 Espace et géométrie', color: '#6ee7b7', pages: [
+          { emoji: '🔷', title: 'Géométrie plane', href: 'geometrie.html' },
+          { emoji: '🎲', title: 'Les solides',     href: 'solides.html' },
+        ]},
+        { label: '📊 Organisation des données', color: '#fcd34d', pages: [
+          { emoji: '📊', title: 'Tableaux et graphiques', href: 'donnees.html' },
+        ]},
+      ],
+    },
+    CM1: {
+      label: '🎯 CM1',
+      color: '#93c5fd',
+      cats: [
+        { label: '🔢 Nombres et calculs', color: '#93c5fd', pages: [
+          { emoji: '🔢', title: 'Grands nombres (≤ 999 999)', href: 'nombres-cm1.html' },
+          { emoji: '🔣', title: 'Nombres décimaux',           href: 'decimaux-cm1.html' },
+          { emoji: '✂️', title: 'Fractions',                  href: 'fractions-cm1.html' },
+          { emoji: '➕', title: 'Les 4 opérations',           href: 'calcul-cm1.html' },
+          { emoji: '⚡', title: 'Calcul mental',              href: 'calcul-mental-cm1.html' },
+          { emoji: '🖊️', title: 'Opérations posées',          href: 'calcul-pose-cm1.html' },
+        ]},
+        { label: '📐 Mesures & géométrie', color: '#93c5fd', pages: [
+          { emoji: '📐', title: 'Périmètres et aires',        href: 'mesures-cm1.html' },
+          { emoji: '🔷', title: 'Géométrie — angles',         href: 'geometrie-cm1.html' },
+          { emoji: '📊', title: 'Données & statistiques',     href: 'donnees-cm1.html' },
+          { emoji: '⚖️', title: 'Proportionnalité',           href: 'proportionnalite-cm1.html' },
+        ]},
+      ],
+    },
+    CM2: {
+      label: '🏆 CM2',
       color: '#fcd34d',
-      pages: [
-        { emoji: '📊', title: 'Tableaux et graphiques', href: 'donnees.html' },
+      cats: [
+        { label: '🔢 Nombres et calculs', color: '#fcd34d', pages: [
+          { emoji: '🔢', title: 'Très grands nombres',         href: 'nombres-cm2.html' },
+          { emoji: '🔣', title: 'Décimaux avancés',            href: 'decimaux-cm2.html' },
+          { emoji: '✂️', title: 'Fractions avancées',           href: 'fractions-cm2.html' },
+          { emoji: '➕', title: 'Les 4 opérations avancées',   href: 'calcul-cm2.html' },
+          { emoji: '⚡', title: 'Calcul mental',               href: 'calcul-mental-cm2.html' },
+          { emoji: '🖊️', title: 'Opérations posées décimaux',  href: 'calcul-pose-cm2.html' },
+          { emoji: '🧩', title: 'Problèmes',                   href: 'problemes-cm2.html' },
+        ]},
+        { label: '📐 Mesures & géométrie', color: '#fcd34d', pages: [
+          { emoji: '📐', title: 'Aires et volumes',            href: 'mesures-cm2.html' },
+          { emoji: '🔷', title: 'Géométrie avancée',           href: 'geometrie-cm2.html' },
+          { emoji: '📊', title: 'Statistiques & probabilités', href: 'donnees-cm2.html' },
+          { emoji: '⚖️', title: 'Proportionnalité & %',        href: 'proportionnalite-cm2.html' },
+        ]},
       ],
     },
-  ];
+    '6e': {
+      label: '⭐ 6ème',
+      color: '#f9a8d4',
+      cats: [
+        { label: '🔢 Nombres et calculs', color: '#f9a8d4', pages: [
+          { emoji: '🔢', title: 'Nombres et relatifs',         href: 'nombres-6e.html' },
+          { emoji: '✂️', title: 'Fractions & quotients',        href: 'fractions-6e.html' },
+          { emoji: '📘', title: 'Algèbre — introduction',       href: 'algebre-6e.html' },
+        ]},
+        { label: '📐 Mesures & géométrie', color: '#f9a8d4', pages: [
+          { emoji: '🔷', title: 'Géométrie',                   href: 'geometrie-6e.html' },
+          { emoji: '📐', title: 'Aires et volumes',            href: 'mesures-6e.html' },
+          { emoji: '📊', title: 'Statistiques',                href: 'donnees-6e.html' },
+          { emoji: '⚖️', title: 'Proportionnalité & %',        href: 'proportionnalite-6e.html' },
+        ]},
+      ],
+    },
+  };
+
+  const LEVEL_ORDER = ['CP','CE1','CE2','CM1','CM2','6e'];
 
   const current = window.location.pathname.split('/').pop() || 'index.html';
+
+  // detect which level the current page belongs to
+  function detectCurrentLevel() {
+    for (const lvKey of LEVEL_ORDER) {
+      for (const cat of NAV_LEVELS[lvKey].cats) {
+        if (cat.pages.some(p => p.href === current)) return lvKey;
+      }
+    }
+    return null;
+  }
+
+  // get user's profile level (from GS if loaded)
+  function getUserLevel() {
+    try {
+      const gs = window.GS;
+      if (gs) {
+        const cl = gs.profile().classe;
+        if (LEVEL_ORDER.includes(cl)) return cl;
+      }
+    } catch(e) {}
+    return 'CE2';
+  }
 
   // ── Styles ───────────────────────────────────────────────────────
   const css = `
@@ -250,6 +355,39 @@
       border-top: 1px solid rgba(255,255,255,0.1);
     }
 
+    /* ===== LEVEL TABS ===== */
+    .nav-level-tabs {
+      display: flex;
+      gap: 5px;
+      padding: 8px 10px 6px;
+      overflow-x: auto;
+      flex-shrink: 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .nav-level-tabs::-webkit-scrollbar { display: none; }
+    .nav-level-tab {
+      flex-shrink: 0;
+      background: rgba(255,255,255,0.07);
+      border: 1.5px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 5px 11px;
+      font-size: 0.72rem;
+      font-weight: 900;
+      color: rgba(255,255,255,0.6);
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+      font-family: inherit;
+      white-space: nowrap;
+    }
+    .nav-level-tab:hover { background: rgba(255,255,255,0.15); color: white; }
+    .nav-level-tab.active {
+      background: rgba(255,255,255,0.22);
+      border-color: rgba(255,255,255,0.45);
+      color: white;
+    }
+    .nav-level-section { display: none; }
+    .nav-level-section.visible { display: block; }
+
     /* ===== PROFILE FOOTER ===== */
     .nav-profile-footer {
       flex-shrink: 0;
@@ -404,51 +542,85 @@
   `;
   body.appendChild(homeItem);
 
-  const div0 = document.createElement('hr');
-  div0.className = 'nav-divider';
-  body.appendChild(div0);
+  // ── Level tabs ─────────────────────────────────────────────────────
+  const pageLevel = detectCurrentLevel();
+  let activeLevel = pageLevel || getUserLevel();
 
-  // Categories
-  let activeCategory = null;
-  NAV.forEach((cat, catIdx) => {
-    const catDiv = document.createElement('div');
-    catDiv.className = 'nav-cat';
+  const tabsRow = document.createElement('div');
+  tabsRow.className = 'nav-level-tabs';
+  LEVEL_ORDER.forEach(lvKey => {
+    const tab = document.createElement('button');
+    tab.className = 'nav-level-tab' + (lvKey === activeLevel ? ' active' : '');
+    tab.textContent = NAV_LEVELS[lvKey].label;
+    tab.style.setProperty('border-color', lvKey === activeLevel ? NAV_LEVELS[lvKey].color : '');
+    tab.style.setProperty('color', lvKey === activeLevel ? NAV_LEVELS[lvKey].color : '');
+    tab.addEventListener('click', () => selectLevel(lvKey));
+    tabsRow.appendChild(tab);
+  });
+  body.appendChild(tabsRow);
 
-    const hasActivePage = cat.pages.some(p => p.href === current);
-    if (hasActivePage) catDiv.classList.add('open');
+  // ── Level sections ─────────────────────────────────────────────────
+  const levelSections = {};
+  LEVEL_ORDER.forEach(lvKey => {
+    const lvData = NAV_LEVELS[lvKey];
+    const section = document.createElement('div');
+    section.className = 'nav-level-section' + (lvKey === activeLevel ? ' visible' : '');
+    section.dataset.level = lvKey;
 
-    catDiv.innerHTML = `
-      <button class="nav-cat-btn" aria-expanded="${hasActivePage}">
-        <span class="nav-cat-label" style="color: ${cat.color};">${cat.label}</span>
-        <span class="nav-cat-arrow">▼</span>
-      </button>
-      <div class="nav-pages">
-        ${cat.pages.map(p => `
-          <a href="${p.href}"
-             class="nav-page-link${p.href === current ? ' active' : ''}"
-             onclick="closeNav()">
-            <span class="nav-pg-emoji">${p.emoji}</span>
-            <span>${p.title}</span>
-          </a>
-        `).join('')}
-      </div>
-    `;
+    lvData.cats.forEach(cat => {
+      const catDiv = document.createElement('div');
+      catDiv.className = 'nav-cat';
 
-    // Toggle accordion
-    catDiv.querySelector('.nav-cat-btn').addEventListener('click', () => {
-      const isOpen = catDiv.classList.contains('open');
-      // Close all
-      document.querySelectorAll('.nav-cat').forEach(c => c.classList.remove('open'));
-      document.querySelectorAll('.nav-cat-btn').forEach(b => b.setAttribute('aria-expanded', 'false'));
-      // Toggle
-      if (!isOpen) {
-        catDiv.classList.add('open');
-        catDiv.querySelector('.nav-cat-btn').setAttribute('aria-expanded', 'true');
-      }
+      const hasActivePage = cat.pages.some(p => p.href === current);
+      if (hasActivePage) catDiv.classList.add('open');
+
+      catDiv.innerHTML = `
+        <button class="nav-cat-btn" aria-expanded="${hasActivePage}">
+          <span class="nav-cat-label" style="color: ${cat.color};">${cat.label}</span>
+          <span class="nav-cat-arrow">▼</span>
+        </button>
+        <div class="nav-pages">
+          ${cat.pages.map(p => `
+            <a href="${p.href}"
+               class="nav-page-link${p.href === current ? ' active' : ''}"
+               onclick="closeNav()">
+              <span class="nav-pg-emoji">${p.emoji}</span>
+              <span>${p.title}</span>
+            </a>
+          `).join('')}
+        </div>
+      `;
+
+      catDiv.querySelector('.nav-cat-btn').addEventListener('click', () => {
+        const isOpen = catDiv.classList.contains('open');
+        section.querySelectorAll('.nav-cat').forEach(c => c.classList.remove('open'));
+        section.querySelectorAll('.nav-cat-btn').forEach(b => b.setAttribute('aria-expanded', 'false'));
+        if (!isOpen) {
+          catDiv.classList.add('open');
+          catDiv.querySelector('.nav-cat-btn').setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      section.appendChild(catDiv);
     });
 
-    body.appendChild(catDiv);
+    levelSections[lvKey] = section;
+    body.appendChild(section);
   });
+
+  function selectLevel(lvKey) {
+    activeLevel = lvKey;
+    tabsRow.querySelectorAll('.nav-level-tab').forEach((tab, i) => {
+      const k = LEVEL_ORDER[i];
+      const isActive = k === lvKey;
+      tab.classList.toggle('active', isActive);
+      tab.style.setProperty('border-color', isActive ? NAV_LEVELS[k].color : '');
+      tab.style.setProperty('color', isActive ? NAV_LEVELS[k].color : '');
+    });
+    Object.entries(levelSections).forEach(([k, s]) => {
+      s.classList.toggle('visible', k === lvKey);
+    });
+  }
 
   // ── Profile footer ────────────────────────────────────────────────
   const profileFooter = document.createElement('div');
@@ -495,6 +667,11 @@
   // ── Open / Close ─────────────────────────────────────────────────
   function openNav() {
     renderProfileFooter();
+    // re-sync level tab to user's profile if no page-based level detected
+    if (!pageLevel) {
+      const ul = getUserLevel();
+      if (ul !== activeLevel) selectLevel(ul);
+    }
     drawer.classList.add('open');
     overlay.classList.add('open');
     toggleBtn.classList.add('is-open');

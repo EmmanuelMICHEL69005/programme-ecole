@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aires et volumes — CM2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #fef08a; border-radius: 22px;
+    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #713f12;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #fef9c3; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #fefce8; border: 2px solid #fef08a; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: linear-gradient(135deg, #b45309, #fcd34d);">
+  <span class="emoji-header">📐</span>
+  <h1>Aires et volumes</h1>
+  <p>Calculs avancés de surfaces et de volumes</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">CM2 — Grandeurs et mesures</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
+      🟦 Aire rectangle = L × l | Aire carré = c² | Aire triangle = (b × h) ÷ 2<br>
+      ⭕ Aire cercle = π × r² (π ≈ 3,14) | Périmètre cercle = 2 × π × r<br>
+      📦 <strong>Volume du pavé droit</strong> = L × l × h (en cm³ ou m³)<br>
+      💧 1 litre = 1 dm³ = 1 000 cm³
+    </div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 1</span> Aire du disque (cercle)</div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 2</span> Volume du pavé droit</div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 3</span> Conversion d'unités d'aire et de volume</div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 4</span> Problèmes de géométrie</div>
+    <div id="ex4"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CM2</footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    d.innerHTML = `
+      <div class="q-text">${item.q}</div>
+      <div class="qcm-row" id="${id}-r${i}">
+        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+      </div>
+      <div class="feedback-line" id="${id}-f${i}"></div>
+    `;
+    c.appendChild(d);
+  });
+}
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([
+  { q: 'Un disque a un rayon de 5 cm. Quelle est son aire ? (π ≈ 3,14)', correct: '78,5 cm²', choices: ['31,4 cm²','62,8 cm²','78,5 cm²','314 cm²'] },
+  { q: 'Un disque a un diamètre de 10 cm. Quel est son rayon ?', correct: '5 cm', choices: ['2 cm','5 cm','10 cm','20 cm'] },
+  { q: 'Le périmètre d\'un cercle de rayon 7 cm est (π ≈ 3,14) :', correct: '43,96 cm', choices: ['21,98 cm','43,96 cm','49 cm','153,86 cm'] },
+  { q: 'Un terrain circulaire a un rayon de 10 m. Son aire est (π ≈ 3,14) :', correct: '314 m²', choices: ['62,8 m','314 m','314 m²','3,14 m²'] },
+], 'ex1');
+
+buildQ([
+  { q: 'Un aquarium mesure 50 cm × 30 cm × 40 cm. Quel est son volume ?', correct: '60 000 cm³', choices: ['6 000 cm³','60 000 cm³','600 000 cm³','120 cm'] },
+  { q: 'Une boîte mesure 20 cm × 15 cm × 10 cm. Quel est son volume ?', correct: '3 000 cm³', choices: ['450 cm²','3 000 cm³','30 000 cm³','3 000 cm'] },
+  { q: 'Un cube de 6 cm de côté a un volume de…', correct: '216 cm³', choices: ['36 cm²','144 cm³','216 cm³','216 cm²'] },
+  { q: 'Si un pavé a un volume de 2 000 cm³, une base de 10×20 cm, quelle est sa hauteur ?', correct: '10 cm', choices: ['5 cm','8 cm','10 cm','20 cm'] },
+], 'ex2');
+
+buildQ([
+  { q: '1 m² = combien de cm² ?', correct: '10 000 cm²', choices: ['100 cm²','1 000 cm²','10 000 cm²','100 000 cm²'] },
+  { q: '5 dm³ = combien de litres ?', correct: '5 litres', choices: ['0,5 litre','5 litres','50 litres','500 litres'] },
+  { q: '3 000 cm³ = combien de litres ?', correct: '3 litres', choices: ['0,3 litre','3 litres','30 litres','0,03 litre'] },
+  { q: '2,5 m² = combien de dm² ?', correct: '250 dm²', choices: ['25 dm²','250 dm²','2 500 dm²','2,5 dm²'] },
+], 'ex3');
+
+buildQ([
+  { q: 'Une piscine rectangulaire de 25 m × 12 m × 1,8 m. Combien de litres d\'eau contient-elle ?', correct: '540 000 litres', choices: ['54 000 litres','540 000 litres','5 400 000 litres','54 litres'] },
+  { q: 'Pour peindre un mur de 4 m × 3 m, il faut 0,2 L de peinture par m². Combien de litres faut-il ?', correct: '2,4 L', choices: ['1,4 L','2,4 L','24 L','0,24 L'] },
+  { q: 'Une pizza ronde a un diamètre de 30 cm. Son aire est (π ≈ 3,14) :', correct: '706,5 cm²', choices: ['94,2 cm²','314 cm²','706,5 cm²','2 826 cm²'] },
+], 'ex4');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

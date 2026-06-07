@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mesures — CE1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #a7f3d0; border-radius: 22px;
+    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #065f46;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #d1fae5; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #ecfdf5; border: 2px solid #a7f3d0; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: linear-gradient(135deg, #059669, #6ee7b7);">
+  <span class="emoji-header">📏</span>
+  <h1>Mesures</h1>
+  <p>Longueurs, masses, monnaie et temps</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">CE1 — Grandeurs et mesures</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
+      📏 <strong>Longueurs</strong> : 1 m = 100 cm | 1 km = 1 000 m<br>
+      ⚖️ <strong>Masses</strong> : 1 kg = 1 000 g<br>
+      💶 <strong>Monnaie</strong> : 1 euro = 100 centimes<br>
+      🕐 <strong>Temps</strong> : 1 heure = 60 minutes | 1 minute = 60 secondes<br>
+      📅 1 semaine = 7 jours | 1 an = 12 mois = 365 jours
+    </div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 1</span> Longueurs — conversions</div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 2</span> Masses et contenances</div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 3</span> La monnaie (euros et centimes)</div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 4</span> Le temps</div>
+    <div id="ex4"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CE1</footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    d.innerHTML = `
+      <div class="q-text">${item.q}</div>
+      <div class="qcm-row" id="${id}-r${i}">
+        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+      </div>
+      <div class="feedback-line" id="${id}-f${i}"></div>
+    `;
+    c.appendChild(d);
+  });
+}
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([
+  { q: '1 mètre = combien de centimètres ?', correct: '100 cm', choices: ['10 cm','50 cm','100 cm','1000 cm'] },
+  { q: '2 m 50 cm = combien de centimètres ?', correct: '250 cm', choices: ['205 cm','250 cm','252 cm','2050 cm'] },
+  { q: '350 cm = combien de mètres et centimètres ?', correct: '3 m 50 cm', choices: ['35 m','3 m 5 cm','3 m 50 cm','30 m 50 cm'] },
+  { q: 'Une piscine mesure 25 m. Un couloir de 10 cm, c\'est combien de mètres ?', correct: '0 m 10 cm', choices: ['10 m','1 m','0 m 10 cm','0 m 01 cm'] },
+], 'ex1');
+
+buildQ([
+  { q: '1 kilogramme = ?', correct: '1 000 grammes', choices: ['10 g','100 g','1 000 g = 1 000 grammes','10 000 g'] },
+  { q: '2 kg 500 g = combien de grammes ?', correct: '2 500 g', choices: ['250 g','2050 g','2 500 g','25 000 g'] },
+  { q: 'Un biberon contient 25 cL. Combien de mL ?', correct: '250 mL', choices: ['25 mL','250 mL','2500 mL','25 000 mL'] },
+  { q: 'Un sac de farine de 1 kg 200 g = combien de grammes ?', correct: '1 200 g', choices: ['120 g','1 020 g','1 200 g','12 000 g'] },
+], 'ex2');
+
+buildQ([
+  { q: '2 euros 50 centimes = combien de centimes ?', correct: '250 centimes', choices: ['25 centimes','205 centimes','250 centimes','2 500 centimes'] },
+  { q: 'J\'ai un billet de 10 € et j\'achète un jouet à 6,50 €. Combien me rend-on ?', correct: '3,50 €', choices: ['2,50 €','3,00 €','3,50 €','4,50 €'] },
+  { q: 'Tom a 1,75 €. Lou a 2,25 €. Combien ont-ils ensemble ?', correct: '4 €', choices: ['3,50 €','3,75 €','4 €','4,50 €'] },
+  { q: 'Un livre coûte 4,80 €. Arrondi à l\'euro le plus proche, c\'est…', correct: '5 €', choices: ['4 €','5 €','6 €','4,50 €'] },
+], 'ex3');
+
+buildQ([
+  { q: '1 heure = combien de minutes ?', correct: '60 minutes', choices: ['30 minutes','60 minutes','100 minutes','24 minutes'] },
+  { q: 'Il est 9h30. Dans 45 minutes, il sera ?', correct: '10h15', choices: ['9h75','10h00','10h15','10h30'] },
+  { q: 'Un film dure 1h30. Il commence à 14h00. Il finit à…', correct: '15h30', choices: ['15h00','15h30','16h00','15h15'] },
+  { q: 'Combien y a-t-il de jours dans une semaine ?', correct: '7 jours', choices: ['5 jours','6 jours','7 jours','8 jours'] },
+], 'ex4');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Données et tableaux — CP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #bbf7d0; border-radius: 22px;
+    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #166534;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #dcfce7; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #f0fdf4; border: 2px solid #bbf7d0; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .simple-table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 0.92rem; }
+  .simple-table th { background: #16a34a; color: white; padding: 9px 12px; font-weight: 900; border: 2px solid #15803d; text-align: center; }
+  .simple-table td { background: white; padding: 9px 12px; text-align: center; border: 2px solid #bbf7d0; font-weight: 700; }
+  .simple-table tr:nth-child(even) td { background: #f0fdf4; }
+  .pictogram { display: flex; gap: 4px; align-items: center; font-size: 1.3rem; }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: linear-gradient(135deg, #16a34a, #86efac);">
+  <span class="emoji-header">📊</span>
+  <h1>Données et tableaux</h1>
+  <p>Lire et organiser des informations</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">CP — Organisation des données</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
+      📋 Un <strong>tableau</strong> organise des informations en lignes et colonnes.<br>
+      📊 Un <strong>pictogramme</strong> utilise des images pour montrer des quantités.<br>
+      🔍 Pour <strong>lire un tableau</strong> : je cherche la bonne ligne ET la bonne colonne.
+    </div>
+  </div>
+
+  <!-- EX 1 : Tableau fruits -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 1</span> Fruits dans le panier</div>
+    <table class="simple-table">
+      <thead><tr><th>Fruit</th><th>🍎 Pommes</th><th>🍌 Bananes</th><th>🍊 Oranges</th><th>🍇 Raisins</th></tr></thead>
+      <tbody><tr><td>Nombre</td><td>5</td><td>3</td><td>7</td><td>2</td></tr></tbody>
+    </table>
+    <div id="ex1"></div>
+  </div>
+
+  <!-- EX 2 : Animaux de la ferme -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 2</span> Animaux à la ferme</div>
+    <table class="simple-table">
+      <thead><tr><th>Animal</th><th>🐄 Vaches</th><th>🐷 Cochons</th><th>🐔 Poules</th><th>🐑 Moutons</th></tr></thead>
+      <tbody><tr><td>Nombre</td><td>4</td><td>6</td><td>10</td><td>8</td></tr></tbody>
+    </table>
+    <div id="ex2"></div>
+  </div>
+
+  <!-- EX 3 : Pictogramme -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 3</span> Lire un pictogramme</div>
+    <div style="background:#dcfce7; border-radius:10px; padding:14px; margin-bottom:12px;">
+      <p style="font-size:0.9rem; font-weight:700; margin:0 0 10px; color:#166534;">Jours de beau temps ce mois-ci (chaque ☀️ = 2 jours)</p>
+      <div style="display:grid; gap:6px;">
+        <div style="display:flex; align-items:center; gap:8px;"><strong style="min-width:60px;color:#166534;">Janvier</strong><div class="pictogram">☀️☀️</div></div>
+        <div style="display:flex; align-items:center; gap:8px;"><strong style="min-width:60px;color:#166534;">Février</strong><div class="pictogram">☀️☀️☀️</div></div>
+        <div style="display:flex; align-items:center; gap:8px;"><strong style="min-width:60px;color:#166534;">Mars</strong><div class="pictogram">☀️☀️☀️☀️</div></div>
+      </div>
+    </div>
+    <div id="ex3"></div>
+  </div>
+
+  <!-- EX 4 : Classer des données -->
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 4</span> Trier et compter</div>
+    <div id="ex4"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CP</footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    d.innerHTML = `
+      <div class="q-text">${item.q}</div>
+      <div class="qcm-row" id="${id}-r${i}">
+        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+      </div>
+      <div class="feedback-line" id="${id}-f${i}"></div>
+    `;
+    c.appendChild(d);
+  });
+}
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([
+  { q: 'Quel fruit est le plus nombreux dans le panier ?', correct: '🍊 Oranges (7)', choices: ['🍎 Pommes (5)','🍌 Bananes (3)','🍊 Oranges (7)','🍇 Raisins (2)'] },
+  { q: 'Combien y a-t-il de pommes et de bananes en tout ?', correct: '8', choices: ['6','7','8','9'] },
+  { q: 'Quel fruit est le moins nombreux ?', correct: '🍇 Raisins', choices: ['🍎 Pommes','🍌 Bananes','🍊 Oranges','🍇 Raisins'] },
+], 'ex1');
+
+buildQ([
+  { q: 'Quel animal est le plus nombreux à la ferme ?', correct: '🐔 Poules (10)', choices: ['🐄 Vaches (4)','🐷 Cochons (6)','🐔 Poules (10)','🐑 Moutons (8)'] },
+  { q: 'Combien y a-t-il d\'animaux en tout à la ferme ?', correct: '28', choices: ['24','26','28','30'] },
+  { q: 'Y a-t-il plus de vaches ou de cochons ?', correct: 'Cochons (6 > 4)', choices: ['Vaches (4 > 6)','Cochons (6 > 4)','Ils sont pareils'] },
+], 'ex2');
+
+buildQ([
+  { q: 'Combien de jours de beau temps en janvier ? (1 ☀️ = 2 jours)', correct: '4 jours', choices: ['2 jours','4 jours','6 jours','8 jours'] },
+  { q: 'Quel mois a eu le plus de beau temps ?', correct: 'Mars (4 ☀️ = 8 jours)', choices: ['Janvier (2 ☀️)','Février (3 ☀️)','Mars (4 ☀️ = 8 jours)'] },
+  { q: 'En tout sur les 3 mois, combien de jours de beau temps ?', correct: '18 jours', choices: ['9 jours','16 jours','18 jours','24 jours'] },
+], 'ex3');
+
+buildQ([
+  { q: 'Dans une classe, 8 enfants aiment le foot, 5 aiment la natation, 7 aiment le vélo. Quel sport est le préféré ?', correct: 'Le foot (8)', choices: ['La natation (5)','Le vélo (7)','Le foot (8)'] },
+  { q: 'Combien d\'enfants aiment la natation OU le vélo en tout ?', correct: '12', choices: ['10','11','12','13'] },
+  { q: 'Combien d\'enfants ont été interrogés en tout ?', correct: '20', choices: ['15','18','20','21'] },
+  { q: 'Quel sport est le moins populaire ?', correct: 'La natation (5)', choices: ['Le foot (8)','La natation (5)','Le vélo (7)'] },
+], 'ex4');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

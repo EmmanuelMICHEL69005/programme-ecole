@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calcul mental — CE1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #a7f3d0; border-radius: 22px;
+    padding: 11px 26px; font-size: 1.05rem; font-weight: 900; cursor: pointer; color: #065f46;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #d1fae5; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #ecfdf5; border: 2px solid #a7f3d0; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .calcul-card { font-size: 2rem; font-weight: 900; color: #065f46; text-align: center; padding: 14px; background: #d1fae5; border-radius: 14px; margin-bottom: 14px; }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: linear-gradient(135deg, #059669, #34d399);">
+  <span class="emoji-header">⚡</span>
+  <h1>Calcul mental</h1>
+  <p>Rapidité et automatismes</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">CE1 — Calcul mental</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Mes automatismes CE1</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
+      🎯 Tables de multiplication par 2, 3, 4, 5<br>
+      ⚡ <strong>+9 = +10 − 1</strong> : 37+9 = 37+10−1 = 46<br>
+      💡 <strong>Doubles et moitiés</strong> : le double de 25 = 50<br>
+      🔟 Compter de 100 en 100 facilement
+    </div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 1</span> Tables de × (2, 3, 4, 5)</div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 2</span> Ajouter ou soustraire 9 et 11</div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 3</span> Doubles et moitiés</div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 4</span> Calculs avec des centaines</div>
+    <div id="ex4"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CE1</footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    d.innerHTML = `
+      <div class="calcul-card">${item.q}</div>
+      <div class="qcm-row" id="${id}-r${i}">
+        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c}','${item.correct}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+      </div>
+      <div class="feedback-line" id="${id}-f${i}"></div>
+    `;
+    c.appendChild(d);
+  });
+}
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([
+  { q: '7 × 3 = ?', correct: '21', choices: ['18','20','21','24'] },
+  { q: '6 × 4 = ?', correct: '24', choices: ['20','22','24','26'] },
+  { q: '8 × 5 = ?', correct: '40', choices: ['35','38','40','45'] },
+  { q: '9 × 2 = ?', correct: '18', choices: ['16','17','18','20'] },
+], 'ex1');
+
+buildQ([
+  { q: '46 + 9 = ?', correct: '55', choices: ['53','54','55','56'] },
+  { q: '73 + 11 = ?', correct: '84', choices: ['82','83','84','85'] },
+  { q: '62 − 9 = ?', correct: '53', choices: ['51','52','53','54'] },
+  { q: '85 − 11 = ?', correct: '74', choices: ['72','73','74','76'] },
+], 'ex2');
+
+buildQ([
+  { q: 'Le double de 35, c\'est ?', correct: '70', choices: ['60','65','70','75'] },
+  { q: 'La moitié de 80, c\'est ?', correct: '40', choices: ['30','35','40','45'] },
+  { q: 'Le double de 48, c\'est ?', correct: '96', choices: ['88','92','96','100'] },
+  { q: 'La moitié de 150, c\'est ?', correct: '75', choices: ['55','65','75','85'] },
+], 'ex3');
+
+buildQ([
+  { q: '300 + 400 = ?', correct: '700', choices: ['600','700','800','340'] },
+  { q: '850 − 200 = ?', correct: '650', choices: ['600','640','650','680'] },
+  { q: '500 + 250 = ?', correct: '750', choices: ['700','740','750','760'] },
+  { q: '1 000 − 300 = ?', correct: '700', choices: ['600','700','800','1300'] },
+], 'ex4');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>
