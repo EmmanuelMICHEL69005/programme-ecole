@@ -392,3 +392,349 @@ main { max-width: 720px; margin: 0 auto; padding: 30px 20px 60px; }
   .figures-grid { grid-template-columns: repeat(2, 1fr); }
   body { font-size: 17px; }
 }
+
+/* ================================================================
+   DESIGN ENRICHI — Inspiré Duolingo
+   ================================================================ */
+
+/* ── Animations ────────────────────────────────────────────── */
+@keyframes _popIn  { from { opacity:0; transform:scale(0.88) translateY(8px); } to { opacity:1; transform:scale(1) translateY(0); } }
+@keyframes _bounce { 0%,100% { transform:scale(1); } 45% { transform:scale(1.14); } }
+@keyframes _shake  { 0%,100% { transform:translateX(0); } 20%,60% { transform:translateX(-8px); } 40%,80% { transform:translateX(8px); } }
+@keyframes _xpFly  { to { opacity:0; transform:translateY(-50px) scale(1.35); } }
+
+/* ── XP Float ──────────────────────────────────────────────── */
+._xpf {
+  position: fixed;
+  font-size: 1rem;
+  font-weight: 900;
+  color: #16a34a;
+  pointer-events: none;
+  z-index: 9999;
+  animation: _xpFly 0.95s ease forwards;
+}
+
+/* ── q-block amélioré ──────────────────────────────────────── */
+.q-block {
+  background: white;
+  border: 2.5px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 0 #e5e7eb;
+  animation: _popIn 0.3s ease both;
+  position: relative;
+}
+.q-block:last-child { margin-bottom: 0; }
+
+/* ── Boutons QCM ── version Duolingo ───────────────────────── */
+.btn-choice {
+  background: white;
+  border: 2.5px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 11px 24px;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  color: #374151;
+  transition: all 0.12s;
+  box-shadow: 0 4px 0 #d1d5db;
+  font-family: inherit;
+}
+.btn-choice:hover:not([disabled]) {
+  border-color: #7c3aed;
+  color: #7c3aed;
+  background: #f5f3ff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #c4b5fd;
+}
+.btn-choice:active:not([disabled]) { transform: translateY(2px); box-shadow: 0 2px 0 #d1d5db; }
+.btn-choice.correct {
+  background: #16a34a; border-color: #15803d; color: white;
+  box-shadow: 0 4px 0 #166534;
+  animation: _bounce 0.35s ease;
+}
+.btn-choice.wrong {
+  background: #ef4444; border-color: #dc2626; color: white;
+  box-shadow: 0 4px 0 #b91c1c;
+  animation: _shake 0.4s ease;
+}
+.btn-choice:disabled { opacity: 0.65; cursor: default; transform: none; box-shadow: none; }
+
+/* Vrai / Faux styles spéciaux */
+.btn-vrai { background:#dcfce7 !important; border-color:#22c55e !important; color:#166534 !important;
+            box-shadow: 0 4px 0 #bbf7d0 !important; font-size:1.05rem !important; }
+.btn-faux { background:#fee2e2 !important; border-color:#ef4444 !important; color:#991b1b !important;
+            box-shadow: 0 4px 0 #fecaca !important; font-size:1.05rem !important; }
+.btn-vrai:hover:not([disabled]) { background:#bbf7d0 !important; transform:translateY(-2px); }
+.btn-faux:hover:not([disabled]) { background:#fecaca !important; transform:translateY(-2px); }
+
+/* ── Feedback ───────────────────────────────────────────────── */
+.feedback-line {
+  font-size: 0.95rem;
+  font-weight: 800;
+  margin-top: 10px;
+  min-height: 24px;
+  border-radius: 10px;
+  padding: 0;
+  transition: all 0.2s;
+}
+.fb-ok { color: #166534; background: #dcfce7; padding: 6px 12px; }
+.fb-ko { color: #991b1b; background: #fee2e2; padding: 6px 12px; }
+.fb-warn { color: #92400e; background: #fef3c7; padding: 6px 12px; }
+
+/* ── Carte affichage (ex-card) ─────────────────────────────── */
+.ex-card {
+  font-size: 2.2rem;
+  font-weight: 900;
+  text-align: center;
+  padding: 14px 20px;
+  border-radius: 16px;
+  margin-bottom: 14px;
+  letter-spacing: 1px;
+  line-height: 1.3;
+}
+.ex-hint { font-size:0.82rem; color:#6b7280; margin-bottom:8px; font-style:italic; }
+
+/* ── Exercice block amélioré ──────────────────────────────── */
+.exercice-block {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 6px 0 #e5e7eb, 0 2px 20px #0001;
+  border: 2.5px solid #f0f0f0;
+  position: relative;
+  overflow: hidden;
+}
+.exercice-block::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 6px;
+  background: var(--accent, var(--violet));
+  border-radius: 20px 0 0 20px;
+}
+.exercice-block .ex-title {
+  font-size: 1.05rem;
+  font-weight: 900;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px dashed #e5e7eb;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ex-badge {
+  background: var(--violet);
+  color: white;
+  border-radius: 10px;
+  padding: 3px 14px;
+  font-size: 0.82rem;
+  font-weight: 900;
+  box-shadow: 0 3px 0 #5b21b6;
+}
+/* Type badges */
+.badge-qcm  { background: #7c3aed; }
+.badge-vf   { background: #0ea5e9; }
+.badge-ordre{ background: #f59e0b; }
+.badge-tri  { background: #10b981; }
+.badge-paires{background: #ec4899; }
+
+/* ── Retiens box améliorée ────────────────────────────────── */
+.retiens-box {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-radius: 20px;
+  border: 3px solid #f59e0b;
+  padding: 22px 24px;
+  margin-bottom: 28px;
+  box-shadow: 0 4px 0 #f59e0b44;
+  position: relative;
+}
+.retiens-box .retiens-title {
+  font-size: 1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #92400e;
+  margin-bottom: 12px;
+  display: flex; align-items: center; gap: 8px;
+}
+/* Retiens visual cards (inside retiens-box) */
+.concept-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+.concept-card {
+  background: white;
+  border: 2px solid #fbbf24;
+  border-radius: 14px;
+  padding: 12px 10px;
+  text-align: center;
+  box-shadow: 0 3px 0 #fbbf24;
+}
+.concept-card .c-big   { font-size: 1.6rem; font-weight: 900; color: #92400e; }
+.concept-card .c-label { font-size: 0.72rem; color: #78350f; margin-top: 4px; font-weight: 700; }
+
+/* ── Actions (valider / reset) ────────────────────────────── */
+.ex-actions { margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap; }
+.btn-validate {
+  background: #7c3aed; color: white; border: none; border-radius: 14px;
+  padding: 11px 28px; font-weight: 900; font-size: 0.95rem; cursor: pointer;
+  font-family: inherit; box-shadow: 0 4px 0 #5b21b6; transition: all 0.12s;
+}
+.btn-validate:hover { background: #6d28d9; transform: translateY(-2px); box-shadow: 0 6px 0 #5b21b6; }
+.btn-validate:active { transform: translateY(2px); box-shadow: 0 2px 0 #5b21b6; }
+.btn-reset {
+  background: #9ca3af; color: white; border: none; border-radius: 14px;
+  padding: 11px 20px; font-weight: 800; font-size: 0.95rem; cursor: pointer;
+  font-family: inherit; box-shadow: 0 4px 0 #6b7280;
+}
+.btn-reset:hover { background: #6b7280; }
+
+/* ── Exercice ORDRE ───────────────────────────────────────── */
+.ordre-pool {
+  display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0;
+}
+.ordre-hint, .tri-hint {
+  font-size: 0.78rem; color: #9ca3af; margin-bottom: 6px; font-style: italic;
+}
+.ordre-item {
+  background: white; border: 2.5px solid #d1d5db; border-radius: 12px;
+  padding: 9px 18px; font-weight: 800; font-size: 1rem; cursor: pointer;
+  transition: all 0.12s; font-family: inherit;
+  box-shadow: 0 3px 0 #d1d5db;
+}
+.ordre-item:hover:not([disabled]):not(.used) {
+  border-color: #7c3aed; background: #f5f3ff; color: #7c3aed; transform: translateY(-2px);
+}
+.ordre-item.used { opacity: 0.25; pointer-events: none; box-shadow: none; }
+.ordre-zone {
+  display: flex; gap: 8px; flex-wrap: wrap; min-height: 56px;
+  border: 2.5px dashed #9ca3af; border-radius: 14px; padding: 8px;
+  align-items: center; background: #f9fafb; margin-top: 4px;
+}
+.ordre-chip {
+  background: #ede9fe; border: 2.5px solid #7c3aed; border-radius: 10px;
+  padding: 8px 16px; font-weight: 800; cursor: pointer; font-size: 0.95rem;
+  font-family: inherit; transition: all 0.12s;
+}
+.ordre-chip:hover { background: #fce7f3; border-color: #ec4899; }
+
+/* ── Exercice TRI ──────────────────────────────────────────── */
+.tri-pool {
+  display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0;
+}
+.tri-chip {
+  background: white; border: 2.5px solid #d1d5db; border-radius: 12px;
+  padding: 9px 18px; font-weight: 800; cursor: pointer; transition: all 0.12s;
+  user-select: none; font-family: inherit; box-shadow: 0 3px 0 #d1d5db;
+}
+.tri-chip:hover:not(.tri-used) { border-color: #7c3aed; background: #f5f3ff; color: #7c3aed; }
+.tri-chip.tri-sel  { box-shadow: 0 0 0 3px #7c3aed55; border-color: #7c3aed; background: #ede9fe; color: #7c3aed; }
+.tri-chip.tri-used { opacity: 0.25; pointer-events: none; box-shadow: none; }
+.tri-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-top: 8px;
+}
+.tri-col {
+  background: #f9fafb; border: 2.5px dashed #9ca3af; border-radius: 14px;
+  padding: 10px; min-height: 90px; transition: border-color 0.15s, background 0.15s;
+  cursor: default;
+}
+.tri-col.tri-target { border-color: #7c3aed; background: #f5f3ff; cursor: pointer; }
+.tri-col-title {
+  font-size: 0.82rem; font-weight: 900; text-align: center; margin-bottom: 8px;
+  padding: 4px 8px; background: white; border-radius: 8px; border: 1.5px solid #e5e7eb;
+}
+.tri-col-items { display: flex; flex-wrap: wrap; gap: 6px; min-height: 36px; }
+.tri-placed {
+  background: white; border: 2px solid #9ca3af; border-radius: 8px;
+  padding: 5px 12px; font-weight: 800; font-size: 0.88rem; cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+.tri-placed:hover { border-color: #ef4444; background: #fef2f2; }
+.tri-placed.ok { border-color: #22c55e; background: #f0fdf4; cursor: default; }
+.tri-placed.ko { border-color: #ef4444; background: #fef2f2; cursor: default; }
+
+/* ── Exercice PAIRES ──────────────────────────────────────── */
+.paires-wrap {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 10px;
+}
+.paires-col { display: flex; flex-direction: column; gap: 8px; }
+.paires-btn {
+  background: white; border: 2.5px solid #d1d5db; border-radius: 12px;
+  padding: 12px; font-weight: 800; cursor: pointer; text-align: center;
+  transition: all 0.12s; font-family: inherit; font-size: 0.95rem; width: 100%;
+  box-shadow: 0 3px 0 #d1d5db;
+}
+.paires-btn:hover:not([disabled]):not(.p-ok) { border-color: #7c3aed; background: #f5f3ff; color: #7c3aed; }
+.paires-btn.p-sel { border-color: #7c3aed; background: #ede9fe; color: #7c3aed; box-shadow: 0 0 0 3px #7c3aed33; }
+.paires-btn.p-ok  { background: #f0fdf4; border-color: #22c55e; color: #166534; opacity: 0.75; cursor: default; box-shadow: none; }
+.paires-btn.p-ko  { border-color: #ef4444; background: #fef2f2; animation: _shake 0.4s ease; }
+
+/* ── Badge niveau ─────────────────────────────────────────── */
+.badge-niveau {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #7c3aed, #3b82f6);
+  color: white;
+  border-radius: 20px;
+  padding: 6px 20px;
+  font-size: 0.85rem;
+  font-weight: 900;
+  margin-bottom: 24px;
+  box-shadow: 0 3px 0 #5b21b6;
+  letter-spacing: 0.5px;
+}
+
+/* ── pb-enonce amélioré ───────────────────────────────────── */
+.pb-enonce {
+  background: linear-gradient(135deg, #fef9c3, #fef3c7);
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  font-size: 0.93rem;
+  color: #78350f;
+  line-height: 1.65;
+  font-weight: 700;
+  border-left: 4px solid #f59e0b;
+}
+
+/* ── Header enrichi ────────────────────────────────────────── */
+.site-header {
+  position: relative;
+  overflow: hidden;
+}
+.site-header::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0; right: 0;
+  height: 28px;
+  background: var(--fond);
+  border-radius: 28px 28px 0 0;
+}
+
+/* ── frac-card améliorée ───────────────────────────────────── */
+.frac-card {
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+  padding: 14px;
+  border-radius: 16px;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.1);
+  letter-spacing: 1px;
+}
+
+/* ── Responsive enrichi ───────────────────────────────────── */
+@media (max-width: 500px) {
+  .paires-wrap { grid-template-columns: 1fr; }
+  .tri-grid    { grid-template-columns: 1fr 1fr; }
+  .btn-choice  { padding: 10px 16px; font-size: 0.95rem; }
+  .ex-card     { font-size: 1.7rem; }
+  .frac-card   { font-size: 1.7rem; }
+}
+

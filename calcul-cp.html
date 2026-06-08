@@ -12,129 +12,260 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-  .btn-choice {
-    background: white; border: 2px solid #bbf7d0; border-radius: 22px;
-    padding: 10px 22px; font-size: 1.05rem; font-weight: 800; cursor: pointer; color: #166534;
-    transition: background 0.15s;
-  }
-  .btn-choice:hover { background: #dcfce7; }
-  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
-  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
-  .btn-choice:disabled { opacity: 0.6; cursor: default; }
-  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
-  .q-block { background: #f0fdf4; border: 2px solid #bbf7d0; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
-  .q-text { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; }
-  .operation-big { font-size: 2rem; font-weight: 900; color: #166534; text-align: center; padding: 12px; background: #dcfce7; border-radius: 12px; margin-bottom: 12px; }
+  :root { --accent: #16a34a; }
+  .qcm-row { display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; }
+  .q-block  { background:#f0fdf4; border-color:#bbf7d0; }
+  .btn-choice { border-color:#bbf7d0; color:#166534; }
+  .btn-choice:hover:not([disabled]) { border-color:#16a34a; color:#15803d; background:#dcfce7; }
+  .btn-vrai { background:#dcfce7!important; border-color:#22c55e!important; color:#166534!important; box-shadow:0 4px 0 #bbf7d0!important; }
+  .btn-faux { background:#fee2e2!important; border-color:#ef4444!important; color:#991b1b!important; box-shadow:0 4px 0 #fecaca!important; }
+
+  /* Illustration opération posée */
+  .op-illus { background:#dcfce7; border:2.5px solid #22c55e; border-radius:14px; padding:16px;
+              font-size:1.8rem; font-weight:900; color:#166534; text-align:center;
+              margin-bottom:12px; box-shadow:0 4px 0 #bbf7d0; font-family:monospace; line-height:1.7; }
+  .op-illus .op-line { border-top:3px solid #166534; padding-top:4px; margin-top:4px; }
+
+  /* Compléments à 10 visual */
+  .comp-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:4px; margin:12px 0; }
+  .comp-box { height:34px; border-radius:8px; display:flex; align-items:center; justify-content:center;
+              font-weight:900; font-size:0.9rem; border:2px solid; }
+  .comp-box.plein { background:#4ade80; border-color:#16a34a; color:white; }
+  .comp-box.vide  { background:#f0fdf4; border-color:#bbf7d0; color:#166534; }
 </style>
 </head>
 <body>
 
-<header class="site-header" style="background: linear-gradient(135deg, #16a34a, #86efac);">
+<header class="site-header" style="background:linear-gradient(135deg,#16a34a,#4ade80);">
   <span class="emoji-header">➕</span>
   <h1>Addition et soustraction</h1>
-  <p>Calculer avec des petits nombres</p>
+  <p>Calculer avec des nombres jusqu'à 100</p>
   <a href="index.html" class="nav-back">← Accueil</a>
 </header>
 
 <main>
+  <div class="badge-niveau">🌱 CP — Nombres et calculs</div>
 
-  <div class="badge-niveau">CP — Nombres et calculs</div>
-
+  <!-- ═══ JE RETIENS ═══ -->
   <div class="retiens-box">
     <div class="retiens-title">💡 Je retiens</div>
-    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
-      ➕ <strong>Addition</strong> : mettre ensemble → 5 + 3 = 8<br>
-      ➖ <strong>Soustraction</strong> : enlever → 8 − 3 = 5<br>
-      🔄 Complément à 10 : 6 + <strong>4</strong> = 10 | 7 + <strong>3</strong> = 10<br>
-      ✅ Vérifier : 5 + 3 = 8 ↔ 8 − 3 = 5
+    <div style="font-size:0.9rem;color:#555;margin-top:8px;line-height:1.9;">
+      ➕ <strong>Additionner</strong> : mettre ensemble → 5 + 3 = <strong>8</strong><br>
+      ➖ <strong>Soustraire</strong> : enlever → 8 − 3 = <strong>5</strong><br>
+      🔟 <strong>Compléments à 10</strong> : 6 + <strong>4</strong> = 10 · 7 + <strong>3</strong> = 10<br>
+      ✅ <strong>Vérifier</strong> : 5 + 3 = 8 ↔ 8 − 3 = 5 (opérations inverses)
+    </div>
+    <div class="concept-cards" style="margin-top:14px">
+      <div class="concept-card"><div class="c-big">5+3</div><div class="c-label">= 8 ✅</div></div>
+      <div class="concept-card"><div class="c-big">8−3</div><div class="c-label">= 5 ✅</div></div>
+      <div class="concept-card"><div class="c-big">6+?</div><div class="c-label">= 10 → 4</div></div>
+      <div class="concept-card"><div class="c-big">20+7</div><div class="c-label">= 27 ✅</div></div>
+    </div>
+    <!-- Compléments à 10 visuels -->
+    <div style="margin-top:14px">
+      <div style="font-size:0.8rem;font-weight:800;color:#92400e;margin-bottom:6px">Compléments à 10 :</div>
+      <div class="comp-grid">
+        <div class="comp-box plein">1</div><div class="comp-box plein">2</div>
+        <div class="comp-box plein">3</div><div class="comp-box plein">4</div>
+        <div class="comp-box plein">5</div>
+        <div class="comp-box plein">6</div><div class="comp-box plein">7</div>
+        <div class="comp-box plein">8</div><div class="comp-box vide">?</div>
+        <div class="comp-box vide">?</div>
+      </div>
+      <div style="font-size:0.78rem;color:#555;margin-top:4px">8 cases rouges + 2 cases vides = 10 → 8 + <strong>2</strong> = 10</div>
     </div>
   </div>
 
-  <!-- EX 1 : Additions simples -->
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 1</span> Petites additions</div>
+  <!-- ═══ EX 1 : Petites additions ═══ -->
+  <div class="exercice-block" style="--accent:#16a34a">
+    <div class="ex-title">
+      <span class="ex-badge" style="background:#16a34a">Ex 1</span>
+      Petites additions (résultat ≤ 20)
+      <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span>
+    </div>
     <div id="ex1"></div>
   </div>
 
-  <!-- EX 2 : Soustractions simples -->
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 2</span> Petites soustractions</div>
+  <!-- ═══ EX 2 : Petites soustractions ═══ -->
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title">
+      <span class="ex-badge" style="background:#ef4444">Ex 2</span>
+      Petites soustractions
+      <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span>
+    </div>
     <div id="ex2"></div>
   </div>
 
-  <!-- EX 3 : Additions avec des dizaines -->
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 3</span> Additions avec dizaines</div>
+  <!-- ═══ EX 3 : Vrai ou Faux ═══ -->
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title">
+      <span class="ex-badge" style="background:#f59e0b">Ex 3</span>
+      Vrai ou Faux ?
+      <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span>
+    </div>
     <div id="ex3"></div>
   </div>
 
-  <!-- EX 4 : Problèmes simples -->
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 4</span> Mini-problèmes</div>
+  <!-- ═══ EX 4 : Compléments ═══ -->
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <div class="ex-title">
+      <span class="ex-badge" style="background:#0ea5e9">Ex 4</span>
+      Compléments à 10 et à 20
+      <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span>
+    </div>
     <div id="ex4"></div>
+  </div>
+
+  <!-- ═══ EX 5 : Additions avec dizaines ═══ -->
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title">
+      <span class="ex-badge" style="background:#7c3aed">Ex 5</span>
+      Additions avec les dizaines
+      <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span>
+    </div>
+    <div id="ex5"></div>
+  </div>
+
+  <!-- ═══ EX 6 : Associer addition ↔ résultat (PAIRES) ═══ -->
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title">
+      <span class="ex-badge" style="background:#ec4899">Ex 6</span>
+      Associer opération et résultat
+      <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span>
+    </div>
+    <div id="ex6"></div>
+  </div>
+
+  <!-- ═══ EX 7 : Mini-problèmes ═══ -->
+  <div class="exercice-block" style="--accent:#f97316">
+    <div class="ex-title">
+      <span class="ex-badge" style="background:#f97316">Ex 7</span>
+      Mini-problèmes
+      <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span>
+    </div>
+    <div id="ex7"></div>
+  </div>
+
+  <!-- ═══ EX 8 : Quel signe ? (TRI) ═══ -->
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title">
+      <span class="ex-badge" style="background:#10b981">Ex 8</span>
+      Quel signe faut-il ? (+, −)
+      <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span>
+    </div>
+    <div id="ex8"></div>
   </div>
 
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence — CP</footer>
 
+<script src="exercises.js"></script>
 <script>
-function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
-function buildQ(data, id) {
-  const c = document.getElementById(id);
-  data.forEach((item, i) => {
-    const d = document.createElement('div');
-    d.className = 'q-block';
-    const sh = shuffle(item.choices);
-    d.innerHTML = `
-      <div class="q-text">${item.q}</div>
-      <div class="qcm-row" id="${id}-r${i}">
-        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
-      </div>
-      <div class="feedback-line" id="${id}-f${i}"></div>
-    `;
-    c.appendChild(d);
-  });
-}
-function check(btn, chosen, correct, rowId, fbId) {
-  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
-  const fb = document.getElementById(fbId);
-  if (chosen === correct) {
-    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
-  } else {
-    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
-    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
-  }
-}
-
-buildQ([
-  { q: '3 + 4 = ?', correct: '7', choices: ['6','7','8','9'] },
-  { q: '6 + 5 = ?', correct: '11', choices: ['10','11','12','13'] },
-  { q: '8 + 7 = ?', correct: '15', choices: ['13','14','15','16'] },
-  { q: 'Quel nombre manque ? 4 + ☐ = 9', correct: '5', choices: ['3','4','5','6'] },
+// ── EX 1 : Petites additions ──────────────────────────────────────────
+buildQCM([
+  { card:'3 + 4 = ?', q:'Calcule 3 + 4', correct:'7', choices:['6','7','8','9'] },
+  { card:'6 + 5 = ?', q:'Calcule 6 + 5', correct:'11', choices:['10','11','12','13'] },
+  { card:'8 + 7 = ?', q:'Calcule 8 + 7', correct:'15', choices:['13','14','15','16'] },
+  { card:'9 + 6 = ?', q:'Calcule 9 + 6', correct:'15', choices:['13','15','16','18'] },
+  { q:'Quel nombre manque ? 4 + ☐ = 9', correct:'5', choices:['3','4','5','6'] },
+  { q:'Quel nombre manque ? ☐ + 7 = 13', correct:'6', choices:['5','6','7','8'] },
+  { card:'14 + 5 = ?', q:'Calcule 14 + 5', correct:'19', choices:['17','18','19','20'] },
 ], 'ex1');
 
-buildQ([
-  { q: '9 − 4 = ?', correct: '5', choices: ['3','4','5','6'] },
-  { q: '12 − 5 = ?', correct: '7', choices: ['6','7','8','9'] },
-  { q: '15 − 8 = ?', correct: '7', choices: ['5','6','7','8'] },
-  { q: 'Quel nombre manque ? ☐ − 3 = 6', correct: '9', choices: ['7','8','9','10'] },
+// ── EX 2 : Petites soustractions ─────────────────────────────────────
+buildQCM([
+  { card:'9 − 4 = ?', q:'Calcule 9 − 4', correct:'5', choices:['3','4','5','6'] },
+  { card:'12 − 5 = ?', q:'Calcule 12 − 5', correct:'7', choices:['6','7','8','9'] },
+  { card:'15 − 8 = ?', q:'Calcule 15 − 8', correct:'7', choices:['5','6','7','8'] },
+  { q:'Quel nombre manque ? ☐ − 3 = 6', correct:'9', choices:['7','8','9','10'] },
+  { card:'18 − 9 = ?', q:'Calcule 18 − 9', correct:'9', choices:['7','8','9','10'] },
+  { q:'Quel nombre manque ? 14 − ☐ = 8', correct:'6', choices:['4','5','6','7'] },
+  { card:'20 − 7 = ?', q:'Calcule 20 − 7', correct:'13', choices:['11','12','13','14'] },
 ], 'ex2');
 
-buildQ([
-  { q: '20 + 30 = ?', correct: '50', choices: ['40','50','60','23'] },
-  { q: '45 + 10 = ?', correct: '55', choices: ['46','54','55','56'] },
-  { q: '60 − 20 = ?', correct: '40', choices: ['30','40','42','80'] },
-  { q: '30 + 17 = ?', correct: '47', choices: ['37','47','48','57'] },
+// ── EX 3 : Vrai ou Faux ───────────────────────────────────────────────
+buildVF([
+  { q:'5 + 8 = 13', correct:true },
+  { q:'7 + 6 = 14', correct:false, expl:'7 + 6 = 13' },
+  { q:'15 − 7 = 8', correct:true },
+  { q:'12 − 5 = 6', correct:false, expl:'12 − 5 = 7' },
+  { q:'4 + 9 = 9 + 4 (on peut changer l\'ordre)', correct:true, expl:'L\'addition est commutative' },
+  { q:'0 + 13 = 13', correct:true, expl:'Ajouter 0 ne change rien' },
+  { q:'10 − 10 = 1', correct:false, expl:'10 − 10 = 0' },
+  { q:'6 + 4 = 10 (complément à 10)', correct:true },
 ], 'ex3');
 
-buildQ([
-  { q: 'Il y a 6 pommes dans le panier et Tom en ajoute 4. Combien y en a-t-il maintenant ?', correct: '10', choices: ['8','9','10','11'] },
-  { q: 'Léa a 13 billes. Elle en perd 5. Combien lui en reste-t-il ?', correct: '8', choices: ['7','8','9','18'] },
-  { q: 'Dans la classe, il y a 11 filles et 9 garçons. Combien d\'élèves y a-t-il en tout ?', correct: '20', choices: ['18','19','20','21'] },
-  { q: 'Un bus a 15 passagers. 6 descendent. Combien reste-t-il de passagers ?', correct: '9', choices: ['7','8','9','10'] },
+// ── EX 4 : Compléments ───────────────────────────────────────────────
+buildQCM([
+  { q:'Quel nombre complète 6 + ☐ = 10 ?', correct:'4', choices:['3','4','5','6'],
+    hint:'Combien faut-il ajouter à 6 pour arriver à 10 ?' },
+  { q:'Quel nombre complète 3 + ☐ = 10 ?', correct:'7', choices:['5','6','7','8'] },
+  { q:'Quel nombre complète 8 + ☐ = 10 ?', correct:'2', choices:['1','2','3','4'] },
+  { q:'Quel nombre complète 7 + ☐ = 10 ?', correct:'3', choices:['2','3','4','5'] },
+  { q:'Quel nombre complète ☐ + 5 = 10 ?', correct:'5', choices:['4','5','6','7'] },
+  { q:'Quel nombre complète 9 + ☐ = 20 ?', correct:'11', choices:['9','10','11','12'] },
+  { q:'Quel nombre complète 15 + ☐ = 20 ?', correct:'5', choices:['4','5','6','7'] },
 ], 'ex4');
+
+// ── EX 5 : Additions avec dizaines ───────────────────────────────────
+buildQCM([
+  { card:'20 + 30 = ?', q:'Calcule 20 + 30', correct:'50', choices:['40','50','60','23'] },
+  { card:'45 + 10 = ?', q:'Calcule 45 + 10', correct:'55', choices:['46','54','55','56'] },
+  { card:'60 − 20 = ?', q:'Calcule 60 − 20', correct:'40', choices:['30','40','42','80'] },
+  { card:'30 + 17 = ?', q:'Calcule 30 + 17', correct:'47', choices:['37','47','48','57'] },
+  { card:'50 + 25 = ?', q:'Calcule 50 + 25', correct:'75', choices:['55','70','75','80'] },
+  { card:'80 − 30 = ?', q:'Calcule 80 − 30', correct:'50', choices:['40','50','55','60'] },
+  { q:'J\'ai 40 billes et j\'en trouve 23 autres. Combien en ai-je ?',
+    correct:'63', choices:['57','63','67','73'] },
+], 'ex5');
+
+// ── EX 6 : Paires opération ↔ résultat ────────────────────────────────
+buildPaires([
+  { q:'Associe chaque opération à son résultat.',
+    pairs:[
+      ['3 + 7', '10'], ['14 − 6', '8'],
+      ['9 + 8', '17'], ['20 − 5', '15'],
+    ]
+  },
+  { q:'Associe chaque opération à son résultat.',
+    pairs:[
+      ['6 + 6', '12'], ['18 − 9', '9'],
+      ['25 + 5', '30'], ['40 − 15', '25'],
+    ]
+  },
+], 'ex6');
+
+// ── EX 7 : Mini-problèmes ─────────────────────────────────────────────
+buildQCM([
+  { enonce:'🍎 Il y a 6 pommes dans le panier et Tom en ajoute 4.',
+    q:'Combien y en a-t-il maintenant ?', correct:'10', choices:['8','9','10','11'] },
+  { enonce:'🎮 Léa a 13 billes. Elle en perd 5.',
+    q:'Combien lui en reste-t-il ?', correct:'8', choices:['7','8','9','18'] },
+  { enonce:'🏫 Il y a 11 filles et 9 garçons dans la classe.',
+    q:'Combien d\'élèves y a-t-il en tout ?', correct:'20', choices:['18','19','20','21'] },
+  { enonce:'🚌 Un bus a 15 passagers. 6 descendent à l\'arrêt.',
+    q:'Combien de passagers restent dans le bus ?', correct:'9', choices:['7','8','9','10'] },
+  { enonce:'🍬 Hugo avait 20 bonbons. Il en a donné 8 à ses amis.',
+    q:'Combien lui en reste-t-il ?', correct:'12', choices:['10','11','12','13'] },
+  { enonce:'📚 Chloé a lu 14 pages lundi et 6 pages mardi.',
+    q:'Combien de pages a-t-elle lues en tout ?', correct:'20', choices:['18','19','20','21'] },
+], 'ex7');
+
+// ── EX 8 : Quel signe ? TRI ───────────────────────────────────────────
+buildTri([
+  { q:'Chaque opération utilise + (addition) ou − (soustraction). Classe-les !',
+    cats:['➕ Addition','➖ Soustraction'],
+    items:[
+      {v:'5 + 3',  cat:'➕ Addition'},
+      {v:'12 − 4', cat:'➖ Soustraction'},
+      {v:'7 + 8',  cat:'➕ Addition'},
+      {v:'15 − 7', cat:'➖ Soustraction'},
+      {v:'20 + 3', cat:'➕ Addition'},
+      {v:'9 − 2',  cat:'➖ Soustraction'},
+    ]
+  },
+], 'ex8');
 </script>
 
 <script src="gamification.js"></script>
