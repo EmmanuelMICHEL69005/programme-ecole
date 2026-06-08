@@ -12,160 +12,174 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-  .btn-choice {
-    background: white; border: 2px solid #ddd6fe; border-radius: 22px;
-    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #5b21b6;
-    transition: background 0.15s;
+  .op-examples {
+    display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin:12px 0;
   }
-  .btn-choice:hover { background: #f5f3ff; }
-  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
-  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
-  .btn-choice:disabled { opacity: 0.6; cursor: default; }
-  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
-  .q-block { background: #f5f3ff; border: 2px solid #ddd6fe; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
-  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
-  .op-col {
-    font-family: 'Courier New', monospace;
-    font-size: 1.6rem;
-    font-weight: 900;
-    background: #ede9fe;
-    border-radius: 10px;
-    padding: 14px 24px 10px;
-    margin-bottom: 14px;
-    color: #4c1d95;
-    text-align: right;
-    line-height: 2;
-    border-bottom: 4px solid #7c3aed;
-    display: inline-block;
-    min-width: 160px;
+  .op-ex-card {
+    background:#f5f3ff;border:2.5px solid #a78bfa;border-radius:14px;
+    padding:12px 16px;text-align:center;
   }
-  .op-col-wrap { margin-bottom: 12px; }
-  .cmp-card {
-    font-size: 1.5rem;
-    font-weight: 900;
-    color: #5b21b6;
-    text-align: center;
-    padding: 12px;
-    background: #ede9fe;
-    border-radius: 14px;
-    margin-bottom: 14px;
-    letter-spacing: 2px;
-  }
+  .op-ex-card .label{font-size:0.7rem;font-weight:800;color:#7c3aed;margin-bottom:6px;}
+  .op-ex-card table{border-collapse:collapse;font-size:1.1rem;font-weight:900;color:#5b21b6;}
+  .op-ex-card td{padding:2px 6px;text-align:right;}
+  .op-ex-card .op-line td{border-top:3px solid #7c3aed;}
+  .op-ex-card .op-sign{color:#dc2626;}
 </style>
 </head>
 <body>
 
-<header class="site-header" style="background: linear-gradient(135deg, #4c1d95, #7c3aed);">
-  <span class="emoji-header">🖊️</span>
+<header class="site-header" style="background:linear-gradient(135deg,#7c3aed,#a78bfa);">
+  <span class="emoji-header">🧮</span>
   <h1>Opérations posées</h1>
-  <p>Additions, soustractions, comparer et encadrer</p>
+  <p>Addition, soustraction et multiplication posées</p>
   <a href="index.html" class="nav-back">← Accueil</a>
 </header>
 
 <main>
-
-  <div class="badge-niveau">CE2 — Opérations posées</div>
+  <div class="badge-niveau">📚 CE2 — Opérations posées</div>
 
   <div class="retiens-box">
     <div class="retiens-title">💡 Je retiens</div>
-    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
-      ➕ <strong>Addition</strong> : on commence par les unités, on retient si besoin<br>
-      ➖ <strong>Soustraction</strong> : si on ne peut pas soustraire, on emprunte une dizaine<br>
-      ⚖️ <strong>Comparer</strong> : d'abord les milliers, puis les centaines, puis les dizaines, puis les unités<br>
-      📦 <strong>Encadrer</strong> : trouver les deux dizaines (ou centaines) les plus proches
+    <div class="op-examples">
+      <div class="op-ex-card">
+        <div class="label">Addition (retenue)</div>
+        <table><tbody>
+        <tr><td></td><td>3</td><td>4</td><td>7</td></tr>
+        <tr><td class="op-sign">+</td><td>1</td><td>8</td><td>6</td></tr>
+        <tr class="op-line"><td></td><td>5</td><td>3</td><td>3</td></tr>
+        </tbody></table>
+      </div>
+      <div class="op-ex-card">
+        <div class="label">Soustraction (emprunt)</div>
+        <table><tbody>
+        <tr><td></td><td>5</td><td>2</td><td>4</td></tr>
+        <tr><td class="op-sign">−</td><td>1</td><td>8</td><td>7</td></tr>
+        <tr class="op-line"><td></td><td>3</td><td>3</td><td>7</td></tr>
+        </tbody></table>
+      </div>
+      <div class="op-ex-card">
+        <div class="label">Multiplication posée</div>
+        <table><tbody>
+        <tr><td></td><td></td><td>2</td><td>4</td></tr>
+        <tr><td class="op-sign">×</td><td></td><td></td><td>6</td></tr>
+        <tr class="op-line"><td></td><td>1</td><td>4</td><td>4</td></tr>
+        </tbody></table>
+      </div>
+    </div>
+    <div style="font-size:0.88rem;color:#555;line-height:1.9;margin-top:4px;">
+      ⬆️ <strong>Retenue</strong> : si total colonne ≥ 10, je retiens 1 à gauche<br>
+      ⬇️ <strong>Emprunt</strong> : si je ne peux pas soustraire, j'emprunte à la colonne gauche<br>
+      ✖️ <strong>Multiplication posée</strong> : chaque chiffre × multiplicateur, de droite à gauche
     </div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#5b21b6;">Ex 1</span> Additions en colonnes — quel est le résultat ?</div>
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 1</span> Additions avec retenues <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex1"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#5b21b6;">Ex 2</span> Soustractions en colonnes — quel est le résultat ?</div>
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 2</span> Soustractions avec emprunts <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex2"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#5b21b6;">Ex 3</span> Comparer les nombres</div>
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 3</span> Multiplication posée (1 chiffre) <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex3"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#5b21b6;">Ex 4</span> Encadrer et ranger les nombres</div>
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 4</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
     <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 5</span> Nombre manquant <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Associer opération et résultat <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Résultat > ou < 1 000 ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex7"></div>
   </div>
 
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence — CE2</footer>
 
+<script src="exercises.js"></script>
 <script>
-function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
-
-function buildQ(data, id) {
-  const c = document.getElementById(id);
-  data.forEach((item, i) => {
-    const d = document.createElement('div');
-    d.className = 'q-block';
-    const sh = shuffle(item.choices);
-    let html = '';
-    if (item.opCol) html += `<div class="op-col-wrap"><div class="op-col">${item.opCol}</div></div>`;
-    if (item.cmpCard) html += `<div class="cmp-card">${item.cmpCard}</div>`;
-    html += `<div class="q-text">${item.q}</div>`;
-    html += `<div class="qcm-row" id="${id}-r${i}">
-      ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
-    </div>
-    <div class="feedback-line" id="${id}-f${i}"></div>`;
-    d.innerHTML = html;
-    c.appendChild(d);
-  });
-}
-
-function check(btn, chosen, correct, rowId, fbId) {
-  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
-  const fb = document.getElementById(fbId);
-  if (chosen === correct) {
-    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
-  } else {
-    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
-    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
-  }
-}
-
-buildQ([
-  { opCol: '357<br>+ 284', q: '357 + 284 = ?', correct: '641', choices: ['631','641','651','661'] },
-  { opCol: '486<br>+ 237', q: '486 + 237 = ?', correct: '723', choices: ['713','723','733','743'] },
-  { opCol: '594<br>+ 308', q: '594 + 308 = ?', correct: '902', choices: ['882','892','902','912'] },
-  { opCol: '2 456<br>+ 1 375', q: '2 456 + 1 375 = ?', correct: '3 831', choices: ['3 821','3 831','3 841','3 851'] },
-  { opCol: '3 784<br>+ 2 609', q: '3 784 + 2 609 = ?', correct: '6 393', choices: ['6 383','6 393','6 403','6 413'] },
+buildQCM([
+  { card:'347 + 186 = ?', q:'Calcule', correct:'533', choices:['513','523','533','543'] },
+  { card:'456 + 278 = ?', q:'Calcule', correct:'734', choices:['714','724','734','744'] },
+  { card:'1 253 + 748 = ?', q:'Calcule', correct:'2 001', choices:['1 901','1 991','2 001','2 011'] },
+  { card:'3 458 + 1 276 = ?', q:'Calcule', correct:'4 734', choices:['4 714','4 724','4 734','4 744'] },
+  { card:'2 947 + 3 085 = ?', q:'Calcule', correct:'6 032', choices:['5 022','6 022','6 032','6 042'] },
+  { card:'5 689 + 2 347 = ?', q:'Calcule', correct:'8 036', choices:['7 036','8 026','8 036','8 046'] },
 ], 'ex1');
 
-buildQ([
-  { opCol: '847<br>− 264', q: '847 − 264 = ?', correct: '583', choices: ['563','573','583','593'] },
-  { opCol: '736<br>− 482', q: '736 − 482 = ?', correct: '254', choices: ['244','254','264','274'] },
-  { opCol: '904<br>− 361', q: '904 − 361 = ?', correct: '543', choices: ['533','543','553','563'] },
-  { opCol: '7 856<br>− 2 493', q: '7 856 − 2 493 = ?', correct: '5 363', choices: ['5 353','5 363','5 373','5 383'] },
-  { opCol: '5 200<br>− 1 873', q: '5 200 − 1 873 = ?', correct: '3 327', choices: ['3 317','3 327','3 337','3 347'] },
+buildQCM([
+  { card:'524 − 187 = ?', q:'Calcule', correct:'337', choices:['317','327','337','347'] },
+  { card:'803 − 256 = ?', q:'Calcule', correct:'547', choices:['537','547','557','647'] },
+  { card:'1 000 − 347 = ?', q:'Calcule', correct:'653', choices:['643','653','663','753'] },
+  { card:'4 521 − 1 876 = ?', q:'Calcule', correct:'2 645', choices:['2 635','2 645','2 655','2 745'] },
+  { card:'7 000 − 3 456 = ?', q:'Calcule', correct:'3 544', choices:['3 444','3 534','3 544','3 644'] },
+  { card:'5 200 − 1 867 = ?', q:'Calcule', correct:'3 333', choices:['3 233','3 323','3 333','3 433'] },
 ], 'ex2');
 
-buildQ([
-  { cmpCard: '736 ___ 763', q: 'Quel signe convient entre 736 et 763 ?', correct: '<', choices: ['<','>','='] },
-  { q: 'Quel est le plus grand parmi : 483, 348, 834, 438 ?', correct: '834', choices: ['483','348','834','438'] },
-  { q: 'Quel est le plus petit parmi : 6 789, 9 876, 6 987, 9 678 ?', correct: '6 789', choices: ['6 789','9 876','6 987','9 678'] },
-  { cmpCard: '(6×100)+9 ___ (9×100)+6', q: 'Quel signe convient ?', correct: '<', choices: ['<','>','='] },
-  { cmpCard: '1 000 ___ 997', q: 'Quel signe convient entre 1 000 et 997 ?', correct: '>', choices: ['<','>','='] },
-  { q: 'Quel est le nombre le plus proche de 1 000 : 899, 1 100, 980 ou 1 090 ?', correct: '980', choices: ['899','1 100','980','1 090'] },
+buildQCM([
+  { card:'24 × 6 = ?', q:'Multiplication posée', correct:'144', choices:['124','134','144','154'] },
+  { card:'53 × 7 = ?', q:'Multiplication posée', correct:'371', choices:['351','361','371','381'] },
+  { card:'126 × 4 = ?', q:'Multiplication posée', correct:'504', choices:['484','494','504','514'] },
+  { card:'235 × 3 = ?', q:'Multiplication posée', correct:'705', choices:['685','695','705','715'] },
+  { card:'348 × 5 = ?', q:'Multiplication posée', correct:'1 740', choices:['1 720','1 730','1 740','1 750'] },
+  { card:'467 × 8 = ?', q:'Multiplication posée', correct:'3 736', choices:['3 716','3 726','3 736','3 746'] },
+  { card:'125 × 9 = ?', q:'Multiplication posée', correct:'1 125', choices:['1 105','1 115','1 125','1 135'] },
 ], 'ex3');
 
-buildQ([
-  { q: 'Entre quelles centaines se trouve 483 ?', correct: '400 et 500', choices: ['300 et 400','400 et 500','500 et 600','200 et 300'] },
-  { q: 'Entre quelles dizaines se trouve 374 ?', correct: '370 et 380', choices: ['360 et 370','370 et 380','380 et 390','350 et 360'] },
-  { q: 'Range ces nombres dans l\'ordre croissant : 879, 87, 798, 987. Quel est le 2ème ?', correct: '798', choices: ['879','798','87','987'] },
-  { q: 'Quel nombre peut s\'intercaler entre 560 et 580 ?', correct: '572', choices: ['512','549','572','593'] },
-  { q: 'Quel est le nombre qui précède 1 000 ?', correct: '999', choices: ['998','999','1 001','1 100'] },
+buildVF([
+  { card:'347 + 186 = 533', q:'347 + 186 = 533', correct:true },
+  { card:'524 − 187 = 347', q:'524 − 187 = 347', correct:false, expl:'524 − 187 = 337' },
+  { card:'24 × 6 = 144', q:'24 × 6 = 144', correct:true },
+  { card:'1 000 − 347 = 663', q:'1 000 − 347 = 663', correct:false, expl:'1 000 − 347 = 653' },
+  { card:'53 × 7 = 371', q:'53 × 7 = 371', correct:true },
+  { card:'456 + 278 = 724', q:'456 + 278 = 724', correct:false, expl:'456 + 278 = 734' },
+  { q:'Pour vérifier 524 − 187 = 337, je calcule 337 + 187.', correct:true, expl:'337 + 187 = 524 ✅' },
 ], 'ex4');
+
+buildQCM([
+  { card:'☐ + 186 = 533', q:'Nombre manquant ?', correct:'347', choices:['317','337','347','357'] },
+  { card:'24 × ☐ = 144', q:'Nombre manquant ?', correct:'6', choices:['4','5','6','7'] },
+  { card:'1 000 − ☐ = 653', q:'Nombre manquant ?', correct:'347', choices:['327','337','347','357'] },
+  { card:'☐ × 7 = 371', q:'Nombre manquant ?', correct:'53', choices:['43','48','53','63'] },
+  { card:'3 458 + ☐ = 4 734', q:'Nombre manquant ?', correct:'1 276', choices:['1 256','1 266','1 276','1 286'] },
+], 'ex5');
+
+buildPaires([
+  { q:'Associe chaque opération à son résultat.',
+    pairs:[['347 + 186','533'],['524 − 187','337'],['24 × 6','144'],['53 × 7','371']] },
+  { q:'Associe chaque opération à son résultat.',
+    pairs:[['1 000 − 347','653'],['126 × 4','504'],['456 + 278','734'],['235 × 3','705']] },
+], 'ex6');
+
+buildTri([
+  { q:'Le résultat de cette opération est-il > ou < 1 000 ?',
+    cats:['> 1 000','< 1 000'],
+    items:[
+      {v:'347 + 186', cat:'< 1 000'},
+      {v:'456 + 278', cat:'< 1 000'},
+      {v:'3 458 + 1 276', cat:'> 1 000'},
+      {v:'348 × 5', cat:'> 1 000'},
+      {v:'24 × 6', cat:'< 1 000'},
+      {v:'467 × 8', cat:'> 1 000'},
+    ]
+  },
+], 'ex7');
 </script>
 
 <script src="gamification.js"></script>

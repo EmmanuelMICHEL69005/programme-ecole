@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="Les Maths de Clémence">
+<meta name="application-name" content="Les Maths de Clémence">
+<meta property="og:site_name" content="Les Maths de Clémence">
+<link rel="manifest" href="manifest.json">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Géométrie — CE2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .geo-gallery {
+    display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:12px 0;
+  }
+  .geo-card {
+    background:#f5f3ff;border:2.5px solid #a78bfa;border-radius:14px;
+    padding:10px 12px;text-align:center;min-width:80px;
+  }
+  .geo-card svg{display:block;margin:0 auto 4px;}
+  .geo-card .name{font-size:0.7rem;font-weight:900;color:#5b21b6;}
+  .geo-card .info{font-size:0.58rem;color:#6b7280;font-weight:700;}
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background:linear-gradient(135deg,#7c3aed,#a78bfa);">
+  <span class="emoji-header">📐</span>
+  <h1>Géométrie</h1>
+  <p>Aires, périmètres, angles, espace</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+  <div class="badge-niveau">📚 CE2 — Géométrie</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div class="geo-gallery">
+      <div class="geo-card">
+        <svg width="52" height="52"><rect x="4" y="4" width="44" height="44" fill="none" stroke="#7c3aed" stroke-width="3"/></svg>
+        <div class="name">Carré</div>
+        <div class="info">Côté : c<br>P = 4c<br>A = c×c</div>
+      </div>
+      <div class="geo-card">
+        <svg width="72" height="52"><rect x="4" y="8" width="64" height="36" fill="none" stroke="#7c3aed" stroke-width="3"/></svg>
+        <div class="name">Rectangle</div>
+        <div class="info">L × l<br>P = 2(L+l)<br>A = L×l</div>
+      </div>
+      <div class="geo-card">
+        <svg width="52" height="52"><polygon points="26,4 4,48 48,48" fill="none" stroke="#7c3aed" stroke-width="3"/></svg>
+        <div class="name">Triangle</div>
+        <div class="info">P = a+b+c<br>Aire = base×h÷2</div>
+      </div>
+      <div class="geo-card">
+        <svg width="52" height="52"><circle cx="26" cy="26" r="22" fill="none" stroke="#7c3aed" stroke-width="3"/><line x1="26" y1="26" x2="48" y2="26" stroke="#dc2626" stroke-width="2" stroke-dasharray="4"/></svg>
+        <div class="name">Cercle</div>
+        <div class="info">Rayon r<br>Diamètre = 2r</div>
+      </div>
+    </div>
+    <div style="font-size:0.88rem;color:#555;margin-top:4px;line-height:1.9;">
+      📏 <strong>Périmètre</strong> = somme de tous les côtés (en cm, m…)<br>
+      📐 <strong>Aire</strong> = surface intérieure (en cm², m²…)<br>
+      🔵 <strong>Rayon</strong> = moitié du diamètre · <strong>Diamètre</strong> = 2 × rayon<br>
+      ↗️ <strong>Droites parallèles</strong> : ne se croisent jamais · <strong>Perpendiculaires</strong> : se croisent à 90°
+    </div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 1</span> Périmètre des figures <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 2</span> Aire — compter les carreaux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 3</span> Cercle : rayon et diamètre <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 4</span> Vrai ou Faux — géométrie <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 5</span> Droites : parallèles ou perpendiculaires ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Associer figure et formule <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex6"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CE2</footer>
+
+<script src="exercises.js"></script>
+<script>
+buildQCM([
+  { q:'Un carré de côté 7 cm. Périmètre ?', correct:'28 cm', choices:['14 cm','21 cm','28 cm','49 cm'] },
+  { q:'Un rectangle 9 cm × 5 cm. Périmètre ?', correct:'28 cm', choices:['14 cm','28 cm','45 cm','36 cm'] },
+  { q:'Un triangle avec des côtés 6 cm, 8 cm et 10 cm. Périmètre ?', correct:'24 cm', choices:['14 cm','18 cm','24 cm','480 cm'] },
+  { q:'Un carré de périmètre 32 cm. Quel est son côté ?', correct:'8 cm', choices:['4 cm','8 cm','16 cm','32 cm'] },
+  { q:'Un rectangle de périmètre 26 cm et de longueur 9 cm. Quelle est sa largeur ?', correct:'4 cm', choices:['4 cm','8 cm','17 cm','26 cm'] },
+  { q:'Un hexagone régulier de côté 5 cm. Périmètre ?', correct:'30 cm', choices:['5 cm','25 cm','30 cm','50 cm'] },
+], 'ex1');
+
+buildQCM([
+  { q:'Un carré de côté 4 cm. Quelle est son aire ?', correct:'16 cm²', choices:['8 cm²','12 cm²','16 cm²','20 cm²'] },
+  { q:'Un rectangle 6 cm × 3 cm. Quelle est son aire ?', correct:'18 cm²', choices:['9 cm²','18 cm²','24 cm²','36 cm²'] },
+  { q:'Un carré de 5 cm de côté. Aire ?', correct:'25 cm²', choices:['10 cm²','20 cm²','25 cm²','50 cm²'] },
+  { q:'Un rectangle a une aire de 24 cm² et une longueur de 8 cm. Quelle est sa largeur ?', correct:'3 cm', choices:['2 cm','3 cm','4 cm','6 cm'] },
+  { q:'Sur du papier quadrillé (carreaux de 1 cm), une figure couvre 15 carreaux entiers et 4 demi-carreaux. Son aire est…', correct:'17 cm²', choices:['15 cm²','17 cm²','19 cm²','4 cm²'] },
+  { q:'Laquelle a la plus grande AIRE ? Carré 5 cm ou Rectangle 8×3 cm ?', correct:'Le rectangle (24 cm²)', choices:['Le carré (25 cm²)','Le rectangle (24 cm²)','Ils ont la même aire','On ne peut pas comparer'] },
+], 'ex2');
+
+buildQCM([
+  { q:'Un cercle a un rayon de 6 cm. Son diamètre est…', correct:'12 cm', choices:['3 cm','6 cm','12 cm','36 cm'] },
+  { q:'Un cercle a un diamètre de 10 cm. Son rayon est…', correct:'5 cm', choices:['2 cm','5 cm','10 cm','20 cm'] },
+  { q:'Le rayon d\'un cercle est la moitié du…', correct:'diamètre', choices:['périmètre','diamètre','circonférence','côté'] },
+  { q:'Le centre d\'un cercle est…', correct:'équidistant de tous les points du cercle', choices:['le point le plus à gauche','équidistant de tous les points du cercle','toujours sur le bord','impossible à trouver'] },
+  { q:'Un cercle de rayon 4 cm a un diamètre de…', correct:'8 cm', choices:['2 cm','4 cm','8 cm','16 cm'] },
+], 'ex3');
+
+buildVF([
+  { q:'L\'aire d\'un carré de 6 cm de côté est 36 cm².', correct:true, expl:'6 × 6 = 36 cm²' },
+  { q:'Le périmètre d\'un rectangle 9×5 cm est 45 cm.', correct:false, expl:'P = 2×(9+5) = 2×14 = 28 cm' },
+  { q:'Le diamètre est deux fois le rayon.', correct:true },
+  { q:'Deux droites parallèles se coupent toujours.', correct:false, expl:'Les droites parallèles ne se coupent jamais !' },
+  { q:'Un carré est un cas particulier de rectangle.', correct:true },
+  { q:'L\'aire se mesure en cm (centimètres).', correct:false, expl:'L\'aire se mesure en cm² (centimètres carrés).' },
+  { q:'Le périmètre d\'un carré de côté 5 cm = 20 cm.', correct:true, expl:'4 × 5 = 20 cm' },
+], 'ex4');
+
+buildTri([
+  { q:'Ces droites sont-elles parallèles ou perpendiculaires ?',
+    cats:['Droites parallèles (jamais croisées)','Droites perpendiculaires (90°)'],
+    items:[
+      {v:'Les deux rails d\'un train', cat:'Droites parallèles (jamais croisées)'},
+      {v:'Le mur et le sol', cat:'Droites perpendiculaires (90°)'},
+      {v:'Les deux bords d\'une route', cat:'Droites parallèles (jamais croisées)'},
+      {v:'Les côtés d\'un carré adjacents', cat:'Droites perpendiculaires (90°)'},
+      {v:'Les lignes d\'un cahier', cat:'Droites parallèles (jamais croisées)'},
+      {v:'La barre et la montant d\'une croix +', cat:'Droites perpendiculaires (90°)'},
+    ]
+  },
+], 'ex5');
+
+buildPaires([
+  { q:'Associe chaque figure à sa formule de périmètre.',
+    pairs:[['Carré (côté c)','P = 4×c'],['Rectangle (L×l)','P = 2×(L+l)'],['Triangle (a,b,c)','P = a+b+c'],['Cercle (rayon r)','Diamètre = 2r']] },
+  { q:'Associe chaque figure à son aire.',
+    pairs:[['Carré de 4 cm','16 cm²'],['Rectangle 6×3 cm','18 cm²'],['Carré de 7 cm','49 cm²'],['Rectangle 8×5 cm','40 cm²']] },
+], 'ex6');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

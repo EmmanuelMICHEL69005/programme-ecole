@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="Les Maths de Clémence">
+<meta name="application-name" content="Les Maths de Clémence">
+<meta property="og:site_name" content="Les Maths de Clémence">
+<link rel="manifest" href="manifest.json">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mesures — CE2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .conv-cards {
+    display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:12px 0;
+  }
+  .conv-card {
+    background:#f5f3ff;border:2.5px solid #a78bfa;border-radius:14px;
+    padding:12px 14px;text-align:center;min-width:110px;
+  }
+  .conv-card .emoji{font-size:1.5rem;display:block;margin-bottom:4px;}
+  .conv-card .title{font-size:0.75rem;font-weight:900;color:#5b21b6;margin-bottom:4px;}
+  .conv-card .conv{font-size:0.65rem;font-weight:700;color:#6b7280;line-height:1.7;}
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background:linear-gradient(135deg,#7c3aed,#a78bfa);">
+  <span class="emoji-header">📏</span>
+  <h1>Mesures et conversions</h1>
+  <p>Longueurs, masses, temps, contenance</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+  <div class="badge-niveau">📚 CE2 — Grandeurs et mesures</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div class="conv-cards">
+      <div class="conv-card">
+        <span class="emoji">📏</span>
+        <div class="title">Longueur</div>
+        <div class="conv">1 km = 1 000 m<br>1 m = 100 cm<br>1 cm = 10 mm</div>
+      </div>
+      <div class="conv-card">
+        <span class="emoji">⚖️</span>
+        <div class="title">Masse</div>
+        <div class="conv">1 t = 1 000 kg<br>1 kg = 1 000 g</div>
+      </div>
+      <div class="conv-card">
+        <span class="emoji">💧</span>
+        <div class="title">Contenance</div>
+        <div class="conv">1 L = 100 cL<br>1 L = 10 dL<br>1 L = 1 000 mL</div>
+      </div>
+      <div class="conv-card">
+        <span class="emoji">🕐</span>
+        <div class="title">Temps</div>
+        <div class="conv">1 h = 60 min<br>1 min = 60 s<br>1 j = 24 h</div>
+      </div>
+    </div>
+    <div style="font-size:0.88rem;color:#555;line-height:1.9;margin-top:4px;">
+      💰 <strong>Monnaie</strong> : 1 € = 100 centimes<br>
+      🔄 <strong>Convertir</strong> : km→m (×1 000) · m→cm (×100) · L→mL (×1 000)
+    </div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 1</span> Conversions de longueur <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 2</span> Conversions de masse et contenance <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 3</span> Durées et calculs de temps <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 4</span> Monnaie et problèmes <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 5</span> Vrai ou Faux — conversions <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Associer grandeur et unité <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Trier du plus petit au plus grand <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">ORDRE</span></div>
+    <div id="ex7"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CE2</footer>
+
+<script src="exercises.js"></script>
+<script>
+buildQCM([
+  { q:'2 km 500 m = combien de mètres ?', correct:'2 500 m', choices:['250 m','2 050 m','2 500 m','25 000 m'] },
+  { q:'3 m 45 cm = combien de cm ?', correct:'345 cm', choices:['34,5 cm','345 cm','3 045 cm','3 045 cm'] },
+  { q:'1 km 200 m = combien de m ?', correct:'1 200 m', choices:['120 m','1 020 m','1 200 m','12 000 m'] },
+  { q:'500 cm = combien de m ?', correct:'5 m', choices:['0,5 m','5 m','50 m','500 m'] },
+  { q:'4 000 m = combien de km ?', correct:'4 km', choices:['0,4 km','4 km','40 km','400 km'] },
+  { q:'25 mm = combien de cm ?', correct:'2,5 cm', choices:['0,25 cm','2,5 cm','25 cm','250 cm'] },
+], 'ex1');
+
+buildQCM([
+  { q:'3 kg 500 g = combien de g ?', correct:'3 500 g', choices:['350 g','3 050 g','3 500 g','35 000 g'] },
+  { q:'2 L 50 cL = combien de cL ?', correct:'250 cL', choices:['25 cL','205 cL','250 cL','2 050 cL'] },
+  { q:'500 g + 2 kg = combien de kg ?', correct:'2,5 kg', choices:['2 kg','2,5 kg','5 kg','502 kg'] },
+  { q:'1 L 500 mL = combien de mL ?', correct:'1 500 mL', choices:['150 mL','1 050 mL','1 500 mL','15 000 mL'] },
+  { q:'4 500 g = combien de kg ?', correct:'4,5 kg', choices:['0,45 kg','4 kg','4,5 kg','45 kg'] },
+  { q:'2 dL = combien de cL ?', correct:'20 cL', choices:['2 cL','20 cL','200 cL','2 000 cL'] },
+], 'ex2');
+
+buildQCM([
+  { q:'1 h 45 min = combien de min ?', correct:'105 min', choices:['45 min','90 min','105 min','145 min'] },
+  { q:'3 h 20 min = combien de min ?', correct:'200 min', choices:['180 min','200 min','220 min','320 min'] },
+  { q:'Le film commence à 14h15 et dure 1h45. Il finit à…', correct:'16h00', choices:['14h45','15h45','16h00','16h15'] },
+  { q:'De 8h30 à 11h15, combien de temps ?', correct:'2h45', choices:['2h15','2h30','2h45','3h15'] },
+  { q:'Combien y a-t-il d\'heures dans un jour ?', correct:'24 heures', choices:['12 heures','20 heures','24 heures','60 heures'] },
+  { q:'Combien y a-t-il de jours dans une année ?', correct:'365 jours (366 si bissextile)', choices:['300 jours','360 jours','365 jours (366 si bissextile)','400 jours'] },
+], 'ex3');
+
+buildQCM([
+  { enonce:'Un livre coûte 12,50 €. Je paie avec un billet de 20 €.', q:'Quelle monnaie dois-je recevoir ?', correct:'7,50 €', choices:['6,50 €','7,00 €','7,50 €','8,50 €'] },
+  { enonce:'Théo achète 3 stylos à 1,80 € chacun.', q:'Combien dépense-t-il ?', correct:'5,40 €', choices:['3,80 €','4,80 €','5,40 €','5,60 €'] },
+  { q:'2,75 € + 3,50 € = ?', correct:'6,25 €', choices:['5,25 €','6,00 €','6,25 €','6,75 €'] },
+  { enonce:'Un sandwich coûte 3,40 € et un jus de fruit 1,60 €.', q:'Total ?', correct:'5,00 €', choices:['4,00 €','4,80 €','5,00 €','5,20 €'] },
+  { q:'Avec 10 €, j\'achète quelque chose à 6,75 €. Monnaie ?', correct:'3,25 €', choices:['3,15 €','3,25 €','3,35 €','3,75 €'] },
+], 'ex4');
+
+buildVF([
+  { q:'1 km = 1 000 m', correct:true },
+  { q:'1 kg = 100 g', correct:false, expl:'1 kg = 1 000 g' },
+  { q:'1 L = 100 cL', correct:true, expl:'1 L = 10 dL = 100 cL = 1 000 mL' },
+  { q:'1 h 30 min = 90 min', correct:true, expl:'60 + 30 = 90 min' },
+  { q:'500 cm = 5 m', correct:true, expl:'500 ÷ 100 = 5 m' },
+  { q:'2 km 500 m = 2 500 m', correct:true },
+  { q:'3 dL = 300 mL', correct:true, expl:'1 dL = 100 mL, donc 3 dL = 300 mL' },
+], 'ex5');
+
+buildPaires([
+  { q:'Associe chaque conversion.',
+    pairs:[['1 km','1 000 m'],['1 kg','1 000 g'],['1 L','1 000 mL'],['1 h','60 min']] },
+  { q:'Associe chaque grandeur à sa bonne unité.',
+    pairs:[['Distance Paris–Lyon','km'],['Poids d\'un livre','g ou kg'],['Volume d\'une bouteille','L ou cL'],['Durée d\'une journée','h']] },
+], 'ex6');
+
+buildOrdre([
+  { q:'Range ces mesures du PLUS PETIT au PLUS GRAND :',
+    items:['500 m','2 km','1 500 m','3 000 m','1 km'] },
+  { q:'Range ces masses du MOINS au PLUS LOURDE :',
+    items:['500 g','2 kg','1 500 g','3 kg','1 kg'] },
+], 'ex7');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

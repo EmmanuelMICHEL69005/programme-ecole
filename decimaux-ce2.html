@@ -12,160 +12,175 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-  .btn-choice {
-    background: white; border: 2px solid #ddd6fe; border-radius: 22px;
-    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #5b21b6;
-    transition: background 0.15s;
+  .dec-grid {
+    display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:12px 0;
   }
-  .btn-choice:hover { background: #f5f3ff; }
-  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
-  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
-  .btn-choice:disabled { opacity: 0.6; cursor: default; }
-  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
-  .q-block { background: #f5f3ff; border: 2px solid #ddd6fe; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
-  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
-  .pb-enonce {
-    background: #ede9fe; border-radius: 10px; padding: 12px 14px; margin-bottom: 12px;
-    font-size: 0.95rem; color: #4c1d95; line-height: 1.6; font-weight: 700;
+  .dec-cell {
+    border-radius:12px;padding:12px 8px;text-align:center;border:2.5px solid;
   }
-  .num-card {
-    font-size: 2.2rem; font-weight: 900; color: #5b21b6; text-align: center;
-    padding: 14px; background: #ede9fe; border-radius: 14px; margin-bottom: 14px; letter-spacing: 2px;
+  .dec-cell .big{font-size:1.5rem;font-weight:900;display:block;margin-bottom:2px;}
+  .dec-cell .sub{font-size:0.68rem;font-weight:700;}
+  .droite-dec {
+    background:#f5f3ff;border-radius:14px;padding:12px;
+    margin:10px 0;border:2px solid #c4b5fd;
   }
-  .droite {
-    background: #ede9fe; border-radius: 12px; padding: 14px; margin-bottom: 12px; text-align: center;
-    font-family: 'Courier New', monospace; font-size: 0.9rem; font-weight: 900; color: #4c1d95;
+  .dec-nb {
+    display:flex;align-items:baseline;gap:2px;justify-content:center;
+    font-size:2.2rem;font-weight:900;color:#5b21b6;letter-spacing:3px;margin:4px 0;
   }
-  .regle-mini {
-    background: #ede9fe; border-radius: 10px; padding: 10px 14px; margin-bottom: 10px;
-    font-size: 0.88rem; font-weight: 800; color: #4c1d95;
-  }
+  .dec-nb .sep{color:#dc2626;font-size:1.8rem;}
+  .dec-nb .part-label{font-size:0.62rem;font-weight:700;color:#9ca3af;writing-mode:horizontal-tb;align-self:flex-end;margin-bottom:2px;}
 </style>
 </head>
 <body>
 
-<header class="site-header" style="background: linear-gradient(135deg, #4c1d95, #7c3aed);">
-  <span class="emoji-header">🔣</span>
+<header class="site-header" style="background:linear-gradient(135deg,#7c3aed,#a78bfa);">
+  <span class="emoji-header">🔢</span>
   <h1>Nombres décimaux</h1>
-  <p>Dixièmes, centièmes et mesures décimales</p>
+  <p>Dixièmes, centièmes et comparaisons</p>
   <a href="index.html" class="nav-back">← Accueil</a>
 </header>
 
 <main>
-  <div class="badge-niveau">CE2 — Nombres décimaux</div>
+  <div class="badge-niveau">📚 CE2 — Nombres décimaux</div>
 
   <div class="retiens-box">
     <div class="retiens-title">💡 Je retiens</div>
-    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.9;">
-      🔟 <strong>Un dixième</strong> = 0,1 = 1/10 (je coupe en 10 parts égales, j'en prends 1)<br>
-      💯 <strong>Un centième</strong> = 0,01 = 1/100 (je coupe en 100 parts égales, j'en prends 1)<br>
-      📐 <strong>1,5 m</strong> = 1 m + 5 dixièmes de m = 1 m 50 cm<br>
-      ⚖️ <strong>2,3 kg</strong> = 2 kg + 3 dixièmes de kg = 2 kg 300 g
+    <div class="droite-dec">
+      <div style="font-size:0.75rem;font-weight:800;color:#5b21b6;margin-bottom:6px;text-align:center">Exemple : le nombre 3,47</div>
+      <div class="dec-nb">
+        <span>3</span><span class="sep">,</span><span>4</span><span>7</span>
+      </div>
+      <div style="display:flex;justify-content:center;gap:18px;font-size:0.7rem;font-weight:800;color:#6b7280;margin-top:4px;">
+        <span>partie entière</span>
+        <span style="color:#dc2626;">virgule</span>
+        <span>dixièmes</span>
+        <span>centièmes</span>
+      </div>
+    </div>
+    <div class="dec-grid" style="margin-top:10px">
+      <div class="dec-cell" style="background:#ede9fe;border-color:#a78bfa;color:#5b21b6">
+        <span class="big">0,1</span><span class="sub">= 1 dixième<br>= 1/10</span>
+      </div>
+      <div class="dec-cell" style="background:#dbeafe;border-color:#60a5fa;color:#1d4ed8">
+        <span class="big">0,01</span><span class="sub">= 1 centième<br>= 1/100</span>
+      </div>
+      <div class="dec-cell" style="background:#dcfce7;border-color:#4ade80;color:#15803d">
+        <span class="big">3,5</span><span class="sub">= 3 + 5 dixièmes<br>= 3 + 0,5</span>
+      </div>
+    </div>
+    <div style="font-size:0.88rem;color:#555;margin-top:6px;line-height:1.9;">
+      📊 <strong>Comparer</strong> : d'abord la partie entière, puis les dixièmes, puis les centièmes<br>
+      🔄 <strong>2,50 = 2,5</strong> (les zéros en fin de décimales ne changent rien)
     </div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#5b21b6;">Ex 1</span> Comprendre les dixièmes (0,1)</div>
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 1</span> Lire et écrire les décimaux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex1"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#5b21b6;">Ex 2</span> Comprendre les centièmes (0,01)</div>
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 2</span> Dixièmes et centièmes <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex2"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#5b21b6;">Ex 3</span> Placer et lire un décimal</div>
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 3</span> Comparer des décimaux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex3"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#5b21b6;">Ex 4</span> Comparer des nombres décimaux</div>
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 4</span> Vrai ou Faux — décimaux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
     <div id="ex4"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#5b21b6;">Ex 5</span> Mesures décimales (m, kg, L)</div>
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 5</span> Ranger dans l'ordre <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">ORDRE</span></div>
     <div id="ex5"></div>
   </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Associer formes d'écriture <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Trier : partie entière 1, 2 ou 3 ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex7"></div>
+  </div>
+
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence — CE2</footer>
 
+<script src="exercises.js"></script>
 <script>
-function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
-
-function buildQ(data, id) {
-  const c = document.getElementById(id);
-  data.forEach((item, i) => {
-    const d = document.createElement('div');
-    d.className = 'q-block';
-    const sh = shuffle(item.choices);
-    let html = '';
-    if (item.card) html += `<div class="num-card">${item.card}</div>`;
-    if (item.droite) html += `<div class="droite">${item.droite}</div>`;
-    if (item.regle) html += `<div class="regle-mini">${item.regle}</div>`;
-    if (item.enonce) html += `<div class="pb-enonce">${item.enonce}</div>`;
-    html += `<div class="q-text">${item.q}</div>`;
-    html += `<div class="qcm-row" id="${id}-r${i}">
-      ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
-    </div>
-    <div class="feedback-line" id="${id}-f${i}"></div>`;
-    d.innerHTML = html;
-    c.appendChild(d);
-  });
-}
-
-function check(btn, chosen, correct, rowId, fbId) {
-  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
-  const fb = document.getElementById(fbId);
-  if (chosen === correct) {
-    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
-  } else {
-    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
-    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
-  }
-}
-
-buildQ([
-  { card: '0,1', q: 'Comment lit-on 0,1 ?', correct: 'zéro virgule un', choices: ['zéro virgule un','un virgule zéro','dix','un dizième'] },
-  { card: '0,1', q: 'Quelle fraction correspond à 0,1 ?', correct: '1/10', choices: ['1/2','1/5','1/10','1/100'] },
-  { enonce: 'On coupe une barre de chocolat en 10 parts égales. On en prend 3.', q: 'Quel nombre décimal correspond à ces 3 parts ?', correct: '0,3', choices: ['0,03','0,3','3,0','3/100'] },
-  { card: '4,7', q: 'Quel est le chiffre des dixièmes dans 4,7 ?', correct: '7', choices: ['4','7','47','0'] },
-  { enonce: 'Une règle mesure 2 dixièmes de mètre.', q: 'Quelle écriture décimale correspond ?', correct: '0,2 m', choices: ['2 m','0,02 m','0,2 m','2,0 m'] },
+buildQCM([
+  { q:'Comment lit-on 2,5 ?', correct:'Deux virgule cinq', choices:['Vingt-cinq','Deux virgule cinq','Deux et demi','Deux cinq'] },
+  { q:'Comment écrit-on "trois virgule sept" ?', correct:'3,7', choices:['37','3.7','3,7','3/7'] },
+  { q:'Dans 4,63, quel chiffre est au rang des dixièmes ?', correct:'6', choices:['4','6','3','63'] },
+  { q:'Dans 7,09, quel chiffre est au rang des centièmes ?', correct:'9', choices:['7','0','9','09'] },
+  { q:'Comment se lit 0,5 ?', correct:'Zéro virgule cinq (= un demi)', choices:['Cinq','Zéro cinq','Zéro virgule cinq (= un demi)','Cinq dixièmes uniquement'] },
+  { q:'Dans 12,34, quelle est la partie entière ?', correct:'12', choices:['1','12','34','2'] },
+  { q:'Comment écrit-on "huit dixièmes" ?', correct:'0,8', choices:['8','80','0,08','0,8'] },
 ], 'ex1');
 
-buildQ([
-  { card: '0,01', q: 'Quelle fraction correspond à 0,01 ?', correct: '1/100', choices: ['1/10','1/100','1/1000','10/100'] },
-  { card: '3,14', q: 'Quel est le chiffre des centièmes dans 3,14 ?', correct: '4', choices: ['3','1','4','14'] },
-  { enonce: 'On coupe un carré en 100 parts égales. On en prend 7.', q: 'Quel nombre décimal correspond ?', correct: '0,07', choices: ['0,7','7,0','0,07','7/10'] },
-  { card: '5,38', q: 'Dans 5,38, quels sont les chiffres après la virgule ?', correct: '3 et 8', choices: ['5 et 3','3 et 8','5 et 8','38'] },
-  { card: '2,05', q: 'Quel est le chiffre des dixièmes dans 2,05 ?', correct: '0', choices: ['2','0','5','20'] },
+buildQCM([
+  { q:'Combien y a-t-il de dixièmes dans 3,7 ?', correct:'37 dixièmes', choices:['3 dixièmes','7 dixièmes','37 dixièmes','30 dixièmes'] },
+  { q:'0,1 = ?', correct:'1 dixième', choices:['1 centième','1 dixième','10 centièmes... et aussi 1 dixième !','1 unité'] },
+  { q:'5 dixièmes = ?', correct:'0,5', choices:['5,0','0,05','0,5','50'] },
+  { q:'Combien y a-t-il de centièmes dans 0,47 ?', correct:'47 centièmes', choices:['4 centièmes','7 centièmes','47 centièmes','40 centièmes'] },
+  { q:'1,0 = ?', correct:'1 (un entier)', choices:['0,1','10','1 (un entier)','0,10'] },
+  { q:'0,30 = ?', correct:'0,3', choices:['0,03','0,30 seulement','0,3','3'] },
 ], 'ex2');
 
-buildQ([
-  { droite: '|——0,1——0,2——0,3——?——0,5——|', q: 'Quel nombre se trouve à la place du « ? » ?', correct: '0,4', choices: ['0,3','0,4','0,45','0,5'] },
-  { droite: '|——1,0——?——1,2——1,3——1,4——|', q: 'Quel nombre se trouve à la place du « ? » ?', correct: '1,1', choices: ['1,01','1,1','1,15','1,0'] },
-  { droite: '|——2,5——2,6——2,7——?——2,9——|', q: 'Quel nombre se trouve à la place du « ? » ?', correct: '2,8', choices: ['2,75','2,8','2,85','2,9'] },
-  { enonce: 'Sur une droite graduée de 0 à 1, les dixièmes sont marqués.', q: 'Combien de nombres décimaux y a-t-il entre 0 et 1 (dixièmes) ?', correct: '10', choices: ['5','9','10','100'] },
+buildQCM([
+  { q:'Lequel est le plus grand : 3,7 ou 3,2 ?', correct:'3,7', choices:['3,2','3,7','Égaux'] },
+  { q:'Lequel est le plus grand : 2,45 ou 2,54 ?', correct:'2,54', choices:['2,45','2,54','Égaux'] },
+  { q:'Range du plus petit au plus grand : 1,3 · 1,03 · 1,30', correct:'1,03 < 1,3 = 1,30', choices:['1,3 < 1,03 < 1,30','1,03 < 1,3 = 1,30','1,30 < 1,3 < 1,03'] },
+  { q:'0,8 ☐ 0,75 : quel signe ?', correct:'>', choices:['<','=','>','On ne peut pas comparer'] },
+  { q:'Lequel est le plus petit : 5,09 ou 5,9 ?', correct:'5,09', choices:['5,09','5,9','Ils sont égaux'] },
+  { q:'Lequel est entre 2 et 3 ? 2,7 ou 3,2 ou 1,9', correct:'2,7', choices:['2,7','3,2','1,9','Aucun'] },
 ], 'ex3');
 
-buildQ([
-  { card: '1,5  ☐  1,8', q: 'Quel signe mettre entre 1,5 et 1,8 ?', correct: '<', choices: ['<','>','=','≠'] },
-  { card: '3,07  ☐  3,7', q: 'Quel signe mettre entre 3,07 et 3,7 ?', correct: '<', choices: ['<','>','=','≠'] },
-  { card: '0,9  ☐  0,90', q: 'Quel signe mettre entre 0,9 et 0,90 ?', correct: '=', choices: ['<','>','=','≠'] },
-  { q: 'Quel est le plus grand : 2,4 ou 2,04 ?', correct: '2,4', choices: ['2,04','2,4','Ils sont égaux','Impossible à comparer'] },
-  { q: 'Ordonne du plus petit au plus grand : 1,3 — 0,9 — 1,05', correct: '0,9 < 1,05 < 1,3', choices: ['1,3 < 1,05 < 0,9','0,9 < 1,05 < 1,3','1,05 < 0,9 < 1,3','0,9 < 1,3 < 1,05'] },
+buildVF([
+  { q:'2,50 = 2,5', correct:true, expl:'Les zéros en fin de partie décimale ne changent pas la valeur.' },
+  { q:'0,3 > 0,25', correct:true, expl:'0,30 > 0,25 (dixièmes : 3 > 2)' },
+  { q:'1,09 > 1,9', correct:false, expl:'1,09 < 1,9 (dixièmes : 0 < 9)' },
+  { q:'5 dixièmes = 0,5', correct:true },
+  { q:'3,7 = 3 + 7', correct:false, expl:'3,7 = 3 + 0,7 (sept dixièmes, pas sept unités)' },
+  { q:'0,1 + 0,1 + 0,1 = 0,3', correct:true },
+  { q:'2,45 < 2,54', correct:true, expl:'Même entier (2), même dixième (4 = 4), centièmes : 5 > … non ! C\'est la virgule : 2,4_ vs 2,5_ → 2,45 < 2,54' },
 ], 'ex4');
 
-buildQ([
-  { enonce: '📏 Un couloir mesure 1 m 50 cm.', q: 'Quelle est cette longueur en mètres, écriture décimale ?', correct: '1,5 m', choices: ['1,05 m','1,5 m','15 m','150 m'] },
-  { enonce: '⚖️ Un sac de pommes pèse 2 kg 300 g.', q: 'Quel est ce poids en kg, écriture décimale ?', correct: '2,3 kg', choices: ['2,03 kg','2,3 kg','23 kg','2,300 kg'] },
-  { enonce: '🥛 Une carafe contient 1 L et 25 cl d\'eau.', q: 'Combien de litres cela représente-t-il ?', correct: '1,25 L', choices: ['1,025 L','1,25 L','12,5 L','125 L'] },
-  { enonce: '💰 Un livre coûte 7 € et 50 centimes.', q: 'Quel est le prix en euros, écriture décimale ?', correct: '7,50 €', choices: ['7,5 €','7,50 €','750 €','7,05 €'] },
-  { enonce: '🏃 Noah court 1,6 km. Lena court 1 km 800 m.', q: 'Qui a couru le plus loin ?', correct: 'Lena (1,8 km)', choices: ['Noah (1,6 km)','Lena (1,8 km)','Ils ont couru la même distance','Impossible à comparer'] },
+buildOrdre([
+  { q:'Range ces nombres du PLUS PETIT au PLUS GRAND :',
+    items:['1,03','1,3','1,30','1,33'] },
+  { q:'Range ces prix du MOINS CHER au PLUS CHER :',
+    items:['3,50 €','3,05 €','3,55 €','3,15 €'] },
 ], 'ex5');
+
+buildPaires([
+  { q:'Associe chaque nombre à une forme équivalente.',
+    pairs:[['2,5','2 + 5 dixièmes'],['0,75','75 centièmes'],['3,0','3 entiers'],['1,08','1 + 8 centièmes']] },
+  { q:'Associe chaque forme à son écriture décimale.',
+    pairs:[['7 dixièmes','0,7'],['45 centièmes','0,45'],['3 et 2 dixièmes','3,2'],['10 centièmes','0,1 = 0,10']] },
+], 'ex6');
+
+buildTri([
+  { q:'La partie entière de ce nombre est-elle 1, 2 ou 3 ?',
+    cats:['Partie entière = 1','Partie entière = 2','Partie entière = 3'],
+    items:[
+      {v:'1,7', cat:'Partie entière = 1'},
+      {v:'2,45', cat:'Partie entière = 2'},
+      {v:'3,08', cat:'Partie entière = 3'},
+      {v:'1,99', cat:'Partie entière = 1'},
+      {v:'2,1', cat:'Partie entière = 2'},
+      {v:'3,5', cat:'Partie entière = 3'},
+    ]
+  },
+], 'ex7');
 </script>
 
 <script src="gamification.js"></script>
