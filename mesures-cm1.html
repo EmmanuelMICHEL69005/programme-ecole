@@ -7,132 +7,156 @@
 <meta property="og:site_name" content="Les Maths de Clémence">
 <link rel="manifest" href="manifest.json">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Périmètres et aires — CM1</title>
+<title>Mesures — CM1</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-  .btn-choice {
-    background: white; border: 2px solid #bfdbfe; border-radius: 22px;
-    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #1e3a8a;
-    transition: background 0.15s;
-  }
-  .btn-choice:hover { background: #dbeafe; }
-  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
-  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
-  .btn-choice:disabled { opacity: 0.6; cursor: default; }
-  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
-  .q-block { background: #eff6ff; border: 2px solid #bfdbfe; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
-  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
-  .figure-card { display: flex; justify-content: center; margin: 12px 0; }
-  .formule-box { background: #dbeafe; border-radius: 10px; padding: 12px; margin: 12px 0; font-size: 0.9rem; color: #1e3a8a; font-weight: 700; }
+.conv-chain{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center;margin:10px 0;}
+.conv-unit{background:#eff6ff;border:2px solid #93c5fd;border-radius:10px;padding:6px 12px;font-size:0.8rem;font-weight:900;color:#1e3a8a;text-align:center;}
+.conv-arrow{font-size:0.75rem;font-weight:900;color:#6b7280;}
 </style>
 </head>
 <body>
 
-<header class="site-header" style="background: linear-gradient(135deg, #1d4ed8, #60a5fa);">
-  <span class="emoji-header">📐</span>
-  <h1>Périmètres et aires</h1>
-  <p>Calculer le contour et la surface</p>
+<header class="site-header" style="background:linear-gradient(135deg,#1d4ed8,#60a5fa);">
+  <span class="emoji-header">📏</span>
+  <h1>Mesures et conversions</h1>
+  <p>Longueurs, masses, contenance, durées</p>
   <a href="index.html" class="nav-back">← Accueil</a>
 </header>
 
 <main>
-
-  <div class="badge-niveau">CM1 — Grandeurs et mesures</div>
+  <div class="badge-niveau">🎯 CM1 — Grandeurs et mesures</div>
 
   <div class="retiens-box">
     <div class="retiens-title">💡 Je retiens</div>
-    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
-      📏 <strong>Périmètre</strong> = somme de tous les côtés (longueur du contour)<br>
-      📐 <strong>Aire</strong> = surface intérieure (mesurée en cm², m², km²…)<br>
-      🟦 Aire rectangle = <strong>longueur × largeur</strong><br>
-      🟦 Aire carré = <strong>côté × côté</strong><br>
-      🔺 Aire triangle = <strong>(base × hauteur) ÷ 2</strong>
+    <div class="conv-chain">
+      <div class="conv-unit">km<br><span style="font-size:0.6rem">×1000</span></div>
+      <div class="conv-arrow">→</div>
+      <div class="conv-unit">m<br><span style="font-size:0.6rem">×100</span></div>
+      <div class="conv-arrow">→</div>
+      <div class="conv-unit">cm<br><span style="font-size:0.6rem">×10</span></div>
+      <div class="conv-arrow">→</div>
+      <div class="conv-unit">mm</div>
+    </div>
+    <div class="conv-chain">
+      <div class="conv-unit">t<br><span style="font-size:0.6rem">×1000</span></div>
+      <div class="conv-arrow">→</div>
+      <div class="conv-unit">kg<br><span style="font-size:0.6rem">×1000</span></div>
+      <div class="conv-arrow">→</div>
+      <div class="conv-unit">g</div>
+      <div class="conv-unit" style="margin-left:12px;border-color:#a78bfa;color:#5b21b6;background:#f5f3ff;">L<br><span style="font-size:0.6rem">×10</span></div>
+      <div class="conv-arrow">→</div>
+      <div class="conv-unit" style="border-color:#a78bfa;color:#5b21b6;background:#f5f3ff;">dL<br><span style="font-size:0.6rem">×10</span></div>
+      <div class="conv-arrow">→</div>
+      <div class="conv-unit" style="border-color:#a78bfa;color:#5b21b6;background:#f5f3ff;">cL</div>
+    </div>
+    <div style="font-size:0.88rem;color:#555;line-height:1.9;margin-top:6px;">
+      🕐 <strong>Durées</strong> : 1 h = 60 min · 1 min = 60 s · 1 j = 24 h · 1 an = 365 j<br>
+      💰 <strong>Monnaie</strong> : 1 € = 100 centimes
     </div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 1</span> Périmètre de polygones</div>
+  <div class="exercice-block" style="--accent:#1d4ed8">
+    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8">Ex 1</span> Conversions de longueur <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex1"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 2</span> Aire du rectangle et du carré</div>
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 2</span> Conversions de masse et contenance <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex2"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 3</span> Aire du triangle</div>
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 3</span> Calculs de durées <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex3"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 4</span> Problèmes de mesures</div>
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 4</span> Problèmes de mesure <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 5</span> Vrai ou Faux — conversions <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Associer mesures équivalentes <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Ranger du plus court au plus long <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">ORDRE</span></div>
+    <div id="ex7"></div>
   </div>
 
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence — CM1</footer>
 
+<script src="exercises.js"></script>
 <script>
-function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
-function buildQ(data, id) {
-  const c = document.getElementById(id);
-  data.forEach((item, i) => {
-    const d = document.createElement('div');
-    d.className = 'q-block';
-    const sh = shuffle(item.choices);
-    d.innerHTML = `
-      <div class="q-text">${item.q}</div>
-      <div class="qcm-row" id="${id}-r${i}">
-        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
-      </div>
-      <div class="feedback-line" id="${id}-f${i}"></div>
-    `;
-    c.appendChild(d);
-  });
-}
-function check(btn, chosen, correct, rowId, fbId) {
-  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
-  const fb = document.getElementById(fbId);
-  if (chosen === correct) {
-    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
-  } else {
-    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
-    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
-  }
-}
-
-buildQ([
-  { q: 'Un carré a des côtés de 8 cm. Quel est son périmètre ?', correct: '32 cm', choices: ['16 cm','24 cm','32 cm','64 cm'] },
-  { q: 'Un rectangle mesure 12 cm × 5 cm. Quel est son périmètre ?', correct: '34 cm', choices: ['17 cm','34 cm','60 cm','60 cm²'] },
-  { q: 'Un triangle a des côtés de 6 cm, 8 cm et 10 cm. Quel est son périmètre ?', correct: '24 cm', choices: ['18 cm','22 cm','24 cm','48 cm'] },
-  { q: 'Le périmètre d\'un hexagone régulier de côté 5 cm est…', correct: '30 cm', choices: ['25 cm','30 cm','35 cm','50 cm'] },
+buildQCM([
+  { q:'3 km 450 m = combien de m ?', correct:'3 450 m', choices:['345 m','3 045 m','3 450 m','34 500 m'] },
+  { q:'7 500 m = combien de km ?', correct:'7,5 km', choices:['0,75 km','7,5 km','75 km','750 km'] },
+  { q:'2 m 35 cm = combien de cm ?', correct:'235 cm', choices:['23,5 cm','235 cm','2 035 cm','2 350 cm'] },
+  { q:'1 250 cm = combien de m ?', correct:'12,5 m', choices:['1,25 m','12,5 m','125 m','1 250 m'] },
+  { q:'45 mm = combien de cm ?', correct:'4,5 cm', choices:['0,45 cm','4,5 cm','45 cm','450 cm'] },
+  { q:'2,5 km = combien de m ?', correct:'2 500 m', choices:['250 m','2 500 m','25 000 m','250 000 m'] },
 ], 'ex1');
 
-buildQ([
-  { q: 'Un rectangle mesure 7 cm × 4 cm. Quelle est son aire ?', correct: '28 cm²', choices: ['11 cm²','22 cm²','28 cm²','28 cm'] },
-  { q: 'Un carré de 9 cm de côté. Quelle est son aire ?', correct: '81 cm²', choices: ['36 cm²','72 cm²','81 cm²','81 cm'] },
-  { q: 'Quelle est l\'unité correcte pour mesurer une aire ?', correct: 'cm² (centimètre carré)', choices: ['cm','cm²(centimètre carré)','cm³','m'] },
-  { q: 'Un jardin rectangulaire mesure 25 m × 18 m. Quelle est son aire ?', correct: '450 m²', choices: ['86 m','86 m²','450 m','450 m²'] },
+buildQCM([
+  { q:'4 kg 750 g = combien de g ?', correct:'4 750 g', choices:['475 g','4 075 g','4 750 g','47 500 g'] },
+  { q:'2 500 g = combien de kg ?', correct:'2,5 kg', choices:['0,25 kg','2,5 kg','25 kg','2 500 kg'] },
+  { q:'3 L 50 cL = combien de cL ?', correct:'350 cL', choices:['35 cL','305 cL','350 cL','3 050 cL'] },
+  { q:'1 500 mL = combien de L ?', correct:'1,5 L', choices:['0,15 L','1,5 L','15 L','1 500 L'] },
+  { q:'1 tonne = combien de kg ?', correct:'1 000 kg', choices:['100 kg','1 000 kg','10 000 kg','100 000 kg'] },
+  { q:'250 cL = combien de L ?', correct:'2,5 L', choices:['0,25 L','2,5 L','25 L','2 500 L'] },
 ], 'ex2');
 
-buildQ([
-  { q: 'Un triangle a une base de 10 cm et une hauteur de 6 cm. Quelle est son aire ?', correct: '30 cm²', choices: ['16 cm²','30 cm²','60 cm²','60 cm'] },
-  { q: 'Un triangle a une base de 8 m et une hauteur de 5 m. Quelle est son aire ?', correct: '20 m²', choices: ['13 m²','20 m²','40 m²','40 m'] },
-  { q: 'Quelle est la formule de l\'aire d\'un triangle ?', correct: '(base × hauteur) ÷ 2', choices: ['base + hauteur','base × hauteur','(base × hauteur) ÷ 2','base × 2'] },
-  { q: 'Un triangle rectangle a des côtés de 6 cm et 8 cm (les deux côtés de l\'angle droit). Son aire est…', correct: '24 cm²', choices: ['14 cm²','24 cm²','48 cm²','48 cm'] },
+buildQCM([
+  { q:'2 h 45 min = combien de min ?', correct:'165 min', choices:['145 min','155 min','165 min','245 min'] },
+  { enonce:'Un film commence à 14h25 et dure 1h55.', q:'À quelle heure se termine-t-il ?', correct:'16h20', choices:['15h20','15h80','16h20','16h25'] },
+  { q:'De 9h35 à 12h10, quelle est la durée ?', correct:'2h35', choices:['2h25','2h35','2h45','3h35'] },
+  { q:'3 h 20 min = combien de min ?', correct:'200 min', choices:['180 min','200 min','220 min','320 min'] },
+  { enonce:'Le cours commence à 8h15 et dure 45 min.', q:'À quelle heure se termine-t-il ?', correct:'9h00', choices:['8h45','9h00','9h15','8h60'] },
+  { q:'1 siècle = combien d\'années ?', correct:'100 ans', choices:['10 ans','100 ans','1 000 ans','10 000 ans'] },
 ], 'ex3');
 
-buildQ([
-  { q: 'Un carrelage carré mesure 30 cm × 30 cm. Combien de carreaux faut-il pour couvrir 1 m² ?', correct: '11 carreaux (environ)', choices: ['9 carreaux','11 carreaux (environ)','12 carreaux','16 carreaux'] },
-  { q: 'Une piscine rectangulaire mesure 15 m × 8 m. Quelle est sa surface ?', correct: '120 m²', choices: ['46 m','120 m','46 m²','120 m²'] },
-  { q: 'Un champ de 200 m × 150 m. Son périmètre est ?', correct: '700 m', choices: ['350 m','700 m','30 000 m','700 m²'] },
-  { q: 'On veut entourer un jardin carré de côté 12 m avec une clôture. Combien de mètres de clôture faut-il ?', correct: '48 m', choices: ['24 m','36 m','48 m','144 m'] },
+buildQCM([
+  { enonce:'Un jardin rectangulaire mesure 25 m de long et 12 m de large.', q:'Quel est son périmètre ?', correct:'74 m', choices:['37 m','74 m','300 m','600 m'] },
+  { enonce:'Une corde de 5 m est partagée en 4 morceaux égaux.', q:'Chaque morceau mesure ?', correct:'1,25 m', choices:['1 m','1,25 m','1,5 m','2 m'] },
+  { enonce:'Léa parcourt 2 km 400 m le matin et 1 km 800 m l\'après-midi.', q:'Quelle distance totale ?', correct:'4 200 m = 4,2 km', choices:['3 200 m','4 200 m = 4,2 km','4 600 m','5 200 m'] },
+  { enonce:'Un récipient contient 3 L 50 cL d\'eau. On en verse 1 L 75 cL.', q:'Combien reste-t-il ?', correct:'1 L 75 cL', choices:['1 L 25 cL','1 L 75 cL','2 L 25 cL','4 L 75 cL'] },
+  { enonce:'Un trajet de 120 km en voiture dure 1h30.', q:'En km/h, quelle est la vitesse ?', correct:'80 km/h', choices:['60 km/h','80 km/h','90 km/h','120 km/h'] },
 ], 'ex4');
+
+buildVF([
+  { q:'1 km = 1 000 m', correct:true },
+  { q:'1 kg = 100 g', correct:false, expl:'1 kg = 1 000 g' },
+  { q:'2 h 45 min = 165 min', correct:true, expl:'2×60 + 45 = 165 min' },
+  { q:'1 L = 1 000 mL', correct:true },
+  { q:'3 km 450 m = 3 450 m', correct:true },
+  { q:'1 tonne = 100 kg', correct:false, expl:'1 tonne = 1 000 kg' },
+  { q:'250 cL = 2,5 L', correct:true },
+], 'ex5');
+
+buildPaires([
+  { q:'Associe les mesures équivalentes.',
+    pairs:[['3 km 450 m','3 450 m'],['4 kg 750 g','4 750 g'],['2 h 45 min','165 min'],['1 L 50 cL','150 cL']] },
+  { q:'Associe les mesures équivalentes.',
+    pairs:[['7 500 m','7,5 km'],['2 500 g','2,5 kg'],['1 500 mL','1,5 L'],['200 cm','2 m']] },
+], 'ex6');
+
+buildOrdre([
+  { q:'Range ces distances du PLUS COURT au PLUS LONG :',
+    items:['500 m','2 km','1 500 m','3 000 m','1 km 200 m'] },
+  { q:'Range ces durées du PLUS COURT au PLUS LONG :',
+    items:['90 min','2 h','1 h 30 min','45 min','3 h'] },
+], 'ex7');
 </script>
 
 <script src="gamification.js"></script>

@@ -11,126 +11,132 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<style>
-  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-  .btn-choice {
-    background: white; border: 2px solid #bfdbfe; border-radius: 22px;
-    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #1e3a8a;
-    transition: background 0.15s;
-  }
-  .btn-choice:hover { background: #dbeafe; }
-  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
-  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
-  .btn-choice:disabled { opacity: 0.6; cursor: default; }
-  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
-  .q-block { background: #eff6ff; border: 2px solid #bfdbfe; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
-  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
-  .pb-enonce { background: #dbeafe; border-radius: 10px; padding: 12px; margin-bottom: 12px; font-size: 0.95rem; color: #1e3a8a; line-height: 1.6; }
-</style>
 </head>
 <body>
 
-<header class="site-header" style="background: linear-gradient(135deg, #1d4ed8, #60a5fa);">
-  <span class="emoji-header">➕</span>
+<header class="site-header" style="background:linear-gradient(135deg,#1d4ed8,#60a5fa);">
+  <span class="emoji-header">✖️</span>
   <h1>Les 4 opérations</h1>
-  <p>Addition, soustraction, multiplication, division</p>
+  <p>Multiplication posée, division euclidienne</p>
   <a href="index.html" class="nav-back">← Accueil</a>
 </header>
 
 <main>
-
-  <div class="badge-niveau">CM1 — Nombres et calculs</div>
+  <div class="badge-niveau">🎯 CM1 — Les 4 opérations</div>
 
   <div class="retiens-box">
     <div class="retiens-title">💡 Je retiens</div>
-    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
-      ✖️ <strong>Multiplication</strong> par un nombre à 2 chiffres : poser le calcul colonne par colonne<br>
-      ÷ <strong>Division euclidienne</strong> : quotient + reste — ex: 47 ÷ 5 = 9 reste 2<br>
-      🔢 <strong>Priorité</strong> : × et ÷ avant + et −<br>
-      ✅ <strong>Vérification</strong> : diviseur × quotient + reste = dividende
+    <div style="font-size:0.88rem;color:#555;margin-top:8px;line-height:1.9;">
+      ✖️ <strong>Multiplication posée (2 chiffres)</strong> : 34 × 25 = 34×5 + 34×20 = 170 + 680 = 850<br>
+      ➗ <strong>Division euclidienne</strong> : 857 ÷ 7 → cherche le quotient, calcule le reste<br>
+      🔄 <strong>Vérification division</strong> : quotient × diviseur + reste = dividende<br>
+      🔢 <strong>Priorité</strong> : × et ÷ avant + et − dans les expressions sans parenthèses
     </div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 1</span> Multiplication à 2 chiffres</div>
+  <div class="exercice-block" style="--accent:#1d4ed8">
+    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8">Ex 1</span> Multiplication (1 chiffre) <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex1"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 2</span> Division euclidienne</div>
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 2</span> Multiplication (2 chiffres) <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex2"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 3</span> Calculs avec décimaux</div>
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 3</span> Division euclidienne — quotient et reste <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex3"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 4</span> Problèmes à plusieurs opérations</div>
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 4</span> Vrai ou Faux — opérations <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
     <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 5</span> Nombre manquant <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Associer opération et résultat <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Trier : multiple de 7 ou de 9 ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex7"></div>
   </div>
 
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence — CM1</footer>
 
+<script src="exercises.js"></script>
 <script>
-function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
-function buildQ(data, id) {
-  const c = document.getElementById(id);
-  data.forEach((item, i) => {
-    const d = document.createElement('div');
-    d.className = 'q-block';
-    const sh = shuffle(item.choices);
-    d.innerHTML = `
-      ${item.enonce ? `<div class="pb-enonce">${item.enonce}</div>` : ''}
-      <div class="q-text">${item.q}</div>
-      <div class="qcm-row" id="${id}-r${i}">
-        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
-      </div>
-      <div class="feedback-line" id="${id}-f${i}"></div>
-    `;
-    c.appendChild(d);
-  });
-}
-function check(btn, chosen, correct, rowId, fbId) {
-  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
-  const fb = document.getElementById(fbId);
-  if (chosen === correct) {
-    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
-  } else {
-    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
-    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
-  }
-}
-
-buildQ([
-  { q: '47 × 23 = ?', correct: '1 081', choices: ['981','1 071','1 081','1 091'] },
-  { q: '86 × 34 = ?', correct: '2 924', choices: ['2 814','2 904','2 924','2 944'] },
-  { q: '125 × 12 = ?', correct: '1 500', choices: ['1 250','1 400','1 500','1 750'] },
-  { q: '63 × 47 = ?', correct: '2 961', choices: ['2 861','2 941','2 961','3 061'] },
+buildQCM([
+  { card:'456 × 7 = ?', q:'Calcule', correct:'3 192', choices:['3 182','3 192','3 202','3 292'] },
+  { card:'834 × 8 = ?', q:'Calcule', correct:'6 672', choices:['6 572','6 662','6 672','6 772'] },
+  { card:'1 245 × 6 = ?', q:'Calcule', correct:'7 470', choices:['7 370','7 460','7 470','7 560'] },
+  { card:'347 × 9 = ?', q:'Calcule', correct:'3 123', choices:['3 113','3 123','3 133','3 213'] },
+  { card:'628 × 5 = ?', q:'Calcule', correct:'3 140', choices:['3 040','3 130','3 140','3 150'] },
 ], 'ex1');
 
-buildQ([
-  { q: '87 ÷ 4 = ? (quotient et reste)', correct: '21 reste 3', choices: ['21 reste 2','21 reste 3','22 reste 1','20 reste 7'] },
-  { q: '154 ÷ 7 = ?', correct: '22 (exact)', choices: ['21','22 (exact)','23','21 reste 7'] },
-  { q: '200 ÷ 9 = ?', correct: '22 reste 2', choices: ['22 reste 1','22 reste 2','23','21 reste 11'] },
-  { q: 'Si 6 × 15 + 3 = 93, alors 93 ÷ 6 = ?', correct: '15 reste 3', choices: ['15','15 reste 3','16','14 reste 9'] },
+buildQCM([
+  { card:'34 × 25 = ?', q:'Calcule', correct:'850', choices:['750','840','850','950'] },
+  { card:'47 × 36 = ?', q:'Calcule', correct:'1 692', choices:['1 592','1 682','1 692','1 792'] },
+  { card:'83 × 47 = ?', q:'Calcule', correct:'3 901', choices:['3 791','3 891','3 901','4 001'] },
+  { card:'125 × 24 = ?', q:'Calcule', correct:'3 000', choices:['2 500','2 900','3 000','3 100'] },
+  { card:'56 × 78 = ?', q:'Calcule', correct:'4 368', choices:['4 268','4 358','4 368','4 468'] },
+  { card:'65 × 43 = ?', q:'Calcule', correct:'2 795', choices:['2 695','2 785','2 795','2 895'] },
 ], 'ex2');
 
-buildQ([
-  { q: '4,5 + 3,7 = ?', correct: '8,2', choices: ['7,12','8,2','8,12','7,2'] },
-  { q: '12,3 − 5,8 = ?', correct: '6,5', choices: ['6,3','6,4','6,5','7,5'] },
-  { q: '3,4 × 5 = ?', correct: '17', choices: ['15,20','17','170','15'] },
-  { q: '8,4 ÷ 4 = ?', correct: '2,1', choices: ['2,0','2,1','21','0,21'] },
+buildQCM([
+  { card:'857 ÷ 7 = ? reste ?', q:'Quotient et reste', correct:'122 reste 3', choices:['121 reste 0','122 reste 3','123 reste 0','122 reste 1'] },
+  { card:'345 ÷ 8 = ? reste ?', q:'Quotient et reste', correct:'43 reste 1', choices:['42 reste 9','43 reste 1','44 reste 0','43 reste 3'] },
+  { card:'1 234 ÷ 6 = ? reste ?', q:'Quotient et reste', correct:'205 reste 4', choices:['204 reste 0','205 reste 4','206 reste 0','205 reste 6'] },
+  { card:'756 ÷ 9 = ?', q:'Division exacte', correct:'84', choices:['82','83','84','85'] },
+  { card:'1 000 ÷ 7 = ? reste ?', q:'Quotient et reste', correct:'142 reste 6', choices:['142 reste 5','142 reste 6','143 reste 0','143 reste 1'] },
 ], 'ex3');
 
-buildQ([
-  { enonce: 'Un fermier a 15 champs. Chaque champ produit 2 750 kg de blé. Il vend les 3/5 de sa récolte.', q: 'Quelle est la récolte totale en kg ?', correct: '41 250 kg', choices: ['37 500 kg','40 250 kg','41 250 kg','42 000 kg'] },
-  { enonce: '24 élèves partent en voyage. Le car coûte 450 €. L\'entrée du musée coûte 8,50 € par élève.', q: 'Quel est le coût total du voyage ?', correct: '654 €', choices: ['614 €','654 €','664 €','694 €'] },
-  { enonce: 'Une librairie a vendu 3 250 livres en janvier, 2 875 en février et 3 100 en mars.', q: 'Combien de livres ont été vendus en tout ?', correct: '9 225 livres', choices: ['9 125 livres','9 225 livres','9 325 livres','9 425 livres'] },
+buildVF([
+  { card:'34 × 25 = 850', q:'34 × 25 = 850', correct:true },
+  { card:'857 ÷ 7 = 122 reste 2', q:'857 ÷ 7 = 122 reste 2', correct:false, expl:'7×122 = 854, 857−854 = 3 → reste 3' },
+  { card:'456 × 7 = 3 192', q:'456 × 7 = 3 192', correct:true },
+  { card:'345 ÷ 8 : le quotient est 43', q:'345 ÷ 8 quotient = 43', correct:true, expl:'8×43 = 344 ≤ 345 < 352 = 8×44 ✅' },
+  { card:'47 × 36 = 1 792', q:'47 × 36 = 1 792', correct:false, expl:'47 × 36 = 1 692' },
+  { q:'Pour vérifier 857 ÷ 7 = 122 reste 3, je calcule 7 × 122 + 3.', correct:true, expl:'7×122 + 3 = 854 + 3 = 857 ✅' },
 ], 'ex4');
+
+buildQCM([
+  { card:'☐ × 25 = 850', q:'Nombre manquant', correct:'34', choices:['25','34','40','50'] },
+  { card:'857 ÷ ☐ = 122 reste 3', q:'Nombre manquant', correct:'7', choices:['5','6','7','8'] },
+  { card:'☐ × 36 = 1 692', q:'Nombre manquant', correct:'47', choices:['37','47','57','67'] },
+  { card:'1 234 ÷ 6 = 205 reste ☐', q:'Nombre manquant', correct:'4', choices:['0','2','4','6'] },
+  { card:'125 × ☐ = 3 000', q:'Nombre manquant', correct:'24', choices:['12','20','24','25'] },
+], 'ex5');
+
+buildPaires([
+  { q:'Associe chaque opération à son résultat.',
+    pairs:[['34 × 25','850'],['857 ÷ 7','122 r.3'],['456 × 7','3 192'],['756 ÷ 9','84']] },
+  { q:'Associe chaque opération à son résultat.',
+    pairs:[['47 × 36','1 692'],['125 × 24','3 000'],['1 234 ÷ 6','205 r.4'],['345 ÷ 8','43 r.1']] },
+], 'ex6');
+
+buildTri([
+  { q:'Ce nombre est-il un multiple de 7 ou de 9 ?',
+    cats:['Multiple de 7','Multiple de 9'],
+    items:[
+      {v:'56', cat:'Multiple de 7'},
+      {v:'63', cat:'Multiple de 7'},
+      {v:'72', cat:'Multiple de 9'},
+      {v:'49', cat:'Multiple de 7'},
+      {v:'81', cat:'Multiple de 9'},
+      {v:'45', cat:'Multiple de 9'},
+    ]
+  },
+], 'ex7');
 </script>
 
 <script src="gamification.js"></script>

@@ -7,157 +7,175 @@
 <meta property="og:site_name" content="Les Maths de Clémence">
 <link rel="manifest" href="manifest.json">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Les solides — CM1</title>
+<title>Solides — CM1</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-  .btn-choice {
-    background: white; border: 2px solid #bae6fd; border-radius: 22px;
-    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #0c4a6e;
-    transition: background 0.15s;
-  }
-  .btn-choice:hover { background: #f0f9ff; }
-  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
-  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
-  .btn-choice:disabled { opacity: 0.6; cursor: default; }
-  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
-  .q-block { background: #f0f9ff; border: 2px solid #bae6fd; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
-  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
-  .pb-enonce {
-    background: #dbeafe; border-radius: 10px; padding: 12px; margin-bottom: 12px;
-    font-size: 0.95rem; color: #1e3a8a; line-height: 1.6; font-weight: 700;
-  }
-  .solide-card {
-    font-size: 3rem; text-align: center; padding: 14px; background: #dbeafe;
-    border-radius: 14px; margin-bottom: 14px;
-  }
-  .solide-info {
-    background: #dbeafe; border-radius: 10px; padding: 12px; margin-bottom: 12px;
-    font-size: 0.9rem; font-weight: 800; color: #1e3a8a; line-height: 1.8;
-  }
-  .solides-grid {
-    display: grid; grid-template-columns: repeat(3,1fr); gap: 8px;
-    background: #dbeafe; border-radius: 10px; padding: 12px; margin-bottom: 12px;
-  }
-  .solide-mini {
-    text-align: center; font-size: 0.82rem; font-weight: 800; color: #1e3a8a;
-    background: white; border-radius: 8px; padding: 8px 4px;
-  }
-  .solide-mini .emoji { font-size: 1.6rem; display: block; margin-bottom: 2px; }
+.solide-gallery{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:12px 0;}
+.solide-card{background:#eff6ff;border:2.5px solid #93c5fd;border-radius:14px;padding:12px 14px;text-align:center;min-width:90px;}
+.solide-card .s-label{font-size:0.68rem;font-weight:900;color:#6b7280;margin-top:6px;}
+.solide-card .s-info{font-size:0.6rem;font-weight:700;color:#9ca3af;line-height:1.5;margin-top:3px;}
+.faces-table{border-collapse:collapse;margin:10px auto;font-size:0.78rem;}
+.faces-table th{background:#1d4ed8;color:white;padding:5px 10px;font-weight:900;}
+.faces-table td{border:1.5px solid #bfdbfe;padding:5px 10px;text-align:center;font-weight:700;color:#1e3a8a;}
 </style>
 </head>
 <body>
 
-<header class="site-header" style="background: linear-gradient(135deg, #1e3a8a, #2563eb);">
-  <span class="emoji-header">🧊</span>
-  <h1>Les solides</h1>
-  <p>Cube, pavé droit, prisme, pyramide, cylindre</p>
+<header class="site-header" style="background:linear-gradient(135deg,#1d4ed8,#60a5fa);">
+  <span class="emoji-header">📦</span>
+  <h1>Solides et volumes</h1>
+  <p>Cube, pavé, pyramide, cylindre, sphère</p>
   <a href="index.html" class="nav-back">← Accueil</a>
 </header>
 
 <main>
-  <div class="badge-niveau">CM1 — Les solides</div>
+  <div class="badge-niveau">🎯 CM1 — Géométrie dans l'espace</div>
 
   <div class="retiens-box">
     <div class="retiens-title">💡 Je retiens</div>
-    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.9;">
-      🔲 <strong>Face</strong> : surface plane d'un solide<br>
-      ➖ <strong>Arête</strong> : intersection de deux faces<br>
-      ● <strong>Sommet</strong> : point où se rencontrent des arêtes<br>
-      🧊 <strong>Cube</strong> : 6 faces carrées · 12 arêtes · 8 sommets<br>
-      📦 <strong>Pavé droit</strong> : 6 faces rectangulaires · 12 arêtes · 8 sommets
+    <div class="solide-gallery">
+      <div class="solide-card">
+        <svg width="50" height="50" viewBox="0 0 50 50">
+          <rect x="5" y="15" width="25" height="25" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+          <polygon points="5,15 15,5 40,5 30,15" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2"/>
+          <polygon points="30,15 40,5 40,30 30,40" fill="#93c5fd" stroke="#1d4ed8" stroke-width="2"/>
+        </svg>
+        <div class="s-label">Cube</div>
+        <div class="s-info">6 faces carrées<br>12 arêtes · 8 sommets</div>
+      </div>
+      <div class="solide-card">
+        <svg width="60" height="50" viewBox="0 0 60 50">
+          <rect x="3" y="18" width="32" height="22" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+          <polygon points="3,18 14,8 46,8 35,18" fill="#bbf7d0" stroke="#16a34a" stroke-width="2"/>
+          <polygon points="35,18 46,8 46,30 35,40" fill="#86efac" stroke="#16a34a" stroke-width="2"/>
+        </svg>
+        <div class="s-label">Pavé droit</div>
+        <div class="s-info">6 faces rectangles<br>12 arêtes · 8 sommets</div>
+      </div>
+      <div class="solide-card">
+        <svg width="50" height="55" viewBox="0 0 50 55">
+          <polygon points="25,2 5,48 45,48" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+          <ellipse cx="25" cy="48" rx="20" ry="6" fill="#fde68a" stroke="#ca8a04" stroke-width="2"/>
+        </svg>
+        <div class="s-label">Pyramide</div>
+        <div class="s-info">1 base + faces triangulaires<br>Sommet au-dessus</div>
+      </div>
+      <div class="solide-card">
+        <svg width="50" height="55" viewBox="0 0 50 55">
+          <ellipse cx="25" cy="12" rx="18" ry="7" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
+          <rect x="7" y="12" width="36" height="34" fill="#ede9fe" stroke="#7c3aed" stroke-width="0"/>
+          <line x1="7" y1="12" x2="7" y2="46" stroke="#7c3aed" stroke-width="2"/>
+          <line x1="43" y1="12" x2="43" y2="46" stroke="#7c3aed" stroke-width="2"/>
+          <ellipse cx="25" cy="46" rx="18" ry="7" fill="#ddd6fe" stroke="#7c3aed" stroke-width="2"/>
+        </svg>
+        <div class="s-label">Cylindre</div>
+        <div class="s-info">2 bases circulaires<br>1 face latérale courbée</div>
+      </div>
+    </div>
+    <div style="overflow-x:auto;margin:6px 0;">
+      <table class="faces-table">
+        <tr><th>Solide</th><th>Faces</th><th>Arêtes</th><th>Sommets</th></tr>
+        <tr><td>Cube</td><td>6</td><td>12</td><td>8</td></tr>
+        <tr><td>Pavé droit</td><td>6</td><td>12</td><td>8</td></tr>
+        <tr><td>Pyramide à base carrée</td><td>5</td><td>8</td><td>5</td></tr>
+        <tr><td>Prisme triangulaire</td><td>5</td><td>9</td><td>6</td></tr>
+      </table>
     </div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1e3a8a;">Ex 1</span> Reconnaître les solides</div>
+  <div class="exercice-block" style="--accent:#1d4ed8">
+    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8">Ex 1</span> Reconnaître les solides <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex1"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1e3a8a;">Ex 2</span> Faces, arêtes et sommets du cube</div>
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 2</span> Faces, arêtes, sommets <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex2"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1e3a8a;">Ex 3</span> Le pavé droit</div>
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 3</span> Patrons de solides <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex3"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1e3a8a;">Ex 4</span> Patrons et développés</div>
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 4</span> Vrai ou Faux — solides <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
     <div id="ex4"></div>
   </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 5</span> Associer solide et propriété <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 6</span> Trier : solides à faces planes ou courbes ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex6"></div>
+  </div>
+
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence — CM1</footer>
 
+<script src="exercises.js"></script>
 <script>
-function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
-
-function buildQ(data, id) {
-  const c = document.getElementById(id);
-  data.forEach((item, i) => {
-    const d = document.createElement('div');
-    d.className = 'q-block';
-    const sh = shuffle(item.choices);
-    let html = '';
-    if (item.card) html += `<div class="solide-card">${item.card}</div>`;
-    if (item.enonce) html += `<div class="pb-enonce">${item.enonce}</div>`;
-    if (item.info) html += `<div class="solide-info">${item.info}</div>`;
-    html += `<div class="q-text">${item.q}</div>`;
-    html += `<div class="qcm-row" id="${id}-r${i}">
-      ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
-    </div>
-    <div class="feedback-line" id="${id}-f${i}"></div>`;
-    d.innerHTML = html;
-    c.appendChild(d);
-  });
-}
-
-function check(btn, chosen, correct, rowId, fbId) {
-  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
-  const fb = document.getElementById(fbId);
-  if (chosen === correct) {
-    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
-  } else {
-    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
-    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
-  }
-}
-
-buildQ([
-  { enonce: '📦 Je suis un solide avec 6 faces rectangulaires (pas toutes carrées). Mes 3 dimensions sont différentes.', q: 'Quel solide suis-je ?', correct: 'Pavé droit', choices: ['Cube','Pavé droit','Prisme','Cylindre'] },
-  { enonce: '🧊 Je suis un solide avec 6 faces qui sont toutes des carrés identiques.', q: 'Quel solide suis-je ?', correct: 'Cube', choices: ['Cube','Pavé droit','Sphère','Pyramide'] },
-  { enonce: '🔺 Je suis un solide avec une base carrée et 4 faces triangulaires qui se rejoignent en un point.', q: 'Quel solide suis-je ?', correct: 'Pyramide à base carrée', choices: ['Prisme triangulaire','Pyramide à base carrée','Cône','Cube'] },
-  { enonce: '🥫 Je suis un solide avec 2 faces circulaires et une face courbe. On me retrouve souvent dans les conserves.', q: 'Quel solide suis-je ?', correct: 'Cylindre', choices: ['Cône','Sphère','Cylindre','Prisme triangulaire'] },
-  { enonce: '🔷 Je suis un solide avec 2 bases triangulaires identiques et 3 faces rectangulaires.', q: 'Quel solide suis-je ?', correct: 'Prisme triangulaire', choices: ['Pyramide','Prisme triangulaire','Tétraèdre','Pavé droit'] },
+buildQCM([
+  { q:'Quel solide a 6 faces carrées identiques ?', correct:'Cube', choices:['Pavé droit','Cube','Cylindre','Pyramide'] },
+  { q:'Comment s\'appelle un solide avec 2 bases circulaires ?', correct:'Cylindre', choices:['Cône','Sphère','Cylindre','Prisme'] },
+  { q:'Quel solide ressemble à une balle ou un ballon ?', correct:'Sphère', choices:['Cylindre','Sphère','Cube','Cône'] },
+  { q:'Un pavé droit a combien de faces ?', correct:'6', choices:['4','5','6','8'] },
+  { q:'Quel solide a une base carrée et 4 faces triangulaires ?', correct:'Pyramide à base carrée', choices:['Cube','Prisme triangulaire','Pyramide à base carrée','Pyramide triangulaire'] },
+  { q:'Quelle forme a les faces d\'un cube ?', correct:'Des carrés', choices:['Des cercles','Des triangles','Des rectangles','Des carrés'] },
 ], 'ex1');
 
-buildQ([
-  { info: '🧊 Le cube a toutes ses faces carrées et identiques.', q: 'Combien le cube a-t-il de faces ?', correct: '6 faces', choices: ['4 faces','5 faces','6 faces','8 faces'] },
-  { info: '🧊 Les arêtes sont les bords du cube, là où deux faces se touchent.', q: 'Combien le cube a-t-il d\'arêtes ?', correct: '12 arêtes', choices: ['8 arêtes','10 arêtes','12 arêtes','14 arêtes'] },
-  { info: '🧊 Les sommets sont les coins du cube.', q: 'Combien le cube a-t-il de sommets ?', correct: '8 sommets', choices: ['6 sommets','7 sommets','8 sommets','10 sommets'] },
-  { q: 'Toutes les arêtes d\'un cube sont-elles de la même longueur ?', correct: 'Oui, toutes égales', choices: ['Oui, toutes égales','Non, elles varient','Seulement 4 sont égales','Seulement les arêtes de la base'] },
-  { q: 'Un cube de 3 cm d\'arête — quelle est la longueur totale de toutes ses arêtes ?', correct: '36 cm', choices: ['12 cm','24 cm','36 cm','48 cm'] },
+buildQCM([
+  { q:'Un cube a combien d\'arêtes ?', correct:'12', choices:['6','8','12','24'] },
+  { q:'Un cube a combien de sommets ?', correct:'8', choices:['4','6','8','12'] },
+  { q:'Une pyramide à base carrée a combien de faces ?', correct:'5', choices:['4','5','6','8'] },
+  { q:'Un prisme triangulaire a combien de sommets ?', correct:'6', choices:['4','5','6','9'] },
+  { q:'Un pavé droit a combien d\'arêtes ?', correct:'12', choices:['6','8','12','24'] },
+  { q:'Une pyramide à base carrée a combien d\'arêtes ?', correct:'8', choices:['5','6','8','12'] },
 ], 'ex2');
 
-buildQ([
-  { info: '📦 Le pavé droit (ou boîte rectangulaire) a 3 dimensions : longueur (L), largeur (l), hauteur (h).', q: 'Combien le pavé droit a-t-il de faces ?', correct: '6 faces', choices: ['4 faces','5 faces','6 faces','8 faces'] },
-  { q: 'Combien le pavé droit a-t-il d\'arêtes ?', correct: '12 arêtes', choices: ['8 arêtes','10 arêtes','12 arêtes','16 arêtes'] },
-  { q: 'Combien le pavé droit a-t-il de sommets ?', correct: '8 sommets', choices: ['4 sommets','6 sommets','8 sommets','10 sommets'] },
-  { enonce: '📦 Un pavé droit a pour dimensions : L = 5 cm, l = 3 cm, h = 2 cm.', q: 'Les faces de devant et de derrière sont des rectangles de quelle taille ?', correct: '5 cm × 2 cm', choices: ['3 cm × 2 cm','5 cm × 3 cm','5 cm × 2 cm','3 cm × 3 cm'] },
-  { q: 'Est-ce qu\'un cube est un cas particulier de pavé droit ?', correct: 'Oui, quand L = l = h', choices: ['Non, ce sont deux solides différents','Oui, quand L = l = h','Oui, quand L = l seulement','Non, un cube a 8 faces'] },
+buildQCM([
+  { q:'Quel solide peut-on construire avec 6 carrés identiques ?', correct:'Cube', choices:['Pavé droit','Cube','Pyramide','Prisme'] },
+  { q:'Le patron d\'un cylindre contient quelles formes ?', correct:'2 cercles + 1 rectangle', choices:['6 carrés','2 cercles + 1 rectangle','2 triangles + 3 rectangles','1 carré + 4 triangles'] },
+  { q:'Le patron d\'une pyramide à base carrée contient…', correct:'1 carré + 4 triangles', choices:['4 carrés','1 carré + 4 triangles','2 carrés + 4 rectangles','5 carrés'] },
+  { q:'Combien de faces rectangulaires dans le patron d\'un pavé 4×3×2 ?', correct:'6 rectangles (3 paires)', choices:['4 rectangles','6 rectangles (3 paires)','8 rectangles','12 rectangles'] },
 ], 'ex3');
 
-buildQ([
-  { info: '🗂️ Le patron (ou développé) d\'un solide est la figure plane qu\'on obtient en "déroulant" le solide.', q: 'Combien de carrés y a-t-il dans le patron d\'un cube ?', correct: '6 carrés', choices: ['4 carrés','5 carrés','6 carrés','8 carrés'] },
-  { enonce: 'On découpe un cube et on l\'ouvre à plat. On obtient une croix faite de 6 carrés.', q: 'Cette forme s\'appelle…', correct: 'Le patron (développé) du cube', choices: ['La face du cube','Le patron (développé) du cube','La projection du cube','L\'ombre du cube'] },
-  { enonce: '📦 Un patron de pavé droit est fait de 6 rectangles. Les faces opposées sont-elles identiques ?', q: 'Vrai ou faux ?', correct: 'Vrai — les faces opposées sont identiques', choices: ['Vrai — les faces opposées sont identiques','Faux — toutes les faces sont différentes','Vrai — mais seulement la base et le dessus','Faux — un pavé a 8 faces'] },
-  { enonce: 'Pour construire un cube, combien de carrés identiques doit-on découper ?', q: 'Sélectionne la bonne réponse.', correct: '6 carrés', choices: ['4 carrés','5 carrés','6 carrés','8 carrés'] },
+buildVF([
+  { q:'Un cube est un cas particulier de pavé droit.', correct:true, expl:'Un cube a toutes ses arêtes égales.' },
+  { q:'Un cylindre a des faces planes uniquement.', correct:false, expl:'Un cylindre a une face courbe (latérale).' },
+  { q:'Une sphère n\'a pas de sommet.', correct:true },
+  { q:'Une pyramide à base carrée a 4 faces.', correct:false, expl:'Elle a 5 faces : 1 base + 4 triangles.' },
+  { q:'Un cube a 6 faces, 12 arêtes et 8 sommets.', correct:true },
+  { q:'Le patron d\'un cube comporte 6 carrés identiques.', correct:true },
+  { q:'Un prisme triangulaire a des bases triangulaires.', correct:true },
 ], 'ex4');
+
+buildPaires([
+  { q:'Associe chaque solide à ses caractéristiques.',
+    pairs:[['Cube','6 faces, 12 arêtes, 8 sommets'],['Cylindre','2 cercles + face courbée'],['Pyramide base carrée','5 faces, 8 arêtes, 5 sommets'],['Sphère','Aucune arête, aucun sommet']] },
+  { q:'Associe chaque solide à son exemple du quotidien.',
+    pairs:[['Cube','Dé à jouer'],['Cylindre','Boîte de conserve'],['Sphère','Ballon de foot'],['Pavé droit','Boîte de céréales']] },
+], 'ex5');
+
+buildTri([
+  { q:'Ce solide n\'a-t-il que des faces planes, ou a-t-il une face courbe ?',
+    cats:['Faces planes uniquement','Face(s) courbe(s)'],
+    items:[
+      {v:'Cube', cat:'Faces planes uniquement'},
+      {v:'Cylindre', cat:'Face(s) courbe(s)'},
+      {v:'Pyramide', cat:'Faces planes uniquement'},
+      {v:'Sphère', cat:'Face(s) courbe(s)'},
+      {v:'Pavé droit', cat:'Faces planes uniquement'},
+      {v:'Cône', cat:'Face(s) courbe(s)'},
+    ]
+  },
+], 'ex6');
 </script>
 
 <script src="gamification.js"></script>

@@ -7,140 +7,153 @@
 <meta property="og:site_name" content="Les Maths de Clémence">
 <link rel="manifest" href="manifest.json">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Données et statistiques — CM1</title>
+<title>Organisation des données — CM1</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-  .btn-choice {
-    background: white; border: 2px solid #bfdbfe; border-radius: 22px;
-    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #1e3a8a;
-    transition: background 0.15s;
-  }
-  .btn-choice:hover { background: #dbeafe; }
-  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
-  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
-  .btn-choice:disabled { opacity: 0.6; cursor: default; }
-  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
-  .q-block { background: #eff6ff; border: 2px solid #bfdbfe; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
-  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
-  .data-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.9rem; }
-  .data-table th { background: #1d4ed8; color: white; padding: 9px; font-weight: 900; border: 2px solid #1e3a8a; text-align: center; }
-  .data-table td { background: white; padding: 9px; text-align: center; border: 2px solid #bfdbfe; font-weight: 700; }
-  .data-table tr:nth-child(even) td { background: #eff6ff; }
+.data-table{border-collapse:collapse;margin:10px auto;font-size:0.8rem;}
+.data-table th{background:#1d4ed8;color:white;padding:6px 10px;font-weight:900;}
+.data-table td{border:1.5px solid #bfdbfe;padding:6px 10px;text-align:center;font-weight:700;color:#1e3a8a;}
+.data-table tr:nth-child(even) td{background:#eff6ff;}
+.bar-vis{display:flex;align-items:flex-end;gap:8px;height:100px;padding:4px 0;justify-content:center;}
+.bar-vis .bar-col{display:flex;flex-direction:column;align-items:center;gap:2px;}
+.bar-vis .bar-rect{width:32px;border-radius:4px 4px 0 0;}
+.bar-vis .bar-lbl{font-size:0.6rem;font-weight:900;color:#6b7280;}
+.bar-vis .bar-val{font-size:0.65rem;font-weight:900;color:#1d4ed8;}
 </style>
 </head>
 <body>
 
-<header class="site-header" style="background: linear-gradient(135deg, #1d4ed8, #60a5fa);">
+<header class="site-header" style="background:linear-gradient(135deg,#1d4ed8,#60a5fa);">
   <span class="emoji-header">📊</span>
-  <h1>Données et statistiques</h1>
-  <p>Moyennes, diagrammes, probabilités</p>
+  <h1>Données et graphiques</h1>
+  <p>Tableaux, diagrammes, statistiques simples</p>
   <a href="index.html" class="nav-back">← Accueil</a>
 </header>
 
 <main>
-
-  <div class="badge-niveau">CM1 — Organisation des données</div>
+  <div class="badge-niveau">🎯 CM1 — Organisation des données</div>
 
   <div class="retiens-box">
     <div class="retiens-title">💡 Je retiens</div>
-    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
-      🧮 <strong>Moyenne</strong> = somme des valeurs ÷ nombre de valeurs<br>
-      📊 <strong>Diagramme circulaire</strong> (camembert) : chaque secteur = une partie du tout<br>
-      🎲 <strong>Probabilité</strong> : chance qu'un événement se produise (0 = impossible, 1 = certain)<br>
-      📈 <strong>Médiane</strong> : valeur qui partage en 2 groupes égaux
+    <div style="overflow-x:auto;margin:10px 0;">
+      <table class="data-table">
+        <tr><th>Activité</th><th>Lundi</th><th>Mardi</th><th>Mercredi</th><th>Total</th></tr>
+        <tr><td>Natation</td><td>12</td><td>8</td><td>15</td><td>35</td></tr>
+        <tr><td>Football</td><td>18</td><td>20</td><td>10</td><td>48</td></tr>
+        <tr><td>Judo</td><td>7</td><td>11</td><td>9</td><td>27</td></tr>
+      </table>
+    </div>
+    <div class="bar-vis">
+      <div class="bar-col"><div class="bar-val">35</div><div class="bar-rect" style="height:58px;background:#3b82f6;"></div><div class="bar-lbl">Natation</div></div>
+      <div class="bar-col"><div class="bar-val">48</div><div class="bar-rect" style="height:80px;background:#10b981;"></div><div class="bar-lbl">Football</div></div>
+      <div class="bar-col"><div class="bar-val">27</div><div class="bar-rect" style="height:45px;background:#f59e0b;"></div><div class="bar-lbl">Judo</div></div>
+    </div>
+    <div style="font-size:0.88rem;color:#555;line-height:1.9;margin-top:4px;">
+      📊 <strong>Tableau à double entrée</strong> : lire ligne + colonne<br>
+      📈 <strong>Diagramme en barres</strong> : la hauteur représente la valeur<br>
+      📉 <strong>Moyenne</strong> : somme des valeurs ÷ nombre de valeurs
     </div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 1</span> Calculer une moyenne</div>
+  <div class="exercice-block" style="--accent:#1d4ed8">
+    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8">Ex 1</span> Lire un tableau à double entrée <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex1"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 2</span> Lire un tableau de données</div>
-    <table class="data-table">
-      <thead><tr><th>Élève</th><th>Lundi</th><th>Mardi</th><th>Mercredi</th><th>Jeudi</th><th>Vendredi</th></tr></thead>
-      <tbody>
-        <tr><td>Alice</td><td>14</td><td>16</td><td>12</td><td>18</td><td>10</td></tr>
-        <tr><td>Théo</td><td>12</td><td>14</td><td>16</td><td>10</td><td>8</td></tr>
-        <tr><td>Léa</td><td>18</td><td>16</td><td>14</td><td>20</td><td>12</td></tr>
-      </tbody>
-    </table>
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 2</span> Lire un diagramme en barres <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex2"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 3</span> Probabilités — chance d'un événement</div>
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 3</span> Calculer des totaux et des différences <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex3"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 4</span> Interpréter un diagramme</div>
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 4</span> Moyennes <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 5</span> Vrai ou Faux — données <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Associer données et représentations <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex6"></div>
   </div>
 
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence — CM1</footer>
 
+<script src="exercises.js"></script>
 <script>
-function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
-function buildQ(data, id) {
-  const c = document.getElementById(id);
-  data.forEach((item, i) => {
-    const d = document.createElement('div');
-    d.className = 'q-block';
-    const sh = shuffle(item.choices);
-    d.innerHTML = `
-      <div class="q-text">${item.q}</div>
-      <div class="qcm-row" id="${id}-r${i}">
-        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
-      </div>
-      <div class="feedback-line" id="${id}-f${i}"></div>
-    `;
-    c.appendChild(d);
-  });
-}
-function check(btn, chosen, correct, rowId, fbId) {
-  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
-  const fb = document.getElementById(fbId);
-  if (chosen === correct) {
-    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
-  } else {
-    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
-    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
-  }
-}
-
-buildQ([
-  { q: 'Les notes de Paul sont : 12, 15, 14, 13, 16. Quelle est sa moyenne ?', correct: '14', choices: ['12','13','14','15'] },
-  { q: 'La température sur 4 jours est : 18°C, 20°C, 16°C, 22°C. Quelle est la moyenne ?', correct: '19°C', choices: ['18°C','19°C','20°C','21°C'] },
-  { q: 'Léa a des notes de 10, 14, 18. Quelle est sa moyenne ?', correct: '14', choices: ['12','13','14','16'] },
-  { q: 'Pour avoir une moyenne de 14 sur 3 notes dont on connaît 12 et 15, quelle doit être la 3e note ?', correct: '15', choices: ['13','14','15','16'] },
+buildQCM([
+  { enonce:'Tableau sports :\nNatation : lundi 12, mardi 8, mercredi 15\nFootball : lundi 18, mardi 20, mercredi 10',
+    q:'Combien d\'élèves ont fait de la natation mardi ?', correct:'8', choices:['8','12','15','18'] },
+  { enonce:'Même tableau.',
+    q:'Quel sport a le plus grand total sur 3 jours ?', correct:'Football (48)', choices:['Natation (35)','Football (48)','Judo (27)'] },
+  { enonce:'Tableau de températures :\nParis : lundi 18°, mardi 22°, mercredi 20°\nLyon : lundi 21°, mardi 25°, mercredi 23°',
+    q:'Quel était l\'écart de température entre Paris et Lyon mardi ?', correct:'3°', choices:['2°','3°','4°','7°'] },
+  { enonce:'Même tableau.',
+    q:'Quelle ville a la température moyenne la plus haute sur 3 jours ?', correct:'Lyon (23°)', choices:['Paris (20°)','Lyon (23°)','Elles sont égales'] },
 ], 'ex1');
 
-buildQ([
-  { q: 'Quelle est la moyenne d\'Alice sur la semaine ?', correct: '14', choices: ['12','13','14','15'] },
-  { q: 'Quel jour Léa a-t-elle eu sa meilleure note ?', correct: 'Jeudi (20)', choices: ['Lundi (18)','Mardi (16)','Jeudi (20)','Vendredi (12)'] },
-  { q: 'Quel élève a la plus basse note du tableau ?', correct: 'Théo - Vendredi (8)', choices: ['Alice - Vendredi (10)','Théo - Vendredi (8)','Léa - Vendredi (12)','Théo - Lundi (12)'] },
-  { q: 'Quelle est la somme des notes de Théo sur la semaine ?', correct: '60', choices: ['55','58','60','62'] },
+buildQCM([
+  { enonce:'Diagramme livres lus : Léa=12, Tom=8, Emma=15, Noah=10',
+    q:'Qui a lu le plus de livres ?', correct:'Emma (15)', choices:['Léa (12)','Tom (8)','Emma (15)','Noah (10)'] },
+  { enonce:'Même diagramme.',
+    q:'Combien de livres de plus Emma a-t-elle lus que Tom ?', correct:'7', choices:['3','5','7','10'] },
+  { enonce:'Diagramme notes : Maths=14, Français=16, Histoire=12, Sciences=15',
+    q:'Quelle matière a la plus basse note ?', correct:'Histoire (12)', choices:['Maths (14)','Français (16)','Histoire (12)','Sciences (15)'] },
+  { enonce:'Même diagramme.',
+    q:'Quelle est la somme des 4 notes ?', correct:'57', choices:['47','57','67','77'] },
 ], 'ex2');
 
-buildQ([
-  { q: 'On lance un dé à 6 faces. Quelle est la probabilité d\'obtenir le 3 ?', correct: '1/6', choices: ['1/3','1/6','1/2','3/6'] },
-  { q: 'On tire une carte dans un jeu de 4 cartes (1, 2, 3, 4). Probabilité de tirer un chiffre pair ?', correct: '2/4 = 1/2', choices: ['1/4','2/4 = 1/2','3/4','1/2'] },
-  { q: 'Un sac contient 3 billes rouges et 2 bleues. Quelle est la probabilité de tirer une bille rouge ?', correct: '3/5', choices: ['1/5','2/5','3/5','3/2'] },
-  { q: 'Quelle probabilité est CERTAINE (= 1) ?', correct: 'Obtenir un nombre ≤ 6 en lançant un dé à 6 faces', choices: ['Obtenir un 7 avec un dé','Avoir de la pluie en été','Obtenir un nombre ≤ 6 en lançant un dé à 6 faces','Tirer le Joker dans un jeu de 52 cartes'] },
+buildQCM([
+  { enonce:'Ventes de jus : lundi 45, mardi 30, mercredi 60, jeudi 25, vendredi 50.',
+    q:'Quel est le total de la semaine ?', correct:'210', choices:['180','200','210','220'] },
+  { enonce:'Même tableau.',
+    q:'Quel est l\'écart entre le meilleur et le pire jour ?', correct:'35', choices:['25','30','35','45'] },
+  { enonce:'Scores au jeu : 120, 95, 135, 110, 100.',
+    q:'Quel est le score total ?', correct:'560', choices:['520','540','560','580'] },
+  { enonce:'Budget de 120 € : livres 35 €, jeux 45 €, musique 28 €.',
+    q:'Combien reste-t-il ?', correct:'12 €', choices:['8 €','10 €','12 €','22 €'] },
 ], 'ex3');
 
-buildQ([
-  { q: 'Dans un sondage, 50% préfèrent le chocolat, 30% la vanille, 20% la fraise. Quelle parfum est le préféré ?', correct: 'Chocolat (50%)', choices: ['Vanille (30%)','Fraise (20%)','Chocolat (50%)','Ils sont pareils'] },
-  { q: 'Dans une enquête sur 100 élèves, 45 font du sport le soir. Combien n\'en font pas ?', correct: '55', choices: ['45','50','55','60'] },
-  { q: 'Un graphique montre les ventes mensuelles : Jan 1 200, Fév 1 450, Mar 1 100. Quel mois a eu le plus de ventes ?', correct: 'Février (1 450)', choices: ['Janvier (1 200)','Février (1 450)','Mars (1 100)','Tous pareil'] },
+buildQCM([
+  { enonce:'Notes de Clémence : 14, 16, 12, 18.',
+    q:'Quelle est sa moyenne ?', correct:'15', choices:['14','15','16','60'] },
+  { enonce:'Températures : lundi 18°, mardi 22°, mercredi 20°.',
+    q:'Quelle est la température moyenne ?', correct:'20°', choices:['18°','20°','22°','60°'] },
+  { enonce:'Livres lus par mois : 8, 5, 9, 6.',
+    q:'Quelle est la moyenne mensuelle ?', correct:'7', choices:['5','6','7','8'] },
+  { enonce:'Vitesses : 45 km/h, 55 km/h, 50 km/h.',
+    q:'Quelle est la vitesse moyenne ?', correct:'50 km/h', choices:['45 km/h','50 km/h','55 km/h','150 km/h'] },
+  { enonce:'Scores : 120, 100, 95, 85.',
+    q:'Quelle est la moyenne ?', correct:'100', choices:['95','100','105','400'] },
 ], 'ex4');
+
+buildVF([
+  { q:'Dans un tableau à double entrée, on lit à l\'intersection d\'une ligne et d\'une colonne.', correct:true },
+  { q:'La moyenne de 12, 16 et 14 est 42.', correct:false, expl:'Moyenne = (12+16+14)÷3 = 42÷3 = 14' },
+  { q:'Un diagramme en barres permet de comparer des valeurs.', correct:true },
+  { q:'La moyenne de 14, 16, 12, 18 est 15.', correct:true, expl:'(14+16+12+18)÷4 = 60÷4 = 15' },
+  { q:'Dans un diagramme, la barre la plus haute correspond à la valeur la plus grande.', correct:true },
+  { q:'Pour calculer une moyenne, on divise la somme par le plus grand nombre.', correct:false, expl:'On divise par le nombre de valeurs.' },
+], 'ex5');
+
+buildPaires([
+  { q:'Associe chaque terme à sa définition.',
+    pairs:[['Diagramme en barres','Représentation avec des rectangles de différentes hauteurs'],['Tableau à double entrée','Croisement lignes et colonnes'],['Moyenne','Somme ÷ nombre de valeurs'],['Pictogramme','Dessin représentant une quantité']] },
+  { q:'Associe chaque donnée à sa valeur.',
+    pairs:[['Natation total (L+M+Me)','35'],['Football lundi','18'],['Total 3 sports lundi','37'],['Judo total','27']] },
+], 'ex6');
 </script>
 
 <script src="gamification.js"></script>

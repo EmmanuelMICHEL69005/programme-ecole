@@ -12,142 +12,140 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-  .btn-choice {
-    background: white; border: 2px solid #bfdbfe; border-radius: 22px;
-    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #1e3a8a;
-    transition: background 0.15s;
+  .tableau-num {
+    display:grid;grid-template-columns:repeat(6,1fr);gap:4px;margin:12px 0;
   }
-  .btn-choice:hover { background: #dbeafe; }
-  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
-  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
-  .btn-choice:disabled { opacity: 0.6; cursor: default; }
-  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
-  .q-block { background: #eff6ff; border: 2px solid #bfdbfe; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
-  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
-  .tableau-valeurs { display: flex; gap: 0; border: 2px solid #3b82f6; border-radius: 10px; overflow: hidden; margin: 12px 0; }
-  .tv-col { flex: 1; text-align: center; }
-  .tv-col:not(:last-child) { border-right: 2px solid #3b82f6; }
-  .tv-header { background: #3b82f6; color: white; font-size: 0.75rem; font-weight: 900; padding: 6px 4px; }
-  .tv-val { background: #eff6ff; font-size: 1.1rem; font-weight: 900; color: #1e3a8a; padding: 10px 4px; }
+  .tn-h{background:#1d4ed8;color:white;border-radius:6px;padding:8px 4px;text-align:center;font-size:0.72rem;font-weight:900;}
+  .tn-c{background:#eff6ff;border:2px solid #bfdbfe;border-radius:6px;padding:8px 4px;text-align:center;font-size:1.1rem;font-weight:900;color:#1e3a8a;}
 </style>
 </head>
 <body>
 
-<header class="site-header" style="background: linear-gradient(135deg, #1d4ed8, #60a5fa);">
+<header class="site-header" style="background:linear-gradient(135deg,#1d4ed8,#60a5fa);">
   <span class="emoji-header">🔢</span>
   <h1>Grands nombres</h1>
-  <p>Jusqu'à 999 999 — numération</p>
+  <p>Jusqu'à 999 999</p>
   <a href="index.html" class="nav-back">← Accueil</a>
 </header>
 
 <main>
-
-  <div class="badge-niveau">CM1 — Nombres et calculs</div>
+  <div class="badge-niveau">🎯 CM1 — Nombres entiers</div>
 
   <div class="retiens-box">
     <div class="retiens-title">💡 Je retiens</div>
-    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
-      🔢 Classe des <strong>millions</strong> | Classe des <strong>mille</strong> | Classe des <strong>unités</strong><br>
-      🗂️ Chaque classe a 3 rangs : centaines / dizaines / unités<br>
-      📝 <strong>237 458</strong> = 2 centaines de mille + 3 dizaines de mille + 7 mille + 4 centaines + 5 dizaines + 8 unités<br>
-      🔍 Pour comparer : on compare de gauche à droite
+    <div class="tableau-num">
+      <div class="tn-h">C de M</div><div class="tn-h">D de M</div><div class="tn-h">Milliers</div>
+      <div class="tn-h">Centaines</div><div class="tn-h">Dizaines</div><div class="tn-h">Unités</div>
+      <div class="tn-c">3</div><div class="tn-c">4</div><div class="tn-c">5</div>
+      <div class="tn-c">6</div><div class="tn-c">7</div><div class="tn-c">8</div>
+    </div>
+    <div style="text-align:center;font-size:1.4rem;font-weight:900;color:#1d4ed8;letter-spacing:4px;margin-bottom:6px;">
+      345 678
+    </div>
+    <div style="font-size:0.88rem;color:#555;line-height:1.9;">
+      = 3 centaines de milliers + 4 dizaines de milliers + 5 milliers + 6 centaines + 7 dizaines + 8 unités<br>
+      📊 <strong>Arrondir au millier</strong> : 345 678 → <strong>346 000</strong> (678 ≥ 500)<br>
+      🔄 <strong>999 999 + 1 = 1 000 000</strong> (un million)
     </div>
   </div>
 
-  <!-- Tableau de numération -->
-  <div class="retiens-box" style="background:#dbeafe; border-color:#60a5fa;">
-    <p style="font-size:0.8rem; font-weight:800; color:#1e3a8a; margin-bottom:8px;">Exemple : 345 076</p>
-    <div class="tableau-valeurs">
-      <div class="tv-col"><div class="tv-header">C. mille</div><div class="tv-val">3</div></div>
-      <div class="tv-col"><div class="tv-header">D. mille</div><div class="tv-val">4</div></div>
-      <div class="tv-col"><div class="tv-header">U. mille</div><div class="tv-val">5</div></div>
-      <div class="tv-col"><div class="tv-header">Centaines</div><div class="tv-val">0</div></div>
-      <div class="tv-col"><div class="tv-header">Dizaines</div><div class="tv-val">7</div></div>
-      <div class="tv-col"><div class="tv-header">Unités</div><div class="tv-val">6</div></div>
-    </div>
-  </div>
-
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 1</span> Décomposer les grands nombres</div>
+  <div class="exercice-block" style="--accent:#1d4ed8">
+    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8">Ex 1</span> Lire et écrire les grands nombres <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex1"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 2</span> Écrire et lire</div>
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 2</span> Valeur des chiffres <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex2"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 3</span> Comparer et ordonner</div>
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 3</span> Comparer et ordonner <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex3"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 4</span> Arrondir un nombre</div>
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 4</span> Arrondir <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 5</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 6</span> Ranger dans l'ordre <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">ORDRE</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 7</span> Associer nombre et décomposition <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex7"></div>
   </div>
 
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence — CM1</footer>
 
+<script src="exercises.js"></script>
 <script>
-function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
-function buildQ(data, id) {
-  const c = document.getElementById(id);
-  data.forEach((item, i) => {
-    const d = document.createElement('div');
-    d.className = 'q-block';
-    const sh = shuffle(item.choices);
-    d.innerHTML = `
-      <div class="q-text">${item.q}</div>
-      <div class="qcm-row" id="${id}-r${i}">
-        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
-      </div>
-      <div class="feedback-line" id="${id}-f${i}"></div>
-    `;
-    c.appendChild(d);
-  });
-}
-function check(btn, chosen, correct, rowId, fbId) {
-  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
-  const fb = document.getElementById(fbId);
-  if (chosen === correct) {
-    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
-  } else {
-    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
-    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
-  }
-}
-
-buildQ([
-  { q: 'Dans 473 819, quel chiffre est au rang des dizaines de mille ?', correct: '7', choices: ['4','7','3','8'] },
-  { q: '200 000 + 50 000 + 3 000 + 400 + 60 + 2 = ?', correct: '253 462', choices: ['25 462','253 462','2 053 462','253 462'] },
-  { q: 'Dans 806 040, quel chiffre est au rang des centaines ?', correct: '0', choices: ['8','6','0','4'] },
-  { q: 'Combien y a-t-il de centaines de mille dans 650 000 ?', correct: '6', choices: ['5','6','65','650'] },
+buildQCM([
+  { q:'Comment s\'écrit "trois cent quarante-cinq mille six cent soixante-dix-huit" ?', correct:'345 678', choices:['345 6 78','345 678','3 456 78','34 5678'] },
+  { q:'Comment se lit 284 050 ?', correct:'Deux cent quatre-vingt-quatre mille cinquante', choices:['Deux huit quatre zéro cinq zéro','Deux cent quatre-vingt-quatre mille cinquante','Deux millions quatre-vingt-quatre','Deux cent quatre-vingt-quatre mille cinq cents'] },
+  { q:'Quel est le nombre après 399 999 ?', correct:'400 000', choices:['399 000','400 000','399 999','500 000'] },
+  { q:'999 999 + 1 = ?', correct:'1 000 000 (un million)', choices:['999 000','1 000 000 (un million)','9 000 000','100 000'] },
+  { q:'Comment s\'écrit "cent mille" ?', correct:'100 000', choices:['10 000','100 000','1 000 000','10 0000'] },
+  { q:'Comment se lit 500 040 ?', correct:'Cinq cent mille quarante', choices:['Cinq mille quarante','Cinq cent mille quatre','Cinq cent mille quarante','Cinq millions quarante'] },
 ], 'ex1');
 
-buildQ([
-  { q: 'Comment s\'écrit "trois cent vingt-cinq mille six cent douze" ?', correct: '325 612', choices: ['3 250 612','325 612','32 562','3 256 120'] },
-  { q: 'Comment se lit 489 307 ?', correct: 'quatre cent quatre-vingt-neuf mille trois cent sept', choices: ['quatre-vingt-neuf mille trois cent sept','quatre cent quatre-vingt-neuf mille trois cent sept','quatre millions quatre-vingt-neuf mille trois cent sept','quatre cent quatre-vingt-neuf mille sept'] },
-  { q: 'Quel est le nombre qui vient après 399 999 ?', correct: '400 000', choices: ['399 998','400 000','4 000 000','399 9991'] },
-  { q: '100 000 − 1 = ?', correct: '99 999', choices: ['99 990','99 999','100 001','10 000'] },
+buildQCM([
+  { q:'Dans 345 678, que vaut le chiffre 3 ?', correct:'300 000 (3 centaines de milliers)', choices:['3 unités','3 milliers','30 000','300 000 (3 centaines de milliers)'] },
+  { q:'Dans 284 050, que vaut le chiffre 4 ?', correct:'4 000 (4 milliers)', choices:['4','40','400','4 000 (4 milliers)'] },
+  { q:'Dans 763 421, quel chiffre est au rang des dizaines de milliers ?', correct:'6', choices:['7','6','3','2'] },
+  { q:'Que vaut le 5 dans 705 834 ?', correct:'5 000 (5 milliers)', choices:['5','50','500','5 000 (5 milliers)'] },
+  { q:'Dans 450 000, que vaut le 4 ?', correct:'400 000', choices:['4 000','40 000','400 000','4 000 000'] },
 ], 'ex2');
 
-buildQ([
-  { q: 'Lequel est le plus grand : 345 678 ou 354 678 ?', correct: '354 678', choices: ['345 678','354 678','Ils sont égaux'] },
-  { q: 'Range du plus petit au plus grand : 258 400, 285 400, 582 400', correct: '258 400 < 285 400 < 582 400', choices: ['258 400 < 285 400 < 582 400','582 400 < 285 400 < 258 400','285 400 < 258 400 < 582 400'] },
-  { q: 'Quel nombre est entre 500 000 et 600 000 ?', correct: '543 000', choices: ['490 000','543 000','620 000','500 0001'] },
-  { q: 'Vrai ou faux : 999 999 < 1 000 000 ?', correct: 'Vrai', choices: ['Vrai','Faux','Impossible à savoir'] },
+buildQCM([
+  { q:'Lequel est le plus grand : 458 320 ou 458 302 ?', correct:'458 320', choices:['458 302','458 320','Ils sont égaux'] },
+  { q:'Range du plus petit au plus grand : 654 321, 645 231, 654 231', correct:'645 231 < 654 231 < 654 321', choices:['645 231 < 654 231 < 654 321','654 321 < 654 231 < 645 231','654 231 < 645 231 < 654 321'] },
+  { q:'Quel nombre est entre 400 000 et 500 000 ?', correct:'450 000', choices:['350 000','450 000','550 000','400 500'] },
+  { q:'Lequel est le plus petit ? 305 000, 350 000, 503 000', correct:'305 000', choices:['305 000','350 000','503 000'] },
+  { q:'Quel est le plus grand nombre à 6 chiffres ?', correct:'999 999', choices:['900 000','990 000','999 000','999 999'] },
 ], 'ex3');
 
-buildQ([
-  { q: 'Arrondi à la dizaine de mille la plus proche : 347 560', correct: '350 000', choices: ['340 000','345 000','350 000','360 000'] },
-  { q: 'Arrondi à la centaine la plus proche : 12 847', correct: '12 800', choices: ['12 700','12 800','12 900','13 000'] },
-  { q: 'Arrondi au millier le plus proche : 237 489', correct: '237 000', choices: ['236 000','237 000','238 000','240 000'] },
-  { q: 'La population d\'une ville est de 127 845 habitants. Arrondie au millier, c\'est environ ?', correct: '128 000', choices: ['127 000','128 000','130 000','120 000'] },
+buildQCM([
+  { q:'Arrondis 345 678 au millier le plus proche.', correct:'346 000', choices:['345 000','346 000','350 000','400 000'] },
+  { q:'Arrondis 784 250 à la dizaine de milliers.', correct:'780 000', choices:['780 000','785 000','790 000','800 000'] },
+  { q:'Arrondis 291 500 au cent millier le plus proche.', correct:'300 000', choices:['200 000','290 000','295 000','300 000'] },
+  { q:'Arrondis 637 420 au millier.', correct:'637 000', choices:['637 000','637 400','638 000','640 000'] },
+  { q:'Arrondis 500 001 à la centaine de milliers.', correct:'500 000', choices:['500 000','500 100','600 000','100 000'] },
 ], 'ex4');
+
+buildVF([
+  { q:'345 678 > 345 867', correct:false, expl:'345 678 < 345 867 (centaines : 6 < 8)' },
+  { q:'500 000 = 5 centaines de milliers', correct:true },
+  { q:'999 999 + 1 = 1 000 000', correct:true },
+  { q:'Arrondis à 1 000 : 76 500 → 77 000', correct:true, expl:'500 ≥ 500, donc on arrondit à 77 000' },
+  { q:'Le chiffre des milliers dans 765 432 est 5.', correct:true, expl:'7-C.M, 6-D.M, 5-M, 4-C, 3-D, 2-U' },
+  { q:'284 050 > 284 500', correct:false, expl:'284 050 < 284 500 (centaines : 0 < 5)' },
+  { q:'Un million s\'écrit 1 000 000.', correct:true },
+], 'ex5');
+
+buildOrdre([
+  { q:'Range ces nombres du PLUS PETIT au PLUS GRAND :',
+    items:['345 000','435 000','354 000','543 000','453 000'] },
+  { q:'Range ces nombres du PLUS GRAND au PLUS PETIT :',
+    items:['900 000','600 000','300 000','700 000','100 000'] },
+], 'ex6');
+
+buildPaires([
+  { q:'Associe chaque nombre à sa décomposition.',
+    pairs:[['345 678','300 000+40 000+5 000+600+70+8'],['500 040','500 000+40'],['284 050','284 000+50'],['100 000','cent mille']] },
+  { q:'Associe chaque nombre à sa forme arrondie (au millier).',
+    pairs:[['345 678','346 000'],['784 250','784 000'],['291 500','292 000'],['637 420','637 000']] },
+], 'ex7');
 </script>
 
 <script src="gamification.js"></script>

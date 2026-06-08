@@ -7,147 +7,172 @@
 <meta property="og:site_name" content="Les Maths de Clémence">
 <link rel="manifest" href="manifest.json">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Durées et conversions — CM1</title>
+<title>Le temps — CM1</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-  .btn-choice {
-    background: white; border: 2px solid #bae6fd; border-radius: 22px;
-    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #0c4a6e;
-    transition: background 0.15s;
-  }
-  .btn-choice:hover { background: #f0f9ff; }
-  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
-  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
-  .btn-choice:disabled { opacity: 0.6; cursor: default; }
-  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
-  .q-block { background: #f0f9ff; border: 2px solid #bae6fd; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
-  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
-  .pb-enonce {
-    background: #dbeafe; border-radius: 10px; padding: 12px; margin-bottom: 12px;
-    font-size: 0.95rem; color: #1e3a8a; line-height: 1.6; font-weight: 700;
-  }
-  .num-card {
-    font-size: 2rem; font-weight: 900; color: #1e40af; text-align: center;
-    padding: 14px; background: #dbeafe; border-radius: 14px; margin-bottom: 14px;
-  }
-  .conv-tableau {
-    background: #dbeafe; border-radius: 10px; padding: 12px; margin-bottom: 12px;
-    font-size: 0.9rem; font-weight: 800; color: #1e3a8a; line-height: 1.9;
-  }
+.clocks{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin:10px 0;}
+.clock-box{text-align:center;}
+.clock-box .clock-face{width:70px;height:70px;border-radius:50%;border:4px solid #1d4ed8;background:#eff6ff;position:relative;display:inline-block;}
+.clock-box .hour-hand{position:absolute;bottom:50%;left:50%;width:3px;height:22px;background:#1d4ed8;transform-origin:bottom center;border-radius:2px;margin-left:-1.5px;}
+.clock-box .min-hand{position:absolute;bottom:50%;left:50%;width:2px;height:28px;background:#ef4444;transform-origin:bottom center;border-radius:2px;margin-left:-1px;}
+.clock-box .center-dot{position:absolute;width:6px;height:6px;border-radius:50%;background:#1d4ed8;top:50%;left:50%;transform:translate(-50%,-50%);}
+.clock-box .clock-label{font-size:0.72rem;font-weight:900;color:#6b7280;margin-top:4px;}
+.timeline{display:flex;align-items:center;gap:0;margin:10px auto;max-width:360px;}
+.tl-dot{width:12px;height:12px;border-radius:50%;background:#1d4ed8;flex-shrink:0;}
+.tl-line{height:3px;background:#bfdbfe;flex:1;}
+.tl-label{font-size:0.62rem;font-weight:900;color:#1d4ed8;text-align:center;white-space:nowrap;margin-top:2px;}
+.tl-col{display:flex;flex-direction:column;align-items:center;}
 </style>
 </head>
 <body>
 
-<header class="site-header" style="background: linear-gradient(135deg, #1e3a8a, #2563eb);">
-  <span class="emoji-header">🕐</span>
-  <h1>Durées et conversions</h1>
-  <p>Heures, minutes, secondes, durées</p>
+<header class="site-header" style="background:linear-gradient(135deg,#1d4ed8,#60a5fa);">
+  <span class="emoji-header">⏰</span>
+  <h1>Le temps</h1>
+  <p>Durées complexes, calendrier, frise chronologique</p>
   <a href="index.html" class="nav-back">← Accueil</a>
 </header>
 
 <main>
-  <div class="badge-niveau">CM1 — Durées et conversions</div>
+  <div class="badge-niveau">🎯 CM1 — Le temps</div>
 
   <div class="retiens-box">
     <div class="retiens-title">💡 Je retiens</div>
-    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.9;">
-      ⏱️ <strong>1 heure</strong> = 60 minutes (h → min : × 60)<br>
-      ⏱️ <strong>1 minute</strong> = 60 secondes (min → s : × 60)<br>
-      📅 <strong>1 heure</strong> = 3 600 secondes<br>
-      🗓️ <strong>1 semaine</strong> = 7 jours &nbsp;·&nbsp; <strong>1 an</strong> = 365 jours (366 si bissextile)<br>
-      🔄 <strong>Durée</strong> = heure de fin − heure de début
+    <div class="clocks">
+      <div class="clock-box">
+        <div class="clock-face">
+          <div class="hour-hand" style="transform:rotate(90deg);"></div>
+          <div class="min-hand" style="transform:rotate(0deg);"></div>
+          <div class="center-dot"></div>
+        </div>
+        <div class="clock-label">9h00</div>
+      </div>
+      <div class="clock-box">
+        <div class="clock-face">
+          <div class="hour-hand" style="transform:rotate(152deg);"></div>
+          <div class="min-hand" style="transform:rotate(150deg);"></div>
+          <div class="center-dot"></div>
+        </div>
+        <div class="clock-label">14h25</div>
+      </div>
+      <div class="clock-box">
+        <div class="clock-face">
+          <div class="hour-hand" style="transform:rotate(330deg);"></div>
+          <div class="min-hand" style="transform:rotate(90deg);"></div>
+          <div class="center-dot"></div>
+        </div>
+        <div class="clock-label">16h15</div>
+      </div>
+    </div>
+    <div style="font-size:0.88rem;color:#555;line-height:1.9;">
+      ⏱️ <strong>1 minute = 60 secondes</strong> · <strong>1 heure = 60 minutes</strong><br>
+      📅 <strong>1 an = 365 jours</strong> (366 si bissextile) · <strong>1 siècle = 100 ans</strong><br>
+      🔢 <strong>Calcul de durée</strong> : arrivée − départ (attention aux heures !)<br>
+      💡 <strong>Astuce</strong> : 9h35 → 10h = 25 min · 10h → 12h15 = 2h15 → total : 2h40
     </div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1e3a8a;">Ex 1</span> Lire et écrire l'heure</div>
+  <div class="exercice-block" style="--accent:#1d4ed8">
+    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8">Ex 1</span> Lire l'heure <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex1"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1e3a8a;">Ex 2</span> Conversions d'unités de temps</div>
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 2</span> Calculer des durées <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex2"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1e3a8a;">Ex 3</span> Calculer une durée</div>
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 3</span> Conversions de durées <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex3"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1e3a8a;">Ex 4</span> Problèmes de durée</div>
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 4</span> Calendrier et dates <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex4"></div>
   </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 5</span> Vrai ou Faux — le temps <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Ranger les durées <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">ORDRE</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Associer heure et durée <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex7"></div>
+  </div>
+
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence — CM1</footer>
 
+<script src="exercises.js"></script>
 <script>
-function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
-
-function buildQ(data, id) {
-  const c = document.getElementById(id);
-  data.forEach((item, i) => {
-    const d = document.createElement('div');
-    d.className = 'q-block';
-    const sh = shuffle(item.choices);
-    let html = '';
-    if (item.card) html += `<div class="num-card">${item.card}</div>`;
-    if (item.enonce) html += `<div class="pb-enonce">${item.enonce}</div>`;
-    if (item.tableau) html += `<div class="conv-tableau">${item.tableau}</div>`;
-    html += `<div class="q-text">${item.q}</div>`;
-    html += `<div class="qcm-row" id="${id}-r${i}">
-      ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
-    </div>
-    <div class="feedback-line" id="${id}-f${i}"></div>`;
-    d.innerHTML = html;
-    c.appendChild(d);
-  });
-}
-
-function check(btn, chosen, correct, rowId, fbId) {
-  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
-  const fb = document.getElementById(fbId);
-  if (chosen === correct) {
-    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
-  } else {
-    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
-    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
-  }
-}
-
-buildQ([
-  { card: '14 h 30', q: 'Comment appelle-t-on 14 h 30 en langage courant ?', correct: 'deux heures et demie de l\'après-midi', choices: ['deux heures et demie de l\'après-midi','deux heures et demie du matin','quatorze heures trente du soir','deux heures moins le quart'] },
-  { card: '9 h 45', q: '9 h 45 correspond à…', correct: 'dix heures moins le quart', choices: ['neuf heures trois quarts','dix heures moins le quart','neuf heures et quart','neuf heures et demie'] },
-  { card: '20 h 15', q: 'À quelle heure correspond 20 h 15 ?', correct: '8 h 15 du soir', choices: ['8 h 15 du matin','8 h 15 du soir','20 h moins le quart','8 h moins le quart du soir'] },
-  { enonce: 'Un film commence à 13 h 00 et se termine à 15 h 30.', q: 'Combien dure le film ?', correct: '2 h 30', choices: ['2 h','2 h 30','3 h','1 h 30'] },
+buildQCM([
+  { q:'Il est 9h35. Comment dit-on en langage courant ?', correct:'9 heures 35', choices:['9 heures moins 25','9 heures 35','10 heures moins 25','9 heures et quart'] },
+  { q:'Il est "quatorze heures vingt-cinq". En chiffres ?', correct:'14h25', choices:['4h25','2h25','14h25','24h25'] },
+  { q:'Il est 16h45. Comment dit-on ?', correct:'17 heures moins le quart', choices:['4h45 du soir','16h45','17 heures moins le quart','5 heures moins le quart'] },
+  { q:'Quelle heure est-il "midi et demi" ?', correct:'12h30', choices:['12h00','12h30','12h50','2h30'] },
+  { q:'Il est 21h15 en notation 24h. En notation 12h du soir ?', correct:'9h15 du soir', choices:['8h15 du soir','9h15 du soir','10h15 du soir','21h15'] },
+  { q:'Minuit = ?', correct:'0h00 ou 24h00', choices:['12h00','0h00 ou 24h00','12h30','6h00'] },
 ], 'ex1');
 
-buildQ([
-  { card: '2 h = ? min', q: 'Convertis 2 heures en minutes', correct: '120 min', choices: ['20 min','60 min','120 min','200 min'] },
-  { card: '3 min = ? s', q: 'Convertis 3 minutes en secondes', correct: '180 s', choices: ['30 s','90 s','180 s','300 s'] },
-  { card: '150 min = ? h ? min', q: 'Convertis 150 minutes en heures et minutes', correct: '2 h 30 min', choices: ['1 h 50 min','2 h 30 min','2 h 10 min','3 h 30 min'] },
-  { card: '1 h 45 min = ? min', q: 'Convertis 1 h 45 min en minutes', correct: '105 min', choices: ['65 min','75 min','105 min','145 min'] },
-  { card: '240 s = ? min', q: 'Convertis 240 secondes en minutes', correct: '4 min', choices: ['2 min 40 s','3 min','4 min','24 min'] },
-  { q: 'Combien de secondes y a-t-il dans 1 heure ?', correct: '3 600 s', choices: ['60 s','360 s','3 600 s','6 000 s'] },
+buildQCM([
+  { enonce:'Départ 9h35 · Arrivée 12h10', q:'Quelle est la durée du trajet ?', correct:'2h35', choices:['2h25','2h35','2h45','3h35'] },
+  { enonce:'Film : 14h25 → durée 1h55', q:'Heure de fin ?', correct:'16h20', choices:['15h25','15h80','16h20','16h25'] },
+  { enonce:'Départ 8h15 · Arrivée 11h45', q:'Durée ?', correct:'3h30', choices:['3h20','3h30','3h40','4h30'] },
+  { enonce:'Séance de sport : 16h30 → 18h15', q:'Durée ?', correct:'1h45', choices:['1h35','1h45','1h55','2h15'] },
+  { enonce:'Départ 7h50 · Arrivée 12h05', q:'Durée du voyage ?', correct:'4h15', choices:['4h05','4h15','4h25','5h15'] },
+  { enonce:'Début du match 15h30 · Durée 1h30', q:'Heure de fin ?', correct:'17h00', choices:['16h30','16h60','17h00','17h30'] },
 ], 'ex2');
 
-buildQ([
-  { enonce: '🏫 L\'école commence à 8 h 30 et la récréation du matin est à 10 h 15.', q: 'Combien de temps s\'est écoulé depuis le début de l\'école ?', correct: '1 h 45 min', choices: ['1 h 15 min','1 h 45 min','2 h 15 min','2 h 45 min'] },
-  { enonce: '🚂 Un train part à 9 h 20 et arrive à 11 h 05.', q: 'Quelle est la durée du trajet ?', correct: '1 h 45 min', choices: ['1 h 25 min','1 h 45 min','2 h 05 min','2 h 25 min'] },
-  { enonce: '🏊 Théo nage 4 longueurs en 3 min 40 s, puis 4 autres longueurs en 4 min 10 s.', q: 'Quelle est la durée totale de sa natation ?', correct: '7 min 50 s', choices: ['6 min 50 s','7 min 50 s','8 min 10 s','7 min 10 s'] },
-  { enonce: '📺 Un film commence à 20 h 45 et dure 1 h 55 min.', q: 'À quelle heure se termine-t-il ?', correct: '22 h 40', choices: ['21 h 40','22 h 00','22 h 40','23 h 00'] },
+buildQCM([
+  { q:'3 h 45 min = combien de minutes ?', correct:'225 min', choices:['145 min','185 min','225 min','345 min'] },
+  { q:'185 minutes = combien d\'heures et minutes ?', correct:'3h05', choices:['1h85','3h05','3h25','3h85'] },
+  { q:'2 jours 6 heures = combien d\'heures ?', correct:'54 h', choices:['26 h','46 h','54 h','62 h'] },
+  { q:'1 siècle = ?', correct:'100 ans', choices:['10 ans','100 ans','1 000 ans','10 000 ans'] },
+  { q:'4 minutes 30 secondes = combien de secondes ?', correct:'270 s', choices:['34 s','270 s','430 s','4 300 s'] },
+  { q:'1 an bissextile = combien de jours ?', correct:'366 jours', choices:['354 jours','365 jours','366 jours','370 jours'] },
 ], 'ex3');
 
-buildQ([
-  { enonce: '🚴 Lena fait du vélo 45 min le matin et 1 h 10 min l\'après-midi.', q: 'Combien de temps a-t-elle fait du vélo en tout ?', correct: '1 h 55 min', choices: ['1 h 45 min','1 h 55 min','2 h 05 min','2 h 10 min'] },
-  { enonce: '🗓️ Les vacances de Noël commencent le 21 décembre et se terminent le 5 janvier.', q: 'Combien de jours durent ces vacances ?', correct: '16 jours', choices: ['14 jours','15 jours','16 jours','17 jours'] },
-  { enonce: '📖 Emma lit 20 pages par jour. Elle veut lire un livre de 300 pages.', q: 'Combien de jours lui faudra-t-il pour finir le livre ?', correct: '15 jours', choices: ['10 jours','12 jours','15 jours','20 jours'] },
-  { enonce: '🏃 Un coureur fait 1 km en 5 min. Il court pendant 35 min.', q: 'Combien de kilomètres a-t-il parcourus ?', correct: '7 km', choices: ['5 km','6 km','7 km','8 km'] },
+buildQCM([
+  { q:'Combien y a-t-il de semaines dans une année (environ) ?', correct:'52 semaines', choices:['48 semaines','52 semaines','56 semaines','60 semaines'] },
+  { q:'En quelle année sommes-nous si nous sommes en 2025 et on recule de 1 siècle ?', correct:'1925', choices:['1825','1900','1925','1950'] },
+  { q:'Quel mois vient après novembre ?', correct:'Décembre', choices:['Octobre','Novembre','Décembre','Janvier'] },
+  { q:'Combien y a-t-il de jours en février d\'une année non-bissextile ?', correct:'28 jours', choices:['27 jours','28 jours','29 jours','30 jours'] },
+  { q:'Si aujourd\'hui c\'est le 28 mars, quelle date sera-t-il dans 2 semaines ?', correct:'11 avril', choices:['11 mars','11 avril','14 avril','4 avril'] },
 ], 'ex4');
+
+buildVF([
+  { q:'1 heure = 60 minutes', correct:true },
+  { q:'3 h 45 min = 225 min', correct:true, expl:'3×60 + 45 = 225 min' },
+  { q:'1 siècle = 10 ans', correct:false, expl:'1 siècle = 100 ans' },
+  { q:'Un film commence à 14h25 et dure 1h55. Il finit à 16h20.', correct:true, expl:'14h25 + 1h35 = 16h00 + 20 min = 16h20 ✅' },
+  { q:'Minuit s\'écrit 12h00', correct:false, expl:'Minuit = 0h00 (ou 24h00). 12h00 = midi.' },
+  { q:'Février a toujours 28 jours.', correct:false, expl:'Février a 28 jours, sauf les années bissextiles (29 j).' },
+  { q:'1 an = 12 mois = 52 semaines environ', correct:true },
+], 'ex5');
+
+buildOrdre([
+  { q:'Range ces durées de la PLUS COURTE à la PLUS LONGUE :',
+    items:['90 min','2 h','1 h 30 min','45 min','3 h 20 min'] },
+  { q:'Range ces durées de la PLUS COURTE à la PLUS LONGUE :',
+    items:['1 siècle','1 an','1 décennie','1 journée','1 semaine'] },
+], 'ex6');
+
+buildPaires([
+  { q:'Associe chaque départ+durée à l\'heure d\'arrivée.',
+    pairs:[['8h15 + 1h45','10h00'],['14h25 + 1h55','16h20'],['16h30 + 1h45','18h15'],['9h35 + 2h35','12h10']] },
+  { q:'Associe chaque durée à sa conversion.',
+    pairs:[['3h45','225 min'],['185 min','3h05'],['2 jours 6 h','54 h'],['4 min 30 s','270 s']] },
+], 'ex7');
 </script>
 
 <script src="gamification.js"></script>

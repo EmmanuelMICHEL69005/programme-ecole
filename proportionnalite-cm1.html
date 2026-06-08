@@ -12,132 +12,151 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-  .btn-choice {
-    background: white; border: 2px solid #bfdbfe; border-radius: 22px;
-    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #1e3a8a;
-    transition: background 0.15s;
-  }
-  .btn-choice:hover { background: #dbeafe; }
-  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
-  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
-  .btn-choice:disabled { opacity: 0.6; cursor: default; }
-  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
-  .q-block { background: #eff6ff; border: 2px solid #bfdbfe; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
-  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
-  .prop-table { border-collapse: collapse; margin: 12px 0; width: 100%; font-size: 0.95rem; }
-  .prop-table th { background: #1d4ed8; color: white; padding: 10px; font-weight: 900; border: 2px solid #1e3a8a; text-align: center; }
-  .prop-table td { background: white; padding: 10px; text-align: center; border: 2px solid #bfdbfe; font-weight: 800; }
-  .prop-table td.missing { background: #fef9c3; color: #854d0e; font-size: 1.2rem; }
-  .pb-enonce { background: #dbeafe; border-radius: 10px; padding: 12px; margin-bottom: 12px; font-size: 0.95rem; color: #1e3a8a; line-height: 1.6; }
+.prop-table{border-collapse:collapse;margin:10px auto;font-size:0.85rem;}
+.prop-table th{background:#1d4ed8;color:white;padding:8px 16px;font-weight:900;border:2px solid #1e3a8a;}
+.prop-table td{border:2px solid #bfdbfe;padding:8px 16px;text-align:center;font-weight:700;color:#1e3a8a;background:#eff6ff;}
+.prop-table td.unknown{background:#fef9c3;color:#92400e;border-color:#fcd34d;}
+.prop-arrow{text-align:center;font-size:1.1rem;font-weight:900;color:#1d4ed8;margin:6px 0;}
 </style>
 </head>
 <body>
 
-<header class="site-header" style="background: linear-gradient(135deg, #1d4ed8, #818cf8);">
+<header class="site-header" style="background:linear-gradient(135deg,#1d4ed8,#60a5fa);">
   <span class="emoji-header">⚖️</span>
   <h1>Proportionnalité</h1>
-  <p>Tableaux de proportionnalité et situations proportionnelles</p>
+  <p>Tableaux, règle de trois, prix unitaire</p>
   <a href="index.html" class="nav-back">← Accueil</a>
 </header>
 
 <main>
-
-  <div class="badge-niveau">CM1 — Nombres et calculs</div>
+  <div class="badge-niveau">🎯 CM1 — Proportionnalité</div>
 
   <div class="retiens-box">
     <div class="retiens-title">💡 Je retiens</div>
-    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
-      ⚖️ Dans un tableau de proportionnalité, toutes les lignes ont le même <strong>coefficient</strong> (rapport).<br>
-      🔢 Si 3 bonbons coûtent 0,90 €, alors 6 bonbons coûtent <strong>1,80 €</strong> (×2)<br>
-      📊 Pour vérifier : les rapports entre lignes sont toujours égaux.<br>
-      💡 <strong>Règle de 3</strong> : trouver le 4e terme d'une proportion.
+    <div style="overflow-x:auto;margin:10px 0;">
+      <table class="prop-table">
+        <tr><th>Nombre de livres</th><td>1</td><td>3</td><td>5</td><td class="unknown">8</td></tr>
+        <tr><th>Prix (€)</th><td>4</td><td>12</td><td>20</td><td class="unknown">?</td></tr>
+      </table>
+    </div>
+    <div class="prop-arrow">× 4 entre chaque rangée</div>
+    <div style="font-size:0.88rem;color:#555;line-height:1.9;">
+      🔢 <strong>Prix unitaire</strong> = prix total ÷ quantité<br>
+      ⚖️ <strong>Coefficient de proportionnalité</strong> : même rapport entre les colonnes<br>
+      💡 <strong>Règle de trois</strong> : si 3 livres → 12 €, alors 8 livres → 8×4 = <strong>32 €</strong><br>
+      ✅ <strong>Vérifier</strong> : prix ÷ quantité doit toujours donner le même résultat
     </div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 1</span> Reconnaître une situation proportionnelle</div>
+  <div class="exercice-block" style="--accent:#1d4ed8">
+    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8">Ex 1</span> Lire et compléter un tableau de proportionnalité <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex1"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 2</span> Compléter un tableau de proportionnalité</div>
-
-    <table class="prop-table">
-      <thead><tr><th>Nombre de carnets</th><th>1</th><th>3</th><th>5</th><th>?</th></tr></thead>
-      <tbody><tr><td>Prix (€)</td><td>2,50</td><td>7,50</td><td>12,50</td><td class="missing">?</td></tr></tbody>
-    </table>
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 2</span> Calculer le prix unitaire <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex2"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 3</span> Problèmes de proportionnalité</div>
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 3</span> Règle de trois <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex3"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 4</span> Vitesse — distance — durée</div>
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 4</span> Ce tableau est-il proportionnel ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
     <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 5</span> Problèmes de proportionnalité <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Associer quantités proportionnelles <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Trier : proportionnel ou non ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex7"></div>
   </div>
 
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence — CM1</footer>
 
+<script src="exercises.js"></script>
 <script>
-function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
-function buildQ(data, id) {
-  const c = document.getElementById(id);
-  data.forEach((item, i) => {
-    const d = document.createElement('div');
-    d.className = 'q-block';
-    const sh = shuffle(item.choices);
-    d.innerHTML = `
-      ${item.enonce ? `<div class="pb-enonce">${item.enonce}</div>` : ''}
-      <div class="q-text">${item.q}</div>
-      <div class="qcm-row" id="${id}-r${i}">
-        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
-      </div>
-      <div class="feedback-line" id="${id}-f${i}"></div>
-    `;
-    c.appendChild(d);
-  });
-}
-function check(btn, chosen, correct, rowId, fbId) {
-  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
-  const fb = document.getElementById(fbId);
-  if (chosen === correct) {
-    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
-  } else {
-    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
-    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
-  }
-}
-
-buildQ([
-  { q: 'La situation "1 stylo → 1,20 € ; 2 stylos → 2,40 € ; 3 stylos → 3,60 €" est-elle proportionnelle ?', correct: 'Oui (on multiplie toujours par 1,20)', choices: ['Oui (on multiplie toujours par 1,20)','Non, les prix changent','Impossible à dire'] },
-  { q: 'La situation "âge de Tom : 8 ans → taille 1,25 m ; 10 ans → 1,38 m ; 12 ans → 1,50 m" est-elle proportionnelle ?', correct: 'Non (le rapport n\'est pas constant)', choices: ['Oui (la taille augmente)','Non (le rapport n\'est pas constant)','Oui (on ajoute toujours la même chose)'] },
-  { q: 'Si 4 livres coûtent 24 €, combien coûtent 6 livres (situation proportionnelle) ?', correct: '36 €', choices: ['24 €','30 €','36 €','42 €'] },
-  { q: 'Le coefficient de proportionnalité entre "nombres → 2, 4, 6" et "valeurs → 5, 10, 15" est ?', correct: '2,5', choices: ['2','2,5','3','5'] },
+buildQCM([
+  { enonce:'Tableau : livres 1→4€, 3→12€, 5→20€',
+    q:'Quel est le prix de 8 livres ?', correct:'32 €', choices:['24 €','28 €','32 €','36 €'] },
+  { enonce:'Tableau vitesse : 1 h → 80 km, 2 h → 160 km, 3 h → ?',
+    q:'Quelle distance en 3 heures ?', correct:'240 km', choices:['200 km','220 km','240 km','260 km'] },
+  { enonce:'Tableau recette pour 4 personnes : farine 200 g. Pour 6 personnes ?',
+    q:'Quelle quantité de farine ?', correct:'300 g', choices:['240 g','280 g','300 g','320 g'] },
+  { enonce:'5 cahiers coûtent 7,50 €',
+    q:'Combien coûtent 8 cahiers ?', correct:'12 €', choices:['10 €','11 €','12 €','13 €'] },
+  { enonce:'Tableau : 2 kg → 3 €, 6 kg → 9 €, 10 kg → ?',
+    q:'Prix pour 10 kg ?', correct:'15 €', choices:['12 €','13 €','15 €','20 €'] },
 ], 'ex1');
 
-buildQ([
-  { q: 'Dans le tableau (carnets → prix), combien coûtent 8 carnets ?', correct: '20 €', choices: ['15 €','17,50 €','20 €','22,50 €'] },
-  { q: 'Si 1 carnet = 2,50 €, quel est le coefficient de proportionnalité ?', correct: '2,50', choices: ['1','2','2,50','5'] },
-  { q: 'Combien coûtent 12 carnets ?', correct: '30 €', choices: ['25 €','28 €','30 €','32 €'] },
+buildQCM([
+  { q:'8 stylos coûtent 4 €. Quel est le prix unitaire ?', correct:'0,50 €', choices:['0,25 €','0,50 €','0,75 €','1 €'] },
+  { q:'6 livres coûtent 45 €. Quel est le prix unitaire ?', correct:'7,50 €', choices:['6 €','7 €','7,50 €','8 €'] },
+  { q:'12 images coûtent 3 €. Quel est le prix unitaire ?', correct:'0,25 €', choices:['0,20 €','0,25 €','0,30 €','0,35 €'] },
+  { q:'Une voiture parcourt 300 km en 3 h. Vitesse en km/h ?', correct:'100 km/h', choices:['80 km/h','90 km/h','100 km/h','110 km/h'] },
+  { q:'5 oranges coûtent 2,50 €. Prix unitaire ?', correct:'0,50 €', choices:['0,25 €','0,45 €','0,50 €','0,55 €'] },
 ], 'ex2');
 
-buildQ([
-  { enonce: '5 kg de pommes coûtent 7,50 €.', q: 'Combien coûtent 8 kg de pommes ?', correct: '12 €', choices: ['10 €','11,50 €','12 €','13 €'] },
-  { enonce: 'Une voiture consomme 6 litres aux 100 km.', q: 'Combien consomme-t-elle pour 250 km ?', correct: '15 litres', choices: ['12 litres','14 litres','15 litres','18 litres'] },
-  { enonce: 'Pour faire 3 gâteaux, il faut 450 g de farine.', q: 'Combien de grammes de farine pour 5 gâteaux ?', correct: '750 g', choices: ['600 g','700 g','750 g','900 g'] },
+buildQCM([
+  { enonce:'Si 4 croissants coûtent 5,20 €,', q:'combien coûtent 10 croissants ?', correct:'13 €', choices:['10,40 €','12 €','13 €','14 €'] },
+  { enonce:'Un cycliste roule à 15 km/h.', q:'Quelle distance en 3 h 30 min ?', correct:'52,5 km', choices:['45 km','50 km','52,5 km','55 km'] },
+  { enonce:'Une recette pour 4 personnes demande 320 g de farine.', q:'Combien pour 7 personnes ?', correct:'560 g', choices:['480 g','520 g','560 g','600 g'] },
+  { enonce:'Si 3 mètres de tissu coûtent 12 €,', q:'combien coûtent 7,5 mètres ?', correct:'30 €', choices:['25 €','27 €','30 €','36 €'] },
+  { enonce:'Un robinet remplit 15 L en 5 min.', q:'Combien de temps pour 45 L ?', correct:'15 min', choices:['10 min','12 min','15 min','20 min'] },
 ], 'ex3');
 
-buildQ([
-  { enonce: 'Un train roule à 120 km/h.', q: 'Quelle distance parcourt-il en 3 heures ?', correct: '360 km', choices: ['240 km','300 km','360 km','400 km'] },
-  { enonce: 'Un cycliste roule à 15 km/h.', q: 'En combien de temps parcourt-il 45 km ?', correct: '3 heures', choices: ['2 heures','2h30','3 heures','4 heures'] },
-  { enonce: 'En 4 heures, une voiture parcourt 280 km.', q: 'Quelle est sa vitesse moyenne ?', correct: '70 km/h', choices: ['60 km/h','65 km/h','70 km/h','75 km/h'] },
+buildVF([
+  { enonce:'Tableau : 2→6, 4→12, 6→18', q:'Ce tableau est proportionnel (coefficient 3).', correct:true },
+  { enonce:'Tableau : 1→3, 2→5, 3→7', q:'Ce tableau est proportionnel.', correct:false, expl:'1×3=3, mais 2×3=6≠5 → non proportionnel' },
+  { enonce:'Prix d\'essence : 10L→15€, 20L→30€, 40L→60€', q:'Proportionnel (1,50€/L).', correct:true },
+  { enonce:'Tableau de l\'âge : âge 5→taille 110 cm, âge 10→taille 145 cm', q:'La taille est proportionnelle à l\'âge.', correct:false, expl:'La taille ne grandit pas à vitesse constante.' },
+  { enonce:'8 stylos → 4 €, donc 12 stylos → 6 €', q:'C\'est proportionnel.', correct:true, expl:'Prix unitaire = 0,50 €, 12 × 0,50 = 6 €' },
 ], 'ex4');
+
+buildQCM([
+  { enonce:'Si 5 croissants coûtent 6,25 €, un boulanger en vend 240 par jour.',
+    q:'Quel est son chiffre d\'affaires quotidien ?', correct:'300 €', choices:['240 €','280 €','300 €','320 €'] },
+  { enonce:'Une voiture consomme 6 L aux 100 km.',
+    q:'Combien consomme-t-elle pour 350 km ?', correct:'21 L', choices:['18 L','20 L','21 L','24 L'] },
+  { enonce:'Une recette pour 6 personnes demande 450 g de sucre.',
+    q:'Pour 10 personnes ?', correct:'750 g', choices:['600 g','700 g','750 g','800 g'] },
+  { enonce:'3 pizzas coûtent 28,50 €.',
+    q:'Prix pour 8 pizzas ?', correct:'76 €', choices:['64 €','72 €','76 €','80 €'] },
+], 'ex5');
+
+buildPaires([
+  { q:'Associe la quantité à sa valeur proportionnelle (prix unitaire 3 €).',
+    pairs:[['2 articles','6 €'],['5 articles','15 €'],['8 articles','24 €'],['12 articles','36 €']] },
+  { q:'Associe chaque situation à son coefficient de proportionnalité.',
+    pairs:[['8 stylos→4€','0,50 €/stylo'],['6 livres→45€','7,50 €/livre'],['100 km/h','1,67 km/min'],['3m tissu→12€','4 €/m']] },
+], 'ex6');
+
+buildTri([
+  { q:'Cette situation est-elle proportionnelle ?',
+    cats:['Proportionnel','Pas proportionnel'],
+    items:[
+      {v:'Prix d\'essence : +10L = +15€', cat:'Proportionnel'},
+      {v:'Âge et taille d\'un enfant', cat:'Pas proportionnel'},
+      {v:'Distance et temps à vitesse constante', cat:'Proportionnel'},
+      {v:'Nombre de pages lues par jour (variable)', cat:'Pas proportionnel'},
+      {v:'Recette : ×2 personnes = ×2 ingrédients', cat:'Proportionnel'},
+      {v:'La température en fonction du mois', cat:'Pas proportionnel'},
+    ]
+  },
+], 'ex7');
 </script>
 
 <script src="gamification.js"></script>

@@ -11,125 +11,133 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<style>
-  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-  .btn-choice {
-    background: white; border: 2px solid #bfdbfe; border-radius: 22px;
-    padding: 11px 26px; font-size: 1.05rem; font-weight: 900; cursor: pointer; color: #1e3a8a;
-    transition: background 0.15s;
-  }
-  .btn-choice:hover { background: #dbeafe; }
-  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
-  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
-  .btn-choice:disabled { opacity: 0.6; cursor: default; }
-  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
-  .q-block { background: #eff6ff; border: 2px solid #bfdbfe; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
-  .calcul-card { font-size: 2rem; font-weight: 900; color: #1e3a8a; text-align: center; padding: 14px; background: #dbeafe; border-radius: 14px; margin-bottom: 14px; }
-</style>
 </head>
 <body>
 
-<header class="site-header" style="background: linear-gradient(135deg, #1d4ed8, #818cf8);">
+<header class="site-header" style="background:linear-gradient(135deg,#1d4ed8,#60a5fa);">
   <span class="emoji-header">⚡</span>
   <h1>Calcul mental</h1>
-  <p>Automatismes de CM1</p>
+  <p>Tables, ×÷10/100/1000, doubles, moitiés</p>
   <a href="index.html" class="nav-back">← Accueil</a>
 </header>
 
 <main>
-
-  <div class="badge-niveau">CM1 — Calcul mental</div>
+  <div class="badge-niveau">🎯 CM1 — Calcul mental</div>
 
   <div class="retiens-box">
-    <div class="retiens-title">💡 Mes astuces CM1</div>
-    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
-      ⚡ Tables de × jusqu'à 9 — maîtrisées !<br>
-      🔟 <strong>× 10, × 100</strong> : décale la virgule ou ajoute des zéros<br>
-      💡 <strong>×25</strong> : × 100 puis ÷ 4 → 8 × 25 = 200<br>
-      🎯 <strong>Compléments à 1 000</strong> : 350 + 650 = 1 000
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.88rem;color:#555;margin-top:8px;line-height:1.9;">
+      ⚡ <strong>Tables jusqu'à 9×9</strong> : connais-les par cœur !<br>
+      🔟 <strong>×10</strong> : ajoute un zéro · <strong>×100</strong> : deux zéros · <strong>×1 000</strong> : trois zéros<br>
+      ➗ <strong>÷10</strong> : enlève un zéro · <strong>÷100</strong> : enlève deux zéros<br>
+      🎯 <strong>Astuce ×9</strong> : ×10 puis −1× (ex : 7×9 = 70−7 = 63)<br>
+      💡 <strong>Astuce ×5</strong> : ×10 puis ÷2 (ex : 14×5 = 140÷2 = 70)
     </div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 1</span> Tables de multiplication (7, 8, 9)</div>
+  <div class="exercice-block" style="--accent:#1d4ed8">
+    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8">Ex 1</span> Tables de 7 et 8 <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex1"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 2</span> Multiplier par 10, 100, 1 000</div>
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 2</span> Tables de 9 et révision <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex2"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 3</span> Compléments à 1 000</div>
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 3</span> Multiplier et diviser par 10, 100, 1000 <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex3"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 4</span> Calculs rapides avec décimaux</div>
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 4</span> Doubles, moitiés, quarts <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 5</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 6</span> Ranger les calculs par résultat <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">ORDRE</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Associer : calcul et résultat <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex7"></div>
   </div>
 
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence — CM1</footer>
 
+<script src="exercises.js"></script>
 <script>
-function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
-function buildQ(data, id) {
-  const c = document.getElementById(id);
-  data.forEach((item, i) => {
-    const d = document.createElement('div');
-    d.className = 'q-block';
-    const sh = shuffle(item.choices);
-    d.innerHTML = `
-      <div class="calcul-card">${item.q}</div>
-      <div class="qcm-row" id="${id}-r${i}">
-        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c}','${item.correct}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
-      </div>
-      <div class="feedback-line" id="${id}-f${i}"></div>
-    `;
-    c.appendChild(d);
-  });
-}
-function check(btn, chosen, correct, rowId, fbId) {
-  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
-  const fb = document.getElementById(fbId);
-  if (chosen === correct) {
-    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
-  } else {
-    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
-    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
-  }
-}
-
-buildQ([
-  { q: '7 × 8 = ?', correct: '56', choices: ['48','54','56','63'] },
-  { q: '9 × 6 = ?', correct: '54', choices: ['48','52','54','56'] },
-  { q: '8 × 9 = ?', correct: '72', choices: ['63','70','72','81'] },
-  { q: '7 × 7 = ?', correct: '49', choices: ['42','47','49','56'] },
+buildQCM([
+  { card:'7 × 6 = ?', q:'Table de 7', correct:'42', choices:['35','42','48','49'] },
+  { card:'7 × 8 = ?', q:'Table de 7', correct:'56', choices:['48','54','56','63'] },
+  { card:'8 × 7 = ?', q:'Table de 8', correct:'56', choices:['48','56','63','64'] },
+  { card:'8 × 9 = ?', q:'Table de 8', correct:'72', choices:['64','72','81','63'] },
+  { card:'7 × 7 = ?', q:'Table de 7', correct:'49', choices:['42','48','49','56'] },
+  { card:'8 × 8 = ?', q:'Table de 8', correct:'64', choices:['56','63','64','72'] },
+  { card:'48 ÷ 8 = ?', q:'Division table de 8', correct:'6', choices:['5','6','7','8'] },
 ], 'ex1');
 
-buildQ([
-  { q: '37 × 10 = ?', correct: '370', choices: ['37','370','3700','3,7'] },
-  { q: '45 × 100 = ?', correct: '4 500', choices: ['450','4 500','45 000','4,5'] },
-  { q: '6,5 × 10 = ?', correct: '65', choices: ['0,65','6,5','65','650'] },
-  { q: '2 400 ÷ 100 = ?', correct: '24', choices: ['240','24','2,4','24 000'] },
+buildQCM([
+  { card:'9 × 7 = ?', q:'Table de 9', correct:'63', choices:['54','63','72','81'] },
+  { card:'9 × 8 = ?', q:'Table de 9', correct:'72', choices:['63','72','81','80'] },
+  { card:'9 × 9 = ?', q:'Table de 9', correct:'81', choices:['72','81','90','91'] },
+  { card:'63 ÷ 9 = ?', q:'Division table de 9', correct:'7', choices:['6','7','8','9'] },
+  { card:'56 ÷ 7 = ?', q:'Division table de 7', correct:'8', choices:['6','7','8','9'] },
+  { card:'7 × ☐ = 42', q:'Nombre manquant', correct:'6', choices:['5','6','7','8'] },
+  { card:'☐ × 9 = 72', q:'Nombre manquant', correct:'8', choices:['7','8','9','10'] },
 ], 'ex2');
 
-buildQ([
-  { q: '350 + ☐ = 1 000', correct: '650', choices: ['550','650','750','850'] },
-  { q: '730 + ☐ = 1 000', correct: '270', choices: ['170','270','370','130'] },
-  { q: '1 000 − 425 = ?', correct: '575', choices: ['475','565','575','585'] },
-  { q: '460 + ☐ = 1 000', correct: '540', choices: ['440','540','640','600'] },
+buildQCM([
+  { card:'34 × 10 = ?', q:'Multiplie par 10', correct:'340', choices:['34','340','3 400','34 000'] },
+  { card:'56 × 100 = ?', q:'Multiplie par 100', correct:'5 600', choices:['560','5 600','56 000','560 000'] },
+  { card:'7 × 1 000 = ?', q:'Multiplie par 1 000', correct:'7 000', choices:['700','7 000','70 000','700 000'] },
+  { card:'4 800 ÷ 100 = ?', q:'Divise par 100', correct:'48', choices:['4,8','48','480','4 800'] },
+  { card:'35 000 ÷ 1 000 = ?', q:'Divise par 1 000', correct:'35', choices:['3,5','35','350','3 500'] },
+  { card:'250 ÷ 10 = ?', q:'Divise par 10', correct:'25', choices:['0,25','2,5','25','250'] },
+  { card:'3,5 × 100 = ?', q:'Multiplie un décimal par 100', correct:'350', choices:['35','350','3 500','0,035'] },
 ], 'ex3');
 
-buildQ([
-  { q: '0,7 + 0,3 = ?', correct: '1', choices: ['0,10','1','10','1,0'] },
-  { q: '2,5 × 4 = ?', correct: '10', choices: ['8','9','10','11'] },
-  { q: '1,5 + 0,5 = ?', correct: '2', choices: ['1','1,5','2','2,5'] },
-  { q: '3,6 ÷ 4 = ?', correct: '0,9', choices: ['0,9','9','0,09','3,2'] },
+buildQCM([
+  { card:'Double de 35', q:'Calcule', correct:'70', choices:['65','70','75','80'] },
+  { card:'Double de 48', q:'Calcule', correct:'96', choices:['86','90','96','98'] },
+  { card:'Moitié de 78', q:'Calcule', correct:'39', choices:['36','38','39','40'] },
+  { card:'Quart de 80', q:'Calcule', correct:'20', choices:['10','15','20','40'] },
+  { card:'Double de 125', q:'Calcule', correct:'250', choices:['150','225','250','255'] },
+  { card:'Moitié de 130', q:'Calcule', correct:'65', choices:['60','63','65','70'] },
 ], 'ex4');
+
+buildVF([
+  { q:'7 × 8 = 56', correct:true },
+  { q:'9 × 9 = 82', correct:false, expl:'9 × 9 = 81' },
+  { q:'56 × 100 = 5 600', correct:true },
+  { q:'7 200 ÷ 100 = 72', correct:true },
+  { q:'Double de 48 = 94', correct:false, expl:'Double de 48 = 96' },
+  { q:'Moitié de 130 = 65', correct:true },
+  { q:'9 × 7 = 63', correct:true },
+], 'ex5');
+
+buildOrdre([
+  { q:'Range ces calculs du PLUS PETIT RÉSULTAT au PLUS GRAND :',
+    items:['7 × 6','8 × 8','9 × 9','7 × 7','8 × 7'] },
+  { q:'Range ces résultats du PLUS PETIT au PLUS GRAND :',
+    items:['34 × 10','7 × 100','5 × 1 000','56 × 10','2 × 1 000'] },
+], 'ex6');
+
+buildPaires([
+  { q:'Associe chaque calcul à son résultat.',
+    pairs:[['7 × 8','56'],['9 × 9','81'],['8 × 6','48'],['7 × 9','63']] },
+  { q:'Associe chaque calcul à son résultat.',
+    pairs:[['45 × 10','450'],['6 × 100','600'],['350 ÷ 10','35'],['8 000 ÷ 1 000','8']] },
+], 'ex7');
 </script>
 
 <script src="gamification.js"></script>

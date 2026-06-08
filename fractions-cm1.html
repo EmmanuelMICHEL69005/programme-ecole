@@ -12,130 +12,164 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-  .btn-choice {
-    background: white; border: 2px solid #bfdbfe; border-radius: 22px;
-    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #1e3a8a;
-    transition: background 0.15s;
-  }
-  .btn-choice:hover { background: #dbeafe; }
-  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
-  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
-  .btn-choice:disabled { opacity: 0.6; cursor: default; }
-  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
-  .q-block { background: #eff6ff; border: 2px solid #bfdbfe; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
-  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
-  .fraction-display { display: inline-flex; flex-direction: column; align-items: center; background: #dbeafe; border-radius: 8px; padding: 8px 16px; margin: 4px; }
-  .frac-num { font-size: 1.4rem; font-weight: 900; color: #1e3a8a; line-height: 1.2; border-bottom: 3px solid #1e3a8a; padding-bottom: 2px; }
-  .frac-den { font-size: 1.4rem; font-weight: 900; color: #1e3a8a; padding-top: 2px; }
+.f{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 4px;line-height:1.2;}
+.fn{border-bottom:2.5px solid currentColor;padding:0 3px;font-size:0.95em;}
+.fd{padding:0 3px;font-size:0.95em;}
+.frac-visual{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:10px 0;}
+.frac-bar{background:#dbeafe;border:2px solid #93c5fd;border-radius:8px;height:32px;display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:900;color:#1d4ed8;min-width:40px;}
+.frac-bar.filled{background:#1d4ed8;color:white;}
+.pizza{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:10px 0;}
+.pizza-box{text-align:center;font-size:0.72rem;font-weight:800;color:#6b7280;}
+.pizza-box svg{display:block;margin:0 auto 4px;}
 </style>
 </head>
 <body>
 
-<header class="site-header" style="background: linear-gradient(135deg, #1d4ed8, #60a5fa);">
-  <span class="emoji-header">✂️</span>
-  <h1>Les fractions</h1>
-  <p>Fractions supérieures à 1, comparaison, addition</p>
+<header class="site-header" style="background:linear-gradient(135deg,#1d4ed8,#60a5fa);">
+  <span class="emoji-header">🍕</span>
+  <h1>Fractions</h1>
+  <p>Fractions supérieures à 1, équivalentes, additions</p>
   <a href="index.html" class="nav-back">← Accueil</a>
 </header>
 
 <main>
-
-  <div class="badge-niveau">CM1 — Nombres et calculs</div>
+  <div class="badge-niveau">🎯 CM1 — Fractions</div>
 
   <div class="retiens-box">
     <div class="retiens-title">💡 Je retiens</div>
-    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
-      🍕 <strong>7/4</strong> : fraction supérieure à 1 → 1 entier + 3/4 = 1 3/4 (nombre mixte)<br>
-      🔄 <strong>Fractions équivalentes</strong> : 2/4 = 1/2 (même valeur)<br>
-      ➕ <strong>Addition</strong> (même dénominateur) : 2/5 + 1/5 = 3/5<br>
-      📏 <strong>Comparer</strong> : même dénominateur → compare les numérateurs
+    <div class="pizza">
+      <div class="pizza-box">
+        <svg width="60" height="60" viewBox="0 0 60 60">
+          <circle cx="30" cy="30" r="28" fill="#fde68a" stroke="#f59e0b" stroke-width="2"/>
+          <line x1="30" y1="2" x2="30" y2="58" stroke="#f59e0b" stroke-width="2"/>
+          <line x1="2" y1="30" x2="58" y2="30" stroke="#f59e0b" stroke-width="2"/>
+        </svg>
+        <span class="f"><span class="fn">3</span><span class="fd">4</span></span> = 3 parts sur 4
+      </div>
+      <div class="pizza-box">
+        <svg width="60" height="60" viewBox="0 0 60 60">
+          <circle cx="30" cy="30" r="28" fill="#fde68a" stroke="#f59e0b" stroke-width="2"/>
+          <line x1="30" y1="2" x2="30" y2="58" stroke="#f59e0b" stroke-width="2"/>
+          <line x1="2" y1="30" x2="58" y2="30" stroke="#f59e0b" stroke-width="2"/>
+          <path d="M30 30 L30 2 A28 28 0 0 1 58 30 Z" fill="#f59e0b" opacity="0.6"/>
+          <path d="M30 30 L58 30 A28 28 0 0 1 30 58 Z" fill="#f59e0b" opacity="0.6"/>
+          <path d="M30 30 L30 58 A28 28 0 0 1 2 30 Z" fill="#f59e0b" opacity="0.6"/>
+        </svg>
+        <span class="f"><span class="fn">7</span><span class="fd">4</span></span> &gt; 1 (fraction &gt;1)
+      </div>
+    </div>
+    <div style="font-size:0.88rem;color:#555;line-height:1.9;">
+      🍕 <strong>Fraction &gt;1</strong> : numérateur &gt; dénominateur → ex : <span class="f" style="color:#1d4ed8"><span class="fn">7</span><span class="fd">4</span></span> = 1 entier + <span class="f" style="color:#1d4ed8"><span class="fn">3</span><span class="fd">4</span></span><br>
+      🔄 <strong>Fractions équivalentes</strong> : <span class="f" style="color:#7c3aed"><span class="fn">1</span><span class="fd">2</span></span> = <span class="f" style="color:#7c3aed"><span class="fn">2</span><span class="fd">4</span></span> = <span class="f" style="color:#7c3aed"><span class="fn">3</span><span class="fd">6</span></span> (même valeur)<br>
+      ➕ <strong>Additionner</strong> (même dénominateur) : <span class="f" style="color:#059669"><span class="fn">2</span><span class="fd">5</span></span> + <span class="f" style="color:#059669"><span class="fn">1</span><span class="fd">5</span></span> = <span class="f" style="color:#059669"><span class="fn">3</span><span class="fd">5</span></span>
     </div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 1</span> Fractions supérieures à 1</div>
+  <div class="exercice-block" style="--accent:#1d4ed8">
+    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8">Ex 1</span> Lire et écrire les fractions <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex1"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 2</span> Fractions équivalentes</div>
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 2</span> Fractions supérieures à 1 <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex2"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 3</span> Comparer des fractions</div>
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 3</span> Fractions équivalentes <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex3"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8;">Ex 4</span> Additionner des fractions (même dénominateur)</div>
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 4</span> Additionner des fractions (même dénominateur) <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 5</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 6</span> Ranger les fractions dans l'ordre <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">ORDRE</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Trier : fraction &lt;1 ou &gt;1 ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex7"></div>
   </div>
 
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence — CM1</footer>
 
+<script src="exercises.js"></script>
 <script>
-function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
-function formatFrac(s) {
-  return String(s).replace(/(\d+)\/(\d+)/g, '<span class="f"><span class="fn">$1</span><span class="fd">$2</span></span>');
-}
-function buildQ(data, id) {
-  const c = document.getElementById(id);
-  data.forEach((item, i) => {
-    const d = document.createElement('div');
-    d.className = 'q-block';
-    const sh = shuffle(item.choices);
-    d.innerHTML = `
-      <div class="q-text">${formatFrac(item.q)}</div>
-      <div class="qcm-row" id="${id}-r${i}">
-        ${sh.map(c => `<button class="btn-choice" data-val="${c.replace(/"/g,'&quot;')}" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${formatFrac(c)}</button>`).join('')}
-      </div>
-      <div class="feedback-line" id="${id}-f${i}"></div>
-    `;
-    c.appendChild(d);
-  });
-}
-function check(btn, chosen, correct, rowId, fbId) {
-  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
-  const fb = document.getElementById(fbId);
-  if (chosen === correct) {
-    btn.classList.add('correct'); fb.innerHTML = '✅ Bravo !'; fb.style.color = '#166534';
-  } else {
-    btn.classList.add('wrong'); fb.innerHTML = '❌ C\'était ' + formatFrac(correct); fb.style.color = '#991b1b';
-    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.dataset.val === correct) b.classList.add('correct'); });
-  }
-}
-
-buildQ([
-  { q: 'La fraction 7/4 est-elle supérieure à 1 ?', correct: 'Oui (7 > 4)', choices: ['Oui (7 > 4)','Non (7 < 4)','Non, 7/4 = 1'] },
-  { q: '11/3 correspond à quel nombre mixte ?', correct: '3 et 2/3', choices: ['2 et 3/3','3 et 2/3','3 et 3/2','4 et 1/3'] },
-  { q: 'Combien vaut 9/3 ?', correct: '3 (entier)', choices: ['1','2','3 (entier)','1/3'] },
-  { q: '2 entiers et 3/5, c\'est quelle fraction ?', correct: '13/5', choices: ['23/5','5/13','13/5','10/5'] },
+buildQCM([
+  { q:'Comment s\'écrit "trois quarts" ?', correct:'3/4', choices:['3/4','4/3','3+4','34'] },
+  { q:'Quelle fraction représente 2 parts sur 5 ?', correct:'2/5', choices:['5/2','2/5','2+5','25'] },
+  { q:'Combien font 3 demis ?', correct:'1 et demi (3/2)', choices:['1 entier','1 et demi (3/2)','3 entiers','1/3'] },
+  { q:'Que représente le numérateur d\'une fraction ?', correct:'Le nombre de parts prises', choices:['Le nombre total de parts','Le nombre de parts prises','La valeur de la fraction','La différence'] },
+  { q:'Que représente le dénominateur ?', correct:'Le nombre total de parts égales', choices:['Le nombre de parts prises','Le nombre total de parts égales','La moitié','Le double'] },
 ], 'ex1');
 
-buildQ([
-  { q: 'Quelle fraction est équivalente à 1/2 ?', correct: '3/6', choices: ['2/3','3/6','1/3','4/6'] },
-  { q: 'Est-ce que 2/6 = 1/3 ?', correct: 'Oui', choices: ['Oui','Non','Parfois'] },
-  { q: 'Quelle fraction est équivalente à 3/4 ?', correct: '6/8', choices: ['4/3','6/8','3/8','9/12... et 6/8'] },
-  { q: 'Pour obtenir 2/10 à partir de 1/5, on ☐ le numérateur et le dénominateur par 2.', correct: 'multiplie', choices: ['divise','multiplie','additionne','soustrait'] },
+buildQCM([
+  { q:'7/4 est-elle supérieure à 1 ?', correct:'Oui (7 > 4)', choices:['Non (7 < 4)','Oui (7 > 4)','On ne sait pas','Non, elle est égale à 1'] },
+  { q:'Combien fait 7/4 en entier + fraction ?', correct:'1 entier + 3/4', choices:['1 entier + 1/4','1 entier + 3/4','2 entiers','3 entiers + 1/4'] },
+  { q:'Combien font 5/3 en entier + fraction ?', correct:'1 entier + 2/3', choices:['1 entier + 1/3','1 entier + 2/3','2 entiers','2 entiers + 2/3'] },
+  { q:'Laquelle est supérieure à 1 ?', correct:'9/7', choices:['3/4','5/8','9/7','2/3'] },
+  { q:'Combien font 9/3 ?', correct:'3 entiers', choices:['1 entier + 2/3','2 entiers','3 entiers','9 entiers'] },
 ], 'ex2');
 
-buildQ([
-  { q: 'Laquelle est la plus grande : 3/8 ou 5/8 ?', correct: '5/8', choices: ['3/8','5/8','Elles sont égales'] },
-  { q: '7/10 ○ 4/10 : quel signe mettre ?', correct: '>', choices: ['<','>','='] },
-  { q: 'Range du plus petit au plus grand : 7/12, 3/12, 11/12', correct: '3/12 < 7/12 < 11/12', choices: ['3/12 < 7/12 < 11/12','11/12 < 7/12 < 3/12','7/12 < 3/12 < 11/12'] },
-  { q: 'Vrai ou faux : 1/3 > 1/4', correct: 'Vrai', choices: ['Vrai','Faux'] },
+buildQCM([
+  { q:'1/2 = ?/4', correct:'2/4', choices:['1/4','2/4','3/4','4/4'] },
+  { q:'2/3 = ?/6', correct:'4/6', choices:['2/6','3/6','4/6','5/6'] },
+  { q:'1/3 = 2/?', correct:'2/6', choices:['2/3','2/6','2/9','2/12'] },
+  { q:'Laquelle est équivalente à 1/2 ?', correct:'3/6', choices:['2/5','3/5','3/6','4/6'] },
+  { q:'Laquelle est équivalente à 3/4 ?', correct:'6/8', choices:['4/6','5/8','6/8','6/9'] },
+  { q:'2/5 = ?/10', correct:'4/10', choices:['2/10','3/10','4/10','5/10'] },
 ], 'ex3');
 
-buildQ([
-  { q: '2/7 + 3/7 = ?', correct: '5/7', choices: ['5/14','5/7','6/14','1/7'] },
-  { q: '5/9 + 4/9 = ?', correct: '9/9 = 1', choices: ['9/18','9/9 = 1','9/81','1/9'] },
-  { q: '3/5 − 1/5 = ?', correct: '2/5', choices: ['2/10','2/5','4/5','2/0'] },
-  { q: '1/4 + 2/4 + 1/4 = ?', correct: '4/4 = 1', choices: ['3/12','4/4 = 1','3/4','4/12'] },
+buildQCM([
+  { card:'2/5 + 1/5 = ?', q:'Additionne', correct:'3/5', choices:['3/10','3/5','3/25','2/5'] },
+  { card:'3/7 + 2/7 = ?', q:'Additionne', correct:'5/7', choices:['5/14','5/7','6/7','1'] },
+  { card:'1/4 + 2/4 = ?', q:'Additionne', correct:'3/4', choices:['3/8','2/4','3/4','1/4'] },
+  { card:'4/6 + 3/6 = ?', q:'Additionne', correct:'7/6 (>1)', choices:['7/12','7/6 (>1)','7/6 (<1)','1/6'] },
+  { card:'2/8 + 5/8 = ?', q:'Additionne', correct:'7/8', choices:['7/16','6/8','7/8','1'] },
+  { card:'5/9 + 7/9 = ?', q:'Additionne', correct:'12/9 (>1)', choices:['12/18','12/9 (>1)','2/9','1'] },
 ], 'ex4');
+
+buildVF([
+  { q:'7/4 est supérieure à 1.', correct:true, expl:'7 > 4, donc 7/4 > 1' },
+  { q:'1/2 = 2/4', correct:true, expl:'×2 au numérateur et au dénominateur' },
+  { q:'3/5 + 2/5 = 5/10', correct:false, expl:'On additionne les numérateurs : 3/5 + 2/5 = 5/5 = 1' },
+  { q:'5/5 = 1 entier', correct:true },
+  { q:'9/7 < 1', correct:false, expl:'9 > 7, donc 9/7 > 1' },
+  { q:'2/3 = 4/6', correct:true },
+  { q:'1/4 + 2/4 = 3/8', correct:false, expl:'1/4 + 2/4 = 3/4 (on garde le dénominateur)' },
+], 'ex5');
+
+buildOrdre([
+  { q:'Range ces fractions de la PLUS PETITE à la PLUS GRANDE (même dénominateur) :',
+    items:['1/5','4/5','2/5','3/5','5/5'] },
+  { q:'Range ces fractions de la PLUS PETITE à la PLUS GRANDE :',
+    items:['1/4','3/4','7/4','5/4','2/4'] },
+], 'ex6');
+
+buildTri([
+  { q:'Cette fraction est-elle inférieure ou supérieure à 1 ?',
+    cats:['< 1 (inférieure)','> 1 (supérieure)'],
+    items:[
+      {v:'3/4', cat:'< 1 (inférieure)'},
+      {v:'7/4', cat:'> 1 (supérieure)'},
+      {v:'5/3', cat:'> 1 (supérieure)'},
+      {v:'2/5', cat:'< 1 (inférieure)'},
+      {v:'9/7', cat:'> 1 (supérieure)'},
+      {v:'1/2', cat:'< 1 (inférieure)'},
+    ]
+  },
+], 'ex7');
 </script>
 
 <script src="gamification.js"></script>
