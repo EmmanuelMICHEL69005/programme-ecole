@@ -7,128 +7,148 @@
 <meta property="og:site_name" content="Les Maths de Clémence">
 <link rel="manifest" href="manifest.json">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aires et volumes — CM2</title>
+<title>Mesures — CM2</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<style>
-  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-  .btn-choice {
-    background: white; border: 2px solid #fef08a; border-radius: 22px;
-    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #713f12;
-    transition: background 0.15s;
-  }
-  .btn-choice:hover { background: #fef9c3; }
-  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
-  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
-  .btn-choice:disabled { opacity: 0.6; cursor: default; }
-  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
-  .q-block { background: #fefce8; border: 2px solid #fef08a; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
-  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
-</style>
 </head>
 <body>
 
-<header class="site-header" style="background: linear-gradient(135deg, #b45309, #fcd34d);">
-  <span class="emoji-header">📐</span>
-  <h1>Aires et volumes</h1>
-  <p>Calculs avancés de surfaces et de volumes</p>
+<header class="site-header" style="background:linear-gradient(135deg,#b45309,#f59e0b);">
+  <span class="emoji-header">📏</span>
+  <h1>Mesures et conversions</h1>
+  <p>Longueurs, masses, aires, volumes</p>
   <a href="index.html" class="nav-back">← Accueil</a>
 </header>
 
 <main>
-
-  <div class="badge-niveau">CM2 — Grandeurs et mesures</div>
+  <div class="badge-niveau">🎯 CM2 — Grandeurs et mesures</div>
 
   <div class="retiens-box">
     <div class="retiens-title">💡 Je retiens</div>
-    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
-      🟦 Aire rectangle = L × l | Aire carré = c² | Aire triangle = (b × h) ÷ 2<br>
-      ⭕ Aire cercle = π × r² (π ≈ 3,14) | Périmètre cercle = 2 × π × r<br>
-      📦 <strong>Volume du pavé droit</strong> = L × l × h (en cm³ ou m³)<br>
-      💧 1 litre = 1 dm³ = 1 000 cm³
+    <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:10px 0;">
+      <div style="background:#fef3c7;border:2px solid #fcd34d;border-radius:10px;padding:8px 12px;font-size:0.72rem;font-weight:900;color:#78350f;text-align:center;min-width:90px;">
+        📏 Longueur<br><span style="color:#6b7280;font-weight:700">km·m·dm·cm·mm</span><br>÷10 chaque rang
+      </div>
+      <div style="background:#dcfce7;border:2px solid #86efac;border-radius:10px;padding:8px 12px;font-size:0.72rem;font-weight:900;color:#14532d;text-align:center;min-width:90px;">
+        ⚖️ Masse<br><span style="color:#6b7280;font-weight:700">t·kg·g·mg</span><br>×1000 chaque rang
+      </div>
+      <div style="background:#eff6ff;border:2px solid #93c5fd;border-radius:10px;padding:8px 12px;font-size:0.72rem;font-weight:900;color:#1e3a8a;text-align:center;min-width:90px;">
+        🔲 Aire<br><span style="color:#6b7280;font-weight:700">km²·ha·m²·dm²·cm²</span><br>×100 chaque rang
+      </div>
+      <div style="background:#f5f3ff;border:2px solid #a78bfa;border-radius:10px;padding:8px 12px;font-size:0.72rem;font-weight:900;color:#5b21b6;text-align:center;min-width:90px;">
+        🎲 Volume<br><span style="color:#6b7280;font-weight:700">m³·dm³·cm³</span><br>×1000 chaque rang
+      </div>
+    </div>
+    <div style="font-size:0.88rem;color:#555;line-height:1.9;">
+      🌾 <strong>1 ha = 10 000 m²</strong> · <strong>1 dm³ = 1 L</strong> · <strong>1 cm³ = 1 mL</strong>
     </div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 1</span> Aire du disque (cercle)</div>
+  <div class="exercice-block" style="--accent:#b45309">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309">Ex 1</span> Conversions de longueur <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex1"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 2</span> Volume du pavé droit</div>
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 2</span> Conversions de masse et volume <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex2"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 3</span> Conversion d'unités d'aire et de volume</div>
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 3</span> Conversions d'aires <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex3"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 4</span> Problèmes de géométrie</div>
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 4</span> Problèmes de mesure <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 5</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Associer mesures équivalentes <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Trier : longueur, masse ou aire ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex7"></div>
   </div>
 
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence — CM2</footer>
 
+<script src="exercises.js"></script>
 <script>
-function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
-function buildQ(data, id) {
-  const c = document.getElementById(id);
-  data.forEach((item, i) => {
-    const d = document.createElement('div');
-    d.className = 'q-block';
-    const sh = shuffle(item.choices);
-    d.innerHTML = `
-      <div class="q-text">${item.q}</div>
-      <div class="qcm-row" id="${id}-r${i}">
-        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
-      </div>
-      <div class="feedback-line" id="${id}-f${i}"></div>
-    `;
-    c.appendChild(d);
-  });
-}
-function check(btn, chosen, correct, rowId, fbId) {
-  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
-  const fb = document.getElementById(fbId);
-  if (chosen === correct) {
-    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
-  } else {
-    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
-    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
-  }
-}
-
-buildQ([
-  { q: 'Un disque a un rayon de 5 cm. Quelle est son aire ? (π ≈ 3,14)', correct: '78,5 cm²', choices: ['31,4 cm²','62,8 cm²','78,5 cm²','314 cm²'] },
-  { q: 'Un disque a un diamètre de 10 cm. Quel est son rayon ?', correct: '5 cm', choices: ['2 cm','5 cm','10 cm','20 cm'] },
-  { q: 'Le périmètre d\'un cercle de rayon 7 cm est (π ≈ 3,14) :', correct: '43,96 cm', choices: ['21,98 cm','43,96 cm','49 cm','153,86 cm'] },
-  { q: 'Un terrain circulaire a un rayon de 10 m. Son aire est (π ≈ 3,14) :', correct: '314 m²', choices: ['62,8 m','314 m','314 m²','3,14 m²'] },
+buildQCM([
+  { q:'4,5 km = combien de m ?', correct:'4 500 m', choices:['450 m','4 500 m','45 000 m','450 000 m'] },
+  { q:'730 cm = combien de m ?', correct:'7,3 m', choices:['0,73 m','7,3 m','73 m','7 300 m'] },
+  { q:'2,35 m = combien de cm ?', correct:'235 cm', choices:['23,5 cm','235 cm','2 350 cm','0,0235 cm'] },
+  { q:'5 km 325 m = combien de m ?', correct:'5 325 m', choices:['5 032 m','5 325 m','53 025 m','5 300 m'] },
+  { q:'8 000 mm = combien de m ?', correct:'8 m', choices:['0,8 m','8 m','80 m','800 m'] },
+  { q:'3,5 dm = combien de cm ?', correct:'35 cm', choices:['3,5 cm','35 cm','350 cm','0,35 cm'] },
 ], 'ex1');
 
-buildQ([
-  { q: 'Un aquarium mesure 50 cm × 30 cm × 40 cm. Quel est son volume ?', correct: '60 000 cm³', choices: ['6 000 cm³','60 000 cm³','600 000 cm³','120 cm'] },
-  { q: 'Une boîte mesure 20 cm × 15 cm × 10 cm. Quel est son volume ?', correct: '3 000 cm³', choices: ['450 cm²','3 000 cm³','30 000 cm³','3 000 cm'] },
-  { q: 'Un cube de 6 cm de côté a un volume de…', correct: '216 cm³', choices: ['36 cm²','144 cm³','216 cm³','216 cm²'] },
-  { q: 'Si un pavé a un volume de 2 000 cm³, une base de 10×20 cm, quelle est sa hauteur ?', correct: '10 cm', choices: ['5 cm','8 cm','10 cm','20 cm'] },
+buildQCM([
+  { q:'2,75 kg = combien de g ?', correct:'2 750 g', choices:['275 g','2 750 g','27 500 g','275 000 g'] },
+  { q:'3 500 g = combien de kg ?', correct:'3,5 kg', choices:['0,35 kg','3,5 kg','35 kg','3 500 kg'] },
+  { q:'1 dm³ = combien de L ?', correct:'1 L', choices:['0,1 L','1 L','10 L','1 000 L'] },
+  { q:'2,5 L = combien de cm³ ?', correct:'2 500 cm³', choices:['25 cm³','250 cm³','2 500 cm³','25 000 cm³'] },
+  { q:'500 mg = combien de g ?', correct:'0,5 g', choices:['0,005 g','0,5 g','5 g','500 g'] },
+  { q:'1 m³ = combien de L ?', correct:'1 000 L', choices:['1 L','10 L','100 L','1 000 L'] },
 ], 'ex2');
 
-buildQ([
-  { q: '1 m² = combien de cm² ?', correct: '10 000 cm²', choices: ['100 cm²','1 000 cm²','10 000 cm²','100 000 cm²'] },
-  { q: '5 dm³ = combien de litres ?', correct: '5 litres', choices: ['0,5 litre','5 litres','50 litres','500 litres'] },
-  { q: '3 000 cm³ = combien de litres ?', correct: '3 litres', choices: ['0,3 litre','3 litres','30 litres','0,03 litre'] },
-  { q: '2,5 m² = combien de dm² ?', correct: '250 dm²', choices: ['25 dm²','250 dm²','2 500 dm²','2,5 dm²'] },
+buildQCM([
+  { q:'3 m² = combien de cm² ?', correct:'30 000 cm²', choices:['300 cm²','3 000 cm²','30 000 cm²','300 000 cm²'] },
+  { q:'50 000 m² = combien d\'hectares ?', correct:'5 ha', choices:['0,5 ha','5 ha','50 ha','500 ha'] },
+  { q:'2,5 ha = combien de m² ?', correct:'25 000 m²', choices:['250 m²','2 500 m²','25 000 m²','250 000 m²'] },
+  { q:'1 km² = combien de m² ?', correct:'1 000 000 m²', choices:['1 000 m²','10 000 m²','100 000 m²','1 000 000 m²'] },
+  { q:'800 dm² = combien de m² ?', correct:'8 m²', choices:['0,8 m²','8 m²','80 m²','8 000 m²'] },
 ], 'ex3');
 
-buildQ([
-  { q: 'Une piscine rectangulaire de 25 m × 12 m × 1,8 m. Combien de litres d\'eau contient-elle ?', correct: '540 000 litres', choices: ['54 000 litres','540 000 litres','5 400 000 litres','54 litres'] },
-  { q: 'Pour peindre un mur de 4 m × 3 m, il faut 0,2 L de peinture par m². Combien de litres faut-il ?', correct: '2,4 L', choices: ['1,4 L','2,4 L','24 L','0,24 L'] },
-  { q: 'Une pizza ronde a un diamètre de 30 cm. Son aire est (π ≈ 3,14) :', correct: '706,5 cm²', choices: ['94,2 cm²','314 cm²','706,5 cm²','2 826 cm²'] },
+buildQCM([
+  { enonce:'Un champ rectangulaire mesure 250 m × 80 m.', q:'Quelle est son aire en hectares ?', correct:'2 ha', choices:['0,2 ha','2 ha','20 ha','200 ha'] },
+  { enonce:'Une piscine contient 1 500 000 L d\'eau.', q:'Quel est son volume en m³ ?', correct:'1 500 m³', choices:['150 m³','1 500 m³','15 000 m³','1 500 000 m³'] },
+  { enonce:'Un terrain de foot mesure 100 m × 68 m.', q:'Quelle est son aire en m² ?', correct:'6 800 m²', choices:['336 m²','6 800 m²','680 m²','68 000 m²'] },
+  { enonce:'Une bouteille contient 1,5 L d\'eau. Elle est remplie à 60%.', q:'Combien de cL d\'eau contient-elle ?', correct:'90 cL', choices:['60 cL','90 cL','150 cL','60 mL'] },
 ], 'ex4');
+
+buildVF([
+  { q:'1 km = 1 000 m', correct:true },
+  { q:'1 ha = 10 000 m²', correct:true },
+  { q:'1 dm³ = 10 L', correct:false, expl:'1 dm³ = 1 L exactement' },
+  { q:'3 m² = 30 000 cm²', correct:true, expl:'1 m² = 10 000 cm², donc 3 m² = 30 000 cm²' },
+  { q:'2,75 kg = 2 750 g', correct:true },
+  { q:'1 cm³ = 1 mL', correct:true },
+  { q:'500 mg = 5 g', correct:false, expl:'500 mg = 0,5 g (1 g = 1 000 mg)' },
+], 'ex5');
+
+buildPaires([
+  { q:'Associe les mesures équivalentes.',
+    pairs:[['4,5 km','4 500 m'],['2,75 kg','2 750 g'],['3 m²','30 000 cm²'],['2,5 L','2 500 cm³']] },
+  { q:'Associe les mesures équivalentes.',
+    pairs:[['1 ha','10 000 m²'],['1 dm³','1 L'],['1 m³','1 000 L'],['500 mg','0,5 g']] },
+], 'ex6');
+
+buildTri([
+  { q:'Cette grandeur est-elle une longueur, une masse ou une aire ?',
+    cats:['Longueur','Masse','Aire'],
+    items:[
+      {v:'4,5 km', cat:'Longueur'},
+      {v:'2,75 kg', cat:'Masse'},
+      {v:'3 m²', cat:'Aire'},
+      {v:'730 cm', cat:'Longueur'},
+      {v:'500 mg', cat:'Masse'},
+      {v:'2,5 ha', cat:'Aire'},
+    ]
+  },
+], 'ex7');
 </script>
 
 <script src="gamification.js"></script>

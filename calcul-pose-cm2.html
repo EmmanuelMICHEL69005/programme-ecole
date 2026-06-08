@@ -7,152 +7,146 @@
 <meta property="og:site_name" content="Les Maths de Clémence">
 <link rel="manifest" href="manifest.json">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Opérations posées décimaux — CM2</title>
+<title>Opérations posées — CM2</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-  .btn-choice {
-    background: white; border: 2px solid #fef08a; border-radius: 22px;
-    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #713f12;
-    transition: background 0.15s;
-  }
-  .btn-choice:hover { background: #fefce8; }
-  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
-  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
-  .btn-choice:disabled { opacity: 0.6; cursor: default; }
-  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
-  .q-block { background: #fefce8; border: 2px solid #fef08a; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
-  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
-  .op-pose {
-    font-family: 'Courier New', monospace;
-    font-size: 1.5rem;
-    font-weight: 900;
-    background: #fef9c3;
-    border: 2px solid #fde047;
-    border-radius: 10px;
-    padding: 14px 24px;
-    display: inline-block;
-    margin-bottom: 14px;
-    color: #713f12;
-    text-align: right;
-    line-height: 1.7;
-    white-space: pre;
-  }
+.op-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+.op-card{background:#fef3c7;border:2.5px solid #fcd34d;border-radius:12px;padding:10px;text-align:center;}
+.op-card .op-title{font-size:0.68rem;font-weight:900;color:#78350f;margin-bottom:6px;}
+.op-card table{margin:0 auto;border-collapse:collapse;}
+.op-card td{width:22px;height:22px;text-align:center;font-size:0.9rem;font-weight:900;color:#1e3a8a;}
+.op-card .op-line td{border-bottom:2.5px solid #b45309;}
+.op-card .ret{font-size:0.6rem;color:#b45309;}
 </style>
 </head>
 <body>
 
-<header class="site-header" style="background: linear-gradient(135deg, #b45309, #f59e0b);">
-  <span class="emoji-header">🖊️</span>
-  <h1>Opérations posées — décimaux</h1>
-  <p>Calculs avec décimaux, division décimale</p>
+<header class="site-header" style="background:linear-gradient(135deg,#b45309,#f59e0b);">
+  <span class="emoji-header">🧮</span>
+  <h1>Opérations posées</h1>
+  <p>Grande multiplication, division décimale</p>
   <a href="index.html" class="nav-back">← Accueil</a>
 </header>
 
 <main>
-
-  <div class="badge-niveau">CM2 — Calcul posé</div>
+  <div class="badge-niveau">🎯 CM2 — Calcul posé</div>
 
   <div class="retiens-box">
     <div class="retiens-title">💡 Je retiens</div>
-    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
-      🔣 <strong>Décimaux</strong> : aligner les virgules dans la colonne avant de calculer<br>
-      ✖️ <strong>Multiplication × décimal</strong> : calculer comme des entiers, puis placer la virgule<br>
-      ÷ <strong>Division décimale</strong> : si le reste ≠ 0, on continue en ajoutant des zéros au dividende<br>
-      🔍 <strong>Vérification</strong> : résultat × diviseur = dividende
+    <div class="op-grid">
+      <div class="op-card">
+        <div class="op-title">345 × 67</div>
+        <table>
+          <tr class="ret"><td></td><td>3</td><td>3</td><td></td></tr>
+          <tr class="op-line"><td></td><td>3</td><td>4</td><td>5</td></tr>
+          <tr><td>×</td><td></td><td>6</td><td>7</td></tr>
+          <tr><td></td><td>2</td><td>4</td><td>1</td><td>5</td></tr>
+          <tr class="op-line"><td>+</td><td>2</td><td>0</td><td>7</td><td>0</td></tr>
+          <tr><td></td><td>2</td><td>3</td><td>1</td><td>1</td><td>5</td></tr>
+        </table>
+      </div>
+      <div class="op-card">
+        <div class="op-title">17,4 ÷ 4 = 4,35</div>
+        <table>
+          <tr><td>1</td><td>7</td><td>,</td><td>4</td><td>0</td><td>|</td><td style="color:#b45309;font-weight:900">4</td></tr>
+          <tr><td style="border-bottom:2px solid #1d4ed8">1</td><td style="border-bottom:2px solid #1d4ed8">6</td><td></td><td></td><td></td><td>|</td><td style="color:#b45309;font-weight:900">4,35</td></tr>
+          <tr><td></td><td>1</td><td></td><td>4</td></tr>
+          <tr><td></td><td style="border-bottom:2px solid #1d4ed8">1</td><td style="border-bottom:2px solid #1d4ed8">2</td></tr>
+          <tr><td></td><td></td><td>2</td><td>0</td></tr>
+          <tr><td></td><td></td><td style="border-bottom:2px solid #1d4ed8">2</td><td style="border-bottom:2px solid #1d4ed8">0</td></tr>
+          <tr><td></td><td></td><td></td><td>0</td></tr>
+        </table>
+      </div>
+    </div>
+    <div style="font-size:0.88rem;color:#555;line-height:1.9;">
+      ✖️ <strong>Mult. posée ×3 chiffres</strong> : 3 produits partiels, décalés<br>
+      ➗ <strong>Division décimale</strong> : on ajoute des 0 après la virgule jusqu'au reste nul
     </div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 1</span> Additions et soustractions de décimaux posées</div>
+  <div class="exercice-block" style="--accent:#b45309">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309">Ex 1</span> Additions et soustractions de grands décimaux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex1"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 2</span> Multiplications avec décimaux</div>
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 2</span> Multiplication ×2 et ×3 chiffres <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex2"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 3</span> Divisions décimales</div>
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 3</span> Division décimale posée <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex3"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 4</span> Trouver le terme manquant</div>
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 4</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
     <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 5</span> Chiffre manquant <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Associer opération et résultat <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex6"></div>
   </div>
 
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence — CM2</footer>
 
+<script src="exercises.js"></script>
 <script>
-function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
-
-function buildQ(data, id) {
-  const c = document.getElementById(id);
-  data.forEach((item, i) => {
-    const d = document.createElement('div');
-    d.className = 'q-block';
-    const sh = shuffle(item.choices);
-    const opHtml = item.op ? `
-      <div style="text-align:center; margin-bottom:4px;">
-        <div class="op-pose">${item.op}</div>
-      </div>
-    ` : '';
-    d.innerHTML = `
-      ${opHtml}
-      <div class="q-text">${item.q}</div>
-      <div class="qcm-row" id="${id}-r${i}">
-        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
-      </div>
-      <div class="feedback-line" id="${id}-f${i}"></div>
-    `;
-    c.appendChild(d);
-  });
-}
-
-function check(btn, chosen, correct, rowId, fbId) {
-  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
-  const fb = document.getElementById(fbId);
-  if (chosen === correct) {
-    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
-  } else {
-    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
-    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
-  }
-}
-
-buildQ([
-  { op: '   47,35\n+  18,09\n————————', q: '47,35 + 18,09 = ?', correct: '65,44', choices: ['65,34','65,44','65,54','64,44'] },
-  { op: '  125,8\n+   47,35\n—————————', q: '125,8 + 47,35 = ?', correct: '173,15', choices: ['172,15','173,05','173,15','174,15'] },
-  { op: '   84,20\n-  37,65\n—————————', q: '84,20 − 37,65 = ?', correct: '46,55', choices: ['46,45','46,55','47,45','47,55'] },
-  { op: '  300,00\n-  184,75\n——————————', q: '300,00 − 184,75 = ?', correct: '115,25', choices: ['114,25','115,25','115,35','116,25'] },
+buildQCM([
+  { card:'234,56 + 78,345 = ?', q:'Additionne', correct:'312,905', choices:['311,905','312,905','312,915','313,905'] },
+  { card:'1 000,000 − 345,678 = ?', q:'Soustrait', correct:'654,322', choices:['644,322','654,322','655,322','664,322'] },
+  { card:'45,67 + 123,456 = ?', q:'Additionne', correct:'169,126', choices:['168,126','169,026','169,126','170,126'] },
+  { card:'7 000,00 − 1 234,56 = ?', q:'Soustrait', correct:'5 765,44', choices:['5 665,44','5 765,44','5 875,44','5 966,44'] },
 ], 'ex1');
 
-buildQ([
-  { op: '  3,14\n×    5\n———————', q: '3,14 × 5 = ?', correct: '15,70', choices: ['15,7','16,7','15,70','14,70'] },
-  { op: '  2,45\n×   12\n———————', q: '2,45 × 12 = ?', correct: '29,40', choices: ['28,40','29,40','30,40','28,60'] },
-  { op: '  7,8\n×  3,5\n———————', q: '7,8 × 3,5 = ?', correct: '27,3', choices: ['25,3','26,3','27,3','28,3'] },
-  { q: 'Dans une multiplication : 4,25 × 8. Combien de chiffres après la virgule dans le résultat ?', correct: '2 chiffres après la virgule', choices: ['0 chiffre','1 chiffre','2 chiffres après la virgule','3 chiffres'] },
+buildQCM([
+  { card:'345 × 67 = ?', q:'Multiplie', correct:'23 115', choices:['23 015','23 115','23 215','24 115'] },
+  { card:'456 × 123 = ?', q:'Multiplie', correct:'56 088', choices:['55 088','56 088','57 088','56 188'] },
+  { card:'2,34 × 56 = ?', q:'Multiplie un décimal', correct:'131,04', choices:['131,04','130,14','132,04','131,40'] },
+  { card:'7,8 × 45 = ?', q:'Multiplie un décimal', correct:'351', choices:['340','351','360','370'] },
+  { card:'1,25 × 8 = ?', q:'Multiplie un décimal', correct:'10', choices:['8','9','10','12'] },
 ], 'ex2');
 
-buildQ([
-  { q: '8,4 ÷ 4 = ?', correct: '2,1', choices: ['2,01','2,1','21','2,4'] },
-  { q: '15,6 ÷ 3 = ?', correct: '5,2', choices: ['4,2','5,2','5,02','52'] },
-  { q: '48,0 ÷ 8 = ?', correct: '6', choices: ['0,6','6','60','6,8'] },
-  { q: '12,5 ÷ 5 = ?', correct: '2,5', choices: ['2,05','2,5','25','3,5'] },
+buildQCM([
+  { card:'17,4 ÷ 4 = ?', q:'Division décimale', correct:'4,35', choices:['4,3','4,35','4,4','4,5'] },
+  { card:'23,1 ÷ 6 = ?', q:'Division décimale', correct:'3,85', choices:['3,7','3,8','3,85','4'] },
+  { card:'45,6 ÷ 8 = ?', q:'Division décimale', correct:'5,7', choices:['5,6','5,7','5,8','6'] },
+  { card:'12,5 ÷ 4 = ?', q:'Division décimale', correct:'3,125', choices:['3,1','3,12','3,125','3,25'] },
+  { card:'7,2 ÷ 5 = ?', q:'Division décimale', correct:'1,44', choices:['1,4','1,44','1,45','1,5'] },
 ], 'ex3');
 
-buildQ([
-  { q: '□ + 14,75 = 30,00. Que vaut □ ?', correct: '15,25', choices: ['14,75','15,25','15,75','16,25'] },
-  { q: '76,4 − □ = 28,9. Que vaut □ ?', correct: '47,5', choices: ['47,5','48,5','105,3','107,3'] },
-  { q: '□ × 6 = 43,2. Que vaut □ ?', correct: '7,2', choices: ['6,2','7,2','7,8','8,2'] },
-  { q: '45,0 ÷ □ = 9. Que vaut □ ?', correct: '5', choices: ['4','5','6','9'] },
+buildVF([
+  { q:'234,56 + 78,345 = 312,905', correct:true },
+  { q:'345 × 67 = 23 115', correct:true },
+  { q:'17,4 ÷ 4 = 4,35', correct:true },
+  { q:'1 000,000 − 345,678 = 654,322', correct:true },
+  { q:'7,8 × 45 = 360', correct:false, expl:'7,8 × 45 = 351' },
+  { q:'23,1 ÷ 6 = 3,85', correct:true },
 ], 'ex4');
+
+buildQCM([
+  { card:'3☐5 × 67 = 23 115', q:'Chiffre manquant', correct:'4', choices:['3','4','5','6'] },
+  { card:'17,☐ ÷ 4 = 4,35', q:'Chiffre manquant', correct:'4', choices:['0','2','4','6'] },
+  { card:'☐,8 × 45 = 351', q:'Chiffre manquant', correct:'7', choices:['5','6','7','8'] },
+  { card:'23☐,56 + 78,345 = 312,905', q:'Chiffre manquant', correct:'4', choices:['2','3','4','5'] },
+], 'ex5');
+
+buildPaires([
+  { q:'Associe chaque opération à son résultat.',
+    pairs:[['345 × 67','23 115'],['17,4 ÷ 4','4,35'],['234,56 + 78,345','312,905'],['7,8 × 45','351']] },
+  { q:'Associe chaque opération à son résultat.',
+    pairs:[['456 × 123','56 088'],['45,6 ÷ 8','5,7'],['1,25 × 8','10'],['7 000 − 1 234,56','5 765,44']] },
+], 'ex6');
 </script>
 
 <script src="gamification.js"></script>

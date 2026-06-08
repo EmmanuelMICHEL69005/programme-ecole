@@ -7,129 +7,141 @@
 <meta property="og:site_name" content="Les Maths de Clémence">
 <link rel="manifest" href="manifest.json">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Très grands nombres — CM2</title>
+<title>Nombres entiers — CM2</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-  .btn-choice {
-    background: white; border: 2px solid #fef08a; border-radius: 22px;
-    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #713f12;
-    transition: background 0.15s;
-  }
-  .btn-choice:hover { background: #fef9c3; }
-  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
-  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
-  .btn-choice:disabled { opacity: 0.6; cursor: default; }
-  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
-  .q-block { background: #fefce8; border: 2px solid #fef08a; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
-  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+.tableau-num{display:grid;grid-template-columns:repeat(9,1fr);gap:3px;margin:10px 0;}
+.tn-h{background:#b45309;color:white;border-radius:6px;padding:6px 2px;text-align:center;font-size:0.62rem;font-weight:900;}
+.tn-c{background:#fef3c7;border:2px solid #fcd34d;border-radius:6px;padding:6px 2px;text-align:center;font-size:0.95rem;font-weight:900;color:#78350f;}
+.tn-sep{background:#78350f;width:3px;border-radius:3px;}
 </style>
 </head>
 <body>
 
-<header class="site-header" style="background: linear-gradient(135deg, #b45309, #fcd34d);">
+<header class="site-header" style="background:linear-gradient(135deg,#b45309,#f59e0b);">
   <span class="emoji-header">🔢</span>
-  <h1>Très grands nombres</h1>
-  <p>Jusqu'à plusieurs milliards</p>
+  <h1>Grands nombres entiers</h1>
+  <p>Jusqu'au milliard</p>
   <a href="index.html" class="nav-back">← Accueil</a>
 </header>
 
 <main>
-
-  <div class="badge-niveau">CM2 — Nombres et calculs</div>
+  <div class="badge-niveau">🎯 CM2 — Nombres entiers</div>
 
   <div class="retiens-box">
     <div class="retiens-title">💡 Je retiens</div>
-    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
-      🔢 Classes : <strong>milliards</strong> | <strong>millions</strong> | <strong>mille</strong> | <strong>unités</strong><br>
-      📝 1 milliard = 1 000 millions = 1 000 000 000<br>
-      🔄 <strong>Notation scientifique</strong> intro : 5,4 × 10⁶ = 5 400 000<br>
-      📊 <strong>Arrondi</strong> : on peut arrondir au million, à la dizaine de million…
+    <div class="tableau-num">
+      <div class="tn-h">C.M</div><div class="tn-h">D.M</div><div class="tn-h">M</div>
+      <div class="tn-h" style="background:#78350f">|</div>
+      <div class="tn-h">C.M</div><div class="tn-h">D.M</div><div class="tn-h">M</div>
+      <div class="tn-h" style="background:#78350f">|</div>
+      <div class="tn-h">…</div>
+    </div>
+    <div style="text-align:center;font-size:1.3rem;font-weight:900;color:#b45309;letter-spacing:3px;margin:8px 0;">
+      234 567 891
+    </div>
+    <div style="font-size:0.88rem;color:#555;line-height:1.9;">
+      🔢 <strong>Milliard</strong> = 1 000 000 000 (9 chiffres)<br>
+      📊 <strong>Classes</strong> : unités simples / milliers / millions / milliards<br>
+      📏 <strong>Arrondir au million</strong> : regarder la centaine de milliers<br>
+      🔄 <strong>999 999 999 + 1 = 1 000 000 000</strong> (un milliard)
     </div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 1</span> Lire et écrire de grands nombres</div>
+  <div class="exercice-block" style="--accent:#b45309">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309">Ex 1</span> Lire et écrire jusqu'au milliard <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex1"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 2</span> Décomposer et composer</div>
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 2</span> Valeur des chiffres <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex2"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 3</span> Comparer et ordonner</div>
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 3</span> Comparer et ordonner <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex3"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 4</span> Arrondir — encadrer</div>
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 4</span> Arrondir à la puissance de 10 <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 5</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 6</span> Ranger dans l'ordre <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">ORDRE</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 7</span> Associer nombre et décomposition <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex7"></div>
   </div>
 
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence — CM2</footer>
 
+<script src="exercises.js"></script>
 <script>
-function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
-function buildQ(data, id) {
-  const c = document.getElementById(id);
-  data.forEach((item, i) => {
-    const d = document.createElement('div');
-    d.className = 'q-block';
-    const sh = shuffle(item.choices);
-    d.innerHTML = `
-      <div class="q-text">${item.q}</div>
-      <div class="qcm-row" id="${id}-r${i}">
-        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
-      </div>
-      <div class="feedback-line" id="${id}-f${i}"></div>
-    `;
-    c.appendChild(d);
-  });
-}
-function check(btn, chosen, correct, rowId, fbId) {
-  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
-  const fb = document.getElementById(fbId);
-  if (chosen === correct) {
-    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
-  } else {
-    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
-    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
-  }
-}
-
-buildQ([
-  { q: 'Comment s\'écrit "deux milliards cinq cent millions" ?', correct: '2 500 000 000', choices: ['2 500 000','25 000 000','2 500 000 000','25 000 000 000'] },
-  { q: 'Comment se lit 7 340 000 ?', correct: 'Sept millions trois cent quarante mille', choices: ['Sept mille trois cent quarante','Sept cent trente-quatre mille','Sept millions trois cent quarante mille','Soixante-sept millions'] },
-  { q: 'La distance Terre-Soleil est environ 150 000 000 km. En notation : 150 ___?', correct: '150 millions de km', choices: ['150 milliers de km','150 millions de km','150 milliards de km','1,5 milliard de km'] },
-  { q: 'Quel est le nombre juste avant 10 000 000 ?', correct: '9 999 999', choices: ['9 990 000','9 999 000','9 999 999','10 000 001'] },
+buildQCM([
+  { q:'Comment s\'écrit "deux cent trente-quatre millions cinq cent soixante-sept mille huit cent quatre-vingt-onze" ?', correct:'234 567 891', choices:['23 456 789','234 567 891','2 345 678 910','234 568'] },
+  { q:'Comment se lit 1 000 000 000 ?', correct:'Un milliard', choices:['Un million','Dix millions','Un milliard','Cent millions'] },
+  { q:'Quel est le nombre après 999 999 999 ?', correct:'1 000 000 000', choices:['999 999 000','1 000 000 000','10 000 000 000','999 000 000'] },
+  { q:'Comment s\'écrit "cinq milliards" ?', correct:'5 000 000 000', choices:['5 000 000','50 000 000','500 000 000','5 000 000 000'] },
+  { q:'Comment se lit 7 450 320 ?', correct:'Sept millions quatre cent cinquante mille trois cent vingt', choices:['Sept milliards...','Sept millions quatre cent cinquante mille trois cent vingt','Sept millions quarante-cinq mille trois cent vingt','Sept cent millions...'] },
 ], 'ex1');
 
-buildQ([
-  { q: '3 000 000 + 500 000 + 40 000 + 2 000 + 300 + 80 + 5 = ?', correct: '3 542 385', choices: ['3 042 385','3 542 385','35 423 850','354 2385'] },
-  { q: 'Dans 8 473 261, quel chiffre est au rang des dizaines de million ?', correct: '8', choices: ['8','4','7','3'] },
-  { q: 'Dans 12 345 678, quel chiffre est à la place des centaines de mille ?', correct: '3', choices: ['1','2','3','4'] },
-  { q: 'Combien y a-t-il de millions dans 23 000 000 ?', correct: '23', choices: ['2','3','23','230'] },
+buildQCM([
+  { q:'Dans 234 567 891, que vaut le chiffre 2 ?', correct:'200 000 000 (2 centaines de millions)', choices:['2 000','2 000 000','200 000 000 (2 centaines de millions)','2 000 000 000'] },
+  { q:'Dans 7 450 320, que vaut le 4 ?', correct:'400 000', choices:['4','4 000','40 000','400 000'] },
+  { q:'Quel chiffre est au rang des dizaines de millions dans 234 567 891 ?', correct:'3', choices:['2','3','4','5'] },
+  { q:'Dans 1 008 045, que vaut le 8 ?', correct:'8 000 (8 milliers)', choices:['8','80','800','8 000 (8 milliers)'] },
 ], 'ex2');
 
-buildQ([
-  { q: 'Lequel est le plus grand : 4 500 000 ou 4 050 000 ?', correct: '4 500 000', choices: ['4 500 000','4 050 000','Ils sont égaux'] },
-  { q: 'Range du plus petit au plus grand : 2 300 000 — 32 000 000 — 2 030 000', correct: '2 030 000 < 2 300 000 < 32 000 000', choices: ['2 030 000 < 2 300 000 < 32 000 000','32 000 000 < 2 300 000 < 2 030 000','2 300 000 < 2 030 000 < 32 000 000'] },
-  { q: 'Vrai ou faux : 1 milliard > 999 millions ?', correct: 'Vrai', choices: ['Vrai','Faux'] },
-  { q: 'Quel nombre est entre 5 millions et 6 millions ?', correct: '5 750 000', choices: ['4 750 000','5 750 000','6 250 000','50 000'] },
+buildQCM([
+  { q:'Lequel est le plus grand : 7 234 500 ou 7 243 500 ?', correct:'7 243 500', choices:['7 234 500','7 243 500','Ils sont égaux'] },
+  { q:'Range du plus petit : 3 456 789, 3 465 789, 3 546 789', correct:'3 456 789 < 3 465 789 < 3 546 789', choices:['3 456 789 < 3 465 789 < 3 546 789','3 546 789 < 3 465 789 < 3 456 789','3 465 789 < 3 456 789 < 3 546 789'] },
+  { q:'Lequel est entre 8 millions et 9 millions ?', correct:'8 500 000', choices:['7 900 000','8 500 000','9 100 000','80 000 000'] },
+  { q:'Quel est le plus grand nombre à 7 chiffres ?', correct:'9 999 999', choices:['9 000 000','9 900 000','9 990 000','9 999 999'] },
 ], 'ex3');
 
-buildQ([
-  { q: 'Arrondi au million le plus proche : 3 567 000', correct: '4 000 000', choices: ['3 000 000','3 500 000','4 000 000','4 500 000'] },
-  { q: 'Arrondi à la dizaine de million : 234 500 000', correct: '230 000 000', choices: ['200 000 000','230 000 000','240 000 000','235 000 000'] },
-  { q: 'La population mondiale est d\'environ 7 900 000 000 habitants. Arrondie au milliard, c\'est…', correct: '8 milliards', choices: ['7 milliards','8 milliards','9 milliards','79 milliards'] },
-  { q: 'Encadre 8 420 000 entre deux millions : ☐ < 8 420 000 < ☐', correct: '8 000 000 < 8 420 000 < 9 000 000', choices: ['7 000 000 < 8 420 000 < 8 000 000','8 000 000 < 8 420 000 < 9 000 000','8 400 000 < 8 420 000 < 8 500 000'] },
+buildQCM([
+  { q:'Arrondis 3 456 789 au million le plus proche.', correct:'3 000 000', choices:['3 000 000','3 500 000','4 000 000','3 456 000'] },
+  { q:'Arrondis 7 845 231 à la dizaine de millions.', correct:'80 000 000', choices:['70 000 000','78 000 000','80 000 000','90 000 000'] },
+  { q:'Arrondis 234 567 891 au milliard le plus proche.', correct:'0 (arrondit à 0)', choices:['0 (arrondit à 0)','1 000 000 000','200 000 000','300 000 000'] },
+  { q:'Arrondis 1 500 000 au million le plus proche.', correct:'2 000 000', choices:['1 000 000','1 500 000','2 000 000','3 000 000'] },
 ], 'ex4');
+
+buildVF([
+  { q:'1 milliard = 1 000 millions', correct:true },
+  { q:'234 567 891 > 234 576 891', correct:false, expl:'234 567 891 < 234 576 891 (dizaines de milliers : 6 < 7)' },
+  { q:'Le chiffre des millions dans 7 450 320 est 7.', correct:true },
+  { q:'9 999 999 + 1 = 10 000 000', correct:true },
+  { q:'3 456 789 arrondi au million vaut 4 000 000.', correct:false, expl:'456 789 < 500 000, donc on arrondit à 3 000 000.' },
+  { q:'Un milliard s\'écrit avec 10 chiffres.', correct:true, expl:'1 000 000 000 = 10 chiffres.' },
+], 'ex5');
+
+buildOrdre([
+  { q:'Range ces nombres du PLUS PETIT au PLUS GRAND :',
+    items:['3 456 000','3 645 000','3 546 000','3 564 000','3 465 000'] },
+  { q:'Range ces nombres du PLUS GRAND au PLUS PETIT :',
+    items:['1 000 000','10 000 000','100 000 000','1 000 000 000','10 000'] },
+], 'ex6');
+
+buildPaires([
+  { q:'Associe chaque nombre à sa décomposition.',
+    pairs:[['234 567 891','200M + 34M + 567K + 891'],['7 000 000','7 millions'],['1 008 045','1M + 8K + 45'],['5 000 000 000','5 milliards']] },
+  { q:'Associe chaque nombre à sa valeur arrondie au million.',
+    pairs:[['3 456 789','3 000 000'],['7 845 231','8 000 000'],['1 500 000','2 000 000'],['9 999 999','10 000 000']] },
+], 'ex7');
 </script>
 
 <script src="gamification.js"></script>

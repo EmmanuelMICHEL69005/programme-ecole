@@ -11,125 +11,130 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<style>
-  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-  .btn-choice {
-    background: white; border: 2px solid #fef08a; border-radius: 22px;
-    padding: 11px 26px; font-size: 1.05rem; font-weight: 900; cursor: pointer; color: #713f12;
-    transition: background 0.15s;
-  }
-  .btn-choice:hover { background: #fef9c3; }
-  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
-  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
-  .btn-choice:disabled { opacity: 0.6; cursor: default; }
-  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
-  .q-block { background: #fefce8; border: 2px solid #fef08a; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
-  .calcul-card { font-size: 2rem; font-weight: 900; color: #713f12; text-align: center; padding: 14px; background: #fef9c3; border-radius: 14px; margin-bottom: 14px; }
-</style>
 </head>
 <body>
 
-<header class="site-header" style="background: linear-gradient(135deg, #b45309, #f59e0b);">
+<header class="site-header" style="background:linear-gradient(135deg,#b45309,#f59e0b);">
   <span class="emoji-header">⚡</span>
   <h1>Calcul mental</h1>
-  <p>Automatismes CM2</p>
+  <p>Tables, ×÷ décimaux, compléments, estimations</p>
   <a href="index.html" class="nav-back">← Accueil</a>
 </header>
 
 <main>
-
-  <div class="badge-niveau">CM2 — Calcul mental</div>
+  <div class="badge-niveau">🎯 CM2 — Calcul mental</div>
 
   <div class="retiens-box">
-    <div class="retiens-title">💡 Mes astuces CM2</div>
-    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
-      ⚡ <strong>×11</strong> : recopier le chiffre → 35 × 11 = 385 (3+5=8)<br>
-      💡 <strong>Carrés parfaits</strong> : 11²=121, 12²=144, 13²=169, 14²=196, 15²=225<br>
-      🎯 <strong>Divisibilité</strong> : par 2 (pair), par 5 (finit en 0 ou 5), par 3 (somme des chiffres divisible)<br>
-      🔢 <strong>Compléments à 100 et 1 000</strong>
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.88rem;color:#555;margin-top:8px;line-height:1.9;">
+      ⚡ <strong>Tables de multiplication</strong> : 1 à 9 par cœur !<br>
+      🔟 <strong>Décimaux ×10/÷10</strong> : virgule se déplace à droite/gauche<br>
+      💡 <strong>Astuce ×25</strong> : ×100 puis ÷4 (ex : 8×25 = 800÷4 = 200)<br>
+      🎯 <strong>Astuce ×11</strong> : 7×11 = 77 · 13×11 = 143 (somme des chiffres au centre)<br>
+      🧮 <strong>Compléments</strong> : 3,7 + ? = 4 → 0,3 · ? + 0,45 = 1 → 0,55
     </div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 1</span> Multiplications rapides</div>
+  <div class="exercice-block" style="--accent:#b45309">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309">Ex 1</span> Tables et dérivées <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex1"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 2</span> Divisibilité</div>
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 2</span> Calcul avec décimaux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex2"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 3</span> Pourcentages mentaux (10%, 25%, 50%)</div>
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 3</span> Compléments et calculs rapides <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex3"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 4</span> Compléments et estimation</div>
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 4</span> Estimation et ordre de grandeur <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 5</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 6</span> Ranger les calculs par résultat <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">ORDRE</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 7</span> Associer calcul et résultat <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex7"></div>
   </div>
 
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence — CM2</footer>
 
+<script src="exercises.js"></script>
 <script>
-function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
-function buildQ(data, id) {
-  const c = document.getElementById(id);
-  data.forEach((item, i) => {
-    const d = document.createElement('div');
-    d.className = 'q-block';
-    const sh = shuffle(item.choices);
-    d.innerHTML = `
-      <div class="calcul-card">${item.q}</div>
-      <div class="qcm-row" id="${id}-r${i}">
-        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
-      </div>
-      <div class="feedback-line" id="${id}-f${i}"></div>
-    `;
-    c.appendChild(d);
-  });
-}
-function check(btn, chosen, correct, rowId, fbId) {
-  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
-  const fb = document.getElementById(fbId);
-  if (chosen === correct) {
-    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
-  } else {
-    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
-    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
-  }
-}
-
-buildQ([
-  { q: '25 × 4 = ?', correct: '100', choices: ['80','90','100','120'] },
-  { q: '125 × 8 = ?', correct: '1 000', choices: ['800','900','1 000','1 200'] },
-  { q: '45 × 20 = ?', correct: '900', choices: ['700','800','900','1 000'] },
-  { q: '15² = ?', correct: '225', choices: ['180','200','225','250'] },
+buildQCM([
+  { card:'7 × 8 = ?', q:'Table de 7', correct:'56', choices:['48','54','56','63'] },
+  { card:'9 × 6 = ?', q:'Table de 9', correct:'54', choices:['45','54','63','56'] },
+  { card:'70 × 8 = ?', q:'Table dérivée', correct:'560', choices:['56','560','5 600','7 008'] },
+  { card:'9 × 60 = ?', q:'Table dérivée', correct:'540', choices:['54','540','5 400','9 060'] },
+  { card:'8 × 25 = ?', q:'Astuce ×25', correct:'200', choices:['150','175','200','225'] },
+  { card:'4 × 125 = ?', q:'Astuce ×125', correct:'500', choices:['400','450','500','550'] },
+  { card:'56 ÷ 7 = ?', q:'Division', correct:'8', choices:['6','7','8','9'] },
 ], 'ex1');
 
-buildQ([
-  { q: '534 est-il divisible par 3 ?', correct: 'Oui (5+3+4=12, 12÷3=4)', choices: ['Oui (5+3+4=12, 12÷3=4)','Non','On ne peut pas savoir'] },
-  { q: 'Lequel de ces nombres est divisible par 4 ?', correct: '324', choices: ['322','323','324','325'] },
-  { q: '720 est divisible par…', correct: '2, 3, 4, 5 et 9', choices: ['2 seulement','2 et 5 seulement','2, 3, 5 seulement','2, 3, 4, 5 et 9'] },
-  { q: 'Un nombre divisible à la fois par 2 et par 3 est divisible par…', correct: '6', choices: ['4','5','6','9'] },
+buildQCM([
+  { card:'0,7 × 8 = ?', q:'Multiplie un décimal', correct:'5,6', choices:['0,56','5,6','56','0,056'] },
+  { card:'4,5 × 4 = ?', q:'Multiplie un décimal', correct:'18', choices:['16','17','18','20'] },
+  { card:'0,9 × 9 = ?', q:'Multiplie un décimal', correct:'8,1', choices:['0,81','8,1','81','0,081'] },
+  { card:'3,6 ÷ 4 = ?', q:'Divise un décimal', correct:'0,9', choices:['0,09','0,9','9','36'] },
+  { card:'6,3 ÷ 7 = ?', q:'Divise un décimal', correct:'0,9', choices:['0,09','0,9','9','0,63'] },
+  { card:'2,4 × 5 = ?', q:'Multiplie un décimal', correct:'12', choices:['10','12','12,4','24'] },
 ], 'ex2');
 
-buildQ([
-  { q: '10% de 340 = ?', correct: '34', choices: ['3,4','34','340','3 400'] },
-  { q: '25% de 80 = ?', correct: '20', choices: ['8','10','20','40'] },
-  { q: '50% de 450 = ?', correct: '225', choices: ['45','175','225','250'] },
-  { q: '15% de 200 = ?', correct: '30', choices: ['15','20','30','45'] },
+buildQCM([
+  { card:'3,7 + ☐ = 4', q:'Complément à l\'entier', correct:'0,3', choices:['0,03','0,3','3','1,3'] },
+  { card:'☐ + 0,45 = 1', q:'Complément à 1', correct:'0,55', choices:['0,45','0,55','0,65','1,45'] },
+  { card:'Complément de 2,8 à 3', q:'Combien manque-t-il ?', correct:'0,2', choices:['0,02','0,2','2','1,2'] },
+  { card:'7,6 + ☐ = 10', q:'Complément à 10', correct:'2,4', choices:['2,4','3,4','7,4','2,6'] },
+  { card:'Double de 3,5 = ?', q:'Calcule', correct:'7', choices:['6','7','7,5','3,5'] },
+  { card:'Moitié de 7,6 = ?', q:'Calcule', correct:'3,8', choices:['3,6','3,8','4','7,6'] },
 ], 'ex3');
 
-buildQ([
-  { q: '750 + ☐ = 1 000', correct: '250', choices: ['150','200','250','350'] },
-  { q: '3 200 ÷ 8 = ?', correct: '400', choices: ['300','350','400','450'] },
-  { q: 'Estime : 498 × 12 ≈ ?', correct: '≈ 6 000', choices: ['≈ 4 000','≈ 5 000','≈ 6 000','≈ 8 000'] },
-  { q: 'Complément à 10 000 : 6 450 + ☐ = 10 000', correct: '3 550', choices: ['3 450','3 550','3 650','4 550'] },
+buildQCM([
+  { q:'Ordre de grandeur de 48 × 53 ?', correct:'Environ 2 500', choices:['Environ 100','Environ 1 000','Environ 2 500','Environ 5 000'] },
+  { q:'Ordre de grandeur de 197 × 4 ?', correct:'Environ 800', choices:['Environ 400','Environ 600','Environ 800','Environ 1 000'] },
+  { q:'Ordre de grandeur de 9 876 ÷ 10 ?', correct:'Environ 1 000', choices:['Environ 100','Environ 1 000','Environ 10 000','Environ 900'] },
+  { q:'Lequel est le plus proche de 30 × 49 ?', correct:'1 500', choices:['900','1 200','1 500','1 800'] },
+  { q:'Ordre de grandeur de 3,9 × 8 ?', correct:'Environ 32', choices:['Environ 3','Environ 32','Environ 320','Environ 3 200'] },
 ], 'ex4');
+
+buildVF([
+  { q:'7 × 8 = 56', correct:true },
+  { q:'0,7 × 8 = 0,56', correct:false, expl:'0,7 × 8 = 5,6' },
+  { q:'3,7 + 0,3 = 4', correct:true },
+  { q:'8 × 25 = 200', correct:true, expl:'8 × 25 = 8 × 100 ÷ 4 = 800 ÷ 4 = 200' },
+  { q:'Double de 3,5 = 7', correct:true },
+  { q:'6,3 ÷ 7 = 0,9', correct:true },
+  { q:'Ordre de grandeur de 48 × 53 est environ 1 000.', correct:false, expl:'50 × 50 = 2 500 → environ 2 500' },
+], 'ex5');
+
+buildOrdre([
+  { q:'Range ces calculs du PLUS PETIT RÉSULTAT au PLUS GRAND :',
+    items:['7 × 8','9 × 6','8 × 7','6 × 9','9 × 9'] },
+  { q:'Range ces résultats du PLUS PETIT au PLUS GRAND :',
+    items:['0,7 × 8','4,5 × 4','2,4 × 5','0,9 × 9','3,6 × 3'] },
+], 'ex6');
+
+buildPaires([
+  { q:'Associe chaque calcul à son résultat.',
+    pairs:[['7 × 8','56'],['8 × 25','200'],['0,7 × 8','5,6'],['3,7 + 0,3','4']] },
+  { q:'Associe chaque calcul à son résultat.',
+    pairs:[['4,5 × 4','18'],['6,3 ÷ 7','0,9'],['Moitié de 7,6','3,8'],['4 × 125','500']] },
+], 'ex7');
 </script>
 
 <script src="gamification.js"></script>

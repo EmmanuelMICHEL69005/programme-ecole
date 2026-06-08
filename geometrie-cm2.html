@@ -7,130 +7,154 @@
 <meta property="og:site_name" content="Les Maths de Clémence">
 <link rel="manifest" href="manifest.json">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Géométrie avancée — CM2</title>
+<title>Géométrie — CM2</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<style>
-  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-  .btn-choice {
-    background: white; border: 2px solid #fef08a; border-radius: 22px;
-    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #713f12;
-    transition: background 0.15s;
-  }
-  .btn-choice:hover { background: #fef9c3; }
-  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
-  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
-  .btn-choice:disabled { opacity: 0.6; cursor: default; }
-  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
-  .q-block { background: #fefce8; border: 2px solid #fef08a; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
-  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
-</style>
 </head>
 <body>
 
-<header class="site-header" style="background: linear-gradient(135deg, #b45309, #fcd34d);">
-  <span class="emoji-header">🔷</span>
-  <h1>Géométrie avancée</h1>
-  <p>Angles en degrés, transformations, solides</p>
+<header class="site-header" style="background:linear-gradient(135deg,#b45309,#f59e0b);">
+  <span class="emoji-header">📐</span>
+  <h1>Géométrie</h1>
+  <p>Aires, périmètres, cercle, angles, symétrie</p>
   <a href="index.html" class="nav-back">← Accueil</a>
 </header>
 
 <main>
-
-  <div class="badge-niveau">CM2 — Espace et géométrie</div>
+  <div class="badge-niveau">🎯 CM2 — Géométrie</div>
 
   <div class="retiens-box">
     <div class="retiens-title">💡 Je retiens</div>
-    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
-      📐 Angles : droit=90° | aigu&lt;90° | obtus&gt;90° | plat=180° | plein=360°<br>
-      🔄 <strong>Translation</strong> : déplacer sans tourner ni agrandir<br>
-      🪞 <strong>Symétrie axiale</strong> : réflexion par rapport à un axe<br>
-      📦 <strong>Solides</strong> : cube (6 faces carrées), pavé droit, prisme, pyramide<br>
-      🔺 La somme des angles d'un triangle = 180°
+    <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:10px 0;">
+      <div style="background:#eff6ff;border:2px solid #93c5fd;border-radius:12px;padding:10px 14px;text-align:center;min-width:100px;">
+        <svg width="50" height="50" viewBox="0 0 50 50"><rect x="5" y="5" width="40" height="40" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2.5"/></svg>
+        <div style="font-size:0.65rem;font-weight:900;color:#6b7280">Carré c²</div>
+      </div>
+      <div style="background:#dcfce7;border:2px solid #86efac;border-radius:12px;padding:10px 14px;text-align:center;min-width:100px;">
+        <svg width="60" height="45" viewBox="0 0 60 45"><rect x="3" y="5" width="54" height="35" fill="#dcfce7" stroke="#16a34a" stroke-width="2.5"/></svg>
+        <div style="font-size:0.65rem;font-weight:900;color:#6b7280">Rectangle L×l</div>
+      </div>
+      <div style="background:#fef9c3;border:2px solid #fde047;border-radius:12px;padding:10px 14px;text-align:center;min-width:100px;">
+        <svg width="55" height="50" viewBox="0 0 55 50"><polygon points="27,3 52,47 2,47" fill="#fef9c3" stroke="#ca8a04" stroke-width="2.5"/></svg>
+        <div style="font-size:0.65rem;font-weight:900;color:#6b7280">Triangle b×h÷2</div>
+      </div>
+      <div style="background:#f5f3ff;border:2px solid #a78bfa;border-radius:12px;padding:10px 14px;text-align:center;min-width:100px;">
+        <svg width="50" height="50" viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2.5"/><line x1="25" y1="25" x2="47" y2="25" stroke="#7c3aed" stroke-width="2" stroke-dasharray="4"/></svg>
+        <div style="font-size:0.65rem;font-weight:900;color:#6b7280">Cercle π≈3,14</div>
+      </div>
+    </div>
+    <div style="font-size:0.88rem;color:#555;line-height:1.9;">
+      📏 <strong>Périmètre cercle</strong> ≈ 2 × 3,14 × r · <strong>Aire disque</strong> ≈ 3,14 × r²<br>
+      📐 <strong>Angles</strong> : aigu &lt;90° · droit =90° · obtus &gt;90° · plat =180°<br>
+      🔄 <strong>Symétrie</strong> : axiale = reflet · centrale = rotation 180°
     </div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 1</span> Angles — calculs</div>
+  <div class="exercice-block" style="--accent:#b45309">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309">Ex 1</span> Angles et triangles <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex1"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 2</span> Triangles — classification</div>
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 2</span> Périmètres <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex2"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 3</span> Transformations géométriques</div>
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 3</span> Aires <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex3"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 4</span> Solides — faces, arêtes, sommets</div>
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 4</span> Cercle : rayon, diamètre, périmètre, aire <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 5</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Associer figure et formule <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Trier les angles <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex7"></div>
   </div>
 
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence — CM2</footer>
 
+<script src="exercises.js"></script>
 <script>
-function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
-function buildQ(data, id) {
-  const c = document.getElementById(id);
-  data.forEach((item, i) => {
-    const d = document.createElement('div');
-    d.className = 'q-block';
-    const sh = shuffle(item.choices);
-    d.innerHTML = `
-      <div class="q-text">${item.q}</div>
-      <div class="qcm-row" id="${id}-r${i}">
-        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
-      </div>
-      <div class="feedback-line" id="${id}-f${i}"></div>
-    `;
-    c.appendChild(d);
-  });
-}
-function check(btn, chosen, correct, rowId, fbId) {
-  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
-  const fb = document.getElementById(fbId);
-  if (chosen === correct) {
-    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
-  } else {
-    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
-    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
-  }
-}
-
-buildQ([
-  { q: 'Un triangle a des angles de 65° et 80°. Combien mesure le 3e angle ?', correct: '35°', choices: ['25°','35°','45°','55°'] },
-  { q: 'Un quadrilatère a des angles de 90°, 95°, 115°. Combien mesure le 4e ?', correct: '60°', choices: ['50°','60°','70°','80°'] },
-  { q: 'Deux angles sont supplémentaires (forment un angle plat). L\'un mesure 65°. Combien mesure l\'autre ?', correct: '115°', choices: ['25°','75°','115°','295°'] },
-  { q: 'Un angle de 270° est un angle…', correct: 'Rentrant (supérieur à 180°)', choices: ['Aigu','Obtus','Plat','Rentrant (supérieur à 180°)'] },
+buildQCM([
+  { q:'Un angle de 35° est…', correct:'Aigu (< 90°)', choices:['Aigu (< 90°)','Droit (= 90°)','Obtus (> 90°)','Plat (= 180°)'] },
+  { q:'Un angle de 120° est…', correct:'Obtus (> 90°)', choices:['Aigu (< 90°)','Droit (= 90°)','Obtus (> 90°)','Plat (= 180°)'] },
+  { q:'La somme des angles d\'un triangle vaut…', correct:'180°', choices:['90°','180°','270°','360°'] },
+  { q:'Un triangle avec un angle de 90° est…', correct:'Rectangle', choices:['Équilatéral','Isocèle','Rectangle','Quelconque'] },
+  { q:'Un angle plat mesure…', correct:'180°', choices:['90°','120°','180°','360°'] },
+  { q:'La somme des angles d\'un quadrilatère vaut…', correct:'360°', choices:['180°','270°','360°','420°'] },
 ], 'ex1');
 
-buildQ([
-  { q: 'Un triangle isocèle a 2 angles égaux de 50°. Quel est le 3e angle ?', correct: '80°', choices: ['50°','70°','80°','90°'] },
-  { q: 'Un triangle équilatéral a tous ses angles égaux à…', correct: '60°', choices: ['45°','60°','90°','180°'] },
-  { q: 'Un triangle a des angles de 90°, 45°, 45°. C\'est un triangle…', correct: 'Rectangle isocèle', choices: ['Équilatéral','Isocèle seulement','Rectangle isocèle','Quelconque'] },
-  { q: 'Peut-on construire un triangle avec des angles de 60°, 70°, 60° ?', correct: 'Non (60+70+60 = 190° ≠ 180°)', choices: ['Oui','Non (60+70+60 = 190° ≠ 180°)','Seulement si les côtés sont égaux'] },
+buildQCM([
+  { card:'Rectangle 12 cm × 7 cm', q:'Périmètre = ?', correct:'38 cm', choices:['19 cm','38 cm','84 cm','76 cm'] },
+  { card:'Carré de côté 9,5 cm', q:'Périmètre = ?', correct:'38 cm', choices:['9,5 cm','19 cm','38 cm','90,25 cm'] },
+  { card:'Triangle côtés : 6,5 cm, 8 cm, 10,5 cm', q:'Périmètre = ?', correct:'25 cm', choices:['15 cm','20 cm','25 cm','30 cm'] },
+  { card:'Hexagone régulier, côté 5 cm', q:'Périmètre = ?', correct:'30 cm', choices:['25 cm','30 cm','35 cm','60 cm'] },
+  { card:'Losange de côté 7,5 cm', q:'Périmètre = ?', correct:'30 cm', choices:['15 cm','22,5 cm','30 cm','56,25 cm'] },
 ], 'ex2');
 
-buildQ([
-  { q: 'Une translation déplace une figure…', correct: 'Sans la tourner ni la déformer', choices: ['En la retournant','En l\'agrandissant','Sans la tourner ni la déformer','En la faisant tourner autour d\'un point'] },
-  { q: 'Dans une symétrie axiale, la figure obtenue est…', correct: 'Le miroir de la figure originale', choices: ['Plus grande','Tournée de 90°','Le miroir de la figure originale','Identique et superposée'] },
-  { q: 'Une rotation de 90° dans le sens horaire, puis une autre de 90° → résultat ?', correct: 'Une rotation de 180°', choices: ['Une rotation de 45°','Une rotation de 90°','Une rotation de 180°','Un retour à la position initiale'] },
-  { q: 'Dans un repère, le point A(3,2) est translaté de +2 en x et -1 en y. Nouvelles coordonnées ?', correct: '(5 ; 1)', choices: ['(5 ; 3)','(5 ; 1)','(1 ; 3)','(3 ; 2)'] },
+buildQCM([
+  { card:'Rectangle 12 cm × 7 cm', q:'Aire = ?', correct:'84 cm²', choices:['38 cm²','42 cm²','84 cm²','168 cm²'] },
+  { card:'Carré de côté 8 cm', q:'Aire = ?', correct:'64 cm²', choices:['32 cm²','64 cm²','128 cm²','256 cm²'] },
+  { card:'Triangle base 10 cm, hauteur 7 cm', q:'Aire = ?', correct:'35 cm²', choices:['17 cm²','35 cm²','70 cm²','140 cm²'] },
+  { card:'Trapèze : bases 8 et 12 cm, hauteur 5 cm', q:'Aire = ?', correct:'50 cm²', choices:['40 cm²','50 cm²','60 cm²','100 cm²'] },
+  { card:'Carré de côté 5,5 cm', q:'Aire = ?', correct:'30,25 cm²', choices:['22 cm²','27,5 cm²','30,25 cm²','55 cm²'] },
 ], 'ex3');
 
-buildQ([
-  { q: 'Un cube a combien de faces ?', correct: '6', choices: ['4','6','8','12'] },
-  { q: 'Une pyramide à base carrée a combien de faces triangulaires ?', correct: '4', choices: ['3','4','5','6'] },
-  { q: 'Un prisme à base triangulaire a combien d\'arêtes ?', correct: '9', choices: ['6','8','9','12'] },
-  { q: 'Pour tout polyèdre convexe, la formule d\'Euler dit : Faces + Sommets − Arêtes = ?', correct: '2', choices: ['0','1','2','3'] },
+buildQCM([
+  { q:'Un cercle a un rayon de 5 cm. Son diamètre est…', correct:'10 cm', choices:['2,5 cm','5 cm','10 cm','15 cm'] },
+  { q:'Un cercle a un diamètre de 14 cm. Son rayon est…', correct:'7 cm', choices:['7 cm','14 cm','28 cm','3,5 cm'] },
+  { q:'Périmètre d\'un cercle de rayon 5 cm ≈ (π≈3,14)', correct:'31,4 cm', choices:['15,7 cm','31,4 cm','62,8 cm','78,5 cm'] },
+  { q:'Aire d\'un disque de rayon 4 cm ≈ (π≈3,14)', correct:'50,24 cm²', choices:['25,12 cm²','50,24 cm²','100,48 cm²','12,56 cm²'] },
+  { q:'Périmètre d\'un cercle de diamètre 10 cm ≈', correct:'31,4 cm', choices:['15,7 cm','31,4 cm','62,8 cm','314 cm'] },
 ], 'ex4');
+
+buildVF([
+  { q:'L\'aire d\'un carré de côté 8 cm est 64 cm².', correct:true },
+  { q:'Un angle de 135° est aigu.', correct:false, expl:'135° > 90° → angle obtus' },
+  { q:'La somme des angles d\'un triangle vaut 180°.', correct:true },
+  { q:'Périmètre d\'un cercle = 2 × π × r', correct:true },
+  { q:'L\'aire d\'un triangle = base × hauteur.', correct:false, expl:'Aire triangle = (base × hauteur) ÷ 2' },
+  { q:'Un carré est un losange avec des angles droits.', correct:true },
+  { q:'Aire d\'un disque de rayon 3 cm ≈ 28,26 cm².', correct:true, expl:'3,14 × 3² = 3,14 × 9 = 28,26 cm²' },
+], 'ex5');
+
+buildPaires([
+  { q:'Associe chaque figure à sa formule d\'aire.',
+    pairs:[['Carré (côté c)','c²'],['Rectangle (L×l)','L × l'],['Triangle (base b, hauteur h)','(b × h) ÷ 2'],['Disque (rayon r)','π × r²']] },
+  { q:'Associe chaque figure à sa formule de périmètre.',
+    pairs:[['Carré (côté c)','4 × c'],['Rectangle (L×l)','2 × (L + l)'],['Cercle (rayon r)','2 × π × r'],['Triangle équilatéral (côté c)','3 × c']] },
+], 'ex6');
+
+buildTri([
+  { q:'Cet angle est-il aigu, droit ou obtus ?',
+    cats:['Aigu (< 90°)','Obtus (> 90°)'],
+    items:[
+      {v:'35°', cat:'Aigu (< 90°)'},
+      {v:'120°', cat:'Obtus (> 90°)'},
+      {v:'75°', cat:'Aigu (< 90°)'},
+      {v:'145°', cat:'Obtus (> 90°)'},
+      {v:'10°', cat:'Aigu (< 90°)'},
+      {v:'160°', cat:'Obtus (> 90°)'},
+    ]
+  },
+], 'ex7');
 </script>
 
 <script src="gamification.js"></script>

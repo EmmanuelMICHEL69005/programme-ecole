@@ -7,130 +7,138 @@
 <meta property="og:site_name" content="Les Maths de Clémence">
 <link rel="manifest" href="manifest.json">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Calcul avancé — CM2</title>
+<title>Calcul — CM2</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<style>
-  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-  .btn-choice {
-    background: white; border: 2px solid #fef08a; border-radius: 22px;
-    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #713f12;
-    transition: background 0.15s;
-  }
-  .btn-choice:hover { background: #fef9c3; }
-  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
-  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
-  .btn-choice:disabled { opacity: 0.6; cursor: default; }
-  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
-  .q-block { background: #fefce8; border: 2px solid #fef08a; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
-  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
-  .pb-enonce { background: #fef9c3; border-radius: 10px; padding: 12px; margin-bottom: 12px; font-size: 0.95rem; color: #713f12; line-height: 1.6; }
-</style>
 </head>
 <body>
 
-<header class="site-header" style="background: linear-gradient(135deg, #b45309, #fcd34d);">
-  <span class="emoji-header">➕</span>
-  <h1>Les 4 opérations avancées</h1>
-  <p>Division décimale, priorités, parenthèses</p>
+<header class="site-header" style="background:linear-gradient(135deg,#b45309,#f59e0b);">
+  <span class="emoji-header">✖️</span>
+  <h1>Les 4 opérations</h1>
+  <p>Grands nombres, décimaux, priorités</p>
   <a href="index.html" class="nav-back">← Accueil</a>
 </header>
 
 <main>
-
-  <div class="badge-niveau">CM2 — Nombres et calculs</div>
+  <div class="badge-niveau">🎯 CM2 — Calcul</div>
 
   <div class="retiens-box">
     <div class="retiens-title">💡 Je retiens</div>
-    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
-      ÷ <strong>Division décimale</strong> : on peut continuer après la virgule → 7 ÷ 4 = 1,75<br>
-      📏 <strong>Priorités</strong> : ( ) d'abord, puis × et ÷, puis + et −<br>
-      🔢 <strong>Distributivité</strong> : 6 × 13 = 6 × 10 + 6 × 3 = 60 + 18 = 78<br>
-      ✅ <strong>Estimation</strong> : arrondir pour vérifier l'ordre de grandeur
+    <div style="font-size:0.88rem;color:#555;margin-top:8px;line-height:1.9;">
+      ✖️ <strong>Multiplication</strong> : jusqu'à 3 chiffres × 2 chiffres<br>
+      ➗ <strong>Division décimale</strong> : 17 ÷ 4 = 4,25 (on continue après la virgule)<br>
+      🔢 <strong>Priorités</strong> : parenthèses → × et ÷ → + et −<br>
+      📐 <strong>Calcul décimal</strong> : aligner les virgules pour + et −<br>
+      ✅ <strong>Vérifier</strong> : estimation = arrondi pour contrôler le résultat
     </div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 1</span> Division décimale</div>
+  <div class="exercice-block" style="--accent:#b45309">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309">Ex 1</span> Multiplication grands nombres <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex1"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 2</span> Priorité des opérations</div>
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 2</span> Division euclidienne et décimale <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex2"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 3</span> Calculs avec grands nombres</div>
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 3</span> Calculs avec décimaux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex3"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 4</span> Problèmes complexes</div>
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 4</span> Priorités et parenthèses <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 5</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Associer opération et résultat <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Trier : division exacte ou avec reste ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex7"></div>
   </div>
 
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence — CM2</footer>
 
+<script src="exercises.js"></script>
 <script>
-function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
-function buildQ(data, id) {
-  const c = document.getElementById(id);
-  data.forEach((item, i) => {
-    const d = document.createElement('div');
-    d.className = 'q-block';
-    const sh = shuffle(item.choices);
-    d.innerHTML = `
-      ${item.enonce ? `<div class="pb-enonce">${item.enonce}</div>` : ''}
-      <div class="q-text">${item.q}</div>
-      <div class="qcm-row" id="${id}-r${i}">
-        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
-      </div>
-      <div class="feedback-line" id="${id}-f${i}"></div>
-    `;
-    c.appendChild(d);
-  });
-}
-function check(btn, chosen, correct, rowId, fbId) {
-  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
-  const fb = document.getElementById(fbId);
-  if (chosen === correct) {
-    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
-  } else {
-    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
-    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
-  }
-}
-
-buildQ([
-  { q: '15 ÷ 4 = ? (résultat décimal)', correct: '3,75', choices: ['3 reste 3','3,5','3,75','4'] },
-  { q: '7 ÷ 8 = ?', correct: '0,875', choices: ['0,75','0,875','0,9','1,14'] },
-  { q: '23,4 ÷ 6 = ?', correct: '3,9', choices: ['3,6','3,9','4,0','4,2'] },
-  { q: 'Si 1 litre d\'essence coûte 1,89 €, quel est le prix de 30 litres ?', correct: '56,70 €', choices: ['56,00 €','56,70 €','57,00 €','58,90 €'] },
+buildQCM([
+  { card:'345 × 67 = ?', q:'Multiplie', correct:'23 115', choices:['23 015','23 115','23 215','24 115'] },
+  { card:'1 234 × 56 = ?', q:'Multiplie', correct:'69 104', choices:['68 904','69 104','69 204','70 104'] },
+  { card:'2 345 × 78 = ?', q:'Multiplie', correct:'182 910', choices:['180 910','182 910','184 910','183 910'] },
+  { card:'456 × 123 = ?', q:'Multiplie', correct:'56 088', choices:['55 088','56 088','57 088','56 188'] },
+  { card:'789 × 45 = ?', q:'Multiplie', correct:'35 505', choices:['34 505','35 505','36 505','35 605'] },
 ], 'ex1');
 
-buildQ([
-  { q: '3 + 4 × 5 = ?', correct: '23', choices: ['35','20','23','60'] },
-  { q: '(3 + 4) × 5 = ?', correct: '35', choices: ['23','35','20','12'] },
-  { q: '48 ÷ (8 − 2) = ?', correct: '8', choices: ['4','6','8','24'] },
-  { q: '2 × 6 + 3 × 4 = ?', correct: '24', choices: ['12','20','24','60'] },
+buildQCM([
+  { card:'17 ÷ 4 = ?', q:'Division décimale', correct:'4,25', choices:['4 r.1','4,25','4,5','4,75'] },
+  { card:'7 ÷ 2 = ?', q:'Division décimale', correct:'3,5', choices:['3 r.1','3,5','4','3,25'] },
+  { card:'23 ÷ 4 = ?', q:'Division décimale', correct:'5,75', choices:['5 r.3','5,3','5,75','6'] },
+  { card:'1 345 ÷ 5 = ?', q:'Division décimale', correct:'269', choices:['269','269,5','270','268'] },
+  { card:'678 ÷ 8 = ?', q:'Division et reste', correct:'84 reste 6', choices:['84','84 reste 6','85','85 reste 2'] },
+  { card:'100 ÷ 8 = ?', q:'Division décimale', correct:'12,5', choices:['12','12,5','13','12,25'] },
 ], 'ex2');
 
-buildQ([
-  { q: '35 648 × 12 = ?', correct: '427 776', choices: ['357 776','427 776','435 776','450 000'] },
-  { q: '7 245 ÷ 15 = ?', correct: '483', choices: ['483','485','493','500'] },
-  { q: '1 250 000 + 750 000 = ?', correct: '2 000 000', choices: ['1 750 000','2 000 000','2 000 500','12 500 000'] },
-  { q: 'Arrondi pour estimer : 4 970 × 22 ≈ ?', correct: '≈ 110 000', choices: ['≈ 90 000','≈ 100 000','≈ 110 000','≈ 1 000 000'] },
+buildQCM([
+  { card:'3,45 × 6 = ?', q:'Calcule', correct:'20,70', choices:['20,50','20,70','20,90','21'] },
+  { card:'7,8 × 5 = ?', q:'Calcule', correct:'39', choices:['35','38','39','40'] },
+  { card:'45,6 ÷ 4 = ?', q:'Calcule', correct:'11,4', choices:['11','11,4','11,6','12'] },
+  { card:'12,34 + 5,678 = ?', q:'Calcule', correct:'18,018', choices:['17,018','18,018','18,118','18,928'] },
+  { card:'10,00 − 3,456 = ?', q:'Calcule', correct:'6,544', choices:['6,444','6,544','6,644','7,544'] },
+  { card:'2,5 × 2,5 = ?', q:'Calcule', correct:'6,25', choices:['4,10','5','6,25','7'] },
 ], 'ex3');
 
-buildQ([
-  { enonce: 'Un magasin a vendu 248 articles à 34,50 € chacun. Il paie ses charges : 2 450 €.', q: 'Quel est le bénéfice net du magasin ?', correct: '6 106 €', choices: ['5 000 €','5 756 €','6 106 €','8 556 €'] },
-  { enonce: 'Une école a 480 élèves. 3/8 des élèves vont au restaurant scolaire. Le repas coûte 3,20 €.', q: 'Quel est le montant total des repas par jour ?', correct: '576 €', choices: ['480 €','512 €','576 €','614 €'] },
-  { enonce: 'Un train roule à 220 km/h. Un autre à 180 km/h. Ils partent de la même ville, en sens opposés.', q: 'Après 3 heures, quelle distance les sépare-t-il ?', correct: '1 200 km', choices: ['660 km','780 km','1 200 km','1 320 km'] },
+buildQCM([
+  { card:'3 + 2 × 4 = ?', q:'Priorité des opérations', correct:'11', choices:['20','11','24','14'] },
+  { card:'(3 + 2) × 4 = ?', q:'Parenthèses d\'abord', correct:'20', choices:['11','20','9','14'] },
+  { card:'8 − 2 × 3 = ?', q:'Priorité des opérations', correct:'2', choices:['2','18','6','16'] },
+  { card:'(8 − 2) × 3 = ?', q:'Parenthèses d\'abord', correct:'18', choices:['2','18','6','14'] },
+  { card:'10 ÷ 2 + 3 × 4 = ?', q:'Calcule en respectant les priorités', correct:'17', choices:['26','17','14','22'] },
 ], 'ex4');
+
+buildVF([
+  { q:'345 × 67 = 23 115', correct:true },
+  { q:'17 ÷ 4 = 4,25', correct:true },
+  { q:'3 + 2 × 4 = 20', correct:false, expl:'2×4 = 8 d\'abord, puis 3+8 = 11' },
+  { q:'7,8 × 5 = 39', correct:true },
+  { q:'10 ÷ 2 + 3 × 4 = 26', correct:false, expl:'5 + 12 = 17 (priorité × sur +)' },
+  { q:'12,34 + 5,678 = 18,018', correct:true },
+], 'ex5');
+
+buildPaires([
+  { q:'Associe chaque opération à son résultat.',
+    pairs:[['345 × 67','23 115'],['17 ÷ 4','4,25'],['3 + 2 × 4','11'],['3,45 × 6','20,70']] },
+  { q:'Associe chaque opération à son résultat.',
+    pairs:[['(3 + 2) × 4','20'],['100 ÷ 8','12,5'],['12,34 + 5,678','18,018'],['789 × 45','35 505']] },
+], 'ex6');
+
+buildTri([
+  { q:'La division est-elle exacte (reste nul) ?',
+    cats:['Division exacte','Avec reste'],
+    items:[
+      {v:'17 ÷ 4', cat:'Avec reste'},
+      {v:'1 345 ÷ 5', cat:'Division exacte'},
+      {v:'7 ÷ 2', cat:'Division exacte'},
+      {v:'678 ÷ 8', cat:'Avec reste'},
+      {v:'100 ÷ 4', cat:'Division exacte'},
+      {v:'23 ÷ 4', cat:'Avec reste'},
+    ]
+  },
+], 'ex7');
 </script>
 
 <script src="gamification.js"></script>

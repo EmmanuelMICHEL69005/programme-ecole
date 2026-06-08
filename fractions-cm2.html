@@ -7,132 +7,149 @@
 <meta property="og:site_name" content="Les Maths de Clémence">
 <link rel="manifest" href="manifest.json">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fractions avancées — CM2</title>
+<title>Fractions — CM2</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-  .btn-choice {
-    background: white; border: 2px solid #fef08a; border-radius: 22px;
-    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #713f12;
-    transition: background 0.15s;
-  }
-  .btn-choice:hover { background: #fef9c3; }
-  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
-  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
-  .btn-choice:disabled { opacity: 0.6; cursor: default; }
-  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
-  .q-block { background: #fefce8; border: 2px solid #fef08a; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
-  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+.f{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 4px;line-height:1.2;}
+.fn{border-bottom:2.5px solid currentColor;padding:0 3px;font-size:0.95em;}
+.fd{padding:0 3px;font-size:0.95em;}
 </style>
 </head>
 <body>
 
-<header class="site-header" style="background: linear-gradient(135deg, #b45309, #fcd34d);">
-  <span class="emoji-header">✂️</span>
-  <h1>Fractions avancées</h1>
-  <p>Simplification, dénominateurs différents, mixtes</p>
+<header class="site-header" style="background:linear-gradient(135deg,#b45309,#f59e0b);">
+  <span class="emoji-header">🍕</span>
+  <h1>Fractions</h1>
+  <p>Opérations, fractions décimales, simplification</p>
   <a href="index.html" class="nav-back">← Accueil</a>
 </header>
 
 <main>
-
-  <div class="badge-niveau">CM2 — Nombres et calculs</div>
+  <div class="badge-niveau">🎯 CM2 — Fractions</div>
 
   <div class="retiens-box">
     <div class="retiens-title">💡 Je retiens</div>
-    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
-      ✂️ <strong>Simplifier</strong> : diviser numérateur et dénominateur par le même nombre → 6/9 = 2/3 (÷3)<br>
-      ➕ <strong>Additionner</strong> des fractions de dénominateurs différents : trouver un dénominateur commun<br>
-      💯 <strong>Fraction → décimal</strong> : 3/4 = 3÷4 = 0,75<br>
-      💯 <strong>Pourcentage</strong> : 25% = 25/100 = 1/4
+    <div style="background:#fef3c7;border-radius:14px;padding:14px;border:2px solid #fcd34d;margin-bottom:12px;">
+      <div style="text-align:center;font-size:1rem;font-weight:900;color:#b45309;line-height:2.2;">
+        <span class="f" style="color:#1d4ed8;font-size:1.3rem"><span class="fn">2</span><span class="fd">3</span></span>
+        +
+        <span class="f" style="color:#1d4ed8;font-size:1.3rem"><span class="fn">1</span><span class="fd">3</span></span>
+        =
+        <span class="f" style="color:#059669;font-size:1.3rem"><span class="fn">3</span><span class="fd">3</span></span>
+        = 1
+        &nbsp;&nbsp;·&nbsp;&nbsp;
+        <span class="f" style="color:#7c3aed;font-size:1.3rem"><span class="fn">3</span><span class="fd">4</span></span>
+        = 0,75
+      </div>
+    </div>
+    <div style="font-size:0.88rem;color:#555;line-height:1.9;">
+      ➕ <strong>Addition (même dénominateur)</strong> : <span class="f" style="color:#1d4ed8"><span class="fn">a</span><span class="fd">n</span></span> + <span class="f" style="color:#1d4ed8"><span class="fn">b</span><span class="fd">n</span></span> = <span class="f" style="color:#1d4ed8"><span class="fn">a+b</span><span class="fd">n</span></span><br>
+      🔄 <strong>Fractions décimales</strong> : <span class="f" style="color:#7c3aed"><span class="fn">3</span><span class="fd">4</span></span> = 0,75 · <span class="f" style="color:#7c3aed"><span class="fn">1</span><span class="fd">5</span></span> = 0,2<br>
+      ✂️ <strong>Simplifier</strong> : <span class="f" style="color:#059669"><span class="fn">6</span><span class="fd">8</span></span> = <span class="f" style="color:#059669"><span class="fn">3</span><span class="fd">4</span></span> (÷2 haut et bas)<br>
+      📐 <strong>Comparer</strong> : mettre au même dénominateur
     </div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 1</span> Simplifier une fraction</div>
+  <div class="exercice-block" style="--accent:#b45309">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309">Ex 1</span> Fractions équivalentes et simplification <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex1"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 2</span> Additionner des fractions (dénominateurs différents)</div>
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 2</span> Fractions et nombres décimaux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex2"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 3</span> Fractions et décimaux</div>
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 3</span> Comparer des fractions <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex3"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#b45309;">Ex 4</span> Fractions et pourcentages</div>
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 4</span> Additionner et soustraire des fractions <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 5</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 6</span> Ranger les fractions <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">ORDRE</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 7</span> Associer fraction et écriture décimale <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex7"></div>
   </div>
 
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence — CM2</footer>
 
+<script src="exercises.js"></script>
 <script>
-function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
-function formatFrac(s) {
-  return String(s).replace(/(\d+)\/(\d+)/g, '<span class="f"><span class="fn">$1</span><span class="fd">$2</span></span>');
-}
-function buildQ(data, id) {
-  const c = document.getElementById(id);
-  data.forEach((item, i) => {
-    const d = document.createElement('div');
-    d.className = 'q-block';
-    const sh = shuffle(item.choices);
-    d.innerHTML = `
-      <div class="q-text">${formatFrac(item.q)}</div>
-      <div class="qcm-row" id="${id}-r${i}">
-        ${sh.map(c => `<button class="btn-choice" data-val="${c.replace(/"/g,'&quot;')}" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${formatFrac(c)}</button>`).join('')}
-      </div>
-      <div class="feedback-line" id="${id}-f${i}"></div>
-    `;
-    c.appendChild(d);
-  });
-}
-function check(btn, chosen, correct, rowId, fbId) {
-  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
-  const fb = document.getElementById(fbId);
-  if (chosen === correct) {
-    btn.classList.add('correct'); fb.innerHTML = '✅ Bravo !'; fb.style.color = '#166534';
-  } else {
-    btn.classList.add('wrong'); fb.innerHTML = '❌ C\'était ' + formatFrac(correct); fb.style.color = '#991b1b';
-    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.dataset.val === correct) b.classList.add('correct'); });
-  }
-}
-
-buildQ([
-  { q: 'Simplifie 6/8 au maximum.', correct: '3/4', choices: ['2/3','3/4','4/6','1/4'] },
-  { q: 'Simplifie 15/25 au maximum.', correct: '3/5', choices: ['5/8','3/5','5/25','15/25'] },
-  { q: 'Simplifie 12/16 au maximum.', correct: '3/4', choices: ['2/4','3/4','6/8','4/5'] },
-  { q: 'Quelle fraction est déjà simplifiée au maximum ?', correct: '7/11', choices: ['6/9','8/12','7/11','4/10'] },
+buildQCM([
+  { q:'6/8 simplifiée = ?', correct:'3/4', choices:['2/4','3/4','4/6','6/8'] },
+  { q:'4/6 simplifiée = ?', correct:'2/3', choices:['1/2','2/3','3/4','4/5'] },
+  { q:'10/15 simplifiée = ?', correct:'2/3', choices:['1/3','2/3','3/4','5/6'] },
+  { q:'1/2 = ?/6', correct:'3/6', choices:['1/6','2/6','3/6','4/6'] },
+  { q:'Laquelle est équivalente à 3/4 ?', correct:'9/12', choices:['6/9','9/12','6/8','8/10'] },
+  { q:'12/16 simplifiée = ?', correct:'3/4', choices:['2/3','3/4','4/5','6/8'] },
 ], 'ex1');
 
-buildQ([
-  { q: '1/2 + 1/4 = ?', correct: '3/4', choices: ['2/6','2/4 = 1/2','3/4','1/8'] },
-  { q: '1/3 + 1/6 = ?', correct: '3/6 = 1/2', choices: ['2/9','2/6 = 1/3','3/6 = 1/2','1/18'] },
-  { q: '3/4 − 1/8 = ?', correct: '5/8', choices: ['2/8 = 1/4','5/8','3/8','1/2'] },
-  { q: '1/2 + 1/3 = ?', correct: '5/6', choices: ['2/5','2/6 = 1/3','5/6','4/6'] },
+buildQCM([
+  { q:'3/4 = ?', correct:'0,75', choices:['0,34','0,50','0,75','3,4'] },
+  { q:'1/5 = ?', correct:'0,2', choices:['0,1','0,2','0,5','1,5'] },
+  { q:'3/10 = ?', correct:'0,3', choices:['0,03','0,3','3','30'] },
+  { q:'7/100 = ?', correct:'0,07', choices:['0,007','0,07','0,7','7'] },
+  { q:'0,25 = ?', correct:'1/4', choices:['1/2','1/4','1/5','1/8'] },
+  { q:'0,6 = ?', correct:'3/5', choices:['6/100','3/5','6/5','6/10 simplifiée'] },
 ], 'ex2');
 
-buildQ([
-  { q: 'Convertis 3/4 en décimal.', correct: '0,75', choices: ['0,34','0,5','0,75','1,33'] },
-  { q: 'Convertis 7/10 en décimal.', correct: '0,7', choices: ['0,07','0,7','7','70'] },
-  { q: 'Quel décimal est égal à 1/8 ?', correct: '0,125', choices: ['0,18','0,125','0,25','0,5'] },
-  { q: '0,6 = ?/5', correct: '3/5', choices: ['1/5','2/5','3/5','6/5'] },
+buildQCM([
+  { q:'Laquelle est la plus grande : 2/3 ou 3/4 ?', correct:'3/4', choices:['2/3','3/4','Elles sont égales'] },
+  { q:'Laquelle est la plus petite : 5/8 ou 3/5 ?', correct:'3/5', choices:['3/5','5/8','Elles sont égales'] },
+  { q:'Laquelle est entre 1/2 et 1 ?', correct:'3/4', choices:['1/4','3/4','5/4','1/2'] },
+  { q:'Range du plus petit : 1/2, 2/3, 1/4, 3/4', correct:'1/4 < 1/2 < 2/3 < 3/4', choices:['1/4 < 1/2 < 2/3 < 3/4','3/4 < 2/3 < 1/2 < 1/4','1/2 < 1/4 < 3/4 < 2/3'] },
 ], 'ex3');
 
-buildQ([
-  { q: '25% d\'une classe de 28 élèves, c\'est combien d\'élèves ?', correct: '7 élèves', choices: ['4 élèves','7 élèves','14 élèves','21 élèves'] },
-  { q: '50% = quelle fraction ?', correct: '1/2', choices: ['1/4','1/3','1/2','2/5'] },
-  { q: 'Un article coûte 80 €. Il est soldé à 20%. Quel est le rabais ?', correct: '16 €', choices: ['8 €','12 €','16 €','20 €'] },
-  { q: '75% de 200 = ?', correct: '150', choices: ['75','100','150','175'] },
+buildQCM([
+  { card:'2/7 + 3/7 = ?', q:'Additionne', correct:'5/7', choices:['5/14','5/7','6/7','1'] },
+  { card:'5/8 − 2/8 = ?', q:'Soustrait', correct:'3/8', choices:['3/16','3/8','3/0','7/8'] },
+  { card:'3/5 + 4/5 = ?', q:'Additionne', correct:'7/5', choices:['7/10','7/5','7/25','1'] },
+  { card:'1 − 3/7 = ?', q:'Soustrait', correct:'4/7', choices:['3/7','4/7','2/7','1/7'] },
+  { card:'2/3 + 1/3 = ?', q:'Additionne', correct:'1 entier', choices:['3/6','3/3 = 1 entier','2/3','1/3'] },
+  { card:'7/8 − 3/8 = ?', q:'Soustrait', correct:'4/8 = 1/2', choices:['4/8 = 1/2','4/0','3/8','10/8'] },
 ], 'ex4');
+
+buildVF([
+  { q:'6/8 = 3/4', correct:true, expl:'÷2 haut et bas : 6÷2=3, 8÷2=4' },
+  { q:'3/4 = 0,75', correct:true, expl:'3÷4 = 0,75' },
+  { q:'2/3 > 3/4', correct:false, expl:'2/3 ≈ 0,667 < 3/4 = 0,75' },
+  { q:'2/7 + 3/7 = 5/7', correct:true },
+  { q:'1/5 = 0,5', correct:false, expl:'1/5 = 0,2 (pas 0,5 qui est 1/2)' },
+  { q:'5/5 = 1 entier', correct:true },
+  { q:'3/5 + 4/5 = 7/10', correct:false, expl:'On additionne seulement les numérateurs : 3/5 + 4/5 = 7/5' },
+], 'ex5');
+
+buildOrdre([
+  { q:'Range ces fractions de la PLUS PETITE à la PLUS GRANDE :',
+    items:['1/4','3/4','1/2','2/4','5/8'] },
+  { q:'Range ces fractions de la PLUS PETITE à la PLUS GRANDE :',
+    items:['1/3','2/3','3/3','1/6','5/6'] },
+], 'ex6');
+
+buildPaires([
+  { q:'Associe chaque fraction à son écriture décimale.',
+    pairs:[['3/4','0,75'],['1/5','0,2'],['3/10','0,3'],['7/100','0,07']] },
+  { q:'Associe chaque fraction à sa forme simplifiée.',
+    pairs:[['6/8','3/4'],['4/6','2/3'],['10/15','2/3'],['12/16','3/4']] },
+], 'ex7');
 </script>
 
 <script src="gamification.js"></script>
