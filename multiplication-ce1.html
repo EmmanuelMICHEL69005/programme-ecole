@@ -12,159 +12,171 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-  .btn-choice {
-    background: white; border: 2px solid #6ee7b7; border-radius: 22px;
-    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #065f46;
-    transition: background 0.15s;
+  .mult-visual {
+    display:grid; gap:8px; margin:12px 0; justify-content:center;
   }
-  .btn-choice:hover { background: #f0fdf4; }
-  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
-  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
-  .btn-choice:disabled { opacity: 0.6; cursor: default; }
-  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
-  .q-block { background: #f0fdf4; border: 2px solid #6ee7b7; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
-  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
-  .calcul-card {
-    font-size: 2rem; font-weight: 900; color: #065f46; text-align: center;
-    padding: 14px; background: #d1fae5; border-radius: 14px; margin-bottom: 14px;
-    letter-spacing: 2px;
+  .mult-row-vis {
+    display:flex; gap:6px; align-items:center;
   }
-  .schema-card {
-    font-size: 1.15rem; font-weight: 800; color: #064e3b; text-align: center;
-    padding: 14px 20px; background: #d1fae5; border-radius: 14px; margin-bottom: 14px;
-    line-height: 2;
+  .mult-dot {
+    width:28px;height:28px;border-radius:50%;
+    background:linear-gradient(135deg,#059669,#34d399);
+    display:flex;align-items:center;justify-content:center;
+    font-size:0.85rem;color:white;font-weight:900;
+    box-shadow:0 2px 0 #059669;
   }
-  .pb-enonce {
-    background: #d1fae5; border-radius: 10px; padding: 12px; margin-bottom: 12px;
-    font-size: 0.95rem; color: #064e3b; line-height: 1.6; font-weight: 700;
+  .table-mult {
+    display:grid; grid-template-columns:repeat(11,1fr);
+    gap:3px; margin:10px 0; font-size:0.75rem; text-align:center;
   }
-  .group-display {
-    display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
-    background: #d1fae5; border-radius: 12px; padding: 14px; margin-bottom: 14px;
-  }
-  .group-box {
-    background: white; border: 2px solid #6ee7b7; border-radius: 10px;
-    padding: 10px 14px; font-size: 1.3rem; font-weight: 900; color: #065f46;
-  }
+  .tm-head { background:#059669; color:white; font-weight:900; border-radius:4px; padding:4px 2px; }
+  .tm-cell { background:#ecfdf5; border-radius:4px; padding:4px 2px; font-weight:700; color:#065f46; border:1px solid #a7f3d0; }
+  .tm-zero { background:#d1fae5; color:#059669; }
 </style>
 </head>
 <body>
 
-<header class="site-header" style="background: linear-gradient(135deg, #065f46, #0d9488);">
+<header class="site-header" style="background: linear-gradient(135deg, #059669, #34d399);">
   <span class="emoji-header">✖️</span>
-  <h1>Sens de la multiplication</h1>
-  <p>Additions répétées, tables et problèmes</p>
+  <h1>La multiplication</h1>
+  <p>Tables de 2, 3, 4, 5 et 10</p>
   <a href="index.html" class="nav-back">← Accueil</a>
 </header>
 
 <main>
-
-  <div class="badge-niveau">CE1 — Multiplication</div>
+  <div class="badge-niveau">🌿 CE1 — Multiplication</div>
 
   <div class="retiens-box">
     <div class="retiens-title">💡 Je retiens</div>
-    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.9;">
-      🔁 <strong>Multiplication = addition répétée</strong> : 3 × 4 = 4 + 4 + 4 = 12<br>
-      🔄 <strong>Commutativité</strong> : 3 × 4 = 4 × 3 (on peut changer l'ordre !)<br>
-      🔟 <strong>× 10</strong> : j'ajoute un zéro → 7 × 10 = <strong>70</strong><br>
-      📦 <strong>Partage</strong> : 20 billes ÷ 4 enfants = 5 billes chacun
+    <div style="font-size:0.88rem;color:#555;margin-top:8px;line-height:1.9;">
+      ✖️ <strong>3 × 4</strong> = 3 fois 4 = 4 + 4 + 4 = <strong>12</strong><br>
+      📦 La multiplication, c'est une addition répétée !<br>
+      🔄 <strong>3 × 4 = 4 × 3</strong> (l'ordre ne change pas le résultat)<br>
+      🔟 <strong>× 10</strong> : on ajoute un 0 à la fin → 7 × 10 = 70<br>
+      ⚡ <strong>× 2</strong> : c'est le double → 6 × 2 = 12
+    </div>
+    <!-- Visual: 3 × 4 -->
+    <div style="margin-top:12px;text-align:center">
+      <div style="font-size:0.78rem;font-weight:800;color:#059669;margin-bottom:6px">3 × 4 = 3 rangées de 4 points</div>
+      <div class="mult-visual">
+        <div class="mult-row-vis"><div class="mult-dot"></div><div class="mult-dot"></div><div class="mult-dot"></div><div class="mult-dot"></div></div>
+        <div class="mult-row-vis"><div class="mult-dot"></div><div class="mult-dot"></div><div class="mult-dot"></div><div class="mult-dot"></div></div>
+        <div class="mult-row-vis"><div class="mult-dot"></div><div class="mult-dot"></div><div class="mult-dot"></div><div class="mult-dot"></div></div>
+      </div>
+      <div style="font-size:1rem;font-weight:900;color:#065f46">= 12</div>
     </div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#065f46;">Ex 1</span> Comprendre la multiplication (addition répétée)</div>
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 1</span> Table de 2 <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex1"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#065f46;">Ex 2</span> Tables de multiplication (×2, ×3, ×5, ×10)</div>
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 2</span> Table de 5 et de 10 <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex2"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#065f46;">Ex 3</span> Commutativité et calcul en ligne</div>
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 3</span> Tables de 3 et 4 <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex3"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#065f46;">Ex 4</span> Problèmes multiplicatifs et de partage</div>
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 4</span> Sens de la multiplication <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 5</span> Vrai ou Faux — tables <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Associer multiplication et résultat <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Trier par table <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex7"></div>
   </div>
 
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence — CE1</footer>
 
+<script src="exercises.js"></script>
 <script>
-function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
-
-function buildQ(data, id) {
-  const c = document.getElementById(id);
-  data.forEach((item, i) => {
-    const d = document.createElement('div');
-    d.className = 'q-block';
-    const sh = shuffle(item.choices);
-    let html = '';
-    if (item.card) html += `<div class="calcul-card">${item.card}</div>`;
-    if (item.schema) html += `<div class="schema-card">${item.schema}</div>`;
-    if (item.enonce) html += `<div class="pb-enonce">${item.enonce}</div>`;
-    html += `<div class="q-text">${item.q}</div>`;
-    html += `<div class="qcm-row" id="${id}-r${i}">
-      ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
-    </div>
-    <div class="feedback-line" id="${id}-f${i}"></div>`;
-    d.innerHTML = html;
-    c.appendChild(d);
-  });
-}
-
-function check(btn, chosen, correct, rowId, fbId) {
-  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
-  const fb = document.getElementById(fbId);
-  if (chosen === correct) {
-    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
-  } else {
-    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
-    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
-  }
-}
-
-buildQ([
-  { schema: '🌷🌷🌷  🌷🌷🌷  🌷🌷🌷  🌷🌷🌷', q: 'Il y a 4 bouquets de 3 tulipes. Quelle multiplication correspond ?', correct: '4 × 3', choices: ['3 + 4','4 × 3','3 × 3','4 + 3'] },
-  { schema: '5 + 5 + 5 = ?', q: '5 + 5 + 5, c\'est le même calcul que…', correct: '3 × 5', choices: ['5 × 5','3 + 5','3 × 5','5 × 3 = 5 + 3'] },
-  { schema: '2 + 2 + 2 + 2 + 2 + 2 = ?', q: '2 additionné 6 fois, c\'est le même calcul que…', correct: '6 × 2', choices: ['2 × 2','6 + 2','6 × 2','6 × 6'] },
-  { schema: '4 × 6 = ?', q: 'Calcule 4 × 6 (pense : 6 + 6 + 6 + 6)', correct: '24', choices: ['20','22','24','28'] },
-  { enonce: 'Chaque enfant reçoit 5 images. Il y a 3 enfants.', q: 'Combien d\'images en tout ?', correct: '15', choices: ['8','10','15','20'] },
+buildQCM([
+  { card:'2 × 3 = ?', q:'Table de 2', correct:'6', choices:['4','5','6','7'] },
+  { card:'2 × 7 = ?', q:'Table de 2', correct:'14', choices:['9','12','14','16'] },
+  { card:'2 × 9 = ?', q:'Table de 2', correct:'18', choices:['16','17','18','19'] },
+  { card:'4 × 2 = ?', q:'4 fois 2', correct:'8', choices:['6','7','8','9'] },
+  { card:'8 × 2 = ?', q:'Table de 2', correct:'16', choices:['14','15','16','18'] },
+  { card:'2 × 6 = ?', q:'Table de 2', correct:'12', choices:['10','11','12','14'] },
+  { card:'2 × 10 = ?', q:'Table de 2', correct:'20', choices:['12','18','20','22'] },
 ], 'ex1');
 
-buildQ([
-  { card: '4 × 2 = ?', q: 'Calcule 4 × 2', correct: '8', choices: ['6','8','10','12'] },
-  { card: '7 × 2 = ?', q: 'Calcule 7 × 2', correct: '14', choices: ['12','14','16','18'] },
-  { card: '6 × 3 = ?', q: 'Calcule 6 × 3', correct: '18', choices: ['15','18','21','24'] },
-  { card: '4 × 5 = ?', q: 'Calcule 4 × 5', correct: '20', choices: ['15','20','25','30'] },
-  { card: '7 × 5 = ?', q: 'Calcule 7 × 5', correct: '35', choices: ['30','35','40','45'] },
-  { card: '6 × 10 = ?', q: 'Calcule 6 × 10', correct: '60', choices: ['16','60','66','106'] },
-  { card: '9 × 10 = ?', q: 'Calcule 9 × 10', correct: '90', choices: ['19','80','90','100'] },
-  { card: '3 × 3 = ?', q: 'Calcule 3 × 3', correct: '9', choices: ['6','9','12','15'] },
+buildQCM([
+  { card:'5 × 3 = ?', q:'Table de 5', correct:'15', choices:['10','13','15','20'] },
+  { card:'5 × 6 = ?', q:'Table de 5', correct:'30', choices:['25','28','30','35'] },
+  { card:'5 × 8 = ?', q:'Table de 5', correct:'40', choices:['35','38','40','45'] },
+  { card:'10 × 4 = ?', q:'Table de 10', correct:'40', choices:['14','30','40','44'] },
+  { card:'10 × 7 = ?', q:'Table de 10', correct:'70', choices:['17','60','70','77'] },
+  { card:'5 × 9 = ?', q:'Table de 5', correct:'45', choices:['40','43','45','50'] },
+  { card:'10 × 5 = ?', q:'Table de 10', correct:'50', choices:['15','40','50','55'] },
 ], 'ex2');
 
-buildQ([
-  { schema: 'Si 3 × 7 = 21, alors 7 × 3 = ?', q: 'Utilise la commutativité pour répondre', correct: '21', choices: ['17','18','21','73'] },
-  { schema: 'Si 5 × 4 = 20, alors 4 × 5 = ?', q: 'Utilise la commutativité pour répondre', correct: '20', choices: ['9','20','45','54'] },
-  { card: '2 × 9 = ?', q: 'Calcule 2 × 9 (tu peux utiliser 9 × 2)', correct: '18', choices: ['11','16','18','20'] },
-  { card: '5 × 6 = ?', q: 'Calcule 5 × 6', correct: '30', choices: ['25','28','30','35'] },
-  { enonce: 'Je connais 3 × 8 = 24.', q: 'Que vaut 8 × 3 ?', correct: '24', choices: ['11','21','24','32'] },
+buildQCM([
+  { card:'3 × 4 = ?', q:'Table de 3', correct:'12', choices:['9','10','12','15'] },
+  { card:'3 × 7 = ?', q:'Table de 3', correct:'21', choices:['18','20','21','24'] },
+  { card:'4 × 6 = ?', q:'Table de 4', correct:'24', choices:['20','22','24','28'] },
+  { card:'4 × 8 = ?', q:'Table de 4', correct:'32', choices:['28','30','32','36'] },
+  { card:'3 × 9 = ?', q:'Table de 3', correct:'27', choices:['24','25','27','30'] },
+  { card:'4 × 5 = ?', q:'Table de 4', correct:'20', choices:['16','18','20','22'] },
+  { card:'3 × 6 = ?', q:'Table de 3', correct:'18', choices:['15','16','18','21'] },
 ], 'ex3');
 
-buildQ([
-  { enonce: 'La fleuriste fait 6 bouquets de 5 roses.', q: 'Combien de roses a-t-elle utilisées ?', correct: '30 roses', choices: ['25 roses','30 roses','35 roses','40 roses'] },
-  { enonce: 'Tom a 7 boîtes. Chaque boîte contient 10 œufs.', q: 'Combien d\'œufs Tom a-t-il en tout ?', correct: '70 œufs', choices: ['17 œufs','60 œufs','70 œufs','80 œufs'] },
-  { enonce: 'Il y a 4 tables dans la classe. Chaque table a 5 places.', q: 'Combien d\'élèves peuvent s\'asseoir ?', correct: '20 élèves', choices: ['9 élèves','15 élèves','20 élèves','25 élèves'] },
-  { enonce: 'Léa a 20 perles. Elle les partage entre 4 amies.', q: 'Combien de perles chaque amie reçoit-elle ?', correct: '5 perles', choices: ['4 perles','5 perles','6 perles','8 perles'] },
-  { enonce: 'Un boulanger fait 30 croissants. Il les met dans des sacs de 5.', q: 'Combien de sacs peut-il remplir ?', correct: '6 sacs', choices: ['5 sacs','6 sacs','7 sacs','8 sacs'] },
-  { enonce: 'Chaque enfant reçoit 3 gâteaux. Il y a 8 enfants à la fête.', q: 'Combien de gâteaux faut-il préparer ?', correct: '24 gâteaux', choices: ['11 gâteaux','21 gâteaux','24 gâteaux','28 gâteaux'] },
+buildQCM([
+  { enonce:'🍭 Dans une boîte : 4 rangées de 3 bonbons.', q:'Combien de bonbons en tout ?', correct:'12', choices:['7','10','12','16'] },
+  { enonce:'🎲 3 joueurs ont chacun 5 dés.', q:'Combien de dés en tout ?', correct:'15', choices:['8','12','15','20'] },
+  { q:'Quelle addition correspond à 4 × 6 ?', correct:'6+6+6+6', choices:['4+4+4+4+4+4','6+6+6+6','4+6','4×6=24'] },
+  { q:'5 × ☐ = 25, quel est le facteur manquant ?', correct:'5', choices:['3','4','5','6'] },
+  { enonce:'🚗 5 voitures ont chacune 4 roues.', q:'Combien de roues en tout ?', correct:'20', choices:['9','16','20','25'] },
+  { q:'3 × 8 = ?', correct:'24', choices:['21','22','24','27'] },
 ], 'ex4');
+
+buildVF([
+  { card:'2 × 8 = 18', q:'2 × 8 = 18', correct:false, expl:'2 × 8 = 16' },
+  { card:'5 × 6 = 30', q:'5 × 6 = 30', correct:true },
+  { card:'3 × 7 = 21', q:'3 × 7 = 21', correct:true },
+  { card:'4 × 9 = 35', q:'4 × 9 = 35', correct:false, expl:'4 × 9 = 36' },
+  { card:'10 × 6 = 60', q:'10 × 6 = 60', correct:true },
+  { card:'3 × 4 = 4 × 3', q:'3 × 4 = 4 × 3', correct:true, expl:'La multiplication est commutative !' },
+  { q:'5 × 7 = 35', correct:true },
+], 'ex5');
+
+buildPaires([
+  { q:'Associe chaque multiplication à son résultat.',
+    pairs:[['3 × 5','15'],['4 × 7','28'],['2 × 9','18'],['5 × 8','40']] },
+  { q:'Associe chaque multiplication à son résultat.',
+    pairs:[['10 × 3','30'],['3 × 8','24'],['4 × 4','16'],['5 × 4','20']] },
+], 'ex6');
+
+buildTri([
+  { q:'Classe chaque produit selon sa table.',
+    cats:['Table de 2','Table de 5'],
+    items:[
+      {v:'2 × 7', cat:'Table de 2'},
+      {v:'5 × 3', cat:'Table de 5'},
+      {v:'8 × 2', cat:'Table de 2'},
+      {v:'4 × 5', cat:'Table de 5'},
+      {v:'2 × 4', cat:'Table de 2'},
+      {v:'7 × 5', cat:'Table de 5'},
+    ]
+  },
+], 'ex7');
 </script>
 
 <script src="gamification.js"></script>

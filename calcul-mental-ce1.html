@@ -11,125 +11,131 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<style>
-  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-  .btn-choice {
-    background: white; border: 2px solid #a7f3d0; border-radius: 22px;
-    padding: 11px 26px; font-size: 1.05rem; font-weight: 900; cursor: pointer; color: #065f46;
-    transition: background 0.15s;
-  }
-  .btn-choice:hover { background: #d1fae5; }
-  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
-  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
-  .btn-choice:disabled { opacity: 0.6; cursor: default; }
-  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
-  .q-block { background: #ecfdf5; border: 2px solid #a7f3d0; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
-  .calcul-card { font-size: 2rem; font-weight: 900; color: #065f46; text-align: center; padding: 14px; background: #d1fae5; border-radius: 14px; margin-bottom: 14px; }
-</style>
 </head>
 <body>
 
-<header class="site-header" style="background: linear-gradient(135deg, #059669, #34d399);">
+<header class="site-header" style="background: linear-gradient(135deg, #059669, #6ee7b7);">
   <span class="emoji-header">⚡</span>
   <h1>Calcul mental</h1>
-  <p>Rapidité et automatismes</p>
+  <p>Calculer vite et bien dans sa tête !</p>
   <a href="index.html" class="nav-back">← Accueil</a>
 </header>
 
 <main>
-
-  <div class="badge-niveau">CE1 — Calcul mental</div>
+  <div class="badge-niveau">🌿 CE1 — Calcul mental</div>
 
   <div class="retiens-box">
-    <div class="retiens-title">💡 Mes automatismes CE1</div>
-    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
-      🎯 Tables de multiplication par 2, 3, 4, 5<br>
-      ⚡ <strong>+9 = +10 − 1</strong> : 37+9 = 37+10−1 = 46<br>
-      💡 <strong>Doubles et moitiés</strong> : le double de 25 = 50<br>
-      🔟 Compter de 100 en 100 facilement
+    <div class="retiens-title">💡 Mes astuces de calcul rapide</div>
+    <div style="font-size:0.88rem;color:#555;margin-top:8px;line-height:1.9;">
+      ⚡ <strong>+9</strong> = +10 puis −1 · <strong>+11</strong> = +10 puis +1<br>
+      🎯 <strong>Compléments à 100</strong> : 35 + 65 = 100, 48 + 52 = 100…<br>
+      🔄 <strong>Doubles et moitiés</strong> : 2×14=28, moitié de 36=18<br>
+      🔟 <strong>+/− 10, 20, 30…</strong> : seule la dizaine change<br>
+      🧩 <strong>Décomposer</strong> : 47 + 35 = 47 + 30 + 5 = 82
     </div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 1</span> Tables de × (2, 3, 4, 5)</div>
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 1</span> Compléments à 100 <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex1"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 2</span> Ajouter ou soustraire 9 et 11</div>
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 2</span> Ajouter ou ôter 9, 11, 19, 21 <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex2"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 3</span> Doubles et moitiés</div>
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 3</span> Doubles et moitiés <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex3"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 4</span> Calculs avec des centaines</div>
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 4</span> Vrai ou Faux — calculs rapides <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
     <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 5</span> Ajouter des multiples de 10 <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Associer calcul et résultat <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#f97316">
+    <div class="ex-title"><span class="ex-badge" style="background:#f97316">Ex 7</span> Trier par ordre de résultat <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">ORDRE</span></div>
+    <div id="ex7"></div>
   </div>
 
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence — CE1</footer>
 
+<script src="exercises.js"></script>
 <script>
-function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
-function buildQ(data, id) {
-  const c = document.getElementById(id);
-  data.forEach((item, i) => {
-    const d = document.createElement('div');
-    d.className = 'q-block';
-    const sh = shuffle(item.choices);
-    d.innerHTML = `
-      <div class="calcul-card">${item.q}</div>
-      <div class="qcm-row" id="${id}-r${i}">
-        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c}','${item.correct}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
-      </div>
-      <div class="feedback-line" id="${id}-f${i}"></div>
-    `;
-    c.appendChild(d);
-  });
-}
-function check(btn, chosen, correct, rowId, fbId) {
-  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
-  const fb = document.getElementById(fbId);
-  if (chosen === correct) {
-    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
-  } else {
-    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
-    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
-  }
-}
-
-buildQ([
-  { q: '7 × 3 = ?', correct: '21', choices: ['18','20','21','24'] },
-  { q: '6 × 4 = ?', correct: '24', choices: ['20','22','24','26'] },
-  { q: '8 × 5 = ?', correct: '40', choices: ['35','38','40','45'] },
-  { q: '9 × 2 = ?', correct: '18', choices: ['16','17','18','20'] },
+buildQCM([
+  { card:'35 + ☐ = 100', q:'Complément à 100', correct:'65', choices:['55','60','65','75'] },
+  { card:'72 + ☐ = 100', q:'Complément à 100', correct:'28', choices:['18','22','28','38'] },
+  { card:'48 + ☐ = 100', q:'Complément à 100', correct:'52', choices:['42','48','52','62'] },
+  { card:'19 + ☐ = 100', q:'Complément à 100', correct:'81', choices:['71','79','81','91'] },
+  { card:'56 + ☐ = 100', q:'Complément à 100', correct:'44', choices:['34','44','54','64'] },
+  { card:'☐ + 63 = 100', q:'Complément à 100', correct:'37', choices:['27','33','37','43'] },
+  { card:'84 + ☐ = 100', q:'Complément à 100', correct:'16', choices:['6','14','16','26'] },
 ], 'ex1');
 
-buildQ([
-  { q: '46 + 9 = ?', correct: '55', choices: ['53','54','55','56'] },
-  { q: '73 + 11 = ?', correct: '84', choices: ['82','83','84','85'] },
-  { q: '62 − 9 = ?', correct: '53', choices: ['51','52','53','54'] },
-  { q: '85 − 11 = ?', correct: '74', choices: ['72','73','74','76'] },
+buildQCM([
+  { card:'36 + 9 = ?', q:'Astuce : +10 puis −1', correct:'45', choices:['44','45','46','47'] },
+  { card:'52 + 11 = ?', q:'Astuce : +10 puis +1', correct:'63', choices:['61','62','63','64'] },
+  { card:'78 − 9 = ?', q:'Astuce : −10 puis +1', correct:'69', choices:['67','68','69','70'] },
+  { card:'45 + 19 = ?', q:'Astuce : +20 puis −1', correct:'64', choices:['54','63','64','65'] },
+  { card:'83 − 11 = ?', q:'Astuce : −10 puis −1', correct:'72', choices:['70','71','72','73'] },
+  { card:'67 + 21 = ?', q:'Astuce : +20 puis +1', correct:'88', choices:['86','87','88','89'] },
 ], 'ex2');
 
-buildQ([
-  { q: 'Le double de 35, c\'est ?', correct: '70', choices: ['60','65','70','75'] },
-  { q: 'La moitié de 80, c\'est ?', correct: '40', choices: ['30','35','40','45'] },
-  { q: 'Le double de 48, c\'est ?', correct: '96', choices: ['88','92','96','100'] },
-  { q: 'La moitié de 150, c\'est ?', correct: '75', choices: ['55','65','75','85'] },
+buildQCM([
+  { card:'Double de 14', q:'Double de 14 = ?', correct:'28', choices:['18','24','28','32'] },
+  { card:'Double de 23', q:'Double de 23 = ?', correct:'46', choices:['36','43','46','56'] },
+  { card:'Moitié de 36', q:'Moitié de 36 = ?', correct:'18', choices:['12','16','18','20'] },
+  { card:'Double de 45', q:'Double de 45 = ?', correct:'90', choices:['80','85','90','95'] },
+  { card:'Moitié de 80', q:'Moitié de 80 = ?', correct:'40', choices:['20','30','40','45'] },
+  { card:'Double de 37', q:'Double de 37 = ?', correct:'74', choices:['64','70','74','80'] },
+  { card:'Moitié de 46', q:'Moitié de 46 = ?', correct:'23', choices:['18','21','23','25'] },
 ], 'ex3');
 
-buildQ([
-  { q: '300 + 400 = ?', correct: '700', choices: ['600','700','800','340'] },
-  { q: '850 − 200 = ?', correct: '650', choices: ['600','640','650','680'] },
-  { q: '500 + 250 = ?', correct: '750', choices: ['700','740','750','760'] },
-  { q: '1 000 − 300 = ?', correct: '700', choices: ['600','700','800','1300'] },
+buildVF([
+  { card:'37 + 9 = 46', q:'37 + 9 = 46', correct:true },
+  { card:'Double de 18 = 38', q:'Double de 18 = 38', correct:false, expl:'Double de 18 = 36' },
+  { card:'54 + 19 = 73', q:'54 + 19 = 73', correct:true },
+  { card:'Moitié de 50 = 30', q:'Moitié de 50 = 30', correct:false, expl:'Moitié de 50 = 25' },
+  { card:'63 − 11 = 52', q:'63 − 11 = 52', correct:true },
+  { card:'27 + 21 = 49', q:'27 + 21 = 49', correct:false, expl:'27 + 21 = 48' },
+  { q:'48 + 9 = 57', correct:true },
 ], 'ex4');
+
+buildQCM([
+  { card:'34 + 20 = ?', q:'Calcule', correct:'54', choices:['44','52','54','56'] },
+  { card:'67 + 30 = ?', q:'Calcule', correct:'97', choices:['87','94','97','100'] },
+  { card:'85 − 40 = ?', q:'Calcule', correct:'45', choices:['35','43','45','55'] },
+  { card:'246 + 50 = ?', q:'Calcule', correct:'296', choices:['256','286','296','346'] },
+  { card:'373 − 70 = ?', q:'Calcule', correct:'303', choices:['293','300','303','313'] },
+  { card:'158 + 200 = ?', q:'Calcule', correct:'358', choices:['348','356','358','368'] },
+  { card:'524 − 300 = ?', q:'Calcule', correct:'224', choices:['194','214','224','234'] },
+], 'ex5');
+
+buildPaires([
+  { q:'Associe chaque calcul à son résultat.',
+    pairs:[['36 + 9','45'],['Moitié de 36','18'],['45 + 19','64'],['Double de 23','46']] },
+  { q:'Associe chaque calcul à son résultat.',
+    pairs:[['72 + ☐ = 100','28'],['Double de 45','90'],['83 − 11','72'],['35 + ☐ = 100','65']] },
+], 'ex6');
+
+buildOrdre([
+  { q:'Range ces calculs du PLUS PETIT résultat au PLUS GRAND :',
+    items:['30 + 5','18 + 9','40 + 7','25 + 6','50 + 3'] },
+], 'ex7');
 </script>
 
 <script src="gamification.js"></script>

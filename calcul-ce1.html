@@ -7,134 +7,161 @@
 <meta property="og:site_name" content="Les Maths de Clémence">
 <link rel="manifest" href="manifest.json">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Les opérations — CE1</title>
+<title>Calcul — CE1</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-  .btn-choice {
-    background: white; border: 2px solid #a7f3d0; border-radius: 22px;
-    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #065f46;
-    transition: background 0.15s;
+  .posee-grid {
+    display:inline-grid;grid-template-columns:repeat(4,38px);gap:2px;
+    border:3px solid #059669;border-radius:12px;padding:12px;
+    background:#ecfdf5;margin:10px auto;text-align:center;
   }
-  .btn-choice:hover { background: #d1fae5; }
-  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
-  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
-  .btn-choice:disabled { opacity: 0.6; cursor: default; }
-  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
-  .q-block { background: #ecfdf5; border: 2px solid #a7f3d0; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
-  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
-  .operation-posee {
-    font-family: 'Courier New', monospace; background: #d1fae5; border-radius: 10px;
-    padding: 12px 20px; font-size: 1.3rem; font-weight: 900; color: #065f46;
-    text-align: right; margin-bottom: 12px; display: inline-block;
-  }
+  .posee-cell{font-size:1.2rem;font-weight:900;color:#065f46;padding:4px 2px;}
+  .posee-line{grid-column:1/-1;border-top:3px solid #059669;margin:2px 0;}
+  .posee-op{color:#dc2626;font-weight:900;}
 </style>
 </head>
 <body>
 
-<header class="site-header" style="background: linear-gradient(135deg, #059669, #6ee7b7);">
+<header class="site-header" style="background: linear-gradient(135deg, #059669, #34d399);">
   <span class="emoji-header">➕</span>
-  <h1>Les opérations</h1>
-  <p>Addition, soustraction et début de multiplication</p>
+  <h1>Calcul — Addition & Soustraction</h1>
+  <p>Jusqu'à 999</p>
   <a href="index.html" class="nav-back">← Accueil</a>
 </header>
 
 <main>
-
-  <div class="badge-niveau">CE1 — Nombres et calculs</div>
+  <div class="badge-niveau">🌿 CE1 — Calcul posé</div>
 
   <div class="retiens-box">
     <div class="retiens-title">💡 Je retiens</div>
-    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
-      ➕ <strong>Addition posée</strong> : on aligne unités sous unités, dizaines sous dizaines<br>
-      ➖ <strong>Soustraction posée</strong> : retenue = emprunter à la colonne suivante<br>
-      ✖️ <strong>Multiplication</strong> = additions répétées → 3 × 4 = 4+4+4 = 12<br>
-      ✅ Tables à mémoriser : ×2, ×3, ×4, ×5
+    <div style="font-size:0.88rem;color:#555;margin-top:8px;line-height:1.9;">
+      ➕ <strong>Addition posée</strong> : je commence par les unités, puis les dizaines, puis les centaines<br>
+      ➖ <strong>Soustraction posée</strong> : colonne par colonne, de droite à gauche<br>
+      🔄 Si <strong>a + b = c</strong>, alors <strong>c − b = a</strong><br>
+      🧠 <strong>124 + 36</strong> → 4+6=10, je pose 0 retiens 1 ; 2+3+1=6 → <strong>160</strong>
+    </div>
+    <div style="display:flex;justify-content:center;margin-top:10px">
+      <div class="posee-grid">
+        <div class="posee-cell"></div><div class="posee-cell">1</div><div class="posee-cell">2</div><div class="posee-cell">4</div>
+        <div class="posee-cell posee-op">+</div><div class="posee-cell"></div><div class="posee-cell">3</div><div class="posee-cell">6</div>
+        <div class="posee-line"></div>
+        <div class="posee-cell"></div><div class="posee-cell">1</div><div class="posee-cell">6</div><div class="posee-cell">0</div>
+      </div>
     </div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 1</span> Additions posées</div>
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 1</span> Additions <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex1"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 2</span> Soustractions posées</div>
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 2</span> Soustractions <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex2"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 3</span> Initiation à la multiplication</div>
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 3</span> Additions — grands nombres <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex3"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 4</span> Problèmes mêlés</div>
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 4</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
     <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 5</span> Nombre manquant <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Associer calcul et résultat <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Résultat > ou < 100 ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex7"></div>
   </div>
 
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence — CE1</footer>
 
+<script src="exercises.js"></script>
 <script>
-function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
-function buildQ(data, id) {
-  const c = document.getElementById(id);
-  data.forEach((item, i) => {
-    const d = document.createElement('div');
-    d.className = 'q-block';
-    const sh = shuffle(item.choices);
-    d.innerHTML = `
-      <div class="q-text">${item.q}</div>
-      <div class="qcm-row" id="${id}-r${i}">
-        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
-      </div>
-      <div class="feedback-line" id="${id}-f${i}"></div>
-    `;
-    c.appendChild(d);
-  });
-}
-function check(btn, chosen, correct, rowId, fbId) {
-  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
-  const fb = document.getElementById(fbId);
-  if (chosen === correct) {
-    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
-  } else {
-    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
-    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
-  }
-}
-
-buildQ([
-  { q: '147 + 85 = ?', correct: '232', choices: ['222','231','232','242'] },
-  { q: '364 + 27 = ?', correct: '391', choices: ['381','391','394','401'] },
-  { q: '225 + 135 = ?', correct: '360', choices: ['350','360','365','370'] },
-  { q: '456 + 244 = ?', correct: '700', choices: ['690','700','710','696'] },
+buildQCM([
+  { card:'34 + 25 = ?', q:'Calcule', correct:'59', choices:['49','57','59','61'] },
+  { card:'47 + 18 = ?', q:'Calcule', correct:'65', choices:['55','63','65','75'] },
+  { card:'53 + 39 = ?', q:'Calcule', correct:'92', choices:['82','90','92','94'] },
+  { card:'26 + 48 = ?', q:'Calcule', correct:'74', choices:['64','72','74','78'] },
+  { card:'65 + 17 = ?', q:'Calcule', correct:'82', choices:['72','80','82','92'] },
+  { card:'38 + 54 = ?', q:'Calcule', correct:'92', choices:['82','90','92','94'] },
+  { card:'29 + 43 = ?', q:'Calcule', correct:'72', choices:['62','70','72','82'] },
 ], 'ex1');
 
-buildQ([
-  { q: '253 − 47 = ?', correct: '206', choices: ['196','200','206','216'] },
-  { q: '400 − 156 = ?', correct: '244', choices: ['234','244','254','244'] },
-  { q: '632 − 89 = ?', correct: '543', choices: ['533','542','543','553'] },
-  { q: '500 − 325 = ?', correct: '175', choices: ['165','175','185','195'] },
+buildQCM([
+  { card:'87 − 34 = ?', q:'Calcule', correct:'53', choices:['43','53','57','63'] },
+  { card:'95 − 42 = ?', q:'Calcule', correct:'53', choices:['43','53','57','63'] },
+  { card:'76 − 51 = ?', q:'Calcule', correct:'25', choices:['15','25','35','27'] },
+  { card:'68 − 35 = ?', q:'Calcule', correct:'33', choices:['23','33','43','32'] },
+  { card:'89 − 46 = ?', q:'Calcule', correct:'43', choices:['33','43','53','47'] },
+  { card:'57 − 24 = ?', q:'Calcule', correct:'33', choices:['23','33','43','34'] },
+  { card:'100 − 40 = ?', q:'Calcule', correct:'60', choices:['40','50','60','70'] },
 ], 'ex2');
 
-buildQ([
-  { q: '3 × 4 = ?', correct: '12', choices: ['9','10','12','14'] },
-  { q: '5 × 6 = ?', correct: '30', choices: ['25','28','30','35'] },
-  { q: '4 × 7 = ?', correct: '28', choices: ['24','27','28','32'] },
-  { q: '2 × 9 = ?', correct: '18', choices: ['16','17','18','19'] },
+buildQCM([
+  { card:'124 + 35 = ?', q:'Calcule', correct:'159', choices:['149','159','169','179'] },
+  { card:'243 + 156 = ?', q:'Calcule', correct:'399', choices:['389','399','409','499'] },
+  { card:'387 + 112 = ?', q:'Calcule', correct:'499', choices:['389','489','499','509'] },
+  { card:'256 + 234 = ?', q:'Calcule', correct:'490', choices:['480','488','490','500'] },
+  { card:'175 + 225 = ?', q:'Calcule', correct:'400', choices:['390','398','400','410'] },
+  { card:'348 + 47 = ?', q:'Calcule', correct:'395', choices:['385','393','395','405'] },
+  { card:'500 − 200 = ?', q:'Calcule', correct:'300', choices:['200','300','400','700'] },
 ], 'ex3');
 
-buildQ([
-  { q: 'Il y a 3 boîtes avec 8 crayons chacune. Combien de crayons en tout ?', correct: '24', choices: ['21','22','24','26'] },
-  { q: 'Léo a 235 images. Il en donne 87. Combien lui en reste-t-il ?', correct: '148', choices: ['138','148','158','168'] },
-  { q: '4 enfants ont chacun 9 billes. Combien au total ?', correct: '36', choices: ['32','34','36','40'] },
-  { q: 'Une bibliothèque a 145 livres. Elle en achète 38. Combien a-t-elle de livres ?', correct: '183', choices: ['173','183','193','180'] },
+buildVF([
+  { card:'45 + 38 = 83', q:'45 + 38 = 83', correct:true },
+  { card:'76 − 29 = 57', q:'76 − 29 = 57', correct:false, expl:'76 − 29 = 47' },
+  { card:'100 − 35 = 65', q:'100 − 35 = 65', correct:true },
+  { card:'247 + 153 = 400', q:'247 + 153 = 400', correct:true },
+  { card:'58 + 47 = 95', q:'58 + 47 = 95', correct:false, expl:'58 + 47 = 105' },
+  { card:'300 − 150 = 200', q:'300 − 150 = 200', correct:false, expl:'300 − 150 = 150' },
+  { q:'63 + 28 = 91', correct:true },
 ], 'ex4');
+
+buildQCM([
+  { card:'☐ + 23 = 50', q:'Quel nombre manque ?', correct:'27', choices:['23','25','27','29'] },
+  { card:'45 + ☐ = 80', q:'Quel nombre manque ?', correct:'35', choices:['25','35','45','37'] },
+  { card:'100 − ☐ = 40', q:'Quel nombre manque ?', correct:'60', choices:['40','50','60','70'] },
+  { card:'☐ − 34 = 51', q:'Quel nombre manque ?', correct:'85', choices:['17','75','83','85'] },
+  { card:'☐ + 125 = 300', q:'Quel nombre manque ?', correct:'175', choices:['155','165','175','185'] },
+  { card:'250 + ☐ = 400', q:'Quel nombre manque ?', correct:'150', choices:['100','140','150','160'] },
+], 'ex5');
+
+buildPaires([
+  { q:'Associe chaque calcul à son résultat.',
+    pairs:[['34 + 47','81'],['85 − 32','53'],['56 + 28','84'],['97 − 44','53']] },
+  { q:'Associe chaque calcul à son résultat.',
+    pairs:[['124 + 76','200'],['300 − 125','175'],['246 + 54','300'],['500 − 250','250']] },
+], 'ex6');
+
+buildTri([
+  { q:'Le résultat est-il > 100 ou < 100 ?',
+    cats:['> 100','< 100'],
+    items:[
+      {v:'67 + 48', cat:'> 100'},
+      {v:'34 + 52', cat:'< 100'},
+      {v:'90 + 25', cat:'> 100'},
+      {v:'45 + 38', cat:'< 100'},
+      {v:'55 + 60', cat:'> 100'},
+      {v:'13 + 74', cat:'< 100'},
+    ]
+  },
+], 'ex7');
 </script>
 
 <script src="gamification.js"></script>

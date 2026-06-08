@@ -12,124 +12,185 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-  .btn-choice {
-    background: white; border: 2px solid #a7f3d0; border-radius: 22px;
-    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #065f46;
-    transition: background 0.15s;
+  .cdu-grid {
+    display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:12px 0;
   }
-  .btn-choice:hover { background: #d1fae5; }
-  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
-  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
-  .btn-choice:disabled { opacity: 0.6; cursor: default; }
-  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
-  .q-block { background: #ecfdf5; border: 2px solid #a7f3d0; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
-  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .cdu-cell {
+    border-radius:14px; padding:14px 10px; text-align:center;
+    font-weight:900; font-size:1rem; border:3px solid;
+  }
+  .cdu-c { background:#dbeafe; border-color:#60a5fa; color:#1d4ed8; }
+  .cdu-d { background:#fef9c3; border-color:#fbbf24; color:#78350f; }
+  .cdu-u { background:#dcfce7; border-color:#4ade80; color:#166534; }
+  .cdu-big { font-size:2rem; display:block; margin-bottom:4px; }
+  .droite-nb {
+    position:relative; height:38px; background:#f0fdf4;
+    border-radius:30px; margin:14px 0; border:2px solid #4ade80;
+    overflow:hidden;
+  }
+  .droite-nb-fill { height:100%; background:linear-gradient(90deg,#4ade80,#059669); border-radius:30px; }
+  .droite-labels { display:flex; justify-content:space-between; font-size:0.72rem; font-weight:900; color:#059669; padding:0 4px; margin-top:2px; }
+  .nb-decomp {
+    background:#ede9fe; border-radius:14px; padding:14px;
+    border:2px solid #a78bfa; margin-bottom:14px; text-align:center;
+    font-size:1.4rem; font-weight:900; color:#5b21b6; letter-spacing:4px;
+  }
+  .nb-decomp small { font-size:0.75rem; color:#6b7280; display:block; font-weight:700; letter-spacing:0; margin-top:4px; }
 </style>
 </head>
 <body>
 
 <header class="site-header" style="background: linear-gradient(135deg, #059669, #6ee7b7);">
   <span class="emoji-header">🔢</span>
-  <h1>Les nombres</h1>
-  <p>Jusqu'à 1 000 — centaines, dizaines, unités</p>
+  <h1>Les nombres jusqu'à 1 000</h1>
+  <p>Centaines, dizaines, unités</p>
   <a href="index.html" class="nav-back">← Accueil</a>
 </header>
 
 <main>
-
-  <div class="badge-niveau">CE1 — Nombres et calculs</div>
+  <div class="badge-niveau">🌿 CE1 — Nombres et calculs</div>
 
   <div class="retiens-box">
     <div class="retiens-title">💡 Je retiens</div>
-    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
-      🔢 <strong>347</strong> = <strong>3 centaines</strong> + <strong>4 dizaines</strong> + <strong>7 unités</strong><br>
-      📊 Pour comparer : centaines d'abord, puis dizaines, puis unités<br>
-      🔢 <strong>999</strong> + 1 = <strong>1 000</strong> (mille)<br>
-      🔄 <strong>Encadrer</strong> : 340 &lt; 347 &lt; 350 (entre dizaines)
+    <div class="cdu-grid" style="margin-top:10px">
+      <div class="cdu-cell cdu-c"><span class="cdu-big">C</span>Centaines</div>
+      <div class="cdu-cell cdu-d"><span class="cdu-big">D</span>Dizaines</div>
+      <div class="cdu-cell cdu-u"><span class="cdu-big">U</span>Unités</div>
     </div>
+    <div class="nb-decomp">
+      3 · 4 · 7
+      <small>3 centaines + 4 dizaines + 7 unités = <strong>347</strong></small>
+    </div>
+    <div style="font-size:0.88rem;color:#555;line-height:1.9;">
+      📊 Pour comparer : centaines d'abord, puis dizaines, puis unités<br>
+      🔢 999 + 1 = <strong>1 000</strong> (mille !)<br>
+      🔄 Encadrer 347 entre dizaines : <strong>340 &lt; 347 &lt; 350</strong>
+    </div>
+    <div class="droite-nb" style="margin-top:12px">
+      <div class="droite-nb-fill" style="width:34.7%"></div>
+    </div>
+    <div class="droite-labels"><span>0</span><span>100</span><span>200</span><span>300</span><span>400</span><span>500</span><span>600</span><span>700</span><span>800</span><span>900</span><span>1000</span></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 1</span> Centaines, dizaines, unités</div>
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 1</span> Centaines, dizaines, unités <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex1"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 2</span> Écrire et lire les nombres</div>
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 2</span> Écrire et lire les nombres <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex2"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 3</span> Comparer et ordonner</div>
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 3</span> Comparer et ordonner <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM + ORDRE</span></div>
     <div id="ex3"></div>
+    <div id="ex3b"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 4</span> Encadrer et intercaler</div>
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 4</span> Encadrer et intercaler <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 5</span> Vrai ou Faux — nombres <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Pair ou Impair ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#f97316">
+    <div class="ex-title"><span class="ex-badge" style="background:#f97316">Ex 7</span> Associer nombre et décomposition <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex7"></div>
   </div>
 
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence — CE1</footer>
 
+<script src="exercises.js"></script>
 <script>
-function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
-function buildQ(data, id) {
-  const c = document.getElementById(id);
-  data.forEach((item, i) => {
-    const d = document.createElement('div');
-    d.className = 'q-block';
-    const sh = shuffle(item.choices);
-    d.innerHTML = `
-      <div class="q-text">${item.q}</div>
-      <div class="qcm-row" id="${id}-r${i}">
-        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
-      </div>
-      <div class="feedback-line" id="${id}-f${i}"></div>
-    `;
-    c.appendChild(d);
-  });
-}
-function check(btn, chosen, correct, rowId, fbId) {
-  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
-  const fb = document.getElementById(fbId);
-  if (chosen === correct) {
-    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
-  } else {
-    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
-    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
-  }
-}
-
-buildQ([
-  { q: 'Dans 356, combien y a-t-il de centaines ?', correct: '3 centaines', choices: ['5 centaines','6 centaines','3 centaines','1 centaine'] },
-  { q: 'Dans 472, quel chiffre est au rang des dizaines ?', correct: '7', choices: ['4','7','2','47'] },
-  { q: '5 centaines + 0 dizaine + 8 unités = ?', correct: '508', choices: ['58','580','508','50 008'] },
-  { q: 'Dans 703, combien y a-t-il d\'unités ?', correct: '3 unités', choices: ['7 unités','0 unités','3 unités','10 unités'] },
+buildQCM([
+  { q:'Dans 356, combien y a-t-il de centaines ?', correct:'3 centaines', choices:['5 centaines','6 centaines','3 centaines','1 centaine'] },
+  { q:'Dans 472, quel chiffre est au rang des dizaines ?', correct:'7', choices:['4','7','2','47'] },
+  { q:'5 centaines + 0 dizaine + 8 unités = ?', correct:'508', choices:['58','580','508','5 008'] },
+  { q:'Dans 703, combien y a-t-il d\'unités ?', correct:'3 unités', choices:['7 unités','0 unités','3 unités','10 unités'] },
+  { q:'Dans 840, quel chiffre est au rang des centaines ?', correct:'8', choices:['8','4','0','84'] },
+  { q:'Combien y a-t-il de dizaines dans 267 ?', correct:'6 dizaines', choices:['2 dizaines','6 dizaines','7 dizaines','26 dizaines'] },
+  { q:'2 centaines + 3 dizaines + 5 unités = ?', correct:'235', choices:['253','325','235','2 035'] },
 ], 'ex1');
 
-buildQ([
-  { q: 'Comment s\'écrit "deux cent trente-six" ?', correct: '236', choices: ['200360','236','2036','2360'] },
-  { q: 'Comment se lit le nombre 819 ?', correct: 'huit cent dix-neuf', choices: ['huit dix-neuf','huit cent dix-neuf','huit cent quatre-vingt-dix','huit mille dix-neuf'] },
-  { q: 'Quel est le nombre juste avant 500 ?', correct: '499', choices: ['498','499','500','501'] },
-  { q: 'Quel est le nombre juste après 999 ?', correct: '1 000', choices: ['998','1 000','9 999','100'] },
+buildQCM([
+  { q:'Comment s\'écrit "deux cent trente-six" ?', correct:'236', choices:['200360','236','2036','2360'] },
+  { q:'Comment se lit 819 ?', correct:'huit cent dix-neuf', choices:['huit dix-neuf','huit cent dix-neuf','huit cent quatre-vingt-dix','huit mille dix-neuf'] },
+  { q:'Quel est le nombre juste avant 500 ?', correct:'499', choices:['498','499','501','400'] },
+  { q:'Quel est le nombre juste après 999 ?', correct:'1 000', choices:['998','1 000','9 999','100'] },
+  { q:'Comment s\'écrit "sept cents" ?', correct:'700', choices:['70','7 000','700','7 00'] },
+  { q:'Comment se lit 450 ?', correct:'quatre cent cinquante', choices:['quatre-cinq-zéro','quatre cent cinq','quatre cent cinquante','quarante-cinq'] },
+  { q:'Quel est le nombre entre 399 et 401 ?', correct:'400', choices:['398','399','400','402'] },
 ], 'ex2');
 
-buildQ([
-  { q: 'Lequel est le plus grand : 487 ou 478 ?', correct: '487', choices: ['487','478','Ils sont égaux'] },
-  { q: 'Range du plus petit au plus grand : 521, 251, 512', correct: '251 < 512 < 521', choices: ['251 < 512 < 521','521 < 512 < 251','512 < 251 < 521'] },
-  { q: 'Entre 200 et 300, lequel se place : 256 ou 562 ?', correct: '256', choices: ['256','562','Les deux','Aucun'] },
-  { q: 'Quel nombre est entre 340 et 360 ?', correct: '350', choices: ['330','350','370','380'] },
+buildQCM([
+  { q:'Lequel est le plus grand : 487 ou 478 ?', correct:'487', choices:['487','478','Ils sont égaux'] },
+  { q:'Range du plus petit au plus grand : 521, 251, 512', correct:'251 < 512 < 521', choices:['251 < 512 < 521','521 < 512 < 251','512 < 251 < 521'] },
+  { q:'Entre 200 et 300, lequel se place : 256 ou 562 ?', correct:'256', choices:['256','562','Les deux','Aucun'] },
+  { q:'Quel nombre est entre 340 et 360 ?', correct:'350', choices:['330','350','370','380'] },
+  { q:'Quel est le plus grand nombre ? 608, 680, 806', correct:'806', choices:['608','680','806'] },
+  { q:'Range du plus grand au plus petit : 145, 154, 415', correct:'415 > 154 > 145', choices:['145 > 154 > 415','415 > 154 > 145','154 > 415 > 145'] },
 ], 'ex3');
 
-buildQ([
-  { q: 'Encadre 347 entre deux centaines : ___ < 347 < ___', correct: '300 < 347 < 400', choices: ['200 < 347 < 300','300 < 347 < 400','400 < 347 < 500','340 < 347 < 350'] },
-  { q: 'Quel nombre est à mi-chemin entre 200 et 300 ?', correct: '250', choices: ['220','240','250','260'] },
-  { q: 'Compte de 100 en 100 : 100, 200, ___, 400. Que manque-t-il ?', correct: '300', choices: ['250','300','350','400'] },
-  { q: 'Encadre 875 entre deux dizaines : ___ < 875 < ___', correct: '870 < 875 < 880', choices: ['860 < 875 < 870','870 < 875 < 880','880 < 875 < 890','800 < 875 < 900'] },
+buildOrdre([
+  { q:'Range ces nombres du PLUS PETIT au PLUS GRAND :',
+    items:['134','341','314','143','413'] },
+  { q:'Range ces nombres du PLUS GRAND au PLUS PETIT :',
+    items:['900','500','100','700','300'] },
+], 'ex3b');
+
+buildQCM([
+  { q:'Encadre 347 entre deux centaines : ___ < 347 < ___', correct:'300 < 347 < 400', choices:['200 < 347 < 300','300 < 347 < 400','400 < 347 < 500','340 < 347 < 350'] },
+  { q:'Quel nombre est à mi-chemin entre 200 et 300 ?', correct:'250', choices:['220','240','250','260'] },
+  { q:'Complète : 100, 200, ___, 400', correct:'300', choices:['250','300','350','400'] },
+  { q:'Encadre 875 entre deux dizaines : ___ < 875 < ___', correct:'870 < 875 < 880', choices:['860 < 875 < 870','870 < 875 < 880','880 < 875 < 890','800 < 875 < 900'] },
+  { q:'Intercale un nombre entre 640 et 660.', correct:'650', choices:['630','650','670','700'] },
+  { q:'Encadre 523 entre deux dizaines.', correct:'520 < 523 < 530', choices:['510 < 523 < 520','520 < 523 < 530','500 < 523 < 600','530 < 523 < 540'] },
 ], 'ex4');
+
+buildVF([
+  { q:'347 > 374', correct:false, expl:'347 < 374 car la dizaine 4 < 7' },
+  { q:'600 = 6 centaines', correct:true },
+  { q:'999 + 1 = 1 000', correct:true },
+  { q:'Le chiffre des dizaines dans 583 est 5.', correct:false, expl:'Le chiffre des dizaines dans 583 est 8.' },
+  { q:'250 est entre 200 et 300.', correct:true },
+  { q:'800 > 799', correct:true },
+  { q:'3 centaines + 5 unités = 350', correct:false, expl:'3 centaines + 5 unités = 305 (pas de dizaines)' },
+], 'ex5');
+
+buildTri([
+  { q:'Ces nombres sont-ils pairs ou impairs ?',
+    cats:['🟢 Pair (se divise par 2)','🔴 Impair (ne se divise pas par 2)'],
+    items:[
+      {v:'124', cat:'🟢 Pair (se divise par 2)'},
+      {v:'357', cat:'🔴 Impair (ne se divise pas par 2)'},
+      {v:'440', cat:'🟢 Pair (se divise par 2)'},
+      {v:'231', cat:'🔴 Impair (ne se divise pas par 2)'},
+      {v:'508', cat:'🟢 Pair (se divise par 2)'},
+      {v:'775', cat:'🔴 Impair (ne se divise pas par 2)'},
+      {v:'666', cat:'🟢 Pair (se divise par 2)'},
+      {v:'903', cat:'🔴 Impair (ne se divise pas par 2)'},
+    ]
+  },
+], 'ex6');
+
+buildPaires([
+  { q:'Associe chaque nombre à sa décomposition.',
+    pairs:[['347','300 + 40 + 7'],['508','500 + 8'],['230','200 + 30'],['619','600 + 10 + 9']] },
+  { q:'Associe chaque nombre à sa forme écrite.',
+    pairs:[['250','deux cent cinquante'],['801','huit cent un'],['470','quatre cent soixante-dix'],['165','cent soixante-cinq']] },
+], 'ex7');
 </script>
 
 <script src="gamification.js"></script>

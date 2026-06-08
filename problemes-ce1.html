@@ -12,134 +12,140 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-  .btn-choice {
-    background: white; border: 2px solid #6ee7b7; border-radius: 22px;
-    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #065f46;
-    transition: background 0.15s;
-  }
-  .btn-choice:hover { background: #f0fdf4; }
-  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
-  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
-  .btn-choice:disabled { opacity: 0.6; cursor: default; }
-  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
-  .q-block { background: #f0fdf4; border: 2px solid #6ee7b7; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
-  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
   .pb-enonce {
-    background: #d1fae5; border-radius: 10px; padding: 14px 16px; margin-bottom: 12px;
-    font-size: 0.95rem; color: #064e3b; line-height: 1.7; font-weight: 700;
-  }
-  .etape-badge {
-    display: inline-block; background: #065f46; color: white; border-radius: 14px;
-    padding: 2px 10px; font-size: 0.75rem; font-weight: 900; margin-bottom: 8px;
+    background:linear-gradient(135deg,#ecfdf5,#d1fae5);
+    border-radius:14px;padding:14px 16px;margin-bottom:12px;
+    font-size:1rem;color:#14532d;line-height:1.8;font-weight:700;
+    border-left:5px solid #059669;
   }
 </style>
 </head>
 <body>
 
-<header class="site-header" style="background: linear-gradient(135deg, #065f46, #0d9488);">
+<header class="site-header" style="background: linear-gradient(135deg, #059669, #6ee7b7);">
   <span class="emoji-header">🧩</span>
   <h1>Résolution de problèmes</h1>
-  <p>Additionner, soustraire, multiplier en contexte</p>
+  <p>Problèmes à une ou deux étapes</p>
   <a href="index.html" class="nav-back">← Accueil</a>
 </header>
 
 <main>
-  <div class="badge-niveau">CE1 — Résolution de problèmes</div>
+  <div class="badge-niveau">🌿 CE1 — Résolution de problèmes</div>
 
   <div class="retiens-box">
     <div class="retiens-title">💡 Ma méthode</div>
-    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.9;">
-      📖 <strong>1. Je lis</strong> le problème en entier<br>
-      ❓ <strong>2. Je repère</strong> ce que l'on cherche<br>
-      🔢 <strong>3. Je choisis</strong> l'opération (+ − ×)<br>
-      ✅ <strong>4. Je vérifie</strong> que ma réponse est sensée
+    <div style="font-size:0.88rem;color:#555;margin-top:8px;line-height:1.9;">
+      📖 <strong>1 · Je lis</strong> attentivement le problème<br>
+      🔍 <strong>2 · Je cherche</strong> ce qu'on me demande<br>
+      🧮 <strong>3 · Je calcule</strong> (parfois en 2 étapes !)<br>
+      ✅ <strong>4 · Je vérifie</strong> que ma réponse est logique<br>
+      ➕ <strong>Mots-clés +</strong> : en tout, au total, de plus, gagne, reçoit<br>
+      ➖ <strong>Mots-clés −</strong> : reste, de moins, donne, perd, enlève<br>
+      ✖️ <strong>Mots-clés ×</strong> : fois, chacun, par
     </div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#065f46;">Ex 1</span> Problèmes d'addition</div>
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 1</span> Additions — 1 étape <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex1"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#065f46;">Ex 2</span> Problèmes de soustraction</div>
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 2</span> Soustractions — 1 étape <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex2"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#065f46;">Ex 3</span> Problèmes multiplicatifs et de partage</div>
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 3</span> Problèmes à 2 étapes <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex3"></div>
   </div>
 
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#065f46;">Ex 4</span> Problèmes à 2 étapes ⭐</div>
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 4</span> Problèmes avec multiplication <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex4"></div>
   </div>
+
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 5</span> Quelle opération ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Trier les problèmes <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Vrai ou Faux — résultats <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex7"></div>
+  </div>
+
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence — CE1</footer>
 
+<script src="exercises.js"></script>
 <script>
-function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
-
-function buildQ(data, id) {
-  const c = document.getElementById(id);
-  data.forEach((item, i) => {
-    const d = document.createElement('div');
-    d.className = 'q-block';
-    const sh = shuffle(item.choices);
-    let html = '';
-    if (item.etapes) html += `<span class="etape-badge">📋 ${item.etapes} étape${item.etapes>1?'s':''}</span>`;
-    if (item.enonce) html += `<div class="pb-enonce">${item.enonce}</div>`;
-    html += `<div class="q-text">${item.q}</div>`;
-    html += `<div class="qcm-row" id="${id}-r${i}">
-      ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
-    </div>
-    <div class="feedback-line" id="${id}-f${i}"></div>`;
-    d.innerHTML = html;
-    c.appendChild(d);
-  });
-}
-
-function check(btn, chosen, correct, rowId, fbId) {
-  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
-  const fb = document.getElementById(fbId);
-  if (chosen === correct) {
-    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
-  } else {
-    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
-    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
-  }
-}
-
-buildQ([
-  { enonce: '📚 La bibliothèque a 145 livres pour enfants et 236 livres pour adultes.', q: 'Combien de livres y a-t-il en tout dans la bibliothèque ?', correct: '381 livres', choices: ['371 livres','381 livres','391 livres','401 livres'] },
-  { enonce: '🍓 Le matin, la marchande a vendu 67 fraises. L\'après-midi, elle en a vendu 58.', q: 'Combien de fraises a-t-elle vendues en tout ?', correct: '125 fraises', choices: ['115 fraises','125 fraises','135 fraises','145 fraises'] },
-  { enonce: '🏃 Lou a parcouru 350 m le matin et 475 m l\'après-midi.', q: 'Quelle distance Lou a-t-elle parcourue en tout ?', correct: '825 m', choices: ['795 m','815 m','825 m','835 m'] },
-  { enonce: '🐑 Un éleveur a 124 moutons blancs et 98 moutons noirs.', q: 'Combien l\'éleveur a-t-il de moutons au total ?', correct: '222 moutons', choices: ['212 moutons','222 moutons','232 moutons','242 moutons'] },
+buildQCM([
+  { enonce:'📚 La bibliothèque a 245 livres pour enfants et 178 livres pour adultes.', q:'Combien de livres en tout ?', correct:'423 livres', choices:['323 livres','403 livres','423 livres','443 livres'] },
+  { enonce:'🌻 Le jardinier a planté 136 tulipes et 247 roses.', q:'Combien de fleurs en tout ?', correct:'383 fleurs', choices:'363,373,383,393'.split(',').map(n=>n+' fleurs') },
+  { enonce:'🎒 Le matin, 148 enfants entrent dans l\'école. L\'après-midi, 37 autres arrivent.', q:'Combien d\'enfants au total ?', correct:'185 enfants', choices:['175 enfants','183 enfants','185 enfants','195 enfants'] },
+  { enonce:'🍬 Théo a 84 billes. Tom lui en donne 57 autres.', q:'Combien Théo a-t-il de billes maintenant ?', correct:'141 billes', choices:['121 billes','131 billes','141 billes','151 billes'] },
+  { enonce:'🎨 La maîtresse commande 256 feuilles blanches et 124 feuilles de couleur.', q:'Combien de feuilles en tout ?', correct:'380 feuilles', choices:['370 feuilles','378 feuilles','380 feuilles','390 feuilles'] },
 ], 'ex1');
 
-buildQ([
-  { enonce: '🎟️ Dans un spectacle, il y a 348 places. 125 sont déjà réservées.', q: 'Combien reste-t-il de places libres ?', correct: '223 places', choices: ['213 places','223 places','233 places','243 places'] },
-  { enonce: '💰 Théo a économisé 275 €. Il achète un jeu vidéo à 89 €.', q: 'Combien d\'argent lui reste-t-il ?', correct: '186 €', choices: ['176 €','186 €','196 €','206 €'] },
-  { enonce: '🏊 La piscine peut accueillir 500 baigneurs. Il y en a déjà 347.', q: 'Combien de baigneurs peuvent encore entrer ?', correct: '153 baigneurs', choices: ['143 baigneurs','153 baigneurs','163 baigneurs','173 baigneurs'] },
-  { enonce: '🌡️ La température était de 28 °C à midi. Le soir, elle a baissé de 11 °C.', q: 'Quelle est la température le soir ?', correct: '17 °C', choices: ['15 °C','17 °C','19 °C','21 °C'] },
+buildQCM([
+  { enonce:'📦 Le magasin reçoit 350 boîtes. Il en vend 178.', q:'Combien de boîtes restent ?', correct:'172 boîtes', choices:['152 boîtes','162 boîtes','172 boîtes','182 boîtes'] },
+  { enonce:'🎈 Il y avait 500 ballons pour la fête. Après la fête, il en reste 187.', q:'Combien de ballons ont été utilisés ?', correct:'313 ballons', choices:['303 ballons','313 ballons','323 ballons','333 ballons'] },
+  { enonce:'🏫 La cantine peut accueillir 400 enfants. Ce midi, 253 sont là.', q:'Combien de places sont encore libres ?', correct:'147 places', choices:['127 places','137 places','147 places','157 places'] },
+  { enonce:'🐟 L\'aquarium avait 264 poissons. 89 ont été vendus.', q:'Combien de poissons restent ?', correct:'175 poissons', choices:['155 poissons','165 poissons','175 poissons','185 poissons'] },
+  { enonce:'💰 Papa a 500 €. Il dépense 237 € pour des courses.', q:'Combien d\'euros reste-t-il à papa ?', correct:'263 €', choices:['243 €','253 €','263 €','273 €'] },
 ], 'ex2');
 
-buildQ([
-  { enonce: '🌸 La fleuriste confectionne 8 bouquets de 5 tulipes chacun.', q: 'Combien de tulipes utilise-t-elle au total ?', correct: '40 tulipes', choices: ['35 tulipes','40 tulipes','45 tulipes','50 tulipes'] },
-  { enonce: '🍫 Un paquet contient 6 chocolats. Mia achète 5 paquets.', q: 'Combien de chocolats Mia a-t-elle en tout ?', correct: '30 chocolats', choices: ['25 chocolats','30 chocolats','35 chocolats','40 chocolats'] },
-  { enonce: '🎀 Tom a 24 perles. Il les répartit également dans 3 boîtes.', q: 'Combien de perles y a-t-il dans chaque boîte ?', correct: '8 perles', choices: ['6 perles','7 perles','8 perles','9 perles'] },
-  { enonce: '🚌 4 cars emmènent des enfants en sortie scolaire. Chaque car peut transporter 30 enfants.', q: 'Combien d\'enfants peuvent partir en sortie ?', correct: '120 enfants', choices: ['100 enfants','110 enfants','120 enfants','130 enfants'] },
+buildQCM([
+  { enonce:'🍭 Camille avait 120 bonbons. Elle en mange 35 le matin, puis en reçoit 48 l\'après-midi.', q:'Combien de bonbons a-t-elle maintenant ?', correct:'133 bonbons', choices:['113 bonbons','123 bonbons','133 bonbons','143 bonbons'] },
+  { enonce:'🚗 Sur un parking : 85 voitures. 37 partent, puis 52 arrivent.', q:'Combien de voitures maintenant ?', correct:'100 voitures', choices:['90 voitures','98 voitures','100 voitures','110 voitures'] },
+  { enonce:'📚 La maîtresse a 3 boîtes de 12 crayons. Elle en distribue 20 aux élèves.', q:'Combien de crayons lui reste-t-il ?', correct:'16 crayons', choices:['4 crayons','8 crayons','16 crayons','20 crayons'] },
+  { enonce:'🎯 Lucas avait 250 points. Il en gagne 175 au 1er tour, puis en perd 87 au 2e tour.', q:'Combien de points a-t-il maintenant ?', correct:'338 points', choices:['318 points','328 points','338 points','348 points'] },
 ], 'ex3');
 
-buildQ([
-  { etapes: 2, enonce: 'Lucie avait 50 images. Elle en a acheté 35, puis en a donné 20 à son frère.', q: 'Combien d\'images Lucie a-t-elle maintenant ?', correct: '65 images', choices: ['55 images','60 images','65 images','70 images'] },
-  { etapes: 2, enonce: 'Le boulanger a fabriqué 150 pains le matin. Il en a vendu 87 le matin et 43 l\'après-midi.', q: 'Combien de pains lui reste-t-il en fin de journée ?', correct: '20 pains', choices: ['15 pains','20 pains','25 pains','30 pains'] },
-  { etapes: 2, enonce: 'Un train a 248 voyageurs. À la 1ère gare, 56 descendent et 34 montent. À la 2ème gare, 70 descendent.', q: 'Combien de voyageurs restent dans le train ?', correct: '156 voyageurs', choices: ['146 voyageurs','156 voyageurs','166 voyageurs','176 voyageurs'] },
-  { etapes: 2, enonce: 'Zoé a économisé 3 € par semaine pendant 10 semaines. Elle veut acheter un livre à 25 €.', q: 'Combien d\'argent lui manque-t-il ?', correct: '5 €', choices: ['3 €','5 €','7 €','10 €'] },
+buildQCM([
+  { enonce:'🎲 Il y a 4 tables avec 6 enfants chacune.', q:'Combien d\'enfants en tout ?', correct:'24 enfants', choices:['10 enfants','18 enfants','24 enfants','30 enfants'] },
+  { enonce:'🍕 Chaque pizza est coupée en 8 parts. Il y a 5 pizzas.', q:'Combien de parts en tout ?', correct:'40 parts', choices:['13 parts','30 parts','40 parts','45 parts'] },
+  { enonce:'🚌 Chaque bus emmène 35 enfants. Il y a 3 bus.', q:'Combien d\'enfants en tout ?', correct:'105 enfants', choices:['75 enfants','95 enfants','105 enfants','115 enfants'] },
+  { enonce:'💐 Chaque bouquet a 5 fleurs. Emma achète 7 bouquets.', q:'Combien de fleurs en tout ?', correct:'35 fleurs', choices:['12 fleurs','25 fleurs','35 fleurs','45 fleurs'] },
 ], 'ex4');
+
+buildQCM([
+  { enonce:'Il y a 245 livres à la bibliothèque. On en achète 78 autres. On cherche le TOTAL.', q:'Quelle opération ?', correct:'245 + 78', choices:['245 − 78','78 + 245 (même résultat)','245 + 78','245 × 78'] },
+  { enonce:'Il y a 350 boîtes. On en vend 178. On cherche combien IL EN RESTE.', q:'Quelle opération ?', correct:'350 − 178', choices:['350 + 178','350 − 178','178 − 350','350 ÷ 178'] },
+  { enonce:'Il y a 4 rangées de 6 chaises. On cherche le TOTAL de chaises.', q:'Quelle opération ?', correct:'4 × 6', choices:['4 + 6','4 − 6','4 × 6','6 ÷ 4'] },
+  { enonce:'Il y avait 500 ballons. Après la fête il en reste 187. On cherche combien ONT ÉTÉ UTILISÉS.', q:'Quelle opération ?', correct:'500 − 187', choices:['500 + 187','187 − 500','500 − 187','500 × 187'] },
+  { enonce:'Paul a 84 billes et Tom en a 57. On cherche combien PAUL EN A DE PLUS.', q:'Quelle opération ?', correct:'84 − 57', choices:['84 + 57','84 − 57','57 + 84','84 × 57'] },
+], 'ex5');
+
+buildTri([
+  { q:'Ce problème nécessite quelle opération principale ?',
+    cats:['➕ Addition','➖ Soustraction'],
+    items:[
+      {v:'245 livres + 178 nouveaux', cat:'➕ Addition'},
+      {v:'350 boîtes, on vend 178', cat:'➖ Soustraction'},
+      {v:'136 tulipes + 247 roses', cat:'➕ Addition'},
+      {v:'500 ballons, 187 restent', cat:'➖ Soustraction'},
+      {v:'148 + 37 enfants', cat:'➕ Addition'},
+      {v:'264 poissons, 89 vendus', cat:'➖ Soustraction'},
+    ]
+  },
+], 'ex6');
+
+buildVF([
+  { enonce:'📚 245 livres enfants + 178 livres adultes', q:'Le total est 423 livres.', correct:true },
+  { enonce:'📦 350 boîtes − 178 vendues', q:'Il reste 182 boîtes.', correct:false, expl:'350 − 178 = 172 boîtes' },
+  { enonce:'🎲 4 tables × 6 enfants', q:'Il y a 24 enfants en tout.', correct:true },
+  { enonce:'💰 500 € − 237 €', q:'Il reste 273 €.', correct:false, expl:'500 − 237 = 263 €' },
+  { enonce:'🍕 5 pizzas × 8 parts', q:'Il y a 40 parts en tout.', correct:true },
+  { enonce:'🏫 400 places − 253 enfants', q:'Il reste 147 places libres.', correct:true },
+], 'ex7');
 </script>
 
 <script src="gamification.js"></script>

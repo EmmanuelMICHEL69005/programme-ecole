@@ -12,157 +12,168 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-  .btn-choice {
-    background: white; border: 2px solid #a7f3d0; border-radius: 22px;
-    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #065f46;
-    transition: background 0.15s;
+  .bar-chart {
+    display:flex;align-items:flex-end;gap:12px;height:120px;
+    margin:14px 0;padding:0 8px;
   }
-  .btn-choice:hover { background: #d1fae5; }
-  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
-  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
-  .btn-choice:disabled { opacity: 0.6; cursor: default; }
-  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
-  .q-block { background: #ecfdf5; border: 2px solid #a7f3d0; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
-  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
-  .data-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.9rem; }
-  .data-table th { background: #059669; color: white; padding: 9px; font-weight: 900; text-align: center; border: 2px solid #047857; }
-  .data-table td { background: white; padding: 9px; text-align: center; border: 2px solid #a7f3d0; font-weight: 700; }
-  .data-table tr:nth-child(even) td { background: #ecfdf5; }
+  .bar-col { display:flex;flex-direction:column;align-items:center;gap:4px; }
+  .bar-fill { width:36px;border-radius:6px 6px 0 0; min-height:4px; transition:height 0.4s; }
+  .bar-lbl { font-size:0.68rem;font-weight:900;color:#065f46; }
+  .bar-val { font-size:0.72rem;font-weight:900;color:#059669; }
 </style>
 </head>
 <body>
 
 <header class="site-header" style="background: linear-gradient(135deg, #059669, #6ee7b7);">
   <span class="emoji-header">📊</span>
-  <h1>Données</h1>
-  <p>Tableaux à double entrée et graphiques</p>
+  <h1>Données et graphiques</h1>
+  <p>Tableaux, graphiques et pictogrammes</p>
   <a href="index.html" class="nav-back">← Accueil</a>
 </header>
 
 <main>
-
-  <div class="badge-niveau">CE1 — Organisation des données</div>
+  <div class="badge-niveau">🌿 CE1 — Organisation et gestion des données</div>
 
   <div class="retiens-box">
     <div class="retiens-title">💡 Je retiens</div>
-    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
-      📋 Un <strong>tableau à double entrée</strong> : les lignes ET les colonnes ont des étiquettes.<br>
-      📊 Un <strong>diagramme en barres</strong> : les barres montrent des quantités à comparer.<br>
-      🔍 Pour lire un tableau : je lis <strong>le nom de la ligne ET le nom de la colonne</strong>.
+    <div style="font-size:0.88rem;color:#555;margin-top:8px;line-height:1.9;">
+      📋 <strong>Tableau</strong> : organise des données en lignes et colonnes<br>
+      📊 <strong>Diagramme en barres</strong> : chaque barre = une quantité<br>
+      🖼️ <strong>Pictogramme</strong> : chaque image représente une quantité (exemple : 🌟 = 5)<br>
+      🔍 Pour lire : je trouve la barre/colonne, je lis la valeur
+    </div>
+    <!-- Bar chart exemple -->
+    <div style="background:#f0fdf4;border-radius:14px;padding:14px;margin-top:10px;border:2px solid #6ee7b7;">
+      <div style="font-size:0.78rem;font-weight:800;color:#065f46;margin-bottom:8px">Couleurs préférées de la classe :</div>
+      <div class="bar-chart">
+        <div class="bar-col">
+          <div class="bar-val">8</div>
+          <div class="bar-fill" style="height:80px;background:#3b82f6"></div>
+          <div class="bar-lbl">🔵 Bleu</div>
+        </div>
+        <div class="bar-col">
+          <div class="bar-val">12</div>
+          <div class="bar-fill" style="height:120px;background:#22c55e"></div>
+          <div class="bar-lbl">🟢 Vert</div>
+        </div>
+        <div class="bar-col">
+          <div class="bar-val">5</div>
+          <div class="bar-fill" style="height:50px;background:#ef4444"></div>
+          <div class="bar-lbl">🔴 Rouge</div>
+        </div>
+        <div class="bar-col">
+          <div class="bar-val">7</div>
+          <div class="bar-fill" style="height:70px;background:#f59e0b"></div>
+          <div class="bar-lbl">🟡 Jaune</div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- EX 1 -->
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 1</span> Tableau des sports — CE1 A et CE1 B</div>
-    <table class="data-table">
-      <thead><tr><th></th><th>CE1 A</th><th>CE1 B</th></tr></thead>
-      <tbody>
-        <tr><td>Football</td><td>9</td><td>6</td></tr>
-        <tr><td>Natation</td><td>5</td><td>8</td></tr>
-        <tr><td>Judo</td><td>4</td><td>3</td></tr>
-        <tr><td>Danse</td><td>7</td><td>9</td></tr>
-      </tbody>
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 1</span> Lire un tableau — fruits vendus <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <table style="border-collapse:collapse;width:100%;margin:10px 0;font-size:0.88rem;">
+      <thead><tr style="background:#059669;color:white">
+        <th style="padding:8px;border:2px solid #065f46">Fruit</th>
+        <th style="padding:8px;border:2px solid #065f46">🍎 Pommes</th>
+        <th style="padding:8px;border:2px solid #065f46">🍌 Bananes</th>
+        <th style="padding:8px;border:2px solid #065f46">🍊 Oranges</th>
+        <th style="padding:8px;border:2px solid #065f46">🍇 Raisins</th>
+      </tr></thead>
+      <tbody><tr style="background:#ecfdf5;font-weight:700;text-align:center">
+        <td style="padding:8px;border:2px solid #a7f3d0">Lundi</td>
+        <td style="padding:8px;border:2px solid #a7f3d0">24</td>
+        <td style="padding:8px;border:2px solid #a7f3d0">18</td>
+        <td style="padding:8px;border:2px solid #a7f3d0">31</td>
+        <td style="padding:8px;border:2px solid #a7f3d0">12</td>
+      </tr><tr style="background:#f0fdf4;font-weight:700;text-align:center">
+        <td style="padding:8px;border:2px solid #a7f3d0">Mardi</td>
+        <td style="padding:8px;border:2px solid #a7f3d0">15</td>
+        <td style="padding:8px;border:2px solid #a7f3d0">27</td>
+        <td style="padding:8px;border:2px solid #a7f3d0">19</td>
+        <td style="padding:8px;border:2px solid #a7f3d0">8</td>
+      </tr></tbody>
     </table>
     <div id="ex1"></div>
   </div>
 
-  <!-- EX 2 : diagramme -->
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 2</span> Diagramme en barres — transports</div>
-    <div style="background:#d1fae5; border-radius:10px; padding:16px; margin-bottom:12px; overflow-x:auto;">
-      <div style="display:flex; align-items:flex-end; gap:18px; height:140px; border-bottom:3px solid #059669; padding:0 8px; min-width:280px;">
-        <div style="display:flex; flex-direction:column; align-items:center; gap:4px;">
-          <div style="width:44px; height:100px; background:#4ade80; border-radius:6px 6px 0 0; display:flex; align-items:flex-start; justify-content:center; padding-top:4px;"><span style="font-size:0.8rem; font-weight:900; color:white;">10</span></div>
-          <div style="font-size:0.75rem; font-weight:800; color:#065f46; text-align:center;">🚌 Bus</div>
-        </div>
-        <div style="display:flex; flex-direction:column; align-items:center; gap:4px;">
-          <div style="width:44px; height:70px; background:#34d399; border-radius:6px 6px 0 0; display:flex; align-items:flex-start; justify-content:center; padding-top:4px;"><span style="font-size:0.8rem; font-weight:900; color:white;">7</span></div>
-          <div style="font-size:0.75rem; font-weight:800; color:#065f46; text-align:center;">🚲 Vélo</div>
-        </div>
-        <div style="display:flex; flex-direction:column; align-items:center; gap:4px;">
-          <div style="width:44px; height:120px; background:#059669; border-radius:6px 6px 0 0; display:flex; align-items:flex-start; justify-content:center; padding-top:4px;"><span style="font-size:0.8rem; font-weight:900; color:white;">12</span></div>
-          <div style="font-size:0.75rem; font-weight:800; color:#065f46; text-align:center;">🚗 Voiture</div>
-        </div>
-        <div style="display:flex; flex-direction:column; align-items:center; gap:4px;">
-          <div style="width:44px; height:50px; background:#6ee7b7; border-radius:6px 6px 0 0; display:flex; align-items:flex-start; justify-content:center; padding-top:4px;"><span style="font-size:0.8rem; font-weight:900; color:#065f46;">5</span></div>
-          <div style="font-size:0.75rem; font-weight:800; color:#065f46; text-align:center;">🚶 Pied</div>
-        </div>
-      </div>
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 2</span> Lire un diagramme en barres <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div style="background:#f5f3ff;border-radius:14px;padding:14px;margin-bottom:12px;border:2px solid #c4b5fd;">
+      <div style="font-size:0.78rem;font-weight:800;color:#5b21b6;margin-bottom:8px">Couleurs préférées (diagramme ci-dessus) :</div>
+      <div style="font-size:0.82rem;color:#6b7280;font-weight:700">🔵 Bleu=8 · 🟢 Vert=12 · 🔴 Rouge=5 · 🟡 Jaune=7</div>
     </div>
     <div id="ex2"></div>
   </div>
 
-  <!-- EX 3 : collecter des données -->
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 3</span> Interpréter des données</div>
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 3</span> Lire un pictogramme <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div style="background:#fef9c3;border-radius:14px;padding:14px;margin-bottom:12px;border:2px solid #fbbf24;">
+      <div style="font-size:0.78rem;font-weight:800;color:#78350f;margin-bottom:8px">Livres lus par les élèves (🌟 = 5 livres) :</div>
+      <div style="display:grid;gap:6px;font-size:0.82rem;font-weight:700">
+        <div style="display:flex;align-items:center;gap:6px"><span style="min-width:60px;color:#78350f">Emma</span><span style="font-size:1.1rem">🌟🌟🌟</span></div>
+        <div style="display:flex;align-items:center;gap:6px"><span style="min-width:60px;color:#78350f">Lucas</span><span style="font-size:1.1rem">🌟🌟</span></div>
+        <div style="display:flex;align-items:center;gap:6px"><span style="min-width:60px;color:#78350f">Sofia</span><span style="font-size:1.1rem">🌟🌟🌟🌟</span></div>
+        <div style="display:flex;align-items:center;gap:6px"><span style="min-width:60px;color:#78350f">Théo</span><span style="font-size:1.1rem">🌟</span></div>
+      </div>
+    </div>
     <div id="ex3"></div>
   </div>
 
-  <!-- EX 4 -->
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 4</span> Créer et compléter un tableau</div>
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 4</span> Vrai ou Faux — lecture de données <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
     <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 5</span> Range les données dans l'ordre <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">ORDRE</span></div>
+    <div id="ex5"></div>
   </div>
 
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence — CE1</footer>
 
+<script src="exercises.js"></script>
 <script>
-function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
-function buildQ(data, id) {
-  const c = document.getElementById(id);
-  data.forEach((item, i) => {
-    const d = document.createElement('div');
-    d.className = 'q-block';
-    const sh = shuffle(item.choices);
-    d.innerHTML = `
-      <div class="q-text">${item.q}</div>
-      <div class="qcm-row" id="${id}-r${i}">
-        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
-      </div>
-      <div class="feedback-line" id="${id}-f${i}"></div>
-    `;
-    c.appendChild(d);
-  });
-}
-function check(btn, chosen, correct, rowId, fbId) {
-  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
-  const fb = document.getElementById(fbId);
-  if (chosen === correct) {
-    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
-  } else {
-    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
-    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
-  }
-}
-
-buildQ([
-  { q: 'Combien d\'élèves de CE1 B font de la natation ?', correct: '8', choices: ['5','7','8','9'] },
-  { q: 'Quel sport est le plus pratiqué dans CE1 A ?', correct: 'Football (9)', choices: ['Natation (5)','Football (9)','Judo (4)','Danse (7)'] },
-  { q: 'Combien d\'élèves font du judo en tout (les deux classes) ?', correct: '7', choices: ['3','4','7','8'] },
-  { q: 'Dans quelle classe la danse est-elle la plus populaire ?', correct: 'CE1 B (9)', choices: ['CE1 A (7)','CE1 B (9)','Dans les deux pareil'] },
+buildQCM([
+  { q:'Combien de pommes le lundi ?', correct:'24 pommes', choices:['15 pommes','18 pommes','24 pommes','31 pommes'] },
+  { q:'Quel fruit a été le plus vendu le lundi ?', correct:'🍊 Oranges (31)', choices:['🍎 Pommes (24)','🍌 Bananes (18)','🍊 Oranges (31)','🍇 Raisins (12)'] },
+  { q:'Combien de bananes en tout (lundi + mardi) ?', correct:'45', choices:['27','36','45','46'] },
+  { q:'Quel fruit a été le MOINS vendu le mardi ?', correct:'🍇 Raisins (8)', choices:['🍎 Pommes (15)','🍌 Bananes (27)','🍊 Oranges (19)','🍇 Raisins (8)'] },
+  { q:'Combien de fruits en tout le lundi ?', correct:'85', choices:['75','80','85','90'] },
 ], 'ex1');
 
-buildQ([
-  { q: 'Quel moyen de transport est le plus utilisé ?', correct: '🚗 Voiture (12)', choices: ['🚌 Bus (10)','🚗 Voiture (12)','🚲 Vélo (7)','🚶 Pied (5)'] },
-  { q: 'Combien d\'élèves viennent à pied ou à vélo ?', correct: '12', choices: ['7','10','12','14'] },
-  { q: 'Quel moyen de transport est le moins utilisé ?', correct: '🚶 Pied (5)', choices: ['🚌 Bus (10)','🚗 Voiture (12)','🚲 Vélo (7)','🚶 Pied (5)'] },
+buildQCM([
+  { q:'Quelle couleur est la préférée de la classe ?', correct:'Vert (12)', choices:['Bleu (8)','Vert (12)','Rouge (5)','Jaune (7)'] },
+  { q:'Combien d\'élèves préfèrent le bleu ou le jaune ?', correct:'15', choices:['12','13','15','19'] },
+  { q:'Combien d\'élèves ont été interrogés en tout ?', correct:'32', choices:['27','30','32','35'] },
+  { q:'La couleur la moins appréciée est…', correct:'Le rouge (5)', choices:['Le bleu (8)','Le rouge (5)','Le jaune (7)','Le vert (12)'] },
+  { q:'Combien d\'élèves de plus préfèrent le vert plutôt que le rouge ?', correct:'7 élèves', choices:['5 élèves','7 élèves','12 élèves','17 élèves'] },
 ], 'ex2');
 
-buildQ([
-  { q: 'Dans une enquête, 15 enfants aiment les chats, 20 aiment les chiens, 5 aiment les lapins. Combien d\'enfants ont répondu en tout ?', correct: '40', choices: ['35','38','40','42'] },
-  { q: 'Sur 40 enfants, 15 aiment les chats. Combien N\'aiment PAS les chats ?', correct: '25', choices: ['15','20','25','30'] },
-  { q: 'Si on agrandit le tableau pour ajouter "oiseaux" avec 8 réponses, combien y a-t-il d\'enfants en tout maintenant ?', correct: '48', choices: ['40','45','48','52'] },
+buildQCM([
+  { q:'Combien de livres Emma a-t-elle lus ? (🌟 = 5)', correct:'15 livres', choices:['3 livres','10 livres','15 livres','20 livres'] },
+  { q:'Qui a lu le plus de livres ?', correct:'Sofia (20 livres)', choices:['Emma (15)','Lucas (10)','Sofia (20 livres)','Théo (5)'] },
+  { q:'Combien de livres Lucas a-t-il lus ?', correct:'10 livres', choices:['2 livres','5 livres','10 livres','15 livres'] },
+  { q:'Combien de livres au total pour Emma et Théo ?', correct:'20 livres', choices:['16 livres','18 livres','20 livres','25 livres'] },
+  { q:'Combien de livres de plus Sofia a-t-elle lus que Théo ?', correct:'15 livres de plus', choices:['3 livres','10 livres','15 livres de plus','20 livres'] },
 ], 'ex3');
 
-buildQ([
-  { q: 'Dans une classe de 25 élèves, 12 ont un chien, 7 ont un chat, 4 ont un poisson, 2 n\'ont pas d\'animal. Combien ont un animal ?', correct: '23', choices: ['21','22','23','25'] },
-  { q: 'Quelle information est la plus fréquente ?', correct: 'Chien (12)', choices: ['Chat (7)','Chien (12)','Poisson (4)','Aucun (2)'] },
-  { q: 'Quelle fraction de la classe n\'a pas d\'animal ?', correct: '2/25', choices: ['2/25','4/25','12/25','2/23'] },
+buildVF([
+  { q:'Le lundi, les oranges sont plus vendues que les pommes.', correct:true, expl:'31 oranges > 24 pommes ✅' },
+  { q:'Emma et Lucas ont lu autant de livres.', correct:false, expl:'Emma = 15 livres, Lucas = 10 livres.' },
+  { q:'La couleur rouge est plus appréciée que la couleur jaune.', correct:false, expl:'Rouge = 5, Jaune = 7 → le jaune est plus apprécié.' },
+  { q:'Il y a plus de bananes vendues le mardi que le lundi.', correct:true, expl:'27 > 18 ✅' },
+  { q:'En tout, les 4 élèves ont lu 50 livres.', correct:true, expl:'15+10+20+5 = 50 ✅' },
 ], 'ex4');
+
+buildOrdre([
+  { q:'Range ces quantités du PLUS PETIT au PLUS GRAND (fruits lundi) :',
+    items:['Raisins : 12','Bananes : 18','Pommes : 24','Oranges : 31'] },
+  { q:'Range ces élèves du MOINS de livres au PLUS de livres :',
+    items:['Théo : 5','Lucas : 10','Emma : 15','Sofia : 20'] },
+], 'ex5');
 </script>
 
 <script src="gamification.js"></script>
