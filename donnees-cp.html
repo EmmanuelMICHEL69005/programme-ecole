@@ -55,8 +55,8 @@
   </div>
 
   <!-- EX 1 : Tableau fruits -->
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 1</span> Fruits dans le panier</div>
+  <div class="exercice-block" style="--accent:#16a34a">
+    <div class="ex-title"><span class="ex-badge" style="background:#16a34a">Ex 1</span> Fruits dans le panier <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <table class="simple-table">
       <thead><tr><th>Fruit</th><th>🍎 Pommes</th><th>🍌 Bananes</th><th>🍊 Oranges</th><th>🍇 Raisins</th></tr></thead>
       <tbody><tr><td>Nombre</td><td>5</td><td>3</td><td>7</td><td>2</td></tr></tbody>
@@ -65,8 +65,8 @@
   </div>
 
   <!-- EX 2 : Animaux de la ferme -->
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 2</span> Animaux à la ferme</div>
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 2</span> Animaux à la ferme <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM + VF</span></div>
     <table class="simple-table">
       <thead><tr><th>Animal</th><th>🐄 Vaches</th><th>🐷 Cochons</th><th>🐔 Poules</th><th>🐑 Moutons</th></tr></thead>
       <tbody><tr><td>Nombre</td><td>4</td><td>6</td><td>10</td><td>8</td></tr></tbody>
@@ -75,82 +75,81 @@
   </div>
 
   <!-- EX 3 : Pictogramme -->
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 3</span> Lire un pictogramme</div>
-    <div style="background:#dcfce7; border-radius:10px; padding:14px; margin-bottom:12px;">
-      <p style="font-size:0.9rem; font-weight:700; margin:0 0 10px; color:#166534;">Jours de beau temps ce mois-ci (chaque ☀️ = 2 jours)</p>
-      <div style="display:grid; gap:6px;">
-        <div style="display:flex; align-items:center; gap:8px;"><strong style="min-width:60px;color:#166534;">Janvier</strong><div class="pictogram">☀️☀️</div></div>
-        <div style="display:flex; align-items:center; gap:8px;"><strong style="min-width:60px;color:#166534;">Février</strong><div class="pictogram">☀️☀️☀️</div></div>
-        <div style="display:flex; align-items:center; gap:8px;"><strong style="min-width:60px;color:#166534;">Mars</strong><div class="pictogram">☀️☀️☀️☀️</div></div>
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 3</span> Lire un pictogramme <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div style="background:#dcfce7;border-radius:14px;padding:16px;margin-bottom:14px;border:2px solid #4ade80;">
+      <p style="font-size:0.88rem;font-weight:800;margin:0 0 10px;color:#166534;">Jours de beau temps (chaque ☀️ = 2 jours)</p>
+      <div style="display:grid;gap:8px;">
+        <div style="display:flex;align-items:center;gap:8px;"><strong style="min-width:72px;color:#166534;">Janvier</strong><span style="font-size:1.3rem">☀️☀️</span><span style="font-size:0.78rem;color:#555;margin-left:4px">= 4 jours</span></div>
+        <div style="display:flex;align-items:center;gap:8px;"><strong style="min-width:72px;color:#166534;">Février</strong><span style="font-size:1.3rem">☀️☀️☀️</span><span style="font-size:0.78rem;color:#555;margin-left:4px">= 6 jours</span></div>
+        <div style="display:flex;align-items:center;gap:8px;"><strong style="min-width:72px;color:#166534;">Mars</strong><span style="font-size:1.3rem">☀️☀️☀️☀️</span><span style="font-size:0.78rem;color:#555;margin-left:4px">= 8 jours</span></div>
       </div>
     </div>
     <div id="ex3"></div>
   </div>
 
-  <!-- EX 4 : Classer des données -->
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 4</span> Trier et compter</div>
+  <!-- EX 4 : Sport préféré -->
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 4</span> Sport préféré — lire les données <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div style="background:#fef9c3;border-radius:14px;padding:14px;margin-bottom:14px;border:2px solid #fbbf24;">
+      <p style="font-size:0.88rem;font-weight:800;margin:0 0 8px;color:#78350f;">Sports préférés des élèves de la classe :</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;">
+        <div style="text-align:center"><div style="font-size:1.5rem">⚽</div><div style="font-size:0.8rem;font-weight:900;color:#78350f">Foot : 8</div></div>
+        <div style="text-align:center"><div style="font-size:1.5rem">🏊</div><div style="font-size:0.8rem;font-weight:900;color:#78350f">Natation : 5</div></div>
+        <div style="text-align:center"><div style="font-size:1.5rem">🚴</div><div style="font-size:0.8rem;font-weight:900;color:#78350f">Vélo : 7</div></div>
+      </div>
+    </div>
     <div id="ex4"></div>
+  </div>
+
+  <!-- EX 5 : TRI données -->
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 5</span> Trier les animaux par taille <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">ORDRE</span></div>
+    <div id="ex5"></div>
   </div>
 
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence — CP</footer>
 
+<script src="exercises.js"></script>
 <script>
-function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
-function buildQ(data, id) {
-  const c = document.getElementById(id);
-  data.forEach((item, i) => {
-    const d = document.createElement('div');
-    d.className = 'q-block';
-    const sh = shuffle(item.choices);
-    d.innerHTML = `
-      <div class="q-text">${item.q}</div>
-      <div class="qcm-row" id="${id}-r${i}">
-        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
-      </div>
-      <div class="feedback-line" id="${id}-f${i}"></div>
-    `;
-    c.appendChild(d);
-  });
-}
-function check(btn, chosen, correct, rowId, fbId) {
-  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
-  const fb = document.getElementById(fbId);
-  if (chosen === correct) {
-    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
-  } else {
-    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
-    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
-  }
-}
-
-buildQ([
-  { q: 'Quel fruit est le plus nombreux dans le panier ?', correct: '🍊 Oranges (7)', choices: ['🍎 Pommes (5)','🍌 Bananes (3)','🍊 Oranges (7)','🍇 Raisins (2)'] },
-  { q: 'Combien y a-t-il de pommes et de bananes en tout ?', correct: '8', choices: ['6','7','8','9'] },
-  { q: 'Quel fruit est le moins nombreux ?', correct: '🍇 Raisins', choices: ['🍎 Pommes','🍌 Bananes','🍊 Oranges','🍇 Raisins'] },
+buildQCM([
+  { q:'Quel fruit est le plus nombreux dans le panier ?', correct:'🍊 Oranges (7)', choices:['🍎 Pommes (5)','🍌 Bananes (3)','🍊 Oranges (7)','🍇 Raisins (2)'] },
+  { q:'Combien y a-t-il de pommes et bananes en tout ?', correct:'8', choices:['6','7','8','9'] },
+  { q:'Quel fruit est le moins nombreux ?', correct:'🍇 Raisins (2)', choices:['🍎 Pommes','🍌 Bananes','🍊 Oranges','🍇 Raisins (2)'] },
+  { q:'Combien y a-t-il de fruits en tout dans le panier ?', correct:'17', choices:['14','15','17','20'] },
+  { q:'Si on enlève toutes les oranges, combien reste-t-il de fruits ?', correct:'10', choices:['8','10','12','14'] },
 ], 'ex1');
 
-buildQ([
-  { q: 'Quel animal est le plus nombreux à la ferme ?', correct: '🐔 Poules (10)', choices: ['🐄 Vaches (4)','🐷 Cochons (6)','🐔 Poules (10)','🐑 Moutons (8)'] },
-  { q: 'Combien y a-t-il d\'animaux en tout à la ferme ?', correct: '28', choices: ['24','26','28','30'] },
-  { q: 'Y a-t-il plus de vaches ou de cochons ?', correct: 'Cochons (6 > 4)', choices: ['Vaches (4 > 6)','Cochons (6 > 4)','Ils sont pareils'] },
+buildQCM([
+  { q:'Quel animal est le plus nombreux à la ferme ?', correct:'🐔 Poules (10)', choices:['🐄 Vaches (4)','🐷 Cochons (6)','🐔 Poules (10)','🐑 Moutons (8)'] },
+  { q:'Combien y a-t-il d\'animaux en tout à la ferme ?', correct:'28', choices:['24','26','28','30'] },
+  { q:'Y a-t-il plus de vaches ou de cochons ?', correct:'Cochons (6 > 4)', choices:['Vaches (4)','Cochons (6 > 4)','Ils sont pareils'] },
+  { q:'Combien y a-t-il de moutons et de cochons ensemble ?', correct:'14', choices:['12','13','14','15'] },
 ], 'ex2');
 
-buildQ([
-  { q: 'Combien de jours de beau temps en janvier ? (1 ☀️ = 2 jours)', correct: '4 jours', choices: ['2 jours','4 jours','6 jours','8 jours'] },
-  { q: 'Quel mois a eu le plus de beau temps ?', correct: 'Mars (4 ☀️ = 8 jours)', choices: ['Janvier (2 ☀️)','Février (3 ☀️)','Mars (4 ☀️ = 8 jours)'] },
-  { q: 'En tout sur les 3 mois, combien de jours de beau temps ?', correct: '18 jours', choices: ['9 jours','16 jours','18 jours','24 jours'] },
+buildQCM([
+  { q:'Combien de jours de beau temps y a-t-il en janvier ? (1 ☀️ = 2 jours)', correct:'4 jours', choices:['2 jours','4 jours','6 jours','8 jours'] },
+  { q:'Quel mois a eu le plus de beau temps ?', correct:'Mars (8 jours)', choices:['Janvier (4 j)','Février (6 j)','Mars (8 jours)'] },
+  { q:'En tout sur les 3 mois, combien de jours de beau temps ?', correct:'18 jours', choices:['9 jours','16 jours','18 jours','24 jours'] },
+  { q:'En février, combien de soleil de PLUS qu\'en janvier ?', correct:'2 jours de plus', choices:['1 jour de plus','2 jours de plus','4 jours de plus','6 jours de plus'] },
 ], 'ex3');
 
-buildQ([
-  { q: 'Dans une classe, 8 enfants aiment le foot, 5 aiment la natation, 7 aiment le vélo. Quel sport est le préféré ?', correct: 'Le foot (8)', choices: ['La natation (5)','Le vélo (7)','Le foot (8)'] },
-  { q: 'Combien d\'enfants aiment la natation OU le vélo en tout ?', correct: '12', choices: ['10','11','12','13'] },
-  { q: 'Combien d\'enfants ont été interrogés en tout ?', correct: '20', choices: ['15','18','20','21'] },
-  { q: 'Quel sport est le moins populaire ?', correct: 'La natation (5)', choices: ['Le foot (8)','La natation (5)','Le vélo (7)'] },
+buildQCM([
+  { q:'Quel sport est le préféré des élèves ?', correct:'Le foot (8)', choices:['La natation (5)','Le vélo (7)','Le foot (8)'] },
+  { q:'Combien d\'élèves aiment la natation OU le vélo ?', correct:'12', choices:['10','11','12','13'] },
+  { q:'Combien d\'élèves ont été interrogés en tout ?', correct:'20', choices:['15','18','20','21'] },
+  { q:'Quel sport est le moins populaire ?', correct:'La natation (5)', choices:['Le foot (8)','La natation (5)','Le vélo (7)'] },
+  { q:'Combien d\'élèves de PLUS aiment le foot que la natation ?', correct:'3 élèves', choices:['1 élève','2 élèves','3 élèves','5 élèves'] },
 ], 'ex4');
+
+buildOrdre([
+  { q:'Range les animaux du PLUS petit au PLUS grand (taille approximative) :',
+    items:['🐭 Souris','🐱 Chat','🐕 Chien','🐄 Vache','🐘 Éléphant'] },
+  { q:'Range ces quantités du PLUS PETIT au PLUS GRAND :',
+    items:['2','5','1','8','3'] },
+], 'ex5');
 </script>
 
 <script src="gamification.js"></script>

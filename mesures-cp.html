@@ -3,144 +3,192 @@
 <head>
 <meta charset="UTF-8">
 <meta name="apple-mobile-web-app-title" content="Les Maths de Clémence">
-<meta name="application-name" content="Les Maths de Clémence">
-<meta property="og:site_name" content="Les Maths de Clémence">
 <link rel="manifest" href="manifest.json">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mesures et monnaie — CP</title>
+<title>Mesures — CP</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-  .btn-choice {
-    background: white; border: 2px solid #bbf7d0; border-radius: 22px;
-    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #166534;
-    transition: background 0.15s;
-  }
-  .btn-choice:hover { background: #dcfce7; }
-  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
-  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
-  .btn-choice:disabled { opacity: 0.6; cursor: default; }
-  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
-  .q-block { background: #f0fdf4; border: 2px solid #bbf7d0; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
-  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
-  .clock-face {
-    width: 110px; height: 110px; background: #dcfce7; border: 3px solid #4ade80;
-    border-radius: 50%; margin: 12px auto; position: relative; display: flex;
-    align-items: center; justify-content: center; font-size: 1.8rem; font-weight: 900; color: #166534;
-  }
+  :root{--accent:#16a34a;}
+  .qcm-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;}
+  .q-block{background:#f0fdf4;border-color:#bbf7d0;}
+  .btn-choice{border-color:#bbf7d0;color:#166534;}
+  .btn-choice:hover:not([disabled]){border-color:#16a34a;color:#15803d;background:#dcfce7;}
+  .btn-vrai{background:#dcfce7!important;border-color:#22c55e!important;color:#166534!important;box-shadow:0 4px 0 #bbf7d0!important;}
+  .btn-faux{background:#fee2e2!important;border-color:#ef4444!important;color:#991b1b!important;box-shadow:0 4px 0 #fecaca!important;}
+  .regle{background:#fefce8;border:2.5px solid #fbbf24;border-radius:12px;padding:12px 18px;margin:12px 0;box-shadow:0 4px 0 #fbbf2455;}
+  .regle-ticks{display:flex;justify-content:space-between;align-items:flex-end;height:32px;}
+  .tick{display:flex;flex-direction:column;align-items:center;gap:2px;}
+  .tick-line{background:#92400e;border-radius:1px;}
+  .tick.big .tick-line{width:2px;height:22px;}
+  .tick.sm  .tick-line{width:1px;height:11px;}
+  .tick .lbl{font-size:0.68rem;font-weight:900;color:#78350f;}
+  .pieces-row{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0;justify-content:center;}
+  .piece{border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;border:3px solid;}
+  .piece.or{background:#fde68a;border-color:#f59e0b;color:#78350f;}
+  .piece.ag{background:#e5e7eb;border-color:#9ca3af;color:#374151;}
+  .billet{border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:900;border:2.5px solid;}
 </style>
 </head>
 <body>
 
-<header class="site-header" style="background: linear-gradient(135deg, #16a34a, #86efac);">
+<header class="site-header" style="background:linear-gradient(135deg,#16a34a,#4ade80);">
   <span class="emoji-header">📏</span>
-  <h1>Mesures et monnaie</h1>
-  <p>Longueurs, masses, heure et argent</p>
+  <h1>Les mesures</h1>
+  <p>Longueurs, masses, temps et argent</p>
   <a href="index.html" class="nav-back">← Accueil</a>
 </header>
 
 <main>
-
-  <div class="badge-niveau">CP — Grandeurs et mesures</div>
+  <div class="badge-niveau">🌱 CP — Grandeurs et mesures</div>
 
   <div class="retiens-box">
     <div class="retiens-title">💡 Je retiens</div>
-    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
-      📏 <strong>Longueur</strong> : en <strong>centimètres (cm)</strong> et <strong>mètres (m)</strong><br>
-      ⚖️ <strong>Masse</strong> : en <strong>grammes (g)</strong> et <strong>kilogrammes (kg)</strong><br>
-      🕐 <strong>L'heure</strong> : la grande aiguille montre les minutes, la petite les heures<br>
-      💶 <strong>Monnaie</strong> : pièces de 1€, 2€, 5€, 10€, 20€, 50€ centimes et billets
+    <div style="font-size:0.9rem;color:#555;margin-top:8px;line-height:1.9;">
+      📏 <strong>Longueur</strong> : centimètre (cm), mètre (m) — 1 m = 100 cm<br>
+      ⚖️ <strong>Masse</strong> : gramme (g), kilogramme (kg) — 1 kg = 1 000 g<br>
+      🕐 <strong>Temps</strong> : 1 heure = 60 min · 1 min = 60 s · 1 semaine = 7 jours<br>
+      📅 <strong>Semaine</strong> : Lu · Ma · Me · Je · Ve · Sa · Di<br>
+      💰 <strong>Monnaie</strong> : pièces 1c à 2€ · billets 5€ à 500€
+    </div>
+    <div class="regle" style="margin-top:12px">
+      <div style="font-size:0.75rem;font-weight:900;color:#78350f;margin-bottom:6px">📏 Règle graduée :</div>
+      <div class="regle-ticks">
+        <div class="tick big"><div class="tick-line"></div><div class="lbl">0</div></div>
+        <div class="tick sm"><div class="tick-line"></div></div><div class="tick sm"><div class="tick-line"></div></div>
+        <div class="tick sm"><div class="tick-line"></div></div><div class="tick sm"><div class="tick-line"></div></div>
+        <div class="tick big"><div class="tick-line"></div><div class="lbl">1 cm</div></div>
+        <div class="tick sm"><div class="tick-line"></div></div><div class="tick sm"><div class="tick-line"></div></div>
+        <div class="tick sm"><div class="tick-line"></div></div><div class="tick sm"><div class="tick-line"></div></div>
+        <div class="tick big"><div class="tick-line"></div><div class="lbl">2 cm</div></div>
+        <div class="tick sm"><div class="tick-line"></div></div><div class="tick sm"><div class="tick-line"></div></div>
+        <div class="tick sm"><div class="tick-line"></div></div><div class="tick sm"><div class="tick-line"></div></div>
+        <div class="tick big"><div class="tick-line"></div><div class="lbl">3 cm</div></div>
+      </div>
+    </div>
+    <div class="pieces-row">
+      <div class="piece ag" style="width:36px;height:36px;font-size:0.65rem">1 c</div>
+      <div class="piece ag" style="width:40px;height:40px;font-size:0.7rem">5 c</div>
+      <div class="piece or" style="width:40px;height:40px;font-size:0.7rem">10 c</div>
+      <div class="piece or" style="width:44px;height:44px;font-size:0.72rem">20 c</div>
+      <div class="piece or" style="width:48px;height:48px;font-size:0.75rem">50 c</div>
+      <div class="piece or" style="width:52px;height:52px;font-size:0.85rem;border-width:4px">1 €</div>
+      <div class="piece or" style="width:58px;height:58px;font-size:0.88rem;border-width:4px">2 €</div>
+      <div class="billet" style="width:78px;height:42px;background:#dcfce7;border-color:#22c55e;color:#166534;font-size:0.85rem">5 €</div>
+      <div class="billet" style="width:78px;height:42px;background:#dbeafe;border-color:#60a5fa;color:#1d4ed8;font-size:0.85rem">10 €</div>
     </div>
   </div>
 
-  <!-- EX 1 : Longueurs -->
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 1</span> Les longueurs</div>
+  <div class="exercice-block" style="--accent:#16a34a">
+    <div class="ex-title"><span class="ex-badge" style="background:#16a34a">Ex 1</span> Longueurs (cm et m) <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex1"></div>
   </div>
 
-  <!-- EX 2 : Masses -->
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 2</span> Les masses</div>
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 2</span> Vrai ou Faux — Longueurs et masses <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
     <div id="ex2"></div>
   </div>
 
-  <!-- EX 3 : L'heure -->
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 3</span> Lire l'heure (heures pleines)</div>
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 3</span> Le temps — heures et jours <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex3"></div>
   </div>
 
-  <!-- EX 4 : La monnaie -->
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 4</span> La monnaie</div>
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 4</span> Les jours de la semaine dans l'ordre <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">ORDRE</span></div>
     <div id="ex4"></div>
   </div>
 
-</main>
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 5</span> La monnaie <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex5"></div>
+  </div>
 
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Associer la bonne unité <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#f97316">
+    <div class="ex-title"><span class="ex-badge" style="background:#f97316">Ex 7</span> Plus lourd ou plus léger qu'1 kg ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex7"></div>
+  </div>
+
+</main>
 <footer class="site-footer">Fait avec ❤️ pour Clémence — CP</footer>
 
+<script src="exercises.js"></script>
 <script>
-function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
-function buildQ(data, id) {
-  const c = document.getElementById(id);
-  data.forEach((item, i) => {
-    const d = document.createElement('div');
-    d.className = 'q-block';
-    const sh = shuffle(item.choices);
-    d.innerHTML = `
-      <div class="q-text">${item.q}</div>
-      <div class="qcm-row" id="${id}-r${i}">
-        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
-      </div>
-      <div class="feedback-line" id="${id}-f${i}"></div>
-    `;
-    c.appendChild(d);
-  });
-}
-function check(btn, chosen, correct, rowId, fbId) {
-  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
-  const fb = document.getElementById(fbId);
-  if (chosen === correct) {
-    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
-  } else {
-    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
-    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
-  }
-}
-
-buildQ([
-  { q: 'Quelle unité utilise-t-on pour mesurer la longueur d\'un crayon ?', correct: 'centimètres (cm)', choices: ['grammes (g)','litres (L)','centimètres (cm)','kilogrammes (kg)'] },
-  { q: 'Quelle unité utilise-t-on pour mesurer la longueur d\'une rue ?', correct: 'mètres (m)', choices: ['centimètres (cm)','mètres (m)','grammes (g)','secondes (s)'] },
-  { q: '1 mètre = combien de centimètres ?', correct: '100 cm', choices: ['10 cm','50 cm','100 cm','1000 cm'] },
-  { q: 'Un crayon mesure environ 15 ☐ ?', correct: 'cm', choices: ['m','km','cm','mm'] },
+buildQCM([
+  { q:'Quelle unité pour mesurer la longueur d\'un stylo ?', correct:'centimètre (cm)', choices:['gramme (g)','centimètre (cm)','litre (L)','heure (h)'] },
+  { q:'Combien y a-t-il de centimètres dans 1 mètre ?', correct:'100 cm', choices:['10 cm','100 cm','1 000 cm','50 cm'], hint:'1 m = 100 cm' },
+  { q:'La porte de la classe mesure environ…', correct:'2 m', choices:['2 cm','20 cm','2 m','20 m'] },
+  { q:'Un stylo mesure environ…', correct:'15 cm', choices:['15 mm','15 cm','15 m','1 m 50'] },
+  { q:'50 cm est … que 1 m.', correct:'plus court', choices:['plus long','plus court','égal','impossible à savoir'] },
+  { q:'Un crayon de 18 cm est … qu\'un crayon de 12 cm.', correct:'plus long', choices:['plus court','plus long','de la même longueur'] },
+  { q:'Ma table mesure 60 cm et la fenêtre mesure 1 m 20. Laquelle est la plus grande ?', correct:'La fenêtre (120 cm > 60 cm)', choices:['La table (60 cm)','La fenêtre (120 cm > 60 cm)','Elles sont égales'] },
 ], 'ex1');
 
-buildQ([
-  { q: 'Quelle unité utilise-t-on pour peser une pomme ?', correct: 'grammes (g)', choices: ['litres (L)','grammes (g)','mètres (m)','centimètres (cm)'] },
-  { q: 'Quelle unité utilise-t-on pour peser un sac de course plein ?', correct: 'kilogrammes (kg)', choices: ['grammes (g)','kilogrammes (kg)','centimètres (cm)','litres (L)'] },
-  { q: '1 kilogramme = combien de grammes ?', correct: '1 000 g', choices: ['10 g','100 g','500 g','1 000 g'] },
-  { q: 'Un enfant pèse environ 25 ☐ ?', correct: 'kg', choices: ['g','kg','cm','m'] },
+buildVF([
+  { q:'1 m = 100 cm', correct:true },
+  { q:'Un éléphant pèse moins qu\'une souris.', correct:false, expl:'Un éléphant est bien plus lourd' },
+  { q:'50 cm est plus petit que 1 m.', correct:true, expl:'50 cm < 100 cm = 1 m' },
+  { q:'1 kg = 100 g', correct:false, expl:'1 kg = 1 000 g' },
+  { q:'Une plume est plus lourde qu\'un livre.', correct:false },
+  { q:'La hauteur d\'une maison se mesure en mètres.', correct:true },
+  { q:'Un livre de maths pèse environ 500 g.', correct:true },
 ], 'ex2');
 
-buildQ([
-  { q: 'Sur une horloge, la petite aiguille pointe sur le 3. Quelle heure est-il ?', correct: '3 heures', choices: ['2 heures','3 heures','30 minutes','3h30'] },
-  { q: 'Quand les deux aiguilles sont sur le 12, quelle heure est-il ?', correct: '12 heures (midi)', choices: ['12 heures (midi)','6 heures','0 heure','24 heures'] },
-  { q: 'Il est 8 heures. Dans 2 heures, quelle heure sera-t-il ?', correct: '10 heures', choices: ['9 heures','10 heures','11 heures','6 heures'] },
-  { q: 'La petite aiguille est entre 4 et 5. C\'est probablement…', correct: '4h30', choices: ['4 heures','4h30','5 heures','45 minutes'] },
+buildQCM([
+  { q:'Combien de minutes dans 1 heure ?', correct:'60 minutes', choices:['10 minutes','30 minutes','60 minutes','100 minutes'] },
+  { q:'Combien de jours dans une semaine ?', correct:'7 jours', choices:['5 jours','6 jours','7 jours','8 jours'] },
+  { q:'Quel jour vient juste après mercredi ?', correct:'Jeudi', choices:['Mardi','Mercredi','Jeudi','Vendredi'] },
+  { q:'Combien de mois dans une année ?', correct:'12 mois', choices:['7','10','12','24'] },
+  { q:'L\'école commence à 8h30 et la récré est à 10h30. Durée ?', correct:'2 heures', choices:['1 heure','2 heures','3 heures','30 min'] },
+  { q:'Le premier mois de l\'année est…', correct:'Janvier', choices:['Décembre','Janvier','Mars','Septembre'] },
+  { q:'Après samedi vient…', correct:'Dimanche', choices:['Lundi','Vendredi','Dimanche','Mercredi'] },
 ], 'ex3');
 
-buildQ([
-  { q: 'Maman paie 3€ pour un pain. Elle donne un billet de 5€. Combien rend-on ?', correct: '2 €', choices: ['1 €','2 €','3 €','5 €'] },
-  { q: 'Un bonbon coûte 20 centimes. Lou achète 3 bonbons. Combien ça coûte ?', correct: '60 centimes', choices: ['40 centimes','50 centimes','60 centimes','80 centimes'] },
-  { q: 'Avec 2 pièces de 2€, combien as-tu en tout ?', correct: '4 €', choices: ['2 €','3 €','4 €','6 €'] },
-  { q: 'Un livre coûte 7€. Tu as une pièce de 10€. Combien te rend-on ?', correct: '3 €', choices: ['2 €','3 €','4 €','7 €'] },
+buildOrdre([
+  { q:'Range les jours dans l\'ordre (lundi en premier) :',
+    items:['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi','Dimanche'] },
+  { q:'Range ces mois dans l\'ordre (du plus tôt au plus tard dans l\'année) :',
+    items:['Janvier','Avril','Juillet','Octobre','Décembre'] },
 ], 'ex4');
-</script>
 
+buildQCM([
+  { q:'Combien font 2 pièces de 1 € ?', correct:'2 €', choices:['1 €','2 €','3 €','20 c'] },
+  { q:'Combien font 5 pièces de 20 centimes ?', correct:'1 €', choices:['20 c','50 c','1 €','2 €'], hint:'5 × 20 c = 100 c = 1 €' },
+  { q:'J\'ai un billet de 5 € et une pièce de 2 €. Total ?', correct:'7 €', choices:['5 €','6 €','7 €','10 €'] },
+  { q:'Une gomme coûte 50 c. Je paie avec 1 €. Ma monnaie ?', correct:'50 centimes', choices:['10 c','50 c','1 €','2 €'] },
+  { q:'Combien font 2 pièces de 50 centimes ?', correct:'1 €', choices:['50 c','1 €','1,50 €','2 €'] },
+  { q:'J\'ai 3 pièces de 2 €. Total ?', correct:'6 €', choices:['2 €','3 €','5 €','6 €'] },
+], 'ex5');
+
+buildPaires([
+  { q:'Associe chaque grandeur à son unité.',
+    pairs:[['Longueur','cm ou m'],['Masse','g ou kg'],['Temps','min ou h'],['Argent','€']] },
+  { q:'Associe chaque objet à l\'unité la mieux adaptée.',
+    pairs:[['Longueur d\'un livre','cm'],['Distance Paris–Lyon','km'],['Masse d\'un chat','kg'],['Durée d\'un film','minutes']] },
+], 'ex6');
+
+buildTri([
+  { q:'Classe chaque objet : pèse-t-il plus ou moins d\'1 kg ?',
+    cats:['⬆️ Plus d\'1 kg','⬇️ Moins d\'1 kg'],
+    items:[
+      {v:'🍎 Une pomme', cat:'⬇️ Moins d\'1 kg'},
+      {v:'📚 Un sac d\'école', cat:'⬆️ Plus d\'1 kg'},
+      {v:'🐱 Un chat', cat:'⬆️ Plus d\'1 kg'},
+      {v:'✏️ Un crayon', cat:'⬇️ Moins d\'1 kg'},
+      {v:'💧 1 L d\'eau', cat:'⬆️ Plus d\'1 kg'},
+      {v:'🍃 Une feuille', cat:'⬇️ Moins d\'1 kg'},
+      {v:'🪶 Une plume', cat:'⬇️ Moins d\'1 kg'},
+      {v:'📦 1 kg de farine', cat:'⬆️ Plus d\'1 kg'},
+    ]
+  },
+], 'ex7');
+</script>
 <script src="gamification.js"></script>
 <script src="nav.js"></script>
 </body>

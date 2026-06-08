@@ -54,90 +54,95 @@
     </div>
   </div>
 
-  <!-- EX 1 : Doubles -->
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 1</span> Les doubles</div>
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 1</span> Les doubles et moitiés <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex1"></div>
   </div>
-
-  <!-- EX 2 : Compléments à 10 -->
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 2</span> Compléments à 10</div>
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 2</span> Compléments à 10 <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex2"></div>
   </div>
-
-  <!-- EX 3 : + et − rapides -->
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 3</span> Calculs rapides</div>
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 3</span> Vrai ou Faux — calculs rapides <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
     <div id="ex3"></div>
   </div>
-
-  <!-- EX 4 : Ajouter 10 -->
-  <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 4</span> Ajouter ou ôter 10</div>
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 4</span> Ajouter ou ôter 10 <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
     <div id="ex4"></div>
   </div>
-
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 5</span> Associer le calcul et son résultat <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex5"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Calculs en tête — résultat > ou < 10 ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex6"></div>
+  </div>
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence — CP</footer>
 
+<script src="exercises.js"></script>
 <script>
-function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
-function buildQ(data, id) {
-  const c = document.getElementById(id);
-  data.forEach((item, i) => {
-    const d = document.createElement('div');
-    d.className = 'q-block';
-    const sh = shuffle(item.choices);
-    d.innerHTML = `
-      <div class="calcul-card">${item.q}</div>
-      <div class="qcm-row" id="${id}-r${i}">
-        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c}','${item.correct}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
-      </div>
-      <div class="feedback-line" id="${id}-f${i}"></div>
-    `;
-    c.appendChild(d);
-  });
-}
-function check(btn, chosen, correct, rowId, fbId) {
-  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
-  const fb = document.getElementById(fbId);
-  if (chosen === correct) {
-    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
-  } else {
-    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
-    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
-  }
-}
-
-buildQ([
-  { q: '3 + 3 = ?', correct: '6', choices: ['5','6','7','8'] },
-  { q: '4 + 4 = ?', correct: '8', choices: ['6','7','8','9'] },
-  { q: '5 + 5 = ?', correct: '10', choices: ['8','9','10','11'] },
-  { q: '6 + 6 = ?', correct: '12', choices: ['10','11','12','13'] },
+buildQCM([
+  { card:'3 + 3 = ?', q:'Double de 3', correct:'6', choices:['5','6','7','8'] },
+  { card:'4 + 4 = ?', q:'Double de 4', correct:'8', choices:['6','7','8','9'] },
+  { card:'5 + 5 = ?', q:'Double de 5', correct:'10', choices:['8','9','10','11'] },
+  { card:'6 + 6 = ?', q:'Double de 6', correct:'12', choices:['10','11','12','13'] },
+  { card:'7 + 7 = ?', q:'Double de 7', correct:'14', choices:['12','13','14','15'] },
+  { q:'La moitié de 10, c\'est…', correct:'5', choices:['2','4','5','6'] },
+  { q:'La moitié de 16, c\'est…', correct:'8', choices:['6','7','8','9'] },
 ], 'ex1');
 
-buildQ([
-  { q: '6 + ☐ = 10', correct: '4', choices: ['3','4','5','6'] },
-  { q: '3 + ☐ = 10', correct: '7', choices: ['6','7','8','9'] },
-  { q: '8 + ☐ = 10', correct: '2', choices: ['1','2','3','4'] },
-  { q: '5 + ☐ = 10', correct: '5', choices: ['3','4','5','6'] },
+buildQCM([
+  { card:'6 + ☐ = 10', q:'Quel nombre complète ?', correct:'4', choices:['3','4','5','6'] },
+  { card:'3 + ☐ = 10', q:'Quel nombre complète ?', correct:'7', choices:['6','7','8','9'] },
+  { card:'8 + ☐ = 10', q:'Quel nombre complète ?', correct:'2', choices:['1','2','3','4'] },
+  { card:'☐ + 5 = 10', q:'Quel nombre complète ?', correct:'5', choices:['3','4','5','6'] },
+  { card:'1 + ☐ = 10', q:'Quel nombre complète ?', correct:'9', choices:['7','8','9','10'] },
+  { card:'7 + ☐ = 10', q:'Quel nombre complète ?', correct:'3', choices:['2','3','4','5'] },
+  { card:'☐ + 4 = 10', q:'Quel nombre complète ?', correct:'6', choices:['4','5','6','7'] },
 ], 'ex2');
 
-buildQ([
-  { q: '7 + 4 = ?', correct: '11', choices: ['10','11','12','13'] },
-  { q: '14 − 6 = ?', correct: '8', choices: ['6','7','8','9'] },
-  { q: '9 + 8 = ?', correct: '17', choices: ['15','16','17','18'] },
-  { q: '16 − 7 = ?', correct: '9', choices: ['7','8','9','10'] },
+buildVF([
+  { card:'7 + 4 = 11', q:'7 + 4 = 11', correct:true },
+  { card:'9 + 8 = 18', q:'9 + 8 = 18', correct:false, expl:'9 + 8 = 17' },
+  { card:'14 − 6 = 8', q:'14 − 6 = 8', correct:true },
+  { card:'16 − 7 = 8', q:'16 − 7 = 8', correct:false, expl:'16 − 7 = 9' },
+  { q:'6 + 7 = 13', correct:true },
+  { q:'15 − 8 = 6', correct:false, expl:'15 − 8 = 7' },
+  { q:'3 + 9 = 12', correct:true },
 ], 'ex3');
 
-buildQ([
-  { q: '24 + 10 = ?', correct: '34', choices: ['25','33','34','35'] },
-  { q: '57 + 10 = ?', correct: '67', choices: ['58','66','67','68'] },
-  { q: '43 − 10 = ?', correct: '33', choices: ['32','33','34','42'] },
-  { q: '86 − 10 = ?', correct: '76', choices: ['75','76','77','87'] },
+buildQCM([
+  { card:'24 + 10 = ?', q:'Calcule', correct:'34', choices:['25','33','34','35'] },
+  { card:'57 + 10 = ?', q:'Calcule', correct:'67', choices:['58','66','67','68'] },
+  { card:'43 − 10 = ?', q:'Calcule', correct:'33', choices:['32','33','34','42'] },
+  { card:'86 − 10 = ?', q:'Calcule', correct:'76', choices:['75','76','77','87'] },
+  { card:'35 + 20 = ?', q:'Calcule', correct:'55', choices:['37','45','55','57'] },
+  { card:'72 − 30 = ?', q:'Calcule', correct:'42', choices:['32','39','42','45'] },
 ], 'ex4');
+
+buildPaires([
+  { q:'Associe chaque calcul à son résultat.',
+    pairs:[['3+7','10'],['8+5','13'],['15−9','6'],['4+8','12']] },
+  { q:'Associe chaque calcul à son résultat.',
+    pairs:[['6+6','12'],['17−8','9'],['5+9','14'],['20−7','13']] },
+], 'ex5');
+
+buildTri([
+  { q:'Chaque résultat est-il plus grand ou plus petit que 10 ?',
+    cats:['> 10 (plus grand)','< 10 (plus petit)'],
+    items:[
+      {v:'6+7',  cat:'> 10 (plus grand)'},
+      {v:'3+4',  cat:'< 10 (plus petit)'},
+      {v:'9+5',  cat:'> 10 (plus grand)'},
+      {v:'2+6',  cat:'< 10 (plus petit)'},
+      {v:'8+4',  cat:'> 10 (plus grand)'},
+      {v:'1+7',  cat:'< 10 (plus petit)'},
+    ]
+  },
+], 'ex6');
 </script>
 
 <script src="gamification.js"></script>
