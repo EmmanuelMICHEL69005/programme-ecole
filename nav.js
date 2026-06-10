@@ -564,7 +564,7 @@
   drawerHeader.className = 'nav-drawer-header';
   drawerHeader.innerHTML = `
     <a href="index.html" class="nav-drawer-home" onclick="closeNav()">
-      <span>🌟</span><span>Les Maths de Clémence</span>
+      <span>🌟</span><span>École Facile</span>
     </a>
     <button class="nav-close-btn" onclick="closeNav()" aria-label="Fermer">✕</button>
   `;

@@ -1,8 +1,8 @@
 {
-  "name": "Les Maths de Clémence",
-  "short_name": "Maths Clémence",
-  "description": "Exercices de maths interactifs CP → 6ème",
-  "start_url": "/programme-ecole/",
+  "name": "École Facile",
+  "short_name": "École Facile",
+  "description": "Exercices interactifs CP → 6ème — Maths, Histoire-Géo, EPS",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#4c1d95",
   "theme_color": "#4c1d95",
