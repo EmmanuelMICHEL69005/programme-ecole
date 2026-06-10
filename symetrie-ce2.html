@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="Les Maths de Clémence">
+<meta name="application-name" content="Les Maths de Clémence">
+<meta property="og:site_name" content="Les Maths de Clémence">
+<link rel="manifest" href="manifest.json">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Symétrie axiale — CE2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.sym-grid{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:10px 0;}
+.sym-card{background:#fff;border:2px solid #c4b5fd;border-radius:12px;padding:10px;text-align:center;min-width:80px;}
+.sym-card svg{display:block;margin:0 auto 4px;}
+.sym-card-label{font-size:0.65rem;font-weight:900;color:#5b21b6;}
+.sym-card-axes{font-size:0.7rem;font-weight:900;color:#7c3aed;margin-top:2px;}
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background:linear-gradient(135deg,#7c3aed,#a78bfa);">
+  <span class="emoji-header">🪞</span>
+  <h1>Symétrie axiale</h1>
+  <p>Axes de symétrie, figures et réflexion</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+  <div class="badge-niveau">📚 CE2 — Géométrie</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div class="sym-grid">
+      <div class="sym-card">
+        <svg width="60" height="50" viewBox="0 0 60 50">
+          <rect x="10" y="5" width="40" height="40" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+          <line x1="30" y1="0" x2="30" y2="50" stroke="#dc2626" stroke-width="2" stroke-dasharray="4,2"/>
+          <line x1="0" y1="25" x2="60" y2="25" stroke="#dc2626" stroke-width="2" stroke-dasharray="4,2"/>
+        </svg>
+        <div class="sym-card-label">Carré</div>
+        <div class="sym-card-axes">4 axes</div>
+      </div>
+      <div class="sym-card">
+        <svg width="60" height="50" viewBox="0 0 60 50">
+          <rect x="5" y="10" width="50" height="30" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+          <line x1="30" y1="0" x2="30" y2="50" stroke="#dc2626" stroke-width="2" stroke-dasharray="4,2"/>
+          <line x1="0" y1="25" x2="60" y2="25" stroke="#dc2626" stroke-width="2" stroke-dasharray="4,2"/>
+        </svg>
+        <div class="sym-card-label">Rectangle</div>
+        <div class="sym-card-axes">2 axes</div>
+      </div>
+      <div class="sym-card">
+        <svg width="60" height="50" viewBox="0 0 60 50">
+          <polygon points="30,3 57,47 3,47" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+          <line x1="30" y1="0" x2="30" y2="50" stroke="#dc2626" stroke-width="2" stroke-dasharray="4,2"/>
+        </svg>
+        <div class="sym-card-label">Triangle isocèle</div>
+        <div class="sym-card-axes">1 axe</div>
+      </div>
+      <div class="sym-card">
+        <svg width="60" height="50" viewBox="0 0 60 50">
+          <circle cx="30" cy="25" r="22" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+          <line x1="30" y1="0" x2="30" y2="50" stroke="#dc2626" stroke-width="2" stroke-dasharray="3,2"/>
+          <line x1="0" y1="25" x2="60" y2="25" stroke="#dc2626" stroke-width="2" stroke-dasharray="3,2"/>
+        </svg>
+        <div class="sym-card-label">Cercle</div>
+        <div class="sym-card-axes">∞ axes</div>
+      </div>
+    </div>
+    <div style="font-size:0.88rem;color:#555;line-height:1.9;">
+      🪞 <strong>Axe de symétrie</strong> = la droite qui "plie" la figure en deux parties identiques<br>
+      👁️ Si on plie la figure sur l'axe, les deux moitiés se superposent exactement<br>
+      🔴 Sur un dessin, l'axe de symétrie se trace en rouge ou en pointillés
+    </div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 1</span> Qu'est-ce que la symétrie ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#a855f7">
+    <div class="ex-title"><span class="ex-badge" style="background:#a855f7">Ex 2</span> Axes de symétrie des figures <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#6d28d9">
+    <div class="ex-title"><span class="ex-badge" style="background:#6d28d9">Ex 3</span> Figure et son symétrique <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 4</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 5</span> Figure ↔ nombre d'axes <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 6</span> Symétrique ou pas ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 7</span> Classer par nombre d'axes <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex7"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CE2</footer>
+
+<script src="exercises.js"></script>
+<script>
+buildQCM([
+  { q:'Qu\'est-ce qu\'un axe de symétrie ?', correct:'Une droite qui partage la figure en deux parties identiques qui se superposent', choices:['Une droite qui divise la figure en deux parties inégales','Une droite qui partage la figure en deux parties identiques qui se superposent','La diagonale d\'un rectangle','Le centre d\'un cercle'] },
+  { q:'Comment vérifier qu\'une droite est bien un axe de symétrie ?', correct:'En pliant le dessin sur la droite : les deux moitiés doivent se superposer exactement', choices:['En mesurant la longueur de la droite','En pliant le dessin sur la droite : les deux moitiés doivent se superposer exactement','En coloriant les deux côtés de la même couleur','En comptant les angles de la figure'] },
+  { q:'Une figure peut-elle avoir plusieurs axes de symétrie ?', correct:'Oui, certaines figures ont plusieurs axes (ex : le carré en a 4)', choices:['Non, une figure a toujours exactement 1 axe','Oui, certaines figures ont plusieurs axes (ex : le carré en a 4)','Non, seul le cercle a plusieurs axes','Oui, mais jamais plus de 2'] },
+  { q:'Quel outil utilise-t-on pour construire le symétrique d\'un point ?', correct:'Une règle et un compas (ou du papier calque)', choices:['Un rapporteur seulement','Une calculatrice','Une règle et un compas (ou du papier calque)','Une équerre seulement'] },
+], 'ex1');
+
+buildQCM([
+  { q:'Combien d\'axes de symétrie a un carré ?', correct:'4 axes', choices:['1 axe','2 axes','4 axes','8 axes'] },
+  { q:'Combien d\'axes de symétrie a un rectangle (non carré) ?', correct:'2 axes', choices:['0 axe','1 axe','2 axes','4 axes'] },
+  { q:'Combien d\'axes de symétrie a un triangle équilatéral ?', correct:'3 axes', choices:['0 axe','1 axe','2 axes','3 axes'] },
+  { q:'Combien d\'axes de symétrie a un cercle ?', correct:'Une infinité d\'axes', choices:['1 axe','2 axes','4 axes','Une infinité d\'axes'] },
+  { q:'Combien d\'axes de symétrie a la lettre A ?', correct:'1 axe (vertical)', choices:['0 axe','1 axe (vertical)','2 axes','3 axes'] },
+  { q:'Combien d\'axes de symétrie a un losange (non carré) ?', correct:'2 axes (les 2 diagonales)', choices:['0 axe','1 axe','2 axes (les 2 diagonales)','4 axes'] },
+], 'ex2');
+
+buildQCM([
+  { q:'Le symétrique d\'un point par rapport à un axe est…', correct:'Le point situé à égale distance de l\'axe, de l\'autre côté', choices:['Le point le plus proche de l\'axe','Le point situé à égale distance de l\'axe, de l\'autre côté','N\'importe quel point de l\'axe','Le centre de la figure'] },
+  { q:'Quand on trace le symétrique d\'une figure, la figure et son image sont…', correct:'De même taille, de même forme, et situées de part et d\'autre de l\'axe', choices:['De tailles différentes','De même taille, de même forme, et situées de part et d\'autre de l\'axe','L\'une au-dessus, l\'autre en-dessous toujours','Identiques et superposées'] },
+  { q:'La distance d\'un point A à l\'axe est de 3 cm. Son symétrique A\' est à…', correct:'3 cm de l\'axe (de l\'autre côté)', choices:['0 cm (sur l\'axe)','1,5 cm de l\'axe','3 cm de l\'axe (de l\'autre côté)','6 cm de l\'axe'] },
+  { q:'Un segment perpendiculaire à l\'axe relie un point et son symétrique. L\'axe le coupe…', correct:'En son milieu (à égale distance des deux points)', choices:['Au premier quart','En son milieu (à égale distance des deux points)','À un tiers','En dehors du segment'] },
+], 'ex3');
+
+buildVF([
+  { q:'Un triangle quelconque a toujours au moins un axe de symétrie.', correct:false, expl:'Un triangle quelconque n\'a aucun axe de symétrie. Seuls le triangle isocèle (1 axe) et équilatéral (3 axes) en ont.' },
+  { q:'Le carré a 4 axes de symétrie.', correct:true },
+  { q:'Le symétrique d\'un point situé SUR l\'axe est lui-même.', correct:true, expl:'Un point situé sur l\'axe est son propre symétrique (il reste au même endroit).' },
+  { q:'Une figure et son symétrique ont la même taille.', correct:true },
+  { q:'La lettre "O" a 2 axes de symétrie.', correct:true, expl:'La lettre "O" a un axe vertical et un axe horizontal.' },
+  { q:'Un rectangle et un carré ont le même nombre d\'axes de symétrie.', correct:false, expl:'Le rectangle a 2 axes, le carré en a 4.' },
+  { q:'Pour trouver le symétrique d\'un point, on mesure sa distance à l\'axe et on la reporte de l\'autre côté.', correct:true },
+], 'ex4');
+
+buildPaires([
+  { q:'Associe chaque figure à son nombre d\'axes de symétrie.',
+    pairs:[['Carré','4 axes'],['Rectangle (non carré)','2 axes'],['Triangle équilatéral','3 axes'],['Triangle quelconque','0 axe']] },
+  { q:'Associe chaque lettre à son nombre d\'axes de symétrie.',
+    pairs:[['Lettre A','1 axe (vertical)'],['Lettre H','2 axes'],['Lettre S','0 axe'],['Lettre O','2 axes']] },
+], 'ex5');
+
+buildTri([
+  { q:'Cette figure a-t-elle au moins un axe de symétrie ?',
+    cats:['Symétrique ✅','Pas symétrique ❌'],
+    items:[
+      {v:'Carré', cat:'Symétrique ✅'},
+      {v:'Triangle quelconque', cat:'Pas symétrique ❌'},
+      {v:'Cercle', cat:'Symétrique ✅'},
+      {v:'Losange', cat:'Symétrique ✅'},
+      {v:'Trapèze quelconque', cat:'Pas symétrique ❌'},
+      {v:'Triangle isocèle', cat:'Symétrique ✅'},
+      {v:'Parallélogramme (non losange)', cat:'Pas symétrique ❌'},
+      {v:'Rectangle', cat:'Symétrique ✅'},
+    ]
+  },
+], 'ex6');
+
+buildTri([
+  { q:'Range ces figures selon leur nombre d\'axes de symétrie.',
+    cats:['0 axe','1 axe','2 axes','4 axes ou plus'],
+    items:[
+      {v:'Triangle scalène (3 côtés différents)', cat:'0 axe'},
+      {v:'Triangle isocèle', cat:'1 axe'},
+      {v:'Rectangle', cat:'2 axes'},
+      {v:'Carré', cat:'4 axes ou plus'},
+      {v:'Parallélogramme (non losange)', cat:'0 axe'},
+      {v:'Losange', cat:'2 axes'},
+      {v:'Cercle', cat:'4 axes ou plus'},
+    ]
+  },
+], 'ex7');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

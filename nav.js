@@ -67,6 +67,7 @@
           { emoji: '🧩', title: 'Problèmes',                  href: 'problemes.html' },
           { emoji: '🖊️', title: 'Opérations posées',          href: 'operations-posees-ce2.html' },
           { emoji: '✖️', title: 'Multiplication et division',  href: 'multiplication-division-ce2.html' },
+          { emoji: '➗', title: 'Division euclidienne',         href: 'division-ce2.html' },
         ]},
         { label: '📐 Grandeurs et mesures', color: '#93c5fd', pages: [
           { emoji: '📏', title: 'Longueurs, masses, contenances', href: 'mesures.html' },
@@ -75,6 +76,7 @@
         { label: '🔷 Espace et géométrie', color: '#6ee7b7', pages: [
           { emoji: '🔷', title: 'Géométrie plane', href: 'geometrie.html' },
           { emoji: '🎲', title: 'Les solides',     href: 'solides.html' },
+          { emoji: '🪞', title: 'Symétrie axiale',  href: 'symetrie-ce2.html' },
         ]},
         { label: '📊 Organisation des données', color: '#fcd34d', pages: [
           { emoji: '📊', title: 'Tableaux et graphiques', href: 'donnees.html' },
