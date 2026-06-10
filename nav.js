@@ -18,6 +18,12 @@
           { emoji: '📊', title: 'Données',                    href: 'donnees-cp.html' },
           { emoji: '🧩', title: 'Résolution de problèmes',   href: 'problemes-cp.html' },
         ]},
+        { label: '🏛️ Histoire & Géographie', color: '#86efac', pages: [
+          { emoji: '🌍', title: 'Histoire & Géographie',      href: 'histoire-geo-cp.html' },
+        ]},
+        { label: '🏃 EPS', color: '#86efac', pages: [
+          { emoji: '🏃', title: 'EPS — Éducation Physique',   href: 'eps-cycle2.html' },
+        ]},
       ],
     },
     CE1: {
@@ -37,6 +43,12 @@
           { emoji: '🔷', title: 'Géométrie',                   href: 'geometrie-ce1.html' },
           { emoji: '📊', title: 'Données',                     href: 'donnees-ce1.html' },
           { emoji: '🧩', title: 'Résolution de problèmes',    href: 'problemes-ce1.html' },
+        ]},
+        { label: '🏛️ Histoire & Géographie', color: '#6ee7b7', pages: [
+          { emoji: '🏛️', title: 'Histoire & Géographie',      href: 'histoire-geo-ce1.html' },
+        ]},
+        { label: '🏃 EPS', color: '#6ee7b7', pages: [
+          { emoji: '🏃', title: 'EPS — Éducation Physique',   href: 'eps-cycle2.html' },
         ]},
       ],
     },
@@ -67,6 +79,12 @@
         { label: '📊 Organisation des données', color: '#fcd34d', pages: [
           { emoji: '📊', title: 'Tableaux et graphiques', href: 'donnees.html' },
         ]},
+        { label: '🏛️ Histoire & Géographie', color: '#a78bfa', pages: [
+          { emoji: '🏰', title: 'Histoire & Géographie',      href: 'histoire-geo-ce2.html' },
+        ]},
+        { label: '🏃 EPS', color: '#a78bfa', pages: [
+          { emoji: '🏃', title: 'EPS — Éducation Physique',   href: 'eps-cycle2.html' },
+        ]},
       ],
     },
     CM1: {
@@ -90,6 +108,9 @@
           { emoji: '⚖️', title: 'Proportionnalité',           href: 'proportionnalite-cm1.html' },
           { emoji: '🧩', title: 'Résolution de problèmes',   href: 'problemes-cm1.html' },
         ]},
+        { label: '🏃 EPS', color: '#93c5fd', pages: [
+          { emoji: '🏆', title: 'EPS — Éducation Physique',   href: 'eps-cycle3.html' },
+        ]},
       ],
     },
     CM2: {
@@ -112,6 +133,9 @@
           { emoji: '📊', title: 'Statistiques & probabilités', href: 'donnees-cm2.html' },
           { emoji: '⚖️', title: 'Proportionnalité & %',        href: 'proportionnalite-cm2.html' },
         ]},
+        { label: '🏃 EPS', color: '#fcd34d', pages: [
+          { emoji: '🏆', title: 'EPS — Éducation Physique',   href: 'eps-cycle3.html' },
+        ]},
       ],
     },
     '6e': {
@@ -130,6 +154,9 @@
           { emoji: '📐', title: 'Aires et volumes',            href: 'mesures-6e.html' },
           { emoji: '📊', title: 'Statistiques',                href: 'donnees-6e.html' },
           { emoji: '⚖️', title: 'Proportionnalité & %',        href: 'proportionnalite-6e.html' },
+        ]},
+        { label: '🏃 EPS', color: '#f9a8d4', pages: [
+          { emoji: '🏆', title: 'EPS — Éducation Physique',   href: 'eps-cycle3.html' },
         ]},
       ],
     },
