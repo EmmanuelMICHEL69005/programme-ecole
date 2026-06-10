@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="Les Maths de Clémence">
+<meta name="application-name" content="Les Maths de Clémence">
+<meta property="og:site_name" content="Les Maths de Clémence">
+<link rel="manifest" href="manifest.json">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EPS — Cycle 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.domaine-grid{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:10px 0;}
+.domaine-card{background:#fff7ed;border:2px solid #fed7aa;border-radius:12px;padding:8px 12px;font-size:0.68rem;font-weight:900;color:#c2410c;text-align:center;min-width:100px;}
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background:linear-gradient(135deg,#dc2626,#f97316);">
+  <span class="emoji-header">🏃</span>
+  <h1>EPS — Éducation Physique</h1>
+  <p>Courir, sauter, nager, jouer, danser</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+  <div class="badge-niveau">🏃 Cycle 2 — CP · CE1 · CE2</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Les 4 grands domaines de l'EPS</div>
+    <div class="domaine-grid">
+      <div class="domaine-card">🏅 Se déplacer<br><small style="color:#6b7280;font-weight:700">course · saut · lancer · orientation</small></div>
+      <div class="domaine-card">🤸 Équilibres<br><small style="color:#6b7280;font-weight:700">gym · vélo · natation</small></div>
+      <div class="domaine-card">🎭 S'exprimer<br><small style="color:#6b7280;font-weight:700">danse · cirque · gym artistique</small></div>
+      <div class="domaine-card">⚽ Coopérer<br><small style="color:#6b7280;font-weight:700">jeux collectifs · combat · raquettes</small></div>
+    </div>
+    <div style="font-size:0.88rem;color:#555;line-height:1.9;">
+      🦵 <strong>Pied d'appel</strong> = le pied sur lequel on s'appuie pour sauter<br>
+      🌊 <strong>Poussée d'Archimède</strong> = force qui fait remonter à la surface de l'eau<br>
+      ⚽ <strong>Se démarquer</strong> = s'éloigner de son adversaire pour être libre de recevoir<br>
+      🤝 <strong>Fair-play</strong> = respecter les règles, les partenaires et les adversaires
+    </div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#dc2626">
+    <div class="ex-title"><span class="ex-badge" style="background:#dc2626">Ex 1</span> Les 4 domaines de l'EPS <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#f97316">
+    <div class="ex-title"><span class="ex-badge" style="background:#f97316">Ex 2</span> Courir, sauter, lancer <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 3</span> Équilibres et natation <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 4</span> Jeux collectifs et règles <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 5</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Associer activité et domaine <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 7</span> Dans quel domaine ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex7"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — EPS Cycle 2</footer>
+
+<script src="exercises.js"></script>
+<script>
+buildQCM([
+  { q:'Combien y a-t-il de grands domaines en EPS au cycle 2 ?', correct:'4 domaines', choices:['2 domaines','3 domaines','4 domaines','6 domaines'] },
+  { q:'Dans quel domaine apprend-on à nager ?', correct:'Construire des équilibres (environnements inhabituels)', choices:['Se déplacer (course/saut/lancer)','Construire des équilibres (environnements inhabituels)','S\'exprimer (danse/cirque)','Coopérer et s\'opposer'] },
+  { q:'Dans quel domaine fait-on de la danse ?', correct:'S\'exprimer avec son corps pour partager des émotions', choices:['Se déplacer (course/saut)','Construire des équilibres','S\'exprimer avec son corps pour partager des émotions','Coopérer et s\'opposer'] },
+  { q:'Dans quel domaine joue-t-on au football ou au handball ?', correct:'Coopérer et s\'opposer pour jouer', choices:['Se déplacer (course)','Construire des équilibres','S\'exprimer (danse)','Coopérer et s\'opposer pour jouer'] },
+  { q:'Le parcours d\'orientation appartient à quel domaine ?', correct:'Se déplacer pour agir dans l\'espace et sur une durée', choices:['Se déplacer pour agir dans l\'espace et sur une durée','Construire des équilibres','S\'exprimer avec son corps','Coopérer et s\'opposer'] },
+], 'ex1');
+
+buildQCM([
+  { q:'Qu\'appelle-t-on le "pied d\'appel" dans un saut ?', correct:'Le pied sur lequel on s\'appuie pour décoller', choices:['Le pied qui touche le sol en premier à l\'atterrissage','Le pied sur lequel on s\'appuie pour décoller','Le pied préféré du joueur','Le pied non dominant'] },
+  { q:'Pour courir vite de façon équilibrée, il faut…', correct:'Regarder loin devant soi', choices:['Regarder ses pieds','Regarder à gauche et à droite','Regarder loin devant soi','Fermer les yeux'] },
+  { q:'Pour lancer un objet loin, il faut…', correct:'Mobiliser ses jambes et basculer le haut du corps vers l\'avant', choices:['Lancer uniquement avec le bras','Rester immobile','Mobiliser ses jambes et basculer le haut du corps vers l\'avant','Lancer le plus bas possible'] },
+  { q:'Qu\'est-ce qu\'un "signal de départ" en course ?', correct:'Un signal (sonore, visuel) qui indique à quel moment partir', choices:['Le départ immédiat sans signal','Un signal (sonore, visuel) qui indique à quel moment partir','Le dossard du coureur','La ligne d\'arrivée'] },
+  { q:'Un "contrat de course" en endurance, c\'est…', correct:'Un objectif de distance ou de durée que l\'élève choisit', choices:['Un uniforme de sport','Un objectif de distance ou de durée que l\'élève choisit','Une règle d\'arbitrage','Une pénalité'] },
+], 'ex2');
+
+buildQCM([
+  { q:'Comment réalise-t-on une roulade avant correctement ?', correct:'On roule vers l\'avant avec le menton collé à la poitrine', choices:['On tombe vers l\'avant les bras tendus','On roule vers l\'avant avec le menton collé à la poitrine','On saute et on tombe','On roule sur le côté'] },
+  { q:'Pour rouler à vélo en toute sécurité, il faut d\'abord apprendre à…', correct:'Maintenir son équilibre en ligne droite', choices:['Faire des pirouettes','Maintenir son équilibre en ligne droite','Rouler à grande vitesse','Faire des roues arrière'] },
+  { q:'La poussée d\'Archimède dans l\'eau permet de…', correct:'Remonter passivement à la surface de l\'eau', choices:['Couler plus vite','Nager plus vite','Remonter passivement à la surface de l\'eau','Respirer sous l\'eau'] },
+  { q:'Pour flotter sur le dos, il faut…', correct:'S\'allonger à l\'horizontale, tête dans le prolongement du corps', choices:['Agiter les bras rapidement','S\'allonger à l\'horizontale, tête dans le prolongement du corps','Se mettre en boule','Nager à toute vitesse'] },
+  { q:'Dans les activités gymniques, "se renverser" signifie…', correct:'Mettre le bas du corps au-dessus du haut du corps', choices:['Tomber par accident','Mettre le bas du corps au-dessus du haut du corps','Rouler sur le côté','Sauter très haut'] },
+], 'ex3');
+
+buildQCM([
+  { q:'Dans un jeu collectif, "se démarquer" signifie…', correct:'S\'éloigner de son adversaire pour être libre de recevoir', choices:['Sortir du terrain','S\'éloigner de son adversaire pour être libre de recevoir','Rester immobile','Courir en cercle'] },
+  { q:'Dans un jeu collectif, à quoi sert un arbitre ?', correct:'À faire respecter les règles du jeu', choices:['À marquer des points pour l\'équipe','À faire respecter les règles du jeu','À décider qui gagne','À soigner les blessés'] },
+  { q:'Qu\'est-ce que le fair-play ?', correct:'Respecter les règles, les partenaires et les adversaires', choices:['Tricher pour gagner','Respecter les règles, les partenaires et les adversaires','Ne jamais perdre','Jouer très vite'] },
+  { q:'Le "porteur de balle" dans un jeu collectif, c\'est…', correct:'Le joueur qui tient le ballon', choices:['Le gardien','Le joueur qui tient le ballon','L\'arbitre','Le capitaine'] },
+  { q:'Dans un jeu de combat, une "zone de combat" sert à…', correct:'Délimiter l\'espace où les joueurs doivent rester', choices:['Protéger les combattants des regards','Délimiter l\'espace où les joueurs doivent rester','Indiquer où marquer les points','Montrer où les spectateurs s\'assoient'] },
+], 'ex4');
+
+buildVF([
+  { q:'Pour sauter loin, on s\'appuie sur son pied d\'appel.', correct:true },
+  { q:'La poussée d\'Archimède fait couler dans l\'eau.', correct:false, expl:'La poussée d\'Archimède est une force vers le HAUT qui aide à flotter et à remonter.' },
+  { q:'Dans un jeu collectif, l\'attaquant cherche à marquer.', correct:true },
+  { q:'Pour lancer loin, on garde les bras et le corps immobiles.', correct:false, expl:'Pour lancer loin, il faut mobiliser les jambes et basculer tout le corps de l\'arrière vers l\'avant.' },
+  { q:'Un arbitre fait respecter les règles du jeu.', correct:true },
+  { q:'On peut partir avant le signal de départ en course.', correct:false, expl:'Il faut attendre le signal de départ. Partir avant est une fausse piste.' },
+  { q:'La roulade avant se fait avec le menton collé à la poitrine.', correct:true },
+  { q:'En EPS, le fair-play c\'est respecter ses adversaires même quand on perd.', correct:true },
+], 'ex5');
+
+buildPaires([
+  { q:'Associe chaque activité à son domaine EPS.',
+    pairs:[['Course de vitesse 🏃','Se déplacer dans l\'espace'],['Roulade avant 🤸','Construire des équilibres (gym)'],['Danse 💃','S\'exprimer avec son corps'],['Football ⚽','Coopérer et s\'opposer']] },
+  { q:'Associe chaque activité à son domaine EPS.',
+    pairs:[['Nager 🏊','Construire des équilibres (eau)'],['Vélo 🚲','Construire des équilibres (locomotion)'],['Arts du cirque 🎪','S\'exprimer avec son corps'],['Jeu de combat 🥊','Coopérer et s\'opposer']] },
+], 'ex6');
+
+buildTri([
+  { q:'Dans quel domaine EPS classe-t-on cette activité ?',
+    cats:['Se déplacer 🏃','Équilibres 🤸','S\'exprimer 💃','Coopérer ⚽'],
+    items:[
+      {v:'Sauter en hauteur', cat:'Se déplacer 🏃'},
+      {v:'Roulade avant sur tapis', cat:'Équilibres 🤸'},
+      {v:'Match de handball', cat:'Coopérer ⚽'},
+      {v:'Danse en groupe', cat:'S\'exprimer 💃'},
+      {v:'Nager dans le petit bain', cat:'Équilibres 🤸'},
+      {v:'Course de haies', cat:'Se déplacer 🏃'},
+      {v:'Jonglage avec balles', cat:'S\'exprimer 💃'},
+      {v:'Jeu de balle au prisonnier', cat:'Coopérer ⚽'},
+    ]
+  },
+], 'ex7');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>
