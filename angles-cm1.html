@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="École Facile">
+<meta name="application-name" content="École Facile">
+<meta property="og:site_name" content="École Facile">
+<link rel="manifest" href="manifest.json">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les angles — CM1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.angle-grid{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:10px 0;}
+.angle-card{background:#fff;border:2px solid #93c5fd;border-radius:12px;padding:10px;text-align:center;min-width:85px;}
+.angle-card svg{display:block;margin:0 auto 4px;}
+.angle-card-label{font-size:0.65rem;font-weight:900;color:#1d4ed8;}
+.angle-card-deg{font-size:0.7rem;font-weight:900;color:#1e40af;margin-top:2px;}
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background:linear-gradient(135deg,#1d4ed8,#93c5fd);">
+  <span class="emoji-header">📐</span>
+  <h1>Les angles</h1>
+  <p>Reconnaître, comparer et mesurer les angles</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+  <div class="badge-niveau">🎯 CM1 — Géométrie</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens — Les 4 types d'angles</div>
+    <div class="angle-grid">
+      <div class="angle-card">
+        <svg width="64" height="54" viewBox="0 0 64 54">
+          <line x1="8" y1="46" x2="56" y2="46" stroke="#1d4ed8" stroke-width="2.5"/>
+          <line x1="8" y1="46" x2="8" y2="8" stroke="#1d4ed8" stroke-width="2.5"/>
+          <rect x="8" y="36" width="10" height="10" fill="none" stroke="#dc2626" stroke-width="2"/>
+        </svg>
+        <div class="angle-card-label">Droit</div>
+        <div class="angle-card-deg">= 90°</div>
+      </div>
+      <div class="angle-card">
+        <svg width="64" height="54" viewBox="0 0 64 54">
+          <line x1="8" y1="46" x2="56" y2="46" stroke="#1d4ed8" stroke-width="2.5"/>
+          <line x1="8" y1="46" x2="28" y2="10" stroke="#1d4ed8" stroke-width="2.5"/>
+          <path d="M 20 46 A 12 12 0 0 1 16 35" fill="none" stroke="#dc2626" stroke-width="2"/>
+        </svg>
+        <div class="angle-card-label">Aigu</div>
+        <div class="angle-card-deg">&lt; 90°</div>
+      </div>
+      <div class="angle-card">
+        <svg width="64" height="54" viewBox="0 0 64 54">
+          <line x1="8" y1="46" x2="56" y2="46" stroke="#1d4ed8" stroke-width="2.5"/>
+          <line x1="8" y1="46" x2="50" y2="10" stroke="#1d4ed8" stroke-width="2.5"/>
+          <path d="M 22 46 A 14 14 0 0 1 18 33" fill="none" stroke="#dc2626" stroke-width="2"/>
+        </svg>
+        <div class="angle-card-label">Obtus</div>
+        <div class="angle-card-deg">&gt; 90°</div>
+      </div>
+      <div class="angle-card">
+        <svg width="64" height="54" viewBox="0 0 64 54">
+          <line x1="4" y1="30" x2="60" y2="30" stroke="#1d4ed8" stroke-width="2.5"/>
+          <path d="M 24 30 A 16 16 0 0 1 44 30" fill="none" stroke="#dc2626" stroke-width="2"/>
+        </svg>
+        <div class="angle-card-label">Plat</div>
+        <div class="angle-card-deg">= 180°</div>
+      </div>
+    </div>
+    <div style="font-size:0.88rem;color:#555;line-height:1.9;">
+      📐 <strong>Angle droit</strong> = 90° · se vérifie avec l'équerre (petit carré symbolique)<br>
+      🔺 <strong>Angle aigu</strong> &lt; 90° · plus petit qu'un angle droit<br>
+      🔻 <strong>Angle obtus</strong> &gt; 90° · plus grand qu'un angle droit (mais &lt; 180°)<br>
+      ➖ <strong>Angle plat</strong> = 180° · les deux côtés forment une ligne droite
+    </div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#1d4ed8">
+    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8">Ex 1</span> Reconnaître les types d'angles <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#2563eb">
+    <div class="ex-title"><span class="ex-badge" style="background:#2563eb">Ex 2</span> Angles dans les figures géométriques <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0369a1">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1">Ex 3</span> Mesurer et comparer les angles <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 4</span> Angles et vie quotidienne <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 5</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Angle ↔ mesure <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 7</span> Classer les angles <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex7"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">École Facile — CM1</footer>
+
+<script src="exercises.js"></script>
+<script>
+buildQCM([
+  { q:'Un angle droit mesure exactement…', correct:'90°', choices:['45°','90°','180°','360°'] },
+  { q:'Quel outil utilise-t-on pour vérifier qu\'un angle est droit ?', correct:'L\'équerre', choices:['Le compas','La règle graduée','L\'équerre','Le rapporteur'] },
+  { q:'Un angle aigu est un angle qui mesure…', correct:'Moins de 90° (plus petit qu\'un angle droit)', choices:['Exactement 90°','Moins de 90° (plus petit qu\'un angle droit)','Plus de 90°','Exactement 180°'] },
+  { q:'Un angle obtus est un angle qui mesure…', correct:'Plus de 90° et moins de 180°', choices:['Exactement 90°','Moins de 90°','Plus de 90° et moins de 180°','Exactement 180°'] },
+  { q:'Un angle plat correspond à…', correct:'Une ligne droite — les deux côtés sont alignés (180°)', choices:['Un angle droit double','Une ligne droite — les deux côtés sont alignés (180°)','Un angle de 90°','Deux angles aigus côte à côte'] },
+], 'ex1');
+
+buildQCM([
+  { q:'Un rectangle a combien d\'angles droits ?', correct:'4 angles droits', choices:['2 angles droits','3 angles droits','4 angles droits','0 angle droit'] },
+  { q:'Un triangle équilatéral a…', correct:'3 angles aigus (chacun de 60°)', choices:['3 angles droits','3 angles aigus (chacun de 60°)','1 angle droit et 2 angles aigus','3 angles obtus'] },
+  { q:'Un losange a…', correct:'2 angles aigus et 2 angles obtus', choices:['4 angles droits','4 angles aigus','2 angles aigus et 2 angles obtus','4 angles obtus'] },
+  { q:'Un triangle rectangle a exactement…', correct:'1 angle droit et 2 angles aigus', choices:['3 angles droits','2 angles droits','1 angle droit et 2 angles aigus','1 angle droit, 1 angle aigu et 1 angle obtus'] },
+  { q:'Dans un carré, chaque angle mesure…', correct:'90° (angle droit)', choices:['45°','60°','90° (angle droit)','120°'] },
+], 'ex2');
+
+buildQCM([
+  { q:'Le rapporteur sert à…', correct:'Mesurer la valeur d\'un angle en degrés', choices:['Tracer des lignes droites','Mesurer des longueurs','Mesurer la valeur d\'un angle en degrés','Vérifier si un angle est droit'] },
+  { q:'Comment lire un angle sur le rapporteur ?', correct:'On place le centre sur le sommet de l\'angle, un côté sur 0°, et on lit la valeur sur l\'autre côté', choices:['On mesure la longueur des côtés','On place le centre sur le sommet de l\'angle, un côté sur 0°, et on lit la valeur sur l\'autre côté','On additionne les longueurs','On compte les degrés entre les deux extrémités'] },
+  { q:'Un angle de 135° est de type…', correct:'Obtus (car 90° < 135° < 180°)', choices:['Droit','Aigu','Obtus (car 90° < 135° < 180°)','Plat'] },
+  { q:'Deux angles droits mis ensemble forment un angle…', correct:'Plat (90° + 90° = 180°)', choices:['Aigu','Droit','Obtus','Plat (90° + 90° = 180°)'] },
+], 'ex3');
+
+buildQCM([
+  { q:'Les aiguilles d\'une horloge à midi forment un angle…', correct:'Plat (les deux aiguilles forment une ligne droite)', choices:['Aigu','Droit','Obtus','Plat (les deux aiguilles forment une ligne droite)'] },
+  { q:'Un toboggan bien penché forme avec le sol un angle…', correct:'Aigu (inférieur à 90°)', choices:['Droit','Aigu (inférieur à 90°)','Obtus','Plat'] },
+  { q:'Le coin d\'une feuille de papier rectangulaire est un angle…', correct:'Droit (90°)', choices:['Aigu','Droit (90°)','Obtus','Plat'] },
+  { q:'Une porte grande ouverte à 150° forme un angle…', correct:'Obtus (car 150° > 90°)', choices:['Droit','Aigu','Obtus (car 150° > 90°)','Plat'] },
+], 'ex4');
+
+buildVF([
+  { q:'Un angle aigu est plus grand qu\'un angle droit.', correct:false, expl:'Un angle AIGU est plus PETIT qu\'un angle droit. Il mesure moins de 90°.' },
+  { q:'Le carré a 4 angles droits.', correct:true },
+  { q:'Un angle plat mesure 180°.', correct:true },
+  { q:'Un triangle peut avoir deux angles droits.', correct:false, expl:'Impossible ! La somme des angles d\'un triangle vaut toujours 180°. Si deux angles valent 90° chacun, ça fait déjà 180°, il ne resterait rien pour le 3ème angle.' },
+  { q:'L\'équerre permet de vérifier qu\'un angle est droit.', correct:true },
+  { q:'Un angle obtus mesure moins de 90°.', correct:false, expl:'Un angle OBTUS mesure PLUS de 90° (et moins de 180°). C\'est l\'angle AIGU qui mesure moins de 90°.' },
+  { q:'La somme des 4 angles d\'un rectangle est 360°.', correct:true, expl:'4 angles droits × 90° = 360°.' },
+], 'ex5');
+
+buildPaires([
+  { q:'Associe chaque type d\'angle à sa mesure.',
+    pairs:[['Angle droit','90° exactement'],['Angle aigu','Moins de 90°'],['Angle obtus','Entre 90° et 180°'],['Angle plat','180° exactement']] },
+  { q:'Associe chaque figure à ses types d\'angles.',
+    pairs:[['Carré','4 angles droits'],['Triangle équilatéral','3 angles aigus'],['Triangle rectangle','1 droit + 2 aigus'],['Losange','2 aigus + 2 obtus']] },
+], 'ex6');
+
+buildTri([
+  { q:'Classe chaque angle selon son type.',
+    cats:['Angle aigu (< 90°)','Angle droit (= 90°)','Angle obtus (> 90°)'],
+    items:[
+      {v:'Angle de 45°', cat:'Angle aigu (< 90°)'},
+      {v:'Angle de 90°', cat:'Angle droit (= 90°)'},
+      {v:'Angle de 120°', cat:'Angle obtus (> 90°)'},
+      {v:'Angle de 30°', cat:'Angle aigu (< 90°)'},
+      {v:'Angle dans un coin de feuille', cat:'Angle droit (= 90°)'},
+      {v:'Angle de 150°', cat:'Angle obtus (> 90°)'},
+      {v:'Angle de 75°', cat:'Angle aigu (< 90°)'},
+      {v:'Angle de 100°', cat:'Angle obtus (> 90°)'},
+    ]
+  },
+], 'ex7');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="related.js"></script>
+</body>
+</html>
