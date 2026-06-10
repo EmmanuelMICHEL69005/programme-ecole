@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://ecolefacile.fr/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+
+  <!-- CP -->
+  <url><loc>https://ecolefacile.fr/nombres-cp.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/calcul-cp.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/calcul-mental-cp.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/mesures-cp.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/geometrie-cp.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/donnees-cp.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/problemes-cp.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/histoire-geo-cp.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/eps-cycle2.html</loc><priority>0.7</priority></url>
+
+  <!-- CE1 -->
+  <url><loc>https://ecolefacile.fr/nombres-ce1.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/fractions-ce1.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/calcul-ce1.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/calcul-mental-ce1.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/operations-posees-ce1.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/multiplication-ce1.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/mesures-ce1.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/geometrie-ce1.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/donnees-ce1.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/problemes-ce1.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/histoire-geo-ce1.html</loc><priority>0.8</priority></url>
+
+  <!-- CE2 -->
+  <url><loc>https://ecolefacile.fr/nombres-ce2.html</loc><priority>0.9</priority></url>
+  <url><loc>https://ecolefacile.fr/decimaux-ce2.html</loc><priority>0.9</priority></url>
+  <url><loc>https://ecolefacile.fr/fiche1.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/fiche2.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/fiche3.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/calcul.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/calcul-mental.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/operations-posees-ce2.html</loc><priority>0.9</priority></url>
+  <url><loc>https://ecolefacile.fr/multiplication-division-ce2.html</loc><priority>0.9</priority></url>
+  <url><loc>https://ecolefacile.fr/division-ce2.html</loc><priority>0.9</priority></url>
+  <url><loc>https://ecolefacile.fr/mesures-ce2.html</loc><priority>0.9</priority></url>
+  <url><loc>https://ecolefacile.fr/mesures.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/geometrie-ce2.html</loc><priority>0.9</priority></url>
+  <url><loc>https://ecolefacile.fr/geometrie.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/symetrie-ce2.html</loc><priority>0.9</priority></url>
+  <url><loc>https://ecolefacile.fr/solides.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/temps.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/donnees.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/problemes.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/histoire-geo-ce2.html</loc><priority>0.9</priority></url>
+
+  <!-- CM1 -->
+  <url><loc>https://ecolefacile.fr/nombres-cm1.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/decimaux-cm1.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/fractions-cm1.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/calcul-cm1.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/calcul-mental-cm1.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/calcul-pose-cm1.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/mesures-cm1.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/temps-cm1.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/geometrie-cm1.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/solides-cm1.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/donnees-cm1.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/proportionnalite-cm1.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/problemes-cm1.html</loc><priority>0.8</priority></url>
+
+  <!-- CM2 -->
+  <url><loc>https://ecolefacile.fr/nombres-cm2.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/decimaux-cm2.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/fractions-cm2.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/calcul-cm2.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/calcul-mental-cm2.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/calcul-pose-cm2.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/problemes-cm2.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/mesures-cm2.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/temps-cm2.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/geometrie-cm2.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/donnees-cm2.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/proportionnalite-cm2.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/eps-cycle3.html</loc><priority>0.7</priority></url>
+
+  <!-- 6e -->
+  <url><loc>https://ecolefacile.fr/nombres-6e.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/fractions-6e.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/algebre-6e.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/calcul-mental-6e.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/probabilites-6e.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/geometrie-6e.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/mesures-6e.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/donnees-6e.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/proportionnalite-6e.html</loc><priority>0.8</priority></url>
+</urlset>
