@@ -1415,7 +1415,6 @@
   function init() {
     injectCSS();
     initPageProgress();
-    renderRelatedPages();
     if (!P) {
       showCreateProfileModal(() => {
         createHeaderProfile();

@@ -12,100 +12,117 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .welcome {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  .welcome .bonjour {
-    font-size: 1.5rem;
-    font-weight: 900;
-    margin-bottom: 6px;
-  }
-  .welcome p {
-    font-size: 1rem;
-    color: #666;
-  }
+/* ── Welcome ── */
+.welcome {
+  text-align: center;
+  margin-bottom: 28px;
+}
+.welcome .bonjour {
+  font-size: 1.45rem;
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+.welcome p { font-size: 0.95rem; color: #6b7280; }
 
-  /* Header level badges */
-  .level-tabs {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 12px;
-  }
-  .level-tab {
-    background: rgba(255,255,255,0.15);
-    border: 1.5px solid rgba(255,255,255,0.35);
-    border-radius: 20px;
-    padding: 5px 16px;
-    font-size: 0.82rem;
-    font-weight: 900;
-    color: white;
-    text-decoration: none;
-    transition: background 0.15s, border-color 0.15s;
-  }
-  .level-tab:hover {
-    background: rgba(255,255,255,0.32);
-    border-color: rgba(255,255,255,0.7);
-    color: white;
-  }
+/* ── Subject filter bar ── */
+.sf-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 0 28px;
+}
+.sf-btn {
+  background: #f3f4f6;
+  border: 2px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 6px 18px;
+  font-size: 0.82rem;
+  font-weight: 900;
+  color: #6b7280;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s;
+}
+.sf-btn.active, .sf-btn:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  color: white;
+}
 
-  /* Level section headers */
-  .level-section {
-    margin-top: 36px;
-    scroll-margin-top: 20px;
-  }
-  .level-heading {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 18px;
-    border-radius: 16px;
-    margin-bottom: 14px;
-    font-size: 1.1rem;
-    font-weight: 900;
-  }
-  .level-heading.cp   { background: #dcfce7; color: #166534; }
-  .level-heading.ce1  { background: #d1fae5; color: #065f46; }
-  .level-heading.ce2  { background: #ede9fe; color: #5b21b6; }
-  .level-heading.cm1  { background: #dbeafe; color: #1e3a8a; }
-  .level-heading.cm2  { background: #fef9c3; color: #713f12; }
-  .level-heading.sixe { background: #fce7f3; color: #9d174d; }
+/* ── Category sections ── */
+.subject-category {
+  margin: 0 0 32px;
+}
+.subject-category[hidden] { display: none; }
+.cat-title {
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #9ca3af;
+  margin: 0 0 4px;
+  padding: 0 0 8px;
+  border-bottom: 2px solid #f3f4f6;
+}
 
-  /* Cards */
-  .domain-title {
-    font-size: 0.8rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin: 18px 0 10px;
-    padding: 6px 14px;
-    border-radius: 20px;
-    display: inline-block;
-  }
-  .domain-title.violet { background: #ede9fe; color: #5b21b6; }
-  .domain-title.bleu   { background: #dbeafe; color: #1d4ed8; }
-  .domain-title.vert   { background: #dcfce7; color: #166534; }
-  .domain-title.orange { background: #ffedd5; color: #c2410c; }
-  .domain-title.green  { background: #dcfce7; color: #166534; }
-  .domain-title.teal   { background: #d1fae5; color: #065f46; }
-  .domain-title.sky    { background: #e0f2fe; color: #075985; }
-  .domain-title.amber  { background: #fef9c3; color: #713f12; }
-  .domain-title.pink   { background: #fce7f3; color: #9d174d; }
+/* ── Subject rows ── */
+.subject-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 2px;
+  border-bottom: 1px solid #f9fafb;
+  flex-wrap: wrap;
+}
+.subject-row:last-child { border-bottom: none; }
+.subject-name {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 195px;
+  flex-shrink: 0;
+  font-size: 0.84rem;
+  font-weight: 800;
+  color: #374151;
+}
+.subject-icon { font-size: 1.05rem; width: 26px; text-align: center; flex-shrink:0; }
+.subject-badges { display: flex; gap: 6px; flex-wrap: wrap; }
 
-  .card.violet  { border-color: #ddd6fe; }
-  .card.violet .icon { background: #f5f3ff; }
-  .card.green   { border-color: #bbf7d0; }
-  .card.green .icon { background: #f0fdf4; }
-  .card.teal    { border-color: #99f6e4; }
-  .card.teal .icon  { background: #f0fdfa; }
-  .card.sky     { border-color: #bae6fd; }
-  .card.sky .icon   { background: #f0f9ff; }
-  .card.amber   { border-color: #fde68a; }
-  .card.amber .icon { background: #fffbeb; }
-  .card.pink    { border-color: #fbcfe8; }
-  .card.pink .icon  { background: #fdf2f8; }
+/* ── Level badges ── */
+.lvl-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 5px 11px;
+  border-radius: 14px;
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-decoration: none;
+  transition: transform 0.12s, box-shadow 0.12s;
+  white-space: nowrap;
+  line-height: 1;
+}
+.lvl-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.13);
+}
+.lvl-badge .ex-n { font-size:0.62rem; opacity:0.65; font-weight:700; margin-left:1px; }
+
+.lvl-badge.cp   { background:#dcfce7; color:#166534; border:2px solid #bbf7d0; }
+.lvl-badge.ce1  { background:#d1fae5; color:#065f46; border:2px solid #6ee7b7; }
+.lvl-badge.ce2  { background:#ede9fe; color:#5b21b6; border:2px solid #c4b5fd; }
+.lvl-badge.cm1  { background:#dbeafe; color:#1e3a8a; border:2px solid #93c5fd; }
+.lvl-badge.cm2  { background:#fef9c3; color:#713f12; border:2px solid #fde68a; }
+.lvl-badge.sixe { background:#fce7f3; color:#9d174d; border:2px solid #fbcfe8; }
+.lvl-badge.c2   { background:#f0fdf4; color:#166534; border:2px solid #86efac; }
+.lvl-badge.c3   { background:#fff7ed; color:#92400e; border:2px solid #fcd34d; }
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .subject-name { min-width: 150px; font-size:0.78rem; }
+  .subject-row { gap:8px; }
+}
 </style>
 </head>
 <body>
@@ -113,532 +130,247 @@
 <header class="site-header">
   <span class="emoji-header">🌟</span>
   <h1>École Facile</h1>
-  <nav class="level-tabs">
-    <a href="#cp"  class="level-tab">🌱 CP</a>
-    <a href="#ce1" class="level-tab">🌿 CE1</a>
-    <a href="#ce2" class="level-tab">📚 CE2</a>
-    <a href="#cm1" class="level-tab">🎯 CM1</a>
-    <a href="#cm2" class="level-tab">🏆 CM2</a>
-    <a href="#6e"  class="level-tab">⭐ 6ème</a>
-  </nav>
+  <p style="color:rgba(255,255,255,0.85);font-size:0.9rem;margin-top:4px;">Exercices interactifs du CP à la 6ème</p>
 </header>
 
 <main>
 
   <div class="welcome">
     <div class="bonjour">Bienvenue sur École Facile ! 👋</div>
-    <p>Choisis ton niveau, puis un thème pour t'entraîner.</p>
+    <p>Choisis une matière, puis ton niveau.</p>
   </div>
 
-  <!-- ══════════════ CP ══════════════ -->
-  <section id="cp" class="level-section">
-    <div class="level-heading cp">🌱 CP — Cycle 2</div>
+  <!-- Filtre matières -->
+  <div class="sf-bar">
+    <button class="sf-btn active" onclick="filterCat('all',this)">Toutes les matières</button>
+    <button class="sf-btn" onclick="filterCat('maths',this)">📐 Mathématiques</button>
+    <button class="sf-btn" onclick="filterCat('histoire',this)">🏛️ Histoire-Géo</button>
+    <button class="sf-btn" onclick="filterCat('eps',this)">🏃 EPS</button>
+  </div>
 
-    <div class="domain-title green">🔢 Nombres et calculs</div>
-    <div class="cards-grid">
-      <a href="nombres-cp.html" class="card green">
-        <div class="icon">🔢</div>
-        <div class="card-body"><h2>Les nombres (jusqu'à 100)</h2><p>Dizaines, unités, compter, comparer</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="calcul-cp.html" class="card green">
-        <div class="icon">➕</div>
-        <div class="card-body"><h2>Addition et soustraction</h2><p>Calculs simples et avec les dizaines</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="calcul-mental-cp.html" class="card green">
-        <div class="icon">⚡</div>
-        <div class="card-body"><h2>Calcul mental</h2><p>Doubles, compléments à 10, ±9</p></div>
-        <span class="arrow">›</span>
-      </a>
+  <!-- ══════════ MATHÉMATIQUES ══════════ -->
+  <div class="subject-category" data-cat="maths" id="cat-maths">
+    <div class="cat-title">📐 Mathématiques</div>
+
+    <div class="subject-row">
+      <div class="subject-name"><span class="subject-icon">🔢</span> Nombres</div>
+      <div class="subject-badges">
+        <a href="nombres-cp.html"  class="lvl-badge cp" >CP <span class="ex-n">9ex</span></a>
+        <a href="nombres-ce1.html" class="lvl-badge ce1">CE1 <span class="ex-n">8ex</span></a>
+        <a href="nombres.html"     class="lvl-badge ce2">CE2 <span class="ex-n">7ex</span></a>
+        <a href="nombres-cm1.html" class="lvl-badge cm1">CM1 <span class="ex-n">7ex</span></a>
+        <a href="nombres-cm2.html" class="lvl-badge cm2">CM2 <span class="ex-n">7ex</span></a>
+        <a href="nombres-6e.html"  class="lvl-badge sixe">6e <span class="ex-n">4ex</span></a>
+      </div>
     </div>
 
-    <div class="domain-title green">📐 Mesures & géométrie</div>
-    <div class="cards-grid">
-      <a href="mesures-cp.html" class="card green">
-        <div class="icon">📏</div>
-        <div class="card-body"><h2>Mesures & monnaie</h2><p>cm, m, g, kg, heures, euros</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="geometrie-cp.html" class="card green">
-        <div class="icon">🔷</div>
-        <div class="card-body"><h2>Les formes</h2><p>Carré, rectangle, triangle, cercle</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="donnees-cp.html" class="card green">
-        <div class="icon">📊</div>
-        <div class="card-body"><h2>Données</h2><p>Tableaux simples et pictogrammes</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="problemes-cp.html" class="card green">
-        <div class="icon">🧩</div>
-        <div class="card-body"><h2>Résolution de problèmes</h2><p>Addition et soustraction en contexte</p><div class="stars">⭐ Facile</div></div>
-        <span class="arrow">›</span>
-      </a>
+    <div class="subject-row">
+      <div class="subject-name"><span class="subject-icon">➕</span> Calcul et opérations</div>
+      <div class="subject-badges">
+        <a href="calcul-cp.html"  class="lvl-badge cp" >CP <span class="ex-n">8ex</span></a>
+        <a href="calcul-ce1.html" class="lvl-badge ce1">CE1 <span class="ex-n">7ex</span></a>
+        <a href="calcul.html"     class="lvl-badge ce2">CE2 <span class="ex-n">7ex</span></a>
+        <a href="calcul-cm1.html" class="lvl-badge cm1">CM1 <span class="ex-n">7ex</span></a>
+        <a href="calcul-cm2.html" class="lvl-badge cm2">CM2 <span class="ex-n">7ex</span></a>
+      </div>
     </div>
 
-    <div class="domain-title green">🏛️ Histoire &amp; Géographie</div>
-    <div class="cards-grid">
-      <a href="histoire-geo-cp.html" class="card green">
-        <div class="icon">🌍</div>
-        <div class="card-body"><h2>Histoire &amp; Géographie</h2><p>Saisons, calendrier, continents, planisphère</p></div>
-        <span class="arrow">›</span>
-      </a>
+    <div class="subject-row">
+      <div class="subject-name"><span class="subject-icon">⚡</span> Calcul mental</div>
+      <div class="subject-badges">
+        <a href="calcul-mental-cp.html"  class="lvl-badge cp" >CP <span class="ex-n">6ex</span></a>
+        <a href="calcul-mental-ce1.html" class="lvl-badge ce1">CE1 <span class="ex-n">7ex</span></a>
+        <a href="calcul-mental.html"     class="lvl-badge ce2">CE2 <span class="ex-n">6ex</span></a>
+        <a href="calcul-mental-cm1.html" class="lvl-badge cm1">CM1 <span class="ex-n">7ex</span></a>
+        <a href="calcul-mental-cm2.html" class="lvl-badge cm2">CM2 <span class="ex-n">7ex</span></a>
+        <a href="calcul-mental-6e.html"  class="lvl-badge sixe">6e <span class="ex-n">4ex</span></a>
+      </div>
     </div>
 
-    <div class="domain-title green">🏃 EPS</div>
-    <div class="cards-grid">
-      <a href="eps-cycle2.html" class="card green">
-        <div class="icon">🏃</div>
-        <div class="card-body"><h2>EPS — Éducation Physique</h2><p>Courir, sauter, nager, jouer, danser — 4 domaines</p></div>
-        <span class="arrow">›</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- ══════════════ CE1 ══════════════ -->
-  <section id="ce1" class="level-section">
-    <div class="level-heading ce1">🌿 CE1 — Cycle 2</div>
-
-    <div class="domain-title teal">🔢 Nombres et calculs</div>
-    <div class="cards-grid">
-      <a href="nombres-ce1.html" class="card teal">
-        <div class="icon">🔢</div>
-        <div class="card-body"><h2>Les nombres (jusqu'à 1000)</h2><p>Centaines, dizaines, unités</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="fractions-ce1.html" class="card teal">
-        <div class="icon">✂️</div>
-        <div class="card-body"><h2>Introduction aux fractions</h2><p>1/2, 1/3, 1/4 — visuels</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="calcul-ce1.html" class="card teal">
-        <div class="icon">➕</div>
-        <div class="card-body"><h2>Les opérations</h2><p>Additions, soustractions posées, multiplication</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="calcul-mental-ce1.html" class="card teal">
-        <div class="icon">⚡</div>
-        <div class="card-body"><h2>Calcul mental</h2><p>Tables ×2 ×3 ×4 ×5, doubles</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="operations-posees-ce1.html" class="card teal">
-        <div class="icon">🖊️</div>
-        <div class="card-body"><h2>Opérations posées</h2><p>Additions et soustractions en colonnes, 2 et 3 chiffres</p><div class="stars">⭐⭐ Moyen</div></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="multiplication-ce1.html" class="card teal">
-        <div class="icon">✖️</div>
-        <div class="card-body"><h2>Sens de la multiplication</h2><p>Addition répétée, tables ×2 ×3 ×5 ×10, problèmes</p><div class="stars">⭐⭐ Moyen</div></div>
-        <span class="arrow">›</span>
-      </a>
+    <div class="subject-row">
+      <div class="subject-name"><span class="subject-icon">🖊️</span> Opérations posées</div>
+      <div class="subject-badges">
+        <a href="operations-posees-ce1.html" class="lvl-badge ce1">CE1 <span class="ex-n">7ex</span></a>
+        <a href="operations-posees-ce2.html" class="lvl-badge ce2">CE2 <span class="ex-n">7ex</span></a>
+        <a href="calcul-pose-cm1.html"       class="lvl-badge cm1">CM1 <span class="ex-n">7ex</span></a>
+        <a href="calcul-pose-cm2.html"       class="lvl-badge cm2">CM2 <span class="ex-n">6ex</span></a>
+      </div>
     </div>
 
-    <div class="domain-title teal">📐 Mesures & géométrie</div>
-    <div class="cards-grid">
-      <a href="mesures-ce1.html" class="card teal">
-        <div class="icon">📏</div>
-        <div class="card-body"><h2>Mesures</h2><p>1m=100cm, 1kg=1000g, euros</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="geometrie-ce1.html" class="card teal">
-        <div class="icon">🔷</div>
-        <div class="card-body"><h2>Géométrie</h2><p>Angles droits, périmètre, symétrie</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="donnees-ce1.html" class="card teal">
-        <div class="icon">📊</div>
-        <div class="card-body"><h2>Données</h2><p>Tableaux à double entrée, graphiques</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="problemes-ce1.html" class="card teal">
-        <div class="icon">🧩</div>
-        <div class="card-body"><h2>Résolution de problèmes</h2><p>Addition, soustraction, multiplication en contexte</p><div class="stars">⭐⭐ Moyen</div></div>
-        <span class="arrow">›</span>
-      </a>
+    <div class="subject-row">
+      <div class="subject-name"><span class="subject-icon">✖️</span> Multiplication</div>
+      <div class="subject-badges">
+        <a href="multiplication-ce1.html"       class="lvl-badge ce1">CE1 <span class="ex-n">7ex</span></a>
+        <a href="multiplication-division-ce2.html" class="lvl-badge ce2">CE2 <span class="ex-n">7ex</span></a>
+        <a href="tables-ce2.html"               class="lvl-badge ce2">CE2 Tables <span class="ex-n">7ex</span></a>
+      </div>
     </div>
 
-    <div class="domain-title teal">🏛️ Histoire &amp; Géographie</div>
-    <div class="cards-grid">
-      <a href="histoire-geo-ce1.html" class="card teal">
-        <div class="icon">🏛️</div>
-        <div class="card-body"><h2>Histoire &amp; Géographie</h2><p>5 grandes périodes, siècles, peuplement mondial</p></div>
-        <span class="arrow">›</span>
-      </a>
+    <div class="subject-row">
+      <div class="subject-name"><span class="subject-icon">➗</span> Division euclidienne</div>
+      <div class="subject-badges">
+        <a href="division-ce2.html" class="lvl-badge ce2">CE2 <span class="ex-n">7ex</span></a>
+      </div>
     </div>
 
-    <div class="domain-title teal">🏃 EPS</div>
-    <div class="cards-grid">
-      <a href="eps-cycle2.html" class="card teal">
-        <div class="icon">🏃</div>
-        <div class="card-body"><h2>EPS — Éducation Physique</h2><p>Courir, sauter, nager, jouer, danser — 4 domaines</p></div>
-        <span class="arrow">›</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- ══════════════ CE2 ══════════════ -->
-  <section id="ce2" class="level-section">
-    <div class="level-heading ce2">📚 CE2 — Cycle 2</div>
-
-    <div class="domain-title violet">🔢 Nombres et calculs</div>
-    <div class="cards-grid">
-      <a href="nombres-ce2.html" class="card violet">
-        <div class="icon">🔢</div>
-        <div class="card-body"><h2>Les nombres jusqu'à 9 999</h2><p>Milliers, centaines, arrondir, comparer</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="decimaux-ce2.html" class="card violet">
-        <div class="icon">🔣</div>
-        <div class="card-body"><h2>Nombres décimaux</h2><p>Dixièmes, centièmes, comparaison</p><div class="stars">⭐⭐ Moyen</div></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="fiche1.html" class="card bleu">
-        <div class="icon">✂️</div>
-        <div class="card-body"><h2>Fractions — Je découpe</h2><p>Comprendre le partage en parts égales</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="fiche2.html" class="card vert">
-        <div class="icon">📏</div>
-        <div class="card-body"><h2>Fractions — Je compare</h2><p>Placer les fractions sur une droite</p><div class="stars">⭐⭐ Moyen</div></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="fiche3.html" class="card orange">
-        <div class="icon">🍎</div>
-        <div class="card-body"><h2>Fractions — Je calcule</h2><p>Trouver la fraction d'une collection</p><div class="stars">⭐⭐⭐ Difficile</div></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="operations-posees-ce2.html" class="card violet">
-        <div class="icon">🖊️</div>
-        <div class="card-body"><h2>Opérations posées</h2><p>Addition, soustraction, multiplication posées</p><div class="stars">⭐⭐ Moyen</div></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="multiplication-division-ce2.html" class="card violet">
-        <div class="icon">✖️</div>
-        <div class="card-body"><h2>Multiplication et division</h2><p>Tables jusqu'à 10×10, division euclidienne</p><div class="stars">⭐⭐ Moyen</div></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="division-ce2.html" class="card violet">
-        <div class="icon">➗</div>
-        <div class="card-body"><h2>Division euclidienne</h2><p>Quotient, reste, vérification, problèmes de partage</p><div class="stars">⭐⭐ Moyen</div></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="tables-ce2.html" class="card violet">
-        <div class="icon">✖️</div>
-        <div class="card-body"><h2>Tables de multiplication</h2><p>Tables de 2 à 9 — mémoriser et utiliser</p></div>
-        <span class="arrow">›</span>
-      </a>
+    <div class="subject-row">
+      <div class="subject-name"><span class="subject-icon">✂️</span> Fractions</div>
+      <div class="subject-badges">
+        <a href="fractions-ce1.html" class="lvl-badge ce1">CE1 <span class="ex-n">4ex</span></a>
+        <a href="fiche1.html"        class="lvl-badge ce2">CE2 Découper <span class="ex-n">3ex</span></a>
+        <a href="fiche2.html"        class="lvl-badge ce2">CE2 Comparer <span class="ex-n">3ex</span></a>
+        <a href="fiche3.html"        class="lvl-badge ce2">CE2 Calculer <span class="ex-n">3ex</span></a>
+        <a href="fractions-cm1.html" class="lvl-badge cm1">CM1 <span class="ex-n">7ex</span></a>
+        <a href="fractions-cm2.html" class="lvl-badge cm2">CM2 <span class="ex-n">7ex</span></a>
+        <a href="fractions-6e.html"  class="lvl-badge sixe">6e <span class="ex-n">4ex</span></a>
+      </div>
     </div>
 
-    <div class="domain-title bleu">📐 Grandeurs et mesures</div>
-    <div class="cards-grid">
-      <a href="mesures-ce2.html" class="card bleu">
-        <div class="icon">📏</div>
-        <div class="card-body"><h2>Mesures et conversions</h2><p>km/m/cm, kg/g, L/cL, durées, monnaie</p><div class="stars">⭐⭐ Moyen</div></div>
-        <span class="arrow">›</span>
-      </a>
+    <div class="subject-row">
+      <div class="subject-name"><span class="subject-icon">🔣</span> Nombres décimaux</div>
+      <div class="subject-badges">
+        <a href="decimaux-ce2.html" class="lvl-badge ce2">CE2 <span class="ex-n">7ex</span></a>
+        <a href="decimaux-cm1.html" class="lvl-badge cm1">CM1 <span class="ex-n">7ex</span></a>
+        <a href="decimaux-cm2.html" class="lvl-badge cm2">CM2 <span class="ex-n">7ex</span></a>
+      </div>
     </div>
 
-    <div class="domain-title vert">🔷 Espace et géométrie</div>
-    <div class="cards-grid">
-      <a href="geometrie-ce2.html" class="card vert">
-        <div class="icon">🔷</div>
-        <div class="card-body"><h2>Géométrie</h2><p>Périmètre, aire, cercle, droites parallèles/perpendiculaires</p><div class="stars">⭐⭐ Moyen</div></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="symetrie-ce2.html" class="card vert">
-        <div class="icon">🪞</div>
-        <div class="card-body"><h2>Symétrie axiale</h2><p>Axes de symétrie, figures et symétrique d'un point</p><div class="stars">⭐⭐ Moyen</div></div>
-        <span class="arrow">›</span>
-      </a>
+    <div class="subject-row">
+      <div class="subject-name"><span class="subject-icon">⚖️</span> Proportionnalité</div>
+      <div class="subject-badges">
+        <a href="proportionnalite-cm1.html" class="lvl-badge cm1">CM1 <span class="ex-n">7ex</span></a>
+        <a href="proportionnalite-cm2.html" class="lvl-badge cm2">CM2 <span class="ex-n">7ex</span></a>
+        <a href="proportionnalite-6e.html"  class="lvl-badge sixe">6e <span class="ex-n">4ex</span></a>
+      </div>
     </div>
 
-    <div class="domain-title violet">🏛️ Histoire &amp; Géographie</div>
-    <div class="cards-grid">
-      <a href="histoire-geo-ce2.html" class="card violet">
-        <div class="icon">🏰</div>
-        <div class="card-body"><h2>Histoire &amp; Géographie</h2><p>Préhistoire, Rome, Moyen Âge, France</p><div class="stars">⭐⭐ Moyen</div></div>
-        <span class="arrow">›</span>
-      </a>
+    <div class="subject-row">
+      <div class="subject-name"><span class="subject-icon">🧩</span> Résolution de problèmes</div>
+      <div class="subject-badges">
+        <a href="problemes-cp.html"  class="lvl-badge cp" >CP <span class="ex-n">6ex</span></a>
+        <a href="problemes-ce1.html" class="lvl-badge ce1">CE1 <span class="ex-n">7ex</span></a>
+        <a href="problemes.html"     class="lvl-badge ce2">CE2 <span class="ex-n">5ex</span></a>
+        <a href="problemes-cm1.html" class="lvl-badge cm1">CM1 <span class="ex-n">7ex</span></a>
+        <a href="problemes-cm2.html" class="lvl-badge cm2">CM2 <span class="ex-n">7ex</span></a>
+      </div>
     </div>
 
-    <div class="domain-title violet">🏃 EPS</div>
-    <div class="cards-grid">
-      <a href="eps-cycle2.html" class="card violet">
-        <div class="icon">🏃</div>
-        <div class="card-body"><h2>EPS — Éducation Physique</h2><p>Courir, sauter, nager, jouer, danser — 4 domaines</p></div>
-        <span class="arrow">›</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- ══════════════ CM1 ══════════════ -->
-  <section id="cm1" class="level-section">
-    <div class="level-heading cm1">🎯 CM1 — Cycle 3</div>
-
-    <div class="domain-title sky">🔢 Nombres et calculs</div>
-    <div class="cards-grid">
-      <a href="nombres-cm1.html" class="card sky">
-        <div class="icon">🔢</div>
-        <div class="card-body"><h2>Grands nombres (≤ 999 999)</h2><p>Tableau de numération, comparaison</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="decimaux-cm1.html" class="card sky">
-        <div class="icon">🔣</div>
-        <div class="card-body"><h2>Nombres décimaux</h2><p>Dixièmes, centièmes, droite numérique</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="fractions-cm1.html" class="card sky">
-        <div class="icon">✂️</div>
-        <div class="card-body"><h2>Fractions</h2><p>Fractions &gt;1, équivalentes, addition</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="calcul-cm1.html" class="card sky">
-        <div class="icon">➕</div>
-        <div class="card-body"><h2>Les 4 opérations</h2><p>Multiplication 2 chiffres, division euclidienne</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="calcul-mental-cm1.html" class="card sky">
-        <div class="icon">⚡</div>
-        <div class="card-body"><h2>Calcul mental</h2><p>Tables ×7 ×8 ×9, ×10/100/1000</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="calcul-pose-cm1.html" class="card sky">
-        <div class="icon">🖊️</div>
-        <div class="card-body"><h2>Opérations posées</h2><p>Additions, soustractions, multiplications posées</p></div>
-        <span class="arrow">›</span>
-      </a>
+    <div class="subject-row">
+      <div class="subject-name"><span class="subject-icon">🔷</span> Géométrie</div>
+      <div class="subject-badges">
+        <a href="geometrie-cp.html"  class="lvl-badge cp" >CP <span class="ex-n">8ex</span></a>
+        <a href="geometrie-ce1.html" class="lvl-badge ce1">CE1 <span class="ex-n">7ex</span></a>
+        <a href="geometrie.html"     class="lvl-badge ce2">CE2 Plane <span class="ex-n">5ex</span></a>
+        <a href="geometrie-ce2.html" class="lvl-badge ce2">CE2 Formes <span class="ex-n">6ex</span></a>
+        <a href="geometrie-cm1.html" class="lvl-badge cm1">CM1 <span class="ex-n">7ex</span></a>
+        <a href="geometrie-cm2.html" class="lvl-badge cm2">CM2 <span class="ex-n">7ex</span></a>
+        <a href="geometrie-6e.html"  class="lvl-badge sixe">6e <span class="ex-n">4ex</span></a>
+      </div>
     </div>
 
-    <div class="domain-title sky">📐 Mesures & géométrie</div>
-    <div class="cards-grid">
-      <a href="mesures-cm1.html" class="card sky">
-        <div class="icon">📐</div>
-        <div class="card-body"><h2>Périmètres et aires</h2><p>Formules rectangle, carré, triangle</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="temps-cm1.html" class="card sky">
-        <div class="icon">⏱️</div>
-        <div class="card-body"><h2>Durées et conversions</h2><p>Heures, minutes, secondes, durées</p><div class="stars">⭐⭐ Moyen</div></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="geometrie-cm1.html" class="card sky">
-        <div class="icon">🔷</div>
-        <div class="card-body"><h2>Géométrie — angles</h2><p>Aigu/droit/obtus, parallèles, cercle</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="angles-cm1.html" class="card sky">
-        <div class="icon">📐</div>
-        <div class="card-body"><h2>Les angles</h2><p>Reconnaître, comparer et mesurer avec le rapporteur</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="solides-cm1.html" class="card sky">
-        <div class="icon">🧊</div>
-        <div class="card-body"><h2>Les solides</h2><p>Cube, pavé droit, faces, arêtes, sommets</p><div class="stars">⭐⭐ Moyen</div></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="donnees-cm1.html" class="card sky">
-        <div class="icon">📊</div>
-        <div class="card-body"><h2>Données & statistiques</h2><p>Moyenne, probabilités, graphiques</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="proportionnalite-cm1.html" class="card sky">
-        <div class="icon">⚖️</div>
-        <div class="card-body"><h2>Proportionnalité</h2><p>Tableaux, coefficient, règle de 3</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="problemes-cm1.html" class="card sky">
-        <div class="icon">🧩</div>
-        <div class="card-body"><h2>Résolution de problèmes</h2><p>4 opérations, décimaux, proportionnalité</p><div class="stars">⭐⭐⭐ Difficile</div></div>
-        <span class="arrow">›</span>
-      </a>
+    <div class="subject-row">
+      <div class="subject-name"><span class="subject-icon">📐</span> Angles</div>
+      <div class="subject-badges">
+        <a href="angles-cm1.html" class="lvl-badge cm1">CM1 <span class="ex-n">7ex</span></a>
+      </div>
     </div>
 
-    <div class="domain-title sky">🏛️ Histoire &amp; Géographie</div>
-    <div class="cards-grid">
-      <a href="histoire-geo-cm1.html" class="card sky">
-        <div class="icon">🏛️</div>
-        <div class="card-body"><h2>Histoire &amp; Géographie</h2><p>Antiquité, Moyen Âge, France et le monde</p></div>
-        <span class="arrow">›</span>
-      </a>
+    <div class="subject-row">
+      <div class="subject-name"><span class="subject-icon">🪞</span> Symétrie axiale</div>
+      <div class="subject-badges">
+        <a href="symetrie-ce2.html" class="lvl-badge ce2">CE2 <span class="ex-n">7ex</span></a>
+      </div>
     </div>
 
-    <div class="domain-title sky">🏃 EPS</div>
-    <div class="cards-grid">
-      <a href="eps-cycle3.html" class="card sky">
-        <div class="icon">🏆</div>
-        <div class="card-body"><h2>EPS — Éducation Physique</h2><p>Athlétisme, natation, jeux collectifs, 4 champs</p></div>
-        <span class="arrow">›</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- ══════════════ CM2 ══════════════ -->
-  <section id="cm2" class="level-section">
-    <div class="level-heading cm2">🏆 CM2 — Cycle 3</div>
-
-    <div class="domain-title amber">🔢 Nombres et calculs</div>
-    <div class="cards-grid">
-      <a href="nombres-cm2.html" class="card amber">
-        <div class="icon">🔢</div>
-        <div class="card-body"><h2>Très grands nombres</h2><p>Jusqu'aux milliards, arrondi au million</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="decimaux-cm2.html" class="card amber">
-        <div class="icon">🔣</div>
-        <div class="card-body"><h2>Décimaux avancés</h2><p>Millièmes, opérations, conversions</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="fractions-cm2.html" class="card amber">
-        <div class="icon">✂️</div>
-        <div class="card-body"><h2>Fractions avancées</h2><p>Simplification, dénominateurs différents, %</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="calcul-cm2.html" class="card amber">
-        <div class="icon">➕</div>
-        <div class="card-body"><h2>Les 4 opérations avancées</h2><p>Division décimale, priorités, grands nombres</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="calcul-mental-cm2.html" class="card amber">
-        <div class="icon">⚡</div>
-        <div class="card-body"><h2>Calcul mental</h2><p>×25/125, carrés parfaits, divisibilité</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="calcul-pose-cm2.html" class="card amber">
-        <div class="icon">🖊️</div>
-        <div class="card-body"><h2>Opérations posées décimaux</h2><p>Additions, soustractions, division décimale</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="problemes-cm2.html" class="card amber">
-        <div class="icon">🧩</div>
-        <div class="card-body"><h2>Problèmes complexes</h2><p>Problèmes à plusieurs étapes</p></div>
-        <span class="arrow">›</span>
-      </a>
+    <div class="subject-row">
+      <div class="subject-name"><span class="subject-icon">🧊</span> Solides (3D)</div>
+      <div class="subject-badges">
+        <a href="solides.html"     class="lvl-badge ce2">CE2 <span class="ex-n">4ex</span></a>
+        <a href="solides-cm1.html" class="lvl-badge cm1">CM1 <span class="ex-n">6ex</span></a>
+      </div>
     </div>
 
-    <div class="domain-title amber">📐 Mesures & géométrie</div>
-    <div class="cards-grid">
-      <a href="mesures-cm2.html" class="card amber">
-        <div class="icon">📐</div>
-        <div class="card-body"><h2>Aires et volumes</h2><p>Disque (π), pavé droit, conversions</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="temps-cm2.html" class="card amber">
-        <div class="icon">⏳</div>
-        <div class="card-body"><h2>Durées et conversions</h2><p>Conversions complexes, opérations sur les durées</p><div class="stars">⭐⭐⭐ Difficile</div></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="geometrie-cm2.html" class="card amber">
-        <div class="icon">🔷</div>
-        <div class="card-body"><h2>Géométrie avancée</h2><p>Angles, transformations, polyèdres</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="donnees-cm2.html" class="card amber">
-        <div class="icon">📊</div>
-        <div class="card-body"><h2>Statistiques & probabilités</h2><p>Moyenne, médiane, mode, fréquences</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="proportionnalite-cm2.html" class="card amber">
-        <div class="icon">⚖️</div>
-        <div class="card-body"><h2>Proportionnalité & %</h2><p>Règle de 3, échelles, augmentations</p></div>
-        <span class="arrow">›</span>
-      </a>
+    <div class="subject-row">
+      <div class="subject-name"><span class="subject-icon">📏</span> Mesures</div>
+      <div class="subject-badges">
+        <a href="mesures-cp.html"  class="lvl-badge cp" >CP <span class="ex-n">7ex</span></a>
+        <a href="mesures-ce1.html" class="lvl-badge ce1">CE1 <span class="ex-n">7ex</span></a>
+        <a href="mesures.html"     class="lvl-badge ce2">CE2 <span class="ex-n">5ex</span></a>
+        <a href="mesures-ce2.html" class="lvl-badge ce2">CE2 Grandeurs <span class="ex-n">7ex</span></a>
+        <a href="mesures-cm1.html" class="lvl-badge cm1">CM1 <span class="ex-n">7ex</span></a>
+        <a href="mesures-cm2.html" class="lvl-badge cm2">CM2 <span class="ex-n">7ex</span></a>
+        <a href="mesures-6e.html"  class="lvl-badge sixe">6e <span class="ex-n">4ex</span></a>
+      </div>
     </div>
 
-    <div class="domain-title amber">🏛️ Histoire &amp; Géographie</div>
-    <div class="cards-grid">
-      <a href="histoire-geo-cm2.html" class="card amber">
-        <div class="icon">⚜️</div>
-        <div class="card-body"><h2>Histoire &amp; Géographie</h2><p>Grandes Découvertes, Révolution, guerres mondiales</p></div>
-        <span class="arrow">›</span>
-      </a>
+    <div class="subject-row">
+      <div class="subject-name"><span class="subject-icon">⏱️</span> Durées et temps</div>
+      <div class="subject-badges">
+        <a href="temps.html"     class="lvl-badge ce2">CE2 <span class="ex-n">5ex</span></a>
+        <a href="temps-cm1.html" class="lvl-badge cm1">CM1 <span class="ex-n">7ex</span></a>
+        <a href="temps-cm2.html" class="lvl-badge cm2">CM2 <span class="ex-n">7ex</span></a>
+      </div>
     </div>
 
-    <div class="domain-title amber">🏃 EPS</div>
-    <div class="cards-grid">
-      <a href="eps-cycle3.html" class="card amber">
-        <div class="icon">🏆</div>
-        <div class="card-body"><h2>EPS — Éducation Physique</h2><p>Athlétisme, natation, jeux collectifs, 4 champs</p></div>
-        <span class="arrow">›</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- ══════════════ 6e ══════════════ -->
-  <section id="6e" class="level-section">
-    <div class="level-heading sixe">⭐ 6ème — Collège</div>
-
-    <div class="domain-title pink">🔢 Nombres et calculs</div>
-    <div class="cards-grid">
-      <a href="nombres-6e.html" class="card pink">
-        <div class="icon">🔢</div>
-        <div class="card-body"><h2>Nombres et relatifs</h2><p>Entiers, décimaux, positifs et négatifs</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="fractions-6e.html" class="card pink">
-        <div class="icon">✂️</div>
-        <div class="card-body"><h2>Fractions</h2><p>Simplifier, additionner, multiplier</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="algebre-6e.html" class="card pink">
-        <div class="icon">📘</div>
-        <div class="card-body"><h2>Algèbre — introduction</h2><p>Expressions, équations, lettres</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="calcul-mental-6e.html" class="card pink">
-        <div class="icon">⚡</div>
-        <div class="card-body"><h2>Calcul mental</h2><p>Relatifs, puissances, fractions, pourcentages</p><div class="stars">⭐⭐ Moyen</div></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="probabilites-6e.html" class="card pink">
-        <div class="icon">🎲</div>
-        <div class="card-body"><h2>Probabilités</h2><p>Évènements, calculer et comparer des probabilités</p><div class="stars">⭐⭐ Moyen</div></div>
-        <span class="arrow">›</span>
-      </a>
+    <div class="subject-row">
+      <div class="subject-name"><span class="subject-icon">📊</span> Données et statistiques</div>
+      <div class="subject-badges">
+        <a href="donnees-cp.html"  class="lvl-badge cp" >CP <span class="ex-n">5ex</span></a>
+        <a href="donnees-ce1.html" class="lvl-badge ce1">CE1 <span class="ex-n">5ex</span></a>
+        <a href="donnees.html"     class="lvl-badge ce2">CE2 <span class="ex-n">5ex</span></a>
+        <a href="donnees-cm1.html" class="lvl-badge cm1">CM1 <span class="ex-n">6ex</span></a>
+        <a href="donnees-cm2.html" class="lvl-badge cm2">CM2 <span class="ex-n">6ex</span></a>
+        <a href="donnees-6e.html"  class="lvl-badge sixe">6e <span class="ex-n">4ex</span></a>
+      </div>
     </div>
 
-    <div class="domain-title pink">📐 Mesures & géométrie</div>
-    <div class="cards-grid">
-      <a href="geometrie-6e.html" class="card pink">
-        <div class="icon">🔷</div>
-        <div class="card-body"><h2>Géométrie</h2><p>Triangles, cercle, angles, médiatrice</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="mesures-6e.html" class="card pink">
-        <div class="icon">📐</div>
-        <div class="card-body"><h2>Aires et volumes</h2><p>Formules, conversions, problèmes</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="donnees-6e.html" class="card pink">
-        <div class="icon">📊</div>
-        <div class="card-body"><h2>Statistiques</h2><p>Moyenne, fréquences, probabilités</p></div>
-        <span class="arrow">›</span>
-      </a>
-      <a href="proportionnalite-6e.html" class="card pink">
-        <div class="icon">⚖️</div>
-        <div class="card-body"><h2>Proportionnalité & %</h2><p>Tableaux, règle de 3, vitesse, échelles</p></div>
-        <span class="arrow">›</span>
-      </a>
+    <div class="subject-row">
+      <div class="subject-name"><span class="subject-icon">🎲</span> Probabilités</div>
+      <div class="subject-badges">
+        <a href="probabilites-6e.html" class="lvl-badge sixe">6e <span class="ex-n">5ex</span></a>
+      </div>
     </div>
 
-    <div class="domain-title pink">🏛️ Histoire &amp; Géographie</div>
-    <div class="cards-grid">
-      <a href="histoire-geo-6e.html" class="card pink">
-        <div class="icon">🌍</div>
-        <div class="card-body"><h2>Histoire &amp; Géographie</h2><p>Premières civilisations, Antiquité, continents</p></div>
-        <span class="arrow">›</span>
-      </a>
+    <div class="subject-row">
+      <div class="subject-name"><span class="subject-icon">📘</span> Algèbre</div>
+      <div class="subject-badges">
+        <a href="algebre-6e.html" class="lvl-badge sixe">6e <span class="ex-n">4ex</span></a>
+      </div>
     </div>
 
-    <div class="domain-title pink">🏃 EPS</div>
-    <div class="cards-grid">
-      <a href="eps-cycle3.html" class="card pink">
-        <div class="icon">🏆</div>
-        <div class="card-body"><h2>EPS — Éducation Physique</h2><p>Athlétisme, natation, jeux collectifs, 4 champs</p></div>
-        <span class="arrow">›</span>
-      </a>
+  </div><!-- /cat-maths -->
+
+  <!-- ══════════ HISTOIRE-GÉOGRAPHIE ══════════ -->
+  <div class="subject-category" data-cat="histoire" id="cat-histoire">
+    <div class="cat-title">🏛️ Histoire &amp; Géographie</div>
+
+    <div class="subject-row">
+      <div class="subject-name"><span class="subject-icon">🌍</span> Histoire-Géographie</div>
+      <div class="subject-badges">
+        <a href="histoire-geo-cp.html"  class="lvl-badge cp" >CP <span class="ex-n">7ex</span></a>
+        <a href="histoire-geo-ce1.html" class="lvl-badge ce1">CE1 <span class="ex-n">7ex</span></a>
+        <a href="histoire-geo-ce2.html" class="lvl-badge ce2">CE2 <span class="ex-n">7ex</span></a>
+        <a href="histoire-geo-cm1.html" class="lvl-badge cm1">CM1 <span class="ex-n">7ex</span></a>
+        <a href="histoire-geo-cm2.html" class="lvl-badge cm2">CM2 <span class="ex-n">7ex</span></a>
+        <a href="histoire-geo-6e.html"  class="lvl-badge sixe">6e <span class="ex-n">7ex</span></a>
+      </div>
     </div>
-  </section>
+
+  </div><!-- /cat-histoire -->
+
+  <!-- ══════════ EPS ══════════ -->
+  <div class="subject-category" data-cat="eps" id="cat-eps">
+    <div class="cat-title">🏃 EPS — Éducation Physique et Sportive</div>
+
+    <div class="subject-row">
+      <div class="subject-name"><span class="subject-icon">🏃</span> EPS</div>
+      <div class="subject-badges">
+        <a href="eps-cycle2.html" class="lvl-badge c2">Cycle 2 · CP CE1 CE2 <span class="ex-n">7ex</span></a>
+        <a href="eps-cycle3.html" class="lvl-badge c3">Cycle 3 · CM1 CM2 6e <span class="ex-n">7ex</span></a>
+      </div>
+    </div>
+
+  </div><!-- /cat-eps -->
 
 </main>
 
@@ -646,51 +378,20 @@
   École Facile — CP · CE1 · CE2 · CM1 · CM2 · 6ème
 </footer>
 
+<script>
+function filterCat(cat, btn) {
+  document.querySelectorAll('.sf-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.querySelectorAll('.subject-category').forEach(function(sec){
+    if (cat === 'all' || sec.dataset.cat === cat) {
+      sec.removeAttribute('hidden');
+    } else {
+      sec.setAttribute('hidden','');
+    }
+  });
+}
+</script>
 <script src="gamification.js"></script>
 <script src="nav.js"></script>
-<script>
-(function(){
-  var C={
-    'nombres-cp.html':9,'calcul-cp.html':8,'calcul-mental-cp.html':6,
-    'mesures-cp.html':7,'geometrie-cp.html':8,'donnees-cp.html':5,
-    'problemes-cp.html':6,'histoire-geo-cp.html':7,'eps-cycle2.html':7,
-    'nombres-ce1.html':8,'fractions-ce1.html':4,'calcul-ce1.html':7,
-    'calcul-mental-ce1.html':7,'operations-posees-ce1.html':7,
-    'multiplication-ce1.html':7,'mesures-ce1.html':7,'geometrie-ce1.html':7,
-    'donnees-ce1.html':5,'problemes-ce1.html':7,'histoire-geo-ce1.html':7,
-    'nombres-ce2.html':7,'decimaux-ce2.html':7,'fiche1.html':3,'fiche2.html':3,
-    'fiche3.html':3,'calcul.html':7,'calcul-mental.html':6,
-    'operations-posees-ce2.html':7,'multiplication-division-ce2.html':7,
-    'division-ce2.html':7,'tables-ce2.html':7,'mesures-ce2.html':7,'mesures.html':5,
-    'geometrie-ce2.html':6,'geometrie.html':5,'symetrie-ce2.html':7,
-    'solides.html':4,'temps.html':5,'donnees.html':5,'problemes.html':5,
-    'histoire-geo-ce2.html':7,
-    'nombres-cm1.html':7,'decimaux-cm1.html':7,'fractions-cm1.html':7,
-    'calcul-cm1.html':7,'calcul-mental-cm1.html':7,'calcul-pose-cm1.html':7,
-    'mesures-cm1.html':7,'temps-cm1.html':7,'geometrie-cm1.html':7,'angles-cm1.html':7,
-    'solides-cm1.html':6,'donnees-cm1.html':6,'proportionnalite-cm1.html':7,
-    'problemes-cm1.html':7,'histoire-geo-cm1.html':7,'eps-cycle3.html':7,
-    'nombres-cm2.html':7,'decimaux-cm2.html':7,'fractions-cm2.html':7,
-    'calcul-cm2.html':7,'calcul-mental-cm2.html':7,'calcul-pose-cm2.html':6,
-    'problemes-cm2.html':7,'mesures-cm2.html':7,'temps-cm2.html':7,
-    'geometrie-cm2.html':7,'donnees-cm2.html':6,'proportionnalite-cm2.html':7,
-    'histoire-geo-cm2.html':7,
-    'nombres-6e.html':4,'fractions-6e.html':4,'algebre-6e.html':4,
-    'calcul-mental-6e.html':4,'probabilites-6e.html':5,'geometrie-6e.html':4,
-    'mesures-6e.html':4,'donnees-6e.html':4,'proportionnalite-6e.html':4,
-    'histoire-geo-6e.html':7
-  };
-  document.querySelectorAll('a.card[href]').forEach(function(card){
-    var n=C[card.getAttribute('href')];
-    if(!n) return;
-    var p=card.querySelector('.card-body');
-    if(!p) return;
-    var b=document.createElement('div');
-    b.style.cssText='font-size:0.68rem;font-weight:900;color:#9ca3af;margin-top:4px;letter-spacing:0.3px;';
-    b.textContent=n+' exercice'+(n>1?'s':'');
-    p.appendChild(b);
-  });
-})();
-</script>
 </body>
 </html>
