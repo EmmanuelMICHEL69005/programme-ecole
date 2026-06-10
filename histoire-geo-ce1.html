@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="Les Maths de Clémence">
+<meta name="application-name" content="Les Maths de Clémence">
+<meta property="og:site_name" content="Les Maths de Clémence">
+<link rel="manifest" href="manifest.json">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Histoire-Géographie — CE1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.frise-ce1{display:flex;align-items:stretch;gap:0;margin:12px auto;overflow-x:auto;max-width:100%;}
+.frise-ce1-item{display:flex;flex-direction:column;align-items:center;min-width:56px;padding:0 4px;}
+.frise-ce1-dot{width:14px;height:14px;border-radius:50%;border:3px solid white;flex-shrink:0;margin:0 auto;}
+.frise-ce1-bar{height:6px;background:#d1fae5;width:100%;flex-grow:1;}
+.frise-ce1-label{font-size:0.56rem;font-weight:900;color:#065f46;margin-top:4px;text-align:center;line-height:1.3;}
+.periode-tag{display:inline-block;padding:3px 8px;border-radius:20px;font-size:0.7rem;font-weight:900;margin:2px;}
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background:linear-gradient(135deg,#059669,#34d399);">
+  <span class="emoji-header">🏛️</span>
+  <h1>Histoire &amp; Géographie</h1>
+  <p>Les grandes périodes, le monde et ses habitants</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+  <div class="badge-niveau">🌿 CE1 — Histoire &amp; Géographie</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:10px 0;">
+      <span class="periode-tag" style="background:#fef3c7;color:#92400e;">Préhistoire<br><small>-3M à -3300</small></span>
+      <span class="periode-tag" style="background:#fce7f3;color:#9d174d;">Antiquité<br><small>-3300 à 476</small></span>
+      <span class="periode-tag" style="background:#ede9fe;color:#5b21b6;">Moyen Âge<br><small>476 à 1492</small></span>
+      <span class="periode-tag" style="background:#dcfce7;color:#065f46;">Époque moderne<br><small>1492 à 1789</small></span>
+      <span class="periode-tag" style="background:#dbeafe;color:#1e3a8a;">Époque contemporaine<br><small>1789 à aujourd'hui</small></span>
+    </div>
+    <div style="font-size:0.88rem;color:#555;line-height:1.9;">
+      📆 <strong>1 décennie = 10 ans</strong> · <strong>1 siècle = 100 ans</strong> · <strong>1 millénaire = 1 000 ans</strong><br>
+      🌍 <strong>Foyers de peuplement</strong> : Asie du Sud, Europe, côte est des États-Unis<br>
+      🏙️ <strong>Ville vs campagne</strong> : plus de la moitié des humains vivent en ville aujourd'hui
+    </div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 1</span> Les 5 grandes périodes de l'Histoire <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 2</span> Décennies, siècles, millénaires <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 3</span> Traces du passé <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 4</span> Où vivent les humains ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 5</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#6366f1">
+    <div class="ex-title"><span class="ex-badge" style="background:#6366f1">Ex 6</span> Ranger les périodes historiques <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">ORDRE</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 7</span> Associer période et événement <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex7"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CE1</footer>
+
+<script src="exercises.js"></script>
+<script>
+buildQCM([
+  { q:'Quelle est la première grande période de l\'Histoire ?', correct:'La Préhistoire', choices:['L\'Antiquité','La Préhistoire','Le Moyen Âge','L\'Époque moderne'] },
+  { q:'À quelle période vivait Jules César ?', correct:'L\'Antiquité', choices:['La Préhistoire','L\'Antiquité','Le Moyen Âge','L\'Époque contemporaine'] },
+  { q:'La Révolution française marque le début de…', correct:'L\'Époque contemporaine', choices:['La Préhistoire','L\'Antiquité','Le Moyen Âge','L\'Époque contemporaine'] },
+  { q:'Christophe Colomb découvre l\'Amérique en 1492. Cette date marque le début de…', correct:'L\'Époque moderne', choices:['L\'Antiquité','Le Moyen Âge','L\'Époque moderne','L\'Époque contemporaine'] },
+  { q:'La chute de l\'empire romain d\'Occident (476) marque la fin de…', correct:'L\'Antiquité', choices:['La Préhistoire','L\'Antiquité','Le Moyen Âge','L\'Époque moderne'] },
+  { q:'Dans quelle période se trouve le château fort, les chevaliers ?', correct:'Le Moyen Âge', choices:['La Préhistoire','L\'Antiquité','Le Moyen Âge','L\'Époque moderne'] },
+], 'ex1');
+
+buildQCM([
+  { q:'1 siècle = combien d\'années ?', correct:'100 ans', choices:['10 ans','100 ans','1 000 ans','10 000 ans'] },
+  { q:'1 millénaire = combien d\'années ?', correct:'1 000 ans', choices:['100 ans','1 000 ans','10 000 ans','100 000 ans'] },
+  { q:'1 décennie = combien d\'années ?', correct:'10 ans', choices:['1 an','5 ans','10 ans','100 ans'] },
+  { q:'3 siècles = combien d\'années ?', correct:'300 ans', choices:['30 ans','300 ans','3 000 ans','30 000 ans'] },
+  { q:'2 000 ans = combien de millénaires ?', correct:'2 millénaires', choices:['2 décennies','20 siècles','2 millénaires','200 siècles'] },
+  { q:'500 ans = combien de siècles ?', correct:'5 siècles', choices:['5 décennies','5 siècles','50 siècles','500 siècles'] },
+], 'ex2');
+
+buildQCM([
+  { q:'Un archéologue est quelqu\'un qui…', correct:'Fouille la terre pour trouver des objets du passé', choices:['Construit des maisons anciennes','Fouille la terre pour trouver des objets du passé','Écrit des livres d\'histoire','Répare les vieux tableaux'] },
+  { q:'Dans quel lieu peut-on trouver des traces du passé exposées au public ?', correct:'Dans un musée', choices:['Dans une boulangerie','À la mairie','Dans un musée','Dans un supermarché'] },
+  { q:'Un document écrit très ancien s\'appelle…', correct:'Un manuscrit', choices:['Un ordinateur','Un manuscrit','Un planisphère','Une bande dessinée'] },
+  { q:'Les peintures dans les grottes de la Préhistoire s\'appellent…', correct:'Des peintures rupestres', choices:['Des graffitis','Des fresques romaines','Des peintures rupestres','Des aquarelles'] },
+  { q:'Un monument très ancien qui a survécu jusqu\'à aujourd\'hui est une…', correct:'Une trace / vestige du passé', choices:['Une construction moderne','Une maquette','Une trace / vestige du passé','Une photo ancienne'] },
+], 'ex3');
+
+buildQCM([
+  { q:'La plus grande concentration d\'habitants dans le monde se trouve…', correct:'En Asie du Sud (Inde, Chine)', choices:['En Antarctique','En Australie','En Asie du Sud (Inde, Chine)','Au pôle Nord'] },
+  { q:'Comment appelle-t-on un endroit très peuplé sur Terre ?', correct:'Un foyer de peuplement', choices:['Un désert','Un foyer de peuplement','Une forêt','Un océan'] },
+  { q:'Une ville de plus d\'un million d\'habitants s\'appelle…', correct:'Une mégapole', choices:['Un village','Un bourg','Une mégapole','Une commune'] },
+  { q:'Quelle proportion des humains vit en ville aujourd\'hui ?', correct:'Plus de la moitié', choices:['Très peu','Environ un quart','Plus de la moitié','Presque personne'] },
+  { q:'Les zones très peu peuplées sont souvent…', correct:'Des déserts, des montagnes ou des pôles', choices:['Des centres-villes','Des zones industrielles','Des déserts, des montagnes ou des pôles','Des bords de mer'] },
+], 'ex4');
+
+buildVF([
+  { q:'La Préhistoire est la première période de l\'Histoire humaine.', correct:true },
+  { q:'1 siècle = 1 000 ans.', correct:false, expl:'1 siècle = 100 ans. 1 millénaire = 1 000 ans.' },
+  { q:'Un archéologue étudie les traces du passé.', correct:true },
+  { q:'La Révolution française (1789) marque le début du Moyen Âge.', correct:false, expl:'1789 marque le début de l\'Époque contemporaine.' },
+  { q:'L\'Asie est le continent le plus peuplé.', correct:true },
+  { q:'2 décennies = 20 ans.', correct:true, expl:'1 décennie = 10 ans, donc 2 décennies = 20 ans.' },
+  { q:'Les peintures des grottes préhistoriques s\'appellent peintures rupestres.', correct:true },
+  { q:'Les zones désertiques sont très peuplées.', correct:false, expl:'Les déserts sont peu ou pas peuplés.' },
+], 'ex5');
+
+buildOrdre([
+  { q:'Range ces périodes de la PLUS ANCIENNE à la PLUS RÉCENTE :',
+    items:['Préhistoire','Antiquité','Moyen Âge','Époque moderne','Époque contemporaine'] },
+  { q:'Range ces durées de la PLUS COURTE à la PLUS LONGUE :',
+    items:['1 décennie','1 siècle','1 millénaire','3 siècles','2 millénaires'] },
+], 'ex6');
+
+buildPaires([
+  { q:'Associe chaque période à un événement ou symbole.',
+    pairs:[['Préhistoire','Les peintures dans les grottes'],['Antiquité','Jules César et les Romains'],['Moyen Âge','Les châteaux forts'],['Époque contemporaine','La Révolution française 1789']] },
+  { q:'Associe chaque durée à sa conversion.',
+    pairs:[['1 décennie','10 ans'],['1 siècle','100 ans'],['1 millénaire','1 000 ans'],['3 siècles','300 ans']] },
+], 'ex7');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

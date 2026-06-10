@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="Les Maths de Clémence">
+<meta name="application-name" content="Les Maths de Clémence">
+<meta property="og:site_name" content="Les Maths de Clémence">
+<link rel="manifest" href="manifest.json">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Histoire-Géographie — CE2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.hg-frise{display:flex;gap:0;margin:12px auto;overflow-x:auto;max-width:100%;align-items:flex-start;}
+.hg-frise-item{display:flex;flex-direction:column;align-items:center;min-width:80px;padding:0 2px;position:relative;}
+.hg-frise-bar{height:8px;width:100%;flex-shrink:0;}
+.hg-frise-dot{width:16px;height:16px;border-radius:50%;border:3px solid white;flex-shrink:0;margin:0 auto;margin-top:-4px;}
+.hg-frise-date{font-size:0.56rem;font-weight:900;color:#4b5563;margin-top:2px;text-align:center;}
+.hg-frise-label{font-size:0.6rem;font-weight:900;margin-top:2px;text-align:center;line-height:1.3;padding:0 2px;}
+.carte-france{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:8px 0;}
+.carte-item{background:#ede9fe;border:2px solid #a78bfa;border-radius:10px;padding:6px 10px;font-size:0.7rem;font-weight:900;color:#5b21b6;text-align:center;}
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background:linear-gradient(135deg,#7c3aed,#a78bfa);">
+  <span class="emoji-header">🏰</span>
+  <h1>Histoire &amp; Géographie</h1>
+  <p>Préhistoire, Rome, Moyen Âge, France</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+  <div class="badge-niveau">📚 CE2 — Histoire &amp; Géographie</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div class="hg-frise">
+      <div class="hg-frise-item">
+        <div class="hg-frise-bar" style="background:#fef3c7;"></div>
+        <div class="hg-frise-dot" style="background:#f59e0b;"></div>
+        <div class="hg-frise-date">-3 000 000</div>
+        <div class="hg-frise-label" style="color:#92400e;">🦴 Paléo-<br>lithique</div>
+      </div>
+      <div class="hg-frise-item">
+        <div class="hg-frise-bar" style="background:#fef3c7;"></div>
+        <div class="hg-frise-dot" style="background:#d97706;"></div>
+        <div class="hg-frise-date">-10 000</div>
+        <div class="hg-frise-label" style="color:#92400e;">🌾 Néo-<br>lithique</div>
+      </div>
+      <div class="hg-frise-item">
+        <div class="hg-frise-bar" style="background:#fce7f3;"></div>
+        <div class="hg-frise-dot" style="background:#ec4899;"></div>
+        <div class="hg-frise-date">-52 av. J.-C.</div>
+        <div class="hg-frise-label" style="color:#9d174d;">🦅 Gaule<br>romaine</div>
+      </div>
+      <div class="hg-frise-item">
+        <div class="hg-frise-bar" style="background:#ede9fe;"></div>
+        <div class="hg-frise-dot" style="background:#7c3aed;"></div>
+        <div class="hg-frise-date">987</div>
+        <div class="hg-frise-label" style="color:#5b21b6;">👑 Hugues<br>Capet</div>
+      </div>
+      <div class="hg-frise-item">
+        <div class="hg-frise-bar" style="background:#ede9fe;"></div>
+        <div class="hg-frise-dot" style="background:#6d28d9;"></div>
+        <div class="hg-frise-date">1337-1453</div>
+        <div class="hg-frise-label" style="color:#5b21b6;">⚔️ Guerre<br>Cent Ans</div>
+      </div>
+    </div>
+    <div style="font-size:0.88rem;color:#555;line-height:1.9;">
+      🦴 <strong>Paléolithique</strong> = chasseurs-cueilleurs nomades · art pariétal (Lascaux)<br>
+      🌾 <strong>Néolithique</strong> = premiers agriculteurs sédentaires · villages<br>
+      🦅 <strong>-52 av. J.-C.</strong> = Vercingétorix vaincu par César à Alésia<br>
+      👑 <strong>987</strong> = Hugues Capet → 1ère dynastie Capétienne<br>
+      🌍 <strong>France</strong> : 67 M d'hab · Paris, Lyon, Marseille, Lille, Bordeaux
+    </div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 1</span> La Préhistoire <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 2</span> La Gaule et Rome <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#6d28d9">
+    <div class="ex-title"><span class="ex-badge" style="background:#6d28d9">Ex 3</span> Le royaume de France <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0369a1">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1">Ex 4</span> La France aujourd'hui <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 5</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 6</span> Frise chronologique <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">ORDRE</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 7</span> À quelle période ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex7"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CE2</footer>
+
+<script src="exercises.js"></script>
+<script>
+buildQCM([
+  { q:'Comment s\'appellent les humains du Paléolithique dans leur mode de vie ?', correct:'Nomades (ils se déplacent)', choices:['Sédentaires (ils restent)','Nomades (ils se déplacent)','Agriculteurs','Navigateurs'] },
+  { q:'Les hommes du Néolithique sont devenus…', correct:'Sédentaires : ils construisent des villages', choices:['Plus nomades encore','Sédentaires : ils construisent des villages','Des explorateurs','Des marchands'] },
+  { q:'Ötzi est une célèbre momie retrouvée dans les Alpes. À quelle période a-t-il vécu ?', correct:'Néolithique (environ -3300)', choices:['Paléolithique lointain (-3 millions)','Néolithique (environ -3300)','Antiquité romaine','Moyen Âge'] },
+  { q:'Comment s\'appellent les peintures préhistoriques trouvées dans les grottes ?', correct:'Des peintures rupestres', choices:['Des fresques','Des peintures rupestres','Des mosaïques','Des gravures modernes'] },
+  { q:'Quelle grotte célèbre abrite des peintures préhistoriques en France ?', correct:'Lascaux (Dordogne)', choices:['Les catacombes de Paris','Lascaux (Dordogne)','Le château de Versailles','Notre-Dame de Paris'] },
+  { q:'La principale activité des hommes du Paléolithique était…', correct:'La chasse et la cueillette', choices:['L\'agriculture','La chasse et la cueillette','Le commerce','La construction de temples'] },
+], 'ex1');
+
+buildQCM([
+  { q:'En quelle année Vercingétorix est-il vaincu par Jules César ?', correct:'52 av. J.-C.', choices:['987','476','52 av. J.-C.','1492'] },
+  { q:'Qui était le chef gaulois qui a résisté aux Romains ?', correct:'Vercingétorix', choices:['Jules César','Charlemagne','Vercingétorix','Astérix'] },
+  { q:'Comment appelle-t-on la province romaine qui correspond à la France actuelle ?', correct:'La Gaule', choices:['La Germanie','La Gaule','L\'Hispanie','La Bretagne'] },
+  { q:'Quel grand ensemble politique dominait la Gaule après -52 av. J.-C. ?', correct:'L\'empire romain', choices:['Le royaume de France','L\'empire romain','L\'empire grec','Le royaume d\'Égypte'] },
+  { q:'Quelle bataille marque la défaite de Vercingétorix ?', correct:'La bataille d\'Alésia', choices:['La bataille de Poitiers','La bataille d\'Hastings','La bataille d\'Alésia','La bataille de Waterloo'] },
+  { q:'Quel grand réseau de routes les Romains ont-ils construit en Gaule ?', correct:'Des voies romaines', choices:['Des chemins de fer','Des autoroutes','Des voies romaines','Des canaux'] },
+], 'ex2');
+
+buildQCM([
+  { q:'En quelle année Hugues Capet devient-il roi de France ?', correct:'987', choices:['476','987','1337','1453'] },
+  { q:'Quelle est la 1ère grande dynastie de rois de France ?', correct:'Les Capétiens', choices:['Les Mérovingiens','Les Carolingiens','Les Capétiens','Les Valois'] },
+  { q:'La guerre de Cent Ans oppose la France à…', correct:'L\'Angleterre', choices:['L\'Espagne','L\'Italie','L\'Angleterre','L\'Allemagne'] },
+  { q:'Jeanne d\'Arc a aidé à libérer la France lors de…', correct:'La guerre de Cent Ans (1337-1453)', choices:['La conquête romaine','Le règne de Charlemagne','La guerre de Cent Ans (1337-1453)','La Révolution française'] },
+  { q:'De quelle période les châteaux forts sont-ils caractéristiques ?', correct:'Du Moyen Âge', choices:['De la Préhistoire','De l\'Antiquité','Du Moyen Âge','De l\'Époque moderne'] },
+  { q:'La guerre de Cent Ans se termine en…', correct:'1453', choices:['987','1337','1453','1492'] },
+], 'ex3');
+
+buildQCM([
+  { q:'Quelle est la ville la plus peuplée de France ?', correct:'Paris', choices:['Lyon','Marseille','Paris','Bordeaux'] },
+  { q:'Environ combien d\'habitants la France compte-t-elle ?', correct:'67 millions', choices:['7 millions','37 millions','67 millions','167 millions'] },
+  { q:'La population française est surtout concentrée…', correct:'Dans les grandes villes et leurs banlieues', choices:['Dans les campagnes isolées','Dans les montagnes','Dans les grandes villes et leurs banlieues','Sur les côtes uniquement'] },
+  { q:'Comment appelle-t-on les grandes chaînes de montagnes françaises ?', correct:'Des massifs (Alpes, Pyrénées, Massif central…)', choices:['Des plaines','Des massifs (Alpes, Pyrénées, Massif central…)','Des déltas','Des presqu\'îles'] },
+  { q:'Quel est le plus long fleuve de France ?', correct:'La Loire', choices:['La Seine','Le Rhône','La Loire','La Garonne'] },
+  { q:'Quel type de paysage trouve-t-on dans une zone industrielle ?', correct:'Des usines, des entrepôts, des routes', choices:['Des champs cultivés','Des plages','Des forêts profondes','Des usines, des entrepôts, des routes'] },
+], 'ex4');
+
+buildVF([
+  { q:'Les hommes du Paléolithique étaient des agriculteurs.', correct:false, expl:'Au Paléolithique, les hommes étaient chasseurs-cueilleurs nomades. L\'agriculture apparaît au Néolithique.' },
+  { q:'Vercingétorix a été vaincu par Jules César en 52 av. J.-C.', correct:true },
+  { q:'Hugues Capet devient roi de France en 987.', correct:true },
+  { q:'Lascaux est une grotte avec des peintures préhistoriques.', correct:true },
+  { q:'La guerre de Cent Ans oppose la France à l\'Espagne.', correct:false, expl:'La guerre de Cent Ans oppose la France à l\'Angleterre.' },
+  { q:'Paris est la ville la plus peuplée de France.', correct:true },
+  { q:'Au Néolithique, les hommes deviennent sédentaires.', correct:true },
+  { q:'La Loire est le plus long fleuve de France.', correct:true },
+], 'ex5');
+
+buildOrdre([
+  { q:'Range ces événements DU PLUS ANCIEN AU PLUS RÉCENT :',
+    items:['Paléolithique (chasse-cueillette)','Néolithique (premiers villages)','Vercingétorix vaincu (-52)','Hugues Capet roi (987)','Jeanne d\'Arc / fin Guerre Cent Ans (1453)'] },
+  { q:'Range ces grandes périodes dans l\'ordre chronologique :',
+    items:['Préhistoire','Antiquité','Moyen Âge','Époque moderne','Époque contemporaine'] },
+], 'ex6');
+
+buildTri([
+  { q:'À quelle grande période appartient cet événement ou personnage ?',
+    cats:['Préhistoire','Antiquité romaine','Moyen Âge'],
+    items:[
+      {v:'Peintures rupestres de Lascaux', cat:'Préhistoire'},
+      {v:'Jules César et la Gaule romaine', cat:'Antiquité romaine'},
+      {v:'Hugues Capet, premier roi capétien (987)', cat:'Moyen Âge'},
+      {v:'Ötzi, la momie des Alpes (-3300)', cat:'Préhistoire'},
+      {v:'Vercingétorix vaincu à Alésia (-52)', cat:'Antiquité romaine'},
+      {v:'Jeanne d\'Arc et la guerre de Cent Ans', cat:'Moyen Âge'},
+      {v:'Premiers villages et agriculture', cat:'Préhistoire'},
+      {v:'L\'empire romain domine la Gaule', cat:'Antiquité romaine'},
+      {v:'Les châteaux forts et les chevaliers', cat:'Moyen Âge'},
+    ]
+  },
+], 'ex7');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

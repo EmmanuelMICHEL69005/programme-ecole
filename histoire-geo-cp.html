@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="Les Maths de Clémence">
+<meta name="application-name" content="Les Maths de Clémence">
+<meta property="og:site_name" content="Les Maths de Clémence">
+<link rel="manifest" href="manifest.json">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Histoire-Géographie — CP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.frise-cp{display:flex;gap:0;margin:12px auto;justify-content:center;flex-wrap:wrap;max-width:340px;}
+.frise-cp-item{display:flex;flex-direction:column;align-items:center;width:68px;}
+.frise-cp-circle{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:900;border:3px solid white;}
+.frise-cp-line{height:4px;width:100%;background:#d1fae5;margin-top:0;}
+.frise-cp-label{font-size:0.58rem;font-weight:900;color:#065f46;margin-top:4px;text-align:center;}
+.saison-grid{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:10px 0;}
+.saison-card{background:#f0fdf4;border:2px solid #86efac;border-radius:12px;padding:8px 12px;font-size:0.72rem;font-weight:900;color:#065f46;text-align:center;min-width:68px;}
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background:linear-gradient(135deg,#16a34a,#4ade80);">
+  <span class="emoji-header">🌍</span>
+  <h1>Histoire &amp; Géographie</h1>
+  <p>Le temps, les saisons, l'école, le monde</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+  <div class="badge-niveau">🌱 CP — Histoire &amp; Géographie</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div class="saison-grid">
+      <div class="saison-card">🍂 Automne<br><span style="color:#6b7280;font-weight:700">sept·oct·nov</span></div>
+      <div class="saison-card">❄️ Hiver<br><span style="color:#6b7280;font-weight:700">déc·jan·fév</span></div>
+      <div class="saison-card">🌸 Printemps<br><span style="color:#6b7280;font-weight:700">mars·avr·mai</span></div>
+      <div class="saison-card">☀️ Été<br><span style="color:#6b7280;font-weight:700">juin·juil·août</span></div>
+    </div>
+    <div style="font-size:0.88rem;color:#555;line-height:1.9;">
+      📅 <strong>1 semaine = 7 jours</strong> · <strong>1 an = 12 mois = 365 jours</strong><br>
+      🌍 <strong>6 continents</strong> : Europe · Asie · Afrique · Amériques · Océanie · Antarctique<br>
+      🌊 <strong>4 océans</strong> : Pacifique · Atlantique · Indien · Arctique<br>
+      📍 <strong>Avant / Après</strong> → sur une frise, le passé est à gauche, le futur à droite
+    </div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#16a34a">
+    <div class="ex-title"><span class="ex-badge" style="background:#16a34a">Ex 1</span> Les saisons <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 2</span> Calendrier : jours et mois <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 3</span> Avant, après, en même temps <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 4</span> Continents et océans <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 5</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 6</span> Ranger dans l'ordre <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">ORDRE</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 7</span> Associer saison et description <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex7"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CP</footer>
+
+<script src="exercises.js"></script>
+<script>
+buildQCM([
+  { q:'En quelle saison les feuilles tombent-elles ?', correct:'Automne 🍂', choices:['Printemps 🌸','Été ☀️','Automne 🍂','Hiver ❄️'] },
+  { q:'En quelle saison fait-il le plus froid ?', correct:'Hiver ❄️', choices:['Automne 🍂','Hiver ❄️','Printemps 🌸','Été ☀️'] },
+  { q:'En quelle saison les fleurs poussent-elles ?', correct:'Printemps 🌸', choices:['Hiver ❄️','Printemps 🌸','Été ☀️','Automne 🍂'] },
+  { q:'Quel mois vient après décembre ?', correct:'Janvier', choices:['Novembre','Décembre','Janvier','Février'] },
+  { q:'Combien de mois y a-t-il dans une année ?', correct:'12 mois', choices:['7 mois','10 mois','12 mois','365 mois'] },
+  { q:'Quels mois font partie du printemps ?', correct:'Mars, avril, mai', choices:['Juin, juillet, août','Mars, avril, mai','Septembre, octobre, novembre','Décembre, janvier, février'] },
+], 'ex1');
+
+buildQCM([
+  { q:'Quel jour vient après mercredi ?', correct:'Jeudi', choices:['Mardi','Mercredi','Jeudi','Vendredi'] },
+  { q:'Combien de jours y a-t-il dans une semaine ?', correct:'7 jours', choices:['5 jours','6 jours','7 jours','12 jours'] },
+  { q:'Quel est le dernier mois de l\'année ?', correct:'Décembre', choices:['Octobre','Novembre','Décembre','Janvier'] },
+  { q:'Quel est le premier jour de la semaine selon le calendrier ?', correct:'Lundi', choices:['Dimanche','Lundi','Mardi','Samedi'] },
+  { q:'Combien de jours y a-t-il en général dans une année ?', correct:'365 jours', choices:['30 jours','100 jours','365 jours','366 jours'] },
+  { q:'Quel mois vient avant juin ?', correct:'Mai', choices:['Avril','Mai','Juillet','Août'] },
+], 'ex2');
+
+buildQCM([
+  { q:'Bébé puis enfant puis adulte : dans quel ordre ?', correct:'D\'abord bébé, ensuite enfant, enfin adulte', choices:['D\'abord adulte, ensuite enfant, enfin bébé','D\'abord enfant, ensuite bébé, enfin adulte','D\'abord bébé, ensuite enfant, enfin adulte','Dans n\'importe quel ordre'] },
+  { q:'Sur une frise du temps, le passé est…', correct:'À gauche', choices:['À droite','En haut','À gauche','Au milieu'] },
+  { q:'Tes grands-parents sont nés… par rapport à toi.', correct:'Avant toi', choices:['Après toi','En même temps que toi','Avant toi','On ne sait pas'] },
+  { q:'L\'école du matin se passe… par rapport à l\'école de l\'après-midi.', correct:'Avant', choices:['Après','En même temps','Avant','Pendant'] },
+  { q:'Un arbre généalogique montre…', correct:'Les membres de la famille et leurs liens', choices:['Les espèces d\'arbres','Les membres de la famille et leurs liens','Les pays du monde','Les saisons'] },
+], 'ex3');
+
+buildQCM([
+  { q:'Sur quel continent habite-t-on en France ?', correct:'Europe', choices:['Asie','Afrique','Europe','Amériques'] },
+  { q:'Comment s\'appelle le plus grand océan ?', correct:'Océan Pacifique', choices:['Océan Atlantique','Océan Indien','Océan Pacifique','Océan Arctique'] },
+  { q:'Combien y a-t-il de continents ?', correct:'6', choices:['4','5','6','7'] },
+  { q:'Quel continent se trouve au nord, très froid ?', correct:'L\'Arctique / Antarctique', choices:['L\'Afrique','L\'Asie','Les Amériques','L\'Arctique / Antarctique'] },
+  { q:'Sur un planisphère, on voit…', correct:'Le monde entier à plat', choices:['Seulement la France','Seulement l\'Europe','Le monde entier à plat','Seulement les océans'] },
+  { q:'Quel est le plus grand continent ?', correct:'L\'Asie', choices:['L\'Europe','L\'Afrique','L\'Asie','Les Amériques'] },
+], 'ex4');
+
+buildVF([
+  { q:'Une année a 12 mois.', correct:true },
+  { q:'L\'hiver est la saison la plus chaude.', correct:false, expl:'L\'hiver est la saison la plus froide. L\'été est la plus chaude.' },
+  { q:'La France se trouve en Europe.', correct:true },
+  { q:'Il y a 5 jours dans une semaine.', correct:false, expl:'Il y a 7 jours dans une semaine.' },
+  { q:'Sur une frise chronologique, le passé est à gauche.', correct:true },
+  { q:'L\'océan Pacifique est le plus grand océan.', correct:true },
+  { q:'En automne, les feuilles poussent sur les arbres.', correct:false, expl:'En automne, les feuilles tombent. Elles poussent au printemps.' },
+  { q:'Un arbre généalogique montre les membres d\'une famille.', correct:true },
+], 'ex5');
+
+buildOrdre([
+  { q:'Range les jours de la semaine dans l\'ordre :',
+    items:['Lundi','Mardi','Mercredi','Jeudi','Vendredi'] },
+  { q:'Range les mois dans l\'ordre (du début de l\'année) :',
+    items:['Janvier','Mars','Juin','Septembre','Décembre'] },
+  { q:'Range les saisons dans l\'ordre (en commençant par l\'automne) :',
+    items:['Automne 🍂','Hiver ❄️','Printemps 🌸','Été ☀️'] },
+], 'ex6');
+
+buildPaires([
+  { q:'Associe chaque saison à sa description.',
+    pairs:[['Automne 🍂','Les feuilles tombent'],['Hiver ❄️','Il peut neiger'],['Printemps 🌸','Les fleurs poussent'],['Été ☀️','On va à la plage']] },
+  { q:'Associe chaque mois à sa saison.',
+    pairs:[['Janvier','Hiver ❄️'],['Avril','Printemps 🌸'],['Juillet','Été ☀️'],['Octobre','Automne 🍂']] },
+], 'ex7');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>
