@@ -120,8 +120,6 @@
     <a href="#cm1" class="level-tab">🎯 CM1</a>
     <a href="#cm2" class="level-tab">🏆 CM2</a>
     <a href="#6e"  class="level-tab">⭐ 6ème</a>
-    <a href="eps-cycle2.html" class="level-tab">🏃 EPS C2</a>
-    <a href="eps-cycle3.html" class="level-tab">🏆 EPS C3</a>
   </nav>
 </header>
 
@@ -613,5 +611,47 @@
 
 <script src="gamification.js"></script>
 <script src="nav.js"></script>
+<script>
+(function(){
+  var C={
+    'nombres-cp.html':9,'calcul-cp.html':8,'calcul-mental-cp.html':6,
+    'mesures-cp.html':7,'geometrie-cp.html':8,'donnees-cp.html':5,
+    'problemes-cp.html':6,'histoire-geo-cp.html':7,'eps-cycle2.html':7,
+    'nombres-ce1.html':8,'fractions-ce1.html':4,'calcul-ce1.html':7,
+    'calcul-mental-ce1.html':7,'operations-posees-ce1.html':7,
+    'multiplication-ce1.html':7,'mesures-ce1.html':7,'geometrie-ce1.html':7,
+    'donnees-ce1.html':5,'problemes-ce1.html':7,'histoire-geo-ce1.html':7,
+    'nombres-ce2.html':7,'decimaux-ce2.html':7,'fiche1.html':3,'fiche2.html':3,
+    'fiche3.html':3,'calcul.html':7,'calcul-mental.html':6,
+    'operations-posees-ce2.html':7,'multiplication-division-ce2.html':7,
+    'division-ce2.html':7,'mesures-ce2.html':7,'mesures.html':5,
+    'geometrie-ce2.html':6,'geometrie.html':5,'symetrie-ce2.html':7,
+    'solides.html':4,'temps.html':5,'donnees.html':5,'problemes.html':5,
+    'histoire-geo-ce2.html':7,
+    'nombres-cm1.html':7,'decimaux-cm1.html':7,'fractions-cm1.html':7,
+    'calcul-cm1.html':7,'calcul-mental-cm1.html':7,'calcul-pose-cm1.html':7,
+    'mesures-cm1.html':7,'temps-cm1.html':7,'geometrie-cm1.html':7,
+    'solides-cm1.html':6,'donnees-cm1.html':6,'proportionnalite-cm1.html':7,
+    'problemes-cm1.html':7,'eps-cycle3.html':7,
+    'nombres-cm2.html':7,'decimaux-cm2.html':7,'fractions-cm2.html':7,
+    'calcul-cm2.html':7,'calcul-mental-cm2.html':7,'calcul-pose-cm2.html':6,
+    'problemes-cm2.html':7,'mesures-cm2.html':7,'temps-cm2.html':7,
+    'geometrie-cm2.html':7,'donnees-cm2.html':6,'proportionnalite-cm2.html':7,
+    'nombres-6e.html':4,'fractions-6e.html':4,'algebre-6e.html':4,
+    'calcul-mental-6e.html':4,'probabilites-6e.html':5,'geometrie-6e.html':4,
+    'mesures-6e.html':4,'donnees-6e.html':4,'proportionnalite-6e.html':4
+  };
+  document.querySelectorAll('a.card[href]').forEach(function(card){
+    var n=C[card.getAttribute('href')];
+    if(!n) return;
+    var p=card.querySelector('.card-body');
+    if(!p) return;
+    var b=document.createElement('div');
+    b.style.cssText='font-size:0.68rem;font-weight:900;color:#9ca3af;margin-top:4px;letter-spacing:0.3px;';
+    b.textContent=n+' exercice'+(n>1?'s':'');
+    p.appendChild(b);
+  });
+})();
+</script>
 </body>
 </html>
