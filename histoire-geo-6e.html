@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="École Facile">
+<meta name="application-name" content="École Facile">
+<meta property="og:site_name" content="École Facile">
+<link rel="manifest" href="manifest.json">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Histoire-Géographie — 6ème</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.hg-frise{display:flex;gap:0;margin:12px auto;overflow-x:auto;max-width:100%;align-items:flex-start;}
+.hg-frise-item{display:flex;flex-direction:column;align-items:center;min-width:80px;padding:0 2px;position:relative;}
+.hg-frise-bar{height:8px;width:100%;flex-shrink:0;}
+.hg-frise-dot{width:16px;height:16px;border-radius:50%;border:3px solid white;flex-shrink:0;margin:0 auto;margin-top:-4px;}
+.hg-frise-date{font-size:0.56rem;font-weight:900;color:#4b5563;margin-top:2px;text-align:center;}
+.hg-frise-label{font-size:0.6rem;font-weight:900;margin-top:2px;text-align:center;line-height:1.3;padding:0 2px;}
+.continent-grid{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:8px 0;}
+.continent-item{background:#fdf4ff;border:2px solid #f9a8d4;border-radius:10px;padding:6px 10px;font-size:0.7rem;font-weight:900;color:#831843;text-align:center;}
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background:linear-gradient(135deg,#9d174d,#f9a8d4);">
+  <span class="emoji-header">🌍</span>
+  <h1>Histoire &amp; Géographie</h1>
+  <p>Premières civilisations, Antiquité, La Terre</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+  <div class="badge-niveau">⭐ 6ème — Histoire &amp; Géographie</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens — L'Antiquité</div>
+    <div class="hg-frise">
+      <div class="hg-frise-item">
+        <div class="hg-frise-bar" style="background:#fef3c7;"></div>
+        <div class="hg-frise-dot" style="background:#f59e0b;"></div>
+        <div class="hg-frise-date">-3500</div>
+        <div class="hg-frise-label" style="color:#78350f;">🏺 Méso-<br>potamie</div>
+      </div>
+      <div class="hg-frise-item">
+        <div class="hg-frise-bar" style="background:#fef3c7;"></div>
+        <div class="hg-frise-dot" style="background:#d97706;"></div>
+        <div class="hg-frise-date">-3000</div>
+        <div class="hg-frise-label" style="color:#78350f;">🏛️ Égypte<br>antique</div>
+      </div>
+      <div class="hg-frise-item">
+        <div class="hg-frise-bar" style="background:#dbeafe;"></div>
+        <div class="hg-frise-dot" style="background:#3b82f6;"></div>
+        <div class="hg-frise-date">-800 / -500</div>
+        <div class="hg-frise-label" style="color:#1e3a8a;">🏺 Grèce<br>classique</div>
+      </div>
+      <div class="hg-frise-item">
+        <div class="hg-frise-bar" style="background:#fee2e2;"></div>
+        <div class="hg-frise-dot" style="background:#ef4444;"></div>
+        <div class="hg-frise-date">-753 à 476</div>
+        <div class="hg-frise-label" style="color:#7f1d1d;">🦅 Rome<br>antique</div>
+      </div>
+      <div class="hg-frise-item">
+        <div class="hg-frise-bar" style="background:#fdf4ff;"></div>
+        <div class="hg-frise-dot" style="background:#a855f7;"></div>
+        <div class="hg-frise-date">476</div>
+        <div class="hg-frise-label" style="color:#6b21a8;">🏰 Début<br>Moyen Âge</div>
+      </div>
+    </div>
+    <div style="font-size:0.88rem;color:#555;line-height:1.9;">
+      📜 <strong>Mésopotamie</strong> : 1ères écritures cunéiformes (Irak actuel), Code d'Hammurabi<br>
+      🏛️ <strong>Égypte</strong> : pharaons, pyramides, hiéroglyphes, Nil<br>
+      🏺 <strong>Grèce</strong> : démocratie (Athènes), philosophie (Socrate, Platon), Jeux olympiques<br>
+      🦅 <strong>Rome</strong> : fondée en -753, conquêtes, Colisée, Empire, chute en 476<br>
+      🌍 <strong>La Terre</strong> : 5 océans, 6 continents, zones climatiques (tropicale/polaire/tempérée)
+    </div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#9d174d">
+    <div class="ex-title"><span class="ex-badge" style="background:#9d174d">Ex 1</span> Premières civilisations — Mésopotamie et Égypte <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#3b82f6">
+    <div class="ex-title"><span class="ex-badge" style="background:#3b82f6">Ex 2</span> La Grèce antique <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 3</span> Rome — République et Empire <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0369a1">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1">Ex 4</span> Géographie — La Terre, continents et océans <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 5</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Civilisations et caractéristiques <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 7</span> Classer dans le temps <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex7"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">École Facile — 6ème</footer>
+
+<script src="exercises.js"></script>
+<script>
+buildQCM([
+  { q:'Où se situait la Mésopotamie (les premières civilisations) ?', correct:'Entre les fleuves Tigre et Euphrate (Irak actuel)', choices:['En Égypte, le long du Nil','Entre les fleuves Tigre et Euphrate (Irak actuel)','En Grèce, près de la mer Égée','En Chine, le long du Yangtsé'] },
+  { q:'Quelle est l\'une des premières formes d\'écriture, inventée en Mésopotamie ?', correct:'L\'écriture cunéiforme', choices:['Les hiéroglyphes','L\'alphabet grec','L\'écriture cunéiforme','Les chiffres arabes'] },
+  { q:'Comment appelle-t-on les rois de l\'Égypte antique ?', correct:'Les pharaons', choices:['Les sultans','Les empereurs','Les pharaons','Les rois-prêtres'] },
+  { q:'Quel fleuve est indispensable à la civilisation égyptienne antique ?', correct:'Le Nil', choices:['Le Tigre','L\'Euphrate','Le Nil','Le Jourdain'] },
+  { q:'Quel monument égyptien monumental servait de tombeau aux pharaons ?', correct:'Les pyramides', choices:['Les sphinx','Les pyramides','Les obélisques','Les temples de Karnak'] },
+], 'ex1');
+
+buildQCM([
+  { q:'Qu\'est-ce qu\'une "cité-État" en Grèce antique ?', correct:'Une ville qui se gouverne de façon indépendante', choices:['Une ville dépendant d\'un roi unique','Une ville qui se gouverne de façon indépendante','Une colonie romaine','Un village de pêcheurs'] },
+  { q:'La démocratie athénienne du Ve siècle av. J.-C. permet à qui de voter ?', correct:'Aux hommes libres athéniens (pas aux femmes ni aux esclaves)', choices:['À tous les habitants d\'Athènes','Aux hommes libres athéniens (pas aux femmes ni aux esclaves)','Aux femmes libres seulement','À tous les Grecs de 18 ans'] },
+  { q:'Quel célèbre philosophe socratique a fondé l\'Académie d\'Athènes ?', correct:'Platon', choices:['Aristote','Socrate','Platon','Hippocrate'] },
+  { q:'Quel est le monument emblématique de l\'Acropole d\'Athènes ?', correct:'Le Parthénon (temple d\'Athéna)', choices:['Le Colisée','Le Parthénon (temple d\'Athéna)','L\'Arc de Triomphe','Le Temple de Zeus'] },
+  { q:'Pourquoi Alexandre le Grand est-il célèbre ?', correct:'Il conquiert un empire immense de la Grèce à l\'Inde (IVe s. av. J.-C.)', choices:['Il invente la démocratie à Athènes','Il fonde la ville de Rome','Il conquiert un empire immense de la Grèce à l\'Inde (IVe s. av. J.-C.)','Il écrit l\'Odyssée'] },
+], 'ex2');
+
+buildQCM([
+  { q:'Selon la légende, qui fonde Rome en -753 av. J.-C. ?', correct:'Romulus (et Rémus, son frère)', choices:['Jules César','Auguste','Romulus (et Rémus, son frère)','Hannibal'] },
+  { q:'Quelle est la différence entre la République romaine et l\'Empire ?', correct:'La République est gouvernée par deux consuls et le Sénat ; l\'Empire par un Empereur', choices:['Il n\'y a aucune différence','La République est gouvernée par deux consuls et le Sénat ; l\'Empire par un Empereur','L\'Empire est plus démocratique','La République a duré seulement 10 ans'] },
+  { q:'Qui est Auguste ?', correct:'Le 1er Empereur romain (27 av. J.-C.)', choices:['Un général gaulois','Un dieu romain','Le 1er Empereur romain (27 av. J.-C.)','Un consul de la République'] },
+  { q:'En quelle année l\'Empire romain d\'Occident s\'effondre-t-il ?', correct:'476 apr. J.-C.', choices:['-52 av. J.-C.','313 apr. J.-C.','476 apr. J.-C.','800 apr. J.-C.'] },
+  { q:'Quel nom donne-t-on aux soldats de l\'armée romaine organisée en unités de combat ?', correct:'Les légionnaires (organisés en légions)', choices:['Les gladiateurs','Les centurions seulement','Les légionnaires (organisés en légions)','Les prétoriens seulement'] },
+], 'ex3');
+
+buildQCM([
+  { q:'Combien de continents compte-t-on sur Terre ?', correct:'6 continents', choices:['4 continents','5 continents','6 continents','7 continents'] },
+  { q:'Quel est l\'océan le plus grand du monde ?', correct:'L\'océan Pacifique', choices:['L\'océan Atlantique','L\'océan Indien','L\'océan Pacifique','L\'océan Arctique'] },
+  { q:'Comment appelle-t-on la zone climatique autour de l\'équateur, chaude et humide ?', correct:'La zone intertropicale (ou tropicale)', choices:['La zone polaire','La zone tempérée','La zone intertropicale (ou tropicale)','La zone aride'] },
+  { q:'Quel continent est aussi un pays ?', correct:'L\'Australie (continent et État)', choices:['L\'Antarctique','L\'Europe','L\'Amérique du Nord','L\'Australie (continent et État)'] },
+  { q:'Qu\'est-ce qu\'un parallèle sur un globe terrestre ?', correct:'Une ligne horizontale indiquant la latitude (ex : l\'équateur)', choices:['Une ligne verticale indiquant la longitude','Une ligne horizontale indiquant la latitude (ex : l\'équateur)','La ligne de partage des eaux','Le tracé des méridiens'] },
+], 'ex4');
+
+buildVF([
+  { q:'L\'écriture cunéiforme a été inventée en Mésopotamie.', correct:true },
+  { q:'Les pharaons sont les rois de la Grèce antique.', correct:false, expl:'Les pharaons sont les rois de l\'ÉGYPTE antique, pas de la Grèce.' },
+  { q:'La démocratie athénienne du Ve siècle incluait les femmes et les esclaves.', correct:false, expl:'La démocratie athénienne était réservée aux hommes LIBRES et citoyens. Les femmes et les esclaves en étaient exclus.' },
+  { q:'Alexandre le Grand étend son empire jusqu\'en Inde.', correct:true },
+  { q:'Rome est fondée selon la légende en -753 av. J.-C.', correct:true },
+  { q:'L\'Empire romain d\'Occident chute en l\'an 476.', correct:true },
+  { q:'L\'océan Atlantique est le plus grand océan du monde.', correct:false, expl:'Le plus grand océan est l\'océan PACIFIQUE. L\'Atlantique est le deuxième.' },
+], 'ex5');
+
+buildPaires([
+  { q:'Associe chaque civilisation à l\'une de ses grandes réalisations.',
+    pairs:[['Mésopotamie','Écriture cunéiforme et Code d\'Hammurabi'],['Égypte antique','Pyramides et hiéroglyphes'],['Grèce antique','Démocratie et philosophie'],['Rome antique','Colisée et droit romain']] },
+  { q:'Associe chaque personnage à sa civilisation.',
+    pairs:[['Socrate','Grèce antique'],['Jules César','Rome antique'],['Ramsès II','Égypte antique'],['Hammurabi','Mésopotamie']] },
+], 'ex6');
+
+buildTri([
+  { q:'Classe ces événements dans leur ordre chronologique approximatif.',
+    cats:['Avant -500 (Antiquité ancienne)','Entre -500 et 0','Après 0 (après J.-C.)'],
+    items:[
+      {v:'Invention de l\'écriture cunéiforme (-3500)', cat:'Avant -500 (Antiquité ancienne)'},
+      {v:'Construction des pyramides de Guizeh (-2500)', cat:'Avant -500 (Antiquité ancienne)'},
+      {v:'Démocratie d\'Athènes (Ve s. av. J.-C.)', cat:'Entre -500 et 0'},
+      {v:'Conquêtes d\'Alexandre le Grand (-336 à -323)', cat:'Entre -500 et 0'},
+      {v:'Auguste, 1er Empereur romain (-27)', cat:'Entre -500 et 0'},
+      {v:'Édit de Milan — liberté du christianisme (313)', cat:'Après 0 (après J.-C.)'},
+      {v:'Chute de l\'Empire romain d\'Occident (476)', cat:'Après 0 (après J.-C.)'},
+    ]
+  },
+], 'ex7');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="related.js"></script>
+</body>
+</html>

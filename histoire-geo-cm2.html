@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="École Facile">
+<meta name="application-name" content="École Facile">
+<meta property="og:site_name" content="École Facile">
+<link rel="manifest" href="manifest.json">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Histoire-Géographie — CM2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.hg-frise{display:flex;gap:0;margin:12px auto;overflow-x:auto;max-width:100%;align-items:flex-start;}
+.hg-frise-item{display:flex;flex-direction:column;align-items:center;min-width:80px;padding:0 2px;position:relative;}
+.hg-frise-bar{height:8px;width:100%;flex-shrink:0;}
+.hg-frise-dot{width:16px;height:16px;border-radius:50%;border:3px solid white;flex-shrink:0;margin:0 auto;margin-top:-4px;}
+.hg-frise-date{font-size:0.56rem;font-weight:900;color:#4b5563;margin-top:2px;text-align:center;}
+.hg-frise-label{font-size:0.6rem;font-weight:900;margin-top:2px;text-align:center;line-height:1.3;padding:0 2px;}
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background:linear-gradient(135deg,#b45309,#fcd34d);">
+  <span class="emoji-header">⚜️</span>
+  <h1>Histoire &amp; Géographie</h1>
+  <p>Grandes Découvertes, Révolution, Monde contemporain</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+  <div class="badge-niveau">🏆 CM2 — Histoire &amp; Géographie</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens — La frise chronologique</div>
+    <div class="hg-frise">
+      <div class="hg-frise-item">
+        <div class="hg-frise-bar" style="background:#fef9c3;"></div>
+        <div class="hg-frise-dot" style="background:#ca8a04;"></div>
+        <div class="hg-frise-date">1453</div>
+        <div class="hg-frise-label" style="color:#713f12;">🏰 Fin<br>Moyen Âge</div>
+      </div>
+      <div class="hg-frise-item">
+        <div class="hg-frise-bar" style="background:#fed7aa;"></div>
+        <div class="hg-frise-dot" style="background:#f97316;"></div>
+        <div class="hg-frise-date">1492</div>
+        <div class="hg-frise-label" style="color:#7c2d12;">⛵ Christophe<br>Colomb</div>
+      </div>
+      <div class="hg-frise-item">
+        <div class="hg-frise-bar" style="background:#fce7f3;"></div>
+        <div class="hg-frise-dot" style="background:#db2777;"></div>
+        <div class="hg-frise-date">1661–1715</div>
+        <div class="hg-frise-label" style="color:#831843;">👑 Louis XIV<br>Versailles</div>
+      </div>
+      <div class="hg-frise-item">
+        <div class="hg-frise-bar" style="background:#dcfce7;"></div>
+        <div class="hg-frise-dot" style="background:#16a34a;"></div>
+        <div class="hg-frise-date">1789</div>
+        <div class="hg-frise-label" style="color:#14532d;">🗽 Révolution<br>française</div>
+      </div>
+      <div class="hg-frise-item">
+        <div class="hg-frise-bar" style="background:#dbeafe;"></div>
+        <div class="hg-frise-dot" style="background:#1d4ed8;"></div>
+        <div class="hg-frise-date">1914–1945</div>
+        <div class="hg-frise-label" style="color:#1e3a8a;">⚔️ Guerres<br>mondiales</div>
+      </div>
+    </div>
+    <div style="font-size:0.88rem;color:#555;line-height:1.9;">
+      ⛵ <strong>1492</strong> : Christophe Colomb découvre l'Amérique (pour les Européens)<br>
+      👑 <strong>Louis XIV</strong> : le Roi-Soleil construit Versailles, monarchie absolue<br>
+      🗽 <strong>1789</strong> : Révolution française, Déclaration des droits de l'Homme<br>
+      🏭 <strong>XIXe siècle</strong> : Révolution industrielle, chemin de fer, urbanisation<br>
+      ⚔️ <strong>1914–1918 et 1939–1945</strong> : deux guerres mondiales dévastatrices
+    </div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#b45309">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309">Ex 1</span> Les Grandes Découvertes (XVe–XVIe s.) <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#db2777">
+    <div class="ex-title"><span class="ex-badge" style="background:#db2777">Ex 2</span> Louis XIV et la monarchie absolue <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#16a34a">
+    <div class="ex-title"><span class="ex-badge" style="background:#16a34a">Ex 3</span> La Révolution française (1789) <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#1d4ed8">
+    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8">Ex 4</span> XIXe siècle et guerres mondiales <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 5</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Dates et événements <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 7</span> Classer dans le temps <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex7"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">École Facile — CM2</footer>
+
+<script src="exercises.js"></script>
+<script>
+buildQCM([
+  { q:'En quelle année Christophe Colomb atteint-il l\'Amérique ?', correct:'1492', choices:['1453','1492','1515','1610'] },
+  { q:'Quelle puissance européenne finance le voyage de Christophe Colomb ?', correct:'L\'Espagne (Isabelle de Castille)', choices:['Le Portugal','La France','L\'Espagne (Isabelle de Castille)','L\'Angleterre'] },
+  { q:'Vasco de Gama ouvre la route maritime vers…', correct:'Les Indes (Asie), en contournant l\'Afrique', choices:['L\'Amérique du Nord','L\'Australie','Les Indes (Asie), en contournant l\'Afrique','Le Japon, par le nord'] },
+  { q:'Que signifie "Grandes Découvertes" pour les peuples d\'Amérique ?', correct:'La conquête et la colonisation par les Européens, souvent violentes', choices:['Une rencontre pacifique','La découverte de la démocratie','La conquête et la colonisation par les Européens, souvent violentes','Un simple échange commercial'] },
+  { q:'Quel roi français incarne la Renaissance au XVIe siècle ?', correct:'François Ier', choices:['Louis XIV','Henri IV','François Ier','Napoléon'] },
+], 'ex1');
+
+buildQCM([
+  { q:'Quel surnom célèbre donne-t-on à Louis XIV ?', correct:'Le Roi-Soleil', choices:['Le Grand Monarque','Le Roi-Soleil','Le Roi-Fer','Le Bien-Aimé'] },
+  { q:'Qu\'est-ce que la "monarchie absolue" de Louis XIV ?', correct:'Le roi détient tout le pouvoir, sans contrôle du Parlement', choices:['Le roi partage son pouvoir avec des élus','Le roi détient tout le pouvoir, sans contrôle du Parlement','Le roi est élu par le peuple','Le roi est contrôlé par l\'Église'] },
+  { q:'Quel grand château Louis XIV fait-il construire ?', correct:'Le château de Versailles', choices:['Le Louvre','Le château de Chambord','Le château de Versailles','Le château de Fontainebleau'] },
+  { q:'Quelle phrase résume la philosophie de gouvernement de Louis XIV ?', correct:'"L\'État, c\'est moi"', choices:['"Vive la France !"','"L\'État, c\'est moi"','"Liberté, Égalité, Fraternité"','"Paris vaut bien une messe"'] },
+], 'ex2');
+
+buildQCM([
+  { q:'En quelle année commence la Révolution française ?', correct:'1789', choices:['1715','1789','1804','1815'] },
+  { q:'Quel événement symbolique déclenche la Révolution le 14 juillet 1789 ?', correct:'La prise de la Bastille à Paris', choices:['L\'exécution du roi','La prise de la Bastille à Paris','La fuite de la famille royale','La proclamation de la République'] },
+  { q:'Que proclame la Déclaration des droits de l\'Homme et du citoyen (1789) ?', correct:'La liberté et l\'égalité de tous les hommes en droit', choices:['La monarchie absolue','La liberté de religion seulement','La liberté et l\'égalité de tous les hommes en droit','La suppression des impôts'] },
+  { q:'Quel général devient Empereur des Français en 1804 ?', correct:'Napoléon Bonaparte', choices:['Louis XVIII','Napoléon Bonaparte','Charles de Gaulle','Maximilien de Robespierre'] },
+], 'ex3');
+
+buildQCM([
+  { q:'Qu\'est-ce que la "Révolution industrielle" (XIXe siècle) ?', correct:'Le passage de la fabrication à la main vers les machines et les usines', choices:['Une révolution politique','Le passage de la fabrication à la main vers les machines et les usines','L\'invention de l\'imprimerie','La découverte de l\'électricité seulement'] },
+  { q:'Quelles sont les dates de la Première Guerre mondiale ?', correct:'1914–1918', choices:['1870–1871','1914–1918','1939–1945','1940–1944'] },
+  { q:'Qu\'est-ce que la Résistance pendant la Seconde Guerre mondiale ?', correct:'Les Français qui refusent l\'occupation nazie et combattent clandestinement', choices:['L\'armée officielle de France','Les Français qui refusent l\'occupation nazie et combattent clandestinement','Un parti politique','Les alliés américains en France'] },
+  { q:'En quelle année la France est-elle libérée de l\'occupation allemande ?', correct:'1944 (Débarquement du 6 juin)', choices:['1942','1943','1944 (Débarquement du 6 juin)','1945'] },
+], 'ex4');
+
+buildVF([
+  { q:'Christophe Colomb cherchait une route vers les Indes quand il a trouvé l\'Amérique.', correct:true },
+  { q:'Louis XIV est surnommé le "Roi de Fer".', correct:false, expl:'Louis XIV est surnommé le "Roi-Soleil". Le "Masque de Fer" est un prisonnier mystérieux de son époque.' },
+  { q:'La prise de la Bastille a lieu le 14 juillet 1789.', correct:true },
+  { q:'Napoléon Bonaparte devient Président de la République en 1804.', correct:false, expl:'Napoléon Bonaparte devient EMPEREUR des Français en 1804, pas Président.' },
+  { q:'La Première Guerre mondiale (1914–1918) est aussi appelée la "Grande Guerre".', correct:true },
+  { q:'Le Débarquement allié en Normandie a lieu le 6 juin 1944.', correct:true },
+  { q:'La Révolution industrielle repose sur le retour au travail artisanal à la main.', correct:false, expl:'La Révolution industrielle au contraire développe les MACHINES et les usines, au détriment du travail artisanal.' },
+], 'ex5');
+
+buildPaires([
+  { q:'Associe chaque date à l\'événement correspondant.',
+    pairs:[['1492','Christophe Colomb arrive en Amérique'],['1789','Prise de la Bastille — Révolution française'],['1804','Napoléon couronné Empereur'],['1944','Débarquement en Normandie']] },
+  { q:'Associe chaque personnage historique à sa description.',
+    pairs:[['Louis XIV','Roi-Soleil, règne à Versailles'],['Napoléon Bonaparte','Général devenu Empereur en 1804'],['Vasco de Gama','Navigateur portugais, route des Indes'],['Robespierre','Figure de la Révolution française, la Terreur']] },
+], 'ex6');
+
+buildTri([
+  { q:'Classe ces événements dans la bonne période historique.',
+    cats:['XVe–XVIIe s. (Temps modernes)','XVIIIe–XIXe s. (Révolution / Empire)','XXe siècle'],
+    items:[
+      {v:'Grandes Découvertes (1492)', cat:'XVe–XVIIe s. (Temps modernes)'},
+      {v:'Révolution française (1789)', cat:'XVIIIe–XIXe s. (Révolution / Empire)'},
+      {v:'Première Guerre mondiale (1914)', cat:'XXe siècle'},
+      {v:'Louis XIV et Versailles (1661–1715)', cat:'XVe–XVIIe s. (Temps modernes)'},
+      {v:'Napoléon Empereur (1804)', cat:'XVIIIe–XIXe s. (Révolution / Empire)'},
+      {v:'Débarquement en Normandie (1944)', cat:'XXe siècle'},
+      {v:'François Ier et la Renaissance (1515)', cat:'XVe–XVIIe s. (Temps modernes)'},
+      {v:'Révolution industrielle (XIXe s.)', cat:'XVIIIe–XIXe s. (Révolution / Empire)'},
+    ]
+  },
+], 'ex7');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="related.js"></script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="École Facile">
+<meta name="application-name" content="École Facile">
+<meta property="og:site_name" content="École Facile">
+<link rel="manifest" href="manifest.json">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Histoire-Géographie — CM1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.hg-frise{display:flex;gap:0;margin:12px auto;overflow-x:auto;max-width:100%;align-items:flex-start;}
+.hg-frise-item{display:flex;flex-direction:column;align-items:center;min-width:80px;padding:0 2px;position:relative;}
+.hg-frise-bar{height:8px;width:100%;flex-shrink:0;}
+.hg-frise-dot{width:16px;height:16px;border-radius:50%;border:3px solid white;flex-shrink:0;margin:0 auto;margin-top:-4px;}
+.hg-frise-date{font-size:0.56rem;font-weight:900;color:#4b5563;margin-top:2px;text-align:center;}
+.hg-frise-label{font-size:0.6rem;font-weight:900;margin-top:2px;text-align:center;line-height:1.3;padding:0 2px;}
+.geo-grid{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:8px 0;}
+.geo-item{background:#dbeafe;border:2px solid #93c5fd;border-radius:10px;padding:6px 10px;font-size:0.7rem;font-weight:900;color:#1e40af;text-align:center;}
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background:linear-gradient(135deg,#1d4ed8,#93c5fd);">
+  <span class="emoji-header">🏛️</span>
+  <h1>Histoire &amp; Géographie</h1>
+  <p>Antiquité, Moyen Âge, France et le monde</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+  <div class="badge-niveau">🎯 CM1 — Histoire &amp; Géographie</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens — La frise chronologique</div>
+    <div class="hg-frise">
+      <div class="hg-frise-item">
+        <div class="hg-frise-bar" style="background:#fef9c3;"></div>
+        <div class="hg-frise-dot" style="background:#ca8a04;"></div>
+        <div class="hg-frise-date">-800 à -146</div>
+        <div class="hg-frise-label" style="color:#713f12;">🏺 Grèce<br>antique</div>
+      </div>
+      <div class="hg-frise-item">
+        <div class="hg-frise-bar" style="background:#fee2e2;"></div>
+        <div class="hg-frise-dot" style="background:#dc2626;"></div>
+        <div class="hg-frise-date">-753 à 476</div>
+        <div class="hg-frise-label" style="color:#7f1d1d;">🦅 Rome<br>antique</div>
+      </div>
+      <div class="hg-frise-item">
+        <div class="hg-frise-bar" style="background:#ede9fe;"></div>
+        <div class="hg-frise-dot" style="background:#7c3aed;"></div>
+        <div class="hg-frise-date">481–751</div>
+        <div class="hg-frise-label" style="color:#4c1d95;">👑 Méro-<br>vingiens</div>
+      </div>
+      <div class="hg-frise-item">
+        <div class="hg-frise-bar" style="background:#dbeafe;"></div>
+        <div class="hg-frise-dot" style="background:#1d4ed8;"></div>
+        <div class="hg-frise-date">768–814</div>
+        <div class="hg-frise-label" style="color:#1e3a8a;">⚜️ Charle-<br>magne</div>
+      </div>
+      <div class="hg-frise-item">
+        <div class="hg-frise-bar" style="background:#dcfce7;"></div>
+        <div class="hg-frise-dot" style="background:#16a34a;"></div>
+        <div class="hg-frise-date">987–1328</div>
+        <div class="hg-frise-label" style="color:#14532d;">🏰 Capo-<br>tiens</div>
+      </div>
+    </div>
+    <div style="font-size:0.88rem;color:#555;line-height:1.9;">
+      🏺 <strong>Grèce antique</strong> : démocratie athénienne, cités-États, Jeux olympiques<br>
+      🦅 <strong>Rome</strong> : République puis Empire · Jules César · chute en 476<br>
+      ✝️ <strong>Christianisme</strong> : se répand sous l'Empire romain (Constantin, 313)<br>
+      ⚜️ <strong>Charlemagne</strong> : couronné Empereur en 800, école obligatoire<br>
+      🌍 <strong>France</strong> : pays de l'UE, 67 millions d'hab., 5 grandes régions naturelles
+    </div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#1d4ed8">
+    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8">Ex 1</span> La Grèce antique <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#dc2626">
+    <div class="ex-title"><span class="ex-badge" style="background:#dc2626">Ex 2</span> Rome antique <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 3</span> Le Moyen Âge — Charlemagne et les Capétiens <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0369a1">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1">Ex 4</span> Géographie — France et Europe <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 5</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Personnages et époques <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 7</span> Classer dans le temps <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex7"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">École Facile — CM1</footer>
+
+<script src="exercises.js"></script>
+<script>
+buildQCM([
+  { q:'Comment s\'appelle la ville grecque célèbre pour avoir inventé la démocratie ?', correct:'Athènes', choices:['Sparte','Athènes','Corinthe','Olympie'] },
+  { q:'Que signifie "démocratie" en grec ?', correct:'Le pouvoir (kratos) du peuple (demos)', choices:['Le pouvoir d\'un roi','Le pouvoir (kratos) du peuple (demos)','Le pouvoir des dieux','Le pouvoir des soldats'] },
+  { q:'Où se déroulaient les premiers Jeux olympiques ?', correct:'À Olympie (Grèce)', choices:['À Athènes','À Rome','À Olympie (Grèce)','À Sparte'] },
+  { q:'Que sont les "cités-États" grecques ?', correct:'Des villes indépendantes qui se gouvernent elles-mêmes', choices:['Des villes dépendant d\'un roi central','Des villes indépendantes qui se gouvernent elles-mêmes','Des colonies romaines','Des temples grecs'] },
+  { q:'Quel monument athénien est dédié à la déesse Athéna ?', correct:'Le Parthénon', choices:['Le Colisée','Le Panthéon','Le Parthénon','L\'Agora'] },
+], 'ex1');
+
+buildQCM([
+  { q:'Rome a été fondée (selon la légende) en…', correct:'-753 av. J.-C.', choices:['-500 av. J.-C.','-753 av. J.-C.','-1000 av. J.-C.','100 apr. J.-C.'] },
+  { q:'Quelle est la différence entre la République romaine et l\'Empire romain ?', correct:'La République est gouvernée par le Sénat, l\'Empire par un Empereur', choices:['Il n\'y a aucune différence','La République est gouvernée par le Sénat, l\'Empire par un Empereur','L\'Empire est plus ancien','La République n\'existait pas à Rome'] },
+  { q:'En quelle année l\'Empire romain d\'Occident chute-t-il ?', correct:'476 apr. J.-C.', choices:['52 av. J.-C.','313 apr. J.-C.','476 apr. J.-C.','800 apr. J.-C.'] },
+  { q:'Quel monument romain célèbre servait aux combats de gladiateurs ?', correct:'Le Colisée', choices:['Le Panthéon','Le Forum','Le Colisée','L\'Arc de Triomphe'] },
+  { q:'En 313, l\'Édit de Milan signé par l\'Empereur Constantin autorise…', correct:'La liberté de culte chrétien dans l\'Empire', choices:['L\'esclavage dans l\'Empire','La liberté de culte chrétien dans l\'Empire','La conquête de la Gaule','La création des légions romaines'] },
+], 'ex2');
+
+buildQCM([
+  { q:'Qui est Charlemagne ?', correct:'Roi des Francs couronné Empereur en 800', choices:['Un pharaon égyptien','Roi des Francs couronné Empereur en 800','Un général romain','Un roi grec'] },
+  { q:'Quelle grande réforme scolaire Charlemagne impose-t-il ?', correct:'L\'obligation d\'ouvrir des écoles près des cathédrales et monastères', choices:['La suppression des écoles','L\'obligation d\'ouvrir des écoles près des cathédrales et monastères','L\'invention de l\'imprimerie','La création des universités'] },
+  { q:'Qui est Hugues Capet ?', correct:'Le premier roi de la dynastie capétienne (987)', choices:['Un roi mérovingien','Un général romain','Le premier roi de la dynastie capétienne (987)','Un roi carolingien'] },
+  { q:'À quoi servait un château fort au Moyen Âge ?', correct:'À protéger le seigneur et ses habitants des attaques', choices:['À stocker des récoltes','À protéger le seigneur et ses habitants des attaques','À accueillir les marchands','À abriter les moines'] },
+  { q:'Comment s\'appelle la grande construction religieuse au cœur des villes médiévales ?', correct:'La cathédrale', choices:['Le château','La mosquée','Le forum','La cathédrale'] },
+], 'ex3');
+
+buildQCM([
+  { q:'Combien la France compte-t-elle d\'habitants environ ?', correct:'67 millions', choices:['45 millions','52 millions','67 millions','80 millions'] },
+  { q:'Quelle est la capitale de la France ?', correct:'Paris', choices:['Lyon','Marseille','Paris','Bordeaux'] },
+  { q:'La France fait partie de quelle grande organisation européenne ?', correct:'L\'Union Européenne (UE)', choices:['L\'ONU seulement','L\'Alliance atlantique','L\'Union Européenne (UE)','Le Commonwealth'] },
+  { q:'Quel fleuve traverse Paris ?', correct:'La Seine', choices:['La Loire','Le Rhône','La Garonne','La Seine'] },
+  { q:'Comment appelle-t-on les habitants de la France ?', correct:'Les Français', choices:['Les Francs','Les Gaulois','Les Français','Les Europénns'] },
+], 'ex4');
+
+buildVF([
+  { q:'La démocratie a été inventée à Athènes, en Grèce.', correct:true },
+  { q:'L\'Empire romain d\'Occident chute en 52 av. J.-C.', correct:false, expl:'L\'Empire romain d\'Occident chute en 476 apr. J.-C., pas en 52 av. J.-C. (qui est la date de la défaite de Vercingétorix à Alésia).' },
+  { q:'Charlemagne est couronné Empereur en l\'an 800.', correct:true },
+  { q:'Les Jeux olympiques antiques se déroulaient à Athènes.', correct:false, expl:'Les Jeux olympiques antiques se déroulaient à Olympie, pas à Athènes.' },
+  { q:'La Loire est le plus long fleuve de France.', correct:true },
+  { q:'Hugues Capet est le premier roi de la dynastie mérovingienne.', correct:false, expl:'Hugues Capet est le premier roi de la dynastie CAPÉTIENNE (987). Les Mérovingiens sont plus anciens (Clovis, 481).' },
+  { q:'Constantin autorise le christianisme dans l\'Empire romain en 313.', correct:true },
+], 'ex5');
+
+buildPaires([
+  { q:'Associe chaque personnage à sa description.',
+    pairs:[['Jules César','Général romain, conquérant de la Gaule'],['Charlemagne','Roi des Francs couronné Empereur en 800'],['Hugues Capet','1er roi capétien (987)'],['Constantin','Empereur romain qui autorise le christianisme']] },
+  { q:'Associe chaque lieu à sa civilisation.',
+    pairs:[['Le Parthénon','Grèce antique'],['Le Colisée','Rome antique'],['La cathédrale Notre-Dame','Moyen Âge'],['Alésia','Gaule romaine']] },
+], 'ex6');
+
+buildTri([
+  { q:'Classe ces événements dans la bonne période historique.',
+    cats:['Antiquité','Moyen Âge'],
+    items:[
+      {v:'Démocratie à Athènes', cat:'Antiquité'},
+      {v:'Charlemagne couronné Empereur', cat:'Moyen Âge'},
+      {v:'Fondation de Rome (-753)', cat:'Antiquité'},
+      {v:'Hugues Capet roi de France', cat:'Moyen Âge'},
+      {v:'Édit de Milan (313)', cat:'Antiquité'},
+      {v:'Construction des cathédrales gothiques', cat:'Moyen Âge'},
+      {v:'Jeux olympiques antiques à Olympie', cat:'Antiquité'},
+      {v:'Clovis roi des Francs (481)', cat:'Moyen Âge'},
+    ]
+  },
+], 'ex7');
+</script>
+
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="related.js"></script>
+</body>
+</html>

@@ -47,7 +47,7 @@
     'solides.html':         [{h:'geometrie.html',l:'Géométrie plane CE2'},{h:'geometrie-ce2.html',l:'Géométrie CE2'},{h:'solides-cm1.html',l:'Solides CM1 — étape suivante'}],
     'donnees.html':         [{h:'donnees-ce1.html',l:'Données CE1 — révision'},{h:'donnees-cm1.html',l:'Données CM1 — étape suivante'}],
     'problemes.html':       [{h:'calcul.html',l:'Les opérations CE2'},{h:'division-ce2.html',l:'Division euclidienne CE2'},{h:'problemes-ce1.html',l:'Problèmes CE1 — révision'},{h:'problemes-cm1.html',l:'Problèmes CM1 — étape suivante'}],
-    'histoire-geo-ce2.html':[{h:'histoire-geo-ce1.html',l:'Histoire-Géo CE1 — révision'},{h:'eps-cycle2.html',l:'EPS Cycle 2'}],
+    'histoire-geo-ce2.html':[{h:'histoire-geo-ce1.html',l:'Histoire-Géo CE1 — révision'},{h:'histoire-geo-cm1.html',l:'Histoire-Géo CM1 — étape suivante'},{h:'eps-cycle2.html',l:'EPS Cycle 2'}],
 
     /* ── CM1 ── */
     'nombres-cm1.html':     [{h:'decimaux-cm1.html',l:'Nombres décimaux CM1'},{h:'fractions-cm1.html',l:'Fractions CM1'},{h:'nombres-ce2.html',l:'Les nombres CE2 — révision'},{h:'nombres-cm2.html',l:'Très grands nombres CM2 — étape suivante'}],
@@ -63,6 +63,7 @@
     'donnees-cm1.html':     [{h:'proportionnalite-cm1.html',l:'Proportionnalité CM1'},{h:'donnees.html',l:'Données CE2 — révision'},{h:'donnees-cm2.html',l:'Statistiques CM2 — étape suivante'}],
     'proportionnalite-cm1.html':[{h:'decimaux-cm1.html',l:'Décimaux CM1'},{h:'fractions-cm1.html',l:'Fractions CM1'},{h:'proportionnalite-cm2.html',l:'Proportionnalité CM2 — étape suivante'}],
     'problemes-cm1.html':   [{h:'calcul-cm1.html',l:'Les 4 opérations CM1'},{h:'proportionnalite-cm1.html',l:'Proportionnalité CM1'},{h:'problemes.html',l:'Problèmes CE2 — révision'},{h:'problemes-cm2.html',l:'Problèmes CM2 — étape suivante'}],
+    'histoire-geo-cm1.html':[{h:'histoire-geo-ce2.html',l:'Histoire-Géo CE2 — révision'},{h:'histoire-geo-cm2.html',l:'Histoire-Géo CM2 — étape suivante'},{h:'eps-cycle3.html',l:'EPS Cycle 3'}],
 
     /* ── CM2 ── */
     'nombres-cm2.html':     [{h:'decimaux-cm2.html',l:'Décimaux CM2'},{h:'fractions-cm2.html',l:'Fractions CM2'},{h:'nombres-cm1.html',l:'Grands nombres CM1 — révision'},{h:'nombres-6e.html',l:'Nombres 6e — étape suivante'}],
@@ -77,6 +78,7 @@
     'geometrie-cm2.html':   [{h:'mesures-cm2.html',l:'Mesures CM2'},{h:'geometrie-cm1.html',l:'Géométrie CM1 — révision'},{h:'geometrie-6e.html',l:'Géométrie 6e — étape suivante'}],
     'donnees-cm2.html':     [{h:'proportionnalite-cm2.html',l:'Proportionnalité CM2'},{h:'donnees-cm1.html',l:'Données CM1 — révision'},{h:'donnees-6e.html',l:'Statistiques 6e — étape suivante'}],
     'proportionnalite-cm2.html':[{h:'fractions-cm2.html',l:'Fractions CM2'},{h:'proportionnalite-cm1.html',l:'Proportionnalité CM1 — révision'},{h:'proportionnalite-6e.html',l:'Proportionnalité 6e — étape suivante'}],
+    'histoire-geo-cm2.html':[{h:'histoire-geo-cm1.html',l:'Histoire-Géo CM1 — révision'},{h:'histoire-geo-6e.html',l:'Histoire-Géo 6e — étape suivante'},{h:'eps-cycle3.html',l:'EPS Cycle 3'}],
 
     /* ── 6e ── */
     'nombres-6e.html':      [{h:'fractions-6e.html',l:'Fractions 6e'},{h:'algebre-6e.html',l:'Algèbre 6e'},{h:'nombres-cm2.html',l:'Très grands nombres CM2 — révision'}],
@@ -88,10 +90,11 @@
     'mesures-6e.html':      [{h:'geometrie-6e.html',l:'Géométrie 6e'},{h:'mesures-cm2.html',l:'Mesures CM2 — révision'}],
     'donnees-6e.html':      [{h:'probabilites-6e.html',l:'Probabilités 6e'},{h:'proportionnalite-6e.html',l:'Proportionnalité 6e'},{h:'donnees-cm2.html',l:'Données CM2 — révision'}],
     'proportionnalite-6e.html':[{h:'fractions-6e.html',l:'Fractions 6e'},{h:'algebre-6e.html',l:'Algèbre 6e'},{h:'proportionnalite-cm2.html',l:'Proportionnalité CM2 — révision'}],
+    'histoire-geo-6e.html': [{h:'histoire-geo-cm2.html',l:'Histoire-Géo CM2 — révision'},{h:'eps-cycle3.html',l:'EPS Cycle 3'}],
 
     /* ── EPS ── */
     'eps-cycle2.html':      [{h:'eps-cycle3.html',l:'EPS Cycle 3 — CM1/CM2/6e'},{h:'histoire-geo-cp.html',l:'Histoire-Géo CP'},{h:'histoire-geo-ce1.html',l:'Histoire-Géo CE1'},{h:'histoire-geo-ce2.html',l:'Histoire-Géo CE2'}],
-    'eps-cycle3.html':      [{h:'eps-cycle2.html',l:'EPS Cycle 2 — CP/CE1/CE2'}],
+    'eps-cycle3.html':      [{h:'eps-cycle2.html',l:'EPS Cycle 2 — CP/CE1/CE2'},{h:'histoire-geo-cm1.html',l:'Histoire-Géo CM1'},{h:'histoire-geo-cm2.html',l:'Histoire-Géo CM2'},{h:'histoire-geo-6e.html',l:'Histoire-Géo 6e'}],
   };
 
   var cur = window.location.pathname.split('/').pop() || 'index.html';
