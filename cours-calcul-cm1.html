@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/cours-calcul-cm1.html">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Les 4 opérations — Cours CM1 | École Facile</title>
+<meta name="description" content="Cours CM1 : multiplication posée 2×2 chiffres, division décimale, priorités des opérations, calcul mental avancé.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/cours-calcul-cm1.html">
+<meta property="og:title" content="Les 4 opérations — Cours CM1 | École Facile">
+<meta property="og:description" content="Cours CM1 : multiplication posée 2×2 chiffres, division décimale, priorités des opérations, calcul mental avancé.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+body{font-family:'Nunito',sans-serif;background:#eff6ff;color:#1e1b4b;margin:0}
+main{max-width:720px;margin:0 auto;padding:22px 18px 60px}
+.cs{margin-bottom:26px}
+.cs h2{font-size:1.1rem;font-weight:900;margin:0 0 12px;padding-bottom:7px;border-bottom:2.5px solid #bfdbfe;color:#1e3a8a}
+.dbox{background:#dbeafe;border-left:4px solid #1d4ed8;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.dbox .lbl{font-size:.65rem;font-weight:900;color:#1d4ed8;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.dbox p,.dbox ul{font-size:.9rem;font-weight:700;color:#1e3a8a;margin:0;line-height:1.6}
+.ebox{background:#fef9c3;border-left:4px solid #ca8a04;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.ebox .lbl{font-size:.65rem;font-weight:900;color:#92400e;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.ebox p,.ebox ul{font-size:.9rem;font-weight:700;color:#713f12;margin:0;line-height:1.6}
+.rbox{background:#dcfce7;border-left:4px solid #16a34a;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.rbox .lbl{font-size:.65rem;font-weight:900;color:#15803d;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.rbox p,.rbox ul{font-size:.9rem;font-weight:700;color:#14532d;margin:0;line-height:1.6}
+.wbox{background:#fee2e2;border-left:4px solid #dc2626;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.wbox .lbl{font-size:.65rem;font-weight:900;color:#dc2626;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.wbox p,.wbox ul{font-size:.9rem;font-weight:700;color:#991b1b;margin:0;line-height:1.6}
+.retenir{background:#fff;border:2.5px solid #1d4ed8;border-radius:16px;padding:16px 18px;margin:22px 0 18px}
+.retenir h3{font-size:.78rem;font-weight:900;color:#1d4ed8;text-transform:uppercase;letter-spacing:1px;margin:0 0 10px}
+.retenir ul{margin:0;padding-left:18px}
+.retenir li{font-size:.88rem;font-weight:700;color:#1e1b4b;line-height:1.7}
+.cta{text-align:center;margin-top:26px;padding:18px;background:#fff;border-radius:16px;border:2px solid #bfdbfe}
+.cta p{font-size:.82rem;color:#6b7280;font-weight:700;margin:0 0 10px}
+.btn-ex{display:inline-block;background:linear-gradient(135deg,#1d4ed8,#3b82f6);color:#fff;padding:13px 26px;border-radius:13px;font-size:.95rem;font-weight:900;text-decoration:none;box-shadow:0 4px 12px rgba(29,78,216,.3)}
+.vgrid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));margin:10px 0}
+.vcrd{background:#fff;border:2px solid #bfdbfe;border-radius:11px;padding:9px;text-align:center}
+.vcrd .vl{font-size:.7rem;font-weight:900;color:#1d4ed8;margin-bottom:4px}
+.vcrd .vv{font-size:1.1rem;font-weight:900;color:#1e3a8a}
+.vcrd .vs{font-size:.68rem;font-weight:700;color:#9ca3af;margin-top:2px}
+.frise{display:flex;flex-direction:column;gap:0;margin:12px 0}
+.frise-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid #bfdbfe}
+.frise-item:last-child{border-bottom:none}
+.frise-dot{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#1d4ed8,#3b82f6);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:900;color:#fff;flex-shrink:0}
+.frise-content{flex:1}
+.frise-date{font-size:.68rem;font-weight:900;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px;color:#1d4ed8}
+.frise-text{font-size:.88rem;font-weight:700;line-height:1.5}
+.formula-card{background:linear-gradient(135deg,#1e3a8a,#1d4ed8);color:white;border-radius:16px;padding:14px 18px;margin:12px 0;text-align:center}
+.formula-card .fc-label{font-size:.65rem;font-weight:900;opacity:.75;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.formula-card .fc-formula{font-size:1.2rem;font-weight:900;letter-spacing:.5px}
+.formula-card .fc-desc{font-size:.8rem;opacity:.85;margin-top:5px;font-weight:700}
+.badge-niveau{display:inline-block;background:rgba(255,255,255,.2);border-radius:20px;padding:4px 14px;font-size:.72rem;font-weight:900;letter-spacing:1px;margin-bottom:8px}
+.cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
+.cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
+.cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.site-footer{text-align:center;padding:16px;font-size:.8rem;color:#9ca3af;border-top:1px solid #e5e7eb;margin-top:10px}
+</style>
+</head>
+<body>
+<header class="cours-header" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6)">
+  <div class="badge-niveau">CM1</div>
+  <h1>🔢 Les 4 opérations</h1>
+  <p>Multiplication et division posées, priorités, calcul mental</p>
+</header>
+<main>
+
+<section class="cs">
+  <h2>1. Rappel — les 4 opérations</h2>
+  <div class="vgrid">
+    <div class="vcrd"><div class="vl">Addition</div><div class="vv">a + b</div><div class="vs">termes → somme</div></div>
+    <div class="vcrd"><div class="vl">Soustraction</div><div class="vv">a − b</div><div class="vs">différence</div></div>
+    <div class="vcrd"><div class="vl">Multiplication</div><div class="vv">a × b</div><div class="vs">facteurs → produit</div></div>
+    <div class="vcrd"><div class="vl">Division</div><div class="vv">a ÷ b</div><div class="vs">dividende ÷ diviseur = quotient</div></div>
+  </div>
+  <div class="rbox"><div class="lbl">Vérifications</div>
+  <ul>
+    <li>Addition : soustraction inverse (a+b=c → c−b=a)</li>
+    <li>Multiplication : division inverse (a×b=c → c÷b=a)</li>
+  </ul></div>
+</section>
+
+<section class="cs">
+  <h2>2. Multiplication posée — 2 × 2 chiffres</h2>
+  <div class="dbox"><div class="lbl">Méthode : exemple 34 × 27</div></div>
+  <div class="frise">
+    <div class="frise-item"><div class="frise-dot">1</div><div class="frise-content"><div class="frise-date">Multiplier par les unités</div><div class="frise-text">34 × 7 = 238 (ligne du bas)</div></div></div>
+    <div class="frise-item"><div class="frise-dot">2</div><div class="frise-content"><div class="frise-date">Multiplier par les dizaines</div><div class="frise-text">34 × 20 = 680 → décaler d'une colonne vers la gauche (ou ajouter un 0)</div></div></div>
+    <div class="frise-item"><div class="frise-dot">3</div><div class="frise-content"><div class="frise-date">Additionner les deux lignes</div><div class="frise-text">238 + 680 = <strong>918</strong></div></div></div>
+  </div>
+  <div class="formula-card">
+    <div class="fc-label">Résultat</div>
+    <div class="fc-formula">34 × 27 = 918</div>
+    <div class="fc-desc">Vérif : 27 × 34 = 918 (commutativité ✓)</div>
+  </div>
+  <div class="wbox"><div class="lbl">Erreur fréquente</div>
+  <p>Ne pas oublier le <strong>décalage</strong> d'une colonne pour la ligne des dizaines ! 34 × 20 ≠ 34 × 2.</p></div>
+</section>
+
+<section class="cs">
+  <h2>3. Division posée — grands nombres</h2>
+  <div class="dbox"><div class="lbl">Exemple : 756 ÷ 12</div></div>
+  <div class="frise">
+    <div class="frise-item"><div class="frise-dot">1</div><div class="frise-content"><div class="frise-date">Prendre les premiers chiffres</div><div class="frise-text">75 ÷ 12 : combien de fois 12 entre dans 75 ? → 6 fois (6 × 12 = 72)</div></div></div>
+    <div class="frise-item"><div class="frise-dot">2</div><div class="frise-content"><div class="frise-date">Soustraire et abaisser</div><div class="frise-text">75 − 72 = 3, abaisser le 6 → reste 36</div></div></div>
+    <div class="frise-item"><div class="frise-dot">3</div><div class="frise-content"><div class="frise-date">Continuer</div><div class="frise-text">36 ÷ 12 = 3 (exactement) → quotient : <strong>63</strong>, reste : 0</div></div></div>
+    <div class="frise-item"><div class="frise-dot">4</div><div class="frise-content"><div class="frise-date">Vérifier</div><div class="frise-text">63 × 12 = 756 ✓</div></div></div>
+  </div>
+  <div class="ebox"><div class="lbl">Division avec reste</div>
+  <p>Si la division n'est pas exacte : dividende = diviseur × quotient + reste<br>
+  Ex : 85 ÷ 7 = 12 reste 1 → vérif : 7 × 12 + 1 = 85 ✓</p></div>
+</section>
+
+<section class="cs">
+  <h2>4. Priorité des opérations</h2>
+  <div class="formula-card">
+    <div class="fc-label">Règle des priorités</div>
+    <div class="fc-formula">( ) puis × ÷ puis + −</div>
+    <div class="fc-desc">Parenthèses d'abord, puis × et ÷, enfin + et −</div>
+  </div>
+  <div class="ebox"><div class="lbl">Exemples</div>
+  <ul>
+    <li>3 + 4 × 2 = 3 + <strong>8</strong> = <strong>11</strong> (pas 14 !)</li>
+    <li>(3 + 4) × 2 = <strong>7</strong> × 2 = <strong>14</strong></li>
+    <li>20 − 3 × 5 + 4 = 20 − <strong>15</strong> + 4 = <strong>9</strong></li>
+    <li>12 ÷ (2 + 1) = 12 ÷ <strong>3</strong> = <strong>4</strong></li>
+  </ul></div>
+  <div class="wbox"><div class="lbl">Piège classique</div>
+  <p>Sans parenthèses, <strong>× et ÷ passent avant + et −</strong>, même s'ils sont écrits après !</p></div>
+</section>
+
+<section class="cs">
+  <h2>5. Calcul mental — astuces CM1</h2>
+  <div class="dbox"><div class="lbl">Multiplications astucieuses</div>
+  <ul>
+    <li><strong>× 11</strong> : × 10 + le nombre lui-même — ex : 13 × 11 = 130 + 13 = 143</li>
+    <li><strong>× 9</strong> : × 10 − le nombre — ex : 7 × 9 = 70 − 7 = 63</li>
+    <li><strong>× 25</strong> : ÷ 4 × 100 — ex : 12 × 25 = 3 × 100 = 300</li>
+    <li><strong>× 5</strong> : ÷ 2 × 10 — ex : 14 × 5 = 7 × 10 = 70</li>
+  </ul></div>
+  <div class="rbox"><div class="lbl">Compensation pour + et −</div>
+  <p>47 + 38 = 45 + 40 = 85 (on a ajouté 3 à 38 et soustrait 3 à 47)<br>
+  63 − 28 = 65 − 30 = 35 (on a ajouté 2 aux deux)</p></div>
+</section>
+
+<div class="retenir">
+  <h3>📌 À retenir</h3>
+  <ul>
+    <li>Multiplication 2×2 : lignes des unités + décalage pour les dizaines, puis additionner</li>
+    <li>Division posée : prendre les premiers chiffres, soustraire, abaisser, répéter</li>
+    <li>Priorités : parenthèses → × ÷ → + −</li>
+    <li>× 11 = × 10 + n | × 9 = × 10 − n | × 25 = ÷ 4 × 100</li>
+  </ul>
+</div>
+
+<div class="cta">
+  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
+  <a href="calcul-cm1.html" class="btn-ex">Faire les exercices CM1 →</a>
+</div>
+
+</main>
+<footer class="site-footer">École Facile — Cours CM1 · Les 4 opérations</footer>
+<script src="sync.js"></script>
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>

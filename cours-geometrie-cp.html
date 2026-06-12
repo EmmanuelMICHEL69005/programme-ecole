@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/cours-geometrie-cp.html">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>📐 La géométrie — Cours CP | École Facile</title>
+<meta name="description" content="Cours géométrie CP : formes planes, solides 3D, repérage dans l'espace, symétrie. Carré, rectangle, triangle, cercle avec visuels colorés pour CP.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/cours-geometrie-cp.html">
+<meta property="og:title" content="La géométrie — Cours CP | École Facile">
+<meta property="og:description" content="Cours géométrie CP : formes planes, solides, repérage dans l'espace, symétrie.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+body{font-family:'Nunito',sans-serif;background:#f0fdf4;color:#1e1b4b;margin:0}
+main{max-width:720px;margin:0 auto;padding:22px 18px 60px}
+.cs{margin-bottom:28px}
+.cs h2{font-size:1.15rem;font-weight:900;margin:0 0 14px;padding-bottom:8px;border-bottom:3px solid #bbf7d0;color:#166534}
+.dbox{background:#dbeafe;border-left:5px solid #1d4ed8;border-radius:0 16px 16px 0;padding:14px 16px;margin:10px 0}
+.dbox .lbl{font-size:.65rem;font-weight:900;color:#1d4ed8;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.dbox p,.dbox ul{font-size:.95rem;font-weight:700;color:#1e3a8a;margin:0;line-height:1.6}
+.ebox{background:#fef9c3;border-left:5px solid #ca8a04;border-radius:0 16px 16px 0;padding:14px 16px;margin:10px 0}
+.ebox .lbl{font-size:.65rem;font-weight:900;color:#92400e;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.ebox p,.ebox ul{font-size:.95rem;font-weight:700;color:#713f12;margin:0;line-height:1.6}
+.rbox{background:#dcfce7;border-left:5px solid #16a34a;border-radius:0 16px 16px 0;padding:14px 16px;margin:10px 0}
+.rbox .lbl{font-size:.65rem;font-weight:900;color:#15803d;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.rbox p,.rbox ul{font-size:.95rem;font-weight:700;color:#14532d;margin:0;line-height:1.6}
+.wbox{background:#fee2e2;border-left:5px solid #dc2626;border-radius:0 16px 16px 0;padding:14px 16px;margin:10px 0}
+.wbox .lbl{font-size:.65rem;font-weight:900;color:#dc2626;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.wbox p,.wbox ul{font-size:.95rem;font-weight:700;color:#991b1b;margin:0;line-height:1.6}
+.retenir{background:#fff;border:3px solid #16a34a;border-radius:18px;padding:18px 20px;margin:24px 0 20px}
+.retenir h3{font-size:.8rem;font-weight:900;color:#16a34a;text-transform:uppercase;letter-spacing:1px;margin:0 0 12px}
+.retenir ul{margin:0;padding-left:20px}
+.retenir li{font-size:.92rem;font-weight:700;color:#1e1b4b;line-height:1.8}
+.cta{text-align:center;margin-top:28px;padding:20px;background:#fff;border-radius:18px;border:2.5px solid #bbf7d0}
+.cta p{font-size:.85rem;color:#6b7280;font-weight:700;margin:0 0 12px}
+.btn-ex{display:inline-block;background:linear-gradient(135deg,#16a34a,#22c55e);color:#fff;padding:14px 28px;border-radius:14px;font-size:.98rem;font-weight:900;text-decoration:none;box-shadow:0 4px 16px rgba(22,163,74,.4)}
+.vgrid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));margin:10px 0}
+.vcrd{background:#fff;border:2.5px solid #bbf7d0;border-radius:14px;padding:10px;text-align:center}
+.vcrd .vl{font-size:.7rem;font-weight:900;color:#6b7280;margin-bottom:4px}
+.vcrd .vv{font-size:1.1rem;font-weight:900;color:#166534}
+.vcrd .vs{font-size:.68rem;font-weight:700;color:#9ca3af;margin-top:2px}
+.visbox{background:#f0fdf4;border:2.5px solid #bbf7d0;border-radius:16px;padding:16px 12px 12px;margin:14px 0;text-align:center;overflow:hidden}
+.visbox svg{max-width:100%;height:auto;display:block;margin:0 auto}
+.visbox .vis-caption{font-size:.72rem;font-weight:900;color:#6b7280;margin-top:10px}
+.badge-niveau{display:inline-block;background:rgba(255,255,255,.2);border-radius:20px;padding:5px 16px;font-size:.75rem;font-weight:900;letter-spacing:1px;margin-bottom:10px}
+.cours-header{text-align:center;padding:22px 20px 18px;color:#fff}
+.cours-header h1{font-size:1.8rem;font-weight:900;margin:8px 0 5px}
+.cours-header p{font-size:.9rem;opacity:.9;margin:0}
+.site-footer{text-align:center;padding:18px;font-size:.8rem;color:#9ca3af;border-top:1px solid #e5e7eb;margin-top:12px}
+.forme-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:12px 0}
+.forme-card{background:#fff;border:3px solid #86efac;border-radius:16px;padding:14px;text-align:center}
+.forme-card .nom{font-size:1rem;font-weight:900;color:#166534;margin:8px 0 4px}
+.forme-card .info{font-size:.75rem;font-weight:700;color:#6b7280}
+.solide-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:10px 0}
+.solide-card{background:#fffbeb;border:2.5px solid #fcd34d;border-radius:14px;padding:12px;text-align:center}
+.solide-card .nom{font-size:.95rem;font-weight:900;color:#92400e;margin:6px 0 3px}
+.solide-card .ex{font-size:.75rem;font-weight:700;color:#6b7280}
+</style>
+</head>
+<body>
+<header class="cours-header" style="background:linear-gradient(135deg,#16a34a,#22c55e)">
+  <div class="badge-niveau">CP</div>
+  <h1>📐 La géométrie</h1>
+  <p>Formes, solides, espace et symétrie</p>
+</header>
+<main>
+
+<!-- SECTION 1 : Formes planes -->
+<div class="cs">
+<h2>1. Les formes planes 🔷</h2>
+
+<p style="font-size:.95rem;font-weight:700;line-height:1.7">
+Les formes planes sont <strong>plates</strong> (en 2 dimensions).
+Tu les traces sur une feuille. Il y en a 4 à bien connaître en CP.
+</p>
+
+<!-- SVG des 4 grandes formes colorées -->
+<div class="visbox">
+<svg width="340" height="130" viewBox="0 0 340 130">
+  <!-- Carré -->
+  <rect x="15" y="15" width="60" height="60" rx="4" fill="#86efac" stroke="#16a34a" stroke-width="3"/>
+  <text x="45" y="95" text-anchor="middle" font-size="13" font-weight="900" fill="#166534">Carré</text>
+  <text x="45" y="110" text-anchor="middle" font-size="10" font-weight="700" fill="#6b7280">4 côtés égaux</text>
+  <text x="45" y="122" text-anchor="middle" font-size="10" font-weight="700" fill="#6b7280">4 angles droits</text>
+  <!-- Rectangle -->
+  <rect x="100" y="25" width="80" height="50" rx="4" fill="#fca5a5" stroke="#dc2626" stroke-width="3"/>
+  <text x="140" y="95" text-anchor="middle" font-size="13" font-weight="900" fill="#dc2626">Rectangle</text>
+  <text x="140" y="110" text-anchor="middle" font-size="10" font-weight="700" fill="#6b7280">4 côtés (2 paires)</text>
+  <text x="140" y="122" text-anchor="middle" font-size="10" font-weight="700" fill="#6b7280">4 angles droits</text>
+  <!-- Triangle -->
+  <polygon points="230,15 195,80 265,80" fill="#fde68a" stroke="#ca8a04" stroke-width="3"/>
+  <text x="230" y="95" text-anchor="middle" font-size="13" font-weight="900" fill="#92400e">Triangle</text>
+  <text x="230" y="110" text-anchor="middle" font-size="10" font-weight="700" fill="#6b7280">3 côtés</text>
+  <text x="230" y="122" text-anchor="middle" font-size="10" font-weight="700" fill="#6b7280">3 angles</text>
+  <!-- Cercle -->
+  <circle cx="310" cy="48" r="32" fill="#c7d2fe" stroke="#4f46e5" stroke-width="3"/>
+  <text x="310" y="95" text-anchor="middle" font-size="13" font-weight="900" fill="#4338ca">Cercle</text>
+  <text x="310" y="110" text-anchor="middle" font-size="10" font-weight="700" fill="#6b7280">0 côté droit</text>
+  <text x="310" y="122" text-anchor="middle" font-size="10" font-weight="700" fill="#6b7280">bord arrondi</text>
+</svg>
+<div class="vis-caption">Les 4 formes planes à connaître en CP</div>
+</div>
+
+<div class="forme-grid">
+  <div class="forme-card">
+    <div style="font-size:2.5rem">🟩</div>
+    <div class="nom">Carré</div>
+    <div class="info">4 côtés <strong>tous égaux</strong> • 4 angles droits<br>
+    Exemples : carreau, dé vu de face</div>
+  </div>
+  <div class="forme-card">
+    <div style="font-size:2.5rem">📄</div>
+    <div class="nom">Rectangle</div>
+    <div class="info">4 côtés en <strong>2 paires égales</strong> • 4 angles droits<br>
+    Exemples : feuille, livre, porte</div>
+  </div>
+  <div class="forme-card">
+    <div style="font-size:2.5rem">🔺</div>
+    <div class="nom">Triangle</div>
+    <div class="info"><strong>3 côtés</strong> • 3 angles<br>
+    Exemples : panneau danger, toit de maison</div>
+  </div>
+  <div class="forme-card">
+    <div style="font-size:2.5rem">⭕</div>
+    <div class="nom">Cercle</div>
+    <div class="info">Bord <strong>arrondi</strong> • Pas de côté droit<br>
+    Exemples : roue, pièce de monnaie, soleil</div>
+  </div>
+</div>
+</div>
+
+<!-- SECTION 2 : Reconnaître les formes -->
+<div class="cs">
+<h2>2. Reconnaître les formes autour de toi 👀</h2>
+
+<p style="font-size:.95rem;font-weight:700;line-height:1.7">
+Les formes géométriques sont <strong>partout dans ta vie quotidienne</strong> !
+Tu peux les reconnaître même si elles ne sont pas de la même taille ou couleur.
+</p>
+
+<div class="vgrid">
+  <div class="vcrd"><div class="vl">Livre</div><div class="vv">📚</div><div class="vs">Rectangle</div></div>
+  <div class="vcrd"><div class="vl">Roue</div><div class="vv">🚲</div><div class="vs">Cercle</div></div>
+  <div class="vcrd"><div class="vl">Carreau</div><div class="vv">🪟</div><div class="vs">Carré</div></div>
+  <div class="vcrd"><div class="vl">Panneau danger</div><div class="vv">⚠️</div><div class="vs">Triangle</div></div>
+  <div class="vcrd"><div class="vl">Pizza entière</div><div class="vv">🍕</div><div class="vs">Cercle</div></div>
+  <div class="vcrd"><div class="vl">Écran TV</div><div class="vv">📺</div><div class="vs">Rectangle</div></div>
+</div>
+
+<div class="dbox">
+<div class="lbl">Important</div>
+<p>Une forme reste la <strong>même forme</strong> même si elle est plus grande, plus petite, ou d'une autre couleur !<br>
+Un grand triangle et un petit triangle sont tous les deux des triangles.</p>
+</div>
+
+<div class="ebox">
+<div class="lbl">Pour trier les formes</div>
+<p>Compte les côtés :<br>
+<strong>0 côté droit</strong> → cercle • <strong>3 côtés</strong> → triangle<br>
+<strong>4 côtés égaux</strong> → carré • <strong>4 côtés en 2 paires</strong> → rectangle</p>
+</div>
+</div>
+
+<!-- SECTION 3 : Solides 3D -->
+<div class="cs">
+<h2>3. Les solides (formes en 3D) 📦</h2>
+
+<p style="font-size:.95rem;font-weight:700;line-height:1.7">
+Les <strong>solides</strong> ont 3 dimensions : longueur, largeur et hauteur.
+Tu peux les tenir dans ta main !
+</p>
+
+<div class="solide-grid">
+  <div class="solide-card">
+    <div style="font-size:2.8rem">🎲</div>
+    <div class="nom">Cube</div>
+    <div class="ex">6 faces carrées identiques<br>Exemple : dé à jouer</div>
+  </div>
+  <div class="solide-card">
+    <div style="font-size:2.8rem">📦</div>
+    <div class="nom">Pavé droit (boîte)</div>
+    <div class="ex">6 faces rectangulaires<br>Exemple : boîte de céréales</div>
+  </div>
+  <div class="solide-card">
+    <div style="font-size:2.8rem">⚽</div>
+    <div class="nom">Sphère (boule)</div>
+    <div class="ex">Surface arrondie tout autour<br>Exemple : balle, orange</div>
+  </div>
+  <div class="solide-card">
+    <div style="font-size:2.8rem">🥫</div>
+    <div class="nom">Cylindre</div>
+    <div class="ex">2 cercles + 1 face arrondie<br>Exemple : boîte de soupe</div>
+  </div>
+  <div class="solide-card">
+    <div style="font-size:2.8rem">🍦</div>
+    <div class="nom">Cône</div>
+    <div class="ex">1 cercle + pointe<br>Exemple : cornet de glace</div>
+  </div>
+  <div class="solide-card">
+    <div style="font-size:2.8rem">🔷</div>
+    <div class="nom">Pyramide</div>
+    <div class="ex">Base carrée + 4 triangles<br>Exemple : pyramide d'Égypte</div>
+  </div>
+</div>
+
+<div class="rbox">
+<div class="lbl">Différence 2D / 3D</div>
+<p>
+Forme <strong>plate</strong> (2D) = tu peux la dessiner sur une feuille.<br>
+Solide <strong>3D</strong> = tu peux le tenir dans ta main, il a du volume.
+</p>
+</div>
+</div>
+
+<!-- SECTION 4 : Repérage dans l'espace -->
+<div class="cs">
+<h2>4. Se repérer dans l'espace 🗺️</h2>
+
+<p style="font-size:.95rem;font-weight:700;line-height:1.7">
+Pour décrire où est un objet, on utilise des <strong>mots de position</strong>.
+</p>
+
+<div class="visbox">
+<svg width="340" height="120" viewBox="0 0 340 120">
+  <!-- maison centrale -->
+  <rect x="130" y="50" width="80" height="60" fill="#fef9c3" stroke="#ca8a04" stroke-width="3"/>
+  <polygon points="130,50 170,15 210,50" fill="#fca5a5" stroke="#dc2626" stroke-width="3"/>
+  <text x="170" y="85" text-anchor="middle" font-size="20">🏠</text>
+  <!-- gauche -->
+  <text x="70" y="85" text-anchor="middle" font-size="20">🌳</text>
+  <text x="70" y="108" text-anchor="middle" font-size="10" font-weight="900" fill="#dc2626">GAUCHE</text>
+  <!-- droite -->
+  <text x="270" y="85" text-anchor="middle" font-size="20">🌳</text>
+  <text x="270" y="108" text-anchor="middle" font-size="10" font-weight="900" fill="#1d4ed8">DROITE</text>
+  <!-- dessus -->
+  <text x="170" y="12" text-anchor="middle" font-size="10" font-weight="900" fill="#166534">DESSUS/AU-DESSUS</text>
+  <!-- devant -->
+  <text x="170" y="118" text-anchor="middle" font-size="10" font-weight="900" fill="#92400e">DEVANT</text>
+</svg>
+<div class="vis-caption">Les arbres sont à gauche et à droite de la maison</div>
+</div>
+
+<div class="vgrid">
+  <div class="vcrd"><div class="vl">Position</div><div class="vv">gauche ←</div><div class="vs">de l'autre côté</div></div>
+  <div class="vcrd"><div class="vl">Position</div><div class="vv">→ droite</div><div class="vs">côté de la main qui écrit</div></div>
+  <div class="vcrd"><div class="vl">Position</div><div class="vv">dessus ↑</div><div class="vs">au-dessus de</div></div>
+  <div class="vcrd"><div class="vl">Position</div><div class="vv">dessous ↓</div><div class="vs">en-dessous de</div></div>
+  <div class="vcrd"><div class="vl">Position</div><div class="vv">devant</div><div class="vs">face à toi</div></div>
+  <div class="vcrd"><div class="vl">Position</div><div class="vv">derrière</div><div class="vs">dans ton dos</div></div>
+</div>
+
+<div class="ebox">
+<div class="lbl">Exercice de repérage</div>
+<p>Dans ta classe : <br>
+Le tableau est <strong>devant</strong> toi. <br>
+La fenêtre est à ta <strong>gauche</strong> ou à ta <strong>droite</strong>.<br>
+La corbeille est <strong>sous</strong> le bureau.</p>
+</div>
+</div>
+
+<!-- SECTION 5 : Symétrie -->
+<div class="cs">
+<h2>5. La symétrie 🦋</h2>
+
+<p style="font-size:.95rem;font-weight:700;line-height:1.7">
+Une figure est <strong>symétrique</strong> si on peut la plier en deux et que les deux parties sont identiques.
+La ligne de pliage s'appelle <strong>l'axe de symétrie</strong>.
+</p>
+
+<div class="visbox">
+<svg width="340" height="110" viewBox="0 0 340 110">
+  <!-- Cœur symétrique -->
+  <text x="75" y="70" text-anchor="middle" font-size="60">❤️</text>
+  <line x1="75" y1="10" x2="75" y2="95" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <text x="75" y="105" text-anchor="middle" font-size="10" font-weight="900" fill="#dc2626">axe de symétrie</text>
+  <!-- Papillon -->
+  <text x="210" y="70" text-anchor="middle" font-size="60">🦋</text>
+  <line x1="210" y1="10" x2="210" y2="95" stroke="#4f46e5" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <text x="210" y="105" text-anchor="middle" font-size="10" font-weight="900" fill="#4f46e5">axe de symétrie</text>
+  <!-- labels -->
+  <text x="75" y="8" text-anchor="middle" font-size="10" font-weight="900" fill="#6b7280">Cœur</text>
+  <text x="210" y="8" text-anchor="middle" font-size="10" font-weight="900" fill="#6b7280">Papillon</text>
+</svg>
+<div class="vis-caption">Le cœur et le papillon ont un axe de symétrie vertical</div>
+</div>
+
+<div class="dbox">
+<div class="lbl">Comment vérifier ?</div>
+<p>
+Tu peux <strong>plier</strong> une figure en papier pour voir si les deux moitiés se superposent parfaitement.
+Si oui → la figure est <strong>symétrique</strong> ! ✅
+</p>
+</div>
+
+<div class="vgrid">
+  <div class="vcrd"><div class="vl">Symétrique</div><div class="vv">❤️</div><div class="vs">cœur</div></div>
+  <div class="vcrd"><div class="vl">Symétrique</div><div class="vv">🦋</div><div class="vs">papillon</div></div>
+  <div class="vcrd"><div class="vl">Symétrique</div><div class="vv">🏠</div><div class="vs">maison simple</div></div>
+  <div class="vcrd"><div class="vl">Pas symétrique</div><div class="vv">🔑</div><div class="vs">clé</div></div>
+</div>
+</div>
+
+<!-- SECTION 6 : Retenir -->
+<div class="cs">
+<h2>6. Ce que tu dois retenir 🌟</h2>
+
+<div class="retenir">
+<h3>Le résumé du cours</h3>
+<ul>
+  <li><strong>Carré</strong> : 4 côtés égaux, 4 angles droits</li>
+  <li><strong>Rectangle</strong> : 4 côtés en 2 paires, 4 angles droits</li>
+  <li><strong>Triangle</strong> : 3 côtés, 3 angles</li>
+  <li><strong>Cercle</strong> : bord arrondi, 0 côté droit</li>
+  <li>Les <strong>solides</strong> sont en 3D : cube, pavé, sphère, cylindre, cône</li>
+  <li>Les mots de position : gauche, droite, dessus, dessous, devant, derrière, <strong>entre</strong></li>
+  <li>Symétrie : figure qu'on peut plier en 2 parties identiques</li>
+</ul>
+</div>
+
+<div class="cta">
+  <p>Tu connais les formes ? Entraîne-toi !</p>
+  <a href="geometrie-cp.html" class="btn-ex">✏️ Faire les exercices CP</a>
+</div>
+</div>
+
+</main>
+<footer class="site-footer">École Facile — Cours CP • Mathématiques</footer>
+<script src="sync.js"></script>
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>

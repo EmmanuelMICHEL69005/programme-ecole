@@ -1,118 +1,145 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://ecolefacile.fr/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
 
-  <!-- CP -->
-  <url><loc>https://ecolefacile.fr/nombres-cp.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/calcul-cp.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/calcul-mental-cp.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/mesures-cp.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/geometrie-cp.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/donnees-cp.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/problemes-cp.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/histoire-geo-cp.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/eps-cycle2.html</loc><priority>0.7</priority></url>
+  <url><loc>https://ecolefacile.fr/</loc><lastmod>2026-06-12</lastmod><priority>1.0</priority><changefreq>weekly</changefreq></url>
 
-  <!-- CE1 -->
-  <url><loc>https://ecolefacile.fr/nombres-ce1.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/fractions-ce1.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/calcul-ce1.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/calcul-mental-ce1.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/operations-posees-ce1.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/multiplication-ce1.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/mesures-ce1.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/geometrie-ce1.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/donnees-ce1.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/problemes-ce1.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/histoire-geo-ce1.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/nombres-cp.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/calcul-cp.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/calcul-mental-cp.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/mesures-cp.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/geometrie-cp.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/donnees-cp.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/problemes-cp.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/histoire-geo-cp.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/eps-cycle2.html</loc><lastmod>2026-06-12</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
 
-  <!-- CE2 -->
-  <url><loc>https://ecolefacile.fr/nombres-ce2.html</loc><priority>0.9</priority></url>
-  <url><loc>https://ecolefacile.fr/decimaux-ce2.html</loc><priority>0.9</priority></url>
-  <url><loc>https://ecolefacile.fr/fiche1.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/fiche2.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/fiche3.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/calcul.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/calcul-mental.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/operations-posees-ce2.html</loc><priority>0.9</priority></url>
-  <url><loc>https://ecolefacile.fr/multiplication-division-ce2.html</loc><priority>0.9</priority></url>
-  <url><loc>https://ecolefacile.fr/division-ce2.html</loc><priority>0.9</priority></url>
-  <url><loc>https://ecolefacile.fr/mesures-ce2.html</loc><priority>0.9</priority></url>
-  <url><loc>https://ecolefacile.fr/mesures.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/geometrie-ce2.html</loc><priority>0.9</priority></url>
-  <url><loc>https://ecolefacile.fr/geometrie.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/symetrie-ce2.html</loc><priority>0.9</priority></url>
-  <url><loc>https://ecolefacile.fr/solides.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/temps.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/donnees.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/problemes.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/histoire-geo-ce2.html</loc><priority>0.9</priority></url>
+  <url><loc>https://ecolefacile.fr/nombres-ce1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/fractions-ce1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/calcul-ce1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/calcul-mental-ce1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/operations-posees-ce1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/multiplication-ce1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/mesures-ce1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/geometrie-ce1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/donnees-ce1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/problemes-ce1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/histoire-geo-ce1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
 
-  <!-- CM1 -->
-  <url><loc>https://ecolefacile.fr/nombres-cm1.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/decimaux-cm1.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/fractions-cm1.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/calcul-cm1.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/calcul-mental-cm1.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/calcul-pose-cm1.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/mesures-cm1.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/temps-cm1.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/geometrie-cm1.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/solides-cm1.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/donnees-cm1.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/proportionnalite-cm1.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/problemes-cm1.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/nombres-ce2.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/decimaux-ce2.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/fiche1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/fiche2.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/fiche3.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/calcul.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/calcul-mental.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/operations-posees-ce2.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/multiplication-division-ce2.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/division-ce2.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/tables-ce2.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/mesures-ce2.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/mesures.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/geometrie-ce2.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/geometrie.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/symetrie-ce2.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/solides.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/temps.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/donnees.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/problemes.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/histoire-geo-ce2.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
 
-  <!-- CM2 -->
-  <url><loc>https://ecolefacile.fr/nombres-cm2.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/decimaux-cm2.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/fractions-cm2.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/calcul-cm2.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/calcul-mental-cm2.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/calcul-pose-cm2.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/problemes-cm2.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/mesures-cm2.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/temps-cm2.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/geometrie-cm2.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/donnees-cm2.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/proportionnalite-cm2.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/eps-cycle3.html</loc><priority>0.7</priority></url>
+  <url><loc>https://ecolefacile.fr/nombres-cm1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/decimaux-cm1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/fractions-cm1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/calcul-cm1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/calcul-mental-cm1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/calcul-pose-cm1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/angles-cm1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/mesures-cm1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/temps-cm1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/geometrie-cm1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/solides-cm1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/donnees-cm1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/proportionnalite-cm1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/problemes-cm1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/histoire-geo-cm1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
 
-  <!-- 6e -->
-  <url><loc>https://ecolefacile.fr/nombres-6e.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/fractions-6e.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/algebre-6e.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/calcul-mental-6e.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/probabilites-6e.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/geometrie-6e.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/mesures-6e.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/donnees-6e.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/proportionnalite-6e.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/histoire-geo-cm1.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/histoire-geo-cm2.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/histoire-geo-6e.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ecolefacile.fr/tables-ce2.html</loc><priority>0.9</priority></url>
-  <url><loc>https://ecolefacile.fr/angles-cm1.html</loc><priority>0.8</priority></url>
+  <url><loc>https://ecolefacile.fr/nombres-cm2.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/decimaux-cm2.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/fractions-cm2.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/calcul-cm2.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/calcul-mental-cm2.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/calcul-pose-cm2.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/problemes-cm2.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/mesures-cm2.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/temps-cm2.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/geometrie-cm2.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/donnees-cm2.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/proportionnalite-cm2.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/histoire-geo-cm2.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/eps-cycle3.html</loc><lastmod>2026-06-12</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
 
-  <!-- Cours CE2 -->
-  <url><loc>https://ecolefacile.fr/cours-nombres-ce2.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://ecolefacile.fr/cours-fractions-ce2.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://ecolefacile.fr/cours-multiplication-ce2.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://ecolefacile.fr/cours-geometrie-ce2.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://ecolefacile.fr/cours-mesures-ce2.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://ecolefacile.fr/cours-histoire-geo-ce2.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/nombres-6e.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/fractions-6e.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/algebre-6e.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/calcul-mental-6e.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/probabilites-6e.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/geometrie-6e.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/mesures-6e.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/donnees-6e.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/proportionnalite-6e.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/histoire-geo-6e.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
 
-  <!-- Cours CM1 -->
-  <url><loc>https://ecolefacile.fr/cours-fractions-cm1.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://ecolefacile.fr/cours-angles-cm1.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://ecolefacile.fr/cours-histoire-geo-cm1.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-nombres-cp.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-calcul-cp.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-geometrie-cp.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-mesures-cp.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-histoire-geo-cp.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
 
-  <!-- Cours CM2 -->
-  <url><loc>https://ecolefacile.fr/cours-fractions-cm2.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://ecolefacile.fr/cours-proportionnalite-cm2.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://ecolefacile.fr/cours-histoire-geo-cm2.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-nombres-ce1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-calcul-ce1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-geometrie-ce1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-mesures-ce1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-fractions-ce1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-histoire-geo-ce1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
 
-  <!-- Cours 6e -->
-  <url><loc>https://ecolefacile.fr/cours-fractions-6e.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://ecolefacile.fr/cours-histoire-geo-6e.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-nombres-ce2.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-decimaux-ce2.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-calcul-ce2.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-fractions-ce2.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-multiplication-ce2.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-geometrie-ce2.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-symetrie-ce2.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-mesures-ce2.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-histoire-geo-ce2.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+
+  <url><loc>https://ecolefacile.fr/cours-nombres-cm1.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-calcul-cm1.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-decimaux-cm1.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-fractions-cm1.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-angles-cm1.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-geometrie-cm1.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-mesures-cm1.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-temps-cm1.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-proportionnalite-cm1.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-histoire-geo-cm1.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+
+  <url><loc>https://ecolefacile.fr/cours-nombres-cm2.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-decimaux-cm2.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-calcul-cm2.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-fractions-cm2.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-geometrie-cm2.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-mesures-cm2.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-temps-cm2.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-proportionnalite-cm2.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-histoire-geo-cm2.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+
+  <url><loc>https://ecolefacile.fr/cours-nombres-6e.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-algebre-6e.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-geometrie-6e.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-probabilites-6e.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-proportionnalite-6e.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-mesures-6e.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-fractions-6e.html</loc><lastmod>2026-06-12</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-histoire-geo-6e.html</loc><lastmod>2026-06-12</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+
 </urlset>

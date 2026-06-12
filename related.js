@@ -99,6 +99,47 @@
     'eps-cycle3.html':      [{h:'eps-cycle2.html',l:'EPS Cycle 2 — CP/CE1/CE2'},{h:'histoire-geo-cm1.html',l:'Histoire-Géo CM1'},{h:'histoire-geo-cm2.html',l:'Histoire-Géo CM2'},{h:'histoire-geo-6e.html',l:'Histoire-Géo 6e'}],
 
     /* ── Cours → exercices ── */
+    /* CP */
+    'cours-nombres-cp.html':        [{h:'nombres-cp.html',l:'Exercices nombres CP'},{h:'calcul-cp.html',l:'Calcul CP'},{h:'cours-calcul-cp.html',l:'Cours calcul CP'},{h:'cours-nombres-ce1.html',l:'Cours nombres CE1 — étape suivante'}],
+    'cours-calcul-cp.html':         [{h:'calcul-cp.html',l:'Exercices calcul CP'},{h:'nombres-cp.html',l:'Nombres CP'},{h:'cours-nombres-cp.html',l:'Cours nombres CP'},{h:'cours-calcul-ce1.html',l:'Cours calcul CE1 — étape suivante'}],
+    'cours-geometrie-cp.html':      [{h:'geometrie-cp.html',l:'Exercices géométrie CP'},{h:'mesures-cp.html',l:'Mesures CP'},{h:'cours-mesures-cp.html',l:'Cours mesures CP'},{h:'cours-geometrie-ce1.html',l:'Cours géométrie CE1 — étape suivante'}],
+    'cours-mesures-cp.html':        [{h:'mesures-cp.html',l:'Exercices mesures CP'},{h:'geometrie-cp.html',l:'Géométrie CP'},{h:'cours-geometrie-cp.html',l:'Cours géométrie CP'},{h:'cours-mesures-ce1.html',l:'Cours mesures CE1 — étape suivante'}],
+    'cours-histoire-geo-cp.html':   [{h:'histoire-geo-cp.html',l:'Exercices histoire-géo CP'},{h:'cours-histoire-geo-ce1.html',l:'Cours histoire-géo CE1 — étape suivante'}],
+    /* CE1 */
+    'cours-nombres-ce1.html':       [{h:'nombres-ce1.html',l:'Exercices nombres CE1'},{h:'calcul-ce1.html',l:'Calcul CE1'},{h:'cours-calcul-ce1.html',l:'Cours calcul CE1'},{h:'cours-nombres-ce2.html',l:'Cours nombres CE2 — étape suivante'}],
+    'cours-calcul-ce1.html':        [{h:'calcul-ce1.html',l:'Exercices calcul CE1'},{h:'nombres-ce1.html',l:'Nombres CE1'},{h:'cours-nombres-ce1.html',l:'Cours nombres CE1'},{h:'cours-calcul-ce2.html',l:'Cours calcul CE2 — étape suivante'}],
+    'cours-geometrie-ce1.html':     [{h:'geometrie-ce1.html',l:'Exercices géométrie CE1'},{h:'mesures-ce1.html',l:'Mesures CE1'},{h:'cours-mesures-ce1.html',l:'Cours mesures CE1'},{h:'cours-geometrie-ce2.html',l:'Cours géométrie CE2 — étape suivante'}],
+    'cours-mesures-ce1.html':       [{h:'mesures-ce1.html',l:'Exercices mesures CE1'},{h:'geometrie-ce1.html',l:'Géométrie CE1'},{h:'cours-geometrie-ce1.html',l:'Cours géométrie CE1'},{h:'cours-mesures-ce2.html',l:'Cours mesures CE2 — étape suivante'}],
+    'cours-fractions-ce1.html':     [{h:'fractions-ce1.html',l:'Exercices fractions CE1'},{h:'nombres-ce1.html',l:'Nombres CE1'},{h:'cours-fractions-ce2.html',l:'Cours fractions CE2 — étape suivante'}],
+    'cours-histoire-geo-ce1.html':  [{h:'histoire-geo-ce1.html',l:'Exercices histoire-géo CE1'},{h:'cours-histoire-geo-cp.html',l:'Cours histoire-géo CP — révision'},{h:'cours-histoire-geo-ce2.html',l:'Cours histoire-géo CE2 — étape suivante'}],
+    /* CE2 */
+    'cours-calcul-ce2.html':        [{h:'calcul.html',l:'Exercices calcul CE2'},{h:'nombres-ce2.html',l:'Nombres CE2'},{h:'cours-nombres-ce2.html',l:'Cours nombres CE2'},{h:'cours-calcul-cm1.html',l:'Cours calcul CM1 — étape suivante'}],
+    'cours-decimaux-ce2.html':      [{h:'decimaux-ce2.html',l:'Exercices décimaux CE2'},{h:'nombres-ce2.html',l:'Nombres CE2'},{h:'cours-nombres-ce2.html',l:'Cours nombres CE2'},{h:'cours-decimaux-cm1.html',l:'Cours décimaux CM1 — étape suivante'}],
+    'cours-symetrie-ce2.html':      [{h:'symetrie-ce2.html',l:'Exercices symétrie CE2'},{h:'geometrie-ce2.html',l:'Géométrie CE2'},{h:'cours-geometrie-ce2.html',l:'Cours géométrie CE2'},{h:'cours-geometrie-cm1.html',l:'Cours géométrie CM1 — étape suivante'}],
+    /* CM1 */
+    'cours-nombres-cm1.html':       [{h:'nombres-cm1.html',l:'Exercices nombres CM1'},{h:'decimaux-cm1.html',l:'Décimaux CM1'},{h:'cours-decimaux-cm1.html',l:'Cours décimaux CM1'},{h:'cours-nombres-cm2.html',l:'Cours nombres CM2 — étape suivante'}],
+    'cours-calcul-cm1.html':        [{h:'calcul-cm1.html',l:'Exercices calcul CM1'},{h:'nombres-cm1.html',l:'Nombres CM1'},{h:'cours-calcul-ce2.html',l:'Cours calcul CE2 — révision'},{h:'cours-calcul-cm2.html',l:'Cours calcul CM2 — étape suivante'}],
+    'cours-decimaux-cm1.html':      [{h:'decimaux-cm1.html',l:'Exercices décimaux CM1'},{h:'fractions-cm1.html',l:'Fractions CM1'},{h:'cours-decimaux-ce2.html',l:'Cours décimaux CE2 — révision'},{h:'cours-decimaux-cm2.html',l:'Cours décimaux CM2 — étape suivante'}],
+    'cours-geometrie-cm1.html':     [{h:'geometrie-cm1.html',l:'Exercices géométrie CM1'},{h:'angles-cm1.html',l:'Angles CM1'},{h:'cours-angles-cm1.html',l:'Cours angles CM1'},{h:'cours-geometrie-cm2.html',l:'Cours géométrie CM2 — étape suivante'}],
+    'cours-mesures-cm1.html':       [{h:'mesures-cm1.html',l:'Exercices mesures CM1'},{h:'temps-cm1.html',l:'Durées CM1'},{h:'cours-temps-cm1.html',l:'Cours temps CM1'},{h:'cours-mesures-cm2.html',l:'Cours mesures CM2 — étape suivante'}],
+    'cours-temps-cm1.html':         [{h:'temps-cm1.html',l:'Exercices temps CM1'},{h:'mesures-cm1.html',l:'Mesures CM1'},{h:'cours-mesures-cm1.html',l:'Cours mesures CM1'},{h:'cours-temps-cm2.html',l:'Cours temps CM2 — étape suivante'}],
+    'cours-proportionnalite-cm1.html':[{h:'proportionnalite-cm1.html',l:'Exercices proportionnalité CM1'},{h:'decimaux-cm1.html',l:'Décimaux CM1'},{h:'cours-proportionnalite-cm2.html',l:'Cours proportionnalité CM2 — étape suivante'}],
+    /* CM2 */
+    'cours-nombres-cm2.html':       [{h:'nombres-cm2.html',l:'Exercices nombres CM2'},{h:'decimaux-cm2.html',l:'Décimaux CM2'},{h:'cours-decimaux-cm2.html',l:'Cours décimaux CM2'},{h:'cours-nombres-6e.html',l:'Cours nombres 6e — étape suivante'}],
+    'cours-decimaux-cm2.html':      [{h:'decimaux-cm2.html',l:'Exercices décimaux CM2'},{h:'fractions-cm2.html',l:'Fractions CM2'},{h:'cours-decimaux-cm1.html',l:'Cours décimaux CM1 — révision'}],
+    'cours-calcul-cm2.html':        [{h:'calcul-cm2.html',l:'Exercices calcul CM2'},{h:'nombres-cm2.html',l:'Nombres CM2'},{h:'cours-calcul-cm1.html',l:'Cours calcul CM1 — révision'}],
+    'cours-geometrie-cm2.html':     [{h:'geometrie-cm2.html',l:'Exercices géométrie CM2'},{h:'mesures-cm2.html',l:'Mesures CM2'},{h:'cours-geometrie-cm1.html',l:'Cours géométrie CM1 — révision'},{h:'cours-geometrie-6e.html',l:'Cours géométrie 6e — étape suivante'}],
+    'cours-mesures-cm2.html':       [{h:'mesures-cm2.html',l:'Exercices mesures CM2'},{h:'temps-cm2.html',l:'Durées CM2'},{h:'cours-temps-cm2.html',l:'Cours temps CM2'},{h:'cours-mesures-6e.html',l:'Cours mesures 6e — étape suivante'}],
+    'cours-temps-cm2.html':         [{h:'temps-cm2.html',l:'Exercices temps CM2'},{h:'mesures-cm2.html',l:'Mesures CM2'},{h:'cours-mesures-cm2.html',l:'Cours mesures CM2'},{h:'cours-temps-cm2.html',l:'Durées CM2 — révision'}],
+    /* 6e */
+    'cours-nombres-6e.html':        [{h:'nombres-6e.html',l:'Exercices nombres 6e'},{h:'algebre-6e.html',l:'Algèbre 6e'},{h:'cours-algebre-6e.html',l:'Cours algèbre 6e'},{h:'cours-nombres-cm2.html',l:'Cours nombres CM2 — révision'}],
+    'cours-algebre-6e.html':        [{h:'algebre-6e.html',l:'Exercices algèbre 6e'},{h:'nombres-6e.html',l:'Nombres 6e'},{h:'cours-nombres-6e.html',l:'Cours nombres 6e'},{h:'cours-proportionnalite-6e.html',l:'Cours proportionnalité 6e'}],
+    'cours-geometrie-6e.html':      [{h:'geometrie-6e.html',l:'Exercices géométrie 6e'},{h:'mesures-6e.html',l:'Mesures 6e'},{h:'cours-mesures-6e.html',l:'Cours mesures 6e'},{h:'cours-geometrie-cm2.html',l:'Cours géométrie CM2 — révision'}],
+    'cours-probabilites-6e.html':   [{h:'probabilites-6e.html',l:'Exercices probabilités 6e'},{h:'donnees-6e.html',l:'Statistiques 6e'},{h:'cours-proportionnalite-6e.html',l:'Cours proportionnalité 6e'}],
+    'cours-proportionnalite-6e.html':[{h:'proportionnalite-6e.html',l:'Exercices proportionnalité 6e'},{h:'fractions-6e.html',l:'Fractions 6e'},{h:'cours-algebre-6e.html',l:'Cours algèbre 6e'},{h:'cours-proportionnalite-cm2.html',l:'Cours proportionnalité CM2 — révision'}],
+    'cours-mesures-6e.html':        [{h:'mesures-6e.html',l:'Exercices mesures 6e'},{h:'geometrie-6e.html',l:'Géométrie 6e'},{h:'cours-geometrie-6e.html',l:'Cours géométrie 6e'},{h:'cours-mesures-cm2.html',l:'Cours mesures CM2 — révision'}],
+
+    /* ── Cours → exercices (already existing) ── */
     'cours-fractions-ce2.html':     [{h:'fiche1.html',l:'Exercices fractions CE2'},{h:'fiche2.html',l:'Fractions — comparer'},{h:'fiche3.html',l:'Fractions — calculer'},{h:'cours-fractions-cm1.html',l:'Cours fractions CM1 — étape suivante'}],
     'cours-fractions-cm1.html':     [{h:'fractions-cm1.html',l:'Exercices fractions CM1'},{h:'cours-fractions-ce2.html',l:'Cours fractions CE2 — révision'},{h:'cours-fractions-cm2.html',l:'Cours fractions CM2 — étape suivante'}],
     'cours-fractions-cm2.html':     [{h:'fractions-cm2.html',l:'Exercices fractions CM2'},{h:'cours-fractions-cm1.html',l:'Cours fractions CM1 — révision'},{h:'cours-fractions-6e.html',l:'Cours fractions 6e — étape suivante'}],

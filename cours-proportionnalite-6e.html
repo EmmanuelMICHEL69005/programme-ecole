@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/cours-proportionnalite-6e.html">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Proportionnalité — Cours 6e | École Facile</title>
+<meta name="description" content="Cours 6e : proportionnalité, y=kx, représentation graphique, pourcentages, vitesse, règle de trois.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/cours-proportionnalite-6e.html">
+<meta property="og:title" content="Proportionnalité — Cours 6e | École Facile">
+<meta property="og:description" content="Cours 6e : proportionnalité, y=kx, représentation graphique, pourcentages, vitesse, règle de trois.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+body{font-family:'Nunito',sans-serif;background:#fdf2f8;color:#1e1b4b;margin:0}
+main{max-width:720px;margin:0 auto;padding:22px 18px 60px}
+.cs{margin-bottom:26px}
+.cs h2{font-size:1.1rem;font-weight:900;margin:0 0 12px;padding-bottom:7px;border-bottom:2.5px solid #fbcfe8;color:#831843}
+.dbox{background:#dbeafe;border-left:4px solid #1d4ed8;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.dbox .lbl{font-size:.65rem;font-weight:900;color:#1d4ed8;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.dbox p,.dbox ul{font-size:.9rem;font-weight:700;color:#1e3a8a;margin:0;line-height:1.6}
+.ebox{background:#fef9c3;border-left:4px solid #ca8a04;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.ebox .lbl{font-size:.65rem;font-weight:900;color:#92400e;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.ebox p,.ebox ul{font-size:.9rem;font-weight:700;color:#713f12;margin:0;line-height:1.6}
+.rbox{background:#dcfce7;border-left:4px solid #16a34a;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.rbox .lbl{font-size:.65rem;font-weight:900;color:#15803d;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.rbox p,.rbox ul{font-size:.9rem;font-weight:700;color:#14532d;margin:0;line-height:1.6}
+.wbox{background:#fee2e2;border-left:4px solid #dc2626;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.wbox .lbl{font-size:.65rem;font-weight:900;color:#dc2626;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.wbox p,.wbox ul{font-size:.9rem;font-weight:700;color:#991b1b;margin:0;line-height:1.6}
+.retenir{background:#fff;border:2.5px solid #9d174d;border-radius:16px;padding:16px 18px;margin:22px 0 18px}
+.retenir h3{font-size:.78rem;font-weight:900;color:#9d174d;text-transform:uppercase;letter-spacing:1px;margin:0 0 10px}
+.retenir ul{margin:0;padding-left:18px}
+.retenir li{font-size:.88rem;font-weight:700;color:#1e1b4b;line-height:1.7}
+.cta{text-align:center;margin-top:26px;padding:18px;background:#fff;border-radius:16px;border:2px solid #fbcfe8}
+.cta p{font-size:.82rem;color:#6b7280;font-weight:700;margin:0 0 10px}
+.btn-ex{display:inline-block;background:linear-gradient(135deg,#9d174d,#ec4899);color:#fff;padding:13px 26px;border-radius:13px;font-size:.95rem;font-weight:900;text-decoration:none;box-shadow:0 4px 12px rgba(157,23,77,.3)}
+.formula-card{background:linear-gradient(135deg,#831843,#9d174d);color:white;border-radius:16px;padding:14px 18px;margin:10px 0;text-align:center}
+.formula-card .fc-label{font-size:.65rem;font-weight:900;opacity:.75;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.formula-card .fc-formula{font-size:1.15rem;font-weight:900}
+.formula-card .fc-desc{font-size:.8rem;opacity:.85;margin-top:5px;font-weight:700}
+.prop-table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.85rem}
+.prop-table th{background:linear-gradient(135deg,#9d174d,#ec4899);color:white;padding:8px 10px;font-weight:900;text-align:center}
+.prop-table td{border:1.5px solid #fbcfe8;padding:8px 10px;font-weight:700;text-align:center;background:#fff}
+.prop-table .calcul{background:#fdf2f8;font-style:italic;color:#9d174d}
+.visbox{background:#fdf2f8;border:2px solid #fbcfe8;border-radius:14px;padding:14px 10px 10px;margin:12px 0;text-align:center;overflow:hidden}
+.visbox svg{max-width:100%;height:auto;display:block;margin:0 auto}
+.visbox .vis-caption{font-size:.72rem;font-weight:900;color:#9d174d;margin-top:8px}
+.vgrid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));margin:10px 0}
+.vcrd{background:#fff;border:2px solid #fbcfe8;border-radius:11px;padding:9px;text-align:center}
+.vcrd .vl{font-size:.7rem;font-weight:900;color:#9d174d;margin-bottom:4px}
+.vcrd .vv{font-size:1rem;font-weight:900;color:#831843}
+.badge-niveau{display:inline-block;background:rgba(255,255,255,.2);border-radius:20px;padding:4px 14px;font-size:.72rem;font-weight:900;letter-spacing:1px;margin-bottom:8px}
+.cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
+.cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
+.cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.site-footer{text-align:center;padding:16px;font-size:.8rem;color:#9ca3af;border-top:1px solid #e5e7eb;margin-top:10px}
+</style>
+</head>
+<body>
+<header class="cours-header" style="background:linear-gradient(135deg,#9d174d,#ec4899)">
+  <div class="badge-niveau">6e</div>
+  <h1>⚖️ Proportionnalité</h1>
+  <p>y = kx, représentation graphique, pourcentages, vitesse</p>
+</header>
+<main>
+
+<section class="cs">
+  <h2>1. Qu'est-ce que la proportionnalité ?</h2>
+  <div class="dbox"><div class="lbl">Définition</div>
+  <p>Deux grandeurs sont <strong>proportionnelles</strong> si leur quotient est constant (= coefficient de proportionnalité k).<br>
+  y = k × x</p></div>
+  <table class="prop-table">
+    <tr><th>Nombre de pots</th><th>1</th><th>2</th><th>3</th><th>5</th><th>8</th></tr>
+    <tr><td><strong>Prix (€)</strong></td><td>3</td><td>6</td><td>9</td><td>15</td><td>24</td></tr>
+    <tr><td class="calcul">Quotient prix/pot</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td></tr>
+  </table>
+  <div class="rbox"><div class="lbl">k = 3 → y = 3x (prix = 3 × nombre de pots)</div>
+  <p>Le quotient est toujours 3 → c'est bien une situation proportionnelle.</p></div>
+</section>
+
+<section class="cs">
+  <h2>2. Représentation graphique — y = kx</h2>
+  <div class="visbox">
+    <svg viewBox="0 0 280 220" width="280" height="220">
+      <line x1="30" y1="195" x2="270" y2="195" stroke="#9d174d" stroke-width="2"/>
+      <line x1="30" y1="195" x2="30" y2="15" stroke="#9d174d" stroke-width="2"/>
+      <line x1="270" y1="195" x2="262" y2="189" stroke="#9d174d" stroke-width="1.5"/>
+      <line x1="270" y1="195" x2="262" y2="201" stroke="#9d174d" stroke-width="1.5"/>
+      <line x1="30" y1="15" x2="24" y2="23" stroke="#9d174d" stroke-width="1.5"/>
+      <line x1="30" y1="15" x2="36" y2="23" stroke="#9d174d" stroke-width="1.5"/>
+      <text x="272" y="193" font-family="Nunito" font-weight="900" font-size="12" fill="#9d174d">x</text>
+      <text x="33" y="14" font-family="Nunito" font-weight="900" font-size="12" fill="#9d174d">y</text>
+      <text x="18" y="199" font-family="Nunito" font-weight="900" font-size="11" fill="#831843">O</text>
+      <line x1="30" y1="195" x2="250" y2="75" stroke="#ec4899" stroke-width="2.5"/>
+      <circle cx="30" cy="195" r="4" fill="#ec4899"/>
+      <circle cx="80" cy="165" r="4" fill="#ec4899"/>
+      <circle cx="130" cy="135" r="4" fill="#ec4899"/>
+      <circle cx="180" cy="105" r="4" fill="#ec4899"/>
+      <circle cx="250" cy="75" r="4" fill="#ec4899"/>
+      <text x="60" y="165" font-family="Nunito" font-weight="800" font-size="10" fill="#6b7280">1 ; 3</text>
+      <text x="132" y="128" font-family="Nunito" font-weight="800" font-size="10" fill="#6b7280">3 ; 9</text>
+      <text x="184" y="98" font-family="Nunito" font-weight="800" font-size="10" fill="#6b7280">5 ; 15</text>
+      <text x="195" y="60" font-family="Nunito" font-weight="900" font-size="11" fill="#9d174d">y = 3x</text>
+    </svg>
+    <div class="vis-caption">Droite passant par l'origine O — proportionnalité y = 3x</div>
+  </div>
+  <div class="rbox"><div class="lbl">Caractéristique graphique</div>
+  <p>La représentation d'une situation proportionnelle est toujours une <strong>droite passant par l'origine (0;0)</strong>.</p></div>
+</section>
+
+<section class="cs">
+  <h2>3. Règle de trois (produit en croix)</h2>
+  <div class="formula-card">
+    <div class="fc-label">Produit en croix</div>
+    <div class="fc-formula">a/b = c/d ↔ a × d = b × c</div>
+    <div class="fc-desc">Pour trouver x : poser la proportion et résoudre</div>
+  </div>
+  <div class="ebox"><div class="lbl">Exemples</div>
+  <ul>
+    <li>3 kilos coûtent 7,50€. Combien coûtent 5 kilos ?<br>
+    3/7,50 = 5/x → 3x = 5 × 7,50 = 37,5 → <strong>x = 12,50€</strong></li>
+    <li>Une voiture fait 350 km avec 28 L. Combien avec 40 L ?<br>
+    350/28 = x/40 → x = 350 × 40 / 28 = <strong>500 km</strong></li>
+  </ul></div>
+</section>
+
+<section class="cs">
+  <h2>4. Pourcentages</h2>
+  <div class="formula-card">
+    <div class="fc-label">t % de a</div>
+    <div class="fc-formula">t % de a = (t × a) ÷ 100 = a × t/100</div>
+    <div class="fc-desc">Augmentation de t% : × (1 + t/100) | Réduction de t% : × (1 − t/100)</div>
+  </div>
+  <div class="vgrid">
+    <div class="vcrd"><div class="vl">10% de 80</div><div class="vv">= 8</div></div>
+    <div class="vcrd"><div class="vl">25% de 120</div><div class="vv">= 30</div></div>
+    <div class="vcrd"><div class="vl">15% de 200</div><div class="vv">= 30</div></div>
+    <div class="vcrd"><div class="vl">−20% de 90</div><div class="vv">= 72</div></div>
+  </div>
+  <div class="ebox"><div class="lbl">Appliquer une réduction</div>
+  <p>Article à 85€, solde −30% :<br>
+  Réduction = 85 × 30/100 = 25,50€<br>
+  Prix final = 85 − 25,50 = <strong>59,50€</strong><br>
+  Ou directement : 85 × 0,70 = <strong>59,50€</strong></p></div>
+</section>
+
+<section class="cs">
+  <h2>5. Vitesse</h2>
+  <div class="formula-card">
+    <div class="fc-label">Formule vitesse-distance-temps</div>
+    <div class="fc-formula">v = d ÷ t &nbsp;|&nbsp; d = v × t &nbsp;|&nbsp; t = d ÷ v</div>
+    <div class="fc-desc">v en km/h, d en km, t en h (convertir les durées !)</div>
+  </div>
+  <div class="ebox"><div class="lbl">Exemples</div>
+  <ul>
+    <li>240 km à 80 km/h → t = 240 ÷ 80 = <strong>3 h</strong></li>
+    <li>Train 2h 30min à 160 km/h → d = 160 × 2,5 = <strong>400 km</strong></li>
+    <li>500 km en 4h → v = 500 ÷ 4 = <strong>125 km/h</strong></li>
+  </ul></div>
+  <div class="wbox"><div class="lbl">Conversion durée en décimal</div>
+  <p>2h 30min = 2,5h | 1h 15min = 1,25h | 45min = 0,75h<br>
+  Règle : diviser les minutes par 60 pour obtenir la partie décimale.</p></div>
+</section>
+
+<div class="retenir">
+  <h3>📌 À retenir</h3>
+  <ul>
+    <li>Proportionnalité : quotient constant k → y = kx</li>
+    <li>Graphique proportionnel = droite passant par O(0;0)</li>
+    <li>Produit en croix : a/b = c/d ↔ ad = bc</li>
+    <li>t% de a = a × t ÷ 100 | réduction t% → × (1 − t/100)</li>
+    <li>Vitesse : v = d/t | convertir les minutes en heures décimales</li>
+  </ul>
+</div>
+
+<div class="cta">
+  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
+  <a href="proportionnalite-6e.html" class="btn-ex">Faire les exercices 6e →</a>
+</div>
+
+</main>
+<footer class="site-footer">École Facile — Cours 6e · Proportionnalité</footer>
+<script src="sync.js"></script>
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>

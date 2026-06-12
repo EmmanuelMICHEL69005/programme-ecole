@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/cours-algebre-6e.html">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Algèbre et équations — Cours 6e | École Facile</title>
+<meta name="description" content="Cours 6e : expressions littérales, réduire, développer, résoudre une équation du 1er degré à une inconnue.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/cours-algebre-6e.html">
+<meta property="og:title" content="Algèbre et équations — Cours 6e | École Facile">
+<meta property="og:description" content="Cours 6e : expressions littérales, réduire, développer, résoudre une équation du 1er degré à une inconnue.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+body{font-family:'Nunito',sans-serif;background:#fdf2f8;color:#1e1b4b;margin:0}
+main{max-width:720px;margin:0 auto;padding:22px 18px 60px}
+.cs{margin-bottom:26px}
+.cs h2{font-size:1.1rem;font-weight:900;margin:0 0 12px;padding-bottom:7px;border-bottom:2.5px solid #fbcfe8;color:#831843}
+.dbox{background:#dbeafe;border-left:4px solid #1d4ed8;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.dbox .lbl{font-size:.65rem;font-weight:900;color:#1d4ed8;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.dbox p,.dbox ul{font-size:.9rem;font-weight:700;color:#1e3a8a;margin:0;line-height:1.6}
+.ebox{background:#fef9c3;border-left:4px solid #ca8a04;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.ebox .lbl{font-size:.65rem;font-weight:900;color:#92400e;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.ebox p,.ebox ul{font-size:.9rem;font-weight:700;color:#713f12;margin:0;line-height:1.6}
+.rbox{background:#dcfce7;border-left:4px solid #16a34a;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.rbox .lbl{font-size:.65rem;font-weight:900;color:#15803d;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.rbox p,.rbox ul{font-size:.9rem;font-weight:700;color:#14532d;margin:0;line-height:1.6}
+.wbox{background:#fee2e2;border-left:4px solid #dc2626;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.wbox .lbl{font-size:.65rem;font-weight:900;color:#dc2626;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.wbox p,.wbox ul{font-size:.9rem;font-weight:700;color:#991b1b;margin:0;line-height:1.6}
+.retenir{background:#fff;border:2.5px solid #9d174d;border-radius:16px;padding:16px 18px;margin:22px 0 18px}
+.retenir h3{font-size:.78rem;font-weight:900;color:#9d174d;text-transform:uppercase;letter-spacing:1px;margin:0 0 10px}
+.retenir ul{margin:0;padding-left:18px}
+.retenir li{font-size:.88rem;font-weight:700;color:#1e1b4b;line-height:1.7}
+.cta{text-align:center;margin-top:26px;padding:18px;background:#fff;border-radius:16px;border:2px solid #fbcfe8}
+.cta p{font-size:.82rem;color:#6b7280;font-weight:700;margin:0 0 10px}
+.btn-ex{display:inline-block;background:linear-gradient(135deg,#9d174d,#ec4899);color:#fff;padding:13px 26px;border-radius:13px;font-size:.95rem;font-weight:900;text-decoration:none;box-shadow:0 4px 12px rgba(157,23,77,.3)}
+.frise{display:flex;flex-direction:column;gap:0;margin:12px 0}
+.frise-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid #fbcfe8}
+.frise-item:last-child{border-bottom:none}
+.frise-dot{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#9d174d,#ec4899);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:900;color:#fff;flex-shrink:0}
+.frise-content{flex:1}
+.frise-date{font-size:.68rem;font-weight:900;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px;color:#9d174d}
+.frise-text{font-size:.88rem;font-weight:700;line-height:1.5}
+.formula-card{background:linear-gradient(135deg,#831843,#9d174d);color:white;border-radius:16px;padding:14px 18px;margin:10px 0;text-align:center}
+.formula-card .fc-label{font-size:.65rem;font-weight:900;opacity:.75;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.formula-card .fc-formula{font-size:1.1rem;font-weight:900;font-family:monospace}
+.formula-card .fc-desc{font-size:.8rem;opacity:.85;margin-top:5px;font-weight:700}
+.balance-box{display:grid;grid-template-columns:1fr 50px 1fr;gap:8px;align-items:center;background:#fdf2f8;border:2px solid #fbcfe8;border-radius:14px;padding:14px;margin:10px 0}
+.bal-side{background:#fff;border:2px solid #fbcfe8;border-radius:10px;padding:10px;text-align:center;font-size:.9rem;font-weight:900;color:#831843}
+.bal-mid{text-align:center;font-size:1.4rem;font-weight:900;color:#9d174d}
+.badge-niveau{display:inline-block;background:rgba(255,255,255,.2);border-radius:20px;padding:4px 14px;font-size:.72rem;font-weight:900;letter-spacing:1px;margin-bottom:8px}
+.cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
+.cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
+.cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.site-footer{text-align:center;padding:16px;font-size:.8rem;color:#9ca3af;border-top:1px solid #e5e7eb;margin-top:10px}
+</style>
+</head>
+<body>
+<header class="cours-header" style="background:linear-gradient(135deg,#9d174d,#ec4899)">
+  <div class="badge-niveau">6e</div>
+  <h1>🔡 Algèbre et équations</h1>
+  <p>Expressions littérales, réduction, équations du 1er degré</p>
+</header>
+<main>
+
+<section class="cs">
+  <h2>1. Expressions littérales — qu'est-ce que c'est ?</h2>
+  <div class="dbox"><div class="lbl">Définition</div>
+  <p>Une <strong>expression littérale</strong> contient des lettres qui représentent des nombres inconnus ou variables.<br>
+  Exemples : <code>3x + 5</code> | <code>2(a + 7)</code> | <code>n² − 4</code></p></div>
+  <div class="dbox"><div class="lbl">Calcul littéral — notations</div>
+  <ul>
+    <li><code>3 × x</code> s'écrit <code>3x</code> (on supprime le signe ×)</li>
+    <li><code>x × y</code> s'écrit <code>xy</code></li>
+    <li><code>1 × x</code> s'écrit <code>x</code> (pas de 1 devant)</li>
+    <li><code>x ÷ 4</code> s'écrit <code>x/4</code> ou <code>x ÷ 4</code></li>
+  </ul></div>
+  <div class="ebox"><div class="lbl">Calculer la valeur d'une expression (substitution)</div>
+  <ul>
+    <li><code>3x + 5</code> pour x = 4 : 3×4 + 5 = 12 + 5 = <strong>17</strong></li>
+    <li><code>2a − 1</code> pour a = 7 : 2×7 − 1 = 14 − 1 = <strong>13</strong></li>
+    <li><code>n² + 2n</code> pour n = 3 : 9 + 6 = <strong>15</strong></li>
+  </ul></div>
+</section>
+
+<section class="cs">
+  <h2>2. Réduire une expression</h2>
+  <div class="dbox"><div class="lbl">Termes semblables</div>
+  <p>On peut additionner les <strong>termes semblables</strong> = termes avec la même partie littérale.</p></div>
+  <div class="ebox"><div class="lbl">Exemples</div>
+  <ul>
+    <li><code>3x + 5x</code> = <code>8x</code> (même lettre x)</li>
+    <li><code>4a + 2 + 3a − 7</code> = <code>7a − 5</code> (regrouper les a et les constantes)</li>
+    <li><code>2x + 3y + 5x − y</code> = <code>7x + 2y</code> (x avec x, y avec y)</li>
+    <li><code>x² + 3x + 2x²</code> = <code>3x² + 3x</code> (x² ≠ x !)</li>
+  </ul></div>
+  <div class="wbox"><div class="lbl">Attention</div>
+  <p><code>3x</code> et <code>3x²</code> ne sont PAS des termes semblables ! La puissance doit être identique.</p></div>
+</section>
+
+<section class="cs">
+  <h2>3. Développer — distributivité</h2>
+  <div class="formula-card">
+    <div class="fc-label">Distributivité simple</div>
+    <div class="fc-formula">k(a + b) = ka + kb</div>
+    <div class="fc-desc">k(a − b) = ka − kb</div>
+  </div>
+  <div class="ebox"><div class="lbl">Exemples</div>
+  <ul>
+    <li><code>3(x + 4)</code> = <code>3x + 12</code></li>
+    <li><code>5(2a − 3)</code> = <code>10a − 15</code></li>
+    <li><code>−2(n + 7)</code> = <code>−2n − 14</code> (attention au signe !)</li>
+    <li><code>4(3 − x)</code> = <code>12 − 4x</code></li>
+  </ul></div>
+  <div class="ebox"><div class="lbl">Développer puis réduire</div>
+  <p><code>3(2x + 1) + 4x</code><br>
+  = <code>6x + 3 + 4x</code><br>
+  = <code>10x + 3</code></p></div>
+</section>
+
+<section class="cs">
+  <h2>4. Résoudre une équation — principe de la balance</h2>
+  <div class="dbox"><div class="lbl">Principe fondamental</div>
+  <p>Une équation, c'est comme une <strong>balance en équilibre</strong>. Si on fait la même opération des deux côtés, l'équilibre est conservé.</p></div>
+  <div class="balance-box">
+    <div class="bal-side">3x + 5</div>
+    <div class="bal-mid">=</div>
+    <div class="bal-side">17</div>
+  </div>
+  <div class="frise">
+    <div class="frise-item"><div class="frise-dot">1</div><div class="frise-content"><div class="frise-date">Isoler le terme en x</div><div class="frise-text"><code>3x + 5 = 17</code><br>→ <code>3x + 5 − 5 = 17 − 5</code><br>→ <code>3x = 12</code></div></div></div>
+    <div class="frise-item"><div class="frise-dot">2</div><div class="frise-content"><div class="frise-date">Diviser par le coefficient</div><div class="frise-text"><code>3x ÷ 3 = 12 ÷ 3</code><br>→ <code>x = 4</code></div></div></div>
+    <div class="frise-item"><div class="frise-dot">✓</div><div class="frise-content"><div class="frise-date">Vérification</div><div class="frise-text">3 × 4 + 5 = 12 + 5 = <strong>17 ✓</strong></div></div></div>
+  </div>
+</section>
+
+<section class="cs">
+  <h2>5. Exemples d'équations variées</h2>
+  <div class="frise">
+    <div class="frise-item"><div class="frise-dot">Ex1</div><div class="frise-content"><div class="frise-date">2x = 10</div><div class="frise-text">÷ 2 : <strong>x = 5</strong></div></div></div>
+    <div class="frise-item"><div class="frise-dot">Ex2</div><div class="frise-content"><div class="frise-date">x + 8 = 15</div><div class="frise-text">− 8 : <strong>x = 7</strong></div></div></div>
+    <div class="frise-item"><div class="frise-dot">Ex3</div><div class="frise-content"><div class="frise-date">4x − 3 = 13</div><div class="frise-text">+3 : 4x = 16 → ÷4 : <strong>x = 4</strong></div></div></div>
+    <div class="frise-item"><div class="frise-dot">Ex4</div><div class="frise-content"><div class="frise-date">2(x + 5) = 20</div><div class="frise-text">÷2 : x + 5 = 10 → −5 : <strong>x = 5</strong></div></div></div>
+    <div class="frise-item"><div class="frise-dot">Ex5</div><div class="frise-content"><div class="frise-date">5x + 3 = 2x + 12</div><div class="frise-text">−2x : 3x + 3 = 12 → −3 : 3x = 9 → <strong>x = 3</strong></div></div></div>
+  </div>
+</section>
+
+<section class="cs">
+  <h2>6. Mettre en équation un problème</h2>
+  <div class="dbox"><div class="lbl">Méthode</div>
+  <ul>
+    <li>Nommer l'inconnue : "soit x le nombre cherché"</li>
+    <li>Traduire le problème en équation</li>
+    <li>Résoudre, puis vérifier dans l'énoncé</li>
+  </ul></div>
+  <div class="ebox"><div class="lbl">Exemple</div>
+  <p>Paul a 3 fois plus de billes que Sophie, plus 4. Il en a 22 au total.<br>
+  Soit x le nombre de billes de Sophie.<br>
+  <code>3x + 4 = 22</code> → <code>3x = 18</code> → <strong>x = 6</strong><br>
+  Sophie a 6 billes, Paul en a 3×6+4 = 22 ✓</p></div>
+</section>
+
+<div class="retenir">
+  <h3>📌 À retenir</h3>
+  <ul>
+    <li>Expression littérale : calculer en remplaçant la lettre par sa valeur</li>
+    <li>Réduire : additionner uniquement les termes semblables (même lettre ET même exposant)</li>
+    <li>Développer : k(a + b) = ka + kb (distribuer)</li>
+    <li>Équation : même opération des deux côtés → balance équilibrée</li>
+    <li>Vérifier : substituer x dans l'équation de départ</li>
+  </ul>
+</div>
+
+<div class="cta">
+  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
+  <a href="algebre-6e.html" class="btn-ex">Faire les exercices 6e →</a>
+</div>
+
+</main>
+<footer class="site-footer">École Facile — Cours 6e · Algèbre et équations</footer>
+<script src="sync.js"></script>
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>

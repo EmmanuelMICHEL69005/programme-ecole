@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/cours-nombres-ce1.html">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Les nombres jusqu'à 1000 — Cours CE1 | École Facile</title>
+<meta name="description" content="Cours CE1 : centaines, dizaines, unités, lire et écrire jusqu'à 1000, comparer, ranger, nombres pairs et impairs.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/cours-nombres-ce1.html">
+<meta property="og:title" content="Les nombres jusqu'à 1000 — Cours CE1 | École Facile">
+<meta property="og:description" content="Cours CE1 : centaines, dizaines, unités, lire et écrire jusqu'à 1000, comparer, ranger, nombres pairs et impairs.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+body{font-family:'Nunito',sans-serif;background:#ecfdf5;color:#1e1b4b;margin:0}
+main{max-width:720px;margin:0 auto;padding:22px 18px 60px}
+.cs{margin-bottom:26px}
+.cs h2{font-size:1.1rem;font-weight:900;margin:0 0 12px;padding-bottom:7px;border-bottom:2.5px solid #a7f3d0;color:#064e3b}
+.dbox{background:#dbeafe;border-left:4px solid #1d4ed8;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.dbox .lbl{font-size:.65rem;font-weight:900;color:#1d4ed8;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.dbox p,.dbox ul{font-size:.9rem;font-weight:700;color:#1e3a8a;margin:0;line-height:1.6}
+.ebox{background:#fef9c3;border-left:4px solid #ca8a04;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.ebox .lbl{font-size:.65rem;font-weight:900;color:#92400e;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.ebox p,.ebox ul{font-size:.9rem;font-weight:700;color:#713f12;margin:0;line-height:1.6}
+.rbox{background:#dcfce7;border-left:4px solid #059669;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.rbox .lbl{font-size:.65rem;font-weight:900;color:#065f46;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.rbox p,.rbox ul{font-size:.9rem;font-weight:700;color:#064e3b;margin:0;line-height:1.6}
+.wbox{background:#fee2e2;border-left:4px solid #dc2626;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.wbox .lbl{font-size:.65rem;font-weight:900;color:#dc2626;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.wbox p,.wbox ul{font-size:.9rem;font-weight:700;color:#991b1b;margin:0;line-height:1.6}
+.retenir{background:#fff;border:2.5px solid #059669;border-radius:16px;padding:16px 18px;margin:22px 0 18px}
+.retenir h3{font-size:.78rem;font-weight:900;color:#059669;text-transform:uppercase;letter-spacing:1px;margin:0 0 10px}
+.retenir ul{margin:0;padding-left:18px}
+.retenir li{font-size:.88rem;font-weight:700;color:#1e1b4b;line-height:1.7}
+.cta{text-align:center;margin-top:26px;padding:18px;background:#fff;border-radius:16px;border:2px solid #a7f3d0}
+.cta p{font-size:.82rem;color:#6b7280;font-weight:700;margin:0 0 10px}
+.btn-ex{display:inline-block;background:linear-gradient(135deg,#059669,#10b981);color:#fff;padding:13px 26px;border-radius:13px;font-size:.95rem;font-weight:900;text-decoration:none;box-shadow:0 4px 12px rgba(5,150,105,.3)}
+.vgrid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));margin:10px 0}
+.vcrd{background:#fff;border:2px solid #a7f3d0;border-radius:11px;padding:9px;text-align:center}
+.vcrd .vl{font-size:.7rem;font-weight:900;color:#059669;margin-bottom:4px}
+.vcrd .vv{font-size:1.3rem;font-weight:900;color:#065f46}
+.vcrd .vs{font-size:.68rem;font-weight:700;color:#9ca3af;margin-top:2px}
+.visbox{background:#f0fdf4;border:2px solid #a7f3d0;border-radius:14px;padding:14px 10px 10px;margin:12px 0;text-align:center;overflow:hidden}
+.visbox svg{max-width:100%;height:auto;display:block;margin:0 auto}
+.visbox .vis-caption{font-size:.72rem;font-weight:900;color:#6b7280;margin-top:8px}
+.num-table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.9rem}
+.num-table th{padding:10px;text-align:center;font-weight:900;color:#fff;font-size:.82rem}
+.num-table td{padding:10px;text-align:center;font-weight:800;border:3px solid #ecfdf5;font-size:1.1rem}
+.nth-c{background:#059669}.nth-d{background:#10b981}.nth-u{background:#6ee7b7;color:#064e3b}
+.badge-niveau{display:inline-block;background:rgba(255,255,255,.2);border-radius:20px;padding:4px 14px;font-size:.72rem;font-weight:900;letter-spacing:1px;margin-bottom:8px}
+.cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
+.cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
+.cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.site-footer{text-align:center;padding:16px;font-size:.8rem;color:#9ca3af;border-top:1px solid #e5e7eb;margin-top:10px}
+</style>
+</head>
+<body>
+<header class="cours-header" style="background:linear-gradient(135deg,#059669,#10b981)">
+  <div class="badge-niveau">CE1</div>
+  <h1>🔢 Les nombres jusqu'à 1000</h1>
+  <p>Centaines, dizaines, unités — lire, écrire, comparer</p>
+</header>
+<main>
+
+<section class="cs">
+  <h2>1. Centaines, dizaines, unités</h2>
+  <div class="dbox"><div class="lbl">Définition</div>
+  <p>Un nombre est formé de <strong>centaines (C)</strong>, de <strong>dizaines (D)</strong> et d'<strong>unités (U)</strong>.<br>
+  On les range dans un tableau de numération.</p></div>
+  <div class="visbox">
+    <table class="num-table">
+      <tr><th class="nth-c">Centaines</th><th class="nth-d">Dizaines</th><th class="nth-u">Unités</th></tr>
+      <tr><td class="nth-c" style="color:#fff">3</td><td class="nth-d" style="color:#fff">4</td><td class="nth-u">7</td></tr>
+    </table>
+    <div class="vis-caption">347 = 3 centaines + 4 dizaines + 7 unités</div>
+  </div>
+  <div class="ebox"><div class="lbl">Exemples</div>
+  <ul>
+    <li><strong>245</strong> = 2 centaines + 4 dizaines + 5 unités = 200 + 40 + 5</li>
+    <li><strong>308</strong> = 3 centaines + 0 dizaine + 8 unités = 300 + 0 + 8</li>
+    <li><strong>70</strong> = 0 centaine + 7 dizaines + 0 unité = 70</li>
+  </ul></div>
+  <div class="wbox"><div class="lbl">Attention !</div>
+  <p><strong>308</strong> : le 0 des dizaines est important — il "garde la place" !</p></div>
+</section>
+
+<section class="cs">
+  <h2>2. Lire et écrire les nombres</h2>
+  <div class="dbox"><div class="lbl">Règle</div>
+  <p>On lit les chiffres de gauche à droite : <strong>centaines</strong> d'abord, puis <strong>dizaines</strong>, puis <strong>unités</strong>.</p></div>
+  <div class="vgrid">
+    <div class="vcrd"><div class="vl">En chiffres</div><div class="vv">456</div><div class="vs">quatre cent cinquante-six</div></div>
+    <div class="vcrd"><div class="vl">En chiffres</div><div class="vv">203</div><div class="vs">deux cent trois</div></div>
+    <div class="vcrd"><div class="vl">En chiffres</div><div class="vv">780</div><div class="vs">sept cent quatre-vingts</div></div>
+    <div class="vcrd"><div class="vl">En chiffres</div><div class="vv">100</div><div class="vs">cent</div></div>
+    <div class="vcrd"><div class="vl">En chiffres</div><div class="vv">999</div><div class="vs">neuf cent quatre-vingt-dix-neuf</div></div>
+    <div class="vcrd"><div class="vl">En chiffres</div><div class="vv">1 000</div><div class="vs">mille</div></div>
+  </div>
+  <div class="wbox"><div class="lbl">Pièges fréquents</div>
+  <ul>
+    <li><strong>200</strong> s'écrit "deux cents" (avec s) mais <strong>201</strong> s'écrit "deux cent un" (sans s car suivi d'un nombre)</li>
+    <li><strong>quatre-vingts</strong> (80) mais <strong>quatre-vingt-deux</strong> (82) — sans s !</li>
+  </ul></div>
+</section>
+
+<section class="cs">
+  <h2>3. Comparer les nombres</h2>
+  <div class="dbox"><div class="lbl">Méthode</div>
+  <p>On compare les chiffres de gauche à droite : centaines d'abord, puis dizaines, puis unités.</p></div>
+  <div class="ebox"><div class="lbl">Exemples avec &lt; &gt; =</div>
+  <ul>
+    <li><strong>456 &lt; 523</strong> : 4 centaines &lt; 5 centaines → 456 est plus petit</li>
+    <li><strong>738 &gt; 729</strong> : même centaine (7), même dizaine (3=2? Non, 3 &gt; 2) → 738 est plus grand</li>
+    <li><strong>345 = 345</strong> : tous les chiffres sont identiques</li>
+  </ul></div>
+  <div class="rbox"><div class="lbl">Astuce : le crocodile</div>
+  <p>Le signe &lt; ou &gt; "ouvre la bouche" vers le <strong>plus grand nombre</strong> — comme un crocodile affamé !</p></div>
+</section>
+
+<section class="cs">
+  <h2>4. Ranger les nombres</h2>
+  <div class="dbox"><div class="lbl">Définitions</div>
+  <p><strong>Ordre croissant</strong> = du plus petit au plus grand (↗)<br>
+  <strong>Ordre décroissant</strong> = du plus grand au plus petit (↘)</p></div>
+  <div class="ebox"><div class="lbl">Exemple</div>
+  <p>Ranger <strong>342, 97, 500, 124, 287</strong> dans l'ordre croissant :<br>
+  → <strong>97 &lt; 124 &lt; 287 &lt; 342 &lt; 500</strong></p></div>
+  <div class="visbox">
+    <svg viewBox="0 0 500 60" width="500" height="60">
+      <line x1="20" y1="30" x2="480" y2="30" stroke="#059669" stroke-width="3"/>
+      <line x1="480" y1="30" x2="470" y2="22" stroke="#059669" stroke-width="3"/>
+      <line x1="480" y1="30" x2="470" y2="38" stroke="#059669" stroke-width="3"/>
+      <line x1="70" y1="25" x2="70" y2="35" stroke="#059669" stroke-width="2"/>
+      <line x1="170" y1="25" x2="170" y2="35" stroke="#059669" stroke-width="2"/>
+      <line x1="270" y1="25" x2="270" y2="35" stroke="#059669" stroke-width="2"/>
+      <line x1="370" y1="25" x2="370" y2="35" stroke="#059669" stroke-width="2"/>
+      <text x="70" y="18" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="13" fill="#064e3b">100</text>
+      <text x="170" y="18" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="13" fill="#064e3b">300</text>
+      <text x="270" y="18" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="13" fill="#064e3b">500</text>
+      <text x="370" y="18" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="13" fill="#064e3b">700</text>
+      <text x="20" y="50" font-family="Nunito" font-weight="800" font-size="12" fill="#059669">0</text>
+      <text x="464" y="50" font-family="Nunito" font-weight="800" font-size="12" fill="#059669">1000</text>
+    </svg>
+    <div class="vis-caption">Droite des nombres de 0 à 1000</div>
+  </div>
+</section>
+
+<section class="cs">
+  <h2>5. Encadrer un nombre</h2>
+  <div class="dbox"><div class="lbl">Définition</div>
+  <p>Encadrer un nombre, c'est trouver les deux <strong>dizaines</strong> (ou centaines) les plus proches entre lesquelles il se trouve.</p></div>
+  <div class="ebox"><div class="lbl">Exemples</div>
+  <ul>
+    <li>Encadrer <strong>347</strong> à la dizaine : <strong>340 &lt; 347 &lt; 350</strong></li>
+    <li>Encadrer <strong>347</strong> à la centaine : <strong>300 &lt; 347 &lt; 400</strong></li>
+    <li>Intercaler un nombre : entre 250 et 260 → <strong>255</strong> par exemple</li>
+  </ul></div>
+</section>
+
+<section class="cs">
+  <h2>6. Nombres pairs et impairs</h2>
+  <div class="dbox"><div class="lbl">Définition</div>
+  <p>Un nombre <strong>pair</strong> se termine par 0, 2, 4, 6 ou 8.<br>
+  Un nombre <strong>impair</strong> se termine par 1, 3, 5, 7 ou 9.</p></div>
+  <div class="vgrid">
+    <div class="vcrd" style="border-color:#bbf7d0"><div class="vl" style="color:#16a34a">Pairs</div><div class="vv" style="color:#15803d">0 2 4 6 8</div><div class="vs">terminaisons</div></div>
+    <div class="vcrd" style="border-color:#fecaca"><div class="vl" style="color:#dc2626">Impairs</div><div class="vv" style="color:#b91c1c">1 3 5 7 9</div><div class="vs">terminaisons</div></div>
+  </div>
+  <div class="rbox"><div class="lbl">Pourquoi c'est utile ?</div>
+  <p>Un nombre pair peut être partagé en <strong>deux groupes égaux</strong>. Un nombre impair, non — il reste 1 en dehors.</p></div>
+  <div class="ebox"><div class="lbl">Exemples rapides</div>
+  <ul>
+    <li><strong>348</strong> : se termine par 8 → <strong>pair</strong></li>
+    <li><strong>507</strong> : se termine par 7 → <strong>impair</strong></li>
+    <li><strong>1000</strong> : se termine par 0 → <strong>pair</strong></li>
+  </ul></div>
+</section>
+
+<section class="cs">
+  <h2>7. Les doubles et moitiés</h2>
+  <div class="dbox"><div class="lbl">Définition</div>
+  <p>Le <strong>double</strong> d'un nombre = ce nombre + ce nombre (× 2).<br>
+  La <strong>moitié</strong> = partager en 2 groupes égaux (÷ 2).</p></div>
+  <div class="vgrid">
+    <div class="vcrd"><div class="vl">Double de</div><div class="vv">5 → 10</div></div>
+    <div class="vcrd"><div class="vl">Double de</div><div class="vv">8 → 16</div></div>
+    <div class="vcrd"><div class="vl">Double de</div><div class="vv">12 → 24</div></div>
+    <div class="vcrd"><div class="vl">Double de</div><div class="vv">15 → 30</div></div>
+    <div class="vcrd"><div class="vl">Moitié de</div><div class="vv">10 → 5</div></div>
+    <div class="vcrd"><div class="vl">Moitié de</div><div class="vv">24 → 12</div></div>
+  </div>
+  <div class="wbox"><div class="lbl">Attention !</div>
+  <p>On ne peut calculer la moitié que des nombres <strong>pairs</strong>. La moitié de 7 n'est pas un nombre entier.</p></div>
+</section>
+
+<div class="retenir">
+  <h3>📌 À retenir</h3>
+  <ul>
+    <li>Centaines — Dizaines — Unités : lire de gauche à droite</li>
+    <li>Pour comparer : regarder les centaines d'abord, puis les dizaines, puis les unités</li>
+    <li>Pair : se termine par 0, 2, 4, 6 ou 8</li>
+    <li>Impair : se termine par 1, 3, 5, 7 ou 9</li>
+    <li>Double × 2, moitié ÷ 2</li>
+  </ul>
+</div>
+
+<div class="cta">
+  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
+  <a href="nombres-ce1.html" class="btn-ex">Faire les exercices CE1 →</a>
+</div>
+
+</main>
+<footer class="site-footer">École Facile — Cours CE1 · Les nombres</footer>
+<script src="sync.js"></script>
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>

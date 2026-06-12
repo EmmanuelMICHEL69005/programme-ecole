@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/cours-decimaux-cm2.html">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🔡 Décimaux avancés — Cours CM2 — École Facile</title>
+<meta name="description" content="Cours décimaux CM2 : division et multiplication de décimaux, conversion fractions/décimaux, décimaux et pourcentages, applications prix TTC.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+body{font-family:'Nunito',sans-serif;background:#fffbeb;color:#1e1b4b;margin:0}
+main{max-width:720px;margin:0 auto;padding:22px 18px 60px}
+.cs{margin-bottom:26px}
+.cs h2{font-size:1.1rem;font-weight:900;margin:0 0 12px;padding-bottom:7px;border-bottom:2.5px solid #fde68a;color:#92400e}
+.dbox{background:#dbeafe;border-left:4px solid #1d4ed8;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.dbox .lbl{font-size:.65rem;font-weight:900;color:#1d4ed8;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.dbox p,.dbox ul{font-size:.9rem;font-weight:700;color:#1e3a8a;margin:0;line-height:1.55}
+.ebox{background:#fef9c3;border-left:4px solid #ca8a04;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.ebox .lbl{font-size:.65rem;font-weight:900;color:#92400e;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.ebox p,.ebox ul{font-size:.9rem;font-weight:700;color:#713f12;margin:0;line-height:1.55}
+.rbox{background:#dcfce7;border-left:4px solid #16a34a;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.rbox .lbl{font-size:.65rem;font-weight:900;color:#15803d;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.rbox p,.rbox ul{font-size:.9rem;font-weight:700;color:#14532d;margin:0;line-height:1.55}
+.wbox{background:#fee2e2;border-left:4px solid #dc2626;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.wbox .lbl{font-size:.65rem;font-weight:900;color:#dc2626;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.wbox p,.wbox ul{font-size:.9rem;font-weight:700;color:#991b1b;margin:0;line-height:1.55}
+.retenir{background:#fff;border:2.5px solid #b45309;border-radius:16px;padding:16px 18px;margin:22px 0 18px}
+.retenir h3{font-size:.78rem;font-weight:900;color:#b45309;text-transform:uppercase;letter-spacing:1px;margin:0 0 10px}
+.retenir ul{margin:0;padding-left:18px}
+.retenir li{font-size:.88rem;font-weight:700;color:#1e1b4b;line-height:1.7}
+.cta{text-align:center;margin-top:26px;padding:18px;background:#fff;border-radius:16px;border:2px solid #fde68a}
+.cta p{font-size:.82rem;color:#6b7280;font-weight:700;margin:0 0 10px}
+.btn-ex{display:inline-block;background:linear-gradient(135deg,#b45309,#f59e0b);color:#fff;padding:13px 26px;border-radius:13px;font-size:.95rem;font-weight:900;text-decoration:none;box-shadow:0 4px 16px rgba(180,83,9,.4)}
+.vgrid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));margin:10px 0}
+.vcrd{background:#fff;border:2px solid #fde68a;border-radius:11px;padding:9px;text-align:center}
+.vcrd .vl{font-size:.7rem;font-weight:900;color:#92400e;margin-bottom:4px}
+.vcrd .vv{font-size:1.3rem;font-weight:900;color:#b45309}
+.vcrd .vs{font-size:.68rem;font-weight:700;color:#9ca3af;margin-top:2px}
+.frise{display:flex;flex-direction:column;gap:0;margin:12px 0}
+.frise-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid #fde68a}
+.frise-item:last-child{border-bottom:none}
+.frise-dot{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:900;flex-shrink:0;margin-top:2px}
+.frise-content{flex:1}
+.frise-date{font-size:.68rem;font-weight:900;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px;color:#b45309}
+.frise-text{font-size:.88rem;font-weight:700;line-height:1.5}
+.visbox{background:#fffbf0;border:2px solid #fde68a;border-radius:14px;padding:14px 10px 10px;margin:12px 0;text-align:center;overflow:hidden}
+.visbox svg{max-width:100%;height:auto;display:block;margin:0 auto}
+.visbox .vis-caption{font-size:.72rem;font-weight:900;color:#92400e;margin-top:8px}
+.method-card{background:linear-gradient(135deg,#1e1b4b,#3730a3);color:white;border-radius:16px;padding:16px 20px;margin:14px 0}
+.method-card .mc-title{font-size:.68rem;font-weight:900;opacity:.7;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.method-card .mc-steps{list-style:none;padding:0;margin:0}
+.method-card .mc-steps li{padding:4px 0;font-size:.9rem;font-weight:700;border-bottom:1px solid rgba(255,255,255,.1)}
+.method-card .mc-steps li:last-child{border-bottom:none}
+.cmp-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.85rem}
+.cmp-table th{background:#b45309;color:white;padding:8px 10px;font-weight:900;text-align:center}
+.cmp-table td{border:1.5px solid #fde68a;padding:8px 10px;font-weight:700;text-align:center;background:#fff}
+.cmp-table tr:nth-child(even) td{background:#fffbeb}
+.badge-niveau{display:inline-block;background:rgba(255,255,255,.2);border-radius:20px;padding:4px 14px;font-size:.72rem;font-weight:900;letter-spacing:1px;margin-bottom:8px}
+.cours-header{text-align:center;padding:20px 20px 16px;color:#fff;background:linear-gradient(135deg,#b45309,#f59e0b);border-radius:0 0 24px 24px;margin-bottom:20px}
+.cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
+.cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.site-footer{text-align:center;padding:16px;font-size:.8rem;color:#9ca3af;border-top:1px solid #e5e7eb;margin-top:10px}
+</style>
+</head>
+<body>
+
+<div class="cours-header">
+  <div class="badge-niveau">CM2 · MATHÉMATIQUES</div>
+  <h1>🔡 Décimaux avancés</h1>
+  <p>Division · Multiplication · Fractions ↔ Décimaux · Pourcentages</p>
+</div>
+
+<main>
+
+<!-- SECTION 1 -->
+<div class="cs">
+  <h2>1. Rappel et extension — précision et arrondi</h2>
+
+  <div class="dbox">
+    <div class="lbl">Position des chiffres décimaux</div>
+    <p>Dans 3,<strong>4</strong><strong>5</strong><strong>6</strong> : 4 est au <strong>dixième</strong>, 5 au <strong>centième</strong>, 6 au <strong>millième</strong>.</p>
+  </div>
+
+  <table class="cmp-table">
+    <tr><th>Nombre</th><th>Arrondi au dixième</th><th>Arrondi au centième</th></tr>
+    <tr><td>3,456</td><td>3,5</td><td>3,46</td></tr>
+    <tr><td>12,3421</td><td>12,3</td><td>12,34</td></tr>
+    <tr><td>0,8975</td><td>0,9</td><td>0,90</td></tr>
+    <tr><td>7,0049</td><td>7,0</td><td>7,00</td></tr>
+  </table>
+
+  <div class="rbox">
+    <div class="lbl">La précision d'un résultat</div>
+    <p>En pratique, on choisit la précision selon le contexte : prix → centième (2 décimales), longueur en cm → dixième (1 décimale), mesure scientifique → plus décimales selon besoin.</p>
+  </div>
+
+  <div class="ebox">
+    <div class="lbl">Opérations avec 3 décimales</div>
+    <p>2,345 + 1,067 = 3,412 · On aligne les virgules, chiffre par chiffre. Ne jamais ignorer les zéros après la virgule.</p>
+  </div>
+</div>
+
+<!-- SECTION 2 -->
+<div class="cs">
+  <h2>2. Division d'un décimal par un décimal</h2>
+
+  <div class="dbox">
+    <div class="lbl">Principe clé</div>
+    <p>Diviser deux décimaux revient à <strong>multiplier dividende et diviseur par la même puissance de 10</strong> pour obtenir des entiers, sans changer le résultat.</p>
+  </div>
+
+  <div class="frise">
+    <div class="frise-item">
+      <div class="frise-dot" style="background:#fde68a;color:#92400e">1</div>
+      <div class="frise-content">
+        <div class="frise-date">Étape 1 — compter les décimales du diviseur</div>
+        <div class="frise-text">2,4 ÷ <strong>0,3</strong> → le diviseur 0,3 a <strong>1 chiffre après la virgule</strong></div>
+      </div>
+    </div>
+    <div class="frise-item">
+      <div class="frise-dot" style="background:#fde68a;color:#92400e">2</div>
+      <div class="frise-content">
+        <div class="frise-date">Étape 2 — multiplier les deux par 10¹</div>
+        <div class="frise-text">2,4 × 10 = <strong>24</strong> · 0,3 × 10 = <strong>3</strong></div>
+      </div>
+    </div>
+    <div class="frise-item">
+      <div class="frise-dot" style="background:#fde68a;color:#92400e">3</div>
+      <div class="frise-content">
+        <div class="frise-date">Étape 3 — effectuer la division entière</div>
+        <div class="frise-text">24 ÷ 3 = <strong>8</strong></div>
+      </div>
+    </div>
+    <div class="frise-item">
+      <div class="frise-dot" style="background:#dcfce7;color:#15803d">✓</div>
+      <div class="frise-content">
+        <div class="frise-date">Résultat</div>
+        <div class="frise-text">2,4 ÷ 0,3 = <strong>8</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ebox">
+    <div class="lbl">Autres exemples</div>
+    <ul>
+      <li>3,6 ÷ 0,4 → ×10 → 36 ÷ 4 = <strong>9</strong></li>
+      <li>0,75 ÷ 0,25 → ×100 → 75 ÷ 25 = <strong>3</strong></li>
+      <li>1,44 ÷ 0,12 → ×100 → 144 ÷ 12 = <strong>12</strong></li>
+    </ul>
+  </div>
+
+  <div class="wbox">
+    <div class="lbl">Erreur fréquente</div>
+    <p>Ne multiplie <strong>que le dividende</strong> par 10 et pas le diviseur — le résultat sera faux ! Il faut toujours appliquer la même opération aux deux termes.</p>
+  </div>
+</div>
+
+<!-- SECTION 3 -->
+<div class="cs">
+  <h2>3. Multiplication de deux décimaux</h2>
+
+  <div class="dbox">
+    <div class="lbl">Règle des virgules</div>
+    <p>Dans une multiplication de décimaux, le résultat a autant de chiffres après la virgule que <strong>la somme des chiffres décimaux</strong> des deux facteurs.</p>
+  </div>
+
+  <div class="method-card">
+    <div class="mc-title">Méthode — Calcul de 2,3 × 1,4</div>
+    <ul class="mc-steps">
+      <li>1. Ignore les virgules : 23 × 14 = 322</li>
+      <li>2. Compte les décimales : 2,3 → 1 décimale · 1,4 → 1 décimale → total 1+1=2</li>
+      <li>3. Place la virgule : 322 → 3,22</li>
+      <li>4. Vérification ordre de grandeur : 2 × 1 = 2 ✓ (3,22 est cohérent)</li>
+    </ul>
+  </div>
+
+  <table class="cmp-table">
+    <tr><th>Calcul</th><th>Sans virgule</th><th>Décimales</th><th>Résultat</th></tr>
+    <tr><td>0,5 × 0,4</td><td>5×4=20</td><td>1+1=2</td><td>0,20 = 0,2</td></tr>
+    <tr><td>1,2 × 3,5</td><td>12×35=420</td><td>1+1=2</td><td>4,20 = 4,2</td></tr>
+    <tr><td>0,12 × 0,5</td><td>12×5=60</td><td>2+1=3</td><td>0,060 = 0,06</td></tr>
+    <tr><td>2,4 × 1,25</td><td>24×125=3000</td><td>1+2=3</td><td>3,000 = 3</td></tr>
+  </table>
+
+  <div class="rbox">
+    <div class="lbl">Vérification systématique</div>
+    <p>Avant de poser la virgule, estime le résultat avec des arrondis. Si 0,5 × 0,4, tu sais que c'est « la moitié de 0,4 » = 0,2 → cohérent avec 0,20 ✓</p>
+  </div>
+</div>
+
+<!-- SECTION 4 -->
+<div class="cs">
+  <h2>4. Conversion fractions ↔ décimaux</h2>
+
+  <div class="dbox">
+    <div class="lbl">Principe</div>
+    <p>Pour convertir une fraction en décimal, effectue la <strong>division du numérateur par le dénominateur</strong>.</p>
+  </div>
+
+  <div class="ebox">
+    <div class="lbl">Exemple — 3/8</div>
+    <p>3 ÷ 8 = 0,375 (on continue avec des zéros : 30÷8=3 reste 6, 60÷8=7 reste 4, 40÷8=5)</p>
+  </div>
+
+  <table class="cmp-table">
+    <tr><th>Fraction</th><th>Décimal</th><th>Type</th></tr>
+    <tr><td>1/2</td><td>0,5</td><td>Fini</td></tr>
+    <tr><td>1/4</td><td>0,25</td><td>Fini</td></tr>
+    <tr><td>1/3</td><td>0,333…</td><td>Périodique</td></tr>
+    <tr><td>1/6</td><td>0,1666…</td><td>Périodique</td></tr>
+    <tr><td>2/3</td><td>0,666…</td><td>Périodique</td></tr>
+    <tr><td>1/7</td><td>0,142857…</td><td>Périodique</td></tr>
+    <tr><td>3/8</td><td>0,375</td><td>Fini</td></tr>
+    <tr><td>5/4</td><td>1,25</td><td>Fini</td></tr>
+  </table>
+
+  <div class="dbox">
+    <div class="lbl">Décimal périodique</div>
+    <p>1/3 = 0,333… le chiffre 3 se répète à l'infini. On écrit 0,3̄ ou on arrondit : 0,333 à la millième.</p>
+  </div>
+
+  <div class="rbox">
+    <div class="lbl">Fiche conversions utiles à mémoriser</div>
+    <p>1/2=0,5 · 1/4=0,25 · 3/4=0,75 · 1/5=0,2 · 1/10=0,1 · 1/8=0,125 · 1/3≈0,333</p>
+  </div>
+</div>
+
+<!-- SECTION 5 -->
+<div class="cs">
+  <h2>5. Décimaux et pourcentages</h2>
+
+  <div class="dbox">
+    <div class="lbl">Lien fondamental</div>
+    <p>Un pourcentage n'est qu'une fraction sur 100 : <strong>35% = 35/100 = 0,35</strong></p>
+  </div>
+
+  <div class="vgrid">
+    <div class="vcrd">
+      <div class="vl">20%</div>
+      <div class="vv">0,20</div>
+      <div class="vs">÷ 5</div>
+    </div>
+    <div class="vcrd">
+      <div class="vl">15%</div>
+      <div class="vv">0,15</div>
+      <div class="vs">3/20</div>
+    </div>
+    <div class="vcrd">
+      <div class="vl">50%</div>
+      <div class="vv">0,50</div>
+      <div class="vs">1/2</div>
+    </div>
+    <div class="vcrd">
+      <div class="vl">7,5%</div>
+      <div class="vv">0,075</div>
+      <div class="vs">3/40</div>
+    </div>
+  </div>
+
+  <div class="method-card">
+    <div class="mc-title">Méthode — Calculer x% d'un nombre</div>
+    <ul class="mc-steps">
+      <li>1. Convertis le pourcentage en décimal : 35% → 0,35</li>
+      <li>2. Multiplie : 0,35 × 200 = 70</li>
+      <li>3. Vérification : 35% de 200 = 70 ✓</li>
+    </ul>
+  </div>
+
+  <div class="method-card">
+    <div class="mc-title">Méthode — Multiplicateur (augmentation / diminution)</div>
+    <ul class="mc-steps">
+      <li>+20% → multiplier par 1,20 (= 1 + 0,20)</li>
+      <li>−20% → multiplier par 0,80 (= 1 − 0,20)</li>
+      <li>+7,5% → multiplier par 1,075</li>
+      <li>−30% → multiplier par 0,70</li>
+    </ul>
+  </div>
+</div>
+
+<!-- SECTION 6 -->
+<div class="cs">
+  <h2>6. Applications concrètes</h2>
+
+  <table class="cmp-table">
+    <tr><th>Situation</th><th>Opération</th><th>Exemple</th></tr>
+    <tr><td>Prix TTC (+20%)</td><td>Prix HT × 1,20</td><td>50 € × 1,20 = 60 €</td></tr>
+    <tr><td>Soldes −20%</td><td>Prix × 0,80</td><td>80 € × 0,80 = 64 €</td></tr>
+    <tr><td>Soldes −30%</td><td>Prix × 0,70</td><td>120 € × 0,70 = 84 €</td></tr>
+    <tr><td>Soldes −50%</td><td>Prix × 0,50</td><td>60 € × 0,50 = 30 €</td></tr>
+    <tr><td>TVA 5,5%</td><td>Prix × 1,055</td><td>100 € × 1,055 = 105,50 €</td></tr>
+  </table>
+
+  <div class="ebox">
+    <div class="lbl">Intérêts simples</div>
+    <p>Si tu places 1 000 € à 3% par an : intérêts = 1 000 × 0,03 = <strong>30 € par an</strong>. Après 5 ans : 5 × 30 = 150 €.</p>
+  </div>
+
+  <div class="rbox">
+    <div class="lbl">Astuce soldes enchaînés</div>
+    <p>−20% puis −10% ≠ −30% ! C'est : 0,80 × 0,90 = 0,72 → soit −28% au total.</p>
+  </div>
+
+  <div class="frise">
+    <div class="frise-item">
+      <div class="frise-dot" style="background:#fde68a;color:#92400e">💡</div>
+      <div class="frise-content">
+        <div class="frise-date">Problème type</div>
+        <div class="frise-text">Un article coûte 45 € HT. La TVA est de 20%. Quel est son prix TTC ?<br>45 × 1,20 = <strong>54 €</strong></div>
+      </div>
+    </div>
+    <div class="frise-item">
+      <div class="frise-dot" style="background:#fde68a;color:#92400e">💡</div>
+      <div class="frise-content">
+        <div class="frise-date">Problème type</div>
+        <div class="frise-text">Un jean à 65 € est soldé à −25%. Quel est son prix soldé ?<br>65 × 0,75 = <strong>48,75 €</strong></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RETENIR -->
+<div class="retenir">
+  <h3>À retenir absolument</h3>
+  <ul>
+    <li>Pour diviser par un décimal : multiplier les deux termes par la même puissance de 10</li>
+    <li>Multiplication : compter les décimales et les additionner pour placer la virgule</li>
+    <li>Vérification obligatoire par ordre de grandeur</li>
+    <li>1/3 = 0,333… (décimal périodique), 1/4 = 0,25 (décimal fini)</li>
+    <li>x% = x/100 = x÷100 en décimal</li>
+    <li>Augmentation de t% → multiplicateur 1 + t/100</li>
+    <li>Diminution de t% → multiplicateur 1 − t/100</li>
+    <li>Prix TTC = Prix HT × 1,20 (si TVA 20%)</li>
+  </ul>
+</div>
+
+<div class="cta">
+  <p>Tu maîtrises les décimaux ? Teste-toi maintenant !</p>
+  <a href="decimaux-cm2.html" class="btn-ex">🎯 Faire les exercices →</a>
+</div>
+
+<!-- FICHE RÉCAP -->
+<div class="cs" style="margin-top:30px">
+  <h2>Fiche récap — Décimaux CM2</h2>
+  <div style="display:grid;gap:10px;grid-template-columns:1fr 1fr">
+    <div style="background:#fff;border:2px solid #fde68a;border-radius:12px;padding:12px">
+      <div style="font-size:.68rem;font-weight:900;color:#b45309;text-transform:uppercase;margin-bottom:6px">Division de décimaux</div>
+      <div style="font-size:.85rem;font-weight:700;line-height:1.7">2,4 ÷ 0,3<br>= 24 ÷ 3<br>= <strong>8</strong><br>×10 les deux termes</div>
+    </div>
+    <div style="background:#fff;border:2px solid #fde68a;border-radius:12px;padding:12px">
+      <div style="font-size:.68rem;font-weight:900;color:#b45309;text-transform:uppercase;margin-bottom:6px">Multiplication</div>
+      <div style="font-size:.85rem;font-weight:700;line-height:1.7">2,3 × 1,4<br>23×14 = 322<br>1+1 = 2 déc.<br>= <strong>3,22</strong></div>
+    </div>
+    <div style="background:#fff;border:2px solid #fde68a;border-radius:12px;padding:12px">
+      <div style="font-size:.68rem;font-weight:900;color:#b45309;text-transform:uppercase;margin-bottom:6px">Pourcentages</div>
+      <div style="font-size:.85rem;font-weight:700;line-height:1.7">25% = 0,25<br>× 1,20 = +20%<br>× 0,80 = −20%<br>× 1,075 = +7,5%</div>
+    </div>
+    <div style="background:#fff;border:2px solid #fde68a;border-radius:12px;padding:12px">
+      <div style="font-size:.68rem;font-weight:900;color:#b45309;text-transform:uppercase;margin-bottom:6px">Fractions → décimaux</div>
+      <div style="font-size:.85rem;font-weight:700;line-height:1.7">1/4 = 0,25<br>3/4 = 0,75<br>1/3 ≈ 0,333<br>3/8 = 0,375</div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 École Facile — ecolefacile.fr · Cours CM2 Mathématiques</p>
+</footer>
+
+<script src="sync.js" defer></script>
+<script src="gamification.js" defer></script>
+<script src="nav.js" defer></script>
+<script src="related.js" defer></script>
+<script src="seo.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/cours-nombres-cm1.html">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Les grands nombres – CM1 | École Facile</title>
+<meta name="description" content="Cours CM1 sur les grands nombres jusqu'à 999 999 : lire, écrire, comparer, arrondir, valeur des chiffres, multiples et diviseurs.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/cours-nombres-cm1.html">
+<meta property="og:title" content="Les grands nombres – CM1 | École Facile">
+<meta property="og:description" content="Cours CM1 sur les grands nombres jusqu'à 999 999 : lire, écrire, comparer, arrondir, multiples et diviseurs.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+body{font-family:'Nunito',sans-serif;background:#eff6ff;color:#1e3a8a;margin:0}
+main{max-width:720px;margin:0 auto;padding:22px 18px 60px}
+.cs{margin-bottom:26px}
+.cs h2{font-size:1.1rem;font-weight:900;margin:0 0 12px;padding-bottom:7px;border-bottom:2.5px solid #bfdbfe;color:#1e3a8a}
+.dbox{background:#dbeafe;border-left:4px solid #1d4ed8;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.dbox .lbl{font-size:.65rem;font-weight:900;color:#1d4ed8;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.dbox p,.dbox ul{font-size:.9rem;font-weight:700;color:#1e3a8a;margin:0;line-height:1.55}
+.ebox{background:#fef9c3;border-left:4px solid #ca8a04;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.ebox .lbl{font-size:.65rem;font-weight:900;color:#92400e;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.ebox p,.ebox ul{font-size:.9rem;font-weight:700;color:#713f12;margin:0;line-height:1.55}
+.rbox{background:#dcfce7;border-left:4px solid #16a34a;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.rbox .lbl{font-size:.65rem;font-weight:900;color:#15803d;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.rbox p,.rbox ul{font-size:.9rem;font-weight:700;color:#14532d;margin:0;line-height:1.55}
+.wbox{background:#fee2e2;border-left:4px solid #dc2626;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.wbox .lbl{font-size:.65rem;font-weight:900;color:#dc2626;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.wbox p,.wbox ul{font-size:.9rem;font-weight:700;color:#991b1b;margin:0;line-height:1.55}
+.retenir{background:#fff;border:2.5px solid #1d4ed8;border-radius:16px;padding:16px 18px;margin:22px 0 18px}
+.retenir h3{font-size:.78rem;font-weight:900;color:#1d4ed8;text-transform:uppercase;letter-spacing:1px;margin:0 0 10px}
+.retenir ul{margin:0;padding-left:18px}
+.retenir li{font-size:.88rem;font-weight:700;color:#1e3a8a;line-height:1.7}
+.cta{text-align:center;margin-top:26px;padding:18px;background:#fff;border-radius:16px;border:2px solid #bfdbfe}
+.cta p{font-size:.82rem;color:#6b7280;font-weight:700;margin:0 0 10px}
+.btn-ex{display:inline-block;background:linear-gradient(135deg,#1d4ed8,#3b82f6);color:#fff;padding:13px 26px;border-radius:13px;font-size:.95rem;font-weight:900;text-decoration:none;box-shadow:0 4px 16px rgba(29,78,216,.4)}
+.vgrid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));margin:10px 0}
+.vcrd{background:#fff;border:2px solid #bfdbfe;border-radius:11px;padding:10px;text-align:center}
+.vcrd .vl{font-size:.7rem;font-weight:900;color:#6b7280;margin-bottom:4px}
+.vcrd .vv{font-size:1.3rem;font-weight:900;color:#1d4ed8}
+.vcrd .vs{font-size:.7rem;font-weight:700;color:#9ca3af;margin-top:3px;line-height:1.4}
+.frise{display:flex;flex-direction:column;gap:0;margin:12px 0}
+.frise-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid #dbeafe}
+.frise-item:last-child{border-bottom:none}
+.frise-dot{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#1d4ed8,#3b82f6);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:900;color:#fff;flex-shrink:0;margin-top:2px}
+.frise-content{flex:1}
+.frise-title{font-size:.75rem;font-weight:900;color:#1d4ed8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+.frise-text{font-size:.88rem;font-weight:700;line-height:1.5;color:#1e3a8a}
+.visbox{background:#f0f9ff;border:2px solid #bfdbfe;border-radius:14px;padding:14px 10px 10px;margin:12px 0;text-align:center;overflow:hidden}
+.visbox svg{max-width:100%;height:auto;display:block;margin:0 auto}
+.visbox .vis-caption{font-size:.72rem;font-weight:900;color:#6b7280;margin-top:8px;letter-spacing:.5px}
+.formula-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.85rem}
+.formula-table th{background:linear-gradient(135deg,#1d4ed8,#3b82f6);color:white;padding:9px 12px;font-weight:900;text-align:left}
+.formula-table td{border:1.5px solid #bfdbfe;padding:8px 12px;font-weight:700;background:white}
+.formula-table tr:nth-child(even) td{background:#eff6ff}
+.formula-card{background:linear-gradient(135deg,#1d4ed8,#3b82f6);color:white;border-radius:16px;padding:16px 20px;margin:12px 0;text-align:center}
+.formula-card .fc-label{font-size:.65rem;font-weight:900;opacity:.75;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.formula-card .fc-formula{font-size:1.2rem;font-weight:900;letter-spacing:.5px}
+.formula-card .fc-desc{font-size:.8rem;opacity:.85;margin-top:6px;font-weight:700}
+.badge-niveau{display:inline-block;background:rgba(255,255,255,.2);border-radius:20px;padding:4px 14px;font-size:.72rem;font-weight:900;letter-spacing:1px;margin-bottom:8px}
+.cours-header{text-align:center;padding:22px 20px 18px;color:#fff;background:linear-gradient(135deg,#1d4ed8,#3b82f6)}
+.cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
+.cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.site-footer{text-align:center;padding:16px;font-size:.8rem;color:#9ca3af;border-top:1px solid #bfdbfe;margin-top:10px}
+</style>
+</head>
+<body>
+<header class="cours-header">
+  <div class="badge-niveau">CM1 · MATHÉMATIQUES</div>
+  <h1>🔢 Les grands nombres</h1>
+  <p>Jusqu'à 999 999 — lire, comparer, arrondir et décomposer</p>
+</header>
+<main>
+
+<!-- SECTION 1 : TABLEAU DE NUMÉRATION -->
+<section class="cs">
+  <h2>1. Les grands nombres jusqu'à 999 999</h2>
+
+  <div class="dbox">
+    <div class="lbl">📖 Les rangs de la numération</div>
+    <p>On regroupe les chiffres par <strong>3</strong>, de droite à gauche. Chaque groupe forme une "famille" :<br>
+    — Groupe des <strong>unités</strong> : unités, dizaines, centaines<br>
+    — Groupe des <strong>milliers</strong> : milliers, dizaines de milliers, centaines de milliers</p>
+  </div>
+
+  <!-- Tableau de numération SVG -->
+  <div class="visbox">
+    <svg width="600" height="130" viewBox="0 0 600 130">
+      <!-- Groupe Milliers -->
+      <rect x="5" y="5" width="285" height="40" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+      <text x="147" y="30" text-anchor="middle" font-family="Nunito" font-size="13" fill="#1d4ed8" font-weight="900">MILLIERS</text>
+      <!-- Groupe Unités -->
+      <rect x="295" y="5" width="295" height="40" rx="8" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+      <text x="442" y="30" text-anchor="middle" font-family="Nunito" font-size="13" fill="#0284c7" font-weight="900">UNITÉS</text>
+      <!-- Colonnes -->
+      <rect x="5" y="52" width="90" height="70" rx="8" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="1.5"/>
+      <text x="50" y="73" text-anchor="middle" font-family="Nunito" font-size="9" fill="#1e3a8a" font-weight="900">C. DE MILLIERS</text>
+      <text x="50" y="98" text-anchor="middle" font-family="Nunito" font-size="30" fill="#1d4ed8" font-weight="900">3</text>
+
+      <rect x="100" y="52" width="90" height="70" rx="8" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="1.5"/>
+      <text x="145" y="73" text-anchor="middle" font-family="Nunito" font-size="9" fill="#1e3a8a" font-weight="900">D. DE MILLIERS</text>
+      <text x="145" y="98" text-anchor="middle" font-family="Nunito" font-size="30" fill="#1d4ed8" font-weight="900">4</text>
+
+      <rect x="195" y="52" width="90" height="70" rx="8" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="1.5"/>
+      <text x="240" y="73" text-anchor="middle" font-family="Nunito" font-size="9" fill="#1e3a8a" font-weight="900">MILLIERS</text>
+      <text x="240" y="98" text-anchor="middle" font-family="Nunito" font-size="30" fill="#1d4ed8" font-weight="900">5</text>
+
+      <rect x="295" y="52" width="90" height="70" rx="8" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+      <text x="340" y="73" text-anchor="middle" font-family="Nunito" font-size="9" fill="#0369a1" font-weight="900">CENTAINES</text>
+      <text x="340" y="98" text-anchor="middle" font-family="Nunito" font-size="30" fill="#0284c7" font-weight="900">6</text>
+
+      <rect x="390" y="52" width="90" height="70" rx="8" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+      <text x="435" y="73" text-anchor="middle" font-family="Nunito" font-size="9" fill="#0369a1" font-weight="900">DIZAINES</text>
+      <text x="435" y="98" text-anchor="middle" font-family="Nunito" font-size="30" fill="#0284c7" font-weight="900">7</text>
+
+      <rect x="485" y="52" width="90" height="70" rx="8" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+      <text x="530" y="73" text-anchor="middle" font-family="Nunito" font-size="9" fill="#0369a1" font-weight="900">UNITÉS</text>
+      <text x="530" y="98" text-anchor="middle" font-family="Nunito" font-size="30" fill="#0284c7" font-weight="900">8</text>
+    </svg>
+    <div class="vis-caption">345 678 — on groupe par 3 chiffres : 345 (milliers) et 678 (unités)</div>
+  </div>
+
+  <div class="ebox">
+    <div class="lbl">💡 Décomposition de 345 678</div>
+    <p><strong>345 678</strong> = 300 000 + 40 000 + 5 000 + 600 + 70 + 8<br>
+    = 3 centaines de milliers + 4 dizaines de milliers + 5 milliers + 6 centaines + 7 dizaines + 8 unités</p>
+  </div>
+
+  <div class="vgrid">
+    <div class="vcrd"><div class="vl">100 000</div><div class="vv">cent mille</div><div class="vs">1 centaine de milliers</div></div>
+    <div class="vcrd"><div class="vl">10 000</div><div class="vv">dix mille</div><div class="vs">1 dizaine de milliers</div></div>
+    <div class="vcrd"><div class="vl">1 000</div><div class="vv">mille</div><div class="vs">1 millier</div></div>
+    <div class="vcrd"><div class="vl">999 999</div><div class="vv">max</div><div class="vs">le plus grand nombre à 6 chiffres</div></div>
+  </div>
+</section>
+
+<!-- SECTION 2 : LIRE ET ÉCRIRE -->
+<section class="cs">
+  <h2>2. Lire et écrire les grands nombres</h2>
+
+  <div class="formula-card">
+    <div class="fc-label">Règle d'écriture</div>
+    <div class="fc-formula">On sépare les groupes de 3 par une espace</div>
+    <div class="fc-desc">345 678 (et non 345678) — l'espace aide à lire</div>
+  </div>
+
+  <div class="frise">
+    <div class="frise-item">
+      <div class="frise-dot">1</div>
+      <div class="frise-content">
+        <div class="frise-title">Repérer le groupe des milliers</div>
+        <div class="frise-text">Compter les chiffres : si 6 chiffres → les 3 premiers sont les milliers, les 3 derniers les unités.</div>
+      </div>
+    </div>
+    <div class="frise-item">
+      <div class="frise-dot">2</div>
+      <div class="frise-content">
+        <div class="frise-title">Lire le groupe des milliers</div>
+        <div class="frise-text"><strong>345 678</strong> → "trois cent quarante-cinq mille" (lire 345 puis dire "mille")</div>
+      </div>
+    </div>
+    <div class="frise-item">
+      <div class="frise-dot">3</div>
+      <div class="frise-content">
+        <div class="frise-title">Lire le groupe des unités</div>
+        <div class="frise-text">Puis "six cent soixante-dix-huit" → "trois cent quarante-cinq mille six cent soixante-dix-huit"</div>
+      </div>
+    </div>
+  </div>
+
+  <table class="formula-table">
+    <tr><th>Nombre</th><th>On écrit en lettres</th></tr>
+    <tr><td><strong>400 050</strong></td><td>quatre cent mille cinquante</td></tr>
+    <tr><td><strong>40 050</strong></td><td>quarante mille cinquante</td></tr>
+    <tr><td><strong>100 000</strong></td><td>cent mille</td></tr>
+    <tr><td><strong>999 999</strong></td><td>neuf cent quatre-vingt-dix-neuf mille neuf cent quatre-vingt-dix-neuf</td></tr>
+  </table>
+
+  <div class="wbox">
+    <div class="lbl">⚠️ Piège classique</div>
+    <p><strong>400 050 ≠ 40 050</strong> — ce n'est pas le même nombre !<br>
+    400 050 = quatre cent mille cinquante (6 chiffres)<br>
+    40 050 = quarante mille cinquante (5 chiffres)<br>
+    Toujours compter le nombre de chiffres avant de lire.</p>
+  </div>
+</section>
+
+<!-- SECTION 3 : COMPARER ET RANGER -->
+<section class="cs">
+  <h2>3. Comparer et ranger les grands nombres</h2>
+
+  <div class="frise">
+    <div class="frise-item">
+      <div class="frise-dot">1</div>
+      <div class="frise-content">
+        <div class="frise-title">Comparer le nombre de chiffres</div>
+        <div class="frise-text">Le nombre qui a <strong>plus de chiffres</strong> est toujours le plus grand.<br>
+        <strong>83 000 &gt; 9 999</strong> (5 chiffres &gt; 4 chiffres)</div>
+      </div>
+    </div>
+    <div class="frise-item">
+      <div class="frise-dot">2</div>
+      <div class="frise-content">
+        <div class="frise-title">Si même nombre de chiffres : comparer depuis la gauche</div>
+        <div class="frise-text">Comparer le chiffre le plus à gauche. Le plus grand = le plus grand nombre.<br>
+        <strong>345 678 vs 342 999</strong> → 3=3, 4=4, 5 &gt; 2 → <strong>345 678 &gt; 342 999</strong></div>
+      </div>
+    </div>
+    <div class="frise-item">
+      <div class="frise-dot">3</div>
+      <div class="frise-content">
+        <div class="frise-title">Encadrer un nombre</div>
+        <div class="frise-text">Encadrer 345 678 entre deux dizaines de milliers :<br>
+        <strong>340 000 &lt; 345 678 &lt; 350 000</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rbox">
+    <div class="lbl">✅ Rangement croissant et décroissant</div>
+    <p><strong>Croissant</strong> = du plus petit au plus grand : 12 300 &lt; 123 000 &lt; 230 000<br>
+    <strong>Décroissant</strong> = du plus grand au plus petit : 230 000 &gt; 123 000 &gt; 12 300</p>
+  </div>
+</section>
+
+<!-- SECTION 4 : VALEUR DES CHIFFRES -->
+<section class="cs">
+  <h2>4. La valeur de chaque chiffre</h2>
+
+  <div class="dbox">
+    <div class="lbl">🎯 Important !</div>
+    <p>Le même chiffre a une valeur différente selon sa <strong>position</strong> dans le nombre.</p>
+  </div>
+
+  <table class="formula-table">
+    <tr>
+      <th>Chiffre dans 345 678</th>
+      <th>Position</th>
+      <th>Valeur</th>
+    </tr>
+    <tr><td><strong>3</strong></td><td>Centaines de milliers</td><td><strong>300 000</strong></td></tr>
+    <tr><td><strong>4</strong></td><td>Dizaines de milliers</td><td><strong>40 000</strong></td></tr>
+    <tr><td><strong>5</strong></td><td>Milliers</td><td><strong>5 000</strong></td></tr>
+    <tr><td><strong>6</strong></td><td>Centaines</td><td><strong>600</strong></td></tr>
+    <tr><td><strong>7</strong></td><td>Dizaines</td><td><strong>70</strong></td></tr>
+    <tr><td><strong>8</strong></td><td>Unités</td><td><strong>8</strong></td></tr>
+  </table>
+
+  <div class="ebox">
+    <div class="lbl">💡 À toi de jouer</div>
+    <p>Dans <strong>402 037</strong>, que vaut le chiffre <strong>4</strong> ?<br>
+    → Le 4 est en position "centaines de milliers" → il vaut <strong>400 000</strong> !</p>
+  </div>
+</section>
+
+<!-- SECTION 5 : ARRONDIR -->
+<section class="cs">
+  <h2>5. Arrondir les grands nombres</h2>
+
+  <div class="formula-card">
+    <div class="fc-label">Règle d'arrondi</div>
+    <div class="fc-formula">Regarder le chiffre qui suit</div>
+    <div class="fc-desc">Ce chiffre &lt; 5 → on arrondit vers le bas (on garde) · Ce chiffre ≥ 5 → on arrondit vers le haut (on augmente de 1)</div>
+  </div>
+
+  <table class="formula-table">
+    <tr>
+      <th>Nombre</th>
+      <th>À la dizaine</th>
+      <th>À la centaine</th>
+      <th>Au millier</th>
+      <th>À la dizaine de milliers</th>
+    </tr>
+    <tr>
+      <td><strong>345 678</strong></td>
+      <td>345 680</td>
+      <td>345 700</td>
+      <td>346 000</td>
+      <td>350 000</td>
+    </tr>
+    <tr>
+      <td><strong>123 432</strong></td>
+      <td>123 430</td>
+      <td>123 400</td>
+      <td>123 000</td>
+      <td>120 000</td>
+    </tr>
+  </table>
+
+  <div class="frise">
+    <div class="frise-item">
+      <div class="frise-dot">1</div>
+      <div class="frise-content">
+        <div class="frise-title">Identifier le rang visé</div>
+        <div class="frise-text">Ex: arrondir 345 678 au millier → on regarde le chiffre des <strong>centaines</strong> (6).</div>
+      </div>
+    </div>
+    <div class="frise-item">
+      <div class="frise-dot">2</div>
+      <div class="frise-content">
+        <div class="frise-title">Appliquer la règle</div>
+        <div class="frise-text">6 ≥ 5 → on arrondit vers le haut : 345 000 + 1 000 = <strong>346 000</strong></div>
+      </div>
+    </div>
+    <div class="frise-item">
+      <div class="frise-dot">3</div>
+      <div class="frise-content">
+        <div class="frise-title">Remplacer les chiffres suivants par des zéros</div>
+        <div class="frise-text">Tout ce qui est après le rang visé devient 0 : 346 <strong>000</strong> ✓</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6 : MULTIPLES ET DIVISEURS -->
+<section class="cs">
+  <h2>6. Multiples et diviseurs — les règles de divisibilité</h2>
+
+  <div class="dbox">
+    <div class="lbl">📖 Définitions</div>
+    <p>Un nombre est <strong>multiple de 3</strong> si on peut l'obtenir en multipliant 3 par un entier.<br>
+    Ex : 6, 9, 12, 15... sont des multiples de 3.<br>
+    Pour tester la divisibilité, on utilise des <strong>critères simples</strong>.</p>
+  </div>
+
+  <table class="formula-table">
+    <tr>
+      <th>Divisible par</th>
+      <th>Critère</th>
+      <th>Exemple</th>
+    </tr>
+    <tr>
+      <td><strong>2</strong></td>
+      <td>Le dernier chiffre est pair (0, 2, 4, 6, 8)</td>
+      <td>348 ✓ (8 est pair)</td>
+    </tr>
+    <tr>
+      <td><strong>5</strong></td>
+      <td>Le dernier chiffre est 0 ou 5</td>
+      <td>345 ✓ (se termine par 5)</td>
+    </tr>
+    <tr>
+      <td><strong>10</strong></td>
+      <td>Le dernier chiffre est 0</td>
+      <td>340 ✓ (se termine par 0)</td>
+    </tr>
+    <tr>
+      <td><strong>3</strong></td>
+      <td>La somme des chiffres est divisible par 3</td>
+      <td>345 : 3+4+5=12, 12÷3=4 ✓</td>
+    </tr>
+    <tr>
+      <td><strong>9</strong></td>
+      <td>La somme des chiffres est divisible par 9</td>
+      <td>126 : 1+2+6=9, 9÷9=1 ✓</td>
+    </tr>
+  </table>
+
+  <div class="ebox">
+    <div class="lbl">💡 Application : 345 678</div>
+    <p>345 678 : dernier chiffre = 8 (pair) → divisible par <strong>2</strong> ✓<br>
+    Somme des chiffres : 3+4+5+6+7+8 = 33, 33÷3=11 → divisible par <strong>3</strong> ✓<br>
+    Mais 33 n'est pas divisible par 9 → <strong>pas divisible par 9</strong> ✗</p>
+  </div>
+
+  <div class="rbox">
+    <div class="lbl">✅ Vocabulaire</div>
+    <p>Si A est divisible par B, alors B est un <strong>diviseur</strong> de A, et A est un <strong>multiple</strong> de B.<br>
+    Ex : 12 est divisible par 3 → 3 est un diviseur de 12 → 12 est un multiple de 3.</p>
+  </div>
+</section>
+
+<!-- SECTION 7 : À RETENIR + CTA -->
+<section class="cs">
+  <h2>7. À retenir</h2>
+  <div class="retenir">
+    <h3>📌 L'essentiel des grands nombres CM1</h3>
+    <ul>
+      <li>Les nombres jusqu'à <strong>999 999</strong> ont 6 chiffres, groupés par 3 (milliers | unités).</li>
+      <li>On <strong>sépare les groupes par une espace</strong> : 345 678 (pas 345678).</li>
+      <li>Pour comparer : d'abord le nombre de chiffres, puis chiffre par chiffre de gauche à droite.</li>
+      <li>La <strong>valeur d'un chiffre</strong> dépend de sa position dans le nombre.</li>
+      <li>Pour <strong>arrondir</strong> : regarder le chiffre du rang suivant ; ≥5 → on monte, &lt;5 → on garde.</li>
+      <li>Divisible par 2 : dernier chiffre pair · par 5 : finit par 0 ou 5 · par 3 : somme des chiffres ÷ 3.</li>
+    </ul>
+  </div>
+
+  <div class="cta">
+    <p>Prêt à pratiquer les grands nombres ?</p>
+    <a class="btn-ex" href="nombres-cm1.html">✏️ Faire les exercices</a>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">École Facile — Cours CM1 · Grands nombres</footer>
+<script src="sync.js"></script>
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>

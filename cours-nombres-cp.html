@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/cours-nombres-cp.html">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🔢 Les nombres — Cours CP | École Facile</title>
+<meta name="description" content="Cours nombres CP : compter jusqu'à 20, comparer, ordonner, droite des nombres, pairs et impairs. Visuels et exemples pour les élèves de CP.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/cours-nombres-cp.html">
+<meta property="og:title" content="Les nombres — Cours CP | École Facile">
+<meta property="og:description" content="Cours nombres CP : compter jusqu'à 20, comparer, ordonner, droite des nombres, pairs et impairs.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+body{font-family:'Nunito',sans-serif;background:#f0fdf4;color:#1e1b4b;margin:0}
+main{max-width:720px;margin:0 auto;padding:22px 18px 60px}
+.cs{margin-bottom:28px}
+.cs h2{font-size:1.15rem;font-weight:900;margin:0 0 14px;padding-bottom:8px;border-bottom:3px solid #bbf7d0;color:#166534}
+.dbox{background:#dbeafe;border-left:5px solid #1d4ed8;border-radius:0 16px 16px 0;padding:14px 16px;margin:10px 0}
+.dbox .lbl{font-size:.65rem;font-weight:900;color:#1d4ed8;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.dbox p,.dbox ul{font-size:.95rem;font-weight:700;color:#1e3a8a;margin:0;line-height:1.6}
+.ebox{background:#fef9c3;border-left:5px solid #ca8a04;border-radius:0 16px 16px 0;padding:14px 16px;margin:10px 0}
+.ebox .lbl{font-size:.65rem;font-weight:900;color:#92400e;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.ebox p,.ebox ul{font-size:.95rem;font-weight:700;color:#713f12;margin:0;line-height:1.6}
+.rbox{background:#dcfce7;border-left:5px solid #16a34a;border-radius:0 16px 16px 0;padding:14px 16px;margin:10px 0}
+.rbox .lbl{font-size:.65rem;font-weight:900;color:#15803d;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.rbox p,.rbox ul{font-size:.95rem;font-weight:700;color:#14532d;margin:0;line-height:1.6}
+.wbox{background:#fee2e2;border-left:5px solid #dc2626;border-radius:0 16px 16px 0;padding:14px 16px;margin:10px 0}
+.wbox .lbl{font-size:.65rem;font-weight:900;color:#dc2626;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.wbox p,.wbox ul{font-size:.95rem;font-weight:700;color:#991b1b;margin:0;line-height:1.6}
+.retenir{background:#fff;border:3px solid #16a34a;border-radius:18px;padding:18px 20px;margin:24px 0 20px}
+.retenir h3{font-size:.8rem;font-weight:900;color:#16a34a;text-transform:uppercase;letter-spacing:1px;margin:0 0 12px}
+.retenir ul{margin:0;padding-left:20px}
+.retenir li{font-size:.92rem;font-weight:700;color:#1e1b4b;line-height:1.8}
+.cta{text-align:center;margin-top:28px;padding:20px;background:#fff;border-radius:18px;border:2.5px solid #bbf7d0}
+.cta p{font-size:.85rem;color:#6b7280;font-weight:700;margin:0 0 12px}
+.btn-ex{display:inline-block;background:linear-gradient(135deg,#16a34a,#22c55e);color:#fff;padding:14px 28px;border-radius:14px;font-size:.98rem;font-weight:900;text-decoration:none;box-shadow:0 4px 16px rgba(22,163,74,.4)}
+.vgrid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));margin:10px 0}
+.vcrd{background:#fff;border:2.5px solid #bbf7d0;border-radius:14px;padding:10px;text-align:center}
+.vcrd .vl{font-size:.7rem;font-weight:900;color:#6b7280;margin-bottom:4px}
+.vcrd .vv{font-size:1.4rem;font-weight:900;color:#166534}
+.vcrd .vs{font-size:.68rem;font-weight:700;color:#9ca3af;margin-top:2px}
+.visbox{background:#f0fdf4;border:2.5px solid #bbf7d0;border-radius:16px;padding:16px 12px 12px;margin:14px 0;text-align:center;overflow:hidden}
+.visbox svg{max-width:100%;height:auto;display:block;margin:0 auto}
+.visbox .vis-caption{font-size:.72rem;font-weight:900;color:#6b7280;margin-top:10px}
+.badge-niveau{display:inline-block;background:rgba(255,255,255,.2);border-radius:20px;padding:5px 16px;font-size:.75rem;font-weight:900;letter-spacing:1px;margin-bottom:10px}
+.cours-header{text-align:center;padding:22px 20px 18px;color:#fff}
+.cours-header h1{font-size:1.8rem;font-weight:900;margin:8px 0 5px}
+.cours-header p{font-size:.9rem;opacity:.9;margin:0}
+.site-footer{text-align:center;padding:18px;font-size:.8rem;color:#9ca3af;border-top:1px solid #e5e7eb;margin-top:12px}
+.num-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.9rem}
+.num-table th{padding:10px;text-align:center;font-weight:900;font-size:.8rem}
+.num-table td{padding:10px;text-align:center;font-weight:800;border:2px solid white;font-size:1.1rem}
+.count-grid{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;padding:10px;max-width:300px;margin:0 auto}
+.count-dot{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.big-num{font-size:2.2rem;font-weight:900;color:#166534;text-align:center;padding:10px}
+.paire-box{display:flex;align-items:center;justify-content:center;gap:16px;padding:12px;flex-wrap:wrap}
+.paire-item{background:#fff;border:3px solid #86efac;border-radius:14px;padding:10px 16px;font-size:1.1rem;font-weight:900;color:#166534;min-width:60px;text-align:center}
+.paire-item.impair{border-color:#fca5a5;color:#dc2626}
+</style>
+</head>
+<body>
+<header class="cours-header" style="background:linear-gradient(135deg,#16a34a,#22c55e)">
+  <div class="badge-niveau">CP</div>
+  <h1>🔢 Les nombres</h1>
+  <p>Compter, comparer, ordonner jusqu'à 20</p>
+</header>
+<main>
+
+<!-- SECTION 1 -->
+<div class="cs">
+<h2>1. Compter jusqu'à 10 🖐️</h2>
+
+<p style="font-size:.95rem;font-weight:700;line-height:1.7">
+Tu peux compter avec tes <strong>doigts</strong> ! Chaque doigt = 1 nombre.
+Quand tu as levé les 10 doigts, tu as compté <strong>jusqu'à 10</strong>.
+</p>
+
+<div class="visbox">
+<svg width="340" height="80" viewBox="0 0 340 80">
+  <!-- 10 points en 2 rangées de 5 -->
+  <circle cx="30" cy="25" r="12" fill="#22c55e"/>
+  <text x="30" y="30" text-anchor="middle" font-size="11" font-weight="900" fill="white">1</text>
+  <circle cx="70" cy="25" r="12" fill="#16a34a"/>
+  <text x="70" y="30" text-anchor="middle" font-size="11" font-weight="900" fill="white">2</text>
+  <circle cx="110" cy="25" r="12" fill="#22c55e"/>
+  <text x="110" y="30" text-anchor="middle" font-size="11" font-weight="900" fill="white">3</text>
+  <circle cx="150" cy="25" r="12" fill="#16a34a"/>
+  <text x="150" y="30" text-anchor="middle" font-size="11" font-weight="900" fill="white">4</text>
+  <circle cx="190" cy="25" r="12" fill="#22c55e"/>
+  <text x="190" y="30" text-anchor="middle" font-size="11" font-weight="900" fill="white">5</text>
+  <circle cx="30" cy="60" r="12" fill="#15803d"/>
+  <text x="30" y="65" text-anchor="middle" font-size="11" font-weight="900" fill="white">6</text>
+  <circle cx="70" cy="60" r="12" fill="#22c55e"/>
+  <text x="70" y="65" text-anchor="middle" font-size="11" font-weight="900" fill="white">7</text>
+  <circle cx="110" cy="60" r="12" fill="#16a34a"/>
+  <text x="110" y="65" text-anchor="middle" font-size="11" font-weight="900" fill="white">8</text>
+  <circle cx="150" cy="60" r="12" fill="#22c55e"/>
+  <text x="150" y="65" text-anchor="middle" font-size="11" font-weight="900" fill="white">9</text>
+  <circle cx="190" cy="60" r="12" fill="#15803d"/>
+  <text x="190" y="65" text-anchor="middle" font-size="11" font-weight="900" fill="white">10</text>
+  <!-- Label -->
+  <text x="260" y="40" text-anchor="middle" font-size="13" font-weight="900" fill="#166534">5 + 5</text>
+  <text x="260" y="58" text-anchor="middle" font-size="13" font-weight="900" fill="#166534">= 10 !</text>
+</svg>
+<div class="vis-caption">10 points en 2 rangées de 5 — c'est plus facile à compter !</div>
+</div>
+
+<div class="dbox">
+<div class="lbl">Astuce</div>
+<p>Compte par groupes de 5 : 🖐️ = 5, deux mains = 10 !</p>
+</div>
+
+<!-- Droite des nombres 0→10 -->
+<div class="visbox">
+<svg width="340" height="60" viewBox="0 0 340 60">
+  <line x1="20" y1="35" x2="320" y2="35" stroke="#16a34a" stroke-width="4" stroke-linecap="round"/>
+  <polygon points="320,31 332,35 320,39" fill="#16a34a"/>
+  <!-- graduations -->
+  <line x1="20" y1="28" x2="20" y2="42" stroke="#16a34a" stroke-width="3"/>
+  <line x1="50" y1="30" x2="50" y2="40" stroke="#86efac" stroke-width="2"/>
+  <line x1="80" y1="30" x2="80" y2="40" stroke="#86efac" stroke-width="2"/>
+  <line x1="110" y1="30" x2="110" y2="40" stroke="#86efac" stroke-width="2"/>
+  <line x1="140" y1="30" x2="140" y2="40" stroke="#86efac" stroke-width="2"/>
+  <line x1="170" y1="28" x2="170" y2="42" stroke="#16a34a" stroke-width="3"/>
+  <line x1="200" y1="30" x2="200" y2="40" stroke="#86efac" stroke-width="2"/>
+  <line x1="230" y1="30" x2="230" y2="40" stroke="#86efac" stroke-width="2"/>
+  <line x1="260" y1="30" x2="260" y2="40" stroke="#86efac" stroke-width="2"/>
+  <line x1="290" y1="30" x2="290" y2="40" stroke="#86efac" stroke-width="2"/>
+  <line x1="320" y1="28" x2="320" y2="42" stroke="#16a34a" stroke-width="3"/>
+  <!-- chiffres -->
+  <text x="20" y="16" text-anchor="middle" font-size="13" font-weight="900" fill="#166534">0</text>
+  <text x="50" y="16" text-anchor="middle" font-size="13" font-weight="900" fill="#166534">1</text>
+  <text x="80" y="16" text-anchor="middle" font-size="13" font-weight="900" fill="#166534">2</text>
+  <text x="110" y="16" text-anchor="middle" font-size="13" font-weight="900" fill="#166534">3</text>
+  <text x="140" y="16" text-anchor="middle" font-size="13" font-weight="900" fill="#166534">4</text>
+  <text x="170" y="16" text-anchor="middle" font-size="14" font-weight="900" fill="#15803d">5</text>
+  <text x="200" y="16" text-anchor="middle" font-size="13" font-weight="900" fill="#166534">6</text>
+  <text x="230" y="16" text-anchor="middle" font-size="13" font-weight="900" fill="#166534">7</text>
+  <text x="260" y="16" text-anchor="middle" font-size="13" font-weight="900" fill="#166534">8</text>
+  <text x="290" y="16" text-anchor="middle" font-size="13" font-weight="900" fill="#166534">9</text>
+  <text x="320" y="16" text-anchor="middle" font-size="14" font-weight="900" fill="#15803d">10</text>
+  <!-- flèche sens -->
+  <text x="170" y="58" text-anchor="middle" font-size="11" font-weight="900" fill="#6b7280">Les nombres grandissent vers la droite →</text>
+</svg>
+<div class="vis-caption">La droite des nombres de 0 à 10</div>
+</div>
+
+<div class="ebox">
+<div class="lbl">À toi !</div>
+<p>Compte à voix haute : <strong>0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10</strong> en levant un doigt à chaque nombre.</p>
+</div>
+</div>
+
+<!-- SECTION 2 -->
+<div class="cs">
+<h2>2. Compter jusqu'à 20 ⭐</h2>
+
+<p style="font-size:.95rem;font-weight:700;line-height:1.7">
+Après 10, on continue ! <strong>Une dizaine</strong> = 10 unités rassemblées.
+Pour compter jusqu'à 20, on compte <strong>une dizaine et encore 1, 2, 3...</strong>
+</p>
+
+<div class="dbox">
+<div class="lbl">À retenir</div>
+<p>10 unités = 1 dizaine 📦<br>
+20 = 2 dizaines = deux fois 10</p>
+</div>
+
+<!-- Tableau 2 rangées de 10 étoiles -->
+<div class="visbox">
+<svg width="340" height="100" viewBox="0 0 340 100">
+  <!-- rangée 1 : étoiles jaunes (1→10) -->
+  <text x="10" y="30" font-size="9" font-weight="900" fill="#92400e">1ère dizaine</text>
+  <text x="24" y="42" font-size="20">⭐</text>
+  <text x="54" y="42" font-size="20">⭐</text>
+  <text x="84" y="42" font-size="20">⭐</text>
+  <text x="114" y="42" font-size="20">⭐</text>
+  <text x="144" y="42" font-size="20">⭐</text>
+  <text x="174" y="42" font-size="20">⭐</text>
+  <text x="204" y="42" font-size="20">⭐</text>
+  <text x="234" y="42" font-size="20">⭐</text>
+  <text x="264" y="42" font-size="20">⭐</text>
+  <text x="294" y="42" font-size="20">⭐</text>
+  <!-- rangée 2 : étoiles orange (11→20) -->
+  <text x="10" y="65" font-size="9" font-weight="900" fill="#1d4ed8">2ème dizaine</text>
+  <text x="24" y="78" font-size="20">🌟</text>
+  <text x="54" y="78" font-size="20">🌟</text>
+  <text x="84" y="78" font-size="20">🌟</text>
+  <text x="114" y="78" font-size="20">🌟</text>
+  <text x="144" y="78" font-size="20">🌟</text>
+  <text x="174" y="78" font-size="20">🌟</text>
+  <text x="204" y="78" font-size="20">🌟</text>
+  <text x="234" y="78" font-size="20">🌟</text>
+  <text x="264" y="78" font-size="20">🌟</text>
+  <text x="294" y="78" font-size="20">🌟</text>
+</svg>
+<div class="vis-caption">2 rangées de 10 = 20 au total</div>
+</div>
+
+<p style="font-size:.9rem;font-weight:700;text-align:center;color:#166534">
+Lis et écris les nombres de 11 à 20 :
+</p>
+<table class="num-table">
+<tr>
+  <th style="background:#22c55e;color:white">Chiffre</th>
+  <th style="background:#16a34a;color:white">En lettres</th>
+  <th style="background:#22c55e;color:white">Chiffre</th>
+  <th style="background:#16a34a;color:white">En lettres</th>
+</tr>
+<tr>
+  <td style="background:#dcfce7">11</td><td style="background:#f0fdf4">onze</td>
+  <td style="background:#dcfce7">16</td><td style="background:#f0fdf4">seize</td>
+</tr>
+<tr>
+  <td style="background:#dcfce7">12</td><td style="background:#f0fdf4">douze</td>
+  <td style="background:#dcfce7">17</td><td style="background:#f0fdf4">dix-sept</td>
+</tr>
+<tr>
+  <td style="background:#dcfce7">13</td><td style="background:#f0fdf4">treize</td>
+  <td style="background:#dcfce7">18</td><td style="background:#f0fdf4">dix-huit</td>
+</tr>
+<tr>
+  <td style="background:#dcfce7">14</td><td style="background:#f0fdf4">quatorze</td>
+  <td style="background:#dcfce7">19</td><td style="background:#f0fdf4">dix-neuf</td>
+</tr>
+<tr>
+  <td style="background:#dcfce7">15</td><td style="background:#f0fdf4">quinze</td>
+  <td style="background:#dcfce7">20</td><td style="background:#f0fdf4">vingt</td>
+</tr>
+</table>
+
+<div class="ebox">
+<div class="lbl">Astuce lecture</div>
+<p>17 = dix + sept, 18 = dix + huit, 19 = dix + neuf.<br>
+Tu reconnais les petits nombres dans les grands !</p>
+</div>
+</div>
+
+<!-- SECTION 3 -->
+<div class="cs">
+<h2>3. Comparer des nombres 🐊</h2>
+
+<p style="font-size:.95rem;font-weight:700;line-height:1.7">
+Le <strong>crocodile glouton</strong> mange toujours le <strong>plus grand</strong> nombre !
+La bouche &lt; ou &gt; s'ouvre vers le plus grand.
+</p>
+
+<div class="visbox">
+<svg width="340" height="100" viewBox="0 0 340 100">
+  <!-- exemple 5 < 8 -->
+  <rect x="5" y="15" width="60" height="50" rx="12" fill="#fef9c3" stroke="#ca8a04" stroke-width="3"/>
+  <text x="35" y="48" text-anchor="middle" font-size="28" font-weight="900" fill="#92400e">5</text>
+  <!-- crocodile -->
+  <text x="90" y="52" text-anchor="middle" font-size="36" fill="#16a34a">🐊</text>
+  <text x="90" y="72" text-anchor="middle" font-size="13" font-weight="900" fill="#15803d">&lt;</text>
+  <rect x="115" y="15" width="60" height="50" rx="12" fill="#dcfce7" stroke="#16a34a" stroke-width="3"/>
+  <text x="145" y="48" text-anchor="middle" font-size="28" font-weight="900" fill="#166534">8</text>
+  <!-- exemple 12 > 9 -->
+  <rect x="195" y="15" width="60" height="50" rx="12" fill="#dcfce7" stroke="#16a34a" stroke-width="3"/>
+  <text x="225" y="48" text-anchor="middle" font-size="28" font-weight="900" fill="#166534">12</text>
+  <text x="265" y="52" text-anchor="middle" font-size="22" font-weight="900" fill="#dc2626">&gt;</text>
+  <rect x="280" y="15" width="55" height="50" rx="12" fill="#fee2e2" stroke="#dc2626" stroke-width="3"/>
+  <text x="308" y="48" text-anchor="middle" font-size="28" font-weight="900" fill="#991b1b">9</text>
+  <!-- labels -->
+  <text x="35" y="85" text-anchor="middle" font-size="10" font-weight="900" fill="#92400e">5 &lt; 8</text>
+  <text x="250" y="85" text-anchor="middle" font-size="10" font-weight="900" fill="#166534">12 &gt; 9</text>
+</svg>
+<div class="vis-caption">Le crocodile ouvre la bouche vers le plus grand nombre</div>
+</div>
+
+<div class="dbox">
+<div class="lbl">Les 3 symboles</div>
+<p>
+<strong>&lt;</strong> est plus petit que → 5 <strong>&lt;</strong> 8 (5 est plus petit que 8)<br>
+<strong>&gt;</strong> est plus grand que → 12 <strong>&gt;</strong> 9 (12 est plus grand que 9)<br>
+<strong>=</strong> est égal à → 7 <strong>=</strong> 7 (c'est le même nombre)
+</p>
+</div>
+
+<div class="vgrid">
+  <div class="vcrd"><div class="vl">Exemple 1</div><div class="vv">3 &lt; 7</div><div class="vs">3 est plus petit</div></div>
+  <div class="vcrd"><div class="vl">Exemple 2</div><div class="vv">15 &gt; 6</div><div class="vs">15 est plus grand</div></div>
+  <div class="vcrd"><div class="vl">Exemple 3</div><div class="vv">9 = 9</div><div class="vs">égaux</div></div>
+  <div class="vcrd"><div class="vl">Exemple 4</div><div class="vv">11 &gt; 10</div><div class="vs">11 est plus grand</div></div>
+</div>
+
+<div class="wbox">
+<div class="lbl">Piège !</div>
+<p>La pointe du symbole pointe toujours vers le <strong>plus petit</strong> nombre.<br>
+5 &lt; 8 → la pointe est vers 5 (le plus petit).</p>
+</div>
+</div>
+
+<!-- SECTION 4 -->
+<div class="cs">
+<h2>4. Ordonner des nombres 📏</h2>
+
+<p style="font-size:.95rem;font-weight:700;line-height:1.7">
+<strong>Ranger en ordre croissant</strong> = du plus petit au plus grand (→)<br>
+<strong>Ranger en ordre décroissant</strong> = du plus grand au plus petit (←)
+</p>
+
+<div class="ebox">
+<div class="lbl">Exemple</div>
+<p>Ces nombres : 7, 2, 15, 9, 4<br>
+Ordre croissant : <strong>2, 4, 7, 9, 15</strong> ✅<br>
+Ordre décroissant : <strong>15, 9, 7, 4, 2</strong> ✅</p>
+</div>
+
+<!-- Droite graduée 0→20 colorée -->
+<div class="visbox">
+<svg width="340" height="80" viewBox="0 0 340 80">
+  <!-- fond coloré sous la droite -->
+  <rect x="10" y="32" width="320" height="12" rx="6" fill="url(#grad1)"/>
+  <defs>
+    <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#86efac"/>
+      <stop offset="50%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#15803d"/>
+    </linearGradient>
+  </defs>
+  <!-- graduations principales -->
+  <line x1="10" y1="25" x2="10" y2="45" stroke="#166534" stroke-width="2.5"/>
+  <line x1="90" y1="25" x2="90" y2="45" stroke="#166534" stroke-width="2.5"/>
+  <line x1="170" y1="25" x2="170" y2="45" stroke="#166534" stroke-width="2.5"/>
+  <line x1="250" y1="25" x2="250" y2="45" stroke="#166534" stroke-width="2.5"/>
+  <line x1="330" y1="25" x2="330" y2="45" stroke="#166534" stroke-width="2.5"/>
+  <!-- petites graduations -->
+  <line x1="26" y1="30" x2="26" y2="42" stroke="#86efac" stroke-width="1.5"/>
+  <line x1="42" y1="30" x2="42" y2="42" stroke="#86efac" stroke-width="1.5"/>
+  <line x1="58" y1="30" x2="58" y2="42" stroke="#86efac" stroke-width="1.5"/>
+  <line x1="74" y1="30" x2="74" y2="42" stroke="#86efac" stroke-width="1.5"/>
+  <line x1="106" y1="30" x2="106" y2="42" stroke="#86efac" stroke-width="1.5"/>
+  <line x1="122" y1="30" x2="122" y2="42" stroke="#86efac" stroke-width="1.5"/>
+  <line x1="138" y1="30" x2="138" y2="42" stroke="#86efac" stroke-width="1.5"/>
+  <line x1="154" y1="30" x2="154" y2="42" stroke="#86efac" stroke-width="1.5"/>
+  <line x1="186" y1="30" x2="186" y2="42" stroke="#86efac" stroke-width="1.5"/>
+  <line x1="202" y1="30" x2="202" y2="42" stroke="#86efac" stroke-width="1.5"/>
+  <line x1="218" y1="30" x2="218" y2="42" stroke="#86efac" stroke-width="1.5"/>
+  <line x1="234" y1="30" x2="234" y2="42" stroke="#86efac" stroke-width="1.5"/>
+  <line x1="266" y1="30" x2="266" y2="42" stroke="#86efac" stroke-width="1.5"/>
+  <line x1="282" y1="30" x2="282" y2="42" stroke="#86efac" stroke-width="1.5"/>
+  <line x1="298" y1="30" x2="298" y2="42" stroke="#86efac" stroke-width="1.5"/>
+  <line x1="314" y1="30" x2="314" y2="42" stroke="#86efac" stroke-width="1.5"/>
+  <!-- chiffres -->
+  <text x="10" y="18" text-anchor="middle" font-size="12" font-weight="900" fill="#166534">0</text>
+  <text x="90" y="18" text-anchor="middle" font-size="12" font-weight="900" fill="#166534">5</text>
+  <text x="170" y="18" text-anchor="middle" font-size="12" font-weight="900" fill="#166534">10</text>
+  <text x="250" y="18" text-anchor="middle" font-size="12" font-weight="900" fill="#166534">15</text>
+  <text x="330" y="18" text-anchor="middle" font-size="12" font-weight="900" fill="#166534">20</text>
+  <!-- flèche direction -->
+  <polygon points="334,36 340,38 334,41" fill="#166534"/>
+  <text x="170" y="70" text-anchor="middle" font-size="10" font-weight="900" fill="#6b7280">Croissant → (les nombres grandissent)</text>
+</svg>
+<div class="vis-caption">Droite graduée 0 → 20</div>
+</div>
+
+<div class="rbox">
+<div class="lbl">Astuce</div>
+<p>Pour ranger, regarde la droite des nombres.<br>
+Plus tu vas à <strong>droite</strong>, plus le nombre est <strong>grand</strong>.</p>
+</div>
+</div>
+
+<!-- SECTION 5 -->
+<div class="cs">
+<h2>5. Les nombres pairs et impairs 🍬</h2>
+
+<p style="font-size:.95rem;font-weight:700;line-height:1.7">
+Un nombre est <strong>pair</strong> si tu peux partager en <strong>2 groupes égaux</strong> sans reste.<br>
+Un nombre est <strong>impair</strong> si il reste <strong>1 tout seul</strong>.
+</p>
+
+<!-- SVG bonbons pairs -->
+<div class="visbox">
+<svg width="340" height="120" viewBox="0 0 340 120">
+  <!-- 6 bonbons pairs → 3+3 -->
+  <text x="85" y="18" text-anchor="middle" font-size="11" font-weight="900" fill="#166534">6 bonbons → PAIR ✅</text>
+  <text x="30" y="48" font-size="22">🍬</text>
+  <text x="56" y="48" font-size="22">🍬</text>
+  <text x="82" y="48" font-size="22">🍬</text>
+  <!-- trait de partage -->
+  <line x1="110" y1="30" x2="110" y2="60" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="4,2"/>
+  <text x="120" y="48" font-size="22">🍬</text>
+  <text x="146" y="48" font-size="22">🍬</text>
+  <text x="172" y="48" font-size="22">🍬</text>
+  <text x="30" y="70" font-size="10" font-weight="900" fill="#166534">Groupe 1 (3)</text>
+  <text x="118" y="70" font-size="10" font-weight="900" fill="#166534">Groupe 2 (3)</text>
+  <!-- 5 bonbons impairs → 2+2+1 -->
+  <text x="275" y="18" text-anchor="middle" font-size="11" font-weight="900" fill="#dc2626">5 bonbons → IMPAIR ❌</text>
+  <text x="225" y="48" font-size="22">🍭</text>
+  <text x="251" y="48" font-size="22">🍭</text>
+  <line x1="278" y1="30" x2="278" y2="60" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="4,2"/>
+  <text x="282" y="48" font-size="22">🍭</text>
+  <text x="308" y="48" font-size="22">🍭</text>
+  <!-- seul -->
+  <text x="265" y="78" font-size="22">🍭</text>
+  <text x="260" y="95" font-size="10" font-weight="900" fill="#dc2626">1 tout seul !</text>
+  <!-- labels groupes 5 -->
+  <text x="240" y="70" font-size="9" font-weight="900" fill="#dc2626">G1 (2)</text>
+  <text x="283" y="70" font-size="9" font-weight="900" fill="#dc2626">G2 (2)</text>
+</svg>
+<div class="vis-caption">6 est pair (2 groupes de 3) — 5 est impair (reste 1)</div>
+</div>
+
+<p style="font-size:.92rem;font-weight:900;color:#166534;text-align:center;margin:12px 0 6px">Les nombres PAIRS (terminent par 0, 2, 4, 6 ou 8) :</p>
+<div class="paire-box">
+  <div class="paire-item">0</div>
+  <div class="paire-item">2</div>
+  <div class="paire-item">4</div>
+  <div class="paire-item">6</div>
+  <div class="paire-item">8</div>
+  <div class="paire-item">10</div>
+  <div class="paire-item">12</div>
+  <div class="paire-item">14</div>
+</div>
+
+<p style="font-size:.92rem;font-weight:900;color:#dc2626;text-align:center;margin:12px 0 6px">Les nombres IMPAIRS (terminent par 1, 3, 5, 7 ou 9) :</p>
+<div class="paire-box">
+  <div class="paire-item impair">1</div>
+  <div class="paire-item impair">3</div>
+  <div class="paire-item impair">5</div>
+  <div class="paire-item impair">7</div>
+  <div class="paire-item impair">9</div>
+  <div class="paire-item impair">11</div>
+  <div class="paire-item impair">13</div>
+  <div class="paire-item impair">15</div>
+</div>
+
+<div class="dbox">
+<div class="lbl">Astuce rapide</div>
+<p>Regarde seulement le <strong>dernier chiffre</strong> d'un nombre.<br>
+S'il finit par 0, 2, 4, 6 ou 8 → <strong>PAIR</strong>.<br>
+S'il finit par 1, 3, 5, 7 ou 9 → <strong>IMPAIR</strong>.</p>
+</div>
+</div>
+
+<!-- SECTION 6 : Retenir -->
+<div class="cs">
+<h2>6. Ce que tu dois retenir 🌟</h2>
+
+<div class="retenir">
+<h3>Le résumé du cours</h3>
+<ul>
+  <li>On peut compter jusqu'à 10 avec nos doigts (5+5)</li>
+  <li>10 unités forment 1 <strong>dizaine</strong> — 20 = 2 dizaines</li>
+  <li>Pour comparer : le crocodile mange le plus grand (<strong>&lt; &gt; =</strong>)</li>
+  <li>Ordre <strong>croissant</strong> = du plus petit au plus grand</li>
+  <li>Ordre <strong>décroissant</strong> = du plus grand au plus petit</li>
+  <li>Nombre <strong>pair</strong> : se partage en 2 groupes égaux (finit par 0,2,4,6,8)</li>
+  <li>Nombre <strong>impair</strong> : il reste 1 tout seul (finit par 1,3,5,7,9)</li>
+</ul>
+</div>
+
+<div class="vgrid">
+  <div class="vcrd"><div class="vl">Je sais compter</div><div class="vv">0→20</div><div class="vs">par 1, par 2, par 5, par 10</div></div>
+  <div class="vcrd"><div class="vl">Je compare</div><div class="vv">&lt; &gt; =</div><div class="vs">crocodile glouton</div></div>
+  <div class="vcrd"><div class="vl">Je range</div><div class="vv">↑↓</div><div class="vs">croissant/décroissant</div></div>
+  <div class="vcrd"><div class="vl">Pairs</div><div class="vv">0,2,4,6,8</div><div class="vs">se partagent en 2</div></div>
+</div>
+
+<div class="cta">
+  <p>Tu as bien compris les nombres ? Entraîne-toi !</p>
+  <a href="nombres-cp.html" class="btn-ex">✏️ Faire les exercices CP</a>
+</div>
+</div>
+
+</main>
+<footer class="site-footer">École Facile — Cours CP • Mathématiques</footer>
+<script src="sync.js"></script>
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>

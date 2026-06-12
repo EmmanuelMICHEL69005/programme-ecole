@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/cours-probabilites-6e.html">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Probabilités et statistiques — Cours 6e | École Facile</title>
+<meta name="description" content="Cours 6e : vocabulaire des probabilités, calcul P(A), événements complémentaires, moyenne, médiane, statistiques.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/cours-probabilites-6e.html">
+<meta property="og:title" content="Probabilités et statistiques — Cours 6e | École Facile">
+<meta property="og:description" content="Cours 6e : vocabulaire des probabilités, calcul P(A), événements complémentaires, moyenne, médiane, statistiques.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+body{font-family:'Nunito',sans-serif;background:#fdf2f8;color:#1e1b4b;margin:0}
+main{max-width:720px;margin:0 auto;padding:22px 18px 60px}
+.cs{margin-bottom:26px}
+.cs h2{font-size:1.1rem;font-weight:900;margin:0 0 12px;padding-bottom:7px;border-bottom:2.5px solid #fbcfe8;color:#831843}
+.dbox{background:#dbeafe;border-left:4px solid #1d4ed8;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.dbox .lbl{font-size:.65rem;font-weight:900;color:#1d4ed8;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.dbox p,.dbox ul{font-size:.9rem;font-weight:700;color:#1e3a8a;margin:0;line-height:1.6}
+.ebox{background:#fef9c3;border-left:4px solid #ca8a04;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.ebox .lbl{font-size:.65rem;font-weight:900;color:#92400e;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.ebox p,.ebox ul{font-size:.9rem;font-weight:700;color:#713f12;margin:0;line-height:1.6}
+.rbox{background:#dcfce7;border-left:4px solid #16a34a;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.rbox .lbl{font-size:.65rem;font-weight:900;color:#15803d;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.rbox p,.rbox ul{font-size:.9rem;font-weight:700;color:#14532d;margin:0;line-height:1.6}
+.wbox{background:#fee2e2;border-left:4px solid #dc2626;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.wbox .lbl{font-size:.65rem;font-weight:900;color:#dc2626;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.wbox p,.wbox ul{font-size:.9rem;font-weight:700;color:#991b1b;margin:0;line-height:1.6}
+.retenir{background:#fff;border:2.5px solid #9d174d;border-radius:16px;padding:16px 18px;margin:22px 0 18px}
+.retenir h3{font-size:.78rem;font-weight:900;color:#9d174d;text-transform:uppercase;letter-spacing:1px;margin:0 0 10px}
+.retenir ul{margin:0;padding-left:18px}
+.retenir li{font-size:.88rem;font-weight:700;color:#1e1b4b;line-height:1.7}
+.cta{text-align:center;margin-top:26px;padding:18px;background:#fff;border-radius:16px;border:2px solid #fbcfe8}
+.cta p{font-size:.82rem;color:#6b7280;font-weight:700;margin:0 0 10px}
+.btn-ex{display:inline-block;background:linear-gradient(135deg,#9d174d,#ec4899);color:#fff;padding:13px 26px;border-radius:13px;font-size:.95rem;font-weight:900;text-decoration:none;box-shadow:0 4px 12px rgba(157,23,77,.3)}
+.formula-card{background:linear-gradient(135deg,#831843,#9d174d);color:white;border-radius:16px;padding:14px 18px;margin:10px 0;text-align:center}
+.formula-card .fc-label{font-size:.65rem;font-weight:900;opacity:.75;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.formula-card .fc-formula{font-size:1.1rem;font-weight:900}
+.formula-card .fc-desc{font-size:.8rem;opacity:.85;margin-top:5px;font-weight:700}
+.vgrid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));margin:10px 0}
+.vcrd{background:#fff;border:2px solid #fbcfe8;border-radius:11px;padding:9px;text-align:center}
+.vcrd .vl{font-size:.7rem;font-weight:900;color:#9d174d;margin-bottom:4px}
+.vcrd .vv{font-size:1.1rem;font-weight:900;color:#831843}
+.vcrd .vs{font-size:.65rem;font-weight:700;color:#9ca3af;margin-top:2px}
+.visbox{background:#fdf2f8;border:2px solid #fbcfe8;border-radius:14px;padding:14px 10px 10px;margin:12px 0;text-align:center;overflow:hidden}
+.visbox svg{max-width:100%;height:auto;display:block;margin:0 auto}
+.visbox .vis-caption{font-size:.72rem;font-weight:900;color:#9d174d;margin-top:8px}
+.stat-table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.85rem}
+.stat-table th{background:linear-gradient(135deg,#9d174d,#ec4899);color:white;padding:8px 10px;font-weight:900;text-align:center}
+.stat-table td{border:1.5px solid #fbcfe8;padding:8px 10px;font-weight:700;text-align:center;background:#fff}
+.stat-table tr:nth-child(even) td{background:#fdf2f8}
+.badge-niveau{display:inline-block;background:rgba(255,255,255,.2);border-radius:20px;padding:4px 14px;font-size:.72rem;font-weight:900;letter-spacing:1px;margin-bottom:8px}
+.cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
+.cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
+.cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.site-footer{text-align:center;padding:16px;font-size:.8rem;color:#9ca3af;border-top:1px solid #e5e7eb;margin-top:10px}
+</style>
+</head>
+<body>
+<header class="cours-header" style="background:linear-gradient(135deg,#9d174d,#ec4899)">
+  <div class="badge-niveau">6e</div>
+  <h1>🎲 Probabilités et statistiques</h1>
+  <p>Hasard, calcul de probabilités, moyenne, médiane</p>
+</header>
+<main>
+
+<section class="cs">
+  <h2>1. Vocabulaire des probabilités</h2>
+  <div class="dbox"><div class="lbl">Définitions clés</div>
+  <ul>
+    <li><strong>Expérience aléatoire</strong> : expérience dont on ne peut pas prévoir le résultat à l'avance (lancer un dé, tirer une carte)</li>
+    <li><strong>Issue</strong> : chaque résultat possible d'une expérience</li>
+    <li><strong>Univers Ω</strong> : ensemble de toutes les issues possibles</li>
+    <li><strong>Événement</strong> : ensemble d'issues qui nous intéressent</li>
+  </ul></div>
+  <div class="ebox"><div class="lbl">Exemple : lancer un dé à 6 faces</div>
+  <ul>
+    <li>Univers Ω = {1, 2, 3, 4, 5, 6}</li>
+    <li>Événement "obtenir un pair" = {2, 4, 6} → 3 issues favorables</li>
+    <li>Événement "obtenir 7" = {} (impossible !)</li>
+  </ul></div>
+</section>
+
+<section class="cs">
+  <h2>2. Calculer une probabilité</h2>
+  <div class="formula-card">
+    <div class="fc-label">Probabilité d'un événement A</div>
+    <div class="fc-formula">P(A) = nombre d'issues favorables ÷ nombre total d'issues</div>
+    <div class="fc-desc">Valable si toutes les issues sont équiprobables (même chance)</div>
+  </div>
+  <div class="visbox">
+    <svg viewBox="0 0 360 50" width="360" height="50">
+      <line x1="30" y1="25" x2="330" y2="25" stroke="#9d174d" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="30" cy="25" r="5" fill="#9d174d"/>
+      <text x="25" y="44" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="11" fill="#831843">0</text>
+      <text x="20" y="16" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="10" fill="#831843">Impossible</text>
+      <circle cx="180" cy="25" r="5" fill="#ca8a04"/>
+      <text x="180" y="44" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="11" fill="#92400e">1/2</text>
+      <text x="180" y="14" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="10" fill="#92400e">Équiprobable</text>
+      <circle cx="330" cy="25" r="5" fill="#16a34a"/>
+      <text x="330" y="44" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="11" fill="#15803d">1</text>
+      <text x="330" y="14" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="10" fill="#15803d">Certain</text>
+    </svg>
+    <div class="vis-caption">Axe des probabilités : toujours entre 0 et 1</div>
+  </div>
+  <div class="ebox"><div class="lbl">Exemples avec un dé à 6 faces</div>
+  <ul>
+    <li>P(face 3) = 1/6 ≈ 0,17</li>
+    <li>P(nombre pair) = 3/6 = 1/2 = 0,5</li>
+    <li>P(nombre > 4) = 2/6 = 1/3 ≈ 0,33</li>
+    <li>P(nombre ≤ 6) = 6/6 = 1 (certain)</li>
+  </ul></div>
+</section>
+
+<section class="cs">
+  <h2>3. Événements complémentaires</h2>
+  <div class="formula-card">
+    <div class="fc-label">Complément</div>
+    <div class="fc-formula">P(Ā) = 1 − P(A)</div>
+    <div class="fc-desc">Ā = "A ne se réalise pas" | P(A) + P(Ā) = 1</div>
+  </div>
+  <div class="ebox"><div class="lbl">Exemples</div>
+  <ul>
+    <li>P(pair) = 1/2 → P(impair) = 1 − 1/2 = <strong>1/2</strong></li>
+    <li>P(6) = 1/6 → P(pas 6) = 1 − 1/6 = <strong>5/6</strong></li>
+    <li>Une urne : 3 rouges, 7 bleues → P(rouge) = 3/10 → P(pas rouge) = <strong>7/10</strong></li>
+  </ul></div>
+  <div class="wbox"><div class="lbl">Attention</div>
+  <p>P(A) est toujours entre 0 et 1 (ou entre 0% et 100%). Si tu trouves une valeur négative ou > 1, tu as fait une erreur !</p></div>
+</section>
+
+<section class="cs">
+  <h2>4. Statistiques — lire un tableau</h2>
+  <table class="stat-table">
+    <tr><th>Note (sur 20)</th><th>8</th><th>10</th><th>12</th><th>14</th><th>16</th></tr>
+    <tr><td><strong>Effectif</strong></td><td>2</td><td>5</td><td>8</td><td>4</td><td>1</td></tr>
+    <tr><td><strong>Fréquence</strong></td><td>10%</td><td>25%</td><td>40%</td><td>20%</td><td>5%</td></tr>
+  </table>
+  <div class="dbox"><div class="lbl">Vocabulaire</div>
+  <ul>
+    <li><strong>Effectif</strong> : nombre de fois qu'une valeur apparaît</li>
+    <li><strong>Effectif total</strong> : somme de tous les effectifs</li>
+    <li><strong>Fréquence</strong> = effectif ÷ effectif total (en %)</li>
+  </ul></div>
+</section>
+
+<section class="cs">
+  <h2>5. Moyenne et médiane</h2>
+  <div class="formula-card">
+    <div class="fc-label">Moyenne</div>
+    <div class="fc-formula">x̄ = (somme de toutes les valeurs) ÷ nombre de valeurs</div>
+    <div class="fc-desc">Sensible aux valeurs extrêmes</div>
+  </div>
+  <div class="ebox"><div class="lbl">Calcul de la moyenne avec le tableau ci-dessus</div>
+  <p>Σ = 2×8 + 5×10 + 8×12 + 4×14 + 1×16<br>
+  = 16 + 50 + 96 + 56 + 16 = 234<br>
+  Effectif total = 2+5+8+4+1 = 20<br>
+  Moyenne = 234 ÷ 20 = <strong>11,7/20</strong></p></div>
+  <div class="dbox"><div class="lbl">Médiane</div>
+  <p>La <strong>médiane</strong> partage la série ordonnée en deux groupes égaux.<br>
+  Pour trouver la médiane : ordonner les valeurs, puis prendre la valeur du milieu.</p></div>
+  <div class="ebox"><div class="lbl">Exemple : 5 notes ordonnées</div>
+  <p>8, 10, 12, 14, 16 → médiane = <strong>12</strong> (valeur centrale)</p>
+  <p>4 notes : 8, 10, 12, 14 → médiane = (10+12)/2 = <strong>11</strong> (moyenne des deux centrales)</p></div>
+</section>
+
+<div class="retenir">
+  <h3>📌 À retenir</h3>
+  <ul>
+    <li>P(A) = issues favorables ÷ total | toujours entre 0 et 1</li>
+    <li>Événement certain : P = 1 | impossible : P = 0 | équiprobable : P = 1/2</li>
+    <li>Complément : P(Ā) = 1 − P(A)</li>
+    <li>Fréquence = effectif ÷ effectif total (× 100 pour %)</li>
+    <li>Moyenne = somme ÷ nombre | médiane = valeur centrale de la série ordonnée</li>
+  </ul>
+</div>
+
+<div class="cta">
+  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
+  <a href="probabilites-6e.html" class="btn-ex">Faire les exercices 6e →</a>
+</div>
+
+</main>
+<footer class="site-footer">École Facile — Cours 6e · Probabilités et statistiques</footer>
+<script src="sync.js"></script>
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>

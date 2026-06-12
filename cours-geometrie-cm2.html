@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/cours-geometrie-cm2.html">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Géométrie — Cours CM2 | École Facile</title>
+<meta name="description" content="Cours CM2 : quadrilatères et propriétés, volume des solides, transformations, repérage dans le plan cartésien.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/cours-geometrie-cm2.html">
+<meta property="og:title" content="Géométrie — Cours CM2 | École Facile">
+<meta property="og:description" content="Cours CM2 : quadrilatères et propriétés, volume des solides, transformations, repérage dans le plan cartésien.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+body{font-family:'Nunito',sans-serif;background:#fffbeb;color:#1e1b4b;margin:0}
+main{max-width:720px;margin:0 auto;padding:22px 18px 60px}
+.cs{margin-bottom:26px}
+.cs h2{font-size:1.1rem;font-weight:900;margin:0 0 12px;padding-bottom:7px;border-bottom:2.5px solid #fde68a;color:#92400e}
+.dbox{background:#dbeafe;border-left:4px solid #1d4ed8;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.dbox .lbl{font-size:.65rem;font-weight:900;color:#1d4ed8;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.dbox p,.dbox ul{font-size:.9rem;font-weight:700;color:#1e3a8a;margin:0;line-height:1.6}
+.ebox{background:#fef9c3;border-left:4px solid #ca8a04;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.ebox .lbl{font-size:.65rem;font-weight:900;color:#92400e;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.ebox p,.ebox ul{font-size:.9rem;font-weight:700;color:#713f12;margin:0;line-height:1.6}
+.rbox{background:#dcfce7;border-left:4px solid #16a34a;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.rbox .lbl{font-size:.65rem;font-weight:900;color:#15803d;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.rbox p,.rbox ul{font-size:.9rem;font-weight:700;color:#14532d;margin:0;line-height:1.6}
+.wbox{background:#fee2e2;border-left:4px solid #dc2626;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.wbox .lbl{font-size:.65rem;font-weight:900;color:#dc2626;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.wbox p,.wbox ul{font-size:.9rem;font-weight:700;color:#991b1b;margin:0;line-height:1.6}
+.retenir{background:#fff;border:2.5px solid #b45309;border-radius:16px;padding:16px 18px;margin:22px 0 18px}
+.retenir h3{font-size:.78rem;font-weight:900;color:#b45309;text-transform:uppercase;letter-spacing:1px;margin:0 0 10px}
+.retenir ul{margin:0;padding-left:18px}
+.retenir li{font-size:.88rem;font-weight:700;color:#1e1b4b;line-height:1.7}
+.cta{text-align:center;margin-top:26px;padding:18px;background:#fff;border-radius:16px;border:2px solid #fde68a}
+.cta p{font-size:.82rem;color:#6b7280;font-weight:700;margin:0 0 10px}
+.btn-ex{display:inline-block;background:linear-gradient(135deg,#b45309,#f59e0b);color:#fff;padding:13px 26px;border-radius:13px;font-size:.95rem;font-weight:900;text-decoration:none;box-shadow:0 4px 12px rgba(180,83,9,.3)}
+.conv-table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.85rem}
+.conv-table th{background:linear-gradient(135deg,#b45309,#f59e0b);color:white;padding:8px 10px;font-weight:900;text-align:center}
+.conv-table td{border:1.5px solid #fde68a;padding:8px 10px;font-weight:700;text-align:center;background:#fff}
+.conv-table tr:nth-child(even) td{background:#fffbeb}
+.formula-card{background:linear-gradient(135deg,#78350f,#b45309);color:white;border-radius:16px;padding:14px 18px;margin:10px 0;text-align:center}
+.formula-card .fc-label{font-size:.65rem;font-weight:900;opacity:.75;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.formula-card .fc-formula{font-size:1.1rem;font-weight:900}
+.formula-card .fc-desc{font-size:.8rem;opacity:.85;margin-top:5px;font-weight:700}
+.visbox{background:#fffbf0;border:2px solid #fde68a;border-radius:14px;padding:14px 10px 10px;margin:12px 0;text-align:center;overflow:hidden}
+.visbox svg{max-width:100%;height:auto;display:block;margin:0 auto}
+.visbox .vis-caption{font-size:.72rem;font-weight:900;color:#92400e;margin-top:8px}
+.badge-niveau{display:inline-block;background:rgba(255,255,255,.2);border-radius:20px;padding:4px 14px;font-size:.72rem;font-weight:900;letter-spacing:1px;margin-bottom:8px}
+.cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
+.cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
+.cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.site-footer{text-align:center;padding:16px;font-size:.8rem;color:#9ca3af;border-top:1px solid #e5e7eb;margin-top:10px}
+</style>
+</head>
+<body>
+<header class="cours-header" style="background:linear-gradient(135deg,#b45309,#f59e0b)">
+  <div class="badge-niveau">CM2</div>
+  <h1>📐 Géométrie</h1>
+  <p>Quadrilatères, volumes, transformations, repérage</p>
+</header>
+<main>
+
+<section class="cs">
+  <h2>1. Quadrilatères — propriétés complètes</h2>
+  <div class="conv-table">
+    <tr><th>Nom</th><th>Côtés</th><th>Angles</th><th>Diagonales</th></tr>
+    <tr><td><strong>Carré</strong></td><td>4 égaux</td><td>4 droits (90°)</td><td>égales et perpendiculaires</td></tr>
+    <tr><td><strong>Rectangle</strong></td><td>2 paires égales</td><td>4 droits</td><td>égales</td></tr>
+    <tr><td><strong>Losange</strong></td><td>4 égaux</td><td>2 paires égales</td><td>perpendiculaires</td></tr>
+    <tr><td><strong>Parallélogramme</strong></td><td>2 paires parallèles</td><td>2 paires égales</td><td>se coupent en leur milieu</td></tr>
+    <tr><td><strong>Trapèze</strong></td><td>1 paire parallèle</td><td>variables</td><td>-</td></tr>
+  </div>
+  <div class="rbox"><div class="lbl">Hiérarchie des quadrilatères</div>
+  <p>Carré ⊂ Rectangle ⊂ Parallélogramme ⊂ Trapèze ⊂ Quadrilatère<br>
+  (Un carré est un rectangle particulier, etc.)</p></div>
+</section>
+
+<section class="cs">
+  <h2>2. Aires — formules complètes</h2>
+  <div class="formula-card">
+    <div class="fc-label">Aire du disque</div>
+    <div class="fc-formula">A = π × r² ≈ 3,14 × r²</div>
+    <div class="fc-desc">r = rayon | disque = intérieur du cercle</div>
+  </div>
+  <div class="formula-card">
+    <div class="fc-label">Parallélogramme et losange</div>
+    <div class="fc-formula">A = base × hauteur</div>
+    <div class="fc-desc">La hauteur est perpendiculaire à la base</div>
+  </div>
+  <div class="ebox"><div class="lbl">Exemples</div>
+  <ul>
+    <li>Disque r = 5 cm : A = 3,14 × 25 = <strong>78,5 cm²</strong></li>
+    <li>Parallélogramme base 8 cm, h = 4 cm : A = 8 × 4 = <strong>32 cm²</strong></li>
+  </ul></div>
+</section>
+
+<section class="cs">
+  <h2>3. Volume des solides</h2>
+  <div class="dbox"><div class="lbl">Définition</div>
+  <p>Le <strong>volume</strong> d'un solide = la place qu'il occupe dans l'espace. Unités : cm³, m³, L (1 L = 1 dm³).</p></div>
+  <div class="formula-card">
+    <div class="fc-label">Cube (arête a)</div>
+    <div class="fc-formula">V = a³ = a × a × a</div>
+    <div class="fc-desc">Exemple : cube a = 3 cm → V = 27 cm³</div>
+  </div>
+  <div class="formula-card">
+    <div class="fc-label">Pavé droit (L × l × h)</div>
+    <div class="fc-formula">V = L × l × h</div>
+    <div class="fc-desc">Exemple : 4 × 3 × 2 cm → V = 24 cm³</div>
+  </div>
+  <div class="rbox"><div class="lbl">Conversions de volumes</div>
+  <p>1 m³ = 1 000 L = 1 000 000 cm³<br>
+  1 L = 1 dm³ = 1 000 cm³</p></div>
+</section>
+
+<section class="cs">
+  <h2>4. Transformations géométriques</h2>
+  <div class="dbox"><div class="lbl">Les 4 isométries</div>
+  <ul>
+    <li><strong>Translation</strong> : glisser la figure sans la tourner (vecteur de déplacement)</li>
+    <li><strong>Rotation</strong> : tourner autour d'un point fixe (centre, angle, sens)</li>
+    <li><strong>Symétrie axiale</strong> : miroir par rapport à une droite (axe)</li>
+    <li><strong>Symétrie centrale</strong> : rotation de 180° autour d'un point (centre)</li>
+  </ul></div>
+  <div class="rbox"><div class="lbl">Propriété commune</div>
+  <p>Toutes ces transformations <strong>conservent</strong> les longueurs, les angles, et les surfaces — la figure est congruente à son image.</p></div>
+</section>
+
+<section class="cs">
+  <h2>5. Repérage dans le plan</h2>
+  <div class="visbox">
+    <svg viewBox="0 0 280 240" width="280" height="240">
+      <line x1="20" y1="120" x2="260" y2="120" stroke="#b45309" stroke-width="2"/>
+      <line x1="140" y1="20" x2="140" y2="230" stroke="#b45309" stroke-width="2"/>
+      <line x1="260" y1="120" x2="252" y2="114" stroke="#b45309" stroke-width="2"/>
+      <line x1="260" y1="120" x2="252" y2="126" stroke="#b45309" stroke-width="2"/>
+      <line x1="140" y1="20" x2="134" y2="28" stroke="#b45309" stroke-width="2"/>
+      <line x1="140" y1="20" x2="146" y2="28" stroke="#b45309" stroke-width="2"/>
+      <text x="262" y="118" font-family="Nunito" font-weight="900" font-size="13" fill="#b45309">x</text>
+      <text x="144" y="18" font-family="Nunito" font-weight="900" font-size="13" fill="#b45309">y</text>
+      <text x="132" y="130" font-family="Nunito" font-weight="900" font-size="12" fill="#92400e">O</text>
+      <line x1="180" y1="115" x2="180" y2="125" stroke="#6b7280" stroke-width="1.5"/>
+      <text x="178" y="138" font-family="Nunito" font-weight="800" font-size="11" fill="#6b7280">2</text>
+      <line x1="100" y1="115" x2="100" y2="125" stroke="#6b7280" stroke-width="1.5"/>
+      <text x="96" y="138" font-family="Nunito" font-weight="800" font-size="11" fill="#6b7280">-2</text>
+      <line x1="135" y1="80" x2="145" y2="80" stroke="#6b7280" stroke-width="1.5"/>
+      <text x="148" y="84" font-family="Nunito" font-weight="800" font-size="11" fill="#6b7280">2</text>
+      <line x1="135" y1="160" x2="145" y2="160" stroke="#6b7280" stroke-width="1.5"/>
+      <text x="148" y="164" font-family="Nunito" font-weight="800" font-size="11" fill="#6b7280">-2</text>
+      <circle cx="220" cy="80" r="6" fill="#dc2626"/>
+      <text x="224" y="75" font-family="Nunito" font-weight="900" font-size="12" fill="#dc2626">A(4;2)</text>
+      <circle cx="100" cy="160" r="6" fill="#1d4ed8"/>
+      <text x="60" y="155" font-family="Nunito" font-weight="900" font-size="12" fill="#1d4ed8">B(-2;-2)</text>
+    </svg>
+    <div class="vis-caption">Repère orthonormé — abscisse (x) et ordonnée (y)</div>
+  </div>
+  <div class="dbox"><div class="lbl">Lire les coordonnées</div>
+  <p>Le point A(4 ; 2) : abscisse = <strong>4</strong> (horizontal), ordonnée = <strong>2</strong> (vertical).<br>
+  Toujours : <strong>abscisse d'abord</strong>, ordonnée ensuite.</p></div>
+</section>
+
+<div class="retenir">
+  <h3>📌 À retenir</h3>
+  <ul>
+    <li>Aire disque : A = π × r² ≈ 3,14 × r²</li>
+    <li>Volume pavé : V = L × l × h | Volume cube : V = a³</li>
+    <li>1 L = 1 dm³ | 1 m³ = 1 000 L</li>
+    <li>Repère : point A(x ; y) → x = abscisse, y = ordonnée</li>
+    <li>4 transformations : translation, rotation, symétrie axiale, symétrie centrale</li>
+  </ul>
+</div>
+
+<div class="cta">
+  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
+  <a href="geometrie-cm2.html" class="btn-ex">Faire les exercices CM2 →</a>
+</div>
+
+</main>
+<footer class="site-footer">École Facile — Cours CM2 · Géométrie</footer>
+<script src="sync.js"></script>
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>

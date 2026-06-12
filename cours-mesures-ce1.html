@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/cours-mesures-ce1.html">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mesures et grandeurs — Cours CE1 | École Facile</title>
+<meta name="description" content="Cours CE1 : longueurs (mm, cm, m), masses (g, kg), contenances (mL, L), durées et calendrier.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/cours-mesures-ce1.html">
+<meta property="og:title" content="Mesures et grandeurs — Cours CE1 | École Facile">
+<meta property="og:description" content="Cours CE1 : longueurs (mm, cm, m), masses (g, kg), contenances (mL, L), durées et calendrier.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+body{font-family:'Nunito',sans-serif;background:#ecfdf5;color:#1e1b4b;margin:0}
+main{max-width:720px;margin:0 auto;padding:22px 18px 60px}
+.cs{margin-bottom:26px}
+.cs h2{font-size:1.1rem;font-weight:900;margin:0 0 12px;padding-bottom:7px;border-bottom:2.5px solid #a7f3d0;color:#064e3b}
+.dbox{background:#dbeafe;border-left:4px solid #1d4ed8;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.dbox .lbl{font-size:.65rem;font-weight:900;color:#1d4ed8;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.dbox p,.dbox ul{font-size:.9rem;font-weight:700;color:#1e3a8a;margin:0;line-height:1.6}
+.ebox{background:#fef9c3;border-left:4px solid #ca8a04;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.ebox .lbl{font-size:.65rem;font-weight:900;color:#92400e;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.ebox p,.ebox ul{font-size:.9rem;font-weight:700;color:#713f12;margin:0;line-height:1.6}
+.rbox{background:#dcfce7;border-left:4px solid #059669;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.rbox .lbl{font-size:.65rem;font-weight:900;color:#065f46;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.rbox p,.rbox ul{font-size:.9rem;font-weight:700;color:#064e3b;margin:0;line-height:1.6}
+.wbox{background:#fee2e2;border-left:4px solid #dc2626;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.wbox .lbl{font-size:.65rem;font-weight:900;color:#dc2626;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.wbox p,.wbox ul{font-size:.9rem;font-weight:700;color:#991b1b;margin:0;line-height:1.6}
+.retenir{background:#fff;border:2.5px solid #059669;border-radius:16px;padding:16px 18px;margin:22px 0 18px}
+.retenir h3{font-size:.78rem;font-weight:900;color:#059669;text-transform:uppercase;letter-spacing:1px;margin:0 0 10px}
+.retenir ul{margin:0;padding-left:18px}
+.retenir li{font-size:.88rem;font-weight:700;color:#1e1b4b;line-height:1.7}
+.cta{text-align:center;margin-top:26px;padding:18px;background:#fff;border-radius:16px;border:2px solid #a7f3d0}
+.cta p{font-size:.82rem;color:#6b7280;font-weight:700;margin:0 0 10px}
+.btn-ex{display:inline-block;background:linear-gradient(135deg,#059669,#10b981);color:#fff;padding:13px 26px;border-radius:13px;font-size:.95rem;font-weight:900;text-decoration:none;box-shadow:0 4px 12px rgba(5,150,105,.3)}
+.vgrid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));margin:10px 0}
+.vcrd{background:#fff;border:2px solid #a7f3d0;border-radius:11px;padding:9px;text-align:center}
+.vcrd .vl{font-size:.7rem;font-weight:900;color:#059669;margin-bottom:4px}
+.vcrd .vv{font-size:1.1rem;font-weight:900;color:#065f46}
+.vcrd .vs{font-size:.68rem;font-weight:700;color:#9ca3af;margin-top:2px}
+.visbox{background:#f0fdf4;border:2px solid #a7f3d0;border-radius:14px;padding:14px 10px 10px;margin:12px 0;text-align:center;overflow:hidden}
+.visbox svg{max-width:100%;height:auto;display:block;margin:0 auto}
+.visbox .vis-caption{font-size:.72rem;font-weight:900;color:#6b7280;margin-top:8px}
+.conv-ladder{display:flex;flex-direction:column;align-items:center;gap:0;margin:10px auto;max-width:200px}
+.conv-rung{background:linear-gradient(135deg,#059669,#10b981);color:#fff;padding:8px 24px;border-radius:8px;font-size:.88rem;font-weight:900;text-align:center;width:100%;box-sizing:border-box}
+.conv-arrow{font-size:.75rem;font-weight:900;color:#059669;text-align:center;padding:3px 0}
+.badge-niveau{display:inline-block;background:rgba(255,255,255,.2);border-radius:20px;padding:4px 14px;font-size:.72rem;font-weight:900;letter-spacing:1px;margin-bottom:8px}
+.cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
+.cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
+.cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.site-footer{text-align:center;padding:16px;font-size:.8rem;color:#9ca3af;border-top:1px solid #e5e7eb;margin-top:10px}
+</style>
+</head>
+<body>
+<header class="cours-header" style="background:linear-gradient(135deg,#059669,#10b981)">
+  <div class="badge-niveau">CE1</div>
+  <h1>📏 Mesures et grandeurs</h1>
+  <p>Longueurs, masses, contenances et durées</p>
+</header>
+<main>
+
+<section class="cs">
+  <h2>1. Les longueurs</h2>
+  <div class="dbox"><div class="lbl">Les unités</div>
+  <p>Pour mesurer des longueurs, on utilise le <strong>millimètre (mm)</strong>, le <strong>centimètre (cm)</strong>, le <strong>décimètre (dm)</strong>, le <strong>mètre (m)</strong> et le <strong>kilomètre (km)</strong>.</p></div>
+  <div class="conv-ladder">
+    <div class="conv-rung">km · kilomètre</div>
+    <div class="conv-arrow">× 1000 ↓ &nbsp; ÷ 1000 ↑</div>
+    <div class="conv-rung">m · mètre</div>
+    <div class="conv-arrow">× 10 ↓ &nbsp; ÷ 10 ↑</div>
+    <div class="conv-rung">dm · décimètre</div>
+    <div class="conv-arrow">× 10 ↓ &nbsp; ÷ 10 ↑</div>
+    <div class="conv-rung">cm · centimètre</div>
+    <div class="conv-arrow">× 10 ↓ &nbsp; ÷ 10 ↑</div>
+    <div class="conv-rung">mm · millimètre</div>
+  </div>
+  <div class="ebox"><div class="lbl">Exemples du quotidien</div>
+  <ul>
+    <li>Un ongle mesure environ 1 <strong>cm</strong></li>
+    <li>Une règle mesure 30 <strong>cm</strong> = 3 <strong>dm</strong></li>
+    <li>Une porte mesure environ 2 <strong>m</strong></li>
+    <li>Paris → Lyon ≈ 470 <strong>km</strong></li>
+  </ul></div>
+  <div class="rbox"><div class="lbl">Conversions clés</div>
+  <p>1 cm = 10 mm &nbsp;|&nbsp; 1 m = 100 cm = 1000 mm &nbsp;|&nbsp; 1 km = 1000 m</p></div>
+</section>
+
+<section class="cs">
+  <h2>2. Les masses</h2>
+  <div class="dbox"><div class="lbl">Unités</div>
+  <p>La <strong>masse</strong> mesure combien pèse un objet. Unités principales : <strong>gramme (g)</strong> et <strong>kilogramme (kg)</strong>.</p></div>
+  <div class="vgrid">
+    <div class="vcrd"><div class="vl">1 kg =</div><div class="vv">1000 g</div></div>
+    <div class="vcrd"><div class="vl">Une pomme</div><div class="vv">≈ 150 g</div></div>
+    <div class="vcrd"><div class="vl">Farine 1 paquet</div><div class="vv">= 1 kg</div></div>
+    <div class="vcrd"><div class="vl">Un élève</div><div class="vv">≈ 30 kg</div></div>
+    <div class="vcrd"><div class="vl">1 tonne (t)</div><div class="vv">= 1000 kg</div></div>
+    <div class="vcrd"><div class="vl">Une voiture</div><div class="vv">≈ 1,5 t</div></div>
+  </div>
+  <div class="wbox"><div class="lbl">Masse ≠ poids</div>
+  <p>En sciences, la <strong>masse</strong> (en kg) est une propriété de la matière. Le <strong>poids</strong> est une force (en Newtons). Dans la vie courante on dit souvent "peser" pour les deux.</p></div>
+</section>
+
+<section class="cs">
+  <h2>3. Les contenances</h2>
+  <div class="dbox"><div class="lbl">Unités</div>
+  <p>La <strong>contenance</strong> mesure le volume d'un liquide. Unités : <strong>millilitre (mL)</strong>, <strong>centilitre (cL)</strong> et <strong>litre (L)</strong>.</p></div>
+  <div class="vgrid">
+    <div class="vcrd"><div class="vl">1 L =</div><div class="vv">100 cL</div></div>
+    <div class="vcrd"><div class="vl">1 cL =</div><div class="vv">10 mL</div></div>
+    <div class="vcrd"><div class="vl">Un verre</div><div class="vv">≈ 25 cL</div></div>
+    <div class="vcrd"><div class="vl">Bouteille eau</div><div class="vv">= 1,5 L</div></div>
+    <div class="vcrd"><div class="vl">Baignoire</div><div class="vv">≈ 150 L</div></div>
+    <div class="vcrd"><div class="vl">Petite cuillère</div><div class="vv">= 5 mL</div></div>
+  </div>
+</section>
+
+<section class="cs">
+  <h2>4. Les durées</h2>
+  <div class="dbox"><div class="lbl">Les unités du temps</div>
+  <p>La durée se mesure en <strong>secondes (s)</strong>, <strong>minutes (min)</strong>, <strong>heures (h)</strong>, <strong>jours</strong>, <strong>semaines</strong>, <strong>mois</strong> et <strong>années</strong>.</p></div>
+  <div class="vgrid">
+    <div class="vcrd"><div class="vl">1 min</div><div class="vv">= 60 s</div></div>
+    <div class="vcrd"><div class="vl">1 h</div><div class="vv">= 60 min</div></div>
+    <div class="vcrd"><div class="vl">1 jour</div><div class="vv">= 24 h</div></div>
+    <div class="vcrd"><div class="vl">1 semaine</div><div class="vv">= 7 jours</div></div>
+    <div class="vcrd"><div class="vl">1 mois</div><div class="vv">28→31 j</div></div>
+    <div class="vcrd"><div class="vl">1 an</div><div class="vv">= 365 j</div></div>
+  </div>
+  <div class="visbox">
+    <svg viewBox="0 0 140 140" width="140" height="140">
+      <circle cx="70" cy="70" r="65" fill="white" stroke="#059669" stroke-width="3"/>
+      <circle cx="70" cy="70" r="3" fill="#059669"/>
+      <text x="70" y="22" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="13" fill="#064e3b">12</text>
+      <text x="118" y="75" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="13" fill="#064e3b">3</text>
+      <text x="70" y="125" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="13" fill="#064e3b">6</text>
+      <text x="22" y="75" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="13" fill="#064e3b">9</text>
+      <line x1="70" y1="70" x2="70" y2="30" stroke="#064e3b" stroke-width="3" stroke-linecap="round"/>
+      <line x1="70" y1="70" x2="105" y2="70" stroke="#059669" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+    <div class="vis-caption">Horloge analogique — 12h00</div>
+  </div>
+  <div class="ebox"><div class="lbl">Lire l'heure</div>
+  <ul>
+    <li>Petite aiguille → les <strong>heures</strong></li>
+    <li>Grande aiguille → les <strong>minutes</strong></li>
+    <li>8h30 se lit "huit heures et demie"</li>
+    <li>Notation 24h : 14h = 2h de l'après-midi</li>
+  </ul></div>
+</section>
+
+<section class="cs">
+  <h2>5. Le calendrier</h2>
+  <div class="dbox"><div class="lbl">Les jours et les mois</div>
+  <p>Une semaine = 7 jours. Une année = 12 mois = 52 semaines = 365 jours (366 les années <strong>bissextiles</strong>).</p></div>
+  <div class="vgrid">
+    <div class="vcrd"><div class="vl">Janvier</div><div class="vv">31 j</div></div>
+    <div class="vcrd"><div class="vl">Février</div><div class="vv">28 j</div></div>
+    <div class="vcrd"><div class="vl">Mars</div><div class="vv">31 j</div></div>
+    <div class="vcrd"><div class="vl">Avril</div><div class="vv">30 j</div></div>
+    <div class="vcrd"><div class="vl">Mai</div><div class="vv">31 j</div></div>
+    <div class="vcrd"><div class="vl">Juin</div><div class="vv">30 j</div></div>
+    <div class="vcrd"><div class="vl">Juillet</div><div class="vv">31 j</div></div>
+    <div class="vcrd"><div class="vl">Août</div><div class="vv">31 j</div></div>
+    <div class="vcrd"><div class="vl">Septembre</div><div class="vv">30 j</div></div>
+    <div class="vcrd"><div class="vl">Octobre</div><div class="vv">31 j</div></div>
+    <div class="vcrd"><div class="vl">Novembre</div><div class="vv">30 j</div></div>
+    <div class="vcrd"><div class="vl">Décembre</div><div class="vv">31 j</div></div>
+  </div>
+  <div class="rbox"><div class="lbl">Astuce des phalanges</div>
+  <p>Sur tes doigts, les bosses = 31 jours, les creux = 30 jours (ou 28 pour février). Compte de gauche à droite !</p></div>
+</section>
+
+<div class="retenir">
+  <h3>📌 À retenir</h3>
+  <ul>
+    <li>1 m = 100 cm = 1000 mm | 1 km = 1000 m</li>
+    <li>1 kg = 1000 g | 1 tonne = 1000 kg</li>
+    <li>1 L = 100 cL | 1 cL = 10 mL</li>
+    <li>1 h = 60 min | 1 min = 60 s | 1 jour = 24 h</li>
+    <li>1 an = 12 mois = 365 jours (366 si bissextile)</li>
+  </ul>
+</div>
+
+<div class="cta">
+  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
+  <a href="mesures-ce1.html" class="btn-ex">Faire les exercices CE1 →</a>
+</div>
+
+</main>
+<footer class="site-footer">École Facile — Cours CE1 · Mesures</footer>
+<script src="sync.js"></script>
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>
