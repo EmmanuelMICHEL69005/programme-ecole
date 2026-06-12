@@ -208,6 +208,15 @@
 
   function saveStore() {
     try { localStorage.setItem(STORE_KEY, JSON.stringify(store)); } catch(e) {}
+    // Sync to Firebase if enabled and profile has a syncCode
+    if (P && P.syncCode && window.EF_SYNC && window.EF_SYNC.enabled) {
+      clearTimeout(saveStore._syncTimer);
+      saveStore._syncTimer = setTimeout(function () {
+        window.EF_SYNC.saveProfile(P.syncCode, P, function (ok) {
+          if (ok) showSyncIndicator('✅ Synchronisé');
+        });
+      }, 1500);
+    }
   }
 
   function save() {
@@ -216,6 +225,20 @@
     if (!P.days) P.days = [];
     if (!P.days.includes(today)) P.days.push(today);
     saveStore();
+  }
+
+  function showSyncIndicator(msg) {
+    let el = document.getElementById('gs-sync-indicator');
+    if (!el) {
+      el = document.createElement('div');
+      el.id = 'gs-sync-indicator';
+      el.style.cssText = 'position:fixed;bottom:60px;right:14px;background:rgba(5,150,105,.92);color:#fff;border-radius:20px;padding:6px 14px;font-size:.8rem;font-weight:800;z-index:9850;pointer-events:none;transition:opacity .4s';
+      document.body.appendChild(el);
+    }
+    el.textContent = msg;
+    el.style.opacity = '1';
+    clearTimeout(el._t);
+    el._t = setTimeout(function () { el.style.opacity = '0'; }, 2200);
   }
 
   // ── Level helpers ─────────────────────────────────────────────────
@@ -994,6 +1017,38 @@
       }).join('');
     }
 
+    const syncEnabled = window.EF_SYNC && window.EF_SYNC.enabled;
+    const syncCode = P && P.syncCode ? P.syncCode : '';
+    const syncSection = `
+      <div style="margin-top:14px;padding:14px;background:rgba(255,255,255,.08);border-radius:14px;border:1.5px solid rgba(255,255,255,.15)">
+        <div style="font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.5);margin-bottom:10px">📱 Multi-appareils</div>
+        ${syncEnabled ? `
+          <div style="margin-bottom:10px">
+            <div style="font-size:.78rem;font-weight:700;color:rgba(255,255,255,.7);margin-bottom:6px">Ton code de synchronisation :</div>
+            <div style="display:flex;gap:8px;align-items:center">
+              <div id="gs-sync-code-display" style="background:rgba(255,255,255,.15);border-radius:10px;padding:8px 14px;font-size:1.2rem;font-weight:900;letter-spacing:3px;color:white;font-family:monospace;min-width:100px;text-align:center">
+                ${syncCode || '—'}
+              </div>
+              ${syncCode ? `<button onclick="window._gsCopyCode('${syncCode}')" style="background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.8);border-radius:8px;padding:7px 12px;font-size:.8rem;font-weight:800;cursor:pointer;font-family:inherit">Copier</button>` : `<button onclick="window._gsGenCode()" style="background:rgba(124,58,237,.5);border:1px solid rgba(124,58,237,.7);color:white;border-radius:8px;padding:7px 12px;font-size:.8rem;font-weight:800;cursor:pointer;font-family:inherit">Générer</button>`}
+            </div>
+          </div>
+          <div>
+            <div style="font-size:.78rem;font-weight:700;color:rgba(255,255,255,.7);margin-bottom:6px">Reprendre sur un autre appareil :</div>
+            <div style="display:flex;gap:8px">
+              <input id="gs-sync-input" type="text" placeholder="Entre ton code (ex: AB3Z7K)" maxlength="8"
+                style="flex:1;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.25);border-radius:10px;padding:8px 12px;color:white;font-size:.9rem;font-weight:800;font-family:inherit;outline:none;text-transform:uppercase"
+                oninput="this.value=this.value.toUpperCase()">
+              <button onclick="window._gsLoadCode()" style="background:linear-gradient(135deg,#7c3aed,#a855f7);border:none;color:white;border-radius:10px;padding:8px 14px;font-size:.85rem;font-weight:900;cursor:pointer;font-family:inherit">Charger</button>
+            </div>
+            <div id="gs-sync-msg" style="font-size:.75rem;font-weight:700;margin-top:6px;min-height:18px;color:rgba(255,255,255,.65)"></div>
+          </div>
+        ` : `
+          <div style="font-size:.82rem;font-weight:700;color:rgba(255,255,255,.5);line-height:1.5">
+            Sync désactivé — configure Firebase dans <code style="font-size:.75rem">sync.js</code> pour activer la synchronisation multi-appareils.
+          </div>
+        `}
+      </div>`;
+
     overlay.innerHTML = `
       <div class="gs-picker-panel">
         <div class="gs-picker-header">
@@ -1003,6 +1058,7 @@
         <div class="gs-picker-list">${buildItems()}</div>
         <button class="gs-picker-add" onclick="window._gsNewProfile()">+ Nouveau profil</button>
         <a href="profile.html" class="gs-picker-full" onclick="this.closest('.gs-picker-overlay').remove()">Voir le profil complet →</a>
+        ${syncSection}
       </div>
     `;
 
@@ -1022,6 +1078,46 @@
         renderHeaderChip();
         checkBadges();
         save();
+      });
+    };
+
+    window._gsCopyCode = code => {
+      navigator.clipboard.writeText(code).catch(() => {});
+      const msg = document.getElementById('gs-sync-msg');
+      if (msg) { msg.textContent = '✅ Code copié !'; setTimeout(() => { msg.textContent = ''; }, 2000); }
+    };
+
+    window._gsGenCode = () => {
+      if (!window.EF_SYNC || !window.EF_SYNC.enabled) return;
+      const code = window.EF_SYNC.generateCode();
+      P.syncCode = code;
+      saveStore();
+      const display = document.getElementById('gs-sync-code-display');
+      if (display) display.textContent = code;
+      const msg = document.getElementById('gs-sync-msg');
+      if (msg) { msg.textContent = '✅ Code généré et sauvegardé !'; setTimeout(() => { msg.textContent = ''; }, 3000); }
+    };
+
+    window._gsLoadCode = () => {
+      if (!window.EF_SYNC || !window.EF_SYNC.enabled) return;
+      const input = document.getElementById('gs-sync-input');
+      const msg = document.getElementById('gs-sync-msg');
+      const code = (input ? input.value : '').trim().toUpperCase();
+      if (code.length < 4) {
+        if (msg) msg.textContent = '⚠️ Entre un code valide (4 à 8 caractères)';
+        return;
+      }
+      if (msg) msg.textContent = '⏳ Chargement…';
+      window.EF_SYNC.loadProfile(code, data => {
+        if (!data) {
+          if (msg) msg.textContent = '❌ Code introuvable — vérifie-le';
+          return;
+        }
+        P = Object.assign({}, P, data, { syncCode: code });
+        store.profiles[store.active] = P;
+        saveStore();
+        if (msg) msg.textContent = '✅ Profil chargé ! Rechargement…';
+        setTimeout(() => location.reload(), 1200);
       });
     };
   }

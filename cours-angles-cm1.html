@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>📐 Les angles — Cours CM1 — École Facile</title>
+<meta name="description" content="Cours sur les angles CM1 : angle droit aigu obtus plat, mesure au rapporteur, somme des angles d'un triangle 180°.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+body{font-family:'Nunito',sans-serif;background:#fffbf0;color:#1e1b4b;margin:0}
+main{max-width:720px;margin:0 auto;padding:22px 18px 60px}
+.cs{margin-bottom:26px}
+.cs h2{font-size:1.1rem;font-weight:900;margin:0 0 12px;padding-bottom:7px;border-bottom:2.5px solid #e5e7eb;color:#1e1b4b}
+.dbox{background:#dbeafe;border-left:4px solid #1d4ed8;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.dbox .lbl{font-size:.65rem;font-weight:900;color:#1d4ed8;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.dbox p,.dbox ul{font-size:.9rem;font-weight:700;color:#1e3a8a;margin:0;line-height:1.55}
+.ebox{background:#fef9c3;border-left:4px solid #ca8a04;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.ebox .lbl{font-size:.65rem;font-weight:900;color:#92400e;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.ebox p,.ebox ul{font-size:.9rem;font-weight:700;color:#713f12;margin:0;line-height:1.55}
+.rbox{background:#dcfce7;border-left:4px solid #16a34a;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.rbox .lbl{font-size:.65rem;font-weight:900;color:#15803d;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.rbox p,.rbox ul{font-size:.9rem;font-weight:700;color:#14532d;margin:0;line-height:1.55}
+.wbox{background:#fee2e2;border-left:4px solid #dc2626;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.wbox .lbl{font-size:.65rem;font-weight:900;color:#dc2626;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.wbox p,.wbox ul{font-size:.9rem;font-weight:700;color:#991b1b;margin:0;line-height:1.55}
+.retenir{background:#fff;border:2.5px solid #7c3aed;border-radius:16px;padding:16px 18px;margin:22px 0 18px}
+.retenir h3{font-size:.78rem;font-weight:900;color:#7c3aed;text-transform:uppercase;letter-spacing:1px;margin:0 0 10px}
+.retenir ul{margin:0;padding-left:18px}
+.retenir li{font-size:.88rem;font-weight:700;color:#1e1b4b;line-height:1.7}
+.cta{text-align:center;margin-top:26px;padding:18px;background:#fff;border-radius:16px;border:2px solid #e5e7eb}
+.cta p{font-size:.82rem;color:#6b7280;font-weight:700;margin:0 0 10px}
+.btn-ex{display:inline-block;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;padding:13px 26px;border-radius:13px;font-size:.95rem;font-weight:900;text-decoration:none;box-shadow:0 4px 16px rgba(124,58,237,.4)}
+.vgrid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));margin:10px 0}
+.vcrd{background:#fff;border:2px solid #e5e7eb;border-radius:11px;padding:9px;text-align:center}
+.vcrd .vl{font-size:.7rem;font-weight:900;color:#6b7280;margin-bottom:4px}
+.vcrd .vv{font-size:1.3rem;font-weight:900;color:#1e1b4b}
+.vcrd .vs{font-size:.68rem;font-weight:700;color:#9ca3af;margin-top:2px}
+table.conv{width:100%;border-collapse:collapse;margin:10px 0;font-size:.85rem;font-weight:700}
+table.conv th{background:#ede9fe;color:#5b21b6;padding:7px 10px;text-align:center;font-weight:900}
+table.conv td{border:1px solid #e5e7eb;padding:6px 10px;text-align:center;background:#fff}
+.badge-niveau{display:inline-block;background:rgba(255,255,255,.2);border-radius:20px;padding:4px 14px;font-size:.72rem;font-weight:900;letter-spacing:1px;margin-bottom:8px}
+.cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
+.cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
+.cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.site-footer{text-align:center;padding:16px;font-size:.8rem;color:#9ca3af;border-top:1px solid #e5e7eb;margin-top:10px}
+</style>
+</head>
+<body>
+<header class="cours-header" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6)">
+  <div class="badge-niveau">CM1</div>
+  <h1>📐 Les angles</h1>
+  <p>Droit, aigu, obtus, plat — mesure au rapporteur</p>
+</header>
+<main>
+
+<div class="cs"><h2>1. Définition d'un angle</h2>
+<div class="dbox"><div class="lbl">Définition</div>
+<p>Un angle est <strong>l'écart entre deux demi-droites</strong> qui partent du même point, appelé <strong>sommet</strong>.<br>
+On mesure un angle en <strong>degrés (°)</strong>.</p></div>
+<div class="ebox"><div class="lbl">Exemple</div>
+<p>L'angle formé par les aiguilles d'une horloge à 3h est un angle droit (90°).<br>
+L'angle formé à 6h est un angle plat (180°).</p></div></div>
+
+<div class="cs"><h2>2. Les 4 types d'angles</h2>
+<div class="vgrid">
+<div class="vcrd"><div class="vl">Angle nul</div><div class="vv">0°</div><div class="vs">les deux côtés confondus</div></div>
+<div class="vcrd"><div class="vl">Angle aigu</div><div class="vv">&lt; 90°</div><div class="vs">plus petit que le droit</div></div>
+<div class="vcrd"><div class="vl">Angle droit</div><div class="vv">= 90°</div><div class="vs">symbole □ au sommet</div></div>
+<div class="vcrd"><div class="vl">Angle obtus</div><div class="vv">90°→180°</div><div class="vs">plus grand que le droit</div></div>
+<div class="vcrd"><div class="vl">Angle plat</div><div class="vv">= 180°</div><div class="vs">ligne droite</div></div>
+<div class="vcrd"><div class="vl">Rentrant</div><div class="vv">&gt; 180°</div><div class="vs">dépasse 180°</div></div>
+</div>
+<div class="rbox"><div class="lbl">Reconnaître sans rapporteur</div>
+<p>Angle droit → pose l'angle d'une feuille : si ça coïncide, c'est droit<br>
+Angle aigu → plus petit que l'angle de la feuille<br>
+Angle obtus → plus grand que l'angle de la feuille</p></div></div>
+
+<div class="cs"><h2>3. Mesurer avec le rapporteur</h2>
+<div class="dbox"><div class="lbl">Méthode en 4 étapes</div>
+<p>1. Place le <strong>centre du rapporteur sur le sommet</strong> de l'angle<br>
+2. Aligne le <strong>zéro du rapporteur</strong> sur un côté de l'angle<br>
+3. Lis le chiffre indiqué par le <strong>deuxième côté</strong><br>
+4. Vérifie : l'angle est-il aigu ou obtus ? Choisis la bonne échelle (intérieure ou extérieure)</p></div>
+<div class="wbox"><div class="lbl">⚠ Attention aux deux échelles</div>
+<p>Le rapporteur a deux rangées de chiffres (0→180 et 180→0).<br>
+Si l'angle est <strong>aigu</strong> (&lt;90°), la mesure doit être &lt;90.<br>
+Si l'angle est <strong>obtus</strong> (&gt;90°), la mesure doit être &gt;90.</p></div>
+<div class="ebox"><div class="lbl">Exemple</div>
+<p>Tu lis 40° et 140° sur les deux échelles. L'angle est visiblement aigu → mesure = <strong>40°</strong></p></div></div>
+
+<div class="cs"><h2>4. Angles et polygones</h2>
+<div class="rbox"><div class="lbl">Dans un triangle</div>
+<p>La somme des 3 angles d'un triangle est toujours <strong>180°</strong>.<br>
+Si deux angles mesurent 60° et 80°, le troisième = 180° − 60° − 80° = <strong>40°</strong></p></div>
+<div class="vgrid">
+<div class="vcrd"><div class="vl">Triangle équilatéral</div><div class="vv">3×60°</div><div class="vs">tous égaux</div></div>
+<div class="vcrd"><div class="vl">Triangle isocèle</div><div class="vv">2 égaux</div><div class="vs">deux côtés égaux</div></div>
+<div class="vcrd"><div class="vl">Triangle rectangle</div><div class="vv">90°+…</div><div class="vs">un angle droit</div></div>
+</div>
+<div class="rbox"><div class="lbl">Dans un quadrilatère</div>
+<p>La somme des 4 angles d'un quadrilatère est toujours <strong>360°</strong>.</p></div></div>
+
+<div class="cs"><h2>5. Angles dans la vie quotidienne</h2>
+<div class="ebox"><div class="lbl">Exemples concrets</div>
+<p>Coin d'une table = angle droit (90°)<br>
+Toit d'une maison = angle aigu au faîte<br>
+Porte entrouverte = angle aigu ou obtus selon l'ouverture<br>
+Route droite = angle plat (180°)<br>
+Compas bien ouvert = angle obtus</p></div></div>
+
+<div class="retenir"><h3>📌 À retenir</h3>
+<ul>
+<li>Aigu &lt; 90° · Droit = 90° (symbole □) · Obtus &gt; 90° · Plat = 180°</li>
+<li>Rapporteur : centre sur le sommet, zéro sur un côté</li>
+<li>Somme des angles d'un triangle = 180°</li>
+<li>Somme des angles d'un quadrilatère = 360°</li>
+</ul></div>
+
+<div class="cta">
+  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
+  <a href="angles-cm1.html" class="btn-ex">📝 Exercices : Angles CM1</a>
+</div>
+</main>
+<footer class="site-footer">École Facile — Cours CM1</footer>
+<script src="nav.js"></script>
+<script src="gamification.js"></script>
+</body>
+</html>

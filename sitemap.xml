@@ -93,4 +93,26 @@
   <url><loc>https://ecolefacile.fr/histoire-geo-6e.html</loc><priority>0.8</priority></url>
   <url><loc>https://ecolefacile.fr/tables-ce2.html</loc><priority>0.9</priority></url>
   <url><loc>https://ecolefacile.fr/angles-cm1.html</loc><priority>0.8</priority></url>
+
+  <!-- Cours CE2 -->
+  <url><loc>https://ecolefacile.fr/cours-nombres-ce2.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-fractions-ce2.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-multiplication-ce2.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-geometrie-ce2.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-mesures-ce2.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-histoire-geo-ce2.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Cours CM1 -->
+  <url><loc>https://ecolefacile.fr/cours-fractions-cm1.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-angles-cm1.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-histoire-geo-cm1.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Cours CM2 -->
+  <url><loc>https://ecolefacile.fr/cours-fractions-cm2.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-proportionnalite-cm2.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-histoire-geo-cm2.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Cours 6e -->
+  <url><loc>https://ecolefacile.fr/cours-fractions-6e.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/cours-histoire-geo-6e.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
 </urlset>
