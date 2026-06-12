@@ -583,6 +583,11 @@ function selectLvl(lvl, btn) {
   }
 }
 </script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').catch(function(){});
+}
+</script>
 <script src="sync.js"></script>
 <script src="gamification.js"></script>
 <script src="nav.js"></script>

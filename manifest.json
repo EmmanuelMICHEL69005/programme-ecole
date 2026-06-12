@@ -3,11 +3,16 @@
   "short_name": "École Facile",
   "description": "Exercices interactifs CP → 6ème — Maths, Histoire-Géo, EPS",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#4c1d95",
-  "theme_color": "#4c1d95",
+  "theme_color": "#7c3aed",
   "lang": "fr",
   "icons": [
-    { "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌟</text></svg>", "sizes": "any", "type": "image/svg+xml" }
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ],
+  "categories": ["education", "kids"],
+  "screenshots": [
+    { "src": "og-image.png", "sizes": "1200x630", "type": "image/png" }
   ]
 }
