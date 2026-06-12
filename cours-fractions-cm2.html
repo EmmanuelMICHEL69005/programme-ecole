@@ -9,69 +9,296 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<style>body{font-family:'Nunito',sans-serif;background:#fffbf0;color:#1e1b4b;margin:0}main{max-width:720px;margin:0 auto;padding:22px 18px 60px}.cs{margin-bottom:26px}.cs h2{font-size:1.1rem;font-weight:900;margin:0 0 12px;padding-bottom:7px;border-bottom:2.5px solid #e5e7eb;color:#1e1b4b}.dbox{background:#dbeafe;border-left:4px solid #1d4ed8;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}.dbox .lbl{font-size:.65rem;font-weight:900;color:#1d4ed8;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}.dbox p,.dbox ul{font-size:.9rem;font-weight:700;color:#1e3a8a;margin:0;line-height:1.55}.ebox{background:#fef9c3;border-left:4px solid #ca8a04;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}.ebox .lbl{font-size:.65rem;font-weight:900;color:#92400e;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}.ebox p,.ebox ul{font-size:.9rem;font-weight:700;color:#713f12;margin:0;line-height:1.55}.rbox{background:#dcfce7;border-left:4px solid #16a34a;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}.rbox .lbl{font-size:.65rem;font-weight:900;color:#15803d;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}.rbox p,.rbox ul{font-size:.9rem;font-weight:700;color:#14532d;margin:0;line-height:1.55}.wbox{background:#fee2e2;border-left:4px solid #dc2626;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}.wbox .lbl{font-size:.65rem;font-weight:900;color:#dc2626;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}.wbox p,.wbox ul{font-size:.9rem;font-weight:700;color:#991b1b;margin:0;line-height:1.55}.retenir{background:#fff;border:2.5px solid #7c3aed;border-radius:16px;padding:16px 18px;margin:22px 0 18px}.retenir h3{font-size:.78rem;font-weight:900;color:#7c3aed;text-transform:uppercase;letter-spacing:1px;margin:0 0 10px}.retenir ul{margin:0;padding-left:18px}.retenir li{font-size:.88rem;font-weight:700;color:#1e1b4b;line-height:1.7}.cta{text-align:center;margin-top:26px;padding:18px;background:#fff;border-radius:16px;border:2px solid #e5e7eb}.cta p{font-size:.82rem;color:#6b7280;font-weight:700;margin:0 0 10px}.btn-ex{display:inline-block;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;padding:13px 26px;border-radius:13px;font-size:.95rem;font-weight:900;text-decoration:none;box-shadow:0 4px 16px rgba(124,58,237,.4)}.vgrid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));margin:10px 0}.vcrd{background:#fff;border:2px solid #e5e7eb;border-radius:11px;padding:9px;text-align:center}.vcrd .vl{font-size:.7rem;font-weight:900;color:#6b7280;margin-bottom:4px}.vcrd .vv{font-size:1.3rem;font-weight:900;color:#1e1b4b}.vcrd .vs{font-size:.68rem;font-weight:700;color:#9ca3af;margin-top:2px}table.conv{width:100%;border-collapse:collapse;margin:10px 0;font-size:.85rem;font-weight:700}table.conv th{background:#ede9fe;color:#5b21b6;padding:7px 10px;text-align:center;font-weight:900}table.conv td{border:1px solid #e5e7eb;padding:6px 10px;text-align:center;background:#fff}.badge-niveau{display:inline-block;background:rgba(255,255,255,.2);border-radius:20px;padding:4px 14px;font-size:.72rem;font-weight:900;letter-spacing:1px;margin-bottom:8px}.cours-header{text-align:center;padding:20px 20px 16px;color:#fff}.cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}.cours-header p{font-size:.87rem;opacity:.88;margin:0}.site-footer{text-align:center;padding:16px;font-size:.8rem;color:#9ca3af;border-top:1px solid #e5e7eb;margin-top:10px}.frise{display:flex;flex-direction:column;gap:0;margin:12px 0}.frise-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid #e5e7eb}.frise-item:last-child{border-bottom:none}.frise-dot{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:900;flex-shrink:0;margin-top:2px}.frise-content{flex:1}.frise-date{font-size:.68rem;font-weight:900;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}.frise-text{font-size:.88rem;font-weight:700;line-height:1.5}</style>
+<style>
+body{font-family:'Nunito',sans-serif;background:#fffbf0;color:#1e1b4b;margin:0}
+main{max-width:720px;margin:0 auto;padding:22px 18px 60px}
+.cs{margin-bottom:26px}
+.cs h2{font-size:1.1rem;font-weight:900;margin:0 0 12px;padding-bottom:7px;border-bottom:2.5px solid #e5e7eb;color:#1e1b4b}
+.dbox{background:#dbeafe;border-left:4px solid #1d4ed8;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.dbox .lbl{font-size:.65rem;font-weight:900;color:#1d4ed8;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.dbox p,.dbox ul{font-size:.9rem;font-weight:700;color:#1e3a8a;margin:0;line-height:1.55}
+.ebox{background:#fef9c3;border-left:4px solid #ca8a04;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.ebox .lbl{font-size:.65rem;font-weight:900;color:#92400e;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.ebox p,.ebox ul{font-size:.9rem;font-weight:700;color:#713f12;margin:0;line-height:1.55}
+.rbox{background:#dcfce7;border-left:4px solid #16a34a;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.rbox .lbl{font-size:.65rem;font-weight:900;color:#15803d;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.rbox p,.rbox ul{font-size:.9rem;font-weight:700;color:#14532d;margin:0;line-height:1.55}
+.wbox{background:#fee2e2;border-left:4px solid #dc2626;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.wbox .lbl{font-size:.65rem;font-weight:900;color:#dc2626;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.wbox p,.wbox ul{font-size:.9rem;font-weight:700;color:#991b1b;margin:0;line-height:1.55}
+.retenir{background:#fff;border:2.5px solid #7c3aed;border-radius:16px;padding:16px 18px;margin:22px 0 18px}
+.retenir h3{font-size:.78rem;font-weight:900;color:#7c3aed;text-transform:uppercase;letter-spacing:1px;margin:0 0 10px}
+.retenir ul{margin:0;padding-left:18px}
+.retenir li{font-size:.88rem;font-weight:700;color:#1e1b4b;line-height:1.7}
+.cta{text-align:center;margin-top:26px;padding:18px;background:#fff;border-radius:16px;border:2px solid #e5e7eb}
+.cta p{font-size:.82rem;color:#6b7280;font-weight:700;margin:0 0 10px}
+.btn-ex{display:inline-block;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;padding:13px 26px;border-radius:13px;font-size:.95rem;font-weight:900;text-decoration:none;box-shadow:0 4px 16px rgba(124,58,237,.4)}
+.vgrid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));margin:10px 0}
+.vcrd{background:#fff;border:2px solid #e5e7eb;border-radius:11px;padding:9px;text-align:center}
+.vcrd .vl{font-size:.7rem;font-weight:900;color:#6b7280;margin-bottom:4px}
+.vcrd .vv{font-size:1.3rem;font-weight:900;color:#1e1b4b}
+.vcrd .vs{font-size:.68rem;font-weight:700;color:#9ca3af;margin-top:2px}
+table.conv{width:100%;border-collapse:collapse;margin:10px 0;font-size:.85rem;font-weight:700}
+table.conv th{background:#ede9fe;color:#5b21b6;padding:7px 10px;text-align:center;font-weight:900}
+table.conv td{border:1px solid #e5e7eb;padding:6px 10px;text-align:center;background:#fff}
+table.conv tr:nth-child(even) td{background:#f9fafb}
+.badge-niveau{display:inline-block;background:rgba(255,255,255,.2);border-radius:20px;padding:4px 14px;font-size:.72rem;font-weight:900;letter-spacing:1px;margin-bottom:8px}
+.cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
+.cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
+.cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.site-footer{text-align:center;padding:16px;font-size:.8rem;color:#9ca3af;border-top:1px solid #e5e7eb;margin-top:10px}
+.frise{display:flex;flex-direction:column;gap:0;margin:12px 0}
+.frise-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid #e5e7eb}
+.frise-item:last-child{border-bottom:none}
+.frise-dot{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:900;flex-shrink:0;margin-top:2px}
+.frise-content{flex:1}
+.frise-date{font-size:.68rem;font-weight:900;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+.frise-text{font-size:.88rem;font-weight:700;line-height:1.5}
+</style>
 </head>
 <body>
 <header class="cours-header" style="background:linear-gradient(135deg,#b45309,#f59e0b)">
   <div class="badge-niveau">CM2</div>
-  <h1>✂️ Fractions avancées</h1>
-  <p>Équivalences, simplification, addition dénominateurs différents</p>
+  <h1>✂️ Les fractions avancées</h1>
+  <p>Simplification, dénominateurs différents, multiplication</p>
 </header>
 <main>
 
-<div class="cs"><h2>1. Rappels et fractions équivalentes</h2>
-<div class="rbox"><div class="lbl">Règle</div>
-<p>Multiplier (ou diviser) numérateur et dénominateur par le même nombre ≠ 0 ne change pas la valeur.</p></div>
-<div class="ebox"><div class="lbl">Exemples</div>
-<p>½ = ²⁄₄ = ³⁄₆ = ⁶⁄₁₂ (×2, ×3, ×6)<br>
-¹²⁄₁₆ = ³⁄₄ (÷4 les deux)</p></div></div>
+<div class="cs"><h2>1. Simplifier une fraction — trouver le PGCD</h2>
+<div class="dbox"><div class="lbl">Définition — fraction irréductible</div>
+<p>Une fraction est <strong>irréductible</strong> quand le numérateur et le dénominateur n'ont aucun diviseur commun autre que 1. On ne peut plus la simplifier.</p></div>
+<div class="dbox"><div class="lbl">Définition — PGCD</div>
+<p>Le <strong>PGCD</strong> (Plus Grand Commun Diviseur) de deux nombres est le plus grand nombre qui divise les deux en même temps.</p></div>
+<div class="rbox"><div class="lbl">Méthode 1 — liste des diviseurs</div>
+<p>Pour simplifier ¹²⁄₁₈ :<br>
+Diviseurs de 12 : 1, 2, 3, 4, <strong>6</strong>, 12<br>
+Diviseurs de 18 : 1, 2, 3, <strong>6</strong>, 9, 18<br>
+PGCD(12, 18) = <strong>6</strong> → ¹²⁄₁₈ = ²⁄₃ (on divise les deux par 6)</p></div>
+<div class="frise">
+  <div class="frise-item">
+    <div class="frise-dot" style="background:#fef9c3;color:#92400e">1</div>
+    <div class="frise-content">
+      <div class="frise-date">Exemple : simplifier ¹⁵⁄₂₅</div>
+      <div class="frise-text">Diviseurs de 15 : 1, 3, <strong>5</strong>, 15 · Diviseurs de 25 : 1, <strong>5</strong>, 25 → PGCD = 5</div>
+    </div>
+  </div>
+  <div class="frise-item">
+    <div class="frise-dot" style="background:#fef9c3;color:#92400e">2</div>
+    <div class="frise-content">
+      <div class="frise-date">Diviser num et dén par 5</div>
+      <div class="frise-text">15 ÷ 5 = 3 et 25 ÷ 5 = 5 → ¹⁵⁄₂₅ = <strong>³⁄₅</strong></div>
+    </div>
+  </div>
+  <div class="frise-item">
+    <div class="frise-dot" style="background:#fef9c3;color:#92400e">3</div>
+    <div class="frise-content">
+      <div class="frise-date">Vérifier l'irréductibilité</div>
+      <div class="frise-text">Diviseurs communs de 3 et 5 : seulement 1 → ³⁄₅ est irréductible ✓</div>
+    </div>
+  </div>
+</div>
+<div class="ebox"><div class="lbl">Exemples supplémentaires</div>
+<ul>
+  <li>²⁰⁄₃₀ : PGCD = 10 → <strong>²⁄₃</strong></li>
+  <li>¹⁶⁄₂₄ : PGCD = 8 → <strong>²⁄₃</strong></li>
+  <li>⁹⁄₁₂ : PGCD = 3 → <strong>¾</strong></li>
+  <li>¹⁰⁄₁₅ : PGCD = 5 → <strong>²⁄₃</strong></li>
+</ul></div>
+<div class="rbox"><div class="lbl">Méthode 2 — divisions successives (si le PGCD n'est pas évident)</div>
+<p>Simplifie étape par étape par les petits diviseurs communs (2, 3, 5…) jusqu'à ce qu'il n'y en ait plus.<br>
+¹²⁄₃₀ → ÷2 → ⁶⁄₁₅ → ÷3 → <strong>²⁄₅</strong> (irréductible car 2 et 5 n'ont pas de diviseur commun)</p></div>
+</div>
 
-<div class="cs"><h2>2. Simplifier une fraction</h2>
-<div class="dbox"><div class="lbl">Fraction irréductible</div>
-<p>Une fraction est irréductible quand le numérateur et le dénominateur n'ont <strong>aucun diviseur commun</strong> autre que 1.</p></div>
-<div class="rbox"><div class="lbl">Méthode : diviser par le PGCD</div>
-<p>PGCD = Plus Grand Commun Diviseur<br>
-Divise numérateur et dénominateur par leur PGCD.</p></div>
-<div class="ebox"><div class="lbl">Exemples</div>
-<p>¹²⁄₁₈ : diviseurs de 12 = 1,2,3,4,6,12 · diviseurs de 18 = 1,2,3,6,9,18<br>
-PGCD(12,18) = 6 → ¹²⁄₁₈ = ²⁄₃ ✓<br><br>
-¹⁵⁄₂₅ : PGCD = 5 → ³⁄₅</p></div></div>
+<div class="cs"><h2>2. Fractions irréductibles — vérification</h2>
+<div class="dbox"><div class="lbl">Comment vérifier qu'une fraction est irréductible</div>
+<p>Une fraction <strong>a/b est irréductible</strong> si et seulement si PGCD(a, b) = 1.<br>
+Concrètement : teste si 2, 3, 5, 7 (les premiers nombres premiers) divisent les deux à la fois.</p></div>
+<div class="ebox"><div class="lbl">Exemples de fractions irréductibles</div>
+<ul>
+  <li><strong>²⁄₃</strong> : 2 et 3 n'ont que 1 en commun ✓</li>
+  <li><strong>⅗</strong> : 3 et 5 n'ont que 1 en commun ✓</li>
+  <li><strong>⁴⁄₇</strong> : 4 n'est pas divisible par 7, et 7 ne divise pas 4 ✓</li>
+  <li><strong>⁷⁄₁₂</strong> : 7 est premier, 12 n'est pas un multiple de 7 ✓</li>
+</ul></div>
+<div class="ebox"><div class="lbl">Exemples de fractions NON irréductibles</div>
+<ul>
+  <li><strong>⁴⁄₆</strong> : 4 et 6 sont tous deux divisibles par 2 → simplifier en ²⁄₃</li>
+  <li><strong>⁹⁄₁₅</strong> : 9 et 15 sont tous deux divisibles par 3 → simplifier en ³⁄₅</li>
+</ul></div>
+<div class="wbox"><div class="lbl">Toujours simplifier le résultat final</div>
+<p>Quand tu trouves une fraction comme réponse à un problème, vérifie toujours si elle est irréductible. Ton professeur peut enlever des points si tu laisses ⁶⁄₈ au lieu de ¾ !</p></div>
+</div>
 
-<div class="cs"><h2>3. Additionner des fractions (dénominateurs différents)</h2>
-<div class="rbox"><div class="lbl">Méthode</div>
-<p>Trouver un <strong>dénominateur commun</strong> (souvent le plus petit commun multiple PPCM), puis convertir chaque fraction.</p></div>
-<div class="ebox"><div class="lbl">Exemple : ½ + ⅓</div>
-<p>Dénominateur commun = 6 (PPCM de 2 et 3)<br>
-½ = ³⁄₆ · ⅓ = ²⁄₆<br>
-³⁄₆ + ²⁄₆ = <strong>⁵⁄₆</strong></p></div>
-<div class="ebox"><div class="lbl">Exemple : ¾ + ⅙</div>
-<p>Dénominateur commun = 12<br>
-¾ = ⁹⁄₁₂ · ⅙ = ²⁄₁₂<br>
-⁹⁄₁₂ + ²⁄₁₂ = ¹¹⁄₁₂</p></div></div>
+<div class="cs"><h2>3. Addition et soustraction — dénominateurs différents</h2>
+<div class="rbox"><div class="lbl">Méthode complète en 4 étapes</div>
+<ul>
+  <li>Étape 1 : trouve un <strong>dénominateur commun</strong> (multiple des deux dénominateurs)</li>
+  <li>Étape 2 : convertis chaque fraction pour avoir ce dénominateur commun</li>
+  <li>Étape 3 : additionne ou soustrait les numérateurs (le dénominateur reste le même)</li>
+  <li>Étape 4 : simplifie le résultat si possible</li>
+</ul></div>
+<div class="frise">
+  <div class="frise-item">
+    <div class="frise-dot" style="background:#dcfce7;color:#15803d">1</div>
+    <div class="frise-content">
+      <div class="frise-date">Exemple facile : ½ + ⅓</div>
+      <div class="frise-text">Dénominateur commun = 6 (PPCM de 2 et 3)<br>½ = ³⁄₆ · ⅓ = ²⁄₆ → ³⁄₆ + ²⁄₆ = <strong>⁵⁄₆</strong> (irréductible)</div>
+    </div>
+  </div>
+  <div class="frise-item">
+    <div class="frise-dot" style="background:#dcfce7;color:#15803d">2</div>
+    <div class="frise-content">
+      <div class="frise-date">Exemple moyen : ¾ + ⅙</div>
+      <div class="frise-text">Dénominateur commun = 12 (PPCM de 4 et 6)<br>¾ = ⁹⁄₁₂ · ⅙ = ²⁄₁₂ → ⁹⁄₁₂ + ²⁄₁₂ = <strong>¹¹⁄₁₂</strong></div>
+    </div>
+  </div>
+  <div class="frise-item">
+    <div class="frise-dot" style="background:#dcfce7;color:#15803d">3</div>
+    <div class="frise-content">
+      <div class="frise-date">Exemple avancé : ⅔ + ¾ − ⅙</div>
+      <div class="frise-text">Dénominateur commun = 12<br>⅔ = ⁸⁄₁₂ · ¾ = ⁹⁄₁₂ · ⅙ = ²⁄₁₂ → 8+9−2 = 15 → <strong>¹⁵⁄₁₂ = ⁵⁄₄</strong></div>
+    </div>
+  </div>
+</div>
+<div class="ebox"><div class="lbl">Soustraction avec résultat à simplifier</div>
+<p>⁵⁄₆ − ¼ : dénominateur commun = 12 · ⁵⁄₆ = ¹⁰⁄₁₂ · ¼ = ³⁄₁₂<br>
+¹⁰⁄₁₂ − ³⁄₁₂ = ⁷⁄₁₂ (irréductible : PGCD(7,12) = 1) ✓</p></div>
+<div class="wbox"><div class="lbl">Trouver le dénominateur commun</div>
+<p>Le plus simple est souvent de multiplier les deux dénominateurs :<br>
+Dénominateurs 3 et 5 → commun = 15. Mais parfois on peut trouver plus petit :<br>
+Dénominateurs 4 et 6 → multiplié = 24, mais PPCM = 12 (plus pratique).</p></div>
+</div>
 
 <div class="cs"><h2>4. Multiplier des fractions</h2>
-<div class="rbox"><div class="lbl">Règle</div>
-<p>Numérateur × numérateur · Dénominateur × dénominateur<br>
-ᵃ⁄ᵦ × ᶜ⁄ᵈ = ᵃᶜ⁄ᵦᵈ</p></div>
-<div class="ebox"><div class="lbl">Exemples</div>
-<p>⅔ × ¾ = ⁶⁄₁₂ = ½<br>
-³⁄₅ × ⁵⁄₉ = ¹⁵⁄₄₅ = ⅓<br>
-Astuce : simplifier en croix avant de multiplier (si possible)</p></div></div>
-
-<div class="cs"><h2>5. Fractions et nombres décimaux</h2>
-<div class="rbox"><div class="lbl">Convertir</div>
-<p>Fraction → décimal : effectue la division<br>
-Décimal → fraction : écris sur 10, 100 ou 1000 puis simplifie</p></div>
-<div class="ebox"><div class="lbl">Exemples</div>
-<p>⅜ = 3 ÷ 8 = 0,375<br>
-0,6 = ⁶⁄₁₀ = ³⁄₅ · 0,125 = ¹²⁵⁄₁₀₀₀ = ⅛</p></div></div>
-
-<div class="retenir"><h3>📌 À retenir</h3>
+<div class="rbox"><div class="lbl">Règle de la multiplication</div>
+<p><strong>(a/b) × (c/d) = (a×c) / (b×d)</strong><br>
+On multiplie les numérateurs entre eux, et les dénominateurs entre eux.</p></div>
+<div class="ebox"><div class="lbl">Exemples de multiplications</div>
 <ul>
-<li>Fractions équivalentes : × ou ÷ les deux par le même nombre</li>
-<li>Simplifier : diviser par le PGCD</li>
-<li>Additionner : trouver un dénominateur commun</li>
-<li>Multiplier : numérateur × numérateur / dénominateur × dénominateur</li>
+  <li>⅔ × ¾ = (2×3)/(3×4) = ⁶⁄₁₂ = <strong>½</strong></li>
+  <li>⅗ × ⁵⁄₉ = (3×5)/(5×9) = ¹⁵⁄₄₅ = <strong>⅓</strong></li>
+  <li>¾ × ⁸⁄₉ = (3×8)/(4×9) = ²⁴⁄₃₆ = <strong>⅔</strong></li>
+</ul></div>
+<div class="rbox"><div class="lbl">Astuce — simplification croisée (avant de multiplier)</div>
+<p>Avant de multiplier, cherche si un numérateur et un dénominateur ont un diviseur commun. Tu peux simplifier <em>en diagonale</em> pour obtenir des plus petits nombres.</p></div>
+<div class="ebox"><div class="lbl">Exemple de simplification croisée</div>
+<p>⅔ × ¾ : le 3 du numérateur de ⅔ et le 3 du dénominateur de ¾ se simplifient (÷3)<br>
+⅔ × ¾ → ²⁄₁ × ¼ = <strong>²⁄₄ = ½</strong> (même résultat, calcul plus facile !)</p></div>
+<div class="ebox"><div class="lbl">Fraction × entier</div>
+<p>⅗ × 10 = ⅗ × ¹⁰⁄₁ = ³⁰⁄₅ = <strong>6</strong><br>
+¾ × 8 = ¾ × ⁸⁄₁ = ²⁴⁄₄ = <strong>6</strong></p></div>
+</div>
+
+<div class="cs"><h2>5. Diviser par une fraction</h2>
+<div class="dbox"><div class="lbl">Définition — inverse d'une fraction</div>
+<p>L'<strong>inverse</strong> d'une fraction a/b est la fraction b/a (on retourne la fraction).<br>
+Inverse de ¾ = ⁴⁄₃ · Inverse de ⅖ = ⁵⁄₂ · Inverse de ½ = 2</p></div>
+<div class="rbox"><div class="lbl">Règle de la division</div>
+<p>Diviser par une fraction revient à <strong>multiplier par son inverse</strong>.<br>
+(a/b) ÷ (c/d) = (a/b) × (d/c)</p></div>
+<div class="frise">
+  <div class="frise-item">
+    <div class="frise-dot" style="background:#dbeafe;color:#1d4ed8">1</div>
+    <div class="frise-content">
+      <div class="frise-date">Exemple : ⅔ ÷ ¼</div>
+      <div class="frise-text">Inverse de ¼ = 4 → ⅔ × 4 = ⁸⁄₃ = <strong>2 et ⅔</strong></div>
+    </div>
+  </div>
+  <div class="frise-item">
+    <div class="frise-dot" style="background:#dbeafe;color:#1d4ed8">2</div>
+    <div class="frise-content">
+      <div class="frise-date">Exemple : ¾ ÷ ½</div>
+      <div class="frise-text">Inverse de ½ = 2 → ¾ × 2 = ⁶⁄₄ = <strong>³⁄₂ = 1,5</strong></div>
+    </div>
+  </div>
+  <div class="frise-item">
+    <div class="frise-dot" style="background:#dbeafe;color:#1d4ed8">3</div>
+    <div class="frise-content">
+      <div class="frise-date">Exemple : ⅗ ÷ ⅔</div>
+      <div class="frise-text">Inverse de ⅔ = ³⁄₂ → ⅗ × ³⁄₂ = ⁹⁄₁₀ (irréductible) = <strong>0,9</strong></div>
+    </div>
+  </div>
+</div>
+<div class="wbox"><div class="lbl">Ne pas confondre inverse et opposé</div>
+<p>L'inverse de ¾ est ⁴⁄₃ (on retourne). L'opposé de ¾ est −¾ (on change le signe). Ce sont deux choses différentes !</p></div>
+</div>
+
+<div class="cs"><h2>6. Fractions et pourcentages</h2>
+<div class="dbox"><div class="lbl">Définition</div>
+<p>Un <strong>pourcentage</strong> est une fraction dont le dénominateur est 100.<br>
+25% = ²⁵⁄₁₀₀ = ¼ &nbsp;&nbsp; 50% = ⁵⁰⁄₁₀₀ = ½ &nbsp;&nbsp; 100% = ¹⁰⁰⁄₁₀₀ = 1 (tout entier)</p></div>
+<div class="vgrid">
+  <div class="vcrd"><div class="vl">50%</div><div class="vv">½</div><div class="vs">÷ 2</div></div>
+  <div class="vcrd"><div class="vl">25%</div><div class="vv">¼</div><div class="vs">÷ 4</div></div>
+  <div class="vcrd"><div class="vl">75%</div><div class="vv">¾</div><div class="vs">×3 puis ÷4</div></div>
+  <div class="vcrd"><div class="vl">10%</div><div class="vv">¹⁄₁₀</div><div class="vs">÷ 10</div></div>
+  <div class="vcrd"><div class="vl">20%</div><div class="vv">⅕</div><div class="vs">÷ 5</div></div>
+  <div class="vcrd"><div class="vl">33%</div><div class="vv">≈⅓</div><div class="vs">÷ 3</div></div>
+</div>
+<div class="rbox"><div class="lbl">Calculer x% d'une quantité</div>
+<p>x% de N = N × x ÷ 100 (ou N × x/100)<br>
+25% de 80 = 80 × 25 ÷ 100 = 80 ÷ 4 = <strong>20</strong><br>
+30% de 50 = 50 × 30 ÷ 100 = <strong>15</strong></p></div>
+<div class="ebox"><div class="lbl">Applications pratiques</div>
+<ul>
+  <li>20% de réduction sur 60 € : 60 × 20 ÷ 100 = 12 € → prix = 60 − 12 = <strong>48 €</strong></li>
+  <li>15% de 200 points : 200 × 15 ÷ 100 = <strong>30 points</strong></li>
+  <li>TVA 20% sur 50 € : 50 × 0,2 = 10 € → prix TTC = <strong>60 €</strong></li>
+</ul></div>
+</div>
+
+<div class="cs"><h2>7. Résoudre un problème avec des fractions</h2>
+<div class="rbox"><div class="lbl">Méthode en 5 étapes</div>
+<ul>
+  <li>1. Lis attentivement et identifie ce qu'on cherche</li>
+  <li>2. Repère les fractions et les quantités données</li>
+  <li>3. Choisis l'opération (fraction d'une quantité, addition, etc.)</li>
+  <li>4. Calcule en montrant toutes les étapes</li>
+  <li>5. Vérifie et simplifie le résultat</li>
+</ul></div>
+<div class="ebox"><div class="lbl">Problème complet — étape par étape</div>
+<p>Une classe de 30 élèves. ⅖ font du sport le mardi et ⅓ font de la musique.<br>
+<strong>Combien d'élèves au total font une activité ?</strong><br>
+Sport : ⅖ de 30 → 30 ÷ 5 = 6 → 6 × 2 = <strong>12 élèves</strong><br>
+Musique : ⅓ de 30 → 30 ÷ 3 = 10 → 10 × 1 = <strong>10 élèves</strong><br>
+Total : 12 + 10 = <strong>22 élèves</strong><br>
+Vérification : 22 &lt; 30, c'est cohérent ✓</p></div>
+<div class="ebox"><div class="lbl">Problème avec fractions de fractions</div>
+<p>Lucas mange ¾ d'une tarte. Sa sœur mange ⅔ de ce qui reste.<br>
+Ce qui reste après Lucas = 1 − ¾ = ¼ de la tarte.<br>
+Sa sœur mange : ⅔ × ¼ = ²⁄₁₂ = <strong>⅙ de la tarte</strong>.</p></div>
+<div class="wbox"><div class="lbl">Attention au mot "reste"</div>
+<p>Si quelqu'un prend ¾, il <strong>reste ¼</strong> (pas ¾ !). Lis toujours bien l'énoncé pour savoir si on parle de la partie prise ou de la partie restante.</p></div>
+</div>
+
+<div class="cs"><h2>Bilan — exercices types CM2</h2>
+<div class="ebox"><div class="lbl">Type 1 — simplification</div>
+<p>Simplifie ²⁴⁄₃₆ :<br>
+Diviseurs communs de 24 et 36 : 1, 2, 3, 4, 6, <strong>12</strong><br>
+PGCD = 12 → ²⁴⁄₃₆ = <strong>²⁄₃</strong> (irréductible car PGCD(2,3)=1)</p></div>
+<div class="ebox"><div class="lbl">Type 2 — addition de fractions</div>
+<p>Calcule ⅔ + ⅗ :<br>
+Dénominateur commun = 15 (PPCM de 3 et 5)<br>
+⅔ = ¹⁰⁄₁₅ · ⅗ = ⁹⁄₁₅<br>
+¹⁰⁄₁₅ + ⁹⁄₁₅ = <strong>¹⁹⁄₁₅</strong> = 1⁴⁄₁₅</p></div>
+<div class="ebox"><div class="lbl">Type 3 — multiplication</div>
+<p>Calcule ⅔ × ⁹⁄₁₀ :<br>
+Simplification croisée : le 2 et le 10 ont 2 en commun → ¹⁄₁ × ⁹⁄₅ ... non.<br>
+Le 3 (dénominateur de ⅔) et le 9 (numérateur) ont 3 en commun → ²⁄₁ × ³⁄₁₀ = <strong>⁶⁄₁₀ = ³⁄₅</strong></p></div>
+<div class="ebox"><div class="lbl">Type 4 — problème de pourcentage</div>
+<p>Un vélo coûte 180 €. Il est en solde à −15%. Quel est le nouveau prix ?<br>
+Réduction = 15% de 180 = 180 × 15 ÷ 100 = 180 × 0,15 = <strong>27 €</strong><br>
+Nouveau prix = 180 − 27 = <strong>153 €</strong></p></div>
+</div>
+
+<div class="retenir"><h3>A retenir</h3>
+<ul>
+<li>Simplifier : divise num ET dén par leur PGCD jusqu'à fraction irréductible</li>
+<li>Addition dénominateurs différents : trouver dénominateur commun, convertir, additionner num</li>
+<li>Multiplication : (a/b) × (c/d) = (a×c)/(b×d) — simplifier avant si possible</li>
+<li>Division : multiplier par l'inverse (retourner la fraction diviseur)</li>
+<li>x% = x/100 · 50%=½ · 25%=¼ · 75%=¾ · 10%=1/10 · 20%=⅕</li>
+<li>Toujours simplifier le résultat final !</li>
 </ul></div>
 
 <div class="cta">

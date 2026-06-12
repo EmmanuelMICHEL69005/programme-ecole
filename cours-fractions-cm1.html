@@ -49,62 +49,220 @@ table.conv td{border:1px solid #e5e7eb;padding:6px 10px;text-align:center;backgr
 </style>
 </head>
 <body>
-<header class="cours-header" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6)">
+<header class="cours-header" style="background:linear-gradient(135deg,#1d4ed8,#60a5fa)">
   <div class="badge-niveau">CM1</div>
   <h1>✂️ Les fractions</h1>
-  <p>Comparer, additionner, fractions et décimaux</p>
+  <p>Fractions supérieures à 1, équivalentes, addition</p>
 </header>
 <main>
 
-<div class="cs"><h2>1. Rappels — Le vocabulaire</h2>
-<div class="dbox"><div class="lbl">Rappel CE2</div>
-<p>Une fraction = numérateur / dénominateur<br>
-½ → 1 part sur 2 · ¼ → 1 part sur 4 · ¾ → 3 parts sur 4</p></div></div>
+<div class="cs"><h2>1. Révisions CE2 — ce que tu dois savoir</h2>
+<div class="dbox"><div class="lbl">Rappel vocabulaire</div>
+<p>Une fraction = <strong>numérateur</strong> (haut) ÷ <strong>dénominateur</strong> (bas).<br>
+Le dénominateur dit en combien de parts égales on coupe. Le numérateur dit combien on en prend.</p></div>
+<div class="vgrid">
+  <div class="vcrd"><div class="vl">½</div><div class="vv">0,5</div><div class="vs">un demi</div></div>
+  <div class="vcrd"><div class="vl">¼</div><div class="vv">0,25</div><div class="vs">un quart</div></div>
+  <div class="vcrd"><div class="vl">¾</div><div class="vv">0,75</div><div class="vs">trois quarts</div></div>
+  <div class="vcrd"><div class="vl">⅓</div><div class="vv">≈0,33</div><div class="vs">un tiers</div></div>
+  <div class="vcrd"><div class="vl">⅔</div><div class="vv">≈0,67</div><div class="vs">deux tiers</div></div>
+  <div class="vcrd"><div class="vl">⅕</div><div class="vv">0,2</div><div class="vs">un cinquième</div></div>
+</div>
+<div class="rbox"><div class="lbl">Rappel — même dénominateur : compare les numérateurs</div>
+<p>⅖ &lt; ⅗ car 2 &lt; 3. &nbsp; ¼ &lt; ¾ car 1 &lt; 3. &nbsp; ³⁄₈ &lt; ⁷⁄₈ car 3 &lt; 7.</p></div>
+<div class="wbox"><div class="lbl">Erreur classique</div>
+<p>On ne compare PAS les dénominateurs directement entre fractions différentes !<br>
+½ et ⅓ : on NE dit pas "½ &lt; ⅓ car 2 &lt; 3". C'est FAUX : <strong>½ &gt; ⅓</strong> (½ = 0,5 et ⅓ ≈ 0,33).</p></div>
+</div>
 
-<div class="cs"><h2>2. Fractions supérieures à 1</h2>
+<div class="cs"><h2>2. Les fractions supérieures à 1</h2>
 <div class="dbox"><div class="lbl">Définition</div>
-<p>Quand le numérateur est <strong>plus grand que le dénominateur</strong>, la fraction est supérieure à 1.</p></div>
-<div class="ebox"><div class="lbl">Exemples</div>
-<p>⁷⁄₄ = 1 + ¾ = 1¾ (une pizza entière et ¾ d'une autre)<br>
-⁵⁄₃ = 1 + ⅔ = 1⅔<br>
-Méthode : 7 ÷ 4 = 1 reste 3 → ⁷⁄₄ = 1 et ¾</p></div></div>
+<p>Une fraction est <strong>supérieure à 1</strong> quand le numérateur est plus grand que le dénominateur.<br>
+Ex : ⁷⁄₄ → 7 &gt; 4 → cette fraction vaut plus de 1 entier.</p></div>
+<div class="ebox"><div class="lbl">Représentation concrète</div>
+<p><strong>⁷⁄₄</strong> : imagine 7 quarts de pizza. 4 quarts font une pizza entière → il reste 3 quarts.<br>
+⁷⁄₄ = <strong>1 entier et ¾</strong> = 1,75</p></div>
+<div class="rbox"><div class="lbl">Méthode — convertir en nombre mixte</div>
+<p>Effectue la division euclidienne : numérateur ÷ dénominateur<br>
+Le <strong>quotient</strong> = partie entière · le <strong>reste</strong> = numérateur de la fraction restante</p></div>
+<div class="frise">
+  <div class="frise-item">
+    <div class="frise-dot" style="background:#dbeafe;color:#1d4ed8">1</div>
+    <div class="frise-content">
+      <div class="frise-date">Exemple : ⁷⁄₄</div>
+      <div class="frise-text">7 ÷ 4 = <strong>1</strong> reste <strong>3</strong> → ⁷⁄₄ = 1 et ¾</div>
+    </div>
+  </div>
+  <div class="frise-item">
+    <div class="frise-dot" style="background:#dbeafe;color:#1d4ed8">2</div>
+    <div class="frise-content">
+      <div class="frise-date">Exemple : ¹¹⁄₃</div>
+      <div class="frise-text">11 ÷ 3 = <strong>3</strong> reste <strong>2</strong> → ¹¹⁄₃ = 3 et ⅔</div>
+    </div>
+  </div>
+  <div class="frise-item">
+    <div class="frise-dot" style="background:#dbeafe;color:#1d4ed8">3</div>
+    <div class="frise-content">
+      <div class="frise-date">Exemple : ⁹⁄₅</div>
+      <div class="frise-text">9 ÷ 5 = <strong>1</strong> reste <strong>4</strong> → ⁹⁄₅ = 1 et ⁴⁄₅</div>
+    </div>
+  </div>
+</div>
+<div class="ebox"><div class="lbl">Représentation sur la droite</div>
+<p>Sur une droite graduée de 0 à 3, on peut placer :<br>
+0 — ⅓ — ⅔ — 1 — ⁴⁄₃ — ⁵⁄₃ — 2 — ⁷⁄₃ — ⁸⁄₃ — 3<br>
+⁷⁄₄ se place entre 1 et 2 (car 1 &lt; ⁷⁄₄ &lt; 2).</p></div>
+</div>
 
-<div class="cs"><h2>3. Fractions équivalentes</h2>
-<div class="rbox"><div class="lbl">Règle</div>
-<p>On peut multiplier (ou diviser) le numérateur ET le dénominateur par le même nombre sans changer la valeur.</p></div>
-<div class="ebox"><div class="lbl">Exemples</div>
-<p>½ = ²⁄₄ = ³⁄₆ = ⁴⁄₈ (on multiplie par 2, 3, 4…)<br>
-⁶⁄₉ = ²⁄₃ (on divise par 3 · car 6÷3=2 et 9÷3=3)</p></div></div>
-
-<div class="cs"><h2>4. Additionner et soustraire des fractions</h2>
-<div class="rbox"><div class="lbl">Règle — même dénominateur</div>
-<p>On additionne (ou soustrait) seulement les numérateurs. Le dénominateur reste le même.</p></div>
-<div class="ebox"><div class="lbl">Exemples</div>
-<p>²⁄₇ + ³⁄₇ = ⁵⁄₇ &nbsp;&nbsp; ⁵⁄₈ − ²⁄₈ = ³⁄₈<br>
-¾ + ¾ = ⁶⁄₄ = 1½</p></div>
-<div class="wbox"><div class="lbl">⚠ Si les dénominateurs sont différents</div>
-<p>Il faut d'abord les rendre égaux (voir cours CM2). En CM1, les exercices ont toujours le même dénominateur.</p></div></div>
-
-<div class="cs"><h2>5. Fractions et décimaux</h2>
-<div class="rbox"><div class="lbl">Fractions décimales à connaître</div>
-<p>¹⁄₁₀ = 0,1 · ²⁄₁₀ = 0,2 · ⁵⁄₁₀ = 0,5 · ⁷⁄₁₀ = 0,7<br>
-¹⁄₁₀₀ = 0,01 · ²⁵⁄₁₀₀ = 0,25 · ⁵⁰⁄₁₀₀ = 0,5<br>
-½ = 0,5 · ¼ = 0,25 · ¾ = 0,75 · ⅕ = 0,2</p></div>
-<div class="ebox"><div class="lbl">Convertir fraction → décimal</div>
-<p>Effectue la division : ³⁄₈ = 3 ÷ 8 = 0,375</p></div></div>
-
-<div class="cs"><h2>6. Placer sur la droite numérique</h2>
-<div class="ebox"><div class="lbl">Exemple</div>
-<p>Sur une droite entre 0 et 2, placer ⅓, 1, ⁴⁄₃, ⁵⁄₃ :<br>
-0 ——— ⅓ ——— ⅔ ——— 1 ——— ⁴⁄₃ ——— ⁵⁄₃ ——— 2<br>
-(chaque segment = ⅓)</p></div></div>
-
-<div class="retenir"><h3>📌 À retenir</h3>
+<div class="cs"><h2>3. Les fractions équivalentes</h2>
+<div class="dbox"><div class="lbl">Définition</div>
+<p>Deux fractions sont <strong>équivalentes</strong> si elles représentent la même quantité, même si elles s'écrivent différemment.</p></div>
+<div class="rbox"><div class="lbl">Règle d'or</div>
+<p>On peut <strong>multiplier</strong> ou <strong>diviser</strong> le numérateur ET le dénominateur par le même nombre (≠ 0) sans changer la valeur de la fraction.</p></div>
+<div class="ebox"><div class="lbl">Famille de ½</div>
+<p>½ = ²⁄₄ = ³⁄₆ = ⁴⁄₈ = ⁵⁄₁₀ = ⁶⁄₁₂ (on multiplie num et dén par 2, 3, 4, 5, 6…)<br>
+C'est toujours la même quantité : la moitié !</p></div>
+<div class="ebox"><div class="lbl">Famille de ⅔</div>
+<p>⅔ = ⁴⁄₆ = ⁶⁄₉ = ⁸⁄₁₂ = ¹⁰⁄₁₅ (on multiplie par 2, 3, 4, 5…)</p></div>
+<div class="ebox"><div class="lbl">Simplifier — trouver une fraction plus simple</div>
+<p>⁶⁄₉ : 6 et 9 ont un diviseur commun = 3 → ⁶⁄₉ = ²⁄₃ (on divise les deux par 3)<br>
+⁸⁄₁₂ : 8 et 12 ont un diviseur commun = 4 → ⁸⁄₁₂ = ²⁄₃<br>
+¹⁰⁄₁₅ : 10 et 15 ont un diviseur commun = 5 → ¹⁰⁄₁₅ = ²⁄₃</p></div>
+<div class="rbox"><div class="lbl">Utilité des fractions équivalentes</div>
 <ul>
-<li>Fraction &gt; 1 : numérateur &gt; dénominateur (ex: ⁷⁄₄ = 1 + ¾)</li>
-<li>Fractions équivalentes : × ou ÷ les deux par le même nombre</li>
-<li>Même dénominateur : additionne les numérateurs</li>
-<li>¹⁄₁₀ = 0,1 · ½ = 0,5 · ¼ = 0,25 · ¾ = 0,75</li>
+  <li>Comparer des fractions : amener au même dénominateur</li>
+  <li>Simplifier un calcul : remplacer ⁴⁄₈ par ½ pour additionner plus facilement</li>
+  <li>Vérifier qu'une réponse est correcte sous une autre forme</li>
+</ul></div>
+</div>
+
+<div class="cs"><h2>4. Comparer des fractions — dénominateurs différents</h2>
+<div class="rbox"><div class="lbl">Méthode — ramener au même dénominateur</div>
+<p>Pour comparer ½ et ⅓ : cherche un dénominateur commun (un multiple des deux).<br>
+Multiple de 2 ET de 3 : <strong>6</strong>.<br>
+½ = ³⁄₆ &nbsp;&nbsp; ⅓ = ²⁄₆ &nbsp;&nbsp; → ³⁄₆ &gt; ²⁄₆ donc <strong>½ &gt; ⅓</strong></p></div>
+<div class="ebox"><div class="lbl">Autres exemples</div>
+<ul>
+  <li>⅔ et ¾ : dénominateur commun = 12 → ⅔ = ⁸⁄₁₂ · ¾ = ⁹⁄₁₂ → <strong>⅔ &lt; ¾</strong></li>
+  <li>⅗ et ½ : dénominateur commun = 10 → ⅗ = ⁶⁄₁₀ · ½ = ⁵⁄₁₀ → <strong>⅗ &gt; ½</strong></li>
+</ul></div>
+<div class="rbox"><div class="lbl">Astuce rapide — comparer à ½</div>
+<p>Si tu peux vite voir si chaque fraction est &gt; ou &lt; ½, tu peux les comparer.<br>
+⅗ &gt; ½ car 3 &gt; 5/2=2,5 &nbsp; et &nbsp; ¼ &lt; ½ car 1 &lt; 4/2=2 → donc ¼ &lt; ½ &lt; ⅗</p></div>
+<div class="wbox"><div class="lbl">Attention aux fractions &gt; 1</div>
+<p>⁵⁄₃ et ⁷⁄₄ : les deux sont &gt; 1. Dénominateur commun = 12 → ⁵⁄₃ = ²⁰⁄₁₂ · ⁷⁄₄ = ²¹⁄₁₂ → <strong>⁵⁄₃ &lt; ⁷⁄₄</strong></p></div>
+</div>
+
+<div class="cs"><h2>5. Additionner et soustraire des fractions (même dénominateur)</h2>
+<div class="rbox"><div class="lbl">Règle fondamentale</div>
+<p>Quand les fractions ont le <strong>même dénominateur</strong> :<br>
+On additionne (ou soustrait) uniquement les <strong>numérateurs</strong>. Le dénominateur reste identique.</p></div>
+<div class="ebox"><div class="lbl">Additions</div>
+<ul>
+  <li>²⁄₇ + ³⁄₇ = <strong>⁵⁄₇</strong> (2+3=5, dénominateur 7)</li>
+  <li>³⁄₈ + ²⁄₈ = <strong>⁵⁄₈</strong></li>
+  <li>¼ + ¼ = <strong>²⁄₄ = ½</strong> (on peut simplifier !)</li>
+  <li>¾ + ¾ = <strong>⁶⁄₄ = 1½</strong> (la fraction dépasse 1 )</li>
+</ul></div>
+<div class="ebox"><div class="lbl">Soustractions</div>
+<ul>
+  <li>⁵⁄₈ − ²⁄₈ = <strong>³⁄₈</strong></li>
+  <li>⁷⁄₉ − ⁴⁄₉ = <strong>³⁄₉ = ⅓</strong> (on simplifie : 3 et 9 ont 3 en commun)</li>
+  <li>⁵⁄₆ − ½ = impossible directement car ½ ≠ ⁵⁄₆ de dénominateur. On convertit : ½ = ³⁄₆ → ⁵⁄₆ − ³⁄₆ = <strong>²⁄₆ = ⅓</strong></li>
+</ul></div>
+<div class="frise">
+  <div class="frise-item">
+    <div class="frise-dot" style="background:#dcfce7;color:#15803d">1</div>
+    <div class="frise-content">
+      <div class="frise-date">Calcul : ⁴⁄₅ + ⁷⁄₅</div>
+      <div class="frise-text">Même dénominateur (5) → additionne les numérateurs : 4 + 7 = 11 → <strong>¹¹⁄₅</strong></div>
+    </div>
+  </div>
+  <div class="frise-item">
+    <div class="frise-dot" style="background:#dcfce7;color:#15803d">2</div>
+    <div class="frise-content">
+      <div class="frise-date">Convertir en nombre mixte</div>
+      <div class="frise-text">¹¹⁄₅ : 11 ÷ 5 = 2 reste 1 → <strong>2 et ⅕</strong></div>
+    </div>
+  </div>
+</div>
+<div class="wbox"><div class="lbl">Erreur à ne jamais faire</div>
+<p>²⁄₅ + ³⁄₅ ≠ ⁵⁄₁₀ ! On n'additionne PAS les dénominateurs !<br>
+²⁄₅ + ³⁄₅ = <strong>⁵⁄₅ = 1</strong> (les dénominateurs restent 5).</p></div>
+</div>
+
+<div class="cs"><h2>6. Fraction d'une quantité — approfondissement CM1</h2>
+<div class="rbox"><div class="lbl">Méthode</div>
+<p>Pour calculer <strong>a/b d'une quantité N</strong> :<br>
+Étape 1 : N ÷ b &nbsp;·&nbsp; Étape 2 : résultat × a</p></div>
+<div class="ebox"><div class="lbl">Applications concrètes CM1</div>
+<ul>
+  <li>⅗ de <strong>45 billes</strong> : 45 ÷ 5 = 9 → 9 × 3 = <strong>27 billes</strong></li>
+  <li>¾ de <strong>60 €</strong> : 60 ÷ 4 = 15 → 15 × 3 = <strong>45 €</strong></li>
+  <li>⅔ de <strong>90 km</strong> : 90 ÷ 3 = 30 → 30 × 2 = <strong>60 km</strong></li>
+  <li>⅗ de <strong>1 heure</strong> : 60 ÷ 5 = 12 → 12 × 3 = <strong>36 minutes</strong></li>
+</ul></div>
+<div class="ebox"><div class="lbl">Problème — prix réduit</div>
+<p>Un livre coûte 24 €. Le libraire en donne ⅛ de réduction.<br>
+Réduction = ⅛ de 24 : 24 ÷ 8 = 3 → 3 × 1 = <strong>3 €</strong><br>
+Prix final = 24 − 3 = <strong>21 €</strong></p></div>
+<div class="ebox"><div class="lbl">Problème — partage</div>
+<p>3 enfants se partagent ¾ d'un gâteau. Chacun a combien ?<br>
+¾ ÷ 3 = ¾ × ⅓ = ³⁄₁₂ = <strong>¼ du gâteau</strong> chacun.</p></div>
+</div>
+
+<div class="cs"><h2>7. Fractions et décimaux — approfondissement</h2>
+<div class="rbox"><div class="lbl">Convertir fraction → décimal</div>
+<p>Divise le numérateur par le dénominateur (pose la division si nécessaire).</p></div>
+<div class="vgrid">
+  <div class="vcrd"><div class="vl">⅛</div><div class="vv">0,125</div><div class="vs">1 ÷ 8</div></div>
+  <div class="vcrd"><div class="vl">³⁄₈</div><div class="vv">0,375</div><div class="vs">3 ÷ 8</div></div>
+  <div class="vcrd"><div class="vl">⁷⁄₁₀</div><div class="vv">0,7</div><div class="vs">7 ÷ 10</div></div>
+  <div class="vcrd"><div class="vl">³⁄₄</div><div class="vv">0,75</div><div class="vs">3 ÷ 4</div></div>
+  <div class="vcrd"><div class="vl">⅔</div><div class="vv">0,666…</div><div class="vs">infini !</div></div>
+  <div class="vcrd"><div class="vl">⁷⁄₄</div><div class="vv">1,75</div><div class="vs">7 ÷ 4</div></div>
+</div>
+<div class="ebox"><div class="lbl">Placer sur une droite de 0 à 2</div>
+<p>Convertis chaque fraction en décimal pour les placer dans l'ordre :<br>
+¼ = 0,25 · ½ = 0,5 · ¾ = 0,75 · 1 · ⁵⁄₄ = 1,25 · ³⁄₂ = 1,5 · ⁷⁄₄ = 1,75 · 2</p></div>
+<div class="ebox"><div class="lbl">Ordre de grandeur</div>
+<p>Avant de calculer, vérifie si ta réponse est raisonnable :<br>
+⁷⁄₄ doit valoir entre 1 et 2 (car ⁴⁄₄=1 et ⁸⁄₄=2). 1,75 ✓<br>
+⅗ doit valoir entre 0 et 1 (car 3 &lt; 5). 0,6 ✓</p></div>
+<div class="rbox"><div class="lbl">Décimal → fraction</div>
+<p>0,5 = ½ · 0,25 = ¼ · 0,75 = ¾ · 0,1 = ⅒ · 0,4 = ⅖ · 0,2 = ⅕<br>
+Méthode : écris le décimal avec 10 ou 100 au dénominateur, puis simplifie.<br>
+0,6 = ⁶⁄₁₀ = ³⁄₅ &nbsp;&nbsp; 0,25 = ²⁵⁄₁₀₀ = ¼</p></div>
+</div>
+
+<div class="cs"><h2>Bilan — ce que tu dois savoir faire en CM1</h2>
+<div class="ebox"><div class="lbl">Exercice type 1 — convertir en nombre mixte</div>
+<p>Écris ¹⁷⁄₅ sous forme de nombre mixte :<br>
+17 ÷ 5 = 3 reste 2 → <strong>3 et ²⁄₅</strong><br>
+Vérification : 3 × 5 + 2 = 17 ✓</p></div>
+<div class="ebox"><div class="lbl">Exercice type 2 — fractions équivalentes</div>
+<p>Complète : ¾ = ?/12<br>
+3 × ? = 4 × ? … non. On cherche quel nombre ×4 donne 12 : 12÷4=3 → on multiplie par 3.<br>
+¾ = <strong>⁹⁄₁₂</strong> (3×3=9 · 4×3=12) ✓</p></div>
+<div class="ebox"><div class="lbl">Exercice type 3 — problème avec fraction d'une quantité</div>
+<p>Un gâteau pèse 720 g. Thomas mange ⅜ du gâteau. Quelle masse a-t-il mangée ?<br>
+720 ÷ 8 = 90 g (1 huitième) → 90 × 3 = <strong>270 g</strong><br>
+Vérification : les ⅝ restants = 90 × 5 = 450 g. 270 + 450 = 720 ✓</p></div>
+<div class="wbox"><div class="lbl">Erreurs classiques de CM1 à éviter</div>
+<ul>
+  <li>²⁄₃ + ⅓ = ³⁄₆ (FAUX — on n'additionne jamais les dénominateurs !) → ²⁄₃ + ⅓ = <strong>⅔ + ⅓ = ³⁄₃ = 1</strong></li>
+  <li>Croire que ¹²⁄₄ &gt; ¾ seulement parce que 12 &gt; 3 → ¹²⁄₄ = 3 et ¾ = 0,75 → ¹²⁄₄ &gt; ¾ ✓ (mais le raisonnement direct ne marche pas)</li>
+</ul></div>
+</div>
+
+<div class="retenir"><h3>A retenir</h3>
+<ul>
+<li>Fraction &gt; 1 : numérateur &gt; dénominateur → convertis : num ÷ dén = quotient reste r → entier et r/dén</li>
+<li>Fractions équivalentes : × ou ÷ num ET dén par le même nombre</li>
+<li>Addition/soustraction même dénominateur : opère les numérateurs, garde le dénominateur</li>
+<li>Ne jamais additionner les dénominateurs !</li>
+<li>Fraction d'une quantité : ÷ par dénominateur, puis × par numérateur</li>
+<li>⅛ = 0,125 · ³⁄₈ = 0,375 · ⁷⁄₁₀ = 0,7</li>
 </ul></div>
 
 <div class="cta">

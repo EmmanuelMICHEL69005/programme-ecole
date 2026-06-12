@@ -47,6 +47,12 @@ table.conv tr:nth-child(even) td{background:#f9fafb}
 .cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
 .cours-header p{font-size:.87rem;opacity:.88;margin:0}
 .site-footer{text-align:center;padding:16px;font-size:.8rem;color:#9ca3af;border-top:1px solid #e5e7eb;margin-top:10px}
+.frise{margin:12px 0;padding-left:0;list-style:none}
+.frise-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
+.frise-dot{min-width:26px;height:26px;background:#7c3aed;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:900;flex-shrink:0}
+.frise-content{flex:1}
+.frise-date{font-size:.65rem;font-weight:900;color:#7c3aed;text-transform:uppercase;letter-spacing:1px}
+.frise-text{font-size:.88rem;font-weight:700;color:#1e1b4b;line-height:1.5}
 </style>
 </head>
 <body>
@@ -57,84 +63,328 @@ table.conv tr:nth-child(even) td{background:#f9fafb}
 </header>
 <main>
 
+<!-- SECTION 1 : SENS DE LA MULTIPLICATION -->
 <div class="cs">
-  <h2>1. Pourquoi connaître les tables ?</h2>
+  <h2>1. Le sens de la multiplication</h2>
   <div class="dbox"><div class="lbl">Définition</div>
   <p>Multiplier, c'est <strong>additionner plusieurs fois le même nombre</strong>.<br>
-  4 × 3 = 4 + 4 + 4 = 12 &nbsp; (3 fois le nombre 4)</p></div>
-  <div class="rbox"><div class="lbl">Les tables à savoir par cœur</div>
-  <p>Tables de <strong>2, 3, 4, 5, 6, 7, 8, 9</strong><br>
-  Plus tu les connais vite, plus les maths deviennent faciles !</p></div>
+  <strong>3 × 4</strong> = "3 fois 4" = 4 + 4 + 4 = <strong>12</strong><br>
+  <strong>5 × 2</strong> = "5 fois 2" = 2 + 2 + 2 + 2 + 2 = <strong>10</strong></p></div>
+
+  <div class="dbox"><div class="lbl">Tableau rectangulaire</div>
+  <p>On peut représenter 3 × 4 par un tableau de <strong>3 lignes et 4 colonnes</strong> : on compte 12 cases au total. C'est la même chose que 4 lignes de 3 : <strong>4 × 3 = 12</strong> aussi.</p></div>
+
+  <div class="rbox"><div class="lbl">La commutativité : l'ordre ne change rien</div>
+  <p><strong>3 × 4 = 4 × 3 = 12</strong><br>
+  C'est la propriété de commutativité. Si tu connais 3 × 7, tu connais aussi 7 × 3 automatiquement ! Cela divise par deux le nombre de tables à apprendre.</p></div>
+
+  <div class="ebox"><div class="lbl">Exemples concrets de la vie quotidienne</div>
+  <ul>
+    <li>5 stylos à 3 € chacun → <strong>5 × 3 = 15 €</strong></li>
+    <li>4 paquets de 6 bonbons → <strong>4 × 6 = 24 bonbons</strong></li>
+    <li>7 jours dans une semaine × 3 semaines → <strong>7 × 3 = 21 jours</strong></li>
+    <li>Une boîte de 6 œufs × 4 boîtes → <strong>6 × 4 = 24 œufs</strong></li>
+  </ul></div>
+
+  <div class="wbox"><div class="lbl">Piège — ne pas confondre addition et multiplication</div>
+  <p>3 × 4 ≠ 3 + 4 !<br>
+  3 × 4 = 12 (quatre fois trois)<br>
+  3 + 4 = 7 (simple addition)<br>
+  La multiplication est une addition <em>répétée</em>, le résultat est bien plus grand que la simple addition.</p></div>
 </div>
 
+<!-- SECTION 2 : TABLES DE 2 ET 4 -->
 <div class="cs">
-  <h2>2. Astuces par table</h2>
-  <div class="ebox"><div class="lbl">Table de 2</div>
-  <p>× 2 = doubler (tous les résultats sont pairs) : 2·4·6·8·10·12·14·16·18</p></div>
-  <div class="ebox"><div class="lbl">Table de 5</div>
-  <p>× 5 = les résultats se terminent par 0 ou 5 : 5·10·15·20·25·30·35·40·45</p></div>
-  <div class="ebox"><div class="lbl">Table de 9</div>
-  <p>× 9 = la somme des chiffres du résultat est toujours 9 :<br>
-  9·18·27·36·45·54·63·72·81 → 1+8=9, 2+7=9, 3+6=9…<br>
-  Astuce des mains : pour 9×3, baisse le 3ème doigt → 2 doigts à gauche, 7 à droite = 27 ✓</p></div>
-  <div class="ebox"><div class="lbl">Table de 4</div>
-  <p>× 4 = doubler deux fois : 4×7 = 2×7 puis re-doubler = 14 puis 28 ✓</p></div>
-  <div class="ebox"><div class="lbl">Table de 6, 7, 8</div>
-  <p>Les plus dures ! Apprends-les par groupes :<br>
-  7×8=56 (56=7×8, retiens "cinq-six = sept-huit")<br>
-  6×8=48, 6×7=42, 8×8=64</p></div>
+  <h2>2. Tables de 2 et de 4</h2>
+
+  <div class="rbox"><div class="lbl">Astuce — table de 2</div>
+  <p><strong>× 2 = doubler</strong> le nombre. Tous les résultats sont pairs (se terminent par 0, 2, 4, 6 ou 8).</p></div>
+
+  <div class="vgrid">
+    <div class="vcrd"><div class="vl">1 × 2</div><div class="vv">= 2</div><div class="vs">doubler 1</div></div>
+    <div class="vcrd"><div class="vl">2 × 2</div><div class="vv">= 4</div><div class="vs">doubler 2</div></div>
+    <div class="vcrd"><div class="vl">3 × 2</div><div class="vv">= 6</div><div class="vs">doubler 3</div></div>
+    <div class="vcrd"><div class="vl">4 × 2</div><div class="vv">= 8</div><div class="vs">doubler 4</div></div>
+    <div class="vcrd"><div class="vl">5 × 2</div><div class="vv">= 10</div><div class="vs">doubler 5</div></div>
+    <div class="vcrd"><div class="vl">6 × 2</div><div class="vv">= 12</div><div class="vs">doubler 6</div></div>
+    <div class="vcrd"><div class="vl">7 × 2</div><div class="vv">= 14</div><div class="vs">doubler 7</div></div>
+    <div class="vcrd"><div class="vl">8 × 2</div><div class="vv">= 16</div><div class="vs">doubler 8</div></div>
+    <div class="vcrd"><div class="vl">9 × 2</div><div class="vv">= 18</div><div class="vs">doubler 9</div></div>
+    <div class="vcrd"><div class="vl">10 × 2</div><div class="vv">= 20</div><div class="vs">doubler 10</div></div>
+  </div>
+
+  <div class="rbox"><div class="lbl">Astuce — table de 4</div>
+  <p><strong>× 4 = doubler deux fois</strong> (doubler, puis redoubler le résultat).<br>
+  Exemple : 4 × 7 → doubler 7 = 14 → doubler 14 = <strong>28</strong> ✓</p></div>
+
+  <div class="vgrid">
+    <div class="vcrd"><div class="vl">1 × 4</div><div class="vv">= 4</div><div class="vs">2×2</div></div>
+    <div class="vcrd"><div class="vl">2 × 4</div><div class="vv">= 8</div><div class="vs">2×4</div></div>
+    <div class="vcrd"><div class="vl">3 × 4</div><div class="vv">= 12</div><div class="vs">2×6</div></div>
+    <div class="vcrd"><div class="vl">4 × 4</div><div class="vv">= 16</div><div class="vs">2×8</div></div>
+    <div class="vcrd"><div class="vl">5 × 4</div><div class="vv">= 20</div><div class="vs">2×10</div></div>
+    <div class="vcrd"><div class="vl">6 × 4</div><div class="vv">= 24</div><div class="vs">2×12</div></div>
+    <div class="vcrd"><div class="vl">7 × 4</div><div class="vv">= 28</div><div class="vs">2×14</div></div>
+    <div class="vcrd"><div class="vl">8 × 4</div><div class="vv">= 32</div><div class="vs">2×16</div></div>
+    <div class="vcrd"><div class="vl">9 × 4</div><div class="vv">= 36</div><div class="vs">2×18</div></div>
+    <div class="vcrd"><div class="vl">10 × 4</div><div class="vv">= 40</div><div class="vs">2×20</div></div>
+  </div>
 </div>
 
+<!-- SECTION 3 : TABLES DE 3 ET 6 -->
 <div class="cs">
-  <h2>3. Propriétés importantes</h2>
+  <h2>3. Tables de 3 et de 6</h2>
+
+  <div class="rbox"><div class="lbl">Astuce — table de 3</div>
+  <p><strong>× 3 = tripler</strong> le nombre. La somme des chiffres du résultat est toujours divisible par 3.<br>
+  Exemple : 3 × 7 = 21 → 2+1 = 3 ✓</p></div>
+
+  <div class="vgrid">
+    <div class="vcrd"><div class="vl">1 × 3</div><div class="vv">= 3</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">2 × 3</div><div class="vv">= 6</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">3 × 3</div><div class="vv">= 9</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">4 × 3</div><div class="vv">= 12</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">5 × 3</div><div class="vv">= 15</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">6 × 3</div><div class="vv">= 18</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">7 × 3</div><div class="vv">= 21</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">8 × 3</div><div class="vv">= 24</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">9 × 3</div><div class="vv">= 27</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">10 × 3</div><div class="vv">= 30</div><div class="vs"></div></div>
+  </div>
+
+  <div class="rbox"><div class="lbl">Astuce — table de 6</div>
+  <p><strong>× 6 = d'abord × 2, puis × 3</strong> (ou l'inverse).<br>
+  Exemple : 6 × 8 → d'abord 2 × 8 = 16, puis 3 × 16 = <strong>48</strong> ✓<br>
+  Autre méthode : 6 × 8 → d'abord 3 × 8 = 24, puis 2 × 24 = <strong>48</strong> ✓</p></div>
+
+  <div class="vgrid">
+    <div class="vcrd"><div class="vl">1 × 6</div><div class="vv">= 6</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">2 × 6</div><div class="vv">= 12</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">3 × 6</div><div class="vv">= 18</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">4 × 6</div><div class="vv">= 24</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">5 × 6</div><div class="vv">= 30</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">6 × 6</div><div class="vv">= 36</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">7 × 6</div><div class="vv">= 42</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">8 × 6</div><div class="vv">= 48</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">9 × 6</div><div class="vv">= 54</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">10 × 6</div><div class="vv">= 60</div><div class="vs"></div></div>
+  </div>
+</div>
+
+<!-- SECTION 4 : TABLES DE 5 ET 10 -->
+<div class="cs">
+  <h2>4. Tables de 5 et de 10</h2>
+
+  <div class="rbox"><div class="lbl">Astuces — les tables les plus faciles !</div>
+  <ul>
+    <li><strong>× 5 :</strong> tous les résultats se terminent par 0 ou 5 (5, 10, 15, 20, 25…). Ou : × 5 = (÷ 2) × 10 → 5 × 8 = (8÷2) × 10 = 4 × 10 = 40</li>
+    <li><strong>× 10 :</strong> on ajoute simplement un <strong>0</strong> à droite du nombre → 7 × 10 = 70, 23 × 10 = 230</li>
+  </ul></div>
+
+  <div class="vgrid">
+    <div class="vcrd"><div class="vl">1 × 5</div><div class="vv">= 5</div><div class="vs">finit par 5</div></div>
+    <div class="vcrd"><div class="vl">2 × 5</div><div class="vv">= 10</div><div class="vs">finit par 0</div></div>
+    <div class="vcrd"><div class="vl">3 × 5</div><div class="vv">= 15</div><div class="vs">finit par 5</div></div>
+    <div class="vcrd"><div class="vl">4 × 5</div><div class="vv">= 20</div><div class="vs">finit par 0</div></div>
+    <div class="vcrd"><div class="vl">5 × 5</div><div class="vv">= 25</div><div class="vs">finit par 5</div></div>
+    <div class="vcrd"><div class="vl">6 × 5</div><div class="vv">= 30</div><div class="vs">finit par 0</div></div>
+    <div class="vcrd"><div class="vl">7 × 5</div><div class="vv">= 35</div><div class="vs">finit par 5</div></div>
+    <div class="vcrd"><div class="vl">8 × 5</div><div class="vv">= 40</div><div class="vs">finit par 0</div></div>
+    <div class="vcrd"><div class="vl">9 × 5</div><div class="vv">= 45</div><div class="vs">finit par 5</div></div>
+    <div class="vcrd"><div class="vl">10 × 5</div><div class="vv">= 50</div><div class="vs">finit par 0</div></div>
+  </div>
+
+  <div class="vgrid">
+    <div class="vcrd"><div class="vl">1 × 10</div><div class="vv">= 10</div><div class="vs">ajoute un 0</div></div>
+    <div class="vcrd"><div class="vl">2 × 10</div><div class="vv">= 20</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">3 × 10</div><div class="vv">= 30</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">4 × 10</div><div class="vv">= 40</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">5 × 10</div><div class="vv">= 50</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">6 × 10</div><div class="vv">= 60</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">7 × 10</div><div class="vv">= 70</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">8 × 10</div><div class="vv">= 80</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">9 × 10</div><div class="vv">= 90</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">10 × 10</div><div class="vv">= 100</div><div class="vs"></div></div>
+  </div>
+</div>
+
+<!-- SECTION 5 : TABLES DE 7, 8, 9 -->
+<div class="cs">
+  <h2>5. Tables de 7, 8 et 9</h2>
+
+  <div class="rbox"><div class="lbl">Astuces pour les tables difficiles</div>
+  <ul>
+    <li><strong>× 9 :</strong> × 9 = × 10 − une fois le nombre → 9 × 7 = 70 − 7 = <strong>63</strong></li>
+    <li><strong>× 8 :</strong> doubler 3 fois → 8 × 6 = (6×2)×2×2 = 12×2×2 = 24×2 = <strong>48</strong></li>
+    <li><strong>Truc des doigts pour ×9 :</strong> pose tes 10 doigts. Pour 9 × 3, baisse le 3ème doigt. Tu as 2 doigts à gauche et 7 à droite → <strong>27</strong> !</li>
+    <li><strong>7 × 8 = 56 :</strong> retiens "cinq-six-sept-huit" : 5-6 = 7×8 !</li>
+  </ul></div>
+
+  <div class="vgrid">
+    <div class="vcrd"><div class="vl">1 × 7</div><div class="vv">= 7</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">2 × 7</div><div class="vv">= 14</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">3 × 7</div><div class="vv">= 21</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">4 × 7</div><div class="vv">= 28</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">5 × 7</div><div class="vv">= 35</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">6 × 7</div><div class="vv">= 42</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">7 × 7</div><div class="vv">= 49</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">8 × 7</div><div class="vv">= 56</div><div class="vs">5-6=7×8 !</div></div>
+    <div class="vcrd"><div class="vl">9 × 7</div><div class="vv">= 63</div><div class="vs">70−7</div></div>
+    <div class="vcrd"><div class="vl">10 × 7</div><div class="vv">= 70</div><div class="vs"></div></div>
+  </div>
+
+  <div class="vgrid">
+    <div class="vcrd"><div class="vl">1 × 8</div><div class="vv">= 8</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">2 × 8</div><div class="vv">= 16</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">3 × 8</div><div class="vv">= 24</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">4 × 8</div><div class="vv">= 32</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">5 × 8</div><div class="vv">= 40</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">6 × 8</div><div class="vv">= 48</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">7 × 8</div><div class="vv">= 56</div><div class="vs">5-6=7×8 !</div></div>
+    <div class="vcrd"><div class="vl">8 × 8</div><div class="vv">= 64</div><div class="vs"></div></div>
+    <div class="vcrd"><div class="vl">9 × 8</div><div class="vv">= 72</div><div class="vs">80−8</div></div>
+    <div class="vcrd"><div class="vl">10 × 8</div><div class="vv">= 80</div><div class="vs"></div></div>
+  </div>
+
+  <div class="vgrid">
+    <div class="vcrd"><div class="vl">1 × 9</div><div class="vv">= 9</div><div class="vs">doigt 1</div></div>
+    <div class="vcrd"><div class="vl">2 × 9</div><div class="vv">= 18</div><div class="vs">doigt 2</div></div>
+    <div class="vcrd"><div class="vl">3 × 9</div><div class="vv">= 27</div><div class="vs">doigt 3</div></div>
+    <div class="vcrd"><div class="vl">4 × 9</div><div class="vv">= 36</div><div class="vs">doigt 4</div></div>
+    <div class="vcrd"><div class="vl">5 × 9</div><div class="vv">= 45</div><div class="vs">doigt 5</div></div>
+    <div class="vcrd"><div class="vl">6 × 9</div><div class="vv">= 54</div><div class="vs">doigt 6</div></div>
+    <div class="vcrd"><div class="vl">7 × 9</div><div class="vv">= 63</div><div class="vs">doigt 7</div></div>
+    <div class="vcrd"><div class="vl">8 × 9</div><div class="vv">= 72</div><div class="vs">doigt 8</div></div>
+    <div class="vcrd"><div class="vl">9 × 9</div><div class="vv">= 81</div><div class="vs">doigt 9</div></div>
+    <div class="vcrd"><div class="vl">10 × 9</div><div class="vv">= 90</div><div class="vs">doigt 10</div></div>
+  </div>
+
+  <div class="ebox"><div class="lbl">Résultats clés à retenir absolument</div>
+  <ul>
+    <li><strong>7 × 8 = 56</strong> (le plus oublié — "cinq-six-sept-huit")</li>
+    <li><strong>6 × 7 = 42</strong></li>
+    <li><strong>6 × 8 = 48</strong></li>
+    <li><strong>7 × 9 = 63</strong> (70 − 7)</li>
+    <li><strong>8 × 9 = 72</strong> (80 − 8)</li>
+    <li><strong>9 × 9 = 81</strong> (90 − 9)</li>
+  </ul></div>
+</div>
+
+<!-- SECTION 6 : MULTIPLICATION POSÉE -->
+<div class="cs">
+  <h2>6. Multiplication posée (× 1 chiffre)</h2>
+  <div class="dbox"><div class="lbl">Quand utiliser la multiplication posée ?</div>
+  <p>Quand le premier facteur a <strong>plusieurs chiffres</strong> (dizaines, centaines…) et que les tables ne suffisent plus. On pose l'opération en colonnes et on procède <strong>chiffre par chiffre, de droite à gauche</strong>.</p></div>
+
+  <div class="ebox"><div class="lbl">Méthode pas-à-pas : calculer 34 × 7</div>
+  <ul class="frise">
+    <li class="frise-item"><span class="frise-dot">1</span><span class="frise-content"><span class="frise-date">Étape 1 — Unités</span><span class="frise-text">Je multiplie les unités : <strong>7 × 4 = 28</strong>. Je pose <strong>8</strong> (unités) et je retiens <strong>2</strong> (dizaines).</span></span></li>
+    <li class="frise-item"><span class="frise-dot">2</span><span class="frise-content"><span class="frise-date">Étape 2 — Dizaines</span><span class="frise-text">Je multiplie les dizaines : <strong>7 × 3 = 21</strong>, puis j'ajoute la retenue : <strong>21 + 2 = 23</strong>. Je pose <strong>23</strong>.</span></span></li>
+    <li class="frise-item"><span class="frise-dot">3</span><span class="frise-content"><span class="frise-date">Résultat</span><span class="frise-text">34 × 7 = <strong>238</strong></span></span></li>
+  </ul></div>
+
+  <div class="ebox"><div class="lbl">Exemple 2 : 56 × 8</div>
+  <p>Unités : <strong>8 × 6 = 48</strong> → je pose 8, retiens 4.<br>
+  Dizaines : <strong>8 × 5 = 40</strong>, + retenue 4 = <strong>44</strong> → je pose 44.<br>
+  Résultat : 56 × 8 = <strong>448</strong></p></div>
+
+  <div class="ebox"><div class="lbl">Exemple 3 : 125 × 6</div>
+  <p>Unités : <strong>6 × 5 = 30</strong> → je pose 0, retiens 3.<br>
+  Dizaines : <strong>6 × 2 = 12</strong> + 3 = <strong>15</strong> → je pose 5, retiens 1.<br>
+  Centaines : <strong>6 × 1 = 6</strong> + 1 = <strong>7</strong> → je pose 7.<br>
+  Résultat : 125 × 6 = <strong>750</strong></p></div>
+
+  <div class="wbox"><div class="lbl">Erreurs fréquentes à la multiplication posée</div>
+  <ul>
+    <li>Oublier d'ajouter la retenue à l'étape suivante</li>
+    <li>Mal aligner les chiffres en colonnes (unités sous unités, dizaines sous dizaines)</li>
+    <li>Multiplier de gauche à droite au lieu de droite à gauche</li>
+  </ul></div>
+</div>
+
+<!-- SECTION 7 : DIVISION EUCLIDIENNE -->
+<div class="cs">
+  <h2>7. La division euclidienne</h2>
+  <div class="dbox"><div class="lbl">Définition</div>
+  <p>Diviser, c'est <strong>partager en parts égales</strong>.<br>
+  Dans une division : <strong>dividende ÷ diviseur = quotient, reste r</strong><br>
+  On peut aussi l'écrire : <strong>dividende = diviseur × quotient + reste</strong></p></div>
+
+  <div class="dbox"><div class="lbl">Lien avec la multiplication</div>
+  <p>La division, c'est la multiplication à l'envers !<br>
+  Pour calculer <strong>14 ÷ 3</strong>, tu te demandes : "combien de fois 3 rentre dans 14 ?"<br>
+  3 × 4 = 12 (trop petit), 3 × 5 = 15 (trop grand) → quotient = <strong>4</strong>, reste = 14 − 12 = <strong>2</strong><br>
+  Vérification : <strong>3 × 4 + 2 = 12 + 2 = 14</strong> ✓</p></div>
+
+  <div class="ebox"><div class="lbl">Méthode pas-à-pas : calculer 47 ÷ 6</div>
+  <ul class="frise">
+    <li class="frise-item"><span class="frise-dot">1</span><span class="frise-content"><span class="frise-date">Étape 1</span><span class="frise-text">Je cherche : combien de fois 6 rentre dans 47 ? Je regarde la table de 6 : 6×7=42, 6×8=48 (trop grand). Donc le quotient est <strong>7</strong>.</span></span></li>
+    <li class="frise-item"><span class="frise-dot">2</span><span class="frise-content"><span class="frise-date">Étape 2</span><span class="frise-text">Je calcule le reste : 47 − (6 × 7) = 47 − 42 = <strong>5</strong>.</span></span></li>
+    <li class="frise-item"><span class="frise-dot">3</span><span class="frise-content"><span class="frise-date">Vérification</span><span class="frise-text"><strong>6 × 7 + 5 = 42 + 5 = 47</strong> ✓ Le reste (5) est bien inférieur au diviseur (6) ✓</span></span></li>
+  </ul></div>
+
+  <div class="ebox"><div class="lbl">Exemples supplémentaires</div>
+  <ul>
+    <li><strong>23 ÷ 4</strong> : 4×5=20, reste 3 → quotient 5, reste <strong>3</strong></li>
+    <li><strong>38 ÷ 7</strong> : 7×5=35, reste 3 → quotient 5, reste <strong>3</strong></li>
+    <li><strong>56 ÷ 9</strong> : 9×6=54, reste 2 → quotient 6, reste <strong>2</strong></li>
+  </ul></div>
+
+  <div class="rbox"><div class="lbl">Règle importante : le reste</div>
+  <p>Le reste est <strong>toujours plus petit que le diviseur</strong>.<br>
+  Si ton reste est supérieur ou égal au diviseur, c'est que tu n'as pas assez divisé !</p></div>
+
+  <div class="wbox"><div class="lbl">Erreurs fréquentes</div>
+  <ul>
+    <li>Confondre le quotient et le reste : le <strong>quotient</strong> est le résultat principal (combien de fois ça rentre), le <strong>reste</strong> est ce qui "déborde".</li>
+    <li>Oublier la vérification : toujours vérifier avec <strong>diviseur × quotient + reste = dividende</strong>.</li>
+    <li>Un reste ≥ diviseur signifie qu'on peut encore diviser.</li>
+  </ul></div>
+</div>
+
+<!-- SECTION 8 : PROPRIETES -->
+<div class="cs">
+  <h2>8. Propriétés de la multiplication</h2>
+
   <div class="rbox"><div class="lbl">Commutativité</div>
   <p>L'ordre ne change pas le résultat : <strong>3 × 7 = 7 × 3 = 21</strong><br>
-  Donc si tu connais 3×7, tu connais aussi 7×3 !</p></div>
+  On dit que la multiplication est <strong>commutative</strong>. Ça te fait moitié moins de tables à apprendre !</p></div>
+
+  <div class="rbox"><div class="lbl">Associativité</div>
+  <p>On peut regrouper les facteurs comme on veut : <strong>(2 × 3) × 4 = 2 × (3 × 4) = 24</strong><br>
+  Utile pour simplifier : pour 2 × 7 × 5, fais d'abord 2 × 5 = 10, puis 10 × 7 = <strong>70</strong> (plus simple que 14 × 5 !)</p></div>
+
+  <div class="rbox"><div class="lbl">Distributivité</div>
+  <p>On peut "distribuer" la multiplication sur une addition :<br>
+  <strong>3 × (4 + 5) = 3 × 4 + 3 × 5 = 12 + 15 = 27</strong><br>
+  Vérification : 3 × 9 = 27 ✓<br>
+  Utile pour décomposer : <strong>6 × 12 = 6 × 10 + 6 × 2 = 60 + 12 = 72</strong></p></div>
+
   <div class="rbox"><div class="lbl">Multiplication par 0 et par 1</div>
-  <p>n × 0 = 0 (zéro fois n'importe quoi = zéro)<br>
-  n × 1 = n (une fois n'importe quoi = ce nombre)</p></div>
-  <div class="rbox"><div class="lbl">Multiplier par 10, 100</div>
-  <p>× 10 → ajoute un zéro : 7 × 10 = 70 · 23 × 10 = 230<br>
-  × 100 → ajoute deux zéros : 7 × 100 = 700</p></div>
+  <ul>
+    <li><strong>n × 0 = 0</strong> : n'importe quel nombre multiplié par zéro donne toujours zéro</li>
+    <li><strong>n × 1 = n</strong> : multiplier par 1 ne change pas le nombre</li>
+  </ul></div>
+
+  <div class="ebox"><div class="lbl">Astuce de la distributivité pour les grands calculs</div>
+  <ul>
+    <li><strong>7 × 13 =</strong> 7 × 10 + 7 × 3 = 70 + 21 = <strong>91</strong></li>
+    <li><strong>8 × 21 =</strong> 8 × 20 + 8 × 1 = 160 + 8 = <strong>168</strong></li>
+    <li><strong>9 × 15 =</strong> 9 × 10 + 9 × 5 = 90 + 45 = <strong>135</strong></li>
+  </ul></div>
 </div>
 
-<div class="cs">
-  <h2>4. La division euclidienne</h2>
-  <div class="dbox"><div class="lbl">Définition</div>
-  <p>Diviser, c'est partager en parts égales.<br>
-  <strong>dividende ÷ diviseur = quotient (reste r)</strong></p></div>
-  <div class="ebox"><div class="lbl">Exemple</div>
-  <p>17 ÷ 3 : combien de fois 3 rentre dans 17 ?<br>
-  3×5=15 (trop petit), 3×6=18 (trop grand) → quotient = 5, reste = 17-15 = <strong>2</strong><br>
-  On écrit : 17 = 3 × 5 + 2</p></div>
-  <div class="rbox"><div class="lbl">Le reste est toujours plus petit que le diviseur</div>
-  <p>Pour 17 ÷ 3, le reste (2) est bien inférieur au diviseur (3). ✓<br>
-  Si le reste ≥ diviseur, c'est qu'on peut encore diviser !</p></div>
-</div>
-
-<div class="cs">
-  <h2>5. Lien × et ÷</h2>
-  <div class="rbox"><div class="lbl">Règle</div>
-  <p>La multiplication et la division sont des opérations inverses.<br>
-  Si 4 × 6 = 24, alors 24 ÷ 4 = 6 et 24 ÷ 6 = 4.</p></div>
-  <div class="ebox"><div class="lbl">Astuce pour les divisions</div>
-  <p>Pour calculer 42 ÷ 7, demande-toi : <em>7 × ? = 42</em> → 7 × 6 = 42 → réponse : 6</p></div>
-</div>
-
-<div class="wbox"><div class="lbl">⚠ Erreurs fréquentes</div>
+<div class="retenir"><h3>A retenir — l'essentiel</h3>
 <ul>
-  <li>Oublier que a × 0 = 0 (même si a est grand !)</li>
-  <li>Confondre le reste et le quotient dans la division</li>
-  <li>Croire que 3 × 4 ≠ 4 × 3 → ils sont TOUJOURS égaux</li>
-</ul></div>
-
-<div class="retenir"><h3>📌 À retenir</h3>
-<ul>
-  <li>Tables de 2 à 9 → apprends-les par cœur</li>
-  <li>× 10 = ajoute un 0 · × 100 = ajoute deux 0</li>
-  <li>Division : dividende = diviseur × quotient + reste</li>
-  <li>Le reste est toujours &lt; au diviseur</li>
-  <li>Multiplication et division sont opérations inverses</li>
+  <li><strong>Multiplication = addition répétée :</strong> 3 × 4 = 4 + 4 + 4 = 12</li>
+  <li><strong>Commutativité :</strong> 3 × 7 = 7 × 3 (ordre sans importance)</li>
+  <li><strong>× 2 = doubler · × 4 = doubler deux fois · × 5 : finit par 0 ou 5</strong></li>
+  <li><strong>× 9 :</strong> astuce × 10 − une fois (9×7 = 70 − 7 = 63)</li>
+  <li><strong>× 10 :</strong> on ajoute un 0 au nombre</li>
+  <li><strong>Multiplication posée :</strong> on multiplie de droite à gauche, on n'oublie pas les retenues</li>
+  <li><strong>Division :</strong> dividende = diviseur × quotient + reste ; le reste est toujours &lt; au diviseur</li>
+  <li><strong>7 × 8 = 56</strong> — retiens "cinq-six = sept-huit" !</li>
+  <li><strong>n × 0 = 0</strong> toujours !</li>
 </ul></div>
 
 <div class="cta">

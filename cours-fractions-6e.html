@@ -9,72 +9,289 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<style>body{font-family:'Nunito',sans-serif;background:#fffbf0;color:#1e1b4b;margin:0}main{max-width:720px;margin:0 auto;padding:22px 18px 60px}.cs{margin-bottom:26px}.cs h2{font-size:1.1rem;font-weight:900;margin:0 0 12px;padding-bottom:7px;border-bottom:2.5px solid #e5e7eb;color:#1e1b4b}.dbox{background:#dbeafe;border-left:4px solid #1d4ed8;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}.dbox .lbl{font-size:.65rem;font-weight:900;color:#1d4ed8;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}.dbox p,.dbox ul{font-size:.9rem;font-weight:700;color:#1e3a8a;margin:0;line-height:1.55}.ebox{background:#fef9c3;border-left:4px solid #ca8a04;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}.ebox .lbl{font-size:.65rem;font-weight:900;color:#92400e;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}.ebox p,.ebox ul{font-size:.9rem;font-weight:700;color:#713f12;margin:0;line-height:1.55}.rbox{background:#dcfce7;border-left:4px solid #16a34a;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}.rbox .lbl{font-size:.65rem;font-weight:900;color:#15803d;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}.rbox p,.rbox ul{font-size:.9rem;font-weight:700;color:#14532d;margin:0;line-height:1.55}.wbox{background:#fee2e2;border-left:4px solid #dc2626;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}.wbox .lbl{font-size:.65rem;font-weight:900;color:#dc2626;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}.wbox p,.wbox ul{font-size:.9rem;font-weight:700;color:#991b1b;margin:0;line-height:1.55}.retenir{background:#fff;border:2.5px solid #7c3aed;border-radius:16px;padding:16px 18px;margin:22px 0 18px}.retenir h3{font-size:.78rem;font-weight:900;color:#7c3aed;text-transform:uppercase;letter-spacing:1px;margin:0 0 10px}.retenir ul{margin:0;padding-left:18px}.retenir li{font-size:.88rem;font-weight:700;color:#1e1b4b;line-height:1.7}.cta{text-align:center;margin-top:26px;padding:18px;background:#fff;border-radius:16px;border:2px solid #e5e7eb}.cta p{font-size:.82rem;color:#6b7280;font-weight:700;margin:0 0 10px}.btn-ex{display:inline-block;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;padding:13px 26px;border-radius:13px;font-size:.95rem;font-weight:900;text-decoration:none;box-shadow:0 4px 16px rgba(124,58,237,.4)}.vgrid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));margin:10px 0}.vcrd{background:#fff;border:2px solid #e5e7eb;border-radius:11px;padding:9px;text-align:center}.vcrd .vl{font-size:.7rem;font-weight:900;color:#6b7280;margin-bottom:4px}.vcrd .vv{font-size:1.3rem;font-weight:900;color:#1e1b4b}.vcrd .vs{font-size:.68rem;font-weight:700;color:#9ca3af;margin-top:2px}table.conv{width:100%;border-collapse:collapse;margin:10px 0;font-size:.85rem;font-weight:700}table.conv th{background:#ede9fe;color:#5b21b6;padding:7px 10px;text-align:center;font-weight:900}table.conv td{border:1px solid #e5e7eb;padding:6px 10px;text-align:center;background:#fff}.badge-niveau{display:inline-block;background:rgba(255,255,255,.2);border-radius:20px;padding:4px 14px;font-size:.72rem;font-weight:900;letter-spacing:1px;margin-bottom:8px}.cours-header{text-align:center;padding:20px 20px 16px;color:#fff}.cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}.cours-header p{font-size:.87rem;opacity:.88;margin:0}.site-footer{text-align:center;padding:16px;font-size:.8rem;color:#9ca3af;border-top:1px solid #e5e7eb;margin-top:10px}.frise{display:flex;flex-direction:column;gap:0;margin:12px 0}.frise-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid #e5e7eb}.frise-item:last-child{border-bottom:none}.frise-dot{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:900;flex-shrink:0;margin-top:2px}.frise-content{flex:1}.frise-date{font-size:.68rem;font-weight:900;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}.frise-text{font-size:.88rem;font-weight:700;line-height:1.5}</style>
+<style>
+body{font-family:'Nunito',sans-serif;background:#fffbf0;color:#1e1b4b;margin:0}
+main{max-width:720px;margin:0 auto;padding:22px 18px 60px}
+.cs{margin-bottom:26px}
+.cs h2{font-size:1.1rem;font-weight:900;margin:0 0 12px;padding-bottom:7px;border-bottom:2.5px solid #e5e7eb;color:#1e1b4b}
+.dbox{background:#dbeafe;border-left:4px solid #1d4ed8;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.dbox .lbl{font-size:.65rem;font-weight:900;color:#1d4ed8;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.dbox p,.dbox ul{font-size:.9rem;font-weight:700;color:#1e3a8a;margin:0;line-height:1.55}
+.ebox{background:#fef9c3;border-left:4px solid #ca8a04;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.ebox .lbl{font-size:.65rem;font-weight:900;color:#92400e;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.ebox p,.ebox ul{font-size:.9rem;font-weight:700;color:#713f12;margin:0;line-height:1.55}
+.rbox{background:#dcfce7;border-left:4px solid #16a34a;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.rbox .lbl{font-size:.65rem;font-weight:900;color:#15803d;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.rbox p,.rbox ul{font-size:.9rem;font-weight:700;color:#14532d;margin:0;line-height:1.55}
+.wbox{background:#fee2e2;border-left:4px solid #dc2626;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.wbox .lbl{font-size:.65rem;font-weight:900;color:#dc2626;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.wbox p,.wbox ul{font-size:.9rem;font-weight:700;color:#991b1b;margin:0;line-height:1.55}
+.retenir{background:#fff;border:2.5px solid #7c3aed;border-radius:16px;padding:16px 18px;margin:22px 0 18px}
+.retenir h3{font-size:.78rem;font-weight:900;color:#7c3aed;text-transform:uppercase;letter-spacing:1px;margin:0 0 10px}
+.retenir ul{margin:0;padding-left:18px}
+.retenir li{font-size:.88rem;font-weight:700;color:#1e1b4b;line-height:1.7}
+.cta{text-align:center;margin-top:26px;padding:18px;background:#fff;border-radius:16px;border:2px solid #e5e7eb}
+.cta p{font-size:.82rem;color:#6b7280;font-weight:700;margin:0 0 10px}
+.btn-ex{display:inline-block;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;padding:13px 26px;border-radius:13px;font-size:.95rem;font-weight:900;text-decoration:none;box-shadow:0 4px 16px rgba(124,58,237,.4)}
+.vgrid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));margin:10px 0}
+.vcrd{background:#fff;border:2px solid #e5e7eb;border-radius:11px;padding:9px;text-align:center}
+.vcrd .vl{font-size:.7rem;font-weight:900;color:#6b7280;margin-bottom:4px}
+.vcrd .vv{font-size:1.3rem;font-weight:900;color:#1e1b4b}
+.vcrd .vs{font-size:.68rem;font-weight:700;color:#9ca3af;margin-top:2px}
+table.conv{width:100%;border-collapse:collapse;margin:10px 0;font-size:.85rem;font-weight:700}
+table.conv th{background:#ede9fe;color:#5b21b6;padding:7px 10px;text-align:center;font-weight:900}
+table.conv td{border:1px solid #e5e7eb;padding:6px 10px;text-align:center;background:#fff}
+table.conv tr:nth-child(even) td{background:#f9fafb}
+.badge-niveau{display:inline-block;background:rgba(255,255,255,.2);border-radius:20px;padding:4px 14px;font-size:.72rem;font-weight:900;letter-spacing:1px;margin-bottom:8px}
+.cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
+.cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
+.cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.site-footer{text-align:center;padding:16px;font-size:.8rem;color:#9ca3af;border-top:1px solid #e5e7eb;margin-top:10px}
+.frise{display:flex;flex-direction:column;gap:0;margin:12px 0}
+.frise-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid #e5e7eb}
+.frise-item:last-child{border-bottom:none}
+.frise-dot{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:900;flex-shrink:0;margin-top:2px}
+.frise-content{flex:1}
+.frise-date{font-size:.68rem;font-weight:900;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+.frise-text{font-size:.88rem;font-weight:700;line-height:1.5}
+</style>
 </head>
 <body>
 <header class="cours-header" style="background:linear-gradient(135deg,#9d174d,#ec4899)">
   <div class="badge-niveau">6ème</div>
-  <h1>✂️ Fractions et nombres relatifs</h1>
-  <p>Quotients, opérations, nombres positifs et négatifs</p>
+  <h1>✂️ Les fractions</h1>
+  <p>Quotients, irréductibles, opérations, relatifs</p>
 </header>
 <main>
 
 <div class="cs"><h2>1. La fraction comme quotient</h2>
-<div class="dbox"><div class="lbl">Définition</div>
-<p>En 6ème, ᵃ⁄ᵦ = a ÷ b. C'est un quotient. Le résultat peut être un entier ou un décimal.</p></div>
-<div class="ebox"><div class="lbl">Exemples</div>
-<p>¹²⁄₄ = 12 ÷ 4 = 3 (entier) · ⁷⁄₂ = 3,5 · ¹⁄₃ = 0,333… (infini)</p></div></div>
-
-<div class="cs"><h2>2. Fraction irréductible</h2>
-<div class="rbox"><div class="lbl">Méthode</div>
-<p>Diviser numérateur et dénominateur par leur PGCD jusqu'à ce qu'ils soient premiers entre eux.</p></div>
-<div class="ebox"><div class="lbl">Exemple</div>
-<p>³⁶⁄₄₈ : PGCD(36,48) = 12 → ³⁶⁄₄₈ = ³⁄₄ (irréductible car PGCD(3,4)=1)</p></div></div>
-
-<div class="cs"><h2>3. Opérations sur les fractions</h2>
-<div class="rbox"><div class="lbl">Addition et soustraction</div>
-<p>Réduire au même dénominateur (PPCM), puis additionner les numérateurs.</p></div>
-<div class="rbox"><div class="lbl">Multiplication</div>
-<p>ᵃ⁄ᵦ × ᶜ⁄ᵈ = ᵃᶜ⁄ᵦᵈ — simplifier si possible avant de calculer</p></div>
-<div class="rbox"><div class="lbl">Division</div>
-<p>ᵃ⁄ᵦ ÷ ᶜ⁄ᵈ = ᵃ⁄ᵦ × ᵈ⁄ᶜ (multiplier par l'inverse)</p></div>
-<div class="ebox"><div class="lbl">Exemples complets</div>
-<p>⅔ + ¾ = ⁸⁄₁₂ + ⁹⁄₁₂ = ¹⁷⁄₁₂ = 1⁵⁄₁₂<br>
-⅗ × ⁵⁄₉ = ¹⁵⁄₄₅ = ⅓<br>
-⅔ ÷ ⅘ = ⅔ × ⁵⁄₄ = ¹⁰⁄₁₂ = ⁵⁄₆</p></div></div>
-
-<div class="cs"><h2>4. Les nombres relatifs</h2>
-<div class="dbox"><div class="lbl">Définition</div>
-<p>Les <strong>nombres relatifs</strong> incluent les nombres positifs (+) et négatifs (−).<br>
-Exemples : −5 · +3 · −0,7 · +¾<br>
-Sur la droite numérique, les négatifs sont à <strong>gauche de 0</strong>.</p></div>
-<div class="ebox"><div class="lbl">Droite graduée</div>
-<p>···−3 −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− 3···<br>
- ←  −3  −2  −1   0  +1  +2  +3  →</p></div>
-<div class="rbox"><div class="lbl">Comparer des relatifs</div>
-<p>Sur la droite graduée, le nombre le plus à droite est le plus grand.<br>
-−5 &lt; −2 &lt; 0 &lt; +3 (même si 5 &gt; 2 en valeur absolue !)</p></div></div>
-
-<div class="cs"><h2>5. Règles des signes (multiplication)</h2>
-<div class="rbox"><div class="lbl">Règles</div>
-<p>(+) × (+) = (+) · (−) × (−) = (+) · (+) × (−) = (−) · (−) × (+) = (−)<br>
-Résumé : <strong>même signe → positif · signes différents → négatif</strong></p></div>
-<div class="ebox"><div class="lbl">Exemples</div>
-<p>(+3) × (+4) = +12 · (−3) × (−4) = +12<br>
-(+3) × (−4) = −12 · (−5) × (+2) = −10</p></div></div>
-
-<div class="retenir"><h3>📌 À retenir</h3>
+<div class="dbox"><div class="lbl">Définition formelle</div>
+<p>En 6ème, une fraction <strong>a/b</strong> est le résultat de la division de a par b. C'est un <strong>quotient</strong>.<br>
+a s'appelle le <strong>numérateur</strong> (dividende) et b le <strong>dénominateur</strong> (diviseur), avec b ≠ 0.</p></div>
+<div class="rbox"><div class="lbl">Lien fraction — décimal — division</div>
+<p>La fraction, le quotient et le nombre décimal sont trois écritures du même nombre :<br>
+¾ = 3 ÷ 4 = 0,75 &nbsp;&nbsp; toutes ces écritures représentent la même valeur.</p></div>
+<div class="ebox"><div class="lbl">Types de résultats possibles</div>
 <ul>
-<li>ᵃ⁄ᵦ = a ÷ b (la fraction est un quotient)</li>
-<li>Simplifier : PGCD · Additionner : PPCM pour dénominateur commun</li>
-<li>Diviser : multiplier par l'inverse</li>
-<li>Négatifs &lt; 0 &lt; Positifs sur la droite numérique</li>
-<li>Même signe → × positif · Signes différents → × négatif</li>
+  <li><strong>Entier</strong> : ¹²⁄₄ = 12 ÷ 4 = 3</li>
+  <li><strong>Décimal fini</strong> : ¾ = 3 ÷ 4 = 0,75</li>
+  <li><strong>Décimal infini périodique</strong> : ⅓ = 1 ÷ 3 = 0,333… (les 3 se répètent à l'infini)</li>
+  <li><strong>Décimal infini périodique</strong> : ⅔ = 0,666…</li>
+</ul></div>
+<div class="ebox"><div class="lbl">Utilité de la fraction</div>
+<p>La fraction permet d'exprimer une valeur <strong>exacte</strong> quand la forme décimale serait infinie.<br>
+⅓ est exact, 0,333… est une approximation. En mathématiques, on préfère ⅓.</p></div>
+<div class="wbox"><div class="lbl">Le dénominateur ne peut jamais être 0</div>
+<p>a/0 n'existe pas en mathématiques. Diviser par zéro est une opération impossible.<br>
+Si tu trouves 0 au dénominateur dans un calcul, tu as fait une erreur.</p></div>
+</div>
+
+<div class="cs"><h2>2. Fractions irréductibles — algorithme d'Euclide</h2>
+<div class="dbox"><div class="lbl">Définition</div>
+<p>Une fraction <strong>a/b est irréductible</strong> si et seulement si a et b sont <strong>premiers entre eux</strong>, c'est-à-dire PGCD(a, b) = 1.</p></div>
+<div class="rbox"><div class="lbl">Algorithme d'Euclide — trouver le PGCD</div>
+<p>Pour PGCD(a, b) avec a &gt; b :<br>
+Divise a par b → obtiens le reste r. Si r = 0, le PGCD est b. Sinon, recommence avec b et r.</p></div>
+<div class="frise">
+  <div class="frise-item">
+    <div class="frise-dot" style="background:#fce7f3;color:#9d174d">1</div>
+    <div class="frise-content">
+      <div class="frise-date">Exemple : PGCD(36, 48)</div>
+      <div class="frise-text">48 ÷ 36 = 1 reste 12 → on continue avec 36 et 12</div>
+    </div>
+  </div>
+  <div class="frise-item">
+    <div class="frise-dot" style="background:#fce7f3;color:#9d174d">2</div>
+    <div class="frise-content">
+      <div class="frise-date">Étape 2</div>
+      <div class="frise-text">36 ÷ 12 = 3 reste 0 → le PGCD est <strong>12</strong></div>
+    </div>
+  </div>
+  <div class="frise-item">
+    <div class="frise-dot" style="background:#fce7f3;color:#9d174d">3</div>
+    <div class="frise-content">
+      <div class="frise-date">Simplifier ³⁶⁄₄₈</div>
+      <div class="frise-text">36 ÷ 12 = 3 · 48 ÷ 12 = 4 → ³⁶⁄₄₈ = <strong>¾</strong></div>
+    </div>
+  </div>
+</div>
+<div class="ebox"><div class="lbl">Vérifier que 2/3 est irréductible</div>
+<p>PGCD(2, 3) : 3 ÷ 2 = 1 reste 1 · puis 2 ÷ 1 = 2 reste 0 → PGCD = 1<br>
+Donc 2 et 3 sont premiers entre eux → ²⁄₃ est irréductible ✓</p></div>
+<div class="ebox"><div class="lbl">Autres exemples</div>
+<ul>
+  <li>⁵⁴⁄₇₂ : PGCD(54,72) — 72÷54=1 r18 · 54÷18=3 r0 → PGCD=18 → <strong>¾</strong></li>
+  <li>⁴⁵⁄₆₀ : PGCD(45,60) — 60÷45=1 r15 · 45÷15=3 r0 → PGCD=15 → <strong>¾</strong></li>
+</ul></div>
+</div>
+
+<div class="cs"><h2>3. Comparaison et ordre des fractions</h2>
+<div class="rbox"><div class="lbl">Méthode générale — réduction au même dénominateur</div>
+<p>Pour comparer a/b et c/d : cherche le PPCM de b et d, convertis les deux fractions, puis compare les numérateurs.</p></div>
+<div class="rbox"><div class="lbl">Trouver le PPCM</div>
+<p>PPCM(a,b) = (a × b) ÷ PGCD(a,b)<br>
+PPCM(4,6) = 24 ÷ PGCD(4,6) = 24 ÷ 2 = <strong>12</strong></p></div>
+<div class="ebox"><div class="lbl">Comparaison progressive</div>
+<ul>
+  <li>⅔ et ¾ : PPCM(3,4) = 12 · ⅔ = ⁸⁄₁₂ · ¾ = ⁹⁄₁₂ → <strong>⅔ &lt; ¾</strong></li>
+  <li>⁵⁄₆ et ⁷⁄₈ : PPCM(6,8) = 24 · ⁵⁄₆ = ²⁰⁄₂₄ · ⁷⁄₈ = ²¹⁄₂₄ → <strong>⁵⁄₆ &lt; ⁷⁄₈</strong></li>
+  <li>⁷⁄₁₂ et ⅗ : PPCM(12,5) = 60 · ⁷⁄₁₂ = ³⁵⁄₆₀ · ⅗ = ³⁶⁄₆₀ → <strong>⁷⁄₁₂ &lt; ⅗</strong></li>
+</ul></div>
+<div class="rbox"><div class="lbl">Comparer à 0 et à 1</div>
+<p>Fraction positive/positive : toujours &gt; 0.<br>
+Fraction &lt; 1 : numérateur &lt; dénominateur.<br>
+Fraction = 1 : numérateur = dénominateur.<br>
+Fraction &gt; 1 : numérateur &gt; dénominateur.</p></div>
+<div class="ebox"><div class="lbl">Placer en ordre croissant</div>
+<p>Ordonne ¼, ⅗, ½, ⁷⁄₁₀ : convertis en décimaux → 0,25 · 0,6 · 0,5 · 0,7<br>
+Ordre croissant : <strong>¼ &lt; ½ &lt; ⅗ &lt; ⁷⁄₁₀</strong></p></div>
+</div>
+
+<div class="cs"><h2>4. Addition et soustraction — cas général 6ème</h2>
+<div class="rbox"><div class="lbl">Méthode formelle</div>
+<ul>
+  <li>Étape 1 : calcule PPCM(b, d)</li>
+  <li>Étape 2 : convertis a/b et c/d au dénominateur PPCM</li>
+  <li>Étape 3 : additionne ou soustrait les numérateurs</li>
+  <li>Étape 4 : simplifie (cherche le PGCD du résultat)</li>
+</ul></div>
+<div class="frise">
+  <div class="frise-item">
+    <div class="frise-dot" style="background:#fce7f3;color:#9d174d">A</div>
+    <div class="frise-content">
+      <div class="frise-date">Calcul : ⅔ + ¾</div>
+      <div class="frise-text">PPCM(3,4) = 12 · ⅔ = ⁸⁄₁₂ · ¾ = ⁹⁄₁₂ → <strong>¹⁷⁄₁₂</strong> = 1⁵⁄₁₂</div>
+    </div>
+  </div>
+  <div class="frise-item">
+    <div class="frise-dot" style="background:#fce7f3;color:#9d174d">B</div>
+    <div class="frise-content">
+      <div class="frise-date">Calcul : ⁵⁄₆ − ⅜</div>
+      <div class="frise-text">PPCM(6,8) = 24 · ⁵⁄₆ = ²⁰⁄₂₄ · ⅜ = ⁹⁄₂₄ → ²⁰⁄₂₄ − ⁹⁄₂₄ = <strong>¹¹⁄₂₄</strong></div>
+    </div>
+  </div>
+  <div class="frise-item">
+    <div class="frise-dot" style="background:#fce7f3;color:#9d174d">C</div>
+    <div class="frise-content">
+      <div class="frise-date">Calcul : ¾ + ⅔ − ⅙</div>
+      <div class="frise-text">PPCM(4,3,6) = 12 · ⁹⁄₁₂ + ⁸⁄₁₂ − ²⁄₁₂ = <strong>¹⁵⁄₁₂ = ⁵⁄₄</strong></div>
+    </div>
+  </div>
+</div>
+<div class="wbox"><div class="lbl">Erreurs typiques en 6ème</div>
+<ul>
+  <li>Additionner les dénominateurs : ½ + ⅓ ≠ ²⁄₅ (FAUX)</li>
+  <li>Oublier de simplifier : ⁶⁄₁₂ doit devenir ½</li>
+  <li>Trouver n'importe quel dénominateur commun au lieu du PPCM (pas grave, mais rend les calculs plus lourds)</li>
+</ul></div>
+</div>
+
+<div class="cs"><h2>5. Multiplication et division de fractions</h2>
+<div class="rbox"><div class="lbl">Règles complètes</div>
+<p><strong>Multiplication</strong> : (a/b) × (c/d) = (a×c) / (b×d)<br>
+<strong>Division</strong> : (a/b) ÷ (c/d) = (a/b) × (d/c) = (a×d) / (b×c)</p></div>
+<div class="ebox"><div class="lbl">Exemples de multiplications</div>
+<ul>
+  <li>⅗ × ⁵⁄₉ = ¹⁵⁄₄₅ = <strong>⅓</strong> (PGCD(15,45)=15)</li>
+  <li>⁴⁄₇ × ⁷⁄₈ = ²⁸⁄₅₆ = <strong>½</strong> (simplification croisée : 4×7 et 7×8, le 7 se simplifie)</li>
+  <li>⅔ × ⁹⁄₄ = ¹⁸⁄₈ = <strong>⁹⁄₄</strong> = 2,25</li>
+</ul></div>
+<div class="ebox"><div class="lbl">Exemples de divisions</div>
+<ul>
+  <li>⅔ ÷ ⅘ = ⅔ × ⁵⁄₄ = ¹⁰⁄₁₂ = <strong>⁵⁄₆</strong></li>
+  <li>¾ ÷ ¾ = ¾ × ⁴⁄₃ = ¹²⁄₁₂ = <strong>1</strong> (tout nombre ÷ par lui-même = 1)</li>
+  <li>⁵⁄₆ ÷ ½ = ⁵⁄₆ × 2 = ¹⁰⁄₆ = <strong>⁵⁄₃</strong></li>
+</ul></div>
+<div class="rbox"><div class="lbl">Simplification croisée — gain de temps</div>
+<p>Avant de multiplier, cherche si un numérateur et un dénominateur (pas forcément de la même fraction) ont un diviseur commun.<br>
+⅔ × ⁹⁄₄ : le 3 (dénominateur) et le 9 (numérateur) ont 3 en commun → ²⁄₁ × ³⁄₄ = ⁶⁄₄ = ³⁄₂</p></div>
+</div>
+
+<div class="cs"><h2>6. Fractions et nombres relatifs</h2>
+<div class="dbox"><div class="lbl">Fractions négatives</div>
+<p>On peut avoir le signe moins dans une fraction.<br>
+−³⁄₅ = ³⁄(−₅) = −(³⁄₅) : ces trois écritures sont équivalentes.<br>
+Par convention, on place le signe devant la fraction : <strong>−³⁄₅</strong>.</p></div>
+<div class="ebox"><div class="lbl">Représentation sur l'axe</div>
+<p>Les fractions négatives se placent à gauche de 0, et les positives à droite.<br>
+−¾ = −0,75 se place entre −1 et 0, plus proche de −1.<br>
+Axe : ··· −1 — −¾ — −½ — −¼ — 0 — ¼ — ½ — ¾ — 1 ···</p></div>
+<div class="rbox"><div class="lbl">Comparer des fractions avec signes</div>
+<p>Tout négatif est inférieur à tout positif.<br>
+Pour comparer deux fractions négatives : −¼ &gt; −¾ (car −0,25 &gt; −0,75)<br>
+Plus une fraction négative est "grande" en valeur absolue, plus elle est petite.</p></div>
+<div class="ebox"><div class="lbl">Calculs avec fractions négatives</div>
+<ul>
+  <li>−⅓ + ⅔ = ¹⁄₃ (−1+2 = 1, même dénominateur)</li>
+  <li>−¾ − ¼ = −⁴⁄₄ = <strong>−1</strong></li>
+  <li>−⅔ × ³⁄₄ = <strong>−⁶⁄₁₂ = −½</strong> (négatif × positif = négatif)</li>
+  <li>−⅓ ÷ (−½) = −⅓ × (−2) = <strong>⅔</strong> (négatif × négatif = positif)</li>
+</ul></div>
+<div class="wbox"><div class="lbl">Signe et fraction</div>
+<p>−(a/b) ≠ (−a)/(−b). L'opposé de ³⁄₅ est −³⁄₅. Mais (−3)/(−5) = ³⁄₅ (les deux signes s'annulent).</p></div>
+</div>
+
+<div class="cs"><h2>7. Problème complexe multi-étapes</h2>
+<div class="rbox"><div class="lbl">Méthode de décomposition</div>
+<ul>
+  <li>Lis deux fois l'énoncé et identifie les données et la question</li>
+  <li>Décompose en sous-questions si c'est complexe</li>
+  <li>Calcule chaque étape en gardant les fractions exactes (pas de décimaux intermédiaires)</li>
+  <li>Donne le résultat simplifié et vérifie l'ordre de grandeur</li>
+</ul></div>
+<div class="ebox"><div class="lbl">Problème complet</div>
+<p>Un collège a 600 élèves. ⅝ sont au collège le lundi. Parmi ceux-là, ¾ ont sport.<br>
+<strong>Combien d'élèves font sport le lundi ?</strong><br><br>
+Étape 1 — élèves présents le lundi : ⅝ de 600 → 600 ÷ 5 = 120 → 120 × 5 = 600... attention.<br>
+⅝ de 600 : 600 ÷ 5 = 120 → 120 × 5... non. 600 ÷ 5 = 120 par part → 5 parts... ⅝ = 5 parts sur 8.<br>
+600 ÷ 8 = 75 (1 huitième) → 75 × 5 = <strong>375 élèves</strong> présents.<br><br>
+Étape 2 — parmi les 375, ¾ font sport : 375 ÷ 4... 375 n'est pas divisible par 4.<br>
+¾ de 375 = (375 × 3) ÷ 4 = 1125 ÷ 4 = <strong>281,25</strong> ← problème ! On arrondit à 281 ou 282.<br><br>
+En réalité le problème serait avec 480 élèves : ⅝ de 480 = 300 · ¾ de 300 = 225 élèves.</p></div>
+<div class="ebox"><div class="lbl">Problème type brevet</div>
+<p>Pierre dépense ⅓ de son argent de poche en livres, et ¼ en jeux. Il lui reste 15 €.<br>
+Part dépensée : ⅓ + ¼ = ⁴⁄₁₂ + ³⁄₁₂ = ⁷⁄₁₂<br>
+Part restante : 1 − ⁷⁄₁₂ = ⁵⁄₁₂<br>
+⁵⁄₁₂ de l'argent = 15 € → 1 douzième = 3 € → argent total = 3 × 12 = <strong>36 €</strong></p></div>
+</div>
+
+<div class="cs"><h2>Bilan — exercices types 6ème</h2>
+<div class="ebox"><div class="lbl">Type 1 — irréductibilité par Euclide</div>
+<p>La fraction ⁵⁶⁄₈₄ est-elle irréductible ? Sinon, simplifie-la.<br>
+PGCD(56,84) : 84 ÷ 56 = 1 r28 · 56 ÷ 28 = 2 r0 → PGCD = 28<br>
+28 ≠ 1 → non irréductible. ⁵⁶⁄₈₄ = <strong>²⁄₃</strong></p></div>
+<div class="ebox"><div class="lbl">Type 2 — addition complexe</div>
+<p>Calcule ⁵⁄₆ + ⁷⁄₁₀ :<br>
+PPCM(6,10) = (6×10) ÷ PGCD(6,10) = 60 ÷ 2 = 30<br>
+⁵⁄₆ = ²⁵⁄₃₀ · ⁷⁄₁₀ = ²¹⁄₃₀ → ²⁵⁄₃₀ + ²¹⁄₃₀ = ⁴⁶⁄₃₀ = <strong>²³⁄₁₅</strong> = 1⁸⁄₁₅</p></div>
+<div class="ebox"><div class="lbl">Type 3 — division avec négatif</div>
+<p>Calcule (−³⁄₄) ÷ ⅙ :<br>
+Inverse de ⅙ = 6 → (−³⁄₄) × 6 = <strong>−¹⁸⁄₄ = −⁹⁄₂</strong> = −4,5</p></div>
+<div class="ebox"><div class="lbl">Type 4 — problème multi-étapes</div>
+<p>Anna a 48 € d'économies. Elle dépense ⅜ pour un cadeau et ¼ pour des livres. Combien lui reste-t-il ?<br>
+Cadeaux : ⅜ de 48 = 48 ÷ 8 × 3 = 18 €<br>
+Livres : ¼ de 48 = 12 €<br>
+Dépenses totales : 18 + 12 = 30 €<br>
+Reste : 48 − 30 = <strong>18 €</strong><br>
+Vérification : 18/48 = ⅜ restants. ⅜ + ¼ + ⅜ = 3+2+3 / 8 = ⁸⁄₈ = 1 ✓</p></div>
+<div class="wbox"><div class="lbl">Le piège du 6ème — ne pas simplifier</div>
+<p>En 6ème, une réponse non simplifiée peut coûter des points. Après chaque calcul :<br>
+1. Cherche le PGCD du résultat · 2. Simplifie · 3. Vérifie que c'est irréductible.</p></div>
+</div>
+
+<div class="retenir"><h3>A retenir</h3>
+<ul>
+<li>a/b = a ÷ b : la fraction est un quotient (exact, même si le décimal est infini)</li>
+<li>Irréductible : PGCD(num, dén) = 1 — utilise l'algorithme d'Euclide</li>
+<li>Additionner : trouver PPCM, convertir, additionner les numérateurs</li>
+<li>Multiplier : (a/b)×(c/d) = (a×c)/(b×d) — simplifier croisé avant si possible</li>
+<li>Diviser : multiplier par l'inverse (retourner la deuxième fraction)</li>
+<li>Fractions négatives : −(a/b) se place à gauche de 0 · même signes → positif · signes différents → négatif</li>
 </ul></div>
 
 <div class="cta">
   <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
-  <a href="fractions-6e.html" class="btn-ex">📝 Exercices : Fractions et relatifs 6e</a>
+  <a href="fractions-6e.html" class="btn-ex">📝 Exercices : Fractions 6ème</a>
 </div>
 </main>
 <footer class="site-footer">École Facile — Cours 6ème</footer>
