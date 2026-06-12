@@ -14,28 +14,63 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-/* ── Hero header override ── */
+/* ── Hero header ── */
 .home-header {
-  background: linear-gradient(135deg, #5b21b6 0%, #7c3aed 40%, #3b82f6 100%);
+  background: linear-gradient(135deg, #5b21b6 0%, #7c3aed 50%, #3b82f6 100%);
   color: white;
   text-align: center;
-  padding: 10px 20px 8px;
+  padding: 18px 20px 22px;
 }
-.home-header h1 { font-size: 1.55rem; font-weight: 900; letter-spacing: -0.3px; display:flex; align-items:center; justify-content:center; gap:9px; }
-.home-header h1 img { width:28px; height:28px; flex-shrink:0; }
-.home-header p  { font-size: 0.8rem; opacity: 0.82; margin-top: 3px; }
+.home-logo {
+  font-size: 1.35rem;
+  font-weight: 900;
+  letter-spacing: -0.3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.home-logo-icon {
+  width: 26px; height: 26px;
+  background: white;
+  border-radius: 7px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+.home-tagline { font-size: 0.78rem; opacity: 0.82; margin-top: 4px; }
+.home-pitch {
+  font-size: 0.88rem;
+  opacity: 0.95;
+  margin-top: 10px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+.home-pitch em { font-style: italic; opacity: 0.82; font-weight: 700; }
 
-/* ── SEO intro ── */
-.seo-intro {
-  background: #f8f7ff;
-  border-bottom: 1.5px solid #ede9fe;
-  padding: 16px 20px;
-  text-align: center;
+/* ── SEO pills dans le header ── */
+.seo-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 12px;
 }
-.seo-intro h2 { font-size:1.05rem; font-weight:900; color:#5b21b6; margin-bottom:8px; }
-.seo-intro p { font-size:0.82rem; color:#4b5563; line-height:1.55; margin-bottom:6px; }
-.seo-keywords { display:flex; flex-wrap:wrap; gap:6px; justify-content:center; margin-top:10px; }
-.seo-kw { background:white; border:1.5px solid #c4b5fd; color:#5b21b6; font-size:0.72rem; font-weight:800; border-radius:20px; padding:4px 11px; }
+.seo-pill {
+  background: rgba(255,255,255,0.18);
+  border: 1.5px solid rgba(255,255,255,0.35);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 800;
+  border-radius: 20px;
+  padding: 5px 13px;
+  text-decoration: none;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+.seo-pill:hover { background: rgba(255,255,255,0.32); }
 
 /* ── Level picker ── */
 .level-picker {
@@ -175,6 +210,7 @@
 }
 
 /* ── Cours card variant ── */
+/* (seo-intro supprimé — contenu intégré dans .home-header) */
 .lc-card-cours { border-color:#c4b5fd; background:#faf5ff; }
 .lc-card-cours:hover { border-color:#7c3aed; }
 .lcc-badge { font-size:0.6rem; font-weight:900; background:#7c3aed; color:white; border-radius:6px; padding:2px 6px; text-transform:uppercase; letter-spacing:.5px; margin-left:6px; vertical-align:middle; }
@@ -188,25 +224,23 @@
 <body>
 
 <header class="home-header">
-  <h1><img src="favicon.svg" alt=""> École Facile</h1>
-  <p>Exercices interactifs du CP à la 6ème — Maths · Histoire · EPS</p>
-</header>
-
-<div class="seo-intro">
-  <h2>Tu bloques sur les maths ? Tu n'es pas seul.</h2>
-  <p>Des milliers d'élèves cherchent chaque jour :<br><em>exercices fractions CE2, tables de multiplication CE2, cours mesures CM1, révisions histoire-géo 6ème…</em></p>
-  <p>École Facile, c'est des <strong>exercices interactifs gratuits</strong> avec correction immédiate, du CP à la 6ème — conçus pour vraiment comprendre, pas juste mémoriser.</p>
-  <div class="seo-keywords">
-    <span class="seo-kw">exercices CE2</span>
-    <span class="seo-kw">fractions CM1</span>
-    <span class="seo-kw">tables de multiplication</span>
-    <span class="seo-kw">cours maths CM2</span>
-    <span class="seo-kw">révisions 6ème</span>
-    <span class="seo-kw">calcul mental CP</span>
-    <span class="seo-kw">géométrie CE1</span>
-    <span class="seo-kw">histoire-géo CE2</span>
+  <div class="home-logo">
+    <span class="home-logo-icon">📚</span>
+    École Facile
   </div>
-</div>
+  <p class="home-tagline">Exercices interactifs du CP à la 6ème — Maths · Histoire · EPS</p>
+  <p class="home-pitch">Tu bloques sur les maths ? Voici les exercices et cours qu'il te faut :<br><em>fractions, tables de ×, mesures, décimaux, histoire-géo…</em></p>
+  <div class="seo-pills">
+    <a href="#lc-ce2" class="seo-pill" onclick="selectLvl('ce2',document.querySelector('.lp-btn.lp-ce2'))">exercices CE2</a>
+    <a href="#lc-cm1" class="seo-pill" onclick="selectLvl('cm1',document.querySelector('.lp-btn.lp-cm1'))">fractions CM1</a>
+    <a href="tables-ce2.html" class="seo-pill">tables de multiplication</a>
+    <a href="#lc-cm2" class="seo-pill" onclick="selectLvl('cm2',document.querySelector('.lp-btn.lp-cm2'))">cours CM2</a>
+    <a href="#lc-6e" class="seo-pill" onclick="selectLvl('6e',document.querySelector('.lp-btn.lp-6e'))">révisions 6ème</a>
+    <a href="calcul-mental-cp.html" class="seo-pill">calcul mental CP</a>
+    <a href="geometrie-ce1.html" class="seo-pill">géométrie CE1</a>
+    <a href="histoire-geo-ce2.html" class="seo-pill">histoire-géo CE2</a>
+  </div>
+</header>
 
 <main>
 
