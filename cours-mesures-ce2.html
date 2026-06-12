@@ -60,13 +60,20 @@ table.conv td{border:1px solid #e5e7eb;padding:6px 10px;text-align:center;backgr
 <div class="dbox"><div class="lbl">Les 5 unités de longueur</div>
 <p><strong>km</strong> (kilomètre) → <strong>m</strong> (mètre) → <strong>dm</strong> (décimètre) → <strong>cm</strong> (centimètre) → <strong>mm</strong> (millimètre)<br>
 À chaque passage, on multiplie (ou divise) par <strong>10</strong>.</p></div>
-<table class="conv">
-  <tr><th>km</th><th>m</th><th>dm</th><th>cm</th><th>mm</th></tr>
-  <tr><td colspan="5" style="text-align:center;background:#f0fdf4;font-size:.8rem">× 10 à chaque fois vers la droite (÷ 10 vers la gauche)</td></tr>
-  <tr><td>1</td><td>1 000</td><td>10 000</td><td>100 000</td><td>1 000 000</td></tr>
-  <tr><td>—</td><td>1</td><td>10</td><td>100</td><td>1 000</td></tr>
-  <tr><td>—</td><td>—</td><td>1</td><td>10</td><td>100</td></tr>
-</table>
+<div class="visbox">
+  <div class="conv-ladder">
+    <div class="conv-rung" style="background:#dbeafe;border-color:#93c5fd;color:#1e3a8a">km — kilomètre</div>
+    <div class="conv-arrow">↕ ×1 000 / ÷1 000<span>1 km = 1 000 m</span></div>
+    <div class="conv-rung" style="background:#dcfce7;border-color:#86efac;color:#14532d">m — mètre</div>
+    <div class="conv-arrow">↕ ×10 / ÷10<span>1 m = 10 dm</span></div>
+    <div class="conv-rung">dm — décimètre</div>
+    <div class="conv-arrow">↕ ×10 / ÷10<span>1 dm = 10 cm</span></div>
+    <div class="conv-rung" style="background:#fef9c3;border-color:#fde68a;color:#713f12">cm — centimètre</div>
+    <div class="conv-arrow">↕ ×10 / ÷10<span>1 cm = 10 mm</span></div>
+    <div class="conv-rung" style="background:#fee2e2;border-color:#fca5a5;color:#991b1b">mm — millimètre</div>
+  </div>
+  <div class="vis-caption">Vers le bas = unité plus petite → on multiplie · Vers le haut = unité plus grande → on divise</div>
+</div>
 <div class="ebox"><div class="lbl">Repères du quotidien</div>
 <ul>
   <li>Crayon : environ <strong>18 cm</strong></li>

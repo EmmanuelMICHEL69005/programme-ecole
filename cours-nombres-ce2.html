@@ -59,10 +59,32 @@ table.conv td{border:1px solid #e5e7eb;padding:6px 10px;text-align:center;backgr
 <div class="cs"><h2>1. Le tableau de numération jusqu'aux milliers</h2>
 <div class="dbox"><div class="lbl">Définition</div>
 <p>Chaque chiffre d'un nombre occupe une <strong>position (rang)</strong> qui lui donne sa valeur. La position à gauche vaut 10 fois plus que la position à droite.</p></div>
-<table class="conv">
-  <tr><th>Milliers</th><th>Centaines</th><th>Dizaines</th><th>Unités</th></tr>
-  <tr><td>3</td><td>4</td><td>5</td><td>6</td></tr>
-</table>
+<div class="visbox">
+  <svg viewBox="0 0 380 90" xmlns="http://www.w3.org/2000/svg" style="max-width:400px">
+    <!-- Cases du tableau -->
+    <rect x="10" y="10" width="85" height="38" rx="8" fill="#dbeafe" stroke="#93c5fd" stroke-width="2"/>
+    <rect x="105" y="10" width="85" height="38" rx="8" fill="#ede9fe" stroke="#c4b5fd" stroke-width="2"/>
+    <rect x="200" y="10" width="85" height="38" rx="8" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+    <rect x="295" y="10" width="75" height="38" rx="8" fill="#fef9c3" stroke="#fde68a" stroke-width="2"/>
+    <!-- Labels -->
+    <text x="52" y="26" text-anchor="middle" font-family="Nunito,sans-serif" font-size="10" font-weight="900" fill="#1e3a8a">Milliers</text>
+    <text x="147" y="26" text-anchor="middle" font-family="Nunito,sans-serif" font-size="10" font-weight="900" fill="#5b21b6">Centaines</text>
+    <text x="242" y="26" text-anchor="middle" font-family="Nunito,sans-serif" font-size="10" font-weight="900" fill="#15803d">Dizaines</text>
+    <text x="332" y="26" text-anchor="middle" font-family="Nunito,sans-serif" font-size="10" font-weight="900" fill="#92400e">Unités</text>
+    <!-- Chiffres -->
+    <text x="52" y="44" text-anchor="middle" font-family="Nunito,sans-serif" font-size="18" font-weight="900" fill="#1e3a8a">3</text>
+    <text x="147" y="44" text-anchor="middle" font-family="Nunito,sans-serif" font-size="18" font-weight="900" fill="#5b21b6">4</text>
+    <text x="242" y="44" text-anchor="middle" font-family="Nunito,sans-serif" font-size="18" font-weight="900" fill="#15803d">5</text>
+    <text x="332" y="44" text-anchor="middle" font-family="Nunito,sans-serif" font-size="18" font-weight="900" fill="#92400e">6</text>
+    <!-- Décomposition -->
+    <text x="52" y="70" text-anchor="middle" font-family="Nunito,sans-serif" font-size="9" fill="#1e3a8a">3 000</text>
+    <text x="147" y="70" text-anchor="middle" font-family="Nunito,sans-serif" font-size="9" fill="#5b21b6">+ 400</text>
+    <text x="242" y="70" text-anchor="middle" font-family="Nunito,sans-serif" font-size="9" fill="#15803d">+ 50</text>
+    <text x="332" y="70" text-anchor="middle" font-family="Nunito,sans-serif" font-size="9" fill="#92400e">+ 6</text>
+    <text x="190" y="84" text-anchor="middle" font-family="Nunito,sans-serif" font-size="9" fill="#6b7280">= 3 456</text>
+  </svg>
+  <div class="vis-caption">Chaque chiffre a une valeur selon sa position dans le tableau</div>
+</div>
 <div class="ebox"><div class="lbl">Lecture et écriture de 3 456</div>
 <p>On lit : <strong>"trois mille quatre cent cinquante-six"</strong><br>
 Décomposition additive : 3 456 = <strong>3 000 + 400 + 50 + 6</strong><br>
