@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="École Facile">
+<meta name="application-name" content="École Facile">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/grammaire-ce2.html">
+<meta property="og:title" content="Grammaire — CE2 | École Facile">
+<meta property="og:description" content="Exercices interactifs de grammaire CE2 — nature des mots, accord sujet-verbe, types de phrases, groupe nominal. Gratuit sur École Facile.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/grammaire-ce2.html">
+<meta name="description" content="Exercices interactifs de grammaire CE2 — nature des mots, accord sujet-verbe, types de phrases, groupe nominal. Gratuit sur École Facile.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grammaire — CE2 | École Facile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header" style="background:linear-gradient(135deg,#5b21b6,#7c3aed);">
+  <span class="emoji-header">🔤</span>
+  <h1>Grammaire</h1>
+  <p>Nature des mots, GN, accord, types de phrases</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+  <div class="badge-niveau">🔤 CE2 — Grammaire</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.88rem;color:#555;margin-top:8px;line-height:1.9;">
+      🔤 <strong>Nom</strong> : désigne une personne, un animal, une chose (chat, maison, Lucas)<br>
+      🔵 <strong>Déterminant</strong> : accompagne le nom (le, la, les, un, une, des, mon, ma…)<br>
+      🟢 <strong>Verbe</strong> : exprime une action ou un état (manger, être, courir)<br>
+      🟡 <strong>Adjectif</strong> : précise le nom (grand, rouge, joli)<br>
+      🔴 <strong>Pronom</strong> : remplace un nom (je, tu, il, elle, nous, vous, ils, elles)<br>
+      📏 <strong>GN</strong> : déterminant + nom (+ adjectif éventuellement) → <em>le grand chat</em>
+    </div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#5b21b6">
+    <div class="ex-title"><span class="ex-badge" style="background:#5b21b6">Ex 1</span> Identifier la nature du mot <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 2</span> Le groupe nominal (GN) <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 3</span> Types de phrases <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0891b2">
+    <div class="ex-title"><span class="ex-badge" style="background:#0891b2">Ex 4</span> Accord sujet-verbe <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 5</span> Accord dans le groupe nominal <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 6</span> Vrai ou Faux — grammaire <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Associer mot et nature <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex7"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CE2</footer>
+
+<script src="exercises.js"></script>
+<script>
+buildQCM([
+  { card:'chat', q:'Quelle est la nature de ce mot ?', correct:'nom commun', choices:['nom commun','verbe','adjectif','déterminant'] },
+  { card:'mange', q:'Quelle est la nature de ce mot ?', correct:'verbe', choices:['nom commun','verbe','adjectif','déterminant'] },
+  { card:'grand', q:'Quelle est la nature de ce mot ?', correct:'adjectif', choices:['nom commun','verbe','adjectif','déterminant'] },
+  { card:'le', q:'Quelle est la nature de ce mot ?', correct:'déterminant', choices:['nom commun','verbe','adjectif','déterminant'] },
+  { card:'Paris', q:'Quelle est la nature de ce mot ?', correct:'nom propre', choices:['nom commun','nom propre','adjectif','déterminant'] },
+  { card:'courent', q:'Quelle est la nature de ce mot ?', correct:'verbe', choices:['nom commun','verbe','adjectif','pronom'] },
+  { card:'ils', q:'Quelle est la nature de ce mot ?', correct:'pronom personnel', choices:['nom commun','déterminant','adjectif','pronom personnel'] },
+], 'ex1');
+
+buildQCM([
+  { card:'"le petit chien"', q:'Combien ce GN contient-il de mots ?', correct:'3 mots', choices:['1 mot','2 mots','3 mots','4 mots'] },
+  { card:'"les maisons rouges"', q:'Quel est le nom dans ce GN ?', correct:'maisons', choices:['les','maisons','rouges','les maisons'] },
+  { card:'"une belle fleur"', q:'Quel est l'adjectif dans ce GN ?', correct:'belle', choices:['une','belle','fleur','une belle'] },
+  { card:'Quel déterminant convient ? "_____ enfants jouent."', q:'Choisis le bon déterminant', correct:'Les', choices:['Le','La','Les','Un'] },
+  { card:'"mon chien"', q:'Quel est le déterminant possessif ?', correct:'mon', choices:['chien','mon','le','un'] },
+  { card:'"des fleurs blanches"', q:'Quel est le nom noyau du GN ?', correct:'fleurs', choices:['des','fleurs','blanches','des fleurs'] },
+], 'ex2');
+
+buildQCM([
+  { card:'"Il pleut aujourd'hui."', q:'Quel type de phrase est-ce ?', correct:'déclarative', choices:['déclarative','interrogative','exclamative','impérative'] },
+  { card:'"Viens ici !"', q:'Quel type de phrase est-ce ?', correct:'impérative', choices:['déclarative','interrogative','exclamative','impérative'] },
+  { card:'"Est-ce que tu viens ?"', q:'Quel type de phrase est-ce ?', correct:'interrogative', choices:['déclarative','interrogative','exclamative','impérative'] },
+  { card:'"Quelle belle journée !"', q:'Quel type de phrase est-ce ?', correct:'exclamative', choices:['déclarative','interrogative','exclamative','impérative'] },
+  { card:'"Les oiseaux chantent."', q:'Quel type de phrase est-ce ?', correct:'déclarative', choices:['déclarative','interrogative','exclamative','impérative'] },
+], 'ex3');
+
+buildQCM([
+  { card:'"Les chats _____ dans le jardin."', q:'Conjugue le verbe "dormir" avec "les chats"', correct:'dorment', choices:['dort','dorment','dormez','dormions'] },
+  { card:'"Mon frère _____ du vélo."', q:'Conjugue le verbe "faire" avec "mon frère"', correct:'fait', choices:['font','fais','fait','faites'] },
+  { card:'"Nous _____ très bien."', q:'Conjugue le verbe "chanter" avec "nous"', correct:'chantons', choices:['chante','chantes','chantons','chantent'] },
+  { card:'"Elle et moi _____ à l'école."', q:'Elle et moi = quel pronom ?', correct:'nous (→ chantons)', choices:['nous (→ chantons)','elles (→ chantent)','vous (→ chantez)','je (→ chante)'] },
+  { card:'"Le chien et le chat _____ ensemble."', q:'Conjugue "jouer" — sujet = le chien et le chat', correct:'jouent', choices:['joue','joues','jouons','jouent'] },
+], 'ex4');
+
+buildQCM([
+  { card:'un chat gris (→ deux…)', q:'Comment dit-on au pluriel ?', correct:'des chats gris', choices:['des chat gris','des chats gris','des chats grises','des chat grises'] },
+  { card:'"une grande maison" → masculin singulier', q:'Quelle est la forme au masculin ?', correct:'un grand bâtiment', choices:['un grande bâtiment','un grand bâtiment','une grand bâtiment','un grands bâtiment'] },
+  { card:'"les filles sportives"', q:'Comment dit-on au singulier ?', correct:'la fille sportive', choices:['la fille sportif','la filles sportives','la fille sportive','la filles sportive'] },
+  { card:'"un beau garçon" → pluriel', q:'Quelle est la forme au pluriel ?', correct:'des beaux garçons', choices:['des beau garçons','des beaux garçon','des beaux garçons','des belles garçons'] },
+  { card:'"la petite fille" → masculin pluriel', q:'Transforme en masculin pluriel', correct:'les petits garçons', choices:['les petit garçons','les petits garçons','les petites garçons','les petites garçon'] },
+], 'ex5');
+
+buildVF([
+  { q:'"mange" est un verbe', correct:true },
+  { q:'"le" est un adjectif', correct:false, expl:'"le" est un déterminant' },
+  { q:'Un GN contient toujours un nom', correct:true },
+  { q:'La phrase "Mange ta soupe !" est déclarative', correct:false, expl:'C'est une phrase impérative' },
+  { q:'Dans "les beaux arbres", arbres s'accorde au pluriel', correct:true },
+  { q:'"Paris" est un nom commun', correct:false, expl:'"Paris" est un nom propre' },
+  { q:'Le verbe s'accorde avec le sujet', correct:true },
+], 'ex6');
+
+buildPaires([
+  { q:'Associe chaque mot à sa nature.',
+    pairs:[['manger','verbe'],['beau','adjectif'],['maison','nom commun'],['une','déterminant']] },
+  { q:'Associe chaque phrase à son type.',
+    pairs:[['Il fait froid.','déclarative'],['Ferme la porte !','impérative'],['Tu viens ?','interrogative'],['Quel beau ciel !','exclamative']] },
+], 'ex7');
+</script>
+
+<script src="sync.js"></script>
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>

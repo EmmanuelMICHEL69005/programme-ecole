@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="École Facile">
+<meta name="application-name" content="École Facile">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ecolefacile.fr/cours.html">
+<meta property="og:title" content="Cours — CP à 6ème | École Facile">
+<meta property="og:description" content="Toutes les fiches de cours du CP à la 6ème — maths, histoire-géo. Gratuit, sans publicité.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<meta name="description" content="Toutes les fiches de cours du CP à la 6ème — maths, histoire-géo. Gratuit, sans publicité.">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/cours.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cours — CP à 6ème | École Facile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.home-header{background:linear-gradient(135deg,#5b21b6 0%,#7c3aed 50%,#3b82f6 100%);color:white;text-align:center;padding:18px 20px 22px}
+.home-logo{font-size:1.35rem;font-weight:900;letter-spacing:-0.3px;display:flex;align-items:center;justify-content:center;gap:8px}
+.home-logo-icon{width:26px;height:26px;background:white;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;font-size:0.95rem;flex-shrink:0}
+.home-tagline{font-size:0.78rem;opacity:.82;margin-top:4px}
+.page-tabs{display:flex;justify-content:center;gap:10px;margin-top:14px}
+.page-tab{font-size:0.78rem;font-weight:800;border-radius:20px;padding:6px 18px;text-decoration:none;border:1.5px solid rgba(255,255,255,.35);color:white;background:rgba(255,255,255,.18);transition:background .15s}
+.page-tab.active{background:white;color:#5b21b6;border-color:white}
+.page-tab:hover:not(.active){background:rgba(255,255,255,.32)}
+.level-picker{background:white;border-radius:20px;padding:18px 16px 16px;box-shadow:0 4px 24px rgba(0,0,0,.07);margin:0 0 28px;text-align:center}
+.lp-label{font-size:.75rem;font-weight:900;color:#9ca3af;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px}
+.lp-btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.lp-btn{display:flex;flex-direction:column;align-items:center;gap:2px;padding:12px 14px 10px;border-radius:14px;border:2.5px solid transparent;cursor:pointer;font-family:inherit;font-weight:900;min-width:64px;transition:transform .15s,box-shadow .15s}
+.lp-btn:hover{transform:scale(1.07);box-shadow:0 6px 18px rgba(0,0,0,.12)}
+.lp-emoji{font-size:1.5rem}
+.lp-name{font-size:.78rem;letter-spacing:.5px}
+.lp-cp{background:#dcfce7;color:#166534;border-color:#bbf7d0}
+.lp-ce1{background:#d1fae5;color:#065f46;border-color:#6ee7b7}
+.lp-ce2{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd}
+.lp-cm1{background:#dbeafe;color:#1e3a8a;border-color:#93c5fd}
+.lp-cm2{background:#fef9c3;color:#713f12;border-color:#fde68a}
+.lp-6e{background:#fce7f3;color:#9d174d;border-color:#fbcfe8}
+.lp-cp.active{background:#16a34a;color:white;border-color:#16a34a;box-shadow:0 4px 14px rgba(22,163,74,.35)}
+.lp-ce1.active{background:#059669;color:white;border-color:#059669;box-shadow:0 4px 14px rgba(5,150,105,.35)}
+.lp-ce2.active{background:#7c3aed;color:white;border-color:#7c3aed;box-shadow:0 4px 14px rgba(124,58,237,.35)}
+.lp-cm1.active{background:#1d4ed8;color:white;border-color:#1d4ed8;box-shadow:0 4px 14px rgba(29,78,216,.35)}
+.lp-cm2.active{background:#b45309;color:white;border-color:#b45309;box-shadow:0 4px 14px rgba(180,83,9,.35)}
+.lp-6e.active{background:#9d174d;color:white;border-color:#9d174d;box-shadow:0 4px 14px rgba(157,23,77,.35)}
+.lc{animation:lcIn .22s ease}
+.lc[hidden]{display:none}
+@keyframes lcIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.lc-cat{margin-bottom:26px}
+.lc-cat-title{font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:2px;color:#6b7280;margin-bottom:12px;padding-bottom:7px;border-bottom:2.5px solid #f3f4f6;display:flex;align-items:center;gap:8px}
+.lc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:11px}
+.lc-card{background:white;border-radius:16px;border:2.5px solid #f0f0ef;padding:16px 10px 13px;text-decoration:none;color:#1f2937;display:flex;flex-direction:column;align-items:center;gap:9px;transition:transform .14s,box-shadow .14s,border-color .14s;box-shadow:0 2px 6px rgba(0,0,0,.04)}
+.lc-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.1);border-color:#d1d5db}
+.lcc-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.75rem;flex-shrink:0}
+.lcc-body{text-align:center}
+.lcc-title{font-size:.85rem;font-weight:900;line-height:1.25;margin-bottom:3px;color:#111827}
+.lcc-desc{font-size:.68rem;color:#9ca3af;font-weight:700;line-height:1.3}
+.lc-card-cours{border-color:#c4b5fd;background:#faf5ff}
+.lc-card-cours:hover{border-color:#7c3aed}
+.lcc-badge{font-size:.6rem;font-weight:900;background:#7c3aed;color:white;border-radius:6px;padding:2px 6px;text-transform:uppercase;letter-spacing:.5px;margin-left:6px;vertical-align:middle}
+@media(max-width:480px){.lc-grid{grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:9px}.lp-btn{min-width:52px;padding:10px 10px 8px}.lp-emoji{font-size:1.3rem}}
+.welcome{text-align:center;margin-bottom:24px;padding-top:4px}
+.welcome .bonjour{font-size:1.4rem;font-weight:900}
+.welcome p{font-size:.92rem;color:#6b7280;margin-top:5px}
+</style>
+</head>
+<body>
+
+<header class="home-header">
+  <div class="home-logo">
+    <span class="home-logo-icon">📚</span>
+    École Facile
+  </div>
+  <p class="home-tagline">Fiches de cours du CP à la 6ème</p>
+  <div class="page-tabs">
+    <a href="index.html" class="page-tab">📝 Exercices</a>
+    <a href="cours.html" class="page-tab active">📖 Cours</a>
+  </div>
+</header>
+
+<main>
+
+  <div class="welcome">
+    <div class="bonjour">Quel est ton niveau ? 👇</div>
+    <p>Clique sur ta classe pour voir toutes tes fiches de cours.</p>
+  </div>
+
+  <div class="level-picker">
+    <div class="lp-label">Choisis ta classe</div>
+    <div class="lp-btns">
+      <button class="lp-btn lp-cp"  onclick="selectLvl('cp', this)"><span class="lp-emoji">🌱</span><span class="lp-name">CP</span></button>
+      <button class="lp-btn lp-ce1" onclick="selectLvl('ce1', this)"><span class="lp-emoji">🌿</span><span class="lp-name">CE1</span></button>
+      <button class="lp-btn lp-ce2" onclick="selectLvl('ce2', this)"><span class="lp-emoji">📚</span><span class="lp-name">CE2</span></button>
+      <button class="lp-btn lp-cm1" onclick="selectLvl('cm1', this)"><span class="lp-emoji">🎯</span><span class="lp-name">CM1</span></button>
+      <button class="lp-btn lp-cm2" onclick="selectLvl('cm2', this)"><span class="lp-emoji">🏆</span><span class="lp-name">CM2</span></button>
+      <button class="lp-btn lp-6e"  onclick="selectLvl('6e', this)"><span class="lp-emoji">⭐</span><span class="lp-name">6ème</span></button>
+    </div>
+  </div>
+
+  <!-- ════ CP ════ -->
+  <div id="lc-cp" class="lc" hidden>
+    <div class="lc-cat">
+      <div class="lc-cat-title">📐 Mathématiques</div>
+      <div class="lc-grid">
+        <a href="cours-nombres-cp.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#dcfce7">🔢</div><div class="lcc-body"><div class="lcc-title">Nombres<span class="lcc-badge">cours</span></div><div class="lcc-desc">compter jusqu'à 100 · dizaines · comparaison</div></div></a>
+        <a href="cours-calcul-cp.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#dcfce7">➕</div><div class="lcc-body"><div class="lcc-title">Calcul<span class="lcc-badge">cours</span></div><div class="lcc-desc">addition · soustraction · doubles</div></div></a>
+        <a href="cours-geometrie-cp.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#dcfce7">🔷</div><div class="lcc-body"><div class="lcc-title">Géométrie<span class="lcc-badge">cours</span></div><div class="lcc-desc">formes · solides · lignes</div></div></a>
+        <a href="cours-mesures-cp.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#dcfce7">📏</div><div class="lcc-body"><div class="lcc-title">Mesures<span class="lcc-badge">cours</span></div><div class="lcc-desc">cm · kg · monnaie · durées</div></div></a>
+      </div>
+    </div>
+    <div class="lc-cat">
+      <div class="lc-cat-title">🏛️ Histoire &amp; Géographie</div>
+      <div class="lc-grid">
+        <a href="cours-histoire-geo-cp.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#dcfce7">📖</div><div class="lcc-body"><div class="lcc-title">Histoire-Géo<span class="lcc-badge">cours</span></div><div class="lcc-desc">famille · saisons · Préhistoire · France</div></div></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════ CE1 ════ -->
+  <div id="lc-ce1" class="lc" hidden>
+    <div class="lc-cat">
+      <div class="lc-cat-title">📐 Mathématiques</div>
+      <div class="lc-grid">
+        <a href="cours-nombres-ce1.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#d1fae5">🔢</div><div class="lcc-body"><div class="lcc-title">Nombres<span class="lcc-badge">cours</span></div><div class="lcc-desc">jusqu'à 1000 · pairs · doubles · moitiés</div></div></a>
+        <a href="cours-calcul-ce1.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#d1fae5">➕</div><div class="lcc-body"><div class="lcc-title">Calcul<span class="lcc-badge">cours</span></div><div class="lcc-desc">4 opérations · tables ×2 à ×5</div></div></a>
+        <a href="cours-geometrie-ce1.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#d1fae5">🔷</div><div class="lcc-body"><div class="lcc-title">Géométrie<span class="lcc-badge">cours</span></div><div class="lcc-desc">angles · droites parallèles · périmètre</div></div></a>
+        <a href="cours-mesures-ce1.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#d1fae5">📏</div><div class="lcc-body"><div class="lcc-title">Mesures<span class="lcc-badge">cours</span></div><div class="lcc-desc">longueurs · masses · durées · monnaie</div></div></a>
+        <a href="cours-fractions-ce1.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#d1fae5">✂️</div><div class="lcc-body"><div class="lcc-title">Fractions<span class="lcc-badge">cours</span></div><div class="lcc-desc">½ ¼ ¾ ⅓ · partager · comparer</div></div></a>
+      </div>
+    </div>
+    <div class="lc-cat">
+      <div class="lc-cat-title">🏛️ Histoire &amp; Géographie</div>
+      <div class="lc-grid">
+        <a href="cours-histoire-geo-ce1.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#d1fae5">📖</div><div class="lcc-body"><div class="lcc-title">Histoire-Géo<span class="lcc-badge">cours</span></div><div class="lcc-desc">Préhistoire · Gaulois · Moyen Âge · continents</div></div></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════ CE2 ════ -->
+  <div id="lc-ce2" class="lc" hidden>
+    <div class="lc-cat">
+      <div class="lc-cat-title">📐 Mathématiques</div>
+      <div class="lc-grid">
+        <a href="cours-nombres-ce2.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#ede9fe">🔢</div><div class="lcc-body"><div class="lcc-title">Nombres<span class="lcc-badge">cours</span></div><div class="lcc-desc">numération, décimaux, comparaison</div></div></a>
+        <a href="cours-decimaux-ce2.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#ede9fe">🔣</div><div class="lcc-body"><div class="lcc-title">Décimaux<span class="lcc-badge">cours</span></div><div class="lcc-desc">dixièmes · centièmes · virgule</div></div></a>
+        <a href="cours-fractions-ce2.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#ede9fe">✂️</div><div class="lcc-body"><div class="lcc-title">Fractions<span class="lcc-badge">cours</span></div><div class="lcc-desc">½, ¼, ¾ · comparer · décimaux</div></div></a>
+        <a href="cours-multiplication-ce2.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#ede9fe">✖️</div><div class="lcc-body"><div class="lcc-title">Tables ×<span class="lcc-badge">cours</span></div><div class="lcc-desc">tables 2→9 · astuces · division</div></div></a>
+        <a href="cours-calcul-ce2.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#ede9fe">➕</div><div class="lcc-body"><div class="lcc-title">Calcul<span class="lcc-badge">cours</span></div><div class="lcc-desc">4 opérations · priorités · calcul mental</div></div></a>
+        <a href="cours-geometrie-ce2.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#ede9fe">🔷</div><div class="lcc-body"><div class="lcc-title">Géométrie<span class="lcc-badge">cours</span></div><div class="lcc-desc">figures · périmètre · symétrie</div></div></a>
+        <a href="cours-symetrie-ce2.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#ede9fe">🪞</div><div class="lcc-body"><div class="lcc-title">Symétrie<span class="lcc-badge">cours</span></div><div class="lcc-desc">axe · figures symétriques · construction</div></div></a>
+        <a href="cours-mesures-ce2.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#ede9fe">📏</div><div class="lcc-body"><div class="lcc-title">Mesures<span class="lcc-badge">cours</span></div><div class="lcc-desc">longueurs · masses · temps · monnaie</div></div></a>
+      </div>
+    </div>
+    <div class="lc-cat">
+      <div class="lc-cat-title">📝 Français</div>
+      <div class="lc-grid">
+        <a href="cours-conjugaison-ce2.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#ede9fe">📝</div><div class="lcc-body"><div class="lcc-title">Conjugaison<span class="lcc-badge">cours</span></div><div class="lcc-desc">présent · imparfait · futur · passé composé</div></div></a>
+        <a href="cours-grammaire-ce2.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#ede9fe">🔤</div><div class="lcc-body"><div class="lcc-title">Grammaire<span class="lcc-badge">cours</span></div><div class="lcc-desc">nature des mots · GN · types de phrases · accords</div></div></a>
+        <a href="cours-orthographe-ce2.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#ede9fe">✏️</div><div class="lcc-body"><div class="lcc-title">Orthographe<span class="lcc-badge">cours</span></div><div class="lcc-desc">homophones · pluriels · accord des adjectifs</div></div></a>
+      </div>
+    </div>
+    <div class="lc-cat">
+      <div class="lc-cat-title">🏛️ Histoire &amp; Géographie</div>
+      <div class="lc-grid">
+        <a href="cours-histoire-geo-ce2.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#ede9fe">📖</div><div class="lcc-body"><div class="lcc-title">Histoire-Géo<span class="lcc-badge">cours</span></div><div class="lcc-desc">Préhistoire · Gaulois · Moyen Âge</div></div></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════ CM1 ════ -->
+  <div id="lc-cm1" class="lc" hidden>
+    <div class="lc-cat">
+      <div class="lc-cat-title">📐 Mathématiques</div>
+      <div class="lc-grid">
+        <a href="cours-nombres-cm1.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#dbeafe">🔢</div><div class="lcc-body"><div class="lcc-title">Nombres<span class="lcc-badge">cours</span></div><div class="lcc-desc">grands nombres · multiples · diviseurs</div></div></a>
+        <a href="cours-calcul-cm1.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#dbeafe">➕</div><div class="lcc-body"><div class="lcc-title">Calcul<span class="lcc-badge">cours</span></div><div class="lcc-desc">priorités · calcul mental · astuces</div></div></a>
+        <a href="cours-decimaux-cm1.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#dbeafe">🔣</div><div class="lcc-body"><div class="lcc-title">Décimaux<span class="lcc-badge">cours</span></div><div class="lcc-desc">millièmes · opérations · pourcentages</div></div></a>
+        <a href="cours-fractions-cm1.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#dbeafe">✂️</div><div class="lcc-body"><div class="lcc-title">Fractions<span class="lcc-badge">cours</span></div><div class="lcc-desc">fractions &gt;1 · équivalentes · addition</div></div></a>
+        <a href="cours-angles-cm1.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#dbeafe">📐</div><div class="lcc-body"><div class="lcc-title">Angles<span class="lcc-badge">cours</span></div><div class="lcc-desc">aigu · droit · obtus · rapporteur</div></div></a>
+        <a href="cours-geometrie-cm1.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#dbeafe">🔷</div><div class="lcc-body"><div class="lcc-title">Géométrie<span class="lcc-badge">cours</span></div><div class="lcc-desc">triangles · cercle · aires · coordonnées</div></div></a>
+        <a href="cours-mesures-cm1.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#dbeafe">📏</div><div class="lcc-body"><div class="lcc-title">Mesures<span class="lcc-badge">cours</span></div><div class="lcc-desc">conversions · aires · masses · volumes</div></div></a>
+        <a href="cours-temps-cm1.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#dbeafe">⏱️</div><div class="lcc-body"><div class="lcc-title">Temps<span class="lcc-badge">cours</span></div><div class="lcc-desc">durées · siècles · frise chronologique</div></div></a>
+        <a href="cours-proportionnalite-cm1.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#dbeafe">⚖️</div><div class="lcc-body"><div class="lcc-title">Proportionnalité<span class="lcc-badge">cours</span></div><div class="lcc-desc">tableaux · règle de 3 · vitesse</div></div></a>
+      </div>
+    </div>
+    <div class="lc-cat">
+      <div class="lc-cat-title">🏛️ Histoire &amp; Géographie</div>
+      <div class="lc-grid">
+        <a href="cours-histoire-geo-cm1.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#dbeafe">📖</div><div class="lcc-body"><div class="lcc-title">Histoire-Géo<span class="lcc-badge">cours</span></div><div class="lcc-desc">Grèce · Rome · Charlemagne · Capétiens</div></div></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════ CM2 ════ -->
+  <div id="lc-cm2" class="lc" hidden>
+    <div class="lc-cat">
+      <div class="lc-cat-title">📐 Mathématiques</div>
+      <div class="lc-grid">
+        <a href="cours-nombres-cm2.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#fef9c3">🔢</div><div class="lcc-body"><div class="lcc-title">Nombres<span class="lcc-badge">cours</span></div><div class="lcc-desc">milliards · entiers relatifs · puissances</div></div></a>
+        <a href="cours-decimaux-cm2.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#fef9c3">🔣</div><div class="lcc-body"><div class="lcc-title">Décimaux<span class="lcc-badge">cours</span></div><div class="lcc-desc">opérations avancées · notation scientifique</div></div></a>
+        <a href="cours-calcul-cm2.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#fef9c3">➕</div><div class="lcc-body"><div class="lcc-title">Calcul<span class="lcc-badge">cours</span></div><div class="lcc-desc">mult. 3×2 · division décimale · puissances</div></div></a>
+        <a href="cours-fractions-cm2.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#fef9c3">✂️</div><div class="lcc-body"><div class="lcc-title">Fractions<span class="lcc-badge">cours</span></div><div class="lcc-desc">PGCD · simplifier · dénominateurs différents</div></div></a>
+        <a href="cours-geometrie-cm2.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#fef9c3">🔷</div><div class="lcc-body"><div class="lcc-title">Géométrie<span class="lcc-badge">cours</span></div><div class="lcc-desc">quadrilatères · volumes · repérage</div></div></a>
+        <a href="cours-mesures-cm2.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#fef9c3">📏</div><div class="lcc-body"><div class="lcc-title">Mesures<span class="lcc-badge">cours</span></div><div class="lcc-desc">aires · volumes · masse volumique · vitesse</div></div></a>
+        <a href="cours-temps-cm2.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#fef9c3">⏳</div><div class="lcc-body"><div class="lcc-title">Temps<span class="lcc-badge">cours</span></div><div class="lcc-desc">siècles · av. J.-C. · fuseaux horaires</div></div></a>
+        <a href="cours-proportionnalite-cm2.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#fef9c3">⚖️</div><div class="lcc-body"><div class="lcc-title">Proportionnalité<span class="lcc-badge">cours</span></div><div class="lcc-desc">tableaux · règle de 3 · pourcentages</div></div></a>
+      </div>
+    </div>
+    <div class="lc-cat">
+      <div class="lc-cat-title">🏛️ Histoire &amp; Géographie</div>
+      <div class="lc-grid">
+        <a href="cours-histoire-geo-cm2.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#fef9c3">📖</div><div class="lcc-body"><div class="lcc-title">Histoire-Géo<span class="lcc-badge">cours</span></div><div class="lcc-desc">Grandes Découvertes · Louis XIV · Révolution</div></div></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════ 6e ════ -->
+  <div id="lc-6e" class="lc" hidden>
+    <div class="lc-cat">
+      <div class="lc-cat-title">📐 Mathématiques</div>
+      <div class="lc-grid">
+        <a href="cours-nombres-6e.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#fce7f3">🔢</div><div class="lcc-body"><div class="lcc-title">Nombres relatifs<span class="lcc-badge">cours</span></div><div class="lcc-desc">négatifs · valeur absolue · calculs</div></div></a>
+        <a href="cours-fractions-6e.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#fce7f3">✂️</div><div class="lcc-body"><div class="lcc-title">Fractions<span class="lcc-badge">cours</span></div><div class="lcc-desc">quotients · irréductibles · opérations</div></div></a>
+        <a href="cours-algebre-6e.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#fce7f3">🔡</div><div class="lcc-body"><div class="lcc-title">Algèbre<span class="lcc-badge">cours</span></div><div class="lcc-desc">expressions littérales · équations 1er degré</div></div></a>
+        <a href="cours-geometrie-6e.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#fce7f3">📐</div><div class="lcc-body"><div class="lcc-title">Géométrie<span class="lcc-badge">cours</span></div><div class="lcc-desc">Pythagore · triangles · cercle · repérage</div></div></a>
+        <a href="cours-probabilites-6e.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#fce7f3">🎲</div><div class="lcc-body"><div class="lcc-title">Probabilités<span class="lcc-badge">cours</span></div><div class="lcc-desc">P(A) · complémentaires · statistiques</div></div></a>
+        <a href="cours-proportionnalite-6e.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#fce7f3">⚖️</div><div class="lcc-body"><div class="lcc-title">Proportionnalité<span class="lcc-badge">cours</span></div><div class="lcc-desc">y=kx · graphique · pourcentages · vitesse</div></div></a>
+        <a href="cours-mesures-6e.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#fce7f3">📏</div><div class="lcc-body"><div class="lcc-title">Mesures SI<span class="lcc-badge">cours</span></div><div class="lcc-desc">préfixes · aires · volumes · vitesse</div></div></a>
+      </div>
+    </div>
+    <div class="lc-cat">
+      <div class="lc-cat-title">🏛️ Histoire &amp; Géographie</div>
+      <div class="lc-grid">
+        <a href="cours-histoire-geo-6e.html" class="lc-card lc-card-cours"><div class="lcc-icon" style="background:#fce7f3">📖</div><div class="lcc-body"><div class="lcc-title">Histoire-Géo<span class="lcc-badge">cours</span></div><div class="lcc-desc">Mésopotamie · Égypte · Grèce · Rome</div></div></a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">École Facile — Cours CP · CE1 · CE2 · CM1 · CM2 · 6ème</footer>
+
+<script>
+function selectLvl(lvl, btn) {
+  document.querySelectorAll('.lp-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.querySelectorAll('.lc').forEach(function(c){ c.hidden = true; });
+  var el = document.getElementById('lc-' + lvl);
+  if (el) { el.hidden = false; }
+  try { localStorage.setItem('ef_last_level', lvl); } catch(e){}
+}
+
+(function(){
+  var hash = location.hash.slice(1);
+  var saved;
+  try { saved = localStorage.getItem('ef_last_level'); } catch(e){}
+  var lvl = hash || saved || 'ce2';
+  var btn = document.querySelector('.lp-btn.lp-' + lvl);
+  if (btn) selectLvl(lvl, btn);
+  else selectLvl('ce2', document.querySelector('.lp-btn.lp-ce2'));
+})();
+</script>
+<script src="sync.js"></script>
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>

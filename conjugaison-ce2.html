@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="École Facile">
+<meta name="application-name" content="École Facile">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/conjugaison-ce2.html">
+<meta property="og:title" content="Conjugaison — CE2 | École Facile">
+<meta property="og:description" content="Exercices interactifs de conjugaison CE2 — présent, passé composé, imparfait, futur. Correction immédiate. Gratuit sur École Facile.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/conjugaison-ce2.html">
+<meta name="description" content="Exercices interactifs de conjugaison CE2 — présent, passé composé, imparfait, futur. Correction immédiate. Gratuit sur École Facile.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conjugaison — CE2 | École Facile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header" style="background:linear-gradient(135deg,#5b21b6,#7c3aed);">
+  <span class="emoji-header">📝</span>
+  <h1>Conjugaison</h1>
+  <p>Présent, passé composé, imparfait, futur</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+  <div class="badge-niveau">📝 CE2 — Conjugaison</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.88rem;color:#555;margin-top:8px;line-height:1.9;">
+      📝 <strong>1er groupe</strong> : verbes en -ER (ex : manger, jouer) → je joue, tu joues…<br>
+      📗 <strong>2e groupe</strong> : verbes en -IR (ex : finir, grandir) → je finis, tu finis…<br>
+      🕐 <strong>Présent</strong> : action qui se passe maintenant<br>
+      🕑 <strong>Imparfait</strong> : action passée qui durait (je jouais…)<br>
+      🕒 <strong>Passé composé</strong> : avoir/être + participe passé (j'ai joué / je suis allé)<br>
+      🕓 <strong>Futur simple</strong> : action à venir, terminaisons -rai, -ras, -ra…
+    </div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#5b21b6">
+    <div class="ex-title"><span class="ex-badge" style="background:#5b21b6">Ex 1</span> Identifier le groupe du verbe <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 2</span> Présent de l'indicatif — 1er groupe <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 3</span> Présent de l'indicatif — être, avoir, aller, faire <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0891b2">
+    <div class="ex-title"><span class="ex-badge" style="background:#0891b2">Ex 4</span> Imparfait <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 5</span> Futur simple <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 6</span> Passé composé — avec avoir <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Quel temps est-ce ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex7"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CE2</footer>
+
+<script src="exercises.js"></script>
+<script>
+buildQCM([
+  { card:'manger', q:'À quel groupe appartient ce verbe ?', correct:'1er groupe (-ER)', choices:['1er groupe (-ER)','2e groupe (-IR)','3e groupe (irrégulier)'] },
+  { card:'finir', q:'À quel groupe appartient ce verbe ?', correct:'2e groupe (-IR)', choices:['1er groupe (-ER)','2e groupe (-IR)','3e groupe (irrégulier)'] },
+  { card:'aller', q:'À quel groupe appartient ce verbe ?', correct:'3e groupe (irrégulier)', choices:['1er groupe (-ER)','2e groupe (-IR)','3e groupe (irrégulier)'] },
+  { card:'choisir', q:'À quel groupe appartient ce verbe ?', correct:'2e groupe (-IR)', choices:['1er groupe (-ER)','2e groupe (-IR)','3e groupe (irrégulier)'] },
+  { card:'jouer', q:'À quel groupe appartient ce verbe ?', correct:'1er groupe (-ER)', choices:['1er groupe (-ER)','2e groupe (-IR)','3e groupe (irrégulier)'] },
+  { card:'venir', q:'À quel groupe appartient ce verbe ?', correct:'3e groupe (irrégulier)', choices:['1er groupe (-ER)','2e groupe (-IR)','3e groupe (irrégulier)'] },
+], 'ex1');
+
+buildQCM([
+  { card:'Je _____ (danser)', q:'Présent — verbe danser, sujet "je"', correct:'danse', choices:['dansse','danse','dansons','dansez'] },
+  { card:'Nous _____ (manger)', q:'Présent — verbe manger, sujet "nous"', correct:'mangeons', choices:['mangons','mangeont','mangeons','mangez'] },
+  { card:'Ils _____ (jouer)', q:'Présent — verbe jouer, sujet "ils"', correct:'jouent', choices:['joue','jouons','jouez','jouent'] },
+  { card:'Tu _____ (aimer)', q:'Présent — verbe aimer, sujet "tu"', correct:'aimes', choices:['aime','aimes','aimons','aimez'] },
+  { card:'Elle _____ (chanter)', q:'Présent — verbe chanter, sujet "elle"', correct:'chante', choices:['chantes','chante','chantons','chantent'] },
+  { card:'Vous _____ (travailler)', q:'Présent — verbe travailler, sujet "vous"', correct:'travaillez', choices:['travaillez','travaille','travaillons','travaillent'] },
+], 'ex2');
+
+buildQCM([
+  { card:'Je _____ (être)', q:'Présent de être', correct:'suis', choices:['suis','est','sommes','êtes'] },
+  { card:'Tu _____ (avoir)', q:'Présent de avoir', correct:'as', choices:['a','as','avons','ont'] },
+  { card:'Il _____ (aller)', q:'Présent de aller', correct:'va', choices:['alle','vas','va','allons'] },
+  { card:'Nous _____ (faire)', q:'Présent de faire', correct:'faisons', choices:['faisent','faisons','font','faites'] },
+  { card:'Elles _____ (être)', q:'Présent de être', correct:'sont', choices:['sont','est','êtes','sommes'] },
+  { card:'Vous _____ (avoir)', q:'Présent de avoir', correct:'avez', choices:['avons','avez','ont','as'] },
+], 'ex3');
+
+buildQCM([
+  { card:'Je _____ (jouer) — imparfait', q:'Imparfait — verbe jouer, sujet "je"', correct:'jouais', choices:['jouais','jouai','jouait','jouions'] },
+  { card:'Il _____ (manger) — imparfait', q:'Imparfait — verbe manger, sujet "il"', correct:'mangeait', choices:['mangeait','mangait','mangeais','mangeaient'] },
+  { card:'Nous _____ (chanter) — imparfait', q:'Imparfait — verbe chanter, sujet "nous"', correct:'chantions', choices:['chantions','chantais','chantait','chantaient'] },
+  { card:'Elles _____ (danser) — imparfait', q:'Imparfait — verbe danser, sujet "elles"', correct:'dansaient', choices:['dansait','dansais','dansaient','dansions'] },
+  { card:'Tu _____ (finir) — imparfait', q:'Imparfait — verbe finir, sujet "tu"', correct:'finissais', choices:['finissais','finissait','finissions','finis'] },
+], 'ex4');
+
+buildQCM([
+  { card:'Je _____ (partir) — futur', q:'Futur simple — verbe partir, sujet "je"', correct:'partirai', choices:['partirai','partira','partirons','partirez'] },
+  { card:'Elle _____ (jouer) — futur', q:'Futur simple — verbe jouer, sujet "elle"', correct:'jouera', choices:['jouera','joueras','jouerai','joueront'] },
+  { card:'Vous _____ (manger) — futur', q:'Futur simple — verbe manger, sujet "vous"', correct:'mangerez', choices:['mangerez','mangera','mangerons','mangeront'] },
+  { card:'Ils _____ (chanter) — futur', q:'Futur simple — verbe chanter, sujet "ils"', correct:'chanteront', choices:['chanterons','chanterez','chanteront','chantera'] },
+  { card:'Tu _____ (finir) — futur', q:'Futur simple — verbe finir, sujet "tu"', correct:'finiras', choices:['finiras','finira','finirai','finirons'] },
+  { card:'Nous _____ (être) — futur', q:'Futur simple — verbe être, sujet "nous"', correct:'serons', choices:['serons','serez','seront','sera'] },
+], 'ex5');
+
+buildQCM([
+  { card:'J'ai _____ (jouer)', q:'Participe passé de jouer', correct:'joué', choices:['joué','jouait','jouant','jouera'] },
+  { card:'Elle a _____ (manger)', q:'Participe passé de manger', correct:'mangé', choices:['mangé','mangeait','mangeant','mangera'] },
+  { card:'Nous avons _____ (finir)', q:'Participe passé de finir', correct:'fini', choices:['fini','finissant','finissait','finira'] },
+  { card:'Il a _____ (choisir)', q:'Participe passé de choisir', correct:'choisi', choices:['choisi','choisissait','choisissant','choisira'] },
+  { card:'Ils ont _____ (regarder)', q:'Participe passé de regarder', correct:'regardé', choices:['regardé','regardait','regardant','regardera'] },
+  { card:'Tu as _____ (danser)', q:'Participe passé de danser', correct:'dansé', choices:['dansé','dansait','dansant','dansera'] },
+], 'ex6');
+
+buildPaires([
+  { q:'Associe chaque phrase à son temps.',
+    pairs:[
+      ['Je mange une pomme.','présent'],
+      ['Je mangeais une pomme.','imparfait'],
+      ['J'ai mangé une pomme.','passé composé'],
+      ['Je mangerai une pomme.','futur simple']
+    ]
+  },
+  { q:'Associe chaque verbe à son groupe.',
+    pairs:[
+      ['jouer','1er groupe'],
+      ['grandir','2e groupe'],
+      ['faire','3e groupe'],
+      ['chanter','1er groupe']
+    ]
+  },
+], 'ex7');
+</script>
+
+<script src="sync.js"></script>
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>
