@@ -27,13 +27,13 @@ body {
   background: linear-gradient(135deg, #7c3aed, #3b82f6);
   color: white;
   text-align: center;
-  padding: 24px 20px 20px;
+  padding: 10px 20px 8px;
   position: relative;
 }
 
-.site-header .emoji-header { font-size: 3rem; display: block; margin-bottom: 6px; }
-.site-header h1 { font-size: 2rem; font-weight: 900; letter-spacing: -0.5px; }
-.site-header p { font-size: 1rem; opacity: 0.9; margin-top: 4px; }
+.site-header .emoji-header { font-size: 1.5rem; display: inline; margin-right: 7px; vertical-align: middle; }
+.site-header h1 { font-size: 1.45rem; font-weight: 900; letter-spacing: -0.3px; }
+.site-header p { font-size: 0.8rem; opacity: 0.85; margin-top: 3px; }
 
 /* ===== NAV ===== */
 .nav-back {
