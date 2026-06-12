@@ -760,3 +760,66 @@ main { max-width: 720px; margin: 0 auto; padding: 30px 20px 60px; }
   .frac-card   { font-size: 1.7rem; }
 }
 
+/* ===== COURS PAGES =====
+   Variables set inline per page:
+   --lc1 --lc2  gradient  •  --lb  border clair  •  --la  accent
+   --ld  accent foncé  •  --lbg  fond  •  --lt  texte  •  --ls  ombre
+*/
+body.cpage{background:var(--lbg,#f8f7ff);color:var(--lt,#1e1b4b);margin:0}
+body.cpage main{max-width:720px;margin:0 auto;padding:22px 18px 60px}
+.cpage .cs{margin-bottom:26px}
+.cpage .cs h2{font-size:1.1rem;font-weight:900;margin:0 0 12px;padding-bottom:7px;border-bottom:2.5px solid var(--lb);color:var(--ld)}
+.cpage .dbox{background:#dbeafe;border-left:4px solid #1d4ed8;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.cpage .dbox .lbl{font-size:.65rem;font-weight:900;color:#1d4ed8;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.cpage .dbox p,.cpage .dbox ul{font-size:.9rem;font-weight:700;color:#1e3a8a;margin:0;line-height:1.6}
+.cpage .ebox{background:#fef9c3;border-left:4px solid #ca8a04;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.cpage .ebox .lbl{font-size:.65rem;font-weight:900;color:#92400e;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.cpage .ebox p,.cpage .ebox ul{font-size:.9rem;font-weight:700;color:#713f12;margin:0;line-height:1.6}
+.cpage .rbox{background:#dcfce7;border-left:4px solid #16a34a;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.cpage .rbox .lbl{font-size:.65rem;font-weight:900;color:#15803d;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.cpage .rbox p,.cpage .rbox ul{font-size:.9rem;font-weight:700;color:#14532d;margin:0;line-height:1.6}
+.cpage .wbox{background:#fee2e2;border-left:4px solid #dc2626;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
+.cpage .wbox .lbl{font-size:.65rem;font-weight:900;color:#dc2626;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.cpage .wbox p,.cpage .wbox ul{font-size:.9rem;font-weight:700;color:#991b1b;margin:0;line-height:1.6}
+.cpage .retenir{background:#fff;border:2.5px solid var(--la);border-radius:16px;padding:16px 18px;margin:22px 0 18px}
+.cpage .retenir h3{font-size:.78rem;font-weight:900;color:var(--la);text-transform:uppercase;letter-spacing:1px;margin:0 0 10px}
+.cpage .retenir ul{margin:0;padding-left:18px}
+.cpage .retenir li{font-size:.88rem;font-weight:700;color:var(--lt);line-height:1.7}
+.cpage .cta{text-align:center;margin-top:26px;padding:18px;background:#fff;border-radius:16px;border:2px solid var(--lb)}
+.cpage .cta p{font-size:.82rem;color:#6b7280;font-weight:700;margin:0 0 10px}
+.cpage .btn-ex{display:inline-block;background:linear-gradient(135deg,var(--lc1),var(--lc2));color:#fff;padding:13px 26px;border-radius:13px;font-size:.95rem;font-weight:900;text-decoration:none;box-shadow:0 4px 12px var(--ls)}
+.cpage .vgrid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));margin:10px 0}
+.cpage .vcrd{background:#fff;border:2px solid var(--lb);border-radius:11px;padding:9px;text-align:center}
+.cpage .vcrd .vl{font-size:.7rem;font-weight:900;color:var(--la);margin-bottom:4px}
+.cpage .vcrd .vv{font-size:1.05rem;font-weight:900;color:var(--ld)}
+.cpage .vcrd .vs{font-size:.65rem;font-weight:700;color:#9ca3af;margin-top:2px}
+.cpage .frise{display:flex;flex-direction:column;gap:0;margin:12px 0}
+.cpage .frise-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--lb)}
+.cpage .frise-item:last-child{border-bottom:none}
+.cpage .frise-dot{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--lc1),var(--lc2));display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:900;color:#fff;flex-shrink:0}
+.cpage .frise-content{flex:1}
+.cpage .frise-date,.cpage .frise-title{font-size:.68rem;font-weight:900;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px;color:var(--la)}
+.cpage .frise-text{font-size:.88rem;font-weight:700;line-height:1.5}
+.cpage .formula-card{background:linear-gradient(135deg,var(--ld),var(--la));color:#fff;border-radius:16px;padding:14px 18px;margin:10px 0;text-align:center}
+.cpage .formula-card .fc-label{font-size:.65rem;font-weight:900;opacity:.75;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.cpage .formula-card .fc-formula{font-size:1.1rem;font-weight:900;font-family:monospace}
+.cpage .formula-card .fc-desc{font-size:.8rem;opacity:.85;margin-top:5px;font-weight:700}
+.cpage .visbox{background:var(--lbg);border:2px solid var(--lb);border-radius:14px;padding:14px 10px 10px;margin:12px 0;text-align:center;overflow:hidden}
+.cpage .visbox svg{max-width:100%;height:auto;display:block;margin:0 auto}
+.cpage .visbox .vis-caption{font-size:.72rem;font-weight:900;color:var(--ld);margin-top:8px}
+.cpage .conv-table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.83rem}
+.cpage .conv-table th{background:linear-gradient(135deg,var(--ld),var(--la));color:#fff;padding:8px 10px;font-weight:900;text-align:center}
+.cpage .conv-table td{border:1.5px solid var(--lb);padding:8px 10px;font-weight:700;text-align:center;background:#fff}
+.cpage .conv-table tr:nth-child(even) td{background:var(--lbg)}
+.cpage .conv-ladder{display:flex;flex-direction:column;gap:2px;margin:10px 0;align-items:center}
+.cpage .cl-row{display:flex;align-items:center;gap:0}
+.cpage .cl-box{background:#fff;border:2px solid var(--lb);border-radius:8px;padding:8px 14px;text-align:center;min-width:72px}
+.cpage .cl-box .cl-unit{font-size:.85rem;font-weight:900;color:var(--ld)}
+.cpage .cl-box .cl-val{font-size:.65rem;font-weight:700;color:var(--la)}
+.cpage .cl-arrow{font-size:.75rem;font-weight:900;color:var(--la);padding:0 6px;text-align:center}
+body.cpage .badge-niveau{display:inline-block;background:rgba(255,255,255,.2);border-radius:20px;padding:4px 14px;font-size:.72rem;font-weight:900;letter-spacing:1px;margin-bottom:8px}
+.cpage .cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
+.cpage .cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
+.cpage .cours-header p{font-size:.87rem;opacity:.88;margin:0}
+body.cpage .site-footer{text-align:center;padding:16px;font-size:.8rem;color:#9ca3af;border-top:1px solid #e5e7eb;margin-top:10px}
+

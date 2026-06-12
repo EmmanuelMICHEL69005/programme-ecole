@@ -17,42 +17,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-body{font-family:'Nunito',sans-serif;background:#f0fdf4;color:#1e1b4b;margin:0}
-main{max-width:720px;margin:0 auto;padding:22px 18px 60px}
-.cs{margin-bottom:28px}
-.cs h2{font-size:1.15rem;font-weight:900;margin:0 0 14px;padding-bottom:8px;border-bottom:3px solid #bbf7d0;color:#166534}
-.dbox{background:#dbeafe;border-left:5px solid #1d4ed8;border-radius:0 16px 16px 0;padding:14px 16px;margin:10px 0}
-.dbox .lbl{font-size:.65rem;font-weight:900;color:#1d4ed8;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
-.dbox p,.dbox ul{font-size:.95rem;font-weight:700;color:#1e3a8a;margin:0;line-height:1.6}
-.ebox{background:#fef9c3;border-left:5px solid #ca8a04;border-radius:0 16px 16px 0;padding:14px 16px;margin:10px 0}
-.ebox .lbl{font-size:.65rem;font-weight:900;color:#92400e;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
-.ebox p,.ebox ul{font-size:.95rem;font-weight:700;color:#713f12;margin:0;line-height:1.6}
-.rbox{background:#dcfce7;border-left:5px solid #16a34a;border-radius:0 16px 16px 0;padding:14px 16px;margin:10px 0}
-.rbox .lbl{font-size:.65rem;font-weight:900;color:#15803d;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
-.rbox p,.rbox ul{font-size:.95rem;font-weight:700;color:#14532d;margin:0;line-height:1.6}
-.wbox{background:#fee2e2;border-left:5px solid #dc2626;border-radius:0 16px 16px 0;padding:14px 16px;margin:10px 0}
-.wbox .lbl{font-size:.65rem;font-weight:900;color:#dc2626;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
-.wbox p,.wbox ul{font-size:.95rem;font-weight:700;color:#991b1b;margin:0;line-height:1.6}
-.retenir{background:#fff;border:3px solid #16a34a;border-radius:18px;padding:18px 20px;margin:24px 0 20px}
-.retenir h3{font-size:.8rem;font-weight:900;color:#16a34a;text-transform:uppercase;letter-spacing:1px;margin:0 0 12px}
-.retenir ul{margin:0;padding-left:20px}
-.retenir li{font-size:.92rem;font-weight:700;color:#1e1b4b;line-height:1.8}
-.cta{text-align:center;margin-top:28px;padding:20px;background:#fff;border-radius:18px;border:2.5px solid #bbf7d0}
-.cta p{font-size:.85rem;color:#6b7280;font-weight:700;margin:0 0 12px}
-.btn-ex{display:inline-block;background:linear-gradient(135deg,#16a34a,#22c55e);color:#fff;padding:14px 28px;border-radius:14px;font-size:.98rem;font-weight:900;text-decoration:none;box-shadow:0 4px 16px rgba(22,163,74,.4)}
-.vgrid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));margin:10px 0}
-.vcrd{background:#fff;border:2.5px solid #bbf7d0;border-radius:14px;padding:10px;text-align:center}
-.vcrd .vl{font-size:.7rem;font-weight:900;color:#6b7280;margin-bottom:4px}
-.vcrd .vv{font-size:1.1rem;font-weight:900;color:#166534}
-.vcrd .vs{font-size:.68rem;font-weight:700;color:#9ca3af;margin-top:2px}
-.visbox{background:#f0fdf4;border:2.5px solid #bbf7d0;border-radius:16px;padding:16px 12px 12px;margin:14px 0;text-align:center;overflow:hidden}
-.visbox svg{max-width:100%;height:auto;display:block;margin:0 auto}
-.visbox .vis-caption{font-size:.72rem;font-weight:900;color:#6b7280;margin-top:10px}
-.badge-niveau{display:inline-block;background:rgba(255,255,255,.2);border-radius:20px;padding:5px 16px;font-size:.75rem;font-weight:900;letter-spacing:1px;margin-bottom:10px}
-.cours-header{text-align:center;padding:22px 20px 18px;color:#fff}
-.cours-header h1{font-size:1.8rem;font-weight:900;margin:8px 0 5px}
-.cours-header p{font-size:.9rem;opacity:.9;margin:0}
-.site-footer{text-align:center;padding:18px;font-size:.8rem;color:#9ca3af;border-top:1px solid #e5e7eb;margin-top:12px}
+:root{--lc1:#16a34a;--lc2:#22c55e;--lb:#bbf7d0;--la:#16a34a;--ld:#15803d;--lbg:#f0fdf4;--lt:#14532d;--ls:rgba(22,163,74,.3)}
 .piece-grid{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:12px 0}
 .piece{background:#fef9c3;border:3px solid #fbbf24;border-radius:50%;width:56px;height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:900;font-size:.8rem;color:#92400e}
 .billet{background:#dcfce7;border:3px solid #16a34a;border-radius:8px;padding:8px 14px;font-weight:900;font-size:.85rem;color:#166534}
@@ -62,7 +27,7 @@ main{max-width:720px;margin:0 auto;padding:22px 18px 60px}
 .mois-cell{background:#dbeafe;border:2px solid #93c5fd;border-radius:10px;padding:8px 4px;text-align:center;font-size:.72rem;font-weight:900;color:#1d4ed8}
 </style>
 </head>
-<body>
+<body class="cpage">
 <header class="cours-header" style="background:linear-gradient(135deg,#16a34a,#22c55e)">
   <div class="badge-niveau">CP</div>
   <h1>📏 Les mesures</h1>
