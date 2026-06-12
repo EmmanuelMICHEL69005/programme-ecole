@@ -97,6 +97,22 @@
     /* ── EPS ── */
     'eps-cycle2.html':      [{h:'eps-cycle3.html',l:'EPS Cycle 3 — CM1/CM2/6e'},{h:'histoire-geo-cp.html',l:'Histoire-Géo CP'},{h:'histoire-geo-ce1.html',l:'Histoire-Géo CE1'},{h:'histoire-geo-ce2.html',l:'Histoire-Géo CE2'}],
     'eps-cycle3.html':      [{h:'eps-cycle2.html',l:'EPS Cycle 2 — CP/CE1/CE2'},{h:'histoire-geo-cm1.html',l:'Histoire-Géo CM1'},{h:'histoire-geo-cm2.html',l:'Histoire-Géo CM2'},{h:'histoire-geo-6e.html',l:'Histoire-Géo 6e'}],
+
+    /* ── Cours → exercices ── */
+    'cours-fractions-ce2.html':     [{h:'fiche1.html',l:'Exercices fractions CE2'},{h:'fiche2.html',l:'Fractions — comparer'},{h:'fiche3.html',l:'Fractions — calculer'},{h:'cours-fractions-cm1.html',l:'Cours fractions CM1 — étape suivante'}],
+    'cours-fractions-cm1.html':     [{h:'fractions-cm1.html',l:'Exercices fractions CM1'},{h:'cours-fractions-ce2.html',l:'Cours fractions CE2 — révision'},{h:'cours-fractions-cm2.html',l:'Cours fractions CM2 — étape suivante'}],
+    'cours-fractions-cm2.html':     [{h:'fractions-cm2.html',l:'Exercices fractions CM2'},{h:'cours-fractions-cm1.html',l:'Cours fractions CM1 — révision'},{h:'cours-fractions-6e.html',l:'Cours fractions 6e — étape suivante'}],
+    'cours-fractions-6e.html':      [{h:'fractions-6e.html',l:'Exercices fractions 6e'},{h:'cours-fractions-cm2.html',l:'Cours fractions CM2 — révision'}],
+    'cours-nombres-ce2.html':       [{h:'nombres-ce2.html',l:'Exercices nombres CE2'},{h:'decimaux-ce2.html',l:'Décimaux CE2'},{h:'cours-mesures-ce2.html',l:'Cours mesures CE2'}],
+    'cours-multiplication-ce2.html':[{h:'tables-ce2.html',l:'Exercices tables ×'},{h:'multiplication-division-ce2.html',l:'Multiplication et division CE2'},{h:'division-ce2.html',l:'Division euclidienne CE2'}],
+    'cours-geometrie-ce2.html':     [{h:'geometrie-ce2.html',l:'Exercices géométrie CE2'},{h:'symetrie-ce2.html',l:'Symétrie CE2'},{h:'solides.html',l:'Solides CE2'},{h:'cours-angles-cm1.html',l:'Cours angles CM1 — étape suivante'}],
+    'cours-mesures-ce2.html':       [{h:'mesures-ce2.html',l:'Exercices mesures CE2'},{h:'mesures.html',l:'Longueurs et masses CE2'},{h:'temps.html',l:'Temps et monnaie CE2'}],
+    'cours-angles-cm1.html':        [{h:'angles-cm1.html',l:'Exercices angles CM1'},{h:'geometrie-cm1.html',l:'Géométrie CM1'},{h:'cours-geometrie-ce2.html',l:'Cours géométrie CE2 — révision'}],
+    'cours-proportionnalite-cm2.html':[{h:'proportionnalite-cm2.html',l:'Exercices proportionnalité CM2'},{h:'proportionnalite-cm1.html',l:'Proportionnalité CM1 — révision'},{h:'proportionnalite-6e.html',l:'Proportionnalité 6e — étape suivante'}],
+    'cours-histoire-geo-ce2.html':  [{h:'histoire-geo-ce2.html',l:'Exercices histoire-géo CE2'},{h:'cours-histoire-geo-cm1.html',l:'Cours histoire-géo CM1 — étape suivante'}],
+    'cours-histoire-geo-cm1.html':  [{h:'histoire-geo-cm1.html',l:'Exercices histoire-géo CM1'},{h:'cours-histoire-geo-ce2.html',l:'Cours histoire-géo CE2 — révision'},{h:'cours-histoire-geo-cm2.html',l:'Cours histoire-géo CM2 — étape suivante'}],
+    'cours-histoire-geo-cm2.html':  [{h:'histoire-geo-cm2.html',l:'Exercices histoire-géo CM2'},{h:'cours-histoire-geo-cm1.html',l:'Cours histoire-géo CM1 — révision'},{h:'cours-histoire-geo-6e.html',l:'Cours histoire-géo 6e — étape suivante'}],
+    'cours-histoire-geo-6e.html':   [{h:'histoire-geo-6e.html',l:'Exercices histoire-géo 6e'},{h:'cours-histoire-geo-cm2.html',l:'Cours histoire-géo CM2 — révision'}],
   };
 
   var cur = window.location.pathname.split('/').pop() || 'index.html';
