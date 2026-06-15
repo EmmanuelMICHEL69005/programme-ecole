@@ -79,9 +79,33 @@
     <div id="ex7"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#d97706">
+    <div class="ex-title"><span class="ex-badge" style="background:#d97706">Ex 8</span> Valeur du présent <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex8"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0891b2">
+    <div class="ex-title"><span class="ex-badge" style="background:#0891b2">Ex 9</span> Conjuguer au conditionnel présent <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex9"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#dc2626">
+    <div class="ex-title"><span class="ex-badge" style="background:#dc2626">Ex 10</span> Indicatif ou Impératif ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex10"></div>
+  </div>
+
+  <div style="background:#f5f3ff;border-left:4px solid #7c3aed;border-radius:10px;padding:14px 16px;margin:16px 0">
+    <div style="font-weight:900;color:#4c1d95;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CE2</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <a href="grammaire-ce2.html" style="background:#7c3aed;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">🔤 Grammaire CE2</a>
+      <a href="orthographe-ce2.html" style="background:#7c3aed;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">✏️ Orthographe CE2</a>
+      <a href="vocabulaire-ce2.html" style="background:#7c3aed;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">📚 Vocabulaire CE2</a>
+    </div>
+  </div>
+
 </main>
 
-<footer class="site-footer">Fait avec ❤️ pour Clémence — CE2</footer>
+<footer class="site-footer">Fait avec ❤️ pour Clémence</footer>
 
 <script src="exercises.js"></script>
 <script>
@@ -156,6 +180,38 @@ buildPaires([
     ]
   },
 ], 'ex7');
+
+buildQCM([
+  { card:'"Il pleut."', q:'Quelle est la valeur du présent dans cette phrase ?', correct:'fait actuel', choices:['fait actuel','habitude','vérité générale','action en cours'] },
+  { card:'"Je me lève à 7h tous les jours."', q:'Quelle est la valeur du présent dans cette phrase ?', correct:'habitude', choices:['fait actuel','habitude','vérité générale','condition'] },
+  { card:'"La Terre tourne autour du Soleil."', q:'Quelle est la valeur du présent dans cette phrase ?', correct:'vérité générale', choices:['fait actuel','habitude','vérité générale','action en cours'] },
+  { card:'"Attention, il arrive !"', q:'Quelle est la valeur du présent dans cette phrase ?', correct:'action en cours', choices:['fait actuel','habitude','vérité générale','action en cours'] },
+  { card:'"Si tu travailles, tu réussis."', q:'Quelle est la valeur du présent dans cette phrase ?', correct:'condition', choices:['fait actuel','habitude','vérité générale','condition'] },
+], 'ex8');
+
+buildQCM([
+  { card:'Je _____ (vouloir) — conditionnel présent', q:'Conditionnel présent de "vouloir", sujet "je"', correct:'voudrais', choices:['voudrais','voudrai','voudraient','voulais'] },
+  { card:'Il _____ (pouvoir) — conditionnel présent', q:'Conditionnel présent de "pouvoir", sujet "il"', correct:'pourrait', choices:['pourrait','pourra','pouvait','pourrais'] },
+  { card:'Nous _____ (aller) — conditionnel présent', q:'Conditionnel présent de "aller", sujet "nous"', correct:'irions', choices:['irions','irons','allions','iriez'] },
+  { card:'Tu _____ (faire) — conditionnel présent', q:'Conditionnel présent de "faire", sujet "tu"', correct:'ferais', choices:['ferais','feras','faisais','ferait'] },
+  { card:'Vous _____ (avoir) — conditionnel présent', q:'Conditionnel présent de "avoir", sujet "vous"', correct:'auriez', choices:['auriez','aurez','aviez','auraient'] },
+], 'ex9');
+
+buildTri([
+  { q:'Classe chaque phrase selon son mode.',
+    cats:['Indicatif','Impératif'],
+    items:[
+      {v:'Tu manges.', cat:'Indicatif'},
+      {v:'Ils jouent.', cat:'Indicatif'},
+      {v:'Nous partons.', cat:'Indicatif'},
+      {v:'Elle dort.', cat:'Indicatif'},
+      {v:'Mange !', cat:'Impératif'},
+      {v:'Jouez !', cat:'Impératif'},
+      {v:'Partons !', cat:'Impératif'},
+      {v:'Dors !', cat:'Impératif'},
+    ]
+  }
+], 'ex10');
 </script>
 
 <script src="sync.js"></script>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/orthographe-cm1.html">
+<meta property="og:title" content="Orthographe — CM1 | École Facile">
+<meta property="og:description" content="Exercices d'orthographe CM1 — accords dans le GN, accord sujet-verbe, participe passé avec être.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/orthographe-cm1.html">
+<meta name="description" content="Exercices d'orthographe CM1 — accords dans le GN, accord sujet-verbe, participe passé avec être, homophones.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orthographe — CM1 | École Facile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">
+  <span class="emoji-header">✏️</span>
+  <h1>Orthographe</h1>
+  <p>Accords, participe passé, homophones</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+<main>
+  <div class="badge-niveau">✏️ CM1 — Orthographe</div>
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.88rem;color:#555;margin-top:8px;line-height:1.9;">
+      🔑 Chaîne d'accords dans le GN : dét. + adj. + <strong>nom</strong> → tout s'accorde avec le nom<br>
+      🔑 Accord sujet-verbe : même avec sujet inversé ou éloigné<br>
+      🔑 PP avec <strong>être</strong> → s'accorde avec le sujet<br>
+      📌 Homophones : <strong>a/à · on/ont · son/sont · ce/se · ou/où</strong>
+    </div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#1d4ed8">
+    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8">Ex 1</span> Accords dans le groupe nominal <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex1"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#2563eb">
+    <div class="ex-title"><span class="ex-badge" style="background:#2563eb">Ex 2</span> Accord sujet-verbe <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex2"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#0891b2">
+    <div class="ex-title"><span class="ex-badge" style="background:#0891b2">Ex 3</span> Participe passé avec être <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex3"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 4</span> Homophones a/à · on/ont · son/sont <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex4"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 5</span> ce/se · ou/où · ces/ses <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex5"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 6</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex6"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Associe l'homophone à son remplacement <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex7"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#d97706">
+    <div class="ex-title"><span class="ex-badge" style="background:#d97706">Ex 8</span> Accord du GN complet <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex8"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 9</span> Participe passé avec AVOIR : accord ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex9"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#dc2626">
+    <div class="ex-title"><span class="ex-badge" style="background:#dc2626">Ex 10</span> Trier les homophones : a/à · on/ont <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex10"></div>
+  </div>
+  <div style="background:#eff6ff;border-left:4px solid #3b82f6;border-radius:10px;padding:14px 16px;margin:16px 0">
+    <div style="font-weight:900;color:#1e3a8a;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CM1</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <a href="conjugaison-cm1.html" style="background:#3b82f6;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">📝 Conjugaison CM1</a>
+      <a href="grammaire-cm1.html" style="background:#3b82f6;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">🔤 Grammaire CM1</a>
+      <a href="vocabulaire-cm1.html" style="background:#3b82f6;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">📚 Vocabulaire CM1</a>
+    </div>
+  </div>
+</main>
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CM1</footer>
+<script src="exercises.js"></script>
+<script>
+buildQCM([
+  { card:'"les petit___ chien___"', q:'Quelle est la forme correcte ?', correct:'les petits chiens', choices:['les petit chien','les petits chiens','les petites chiens','les petit chiens'] },
+  { card:'"une belle fleur ___"', q:'"belle" est déjà accordé — que vaut "fraîche" ici ?', correct:'une belle fleur fraîche', choices:['une belle fleur fraîche','une belle fleur fraîch','une belle fleur frais','une belle fleurs fraîche'] },
+  { card:'"des maisons blanc___"', q:'Forme correcte de l\'adjectif', correct:'des maisons blanches', choices:['des maisons blanc','des maisons blancs','des maisons blanche','des maisons blanches'] },
+  { card:'"un beau cheval___"', q:'Pluriel du GN', correct:'de beaux chevaux', choices:['des beaux chevaux','des beau chevaux','de beaux chevaux','des beau cheval'] },
+  { card:'"des travaux difficile___"', q:'Forme correcte', correct:'des travaux difficiles', choices:['des travaux difficile','des travaux difficiles','des travail difficile','des travaux difficils'] },
+], 'ex1');
+
+buildQCM([
+  { card:'"Les oiseaux ___ chanter."', q:'Accord du verbe "chanter"', correct:'aiment à', choices:['aime à','aimons à','aiment à','aimez à'] },
+  { card:'"La directrice et ses élèves ___ présents."', q:'Accord de "être" au présent', correct:'sont', choices:['est','sommes','sont','êtes'] },
+  { card:'"Chantent dans la forêt ___ oiseau."', q:'Quel verbe accorde-t-on ?', correct:'chantent (accord avec "oiseaux")', choices:['chante (accord avec "forêt")','chantent (accord avec "oiseaux")','chantez (accord avec "vous")','chantons (accord avec "nous")'] },
+  { card:'"Ni Paul ni Marie ne ___ venu."', q:'Accord du PP', correct:'sont venus', choices:['est venu','sont venus','sommes venus','êtes venus'] },
+  { card:'"Mon frère et moi ___ joué aux cartes."', q:'Accord du verbe "jouer"', correct:'avons', choices:['ai','as','a','avons'] },
+], 'ex2');
+
+buildQCM([
+  { card:'"Léa est parti___ en voyage."', q:'Accord du PP avec "Léa" (féminin)', correct:'partie', choices:['parti','parties','partie','partis'] },
+  { card:'"Les enfants sont arrivé___."', q:'Accord du PP avec "les enfants" (masc. plur.)', correct:'arrivés', choices:['arrivé','arrivée','arrivés','arrivées'] },
+  { card:'"Ma sœur est tombé___ hier."', q:'Accord du PP avec "ma sœur" (féminin)', correct:'tombée', choices:['tombé','tombée','tombées','tombés'] },
+  { card:'"Paul et Théo sont venu___."', q:'Accord du PP avec "Paul et Théo"', correct:'venus', choices:['venu','venus','venues','venue'] },
+  { card:'"Nous sommes parti___."', q:'Accord du PP (groupe mixte impossible — 2 filles)', correct:'parties', choices:['parti','partis','partie','parties'] },
+], 'ex3');
+
+buildQCM([
+  { card:'"Il ___ neigé cette nuit."', q:'a ou à ?', correct:'a (verbe avoir)', choices:['a (verbe avoir)','à (préposition)'] },
+  { card:'"Je vais ___ l\'école."', q:'a ou à ?', correct:'à (préposition)', choices:['a (verbe avoir)','à (préposition)'] },
+  { card:'"___ entend le bruit."', q:'on ou ont ?', correct:'On (pronom sujet)', choices:['On (pronom sujet)','Ont (verbe avoir)'] },
+  { card:'"Ils ___ fini leur travail."', q:'on ou ont ?', correct:'ont (verbe avoir)', choices:['on (pronom sujet)','ont (verbe avoir)'] },
+  { card:'"___ livre est perdu."', q:'son ou sont ?', correct:'Son (déterminant)', choices:['Son (déterminant)','Sont (verbe être)'] },
+  { card:'"Les élèves ___ fatigués."', q:'son ou sont ?', correct:'sont (verbe être)', choices:['son (déterminant)','sont (verbe être)'] },
+], 'ex4');
+
+buildQCM([
+  { card:'"Il ___ lave les mains."', q:'ce ou se ?', correct:'se (pronom réfléchi)', choices:['ce (démonstratif)','se (pronom réfléchi)'] },
+  { card:'"___ chien est gentil."', q:'ce ou se ?', correct:'ce (déterminant démonstratif)', choices:['ce (déterminant démonstratif)','se (pronom réfléchi)'] },
+  { card:'"Tu viens ___ non ?"', q:'ou ou où ?', correct:'ou (choix = ou bien)', choices:['ou (choix = ou bien)','où (lieu ou moment)'] },
+  { card:'"___ habites-tu ?"', q:'ou ou où ?', correct:'où (lieu)', choices:['ou (choix)','où (lieu)'] },
+  { card:'"___ chaussures sont neuves."', q:'ces ou ses ?', correct:'ses (appartient à lui/elle)', choices:['ces (démonstratif)','ses (appartient à lui/elle)'] },
+  { card:'"Je veux ___ bonbons !"', q:'ces ou ses ?', correct:'ces (démonstratif)', choices:['ces (démonstratif)','ses (appartient à lui/elle)'] },
+], 'ex5');
+
+buildVF([
+  { q:'"Les belles fleurs" — "belles" s\'accorde avec "fleurs" (féminin pluriel)', correct:true },
+  { q:'"Elle est partie" → le PP "partie" prend un -e parce qu\'il est avec être', correct:true },
+  { q:'"Il a pris" → le PP "pris" prend un -e parce qu\'il est avec avoir', correct:false, expl:'Avec avoir, le PP ne s\'accorde pas avec le sujet — ici pris reste invariable' },
+  { q:'"Ont" peut toujours être remplacé par "avaient" pour vérifier', correct:true },
+  { q:'"À" s\'écrit sans accent quand c\'est le verbe avoir', correct:false, expl:'"A" sans accent = verbe avoir ; "à" avec accent = préposition' },
+  { q:'"Sont" peut toujours être remplacé par "étaient" pour vérifier', correct:true },
+], 'ex6');
+
+buildPaires([
+  { left:'a', right:'verbe avoir → remplacer par "avait"' },
+  { left:'à', right:'préposition → ne peut pas se remplacer par "avait"' },
+  { left:'on', right:'pronom → remplacer par "il"' },
+  { left:'ont', right:'verbe avoir → remplacer par "avaient"' },
+  { left:'son', right:'déterminant possessif → remplacer par "mon"' },
+  { left:'sont', right:'verbe être → remplacer par "étaient"' },
+], 'ex7');
+
+buildQCM([
+  { card:'"de beau___ château___"', q:'Forme correcte du GN', correct:'de beaux châteaux', choices:['de beaux châteaux','des beaux châteaux','de beau châteaux','des beaux château'] },
+  { card:'"un vieil___ homme___"', q:'Forme correcte du GN', correct:'un vieil homme', choices:['un vieil homme','un vieux homme','un vieil hommes','un vielle homme'] },
+  { card:'"des nou___ lunettes___"', q:'Forme correcte (adjectif avant nom pluriel → de)', correct:'de nouvelles lunettes', choices:['de nouvelles lunettes','des nouvelles lunettes','de nouvelle lunettes','des nouveau lunettes'] },
+  { card:'"un travail sérieu___"', q:'Forme correcte du GN', correct:'un travail sérieux', choices:['un travail sérieux','un travail sérieus','un travail sérieuse','un travail sérieusse'] },
+  { card:'"des fleur___ rouge___"', q:'Forme correcte du GN', correct:'des fleurs rouges', choices:['des fleurs rouges','des fleur rouge','des fleurs rouge','des fleur rouges'] },
+], 'ex8');
+
+buildQCM([
+  { card:'"Elle a mangé ___ une pomme."', q:'Accord du PP "mangé" (COD après le verbe)', correct:'mangé (pas d\'accord : COD après)', choices:['mangé (pas d\'accord : COD après)','mangée (accord féminin)'] },
+  { card:'"La pomme qu\'elle a mangé___ était bonne."', q:'Accord du PP (COD "que" = "la pomme", féminin, avant)', correct:'mangée (accord : COD fém. avant)', choices:['mangé (pas d\'accord)','mangée (accord : COD fém. avant)'] },
+  { card:'"Les livres que j\'ai lu___."', q:'Accord du PP (COD "que" = "les livres", masc. pl., avant)', correct:'lus (accord : COD masc. pl. avant)', choices:['lu (pas d\'accord)','lus (accord : COD masc. pl. avant)'] },
+  { card:'"J\'ai vu ___ ma sœur."', q:'Accord du PP "vu" (COD après le verbe)', correct:'vu (pas d\'accord : COD après)', choices:['vu (pas d\'accord : COD après)','vue (accord féminin)'] },
+  { card:'"Les filles que j\'ai vu___."', q:'Accord du PP (COD "que" = "les filles", fém. pl., avant)', correct:'vues (accord : COD fém. pl. avant)', choices:['vu (pas d\'accord)','vues (accord : COD fém. pl. avant)'] },
+], 'ex9');
+
+buildTri([
+  { q:'Range chaque phrase dans la bonne catégorie selon l\'homophone souligné', cats:['a (verbe avoir)','à (préposition)','on (pronom)','ont (verbe avoir)'], items:[
+    { v:'Il a faim.', cat:'a (verbe avoir)' },
+    { v:'Elle a dix ans.', cat:'a (verbe avoir)' },
+    { v:'On a bien travaillé.', cat:'a (verbe avoir)' },
+    { v:'Je vais à l\'école.', cat:'à (préposition)' },
+    { v:'C\'est à moi.', cat:'à (préposition)' },
+    { v:'Il parle à Marie.', cat:'à (préposition)' },
+    { v:'On mange ensemble.', cat:'on (pronom)' },
+    { v:'On part demain.', cat:'on (pronom)' },
+    { v:'Ils ont fini.', cat:'ont (verbe avoir)' },
+    { v:'Mes amis ont raison.', cat:'ont (verbe avoir)' },
+  ]},
+], 'ex10');
+</script>
+<script src="sync.js"></script>
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>

@@ -78,6 +78,30 @@
     <div id="ex7"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#d97706">
+    <div class="ex-title"><span class="ex-badge" style="background:#d97706">Ex 8</span> Homophones : ou/où et ce/se <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex8"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 9</span> Accord du verbe avec le sujet <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex9"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0891b2">
+    <div class="ex-title"><span class="ex-badge" style="background:#0891b2">Ex 10</span> Associe chaque homophone à sa règle <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex10"></div>
+  </div>
+
+  <div style="background:#f0fdf4;border-left:4px solid #059669;border-radius:10px;padding:14px 16px;margin:16px 0">
+    <div style="font-weight:900;color:#064e3b;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CE1</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <a href="conjugaison-ce1.html" style="background:#059669;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">📝 Conjugaison CE1</a>
+      <a href="grammaire-ce1.html" style="background:#059669;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">🔤 Grammaire CE1</a>
+      <a href="vocabulaire-ce1.html" style="background:#059669;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">📚 Vocabulaire CE1</a>
+    </div>
+  </div>
+
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence — CE1</footer>
@@ -144,6 +168,31 @@ buildQCM([
   { card:'"des ___" (bateau au pluriel)', q:'Quelle est la bonne orthographe ?', correct:'bateaux', choices:['bateaus','bateaux','bateau','bateauxs'] },
   { card:'"___ amis jouent."', q:'Ses ou Ces ?', correct:'Ses', choices:['Ses','Ces'] },
 ], 'ex7');
+
+buildQCM([
+  { card:'"Je vais à Paris ___ à Lyon."', q:'ou ou où ?', correct:'ou', choices:['ou','où'] },
+  { card:'"Mais ___ es-tu ?"', q:'ou ou où ?', correct:'où', choices:['ou','où'] },
+  { card:'"Il ___ lave les mains."', q:'ce ou se ?', correct:'se', choices:['ce','se'] },
+  { card:'"___ film est beau."', q:'ce ou se ?', correct:'Ce', choices:['Ce','Se'] },
+  { card:'"Veux-tu du lait ___ du jus ?"', q:'ou ou où ?', correct:'ou', choices:['ou','où'] },
+], 'ex8');
+
+buildQCM([
+  { card:'"Les enfants ___ (jouer) au parc."', q:'Forme correcte au présent', correct:'jouent', choices:['joue','jouons','jouez','jouent'] },
+  { card:'"Ma sœur ___ (chanter) bien."', q:'Forme correcte au présent', correct:'chante', choices:['chante','chantes','chantons','chantent'] },
+  { card:'"Elles ___ (finir) leurs devoirs."', q:'Forme correcte au présent', correct:'finissent', choices:['finit','finissons','finissez','finissent'] },
+  { card:'"Mon ami et moi ___ (aller) au cinéma."', q:'Forme correcte au présent', correct:'allons', choices:['vais','vas','allez','allons'] },
+  { card:'"Le chat et le chien ___ (dormir)."', q:'Forme correcte au présent', correct:'dorment', choices:['dort','dors','dormons','dorment'] },
+], 'ex9');
+
+buildPaires([
+  { left:'a', right:'verbe avoir (remplaçable par avait)' },
+  { left:'à', right:'préposition (lieu, direction)' },
+  { left:'on', right:'pronom sujet' },
+  { left:'ont', right:'verbe avoir (remplaçable par avaient)' },
+  { left:'est', right:'verbe être (remplaçable par était)' },
+  { left:'et', right:'conjonction (remplaçable par et puis)' },
+], 'ex10');
 </script>
 
 <script src="sync.js"></script>

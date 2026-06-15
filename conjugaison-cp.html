@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="École Facile">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/conjugaison-cp.html">
+<meta property="og:title" content="Conjugaison — CP | École Facile">
+<meta property="og:description" content="Exercices interactifs de conjugaison CP — présent de être, avoir et 1er groupe. Gratuit sur École Facile.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/conjugaison-cp.html">
+<meta name="description" content="Exercices interactifs de conjugaison CP — présent de être, avoir et verbes du 1er groupe.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conjugaison — CP | École Facile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header" style="background:linear-gradient(135deg,#16a34a,#22c55e);">
+  <span class="emoji-header">📝</span>
+  <h1>Conjugaison</h1>
+  <p>Présent de être, avoir et -ER</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+<main>
+  <div class="badge-niveau">📝 CP — Conjugaison</div>
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.88rem;color:#555;margin-top:8px;line-height:1.9;">
+      🔑 <strong>être</strong> : je suis, tu es, il est, nous sommes, vous êtes, ils sont<br>
+      🔑 <strong>avoir</strong> : j'ai, tu as, il a, nous avons, vous avez, ils ont<br>
+      🔑 <strong>Verbes en -ER</strong> au présent : je chante, tu chantes, il chante, nous chantons, vous chantez, ils chantent<br>
+      📌 L'<strong>infinitif</strong> est la forme du verbe trouvée dans le dictionnaire : chanter, manger, jouer
+    </div>
+  </div>
+  <div class="exercice-block" style="--accent:#16a34a">
+    <div class="ex-title"><span class="ex-badge" style="background:#16a34a">Ex 1</span> Infinitif ou verbe conjugué ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex1"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 2</span> Présent de être <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex2"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#0d9488">
+    <div class="ex-title"><span class="ex-badge" style="background:#0d9488">Ex 3</span> Présent de avoir <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex3"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#0891b2">
+    <div class="ex-title"><span class="ex-badge" style="background:#0891b2">Ex 4</span> Présent des verbes en -ER <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex4"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 5</span> Trouver le verbe dans la phrase <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex5"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 6</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex6"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Associe le pronom à la forme de "être" <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex7"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 8</span> Quel pronom sujet ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex8"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#8b5cf6">
+    <div class="ex-title"><span class="ex-badge" style="background:#8b5cf6">Ex 9</span> Présent de "aller" <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex9"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#06b6d4">
+    <div class="ex-title"><span class="ex-badge" style="background:#06b6d4">Ex 10</span> Infinitif ou conjugué ? Trier les verbes <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex10"></div>
+  </div>
+  <div style="background:#f0fdf4;border-left:4px solid #16a34a;border-radius:10px;padding:14px 16px;margin:16px 0">
+    <div style="font-weight:900;color:#14532d;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CP</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <a href="grammaire-cp.html" style="background:#16a34a;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">🔤 Grammaire CP</a>
+      <a href="orthographe-cp.html" style="background:#16a34a;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">✏️ Orthographe CP</a>
+      <a href="vocabulaire-cp.html" style="background:#16a34a;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">📚 Vocabulaire CP</a>
+    </div>
+  </div>
+</main>
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CP</footer>
+<script src="exercises.js"></script>
+<script>
+buildQCM([
+  { card:'"chanter"', q:'Infinitif ou conjugué ?', correct:'infinitif', choices:['infinitif','conjugué'] },
+  { card:'"je chante"', q:'Infinitif ou conjugué ?', correct:'conjugué', choices:['infinitif','conjugué'] },
+  { card:'"manger"', q:'Infinitif ou conjugué ?', correct:'infinitif', choices:['infinitif','conjugué'] },
+  { card:'"il mange"', q:'Infinitif ou conjugué ?', correct:'conjugué', choices:['infinitif','conjugué'] },
+  { card:'"être"', q:'Infinitif ou conjugué ?', correct:'infinitif', choices:['infinitif','conjugué'] },
+  { card:'"nous sommes"', q:'Infinitif ou conjugué ?', correct:'conjugué', choices:['infinitif','conjugué'] },
+], 'ex1');
+
+buildQCM([
+  { card:'"Je ___ petit."', q:'Forme de être avec "je"', correct:'suis', choices:['suis','es','est','êtes'] },
+  { card:'"Tu ___ grand."', q:'Forme de être avec "tu"', correct:'es', choices:['suis','es','est','sont'] },
+  { card:'"Il ___ content."', q:'Forme de être avec "il"', correct:'est', choices:['suis','es','est','êtes'] },
+  { card:'"Nous ___ amis."', q:'Forme de être avec "nous"', correct:'sommes', choices:['sommes','êtes','sont','suis'] },
+  { card:'"Vous ___ gentils."', q:'Forme de être avec "vous"', correct:'êtes', choices:['sommes','êtes','sont','suis'] },
+  { card:'"Elles ___ jolies."', q:'Forme de être avec "elles"', correct:'sont', choices:['sommes','êtes','sont','suis'] },
+], 'ex2');
+
+buildQCM([
+  { card:'"J\'___ un chien."', q:'Forme de avoir avec "je"', correct:'ai', choices:['ai','as','a','avons'] },
+  { card:'"Tu ___ un chat."', q:'Forme de avoir avec "tu"', correct:'as', choices:['ai','as','a','avez'] },
+  { card:'"Il ___ faim."', q:'Forme de avoir avec "il"', correct:'a', choices:['ai','as','a','ont'] },
+  { card:'"Nous ___ chaud."', q:'Forme de avoir avec "nous"', correct:'avons', choices:['avons','avez','ont','ai'] },
+  { card:'"Vous ___ soif."', q:'Forme de avoir avec "vous"', correct:'avez', choices:['avons','avez','ont','as'] },
+  { card:'"Ils ___ peur."', q:'Forme de avoir avec "ils"', correct:'ont', choices:['avons','avez','ont','a'] },
+], 'ex3');
+
+buildQCM([
+  { card:'"Je ___ (chanter)"', q:'Présent avec "je"', correct:'chante', choices:['chante','chantes','chantons','chantent'] },
+  { card:'"Tu ___ (jouer)"', q:'Présent avec "tu"', correct:'joues', choices:['joue','joues','jouons','jouez'] },
+  { card:'"Il ___ (sauter)"', q:'Présent avec "il"', correct:'saute', choices:['saute','sautes','sautons','sautent'] },
+  { card:'"Nous ___ (danser)"', q:'Présent avec "nous"', correct:'dansons', choices:['danse','danses','dansons','dansent'] },
+  { card:'"Elles ___ (chanter)"', q:'Présent avec "elles"', correct:'chantent', choices:['chante','chantes','chantons','chantent'] },
+], 'ex4');
+
+buildQCM([
+  { card:'"Le chien court dans le jardin."', q:'Quel est le verbe ?', correct:'court', choices:['chien','court','jardin','dans'] },
+  { card:'"Ma maman mange une pomme."', q:'Quel est le verbe ?', correct:'mange', choices:['maman','mange','pomme','une'] },
+  { card:'"Je suis heureux."', q:'Quel est le verbe ?', correct:'suis', choices:['je','suis','heureux','très'] },
+  { card:'"Les enfants jouent au parc."', q:'Quel est le verbe ?', correct:'jouent', choices:['enfants','jouent','parc','les'] },
+  { card:'"Tu as un joli livre."', q:'Quel est le verbe ?', correct:'as', choices:['tu','as','joli','livre'] },
+], 'ex5');
+
+buildVF([
+  { q:'La forme "chanter" est un verbe à l\'infinitif', correct:true },
+  { q:'"je suis" → "suis" est la forme de "être" à la 1ère personne du singulier', correct:true },
+  { q:'"ils avons" est une phrase correcte', correct:false, expl:'Avec "ils", on dit "ils ont"' },
+  { q:'"tu chantes" → la terminaison du présent avec "tu" pour un verbe en -ER est -es', correct:true },
+  { q:'"nous mangent" est une phrase correcte', correct:false, expl:'Avec "nous", on dit "nous mangeons"' },
+], 'ex6');
+
+buildPaires([
+  { left:'je', right:'suis' },
+  { left:'tu', right:'es' },
+  { left:'il / elle', right:'est' },
+  { left:'nous', right:'sommes' },
+  { left:'vous', right:'êtes' },
+  { left:'ils / elles', right:'sont' },
+], 'ex7');
+
+buildQCM([
+  { card:'"chante"', q:'Quel pronom sujet va avec "chante" ?', correct:'il / elle', choices:['je / tu','il / elle','nous','vous'] },
+  { card:'"mangeons"', q:'Quel pronom sujet va avec "mangeons" ?', correct:'nous', choices:['je','tu','nous','ils / elles'] },
+  { card:'"jouez"', q:'Quel pronom sujet va avec "jouez" ?', correct:'vous', choices:['nous','vous','il / elle','ils / elles'] },
+  { card:'"courent"', q:'Quel pronom sujet va avec "courent" ?', correct:'ils / elles', choices:['je','il / elle','nous','ils / elles'] },
+  { card:'"dors"', q:'Quel pronom sujet va avec "dors" ?', correct:'je ou tu', choices:['je ou tu','il / elle','nous','ils / elles'] },
+], 'ex8');
+
+buildQCM([
+  { card:'"Je ___ à l\'école."', q:'Présent de "aller" avec "je"', correct:'vais', choices:['vais','vas','va','allons'] },
+  { card:'"Tu ___ au parc."', q:'Présent de "aller" avec "tu"', correct:'vas', choices:['vais','vas','va','allez'] },
+  { card:'"Il ___ chez mamie."', q:'Présent de "aller" avec "il"', correct:'va', choices:['vais','vas','va','vont'] },
+  { card:'"Nous ___ à la piscine."', q:'Présent de "aller" avec "nous"', correct:'allons', choices:['allons','allez','vont','vas'] },
+  { card:'"Vous ___ au cinéma."', q:'Présent de "aller" avec "vous"', correct:'allez', choices:['allons','allez','vont','va'] },
+], 'ex9');
+
+buildTri([
+  { q:'Classe chaque forme : infinitif ou verbe conjugué ?', cats:['Infinitif','Conjugué'], items:[
+    { v:'jouer', cat:'Infinitif' },
+    { v:'manger', cat:'Infinitif' },
+    { v:'dormir', cat:'Infinitif' },
+    { v:'courir', cat:'Infinitif' },
+    { v:'il joue', cat:'Conjugué' },
+    { v:'nous mangeons', cat:'Conjugué' },
+    { v:'tu dors', cat:'Conjugué' },
+    { v:'je cours', cat:'Conjugué' },
+  ]}
+], 'ex10');
+</script>
+<script src="sync.js"></script>
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>

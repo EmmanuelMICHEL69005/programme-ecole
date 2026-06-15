@@ -78,6 +78,30 @@
     <div id="ex7"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#d97706">
+    <div class="ex-title"><span class="ex-badge" style="background:#d97706">Ex 8</span> Identifier le temps du verbe <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex8"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 9</span> Conjuguer au passé composé avec "être" <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex9"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0891b2">
+    <div class="ex-title"><span class="ex-badge" style="background:#0891b2">Ex 10</span> Auxiliaire être ou avoir au passé composé <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex10"></div>
+  </div>
+
+  <div style="background:#f0fdf4;border-left:4px solid #059669;border-radius:10px;padding:14px 16px;margin:16px 0">
+    <div style="font-weight:900;color:#064e3b;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CE1</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <a href="grammaire-ce1.html" style="background:#059669;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">🔤 Grammaire CE1</a>
+      <a href="orthographe-ce1.html" style="background:#059669;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">✏️ Orthographe CE1</a>
+      <a href="vocabulaire-ce1.html" style="background:#059669;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">📚 Vocabulaire CE1</a>
+    </div>
+  </div>
+
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence — CE1</footer>
@@ -148,6 +172,37 @@ buildPaires([
   { left:'vous', right:'chantez' },
   { left:'ils / elles', right:'chantent' },
 ], 'ex7');
+
+buildQCM([
+  { card:'"Il mange une pomme."', q:'Quel est le temps du verbe ?', correct:'présent', choices:['présent','futur proche','passé composé','imparfait'] },
+  { card:'"Elle va partir."', q:'Quel est le temps du verbe ?', correct:'futur proche', choices:['présent','futur proche','passé composé','futur simple'] },
+  { card:'"Nous avons mangé."', q:'Quel est le temps du verbe ?', correct:'passé composé', choices:['présent','futur proche','passé composé','imparfait'] },
+  { card:'"Tu jouais souvent."', q:'Quel est le temps du verbe ?', correct:'imparfait', choices:['présent','futur proche','imparfait','passé composé'] },
+  { card:'"Je chanterai demain."', q:'Quel est le temps du verbe ?', correct:'futur simple', choices:['présent','futur proche','passé composé','futur simple'] },
+], 'ex8');
+
+buildQCM([
+  { card:'"il ___ (partir)" — passé composé avec être', q:'Forme correcte ?', correct:'est parti', choices:['est parti','a parti','est partie','a partis'] },
+  { card:'"elle ___ (arriver)" — passé composé avec être', q:'Forme correcte ?', correct:'est arrivée', choices:['est arrivé','a arrivée','est arrivée','a arrivé'] },
+  { card:'"ils ___ (tomber)" — passé composé avec être', q:'Forme correcte ?', correct:'sont tombés', choices:['sont tombés','ont tombés','sont tombé','ont tombé'] },
+  { card:'"nous ___ (aller)" — passé composé avec être', q:'Forme correcte ?', correct:'sommes allés', choices:['sommes allés','avons allé','êtes allés','ont allé'] },
+  { card:'"tu ___ (venir)" — passé composé avec être', q:'Forme correcte ?', correct:'es venu', choices:['es venu','as venu','est venu','as venue'] },
+], 'ex9');
+
+buildTri([{
+  q: 'Classe chaque verbe : il se conjugue avec "avoir" ou avec "être" au passé composé ?',
+  cats: ['avoir', 'être'],
+  items: [
+    { v:'manger → j\'ai mangé', cat:'avoir' },
+    { v:'boire → j\'ai bu', cat:'avoir' },
+    { v:'faire → j\'ai fait', cat:'avoir' },
+    { v:'lire → j\'ai lu', cat:'avoir' },
+    { v:'aller → je suis allé', cat:'être' },
+    { v:'partir → je suis parti', cat:'être' },
+    { v:'arriver → je suis arrivé', cat:'être' },
+    { v:'tomber → je suis tombé', cat:'être' },
+  ]
+}], 'ex10');
 </script>
 
 <script src="sync.js"></script>

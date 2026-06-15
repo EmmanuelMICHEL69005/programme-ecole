@@ -79,9 +79,33 @@
     <div id="ex7"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#d97706">
+    <div class="ex-title"><span class="ex-badge" style="background:#d97706">Ex 8</span> Homophones : leur/leurs et tout/tous/toute/toutes <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex8"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0891b2">
+    <div class="ex-title"><span class="ex-badge" style="background:#0891b2">Ex 9</span> Accord du participe passé avec être <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex9"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#dc2626">
+    <div class="ex-title"><span class="ex-badge" style="background:#dc2626">Ex 10</span> Associer : règle d'accord de l'adjectif <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex10"></div>
+  </div>
+
+  <div style="background:#f5f3ff;border-left:4px solid #7c3aed;border-radius:10px;padding:14px 16px;margin:16px 0">
+    <div style="font-weight:900;color:#4c1d95;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CE2</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <a href="conjugaison-ce2.html" style="background:#7c3aed;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">📝 Conjugaison CE2</a>
+      <a href="grammaire-ce2.html" style="background:#7c3aed;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">🔤 Grammaire CE2</a>
+      <a href="vocabulaire-ce2.html" style="background:#7c3aed;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">📚 Vocabulaire CE2</a>
+    </div>
+  </div>
+
 </main>
 
-<footer class="site-footer">Fait avec ❤️ pour Clémence — CE2</footer>
+<footer class="site-footer">Fait avec ❤️ pour Clémence</footer>
 
 <script src="exercises.js"></script>
 <script>
@@ -149,6 +173,34 @@ buildQCM([
   { card:'"des ___" (jeu au pluriel)', q:'Quelle est la bonne orthographe ?', correct:'jeux', choices:['jeus','jeux','jeuxs','jeues'] },
   { card:'"___ crayons sont à moi."', q:'Ses ou Ces ?', correct:'Ces', choices:['Ses','Ces'] },
 ], 'ex7');
+
+buildQCM([
+  { card:'"Je ___ donne des bonbons." (leur/leurs)', q:'leur ou leurs ? (pronom)', correct:'leur', choices:['leur','leurs'] },
+  { card:'"___ chiens aboient." (Leur/Leurs)', q:'Leur ou Leurs ? (adjectif possessif)', correct:'Leurs', choices:['Leur','Leurs'] },
+  { card:'"___ la classe chante." (Toute/Tout)', q:'Toute ou Tout ?', correct:'Toute', choices:['Toute','Tout'] },
+  { card:'"Ils sont ___ prêts." (tous/tout)', q:'tous ou tout ?', correct:'tous', choices:['tous','tout'] },
+  { card:'"Je mange ___ le gâteau." (tout/toute)', q:'tout ou toute ?', correct:'tout', choices:['tout','toute'] },
+], 'ex8');
+
+buildQCM([
+  { card:'"Elle est ___." (parti/partie)', q:'Accord du participe passé avec être', correct:'partie', choices:['partie','parti'] },
+  { card:'"Ils sont ___." (arrivé/arrivés)', q:'Accord du participe passé avec être', correct:'arrivés', choices:['arrivés','arrivé'] },
+  { card:'"Nous sommes ___." (tombé/tombés)', q:'Accord du participe passé avec être', correct:'tombés', choices:['tombés','tombé'] },
+  { card:'"Elle est ___." (venue/venu)', q:'Accord du participe passé avec être', correct:'venue', choices:['venue','venu'] },
+  { card:'"Les filles sont ___." (allée/allées)', q:'Accord du participe passé avec être', correct:'allées', choices:['allées','allée'] },
+], 'ex9');
+
+buildPaires([
+  { q:"Associe chaque forme masculine à sa forme féminine ou plurielle.",
+    pairs:[
+      ['un garçon grand','une fille grande'],
+      ['un ami heureux','une amie heureuse'],
+      ['un beau château','de beaux châteaux'],
+      ['un enfant doux','des enfants doux'],
+      ['un vieux monsieur','une vieille dame'],
+    ]
+  }
+], 'ex10');
 </script>
 
 <script src="sync.js"></script>

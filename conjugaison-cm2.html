@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/conjugaison-cm2.html">
+<meta property="og:title" content="Conjugaison — CM2 | École Facile">
+<meta property="og:description" content="Exercices de conjugaison CM2 — passé simple, plus-que-parfait, conditionnel présent, révision des temps.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/conjugaison-cm2.html">
+<meta name="description" content="Exercices de conjugaison CM2 — passé simple, plus-que-parfait, conditionnel présent.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conjugaison — CM2 | École Facile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header" style="background:linear-gradient(135deg,#b45309,#f59e0b);">
+  <span class="emoji-header">📝</span>
+  <h1>Conjugaison</h1>
+  <p>Passé simple, plus-que-parfait, conditionnel</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+<main>
+  <div class="badge-niveau">📝 CM2 — Conjugaison</div>
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.88rem;color:#555;margin-top:8px;line-height:1.9;">
+      🔑 <strong>Passé simple</strong> : temps du récit littéraire (surtout 3e pers.)<br>
+      1er groupe : -a / -as / -a / -âmes / -âtes / -èrent<br>
+      2e groupe : -it / -it / -it / -îmes / -îtes / -irent<br>
+      🔑 <strong>Plus-que-parfait</strong> : avoir/être à l'imparfait + PP<br>
+      🔑 <strong>Conditionnel</strong> : base du futur + terminaisons de l'imparfait
+    </div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#b45309">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309">Ex 1</span> Identifier le temps du verbe (nouveaux temps) <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex1"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#d97706">
+    <div class="ex-title"><span class="ex-badge" style="background:#d97706">Ex 2</span> Passé simple — 1er groupe <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex2"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#ca8a04">
+    <div class="ex-title"><span class="ex-badge" style="background:#ca8a04">Ex 3</span> Passé simple — être et avoir <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex3"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#a16207">
+    <div class="ex-title"><span class="ex-badge" style="background:#a16207">Ex 4</span> Plus-que-parfait <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex4"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#78350f">
+    <div class="ex-title"><span class="ex-badge" style="background:#78350f">Ex 5</span> Conditionnel présent <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex5"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 6</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex6"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Associe le verbe à son temps <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex7"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 8</span> Passé simple des verbes du 3e groupe courants <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex8"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 9</span> Concordance des temps (passé) <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex9"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#dc2626">
+    <div class="ex-title"><span class="ex-badge" style="background:#dc2626">Ex 10</span> Classer : Indicatif / Conditionnel <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex10"></div>
+  </div>
+  <div style="background:#fffbeb;border-left:4px solid #f59e0b;border-radius:10px;padding:14px 16px;margin:16px 0">
+    <div style="font-weight:900;color:#78350f;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CM2</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <a href="grammaire-cm2.html" style="background:#f59e0b;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">🔤 Grammaire CM2</a>
+      <a href="orthographe-cm2.html" style="background:#f59e0b;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">✏️ Orthographe CM2</a>
+      <a href="vocabulaire-cm2.html" style="background:#f59e0b;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">📚 Vocabulaire CM2</a>
+    </div>
+  </div>
+</main>
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CM2</footer>
+<script src="exercises.js"></script>
+<script>
+buildQCM([
+  { card:'"Il chanta toute la nuit."', q:'Quel est le temps de "chanta" ?', correct:'passé simple', choices:['passé composé','imparfait','passé simple','plus-que-parfait'] },
+  { card:'"Elle aurait aimé venir."', q:'Quel est le temps de "aurait aimé" ?', correct:'conditionnel passé', choices:['passé composé','conditionnel présent','passé simple','conditionnel passé'] },
+  { card:'"J\'avais déjà mangé quand il arriva."', q:'Quel est le temps de "avais mangé" ?', correct:'plus-que-parfait', choices:['passé composé','imparfait','passé simple','plus-que-parfait'] },
+  { card:'"Si j\'avais le temps, je lirais."', q:'Quel est le temps de "lirais" ?', correct:'conditionnel présent', choices:['futur simple','imparfait','passé simple','conditionnel présent'] },
+  { card:'"Ils partirent sans prévenir."', q:'Quel est le temps de "partirent" ?', correct:'passé simple', choices:['passé composé','futur','passé simple','plus-que-parfait'] },
+], 'ex1');
+
+buildQCM([
+  { card:'"Il ___ (chanter) une belle mélodie."', q:'Passé simple de "chanter" avec "il"', correct:'chanta', choices:['chantait','a chanté','chanta','chanter'] },
+  { card:'"Elles ___ (marcher) longtemps dans la forêt."', q:'Passé simple de "marcher" avec "elles"', correct:'marchèrent', choices:['marchaient','ont marché','marcha','marchèrent'] },
+  { card:'"Nous ___ (jouer) jusqu\'à la nuit."', q:'Passé simple de "jouer" avec "nous"', correct:'jouâmes', choices:['jouions','avons joué','jouâmes','jouèrent'] },
+  { card:'"Il ___ (arriver) au château à minuit."', q:'Passé simple de "arriver" avec "il"', correct:'arriva', choices:['arrivait','est arrivé','arriva','arrivèrent'] },
+  { card:'"Vous ___ (trouver) la solution."', q:'Passé simple de "trouver" avec "vous"', correct:'trouvâtes', choices:['trouviez','avez trouvé','trouvâtes','trouvèrent'] },
+], 'ex2');
+
+buildQCM([
+  { card:'"Il ___ (être) très courageux."', q:'Passé simple de "être" avec "il"', correct:'fut', choices:['était','a été','fut','serait'] },
+  { card:'"Ils ___ (avoir) peur."', q:'Passé simple de "avoir" avec "ils"', correct:'eurent', choices:['avaient','ont eu','eurent','auraient'] },
+  { card:'"Elle ___ (être) la première à arriver."', q:'Passé simple de "être" avec "elle"', correct:'fut', choices:['était','a été','fut','sera'] },
+  { card:'"Nous ___ (avoir) une idée."', q:'Passé simple de "avoir" avec "nous"', correct:'eûmes', choices:['avions','avons eu','eûmes','aurions'] },
+  { card:'"Ils ___ (faire) un long voyage."', q:'Passé simple de "faire" avec "ils"', correct:'firent', choices:['faisaient','ont fait','firent','feront'] },
+], 'ex3');
+
+buildQCM([
+  { card:'"Il ___ (manger) avant que j\'arrive."', q:'Plus-que-parfait de "manger" avec "il"', correct:'avait mangé', choices:['a mangé','avait mangé','mangea','mangeait'] },
+  { card:'"Quand nous arrivâmes, elle ___ (partir)."', q:'Plus-que-parfait de "partir" avec "elle"', correct:'était partie', choices:['est partie','était partie','partait','partira'] },
+  { card:'"Ils ___ (finir) leur travail avant la récréation."', q:'Plus-que-parfait de "finir" avec "ils"', correct:'avaient fini', choices:['ont fini','avaient fini','finirent','finissaient'] },
+  { card:'"Tu ___ (voir) ce film avant moi."', q:'Plus-que-parfait de "voir" avec "tu"', correct:'avais vu', choices:['as vu','avais vu','vis','verras'] },
+], 'ex4');
+
+buildQCM([
+  { card:'"Si j\'avais le temps, je ___ (lire)."', q:'Conditionnel présent de "lire" avec "je"', correct:'lirais', choices:['lis','lirai','lirais','lisais'] },
+  { card:'"Il ___ (venir) volontiers."', q:'Conditionnel présent de "venir" avec "il"', correct:'viendrait', choices:['vient','viendra','viendrait','venait'] },
+  { card:'"Nous ___ (être) ravis de vous aider."', q:'Conditionnel présent de "être" avec "nous"', correct:'serions', choices:['sommes','serons','serions','étions'] },
+  { card:'"Ils ___ (faire) n\'importe quoi pour toi."', q:'Conditionnel présent de "faire" avec "ils"', correct:'feraient', choices:['font','feront','feraient','faisaient'] },
+  { card:'"Tu ___ (pouvoir) m\'aider ?"', q:'Conditionnel présent de "pouvoir" avec "tu" (formule de politesse)', correct:'pourrais', choices:['peux','pourras','pourrais','pouvais'] },
+], 'ex5');
+
+buildVF([
+  { q:'Le passé simple est surtout utilisé à l\'écrit dans les récits littéraires', correct:true },
+  { q:'"Il chanta" est au passé simple et "il chantait" est au passé composé', correct:false, expl:'"Il chantait" est à l\'imparfait, pas au passé composé' },
+  { q:'Le plus-que-parfait indique une action antérieure à une autre action passée', correct:true },
+  { q:'Le conditionnel présent se forme sur la base du futur + terminaisons de l\'imparfait', correct:true },
+  { q:'"Ils eurent" est le passé simple de "avoir" à la 3e pers. du pluriel', correct:true },
+  { q:'Au passé simple, "ils allèrent" est la forme correcte de "aller"', correct:true },
+], 'ex6');
+
+buildPaires([
+  { left:'il chanta', right:'passé simple' },
+  { left:'il avait chanté', right:'plus-que-parfait' },
+  { left:'il chanterait', right:'conditionnel présent' },
+  { left:'il chantait', right:'imparfait' },
+  { left:'il chantera', right:'futur simple' },
+  { left:'il a chanté', right:'passé composé' },
+], 'ex7');
+
+buildQCM([
+  { card:'"faire" — passé simple avec "il"', q:'Quelle est la forme correcte ?', correct:'fit', choices:['faisait','a fait','fit','fera'] },
+  { card:'"venir" — passé simple avec "elle"', q:'Quelle est la forme correcte ?', correct:'vint', choices:['venait','est venue','viendra','vint'] },
+  { card:'"voir" — passé simple avec "ils"', q:'Quelle est la forme correcte ?', correct:'virent', choices:['voyaient','ont vu','virent','verront'] },
+  { card:'"prendre" — passé simple avec "il"', q:'Quelle est la forme correcte ?', correct:'prit', choices:['prenait','a pris','prendra','prit'] },
+  { card:'"mettre" — passé simple avec "elle"', q:'Quelle est la forme correcte ?', correct:'mit', choices:['mettait','a mis','mettra','mit'] },
+], 'ex8');
+
+buildQCM([
+  { card:'"Elle pensait qu\'il ___ (partir — action antérieure)."', q:'Quelle forme du verbe ?', correct:'était parti (plus-que-parfait)', choices:['est parti','partait','était parti (plus-que-parfait)','partirait'] },
+  { card:'"Il dit qu\'il ___ (venir — futur du passé)."', q:'Quelle forme du verbe ?', correct:'viendrait (conditionnel)', choices:['vient','viendra','est venu','viendrait (conditionnel)'] },
+  { card:'"Quand il ___ (arriver — PS), nous partîmes."', q:'Quelle forme du verbe ?', correct:'arriva (passé simple)', choices:['arrivait','est arrivé','arrivera','arriva (passé simple)'] },
+  { card:'"Je croyais qu\'elle ___ (réussir — action antérieure)."', q:'Quelle forme du verbe ?', correct:'avait réussi (plus-que-parfait)', choices:['a réussi','réussissait','réussirait','avait réussi (plus-que-parfait)'] },
+  { card:'"Il espérait que tu ___ (venir — futur du passé)."', q:'Quelle forme du verbe ?', correct:'viendrais (conditionnel)', choices:['viens','viendras','es venu','viendrais (conditionnel)'] },
+], 'ex9');
+
+buildTri([{
+  q: 'Classe ces formes verbales : Indicatif ou Conditionnel ?',
+  cats: ['Indicatif', 'Conditionnel'],
+  items: [
+    { v:'Il mange.', cat:'Indicatif' },
+    { v:'Nous partirons.', cat:'Indicatif' },
+    { v:'Elle est venue.', cat:'Indicatif' },
+    { v:'Vous finissez.', cat:'Indicatif' },
+    { v:'Il mangerait.', cat:'Conditionnel' },
+    { v:'Nous partirions.', cat:'Conditionnel' },
+    { v:'Elle serait venue.', cat:'Conditionnel' },
+    { v:'Vous finiriez.', cat:'Conditionnel' },
+  ]
+}], 'ex10');
+</script>
+<script src="sync.js"></script>
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>

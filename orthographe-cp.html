@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/orthographe-cp.html">
+<meta property="og:title" content="Orthographe — CP | École Facile">
+<meta property="og:description" content="Exercices d'orthographe CP — majuscule, pluriel en -s, féminin, sons du français.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/orthographe-cp.html">
+<meta name="description" content="Exercices d'orthographe CP — majuscule, pluriel, féminin, sons (s/ss/c).">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orthographe — CP | École Facile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header" style="background:linear-gradient(135deg,#16a34a,#22c55e);">
+  <span class="emoji-header">✏️</span>
+  <h1>Orthographe</h1>
+  <p>Majuscule · Pluriel · Sons</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+<main>
+  <div class="badge-niveau">✏️ CP — Orthographe</div>
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.88rem;color:#555;margin-top:8px;line-height:1.9;">
+      🔑 <strong>Majuscule</strong> : début de phrase + prénoms + noms de villes<br>
+      🔑 <strong>Pluriel</strong> : souvent + -s (un chat → des chat<strong>s</strong>)<br>
+      🔑 <strong>Son [s]</strong> : s (solo) · ss (entre 2 voyelles) · c (devant e/i) · ç (devant a/o/u)<br>
+      📌 Féminin : souvent + -e (ami → ami<strong>e</strong> · petit → petit<strong>e</strong>)
+    </div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#16a34a">
+    <div class="ex-title"><span class="ex-badge" style="background:#16a34a">Ex 1</span> Quand mettre une majuscule ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex1"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#15803d">
+    <div class="ex-title"><span class="ex-badge" style="background:#15803d">Ex 2</span> Former le pluriel <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex2"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#166534">
+    <div class="ex-title"><span class="ex-badge" style="background:#166534">Ex 3</span> Former le féminin <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex3"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#14532d">
+    <div class="ex-title"><span class="ex-badge" style="background:#14532d">Ex 4</span> Le son [s] — s, ss, c ou ç ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex4"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#22c55e">
+    <div class="ex-title"><span class="ex-badge" style="background:#22c55e">Ex 5</span> Choisir la bonne orthographe <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex5"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 6</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex6"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Associe le mot à sa forme féminine <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex7"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 8</span> Le son [k] — comment l'écrire ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex8"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#8b5cf6">
+    <div class="ex-title"><span class="ex-badge" style="background:#8b5cf6">Ex 9</span> Son [ʃ] (ch) ou son [k] ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex9"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#06b6d4">
+    <div class="ex-title"><span class="ex-badge" style="background:#06b6d4">Ex 10</span> Singulier → pluriel — associer <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex10"></div>
+  </div>
+  <div style="background:#f0fdf4;border-left:4px solid #16a34a;border-radius:10px;padding:14px 16px;margin:16px 0">
+    <div style="font-weight:900;color:#14532d;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CP</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <a href="conjugaison-cp.html" style="background:#16a34a;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">📝 Conjugaison CP</a>
+      <a href="grammaire-cp.html" style="background:#16a34a;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">🔤 Grammaire CP</a>
+      <a href="vocabulaire-cp.html" style="background:#16a34a;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">📚 Vocabulaire CP</a>
+    </div>
+  </div>
+</main>
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CP</footer>
+<script src="exercises.js"></script>
+<script>
+buildQCM([
+  { card:'"le prénom léa"', q:'Que faut-il corriger ?', correct:'"Léa" prend une majuscule (prénom)', choices:['rien, c\'est correct','"Léa" prend une majuscule (prénom)','"le" prend une majuscule','tout prend une majuscule'] },
+  { card:'"je vais à paris."', q:'Que faut-il corriger ?', correct:'"Je" (début de phrase) et "Paris" (ville) prennent une majuscule', choices:['rien','"paris" seulement','"Je" (début de phrase) et "Paris" (ville) prennent une majuscule','"je" seulement'] },
+  { card:'"emma habite à lyon."', q:'Combien de majuscules faut-il ?', correct:'2 : "Emma" et "Lyon"', choices:['1 : "Emma" seulement','2 : "Emma" et "Lyon"','3 : "Emma", "habite", "Lyon"','0'] },
+  { card:'"La france est belle."', q:'La majuscule est-elle bien placée ?', correct:'Non — "France" (pays) doit prendre une majuscule aussi', choices:['Oui, c\'est correct','Non — "France" (pays) doit prendre une majuscule aussi','Oui, mais "belle" aussi','Non, pas de majuscule à "La"'] },
+], 'ex1');
+
+buildQCM([
+  { card:'"un chat"', q:'Quel est le pluriel ?', correct:'des chats', choices:['des chat','des chats','des chates','un chats'] },
+  { card:'"une fleur"', q:'Quel est le pluriel ?', correct:'des fleurs', choices:['des fleur','des fleurs','une fleurs','des fleures'] },
+  { card:'"un oiseau"', q:'Quel est le pluriel ?', correct:'des oiseaux', choices:['des oiseau','des oiseaus','des oiseaux','un oiseaux'] },
+  { card:'"un jeu"', q:'Quel est le pluriel ?', correct:'des jeux', choices:['des jeus','des jeux','des jeu','un jeux'] },
+  { card:'"une souris"', q:'Quel est le pluriel ?', correct:'des souris (pas de -s car déjà -s)', choices:['des souriss','des sourises','des souris (pas de -s car déjà -s)','des souries'] },
+], 'ex2');
+
+buildQCM([
+  { card:'"un ami"', q:'Quel est le féminin ?', correct:'une amie', choices:['une ami','une amie','une amis','une amière'] },
+  { card:'"un petit garçon"', q:'Quel est le féminin de "petit" ?', correct:'petite', choices:['peti','petite','petits','petites'] },
+  { card:'"un chanteur"', q:'Quel est le féminin ?', correct:'une chanteuse', choices:['une chanteure','une chanteuse','une chanteresse','une chanteure'] },
+  { card:'"le boulanger"', q:'Quel est le féminin ?', correct:'la boulangère', choices:['la boulangeresse','la boulangère','la boulangeure','la boulangere'] },
+  { card:'"un acteur"', q:'Quel est le féminin ?', correct:'une actrice', choices:['une acteure','une actrice','une actresse','une actrice'] },
+], 'ex3');
+
+buildQCM([
+  { card:'"po___on" (le poison !)', q:'Son [s] entre deux voyelles → ?', correct:'poison (s entre 2 voyelles = [z] → ici son [s] : ss → poisson !)', choices:['poso','poison (s entre 2 voyelles = [z] → ici son [s] : ss → poisson !)','poosson','poise'] },
+  { card:'"un gar___on"', q:'Quel lettre donne le son [s] devant "on" (voyelle) ?', correct:'garçon (ç devant o)', choices:['garson','garcon','garçon (ç devant o)','garsson'] },
+  { card:'"une ___grenouille" — le préfixe vient de "re___sauter"', q:'"re___sauter" → la grenouille re-?-saute', correct:'resauter (un seul s entre consonne et voyelle = [s])', choices:['resauter (un seul s entre consonne et voyelle = [s])','ressauter (ss)','recessauter','receutar'] },
+  { card:'"la ___ité" (la cité)', q:'Son [s] devant "i" ?', correct:'cité (c devant i = [s])', choices:['ssité','sité','cité (c devant i = [s])','çité'] },
+], 'ex4');
+
+buildQCM([
+  { card:'"un po___on" (animal de l\'eau)', q:'Orthographe correcte', correct:'poisson (ss entre 2 voyelles)', choices:['poison','poisson (ss entre 2 voyelles)','poison','poisson'] },
+  { card:'"la mai___on"', q:'Orthographe correcte', correct:'maison (s seul entre 2 voyelles = [z])', choices:['maison (s seul entre 2 voyelles = [z])','maisson','maiçon','maiszon'] },
+  { card:'"un gar___on"', q:'Orthographe correcte', correct:'garçon', choices:['garson','garcon','garçon','garsson'] },
+  { card:'"une ___erise" (fruit rouge)', q:'Orthographe correcte', correct:'cerise (c devant e = [s])', choices:['serise','cerise (c devant e = [s])','çerise','sserise'] },
+  { card:'"il ___aute" (il saute)', q:'Orthographe correcte', correct:'saute (s au début = [s])', choices:['ssaute','saute (s au début = [s])','çaute','zaute'] },
+], 'ex5');
+
+buildVF([
+  { q:'Les prénoms prennent toujours une majuscule', correct:true },
+  { q:'Au pluriel, on ajoute toujours -s au nom', correct:false, expl:'Pas toujours : "oiseaux" (pluriel en -ux), "souris" (déjà en -s)' },
+  { q:'Le féminin se forme souvent en ajoutant un -e', correct:true },
+  { q:'"ss" entre deux voyelles fait toujours le son [s]', correct:true },
+  { q:'"s" seul entre deux voyelles fait le son [s]', correct:false, expl:'"s" entre deux voyelles fait le son [z] : maison, cuisine. Pour le son [s], on écrit "ss"' },
+  { q:'"ç" s\'utilise devant a, o, u pour faire le son [s]', correct:true },
+], 'ex6');
+
+buildPaires([
+  { left:'un ami', right:'une amie' },
+  { left:'un chanteur', right:'une chanteuse' },
+  { left:'le boulanger', right:'la boulangère' },
+  { left:'un acteur', right:'une actrice' },
+  { left:'un chat', right:'une chatte' },
+  { left:'un prince', right:'une princesse' },
+], 'ex7');
+
+buildQCM([
+  { card:'"coq"', q:'Comment s\'écrit le son [k] dans "coq" ?', correct:'c (devant o)', choices:['c (devant o)','qu','k','ck'] },
+  { card:'"qui"', q:'Comment s\'écrit le son [k] dans "qui" ?', correct:'qu (devant i)', choices:['c','qu (devant i)','k','q'] },
+  { card:'"kilo"', q:'Comment s\'écrit le son [k] dans "kilo" ?', correct:'k', choices:['c','qu','k','ck'] },
+  { card:'"quand"', q:'Comment s\'écrit le son [k] dans "quand" ?', correct:'qu (devant a)', choices:['c','qu (devant a)','k','ca'] },
+  { card:'"carotte"', q:'Comment s\'écrit le son [k] dans "carotte" ?', correct:'c (devant a)', choices:['c (devant a)','qu','k','ck'] },
+], 'ex8');
+
+buildQCM([
+  { card:'"chat"', q:'Quel son entend-on au début ?', correct:'[ʃ] ch (comme dans "chapeau")', choices:['[ʃ] ch (comme dans "chapeau")', '[k] c/qu/k'] },
+  { card:'"carotte"', q:'Quel son entend-on au début ?', correct:'[k] c/qu/k', choices:['[ʃ] ch', '[k] c/qu/k'] },
+  { card:'"chien"', q:'Quel son entend-on au début ?', correct:'[ʃ] ch (comme dans "chapeau")', choices:['[ʃ] ch (comme dans "chapeau")', '[k] c/qu/k'] },
+  { card:'"qui"', q:'Quel son entend-on au début ?', correct:'[k] c/qu/k', choices:['[ʃ] ch', '[k] c/qu/k'] },
+  { card:'"chocolat"', q:'Quel son entend-on au début ?', correct:'[ʃ] ch (comme dans "chapeau")', choices:['[ʃ] ch (comme dans "chapeau")', '[k] c/qu/k'] },
+  { card:'"coq"', q:'Quel son entend-on au début ?', correct:'[k] c/qu/k', choices:['[ʃ] ch', '[k] c/qu/k'] },
+], 'ex9');
+
+buildPaires([
+  { left:'un oiseau', right:'des oiseaux' },
+  { left:'un jeu', right:'des jeux' },
+  { left:'une souris', right:'des souris' },
+  { left:'une fleur', right:'des fleurs' },
+  { left:'un gâteau', right:'des gâteaux' },
+], 'ex10');
+</script>
+<script src="sync.js"></script>
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>

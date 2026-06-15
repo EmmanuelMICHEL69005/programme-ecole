@@ -78,6 +78,30 @@
     <div id="ex7"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#d97706">
+    <div class="ex-title"><span class="ex-badge" style="background:#d97706">Ex 8</span> Préfixes simples (re-, dé-, in-) <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex8"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 9</span> Suffixes simples (-eur, -euse, -tion) <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex9"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0891b2">
+    <div class="ex-title"><span class="ex-badge" style="background:#0891b2">Ex 10</span> Synonymes ou Antonymes ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex10"></div>
+  </div>
+
+  <div style="background:#f0fdf4;border-left:4px solid #059669;border-radius:10px;padding:14px 16px;margin:16px 0">
+    <div style="font-weight:900;color:#064e3b;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CE1</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <a href="conjugaison-ce1.html" style="background:#059669;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">📝 Conjugaison CE1</a>
+      <a href="grammaire-ce1.html" style="background:#059669;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">🔤 Grammaire CE1</a>
+      <a href="orthographe-ce1.html" style="background:#059669;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">✏️ Orthographe CE1</a>
+    </div>
+  </div>
+
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence — CE1</footer>
@@ -143,6 +167,37 @@ buildPaires([
   { left:'propre', right:'sale' },
   { left:'devant', right:'derrière' },
 ], 'ex7');
+
+buildQCM([
+  { card:'Que signifie "re-" dans "refaire" ?', q:'Sens du préfixe "re-"', correct:'faire de nouveau', choices:['faire de nouveau','ne pas faire','faire vite','faire ensemble'] },
+  { card:'Que signifie "dé-" dans "décoller" ?', q:'Sens du préfixe "dé-"', correct:'le contraire de coller', choices:['le contraire de coller','coller de nouveau','coller ensemble','très collé'] },
+  { card:'Que signifie "in-" dans "invisible" ?', q:'Sens du préfixe "in-"', correct:'non visible, pas visible', choices:['non visible, pas visible','voir de nouveau','voir ensemble','très visible'] },
+  { card:'"Relire" signifie ?', q:'Sens de "relire"', correct:'lire de nouveau', choices:['lire de nouveau','ne pas lire','mal lire','lire ensemble'] },
+  { card:'Quel est le contraire de "faire" avec un préfixe ?', q:'Contraire de "faire" avec préfixe', correct:'défaire', choices:['défaire','refaire','surfaire','parfaire'] },
+], 'ex8');
+
+buildQCM([
+  { card:'"Celui qui chante est un ___"', q:'Mot avec le suffixe -eur', correct:'chanteur', choices:['chanteur','chanteuse','chantation','chanterie'] },
+  { card:'"Celle qui danse est une ___"', q:'Mot avec le suffixe -euse', correct:'danseuse', choices:['danseur','danseuse','dansation','danserie'] },
+  { card:'"L\'action de construire = la ___"', q:'Mot avec le suffixe -tion', correct:'construction', choices:['constructeur','constructeuse','construction','constructerie'] },
+  { card:'"Celui qui court = un ___"', q:'Mot avec le suffixe -eur', correct:'coureur', choices:['coureur','coureuse','couration','courerie'] },
+  { card:'"L\'action de décider = la ___"', q:'Mot avec le suffixe -tion', correct:'décision', choices:['décideur','décideuse','décision','déciderie'] },
+], 'ex9');
+
+buildTri([{
+  q: 'Ces paires de mots sont-elles des synonymes (même sens) ou des antonymes (contraires) ?',
+  cats: ['Synonymes', 'Antonymes'],
+  items: [
+    { v:'rapide / vite', cat:'Synonymes' },
+    { v:'heureux / content', cat:'Synonymes' },
+    { v:'grand / immense', cat:'Synonymes' },
+    { v:'parler / dire', cat:'Synonymes' },
+    { v:'chaud / froid', cat:'Antonymes' },
+    { v:'jour / nuit', cat:'Antonymes' },
+    { v:'monter / descendre', cat:'Antonymes' },
+    { v:'aimer / détester', cat:'Antonymes' },
+  ]
+}], 'ex10');
 </script>
 
 <script src="sync.js"></script>

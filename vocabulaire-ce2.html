@@ -78,9 +78,33 @@
     <div id="ex7"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#d97706">
+    <div class="ex-title"><span class="ex-badge" style="background:#d97706">Ex 8</span> Niveau de langue (registre) <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex8"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0891b2">
+    <div class="ex-title"><span class="ex-badge" style="background:#0891b2">Ex 9</span> Champ lexical <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex9"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#dc2626">
+    <div class="ex-title"><span class="ex-badge" style="background:#dc2626">Ex 10</span> Sens propre ou Sens figuré ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex10"></div>
+  </div>
+
+  <div style="background:#f5f3ff;border-left:4px solid #7c3aed;border-radius:10px;padding:14px 16px;margin:16px 0">
+    <div style="font-weight:900;color:#4c1d95;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CE2</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <a href="conjugaison-ce2.html" style="background:#7c3aed;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">📝 Conjugaison CE2</a>
+      <a href="grammaire-ce2.html" style="background:#7c3aed;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">🔤 Grammaire CE2</a>
+      <a href="orthographe-ce2.html" style="background:#7c3aed;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">✏️ Orthographe CE2</a>
+    </div>
+  </div>
+
 </main>
 
-<footer class="site-footer">Fait avec ❤️ pour Clémence — CE2</footer>
+<footer class="site-footer">Fait avec ❤️ pour Clémence</footer>
 
 <script src="exercises.js"></script>
 <script>
@@ -141,13 +165,49 @@ buildVF([
 ], 'ex6');
 
 buildPaires([
-  { left:'content', right:'heureux' },
-  { left:'rapide', right:'vite' },
-  { left:'commencer', right:'démarrer' },
-  { left:'petit', right:'minuscule' },
-  { left:'regarder', right:'observer' },
-  { left:'beau', right:'magnifique' },
+  { q:'Associe chaque mot à son synonyme.',
+    pairs:[
+      ['content','heureux'],
+      ['rapide','vite'],
+      ['commencer','démarrer'],
+      ['petit','minuscule'],
+      ['regarder','observer'],
+      ['beau','magnifique'],
+    ]
+  }
 ], 'ex7');
+
+buildQCM([
+  { card:'"Il a cramé son dîner."', q:'Quel est le niveau de langue de cette phrase ?', correct:'familier', choices:['familier','courant','soutenu'] },
+  { card:'"Il a préparé son repas."', q:'Quel est le niveau de langue de cette phrase ?', correct:'courant', choices:['familier','courant','soutenu'] },
+  { card:'"Il a confectionné son repas."', q:'Quel est le niveau de langue de cette phrase ?', correct:'soutenu', choices:['familier','courant','soutenu'] },
+  { card:'"C\'est trop cool !"', q:'Quel est le niveau de langue de cette phrase ?', correct:'familier', choices:['familier','courant','soutenu'] },
+  { card:'"C\'est agréable."', q:'Quel est le niveau de langue de cette phrase ?', correct:'courant', choices:['familier','courant','soutenu'] },
+], 'ex8');
+
+buildQCM([
+  { card:'école, cahier, maîtresse, récréation', q:'Quel est le champ lexical de ces mots ?', correct:"l'école", choices:["l'école","la boulangerie","la musique","la mer"] },
+  { card:'pain, farine, four, boulanger', q:'Quel est le champ lexical de ces mots ?', correct:'la boulangerie', choices:["l'école",'la boulangerie','la musique','la mer'] },
+  { card:'guitare, piano, mélodie, partition', q:'Quel est le champ lexical de ces mots ?', correct:'la musique', choices:["l'école",'la boulangerie','la musique','le sport'] },
+  { card:'océan, vague, marée, plage', q:'Quel est le champ lexical de ces mots ?', correct:'la mer', choices:["l'école",'la mer','la musique','le sport'] },
+  { card:'but, arbitre, terrain, équipe', q:'Quel est le champ lexical de ces mots ?', correct:'le sport', choices:["l'école",'la boulangerie','la musique','le sport'] },
+], 'ex9');
+
+buildTri([
+  { q:'Classe chaque expression selon son sens.',
+    cats:['Sens propre','Sens figuré'],
+    items:[
+      {v:"Il a les pieds dans l'eau.", cat:'Sens propre'},
+      {v:'Le chat mange sa souris.', cat:'Sens propre'},
+      {v:'Elle porte un chapeau.', cat:'Sens propre'},
+      {v:'Le chien court vite.', cat:'Sens propre'},
+      {v:'Il a les pieds sur terre.', cat:'Sens figuré'},
+      {v:"Il a un cœur d'or.", cat:'Sens figuré'},
+      {v:'Elle a la tête dans les nuages.', cat:'Sens figuré'},
+      {v:"Il est le lion de l'équipe.", cat:'Sens figuré'},
+    ]
+  }
+], 'ex10');
 </script>
 
 <script src="sync.js"></script>

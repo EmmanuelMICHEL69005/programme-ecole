@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/vocabulaire-cp.html">
+<meta property="og:title" content="Vocabulaire — CP | École Facile">
+<meta property="og:description" content="Exercices de vocabulaire CP — ordre alphabétique, contraires, mots génériques, familles simples.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/vocabulaire-cp.html">
+<meta name="description" content="Exercices de vocabulaire CP — ordre alphabétique, contraires simples, mots génériques.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vocabulaire — CP | École Facile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header" style="background:linear-gradient(135deg,#16a34a,#22c55e);">
+  <span class="emoji-header">📚</span>
+  <h1>Vocabulaire</h1>
+  <p>Alphabet · Contraires · Mots génériques</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+<main>
+  <div class="badge-niveau">📚 CP — Vocabulaire</div>
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.88rem;color:#555;margin-top:8px;line-height:1.9;">
+      🔑 <strong>Ordre alphabétique</strong> : on classe par la 1re lettre<br>
+      a b c d e f g h i j k l m n o p q r s t u v w x y z<br>
+      🔑 <strong>Contraire</strong> : mot de sens opposé (chaud ↔ froid)<br>
+      📌 <strong>Mot générique</strong> : mot qui regroupe plusieurs mots (animal = chien, chat, lion…)
+    </div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#16a34a">
+    <div class="ex-title"><span class="ex-badge" style="background:#16a34a">Ex 1</span> Ordre alphabétique <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex1"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#15803d">
+    <div class="ex-title"><span class="ex-badge" style="background:#15803d">Ex 2</span> Contraires simples <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex2"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#166534">
+    <div class="ex-title"><span class="ex-badge" style="background:#166534">Ex 3</span> Mots génériques <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex3"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#14532d">
+    <div class="ex-title"><span class="ex-badge" style="background:#14532d">Ex 4</span> Familles de mots simples <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex4"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#22c55e">
+    <div class="ex-title"><span class="ex-badge" style="background:#22c55e">Ex 5</span> Trouver le bon mot <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex5"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 6</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex6"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Associe le mot à son contraire <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex7"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 8</span> Ordre alphabétique (2e lettre) <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex8"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#8b5cf6">
+    <div class="ex-title"><span class="ex-badge" style="background:#8b5cf6">Ex 9</span> Synonymes simples <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex9"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#06b6d4">
+    <div class="ex-title"><span class="ex-badge" style="background:#06b6d4">Ex 10</span> Classer par catégories <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex10"></div>
+  </div>
+  <div style="background:#f0fdf4;border-left:4px solid #16a34a;border-radius:10px;padding:14px 16px;margin:16px 0">
+    <div style="font-weight:900;color:#14532d;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CP</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <a href="conjugaison-cp.html" style="background:#16a34a;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">📝 Conjugaison CP</a>
+      <a href="grammaire-cp.html" style="background:#16a34a;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">🔤 Grammaire CP</a>
+      <a href="orthographe-cp.html" style="background:#16a34a;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">✏️ Orthographe CP</a>
+    </div>
+  </div>
+</main>
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CP</footer>
+<script src="exercises.js"></script>
+<script>
+buildQCM([
+  { card:'"chat · ballon · arbre"', q:'Quel mot vient en premier dans le dictionnaire ?', correct:'arbre (a)', choices:['chat (c)','ballon (b)','arbre (a)','tous pareils'] },
+  { card:'"fleur · cerise · dent"', q:'Quel mot vient en premier ?', correct:'cerise (c)', choices:['fleur (f)','cerise (c)','dent (d)'] },
+  { card:'"maison · lapin · nuage"', q:'Quel mot vient en dernier ?', correct:'nuage (n)', choices:['maison (m)','lapin (l)','nuage (n)'] },
+  { card:'"soleil · rivière · tigre"', q:'Dans l\'ordre alphabétique, quel est le 2e mot ?', correct:'soleil (s)', choices:['rivière (r)','soleil (s)','tigre (t)'] },
+  { card:'"zèbre · vache · renard"', q:'Quel mot vient en premier ?', correct:'renard (r)', choices:['zèbre (z)','vache (v)','renard (r)'] },
+], 'ex1');
+
+buildQCM([
+  { card:'"chaud"', q:'Quel est le contraire de "chaud" ?', correct:'froid', choices:['tiède','froid','brûlant','doux'] },
+  { card:'"grand"', q:'Quel est le contraire de "grand" ?', correct:'petit', choices:['moyen','gros','petit','long'] },
+  { card:'"jour"', q:'Quel est le contraire de "jour" ?', correct:'nuit', choices:['soir','matin','nuit','après-midi'] },
+  { card:'"ouvrir"', q:'Quel est le contraire de "ouvrir" ?', correct:'fermer', choices:['entrer','fermer','sortir','casser'] },
+  { card:'"vite"', q:'Quel est le contraire de "vite" ?', correct:'lentement', choices:['fort','vitement','lentement','doucement'] },
+  { card:'"propre"', q:'Quel est le contraire de "propre" ?', correct:'sale', choices:['lavé','rangé','sale','neuf'] },
+], 'ex2');
+
+buildQCM([
+  { card:'"chien · chat · lapin · oiseau"', q:'Quel mot générique regroupe tous ces mots ?', correct:'animal', choices:['animal','jouet','nourriture','couleur'] },
+  { card:'"rouge · bleu · vert · jaune"', q:'Quel mot générique regroupe tous ces mots ?', correct:'couleur', choices:['fleur','couleur','fruit','légume'] },
+  { card:'"rose · tulipe · marguerite"', q:'Quel mot générique correspond ?', correct:'fleur', choices:['arbre','fleur','légume','insecte'] },
+  { card:'"pomme · poire · banane · orange"', q:'Quel mot générique correspond ?', correct:'fruit', choices:['légume','fruit','animal','couleur'] },
+  { card:'"stylo · règle · cahier · gomme"', q:'Quel mot générique correspond ?', correct:'fourniture scolaire', choices:['jouet','vêtement','fourniture scolaire','meuble'] },
+], 'ex3');
+
+buildQCM([
+  { card:'"jardin"', q:'Quel mot de la même famille ?', correct:'jardiner', choices:['maison','jardiner','balcon','herbe'] },
+  { card:'"chanter"', q:'Quel mot de la même famille ?', correct:'chanson', choices:['danser','courir','chanson','musique'] },
+  { card:'"lire"', q:'Quel mot de la même famille ?', correct:'lecteur', choices:['écrire','dessiner','lecteur','regarder'] },
+  { card:'"pain"', q:'Quel mot de la même famille ?', correct:'boulanger', choices:['gâteau','sel','boulanger','farine'] },
+  { card:'"mer"', q:'Quel mot de la même famille ?', correct:'marin', choices:['lac','rivière','marin','bateau'] },
+], 'ex4');
+
+buildQCM([
+  { card:'"Le contraire de 'allumer'"', q:'Quel est le contraire ?', correct:'éteindre', choices:['illuminer','éteindre','briller','souffler'] },
+  { card:'"Quel mot signifie la même chose que 'content' ?"', q:'Synonyme de "content"', correct:'joyeux', choices:['triste','fâché','joyeux','inquiet'] },
+  { card:'"Quel mot est dans la même famille que 'fleur' ?"', q:'Famille de mots', correct:'fleurir', choices:['bouton','jardin','fleurir','herbe'] },
+  { card:'"chat · chien · lapin → quel mot générique ?"', q:'Mot générique', choices:['jouet','animal','légume','couleur'], correct:'animal' },
+  { card:'"Trouver le mot qui vient après 'n' dans l\'alphabet"', q:'Lettre suivant "n"', correct:'o', choices:['m','o','p','q'] },
+], 'ex5');
+
+buildVF([
+  { q:'Dans le dictionnaire, les mots sont classés dans l\'ordre alphabétique', correct:true },
+  { q:'Le contraire de "ouvert" est "fermé"', correct:true },
+  { q:'"Animal" est un mot générique qui peut désigner un chien, un chat, un lion', correct:true },
+  { q:'La lettre "a" vient après la lettre "b" dans l\'alphabet', correct:false, expl:'"a" vient AVANT "b" dans l\'alphabet (a, b, c…)' },
+  { q:'"Chanter" et "chanson" appartiennent à la même famille de mots', correct:true },
+  { q:'"Petit" et "grand" sont des synonymes', correct:false, expl:'"Petit" et "grand" sont des contraires (antonymes)' },
+], 'ex6');
+
+buildPaires([
+  { left:'chaud', right:'froid' },
+  { left:'grand', right:'petit' },
+  { left:'jour', right:'nuit' },
+  { left:'propre', right:'sale' },
+  { left:'ouvrir', right:'fermer' },
+  { left:'vite', right:'lentement' },
+], 'ex7');
+
+buildQCM([
+  { card:'"balle" ou "bonbon" ?', q:'Quand la 1re lettre est la même, on regarde la 2e. Lequel vient en premier ?', correct:'balle (ba- vient avant bo-)', choices:['balle (ba- vient avant bo-)','bonbon (bo-)'] },
+  { card:'"chat" ou "chien" ?', q:'Même 1re lettre "c" et même 2e lettre "h" → on regarde la 3e. Lequel vient en premier ?', correct:'chat (cha- vient avant chi-)', choices:['chat (cha- vient avant chi-)','chien (chi-)'] },
+  { card:'"papa" ou "papi" ?', q:'Les deux commencent par "pa". Lequel vient en premier ?', correct:'papa (pap-a vient avant pap-i)', choices:['papa (pap-a vient avant pap-i)','papi (pap-i)'] },
+  { card:'"sac" ou "sel" ?', q:'Les deux commencent par "s". Lequel vient en premier ?', correct:'sac (sa- vient avant se-)', choices:['sac (sa- vient avant se-)','sel (se-)'] },
+  { card:'"mer" ou "moto" ?', q:'Les deux commencent par "m". Lequel vient en premier ?', correct:'mer (me- vient avant mo-)', choices:['mer (me- vient avant mo-)','moto (mo-)'] },
+], 'ex8');
+
+buildQCM([
+  { card:'"content"', q:'Quel mot veut dire la même chose que "content" ?', correct:'joyeux', choices:['triste','méchant','joyeux','fatigué'] },
+  { card:'"beau"', q:'Quel mot veut dire la même chose que "beau" ?', correct:'joli', choices:['laid','vieux','grand','joli'] },
+  { card:'"marcher"', q:'Quel mot veut dire la même chose que "marcher" ?', correct:'se promener', choices:['courir','dormir','se promener','manger'] },
+  { card:'"regarder"', q:'Quel mot veut dire la même chose que "regarder" ?', correct:'observer', choices:['écouter','observer','sentir','toucher'] },
+  { card:'"crier"', q:'Quel mot veut dire la même chose que "crier" ?', correct:'hurler', choices:['chanter','hurler','souffler','murmurer'] },
+], 'ex9');
+
+buildTri([
+  { q:'Classe chaque mot dans la bonne catégorie.', cats:['Animal','Fruit','Couleur','Vêtement'], items:[
+    { v:'lion', cat:'Animal' },
+    { v:'dauphin', cat:'Animal' },
+    { v:'serpent', cat:'Animal' },
+    { v:'cerise', cat:'Fruit' },
+    { v:'raisin', cat:'Fruit' },
+    { v:'abricot', cat:'Fruit' },
+    { v:'violet', cat:'Couleur' },
+    { v:'gris', cat:'Couleur' },
+    { v:'orange', cat:'Couleur' },
+    { v:'manteau', cat:'Vêtement' },
+    { v:'chaussette', cat:'Vêtement' },
+    { v:'ceinture', cat:'Vêtement' },
+  ]}
+], 'ex10');
+</script>
+<script src="sync.js"></script>
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>

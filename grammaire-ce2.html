@@ -79,9 +79,33 @@
     <div id="ex7"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#d97706">
+    <div class="ex-title"><span class="ex-badge" style="background:#d97706">Ex 8</span> Identifier le groupe nominal sujet (GNS) <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex8"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0891b2">
+    <div class="ex-title"><span class="ex-badge" style="background:#0891b2">Ex 9</span> Nature vs Fonction <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex9"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#dc2626">
+    <div class="ex-title"><span class="ex-badge" style="background:#dc2626">Ex 10</span> Classer les compléments : CCL / CCT / CCM <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex10"></div>
+  </div>
+
+  <div style="background:#f5f3ff;border-left:4px solid #7c3aed;border-radius:10px;padding:14px 16px;margin:16px 0">
+    <div style="font-weight:900;color:#4c1d95;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CE2</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <a href="conjugaison-ce2.html" style="background:#7c3aed;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">📝 Conjugaison CE2</a>
+      <a href="orthographe-ce2.html" style="background:#7c3aed;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">✏️ Orthographe CE2</a>
+      <a href="vocabulaire-ce2.html" style="background:#7c3aed;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">📚 Vocabulaire CE2</a>
+    </div>
+  </div>
+
 </main>
 
-<footer class="site-footer">Fait avec ❤️ pour Clémence — CE2</footer>
+<footer class="site-footer">Fait avec ❤️ pour Clémence</footer>
 
 <script src="exercises.js"></script>
 <script>
@@ -144,6 +168,42 @@ buildPaires([
   { q:'Associe chaque phrase à son type.',
     pairs:[['Il fait froid.','déclarative'],['Ferme la porte !','impérative'],['Tu viens ?','interrogative'],['Quel beau ciel !','exclamative']] },
 ], 'ex7');
+
+buildQCM([
+  { card:'"Le petit chat noir dort."', q:'Quel est le groupe nominal sujet (GNS) ?', correct:'Le petit chat noir', choices:['Le petit chat noir','dort','chat','noir dort'] },
+  { card:'"Mes amis et moi jouons au foot."', q:'Quel est le GNS ?', correct:'Mes amis et moi', choices:['Mes amis et moi','jouons','au foot','Mes amis'] },
+  { card:'"La maîtresse explique."', q:'Quel est le GNS ?', correct:'La maîtresse', choices:['La maîtresse','explique','La','maîtresse explique'] },
+  { card:'"Ce beau livre raconte une histoire."', q:'Quel est le GNS ?', correct:'Ce beau livre', choices:['Ce beau livre','raconte','une histoire','Ce livre'] },
+  { card:'"Les enfants de la classe chantent."', q:'Quel est le GNS ?', correct:'Les enfants de la classe', choices:['Les enfants de la classe','chantent','Les enfants','de la classe'] },
+], 'ex8');
+
+buildQCM([
+  { card:'"rapidement"', q:'Ce mot est de quelle nature ?', correct:'adverbe', choices:['adverbe','verbe','adjectif','nom'] },
+  { card:'"Le soleil" dans "Le soleil brille"', q:'Quelle est la fonction de "Le soleil" ?', correct:'sujet', choices:['sujet','COD','CCL','attribut'] },
+  { card:'"une pomme" dans "Je mange une pomme"', q:'Quelle est la fonction de "une pomme" ?', correct:'COD', choices:['sujet','COD','CCT','CCM'] },
+  { card:'"à Paris" dans "Je vais à Paris"', q:'Quelle est la fonction de "à Paris" ?', correct:'CCL (complément circonstanciel de lieu)', choices:['CCL (complément circonstanciel de lieu)','CCT (complément circonstanciel de temps)','COD','sujet'] },
+  { card:'"beau" dans "un beau jardin"', q:'Ce mot est de quelle nature ?', correct:'adjectif qualificatif', choices:['adjectif qualificatif','verbe','adverbe','déterminant'] },
+], 'ex9');
+
+buildTri([
+  { q:'Classe chaque groupe selon sa nature de complément.',
+    cats:['CCL (lieu)','CCT (temps)','CCM (manière)'],
+    items:[
+      {v:'à Paris', cat:'CCL (lieu)'},
+      {v:'dans la forêt', cat:'CCL (lieu)'},
+      {v:'chez moi', cat:'CCL (lieu)'},
+      {v:'sous la table', cat:'CCL (lieu)'},
+      {v:'demain', cat:'CCT (temps)'},
+      {v:'le lundi', cat:'CCT (temps)'},
+      {v:'à midi', cat:'CCT (temps)'},
+      {v:"pendant l'été", cat:'CCT (temps)'},
+      {v:'rapidement', cat:'CCM (manière)'},
+      {v:'avec soin', cat:'CCM (manière)'},
+      {v:'doucement', cat:'CCM (manière)'},
+      {v:'en silence', cat:'CCM (manière)'},
+    ]
+  }
+], 'ex10');
 </script>
 
 <script src="sync.js"></script>

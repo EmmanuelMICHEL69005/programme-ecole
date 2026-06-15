@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/orthographe-cm2.html">
+<meta property="og:title" content="Orthographe — CM2 | École Facile">
+<meta property="og:description" content="Exercices d'orthographe CM2 — accord PP avec avoir et être, homophones avancés, chaîne d'accords.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/orthographe-cm2.html">
+<meta name="description" content="Exercices d'orthographe CM2 — accord PP avec avoir, homophones avancés, chaîne d'accords.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orthographe — CM2 | École Facile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header" style="background:linear-gradient(135deg,#b45309,#f59e0b);">
+  <span class="emoji-header">✏️</span>
+  <h1>Orthographe</h1>
+  <p>PP avec avoir, homophones, chaîne d'accords</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+<main>
+  <div class="badge-niveau">✏️ CM2 — Orthographe</div>
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.88rem;color:#555;margin-top:8px;line-height:1.9;">
+      🔑 PP + <strong>avoir</strong> : invariable sauf si COD placé <em>avant</em> le verbe<br>
+      🔑 PP + <strong>être</strong> : s'accorde avec le sujet (revu CM1)<br>
+      🔑 <strong>quand / quant / qu'en</strong> · <strong>davantage / d'avantage(s)</strong><br>
+      📌 La chaîne d'accords : dét. + adj. → tout suit le nom noyau
+    </div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#b45309">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309">Ex 1</span> PP avec avoir — accord ou pas ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex1"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#d97706">
+    <div class="ex-title"><span class="ex-badge" style="background:#d97706">Ex 2</span> PP avec être — accord avec le sujet <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex2"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#ca8a04">
+    <div class="ex-title"><span class="ex-badge" style="background:#ca8a04">Ex 3</span> Homophones avancés <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex3"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#a16207">
+    <div class="ex-title"><span class="ex-badge" style="background:#a16207">Ex 4</span> Chaîne d'accords complexe <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex4"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#78350f">
+    <div class="ex-title"><span class="ex-badge" style="background:#78350f">Ex 5</span> Choisir la bonne orthographe <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex5"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 6</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex6"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Associe les homophones à leur nature <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex7"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 8</span> Homophones : quand / quant / qu'en <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex8"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 9</span> Accords complexes dans le GN <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex9"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#dc2626">
+    <div class="ex-title"><span class="ex-badge" style="background:#dc2626">Ex 10</span> Associer la règle d'accord du participe passé <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex10"></div>
+  </div>
+  <div style="background:#fffbeb;border-left:4px solid #f59e0b;border-radius:10px;padding:14px 16px;margin:16px 0">
+    <div style="font-weight:900;color:#78350f;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CM2</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <a href="conjugaison-cm2.html" style="background:#f59e0b;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">📝 Conjugaison CM2</a>
+      <a href="grammaire-cm2.html" style="background:#f59e0b;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">🔤 Grammaire CM2</a>
+      <a href="vocabulaire-cm2.html" style="background:#f59e0b;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">📚 Vocabulaire CM2</a>
+    </div>
+  </div>
+</main>
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CM2</footer>
+<script src="exercises.js"></script>
+<script>
+buildQCM([
+  { card:'"Elle a chanté une belle chanson."', q:'PP "chanté" — faut-il l\'accorder ?', correct:'non — le COD "chanson" est après le verbe', choices:['oui, avec "elle"','oui, avec "chanson"','non — le COD "chanson" est après le verbe','oui, avec "belle"'] },
+  { card:'"La chanson qu\'elle a chantée était belle."', q:'PP "chantée" — l\'accord est-il correct ?', correct:'oui — le COD "que" (= chanson, féminin) est avant', choices:['non, on écrit "chanté"','oui — le COD "que" (= chanson, féminin) est avant','non, "avait chanté"','oui — accord avec "belle"'] },
+  { card:'"Les livres qu\'il a lu___ étaient passionnants."', q:'Forme correcte du PP', correct:'lus (COD "les livres" masc. plur. avant)', choices:['lu (invariable)','lus (COD "les livres" masc. plur. avant)','lues','lue'] },
+  { card:'"Il a regardé les films."', q:'PP "regardé" — faut-il l\'accorder ?', correct:'non — le COD "les films" est après', choices:['oui, avec "il"','oui, avec "les films"','non — le COD "les films" est après','oui, avec "regardé"'] },
+  { card:'"Les fleurs qu\'elle a cueillie___"', q:'Forme correcte du PP', correct:'cueillies (COD "les fleurs" fém. plur. avant)', choices:['cueillie','cueilli','cueillies (COD "les fleurs" fém. plur. avant)','cueillies (avec "elle")'] },
+], 'ex1');
+
+buildQCM([
+  { card:'"Paul et Lucie sont allé___ au cinéma."', q:'Accord du PP avec le sujet mixte', correct:'allés (masculin pluriel l\'emporte)', choices:['allé','allée','allés (masculin pluriel l\'emporte)','allées'] },
+  { card:'"Elles sont toutes arrivé___ en retard."', q:'Accord du PP avec "elles"', correct:'arrivées', choices:['arrivé','arrivée','arrivés','arrivées'] },
+  { card:'"Nous (2 garçons) sommes rentré___ tôt."', q:'Accord du PP avec "nous" (masc.)', correct:'rentrés', choices:['rentré','rentrée','rentrés','rentrées'] },
+  { card:'"Elle s\'est blessé___ au genou."', q:'PP d\'un verbe pronominal (accord avec "elle")', correct:'blessée', choices:['blessé','blessée','blessés','blessées'] },
+], 'ex2');
+
+buildQCM([
+  { card:'"___ il viendra, je lui parlerai."', q:'quand, quant ou qu\'en ?', correct:'quand (conjonction de temps)', choices:['quand (conjonction de temps)','quant (= en ce qui concerne)','qu\'en (que + en)'] },
+  { card:'"___ à moi, je préfère rester."', q:'quand, quant ou qu\'en ?', correct:'quant (= en ce qui concerne)', choices:['quand (conjonction de temps)','quant (= en ce qui concerne)','qu\'en (que + en)'] },
+  { card:'"Il travaille ___ que toi."', q:'davantage ou d\'avantage(s) ?', correct:'davantage (= plus)', choices:['davantage (= plus)','d\'avantage (bénéfice)','d\'avantages (bénéfices)'] },
+  { card:'"Les ___ de ce poste sont nombreux."', q:'davantage ou d\'avantages ?', correct:'avantages (nom, bénéfices)', choices:['davantages','avantages (nom, bénéfices)','d\'avantage'] },
+  { card:'"___ penses-tu de ce livre ?"', q:'qu\'en ou quand ?', correct:'qu\'en (= que + en : qu\'en penses-tu ?)', choices:['quand','quant','qu\'en (= que + en : qu\'en penses-tu ?)'] },
+], 'ex3');
+
+buildQCM([
+  { card:'"de beau___ vieux___ chevaux___"', q:'Forme correcte de ce GN', correct:'de beaux vieux chevaux', choices:['de beaux vieux chevaux','des beaux vieux cheval','de beau vieux chevaux','des beaux vieux chevaux'] },
+  { card:'"les journal___ régionaux___"', q:'Forme correcte du GN', correct:'les journaux régionaux', choices:['les journaux régionals','les journaux régionaux','les journales régionaux','les journal régionaux'] },
+  { card:'"des travail___ difficile___"', q:'Forme correcte du GN', correct:'des travaux difficiles', choices:['des travaux difficile','des travaux difficiles','des travails difficiles','des travail difficiles'] },
+  { card:'"de grand___ yeux___ bleu___"', q:'Forme correcte du GN (yeux = masc. plur.)', correct:'de grands yeux bleus', choices:['de grande yeux bleus','de grands yeux bleus','de grands yeuzes bleus','de grands œil bleus'] },
+], 'ex4');
+
+buildQCM([
+  { card:'"Il est ___ parti."', q:'"déjà" — adverbe ou "dé-jà" ?', correct:'déjà (adverbe invariable)', choices:['déjà (adverbe invariable)','deja','déjas'] },
+  { card:'"Elle est ___ de lui."', q:'"amoureuse" — accord avec ?', correct:'amoureuse (féminin pour "elle")', choices:['amoureux','amoureuse (féminin pour "elle")','amoureuses'] },
+  { card:'"Ils se sont ___ perdus."', q:'"certainement" — accord ?', correct:'certainement (invariable — adverbe)', choices:['certainement (invariable — adverbe)','certainements','certaines'] },
+  { card:'"Nous avons ___ (tout) mangé."', q:'"tout" devant un PP avec avoir', correct:'tout (adverbe invariable ici)', choices:['tout (adverbe invariable ici)','toute','tous','toutes'] },
+], 'ex5');
+
+buildVF([
+  { q:'Avec avoir, le PP s\'accorde si le COD est AVANT le verbe', correct:true },
+  { q:'"Les fleurs qu\'il a cueilli" — "cueilli" est correct', correct:false, expl:'"que" remplace "les fleurs" (féminin pluriel) qui est avant → il faut "cueillies"' },
+  { q:'"Quant à moi" signifie "en ce qui me concerne"', correct:true },
+  { q:'"Davantage" (sans apostrophe) signifie "plus"', correct:true },
+  { q:'Le PP d\'un verbe pronominal s\'accorde toujours avec le sujet', correct:false, expl:'Pas toujours : il faut vérifier si le pronom réfléchi est COD ou non — mais en CM2 on retient que souvent il s\'accorde' },
+  { q:'"Des beaux chevaux" est correct', correct:false, expl:'Devant "beaux" qui commence par une consonne, on utilise "de" : "de beaux chevaux"' },
+], 'ex6');
+
+buildPaires([
+  { left:'quand', right:'conjonction de temps (quand tu viendras)' },
+  { left:'quant', right:'locution (quant à moi = en ce qui me concerne)' },
+  { left:"qu'en", right:'que + en (qu\'en penses-tu ?)' },
+  { left:'davantage', right:'adverbe = plus (il travaille davantage)' },
+  { left:"d'avantages", right:"de + avantages (les d'avantages de ce métier)" },
+  { left:'leur', right:'pronom (je leur parle) ou dét. (leur maison)' },
+], 'ex7');
+
+buildQCM([
+  { card:'"___ partez-vous ?"', q:'quand, quant ou qu\'en ?', correct:'Quand (conjonction de temps)', choices:['Quand (conjonction de temps)','Quant (= en ce qui concerne)','Qu\'en (= que + en)'] },
+  { card:'"___ à moi, je reste."', q:'quand, quant ou qu\'en ?', correct:'Quant (= en ce qui concerne)', choices:['Quand (conjonction de temps)','Quant (= en ce qui concerne)','Qu\'en (= que + en)'] },
+  { card:'"Je ne le vois ___ vacances."', q:'quand, quant ou qu\'en ?', correct:"qu'en (= que + en)", choices:['quand','quant',"qu'en (= que + en)"] },
+  { card:'"___ il viendra, préviens-moi."', q:'quand, quant ou qu\'en ?', correct:'Quand (conjonction de temps)', choices:['Quand (conjonction de temps)','Quant (= en ce qui concerne)','Qu\'en (= que + en)'] },
+  { card:'"___ à eux, ils refusent."', q:'quand, quant ou qu\'en ?', correct:'Quant (= en ce qui concerne)', choices:['Quand (conjonction de temps)','Quant (= en ce qui concerne)','Qu\'en (= que + en)'] },
+], 'ex8');
+
+buildQCM([
+  { card:'"des travaux (nouveau) ___"', q:'Forme correcte de l\'adjectif', correct:'nouveaux (masc. plur.)', choices:['nouveaux (masc. plur.)','nouvelles','nouvels','nouveau'] },
+  { card:'"une (demi) ___ heure"', q:'Accord de "demi" devant le nom', correct:'demi (invariable devant le nom)', choices:['demie','demis','demi (invariable devant le nom)','demies'] },
+  { card:'"des châteaux (vieux) ___"', q:'Forme correcte de l\'adjectif', correct:'vieux (masc. plur.)', choices:['vieils','vieil','vieilles','vieux (masc. plur.)'] },
+  { card:'"des ___ (beau) jardins"', q:'Forme correcte de l\'adjectif', correct:'beaux (masc. plur.)', choices:['belles','beaux (masc. plur.)','beaus','beau'] },
+  { card:'"des ___ (vieil) arbres"', q:'Forme correcte de l\'adjectif au pluriel', correct:'vieux (masc. plur. — vieil = sing. devant voyelle)', choices:['vieils','vieil','vieux (masc. plur. — vieil = sing. devant voyelle)','vieilles'] },
+], 'ex9');
+
+buildPaires([
+  { left:'PP avec avoir, COD après le verbe', right:'pas d\'accord (ex : J\'ai mangé une pomme.)' },
+  { left:'PP avec avoir, COD avant le verbe', right:'accord avec le COD (ex : La pomme que j\'ai mangée.)' },
+  { left:'PP avec être', right:'accord avec le sujet (ex : Elle est partie.)' },
+  { left:'PP verbe pronominal réfléchi (COD = pronom)', right:'accord avec le sujet (ex : Elle s\'est lavée.)' },
+  { left:'PP verbe pronominal (COD ≠ pronom)', right:'pas d\'accord (ex : Elle s\'est lavé les mains.)' },
+], 'ex10');
+</script>
+<script src="sync.js"></script>
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>

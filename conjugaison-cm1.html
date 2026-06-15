@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/conjugaison-cm1.html">
+<meta property="og:title" content="Conjugaison — CM1 | École Facile">
+<meta property="og:description" content="Exercices de conjugaison CM1 — présent, imparfait, futur, passé composé, verbes irréguliers.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/conjugaison-cm1.html">
+<meta name="description" content="Exercices de conjugaison CM1 — présent, imparfait, futur, passé composé, verbes irréguliers (faire, aller, voir, venir…).">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conjugaison — CM1 | École Facile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);">
+  <span class="emoji-header">📝</span>
+  <h1>Conjugaison</h1>
+  <p>Présent, imparfait, futur, passé composé</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+<main>
+  <div class="badge-niveau">📝 CM1 — Conjugaison</div>
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.88rem;color:#555;margin-top:8px;line-height:1.9;">
+      🔑 <strong>Imparfait</strong> : radical + -ais/-ais/-ait/-ions/-iez/-aient (tous groupes)<br>
+      🔑 <strong>Futur</strong> : infinitif + -ai/-as/-a/-ons/-ez/-ont<br>
+      🔑 <strong>Passé composé</strong> : avoir ou être (présent) + participe passé<br>
+      🔑 <strong>Irréguliers clés</strong> : faire, aller, dire, venir, pouvoir, voir, vouloir, prendre<br>
+      📌 Auxiliaire <strong>être</strong> : verbes de déplacement → le PP s'accorde avec le sujet
+    </div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#1d4ed8">
+    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8">Ex 1</span> Identifier le temps du verbe <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex1"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#2563eb">
+    <div class="ex-title"><span class="ex-badge" style="background:#2563eb">Ex 2</span> Présent — verbes irréguliers <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex2"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#0891b2">
+    <div class="ex-title"><span class="ex-badge" style="background:#0891b2">Ex 3</span> Imparfait <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex3"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 4</span> Futur simple <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex4"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 5</span> Passé composé — auxiliaire avoir ou être ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex5"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 6</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex6"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Associe le verbe à son temps <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex7"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#d97706">
+    <div class="ex-title"><span class="ex-badge" style="background:#d97706">Ex 8</span> Identifier l'auxiliaire du passé composé <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex8"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 9</span> Conjuguer à l'imparfait (irréguliers) <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex9"></div>
+  </div>
+  <div class="exercice-block" style="--accent:#dc2626">
+    <div class="ex-title"><span class="ex-badge" style="background:#dc2626">Ex 10</span> Mettre les temps dans l'ordre chronologique <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">ORDRE</span></div>
+    <div id="ex10"></div>
+  </div>
+  <div style="background:#eff6ff;border-left:4px solid #3b82f6;border-radius:10px;padding:14px 16px;margin:16px 0">
+    <div style="font-weight:900;color:#1e3a8a;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CM1</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <a href="grammaire-cm1.html" style="background:#3b82f6;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">🔤 Grammaire CM1</a>
+      <a href="orthographe-cm1.html" style="background:#3b82f6;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">✏️ Orthographe CM1</a>
+      <a href="vocabulaire-cm1.html" style="background:#3b82f6;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">📚 Vocabulaire CM1</a>
+    </div>
+  </div>
+</main>
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CM1</footer>
+<script src="exercises.js"></script>
+<script>
+buildQCM([
+  { card:'"Il chantait sous la pluie."', q:'Quel est le temps de "chantait" ?', correct:'imparfait', choices:['présent','imparfait','futur','passé composé'] },
+  { card:'"Nous partirons demain."', q:'Quel est le temps de "partirons" ?', correct:'futur simple', choices:['présent','imparfait','futur simple','passé composé'] },
+  { card:'"Elle a terminé son travail."', q:'Quel est le temps de "a terminé" ?', correct:'passé composé', choices:['présent','imparfait','futur simple','passé composé'] },
+  { card:'"Tu finis toujours en retard."', q:'Quel est le temps de "finis" ?', correct:'présent', choices:['présent','imparfait','futur simple','passé composé'] },
+  { card:'"Ils venaient chaque soir."', q:'Quel est le temps de "venaient" ?', correct:'imparfait', choices:['présent','imparfait','futur simple','passé composé'] },
+  { card:'"Je verrai ce film ce soir."', q:'Quel est le temps de "verrai" ?', correct:'futur simple', choices:['présent','imparfait','futur simple','passé composé'] },
+], 'ex1');
+
+buildQCM([
+  { card:'"Il ___ (faire) ses devoirs."', q:'Présent de "faire" avec "il"', correct:'fait', choices:['fais','fait','font','faisons'] },
+  { card:'"Nous ___ (aller) au cinéma."', q:'Présent de "aller" avec "nous"', correct:'allons', choices:['allons','allez','vont','vas'] },
+  { card:'"Tu ___ (voir) bien ?"', q:'Présent de "voir" avec "tu"', correct:'vois', choices:['vois','voit','voyons','voyez'] },
+  { card:'"Elles ___ (venir) demain."', q:'Présent de "venir" avec "elles"', correct:'viennent', choices:['vient','viennent','venons','venez'] },
+  { card:'"Je ___ (pouvoir) t\'aider."', q:'Présent de "pouvoir" avec "je"', correct:'peux', choices:['peut','peux','pouvons','pouvez'] },
+  { card:'"Vous ___ (prendre) le bus ?"', q:'Présent de "prendre" avec "vous"', correct:'prenez', choices:['prends','prend','prenons','prenez'] },
+  { card:'"Il ___ (vouloir) partir."', q:'Présent de "vouloir" avec "il"', correct:'veut', choices:['veux','veut','voulons','voulez'] },
+], 'ex2');
+
+buildQCM([
+  { card:'"Je ___ (chanter) quand j\'étais petit."', q:'Imparfait de "chanter" avec "je"', correct:'chantais', choices:['chantais','chantait','chantions','chantaient'] },
+  { card:'"Nous ___ (finir) tard chaque soir."', q:'Imparfait de "finir" avec "nous"', correct:'finissions', choices:['finissions','finissiez','finissaient','finissais'] },
+  { card:'"Ils ___ (être) très jeunes."', q:'Imparfait de "être" avec "ils"', correct:'étaient', choices:['étais','était','étions','étaient'] },
+  { card:'"Tu ___ (avoir) peur du noir."', q:'Imparfait de "avoir" avec "tu"', correct:'avais', choices:['avais','avait','avions','aviez'] },
+  { card:'"Elle ___ (faire) du sport tous les jours."', q:'Imparfait de "faire" avec "elle"', correct:'faisait', choices:['faisais','faisait','faisions','faisaient'] },
+  { card:'"Vous ___ (venir) souvent ici ?"', q:'Imparfait de "venir" avec "vous"', correct:'veniez', choices:['venais','venait','venions','veniez'] },
+], 'ex3');
+
+buildQCM([
+  { card:'"Je ___ (partir) en vacances."', q:'Futur de "partir" avec "je"', correct:'partirai', choices:['partirai','partiras','partira','partirons'] },
+  { card:'"Nous ___ (faire) une fête."', q:'Futur de "faire" avec "nous"', correct:'ferons', choices:['ferai','feras','fera','ferons'] },
+  { card:'"Il ___ (être) en retard."', q:'Futur de "être" avec "il"', correct:'sera', choices:['serai','seras','sera','serons'] },
+  { card:'"Vous ___ (avoir) une surprise."', q:'Futur de "avoir" avec "vous"', correct:'aurez', choices:['aurai','auras','aura','aurez'] },
+  { card:'"Ils ___ (venir) te voir."', q:'Futur de "venir" avec "ils"', correct:'viendront', choices:['viendrai','viendra','viendrons','viendront'] },
+  { card:'"Tu ___ (voir) ce qu\'on t\'a préparé."', q:'Futur de "voir" avec "tu"', correct:'verras', choices:['verrai','verras','verra','verrons'] },
+], 'ex4');
+
+buildQCM([
+  { card:'"Elle ___ partie à 8h."', q:'Auxiliaire de "partir" au passé composé', correct:'est', choices:['est','a'] },
+  { card:'"Il ___ mangé une pizza."', q:'Auxiliaire de "manger" au passé composé', correct:'a', choices:['est','a'] },
+  { card:'"Nous ___ arrivés hier soir."', q:'Auxiliaire de "arriver" au passé composé', correct:'sommes', choices:['sommes','avons'] },
+  { card:'"Ils ___ vu un film."', q:'Auxiliaire de "voir" au passé composé', correct:'ont', choices:['sont','ont'] },
+  { card:'"Tu ___ tombé dans l\'escalier."', q:'Auxiliaire de "tomber" au passé composé', correct:'es', choices:['es','as'] },
+  { card:'"J\'___ fait mes devoirs."', q:'Auxiliaire de "faire" au passé composé', correct:'ai', choices:['suis','ai'] },
+], 'ex5');
+
+buildVF([
+  { q:'"Il faisait" est à l\'imparfait', correct:true },
+  { q:'Le futur de "aller" avec "je" est "allerai"', correct:false, expl:'Le futur de "aller" est irrégulier : j\'irai' },
+  { q:'"Elle est venue" → le PP "venue" s\'accorde avec "elle" (auxiliaire être)', correct:true },
+  { q:'"Nous faisions" est au passé composé', correct:false, expl:'"Faisions" est à l\'imparfait ; le passé composé serait "nous avons fait"' },
+  { q:'Le participe passé de "prendre" est "pris"', correct:true },
+  { q:'"J\'ai allé" est une phrase correcte', correct:false, expl:'"Aller" se conjugue avec être : je suis allé(e)' },
+], 'ex6');
+
+buildPaires([
+  { left:'je chantais', right:'imparfait' },
+  { left:'nous chanterons', right:'futur simple' },
+  { left:'il a chanté', right:'passé composé' },
+  { left:'tu chantes', right:'présent' },
+  { left:'elles faisaient', right:'imparfait' },
+  { left:'vous irez', right:'futur simple' },
+], 'ex7');
+
+buildQCM([
+  { card:'"La fleur ___ éclos."', q:'Quel auxiliaire complète la phrase ? (éclore = verbe de mouvement → être)', correct:'est', choices:['est','a'] },
+  { card:'"Nous ___ mangé."', q:'Quel auxiliaire complète la phrase ?', correct:'avons', choices:['sommes','avons'] },
+  { card:'"Elle ___ partie."', q:'Quel auxiliaire complète la phrase ?', correct:'est', choices:['est','a'] },
+  { card:'"Il ___ sorti."', q:'Quel auxiliaire complète la phrase ?', correct:'est', choices:['est','a'] },
+  { card:'"Elles ___ compris."', q:'Quel auxiliaire complète la phrase ?', correct:'ont', choices:['sont','ont'] },
+  { card:'"Vous ___ arrivés."', q:'Quel auxiliaire complète la phrase ?', correct:'êtes', choices:['êtes','avez'] },
+], 'ex8');
+
+buildQCM([
+  { card:'"être : il ___"', q:'Imparfait de "être" avec "il"', correct:'était', choices:['était','est','soit','étais'] },
+  { card:'"avoir : vous ___"', q:'Imparfait de "avoir" avec "vous"', correct:'aviez', choices:['avez','aviez','avions','avais'] },
+  { card:'"faire : nous ___"', q:'Imparfait de "faire" avec "nous"', correct:'faisions', choices:['faisions','faisaient','faisiez','faisons'] },
+  { card:'"aller : tu ___"', q:'Imparfait de "aller" avec "tu"', correct:'allais', choices:['allais','allait','allions','alliez'] },
+  { card:'"voir : elles ___"', q:'Imparfait de "voir" avec "elles"', correct:'voyaient', choices:['voyaient','voyions','voyiez','voyais'] },
+], 'ex9');
+
+buildOrdre([
+  { q:'Du plus passé au plus récent :', items:['Plus-que-parfait','Imparfait / Passé composé','Présent','Futur simple'] },
+], 'ex10');
+</script>
+<script src="sync.js"></script>
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>

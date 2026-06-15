@@ -78,6 +78,30 @@
     <div id="ex7"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#d97706">
+    <div class="ex-title"><span class="ex-badge" style="background:#d97706">Ex 8</span> Quelle est la nature de ce mot ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex8"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 9</span> Type et forme des phrases <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex9"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0891b2">
+    <div class="ex-title"><span class="ex-badge" style="background:#0891b2">Ex 10</span> Classer : Nom / Verbe / Adjectif <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div id="ex10"></div>
+  </div>
+
+  <div style="background:#f0fdf4;border-left:4px solid #059669;border-radius:10px;padding:14px 16px;margin:16px 0">
+    <div style="font-weight:900;color:#064e3b;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CE1</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <a href="conjugaison-ce1.html" style="background:#059669;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">📝 Conjugaison CE1</a>
+      <a href="orthographe-ce1.html" style="background:#059669;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">✏️ Orthographe CE1</a>
+      <a href="vocabulaire-ce1.html" style="background:#059669;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:800;font-size:0.82rem">📚 Vocabulaire CE1</a>
+    </div>
+  </div>
+
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence — CE1</footer>
@@ -143,6 +167,41 @@ buildPaires([
   { left:'Paris', right:'nom propre' },
   { left:'vite', right:'adverbe' },
 ], 'ex7');
+
+buildQCM([
+  { card:'"rapidement"', q:'Quelle est la nature de ce mot ?', correct:'adverbe', choices:['adverbe','préposition','conjonction','nom commun'] },
+  { card:'"sous"', q:'Quelle est la nature de ce mot ?', correct:'préposition', choices:['adverbe','préposition','conjonction','déterminant'] },
+  { card:'"mais"', q:'Quelle est la nature de ce mot ?', correct:'conjonction', choices:['adverbe','préposition','conjonction','déterminant'] },
+  { card:'"Léa"', q:'Quelle est la nature de ce mot ?', correct:'nom propre', choices:['nom commun','nom propre','adjectif','verbe'] },
+  { card:'"courir"', q:'Quelle est la nature de ce mot ?', correct:'verbe à l\'infinitif', choices:['nom commun','adjectif','verbe à l\'infinitif','adverbe'] },
+], 'ex8');
+
+buildQCM([
+  { card:'"Quelle est la forme négative de \'Il chante\' ?"', q:'Forme négative correcte', correct:'Il ne chante pas.', choices:['Il ne chante pas.','Il chante pas.','Il ne pas chante.','Pas il chante.'] },
+  { card:'"Quel est le type de \'Ferme la porte !\' ?"', q:'Type de phrase', correct:'impérative', choices:['déclarative','interrogative','exclamative','impérative'] },
+  { card:'"Quelle est la forme négative de \'Nous mangeons\' ?"', q:'Forme négative correcte', correct:'Nous ne mangeons pas.', choices:['Nous ne mangeons pas.','Nous mangeons pas.','Ne mangeons pas nous.','Nous pas mangeons.'] },
+  { card:'"Quelle est la forme négative de \'Tu joues\' ?"', q:'Forme négative correcte', correct:'Tu ne joues pas.', choices:['Tu ne joues pas.','Tu joues pas.','Ne tu joues pas.','Tu pas joues.'] },
+  { card:'"Quel est le type de \'Est-ce qu\'il pleut ?\' ?"', q:'Type de phrase', correct:'interrogative', choices:['déclarative','interrogative','exclamative','impérative'] },
+], 'ex9');
+
+buildTri([{
+  q: 'Classe chaque mot dans la bonne catégorie grammaticale.',
+  cats: ['Nom', 'Verbe', 'Adjectif'],
+  items: [
+    { v:'chien', cat:'Nom' },
+    { v:'école', cat:'Nom' },
+    { v:'soleil', cat:'Nom' },
+    { v:'maison', cat:'Nom' },
+    { v:'courir', cat:'Verbe' },
+    { v:'manger', cat:'Verbe' },
+    { v:'dormir', cat:'Verbe' },
+    { v:'jouer', cat:'Verbe' },
+    { v:'rouge', cat:'Adjectif' },
+    { v:'grand', cat:'Adjectif' },
+    { v:'beau', cat:'Adjectif' },
+    { v:'petit', cat:'Adjectif' },
+  ]
+}], 'ex10');
 </script>
 
 <script src="sync.js"></script>
