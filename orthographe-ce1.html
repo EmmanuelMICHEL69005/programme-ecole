@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="École Facile">
+<meta name="application-name" content="École Facile">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/orthographe-ce1.html">
+<meta property="og:title" content="Orthographe — CE1 | École Facile">
+<meta property="og:description" content="Exercices interactifs d'orthographe CE1 — homophones a/à, est/et, pluriel, accord. Gratuit sur École Facile.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/orthographe-ce1.html">
+<meta name="description" content="Exercices interactifs d'orthographe CE1 — homophones a/à, est/et, pluriel des noms, accord adjectif.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orthographe — CE1 | École Facile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header" style="background:linear-gradient(135deg,#065f46,#059669);">
+  <span class="emoji-header">✏️</span>
+  <h1>Orthographe</h1>
+  <p>Homophones, pluriels, accords</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+  <div class="badge-niveau">✏️ CE1 — Orthographe</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.88rem;color:#555;margin-top:8px;line-height:1.9;">
+      🔑 <strong>a / à</strong> : "a" = avoir (avait) — "à" = préposition (vers, à Paris)<br>
+      🔑 <strong>est / et</strong> : "est" = être (était) — "et" = liaison (et puis)<br>
+      🔑 <strong>on / ont</strong> : "ont" = avoir → remplace par "avaient"<br>
+      🔑 <strong>son / sont</strong> : "sont" = être → remplace par "étaient"<br>
+      📌 Pluriel des noms : généralement <strong>-s</strong> — féminin des adjectifs : + <strong>-e</strong>
+    </div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#065f46">
+    <div class="ex-title"><span class="ex-badge" style="background:#065f46">Ex 1</span> Homophones a / à <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 2</span> Homophones est / et — on / ont — son / sont <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0d9488">
+    <div class="ex-title"><span class="ex-badge" style="background:#0d9488">Ex 3</span> Pluriel des noms <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0891b2">
+    <div class="ex-title"><span class="ex-badge" style="background:#0891b2">Ex 4</span> Accord de l'adjectif <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 5</span> Accord sujet-verbe <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 6</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Orthographe correcte <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex7"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CE1</footer>
+
+<script src="exercises.js"></script>
+<script>
+buildQCM([
+  { card:'"Il ___ un beau vélo."', q:'a ou à ?', correct:'a', choices:['a','à'] },
+  { card:'"Je vais ___ l\'école."', q:'a ou à ?', correct:'à', choices:['a','à'] },
+  { card:'"Elle ___ mangé une pomme."', q:'a ou à ?', correct:'a', choices:['a','à'] },
+  { card:'"Il parle ___ sa maman."', q:'a ou à ?', correct:'à', choices:['a','à'] },
+  { card:'"Mon chat ___ les yeux verts."', q:'a ou à ?', correct:'a', choices:['a','à'] },
+  { card:'"Il va ___ la mer."', q:'a ou à ?', correct:'à', choices:['a','à'] },
+], 'ex1');
+
+buildQCM([
+  { card:'"Il ___ grand."', q:'est ou et ?', correct:'est', choices:['est','et'] },
+  { card:'"Il aime le foot ___ la natation."', q:'est ou et ?', correct:'et', choices:['est','et'] },
+  { card:'"___ joue dans le jardin."', q:'on ou ont ?', correct:'On', choices:['On','Ont'] },
+  { card:'"Ils ___ faim."', q:'on ou ont ?', correct:'ont', choices:['on','ont'] },
+  { card:'"Il cherche ___ sac."', q:'son ou sont ?', correct:'son', choices:['son','sont'] },
+  { card:'"Elles ___ venues."', q:'son ou sont ?', correct:'sont', choices:['son','sont'] },
+  { card:'"Le soleil ___ chaud ___ brillant."', q:'est ou et ? (1er trou)', correct:'est', choices:['est','et'] },
+], 'ex2');
+
+buildQCM([
+  { card:'un oiseau → des…', q:'Pluriel de "oiseau"', correct:'oiseaux', choices:['oiseaus','oiseaux','oiseau','oisele'] },
+  { card:'un chapeau → des…', q:'Pluriel de "chapeau"', correct:'chapeaux', choices:['chapeaus','chapeaux','chapeau','chapels'] },
+  { card:'un ami → des…', q:'Pluriel de "ami"', correct:'amis', choices:['amis','amies','amix','ami'] },
+  { card:'un cheval → des…', q:'Pluriel de "cheval"', correct:'chevaux', choices:['chevals','chevaux','cheval','cheveaux'] },
+  { card:'une maison → des…', q:'Pluriel de "maison"', correct:'maisons', choices:['maisons','maisones','maisonx','maison'] },
+], 'ex3');
+
+buildQCM([
+  { card:'une fille ___ (petit)', q:'Accord de "petit" avec "une fille"', correct:'petite', choices:['petit','petite','petits','petites'] },
+  { card:'des garçons ___ (content)', q:'Accord de "content" avec "des garçons"', correct:'contents', choices:['content','contente','contents','contentes'] },
+  { card:'une robe ___ (bleu)', q:'Accord de "bleu" avec "une robe"', correct:'bleue', choices:['bleu','bleue','bleus','bleues'] },
+  { card:'des fleurs ___ (rouge)', q:'Accord de "rouge" avec "des fleurs"', correct:'rouges', choices:['rouge','rouges','rouge','rouges'] },
+  { card:'un garçon ___ (grand)', q:'Accord de "grand" avec "un garçon"', correct:'grand', choices:['grand','grande','grands','grandes'] },
+], 'ex4');
+
+buildQCM([
+  { card:'"Le lapin ___ (manger, présent)"', q:'Forme correcte ?', correct:'mange', choices:['mange','manges','mangeons','mangent'] },
+  { card:'"Les lapins ___ (manger, présent)"', q:'Forme correcte ?', correct:'mangent', choices:['mange','mangent','manges','mangeons'] },
+  { card:'"Tu ___ (chanter, présent)"', q:'Forme correcte ?', correct:'chantes', choices:['chante','chantes','chantons','chantez'] },
+  { card:'"Elle ___ (être, présent)"', q:'Forme correcte ?', correct:'est', choices:['suis','es','est','sont'] },
+  { card:'"Ils ___ (avoir, présent)"', q:'Forme correcte ?', correct:'ont', choices:['ai','as','a','ont'] },
+], 'ex5');
+
+buildVF([
+  { q:'"a" dans "Il a faim" peut être remplacé par "avait" → c\'est le verbe avoir', correct:true },
+  { q:'"des oiseaux" est le pluriel correct de "oiseau"', correct:true },
+  { q:'"une fille grande" → "grande" s\'accorde avec "fille" (féminin singulier)', correct:true },
+  { q:'"Il et content" est une phrase correcte', correct:false, expl:'Il faut écrire "est" (verbe être), pas "et"' },
+  { q:'"Ils ont faim" → "ont" est le verbe avoir au pluriel', correct:true },
+  { q:'"des chevals" est le pluriel correct de "cheval"', correct:false, expl:'Le pluriel de "cheval" est "chevaux"' },
+], 'ex6');
+
+buildQCM([
+  { card:'"Le ciel ___ beau et chaud."', q:'est ou et ? (1er trou)', correct:'est', choices:['est','et'] },
+  { card:'"Une belle ___" (fleur, pluriel)', q:'Forme correcte au pluriel', correct:'De belles fleurs', choices:['De belles fleurs','Des belle fleur','De beau fleurs','Des beaux fleurs'] },
+  { card:'"Les enfants ___."', q:'Forme correcte de "jouer" au présent', correct:'jouent', choices:['joue','joues','jouons','jouent'] },
+  { card:'"Il ___ son crayon."', q:'a ou à ?', correct:'a', choices:['a','à'] },
+  { card:'"des ___" (bateau au pluriel)', q:'Quelle est la bonne orthographe ?', correct:'bateaux', choices:['bateaus','bateaux','bateau','bateauxs'] },
+  { card:'"___ amis jouent."', q:'Ses ou Ces ?', correct:'Ses', choices:['Ses','Ces'] },
+], 'ex7');
+</script>
+
+<script src="sync.js"></script>
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>

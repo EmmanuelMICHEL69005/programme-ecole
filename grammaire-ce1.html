@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="École Facile">
+<meta name="application-name" content="École Facile">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/grammaire-ce1.html">
+<meta property="og:title" content="Grammaire — CE1 | École Facile">
+<meta property="og:description" content="Exercices interactifs de grammaire CE1 — nature des mots, sujet, verbe, types de phrases. Gratuit sur École Facile.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/grammaire-ce1.html">
+<meta name="description" content="Exercices interactifs de grammaire CE1 — nature des mots, sujet, verbe, types de phrases, accord.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grammaire — CE1 | École Facile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header" style="background:linear-gradient(135deg,#065f46,#059669);">
+  <span class="emoji-header">🔤</span>
+  <h1>Grammaire</h1>
+  <p>Nature des mots, sujet, verbe, types de phrases</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+  <div class="badge-niveau">🔤 CE1 — Grammaire</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.88rem;color:#555;margin-top:8px;line-height:1.9;">
+      🔑 <strong>Nom</strong> : désigne une personne, un animal, une chose (chat, maison, Lucas)<br>
+      🔑 <strong>Verbe</strong> : exprime une action ou un état (mange, est, court)<br>
+      🔑 <strong>Adjectif</strong> : décrit le nom (grand, rouge, joli)<br>
+      🔑 <strong>Sujet</strong> : "qui ?" ou "qu'est-ce qui ?" fait l'action<br>
+      📌 La phrase commence par une <strong>majuscule</strong> et se termine par un <strong>point</strong>
+    </div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#065f46">
+    <div class="ex-title"><span class="ex-badge" style="background:#065f46">Ex 1</span> Nature des mots <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 2</span> Identifier le verbe <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0d9488">
+    <div class="ex-title"><span class="ex-badge" style="background:#0d9488">Ex 3</span> Identifier le sujet <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0891b2">
+    <div class="ex-title"><span class="ex-badge" style="background:#0891b2">Ex 4</span> Types de phrases <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 5</span> Accord sujet-verbe <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 6</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Associe le mot à sa nature <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex7"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CE1</footer>
+
+<script src="exercises.js"></script>
+<script>
+buildQCM([
+  { card:'"chat"', q:'Quelle est la nature de ce mot ?', correct:'nom', choices:['nom','verbe','adjectif','déterminant'] },
+  { card:'"mange"', q:'Quelle est la nature de ce mot ?', correct:'verbe', choices:['nom','verbe','adjectif','déterminant'] },
+  { card:'"grand"', q:'Quelle est la nature de ce mot ?', correct:'adjectif', choices:['nom','verbe','adjectif','déterminant'] },
+  { card:'"le"', q:'Quelle est la nature de ce mot ?', correct:'déterminant', choices:['nom','verbe','adjectif','déterminant'] },
+  { card:'"Paris"', q:'Quelle est la nature de ce mot ?', correct:'nom propre', choices:['nom propre','verbe','adjectif','déterminant'] },
+  { card:'"rouge"', q:'Quelle est la nature de ce mot ?', correct:'adjectif', choices:['nom','verbe','adjectif','pronom'] },
+], 'ex1');
+
+buildQCM([
+  { card:'"Le chien court dans le jardin."', q:'Quel est le verbe ?', correct:'court', choices:['chien','court','jardin','dans'] },
+  { card:'"La petite fille mange une pomme."', q:'Quel est le verbe ?', correct:'mange', choices:['fille','petite','mange','pomme'] },
+  { card:'"Mon chat dort sur le canapé."', q:'Quel est le verbe ?', correct:'dort', choices:['chat','mon','dort','canapé'] },
+  { card:'"Les enfants jouent au ballon."', q:'Quel est le verbe ?', correct:'jouent', choices:['enfants','jouent','ballon','les'] },
+  { card:'"Elle est très contente."', q:'Quel est le verbe ?', correct:'est', choices:['elle','est','très','contente'] },
+], 'ex2');
+
+buildQCM([
+  { card:'"Le chat mange sa pâtée."', q:'Qui fait l\'action ?', correct:'Le chat', choices:['Le chat','mange','sa pâtée','sa'] },
+  { card:'"Les enfants courent vite."', q:'Qui fait l\'action ?', correct:'Les enfants', choices:['Les enfants','courent','vite','enfants'] },
+  { card:'"Ma petite sœur pleure."', q:'Qui fait l\'action ?', correct:'Ma petite sœur', choices:['Ma petite sœur','pleure','petite','Ma'] },
+  { card:'"Le soleil brille."', q:'Qui fait l\'action ?', correct:'Le soleil', choices:['Le soleil','brille','le','soleil'] },
+  { card:'"Nous mangeons des fruits."', q:'Qui fait l\'action ?', correct:'Nous', choices:['Nous','mangeons','des fruits','fruits'] },
+], 'ex3');
+
+buildQCM([
+  { card:'"Il fait beau aujourd\'hui."', q:'Quel type de phrase ?', correct:'déclarative', choices:['déclarative','interrogative','exclamative','impérative'] },
+  { card:'"Quelle belle journée !"', q:'Quel type de phrase ?', correct:'exclamative', choices:['déclarative','interrogative','exclamative','impérative'] },
+  { card:'"Mange tes légumes !"', q:'Quel type de phrase ?', correct:'impérative', choices:['déclarative','interrogative','exclamative','impérative'] },
+  { card:'"Tu viens jouer ?"', q:'Quel type de phrase ?', correct:'interrogative', choices:['déclarative','interrogative','exclamative','impérative'] },
+  { card:'"Les enfants jouent dans le parc."', q:'Quel type de phrase ?', correct:'déclarative', choices:['déclarative','interrogative','exclamative','impérative'] },
+  { card:'"Viens ici !"', q:'Quel type de phrase ?', correct:'impérative', choices:['déclarative','interrogative','exclamative','impérative'] },
+], 'ex4');
+
+buildQCM([
+  { card:'"Le chat ___ (dormir, présent)"', q:'Forme correcte ?', correct:'dort', choices:['dorment','dort','dormons','dormez'] },
+  { card:'"Les oiseaux ___ (chanter, présent)"', q:'Forme correcte ?', correct:'chantent', choices:['chante','chantes','chantons','chantent'] },
+  { card:'"Je ___ (avoir, présent)"', q:'Forme correcte ?', correct:'ai', choices:['ai','as','a','avons'] },
+  { card:'"Nous ___ (être, présent)"', q:'Forme correcte ?', correct:'sommes', choices:['suis','êtes','sommes','sont'] },
+  { card:'"Ma sœur ___ (manger, présent)"', q:'Forme correcte ?', correct:'mange', choices:['mange','manges','mangeons','mangent'] },
+], 'ex5');
+
+buildVF([
+  { q:'Une phrase commence toujours par une majuscule', correct:true },
+  { q:'"Le chat" est un groupe nominal (déterminant + nom)', correct:true },
+  { q:'"Mange !" est une phrase déclarative', correct:false, expl:'C\'est une phrase impérative (ordre)' },
+  { q:'Dans "Les oiseaux chantent", le sujet est "oiseaux"', correct:false, expl:'Le sujet est "Les oiseaux" (avec le déterminant)' },
+  { q:'Un adjectif précise le sens d\'un nom', correct:true },
+  { q:'"Elle est belle." — "belle" est un verbe', correct:false, expl:'"belle" est un adjectif' },
+], 'ex6');
+
+buildPaires([
+  { left:'chien', right:'nom commun' },
+  { left:'mange', right:'verbe' },
+  { left:'beau', right:'adjectif' },
+  { left:'le', right:'déterminant' },
+  { left:'Paris', right:'nom propre' },
+  { left:'vite', right:'adverbe' },
+], 'ex7');
+</script>
+
+<script src="sync.js"></script>
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>

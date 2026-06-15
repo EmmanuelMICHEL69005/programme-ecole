@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="École Facile">
+<meta name="application-name" content="École Facile">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/conjugaison-ce1.html">
+<meta property="og:title" content="Conjugaison — CE1 | École Facile">
+<meta property="og:description" content="Exercices interactifs de conjugaison CE1 — présent, futur proche, passé composé. Gratuit sur École Facile.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/conjugaison-ce1.html">
+<meta name="description" content="Exercices interactifs de conjugaison CE1 — présent de être/avoir/1er groupe, futur proche, passé composé.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conjugaison — CE1 | École Facile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header" style="background:linear-gradient(135deg,#065f46,#059669);">
+  <span class="emoji-header">📝</span>
+  <h1>Conjugaison</h1>
+  <p>Présent, futur proche, passé composé</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+  <div class="badge-niveau">📝 CE1 — Conjugaison</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.88rem;color:#555;margin-top:8px;line-height:1.9;">
+      🔑 <strong>1er groupe (-ER)</strong> au présent : -e, -es, -e, -ons, -ez, -ent<br>
+      🔑 <strong>être</strong> : suis, es, est, sommes, êtes, sont<br>
+      🔑 <strong>avoir</strong> : ai, as, a, avons, avez, ont<br>
+      🔑 <strong>Futur proche</strong> : aller (présent) + infinitif → Il va chanter<br>
+      📌 <strong>Passé composé</strong> : avoir (présent) + participe passé en -é → J'ai chanté
+    </div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#065f46">
+    <div class="ex-title"><span class="ex-badge" style="background:#065f46">Ex 1</span> Identifier le groupe du verbe <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 2</span> Présent de être et avoir <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0d9488">
+    <div class="ex-title"><span class="ex-badge" style="background:#0d9488">Ex 3</span> Présent des verbes du 1er groupe <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0891b2">
+    <div class="ex-title"><span class="ex-badge" style="background:#0891b2">Ex 4</span> Futur proche (aller + infinitif) <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 5</span> Passé composé <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 6</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Associe le pronom à sa forme <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex7"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CE1</footer>
+
+<script src="exercises.js"></script>
+<script>
+buildQCM([
+  { card:'"chanter"', q:'Quel groupe ?', correct:'1er groupe (-ER)', choices:['1er groupe (-ER)','2e groupe (-IR)','3e groupe'] },
+  { card:'"finir"', q:'Quel groupe ?', correct:'2e groupe (-IR)', choices:['1er groupe (-ER)','2e groupe (-IR)','3e groupe'] },
+  { card:'"jouer"', q:'Quel groupe ?', correct:'1er groupe (-ER)', choices:['1er groupe (-ER)','2e groupe (-IR)','3e groupe'] },
+  { card:'"aller"', q:'Quel groupe ?', correct:'3e groupe', choices:['1er groupe (-ER)','2e groupe (-IR)','3e groupe'] },
+  { card:'"manger"', q:'Quel groupe ?', correct:'1er groupe (-ER)', choices:['1er groupe (-ER)','2e groupe (-IR)','3e groupe'] },
+  { card:'"faire"', q:'Quel groupe ?', correct:'3e groupe', choices:['1er groupe (-ER)','2e groupe (-IR)','3e groupe'] },
+], 'ex1');
+
+buildQCM([
+  { card:'"Je ___ content."', q:'Forme de "être" avec "je"', correct:'suis', choices:['suis','es','est','sommes'] },
+  { card:'"Tu ___ fatigué."', q:'Forme de "être" avec "tu"', correct:'es', choices:['suis','es','est','êtes'] },
+  { card:'"Elle ___ grande."', q:'Forme de "être" avec "elle"', correct:'est', choices:['suis','es','est','sont'] },
+  { card:'"J\'___ faim."', q:'Forme de "avoir" avec "je"', correct:'ai', choices:['ai','as','a','avons'] },
+  { card:'"Tu ___ un vélo."', q:'Forme de "avoir" avec "tu"', correct:'as', choices:['ai','as','a','avez'] },
+  { card:'"Ils ___ partis."', q:'Forme de "être" avec "ils"', correct:'sont', choices:['est','êtes','sommes','sont'] },
+  { card:'"Nous ___ chaud."', q:'Forme de "avoir" avec "nous"', correct:'avons', choices:['ai','as','avons','avez'] },
+], 'ex2');
+
+buildQCM([
+  { card:'"Je ___ (chanter)"', q:'Forme correcte au présent', correct:'chante', choices:['chante','chantes','chantons','chantent'] },
+  { card:'"Tu ___ (jouer)"', q:'Forme correcte au présent', correct:'joues', choices:['joue','joues','jouons','jouez'] },
+  { card:'"Il ___ (manger)"', q:'Forme correcte au présent', correct:'mange', choices:['mange','manges','mangeons','mangent'] },
+  { card:'"Nous ___ (danser)"', q:'Forme correcte au présent', correct:'dansons', choices:['danse','danses','dansons','dansent'] },
+  { card:'"Vous ___ (regarder)"', q:'Forme correcte au présent', correct:'regardez', choices:['regardons','regardez','regardes','regardent'] },
+  { card:'"Elles ___ (sauter)"', q:'Forme correcte au présent', correct:'sautent', choices:['saute','sautes','sautons','sautent'] },
+  { card:'"Je ___ (laver)"', q:'Forme correcte au présent', correct:'lave', choices:['lave','laves','lavons','lavent'] },
+], 'ex3');
+
+buildQCM([
+  { card:'"Je ___ chanter." (futur proche)', q:'Forme de aller avec "je"', correct:'vais', choices:['vais','vas','va','allons'] },
+  { card:'"Tu ___ manger." (futur proche)', q:'Forme de aller avec "tu"', correct:'vas', choices:['vais','vas','va','allez'] },
+  { card:'"Il ___ jouer." (futur proche)', q:'Forme de aller avec "il"', correct:'va', choices:['vais','vas','va','vont'] },
+  { card:'"Nous ___ partir." (futur proche)', q:'Forme de aller avec "nous"', correct:'allons', choices:['allons','allez','vont','vas'] },
+  { card:'Que dit "il va manger" sur l\'action ?', q:'Quel temps exprime-t-on ?', correct:'Action future proche', choices:['Action passée','Action présente','Action future proche'] },
+  { card:'"Elles ___ danser." (futur proche)', q:'Forme de aller avec "elles"', correct:'vont', choices:['va','allons','allez','vont'] },
+], 'ex4');
+
+buildQCM([
+  { card:'"J\'ai ___" (chanter)', q:'Participe passé de "chanter"', correct:'chanté', choices:['chanté','chanter','chante','chantait'] },
+  { card:'"Elle a ___" (jouer)', q:'Participe passé de "jouer"', correct:'joué', choices:['joué','jouer','joue','jouait'] },
+  { card:'"Il a ___" (manger)', q:'Participe passé de "manger"', correct:'mangé', choices:['mangé','manger','mange','mangeait'] },
+  { card:'"Nous avons ___" (sauter)', q:'Participe passé de "sauter"', correct:'sauté', choices:['sauté','sauter','saute','sautait'] },
+  { card:'"Tu as ___" (regarder)', q:'Participe passé de "regarder"', correct:'regardé', choices:['regardé','regarder','regarde','regardait'] },
+  { card:'Auxiliaire de "J\'ai mangé" ?', q:'Quel auxiliaire est utilisé ?', correct:'avoir', choices:['être','avoir','aller'] },
+], 'ex5');
+
+buildVF([
+  { q:'"Je chante" → la terminaison du présent pour "je" avec un verbe en -ER est -e', correct:true },
+  { q:'"Tu es grand" → "es" est la forme de "être" à la 2e personne du singulier', correct:true },
+  { q:'"Il va chanter" est au passé composé', correct:false, expl:'C\'est le futur proche (aller + infinitif)' },
+  { q:'"J\'ai chanté" → le participe passé de "chanter" est "chanté"', correct:true },
+  { q:'"Nous chantent" est une phrase correcte', correct:false, expl:'Avec "nous", on dit "nous chantons"' },
+  { q:'"Elle a joué" est au passé composé', correct:true },
+], 'ex6');
+
+buildPaires([
+  { left:'je', right:'chante' },
+  { left:'tu', right:'chantes' },
+  { left:'il / elle', right:'chante' },
+  { left:'nous', right:'chantons' },
+  { left:'vous', right:'chantez' },
+  { left:'ils / elles', right:'chantent' },
+], 'ex7');
+</script>
+
+<script src="sync.js"></script>
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>

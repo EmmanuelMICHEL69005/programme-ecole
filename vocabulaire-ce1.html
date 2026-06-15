@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="École Facile">
+<meta name="application-name" content="École Facile">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/vocabulaire-ce1.html">
+<meta property="og:title" content="Vocabulaire — CE1 | École Facile">
+<meta property="og:description" content="Exercices interactifs de vocabulaire CE1 — ordre alphabétique, familles de mots, synonymes, contraires. Gratuit.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/vocabulaire-ce1.html">
+<meta name="description" content="Exercices interactifs de vocabulaire CE1 — ordre alphabétique, familles de mots, synonymes, contraires.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vocabulaire — CE1 | École Facile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header" style="background:linear-gradient(135deg,#065f46,#059669);">
+  <span class="emoji-header">📚</span>
+  <h1>Vocabulaire</h1>
+  <p>Ordre alphabétique, familles, synonymes, contraires</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+  <div class="badge-niveau">📚 CE1 — Vocabulaire</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.88rem;color:#555;margin-top:8px;line-height:1.9;">
+      🔑 <strong>Ordre alphabétique</strong> : a, b, c, d, e… — comparer les 1ères lettres différentes<br>
+      🔑 <strong>Famille de mots</strong> : même radical → lire, lecture, lecteur, lisible<br>
+      🔑 <strong>Synonyme</strong> : même sens → content = heureux = joyeux<br>
+      🔑 <strong>Contraire</strong> : sens opposé → grand ≠ petit, chaud ≠ froid<br>
+      📌 <strong>Dictionnaire</strong> : les mots sont classés par ordre alphabétique
+    </div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#065f46">
+    <div class="ex-title"><span class="ex-badge" style="background:#065f46">Ex 1</span> Ordre alphabétique <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 2</span> Familles de mots <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0d9488">
+    <div class="ex-title"><span class="ex-badge" style="background:#0d9488">Ex 3</span> Synonymes <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0891b2">
+    <div class="ex-title"><span class="ex-badge" style="background:#0891b2">Ex 4</span> Contraires (antonymes) <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 5</span> Noms génériques <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 6</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Associe le mot à son contraire <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex7"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CE1</footer>
+
+<script src="exercises.js"></script>
+<script>
+buildQCM([
+  { card:'bal, chat, ami, dent', q:'Lequel vient en premier dans le dictionnaire ?', correct:'ami', choices:['bal','chat','ami','dent'] },
+  { card:'chat, chou, cerise, crayon', q:'Lequel vient en dernier dans le dictionnaire ?', correct:'crayon', choices:['chat','chou','cerise','crayon'] },
+  { card:'école, éléphant, enfant, épée', q:'Lequel vient en 2e position ?', correct:'éléphant', choices:['école','éléphant','enfant','épée'] },
+  { card:'loup, livre, lune, lac', q:'Lequel vient en premier dans le dictionnaire ?', correct:'lac', choices:['loup','livre','lune','lac'] },
+  { card:'papa, pain, parc, panda', q:'Lequel vient en dernier dans le dictionnaire ?', correct:'papa', choices:['papa','pain','parc','panda'] },
+], 'ex1');
+
+buildQCM([
+  { card:'Quel mot appartient à la famille de "lire" ?', q:'Famille de "lire"', correct:'lecture', choices:['litre','lecture','libre','ligne'] },
+  { card:'Quel mot appartient à la famille de "maison" ?', q:'Famille de "maison"', correct:'maisonnette', choices:['mairie','maisonnette','mais','maçon'] },
+  { card:'Quel mot appartient à la famille de "chaud" ?', q:'Famille de "chaud"', correct:'réchauffer', choices:['château','chaussure','réchauffer','cheval'] },
+  { card:'Quel mot appartient à la famille de "beau" ?', q:'Famille de "beau"', correct:'embellir', choices:['bateau','bœuf','embellir','bague'] },
+  { card:'"jardinier" appartient à la famille de…', q:'Famille de "jardinier"', correct:'jardin', choices:['jarre','jardin','gare','jeu'] },
+], 'ex2');
+
+buildQCM([
+  { card:'Un synonyme de "content" ?', q:'Synonyme de "content"', correct:'joyeux', choices:['triste','joyeux','fâché','fatigué'] },
+  { card:'Un synonyme de "rapide" ?', q:'Synonyme de "rapide"', correct:'vite', choices:['lent','vite','lourd','grand'] },
+  { card:'Un synonyme de "petit" ?', q:'Synonyme de "petit"', correct:'minuscule', choices:['grand','minuscule','gros','lourd'] },
+  { card:'Un synonyme de "regarder" ?', q:'Synonyme de "regarder"', correct:'observer', choices:['écouter','observer','toucher','goûter'] },
+  { card:'Un synonyme de "beau" ?', q:'Synonyme de "beau"', correct:'joli', choices:['laid','vilain','joli','horrible'] },
+  { card:'Un synonyme de "terminer" ?', q:'Synonyme de "terminer"', correct:'finir', choices:['commencer','débuter','finir','ouvrir'] },
+], 'ex3');
+
+buildQCM([
+  { card:'Le contraire de "grand" ?', q:'Contraire de "grand"', correct:'petit', choices:['long','petit','haut','gros'] },
+  { card:'Le contraire de "chaud" ?', q:'Contraire de "chaud"', correct:'froid', choices:['tiède','froid','brûlant','doux'] },
+  { card:'Le contraire de "jour" ?', q:'Contraire de "jour"', correct:'nuit', choices:['soir','matin','nuit','après-midi'] },
+  { card:'Le contraire de "ouvrir" ?', q:'Contraire de "ouvrir"', correct:'fermer', choices:['garder','casser','fermer','laisser'] },
+  { card:'Le contraire de "propre" ?', q:'Contraire de "propre"', correct:'sale', choices:['neuf','vieux','sale','beau'] },
+  { card:'Le contraire de "devant" ?', q:'Contraire de "devant"', correct:'derrière', choices:['sous','derrière','dessus','à côté'] },
+], 'ex4');
+
+buildQCM([
+  { card:'"chien, chat, lapin, oiseau"', q:'Quel est le nom générique ?', correct:'animal', choices:['animal','légume','fruit','jouet'] },
+  { card:'"pomme, poire, banane, cerise"', q:'Quel est le nom générique ?', correct:'fruit', choices:['légume','fruit','aliment','gâteau'] },
+  { card:'"rouge, bleu, vert, jaune"', q:'Quel est le nom générique ?', correct:'couleur', choices:['couleur','forme','nombre','objet'] },
+  { card:'"bus, voiture, vélo, camion"', q:'Quel est le nom générique ?', correct:'véhicule', choices:['machine','jouet','véhicule','outil'] },
+  { card:'"chaise, table, lit, armoire"', q:'Quel est le nom générique ?', correct:'meuble', choices:['objet','meuble','vêtement','ustensile'] },
+], 'ex5');
+
+buildVF([
+  { q:'"beau" et "joli" sont des synonymes (même sens)', correct:true },
+  { q:'"grand" et "petit" sont des synonymes', correct:false, expl:'Ce sont des contraires (antonymes)' },
+  { q:'Dans le dictionnaire, "ami" vient avant "bal"', correct:true },
+  { q:'"maisonnette" appartient à la famille du mot "maison"', correct:true },
+  { q:'"chat" et "chien" sont des synonymes', correct:false, expl:'Ce sont des mots différents qui appartiennent à la catégorie "animal"' },
+  { q:'Un nom générique désigne une catégorie (ex: fruit, animal, meuble)', correct:true },
+], 'ex6');
+
+buildPaires([
+  { left:'grand', right:'petit' },
+  { left:'chaud', right:'froid' },
+  { left:'jour', right:'nuit' },
+  { left:'ouvrir', right:'fermer' },
+  { left:'propre', right:'sale' },
+  { left:'devant', right:'derrière' },
+], 'ex7');
+</script>
+
+<script src="sync.js"></script>
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>
