@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="École Facile">
+<meta name="application-name" content="École Facile">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/vocabulaire-ce2.html">
+<meta property="og:title" content="Vocabulaire — CE2 | École Facile">
+<meta property="og:description" content="Exercices interactifs de vocabulaire CE2 — familles de mots, synonymes, antonymes, préfixes, suffixes. Gratuit sur École Facile.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/vocabulaire-ce2.html">
+<meta name="description" content="Exercices interactifs de vocabulaire CE2 — familles de mots, synonymes, antonymes, préfixes, suffixes. Gratuit sur École Facile.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vocabulaire — CE2 | École Facile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header" style="background:linear-gradient(135deg,#5b21b6,#7c3aed);">
+  <span class="emoji-header">📚</span>
+  <h1>Vocabulaire</h1>
+  <p>Familles de mots, synonymes, préfixes, suffixes</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+  <div class="badge-niveau">📚 CE2 — Vocabulaire</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.88rem;color:#555;margin-top:8px;line-height:1.9;">
+      🔑 <strong>Famille de mots</strong> : même radical → terre, terrain, enterrer, territoire<br>
+      🔑 <strong>Synonyme</strong> : même sens → content = heureux = joyeux<br>
+      🔑 <strong>Antonyme</strong> : contraire → grand ≠ petit, chaud ≠ froid<br>
+      🔑 <strong>Préfixe</strong> (avant) : re- = à nouveau, in-/im- = contraire, dé- = défaire<br>
+      📌 <strong>Nom générique</strong> = catégorie (fruit) ; <strong>particulier</strong> = exemple précis (pomme)
+    </div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#5b21b6">
+    <div class="ex-title"><span class="ex-badge" style="background:#5b21b6">Ex 1</span> Familles de mots <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 2</span> Synonymes <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 3</span> Antonymes (contraires) <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0891b2">
+    <div class="ex-title"><span class="ex-badge" style="background:#0891b2">Ex 4</span> Préfixes <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 5</span> Noms génériques <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div id="ex5"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 6</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex6"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ec4899">
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Associe le mot à son synonyme <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div id="ex7"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence — CE2</footer>
+
+<script src="exercises.js"></script>
+<script>
+buildQCM([
+  { card:'Quel mot appartient à la famille de "terre" ?', q:'Famille de "terre"', correct:'terrain', choices:['terrasse','terrain','tortue','terreur'] },
+  { card:'Quel mot appartient à la famille de "port" ?', q:'Famille de "port"', correct:'transport', choices:['porte-monnaie','transport','portable','portrait'] },
+  { card:'Quel mot appartient à la famille de "chaud" ?', q:'Famille de "chaud"', correct:'chauffage', choices:['château','chauffage','chaussure','cheval'] },
+  { card:'Quel mot appartient à la famille de "mer" ?', q:'Famille de "mer"', correct:'marin', choices:['merci','mardi','marin','marché'] },
+  { card:'"Fleurir" appartient à la famille de…', q:'Famille de "fleurir"', correct:'fleur', choices:['fleuve','fleur','flûte','flacon'] },
+  { card:'"Jardinier" appartient à la famille de…', q:'Famille de "jardinier"', correct:'jardin', choices:['jardi','jardin','gare','journal'] },
+], 'ex1');
+
+buildQCM([
+  { card:'Un synonyme de "content" ?', q:'Synonyme de "content"', correct:'heureux', choices:['triste','heureux','fâché','fatigué'] },
+  { card:'Un synonyme de "rapide" ?', q:'Synonyme de "rapide"', correct:'vite', choices:['lent','vite','grand','bruyant'] },
+  { card:'Un synonyme de "commencer" ?', q:'Synonyme de "commencer"', correct:'démarrer', choices:['finir','arrêter','démarrer','perdre'] },
+  { card:'Un synonyme de "petit" ?', q:'Synonyme de "petit"', correct:'minuscule', choices:['grand','minuscule','énorme','gros'] },
+  { card:'Un synonyme de "regarder" ?', q:'Synonyme de "regarder"', correct:'observer', choices:['écouter','fermer','observer','toucher'] },
+  { card:'Un synonyme de "fatigué" ?', q:'Synonyme de "fatigué"', correct:'épuisé', choices:['reposé','vif','épuisé','énergique'] },
+  { card:'Un synonyme de "beau" ?', q:'Synonyme de "beau"', correct:'magnifique', choices:['laid','horrible','magnifique','vilain'] },
+], 'ex2');
+
+buildQCM([
+  { card:'Le contraire de "grand" ?', q:'Antonyme de "grand"', correct:'petit', choices:['long','petit','gros','haut'] },
+  { card:'Le contraire de "chaud" ?', q:'Antonyme de "chaud"', correct:'froid', choices:['tiède','froid','brûlant','doux'] },
+  { card:'Le contraire de "entrer" ?', q:'Antonyme de "entrer"', correct:'sortir', choices:['aller','sortir','monter','courir'] },
+  { card:'Le contraire de "rapide" ?', q:'Antonyme de "rapide"', correct:'lent', choices:['fort','lent','agile','pressé'] },
+  { card:'Le contraire de "propre" ?', q:'Antonyme de "propre"', correct:'sale', choices:['neuf','sale','rouge','beau'] },
+  { card:'Le contraire de "jour" ?', q:'Antonyme de "jour"', correct:'nuit', choices:['soir','matin','nuit','après-midi'] },
+], 'ex3');
+
+buildQCM([
+  { card:'"___ faire" → faire à nouveau', q:'Quel préfixe ?', correct:'re-', choices:['in-','re-','dé-','pré-'] },
+  { card:'"___ possible" → contraire de possible', q:'Quel préfixe ?', correct:'im-', choices:['re-','im-','pré-','sur-'] },
+  { card:'"___ faire" → contraire de faire', q:'Quel préfixe ?', correct:'dé-', choices:['re-','dé-','pré-','trans-'] },
+  { card:'"___ voir" → voir d'avance', q:'Quel préfixe ?', correct:'pré-', choices:['re-','in-','pré-','sur-'] },
+  { card:'"___ voler" → voler au-dessus', q:'Quel préfixe ?', correct:'sur-', choices:['dé-','sur-','pré-','trans-'] },
+  { card:'"___ juste" → contraire de juste', q:'Quel préfixe ?', correct:'in-', choices:['in-','re-','sur-','pré-'] },
+], 'ex4');
+
+buildQCM([
+  { card:'"chien, chat, éléphant, aigle"', q:'Quel est le nom générique ?', correct:'animal', choices:['animal','végétal','objet','vêtement'] },
+  { card:'"pomme, banane, poire, cerise"', q:'Quel est le nom générique ?', correct:'fruit', choices:['légume','fruit','dessert','aliment'] },
+  { card:'"voiture, bus, vélo, avion"', q:'Quel est le nom générique ?', correct:'véhicule', choices:['machine','véhicule','moteur','transport'] },
+  { card:'"football, natation, tennis, judo"', q:'Quel est le nom générique ?', correct:'sport', choices:['jeu','loisir','sport','activité'] },
+  { card:'"rose, tulipe, marguerite, violette"', q:'Quel est le nom générique ?', correct:'fleur', choices:['plante','arbre','fleur','végétal'] },
+  { card:'"chaise, table, armoire, canapé"', q:'Quel est le nom générique ?', correct:'meuble', choices:['objet','meuble','ustensile','décoration'] },
+], 'ex5');
+
+buildVF([
+  { q:'"terrain" et "enterrer" appartiennent à la famille du mot "terre"', correct:true },
+  { q:'"chanter" et "chanteur" sont des antonymes', correct:false, expl:'Ce sont des mots de la même famille, pas des antonymes' },
+  { q:'Le préfixe "re-" signifie "faire à nouveau" (refaire, relire)', correct:true },
+  { q:'"rapide" et "lent" sont des synonymes', correct:false, expl:'Ce sont des antonymes (contraires)' },
+  { q:'"fruit" est un nom générique car il désigne une catégorie', correct:true },
+  { q:'Le préfixe "im-" dans "impossible" rend le mot contraire', correct:true },
+  { q:'"heureux" et "content" sont des antonymes', correct:false, expl:'Ce sont des synonymes (même sens)' },
+], 'ex6');
+
+buildPaires([
+  { left:'content', right:'heureux' },
+  { left:'rapide', right:'vite' },
+  { left:'commencer', right:'démarrer' },
+  { left:'petit', right:'minuscule' },
+  { left:'regarder', right:'observer' },
+  { left:'beau', right:'magnifique' },
+], 'ex7');
+</script>
+
+<script src="sync.js"></script>
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>
