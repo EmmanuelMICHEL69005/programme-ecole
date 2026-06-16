@@ -17,17 +17,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-:root{--lc1:#059669;--lc2:#10b981;--lb:#6ee7b7;--la:#059669;--ld:#065f46;--lbg:#ecfdf5;--lt:#14532d;--ls:rgba(5,150,105,.3)}
-/* Barres de fractions */
-.frac-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin:12px 0}
-.frac-item{text-align:center}
-.frac-bar{display:flex;height:28px;border-radius:6px;overflow:hidden;border:2px solid #059669;margin-bottom:6px}
-.frac-on{background:#059669}
-.frac-off{background:#d1fae5}
-.frac-label{font-size:.8rem;font-weight:900;color:#064e3b}
+:root{--lc1:#065f46;--lc2:#059669;--lb:#6ee7b7;--la:#059669;--ld:#065f46;--lbg:#ecfdf5;--lt:#14532d;--ls:rgba(5,150,105,.3)}
 .cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
 .cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
 .cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.lf-grid{display:grid;gap:12px;margin-bottom:18px}
+.lf-card{background:#fff;border-left:4px solid var(--lc1);border-radius:0 12px 12px 0;padding:12px 14px}
+.lf-rule{font-size:.72rem;font-weight:900;color:var(--lc1);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.lf-body{font-size:.9rem;font-weight:700;color:var(--lt);line-height:1.5;margin-bottom:6px}
+.lf-ex{font-size:.82rem;font-weight:700;color:var(--ld);background:var(--lb);border-radius:8px;padding:5px 10px}
 </style>
 </head>
 <body class="cpage">
@@ -37,139 +35,35 @@
   <p>Demi, tiers, quart — partager en parts égales</p>
 </header>
 <main>
-
-<section class="cs">
-  <h2>1. Qu'est-ce qu'une fraction ?</h2>
-  <div class="dbox"><div class="lbl">Définition</div>
-  <p>Une <strong>fraction</strong> représente une ou plusieurs <strong>parts égales</strong> d'un tout. Pour avoir une fraction, il faut :<br>
-  1. Couper en <strong>parts égales</strong> (toutes de la même taille)<br>
-  2. Indiquer combien de parts on prend</p></div>
-  <div class="wbox"><div class="lbl">Important !</div>
-  <p>Les parts doivent être <strong>exactement égales</strong> ! Une pizza coupée en morceaux inégaux ne donne pas de vraies fractions.</p></div>
-</section>
-
-<section class="cs">
-  <h2>2. Le demi (½)</h2>
-  <div class="dbox"><div class="lbl">Définition</div>
-  <p>Un <strong>demi</strong> = couper en <strong>2 parts égales</strong> et prendre 1 part.<br>
-  On écrit ½ (un sur deux).</p></div>
-  <div class="frac-row">
-    <div class="frac-item">
-      <div class="frac-bar" style="width:120px"><div class="frac-on" style="width:50%"></div><div class="frac-off" style="width:50%"></div></div>
-      <div class="frac-label">½ — la moitié</div>
-    </div>
-    <div class="frac-item">
-      <div class="frac-bar" style="width:120px"><div class="frac-on" style="width:100%"></div></div>
-      <div class="frac-label">1 entier</div>
-    </div>
+<div class="lf-grid">
+  <div class="lf-card">
+    <div class="lf-rule">📌 Qu'est-ce qu'une fraction ?</div>
+    <div class="lf-body">Une fraction, c'est quand on partage un tout en parts égales et qu'on en prend une ou plusieurs.</div>
+    <div class="lf-ex">Ex : 1 pizza ÷ 2 = ½ chacun · ½ heure = 30 min</div>
   </div>
-  <div class="ebox"><div class="lbl">Exemples de la vie quotidienne</div>
-  <ul>
-    <li>½ d'une pizza = une part coupée en <strong>2 parts égales</strong></li>
-    <li>½ heure = <strong>30 minutes</strong></li>
-    <li>½ de 10 = <strong>5</strong> (moitié de 10)</li>
-    <li>½ kg = <strong>500 g</strong></li>
-  </ul></div>
-</section>
-
-<section class="cs">
-  <h2>3. Le quart (¼) et les trois quarts (¾)</h2>
-  <div class="dbox"><div class="lbl">Définition</div>
-  <p>Un <strong>quart</strong> = couper en <strong>4 parts égales</strong> et prendre 1 part.<br>
-  Les <strong>trois quarts</strong> = 3 parts sur 4.</p></div>
-  <div class="frac-row">
-    <div class="frac-item">
-      <div class="frac-bar" style="width:160px"><div class="frac-on" style="width:25%"></div><div class="frac-off" style="width:75%"></div></div>
-      <div class="frac-label">¼ (un quart)</div>
-    </div>
-    <div class="frac-item">
-      <div class="frac-bar" style="width:160px"><div class="frac-on" style="width:75%"></div><div class="frac-off" style="width:25%"></div></div>
-      <div class="frac-label">¾ (trois quarts)</div>
-    </div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Les fractions simples</div>
+    <div class="lf-body">½ = moitié (÷ 2) · ¼ = quart (÷ 4) · ⅓ = tiers (÷ 3) · ¾ = trois-quarts.</div>
+    <div class="lf-ex">Ex : ¼ d'heure = 15 min · ½ de 10 = 5 · ¾ de 20 = 15</div>
   </div>
-  <div class="ebox"><div class="lbl">Exemples</div>
-  <ul>
-    <li>¼ d'heure = <strong>15 minutes</strong></li>
-    <li>¾ d'heure = <strong>45 minutes</strong></li>
-    <li>¼ de 20 = <strong>5</strong></li>
-    <li>¾ de 20 = <strong>15</strong></li>
-  </ul></div>
-</section>
-
-<section class="cs">
-  <h2>4. Le tiers (⅓) et les deux tiers (⅔)</h2>
-  <div class="dbox"><div class="lbl">Définition</div>
-  <p>Un <strong>tiers</strong> = couper en <strong>3 parts égales</strong> et prendre 1 part.<br>
-  Les <strong>deux tiers</strong> = 2 parts sur 3.</p></div>
-  <div class="frac-row">
-    <div class="frac-item">
-      <div class="frac-bar" style="width:150px"><div class="frac-on" style="width:33%"></div><div class="frac-off" style="width:67%"></div></div>
-      <div class="frac-label">⅓ (un tiers)</div>
-    </div>
-    <div class="frac-item">
-      <div class="frac-bar" style="width:150px"><div class="frac-on" style="width:66%"></div><div class="frac-off" style="width:34%"></div></div>
-      <div class="frac-label">⅔ (deux tiers)</div>
-    </div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Comparer les fractions</div>
+    <div class="lf-body">Plus le nombre du bas (dénominateur) est grand, plus la part est petite.</div>
+    <div class="lf-ex">Ex : ¼ &lt; ⅓ &lt; ½ &lt; ¾ · 3/4 &gt; 1/2 car 3 parts sur 4 &gt; 1 part sur 2</div>
   </div>
-  <div class="ebox"><div class="lbl">Exemples</div>
-  <ul>
-    <li>⅓ de 12 = <strong>4</strong> (12 ÷ 3)</li>
-    <li>⅔ de 12 = <strong>8</strong> (4 × 2)</li>
-    <li>⅓ de 9 = <strong>3</strong></li>
-  </ul></div>
-</section>
-
-<section class="cs">
-  <h2>5. Comparer les fractions</h2>
-  <div class="dbox"><div class="lbl">Méthode visuelle</div>
-  <p>Une barre représente "1 entier". Plus la fraction est grande, plus la barre colorée est longue.</p></div>
-  <div class="frac-row">
-    <div class="frac-item">
-      <div class="frac-bar" style="width:180px"><div class="frac-on" style="width:50%"></div><div class="frac-off" style="width:50%"></div></div>
-      <div class="frac-label">½ = 0,5</div>
-    </div>
-    <div class="frac-item">
-      <div class="frac-bar" style="width:180px"><div class="frac-on" style="width:33%"></div><div class="frac-off" style="width:67%"></div></div>
-      <div class="frac-label">⅓ ≈ 0,33</div>
-    </div>
-    <div class="frac-item">
-      <div class="frac-bar" style="width:180px"><div class="frac-on" style="width:25%"></div><div class="frac-off" style="width:75%"></div></div>
-      <div class="frac-label">¼ = 0,25</div>
-    </div>
-  </div>
-  <div class="rbox"><div class="lbl">Ordre croissant</div>
-  <p>¼ &lt; ⅓ &lt; ½ &lt; ⅔ &lt; ¾ &lt; 1<br>
-  Plus le dénominateur (nombre du bas) est grand, plus la fraction est <strong>petite</strong>.</p></div>
-</section>
-
-<section class="cs">
-  <h2>6. Fraction d'une quantité</h2>
-  <div class="dbox"><div class="lbl">Méthode</div>
-  <p>Pour trouver une fraction d'une quantité : <strong>diviser par le dénominateur</strong>, puis multiplier par le numérateur.</p></div>
-  <div class="vgrid">
-    <div class="vcrd"><div class="vl">½ de 16</div><div class="vv">= 8</div><div class="vs">16 ÷ 2 = 8</div></div>
-    <div class="vcrd"><div class="vl">¼ de 20</div><div class="vv">= 5</div><div class="vs">20 ÷ 4 = 5</div></div>
-    <div class="vcrd"><div class="vl">⅓ de 15</div><div class="vv">= 5</div><div class="vs">15 ÷ 3 = 5</div></div>
-    <div class="vcrd"><div class="vl">¾ de 20</div><div class="vv">= 15</div><div class="vs">5 × 3 = 15</div></div>
-  </div>
-</section>
-
+</div>
 <div class="retenir">
   <h3>📌 À retenir</h3>
   <ul>
-    <li>Fraction = parts <strong>égales</strong> d'un tout</li>
-    <li>½ = 1 part sur 2 (demi) = moitié</li>
-    <li>¼ = 1 part sur 4 (quart) | ¾ = 3 parts sur 4</li>
-    <li>⅓ = 1 part sur 3 (tiers) | ⅔ = 2 parts sur 3</li>
-    <li>Pour calculer ½ d'une quantité : ÷ 2 | Pour ¼ : ÷ 4 | Pour ⅓ : ÷ 3</li>
+    <li>Fraction = parts égales d'un tout</li>
+    <li>½ = moitié · ¼ = quart · ⅓ = tiers</li>
+    <li>Plus le dénominateur est grand, plus petite est la part</li>
   </ul>
 </div>
-
 <div class="cta">
-  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
+  <p>Tu as compris ? Entraîne-toi !</p>
   <a href="fractions-ce1.html" class="btn-ex">Faire les exercices CE1 →</a>
 </div>
-
 </main>
 <footer class="site-footer">École Facile — Cours CE1 · Fractions</footer>
 <script src="sync.js"></script>

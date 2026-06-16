@@ -11,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
+:root{--lc1:#b45309;--lc2:#f59e0b;--lb:#fde68a;--la:#b45309;--ld:#78350f;--lbg:#fffbeb;--lt:#78350f;--ls:rgba(180,83,9,.3)}
 body{font-family:'Nunito',sans-serif;background:#fffbf0;color:#1e1b4b;margin:0}
 main{max-width:720px;margin:0 auto;padding:22px 18px 60px}
 .cs{margin-bottom:26px}
@@ -55,6 +56,20 @@ table.conv tr:nth-child(even) td{background:#f9fafb}
 .frise-content{flex:1}
 .frise-date{font-size:.68rem;font-weight:900;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
 .frise-text{font-size:.88rem;font-weight:700;line-height:1.5}
+
+.lf-grid{display:grid;gap:12px;margin-bottom:18px}
+.lf-card{background:#fff;border-left:4px solid var(--lc1);border-radius:0 12px 12px 0;padding:12px 14px}
+.lf-rule{font-size:.72rem;font-weight:900;color:var(--lc1);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.lf-body{font-size:.9rem;font-weight:700;color:var(--lt);line-height:1.5;margin-bottom:6px}
+.lf-ex{font-size:.82rem;font-weight:700;color:var(--ld);background:var(--lb);border-radius:8px;padding:5px 10px}
+
+.retenir{background:#fff;border:2.5px solid #b45309;border-radius:16px;padding:16px 18px;margin:22px 0 18px}
+.retenir h3{font-size:.78rem;font-weight:900;color:#b45309;text-transform:uppercase;letter-spacing:1px;margin:0 0 10px}
+.retenir ul{margin:0;padding-left:18px}
+.retenir li{font-size:.88rem;font-weight:700;color:#1e1b4b;line-height:1.7}
+.cta{text-align:center;margin-top:26px;padding:18px;background:#fff;border-radius:16px;border:2px solid #fde68a}
+.cta p{font-size:.82rem;color:#6b7280;font-weight:700;margin:0 0 10px}
+.btn-ex{display:inline-block;background:linear-gradient(135deg,#b45309,#f59e0b);color:#fff;padding:13px 26px;border-radius:13px;font-size:.95rem;font-weight:900;text-decoration:none;box-shadow:0 4px 16px rgba(180,83,9,.4)}
 </style>
 </head>
 <body>
@@ -64,244 +79,32 @@ table.conv tr:nth-child(even) td{background:#f9fafb}
   <p>Tableaux, règle de 3, %, calculs</p>
 </header>
 <main>
-
-<div class="cs"><h2>1. Qu'est-ce que la proportionnalité ?</h2>
-<div class="dbox"><div class="lbl">Définition</div>
-<p>Deux grandeurs sont <strong>proportionnelles</strong> si, quand on multiplie l'une par un nombre, l'autre est multipliée par le même nombre.<br>
-Il existe un nombre appelé <strong>coefficient de proportionnalité</strong> qui relie les deux grandeurs.</p></div>
-<div class="ebox"><div class="lbl">Exemple — prix de pommes</div>
-<p>1 kg → 2 € · 2 kg → 4 € · 5 kg → 10 €<br>
-On multiplie le nombre de kg par 2 pour trouver le prix. Le <strong>coefficient est 2</strong>.<br>
-Vérification : 1×2=2 ✓ · 2×2=4 ✓ · 5×2=10 ✓ → situation proportionnelle.</p></div>
-<div class="rbox"><div class="lbl">Représentation en tableau</div>
-<p>Un tableau de proportionnalité a deux lignes. Pour passer de la première ligne à la seconde, on multiplie toujours par le même coefficient.</p></div>
-<table class="conv">
-  <tr><th>Quantité (kg)</th><th>1</th><th>2</th><th>3</th><th>5</th></tr>
-  <tr><td>Prix (€)</td><td>2</td><td>4</td><td>6</td><td>10</td></tr>
-</table>
-<div class="ebox"><div class="lbl">Situations NON proportionnelles</div>
-<ul>
-  <li><strong>Âge et taille</strong> : à 5 ans on mesure 1 m, à 10 ans 1,3 m (pas ×2 !) → non proportionnel</li>
-  <li><strong>Côté d'un carré et périmètre</strong> : proportionnel (P = 4×côté)</li>
-  <li><strong>Côté d'un carré et aire</strong> : NON proportionnel (aire = côté², pas côté×k)</li>
-</ul></div>
-<div class="wbox"><div class="lbl">Comment repérer</div>
-<p>Ce n'est PAS parce que les nombres augmentent ensemble que c'est proportionnel.<br>
-Il faut vérifier que le rapport (valeur2 ÷ valeur1) est toujours le même.</p></div>
-</div>
-
-<div class="cs"><h2>2. Reconnaître un tableau de proportionnalité</h2>
-<div class="rbox"><div class="lbl">Test du quotient constant</div>
-<p>Dans un tableau de proportionnalité, si on divise chaque valeur de la 2ème ligne par la valeur correspondante de la 1ère ligne, on obtient <strong>toujours le même nombre</strong> : le coefficient.</p></div>
-<div class="ebox"><div class="lbl">Tableau qui EST proportionnel</div>
-<table class="conv">
-  <tr><th>Nombre d'heures</th><th>2</th><th>5</th><th>8</th></tr>
-  <tr><td>Salaire (€)</td><td>16</td><td>40</td><td>64</td></tr>
-</table>
-<p>16÷2 = 8 · 40÷5 = 8 · 64÷8 = 8 → coefficient = 8 ✓ → proportionnel</p></div>
-<div class="ebox"><div class="lbl">Tableau qui N'EST PAS proportionnel</div>
-<table class="conv">
-  <tr><th>Âge (années)</th><th>2</th><th>5</th><th>10</th></tr>
-  <tr><td>Taille (cm)</td><td>85</td><td>110</td><td>140</td></tr>
-</table>
-<p>85÷2 = 42,5 · 110÷5 = 22 · 140÷10 = 14 → quotients différents → <strong>non proportionnel</strong></p></div>
-<div class="rbox"><div class="lbl">Propriété du produit en croix</div>
-<p>Dans un tableau de proportionnalité, les <strong>produits en croix</strong> sont égaux.<br>
-Si (a, b) et (c, d) sont deux colonnes : a × d = b × c</p></div>
-</div>
-
-<div class="cs"><h2>3. Compléter un tableau de proportionnalité</h2>
-<div class="dbox"><div class="lbl">Deux méthodes</div>
-<ul>
-  <li><strong>Méthode du coefficient</strong> : trouve le coefficient (2ème ligne ÷ 1ère ligne), puis multiplie</li>
-  <li><strong>Méthode de la règle de 3</strong> : passe d'abord par 1 (la valeur unitaire)</li>
-</ul></div>
-<div class="frise">
-  <div class="frise-item">
-    <div class="frise-dot" style="background:#dcfce7;color:#15803d">1</div>
-    <div class="frise-content">
-      <div class="frise-date">Exemple 1 — méthode coefficient</div>
-      <div class="frise-text">3 stylos → 4,50 € · 7 stylos → ?<br>
-      Coefficient = 4,50 ÷ 3 = 1,50 → 7 × 1,50 = <strong>10,50 €</strong></div>
-    </div>
+<div class="lf-grid">
+  <div class="lf-card">
+    <div class="lf-rule">📌 Tableau proportionnel</div>
+    <div class="lf-body">Dans un tableau proportionnel, toutes les valeurs sont liées par un coefficient k : y = k × x. Pour trouver une valeur manquante, on utilise la règle de trois.</div>
+    <div class="lf-ex">Ex : 3 km en 1 h → k = 3 → 12 km en 4 h</div>
   </div>
-  <div class="frise-item">
-    <div class="frise-dot" style="background:#dcfce7;color:#15803d">2</div>
-    <div class="frise-content">
-      <div class="frise-date">Exemple 2 — méthode règle de 3</div>
-      <div class="frise-text">5 livres → 12 € · 8 livres → ?<br>
-      1 livre = 12 ÷ 5 = 2,40 € → 8 × 2,40 = <strong>19,20 €</strong></div>
-    </div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Pourcentages</div>
+    <div class="lf-body">p% de n = n × p ÷ 100. Les pourcentages sont un cas particulier de proportionnalité (coefficient k = p/100).</div>
+    <div class="lf-ex">Ex : 20% de 150 = 150 × 20 ÷ 100 = 30</div>
   </div>
-  <div class="frise-item">
-    <div class="frise-dot" style="background:#dcfce7;color:#15803d">3</div>
-    <div class="frise-content">
-      <div class="frise-date">Exemple 3 — trouver la quantité (inversion)</div>
-      <div class="frise-text">Prix = 7,50 € pour 5 kg · Combien de kg pour 12 € ?<br>
-      1 kg = 7,50 ÷ 5 = 1,50 € → 12 ÷ 1,50 = <strong>8 kg</strong></div>
-    </div>
-  </div>
-  <div class="frise-item">
-    <div class="frise-dot" style="background:#dcfce7;color:#15803d">4</div>
-    <div class="frise-content">
-      <div class="frise-date">Exemple 4 — recette</div>
-      <div class="frise-text">Recette pour 4 personnes : 200 g de farine. Pour 6 personnes ?<br>
-      1 personne = 200 ÷ 4 = 50 g → 6 × 50 = <strong>300 g</strong></div>
-    </div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Graphique de proportionnalité</div>
+    <div class="lf-body">La représentation graphique d'une situation proportionnelle est une droite qui passe par l'origine (0 ; 0).</div>
+    <div class="lf-ex">Ex : abscisse = quantité · ordonnée = prix · droite par (0 ; 0)</div>
   </div>
 </div>
+<div class="retenir">
+  <h3>📌 À retenir</h3>
+  <ul>
+    <li>y = k × x (coefficient de proportionnalité)</li>
+    <li>Pourcentage : × p ÷ 100</li>
+    <li>Graphique proportionnel = droite passant par l'origine</li>
+  </ul>
 </div>
-
-<div class="cs"><h2>4. La règle de 3 (produit en croix)</h2>
-<div class="rbox"><div class="lbl">Méthode formelle</div>
-<p>Si <strong>a est à b</strong> ce que <strong>c est à ?</strong> :<br>
-On pose : a → b · c → x<br>
-x = (b × c) ÷ a = <strong>b × c / a</strong></p></div>
-<div class="ebox"><div class="lbl">5 exemples variés</div>
-<ul>
-  <li><strong>Recette</strong> : 250 g de sucre pour 12 gâteaux → pour 8 gâteaux ? → x = (250 × 8) ÷ 12 = 2000 ÷ 12 ≈ <strong>167 g</strong></li>
-  <li><strong>Distance</strong> : en 3 h, on roule 240 km → en 5 h ? → x = (240 × 5) ÷ 3 = <strong>400 km</strong></li>
-  <li><strong>Prix</strong> : 4 m de tissu → 18 € → 7 m ? → x = (18 × 7) ÷ 4 = 126 ÷ 4 = <strong>31,50 €</strong></li>
-  <li><strong>Quantité</strong> : 15 € pour 5 kg de pommes → combien de kg pour 21 € ? → x = (5 × 21) ÷ 15 = <strong>7 kg</strong></li>
-  <li><strong>Durée</strong> : 40 pages lues en 2 h → 100 pages en combien de temps ? → x = (2 × 100) ÷ 40 = <strong>5 h</strong></li>
-</ul></div>
-<div class="rbox"><div class="lbl">Vérification</div>
-<p>Après chaque calcul, vérifie que ton résultat est cohérent.<br>
-Si 1 kg coûte 3 €, alors 5 kg = 15 €. Si tu trouves 150 €, c'est une erreur d'un facteur 10.</p></div>
-<div class="wbox"><div class="lbl">Produit en croix — l'erreur la plus fréquente</div>
-<p>Dans la règle de 3, on multiplie en diagonale puis on divise par le dernier :<br>
-3 → 4,50 · 7 → x : x = (4,50 × 7) ÷ 3 = 31,50 ÷ 3 = 10,50<br>
-Ne divise pas 4,50 ÷ 7 (ce serait inverser le calcul).</p></div>
-</div>
-
-<div class="cs"><h2>5. Les pourcentages</h2>
-<div class="dbox"><div class="lbl">Définition</div>
-<p>Le mot <strong>pourcent</strong> signifie "pour cent", soit "sur 100".<br>
-x% = x/100 = x ÷ 100<br>
-Exemple : 30% = 30/100 = 0,30 = 30 pour 100</p></div>
-<div class="vgrid">
-  <div class="vcrd"><div class="vl">100%</div><div class="vv">tout</div><div class="vs">= 1 entier</div></div>
-  <div class="vcrd"><div class="vl">50%</div><div class="vv">½</div><div class="vs">= 0,5</div></div>
-  <div class="vcrd"><div class="vl">25%</div><div class="vv">¼</div><div class="vs">= 0,25</div></div>
-  <div class="vcrd"><div class="vl">75%</div><div class="vv">¾</div><div class="vs">= 0,75</div></div>
-  <div class="vcrd"><div class="vl">10%</div><div class="vv">⅒</div><div class="vs">÷ 10</div></div>
-  <div class="vcrd"><div class="vl">20%</div><div class="vv">⅕</div><div class="vs">÷ 5</div></div>
-</div>
-<div class="rbox"><div class="lbl">Calculer x% d'une quantité</div>
-<p>Méthode 1 : Quantité × x ÷ 100<br>
-Méthode 2 : Quantité × (x/100) = Quantité × 0,x<br>
-Exemple : 30% de 80 = 80 × 30 ÷ 100 = 80 × 0,30 = <strong>24</strong></p></div>
-<div class="ebox"><div class="lbl">Calculs pratiques</div>
-<ul>
-  <li>10% de 350 = 350 ÷ 10 = <strong>35</strong></li>
-  <li>20% de 150 = 150 ÷ 5 = <strong>30</strong> (car 20% = ⅕)</li>
-  <li>25% de 120 = 120 ÷ 4 = <strong>30</strong> (car 25% = ¼)</li>
-  <li>15% de 200 = 10% + 5% = 20 + 10 = <strong>30</strong> (15% = 10% + 5%)</li>
-</ul></div>
-<div class="rbox"><div class="lbl">Trouver un pourcentage</div>
-<p>Quelle fraction de 80 représente 20 ?<br>
-20 ÷ 80 = 0,25 = 25% → 20 est <strong>25%</strong> de 80.</p></div>
-</div>
-
-<div class="cs"><h2>6. Soldes et remises</h2>
-<div class="dbox"><div class="lbl">Vocabulaire</div>
-<p>Un article est en <strong>solde</strong> quand son prix est réduit d'un certain pourcentage.<br>
-La <strong>remise</strong> (ou réduction) = montant économisé.<br>
-Le <strong>nouveau prix</strong> = prix initial − remise.</p></div>
-<div class="frise">
-  <div class="frise-item">
-    <div class="frise-dot" style="background:#fef9c3;color:#92400e">1</div>
-    <div class="frise-content">
-      <div class="frise-date">Manteau à 80 €, soldes −25%</div>
-      <div class="frise-text">Remise = 25% de 80 = 80 ÷ 4 = <strong>20 €</strong></div>
-    </div>
-  </div>
-  <div class="frise-item">
-    <div class="frise-dot" style="background:#fef9c3;color:#92400e">2</div>
-    <div class="frise-content">
-      <div class="frise-date">Prix soldé</div>
-      <div class="frise-text">80 − 20 = <strong>60 €</strong></div>
-    </div>
-  </div>
-  <div class="frise-item">
-    <div class="frise-dot" style="background:#fef9c3;color:#92400e">3</div>
-    <div class="frise-content">
-      <div class="frise-date">Méthode rapide</div>
-      <div class="frise-text">−25% → tu paies 75% du prix → 80 × 0,75 = <strong>60 €</strong> (même résultat !)</div>
-    </div>
-  </div>
-</div>
-<div class="ebox"><div class="lbl">Exemples de soldes</div>
-<ul>
-  <li>T-shirt 40 €, −20% → remise = 8 € → prix soldé = <strong>32 €</strong></li>
-  <li>Chaussures 60 €, −30% → remise = 18 € → prix soldé = <strong>42 €</strong></li>
-  <li>Jouet 45 €, −10% → remise = 4,50 € → prix soldé = <strong>40,50 €</strong></li>
-</ul></div>
-<div class="ebox"><div class="lbl">La TVA (concept)</div>
-<p>La TVA (taxe) <strong>augmente</strong> le prix. TVA de 20% sur 50 € HT :<br>
-TVA = 20% de 50 = 50 × 0,20 = 10 €<br>
-Prix TTC (avec taxe) = 50 + 10 = <strong>60 €</strong></p></div>
-</div>
-
-<div class="cs"><h2>7. Échelles et plans</h2>
-<div class="dbox"><div class="lbl">Définition</div>
-<p>Une <strong>échelle</strong> est un rapport de proportionnalité entre une mesure sur un plan (ou une carte) et la mesure réelle.<br>
-Une échelle s'écrit sous la forme <strong>1 / n</strong> ou <strong>1 : n</strong> (exemple : 1/25 000).</p></div>
-<div class="rbox"><div class="lbl">Lire une échelle</div>
-<p>Échelle 1/25 000 signifie : 1 cm sur la carte = 25 000 cm dans la réalité = <strong>250 m</strong><br>
-Échelle 1/1 000 signifie : 1 cm sur le plan = 1 000 cm = <strong>10 m</strong><br>
-Échelle 1/100 signifie : 1 cm sur le dessin = 100 cm = <strong>1 m</strong></p></div>
-<div class="frise">
-  <div class="frise-item">
-    <div class="frise-dot" style="background:#dbeafe;color:#1d4ed8">1</div>
-    <div class="frise-content">
-      <div class="frise-date">Trouver la distance réelle</div>
-      <div class="frise-text">Carte à l'échelle 1/50 000. Sur la carte : 3 cm. Distance réelle ?<br>
-      3 × 50 000 = 150 000 cm = 1 500 m = <strong>1,5 km</strong></div>
-    </div>
-  </div>
-  <div class="frise-item">
-    <div class="frise-dot" style="background:#dbeafe;color:#1d4ed8">2</div>
-    <div class="frise-content">
-      <div class="frise-date">Trouver la mesure sur la carte</div>
-      <div class="frise-text">Distance réelle : 2 km = 200 000 cm. Échelle 1/100 000.<br>
-      200 000 ÷ 100 000 = <strong>2 cm</strong> sur la carte</div>
-    </div>
-  </div>
-  <div class="frise-item">
-    <div class="frise-dot" style="background:#dbeafe;color:#1d4ed8">3</div>
-    <div class="frise-content">
-      <div class="frise-date">Plan d'une maison à l'échelle 1/100</div>
-      <div class="frise-text">Chambre : 3 cm × 4 cm sur le plan → taille réelle : 3 m × 4 m = <strong>12 m²</strong></div>
-    </div>
-  </div>
-</div>
-<div class="ebox"><div class="lbl">Exemples d'échelles courantes</div>
-<ul>
-  <li><strong>Plan de maison</strong> : 1/100 (1 cm = 1 m)</li>
-  <li><strong>Plan de ville</strong> : 1/10 000 (1 cm = 100 m)</li>
-  <li><strong>Carte routière</strong> : 1/200 000 (1 cm = 2 km)</li>
-  <li><strong>Carte IGN</strong> : 1/25 000 (1 cm = 250 m)</li>
-</ul></div>
-<div class="wbox"><div class="lbl">Attention aux unités</div>
-<p>Convertis toujours en mêmes unités avant de calculer.<br>
-Échelle 1/100 000 : distance réelle = 3,5 km = 350 000 cm → sur la carte = 350 000 ÷ 100 000 = <strong>3,5 cm</strong></p></div>
-</div>
-
-<div class="retenir"><h3>A retenir</h3>
-<ul>
-<li>Proportionnel : même coefficient partout → test : valeur2 ÷ valeur1 = constante</li>
-<li>Compléter un tableau : trouver le coefficient (÷) puis multiplier</li>
-<li>Règle de 3 : passe par 1 unité, puis multiplie (ou produit en croix)</li>
-<li>x% de N = N × x ÷ 100 · 10%=÷10 · 25%=÷4 · 50%=÷2</li>
-<li>Solde −x% → tu paies (100−x)% du prix initial</li>
-<li>Échelle 1/n : mesure réelle = mesure carte × n (convertir les unités !)</li>
-</ul></div>
-
-<div class="cta">
-  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
-  <a href="proportionnalite-cm2.html" class="btn-ex">📝 Exercices : Proportionnalité CM2</a>
-</div>
+<div class="cta"><p>Tu as compris ? Entraîne-toi !</p><a href="proportionnalite-cm2.html" class="btn-ex">Faire les exercices CM2 →</a></div>
 </main>
 <footer class="site-footer">École Facile — Cours CM2</footer>
 <script src="nav.js"></script>

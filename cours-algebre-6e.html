@@ -17,13 +17,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-:root{--lc1:#9d174d;--lc2:#ec4899;--lb:#fbcfe8;--la:#9d174d;--ld:#831843;--lbg:#fdf2f8;--lt:#1e1b4b;--ls:rgba(157,23,77,.3)}
-.balance-box{display:grid;grid-template-columns:1fr 50px 1fr;gap:8px;align-items:center;background:#fdf2f8;border:2px solid #fbcfe8;border-radius:14px;padding:14px;margin:10px 0}
-.bal-side{background:#fff;border:2px solid #fbcfe8;border-radius:10px;padding:10px;text-align:center;font-size:.9rem;font-weight:900;color:#831843}
-.bal-mid{text-align:center;font-size:1.4rem;font-weight:900;color:#9d174d}
+:root{--lc1:#9d174d;--lc2:#ec4899;--lb:#fbcfe8;--la:#ec4899;--ld:#831843;--lbg:#fdf2f8;--lt:#831843;--ls:rgba(157,23,77,.3)}
 .cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
 .cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
 .cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.lf-grid{display:grid;gap:12px;margin-bottom:18px}
+.lf-card{background:#fff;border-left:4px solid var(--lc1);border-radius:0 12px 12px 0;padding:12px 14px}
+.lf-rule{font-size:.72rem;font-weight:900;color:var(--lc1);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.lf-body{font-size:.9rem;font-weight:700;color:var(--lt);line-height:1.5;margin-bottom:6px}
+.lf-ex{font-size:.82rem;font-weight:700;color:var(--ld);background:var(--lb);border-radius:8px;padding:5px 10px}
 </style>
 </head>
 <body class="cpage">
@@ -33,120 +35,38 @@
   <p>Expressions littérales, réduction, équations du 1er degré</p>
 </header>
 <main>
-
-<section class="cs">
-  <h2>1. Expressions littérales — qu'est-ce que c'est ?</h2>
-  <div class="dbox"><div class="lbl">Définition</div>
-  <p>Une <strong>expression littérale</strong> contient des lettres qui représentent des nombres inconnus ou variables.<br>
-  Exemples : <code>3x + 5</code> | <code>2(a + 7)</code> | <code>n² − 4</code></p></div>
-  <div class="dbox"><div class="lbl">Calcul littéral — notations</div>
-  <ul>
-    <li><code>3 × x</code> s'écrit <code>3x</code> (on supprime le signe ×)</li>
-    <li><code>x × y</code> s'écrit <code>xy</code></li>
-    <li><code>1 × x</code> s'écrit <code>x</code> (pas de 1 devant)</li>
-    <li><code>x ÷ 4</code> s'écrit <code>x/4</code> ou <code>x ÷ 4</code></li>
-  </ul></div>
-  <div class="ebox"><div class="lbl">Calculer la valeur d'une expression (substitution)</div>
-  <ul>
-    <li><code>3x + 5</code> pour x = 4 : 3×4 + 5 = 12 + 5 = <strong>17</strong></li>
-    <li><code>2a − 1</code> pour a = 7 : 2×7 − 1 = 14 − 1 = <strong>13</strong></li>
-    <li><code>n² + 2n</code> pour n = 3 : 9 + 6 = <strong>15</strong></li>
-  </ul></div>
-</section>
-
-<section class="cs">
-  <h2>2. Réduire une expression</h2>
-  <div class="dbox"><div class="lbl">Termes semblables</div>
-  <p>On peut additionner les <strong>termes semblables</strong> = termes avec la même partie littérale.</p></div>
-  <div class="ebox"><div class="lbl">Exemples</div>
-  <ul>
-    <li><code>3x + 5x</code> = <code>8x</code> (même lettre x)</li>
-    <li><code>4a + 2 + 3a − 7</code> = <code>7a − 5</code> (regrouper les a et les constantes)</li>
-    <li><code>2x + 3y + 5x − y</code> = <code>7x + 2y</code> (x avec x, y avec y)</li>
-    <li><code>x² + 3x + 2x²</code> = <code>3x² + 3x</code> (x² ≠ x !)</li>
-  </ul></div>
-  <div class="wbox"><div class="lbl">Attention</div>
-  <p><code>3x</code> et <code>3x²</code> ne sont PAS des termes semblables ! La puissance doit être identique.</p></div>
-</section>
-
-<section class="cs">
-  <h2>3. Développer — distributivité</h2>
-  <div class="formula-card">
-    <div class="fc-label">Distributivité simple</div>
-    <div class="fc-formula">k(a + b) = ka + kb</div>
-    <div class="fc-desc">k(a − b) = ka − kb</div>
+<div class="lf-grid">
+  <div class="lf-card">
+    <div class="lf-rule">📌 Expression littérale</div>
+    <div class="lf-body">Expression avec des lettres (variables). Pour calculer sa valeur, remplacer la lettre par un nombre.</div>
+    <div class="lf-ex">Ex : 2x + 3 avec x = 5 → 2×5 + 3 = 13</div>
   </div>
-  <div class="ebox"><div class="lbl">Exemples</div>
-  <ul>
-    <li><code>3(x + 4)</code> = <code>3x + 12</code></li>
-    <li><code>5(2a − 3)</code> = <code>10a − 15</code></li>
-    <li><code>−2(n + 7)</code> = <code>−2n − 14</code> (attention au signe !)</li>
-    <li><code>4(3 − x)</code> = <code>12 − 4x</code></li>
-  </ul></div>
-  <div class="ebox"><div class="lbl">Développer puis réduire</div>
-  <p><code>3(2x + 1) + 4x</code><br>
-  = <code>6x + 3 + 4x</code><br>
-  = <code>10x + 3</code></p></div>
-</section>
-
-<section class="cs">
-  <h2>4. Résoudre une équation — principe de la balance</h2>
-  <div class="dbox"><div class="lbl">Principe fondamental</div>
-  <p>Une équation, c'est comme une <strong>balance en équilibre</strong>. Si on fait la même opération des deux côtés, l'équilibre est conservé.</p></div>
-  <div class="balance-box">
-    <div class="bal-side">3x + 5</div>
-    <div class="bal-mid">=</div>
-    <div class="bal-side">17</div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Réduire</div>
+    <div class="lf-body">Regrouper les termes semblables (même lettre ET même exposant). On ne peut pas additionner x et x².</div>
+    <div class="lf-ex">Ex : 3x + 5 + 2x − 1 = 5x + 4 · 2x + 3y + 5x = 7x + 3y</div>
   </div>
-  <div class="frise">
-    <div class="frise-item"><div class="frise-dot">1</div><div class="frise-content"><div class="frise-date">Isoler le terme en x</div><div class="frise-text"><code>3x + 5 = 17</code><br>→ <code>3x + 5 − 5 = 17 − 5</code><br>→ <code>3x = 12</code></div></div></div>
-    <div class="frise-item"><div class="frise-dot">2</div><div class="frise-content"><div class="frise-date">Diviser par le coefficient</div><div class="frise-text"><code>3x ÷ 3 = 12 ÷ 3</code><br>→ <code>x = 4</code></div></div></div>
-    <div class="frise-item"><div class="frise-dot">✓</div><div class="frise-content"><div class="frise-date">Vérification</div><div class="frise-text">3 × 4 + 5 = 12 + 5 = <strong>17 ✓</strong></div></div></div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Équation du 1er degré</div>
+    <div class="lf-body">Trouver la valeur de x. Principe : même opération des deux côtés (comme une balance). Toujours vérifier en remplaçant x.</div>
+    <div class="lf-ex">Ex : 2x + 3 = 11 → 2x = 8 → x = 4 · Vérif : 2×4 + 3 = 11 ✓</div>
   </div>
-</section>
-
-<section class="cs">
-  <h2>5. Exemples d'équations variées</h2>
-  <div class="frise">
-    <div class="frise-item"><div class="frise-dot">Ex1</div><div class="frise-content"><div class="frise-date">2x = 10</div><div class="frise-text">÷ 2 : <strong>x = 5</strong></div></div></div>
-    <div class="frise-item"><div class="frise-dot">Ex2</div><div class="frise-content"><div class="frise-date">x + 8 = 15</div><div class="frise-text">− 8 : <strong>x = 7</strong></div></div></div>
-    <div class="frise-item"><div class="frise-dot">Ex3</div><div class="frise-content"><div class="frise-date">4x − 3 = 13</div><div class="frise-text">+3 : 4x = 16 → ÷4 : <strong>x = 4</strong></div></div></div>
-    <div class="frise-item"><div class="frise-dot">Ex4</div><div class="frise-content"><div class="frise-date">2(x + 5) = 20</div><div class="frise-text">÷2 : x + 5 = 10 → −5 : <strong>x = 5</strong></div></div></div>
-    <div class="frise-item"><div class="frise-dot">Ex5</div><div class="frise-content"><div class="frise-date">5x + 3 = 2x + 12</div><div class="frise-text">−2x : 3x + 3 = 12 → −3 : 3x = 9 → <strong>x = 3</strong></div></div></div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Tester une solution</div>
+    <div class="lf-body">Remplacer x par la valeur trouvée dans l'équation de départ. Si les deux membres sont égaux, c'est correct.</div>
+    <div class="lf-ex">Ex : x = 4 dans 4x − 3 = 13 → 4×4 − 3 = 13 ✓</div>
   </div>
-</section>
-
-<section class="cs">
-  <h2>6. Mettre en équation un problème</h2>
-  <div class="dbox"><div class="lbl">Méthode</div>
-  <ul>
-    <li>Nommer l'inconnue : "soit x le nombre cherché"</li>
-    <li>Traduire le problème en équation</li>
-    <li>Résoudre, puis vérifier dans l'énoncé</li>
-  </ul></div>
-  <div class="ebox"><div class="lbl">Exemple</div>
-  <p>Paul a 3 fois plus de billes que Sophie, plus 4. Il en a 22 au total.<br>
-  Soit x le nombre de billes de Sophie.<br>
-  <code>3x + 4 = 22</code> → <code>3x = 18</code> → <strong>x = 6</strong><br>
-  Sophie a 6 billes, Paul en a 3×6+4 = 22 ✓</p></div>
-</section>
-
+</div>
 <div class="retenir">
   <h3>📌 À retenir</h3>
   <ul>
-    <li>Expression littérale : calculer en remplaçant la lettre par sa valeur</li>
-    <li>Réduire : additionner uniquement les termes semblables (même lettre ET même exposant)</li>
-    <li>Développer : k(a + b) = ka + kb (distribuer)</li>
-    <li>Équation : même opération des deux côtés → balance équilibrée</li>
-    <li>Vérifier : substituer x dans l'équation de départ</li>
+    <li>Expression : calculer en remplaçant la lettre par sa valeur</li>
+    <li>Réduire : additionner uniquement les termes semblables</li>
+    <li>Équation : même opération des 2 côtés → balance équilibrée</li>
+    <li>Toujours vérifier en substituant x dans l'équation</li>
   </ul>
 </div>
-
-<div class="cta">
-  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
-  <a href="algebre-6e.html" class="btn-ex">Faire les exercices 6e →</a>
-</div>
-
+<div class="cta"><p>Tu as compris ? Entraîne-toi !</p><a href="algebre-6e.html" class="btn-ex">Faire les exercices 6e →</a></div>
 </main>
 <footer class="site-footer">École Facile — Cours 6e · Algèbre et équations</footer>
 <script src="sync.js"></script>

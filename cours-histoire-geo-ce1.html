@@ -17,10 +17,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-:root{--lc1:#059669;--lc2:#10b981;--lb:#6ee7b7;--la:#059669;--ld:#065f46;--lbg:#ecfdf5;--lt:#14532d;--ls:rgba(5,150,105,.3)}
+:root{--lc1:#065f46;--lc2:#059669;--lb:#6ee7b7;--la:#059669;--ld:#065f46;--lbg:#ecfdf5;--lt:#14532d;--ls:rgba(5,150,105,.3)}
 .cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
 .cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
 .cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.lf-grid{display:grid;gap:12px;margin-bottom:18px}
+.lf-card{background:#fff;border-left:4px solid var(--lc1);border-radius:0 12px 12px 0;padding:12px 14px}
+.lf-rule{font-size:.72rem;font-weight:900;color:var(--lc1);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.lf-body{font-size:.9rem;font-weight:700;color:var(--lt);line-height:1.5;margin-bottom:6px}
+.lf-ex{font-size:.82rem;font-weight:700;color:var(--ld);background:var(--lb);border-radius:8px;padding:5px 10px}
 </style>
 </head>
 <body class="cpage">
@@ -30,89 +35,35 @@
   <p>De la Préhistoire au Moyen Âge — continents, France</p>
 </header>
 <main>
-
-<section class="cs">
-  <h2>1. Frise chronologique — les grandes périodes</h2>
-  <div class="frise">
-    <div class="frise-item"><div class="frise-dot">🦣</div><div class="frise-content"><div class="frise-date">La Préhistoire — il y a des millions d'années</div><div class="frise-text">Premiers hommes, outils en pierre, grottes, mammouth. Invention de l'agriculture. Pas d'écriture.</div></div></div>
-    <div class="frise-item"><div class="frise-dot">🏛</div><div class="frise-content"><div class="frise-date">L'Antiquité — 3000 av. J.-C. à 476 ap. J.-C.</div><div class="frise-text">Invention de l'écriture, Égypte ancienne (pharaons, pyramides), Grèce et Rome antiques. Les Gaulois en France.</div></div></div>
-    <div class="frise-item"><div class="frise-dot">🏰</div><div class="frise-content"><div class="frise-date">Le Moyen Âge — 476 à 1492</div><div class="frise-text">Châteaux forts, chevaliers, seigneurs et serfs. Charlemagne, croisades. Construction des cathédrales.</div></div></div>
-    <div class="frise-item"><div class="frise-dot">🚀</div><div class="frise-content"><div class="frise-date">Les Temps modernes et aujourd'hui</div><div class="frise-text">Découverte de l'Amérique (1492), Révolution française (1789), industrialisation, monde contemporain.</div></div></div>
+<div class="lf-grid">
+  <div class="lf-card">
+    <div class="lf-rule">📌 La Préhistoire</div>
+    <div class="lf-body">Premiers êtres humains, pas d'écriture. Outils en pierre, peintures rupestres dans les grottes.</div>
+    <div class="lf-ex">Ex : Cro-Magnon · grotte de Lascaux · invention du feu et de l'agriculture</div>
   </div>
-</section>
-
-<section class="cs">
-  <h2>2. La Préhistoire — approfondissement</h2>
-  <div class="dbox"><div class="lbl">Comment vivaient-ils ?</div>
-  <ul>
-    <li><strong>Nomades</strong> au début : ils se déplaçaient pour chasser et cueillir</li>
-    <li><strong>Sédentaires</strong> ensuite : ils s'installent quand ils inventent l'agriculture</li>
-    <li>Ils vivaient en groupes (tribus) pour s'entraider</li>
-  </ul></div>
-  <div class="ebox"><div class="lbl">Inventions importantes</div>
-  <ul>
-    <li>🔥 <strong>Le feu</strong> : pour se chauffer, cuire, éloigner les prédateurs</li>
-    <li>🏹 <strong>Les outils en silex</strong> : couteaux, pointes de flèche</li>
-    <li>🌾 <strong>L'agriculture</strong> : cultiver blé, orge → fin du nomadisme</li>
-    <li>🐄 <strong>L'élevage</strong> : domestiquer les animaux (chèvre, mouton, bœuf)</li>
-    <li>⚙️ <strong>La roue</strong> et la poterie (argile)</li>
-  </ul></div>
-</section>
-
-<section class="cs">
-  <h2>3. L'Antiquité — Gaulois et Romains</h2>
-  <div class="vgrid">
-    <div class="vcrd"><div class="vl">Les Gaulois</div><div class="vv">🛡️</div><div class="vs">peuple celte en Gaule (France)</div></div>
-    <div class="vcrd"><div class="vl">Les Romains</div><div class="vv">🦅</div><div class="vs">César conquiert la Gaule (52 av. J.-C.)</div></div>
-    <div class="vcrd"><div class="vl">Vercingétorix</div><div class="vv">⚔️</div><div class="vs">chef gaulois, battu à Alésia</div></div>
-    <div class="vcrd"><div class="vl">Pharaons</div><div class="vv">🏺</div><div class="vs">rois d'Égypte — pyramides</div></div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Les Gaulois</div>
+    <div class="lf-body">Peuple qui habitait la France (la Gaule) avant les Romains. Chef célèbre : Vercingétorix.</div>
+    <div class="lf-ex">Ex : 52 av. J.-C. — Vercingétorix battu par César à Alésia</div>
   </div>
-</section>
-
-<section class="cs">
-  <h2>4. Le Moyen Âge — châteaux et chevaliers</h2>
-  <div class="dbox"><div class="lbl">La société féodale</div>
-  <ul>
-    <li>Le <strong>roi</strong> → les <strong>seigneurs</strong> → les <strong>chevaliers</strong> → les <strong>paysans</strong> (serfs)</li>
-    <li>Le <strong>château fort</strong> : protège le seigneur et les paysans (fossés, pont-levis, tours)</li>
-    <li>L'<strong>Église</strong> est très puissante : évêques, moines, cathédrales</li>
-    <li><strong>Charlemagne</strong> (742–814) : roi des Francs et premier empereur d'Occident</li>
-  </ul></div>
-  <div class="ebox"><div class="lbl">Ce qu'on fabriquait au Moyen Âge</div>
-  <p>Des cathédrales en pierre (Notre-Dame de Paris), de grandes tapisseries (Bayeux), et des livres enluminés à la main par des moines.</p></div>
-</section>
-
-<section class="cs">
-  <h2>5. Géographie — la Terre et ses continents</h2>
-  <div class="vgrid">
-    <div class="vcrd"><div class="vl">Europe</div><div class="vv">🇪🇺</div><div class="vs">France, Allemagne, Italie…</div></div>
-    <div class="vcrd"><div class="vl">Afrique</div><div class="vv">🌍</div><div class="vs">54 pays</div></div>
-    <div class="vcrd"><div class="vl">Asie</div><div class="vv">🌏</div><div class="vs">le plus grand</div></div>
-    <div class="vcrd"><div class="vl">Amériques</div><div class="vv">🌎</div><div class="vs">N et S</div></div>
-    <div class="vcrd"><div class="vl">Océanie</div><div class="vv">🦘</div><div class="vs">Australie…</div></div>
-    <div class="vcrd"><div class="vl">Antarctique</div><div class="vv">🐧</div><div class="vs">pôle Sud</div></div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 La carte de France</div>
+    <div class="lf-body">La France est en Europe de l'Ouest. Capitale : Paris. Elle a des voisins de tous côtés.</div>
+    <div class="lf-ex">Ex : voisins — Espagne, Italie, Allemagne, Belgique, Suisse</div>
   </div>
-  <div class="rbox"><div class="lbl">La France et ses régions</div>
-  <p>La France est divisée en <strong>régions</strong> (ex : Île-de-France, Bretagne, PACA…), puis en <strong>départements</strong>.<br>
-  Elle comprend aussi les <strong>DOM-TOM</strong> (territoires d'outre-mer) : Martinique, Réunion, Polynésie…</p></div>
-</section>
-
+</div>
 <div class="retenir">
   <h3>📌 À retenir</h3>
   <ul>
-    <li>Préhistoire → Antiquité → Moyen Âge → Temps modernes → Contemporain</li>
-    <li>Préhistoire : pas d'écriture, outils en pierre, invention du feu et de l'agriculture</li>
-    <li>Gaulois (Vercingétorix) battus par les Romains (César) à Alésia en 52 av. J.-C.</li>
-    <li>Moyen Âge : châteaux forts, chevaliers, Charlemagne</li>
-    <li>7 continents dont l'Europe où se trouve la France</li>
+    <li>Préhistoire = outils en pierre, peintures rupestres, pas d'écriture</li>
+    <li>Gaulois = Vercingétorix · Romains = César · bataille d'Alésia 52 av. J.-C.</li>
+    <li>France = Europe de l'Ouest · capitale Paris</li>
   </ul>
 </div>
-
 <div class="cta">
-  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
+  <p>Tu as compris ? Entraîne-toi !</p>
   <a href="histoire-geo-ce1.html" class="btn-ex">Faire les exercices CE1 →</a>
 </div>
-
 </main>
 <footer class="site-footer">École Facile — Cours CE1 · Histoire et Géographie</footer>
 <script src="sync.js"></script>

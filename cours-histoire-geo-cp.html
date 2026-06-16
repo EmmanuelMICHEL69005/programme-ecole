@@ -17,10 +17,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-:root{--lc1:#16a34a;--lc2:#22c55e;--lb:#bbf7d0;--la:#16a34a;--ld:#15803d;--lbg:#f0fdf4;--lt:#14532d;--ls:rgba(22,163,74,.3)}
+:root{--lc1:#16a34a;--lc2:#22c55e;--lb:#bbf7d0;--la:#16a34a;--ld:#14532d;--lbg:#f0fdf4;--lt:#052e16;--ls:rgba(22,163,74,.3)}
 .cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
 .cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
 .cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.lf-grid{display:grid;gap:12px;margin-bottom:18px}
+.lf-card{background:#fff;border-left:4px solid var(--lc1);border-radius:0 12px 12px 0;padding:12px 14px}
+.lf-rule{font-size:.72rem;font-weight:900;color:var(--lc1);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.lf-body{font-size:.9rem;font-weight:700;color:var(--lt);line-height:1.5;margin-bottom:6px}
+.lf-ex{font-size:.82rem;font-weight:700;color:var(--ld);background:var(--lb);border-radius:8px;padding:5px 10px}
 </style>
 </head>
 <body class="cpage">
@@ -31,108 +36,38 @@
 </header>
 <main>
 
-<section class="cs">
-  <h2>1. Ma famille et moi</h2>
-  <div class="dbox"><div class="lbl">Les membres de la famille</div>
-  <ul>
-    <li><strong>Parents</strong> : papa (père) et maman (mère)</li>
-    <li><strong>Frère / Sœur</strong> : enfants des mêmes parents (fratrie)</li>
-    <li><strong>Grands-parents</strong> : grand-père / grand-mère (papy/mamie)</li>
-    <li><strong>Oncle / Tante</strong> : frère ou sœur de papa ou maman</li>
-    <li><strong>Cousin / Cousine</strong> : enfants de l'oncle ou de la tante</li>
-  </ul></div>
-  <div class="ebox"><div class="lbl">L'arbre généalogique</div>
-  <p>Un <strong>arbre généalogique</strong> montre les liens de parenté entre les membres d'une famille.<br>
-  En haut = les plus anciens (grands-parents, arrière-grands-parents)<br>
-  En bas = les plus jeunes (toi et tes cousins)</p></div>
-</section>
+<div class="lf-grid">
 
-<section class="cs">
-  <h2>2. Le temps qui passe — jours, mois, saisons</h2>
-  <div class="vgrid">
-    <div class="vcrd"><div class="vl">Printemps</div><div class="vv">🌸</div><div class="vs">mars–mai</div></div>
-    <div class="vcrd"><div class="vl">Été</div><div class="vv">☀️</div><div class="vs">juin–août</div></div>
-    <div class="vcrd"><div class="vl">Automne</div><div class="vv">🍂</div><div class="vs">sept–nov</div></div>
-    <div class="vcrd"><div class="vl">Hiver</div><div class="vv">❄️</div><div class="vs">déc–fév</div></div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Ma famille et moi</div>
+    <div class="lf-body">La famille : parents, grands-parents, frères et sœurs. On peut faire un arbre généalogique.</div>
+    <div class="lf-ex">Ex : moi → parents → grands-parents</div>
   </div>
-  <div class="dbox"><div class="lbl">Les repères du temps</div>
-  <ul>
-    <li>1 semaine = 7 jours (lundi, mardi, mercredi, jeudi, vendredi, samedi, dimanche)</li>
-    <li>1 mois = 28 à 31 jours | 1 an = 12 mois = 365 jours</li>
-    <li><strong>Avant</strong> = dans le passé | <strong>Après</strong> = dans le futur | <strong>Maintenant</strong> = le présent</li>
-  </ul></div>
-</section>
 
-<section class="cs">
-  <h2>3. La Préhistoire — les premiers hommes</h2>
-  <div class="frise">
-    <div class="frise-item"><div class="frise-dot">1</div><div class="frise-content"><div class="frise-date">Il y a très très longtemps (millions d'années)</div><div class="frise-text">Les <strong>premiers hommes</strong> apparaissent. Ils sont chasseurs et cueilleurs. Ils vivent dans des grottes.</div></div></div>
-    <div class="frise-item"><div class="frise-dot">2</div><div class="frise-content"><div class="frise-date">La vie à la Préhistoire</div><div class="frise-text">Ils fabriquent des outils en <strong>pierre taillée</strong>, chassent les mammouths, allument le feu, et dessinent sur les murs des grottes (ex : Lascaux).</div></div></div>
-    <div class="frise-item"><div class="frise-dot">3</div><div class="frise-content"><div class="frise-date">Les grandes inventions préhistoriques</div><div class="frise-text"><strong>La roue</strong>, la poterie, l'agriculture — les hommes commencent à cultiver la terre et élever des animaux.</div></div></div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Les saisons</div>
+    <div class="lf-body">Il y a 4 saisons : printemps (fleurs), été (chaleur), automne (feuilles tombent), hiver (froid).</div>
+    <div class="lf-ex">Ex : décembre = hiver · juin = été</div>
   </div>
-  <div class="ebox"><div class="lbl">Ce que les hommes préhistoriques savaient faire</div>
-  <ul>
-    <li>Tailler la pierre pour faire des outils et des armes</li>
-    <li>Faire du feu pour se chauffer et cuire les aliments</li>
-    <li>Peindre sur les murs des grottes (art préhistorique)</li>
-    <li>Fabriquer des vêtements avec des peaux d'animaux</li>
-  </ul></div>
-</section>
 
-<section class="cs">
-  <h2>4. La France — où est-ce ?</h2>
-  <div class="visbox">
-    <svg viewBox="0 0 280 220" width="280" height="220">
-      <rect x="10" y="10" width="260" height="200" rx="12" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.5"/>
-      <polygon points="130,20 170,20 185,60 175,100 145,130 110,130 85,100 95,60" fill="#16a34a" stroke="#15803d" stroke-width="2"/>
-      <text x="130" y="80" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="13" fill="#fff">FRANCE</text>
-      <text x="130" y="150" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="11" fill="#1d4ed8">Paris ★</text>
-      <circle cx="130" cy="142" r="4" fill="#dc2626"/>
-      <text x="30" y="60" font-family="Nunito" font-weight="800" font-size="10" fill="#1e3a8a">Océan</text>
-      <text x="30" y="72" font-family="Nunito" font-weight="800" font-size="10" fill="#1e3a8a">Atlantique</text>
-      <text x="195" y="100" font-family="Nunito" font-weight="800" font-size="10" fill="#1e3a8a">Mer</text>
-      <text x="195" y="112" font-family="Nunito" font-weight="800" font-size="10" fill="#1e3a8a">Médit.</text>
-      <text x="130" y="195" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="10" fill="#1e3a8a">Espagne</text>
-    </svg>
-    <div class="vis-caption">La France en Europe — capitale Paris</div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 La France</div>
+    <div class="lf-body">La France est en Europe. Sa capitale est Paris. On y parle le français.</div>
+    <div class="lf-ex">Ex : Paris · Lyon · Marseille sont des grandes villes</div>
   </div>
-  <div class="rbox"><div class="lbl">Ce que je sais sur la France</div>
-  <ul>
-    <li>La France est en <strong>Europe</strong></li>
-    <li>Sa capitale est <strong>Paris</strong></li>
-    <li>Elle est entourée par la mer (Atlantique, Méditerranée, Manche)</li>
-    <li>Elle a des voisins : Espagne, Italie, Belgique, Suisse, Allemagne…</li>
-    <li>Les habitants de France s'appellent les <strong>Français</strong></li>
-  </ul></div>
-</section>
 
-<section class="cs">
-  <h2>5. Mon école et ma ville</h2>
-  <div class="dbox"><div class="lbl">S'orienter dans l'espace</div>
-  <ul>
-    <li>Les <strong>points cardinaux</strong> : Nord, Sud, Est, Ouest</li>
-    <li>Le soleil se lève à l'<strong>Est</strong> et se couche à l'<strong>Ouest</strong></li>
-    <li>Une <strong>carte</strong> représente un espace vu du dessus (comme un oiseau)</li>
-    <li>Le <strong>plan</strong> montre les rues, bâtiments, parcs d'une ville</li>
-  </ul></div>
-  <div class="ebox"><div class="lbl">De chez moi à l'école</div>
-  <p>Pour décrire un chemin : on utilise les mots <strong>gauche / droite</strong>, <strong>tout droit</strong>, <strong>au bout de la rue</strong>…<br>
-  Une <strong>adresse</strong> = numéro + nom de rue + ville</p></div>
-</section>
+</div>
 
 <div class="retenir">
   <h3>📌 À retenir</h3>
   <ul>
-    <li>Famille : père/mère → parents | frère/sœur → fratrie | grands-parents = 2 générations avant</li>
-    <li>4 saisons : printemps 🌸, été ☀️, automne 🍂, hiver ❄️</li>
-    <li>Préhistoire : hommes des cavernes, outils en pierre, dessins rupestres</li>
-    <li>France = pays d'Europe, capitale Paris</li>
-    <li>Points cardinaux : N, S, E, O | le soleil se lève à l'Est</li>
+    <li>4 saisons : printemps, été, automne, hiver</li>
+    <li>France → Europe → capitale Paris</li>
+    <li>Famille = arbre généalogique</li>
   </ul>
 </div>
-
 <div class="cta">
-  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
+  <p>Tu as compris ? Entraîne-toi !</p>
   <a href="histoire-geo-cp.html" class="btn-ex">Faire les exercices CP →</a>
 </div>
 

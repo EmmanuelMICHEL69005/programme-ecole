@@ -5,140 +5,65 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://ecolefacile.fr/cours-decimaux-cm1.html">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Nombres décimaux — Cours CM1 | École Facile</title>
-<meta name="description" content="Cours CM1 : opérations sur les décimaux, multiplication décimal×entier, division, conversions fractions-décimaux.">
+<title>Les nombres décimaux — Cours CM1 | École Facile</title>
+<meta name="description" content="Cours CM1 : lire, écrire et comparer des nombres décimaux, opérations avec la virgule.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ecolefacile.fr/cours-decimaux-cm1.html">
-<meta property="og:title" content="Nombres décimaux — Cours CM1 | École Facile">
-<meta property="og:description" content="Cours CM1 : opérations sur les décimaux, multiplication décimal×entier, division, conversions fractions-décimaux.">
+<meta property="og:title" content="Les nombres décimaux — Cours CM1 | École Facile">
+<meta property="og:description" content="Cours CM1 : lire, écrire et comparer des nombres décimaux, opérations avec la virgule.">
 <meta property="og:image" content="https://ecolefacile.fr/og-image.png">
 <meta property="og:site_name" content="École Facile">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-:root{--lc1:#1d4ed8;--lc2:#3b82f6;--lb:#bfdbfe;--la:#1d4ed8;--ld:#1e3a8a;--lbg:#eff6ff;--lt:#1e1b4b;--ls:rgba(29,78,216,.3)}
+:root{--lc1:#1d4ed8;--lc2:#3b82f6;--lb:#93c5fd;--la:#1d4ed8;--ld:#1e3a8a;--lbg:#eff6ff;--lt:#1e3a8a;--ls:rgba(29,78,216,.3)}
 .cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
 .cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
 .cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.lf-grid{display:grid;gap:12px;margin-bottom:18px}
+.lf-card{background:#fff;border-left:4px solid var(--lc1);border-radius:0 12px 12px 0;padding:12px 14px}
+.lf-rule{font-size:.72rem;font-weight:900;color:var(--lc1);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.lf-body{font-size:.9rem;font-weight:700;color:var(--lt);line-height:1.5;margin-bottom:6px}
+.lf-ex{font-size:.82rem;font-weight:700;color:var(--ld);background:var(--lb);border-radius:8px;padding:5px 10px}
 </style>
 </head>
 <body class="cpage">
 <header class="cours-header" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6)">
   <div class="badge-niveau">CM1</div>
-  <h1>🔢 Nombres décimaux</h1>
-  <p>Opérations, conversions fractions-décimaux, millièmes</p>
+  <h1>🔢 Les nombres décimaux</h1>
+  <p>Dixièmes, centièmes, millièmes — lire, comparer, calculer</p>
 </header>
 <main>
 
-<section class="cs">
-  <h2>1. Rappel — tableau de numération étendu</h2>
-  <div class="dbox"><div class="lbl">Les rangs décimaux</div>
-  <p>À droite de la virgule : <strong>dixièmes</strong>, <strong>centièmes</strong>, <strong>millièmes</strong>.</p></div>
-  <div class="visbox">
-    <svg viewBox="0 0 450 70" width="450" height="70">
-      <rect x="5" y="5" width="80" height="60" fill="#1d4ed8" rx="6"/>
-      <rect x="90" y="5" width="80" height="60" fill="#3b82f6" rx="6"/>
-      <rect x="175" y="5" width="80" height="60" fill="#60a5fa" rx="6"/>
-      <text x="45" y="30" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="10" fill="white">Unités</text>
-      <text x="130" y="30" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="10" fill="white">Dixièmes</text>
-      <text x="215" y="30" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="10" fill="white">Centièmes</text>
-      <rect x="258" y="5" width="85" height="60" fill="#93c5fd" rx="6"/>
-      <text x="300" y="30" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="10" fill="#1e3a8a">Millièmes</text>
-      <text x="45" y="52" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="18" fill="white">2</text>
-      <text x="130" y="52" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="18" fill="white">3</text>
-      <text x="215" y="52" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="18" fill="white">5</text>
-      <text x="300" y="52" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="18" fill="#1e3a8a">7</text>
-      <text x="360" y="42" font-family="Nunito" font-weight="900" font-size="13" fill="#1d4ed8">= 2,357</text>
-    </svg>
-    <div class="vis-caption">2,357 = 2 unités + 3 dixièmes + 5 centièmes + 7 millièmes</div>
+<div class="lf-grid">
+  <div class="lf-card">
+    <div class="lf-rule">📌 Lire et écrire</div>
+    <div class="lf-body">Après la virgule : dixièmes · centièmes · millièmes (1er, 2e, 3e chiffre).</div>
+    <div class="lf-ex">Ex : 4,073 = 4 + 0 dix. + 7 cent. + 3 mill.</div>
   </div>
-</section>
-
-<section class="cs">
-  <h2>2. Addition et soustraction de décimaux</h2>
-  <div class="dbox"><div class="lbl">Règle d'or</div>
-  <p>Aligner les <strong>virgules</strong> et compléter avec des zéros si nécessaire. Opérer chiffre par chiffre comme pour les entiers.</p></div>
-  <div class="ebox"><div class="lbl">Exemples</div>
-  <ul>
-    <li>3,450 + 1,270 = <strong>4,720</strong> (aligner virgules)</li>
-    <li>5,000 − 2,350 = <strong>2,650</strong></li>
-    <li>2,45 + 0,3 → écrire 2,45 + 0,30 = <strong>2,75</strong></li>
-  </ul></div>
-</section>
-
-<section class="cs">
-  <h2>3. Multiplication décimal × entier</h2>
-  <div class="frise">
-    <div class="frise-item"><div class="frise-dot">1</div><div class="frise-content"><div class="frise-date">Ignorer la virgule</div><div class="frise-text">2,4 × 3 → calculer 24 × 3 = 72</div></div></div>
-    <div class="frise-item"><div class="frise-dot">2</div><div class="frise-content"><div class="frise-date">Replacer la virgule</div><div class="frise-text">2,4 a 1 chiffre après la virgule → résultat a 1 chiffre → 7,2</div></div></div>
-    <div class="frise-item"><div class="frise-dot">3</div><div class="frise-content"><div class="frise-date">Vérifier l'ordre de grandeur</div><div class="frise-text">2,4 × 3 ≈ 2 × 3 = 6 → 7,2 est cohérent ✓</div></div></div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Opérations</div>
+    <div class="lf-body">Addition et soustraction : aligner les virgules. Multiplication : ignorer la virgule, puis la replacer.</div>
+    <div class="lf-ex">Ex : 3,4 + 1,25 = 4,65 · 2,4 × 3 = 7,2</div>
   </div>
-  <div class="vgrid">
-    <div class="vcrd"><div class="vl">1,5 × 4</div><div class="vv">= 6,0</div><div class="vs">15 × 4 = 60</div></div>
-    <div class="vcrd"><div class="vl">3,25 × 2</div><div class="vv">= 6,50</div><div class="vs">325 × 2 = 650</div></div>
-    <div class="vcrd"><div class="vl">0,7 × 6</div><div class="vv">= 4,2</div><div class="vs">7 × 6 = 42</div></div>
-    <div class="vcrd"><div class="vl">2,5 × 8</div><div class="vv">= 20,0</div><div class="vs">25 × 8 = 200</div></div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Comparer</div>
+    <div class="lf-body">Comparer la partie entière d'abord, puis les décimaux chiffre par chiffre.</div>
+    <div class="lf-ex">Ex : 3,07 &lt; 3,1 (0 dix. &lt; 1 dix.) · 2,50 = 2,5</div>
   </div>
-</section>
-
-<section class="cs">
-  <h2>4. Division d'un décimal par un entier</h2>
-  <div class="dbox"><div class="lbl">Méthode</div>
-  <p>Même méthode que la division posée d'entiers. Si le reste n'est pas nul, on continue en ajoutant des zéros après la virgule.</p></div>
-  <div class="ebox"><div class="lbl">Exemples</div>
-  <ul>
-    <li>7,2 ÷ 3 = <strong>2,4</strong> (vérif : 2,4 × 3 = 7,2 ✓)</li>
-    <li>9,6 ÷ 4 = <strong>2,4</strong></li>
-    <li>5 ÷ 4 = 1 reste 1 → 1,0 ÷ 4 → 1,2 reste 0,2 → 1,25</li>
-  </ul></div>
-  <div class="rbox"><div class="lbl">Toujours vérifier !</div>
-  <p>résultat × diviseur = dividende</p></div>
-</section>
-
-<section class="cs">
-  <h2>5. Décimaux et fractions</h2>
-  <div class="conv-table">
-    <tr><th>Fraction</th><th>Décimal</th><th>Pourcentage</th></tr>
-    <tr><td>½</td><td>0,5</td><td>50 %</td></tr>
-    <tr><td>¼</td><td>0,25</td><td>25 %</td></tr>
-    <tr><td>¾</td><td>0,75</td><td>75 %</td></tr>
-    <tr><td>1/5</td><td>0,2</td><td>20 %</td></tr>
-    <tr><td>1/10</td><td>0,1</td><td>10 %</td></tr>
-    <tr><td>1/3</td><td>0,333…</td><td>33,3 %</td></tr>
-  </div>
-  <div class="dbox"><div class="lbl">Convertir une fraction en décimal</div>
-  <p>Diviser le numérateur par le dénominateur : 3/4 → 3 ÷ 4 = <strong>0,75</strong></p></div>
-</section>
-
-<section class="cs">
-  <h2>6. Multiplier et diviser par 10, 100, 1000</h2>
-  <div class="dbox"><div class="lbl">La règle de la virgule</div>
-  <p>× 10 → déplacer la virgule d'<strong>1 cran</strong> vers la droite<br>
-  × 100 → déplacer de <strong>2 crans</strong> | × 1000 → <strong>3 crans</strong><br>
-  ÷ 10 → déplacer de 1 cran vers la <strong>gauche</strong></p></div>
-  <div class="vgrid">
-    <div class="vcrd"><div class="vl">3,4 × 10</div><div class="vv">= 34</div></div>
-    <div class="vcrd"><div class="vl">0,56 × 100</div><div class="vv">= 56</div></div>
-    <div class="vcrd"><div class="vl">2,3 ÷ 10</div><div class="vv">= 0,23</div></div>
-    <div class="vcrd"><div class="vl">45 ÷ 1000</div><div class="vv">= 0,045</div></div>
-  </div>
-</section>
+</div>
 
 <div class="retenir">
   <h3>📌 À retenir</h3>
   <ul>
-    <li>Addition/soustraction de décimaux : aligner les virgules</li>
-    <li>Décimal × entier : ignorer virgule, multiplier, replacer virgule</li>
-    <li>× 10 → virgule décale d'1 cran à droite | ÷ 10 → à gauche</li>
-    <li>½ = 0,5 | ¼ = 0,25 | ¾ = 0,75 | 1/10 = 0,1</li>
+    <li>Millièmes = 3e chiffre après la virgule</li>
+    <li>Aligner les virgules pour + et −</li>
+    <li>3,07 &lt; 3,1 (comparer chiffre par chiffre)</li>
   </ul>
 </div>
 
-<div class="cta">
-  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
-  <a href="decimaux-cm1.html" class="btn-ex">Faire les exercices CM1 →</a>
-</div>
+<div class="cta"><p>Tu as compris ? Entraîne-toi !</p><a href="decimaux-cm1.html" class="btn-ex">Faire les exercices CM1 →</a></div>
 
 </main>
 <footer class="site-footer">École Facile — Cours CM1 · Nombres décimaux</footer>

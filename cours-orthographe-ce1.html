@@ -17,15 +17,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-:root{--lc1:#065f46;--lc2:#059669;--lb:#6ee7b7;--la:#065f46;--ld:#064e3b;--lbg:#f0fdf4;--lt:#052e16;--ls:rgba(5,150,105,.3)}
-.homo-table{width:100%;border-collapse:collapse;margin:10px 0;font-size:0.84rem}
-.homo-table th{background:var(--lb);color:var(--ld);font-weight:900;padding:7px 10px;text-align:left;border:1.5px solid var(--lb)}
-.homo-table td{padding:7px 10px;border:1.5px solid #a7f3d0;vertical-align:top}
-.homo-table tr:nth-child(even) td{background:#f0fdf4}
-.key{font-weight:900;color:#059669}
+:root{--lc1:#065f46;--lc2:#059669;--lb:#6ee7b7;--la:#059669;--ld:#065f46;--lbg:#ecfdf5;--lt:#14532d;--ls:rgba(5,150,105,.3)}
 .cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
 .cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
 .cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.lf-grid{display:grid;gap:12px;margin-bottom:18px}
+.lf-card{background:#fff;border-left:4px solid var(--lc1);border-radius:0 12px 12px 0;padding:12px 14px}
+.lf-rule{font-size:.72rem;font-weight:900;color:var(--lc1);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.lf-body{font-size:.9rem;font-weight:700;color:var(--lt);line-height:1.5;margin-bottom:6px}
+.lf-ex{font-size:.82rem;font-weight:700;color:var(--ld);background:var(--lb);border-radius:8px;padding:5px 10px}
 </style>
 </head>
 <body class="cpage">
@@ -35,95 +35,35 @@
   <p>Homophones, pluriels, accords</p>
 </header>
 <main>
-
-<section class="cs">
-  <h2>1. Majuscules et ponctuation</h2>
-  <div class="dbox"><div class="lbl">Règles de base</div>
-  <ul>
-    <li>Toute phrase commence par une <strong>majuscule</strong>.</li>
-    <li>Toute phrase se termine par un <strong>signe de ponctuation</strong> : <strong>. ? ! …</strong></li>
-    <li>Les noms propres (personnes, villes, pays) prennent toujours une majuscule : <em>Lucas, Paris, France</em>.</li>
-  </ul></div>
-</section>
-
-<section class="cs">
-  <h2>2. Homophones a / à</h2>
-  <table class="homo-table">
-    <tr><th>Mot</th><th>Nature</th><th>Astuce</th><th>Exemple</th></tr>
-    <tr><td><span class="key">a</span></td><td>verbe avoir (il/elle/on)</td><td>Remplace par <strong>avait</strong> → ça marche</td><td>Il <span class="key">a</span> faim. → avait faim ✓</td></tr>
-    <tr><td><span class="key">à</span></td><td>préposition</td><td>Remplace par <strong>avait</strong> → ça ne marche <em>pas</em></td><td>Il va <span class="key">à</span> Paris. → ✗ avait Paris</td></tr>
-  </table>
-</section>
-
-<section class="cs">
-  <h2>3. Homophones est / et</h2>
-  <table class="homo-table">
-    <tr><th>Mot</th><th>Nature</th><th>Astuce</th><th>Exemple</th></tr>
-    <tr><td><span class="key">est</span></td><td>verbe être (il/elle/on)</td><td>Remplace par <strong>était</strong> → ça marche</td><td>Il <span class="key">est</span> beau. → était beau ✓</td></tr>
-    <tr><td><span class="key">et</span></td><td>conjonction de coordination</td><td>Remplace par <strong>et puis</strong> → ça marche</td><td>Il mange <span class="key">et</span> boit. → et puis boit ✓</td></tr>
-  </table>
-</section>
-
-<section class="cs">
-  <h2>4. Homophones on / ont et son / sont</h2>
-  <table class="homo-table">
-    <tr><th>Mot</th><th>Nature</th><th>Astuce</th><th>Exemple</th></tr>
-    <tr><td><span class="key">on</span></td><td>pronom sujet</td><td>Remplace par <strong>il</strong></td><td><span class="key">On</span> joue. → Il joue. ✓</td></tr>
-    <tr><td><span class="key">ont</span></td><td>verbe avoir (ils)</td><td>Remplace par <strong>avaient</strong></td><td>Ils <span class="key">ont</span> fini. → avaient fini ✓</td></tr>
-    <tr><td><span class="key">son</span></td><td>déterminant possessif</td><td>Remplace par <strong>mon/ton</strong></td><td>Il prend <span class="key">son</span> sac. → mon sac ✓</td></tr>
-    <tr><td><span class="key">sont</span></td><td>verbe être (ils)</td><td>Remplace par <strong>étaient</strong></td><td>Ils <span class="key">sont</span> grands. → étaient ✓</td></tr>
-  </table>
-</section>
-
-<section class="cs">
-  <h2>5. Pluriel des noms</h2>
-  <div class="dbox"><div class="lbl">Règle générale</div>
-  <p>La plupart des noms prennent un <strong>-s</strong> au pluriel.</p>
-  <ul>
-    <li>un chat → des chat<span class="key">s</span></li>
-    <li>une maison → des maison<span class="key">s</span></li>
-  </ul></div>
-  <div class="ebox"><div class="lbl">Cas particuliers</div>
-  <ul>
-    <li>Noms en <strong>-eau</strong> → <strong>-eaux</strong> : bateau → bate<span class="key">aux</span>, oiseau → oise<span class="key">aux</span></li>
-    <li>Noms en <strong>-al</strong> → <strong>-aux</strong> : cheval → chev<span class="key">aux</span>, animal → anim<span class="key">aux</span></li>
-    <li>Noms déjà en <strong>-s, -x</strong> → invariables : bras, voix</li>
-  </ul></div>
-</section>
-
-<section class="cs">
-  <h2>6. Accord de l'adjectif</h2>
-  <div class="dbox"><div class="lbl">Règle</div>
-  <p>L'adjectif s'accorde en <strong>genre</strong> (masculin/féminin) et en <strong>nombre</strong> (singulier/pluriel) avec le nom.</p></div>
-  <table class="homo-table">
-    <tr><th></th><th>Singulier</th><th>Pluriel</th></tr>
-    <tr><td><strong>Masculin</strong></td><td>un grand chat</td><td>des grands chats</td></tr>
-    <tr><td><strong>Féminin</strong></td><td>une grand<span class="key">e</span> maison</td><td>des grande<span class="key">s</span> maisons</td></tr>
-  </table>
-  <div class="ebox"><div class="lbl">Former le féminin</div>
-  <ul>
-    <li>Règle générale : + <strong>-e</strong> → petit → petit<span class="key">e</span>, grand → grand<span class="key">e</span></li>
-    <li>Déjà en -e → invariable : rouge → rouge</li>
-    <li>Quelques irréguliers : beau → <strong>belle</strong>, blanc → <strong>blanche</strong></li>
-  </ul></div>
-</section>
-
+<div class="lf-grid">
+  <div class="lf-card">
+    <div class="lf-rule">📌 Homophones a / à · on / ont · son / sont · et / est</div>
+    <div class="lf-body">a = verbe avoir (remplaçable par "avait") · à = préposition · ont = avaient · son = mon/ton · sont = étaient · est = verbe être · et = liaison.</div>
+    <div class="lf-ex">Ex : Il a faim. (avoir) · Il va à l'école. (préposition) · Ils ont fini. · Il est beau.</div>
+  </div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Le pluriel des noms</div>
+    <div class="lf-body">Règle : + s. Exceptions : -eau → -eaux · -eu → -eux · déjà en -s ou -x : invariable.</div>
+    <div class="lf-ex">Ex : bateau → bateaux · nez → nez · cheval → chevaux</div>
+  </div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Accord de l'adjectif</div>
+    <div class="lf-body">L'adjectif s'accorde en genre et en nombre avec le nom qu'il qualifie.</div>
+    <div class="lf-ex">Ex : un petit chat → une petite chatte · des petits chats</div>
+  </div>
+</div>
 <div class="retenir">
   <h3>📌 À retenir</h3>
   <ul>
-    <li>a / à : remplace par "avait" → verbe avoir → "a" sans accent</li>
-    <li>est / et : remplace par "était" → verbe être → "est"</li>
-    <li>on / ont : "ont" = avaient ; son / sont : "sont" = étaient</li>
-    <li>Pluriel : généralement -s, mais -eau→-eaux, -al→-aux</li>
-    <li>Adjectif : féminin = +e, pluriel = +s</li>
+    <li>a/à · on/ont · son/sont · et/est : tester avec "avait" ou "étaient"</li>
+    <li>Pluriel : +s sauf -eau → -eaux · -al → -aux</li>
+    <li>Adjectif s'accorde en genre et en nombre</li>
   </ul>
 </div>
-
 <div class="cta">
-  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
+  <p>Tu as compris ? Entraîne-toi !</p>
   <a href="orthographe-ce1.html" class="btn-ex">Faire les exercices CE1 →</a>
 </div>
-
 </main>
 <footer class="site-footer">École Facile — Cours CE1 · Orthographe</footer>
 <script src="sync.js"></script>

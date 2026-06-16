@@ -17,10 +17,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-:root{--lc1:#9d174d;--lc2:#ec4899;--lb:#fbcfe8;--la:#9d174d;--ld:#831843;--lbg:#fdf2f8;--lt:#1e1b4b;--ls:rgba(157,23,77,.3)}
+:root{--lc1:#9d174d;--lc2:#ec4899;--lb:#fbcfe8;--la:#ec4899;--ld:#831843;--lbg:#fdf2f8;--lt:#831843;--ls:rgba(157,23,77,.3)}
 .cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
 .cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
 .cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.lf-grid{display:grid;gap:12px;margin-bottom:18px}
+.lf-card{background:#fff;border-left:4px solid var(--lc1);border-radius:0 12px 12px 0;padding:12px 14px}
+.lf-rule{font-size:.72rem;font-weight:900;color:var(--lc1);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.lf-body{font-size:.9rem;font-weight:700;color:var(--lt);line-height:1.5;margin-bottom:6px}
+.lf-ex{font-size:.82rem;font-weight:700;color:var(--ld);background:var(--lb);border-radius:8px;padding:5px 10px}
 </style>
 </head>
 <body class="cpage">
@@ -30,145 +35,33 @@
   <p>Pythagore, triangles, angles, cercle, repérage</p>
 </header>
 <main>
-
-<section class="cs">
-  <h2>1. Théorème de Pythagore</h2>
-  <div class="visbox">
-    <svg viewBox="0 0 280 200" width="280" height="200">
-      <polygon points="40,160 200,160 200,40" fill="none" stroke="#9d174d" stroke-width="2.5"/>
-      <rect x="192" y="152" width="10" height="10" fill="none" stroke="#9d174d" stroke-width="1.5"/>
-      <text x="30" y="175" font-family="Nunito" font-weight="900" font-size="12" fill="#831843">C</text>
-      <text x="205" y="175" font-family="Nunito" font-weight="900" font-size="12" fill="#831843">A</text>
-      <text x="205" y="38" font-family="Nunito" font-weight="900" font-size="12" fill="#831843">B</text>
-      <text x="113" y="175" font-family="Nunito" font-weight="900" font-size="11" fill="#9d174d">b</text>
-      <text x="207" y="108" font-family="Nunito" font-weight="900" font-size="11" fill="#9d174d">a</text>
-      <text x="100" y="105" font-family="Nunito" font-weight="900" font-size="11" fill="#ec4899">c (hyp.)</text>
-      <text x="40" y="195" font-family="Nunito" font-weight="800" font-size="10" fill="#6b7280">angle droit en A</text>
-    </svg>
-    <div class="vis-caption">Triangle rectangle BAC avec l'angle droit en A</div>
+<div class="lf-grid">
+  <div class="lf-card">
+    <div class="lf-rule">📌 Triangles et angles</div>
+    <div class="lf-body">Somme des angles d'un triangle = 180°. Théorème de Pythagore : dans un triangle rectangle, a² + b² = c² (c = hypoténuse, côté le plus long).</div>
+    <div class="lf-ex">Ex : côtés 3, 4, 5 → 9 + 16 = 25 = 5² ✓ triangle rectangle</div>
   </div>
-  <div class="formula-card">
-    <div class="fc-label">Théorème de Pythagore</div>
-    <div class="fc-formula">BC² = AB² + AC²</div>
-    <div class="fc-desc">Dans un triangle rectangle, le carré de l'hypoténuse = somme des carrés des deux autres côtés</div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Cercle</div>
+    <div class="lf-body">Circonférence = 2πr · Aire = πr² (π ≈ 3,14). r = rayon, d = diamètre = 2r.</div>
+    <div class="lf-ex">Ex : r = 5 cm → C ≈ 31,4 cm · A ≈ 78,5 cm²</div>
   </div>
-  <div class="ebox"><div class="lbl">Exemple</div>
-  <p>Triangle rectangle, AB = 3 cm, AC = 4 cm. Calculer BC.<br>
-  BC² = 3² + 4² = 9 + 16 = 25<br>
-  BC = √25 = <strong>5 cm</strong></p></div>
-  <div class="rbox"><div class="lbl">Triplets de Pythagore à connaître</div>
-  <p>(3, 4, 5) — (5, 12, 13) — (6, 8, 10) — (8, 15, 17)</p></div>
-</section>
-
-<section class="cs">
-  <h2>2. Angles dans les triangles</h2>
-  <div class="dbox"><div class="lbl">Propriété fondamentale</div>
-  <p>La somme des angles d'un triangle est toujours égale à <strong>180°</strong>.</p></div>
-  <div class="ebox"><div class="lbl">Exemples</div>
-  <ul>
-    <li>Angles 40° et 60° → 3e angle = 180 − 40 − 60 = <strong>80°</strong></li>
-    <li>Triangle équilatéral → 3 angles de 60°</li>
-    <li>Triangle rectangle → un angle de 90°, donc les deux autres font 90° au total</li>
-  </ul></div>
-  <div class="vgrid">
-    <div class="vcrd"><div class="vl">Équilatéral</div><div class="vv">3 angles 60°</div><div class="vs">3 côtés égaux</div></div>
-    <div class="vcrd"><div class="vl">Isocèle</div><div class="vv">2 angles égaux</div><div class="vs">2 côtés égaux</div></div>
-    <div class="vcrd"><div class="vl">Rectangle</div><div class="vv">1 angle 90°</div><div class="vs">hypoténuse</div></div>
-    <div class="vcrd"><div class="vl">Scalène</div><div class="vv">3 angles diff.</div><div class="vs">3 côtés diff.</div></div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Repérage dans le plan</div>
+    <div class="lf-body">Plan avec axes x (abscisse) et y (ordonnée). Point A(x ; y). Symétrie axiale : par rapport à un axe. Symétrie centrale : par rapport à un point.</div>
+    <div class="lf-ex">Ex : A(2 ; 3) symétrique de A'(−2 ; 3) par l'axe des ordonnées</div>
   </div>
-</section>
-
-<section class="cs">
-  <h2>3. Angles formés par deux droites</h2>
-  <div class="dbox"><div class="lbl">Angles opposés par le sommet</div>
-  <p>Deux droites sécantes forment 4 angles. Les angles <strong>opposés par le sommet</strong> sont égaux.</p></div>
-  <div class="dbox"><div class="lbl">Angles alternes-internes (droites parallèles)</div>
-  <p>Si deux droites sont coupées par une sécante, les angles <strong>alternes-internes</strong> sont égaux.<br>
-  Les angles <strong>correspondants</strong> sont aussi égaux.</p></div>
-  <div class="ebox"><div class="lbl">Application</div>
-  <p>Si α = 65° et les droites sont parallèles, l'angle alterne-interne = <strong>65°</strong>, l'angle supplémentaire = 180 − 65 = <strong>115°</strong>.</p></div>
-</section>
-
-<section class="cs">
-  <h2>4. Le cercle</h2>
-  <div class="visbox">
-    <svg viewBox="0 0 220 200" width="220" height="200">
-      <circle cx="110" cy="100" r="75" fill="none" stroke="#9d174d" stroke-width="2.5"/>
-      <circle cx="110" cy="100" r="4" fill="#9d174d"/>
-      <text x="112" y="96" font-family="Nunito" font-weight="900" font-size="12" fill="#9d174d">O</text>
-      <line x1="110" y1="100" x2="185" y2="100" stroke="#ec4899" stroke-width="2" stroke-dasharray="5,3"/>
-      <text x="142" y="92" font-family="Nunito" font-weight="900" font-size="11" fill="#ec4899">r</text>
-      <line x1="35" y1="100" x2="185" y2="100" stroke="#1d4ed8" stroke-width="1.5" stroke-dasharray="4,4"/>
-      <text x="95" y="130" font-family="Nunito" font-weight="900" font-size="11" fill="#1d4ed8">d = 2r</text>
-      <circle cx="185" cy="100" r="4" fill="#dc2626"/>
-      <text x="188" y="96" font-family="Nunito" font-weight="900" font-size="11" fill="#dc2626">M</text>
-    </svg>
-    <div class="vis-caption">Cercle de centre O, rayon r, diamètre d = 2r</div>
-  </div>
-  <div class="formula-card">
-    <div class="fc-label">Périmètre et aire du disque</div>
-    <div class="fc-formula">P = 2πr ≈ 6,28r &nbsp;|&nbsp; A = πr² ≈ 3,14r²</div>
-    <div class="fc-desc">π ≈ 3,14159… | r = rayon, d = diamètre = 2r</div>
-  </div>
-  <div class="ebox"><div class="lbl">Exemples</div>
-  <ul>
-    <li>Cercle r = 5 cm → P = 2 × 3,14 × 5 = <strong>31,4 cm</strong></li>
-    <li>Disque r = 3 cm → A = 3,14 × 9 = <strong>28,26 cm²</strong></li>
-    <li>Diamètre = 12 cm → r = 6 cm</li>
-  </ul></div>
-</section>
-
-<section class="cs">
-  <h2>5. Repérage dans le plan</h2>
-  <div class="visbox">
-    <svg viewBox="0 0 300 250" width="300" height="250">
-      <line x1="20" y1="125" x2="280" y2="125" stroke="#9d174d" stroke-width="2"/>
-      <line x1="150" y1="15" x2="150" y2="240" stroke="#9d174d" stroke-width="2"/>
-      <line x1="280" y1="125" x2="272" y2="118" stroke="#9d174d" stroke-width="2"/>
-      <line x1="280" y1="125" x2="272" y2="132" stroke="#9d174d" stroke-width="2"/>
-      <text x="283" y="123" font-family="Nunito" font-weight="900" font-size="13" fill="#9d174d">x</text>
-      <text x="155" y="14" font-family="Nunito" font-weight="900" font-size="13" fill="#9d174d">y</text>
-      <text x="140" y="138" font-family="Nunito" font-weight="900" font-size="12" fill="#831843">O</text>
-      <line x1="190" y1="120" x2="190" y2="130" stroke="#6b7280" stroke-width="1.5"/>
-      <text x="186" y="143" font-family="Nunito" font-weight="800" font-size="10" fill="#6b7280">2</text>
-      <line x1="110" y1="120" x2="110" y2="130" stroke="#6b7280" stroke-width="1.5"/>
-      <text x="104" y="143" font-family="Nunito" font-weight="800" font-size="10" fill="#6b7280">-2</text>
-      <line x1="145" y1="85" x2="155" y2="85" stroke="#6b7280" stroke-width="1.5"/>
-      <text x="158" y="89" font-family="Nunito" font-weight="800" font-size="10" fill="#6b7280">2</text>
-      <line x1="145" y1="165" x2="155" y2="165" stroke="#6b7280" stroke-width="1.5"/>
-      <text x="158" y="169" font-family="Nunito" font-weight="800" font-size="10" fill="#6b7280">-2</text>
-      <circle cx="230" cy="85" r="6" fill="#ec4899"/>
-      <text x="234" y="80" font-family="Nunito" font-weight="900" font-size="11" fill="#9d174d">A(4 ; 2)</text>
-      <circle cx="110" cy="165" r="6" fill="#1d4ed8"/>
-      <text x="60" y="160" font-family="Nunito" font-weight="900" font-size="11" fill="#1d4ed8">B(-2 ; -2)</text>
-      <circle cx="190" cy="165" r="6" fill="#16a34a"/>
-      <text x="196" y="178" font-family="Nunito" font-weight="900" font-size="11" fill="#16a34a">C(2;-2)</text>
-    </svg>
-    <div class="vis-caption">Plan cartésien — abscisse (x), ordonnée (y)</div>
-  </div>
-  <div class="rbox"><div class="lbl">Milieu d'un segment</div>
-  <p>Le milieu M de [AB] avec A(x₁;y₁) et B(x₂;y₂) :<br>
-  M = ((x₁+x₂)/2 ; (y₁+y₂)/2)</p></div>
-  <div class="ebox"><div class="lbl">Exemple</div>
-  <p>A(2;4) et B(6;2) → milieu M = ((2+6)/2 ; (4+2)/2) = (4 ; 3)</p></div>
-</section>
-
+</div>
 <div class="retenir">
   <h3>📌 À retenir</h3>
   <ul>
-    <li>Pythagore : hypoténuse² = côté1² + côté2² (triangle rectangle)</li>
-    <li>Somme des angles d'un triangle = 180°</li>
-    <li>Cercle : P = 2πr | Disque : A = πr² (π ≈ 3,14)</li>
-    <li>Diamètre = 2 × rayon</li>
-    <li>Repère : A(x;y) → x = abscisse (horizontal), y = ordonnée (vertical)</li>
+    <li>Angles d'un triangle = 180°</li>
+    <li>Pythagore : a² + b² = c² (triangle rectangle)</li>
+    <li>Cercle : circonférence = 2πr · aire = πr²</li>
+    <li>Repérage : point A(x ; y) dans le plan</li>
   </ul>
 </div>
-
-<div class="cta">
-  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
-  <a href="geometrie-6e.html" class="btn-ex">Faire les exercices 6e →</a>
-</div>
-
+<div class="cta"><p>Tu as compris ? Entraîne-toi !</p><a href="geometrie-6e.html" class="btn-ex">Faire les exercices 6e →</a></div>
 </main>
 <footer class="site-footer">École Facile — Cours 6e · Géométrie</footer>
 <script src="sync.js"></script>

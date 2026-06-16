@@ -17,16 +17,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-:root{--lc1:#065f46;--lc2:#059669;--lb:#6ee7b7;--la:#065f46;--ld:#064e3b;--lbg:#f0fdf4;--lt:#052e16;--ls:rgba(5,150,105,.3)}
-.conj-table{width:100%;border-collapse:collapse;margin:10px 0;font-size:0.85rem}
-.conj-table th{background:var(--lb);color:var(--ld);font-weight:900;padding:7px 10px;text-align:left;border:1.5px solid var(--lb)}
-.conj-table td{padding:6px 10px;border:1.5px solid #a7f3d0;vertical-align:top}
-.conj-table tr:nth-child(even) td{background:#f0fdf4}
-.pronoun{font-weight:900;color:var(--lc1);white-space:nowrap}
-.term{color:#059669;font-weight:900}
+:root{--lc1:#065f46;--lc2:#059669;--lb:#6ee7b7;--la:#059669;--ld:#065f46;--lbg:#ecfdf5;--lt:#14532d;--ls:rgba(5,150,105,.3)}
 .cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
 .cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
 .cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.lf-grid{display:grid;gap:12px;margin-bottom:18px}
+.lf-card{background:#fff;border-left:4px solid var(--lc1);border-radius:0 12px 12px 0;padding:12px 14px}
+.lf-rule{font-size:.72rem;font-weight:900;color:var(--lc1);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.lf-body{font-size:.9rem;font-weight:700;color:var(--lt);line-height:1.5;margin-bottom:6px}
+.lf-ex{font-size:.82rem;font-weight:700;color:var(--ld);background:var(--lb);border-radius:8px;padding:5px 10px}
 </style>
 </head>
 <body class="cpage">
@@ -36,115 +35,41 @@
   <p>Présent, futur proche, passé composé</p>
 </header>
 <main>
-
-<section class="cs">
-  <h2>1. L'infinitif</h2>
-  <div class="dbox"><div class="lbl">Définition</div>
-  <p>L'<strong>infinitif</strong> est la forme de base du verbe — celle qu'on trouve dans le dictionnaire. Le verbe n'est pas conjugué.</p></div>
-  <div class="ebox"><div class="lbl">Les terminaisons de l'infinitif</div>
-  <ul>
-    <li><strong>-ER</strong> (1er groupe) : chanter, manger, jouer, sauter <em>(la plupart des verbes)</em></li>
-    <li><strong>-IR</strong> (2e groupe) : finir, grandir, choisir <em>(participe présent en -issant)</em></li>
-    <li><strong>Autres</strong> (3e groupe) : faire, être, avoir, aller, venir, prendre…</li>
-  </ul></div>
-</section>
-
-<section class="cs">
-  <h2>2. Présent de être et avoir</h2>
-  <table class="conj-table">
-    <tr><th>Pronom</th><th>être</th><th>avoir</th></tr>
-    <tr><td class="pronoun">je / j'</td><td>su<span class="term">is</span></td><td>a<span class="term">i</span></td></tr>
-    <tr><td class="pronoun">tu</td><td><span class="term">es</span></td><td><span class="term">as</span></td></tr>
-    <tr><td class="pronoun">il / elle / on</td><td><span class="term">est</span></td><td><span class="term">a</span></td></tr>
-    <tr><td class="pronoun">nous</td><td>somm<span class="term">es</span></td><td>av<span class="term">ons</span></td></tr>
-    <tr><td class="pronoun">vous</td><td>êt<span class="term">es</span></td><td>av<span class="term">ez</span></td></tr>
-    <tr><td class="pronoun">ils / elles</td><td>s<span class="term">ont</span></td><td><span class="term">ont</span></td></tr>
-  </table>
-  <div class="wbox"><div class="lbl">Astuce</div>
-  <p>Ces deux verbes sont très irréguliers — il faut les apprendre par cœur !</p></div>
-</section>
-
-<section class="cs">
-  <h2>3. Présent des verbes du 1er groupe (-ER)</h2>
-  <div class="dbox"><div class="lbl">Terminaisons</div>
-  <p>Radical + <strong class="term">-e / -es / -e / -ons / -ez / -ent</strong></p></div>
-  <table class="conj-table">
-    <tr><th>Pronom</th><th>chanter</th><th>Terminaison</th></tr>
-    <tr><td class="pronoun">je</td><td>chant<span class="term">e</span></td><td><span class="term">-e</span></td></tr>
-    <tr><td class="pronoun">tu</td><td>chant<span class="term">es</span></td><td><span class="term">-es</span></td></tr>
-    <tr><td class="pronoun">il / elle</td><td>chant<span class="term">e</span></td><td><span class="term">-e</span></td></tr>
-    <tr><td class="pronoun">nous</td><td>chant<span class="term">ons</span></td><td><span class="term">-ons</span></td></tr>
-    <tr><td class="pronoun">vous</td><td>chant<span class="term">ez</span></td><td><span class="term">-ez</span></td></tr>
-    <tr><td class="pronoun">ils / elles</td><td>chant<span class="term">ent</span></td><td><span class="term">-ent</span></td></tr>
-  </table>
-  <div class="ebox"><div class="lbl">Exemples avec d'autres verbes -ER</div>
-  <ul>
-    <li>jouer : je joue, tu joues, il joue, nous jouons, vous jouez, ils jouent</li>
-    <li>manger : je mange, tu manges, nous mangeons (+ e avant -ons)</li>
-  </ul></div>
-</section>
-
-<section class="cs">
-  <h2>4. Le futur proche</h2>
-  <div class="dbox"><div class="lbl">Formation</div>
-  <p><strong>Verbe aller (au présent) + infinitif du verbe</strong></p>
-  <p>Exprime une action qui va se passer très bientôt.</p></div>
-  <table class="conj-table">
-    <tr><th>Pronom</th><th>Futur proche (chanter)</th></tr>
-    <tr><td class="pronoun">je</td><td>je <span class="term">vais</span> chanter</td></tr>
-    <tr><td class="pronoun">tu</td><td>tu <span class="term">vas</span> chanter</td></tr>
-    <tr><td class="pronoun">il / elle</td><td>il/elle <span class="term">va</span> chanter</td></tr>
-    <tr><td class="pronoun">nous</td><td>nous <span class="term">allons</span> chanter</td></tr>
-    <tr><td class="pronoun">vous</td><td>vous <span class="term">allez</span> chanter</td></tr>
-    <tr><td class="pronoun">ils / elles</td><td>ils/elles <span class="term">vont</span> chanter</td></tr>
-  </table>
-  <div class="ebox"><div class="lbl">Exemples</div>
-  <ul>
-    <li><em>Je <strong>vais manger</strong>.</em> → dans quelques instants</li>
-    <li><em>Il <strong>va pleuvoir</strong>.</em> → bientôt</li>
-    <li><em>Nous <strong>allons partir</strong>.</em> → très prochainement</li>
-  </ul></div>
-</section>
-
-<section class="cs">
-  <h2>5. Passé composé</h2>
-  <div class="dbox"><div class="lbl">Formation (avec avoir)</div>
-  <p><strong>Avoir (au présent) + participe passé</strong></p>
-  <p>Pour les verbes du 1er groupe (-ER), le participe passé se forme avec <strong>-é</strong> à la place de -er.</p></div>
-  <div class="ebox"><div class="lbl">Participes passés -ER → -é</div>
-  <ul>
-    <li>chanter → <strong>chanté</strong></li>
-    <li>jouer → <strong>joué</strong></li>
-    <li>manger → <strong>mangé</strong></li>
-    <li>regarder → <strong>regardé</strong></li>
-  </ul></div>
-  <table class="conj-table">
-    <tr><th>Pronom</th><th>Passé composé (manger)</th></tr>
-    <tr><td class="pronoun">j'</td><td>j'<span class="term">ai mangé</span></td></tr>
-    <tr><td class="pronoun">tu</td><td>tu <span class="term">as mangé</span></td></tr>
-    <tr><td class="pronoun">il / elle</td><td>il/elle <span class="term">a mangé</span></td></tr>
-    <tr><td class="pronoun">nous</td><td>nous <span class="term">avons mangé</span></td></tr>
-    <tr><td class="pronoun">vous</td><td>vous <span class="term">avez mangé</span></td></tr>
-    <tr><td class="pronoun">ils / elles</td><td>ils/elles <span class="term">ont mangé</span></td></tr>
-  </table>
-</section>
-
+<div class="lf-grid">
+  <div class="lf-card">
+    <div class="lf-rule">📌 Le présent</div>
+    <div class="lf-body">Action qui se passe maintenant ou habituellement. Verbes en -ER : je chante, tu chantes, il chante, nous chantons, vous chantez, ils chantent.</div>
+    <div class="lf-ex">Ex : Je mange ma soupe. · Il joue tous les jours.</div>
+  </div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Le futur proche</div>
+    <div class="lf-body">Aller (conjugué au présent) + infinitif → action qui va se passer bientôt.</div>
+    <div class="lf-ex">Ex : Je vais manger. · Nous allons partir. · Il va pleuvoir.</div>
+  </div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Le passé composé</div>
+    <div class="lf-body">Auxiliaire avoir ou être + participe passé → action terminée. Verbes -ER : participe passé en -é.</div>
+    <div class="lf-ex">Ex : J'ai mangé. · Elle est partie. · Nous avons joué.</div>
+  </div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 L'impératif</div>
+    <div class="lf-body">Donne un ordre ou un conseil, sans pronom sujet.</div>
+    <div class="lf-ex">Ex : Mange ! · Partons ! · Finissez !</div>
+  </div>
+</div>
 <div class="retenir">
   <h3>📌 À retenir</h3>
   <ul>
-    <li>1er groupe (-ER) au présent : je chante, tu chantes, il chante, nous chantons, vous chantez, ils chantent</li>
-    <li>être : suis / es / est / sommes / êtes / sont</li>
-    <li>avoir : ai / as / a / avons / avez / ont</li>
-    <li>Futur proche : aller (présent) + infinitif → je vais chanter</li>
-    <li>Passé composé : avoir + participe passé en -é → j'ai chanté</li>
+    <li>Présent (-ER) : je chante, tu chantes, il chante, nous chantons, vous chantez, ils chantent</li>
+    <li>Futur proche : aller au présent + infinitif</li>
+    <li>Passé composé : avoir ou être + participe passé (-ER → -é)</li>
+    <li>Impératif : ordre sans pronom sujet</li>
   </ul>
 </div>
-
 <div class="cta">
-  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
+  <p>Tu as compris ? Entraîne-toi !</p>
   <a href="conjugaison-ce1.html" class="btn-ex">Faire les exercices CE1 →</a>
 </div>
-
 </main>
 <footer class="site-footer">École Facile — Cours CE1 · Conjugaison</footer>
 <script src="sync.js"></script>

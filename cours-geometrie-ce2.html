@@ -6,386 +6,76 @@
 <link rel="canonical" href="https://ecolefacile.fr/cours-geometrie-ce2.html">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>🔷 Géométrie — Cours CE2 — École Facile</title>
-<meta name="description" content="Cours géométrie CE2 : figures planes, carré rectangle triangle, périmètre, axes de symétrie, solides, droites perpendiculaires.">
+<meta name="description" content="Cours géométrie CE2 : figures planes, carré rectangle triangle, périmètre, axes de symétrie, coordonnées.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
+:root{--lc1:#5b21b6;--lc2:#7c3aed;--lb:#ddd6fe;--la:#7c3aed;--ld:#4c1d95;--lbg:#f5f3ff;--lt:#1e1b4b;--ls:rgba(124,58,237,.3)}
 body{font-family:'Nunito',sans-serif;background:#fffbf0;color:#1e1b4b;margin:0}
 main{max-width:720px;margin:0 auto;padding:22px 18px 60px}
-.cs{margin-bottom:26px}
-.cs h2{font-size:1.1rem;font-weight:900;margin:0 0 12px;padding-bottom:7px;border-bottom:2.5px solid #e5e7eb;color:#1e1b4b}
-.dbox{background:#dbeafe;border-left:4px solid #1d4ed8;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
-.dbox .lbl{font-size:.65rem;font-weight:900;color:#1d4ed8;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
-.dbox p,.dbox ul{font-size:.9rem;font-weight:700;color:#1e3a8a;margin:0;line-height:1.55}
-.ebox{background:#fef9c3;border-left:4px solid #ca8a04;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
-.ebox .lbl{font-size:.65rem;font-weight:900;color:#92400e;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
-.ebox p,.ebox ul{font-size:.9rem;font-weight:700;color:#713f12;margin:0;line-height:1.55}
-.rbox{background:#dcfce7;border-left:4px solid #16a34a;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
-.rbox .lbl{font-size:.65rem;font-weight:900;color:#15803d;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
-.rbox p,.rbox ul{font-size:.9rem;font-weight:700;color:#14532d;margin:0;line-height:1.55}
-.wbox{background:#fee2e2;border-left:4px solid #dc2626;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
-.wbox .lbl{font-size:.65rem;font-weight:900;color:#dc2626;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
-.wbox p,.wbox ul{font-size:.9rem;font-weight:700;color:#991b1b;margin:0;line-height:1.55}
-.retenir{background:#fff;border:2.5px solid #7c3aed;border-radius:16px;padding:16px 18px;margin:22px 0 18px}
-.retenir h3{font-size:.78rem;font-weight:900;color:#7c3aed;text-transform:uppercase;letter-spacing:1px;margin:0 0 10px}
+.retenir{background:#fff;border:2.5px solid var(--lc1);border-radius:16px;padding:16px 18px;margin:22px 0 18px}
+.retenir h3{font-size:.78rem;font-weight:900;color:var(--lc2);text-transform:uppercase;letter-spacing:1px;margin:0 0 10px}
 .retenir ul{margin:0;padding-left:18px}
-.retenir li{font-size:.88rem;font-weight:700;color:#1e1b4b;line-height:1.7}
+.retenir li{font-size:.88rem;font-weight:700;color:var(--lt);line-height:1.7}
 .cta{text-align:center;margin-top:26px;padding:18px;background:#fff;border-radius:16px;border:2px solid #e5e7eb}
 .cta p{font-size:.82rem;color:#6b7280;font-weight:700;margin:0 0 10px}
-.btn-ex{display:inline-block;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;padding:13px 26px;border-radius:13px;font-size:.95rem;font-weight:900;text-decoration:none;box-shadow:0 4px 16px rgba(124,58,237,.4)}
-.vgrid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));margin:10px 0}
-.vcrd{background:#fff;border:2px solid #e5e7eb;border-radius:11px;padding:9px;text-align:center}
-.vcrd .vl{font-size:.7rem;font-weight:900;color:#6b7280;margin-bottom:4px}
-.vcrd .vv{font-size:1.3rem;font-weight:900;color:#1e1b4b}
-.vcrd .vs{font-size:.68rem;font-weight:700;color:#9ca3af;margin-top:2px}
-table.conv{width:100%;border-collapse:collapse;margin:10px 0;font-size:.85rem;font-weight:700}
-table.conv th{background:#ede9fe;color:#5b21b6;padding:7px 10px;text-align:center;font-weight:900}
-table.conv td{border:1px solid #e5e7eb;padding:6px 10px;text-align:center;background:#fff}
-table.conv tr:nth-child(even) td{background:#f9fafb}
+.btn-ex{display:inline-block;background:linear-gradient(135deg,var(--lc1),var(--lc2));color:#fff;padding:13px 26px;border-radius:13px;font-size:.95rem;font-weight:900;text-decoration:none;box-shadow:0 4px 16px var(--ls)}
 .badge-niveau{display:inline-block;background:rgba(255,255,255,.2);border-radius:20px;padding:4px 14px;font-size:.72rem;font-weight:900;letter-spacing:1px;margin-bottom:8px}
 .cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
 .cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
 .cours-header p{font-size:.87rem;opacity:.88;margin:0}
 .site-footer{text-align:center;padding:16px;font-size:.8rem;color:#9ca3af;border-top:1px solid #e5e7eb;margin-top:10px}
-.frise{margin:12px 0;padding-left:0;list-style:none}
-.frise-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
-.frise-dot{min-width:26px;height:26px;background:#7c3aed;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:900;flex-shrink:0}
-.frise-content{flex:1}
-.frise-date{font-size:.65rem;font-weight:900;color:#7c3aed;text-transform:uppercase;letter-spacing:1px}
-.frise-text{font-size:.88rem;font-weight:700;color:#1e1b4b;line-height:1.5}
+.lf-grid{display:grid;gap:12px;margin-bottom:18px}
+.lf-card{background:#fff;border-left:4px solid var(--lc1);border-radius:0 12px 12px 0;padding:12px 14px}
+.lf-rule{font-size:.72rem;font-weight:900;color:var(--lc1);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.lf-body{font-size:.9rem;font-weight:700;color:var(--lt);line-height:1.5;margin-bottom:6px}
+.lf-ex{font-size:.82rem;font-weight:700;color:var(--ld);background:var(--lb);border-radius:8px;padding:5px 10px}
 </style>
 </head>
 <body>
 <header class="cours-header" style="background:linear-gradient(135deg,#5b21b6,#7c3aed)">
   <div class="badge-niveau">CE2</div>
   <h1>🔷 Géométrie</h1>
-  <p>Figures planes, périmètre, symétrie, solides</p>
+  <p>Figures planes, périmètre, symétrie, coordonnées</p>
 </header>
 <main>
 
-<!-- SECTION 1 : LES FIGURES PLANES -->
-<div class="cs">
-  <h2>1. Les figures planes</h2>
-  <div class="dbox"><div class="lbl">Définition</div>
-  <p>Une <strong>figure plane</strong> est une figure à plat, dessinée sur une feuille. Les figures avec des côtés droits s'appellent des <strong>polygones</strong>. On les nomme selon leur nombre de côtés.</p></div>
-
-  <div class="vgrid">
-    <div class="vcrd"><div class="vl">Carré</div><div class="vv">■</div><div class="vs">4 côtés égaux · 4 angles droits · carreau de sol</div></div>
-    <div class="vcrd"><div class="vl">Rectangle</div><div class="vv">▬</div><div class="vs">2 paires de côtés égaux · 4 angles droits · livre, porte</div></div>
-    <div class="vcrd"><div class="vl">Triangle</div><div class="vv">▲</div><div class="vs">3 côtés · 3 angles · somme angles = 180°</div></div>
-    <div class="vcrd"><div class="vl">Cercle</div><div class="vv">⬤</div><div class="vs">centre + rayon + diamètre · roue, pièce</div></div>
-    <div class="vcrd"><div class="vl">Losange</div><div class="vv">◆</div><div class="vs">4 côtés égaux · pas forcément 4 angles droits</div></div>
-    <div class="vcrd"><div class="vl">Hexagone</div><div class="vv">⬡</div><div class="vs">6 côtés égaux · alvéole d'abeille</div></div>
+<div class="lf-grid">
+  <div class="lf-card">
+    <div class="lf-rule">📌 Figures planes</div>
+    <div class="lf-body">Carré : 4 côtés égaux + 4 angles droits. Rectangle : côtés opposés égaux + 4 angles droits. Triangle : 3 côtés. Cercle : centre + rayon.</div>
+    <div class="lf-ex">Ex : carré de 5 cm → P = 4×5 = 20 cm · rectangle 5×3 → P = 2×(5+3) = 16 cm</div>
   </div>
-
-  <div class="rbox"><div class="lbl">Propriétés essentielles à connaître</div>
-  <ul>
-    <li><strong>Carré :</strong> 4 côtés tous égaux + 4 angles droits (90° chacun)</li>
-    <li><strong>Rectangle :</strong> longueur ≠ largeur, mais les côtés opposés sont égaux + 4 angles droits</li>
-    <li><strong>Triangle :</strong> 3 côtés, 3 angles — la somme des 3 angles vaut toujours <strong>180°</strong></li>
-    <li><strong>Cercle :</strong> le <strong>rayon</strong> va du centre au bord, le <strong>diamètre = 2 × rayon</strong> traverse le cercle en passant par le centre</li>
-  </ul></div>
-
-  <div class="ebox"><div class="lbl">Exemples dans la vie quotidienne</div>
-  <ul>
-    <li>Un carreau de sol = carré</li>
-    <li>Une feuille de cahier, une tablette de chocolat = rectangle</li>
-    <li>Un triangle de signalisation = triangle</li>
-    <li>Une pièce de monnaie, une roue de vélo = cercle</li>
-    <li>Une fenêtre classique = rectangle, un miroir rond = cercle</li>
-  </ul></div>
-
-  <div class="visbox">
-    <svg viewBox="0 0 400 110" xmlns="http://www.w3.org/2000/svg" style="max-width:420px">
-      <!-- Carré -->
-      <rect x="10" y="20" width="60" height="60" fill="#ede9fe" stroke="#7c3aed" stroke-width="2.5" rx="2"/>
-      <text x="40" y="98" text-anchor="middle" font-family="Nunito,sans-serif" font-size="11" font-weight="900" fill="#5b21b6">Carré</text>
-      <text x="40" y="108" text-anchor="middle" font-family="Nunito,sans-serif" font-size="9" fill="#7c3aed">4 côtés égaux</text>
-      <!-- Angle droit -->
-      <polyline points="18,72 18,62 28,62" fill="none" stroke="#7c3aed" stroke-width="1.5"/>
-      <!-- Rectangle -->
-      <rect x="90" y="30" width="90" height="50" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2.5" rx="2"/>
-      <text x="135" y="98" text-anchor="middle" font-family="Nunito,sans-serif" font-size="11" font-weight="900" fill="#1d4ed8">Rectangle</text>
-      <text x="135" y="108" text-anchor="middle" font-family="Nunito,sans-serif" font-size="9" fill="#1d4ed8">L ≠ l, 4 angles droits</text>
-      <!-- Triangle -->
-      <polygon points="220,20 255,80 190,80" fill="#dcfce7" stroke="#16a34a" stroke-width="2.5"/>
-      <text x="222" y="98" text-anchor="middle" font-family="Nunito,sans-serif" font-size="11" font-weight="900" fill="#15803d">Triangle</text>
-      <text x="222" y="108" text-anchor="middle" font-family="Nunito,sans-serif" font-size="9" fill="#15803d">3 côtés, 3 angles</text>
-      <!-- Cercle -->
-      <circle cx="325" cy="50" r="34" fill="#fef9c3" stroke="#ca8a04" stroke-width="2.5"/>
-      <line x1="325" y1="50" x2="359" y2="50" stroke="#92400e" stroke-width="1.5" stroke-dasharray="3,2"/>
-      <circle cx="325" cy="50" r="3" fill="#92400e"/>
-      <text x="340" y="46" font-family="Nunito,sans-serif" font-size="9" fill="#92400e" font-weight="900">r</text>
-      <text x="325" y="98" text-anchor="middle" font-family="Nunito,sans-serif" font-size="11" font-weight="900" fill="#92400e">Cercle</text>
-      <text x="325" y="108" text-anchor="middle" font-family="Nunito,sans-serif" font-size="9" fill="#92400e">rayon r, diamètre = 2r</text>
-    </svg>
-    <div class="vis-caption">Les 4 figures planes essentielles du CE2</div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Périmètre</div>
+    <div class="lf-body">Le périmètre = somme de tous les côtés. Carré : P = 4×c · Rectangle : P = 2×(L+l) · Triangle : P = a+b+c.</div>
+    <div class="lf-ex">Ex : triangle 3+4+5 = 12 cm · rectangle 6×4 → P = 2×(6+4) = 20 cm</div>
   </div>
-  <div class="wbox"><div class="lbl">Piege courant</div>
-  <p>Un <strong>carré est un cas particulier de rectangle</strong> (il a bien 4 angles droits), mais un rectangle n'est pas forcément un carré. Ne confonds pas les deux ! Le losange a 4 côtés égaux comme le carré, mais ses angles <em>ne sont pas droits</em> (sauf s'il est aussi un carré).</p></div>
-</div>
-
-<!-- SECTION 2 : RECONNAÎTRE ET TRACER -->
-<div class="cs">
-  <h2>2. Reconnaître et tracer une figure</h2>
-  <div class="dbox"><div class="lbl">Les outils du géomètre</div>
-  <ul>
-    <li><strong>La règle :</strong> pour tracer des segments droits et mesurer les longueurs</li>
-    <li><strong>L'équerre :</strong> pour vérifier et tracer des angles droits (coin parfait de 90°)</li>
-    <li><strong>Le compas :</strong> pour tracer des cercles ou reporter des longueurs</li>
-    <li><strong>Le rapporteur :</strong> pour mesurer les angles en degrés</li>
-  </ul></div>
-
-  <div class="rbox"><div class="lbl">Comment vérifier un angle droit</div>
-  <p>Place le coin de ton équerre sur le sommet de l'angle, en alignant un côté de l'équerre sur un côté de l'angle. Si l'autre côté de l'équerre coïncide exactement avec l'autre côté de l'angle, c'est bien un <strong>angle droit</strong>. On le marque avec le symbole <strong>□</strong>.</p></div>
-
-  <div class="ebox"><div class="lbl">Méthode : tracer un carré de 4 cm</div>
-  <ul class="frise">
-    <li class="frise-item"><span class="frise-dot">1</span><span class="frise-content"><span class="frise-date">Étape 1</span><span class="frise-text">Trace un segment horizontal de <strong>4 cm</strong> : c'est la base du carré (côté AB).</span></span></li>
-    <li class="frise-item"><span class="frise-dot">2</span><span class="frise-content"><span class="frise-date">Étape 2</span><span class="frise-text">En A, pose l'équerre et trace un segment vertical de <strong>4 cm</strong> vers le haut (côté AD).</span></span></li>
-    <li class="frise-item"><span class="frise-dot">3</span><span class="frise-content"><span class="frise-date">Étape 3</span><span class="frise-text">Fais de même en B : trace un segment vertical de <strong>4 cm</strong> vers le haut (côté BC).</span></span></li>
-    <li class="frise-item"><span class="frise-dot">4</span><span class="frise-content"><span class="frise-date">Étape 4</span><span class="frise-text">Relie les deux points du haut (D et C). Vérifie avec la règle : <strong>DC = 4 cm</strong>.</span></span></li>
-    <li class="frise-item"><span class="frise-dot">5</span><span class="frise-content"><span class="frise-date">Vérif</span><span class="frise-text">Contrôle les 4 angles droits avec l'équerre : chaque coin doit être parfaitement à 90°.</span></span></li>
-  </ul></div>
-
-  <div class="ebox"><div class="lbl">Méthode : tracer un rectangle 5 cm × 3 cm</div>
-  <p>Même principe : trace la base de <strong>5 cm</strong>, puis des côtés perpendiculaires de <strong>3 cm</strong> à chaque extrémité, et relie les sommets du haut. Les 2 côtés longs mesurent 5 cm, les 2 côtés courts mesurent 3 cm.</p></div>
-
-  <div class="wbox"><div class="lbl">Erreur fréquente</div>
-  <p>Ne pas utiliser l'équerre pour les angles droits et se contenter "à l'oeil". Résultat : ton carré ressemble à un losange ! <strong>Toujours vérifier avec l'équerre.</strong></p></div>
-</div>
-
-<!-- SECTION 3 : LE PERIMETRE -->
-<div class="cs">
-  <h2>3. Le périmètre</h2>
-  <div class="dbox"><div class="lbl">Définition</div>
-  <p>Le <strong>périmètre</strong> d'une figure, c'est la <strong>longueur totale de son contour</strong>. C'est comme si tu faisais le tour de la figure à pied : le périmètre, c'est la distance parcourue. On l'exprime en cm, m, km…</p></div>
-
-  <div class="rbox"><div class="lbl">Formules des périmètres</div>
-  <ul>
-    <li><strong>Carré :</strong> P = 4 × c (c = longueur d'un côté)</li>
-    <li><strong>Rectangle :</strong> P = 2 × (L + l) (L = longueur, l = largeur)</li>
-    <li><strong>Triangle :</strong> P = a + b + c (a, b, c = les 3 côtés)</li>
-    <li><strong>Cercle (périmètre = circonférence) :</strong> P ≈ 2 × 3,14 × r (r = rayon) — on verra ça plus tard</li>
-  </ul></div>
-
-  <div class="vgrid">
-    <div class="vcrd"><div class="vl">Carré</div><div class="vv">P = 4×c</div><div class="vs">ex : c=5cm → P=20cm</div></div>
-    <div class="vcrd"><div class="vl">Rectangle</div><div class="vv">P = 2×(L+l)</div><div class="vs">ex : 6×4 → P=20cm</div></div>
-    <div class="vcrd"><div class="vl">Triangle</div><div class="vv">P = a+b+c</div><div class="vs">ex : 3+4+5=12cm</div></div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Axe de symétrie</div>
+    <div class="lf-body">Une figure est symétrique si on peut la plier pour que les deux parties se superposent exactement. Carré : 4 axes · Rectangle : 2 axes · Cercle : infini.</div>
+    <div class="lf-ex">Ex : carré a 4 axes · rectangle n'a pas d'axe diagonal</div>
   </div>
-
-  <div class="ebox"><div class="lbl">Exemple détaillé — Rectangle 8 cm × 5 cm</div>
-  <p>On applique la formule <strong>P = 2 × (L + l)</strong><br>
-  → P = 2 × (8 + 5)<br>
-  → P = 2 × 13<br>
-  → <strong>P = 26 cm</strong><br>
-  Vérification : 8 + 5 + 8 + 5 = 26 cm ✓</p></div>
-
-  <div class="ebox"><div class="lbl">Exemple détaillé — Carré de côté 7 cm</div>
-  <p>P = 4 × 7 = <strong>28 cm</strong></p></div>
-
-  <div class="ebox"><div class="lbl">Exemple détaillé — Triangle avec côtés 6 cm, 8 cm, 10 cm</div>
-  <p>P = 6 + 8 + 10 = <strong>24 cm</strong></p></div>
-
-  <div class="wbox"><div class="lbl">Erreur fréquente</div>
-  <ul>
-    <li>Pour le rectangle : <strong>ne pas oublier de multiplier par 2</strong> — on a 2 longueurs et 2 largeurs.</li>
-    <li>Confondre périmètre (contour) et aire (surface intérieure) : le périmètre se mesure en cm, l'aire en cm².</li>
-    <li>Pour un carré : multiplier par 4, pas par 2 !</li>
-  </ul></div>
-</div>
-
-<!-- SECTION 4 : LA SYMÉTRIE AXIALE -->
-<div class="cs">
-  <h2>4. La symétrie axiale</h2>
-  <div class="dbox"><div class="lbl">Définition</div>
-  <p>Un <strong>axe de symétrie</strong> est une droite qui partage une figure en deux parties identiques. Si tu plies la figure sur cet axe, les deux moitiés se superposent exactement. On dit que la figure est <strong>symétrique</strong> par rapport à cet axe.</p></div>
-
-  <div class="rbox"><div class="lbl">Nombre d'axes de symétrie selon la figure</div>
-  <ul>
-    <li><strong>Carré :</strong> 4 axes (2 axes par les milieux des côtés + 2 diagonales)</li>
-    <li><strong>Rectangle :</strong> 2 axes (par les milieux des côtés seulement — les diagonales ne sont pas des axes !)</li>
-    <li><strong>Cercle :</strong> une infinité d'axes (tout diamètre est un axe)</li>
-    <li><strong>Triangle équilatéral :</strong> 3 axes</li>
-    <li><strong>Triangle quelconque :</strong> 0 axe en général</li>
-    <li><strong>Losange :</strong> 2 axes (les deux diagonales)</li>
-  </ul></div>
-
-  <div class="ebox"><div class="lbl">Comment vérifier si une droite est un axe de symétrie</div>
-  <ul>
-    <li><strong>Méthode du pliage :</strong> plie ton dessin sur la droite. Si les deux parties se superposent exactement, c'est bien un axe.</li>
-    <li><strong>Méthode du papier calque :</strong> décalque la figure, retourne le calque sur l'axe — la figure doit coïncider.</li>
-    <li><strong>Méthode des points :</strong> chaque point de la figure doit avoir son symétrique à la même distance de l'axe, de l'autre côté.</li>
-  </ul></div>
-
-  <div class="ebox"><div class="lbl">Construire le symétrique d'une figure point par point</div>
-  <ul class="frise">
-    <li class="frise-item"><span class="frise-dot">1</span><span class="frise-content"><span class="frise-date">Étape 1</span><span class="frise-text">Identifie chaque sommet (point) de la figure originale.</span></span></li>
-    <li class="frise-item"><span class="frise-dot">2</span><span class="frise-content"><span class="frise-date">Étape 2</span><span class="frise-text">Pour chaque sommet, trace une perpendiculaire à l'axe (utilise l'équerre).</span></span></li>
-    <li class="frise-item"><span class="frise-dot">3</span><span class="frise-content"><span class="frise-date">Étape 3</span><span class="frise-text">Mesure la distance du point à l'axe, puis reporte cette même distance de l'autre côté.</span></span></li>
-    <li class="frise-item"><span class="frise-dot">4</span><span class="frise-content"><span class="frise-date">Étape 4</span><span class="frise-text">Relie les nouveaux points dans le même ordre que la figure originale.</span></span></li>
-  </ul></div>
-
-  <div class="wbox"><div class="lbl">Erreur fréquente</div>
-  <p>Les diagonales d'un <strong>rectangle</strong> ne sont <em>pas</em> des axes de symétrie (contrairement au carré). Si tu plies un rectangle sur sa diagonale, les deux parties ne se superposent pas !</p></div>
-</div>
-
-<!-- SECTION 5 : LES DROITES -->
-<div class="cs">
-  <h2>5. Segments, droites et positions relatives</h2>
-  <div class="dbox"><div class="lbl">Segment, demi-droite, droite</div>
-  <ul>
-    <li><strong>Segment [AB] :</strong> portion de droite avec deux extrémités A et B. Il a une longueur qu'on peut mesurer.</li>
-    <li><strong>Demi-droite [AB) :</strong> part du point A et se prolonge indéfiniment du côté de B. Une extrémité seulement.</li>
-    <li><strong>Droite (AB) :</strong> se prolonge indéfiniment dans les deux sens. Pas d'extrémité, pas de longueur mesurable.</li>
-  </ul></div>
-
-  <div class="dbox"><div class="lbl">Droites parallèles et perpendiculaires</div>
-  <ul>
-    <li><strong>Droites parallèles :</strong> deux droites qui ne se croisent jamais, quelle que soit leur longueur. Elles restent toujours à la même distance l'une de l'autre. Symbole : d₁ // d₂</li>
-    <li><strong>Droites perpendiculaires :</strong> deux droites qui se croisent en formant un angle droit (90°). Symbole : d₁ ⊥ d₂</li>
-  </ul></div>
-
-  <div class="rbox"><div class="lbl">Dans les figures planes</div>
-  <ul>
-    <li><strong>Rectangle et carré :</strong> les côtés opposés sont parallèles deux à deux, et les côtés adjacents sont perpendiculaires.</li>
-    <li><strong>Triangle quelconque :</strong> aucun côté parallèle, aucun côté perpendiculaire en général.</li>
-    <li>Pour vérifier la perpendicularité : utiliser l'équerre.</li>
-    <li>Pour vérifier le parallélisme : les droites ne doivent jamais se croiser et rester à égale distance.</li>
-  </ul></div>
-
-  <div class="ebox"><div class="lbl">Exemples dans la vie quotidienne</div>
-  <ul>
-    <li>Les deux rails d'une voie ferrée = droites parallèles</li>
-    <li>La route et un poteau électrique = perpendiculaires</li>
-    <li>Les lignes d'un cahier = parallèles entre elles</li>
-    <li>Le côté d'une porte et le sol = perpendiculaires</li>
-  </ul></div>
-</div>
-
-<!-- SECTION 6 : LES ANGLES -->
-<div class="cs">
-  <h2>6. Les angles dans les figures</h2>
-  <div class="dbox"><div class="lbl">Définition d'un angle</div>
-  <p>Un <strong>angle</strong> est l'ouverture entre deux demi-droites qui partent du même point, appelé le <strong>sommet</strong>. On mesure les angles en <strong>degrés (°)</strong>. Pour vérifier si un angle est droit, on utilise l'<strong>équerre</strong>.</p></div>
-
-  <div class="vgrid">
-    <div class="vcrd"><div class="vl">Angle droit</div><div class="vv">⊾</div><div class="vs">= 90° — symbole □ au sommet</div></div>
-    <div class="vcrd"><div class="vl">Angle aigu</div><div class="vv">∠</div><div class="vs">moins de 90° — plus fermé qu'un angle droit</div></div>
-    <div class="vcrd"><div class="vl">Angle obtus</div><div class="vv">∡</div><div class="vs">entre 90° et 180° — plus ouvert qu'un angle droit</div></div>
-    <div class="vcrd"><div class="vl">Angle plat</div><div class="vv">——</div><div class="vs">= 180° — c'est une ligne droite</div></div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Coordonnées</div>
+    <div class="lf-body">Sur un quadrillage, on repère un point par (colonne, ligne). La colonne s'écrit en premier.</div>
+    <div class="lf-ex">Ex : point A en (3, 2) → 3e colonne, 2e ligne</div>
   </div>
-
-  <div class="rbox"><div class="lbl">Les angles dans les figures planes</div>
-  <ul>
-    <li><strong>Carré et rectangle :</strong> tous leurs angles sont des angles droits (4 × 90° = 360°)</li>
-    <li><strong>Triangle :</strong> la somme des 3 angles vaut toujours <strong>180°</strong></li>
-    <li><strong>Triangle équilatéral :</strong> 3 angles de 60° chacun</li>
-    <li><strong>Triangle rectangle :</strong> un angle de 90° et deux angles dont la somme vaut 90°</li>
-  </ul></div>
-
-  <div class="ebox"><div class="lbl">Identifier les angles sans rapporteur</div>
-  <p>Compare l'angle avec le coin d'une feuille de papier (= angle droit) :<br>
-  — L'angle est <strong>plus fermé</strong> que le coin ? → <strong>angle aigu</strong><br>
-  — L'angle coïncide exactement avec le coin ? → <strong>angle droit</strong><br>
-  — L'angle est <strong>plus ouvert</strong> que le coin ? → <strong>angle obtus</strong></p></div>
-
-  <div class="wbox"><div class="lbl">Piège</div>
-  <p>La taille des côtés d'un angle n'a rien à voir avec sa mesure en degrés ! Un angle aigu avec de grands côtés reste aigu. Ce qui compte, c'est l'<em>ouverture</em>, pas la longueur des côtés.</p></div>
 </div>
 
-<!-- SECTION 7 : LES SOLIDES -->
-<div class="cs">
-  <h2>7. Les solides (figures en 3 dimensions)</h2>
-  <div class="dbox"><div class="lbl">Vocabulaire des solides</div>
+<div class="retenir">
+  <h3>📌 À retenir</h3>
   <ul>
-    <li><strong>Face :</strong> chaque surface plate (ou courbe) qui délimite le solide</li>
-    <li><strong>Arête :</strong> la ligne droite où se rencontrent deux faces</li>
-    <li><strong>Sommet :</strong> le point où se rencontrent plusieurs arêtes (un coin)</li>
-  </ul></div>
-
-  <div class="vgrid">
-    <div class="vcrd"><div class="vl">Cube</div><div class="vv">🎲</div><div class="vs">6 faces carrées · 12 arêtes · 8 sommets · dé à jouer</div></div>
-    <div class="vcrd"><div class="vl">Pavé droit</div><div class="vv">📦</div><div class="vs">6 faces rectangulaires · 12 arêtes · 8 sommets · boîte, brique</div></div>
-    <div class="vcrd"><div class="vl">Pyramide</div><div class="vv">🔺</div><div class="vs">1 base + faces triangulaires · Pyramides d'Égypte</div></div>
-    <div class="vcrd"><div class="vl">Sphère</div><div class="vv">⚽</div><div class="vs">1 face courbe · 0 arête · 0 sommet · ballon, boule</div></div>
-    <div class="vcrd"><div class="vl">Cylindre</div><div class="vv">🥫</div><div class="vs">2 faces circulaires + 1 face courbe · boîte de conserve</div></div>
-    <div class="vcrd"><div class="vl">Cône</div><div class="vv">🍦</div><div class="vs">1 base circulaire + 1 face courbe · sommet · cornet de glace</div></div>
-  </div>
-
-  <div class="rbox"><div class="lbl">Le cube en détail</div>
-  <ul>
-    <li><strong>6 faces</strong> : toutes carrées et toutes égales</li>
-    <li><strong>12 arêtes</strong> : toutes de même longueur</li>
-    <li><strong>8 sommets</strong> : les 8 coins du cube</li>
-    <li>Exemple quotidien : un dé à jouer, un carton cubique</li>
-  </ul></div>
-
-  <div class="ebox"><div class="lbl">Différence face / arête / sommet sur un cube</div>
-  <p>Imagine une boîte en carton cubique :<br>
-  — Les <strong>6 côtés de la boîte</strong> (dessus, dessous, devant, derrière, gauche, droite) = les <strong>6 faces</strong><br>
-  — Les <strong>bords</strong> où deux côtés se rejoignent = les <strong>12 arêtes</strong><br>
-  — Les <strong>8 coins</strong> de la boîte = les <strong>8 sommets</strong></p></div>
-
-  <div class="rbox"><div class="lbl">Différence solides "à faces plates" et solides "ronds"</div>
-  <ul>
-    <li><strong>Faces plates uniquement :</strong> cube, pavé droit, pyramide → ce sont des <strong>polyèdres</strong></li>
-    <li><strong>Surface courbe :</strong> sphère, cylindre, cône → on ne peut pas les "déplier" facilement</li>
-    <li>La sphère n'a ni arête ni sommet</li>
-  </ul></div>
-
-  <div class="wbox"><div class="lbl">Erreur fréquente</div>
-  <ul>
-    <li>Confondre le <strong>cube</strong> (toutes les faces sont des carrés) et le <strong>pavé droit</strong> (les faces sont des rectangles). Le cube est un cas particulier de pavé droit.</li>
-    <li>Appeler "face" une arête ou un sommet. Les faces sont les <em>surfaces</em>, pas les bords ni les coins.</li>
-  </ul></div>
+    <li>Périmètre = somme des côtés · carré : 4×c · rectangle : 2×(L+l)</li>
+    <li>Axe de symétrie = ligne de pliage</li>
+    <li>Coordonnées (x, y) : colonne puis ligne</li>
+  </ul>
 </div>
-
-<!-- SECTION 8 : RETENIR -->
-<div class="cs">
-  <h2>8. Méthodes et astuces pour tout retenir</h2>
-  <div class="rbox"><div class="lbl">Formules de périmètre à connaître par coeur</div>
-  <ul>
-    <li>Carré de côté c : <strong>P = 4 × c</strong></li>
-    <li>Rectangle L × l : <strong>P = 2 × (L + l)</strong></li>
-    <li>Triangle a, b, c : <strong>P = a + b + c</strong></li>
-  </ul></div>
-
-  <div class="rbox"><div class="lbl">Propriétés des figures à retenir</div>
-  <ul>
-    <li>Carré : 4 côtés <strong>égaux</strong> + 4 <strong>angles droits</strong> + 4 axes de symétrie</li>
-    <li>Rectangle : 4 angles droits + côtés opposés égaux + 2 axes de symétrie</li>
-    <li>Triangle : somme des angles = <strong>180°</strong></li>
-    <li>Cercle : diamètre = <strong>2 × rayon</strong></li>
-    <li>Cube : <strong>6</strong> faces, <strong>12</strong> arêtes, <strong>8</strong> sommets</li>
-  </ul></div>
-
-  <div class="ebox"><div class="lbl">Astuces mnémotechniques</div>
-  <ul>
-    <li>Pour le cube : "6-12-8" → retiens "la date 6/12 à 8h" !</li>
-    <li>Pour le rectangle : 2 × (L + l) → tu additionnes d'abord, tu doubles ensuite</li>
-    <li>Pour les axes de symétrie : rectangle = 2 axes / carré = 4 axes (le double !)</li>
-  </ul></div>
-</div>
-
-<div class="retenir"><h3>A retenir — l'essentiel</h3>
-<ul>
-  <li><strong>Carré :</strong> 4 côtés égaux, 4 angles droits → <strong>P = 4 × c</strong></li>
-  <li><strong>Rectangle :</strong> 4 angles droits, côtés opposés égaux → <strong>P = 2 × (L + l)</strong></li>
-  <li><strong>Triangle :</strong> 3 côtés, somme des angles = <strong>180°</strong></li>
-  <li><strong>Cercle :</strong> diamètre = <strong>2 × rayon</strong></li>
-  <li><strong>Axe de symétrie :</strong> on plie et les deux moitiés se superposent</li>
-  <li><strong>Droites parallèles :</strong> ne se croisent jamais</li>
-  <li><strong>Droites perpendiculaires :</strong> forment un angle droit</li>
-  <li><strong>Cube :</strong> 6 faces, 12 arêtes, 8 sommets</li>
-  <li><strong>Angle aigu</strong> &lt; 90° · <strong>Angle droit</strong> = 90° · <strong>Angle obtus</strong> &gt; 90° · <strong>Angle plat</strong> = 180°</li>
-</ul></div>
 
 <div class="cta">
-  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
-  <a href="geometrie-ce2.html" class="btn-ex">📝 Exercices : Géométrie CE2</a>
+  <p>Tu as compris ? Entraîne-toi !</p>
+  <a href="geometrie-ce2.html" class="btn-ex">Faire les exercices CE2 →</a>
 </div>
 </main>
 <footer class="site-footer">École Facile — Cours CE2</footer>

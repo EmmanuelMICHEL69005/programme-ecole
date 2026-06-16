@@ -5,366 +5,72 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://ecolefacile.fr/cours-angles-cm1.html">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>📐 Les angles — Cours CM1 — École Facile</title>
-<meta name="description" content="Cours sur les angles CM1 : angle droit aigu obtus plat, mesure au rapporteur, somme des angles d'un triangle 180°.">
+<title>Les angles — Cours CM1 | École Facile</title>
+<meta name="description" content="Cours CM1 : types d'angles, mesure avec le rapporteur, angles dans les figures.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/cours-angles-cm1.html">
+<meta property="og:title" content="Les angles — Cours CM1 | École Facile">
+<meta property="og:description" content="Cours CM1 : types d'angles, mesure avec le rapporteur, angles dans les figures.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-body{font-family:'Nunito',sans-serif;background:#fffbf0;color:#1e1b4b;margin:0}
-main{max-width:720px;margin:0 auto;padding:22px 18px 60px}
-.cs{margin-bottom:26px}
-.cs h2{font-size:1.1rem;font-weight:900;margin:0 0 12px;padding-bottom:7px;border-bottom:2.5px solid #e5e7eb;color:#1e1b4b}
-.dbox{background:#dbeafe;border-left:4px solid #1d4ed8;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
-.dbox .lbl{font-size:.65rem;font-weight:900;color:#1d4ed8;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
-.dbox p,.dbox ul{font-size:.9rem;font-weight:700;color:#1e3a8a;margin:0;line-height:1.55}
-.ebox{background:#fef9c3;border-left:4px solid #ca8a04;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
-.ebox .lbl{font-size:.65rem;font-weight:900;color:#92400e;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
-.ebox p,.ebox ul{font-size:.9rem;font-weight:700;color:#713f12;margin:0;line-height:1.55}
-.rbox{background:#dcfce7;border-left:4px solid #16a34a;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
-.rbox .lbl{font-size:.65rem;font-weight:900;color:#15803d;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
-.rbox p,.rbox ul{font-size:.9rem;font-weight:700;color:#14532d;margin:0;line-height:1.55}
-.wbox{background:#fee2e2;border-left:4px solid #dc2626;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
-.wbox .lbl{font-size:.65rem;font-weight:900;color:#dc2626;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
-.wbox p,.wbox ul{font-size:.9rem;font-weight:700;color:#991b1b;margin:0;line-height:1.55}
-.retenir{background:#fff;border:2.5px solid #7c3aed;border-radius:16px;padding:16px 18px;margin:22px 0 18px}
-.retenir h3{font-size:.78rem;font-weight:900;color:#7c3aed;text-transform:uppercase;letter-spacing:1px;margin:0 0 10px}
-.retenir ul{margin:0;padding-left:18px}
-.retenir li{font-size:.88rem;font-weight:700;color:#1e1b4b;line-height:1.7}
-.cta{text-align:center;margin-top:26px;padding:18px;background:#fff;border-radius:16px;border:2px solid #e5e7eb}
-.cta p{font-size:.82rem;color:#6b7280;font-weight:700;margin:0 0 10px}
-.btn-ex{display:inline-block;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;padding:13px 26px;border-radius:13px;font-size:.95rem;font-weight:900;text-decoration:none;box-shadow:0 4px 16px rgba(124,58,237,.4)}
-.vgrid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));margin:10px 0}
-.vcrd{background:#fff;border:2px solid #e5e7eb;border-radius:11px;padding:9px;text-align:center}
-.vcrd .vl{font-size:.7rem;font-weight:900;color:#6b7280;margin-bottom:4px}
-.vcrd .vv{font-size:1.3rem;font-weight:900;color:#1e1b4b}
-.vcrd .vs{font-size:.68rem;font-weight:700;color:#9ca3af;margin-top:2px}
-table.conv{width:100%;border-collapse:collapse;margin:10px 0;font-size:.85rem;font-weight:700}
-table.conv th{background:#ede9fe;color:#5b21b6;padding:7px 10px;text-align:center;font-weight:900}
-table.conv td{border:1px solid #e5e7eb;padding:6px 10px;text-align:center;background:#fff}
-.badge-niveau{display:inline-block;background:rgba(255,255,255,.2);border-radius:20px;padding:4px 14px;font-size:.72rem;font-weight:900;letter-spacing:1px;margin-bottom:8px}
+:root{--lc1:#1d4ed8;--lc2:#3b82f6;--lb:#93c5fd;--la:#1d4ed8;--ld:#1e3a8a;--lbg:#eff6ff;--lt:#1e3a8a;--ls:rgba(29,78,216,.3)}
 .cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
 .cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
 .cours-header p{font-size:.87rem;opacity:.88;margin:0}
-.site-footer{text-align:center;padding:16px;font-size:.8rem;color:#9ca3af;border-top:1px solid #e5e7eb;margin-top:10px}
-.frise{margin:12px 0;padding-left:0;list-style:none}
-.frise-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
-.frise-dot{min-width:26px;height:26px;background:#1d4ed8;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:900;flex-shrink:0}
-.frise-content{flex:1}
-.frise-date{font-size:.65rem;font-weight:900;color:#1d4ed8;text-transform:uppercase;letter-spacing:1px}
-.frise-text{font-size:.88rem;font-weight:700;color:#1e1b4b;line-height:1.5}
+.lf-grid{display:grid;gap:12px;margin-bottom:18px}
+.lf-card{background:#fff;border-left:4px solid var(--lc1);border-radius:0 12px 12px 0;padding:12px 14px}
+.lf-rule{font-size:.72rem;font-weight:900;color:var(--lc1);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.lf-body{font-size:.9rem;font-weight:700;color:var(--lt);line-height:1.5;margin-bottom:6px}
+.lf-ex{font-size:.82rem;font-weight:700;color:var(--ld);background:var(--lb);border-radius:8px;padding:5px 10px}
 </style>
 </head>
-<body>
+<body class="cpage">
 <header class="cours-header" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6)">
   <div class="badge-niveau">CM1</div>
   <h1>📐 Les angles</h1>
-  <p>Droit, aigu, obtus, plat — mesure au rapporteur</p>
+  <p>Types d'angles, rapporteur, angles dans les figures</p>
 </header>
 <main>
 
-<!-- SECTION 1 : QU'EST-CE QU'UN ANGLE -->
-<div class="cs">
-  <h2>1. Qu'est-ce qu'un angle ?</h2>
-  <div class="dbox"><div class="lbl">Définition</div>
-  <p>Un <strong>angle</strong>, c'est l'<strong>ouverture entre deux demi-droites qui partent du même point</strong>. Ce point commun s'appelle le <strong>sommet</strong> de l'angle. Les deux demi-droites s'appellent les <strong>côtés</strong> de l'angle.<br>
-  On mesure les angles en <strong>degrés (°)</strong>. Plus l'ouverture est grande, plus le nombre de degrés est grand.</p></div>
-
-  <div class="dbox"><div class="lbl">Notation d'un angle</div>
-  <p>Un angle se note souvent <strong>∠ABC</strong> où B est le sommet et A, C sont des points sur chaque côté.<br>
-  On le lit "angle ABC". La lettre du <strong>milieu est toujours le sommet</strong>.<br>
-  Un angle droit se note avec un petit carré □ dessiné au sommet.</p></div>
-
-  <div class="ebox"><div class="lbl">Exemples concrets</div>
-  <ul>
-    <li>Les aiguilles d'une horloge forment un angle : plus elles sont écartées, plus l'angle est grand</li>
-    <li>La porte ouverte forme un angle avec le mur</li>
-    <li>Les branches d'un compas forment un angle à la pointe</li>
-    <li>Le coin d'une feuille de papier = angle droit (90°)</li>
-  </ul></div>
-
-  <div class="rbox"><div class="lbl">Angle intérieur d'une figure</div>
-  <p>Dans un polygone (triangle, carré, rectangle…), chaque <strong>coin</strong> est un angle intérieur. Le coin d'un carré = angle droit de 90°. Le coin d'un triangle varie selon la forme du triangle.</p></div>
-
-  <div class="wbox"><div class="lbl">Piège — la longueur des côtés ne change pas l'angle</div>
-  <p>Un angle de 45° est un angle de 45° que ses côtés mesurent 1 cm ou 20 cm ! Ce qui compte, c'est l'<em>ouverture</em>. Ne te laisse pas tromper par la longueur des traits.</p></div>
-</div>
-
-<!-- SECTION 2 : TYPES D'ANGLES -->
-<div class="cs">
-  <h2>2. Les types d'angles</h2>
-
-  <div class="visbox">
-    <svg viewBox="0 0 420 100" xmlns="http://www.w3.org/2000/svg" style="max-width:440px">
-      <!-- Angle aigu ~40° -->
-      <line x1="20" y1="80" x2="80" y2="80" stroke="#1d4ed8" stroke-width="2.5" stroke-linecap="round"/>
-      <line x1="20" y1="80" x2="50" y2="25" stroke="#1d4ed8" stroke-width="2.5" stroke-linecap="round"/>
-      <path d="M 38,80 A 18,18 0 0,0 29,61" fill="none" stroke="#1d4ed8" stroke-width="1.5"/>
-      <text x="50" y="95" text-anchor="middle" font-family="Nunito,sans-serif" font-size="11" font-weight="900" fill="#1d4ed8">Aigu</text>
-      <text x="50" y="106" text-anchor="middle" font-family="Nunito,sans-serif" font-size="9" fill="#1d4ed8">&lt; 90°</text>
-      <!-- Angle droit 90° -->
-      <line x1="115" y1="80" x2="185" y2="80" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round"/>
-      <line x1="115" y1="80" x2="115" y2="20" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round"/>
-      <rect x="115" y="66" width="14" height="14" fill="none" stroke="#16a34a" stroke-width="2"/>
-      <text x="150" y="95" text-anchor="middle" font-family="Nunito,sans-serif" font-size="11" font-weight="900" fill="#15803d">Droit</text>
-      <text x="150" y="106" text-anchor="middle" font-family="Nunito,sans-serif" font-size="9" fill="#15803d">= 90°</text>
-      <!-- Angle obtus ~130° -->
-      <line x1="215" y1="80" x2="295" y2="80" stroke="#ca8a04" stroke-width="2.5" stroke-linecap="round"/>
-      <line x1="215" y1="80" x2="195" y2="25" stroke="#ca8a04" stroke-width="2.5" stroke-linecap="round"/>
-      <path d="M 237,80 A 22,22 0 0,0 208,62" fill="none" stroke="#ca8a04" stroke-width="1.5"/>
-      <text x="255" y="95" text-anchor="middle" font-family="Nunito,sans-serif" font-size="11" font-weight="900" fill="#92400e">Obtus</text>
-      <text x="255" y="106" text-anchor="middle" font-family="Nunito,sans-serif" font-size="9" fill="#92400e">90°→180°</text>
-      <!-- Angle plat 180° -->
-      <line x1="310" y1="80" x2="415" y2="80" stroke="#dc2626" stroke-width="2.5" stroke-linecap="round"/>
-      <path d="M 342,80 A 32,32 0 0,0 310,80" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="3,2"/>
-      <text x="363" y="95" text-anchor="middle" font-family="Nunito,sans-serif" font-size="11" font-weight="900" fill="#dc2626">Plat</text>
-      <text x="363" y="106" text-anchor="middle" font-family="Nunito,sans-serif" font-size="9" fill="#dc2626">= 180°</text>
-    </svg>
-    <div class="vis-caption">Les 4 types d'angles à reconnaître au premier coup d'œil</div>
+<div class="lf-grid">
+  <div class="lf-card">
+    <div class="lf-rule">📌 Types d'angles</div>
+    <div class="lf-body">Droit (90°) · aigu (&lt; 90°) · obtus (&gt; 90°) · plat (180°).</div>
+    <div class="lf-ex">Ex : coin d'une feuille = 90° (droit) · angle de 35° = aigu · angle de 120° = obtus</div>
   </div>
-  <div class="vgrid">
-    <div class="vcrd"><div class="vl">Angle nul</div><div class="vv">0°</div><div class="vs">les deux côtés sont confondus, aucune ouverture</div></div>
-    <div class="vcrd"><div class="vl">Angle aigu</div><div class="vv">&lt; 90°</div><div class="vs">entre 0° et 90° — plus fermé que le droit</div></div>
-    <div class="vcrd"><div class="vl">Angle droit</div><div class="vv">= 90°</div><div class="vs">symbole □ — coin parfait de 90°</div></div>
-    <div class="vcrd"><div class="vl">Angle obtus</div><div class="vv">90° à 180°</div><div class="vs">entre 90° et 180° — plus ouvert que le droit</div></div>
-    <div class="vcrd"><div class="vl">Angle plat</div><div class="vv">= 180°</div><div class="vs">les deux côtés forment une ligne droite</div></div>
-    <div class="vcrd"><div class="vl">Angle rentrant</div><div class="vv">&gt; 180°</div><div class="vs">entre 180° et 360° — dépasse la ligne droite</div></div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Mesurer avec le rapporteur</div>
+    <div class="lf-body">Placer le centre du rapporteur sur le sommet de l'angle, aligner un côté sur 0°, lire la graduation.</div>
+    <div class="lf-ex">Ex : angle de 35° → aigu · angle de 110° → obtus</div>
   </div>
-
-  <div class="rbox"><div class="lbl">Reconnaître un angle sans rapporteur</div>
-  <p>Compare avec le <strong>coin d'une feuille de papier</strong> (= angle droit, 90°) :<br>
-  — L'angle est <strong>plus fermé</strong> que le coin → <strong>angle aigu</strong><br>
-  — L'angle coïncide <strong>exactement</strong> avec le coin → <strong>angle droit</strong><br>
-  — L'angle est <strong>plus ouvert</strong> que le coin mais pas une ligne droite → <strong>angle obtus</strong><br>
-  — Les deux côtés forment une <strong>ligne droite</strong> → <strong>angle plat</strong></p></div>
-
-  <div class="ebox"><div class="lbl">Exemples du quotidien</div>
-  <ul>
-    <li>Coin d'une page de cahier = <strong>angle droit (90°)</strong></li>
-    <li>Pizza coupée en 6 parts = chaque part a un angle de <strong>60° (aigu)</strong> au centre</li>
-    <li>Porte entrouverte = <strong>angle aigu ou obtus</strong> selon l'ouverture</li>
-    <li>Aiguilles à 6h = <strong>angle plat (180°)</strong></li>
-    <li>Aiguilles à 3h = <strong>angle droit (90°)</strong></li>
-    <li>Toit d'une maison = <strong>angle aigu</strong> au sommet</li>
-  </ul></div>
-
-  <div class="wbox"><div class="lbl">Erreur fréquente</div>
-  <p>Un angle <strong>obtus</strong> n'est pas "plus grand que 180°". Un obtus est entre 90° et 180°. Au-delà de 180°, c'est un angle <strong>rentrant</strong> (qu'on voit peu en CM1). Ne pas confondre obtus et rentrant.</p></div>
-</div>
-
-<!-- SECTION 3 : MESURER AU RAPPORTEUR -->
-<div class="cs">
-  <h2>3. Mesurer un angle au rapporteur</h2>
-  <div class="dbox"><div class="lbl">Le rapporteur — présentation</div>
-  <p>Le <strong>rapporteur</strong> est un demi-cercle gradué de 0° à 180°. Il a <strong>deux rangées de chiffres</strong> allant en sens opposés (une de 0 à 180 dans un sens, l'autre dans le sens inverse). Il a un <strong>centre</strong> (point au milieu de la base droite) et une <strong>ligne de base</strong> (diamètre du demi-cercle).</p></div>
-
-  <div class="ebox"><div class="lbl">Méthode pas-à-pas : mesurer ∠ABC</div>
-  <ul class="frise">
-    <li class="frise-item"><span class="frise-dot">1</span><span class="frise-content"><span class="frise-date">Étape 1 — Placer le centre</span><span class="frise-text">Place le <strong>centre du rapporteur exactement sur le sommet B</strong> de l'angle. Le rapporteur doit être bien centré.</span></span></li>
-    <li class="frise-item"><span class="frise-dot">2</span><span class="frise-content"><span class="frise-date">Étape 2 — Aligner la base</span><span class="frise-text">Fais coïncider la <strong>ligne de base du rapporteur avec le côté BA</strong>. Le zéro doit se trouver exactement sur ce côté.</span></span></li>
-    <li class="frise-item"><span class="frise-dot">3</span><span class="frise-content"><span class="frise-date">Étape 3 — Lire la mesure</span><span class="frise-text">Regarde où pointe le côté BC sur les graduations. Tu verras deux chiffres (un sur chaque rangée). Note les deux valeurs possibles.</span></span></li>
-    <li class="frise-item"><span class="frise-dot">4</span><span class="frise-content"><span class="frise-date">Étape 4 — Choisir la bonne valeur</span><span class="frise-text">Est-ce que l'angle est <strong>aigu ou obtus</strong> ? Si aigu → choisis la valeur &lt; 90°. Si obtus → choisis la valeur &gt; 90°. Si tu lis 40° et 140°, et l'angle est aigu, alors la mesure est <strong>40°</strong>.</span></span></li>
-  </ul></div>
-
-  <div class="rbox"><div class="lbl">Les deux échelles — règle de vérification</div>
-  <ul>
-    <li>L'angle semble <strong>plus fermé</strong> que le coin de ta feuille → mesure &lt; 90° → prends la <strong>petite valeur</strong></li>
-    <li>L'angle semble <strong>plus ouvert</strong> que le coin de ta feuille → mesure &gt; 90° → prends la <strong>grande valeur</strong></li>
-    <li>Les deux valeurs affichées ont toujours une somme de 180°</li>
-  </ul></div>
-
-  <div class="ebox"><div class="lbl">Exercice guidé — exemples</div>
-  <ul>
-    <li>Le rapporteur indique 55° et 125° — l'angle est clairement aigu → mesure = <strong>55°</strong></li>
-    <li>Le rapporteur indique 70° et 110° — l'angle est obtus → mesure = <strong>110°</strong></li>
-    <li>Le rapporteur indique 90° sur les deux échelles → mesure = <strong>90°</strong> (angle droit !)</li>
-  </ul></div>
-
-  <div class="wbox"><div class="lbl">Erreurs fréquentes avec le rapporteur</div>
-  <ul>
-    <li>Ne pas centrer exactement le rapporteur sur le sommet → mesure fausse</li>
-    <li>Lire la mauvaise rangée de chiffres sans vérifier si l'angle est aigu ou obtus</li>
-    <li>Mal aligner la ligne de base sur un côté de l'angle</li>
-    <li>Oublier que si tu lis 0° ce n'est pas l'angle — c'est juste que tu t'es aligné sur ce côté</li>
-  </ul></div>
-</div>
-
-<!-- SECTION 4 : TRACER UN ANGLE -->
-<div class="cs">
-  <h2>4. Tracer un angle au rapporteur</h2>
-  <div class="dbox"><div class="lbl">Le principe</div>
-  <p>Pour tracer un angle d'une mesure donnée, tu vas d'abord dessiner un côté, puis utiliser le rapporteur pour marquer la bonne direction pour le deuxième côté.</p></div>
-
-  <div class="ebox"><div class="lbl">Méthode pas-à-pas : tracer un angle de 45°</div>
-  <ul class="frise">
-    <li class="frise-item"><span class="frise-dot">1</span><span class="frise-content"><span class="frise-date">Étape 1</span><span class="frise-text">Trace un <strong>premier côté</strong> (un segment horizontal par exemple). Marque son extrémité gauche : c'est le <strong>sommet</strong> de l'angle.</span></span></li>
-    <li class="frise-item"><span class="frise-dot">2</span><span class="frise-content"><span class="frise-date">Étape 2</span><span class="frise-text">Place le <strong>centre du rapporteur sur le sommet</strong>, la ligne de base alignée sur le premier côté.</span></span></li>
-    <li class="frise-item"><span class="frise-dot">3</span><span class="frise-content"><span class="frise-date">Étape 3</span><span class="frise-text">Repère la graduation <strong>45°</strong> sur la bonne rangée (45 est plus petit que 90 donc c'est une mesure d'angle aigu, prends la rangée qui commence par 0° du côté de ton premier côté). Fais un petit trait au crayon à cet endroit.</span></span></li>
-    <li class="frise-item"><span class="frise-dot">4</span><span class="frise-content"><span class="frise-date">Étape 4</span><span class="frise-text">Retire le rapporteur. Trace un segment depuis le sommet jusqu'au petit trait : c'est le <strong>deuxième côté</strong> de l'angle.</span></span></li>
-    <li class="frise-item"><span class="frise-dot">5</span><span class="frise-content"><span class="frise-date">Vérif</span><span class="frise-text">Replace le rapporteur et mesure l'angle obtenu : tu dois bien lire <strong>45°</strong>.</span></span></li>
-  </ul></div>
-
-  <div class="ebox"><div class="lbl">Exemple — tracer un angle de 120°</div>
-  <p>Même méthode mais tu cherches la graduation <strong>120°</strong>. L'angle sera obtus (plus ouvert que le coin de la feuille). Utilise la rangée qui te donne une valeur &gt; 90°.</p></div>
-
-  <div class="wbox"><div class="lbl">Attention au sens du rapporteur</div>
-  <p>Quand tu traces l'angle, le deuxième côté doit s'ouvrir du <strong>bon côté</strong>. Si tu te trompes de sens, ton angle sera dans la mauvaise direction. Vérifie toujours en mesurant après le tracé.</p></div>
-</div>
-
-<!-- SECTION 5 : ANGLES ET TRIANGLES -->
-<div class="cs">
-  <h2>5. Angles et triangles</h2>
-  <div class="rbox"><div class="lbl">Propriété fondamentale — à retenir absolument</div>
-  <p>La somme des <strong>3 angles d'un triangle</strong> vaut <strong>TOUJOURS 180°</strong>.<br>
-  Peu importe la forme du triangle, quelle que soit sa taille : <strong>angle A + angle B + angle C = 180°</strong></p></div>
-
-  <div class="ebox"><div class="lbl">Application — trouver un angle manquant</div>
-  <ul>
-    <li>Un triangle a deux angles de <strong>60° et 80°</strong>. Le troisième angle = 180° − 60° − 80° = <strong>40°</strong></li>
-    <li>Un triangle a un angle de <strong>90°</strong> et un angle de <strong>35°</strong>. Le troisième = 180° − 90° − 35° = <strong>55°</strong></li>
-    <li>Un triangle équilatéral : chaque angle = 180° ÷ 3 = <strong>60°</strong></li>
-  </ul></div>
-
-  <div class="dbox"><div class="lbl">Types de triangles selon leurs angles</div>
-  <ul>
-    <li><strong>Triangle rectangle :</strong> un angle droit (90°) — les deux autres angles sont aigus et leur somme vaut 90°</li>
-    <li><strong>Triangle acutangle :</strong> tous les angles sont aigus (tous &lt; 90°)</li>
-    <li><strong>Triangle obtusangle :</strong> un angle obtus (&gt; 90°) — les deux autres sont forcément aigus</li>
-    <li><strong>Triangle équilatéral :</strong> 3 angles de 60° — tous égaux</li>
-    <li><strong>Triangle isocèle :</strong> 2 angles égaux (les angles à la base des deux côtés égaux)</li>
-  </ul></div>
-
-  <div class="vgrid">
-    <div class="vcrd"><div class="vl">Équilatéral</div><div class="vv">3×60°</div><div class="vs">3 côtés égaux · 3 angles égaux</div></div>
-    <div class="vcrd"><div class="vl">Rectangle</div><div class="vv">90°+…</div><div class="vs">un angle droit · 2 côtés perpendiculaires</div></div>
-    <div class="vcrd"><div class="vl">Isocèle</div><div class="vv">2 égaux</div><div class="vs">2 angles à la base égaux</div></div>
-    <div class="vcrd"><div class="vl">Obtusangle</div><div class="vv">&gt;90°</div><div class="vs">un angle obtus · les autres aigus</div></div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Angles dans les figures</div>
+    <div class="lf-body">Dans un triangle, la somme des 3 angles vaut toujours 180°.</div>
+    <div class="lf-ex">Ex : triangle équilatéral : 3 × 60° = 180° · triangle rectangle : 90° + 50° + 40° = 180°</div>
   </div>
-
-  <div class="wbox"><div class="lbl">Pièges sur les triangles</div>
-  <ul>
-    <li>Un triangle <strong>ne peut pas</strong> avoir deux angles droits (car 90°+90°=180°, il n'y aurait plus de place pour le troisième angle)</li>
-    <li>Un triangle <strong>ne peut pas</strong> avoir deux angles obtus (leur somme dépasserait déjà 180°)</li>
-    <li>Si tu trouves un troisième angle négatif ou nul, c'est que tu as mal calculé les deux premiers !</li>
-  </ul></div>
 </div>
 
-<!-- SECTION 6 : ANGLES ET POLYGONES -->
-<div class="cs">
-  <h2>6. Angles et polygones</h2>
-  <div class="rbox"><div class="lbl">Somme des angles intérieurs selon le nombre de côtés</div>
+<div class="retenir">
+  <h3>📌 À retenir</h3>
   <ul>
-    <li><strong>Triangle (3 côtés) :</strong> somme = <strong>180°</strong></li>
-    <li><strong>Quadrilatère (4 côtés) :</strong> somme = <strong>360°</strong> (deux triangles)</li>
-    <li><strong>Pentagone (5 côtés) :</strong> somme = <strong>540°</strong> (trois triangles)</li>
-    <li><strong>Hexagone (6 côtés) :</strong> somme = <strong>720°</strong> (quatre triangles)</li>
-  </ul></div>
-
-  <div class="dbox"><div class="lbl">Pourquoi ces formules ?</div>
-  <p>On peut toujours <strong>décomposer un polygone en triangles</strong> à partir d'un sommet. Un quadrilatère donne 2 triangles → 2 × 180° = 360°. Un pentagone donne 3 triangles → 3 × 180° = 540°. La formule générale (qu'on verra plus tard) est : <strong>(n − 2) × 180°</strong> pour un polygone à n côtés.</p></div>
-
-  <div class="ebox"><div class="lbl">Applications — trouver un angle manquant dans un quadrilatère</div>
-  <ul>
-    <li>Un quadrilatère a 3 angles : 80°, 100°, 95°. Le 4ème = 360° − 80° − 100° − 95° = <strong>85°</strong></li>
-    <li>Un rectangle : 4 angles droits → 4 × 90° = <strong>360°</strong> ✓</li>
-    <li>Un carré : 4 angles droits → 4 × 90° = <strong>360°</strong> ✓</li>
-  </ul></div>
-
-  <div class="ebox"><div class="lbl">Angles dans un hexagone régulier</div>
-  <p>Chaque angle d'un hexagone régulier (6 côtés égaux) = 720° ÷ 6 = <strong>120°</strong> chacun.<br>
-  Tu reconnais la forme des alvéoles d'abeille !</p></div>
-
-  <div class="wbox"><div class="lbl">Erreur fréquente</div>
-  <p>Certains pensent que tous les polygones ont des angles droits. C'est faux ! Seuls le carré et le rectangle ont 4 angles droits parmi les figures courantes. Un pentagone quelconque a des angles variés.</p></div>
+    <li>Droit 90° / aigu &lt;90° / obtus &gt;90° / plat 180°</li>
+    <li>Rapporteur : centre sur le sommet</li>
+    <li>Triangle : somme des angles = 180°</li>
+  </ul>
 </div>
 
-<!-- SECTION 7 : ANGLES REMARQUABLES -->
-<div class="cs">
-  <h2>7. Angles remarquables et relations entre angles</h2>
+<div class="cta"><p>Tu as compris ? Entraîne-toi !</p><a href="angles-cm1.html" class="btn-ex">Faire les exercices CM1 →</a></div>
 
-  <div class="vgrid">
-    <div class="vcrd"><div class="vl">30°</div><div class="vv">30°</div><div class="vs">angle d'un triangle équilatéral coupé en deux · horloge 1h</div></div>
-    <div class="vcrd"><div class="vl">45°</div><div class="vv">45°</div><div class="vs">moitié d'un angle droit · triangle isocèle rectangle</div></div>
-    <div class="vcrd"><div class="vl">60°</div><div class="vv">60°</div><div class="vs">triangle équilatéral · pizza en 6 parts</div></div>
-    <div class="vcrd"><div class="vl">90°</div><div class="vv">90°</div><div class="vs">angle droit · coin de feuille</div></div>
-    <div class="vcrd"><div class="vl">120°</div><div class="vv">120°</div><div class="vs">angle d'un hexagone régulier · supplément de 60°</div></div>
-    <div class="vcrd"><div class="vl">135°</div><div class="vv">135°</div><div class="vs">supplément de 45°</div></div>
-    <div class="vcrd"><div class="vl">150°</div><div class="vv">150°</div><div class="vs">supplément de 30°</div></div>
-    <div class="vcrd"><div class="vl">180°</div><div class="vv">180°</div><div class="vs">angle plat · demi-tour complet</div></div>
-  </div>
-
-  <div class="dbox"><div class="lbl">Angles supplémentaires</div>
-  <p>Deux angles sont <strong>supplémentaires</strong> quand leur somme vaut <strong>180°</strong>.<br>
-  Exemples : 60° et 120° sont supplémentaires (60+120=180). 45° et 135° aussi.<br>
-  Sur une droite, les deux angles formés de part et d'autre sont toujours supplémentaires !</p></div>
-
-  <div class="dbox"><div class="lbl">Angles complémentaires</div>
-  <p>Deux angles sont <strong>complémentaires</strong> quand leur somme vaut <strong>90°</strong>.<br>
-  Exemples : 30° et 60° sont complémentaires (30+60=90). 45° et 45° aussi.<br>
-  Dans un triangle rectangle, les deux angles aigus sont toujours complémentaires !</p></div>
-
-  <div class="ebox"><div class="lbl">Application — trouver l'angle supplémentaire ou complémentaire</div>
-  <ul>
-    <li>Supplément de 70° = 180° − 70° = <strong>110°</strong></li>
-    <li>Supplément de 45° = 180° − 45° = <strong>135°</strong></li>
-    <li>Complément de 35° = 90° − 35° = <strong>55°</strong></li>
-    <li>Complément de 60° = 90° − 60° = <strong>30°</strong></li>
-  </ul></div>
-
-  <div class="wbox"><div class="lbl">Ne pas confondre supplémentaires et complémentaires</div>
-  <p><strong>Complémentaires → somme = 90°</strong> (deux angles qui "complètent" un angle droit)<br>
-  <strong>Supplémentaires → somme = 180°</strong> (deux angles qui "complètent" un angle plat)<br>
-  Astuce : Com-plémentaire → 90 (comme "Coin") · Sup-plémentaire → 180 (comme "Straight" = droit en anglais)</p></div>
-</div>
-
-<!-- SECTION 8 : PARALLELES ET ANGLES -->
-<div class="cs">
-  <h2>8. Droites parallèles, perpendiculaires et angles</h2>
-  <div class="dbox"><div class="lbl">Perpendiculaires et angles droits</div>
-  <p>Quand deux droites sont <strong>perpendiculaires</strong>, elles forment <strong>4 angles droits</strong> à leur intersection. Les 4 angles valent chacun 90°, et leur somme = 360° (un tour complet).</p></div>
-
-  <div class="dbox"><div class="lbl">Droites parallèles et droite sécante</div>
-  <p>Quand une droite coupe deux droites parallèles, elle crée plusieurs angles. Les <strong>angles alternes-internes</strong> (en zigzag de part et d'autre de la droite, entre les parallèles) sont <strong>égaux</strong>. Les <strong>angles correspondants</strong> (du même côté, l'un entre les parallèles, l'autre à l'extérieur) sont aussi <strong>égaux</strong>. On peut vérifier visuellement en regardant les angles qui semblent identiques.</p></div>
-
-  <div class="rbox"><div class="lbl">Propriétés visuelles à retenir</div>
-  <ul>
-    <li>Droites <strong>perpendiculaires</strong> → 4 angles droits de 90°</li>
-    <li>Une droite qui coupe deux parallèles → crée des angles égaux (alternes-internes et correspondants)</li>
-    <li>Les droites parallèles ne se croisent jamais → elles ne forment pas d'angle entre elles</li>
-  </ul></div>
-
-  <div class="ebox"><div class="lbl">Dans les figures planes</div>
-  <ul>
-    <li><strong>Carré et rectangle :</strong> côtés opposés parallèles, côtés adjacents perpendiculaires → 4 angles droits</li>
-    <li><strong>Losange :</strong> côtés opposés parallèles, mais côtés adjacents <em>non</em> perpendiculaires → angles non droits</li>
-    <li><strong>Triangle quelconque :</strong> pas de côtés parallèles entre eux</li>
-  </ul></div>
-
-  <div class="wbox"><div class="lbl">Erreur fréquente</div>
-  <p>Confondre "angles égaux" et "angles supplémentaires" quand une droite coupe deux parallèles. Les angles <em>alternes-internes</em> sont égaux. Mais les angles situés du <em>même côté</em> (co-internes) sont supplémentaires (leur somme = 180°).</p></div>
-</div>
-
-<div class="retenir"><h3>A retenir — l'essentiel</h3>
-<ul>
-  <li><strong>Angle :</strong> ouverture entre deux demi-droites de même sommet, mesure en degrés (°)</li>
-  <li><strong>Aigu</strong> &lt; 90° · <strong>Droit</strong> = 90° (symbole □) · <strong>Obtus</strong> entre 90° et 180° · <strong>Plat</strong> = 180°</li>
-  <li><strong>Rapporteur :</strong> centre sur le sommet, base alignée sur un côté, lire sur la bonne échelle</li>
-  <li>Vérifier : aigu → valeur &lt; 90° / obtus → valeur &gt; 90°</li>
-  <li><strong>Triangle : somme des angles = 180° TOUJOURS</strong></li>
-  <li><strong>Quadrilatère :</strong> somme des angles = 360°</li>
-  <li><strong>Complémentaires :</strong> somme = 90° · <strong>Supplémentaires :</strong> somme = 180°</li>
-  <li><strong>Perpendiculaires :</strong> forment 4 angles droits</li>
-  <li>Dans un triangle rectangle, les deux angles aigus sont complémentaires</li>
-</ul></div>
-
-<div class="cta">
-  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
-  <a href="angles-cm1.html" class="btn-ex">📝 Exercices : Angles CM1</a>
-</div>
 </main>
-<footer class="site-footer">École Facile — Cours CM1</footer>
-<script src="nav.js"></script>
+<footer class="site-footer">École Facile — Cours CM1 · Les angles</footer>
+<script src="sync.js"></script>
 <script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="related.js"></script>
 <script src="seo.js"></script>
 </body>
 </html>

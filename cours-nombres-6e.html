@@ -17,10 +17,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-:root{--lc1:#9d174d;--lc2:#ec4899;--lb:#fbcfe8;--la:#9d174d;--ld:#831843;--lbg:#fdf2f8;--lt:#1e1b4b;--ls:rgba(157,23,77,.3)}
+:root{--lc1:#9d174d;--lc2:#ec4899;--lb:#fbcfe8;--la:#ec4899;--ld:#831843;--lbg:#fdf2f8;--lt:#831843;--ls:rgba(157,23,77,.3)}
 .cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
 .cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
 .cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.lf-grid{display:grid;gap:12px;margin-bottom:18px}
+.lf-card{background:#fff;border-left:4px solid var(--lc1);border-radius:0 12px 12px 0;padding:12px 14px}
+.lf-rule{font-size:.72rem;font-weight:900;color:var(--lc1);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.lf-body{font-size:.9rem;font-weight:700;color:var(--lt);line-height:1.5;margin-bottom:6px}
+.lf-ex{font-size:.82rem;font-weight:700;color:var(--ld);background:var(--lb);border-radius:8px;padding:5px 10px}
 </style>
 </head>
 <body class="cpage">
@@ -30,147 +35,33 @@
   <p>Positifs, négatifs, valeur absolue, calculs</p>
 </header>
 <main>
-
-<section class="cs">
-  <h2>1. Les entiers relatifs</h2>
-  <div class="dbox"><div class="lbl">Définition</div>
-  <p>Les <strong>entiers relatifs</strong> sont les entiers positifs (+1, +2, +3…), les entiers négatifs (−1, −2, −3…) et zéro.<br>
-  Le signe indique la <strong>direction par rapport à zéro</strong>.</p></div>
-  <div class="ebox"><div class="lbl">Exemples concrets</div>
-  <ul>
-    <li><strong>Température</strong> : −5°C = 5 degrés sous zéro</li>
-    <li><strong>Altitude</strong> : −200 m = 200 m sous le niveau de la mer</li>
-    <li><strong>Bilan financier</strong> : −50€ = dette de 50€</li>
-    <li><strong>Score</strong> : +10 = 10 points gagnés</li>
-  </ul></div>
-  <div class="visbox">
-    <svg viewBox="0 0 380 60" width="380" height="60">
-      <line x1="20" y1="30" x2="360" y2="30" stroke="#9d174d" stroke-width="2.5"/>
-      <line x1="360" y1="30" x2="350" y2="22" stroke="#9d174d" stroke-width="2.5"/>
-      <line x1="360" y1="30" x2="350" y2="38" stroke="#9d174d" stroke-width="2.5"/>
-      <line x1="20" y1="30" x2="30" y2="22" stroke="#9d174d" stroke-width="2.5"/>
-      <line x1="20" y1="30" x2="30" y2="38" stroke="#9d174d" stroke-width="2.5"/>
-      <line x1="190" y1="18" x2="190" y2="42" stroke="#dc2626" stroke-width="3"/>
-      <text x="190" y="14" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="12" fill="#dc2626">0</text>
-      <text x="50" y="20" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="11" fill="#9d174d">−5</text>
-      <text x="95" y="20" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="11" fill="#9d174d">−3</text>
-      <text x="143" y="20" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="11" fill="#9d174d">−1</text>
-      <text x="238" y="20" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="11" fill="#059669">+2</text>
-      <text x="286" y="20" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="11" fill="#059669">+4</text>
-      <text x="334" y="20" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="11" fill="#059669">+6</text>
-      <circle cx="50" cy="30" r="4" fill="#9d174d"/>
-      <circle cx="95" cy="30" r="4" fill="#9d174d"/>
-      <circle cx="143" cy="30" r="4" fill="#9d174d"/>
-      <circle cx="238" cy="30" r="4" fill="#059669"/>
-      <circle cx="286" cy="30" r="4" fill="#059669"/>
-      <circle cx="334" cy="30" r="4" fill="#059669"/>
-    </svg>
-    <div class="vis-caption">Droite numérique des entiers relatifs</div>
+<div class="lf-grid">
+  <div class="lf-card">
+    <div class="lf-rule">📌 Entiers relatifs</div>
+    <div class="lf-body">Positifs, négatifs, zéro. Ordre sur la droite numérique : les grands sont à droite. Valeur absolue |a| = distance à 0, toujours positive.</div>
+    <div class="lf-ex">Ex : −5 &lt; −2 &lt; 0 &lt; 3 &lt; 8 · |−5| = 5 · température −3°C &lt; 0°C &lt; 20°C</div>
   </div>
-</section>
-
-<section class="cs">
-  <h2>2. Valeur absolue et opposé</h2>
-  <div class="dbox"><div class="lbl">Valeur absolue</div>
-  <p>La <strong>valeur absolue</strong> de a (notée |a|) = distance de a à 0 sur la droite numérique.<br>
-  |a| est toujours positive ou nulle.</p></div>
-  <div class="vgrid">
-    <div class="vcrd"><div class="vl">|+5|</div><div class="vv">= 5</div></div>
-    <div class="vcrd"><div class="vl">|−7|</div><div class="vv">= 7</div></div>
-    <div class="vcrd"><div class="vl">|0|</div><div class="vv">= 0</div></div>
-    <div class="vcrd"><div class="vl">|−12|</div><div class="vv">= 12</div></div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Addition et soustraction</div>
+    <div class="lf-body">Même signe : additionner les valeurs absolues, garder le signe. Signes opposés : soustraire, prendre le signe du plus grand. Soustraire b = additionner l'opposé de b.</div>
+    <div class="lf-ex">Ex : −5 + 3 = −2 · −4 + (−3) = −7 · 3 − (−5) = 3 + 5 = 8</div>
   </div>
-  <div class="dbox"><div class="lbl">Opposé</div>
-  <p>L'<strong>opposé</strong> de a (noté −a) = même valeur absolue, signe contraire.<br>
-  L'opposé de (+5) = −5 | L'opposé de (−3) = +3</p></div>
-</section>
-
-<section class="cs">
-  <h2>3. Comparer les entiers relatifs</h2>
-  <div class="rbox"><div class="lbl">Règles</div>
-  <ul>
-    <li>Tout entier positif est supérieur à tout entier négatif</li>
-    <li>Deux négatifs : le plus grand est celui dont la valeur absolue est la plus petite<br>
-    Ex : −3 &gt; −8 (car −3 est plus près de 0)</li>
-    <li>Sur la droite numérique : les grands sont à droite</li>
-  </ul></div>
-  <div class="ebox"><div class="lbl">Exemples</div>
-  <ul>
-    <li>−5 &lt; −2 &lt; 0 &lt; 1 &lt; 4 &lt; 10</li>
-    <li>Température : −10°C &lt; −3°C &lt; 0°C &lt; +5°C &lt; +20°C</li>
-  </ul></div>
-</section>
-
-<section class="cs">
-  <h2>4. Additionner des entiers relatifs</h2>
-  <div class="formula-card">
-    <div class="fc-label">Même signe</div>
-    <div class="fc-formula">(+3) + (+5) = +(3+5) = +8</div>
-    <div class="fc-desc">(−4) + (−6) = −(4+6) = −10</div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Règles des signes × et ÷</div>
+    <div class="lf-body">Même signe → résultat positif. Signes différents → résultat négatif. Même règle pour la division.</div>
+    <div class="lf-ex">Ex : −3 × 4 = −12 · −6 ÷ (−2) = +3 · (−3) × (−4) = +12</div>
   </div>
-  <div class="formula-card">
-    <div class="fc-label">Signes différents → soustraire les valeurs absolues</div>
-    <div class="fc-formula">(+8) + (−3) = +(8−3) = +5</div>
-    <div class="fc-desc">(−7) + (+2) = −(7−2) = −5 (signe du + grand)</div>
-  </div>
-  <div class="ebox"><div class="lbl">Exemples guidés</div>
-  <ul>
-    <li>(+4) + (−9) = −5 (9 &gt; 4, donc signe −, 9−4=5)</li>
-    <li>(−3) + (−8) = −11 (même signe, additionner)</li>
-    <li>(+12) + (−7) = +5 (12 &gt; 7, signe +, 12−7=5)</li>
-  </ul></div>
-</section>
-
-<section class="cs">
-  <h2>5. Soustraire des entiers relatifs</h2>
-  <div class="formula-card">
-    <div class="fc-label">Règle fondamentale</div>
-    <div class="fc-formula">a − b = a + (−b)</div>
-    <div class="fc-desc">Soustraire b revient à additionner l'opposé de b</div>
-  </div>
-  <div class="ebox"><div class="lbl">Exemples</div>
-  <ul>
-    <li>3 − (−5) = 3 + 5 = <strong>8</strong> (soustraire un négatif = ajouter)</li>
-    <li>(−2) − 7 = (−2) + (−7) = <strong>−9</strong></li>
-    <li>5 − 8 = 5 + (−8) = <strong>−3</strong></li>
-    <li>(−4) − (−6) = (−4) + 6 = <strong>+2</strong></li>
-  </ul></div>
-  <div class="wbox"><div class="lbl">Erreur fréquente</div>
-  <p>3 − (−5) ≠ 3 − 5 ! Soustraire un <strong>négatif</strong> c'est comme additionner son opposé positif.</p></div>
-</section>
-
-<section class="cs">
-  <h2>6. Multiplier et diviser</h2>
-  <div class="dbox"><div class="lbl">Règle des signes</div>
-  <ul>
-    <li><strong>+×+ = +</strong> et <strong>−×− = +</strong> (même signe → résultat positif)</li>
-    <li><strong>+×− = −</strong> et <strong>−×+ = −</strong> (signes différents → résultat négatif)</li>
-    <li>Même règle pour la division</li>
-  </ul></div>
-  <div class="vgrid">
-    <div class="vcrd"><div class="vl">(+3)×(+4)</div><div class="vv">= +12</div></div>
-    <div class="vcrd"><div class="vl">(−3)×(−4)</div><div class="vv">= +12</div></div>
-    <div class="vcrd"><div class="vl">(+3)×(−4)</div><div class="vv">= −12</div></div>
-    <div class="vcrd"><div class="vl">(−12)÷(+3)</div><div class="vv">= −4</div></div>
-  </div>
-</section>
-
+</div>
 <div class="retenir">
   <h3>📌 À retenir</h3>
   <ul>
-    <li>Négatifs : plus la valeur absolue est grande, plus le nombre est petit (−8 &lt; −2)</li>
-    <li>|−5| = 5 (distance à zéro) | opposé de (−3) = +3</li>
-    <li>Même signe → additionner les valeurs absolues, garder le signe</li>
-    <li>Signes différents → soustraire, signe du plus grand en valeur absolue</li>
-    <li>a − b = a + (−b) | même signe × → +, signes différents × → −</li>
+    <li>Entiers relatifs : positifs, négatifs, zéro</li>
+    <li>Valeur absolue = distance à 0 (toujours positive)</li>
+    <li>Même signe → additionner · signes différents → soustraire</li>
+    <li>Règles × et ÷ : même signe = + · signes différents = −</li>
   </ul>
 </div>
-
-<div class="cta">
-  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
-  <a href="nombres-6e.html" class="btn-ex">Faire les exercices 6e →</a>
-</div>
-
+<div class="cta"><p>Tu as compris ? Entraîne-toi !</p><a href="nombres-6e.html" class="btn-ex">Faire les exercices 6e →</a></div>
 </main>
 <footer class="site-footer">École Facile — Cours 6e · Entiers relatifs</footer>
 <script src="sync.js"></script>

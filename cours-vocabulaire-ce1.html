@@ -17,17 +17,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-:root{--lc1:#065f46;--lc2:#059669;--lb:#6ee7b7;--la:#065f46;--ld:#064e3b;--lbg:#f0fdf4;--lt:#052e16;--ls:rgba(5,150,105,.3)}
-.voc-table{width:100%;border-collapse:collapse;margin:10px 0;font-size:0.84rem}
-.voc-table th{background:var(--lb);color:var(--ld);font-weight:900;padding:7px 10px;text-align:left;border:1.5px solid var(--lb)}
-.voc-table td{padding:7px 10px;border:1.5px solid #a7f3d0;vertical-align:top}
-.voc-table tr:nth-child(even) td{background:#f0fdf4}
-.key{font-weight:900;color:#059669}
-.alpha-band{display:flex;flex-wrap:wrap;gap:5px;margin:10px 0}
-.alpha-band span{background:#d1fae5;color:#065f46;border-radius:7px;padding:4px 9px;font-size:0.82rem;font-weight:900}
+:root{--lc1:#065f46;--lc2:#059669;--lb:#6ee7b7;--la:#059669;--ld:#065f46;--lbg:#ecfdf5;--lt:#14532d;--ls:rgba(5,150,105,.3)}
 .cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
 .cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
 .cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.lf-grid{display:grid;gap:12px;margin-bottom:18px}
+.lf-card{background:#fff;border-left:4px solid var(--lc1);border-radius:0 12px 12px 0;padding:12px 14px}
+.lf-rule{font-size:.72rem;font-weight:900;color:var(--lc1);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.lf-body{font-size:.9rem;font-weight:700;color:var(--lt);line-height:1.5;margin-bottom:6px}
+.lf-ex{font-size:.82rem;font-weight:700;color:var(--ld);background:var(--lb);border-radius:8px;padding:5px 10px}
 </style>
 </head>
 <body class="cpage">
@@ -37,101 +35,41 @@
   <p>Ordre alphabétique, familles, synonymes, contraires</p>
 </header>
 <main>
-
-<section class="cs">
-  <h2>1. L'ordre alphabétique</h2>
-  <div class="dbox"><div class="lbl">L'alphabet</div>
-  <div class="alpha-band">
-    <span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span><span>i</span><span>j</span><span>k</span><span>l</span><span>m</span><span>n</span><span>o</span><span>p</span><span>q</span><span>r</span><span>s</span><span>t</span><span>u</span><span>v</span><span>w</span><span>x</span><span>y</span><span>z</span>
+<div class="lf-grid">
+  <div class="lf-card">
+    <div class="lf-rule">📌 Ordre alphabétique</div>
+    <div class="lf-body">On range les mots par leur 1re lettre, puis la 2e si la 1re est identique, etc.</div>
+    <div class="lf-ex">Ex : chat, cheval, chien → chat (a) &lt; cheval (e) &lt; chien (i)</div>
   </div>
-  <p>Les mots du dictionnaire sont classés dans l'<strong>ordre alphabétique</strong>. On compare <strong>lettre par lettre</strong>, en partant de la 1ère.</p></div>
-  <div class="ebox"><div class="lbl">Exemples</div>
-  <ul>
-    <li><em>ami</em> avant <em>bal</em> : <strong>a</strong> vient avant <strong>b</strong></li>
-    <li><em>chat</em> avant <em>chien</em> : même début "ch", mais <strong>a</strong> avant <strong>i</strong> (3e lettre)</li>
-    <li><em>bal</em> avant <em>ballon</em> : "bal" est plus court → il vient avant</li>
-  </ul></div>
-</section>
-
-<section class="cs">
-  <h2>2. Les familles de mots</h2>
-  <div class="dbox"><div class="lbl">Définition</div>
-  <p>Les mots d'une même <strong>famille</strong> partagent le même <strong>radical</strong> (racine) et ont des sens proches.</p></div>
-  <table class="voc-table">
-    <tr><th>Radical</th><th>Famille de mots</th></tr>
-    <tr><td><span class="key">lire</span></td><td>lecteur, lecture, lisible, relire, bibliothèque</td></tr>
-    <tr><td><span class="key">maison</span></td><td>maisonnette, maisonnée, maçon</td></tr>
-    <tr><td><span class="key">chaud</span></td><td>chaleur, chauffage, réchauffer, échauder</td></tr>
-    <tr><td><span class="key">jardin</span></td><td>jardinier, jardinage, jardiner</td></tr>
-  </table>
-  <div class="wbox"><div class="lbl">Astuce</div>
-  <p>Pour trouver le radical, cherche la partie du mot qui se retrouve dans tous les autres mots de la famille.</p></div>
-</section>
-
-<section class="cs">
-  <h2>3. Les synonymes</h2>
-  <div class="dbox"><div class="lbl">Définition</div>
-  <p>Des <strong>synonymes</strong> sont des mots qui ont un sens <strong>proche ou identique</strong>.</p></div>
-  <table class="voc-table">
-    <tr><th>Mot</th><th>Synonymes</th></tr>
-    <tr><td><span class="key">content</span></td><td>heureux, joyeux, ravi, gai</td></tr>
-    <tr><td><span class="key">beau</span></td><td>joli, magnifique, splendide</td></tr>
-    <tr><td><span class="key">rapide</span></td><td>vite, prompt, agile</td></tr>
-    <tr><td><span class="key">regarder</span></td><td>observer, contempler, fixer</td></tr>
-    <tr><td><span class="key">maison</span></td><td>habitation, demeure, logement</td></tr>
-  </table>
-  <div class="ebox"><div class="lbl">Pourquoi utiliser des synonymes ?</div>
-  <p>Pour <strong>éviter les répétitions</strong> dans un texte et pour <strong>enrichir son vocabulaire</strong>.</p></div>
-</section>
-
-<section class="cs">
-  <h2>4. Les contraires (antonymes)</h2>
-  <div class="dbox"><div class="lbl">Définition</div>
-  <p>Des <strong>contraires</strong> (ou antonymes) sont des mots de sens <strong>opposé</strong>.</p></div>
-  <table class="voc-table">
-    <tr><th>Mot</th><th>Contraire</th></tr>
-    <tr><td><span class="key">grand</span></td><td>petit</td></tr>
-    <tr><td><span class="key">chaud</span></td><td>froid</td></tr>
-    <tr><td><span class="key">jour</span></td><td>nuit</td></tr>
-    <tr><td><span class="key">ouvrir</span></td><td>fermer</td></tr>
-    <tr><td><span class="key">propre</span></td><td>sale</td></tr>
-    <tr><td><span class="key">devant</span></td><td>derrière</td></tr>
-    <tr><td><span class="key">content</span></td><td>triste</td></tr>
-  </table>
-</section>
-
-<section class="cs">
-  <h2>5. Noms génériques et noms particuliers</h2>
-  <div class="dbox"><div class="lbl">Définitions</div>
-  <ul>
-    <li><strong>Générique</strong> : désigne une catégorie entière → <em>animal, fruit, couleur…</em></li>
-    <li><strong>Particulier</strong> : désigne un élément de cette catégorie → <em>chien, pomme, rouge…</em></li>
-  </ul></div>
-  <table class="voc-table">
-    <tr><th>Nom générique</th><th>Noms particuliers</th></tr>
-    <tr><td><span class="key">animal</span></td><td>chien, chat, lapin, oiseau</td></tr>
-    <tr><td><span class="key">fruit</span></td><td>pomme, poire, banane, cerise</td></tr>
-    <tr><td><span class="key">couleur</span></td><td>rouge, bleu, vert, jaune</td></tr>
-    <tr><td><span class="key">meuble</span></td><td>chaise, table, lit, armoire</td></tr>
-  </table>
-</section>
-
+  <div class="lf-card">
+    <div class="lf-rule">📌 Familles de mots</div>
+    <div class="lf-body">Des mots liés par une racine commune forment une famille. Ils ont des sens proches.</div>
+    <div class="lf-ex">Ex : fleur → fleurir · fleuriste · floral</div>
+  </div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Synonymes et antonymes</div>
+    <div class="lf-body">Synonyme = même sens. Antonyme = sens contraire.</div>
+    <div class="lf-ex">Ex : heureux = content · heureux ≠ triste · grand ≠ petit</div>
+  </div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Préfixes simples</div>
+    <div class="lf-body">re- (de nouveau) · dé- (contraire) · in- (pas).</div>
+    <div class="lf-ex">Ex : refaire · défaire · impossible · inconnu</div>
+  </div>
+</div>
 <div class="retenir">
   <h3>📌 À retenir</h3>
   <ul>
-    <li>Ordre alphabétique : comparer lettre par lettre de gauche à droite</li>
-    <li>Famille de mots : même radical → lire, lecture, lecteur, lisible</li>
-    <li>Synonymes : même sens → content = heureux ; beau = joli</li>
-    <li>Contraires : sens opposé → grand ≠ petit ; jour ≠ nuit</li>
-    <li>Générique = catégorie (animal) ; particulier = élément (chien)</li>
+    <li>Ordre alphabétique : lettre par lettre de gauche à droite</li>
+    <li>Famille de mots = même racine</li>
+    <li>Synonyme ≈ même sens · antonyme = contraire</li>
+    <li>Préfixes : re- / dé- / in-</li>
   </ul>
 </div>
-
 <div class="cta">
-  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
+  <p>Tu as compris ? Entraîne-toi !</p>
   <a href="vocabulaire-ce1.html" class="btn-ex">Faire les exercices CE1 →</a>
 </div>
-
 </main>
 <footer class="site-footer">École Facile — Cours CE1 · Vocabulaire</footer>
 <script src="sync.js"></script>

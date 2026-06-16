@@ -18,15 +18,14 @@
 <link rel="stylesheet" href="style.css">
 <style>
 :root{--lc1:#16a34a;--lc2:#22c55e;--lb:#bbf7d0;--la:#16a34a;--ld:#14532d;--lbg:#f0fdf4;--lt:#052e16;--ls:rgba(22,163,74,.3)}
-.ot{width:100%;border-collapse:collapse;margin:10px 0;font-size:0.85rem}
-.ot th{background:var(--lb);color:var(--ld);font-weight:900;padding:8px 12px;text-align:left;border:1.5px solid #86efac}
-.ot td{padding:7px 12px;border:1.5px solid #bbf7d0}
-.ot tr:nth-child(even) td{background:#f0fdf4}
-.acc{color:#16a34a;font-weight:900;font-size:1.05em}
-.big-card{background:#f0fdf4;border:3px solid #86efac;border-radius:16px;padding:14px;margin:12px 0;font-size:0.95rem;font-weight:800;color:#14532d;text-align:center}
 .cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
 .cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
 .cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.lf-grid{display:grid;gap:12px;margin-bottom:18px}
+.lf-card{background:#fff;border-left:4px solid var(--lc1);border-radius:0 12px 12px 0;padding:12px 14px}
+.lf-rule{font-size:.72rem;font-weight:900;color:var(--lc1);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.lf-body{font-size:.9rem;font-weight:700;color:var(--lt);line-height:1.5;margin-bottom:6px}
+.lf-ex{font-size:.82rem;font-weight:700;color:var(--ld);background:var(--lb);border-radius:8px;padding:5px 10px}
 </style>
 </head>
 <body class="cpage">
@@ -37,76 +36,48 @@
 </header>
 <main>
 
-<section class="cs">
-  <h2>1. La majuscule</h2>
-  <div class="big-card">Majuscule = 1re lettre d'une phrase · Prénoms · Noms de villes et pays</div>
-  <div class="dbox"><div class="lbl">Exemples</div>
-  <ul>
-    <li>Début de phrase : <em><strong>L</strong>e chat dort.</em></li>
-    <li>Prénom : <em><strong>L</strong>éa · <strong>T</strong>héo · <strong>E</strong>mma</em></li>
-    <li>Ville / pays : <em><strong>P</strong>aris · <strong>F</strong>rance · <strong>L</strong>yon</em></li>
-  </ul></div>
-</section>
+<div class="lf-grid">
 
-<section class="cs">
-  <h2>2. Le pluriel</h2>
-  <div class="dbox"><div class="lbl">Règle générale : + -s</div>
-  <p>Un chat → des chat<span class="acc">s</span> · une maison → des maison<span class="acc">s</span></p></div>
-  <div class="ebox"><div class="lbl">Exceptions à connaître</div>
-  <table class="ot">
-    <tr><th>Singulier</th><th>Pluriel</th><th>Règle</th></tr>
-    <tr><td>un oiseau</td><td>des oiseau<span class="acc">x</span></td><td>noms en -eau → -eaux</td></tr>
-    <tr><td>un jeu</td><td>des jeu<span class="acc">x</span></td><td>noms en -eu → -eux</td></tr>
-    <tr><td>une souris</td><td>des souris</td><td>déjà en -s → invariable</td></tr>
-    <tr><td>un nez</td><td>des nez</td><td>déjà en -z → invariable</td></tr>
-  </table></div>
-</section>
+  <div class="lf-card">
+    <div class="lf-rule">📌 La majuscule</div>
+    <div class="lf-body">On met une majuscule : au début d'une phrase · pour les prénoms · pour les villes.</div>
+    <div class="lf-ex">Ex : Léa habite à Lyon.</div>
+  </div>
 
-<section class="cs">
-  <h2>3. Le féminin</h2>
-  <div class="dbox"><div class="lbl">Règle générale : + -e</div>
-  <p>un ami → une ami<span class="acc">e</span> · un petit → une petit<span class="acc">e</span></p></div>
-  <div class="ebox"><div class="lbl">Féminins particuliers</div>
-  <table class="ot">
-    <tr><th>Masculin</th><th>Féminin</th><th>Règle</th></tr>
-    <tr><td>un chanteur</td><td>une chanteu<span class="acc">se</span></td><td>-eur → -euse</td></tr>
-    <tr><td>un boulanger</td><td>une boulang<span class="acc">ère</span></td><td>-er → -ère</td></tr>
-    <tr><td>un acteur</td><td>une act<span class="acc">rice</span></td><td>-eur → -rice (certains)</td></tr>
-    <tr><td>un chat</td><td>une chat<span class="acc">te</span></td><td>consonne double</td></tr>
-    <tr><td>un lion</td><td>une lion<span class="acc">ne</span></td><td>consonne double</td></tr>
-    <tr><td>un prince</td><td>une prince<span class="acc">sse</span></td><td>-ce → -cesse</td></tr>
-  </table></div>
-</section>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Le pluriel</div>
+    <div class="lf-body">On ajoute -s au nom (en général). Les mots en -eau font -eaux au pluriel.</div>
+    <div class="lf-ex">Ex : un chat → des chats · un oiseau → des oiseaux</div>
+  </div>
 
-<section class="cs">
-  <h2>4. Le son [s]</h2>
-  <div class="big-card">s (début) · ss (entre 2 voyelles) · c (devant e, i, y) · ç (devant a, o, u)</div>
-  <table class="ot">
-    <tr><th>Lettre</th><th>Quand ?</th><th>Exemples</th></tr>
-    <tr><td><span class="acc">s</span></td><td>Début de mot, après consonne</td><td>sauter · sable · danser</td></tr>
-    <tr><td><span class="acc">ss</span></td><td>Entre deux voyelles</td><td>poisson · tasse · dessert</td></tr>
-    <tr><td><span class="acc">c</span></td><td>Devant e, i, y</td><td>cerise · cirque · cycle</td></tr>
-    <tr><td><span class="acc">ç</span></td><td>Devant a, o, u</td><td>garçon · reçu · façon</td></tr>
-  </table>
-  <div class="wbox"><div class="lbl">Attention !</div>
-  <p><strong>s</strong> entre deux voyelles → son <strong>[z]</strong> : maison, cuisine, rose<br>
-  Pour le son [s] entre deux voyelles → il faut écrire <strong>ss</strong> : poisson, tasse</p></div>
-</section>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Le féminin</div>
+    <div class="lf-body">On ajoute -e (en général). Mais certains mots changent davantage.</div>
+    <div class="lf-ex">Ex : un ami → une amie · un chanteur → une chanteuse · le boulanger → la boulangère</div>
+  </div>
+
+  <div class="lf-card">
+    <div class="lf-rule">📌 Le son [s]</div>
+    <div class="lf-body">s (début de mot) · ss (entre 2 voyelles) · c (devant e, i) · ç (devant a, o, u).</div>
+    <div class="lf-ex">Ex : sauter · poisson · cerise · garçon</div>
+  </div>
+
+</div>
 
 <div class="retenir">
   <h3>📌 À retenir</h3>
   <ul>
-    <li>Majuscule : début de phrase, prénoms, noms de villes/pays</li>
-    <li>Pluriel : + -s en général ; -eaux pour les mots en -eau</li>
-    <li>Féminin : + -e en général ; -eur → -euse, -er → -ère</li>
-    <li>Son [s] : ss entre 2 voyelles · c devant e/i · ç devant a/o/u</li>
-    <li>s entre 2 voyelles → son [z] (maison = [z])</li>
+    <li>Majuscule : début de phrase, prénom, ville</li>
+    <li>Pluriel : + -s (oiseau → oiseaux)</li>
+    <li>Féminin : + -e en général</li>
+    <li>Son [s] : s / ss / c / ç selon la lettre suivante</li>
   </ul>
 </div>
 <div class="cta">
-  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
+  <p>Tu as compris ? Entraîne-toi !</p>
   <a href="orthographe-cp.html" class="btn-ex">Faire les exercices CP →</a>
 </div>
+
 </main>
 <footer class="site-footer">École Facile — Cours CP · Orthographe</footer>
 <script src="sync.js"></script>

@@ -17,15 +17,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-:root{--lc1:#059669;--lc2:#10b981;--lb:#6ee7b7;--la:#059669;--ld:#065f46;--lbg:#ecfdf5;--lt:#14532d;--ls:rgba(5,150,105,.3)}
-/* Table de multiplication */
-.mult-table{border-collapse:collapse;margin:10px auto;font-size:.85rem}
-.mult-table th{background:linear-gradient(135deg,#059669,#10b981);color:#fff;padding:7px 10px;font-weight:900;text-align:center}
-.mult-table td{border:2px solid #a7f3d0;padding:7px 10px;font-weight:800;text-align:center;background:#fff}
-.mult-table tr:nth-child(even) td{background:#f0fdf4}
+:root{--lc1:#065f46;--lc2:#059669;--lb:#6ee7b7;--la:#059669;--ld:#065f46;--lbg:#ecfdf5;--lt:#14532d;--ls:rgba(5,150,105,.3)}
 .cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
 .cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
 .cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.lf-grid{display:grid;gap:12px;margin-bottom:18px}
+.lf-card{background:#fff;border-left:4px solid var(--lc1);border-radius:0 12px 12px 0;padding:12px 14px}
+.lf-rule{font-size:.72rem;font-weight:900;color:var(--lc1);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.lf-body{font-size:.9rem;font-weight:700;color:var(--lt);line-height:1.5;margin-bottom:6px}
+.lf-ex{font-size:.82rem;font-weight:700;color:var(--ld);background:var(--lb);border-radius:8px;padding:5px 10px}
 </style>
 </head>
 <body class="cpage">
@@ -35,103 +35,40 @@
   <p>Addition, soustraction, premières multiplications</p>
 </header>
 <main>
-
-<section class="cs">
-  <h2>1. L'addition posée</h2>
-  <div class="dbox"><div class="lbl">Principe</div>
-  <p>On additionne chiffre à chiffre en commençant par les <strong>unités</strong>, puis les dizaines, puis les centaines.</p></div>
-  <div class="frise">
-    <div class="frise-item"><div class="frise-dot">1</div><div class="frise-content"><div class="frise-date">Étape 1 — Unités</div><div class="frise-text">Écrire les nombres en colonnes (U sous U, D sous D). Additionner les unités : 4 + 3 = 7</div></div></div>
-    <div class="frise-item"><div class="frise-dot">2</div><div class="frise-content"><div class="frise-date">Étape 2 — Dizaines</div><div class="frise-text">Additionner les dizaines : 3 + 5 = 8 dizaines</div></div></div>
-    <div class="frise-item"><div class="frise-dot">3</div><div class="frise-content"><div class="frise-date">Étape 3 — Écrire le résultat</div><div class="frise-text">234 + 153 = <strong>387</strong></div></div></div>
+<div class="lf-grid">
+  <div class="lf-card">
+    <div class="lf-rule">📌 Addition et soustraction</div>
+    <div class="lf-body">On les pose en colonnes et on commence toujours par les unités, puis les dizaines, puis les centaines.</div>
+    <div class="lf-ex">Ex : 45 + 37 = 82 · 91 − 28 = 63</div>
   </div>
-  <div class="ebox"><div class="lbl">Addition avec retenue</div>
-  <p>Si la somme des unités dépasse 9, on <strong>retient 1</strong> dizaine :<br>
-  47 + 36 : 7 + 6 = 13 → on écrit 3, on retient 1<br>
-  Dizaines : 4 + 3 + 1 (retenue) = 8 → résultat : <strong>83</strong></p></div>
-  <div class="wbox"><div class="lbl">Règle d'or</div>
-  <p>Toujours commencer par les <strong>unités</strong> ! Ne jamais aller de gauche à droite.</p></div>
-</section>
-
-<section class="cs">
-  <h2>2. La soustraction posée</h2>
-  <div class="dbox"><div class="lbl">Principe</div>
-  <p>On soustrait chiffre à chiffre en commençant par les unités. Si le chiffre du haut est plus petit, on fait un <strong>emprunt</strong>.</p></div>
-  <div class="frise">
-    <div class="frise-item"><div class="frise-dot">1</div><div class="frise-content"><div class="frise-date">Sans emprunt</div><div class="frise-text">85 − 32 : unités 5−2=3, dizaines 8−3=5 → résultat : <strong>53</strong></div></div></div>
-    <div class="frise-item"><div class="frise-dot">2</div><div class="frise-content"><div class="frise-date">Avec emprunt — ex. 71 − 48</div><div class="frise-text">Unités : 1 &lt; 8 → on emprunte 1 dizaine = 10 unités → 11 − 8 = 3</div></div></div>
-    <div class="frise-item"><div class="frise-dot">3</div><div class="frise-content"><div class="frise-date">Dizaines après emprunt</div><div class="frise-text">7 dizaines − 1 empruntée = 6, puis 6 − 4 = 2 → résultat : <strong>23</strong></div></div></div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Multiplication</div>
+    <div class="lf-body">Multiplier = répéter une addition. Tables à connaître : × 2, × 5, × 10.</div>
+    <div class="lf-ex">Ex : 3 × 4 = 4 + 4 + 4 = 12 · × 10 → ajouter un zéro</div>
   </div>
-  <div class="rbox"><div class="lbl">Vérification</div>
-  <p>Pour vérifier une soustraction, additionne le résultat avec le nombre soustrait : 23 + 48 = 71 ✓</p></div>
-</section>
-
-<section class="cs">
-  <h2>3. Les tables de multiplication</h2>
-  <div class="dbox"><div class="lbl">Définition</div>
-  <p>Multiplier, c'est faire une <strong>addition répétée</strong> : 4 × 3 = 3 + 3 + 3 + 3 = 12</p></div>
-  <table class="mult-table">
-    <tr><th>×</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th></tr>
-    <tr><td><strong>×2</strong></td><td>2</td><td>4</td><td>6</td><td>8</td><td>10</td><td>12</td><td>14</td><td>16</td><td>18</td><td>20</td></tr>
-    <tr><td><strong>×3</strong></td><td>3</td><td>6</td><td>9</td><td>12</td><td>15</td><td>18</td><td>21</td><td>24</td><td>27</td><td>30</td></tr>
-    <tr><td><strong>×4</strong></td><td>4</td><td>8</td><td>12</td><td>16</td><td>20</td><td>24</td><td>28</td><td>32</td><td>36</td><td>40</td></tr>
-    <tr><td><strong>×5</strong></td><td>5</td><td>10</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td></tr>
-  </table>
-  <div class="rbox"><div class="lbl">Astuces mémo</div>
-  <ul>
-    <li><strong>× 2</strong> = doubler le nombre</li>
-    <li><strong>× 5</strong> = le résultat finit toujours par 0 ou 5</li>
-    <li><strong>× 10</strong> = ajouter un zéro</li>
-  </ul></div>
-</section>
-
-<section class="cs">
-  <h2>4. Multiplication par 10 et 100</h2>
-  <div class="dbox"><div class="lbl">Règle simple</div>
-  <p>Multiplier par <strong>10</strong> : on ajoute un zéro à droite.<br>
-  Multiplier par <strong>100</strong> : on ajoute deux zéros à droite.</p></div>
-  <div class="vgrid">
-    <div class="vcrd"><div class="vl">× 10</div><div class="vv">6 → 60</div></div>
-    <div class="vcrd"><div class="vl">× 10</div><div class="vv">24 → 240</div></div>
-    <div class="vcrd"><div class="vl">× 100</div><div class="vv">5 → 500</div></div>
-    <div class="vcrd"><div class="vl">× 100</div><div class="vv">13 → 1300</div></div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Division</div>
+    <div class="lf-body">Diviser = partager en parts égales.</div>
+    <div class="lf-ex">Ex : 12 ÷ 3 = 4 (4 parts de 3) · 20 ÷ 5 = 4</div>
   </div>
-</section>
-
-<section class="cs">
-  <h2>5. Calcul mental — stratégies</h2>
-  <div class="dbox"><div class="lbl">Passer par la dizaine</div>
-  <p>Pour calculer <strong>47 + 8</strong> : 47 + 3 = 50, puis 50 + 5 = 55<br>
-  Pour calculer <strong>63 − 7</strong> : 63 − 3 = 60, puis 60 − 4 = 56</p></div>
-  <div class="ebox"><div class="lbl">Compléments à 10 — à connaître par cœur</div>
-  <div class="vgrid">
-    <div class="vcrd"><div class="vl">0 + ?</div><div class="vv">10</div></div>
-    <div class="vcrd"><div class="vl">1 + ?</div><div class="vv">9</div></div>
-    <div class="vcrd"><div class="vl">2 + ?</div><div class="vv">8</div></div>
-    <div class="vcrd"><div class="vl">3 + ?</div><div class="vv">7</div></div>
-    <div class="vcrd"><div class="vl">4 + ?</div><div class="vv">6</div></div>
-    <div class="vcrd"><div class="vl">5 + ?</div><div class="vv">5</div></div>
-  </div></div>
-  <div class="rbox"><div class="lbl">Compléments à 100</div>
-  <p>30 + 70 = 100 | 45 + 55 = 100 | 80 + 20 = 100<br>
-  Méthode : d'abord compléter les dizaines à 100, puis ajuster les unités.</p></div>
-</section>
-
+  <div class="lf-card">
+    <div class="lf-rule">📌 Calcul mental</div>
+    <div class="lf-body">Connaître les doubles, les moitiés et les compléments à 10 pour calculer vite de tête.</div>
+    <div class="lf-ex">Ex : double 6 = 12 · moitié de 18 = 9 · 7 + 3 = 10</div>
+  </div>
+</div>
 <div class="retenir">
   <h3>📌 À retenir</h3>
   <ul>
-    <li>Addition posée : commencer par les unités, retenir si &gt; 9</li>
-    <li>Soustraction posée : emprunter une dizaine si le chiffre du haut est trop petit</li>
-    <li>× 2 = doubler, × 5 finit par 0 ou 5, × 10 ajoute un zéro</li>
-    <li>Calcul mental : passer par les dizaines rondes</li>
+    <li>Addition/soustraction posées : on commence par les unités</li>
+    <li>Tables de × 2, × 5, × 10 à savoir par cœur</li>
+    <li>Division = partage en parts égales</li>
   </ul>
 </div>
-
 <div class="cta">
-  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
+  <p>Tu as compris ? Entraîne-toi !</p>
   <a href="calcul-ce1.html" class="btn-ex">Faire les exercices CE1 →</a>
 </div>
-
 </main>
 <footer class="site-footer">École Facile — Cours CE1 · Les opérations</footer>
 <script src="sync.js"></script>

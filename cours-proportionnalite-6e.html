@@ -6,149 +6,62 @@
 <link rel="canonical" href="https://ecolefacile.fr/cours-proportionnalite-6e.html">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Proportionnalité — Cours 6e | École Facile</title>
-<meta name="description" content="Cours 6e : proportionnalité, y=kx, représentation graphique, pourcentages, vitesse, règle de trois.">
+<meta name="description" content="Cours 6e : proportionnalité y=kx, graphe, pourcentages.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ecolefacile.fr/cours-proportionnalite-6e.html">
 <meta property="og:title" content="Proportionnalité — Cours 6e | École Facile">
-<meta property="og:description" content="Cours 6e : proportionnalité, y=kx, représentation graphique, pourcentages, vitesse, règle de trois.">
+<meta property="og:description" content="Cours 6e : proportionnalité y=kx, graphe, pourcentages.">
 <meta property="og:image" content="https://ecolefacile.fr/og-image.png">
 <meta property="og:site_name" content="École Facile">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-:root{--lc1:#9d174d;--lc2:#ec4899;--lb:#fbcfe8;--la:#9d174d;--ld:#831843;--lbg:#fdf2f8;--lt:#1e1b4b;--ls:rgba(157,23,77,.3)}
-.prop-table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.85rem}
-.prop-table th{background:linear-gradient(135deg,#9d174d,#ec4899);color:white;padding:8px 10px;font-weight:900;text-align:center}
-.prop-table td{border:1.5px solid #fbcfe8;padding:8px 10px;font-weight:700;text-align:center;background:#fff}
-.prop-table .calcul{background:#fdf2f8;font-style:italic;color:#9d174d}
+:root{--lc1:#9d174d;--lc2:#ec4899;--lb:#fbcfe8;--la:#ec4899;--ld:#831843;--lbg:#fdf2f8;--lt:#831843;--ls:rgba(157,23,77,.3)}
 .cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
 .cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
 .cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.lf-grid{display:grid;gap:12px;margin-bottom:18px}
+.lf-card{background:#fff;border-left:4px solid var(--lc1);border-radius:0 12px 12px 0;padding:12px 14px}
+.lf-rule{font-size:.72rem;font-weight:900;color:var(--lc1);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.lf-body{font-size:.9rem;font-weight:700;color:var(--lt);line-height:1.5;margin-bottom:6px}
+.lf-ex{font-size:.82rem;font-weight:700;color:var(--ld);background:var(--lb);border-radius:8px;padding:5px 10px}
 </style>
 </head>
 <body class="cpage">
 <header class="cours-header" style="background:linear-gradient(135deg,#9d174d,#ec4899)">
   <div class="badge-niveau">6e</div>
-  <h1>⚖️ Proportionnalité</h1>
-  <p>y = kx, représentation graphique, pourcentages, vitesse</p>
+  <h1>📊 Proportionnalité</h1>
+  <p>y = kx, graphe, pourcentages</p>
 </header>
 <main>
-
-<section class="cs">
-  <h2>1. Qu'est-ce que la proportionnalité ?</h2>
-  <div class="dbox"><div class="lbl">Définition</div>
-  <p>Deux grandeurs sont <strong>proportionnelles</strong> si leur quotient est constant (= coefficient de proportionnalité k).<br>
-  y = k × x</p></div>
-  <table class="prop-table">
-    <tr><th>Nombre de pots</th><th>1</th><th>2</th><th>3</th><th>5</th><th>8</th></tr>
-    <tr><td><strong>Prix (€)</strong></td><td>3</td><td>6</td><td>9</td><td>15</td><td>24</td></tr>
-    <tr><td class="calcul">Quotient prix/pot</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td></tr>
-  </table>
-  <div class="rbox"><div class="lbl">k = 3 → y = 3x (prix = 3 × nombre de pots)</div>
-  <p>Le quotient est toujours 3 → c'est bien une situation proportionnelle.</p></div>
-</section>
-
-<section class="cs">
-  <h2>2. Représentation graphique — y = kx</h2>
-  <div class="visbox">
-    <svg viewBox="0 0 280 220" width="280" height="220">
-      <line x1="30" y1="195" x2="270" y2="195" stroke="#9d174d" stroke-width="2"/>
-      <line x1="30" y1="195" x2="30" y2="15" stroke="#9d174d" stroke-width="2"/>
-      <line x1="270" y1="195" x2="262" y2="189" stroke="#9d174d" stroke-width="1.5"/>
-      <line x1="270" y1="195" x2="262" y2="201" stroke="#9d174d" stroke-width="1.5"/>
-      <line x1="30" y1="15" x2="24" y2="23" stroke="#9d174d" stroke-width="1.5"/>
-      <line x1="30" y1="15" x2="36" y2="23" stroke="#9d174d" stroke-width="1.5"/>
-      <text x="272" y="193" font-family="Nunito" font-weight="900" font-size="12" fill="#9d174d">x</text>
-      <text x="33" y="14" font-family="Nunito" font-weight="900" font-size="12" fill="#9d174d">y</text>
-      <text x="18" y="199" font-family="Nunito" font-weight="900" font-size="11" fill="#831843">O</text>
-      <line x1="30" y1="195" x2="250" y2="75" stroke="#ec4899" stroke-width="2.5"/>
-      <circle cx="30" cy="195" r="4" fill="#ec4899"/>
-      <circle cx="80" cy="165" r="4" fill="#ec4899"/>
-      <circle cx="130" cy="135" r="4" fill="#ec4899"/>
-      <circle cx="180" cy="105" r="4" fill="#ec4899"/>
-      <circle cx="250" cy="75" r="4" fill="#ec4899"/>
-      <text x="60" y="165" font-family="Nunito" font-weight="800" font-size="10" fill="#6b7280">1 ; 3</text>
-      <text x="132" y="128" font-family="Nunito" font-weight="800" font-size="10" fill="#6b7280">3 ; 9</text>
-      <text x="184" y="98" font-family="Nunito" font-weight="800" font-size="10" fill="#6b7280">5 ; 15</text>
-      <text x="195" y="60" font-family="Nunito" font-weight="900" font-size="11" fill="#9d174d">y = 3x</text>
-    </svg>
-    <div class="vis-caption">Droite passant par l'origine O — proportionnalité y = 3x</div>
+<div class="lf-grid">
+  <div class="lf-card">
+    <div class="lf-rule">📌 Proportionnalité</div>
+    <div class="lf-body">y = k × x (k = coefficient de proportionnalité). Dans un tableau proportionnel, toutes les colonnes ont le même rapport. Règle de trois : si on connaît 3 valeurs, on calcule la 4e.</div>
+    <div class="lf-ex">Ex : 5 stylos → 10€ (k=2) → 8 stylos → 16€</div>
   </div>
-  <div class="rbox"><div class="lbl">Caractéristique graphique</div>
-  <p>La représentation d'une situation proportionnelle est toujours une <strong>droite passant par l'origine (0;0)</strong>.</p></div>
-</section>
-
-<section class="cs">
-  <h2>3. Règle de trois (produit en croix)</h2>
-  <div class="formula-card">
-    <div class="fc-label">Produit en croix</div>
-    <div class="fc-formula">a/b = c/d ↔ a × d = b × c</div>
-    <div class="fc-desc">Pour trouver x : poser la proportion et résoudre</div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Graphe de proportionnalité</div>
+    <div class="lf-body">La représentation graphique d'une situation proportionnelle est une droite passant par l'origine O(0 ; 0). La pente de la droite = k.</div>
+    <div class="lf-ex">Ex : k = 2 → la droite monte de 2 pour chaque unité vers la droite</div>
   </div>
-  <div class="ebox"><div class="lbl">Exemples</div>
-  <ul>
-    <li>3 kilos coûtent 7,50€. Combien coûtent 5 kilos ?<br>
-    3/7,50 = 5/x → 3x = 5 × 7,50 = 37,5 → <strong>x = 12,50€</strong></li>
-    <li>Une voiture fait 350 km avec 28 L. Combien avec 40 L ?<br>
-    350/28 = x/40 → x = 350 × 40 / 28 = <strong>500 km</strong></li>
-  </ul></div>
-</section>
-
-<section class="cs">
-  <h2>4. Pourcentages</h2>
-  <div class="formula-card">
-    <div class="fc-label">t % de a</div>
-    <div class="fc-formula">t % de a = (t × a) ÷ 100 = a × t/100</div>
-    <div class="fc-desc">Augmentation de t% : × (1 + t/100) | Réduction de t% : × (1 − t/100)</div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Pourcentages</div>
+    <div class="lf-body">p% de n = n × p/100. Augmentation de p% : × (1 + p/100). Réduction de p% : × (1 − p/100).</div>
+    <div class="lf-ex">Ex : −20% de 80 = 80 × 0,8 = 64 · +15% de 200 = 200 × 1,15 = 230</div>
   </div>
-  <div class="vgrid">
-    <div class="vcrd"><div class="vl">10% de 80</div><div class="vv">= 8</div></div>
-    <div class="vcrd"><div class="vl">25% de 120</div><div class="vv">= 30</div></div>
-    <div class="vcrd"><div class="vl">15% de 200</div><div class="vv">= 30</div></div>
-    <div class="vcrd"><div class="vl">−20% de 90</div><div class="vv">= 72</div></div>
-  </div>
-  <div class="ebox"><div class="lbl">Appliquer une réduction</div>
-  <p>Article à 85€, solde −30% :<br>
-  Réduction = 85 × 30/100 = 25,50€<br>
-  Prix final = 85 − 25,50 = <strong>59,50€</strong><br>
-  Ou directement : 85 × 0,70 = <strong>59,50€</strong></p></div>
-</section>
-
-<section class="cs">
-  <h2>5. Vitesse</h2>
-  <div class="formula-card">
-    <div class="fc-label">Formule vitesse-distance-temps</div>
-    <div class="fc-formula">v = d ÷ t &nbsp;|&nbsp; d = v × t &nbsp;|&nbsp; t = d ÷ v</div>
-    <div class="fc-desc">v en km/h, d en km, t en h (convertir les durées !)</div>
-  </div>
-  <div class="ebox"><div class="lbl">Exemples</div>
-  <ul>
-    <li>240 km à 80 km/h → t = 240 ÷ 80 = <strong>3 h</strong></li>
-    <li>Train 2h 30min à 160 km/h → d = 160 × 2,5 = <strong>400 km</strong></li>
-    <li>500 km en 4h → v = 500 ÷ 4 = <strong>125 km/h</strong></li>
-  </ul></div>
-  <div class="wbox"><div class="lbl">Conversion durée en décimal</div>
-  <p>2h 30min = 2,5h | 1h 15min = 1,25h | 45min = 0,75h<br>
-  Règle : diviser les minutes par 60 pour obtenir la partie décimale.</p></div>
-</section>
-
+</div>
 <div class="retenir">
   <h3>📌 À retenir</h3>
   <ul>
-    <li>Proportionnalité : quotient constant k → y = kx</li>
-    <li>Graphique proportionnel = droite passant par O(0;0)</li>
-    <li>Produit en croix : a/b = c/d ↔ ad = bc</li>
-    <li>t% de a = a × t ÷ 100 | réduction t% → × (1 − t/100)</li>
-    <li>Vitesse : v = d/t | convertir les minutes en heures décimales</li>
+    <li>Proportionnalité : y = k × x</li>
+    <li>Graphe : droite passant par l'origine O</li>
+    <li>Augmentation de p% : × (1 + p/100)</li>
+    <li>Réduction de p% : × (1 − p/100)</li>
   </ul>
 </div>
-
-<div class="cta">
-  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
-  <a href="proportionnalite-6e.html" class="btn-ex">Faire les exercices 6e →</a>
-</div>
-
+<div class="cta"><p>Tu as compris ? Entraîne-toi !</p><a href="proportionnalite-6e.html" class="btn-ex">Faire les exercices 6e →</a></div>
 </main>
 <footer class="site-footer">École Facile — Cours 6e · Proportionnalité</footer>
 <script src="sync.js"></script>

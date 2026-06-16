@@ -17,464 +17,67 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-:root{--lc1:#5b21b6;--lc2:#7c3aed;--lb:#ddd6fe;--la:#7c3aed;--ld:#5b21b6;--lbg:#faf5ff;--lt:#1e1b4b;--ls:rgba(91,33,182,.3)}
-.cpage .dbox{background:#ede9fe;border-left-color:#7c3aed}
-.cpage .dbox .lbl{color:#5b21b6}
-.cpage .dbox p,.cpage .dbox ul{color:#3b0764}
-.formula-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.85rem}
-.formula-table th{background:linear-gradient(135deg,#5b21b6,#7c3aed);color:white;padding:9px 12px;font-weight:900;text-align:left}
-.formula-table td{border:1.5px solid #e5e7eb;padding:8px 12px;font-weight:700;background:white}
-.formula-table tr:nth-child(even) td{background:#faf5ff}
-.numeration-tableau{display:flex;gap:4px;margin:10px 0;flex-wrap:wrap}
-.num-col{flex:1;min-width:70px;border-radius:10px;padding:8px 6px;text-align:center}
-.num-col .nc-titre{font-size:.62rem;font-weight:900;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
-.num-col .nc-val{font-size:1.5rem;font-weight:900}
-.num-col .nc-ex{font-size:.65rem;font-weight:700;margin-top:3px;opacity:.8}
+:root{--lc1:#5b21b6;--lc2:#7c3aed;--lb:#ddd6fe;--la:#7c3aed;--ld:#4c1d95;--lbg:#f5f3ff;--lt:#1e1b4b;--ls:rgba(124,58,237,.3)}
+body{font-family:'Nunito',sans-serif;background:#fffbf0;color:#1e1b4b;margin:0}
+main{max-width:720px;margin:0 auto;padding:22px 18px 60px}
+.retenir{background:#fff;border:2.5px solid var(--lc1);border-radius:16px;padding:16px 18px;margin:22px 0 18px}
+.retenir h3{font-size:.78rem;font-weight:900;color:var(--lc2);text-transform:uppercase;letter-spacing:1px;margin:0 0 10px}
+.retenir ul{margin:0;padding-left:18px}
+.retenir li{font-size:.88rem;font-weight:700;color:var(--lt);line-height:1.7}
+.cta{text-align:center;margin-top:26px;padding:18px;background:#fff;border-radius:16px;border:2px solid #e5e7eb}
+.cta p{font-size:.82rem;color:#6b7280;font-weight:700;margin:0 0 10px}
+.btn-ex{display:inline-block;background:linear-gradient(135deg,var(--lc1),var(--lc2));color:#fff;padding:13px 26px;border-radius:13px;font-size:.95rem;font-weight:900;text-decoration:none;box-shadow:0 4px 16px var(--ls)}
+.badge-niveau{display:inline-block;background:rgba(255,255,255,.2);border-radius:20px;padding:4px 14px;font-size:.72rem;font-weight:900;letter-spacing:1px;margin-bottom:8px}
 .cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
 .cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
 .cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.site-footer{text-align:center;padding:16px;font-size:.8rem;color:#9ca3af;border-top:1px solid #e5e7eb;margin-top:10px}
+.lf-grid{display:grid;gap:12px;margin-bottom:18px}
+.lf-card{background:#fff;border-left:4px solid var(--lc1);border-radius:0 12px 12px 0;padding:12px 14px}
+.lf-rule{font-size:.72rem;font-weight:900;color:var(--lc1);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.lf-body{font-size:.9rem;font-weight:700;color:var(--lt);line-height:1.5;margin-bottom:6px}
+.lf-ex{font-size:.82rem;font-weight:700;color:var(--ld);background:var(--lb);border-radius:8px;padding:5px 10px}
 </style>
 </head>
 <body class="cpage">
-<header class="cours-header">
-  <div class="badge-niveau">CE2 · MATHÉMATIQUES</div>
+<header class="cours-header" style="background:linear-gradient(135deg,#5b21b6,#7c3aed)">
+  <div class="badge-niveau">CE2</div>
   <h1>🔣 Les nombres décimaux</h1>
-  <p>Dixièmes, centièmes, virgule — comprendre et utiliser les décimaux</p>
+  <p>Virgule, dixièmes, centièmes</p>
 </header>
 <main>
 
-<!-- SECTION 1 : QU'EST-CE QU'UN DÉCIMAL ? -->
-<section class="cs">
-  <h2>1. Qu'est-ce qu'un nombre décimal ?</h2>
-
-  <div class="dbox">
-    <div class="lbl">📖 Définition</div>
-    <p>Un <strong>nombre décimal</strong> est un nombre qui comporte une <strong>virgule</strong>. La virgule sépare :<br>
-    — à gauche : la <strong>partie entière</strong> (les unités, dizaines, centaines…)<br>
-    — à droite : la <strong>partie décimale</strong> (les dixièmes, centièmes…)</p>
+<div class="lf-grid">
+  <div class="lf-card">
+    <div class="lf-rule">📌 Nombre avec virgule</div>
+    <div class="lf-body">La virgule sépare la partie entière (gauche) des dixièmes et centièmes (droite). Un dixième = 0,1 · Un centième = 0,01.</div>
+    <div class="lf-ex">Ex : 3,5 = 3 entiers + 5 dixièmes · 2,47 = 2 + 4/10 + 7/100</div>
   </div>
-
-  <!-- Tableau de numération étendu SVG -->
-  <div class="visbox">
-    <svg width="560" height="110" viewBox="0 0 560 110">
-      <!-- Centaines -->
-      <rect x="5" y="10" width="90" height="80" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
-      <text x="50" y="34" text-anchor="middle" font-family="Nunito" font-size="10" fill="#5b21b6" font-weight="900">CENTAINES</text>
-      <text x="50" y="58" text-anchor="middle" font-family="Nunito" font-size="28" fill="#5b21b6" font-weight="900">2</text>
-      <text x="50" y="80" text-anchor="middle" font-family="Nunito" font-size="9" fill="#7c3aed" font-weight="700">= 200</text>
-      <!-- Dizaines -->
-      <rect x="100" y="10" width="90" height="80" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
-      <text x="145" y="34" text-anchor="middle" font-family="Nunito" font-size="10" fill="#5b21b6" font-weight="900">DIZAINES</text>
-      <text x="145" y="58" text-anchor="middle" font-family="Nunito" font-size="28" fill="#5b21b6" font-weight="900">3</text>
-      <text x="145" y="80" text-anchor="middle" font-family="Nunito" font-size="9" fill="#7c3aed" font-weight="700">= 30</text>
-      <!-- Unités -->
-      <rect x="195" y="10" width="80" height="80" rx="10" fill="#ddd6fe" stroke="#7c3aed" stroke-width="2.5"/>
-      <text x="235" y="34" text-anchor="middle" font-family="Nunito" font-size="10" fill="#4c1d95" font-weight="900">UNITÉS</text>
-      <text x="235" y="58" text-anchor="middle" font-family="Nunito" font-size="28" fill="#4c1d95" font-weight="900">2</text>
-      <text x="235" y="80" text-anchor="middle" font-family="Nunito" font-size="9" fill="#5b21b6" font-weight="700">= 2</text>
-      <!-- VIRGULE -->
-      <text x="282" y="75" text-anchor="middle" font-family="Nunito" font-size="36" fill="#dc2626" font-weight="900">,</text>
-      <text x="282" y="24" text-anchor="middle" font-family="Nunito" font-size="9" fill="#dc2626" font-weight="900">VIRGULE</text>
-      <!-- Dixièmes -->
-      <rect x="290" y="10" width="90" height="80" rx="10" fill="#fce7f3" stroke="#ec4899" stroke-width="2"/>
-      <text x="335" y="34" text-anchor="middle" font-family="Nunito" font-size="10" fill="#9d174d" font-weight="900">DIXIÈMES</text>
-      <text x="335" y="58" text-anchor="middle" font-family="Nunito" font-size="28" fill="#be185d" font-weight="900">3</text>
-      <text x="335" y="80" text-anchor="middle" font-family="Nunito" font-size="9" fill="#be185d" font-weight="700">= 0,3</text>
-      <!-- Centièmes -->
-      <rect x="385" y="10" width="90" height="80" rx="10" fill="#fce7f3" stroke="#ec4899" stroke-width="2"/>
-      <text x="430" y="34" text-anchor="middle" font-family="Nunito" font-size="10" fill="#9d174d" font-weight="900">CENTIÈMES</text>
-      <text x="430" y="58" text-anchor="middle" font-family="Nunito" font-size="28" fill="#be185d" font-weight="900">5</text>
-      <text x="430" y="80" text-anchor="middle" font-family="Nunito" font-size="9" fill="#be185d" font-weight="700">= 0,05</text>
-    </svg>
-    <div class="vis-caption">2,35 = 2 unités + 3 dixièmes + 5 centièmes — la virgule sépare la partie entière (gauche) de la partie décimale (droite)</div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Dixièmes et centièmes</div>
+    <div class="lf-body">1 dixième = 0,1 = 1/10 · 1 centième = 0,01 = 1/100.<br>Un zéro final ne change pas la valeur : 3,40 = 3,4.</div>
+    <div class="lf-ex">Ex : 0,3 = 3 dixièmes · 0,07 = 7 centièmes · 3,40 = 3,4</div>
   </div>
-
-  <div class="ebox">
-    <div class="lbl">💡 Exemple détaillé</div>
-    <p><strong>2,35</strong> se décompose ainsi :<br>
-    • <strong>2</strong> = partie entière → 2 unités<br>
-    • <strong>3</strong> = 3 dixièmes (= 3 × 0,1 = 0,3)<br>
-    • <strong>5</strong> = 5 centièmes (= 5 × 0,01 = 0,05)<br>
-    Donc : 2,35 = 2 + 0,3 + 0,05</p>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Comparer des décimaux</div>
+    <div class="lf-body">On compare d'abord la partie entière. Si égale, on compare les dixièmes. Attention : 2,9 &gt; 2,15 (9 dixièmes &gt; 1 dixième).</div>
+    <div class="lf-ex">Ex : 3,4 &lt; 3,9 · 2,7 &gt; 2,07 · 5,12 &gt; 4,99</div>
   </div>
+</div>
 
-  <div class="vgrid">
-    <div class="vcrd">
-      <div class="vl">1 dixième</div>
-      <div class="vv">0,1</div>
-      <div class="vs">= 1/10<br>= une part sur 10</div>
-    </div>
-    <div class="vcrd">
-      <div class="vl">1 centième</div>
-      <div class="vv">0,01</div>
-      <div class="vs">= 1/100<br>= une part sur 100</div>
-    </div>
-    <div class="vcrd">
-      <div class="vl">1 euro</div>
-      <div class="vv">1,00 €</div>
-      <div class="vs">= 100 centimes<br>= 100 centièmes</div>
-    </div>
-  </div>
-</section>
+<div class="retenir">
+  <h3>📌 À retenir</h3>
+  <ul>
+    <li>La virgule sépare les entiers (gauche) des décimaux (droite)</li>
+    <li>0,1 = 1 dixième · 0,01 = 1 centième</li>
+    <li>Pour comparer : partie entière d'abord, puis dixièmes, puis centièmes</li>
+  </ul>
+</div>
 
-<!-- SECTION 2 : LIRE ET ÉCRIRE -->
-<section class="cs">
-  <h2>2. Lire et écrire les nombres décimaux</h2>
-
-  <div class="frise">
-    <div class="frise-item">
-      <div class="frise-dot">1</div>
-      <div class="frise-content">
-        <div class="frise-title">On lit la partie entière</div>
-        <div class="frise-text"><strong>2,35</strong> → On dit d'abord "deux"</div>
-      </div>
-    </div>
-    <div class="frise-item">
-      <div class="frise-dot">2</div>
-      <div class="frise-content">
-        <div class="frise-title">On dit "virgule"</div>
-        <div class="frise-text">Jamais "point" en français ! On dit "<strong>virgule</strong>".</div>
-      </div>
-    </div>
-    <div class="frise-item">
-      <div class="frise-dot">3</div>
-      <div class="frise-content">
-        <div class="frise-title">On lit les chiffres après la virgule comme un entier</div>
-        <div class="frise-text"><strong>2,35</strong> → "deux virgule trente-cinq"</div>
-      </div>
-    </div>
-  </div>
-
-  <table class="formula-table">
-    <tr>
-      <th>Nombre</th>
-      <th>On dit</th>
-      <th>Partie entière</th>
-      <th>Partie décimale</th>
-    </tr>
-    <tr>
-      <td><strong>2,35</strong></td>
-      <td>deux virgule trente-cinq</td>
-      <td>2</td>
-      <td>35 centièmes</td>
-    </tr>
-    <tr>
-      <td><strong>0,7</strong></td>
-      <td>zéro virgule sept</td>
-      <td>0</td>
-      <td>7 dixièmes</td>
-    </tr>
-    <tr>
-      <td><strong>12,05</strong></td>
-      <td>douze virgule cinq</td>
-      <td>12</td>
-      <td>5 centièmes</td>
-    </tr>
-    <tr>
-      <td><strong>8,90</strong></td>
-      <td>huit virgule quatre-vingt-dix</td>
-      <td>8</td>
-      <td>90 centièmes = 9 dixièmes</td>
-    </tr>
-  </table>
-
-  <div class="wbox">
-    <div class="lbl">⚠️ Les zéros inutiles</div>
-    <p><strong>2,30 = 2,3</strong> (le zéro final ne change pas la valeur)<br>
-    <strong>3,00 = 3</strong> (un entier peut s'écrire avec une virgule)<br>
-    Mais <strong>0,03 ≠ 0,3</strong> ! La position du chiffre compte.</p>
-  </div>
-
-  <div class="ebox">
-    <div class="lbl">💶 Les centimes = centièmes d'euro</div>
-    <p><strong>0,05 € = 5 centimes</strong> (5 centièmes d'euro)<br>
-    <strong>1,25 € = 1 euro et 25 centimes</strong> = 1 euro + 25 centièmes<br>
-    <strong>0,50 € = 50 centimes = 0,5 €</strong> (même valeur !)</p>
-  </div>
-</section>
-
-<!-- SECTION 3 : COMPARER ET RANGER -->
-<section class="cs">
-  <h2>3. Comparer et ranger des décimaux</h2>
-
-  <div class="formula-card">
-    <div class="fc-label">Méthode de comparaison</div>
-    <div class="fc-formula">Partie entière → Dixièmes → Centièmes</div>
-    <div class="fc-desc">On compare toujours de gauche à droite, rang par rang.</div>
-  </div>
-
-  <div class="frise">
-    <div class="frise-item">
-      <div class="frise-dot">1</div>
-      <div class="frise-content">
-        <div class="frise-title">Comparer les parties entières</div>
-        <div class="frise-text">Si elles sont différentes, le plus grand entier donne le plus grand nombre.<br>
-        <strong>5,12 &gt; 4,99</strong> car 5 &gt; 4</div>
-      </div>
-    </div>
-    <div class="frise-item">
-      <div class="frise-dot">2</div>
-      <div class="frise-content">
-        <div class="frise-title">Si les parties entières sont égales → comparer les dixièmes</div>
-        <div class="frise-text"><strong>2,43 vs 2,34</strong> → même entier (2), alors on compare les dixièmes : 4 &gt; 3, donc <strong>2,43 &gt; 2,34</strong></div>
-      </div>
-    </div>
-    <div class="frise-item">
-      <div class="frise-dot">3</div>
-      <div class="frise-content">
-        <div class="frise-title">Si les dixièmes aussi sont égaux → comparer les centièmes</div>
-        <div class="frise-text"><strong>3,45 vs 3,47</strong> → même entier (3), mêmes dixièmes (4), alors 5 &lt; 7, donc <strong>3,45 &lt; 3,47</strong></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="rbox">
-    <div class="lbl">✅ Cas spécial : zéros</div>
-    <p><strong>1,9 = 1,90</strong> (c'est le même nombre ! 9 dixièmes = 90 centièmes)<br>
-    <strong>0,5 = 0,50</strong> — ajouter un zéro à la fin d'un décimal ne change pas sa valeur.</p>
-  </div>
-
-  <!-- Droite graduée SVG de 0 à 3 -->
-  <div class="visbox">
-    <svg width="540" height="90" viewBox="0 0 540 90">
-      <!-- droite principale -->
-      <line x1="20" y1="45" x2="520" y2="45" stroke="#7c3aed" stroke-width="2.5"/>
-      <!-- flèche -->
-      <polygon points="520,45 510,40 510,50" fill="#7c3aed"/>
-      <!-- graduations 0.5 -->
-      <line x1="20" y1="38" x2="20" y2="52" stroke="#7c3aed" stroke-width="2"/>
-      <text x="20" y="68" text-anchor="middle" font-family="Nunito" font-size="12" fill="#5b21b6" font-weight="900">0</text>
-      <line x1="103" y1="40" x2="103" y2="50" stroke="#a78bfa" stroke-width="1.5"/>
-      <text x="103" y="65" text-anchor="middle" font-family="Nunito" font-size="10" fill="#7c3aed" font-weight="700">0,5</text>
-      <line x1="186" y1="38" x2="186" y2="52" stroke="#7c3aed" stroke-width="2"/>
-      <text x="186" y="68" text-anchor="middle" font-family="Nunito" font-size="12" fill="#5b21b6" font-weight="900">1</text>
-      <line x1="269" y1="40" x2="269" y2="50" stroke="#a78bfa" stroke-width="1.5"/>
-      <text x="269" y="65" text-anchor="middle" font-family="Nunito" font-size="10" fill="#7c3aed" font-weight="700">1,5</text>
-      <line x1="353" y1="38" x2="353" y2="52" stroke="#7c3aed" stroke-width="2"/>
-      <text x="353" y="68" text-anchor="middle" font-family="Nunito" font-size="12" fill="#5b21b6" font-weight="900">2</text>
-      <line x1="436" y1="40" x2="436" y2="50" stroke="#a78bfa" stroke-width="1.5"/>
-      <text x="436" y="65" text-anchor="middle" font-family="Nunito" font-size="10" fill="#7c3aed" font-weight="700">2,5</text>
-      <!-- point 2,35 -->
-      <circle cx="413" cy="45" r="6" fill="#dc2626"/>
-      <text x="413" y="28" text-anchor="middle" font-family="Nunito" font-size="11" fill="#dc2626" font-weight="900">2,35</text>
-      <!-- point 1,7 -->
-      <circle cx="327" cy="45" r="6" fill="#f59e0b"/>
-      <text x="327" y="28" text-anchor="middle" font-family="Nunito" font-size="11" fill="#b45309" font-weight="900">1,7</text>
-    </svg>
-    <div class="vis-caption">Droite graduée de 0 à 3 — 1,7 &lt; 2,35</div>
-  </div>
-</section>
-
-<!-- SECTION 4 : ADDITION ET SOUSTRACTION -->
-<section class="cs">
-  <h2>4. Addition et soustraction de décimaux</h2>
-
-  <div class="formula-card">
-    <div class="fc-label">Règle essentielle</div>
-    <div class="fc-formula">Aligner les virgules !</div>
-    <div class="fc-desc">Les virgules doivent être l'une en dessous de l'autre. Puis on calcule comme des entiers.</div>
-  </div>
-
-  <p style="font-size:.88rem;font-weight:700;margin:8px 0">Exemple 1 : <strong>3,45 + 1,27 = ?</strong></p>
-
-  <div class="frise">
-    <div class="frise-item">
-      <div class="frise-dot">1</div>
-      <div class="frise-content">
-        <div class="frise-title">Poser avec les virgules alignées</div>
-        <div class="frise-text">3,45 au-dessus, 1,27 en dessous, virgule sous virgule.</div>
-      </div>
-    </div>
-    <div class="frise-item">
-      <div class="frise-dot">2</div>
-      <div class="frise-content">
-        <div class="frise-title">Additionner les centièmes</div>
-        <div class="frise-text"><strong>5 + 7 = 12</strong> → on écrit 2, on retient 1.</div>
-      </div>
-    </div>
-    <div class="frise-item">
-      <div class="frise-dot">3</div>
-      <div class="frise-content">
-        <div class="frise-title">Additionner les dixièmes + retenue</div>
-        <div class="frise-text"><strong>4 + 2 + 1 = 7</strong> → on écrit 7.</div>
-      </div>
-    </div>
-    <div class="frise-item">
-      <div class="frise-dot">4</div>
-      <div class="frise-content">
-        <div class="frise-title">Poser la virgule et continuer</div>
-        <div class="frise-text"><strong>3 + 1 = 4</strong> → résultat : <strong>4,72</strong> ✓</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="ebox">
-    <div class="lbl">💡 Exemple 2 : soustraction</div>
-    <p><strong>5,00 − 2,35 = ?</strong><br>
-    On complète 5 en 5,00, on aligne et on calcule :<br>
-    Centièmes : 0 − 5, on emprunte → <strong>10 − 5 = 5</strong><br>
-    Dixièmes : 0 − 1 (après emprunt) − 3, on emprunte → <strong>10 − 1 − 3 = 6</strong> ... wait, méthode classique :<br>
-    La méthode la plus simple : 5,00 − 2,35 = <strong>2,65</strong><br>
-    Vérif : 2,65 + 2,35 = 5,00 ✓</p>
-  </div>
-
-  <table class="formula-table">
-    <tr>
-      <th>Opération</th>
-      <th>Calcul</th>
-      <th>Résultat</th>
-    </tr>
-    <tr><td>Addition</td><td>3,45 + 1,27</td><td><strong>4,72</strong></td></tr>
-    <tr><td>Addition</td><td>2,6 + 0,75</td><td><strong>3,35</strong></td></tr>
-    <tr><td>Soustraction</td><td>5,00 − 2,35</td><td><strong>2,65</strong></td></tr>
-    <tr><td>Soustraction</td><td>4,8 − 1,5</td><td><strong>3,3</strong></td></tr>
-  </table>
-</section>
-
-<!-- SECTION 5 : MULTIPLICATION PAR 10/100/1000 -->
-<section class="cs">
-  <h2>5. Multiplier un décimal par 10, 100, 1000</h2>
-
-  <div class="formula-card">
-    <div class="fc-label">Règle</div>
-    <div class="fc-formula">× 10 → virgule avance d'un cran à droite</div>
-    <div class="fc-desc">× 100 → avance de 2 crans · × 1000 → avance de 3 crans</div>
-  </div>
-
-  <table class="formula-table">
-    <tr>
-      <th>Calcul</th>
-      <th>Ce qui se passe</th>
-      <th>Résultat</th>
-    </tr>
-    <tr>
-      <td>2,35 × 10</td>
-      <td>Virgule avance d'1 cran : 23,5</td>
-      <td><strong>23,5</strong></td>
-    </tr>
-    <tr>
-      <td>2,35 × 100</td>
-      <td>Virgule avance de 2 crans : 235</td>
-      <td><strong>235</strong></td>
-    </tr>
-    <tr>
-      <td>0,7 × 10</td>
-      <td>Virgule avance d'1 cran : 7</td>
-      <td><strong>7</strong></td>
-    </tr>
-    <tr>
-      <td>0,04 × 100</td>
-      <td>Virgule avance de 2 crans : 4</td>
-      <td><strong>4</strong></td>
-    </tr>
-    <tr>
-      <td>1,5 × 1000</td>
-      <td>Virgule avance de 3 crans : 1500</td>
-      <td><strong>1 500</strong></td>
-    </tr>
-  </table>
-
-  <div class="ebox">
-    <div class="lbl">💡 Astuce pour diviser</div>
-    <p><strong>÷ 10</strong> → la virgule recule d'un cran vers la gauche<br>
-    <strong>23,5 ÷ 10 = 2,35</strong> — C'est l'inverse de × 10 !</p>
-  </div>
-</section>
-
-<!-- SECTION 6 : DÉCIMAUX ET FRACTIONS -->
-<section class="cs">
-  <h2>6. Décimaux et fractions — les équivalences</h2>
-
-  <div class="dbox">
-    <div class="lbl">🔗 Lien décimaux ↔ fractions</div>
-    <p>On peut écrire la même quantité comme une fraction ou comme un décimal. Ce sont deux façons d'écrire la même chose !</p>
-  </div>
-
-  <table class="formula-table">
-    <tr>
-      <th>Fraction</th>
-      <th>Décimal</th>
-      <th>Dessin</th>
-      <th>On dit</th>
-    </tr>
-    <tr>
-      <td><strong>1/2</strong></td>
-      <td><strong>0,5</strong></td>
-      <td>une moitié</td>
-      <td>zéro virgule cinq</td>
-    </tr>
-    <tr>
-      <td><strong>1/4</strong></td>
-      <td><strong>0,25</strong></td>
-      <td>un quart</td>
-      <td>zéro virgule vingt-cinq</td>
-    </tr>
-    <tr>
-      <td><strong>3/4</strong></td>
-      <td><strong>0,75</strong></td>
-      <td>trois quarts</td>
-      <td>zéro virgule soixante-quinze</td>
-    </tr>
-    <tr>
-      <td><strong>1/10</strong></td>
-      <td><strong>0,1</strong></td>
-      <td>un dixième</td>
-      <td>zéro virgule un</td>
-    </tr>
-    <tr>
-      <td><strong>1/100</strong></td>
-      <td><strong>0,01</strong></td>
-      <td>un centième</td>
-      <td>zéro virgule zéro un</td>
-    </tr>
-  </table>
-
-  <!-- SVG barre fraction 0,75 -->
-  <div class="visbox">
-    <svg width="400" height="80" viewBox="0 0 400 80">
-      <text x="200" y="18" text-anchor="middle" font-family="Nunito" font-size="12" fill="#5b21b6" font-weight="900">0,75 = 3/4 de la barre</text>
-      <!-- barre complète -->
-      <rect x="10" y="25" width="380" height="36" rx="6" fill="#e5e7eb"/>
-      <!-- 3/4 remplis -->
-      <rect x="10" y="25" width="285" height="36" rx="6" fill="linear-gradient(90deg,#7c3aed,#a855f7)"/>
-      <rect x="10" y="25" width="285" height="36" rx="6" fill="#7c3aed"/>
-      <!-- séparations -->
-      <line x1="105" y1="25" x2="105" y2="61" stroke="white" stroke-width="2"/>
-      <line x1="200" y1="25" x2="200" y2="61" stroke="white" stroke-width="2"/>
-      <line x1="295" y1="25" x2="295" y2="61" stroke="#9ca3af" stroke-width="2" stroke-dasharray="4"/>
-      <!-- labels -->
-      <text x="57" y="47" text-anchor="middle" font-family="Nunito" font-size="13" fill="white" font-weight="900">1/4</text>
-      <text x="152" y="47" text-anchor="middle" font-family="Nunito" font-size="13" fill="white" font-weight="900">1/4</text>
-      <text x="247" y="47" text-anchor="middle" font-family="Nunito" font-size="13" fill="white" font-weight="900">1/4</text>
-      <text x="347" y="47" text-anchor="middle" font-family="Nunito" font-size="12" fill="#9ca3af" font-weight="900">1/4</text>
-      <!-- étiquette 0,75 -->
-      <text x="152" y="73" text-anchor="middle" font-family="Nunito" font-size="11" fill="#5b21b6" font-weight="900">← 0,75 = 3 quarts →</text>
-    </svg>
-    <div class="vis-caption">3/4 = 0,75 — les fractions et les décimaux représentent la même chose</div>
-  </div>
-</section>
-
-<!-- SECTION 7 : À RETENIR + CTA -->
-<section class="cs">
-  <h2>7. À retenir</h2>
-  <div class="retenir">
-    <h3>📌 L'essentiel des décimaux CE2</h3>
-    <ul>
-      <li>La <strong>virgule</strong> sépare les unités (gauche) des dixièmes et centièmes (droite).</li>
-      <li><strong>2,35</strong> = 2 unités + 3 dixièmes + 5 centièmes.</li>
-      <li>Pour comparer : partie entière d'abord, puis dixièmes, puis centièmes.</li>
-      <li><strong>1,9 = 1,90</strong> (même valeur, les zéros finaux ne comptent pas).</li>
-      <li>Pour additionner/soustraire : <strong>aligner les virgules</strong>, puis calculer comme des entiers.</li>
-      <li>× 10 → la virgule avance d'1 cran vers la droite.</li>
-      <li><strong>0,5 = 1/2</strong>, <strong>0,25 = 1/4</strong>, <strong>0,75 = 3/4</strong>.</li>
-    </ul>
-  </div>
-
-  <div class="cta">
-    <p>Tu maîtrises les décimaux ? Teste-toi !</p>
-    <a class="btn-ex" href="decimaux-ce2.html">✏️ Faire les exercices</a>
-  </div>
-</section>
+<div class="cta">
+  <p>Tu as compris ? Entraîne-toi !</p>
+  <a href="decimaux-ce2.html" class="btn-ex">Faire les exercices CE2 →</a>
+</div>
 
 </main>
 <footer class="site-footer">École Facile — Cours CE2 · Nombres décimaux</footer>

@@ -17,112 +17,58 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-:root{--lc1:#1d4ed8;--lc2:#3b82f6;--lb:#bfdbfe;--la:#1d4ed8;--ld:#1e3a8a;--lbg:#eff6ff;--lt:#1e1b4b;--ls:rgba(29,78,216,.3)}
+:root{--lc1:#1d4ed8;--lc2:#3b82f6;--lb:#93c5fd;--la:#1d4ed8;--ld:#1e3a8a;--lbg:#eff6ff;--lt:#1e3a8a;--ls:rgba(29,78,216,.3)}
 .cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
 .cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
 .cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.lf-grid{display:grid;gap:12px;margin-bottom:18px}
+.lf-card{background:#fff;border-left:4px solid var(--lc1);border-radius:0 12px 12px 0;padding:12px 14px}
+.lf-rule{font-size:.72rem;font-weight:900;color:var(--lc1);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.lf-body{font-size:.9rem;font-weight:700;color:var(--lt);line-height:1.5;margin-bottom:6px}
+.lf-ex{font-size:.82rem;font-weight:700;color:var(--ld);background:var(--lb);border-radius:8px;padding:5px 10px}
 </style>
 </head>
 <body class="cpage">
 <header class="cours-header" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6)">
   <div class="badge-niveau">CM1</div>
   <h1>🔢 Les 4 opérations</h1>
-  <p>Multiplication et division posées, priorités, calcul mental</p>
+  <p>Priorités, multiplication et division posées, calcul mental</p>
 </header>
 <main>
 
-<section class="cs">
-  <h2>1. Rappel — les 4 opérations</h2>
-  <div class="vgrid">
-    <div class="vcrd"><div class="vl">Addition</div><div class="vv">a + b</div><div class="vs">termes → somme</div></div>
-    <div class="vcrd"><div class="vl">Soustraction</div><div class="vv">a − b</div><div class="vs">différence</div></div>
-    <div class="vcrd"><div class="vl">Multiplication</div><div class="vv">a × b</div><div class="vs">facteurs → produit</div></div>
-    <div class="vcrd"><div class="vl">Division</div><div class="vv">a ÷ b</div><div class="vs">dividende ÷ diviseur = quotient</div></div>
+<div class="lf-grid">
+  <div class="lf-card">
+    <div class="lf-rule">📌 Priorités des opérations</div>
+    <div class="lf-body">× et ÷ avant + et −. Les parenthèses passent en premier.</div>
+    <div class="lf-ex">Ex : 4 × (3 + 2) = 4 × 5 = 20 · 10 − 2 × 3 = 10 − 6 = 4</div>
   </div>
-  <div class="rbox"><div class="lbl">Vérifications</div>
-  <ul>
-    <li>Addition : soustraction inverse (a+b=c → c−b=a)</li>
-    <li>Multiplication : division inverse (a×b=c → c÷b=a)</li>
-  </ul></div>
-</section>
-
-<section class="cs">
-  <h2>2. Multiplication posée — 2 × 2 chiffres</h2>
-  <div class="dbox"><div class="lbl">Méthode : exemple 34 × 27</div></div>
-  <div class="frise">
-    <div class="frise-item"><div class="frise-dot">1</div><div class="frise-content"><div class="frise-date">Multiplier par les unités</div><div class="frise-text">34 × 7 = 238 (ligne du bas)</div></div></div>
-    <div class="frise-item"><div class="frise-dot">2</div><div class="frise-content"><div class="frise-date">Multiplier par les dizaines</div><div class="frise-text">34 × 20 = 680 → décaler d'une colonne vers la gauche (ou ajouter un 0)</div></div></div>
-    <div class="frise-item"><div class="frise-dot">3</div><div class="frise-content"><div class="frise-date">Additionner les deux lignes</div><div class="frise-text">238 + 680 = <strong>918</strong></div></div></div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Calcul mental — × par 10, 100, 1000</div>
+    <div class="lf-body">Multiplier par 10, 100 ou 1000 : glisse la virgule vers la droite.</div>
+    <div class="lf-ex">Ex : 3,4 × 10 = 34 · 2,5 × 100 = 250 · 0,7 × 1000 = 700</div>
   </div>
-  <div class="formula-card">
-    <div class="fc-label">Résultat</div>
-    <div class="fc-formula">34 × 27 = 918</div>
-    <div class="fc-desc">Vérif : 27 × 34 = 918 (commutativité ✓)</div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Multiplication posée — 2 × 2 chiffres</div>
+    <div class="lf-body">On calcule les produits partiels (unités puis dizaines), puis on additionne.</div>
+    <div class="lf-ex">Ex : 34 × 27 : 34×7 = 238 + 34×20 = 680 → 238 + 680 = 918</div>
   </div>
-  <div class="wbox"><div class="lbl">Erreur fréquente</div>
-  <p>Ne pas oublier le <strong>décalage</strong> d'une colonne pour la ligne des dizaines ! 34 × 20 ≠ 34 × 2.</p></div>
-</section>
-
-<section class="cs">
-  <h2>3. Division posée — grands nombres</h2>
-  <div class="dbox"><div class="lbl">Exemple : 756 ÷ 12</div></div>
-  <div class="frise">
-    <div class="frise-item"><div class="frise-dot">1</div><div class="frise-content"><div class="frise-date">Prendre les premiers chiffres</div><div class="frise-text">75 ÷ 12 : combien de fois 12 entre dans 75 ? → 6 fois (6 × 12 = 72)</div></div></div>
-    <div class="frise-item"><div class="frise-dot">2</div><div class="frise-content"><div class="frise-date">Soustraire et abaisser</div><div class="frise-text">75 − 72 = 3, abaisser le 6 → reste 36</div></div></div>
-    <div class="frise-item"><div class="frise-dot">3</div><div class="frise-content"><div class="frise-date">Continuer</div><div class="frise-text">36 ÷ 12 = 3 (exactement) → quotient : <strong>63</strong>, reste : 0</div></div></div>
-    <div class="frise-item"><div class="frise-dot">4</div><div class="frise-content"><div class="frise-date">Vérifier</div><div class="frise-text">63 × 12 = 756 ✓</div></div></div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Division posée</div>
+    <div class="lf-body">Quotient entier ou décimal. Vérification : diviseur × quotient + reste = dividende.</div>
+    <div class="lf-ex">Ex : 675 ÷ 5 = 135 · 85 ÷ 7 = 12 reste 1 (7×12+1=85 ✓)</div>
   </div>
-  <div class="ebox"><div class="lbl">Division avec reste</div>
-  <p>Si la division n'est pas exacte : dividende = diviseur × quotient + reste<br>
-  Ex : 85 ÷ 7 = 12 reste 1 → vérif : 7 × 12 + 1 = 85 ✓</p></div>
-</section>
-
-<section class="cs">
-  <h2>4. Priorité des opérations</h2>
-  <div class="formula-card">
-    <div class="fc-label">Règle des priorités</div>
-    <div class="fc-formula">( ) puis × ÷ puis + −</div>
-    <div class="fc-desc">Parenthèses d'abord, puis × et ÷, enfin + et −</div>
-  </div>
-  <div class="ebox"><div class="lbl">Exemples</div>
-  <ul>
-    <li>3 + 4 × 2 = 3 + <strong>8</strong> = <strong>11</strong> (pas 14 !)</li>
-    <li>(3 + 4) × 2 = <strong>7</strong> × 2 = <strong>14</strong></li>
-    <li>20 − 3 × 5 + 4 = 20 − <strong>15</strong> + 4 = <strong>9</strong></li>
-    <li>12 ÷ (2 + 1) = 12 ÷ <strong>3</strong> = <strong>4</strong></li>
-  </ul></div>
-  <div class="wbox"><div class="lbl">Piège classique</div>
-  <p>Sans parenthèses, <strong>× et ÷ passent avant + et −</strong>, même s'ils sont écrits après !</p></div>
-</section>
-
-<section class="cs">
-  <h2>5. Calcul mental — astuces CM1</h2>
-  <div class="dbox"><div class="lbl">Multiplications astucieuses</div>
-  <ul>
-    <li><strong>× 11</strong> : × 10 + le nombre lui-même — ex : 13 × 11 = 130 + 13 = 143</li>
-    <li><strong>× 9</strong> : × 10 − le nombre — ex : 7 × 9 = 70 − 7 = 63</li>
-    <li><strong>× 25</strong> : ÷ 4 × 100 — ex : 12 × 25 = 3 × 100 = 300</li>
-    <li><strong>× 5</strong> : ÷ 2 × 10 — ex : 14 × 5 = 7 × 10 = 70</li>
-  </ul></div>
-  <div class="rbox"><div class="lbl">Compensation pour + et −</div>
-  <p>47 + 38 = 45 + 40 = 85 (on a ajouté 3 à 38 et soustrait 3 à 47)<br>
-  63 − 28 = 65 − 30 = 35 (on a ajouté 2 aux deux)</p></div>
-</section>
+</div>
 
 <div class="retenir">
   <h3>📌 À retenir</h3>
   <ul>
-    <li>Multiplication 2×2 : lignes des unités + décalage pour les dizaines, puis additionner</li>
-    <li>Division posée : prendre les premiers chiffres, soustraire, abaisser, répéter</li>
-    <li>Priorités : parenthèses → × ÷ → + −</li>
-    <li>× 11 = × 10 + n | × 9 = × 10 − n | × 25 = ÷ 4 × 100</li>
+    <li>Parenthèses → × ÷ → + −</li>
+    <li>×10, ×100, ×1000 : glisse la virgule vers la droite</li>
+    <li>Produits partiels pour la multiplication 2×2 chiffres</li>
   </ul>
 </div>
 
-<div class="cta">
-  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
-  <a href="calcul-cm1.html" class="btn-ex">Faire les exercices CM1 →</a>
-</div>
+<div class="cta"><p>Tu as compris ? Entraîne-toi !</p><a href="calcul-cm1.html" class="btn-ex">Faire les exercices CM1 →</a></div>
 
 </main>
 <footer class="site-footer">École Facile — Cours CM1 · Les 4 opérations</footer>

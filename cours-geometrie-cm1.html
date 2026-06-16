@@ -6,143 +6,64 @@
 <link rel="canonical" href="https://ecolefacile.fr/cours-geometrie-cm1.html">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Géométrie — Cours CM1 | École Facile</title>
-<meta name="description" content="Cours CM1 : triangles, quadrilatères, cercle, périmètre et aire, symétrie axiale, repérage dans le plan.">
+<meta name="description" content="Cours CM1 : triangles, cercle, périmètre et aires des figures planes.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ecolefacile.fr/cours-geometrie-cm1.html">
 <meta property="og:title" content="Géométrie — Cours CM1 | École Facile">
-<meta property="og:description" content="Cours CM1 : triangles, quadrilatères, cercle, périmètre et aire, symétrie axiale, repérage dans le plan.">
+<meta property="og:description" content="Cours CM1 : triangles, cercle, périmètre et aires des figures planes.">
 <meta property="og:image" content="https://ecolefacile.fr/og-image.png">
 <meta property="og:site_name" content="École Facile">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-:root{--lc1:#1d4ed8;--lc2:#3b82f6;--lb:#bfdbfe;--la:#1d4ed8;--ld:#1e3a8a;--lbg:#eff6ff;--lt:#1e1b4b;--ls:rgba(29,78,216,.3)}
+:root{--lc1:#1d4ed8;--lc2:#3b82f6;--lb:#93c5fd;--la:#1d4ed8;--ld:#1e3a8a;--lbg:#eff6ff;--lt:#1e3a8a;--ls:rgba(29,78,216,.3)}
 .cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
 .cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
 .cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.lf-grid{display:grid;gap:12px;margin-bottom:18px}
+.lf-card{background:#fff;border-left:4px solid var(--lc1);border-radius:0 12px 12px 0;padding:12px 14px}
+.lf-rule{font-size:.72rem;font-weight:900;color:var(--lc1);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.lf-body{font-size:.9rem;font-weight:700;color:var(--lt);line-height:1.5;margin-bottom:6px}
+.lf-ex{font-size:.82rem;font-weight:700;color:var(--ld);background:var(--lb);border-radius:8px;padding:5px 10px}
 </style>
 </head>
 <body class="cpage">
 <header class="cours-header" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6)">
   <div class="badge-niveau">CM1</div>
   <h1>📐 Géométrie</h1>
-  <p>Triangles, quadrilatères, périmètre, aire, repérage</p>
+  <p>Triangles, cercle, périmètre et aires</p>
 </header>
 <main>
 
-<section class="cs">
-  <h2>1. Les types de triangles</h2>
-  <div class="visbox">
-    <svg viewBox="0 0 400 120" width="400" height="120">
-      <polygon points="50,100 100,10 150,100" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
-      <text x="100" y="115" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="11" fill="#1d4ed8">Équilatéral</text>
-      <text x="100" y="128" text-anchor="middle" font-family="Nunito" font-weight="700" font-size="10" fill="#6b7280">3 côtés égaux</text>
-      <polygon points="170,100 220,10 290,100" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2"/>
-      <text x="230" y="115" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="11" fill="#1d4ed8">Isocèle</text>
-      <text x="230" y="128" text-anchor="middle" font-family="Nunito" font-weight="700" font-size="10" fill="#6b7280">2 côtés égaux</text>
-      <polygon points="310,100 310,15 390,100" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
-      <rect x="310" y="80" width="18" height="18" fill="none" stroke="#dc2626" stroke-width="2"/>
-      <text x="350" y="115" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="11" fill="#1d4ed8">Rectangle</text>
-      <text x="350" y="128" text-anchor="middle" font-family="Nunito" font-weight="700" font-size="10" fill="#6b7280">1 angle droit</text>
-    </svg>
-    <div class="vis-caption">Les trois principaux types de triangles</div>
+<div class="lf-grid">
+  <div class="lf-card">
+    <div class="lf-rule">📌 Les triangles</div>
+    <div class="lf-body">Équilatéral (3 côtés égaux) · isocèle (2 égaux) · rectangle (1 angle droit) · quelconque.</div>
+    <div class="lf-ex">Ex : triangle 3-4-5 = rectangle · triangle équilatéral : 3 angles de 60°</div>
   </div>
-  <div class="dbox"><div class="lbl">Classement par côtés</div>
-  <ul>
-    <li><strong>Équilatéral</strong> : 3 côtés égaux, 3 angles de 60°</li>
-    <li><strong>Isocèle</strong> : 2 côtés égaux, 2 angles égaux</li>
-    <li><strong>Rectangle</strong> : 1 angle droit (90°), les autres font 45°+45° ou autre combinaison</li>
-    <li><strong>Scalène</strong> : tous les côtés différents</li>
-  </ul></div>
-</section>
-
-<section class="cs">
-  <h2>2. Les quadrilatères</h2>
-  <div class="vgrid">
-    <div class="vcrd"><div class="vl">Carré</div><div class="vv">4 côtés égaux, 4 angles droits</div></div>
-    <div class="vcrd"><div class="vl">Rectangle</div><div class="vv">2 paires de côtés égaux, 4 angles droits</div></div>
-    <div class="vcrd"><div class="vl">Losange</div><div class="vv">4 côtés égaux, pas forcément d'angle droit</div></div>
-    <div class="vcrd"><div class="vl">Parallélogramme</div><div class="vv">2 paires de côtés parallèles</div></div>
-    <div class="vcrd"><div class="vl">Trapèze</div><div class="vv">1 seule paire de côtés parallèles</div></div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Le cercle</div>
+    <div class="lf-body">Centre O · rayon r · diamètre d = 2r · circonférence ≈ 6,28 × r.</div>
+    <div class="lf-ex">Ex : rayon 5 cm → diamètre 10 cm · circonférence ≈ 31,4 cm</div>
   </div>
-</section>
-
-<section class="cs">
-  <h2>3. Périmètre et aire</h2>
-  <div class="dbox"><div class="lbl">Périmètre = tour de la figure | Aire = surface à l'intérieur</div></div>
-  <div class="formula-card">
-    <div class="fc-label">Carré (côté c)</div>
-    <div class="fc-formula">P = 4 × c &nbsp;&nbsp; A = c × c = c²</div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Les aires</div>
+    <div class="lf-body">Carré : A = c² · rectangle : A = L × l · triangle : A = (base × hauteur) ÷ 2.</div>
+    <div class="lf-ex">Ex : rectangle 6×4 : A = 24 cm² · triangle base 6, h 4 : A = 12 cm²</div>
   </div>
-  <div class="formula-card">
-    <div class="fc-label">Rectangle (longueur L, largeur l)</div>
-    <div class="fc-formula">P = 2 × (L + l) &nbsp;&nbsp; A = L × l</div>
-  </div>
-  <div class="formula-card">
-    <div class="fc-label">Triangle (base b, hauteur h, côtés a,b,c)</div>
-    <div class="fc-formula">P = a + b + c &nbsp;&nbsp; A = (base × hauteur) ÷ 2</div>
-  </div>
-  <div class="ebox"><div class="lbl">Exemples</div>
-  <ul>
-    <li>Carré 6 cm : P = 24 cm, A = 36 cm²</li>
-    <li>Rectangle 8 × 5 cm : P = 26 cm, A = 40 cm²</li>
-    <li>Triangle base 6 cm, hauteur 4 cm : A = (6 × 4) ÷ 2 = 12 cm²</li>
-  </ul></div>
-  <div class="wbox"><div class="lbl">Unités d'aire</div>
-  <p>L'aire s'exprime en cm² (centimètres carrés), m², km²… Ne pas confondre cm (longueur) et cm² (surface) !</p></div>
-</section>
-
-<section class="cs">
-  <h2>4. Le cercle</h2>
-  <div class="dbox"><div class="lbl">Vocabulaire du cercle</div></div>
-  <div class="visbox">
-    <svg viewBox="0 0 200 180" width="200" height="180">
-      <circle cx="100" cy="90" r="70" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2.5"/>
-      <circle cx="100" cy="90" r="4" fill="#1d4ed8"/>
-      <text x="104" y="86" font-family="Nunito" font-weight="900" font-size="12" fill="#1d4ed8">O</text>
-      <line x1="100" y1="90" x2="170" y2="90" stroke="#dc2626" stroke-width="2"/>
-      <text x="130" y="82" font-family="Nunito" font-weight="900" font-size="11" fill="#dc2626">r</text>
-      <line x1="30" y1="90" x2="170" y2="90" stroke="#059669" stroke-width="1.5" stroke-dasharray="5,3"/>
-      <text x="40" y="82" font-family="Nunito" font-weight="900" font-size="11" fill="#059669">d = 2r</text>
-    </svg>
-    <div class="vis-caption">Centre O, rayon r, diamètre d = 2r</div>
-  </div>
-  <div class="rbox"><div class="lbl">Propriétés</div>
-  <ul>
-    <li><strong>Rayon</strong> (r) : distance du centre à la courbe</li>
-    <li><strong>Diamètre</strong> (d) : d = 2 × r (corde passant par le centre)</li>
-    <li><strong>Circonférence</strong> (longueur du cercle) : C = 2 × π × r ≈ 6,28 × r</li>
-  </ul></div>
-</section>
-
-<section class="cs">
-  <h2>5. Symétrie axiale — approfondissement</h2>
-  <div class="dbox"><div class="lbl">Axes de symétrie des polygones réguliers</div>
-  <ul>
-    <li>Triangle équilatéral : <strong>3 axes</strong></li>
-    <li>Carré : <strong>4 axes</strong> (2 médianes + 2 diagonales)</li>
-    <li>Pentagone régulier : <strong>5 axes</strong></li>
-    <li>Hexagone régulier : <strong>6 axes</strong></li>
-  </ul></div>
-  <div class="rbox"><div class="lbl">Règle générale</div>
-  <p>Un polygone régulier à n côtés a exactement <strong>n axes de symétrie</strong>.</p></div>
-</section>
+</div>
 
 <div class="retenir">
   <h3>📌 À retenir</h3>
   <ul>
-    <li>Triangle : équilatéral (3 égaux), isocèle (2 égaux), rectangle (1 angle droit)</li>
-    <li>Aire rectangle = L × l | Aire triangle = base × hauteur ÷ 2</li>
+    <li>Triangles : équilatéral / isocèle / rectangle / quelconque</li>
     <li>Cercle : rayon r, diamètre d = 2r</li>
-    <li>Polygone régulier à n côtés → n axes de symétrie</li>
+    <li>Aires : carré c² · rectangle L×l · triangle (b×h)÷2</li>
   </ul>
 </div>
 
-<div class="cta">
-  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
-  <a href="geometrie-cm1.html" class="btn-ex">Faire les exercices CM1 →</a>
-</div>
+<div class="cta"><p>Tu as compris ? Entraîne-toi !</p><a href="geometrie-cm1.html" class="btn-ex">Faire les exercices CM1 →</a></div>
 
 </main>
 <footer class="site-footer">École Facile — Cours CM1 · Géométrie</footer>

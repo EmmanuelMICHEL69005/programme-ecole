@@ -17,10 +17,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-:root{--lc1:#059669;--lc2:#10b981;--lb:#6ee7b7;--la:#059669;--ld:#065f46;--lbg:#ecfdf5;--lt:#14532d;--ls:rgba(5,150,105,.3)}
+:root{--lc1:#065f46;--lc2:#059669;--lb:#6ee7b7;--la:#059669;--ld:#065f46;--lbg:#ecfdf5;--lt:#14532d;--ls:rgba(5,150,105,.3)}
 .cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
 .cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
 .cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.lf-grid{display:grid;gap:12px;margin-bottom:18px}
+.lf-card{background:#fff;border-left:4px solid var(--lc1);border-radius:0 12px 12px 0;padding:12px 14px}
+.lf-rule{font-size:.72rem;font-weight:900;color:var(--lc1);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.lf-body{font-size:.9rem;font-weight:700;color:var(--lt);line-height:1.5;margin-bottom:6px}
+.lf-ex{font-size:.82rem;font-weight:700;color:var(--ld);background:var(--lb);border-radius:8px;padding:5px 10px}
 </style>
 </head>
 <body class="cpage">
@@ -30,129 +35,35 @@
   <p>Polygones, angles droits, périmètre, droites et symétrie</p>
 </header>
 <main>
-
-<section class="cs">
-  <h2>1. L'angle droit</h2>
-  <div class="dbox"><div class="lbl">Définition</div>
-  <p>Un <strong>angle droit</strong> est formé par deux droites perpendiculaires. On le marque avec un petit carré □.</p></div>
-  <div class="visbox">
-    <svg viewBox="0 0 300 160" width="300" height="160">
-      <line x1="60" y1="130" x2="60" y2="30" stroke="#059669" stroke-width="3"/>
-      <line x1="60" y1="130" x2="180" y2="130" stroke="#059669" stroke-width="3"/>
-      <rect x="60" y="110" width="20" height="20" fill="none" stroke="#dc2626" stroke-width="2.5"/>
-      <text x="65" y="25" font-family="Nunito" font-weight="800" font-size="13" fill="#064e3b">angle droit = 90°</text>
-      <text x="75" y="120" font-family="Nunito" font-weight="900" font-size="11" fill="#dc2626">□</text>
-      <line x1="200" y1="130" x2="260" y2="60" stroke="#1d4ed8" stroke-width="3"/>
-      <line x1="200" y1="130" x2="290" y2="130" stroke="#1d4ed8" stroke-width="3"/>
-      <text x="202" y="55" font-family="Nunito" font-weight="800" font-size="12" fill="#1d4ed8">angle aigu</text>
-      <text x="202" y="68" font-family="Nunito" font-weight="800" font-size="12" fill="#1d4ed8">&lt; 90°</text>
-    </svg>
-    <div class="vis-caption">Angle droit (rouge) vs angle aigu (bleu)</div>
+<div class="lf-grid">
+  <div class="lf-card">
+    <div class="lf-rule">📌 Les angles</div>
+    <div class="lf-body">Angle droit (coin de feuille) = 90° · angle aigu (plus fermé) · angle obtus (plus ouvert).</div>
+    <div class="lf-ex">Ex : coin d'un carré = angle droit · carré et rectangle ont 4 angles droits</div>
   </div>
-  <div class="rbox"><div class="lbl">Reconnaître un angle droit</div>
-  <p>On utilise l'<strong>équerre</strong> : on pose le coin de l'équerre dans l'angle. Si ça coïncide exactement, c'est un angle droit !</p></div>
-  <div class="ebox"><div class="lbl">Dans les figures</div>
-  <ul>
-    <li>Le <strong>carré</strong> a 4 angles droits</li>
-    <li>Le <strong>rectangle</strong> a 4 angles droits</li>
-    <li>Le <strong>triangle rectangle</strong> a exactement 1 angle droit</li>
-  </ul></div>
-</section>
-
-<section class="cs">
-  <h2>2. Les polygones</h2>
-  <div class="dbox"><div class="lbl">Définition</div>
-  <p>Un <strong>polygone</strong> est une figure fermée formée de segments. Le nombre de côtés = le nombre de sommets = le nombre d'angles.</p></div>
-  <div class="vgrid">
-    <div class="vcrd"><div class="vl">Triangle</div><div class="vv">3 côtés</div><div class="vs">3 angles</div></div>
-    <div class="vcrd"><div class="vl">Quadrilatère</div><div class="vv">4 côtés</div><div class="vs">carré, rectangle…</div></div>
-    <div class="vcrd"><div class="vl">Pentagone</div><div class="vv">5 côtés</div><div class="vs">5 angles</div></div>
-    <div class="vcrd"><div class="vl">Hexagone</div><div class="vv">6 côtés</div><div class="vs">nid d'abeilles !</div></div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Perpendiculaires et parallèles</div>
+    <div class="lf-body">Perpendiculaires = se croisent à angle droit. Parallèles = ne se croisent jamais.</div>
+    <div class="lf-ex">Ex : les bords d'une feuille sont parallèles · rails de train = parallèles</div>
   </div>
-  <div class="ebox"><div class="lbl">Quadrilatères particuliers</div>
-  <ul>
-    <li><strong>Carré</strong> : 4 côtés égaux, 4 angles droits</li>
-    <li><strong>Rectangle</strong> : 2 côtés longs, 2 côtés courts, 4 angles droits</li>
-    <li><strong>Losange</strong> : 4 côtés égaux, pas forcément d'angle droit</li>
-  </ul></div>
-</section>
-
-<section class="cs">
-  <h2>3. Le périmètre</h2>
-  <div class="dbox"><div class="lbl">Définition</div>
-  <p>Le <strong>périmètre</strong> d'une figure = la longueur du chemin qui fait le tour complet. On additionne tous les côtés.</p></div>
-  <div class="ebox"><div class="lbl">Formules</div>
-  <ul>
-    <li><strong>Carré</strong> de côté c : P = 4 × c</li>
-    <li><strong>Rectangle</strong> de longueur L et largeur l : P = 2 × (L + l)</li>
-    <li><strong>Triangle</strong> de côtés a, b, c : P = a + b + c</li>
-  </ul></div>
-  <div class="rbox"><div class="lbl">Exemples</div>
-  <ul>
-    <li>Carré de côté 5 cm : P = 4 × 5 = <strong>20 cm</strong></li>
-    <li>Rectangle 8 cm × 3 cm : P = 2 × (8 + 3) = 2 × 11 = <strong>22 cm</strong></li>
-    <li>Triangle 4 cm, 5 cm, 6 cm : P = 4 + 5 + 6 = <strong>15 cm</strong></li>
-  </ul></div>
-</section>
-
-<section class="cs">
-  <h2>4. Droites parallèles et perpendiculaires</h2>
-  <div class="dbox"><div class="lbl">Définitions</div>
-  <p><strong>Parallèles</strong> = droites qui ne se croisent jamais (distance constante)<br>
-  <strong>Perpendiculaires</strong> = droites qui se croisent en faisant un angle droit (90°)</p></div>
-  <div class="visbox">
-    <svg viewBox="0 0 360 100" width="360" height="100">
-      <line x1="20" y1="30" x2="160" y2="30" stroke="#059669" stroke-width="2.5"/>
-      <line x1="20" y1="60" x2="160" y2="60" stroke="#059669" stroke-width="2.5"/>
-      <text x="60" y="20" font-family="Nunito" font-weight="800" font-size="12" fill="#064e3b">parallèles →</text>
-      <text x="60" y="80" font-family="Nunito" font-weight="800" font-size="12" fill="#064e3b">distance constante</text>
-      <line x1="230" y1="90" x2="230" y2="10" stroke="#1d4ed8" stroke-width="2.5"/>
-      <line x1="195" y1="50" x2="340" y2="50" stroke="#1d4ed8" stroke-width="2.5"/>
-      <rect x="230" y="50" width="14" height="14" fill="none" stroke="#dc2626" stroke-width="2"/>
-      <text x="250" y="25" font-family="Nunito" font-weight="800" font-size="12" fill="#1d4ed8">perpendiculaires</text>
-      <text x="250" y="40" font-family="Nunito" font-weight="800" font-size="12" fill="#1d4ed8">→ angle droit</text>
-    </svg>
-    <div class="vis-caption">Parallèles (vert) et perpendiculaires (bleu)</div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Périmètre</div>
+    <div class="lf-body">Le périmètre = la longueur totale du contour. On additionne tous les côtés.</div>
+    <div class="lf-ex">Ex : carré côté 5 cm → P = 4 × 5 = 20 cm · triangle 3+4+5 = 12 cm</div>
   </div>
-  <div class="rbox"><div class="lbl">Dans la vie quotidienne</div>
-  <ul>
-    <li>Les rails d'un train sont <strong>parallèles</strong></li>
-    <li>Le mur et le sol sont <strong>perpendiculaires</strong></li>
-    <li>Les côtés opposés d'un rectangle sont <strong>parallèles</strong></li>
-  </ul></div>
-</section>
-
-<section class="cs">
-  <h2>5. La symétrie axiale</h2>
-  <div class="dbox"><div class="lbl">Définition</div>
-  <p>Une figure a un <strong>axe de symétrie</strong> si on peut la plier et que les deux parties se superposent exactement.</p></div>
-  <div class="ebox"><div class="lbl">Exemples d'axes</div>
-  <ul>
-    <li><strong>Rectangle</strong> : 2 axes de symétrie (un horizontal, un vertical)</li>
-    <li><strong>Carré</strong> : 4 axes de symétrie</li>
-    <li><strong>Cercle</strong> : infiniment d'axes</li>
-    <li><strong>Triangle équilatéral</strong> : 3 axes</li>
-  </ul></div>
-  <div class="wbox"><div class="lbl">Pas toujours !</div>
-  <p>Un rectangle n'a pas d'axe de symétrie diagonale (contrairement au carré) !</p></div>
-</section>
-
+</div>
 <div class="retenir">
   <h3>📌 À retenir</h3>
   <ul>
-    <li>Angle droit = 90°, marqué par un petit carré □</li>
-    <li>Polygone = figure fermée ; le nom dépend du nombre de côtés</li>
-    <li>Périmètre = somme de tous les côtés</li>
-    <li>Parallèles : même direction, ne se croisent jamais</li>
-    <li>Perpendiculaires : se croisent à 90°</li>
+    <li>Angle droit = 90°, marqué □</li>
+    <li>Perpendiculaires = croisement à 90° · parallèles = ne se croisent pas</li>
+    <li>Périmètre = somme des côtés</li>
   </ul>
 </div>
-
 <div class="cta">
-  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
+  <p>Tu as compris ? Entraîne-toi !</p>
   <a href="geometrie-ce1.html" class="btn-ex">Faire les exercices CE1 →</a>
 </div>
-
 </main>
 <footer class="site-footer">École Facile — Cours CE1 · Géométrie</footer>
 <script src="sync.js"></script>

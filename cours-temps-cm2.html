@@ -17,10 +17,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-:root{--lc1:#b45309;--lc2:#f59e0b;--lb:#fde68a;--la:#b45309;--ld:#92400e;--lbg:#fffbeb;--lt:#1e1b4b;--ls:rgba(180,83,9,.3)}
+:root{--lc1:#b45309;--lc2:#f59e0b;--lb:#fde68a;--la:#b45309;--ld:#78350f;--lbg:#fffbeb;--lt:#78350f;--ls:rgba(180,83,9,.3)}
 .cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
 .cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
 .cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.lf-grid{display:grid;gap:12px;margin-bottom:18px}
+.lf-card{background:#fff;border-left:4px solid var(--lc1);border-radius:0 12px 12px 0;padding:12px 14px}
+.lf-rule{font-size:.72rem;font-weight:900;color:var(--lc1);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.lf-body{font-size:.9rem;font-weight:700;color:var(--lt);line-height:1.5;margin-bottom:6px}
+.lf-ex{font-size:.82rem;font-weight:700;color:var(--ld);background:var(--lb);border-radius:8px;padding:5px 10px}
 </style>
 </head>
 <body class="cpage">
@@ -30,109 +35,32 @@
   <p>Siècles, avant J.-C., fuseaux horaires, frises</p>
 </header>
 <main>
-
-<section class="cs">
-  <h2>1. Durées complexes — additions et soustractions</h2>
-  <div class="dbox"><div class="lbl">Additionner des durées</div>
-  <p>3h 45min + 1h 50min = ?<br>
-  → min : 45 + 50 = 95 min = 1h 35min<br>
-  → h : 3 + 1 + 1 (retenue) = 5h<br>
-  → total : <strong>5h 35min</strong></p></div>
-  <div class="ebox"><div class="lbl">Durées en décimales</div>
-  <ul>
-    <li>1h 30min = 1,5 h (car 30 min = ½ h)</li>
-    <li>2h 15min = 2,25 h (car 15 min = ¼ h)</li>
-    <li>1h 20min = 1,33 h (car 20 min = ⅓ h)</li>
-  </ul></div>
-</section>
-
-<section class="cs">
-  <h2>2. Les siècles et le calendrier</h2>
-  <div class="dbox"><div class="lbl">Comprendre les siècles</div>
-  <p>Un <strong>siècle</strong> = 100 ans. Pour trouver le siècle d'une année :<br>
-  Si l'année se termine par 00 : siècle = année ÷ 100<br>
-  Sinon : siècle = (année ÷ 100) + 1 (arrondi vers le haut)</p></div>
-  <div class="ebox"><div class="lbl">Exemples</div>
-  <ul>
-    <li>1789 → 1789 ÷ 100 = 17,89 → <strong>XVIIIe siècle</strong> (1701–1800)</li>
-    <li>1900 → 1900 ÷ 100 = 19 → <strong>XIXe siècle</strong></li>
-    <li>2024 → 2024 ÷ 100 = 20,24 → <strong>XXIe siècle</strong> (2001–2100)</li>
-  </ul></div>
-  <div class="rbox"><div class="lbl">Chiffres romains des siècles</div>
-  <p>I II III IV V VI VII VIII IX X XI XII XIII XIV XV XVI XVII XVIII XIX XX XXI</p></div>
-</section>
-
-<section class="cs">
-  <h2>3. Avant et après Jésus-Christ</h2>
-  <div class="visbox">
-    <svg viewBox="0 0 440 60" width="440" height="60">
-      <line x1="20" y1="30" x2="420" y2="30" stroke="#b45309" stroke-width="2.5"/>
-      <line x1="420" y1="30" x2="410" y2="22" stroke="#b45309" stroke-width="2.5"/>
-      <line x1="420" y1="30" x2="410" y2="38" stroke="#b45309" stroke-width="2.5"/>
-      <line x1="80" y1="22" x2="80" y2="38" stroke="#b45309" stroke-width="2"/>
-      <text x="80" y="16" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="11" fill="#92400e">−500</text>
-      <line x1="160" y1="22" x2="160" y2="38" stroke="#b45309" stroke-width="2"/>
-      <text x="160" y="16" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="11" fill="#92400e">−200</text>
-      <line x1="230" y1="15" x2="230" y2="45" stroke="#dc2626" stroke-width="3"/>
-      <text x="230" y="10" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="11" fill="#dc2626">0</text>
-      <line x1="310" y1="22" x2="310" y2="38" stroke="#b45309" stroke-width="2"/>
-      <text x="310" y="16" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="11" fill="#92400e">500</text>
-      <line x1="390" y1="22" x2="390" y2="38" stroke="#b45309" stroke-width="2"/>
-      <text x="390" y="16" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="11" fill="#92400e">1000</text>
-      <text x="120" y="50" font-family="Nunito" font-weight="900" font-size="10" fill="#dc2626">← Avant J.-C.</text>
-      <text x="260" y="50" font-family="Nunito" font-weight="900" font-size="10" fill="#059669">Après J.-C. →</text>
-    </svg>
-    <div class="vis-caption">La frise avec l'an 0 = naissance de Jésus-Christ</div>
+<div class="lf-grid">
+  <div class="lf-card">
+    <div class="lf-rule">📌 Avant J.-C. et après J.-C.</div>
+    <div class="lf-body">Les dates avant J.-C. comptent à rebours : plus le nombre est grand, plus c'est ancien. Zéro est le point de séparation.</div>
+    <div class="lf-ex">Ex : −52 &lt; −10 &lt; 0 &lt; 476 (−52 est AVANT −10)</div>
   </div>
-  <div class="dbox"><div class="lbl">Calculer une durée avec des dates av. J.-C.</div>
-  <ul>
-    <li>De −200 à +800 : 200 + 800 = <strong>1 000 ans</strong></li>
-    <li>De −50 à 2024 : 50 + 2024 = <strong>2 074 ans</strong></li>
-    <li>De −500 à −200 : 500 − 200 = <strong>300 ans</strong></li>
-  </ul></div>
-</section>
-
-<section class="cs">
-  <h2>4. Fuseaux horaires</h2>
-  <div class="dbox"><div class="lbl">Principe</div>
-  <p>La Terre tourne en 24h. Elle est découpée en <strong>24 fuseaux horaires</strong>.<br>
-  En allant vers l'est : + 1h par fuseau. Vers l'ouest : − 1h.</p></div>
-  <div class="vgrid">
-    <div class="vcrd"><div class="vl">Paris → New York</div><div class="vv">−6h</div><div class="vs">si Paris 14h → NY 8h</div></div>
-    <div class="vcrd"><div class="vl">Paris → Tokyo</div><div class="vv">+8h</div><div class="vs">si Paris 14h → Tokyo 22h</div></div>
-    <div class="vcrd"><div class="vl">Paris → Moscou</div><div class="vv">+2h</div><div class="vs">si Paris 12h → Moscou 14h</div></div>
-    <div class="vcrd"><div class="vl">Paris → Los Angeles</div><div class="vv">−9h</div><div class="vs">si Paris 18h → LA 9h</div></div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Siècles</div>
+    <div class="lf-body">Le siècle X va de (X−1)×100+1 à X×100. Le XIXe siècle = 1801 à 1900. Les années 1900 font partie du XXe siècle.</div>
+    <div class="lf-ex">Ex : XXIe s. = 2001 à 2100 · 2026 est au XXIe siècle</div>
   </div>
-  <div class="ebox"><div class="lbl">Problème type</div>
-  <p>Un avion Paris → New York décolle à 10h (heure de Paris), vol de 8h.<br>
-  Heure d'arrivée (Paris) : 10h + 8h = 18h<br>
-  Heure locale NY : 18h − 6h = <strong>12h (heure de New York)</strong></p></div>
-</section>
-
-<section class="cs">
-  <h2>5. Vitesse et durée — problèmes</h2>
-  <div class="frise">
-    <div class="frise-item"><div class="frise-dot">Ex</div><div class="frise-content"><div class="frise-date">Problème : un TGV roule à 320 km/h pendant 2h 45min</div><div class="frise-text">2h 45min = 2,75 h → d = 320 × 2,75 = <strong>880 km</strong></div></div></div>
-    <div class="frise-item"><div class="frise-dot">Ex</div><div class="frise-content"><div class="frise-date">Problème : 450 km à 90 km/h</div><div class="frise-text">t = 450 ÷ 90 = 5 h → arrivée : heure départ + 5h</div></div></div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Fuseaux horaires</div>
+    <div class="lf-body">La Terre est divisée en 24 fuseaux de 15° chacun. Quand on va vers l'est, on avance l'heure ; vers l'ouest, on la recule.</div>
+    <div class="lf-ex">Ex : Paris + 1 h ≈ Moscou · Paris − 6 h ≈ New York</div>
   </div>
-</section>
-
+</div>
 <div class="retenir">
   <h3>📌 À retenir</h3>
   <ul>
-    <li>Durées : additionner min séparément des h, retenir si ≥ 60</li>
-    <li>Siècle d'une année = (année − 1) ÷ 100 + 1 (arrondi)</li>
-    <li>Avant/après J.-C. : durée = |date1| + |date2| si signes opposés</li>
-    <li>Fuseaux : est = +h, ouest = −h</li>
-    <li>v = d ÷ t → convertir les durées en heures décimales d'abord</li>
+    <li>Av. J.-C. : compte à rebours (−100 est avant −50)</li>
+    <li>Siècle X : de (X−1)×100+1 à X×100</li>
+    <li>Fuseaux : +1 h par fuseau vers l'est</li>
   </ul>
 </div>
-
-<div class="cta">
-  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
-  <a href="temps-cm2.html" class="btn-ex">Faire les exercices CM2 →</a>
-</div>
-
+<div class="cta"><p>Tu as compris ? Entraîne-toi !</p><a href="temps-cm2.html" class="btn-ex">Faire les exercices CM2 →</a></div>
 </main>
 <footer class="site-footer">École Facile — Cours CM2 · Durées et chronologie</footer>
 <script src="sync.js"></script>

@@ -17,12 +17,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-:root{--lc1:#059669;--lc2:#10b981;--lb:#6ee7b7;--la:#059669;--ld:#065f46;--lbg:#ecfdf5;--lt:#14532d;--ls:rgba(5,150,105,.3)}
-.conv-rung{background:linear-gradient(135deg,#059669,#10b981);color:#fff;padding:8px 24px;border-radius:8px;font-size:.88rem;font-weight:900;text-align:center;width:100%;box-sizing:border-box}
-.conv-arrow{font-size:.75rem;font-weight:900;color:#059669;text-align:center;padding:3px 0}
+:root{--lc1:#065f46;--lc2:#059669;--lb:#6ee7b7;--la:#059669;--ld:#065f46;--lbg:#ecfdf5;--lt:#14532d;--ls:rgba(5,150,105,.3)}
 .cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
 .cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
 .cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.lf-grid{display:grid;gap:12px;margin-bottom:18px}
+.lf-card{background:#fff;border-left:4px solid var(--lc1);border-radius:0 12px 12px 0;padding:12px 14px}
+.lf-rule{font-size:.72rem;font-weight:900;color:var(--lc1);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.lf-body{font-size:.9rem;font-weight:700;color:var(--lt);line-height:1.5;margin-bottom:6px}
+.lf-ex{font-size:.82rem;font-weight:700;color:var(--ld);background:var(--lb);border-radius:8px;padding:5px 10px}
 </style>
 </head>
 <body class="cpage">
@@ -32,135 +35,41 @@
   <p>Longueurs, masses, contenances et durées</p>
 </header>
 <main>
-
-<section class="cs">
-  <h2>1. Les longueurs</h2>
-  <div class="dbox"><div class="lbl">Les unités</div>
-  <p>Pour mesurer des longueurs, on utilise le <strong>millimètre (mm)</strong>, le <strong>centimètre (cm)</strong>, le <strong>décimètre (dm)</strong>, le <strong>mètre (m)</strong> et le <strong>kilomètre (km)</strong>.</p></div>
-  <div class="conv-ladder">
-    <div class="conv-rung">km · kilomètre</div>
-    <div class="conv-arrow">× 1000 ↓ &nbsp; ÷ 1000 ↑</div>
-    <div class="conv-rung">m · mètre</div>
-    <div class="conv-arrow">× 10 ↓ &nbsp; ÷ 10 ↑</div>
-    <div class="conv-rung">dm · décimètre</div>
-    <div class="conv-arrow">× 10 ↓ &nbsp; ÷ 10 ↑</div>
-    <div class="conv-rung">cm · centimètre</div>
-    <div class="conv-arrow">× 10 ↓ &nbsp; ÷ 10 ↑</div>
-    <div class="conv-rung">mm · millimètre</div>
+<div class="lf-grid">
+  <div class="lf-card">
+    <div class="lf-rule">📌 Longueurs</div>
+    <div class="lf-body">mm · cm · dm · m · km — du plus petit au plus grand.</div>
+    <div class="lf-ex">Ex : 1 m = 100 cm · 1 km = 1000 m · 1 cm = 10 mm</div>
   </div>
-  <div class="ebox"><div class="lbl">Exemples du quotidien</div>
-  <ul>
-    <li>Un ongle mesure environ 1 <strong>cm</strong></li>
-    <li>Une règle mesure 30 <strong>cm</strong> = 3 <strong>dm</strong></li>
-    <li>Une porte mesure environ 2 <strong>m</strong></li>
-    <li>Paris → Lyon ≈ 470 <strong>km</strong></li>
-  </ul></div>
-  <div class="rbox"><div class="lbl">Conversions clés</div>
-  <p>1 cm = 10 mm &nbsp;|&nbsp; 1 m = 100 cm = 1000 mm &nbsp;|&nbsp; 1 km = 1000 m</p></div>
-</section>
-
-<section class="cs">
-  <h2>2. Les masses</h2>
-  <div class="dbox"><div class="lbl">Unités</div>
-  <p>La <strong>masse</strong> mesure combien pèse un objet. Unités principales : <strong>gramme (g)</strong> et <strong>kilogramme (kg)</strong>.</p></div>
-  <div class="vgrid">
-    <div class="vcrd"><div class="vl">1 kg =</div><div class="vv">1000 g</div></div>
-    <div class="vcrd"><div class="vl">Une pomme</div><div class="vv">≈ 150 g</div></div>
-    <div class="vcrd"><div class="vl">Farine 1 paquet</div><div class="vv">= 1 kg</div></div>
-    <div class="vcrd"><div class="vl">Un élève</div><div class="vv">≈ 30 kg</div></div>
-    <div class="vcrd"><div class="vl">1 tonne (t)</div><div class="vv">= 1000 kg</div></div>
-    <div class="vcrd"><div class="vl">Une voiture</div><div class="vv">≈ 1,5 t</div></div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Masses</div>
+    <div class="lf-body">On mesure en grammes (g) et kilogrammes (kg).</div>
+    <div class="lf-ex">Ex : 1 kg = 1000 g · une pomme ≈ 200 g · toi ≈ 25 kg</div>
   </div>
-  <div class="wbox"><div class="lbl">Masse ≠ poids</div>
-  <p>En sciences, la <strong>masse</strong> (en kg) est une propriété de la matière. Le <strong>poids</strong> est une force (en Newtons). Dans la vie courante on dit souvent "peser" pour les deux.</p></div>
-</section>
-
-<section class="cs">
-  <h2>3. Les contenances</h2>
-  <div class="dbox"><div class="lbl">Unités</div>
-  <p>La <strong>contenance</strong> mesure le volume d'un liquide. Unités : <strong>millilitre (mL)</strong>, <strong>centilitre (cL)</strong> et <strong>litre (L)</strong>.</p></div>
-  <div class="vgrid">
-    <div class="vcrd"><div class="vl">1 L =</div><div class="vv">100 cL</div></div>
-    <div class="vcrd"><div class="vl">1 cL =</div><div class="vv">10 mL</div></div>
-    <div class="vcrd"><div class="vl">Un verre</div><div class="vv">≈ 25 cL</div></div>
-    <div class="vcrd"><div class="vl">Bouteille eau</div><div class="vv">= 1,5 L</div></div>
-    <div class="vcrd"><div class="vl">Baignoire</div><div class="vv">≈ 150 L</div></div>
-    <div class="vcrd"><div class="vl">Petite cuillère</div><div class="vv">= 5 mL</div></div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Contenances</div>
+    <div class="lf-body">On mesure les liquides en millilitres (mL) et litres (L).</div>
+    <div class="lf-ex">Ex : 1 L = 1000 mL · une bouteille d'eau = 1,5 L</div>
   </div>
-</section>
-
-<section class="cs">
-  <h2>4. Les durées</h2>
-  <div class="dbox"><div class="lbl">Les unités du temps</div>
-  <p>La durée se mesure en <strong>secondes (s)</strong>, <strong>minutes (min)</strong>, <strong>heures (h)</strong>, <strong>jours</strong>, <strong>semaines</strong>, <strong>mois</strong> et <strong>années</strong>.</p></div>
-  <div class="vgrid">
-    <div class="vcrd"><div class="vl">1 min</div><div class="vv">= 60 s</div></div>
-    <div class="vcrd"><div class="vl">1 h</div><div class="vv">= 60 min</div></div>
-    <div class="vcrd"><div class="vl">1 jour</div><div class="vv">= 24 h</div></div>
-    <div class="vcrd"><div class="vl">1 semaine</div><div class="vv">= 7 jours</div></div>
-    <div class="vcrd"><div class="vl">1 mois</div><div class="vv">28→31 j</div></div>
-    <div class="vcrd"><div class="vl">1 an</div><div class="vv">= 365 j</div></div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Durées</div>
+    <div class="lf-body">1 h = 60 min · 1 min = 60 s · 1 jour = 24 h · 1 an = 12 mois = 365 jours.</div>
+    <div class="lf-ex">Ex : école 8h30 → 16h30 = 8 h · 1 semaine = 7 jours</div>
   </div>
-  <div class="visbox">
-    <svg viewBox="0 0 140 140" width="140" height="140">
-      <circle cx="70" cy="70" r="65" fill="white" stroke="#059669" stroke-width="3"/>
-      <circle cx="70" cy="70" r="3" fill="#059669"/>
-      <text x="70" y="22" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="13" fill="#064e3b">12</text>
-      <text x="118" y="75" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="13" fill="#064e3b">3</text>
-      <text x="70" y="125" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="13" fill="#064e3b">6</text>
-      <text x="22" y="75" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="13" fill="#064e3b">9</text>
-      <line x1="70" y1="70" x2="70" y2="30" stroke="#064e3b" stroke-width="3" stroke-linecap="round"/>
-      <line x1="70" y1="70" x2="105" y2="70" stroke="#059669" stroke-width="2.5" stroke-linecap="round"/>
-    </svg>
-    <div class="vis-caption">Horloge analogique — 12h00</div>
-  </div>
-  <div class="ebox"><div class="lbl">Lire l'heure</div>
-  <ul>
-    <li>Petite aiguille → les <strong>heures</strong></li>
-    <li>Grande aiguille → les <strong>minutes</strong></li>
-    <li>8h30 se lit "huit heures et demie"</li>
-    <li>Notation 24h : 14h = 2h de l'après-midi</li>
-  </ul></div>
-</section>
-
-<section class="cs">
-  <h2>5. Le calendrier</h2>
-  <div class="dbox"><div class="lbl">Les jours et les mois</div>
-  <p>Une semaine = 7 jours. Une année = 12 mois = 52 semaines = 365 jours (366 les années <strong>bissextiles</strong>).</p></div>
-  <div class="vgrid">
-    <div class="vcrd"><div class="vl">Janvier</div><div class="vv">31 j</div></div>
-    <div class="vcrd"><div class="vl">Février</div><div class="vv">28 j</div></div>
-    <div class="vcrd"><div class="vl">Mars</div><div class="vv">31 j</div></div>
-    <div class="vcrd"><div class="vl">Avril</div><div class="vv">30 j</div></div>
-    <div class="vcrd"><div class="vl">Mai</div><div class="vv">31 j</div></div>
-    <div class="vcrd"><div class="vl">Juin</div><div class="vv">30 j</div></div>
-    <div class="vcrd"><div class="vl">Juillet</div><div class="vv">31 j</div></div>
-    <div class="vcrd"><div class="vl">Août</div><div class="vv">31 j</div></div>
-    <div class="vcrd"><div class="vl">Septembre</div><div class="vv">30 j</div></div>
-    <div class="vcrd"><div class="vl">Octobre</div><div class="vv">31 j</div></div>
-    <div class="vcrd"><div class="vl">Novembre</div><div class="vv">30 j</div></div>
-    <div class="vcrd"><div class="vl">Décembre</div><div class="vv">31 j</div></div>
-  </div>
-  <div class="rbox"><div class="lbl">Astuce des phalanges</div>
-  <p>Sur tes doigts, les bosses = 31 jours, les creux = 30 jours (ou 28 pour février). Compte de gauche à droite !</p></div>
-</section>
-
+</div>
 <div class="retenir">
   <h3>📌 À retenir</h3>
   <ul>
-    <li>1 m = 100 cm = 1000 mm | 1 km = 1000 m</li>
-    <li>1 kg = 1000 g | 1 tonne = 1000 kg</li>
-    <li>1 L = 100 cL | 1 cL = 10 mL</li>
-    <li>1 h = 60 min | 1 min = 60 s | 1 jour = 24 h</li>
-    <li>1 an = 12 mois = 365 jours (366 si bissextile)</li>
+    <li>Longueurs : mm · cm · m · km (1 m = 100 cm · 1 km = 1000 m)</li>
+    <li>Masses : kg / g (1 kg = 1000 g)</li>
+    <li>Contenances : L / mL (1 L = 1000 mL)</li>
+    <li>Durées : 1 h = 60 min · 1 an = 365 jours</li>
   </ul>
 </div>
-
 <div class="cta">
-  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
+  <p>Tu as compris ? Entraîne-toi !</p>
   <a href="mesures-ce1.html" class="btn-ex">Faire les exercices CE1 →</a>
 </div>
-
 </main>
 <footer class="site-footer">École Facile — Cours CE1 · Mesures</footer>
 <script src="sync.js"></script>

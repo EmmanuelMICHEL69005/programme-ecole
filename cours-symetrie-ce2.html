@@ -17,10 +17,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-:root{--lc1:#5b21b6;--lc2:#7c3aed;--lb:#ddd6fe;--la:#7c3aed;--ld:#5b21b6;--lbg:#faf5ff;--lt:#1e1b4b;--ls:rgba(91,33,182,.3)}
+:root{--lc1:#5b21b6;--lc2:#7c3aed;--lb:#ddd6fe;--la:#7c3aed;--ld:#4c1d95;--lbg:#f5f3ff;--lt:#1e1b4b;--ls:rgba(124,58,237,.3)}
+body{font-family:'Nunito',sans-serif;background:#fffbf0;color:#1e1b4b;margin:0}
+main{max-width:720px;margin:0 auto;padding:22px 18px 60px}
+.retenir{background:#fff;border:2.5px solid var(--lc1);border-radius:16px;padding:16px 18px;margin:22px 0 18px}
+.retenir h3{font-size:.78rem;font-weight:900;color:var(--lc2);text-transform:uppercase;letter-spacing:1px;margin:0 0 10px}
+.retenir ul{margin:0;padding-left:18px}
+.retenir li{font-size:.88rem;font-weight:700;color:var(--lt);line-height:1.7}
+.cta{text-align:center;margin-top:26px;padding:18px;background:#fff;border-radius:16px;border:2px solid #e5e7eb}
+.cta p{font-size:.82rem;color:#6b7280;font-weight:700;margin:0 0 10px}
+.btn-ex{display:inline-block;background:linear-gradient(135deg,var(--lc1),var(--lc2));color:#fff;padding:13px 26px;border-radius:13px;font-size:.95rem;font-weight:900;text-decoration:none;box-shadow:0 4px 16px var(--ls)}
+.badge-niveau{display:inline-block;background:rgba(255,255,255,.2);border-radius:20px;padding:4px 14px;font-size:.72rem;font-weight:900;letter-spacing:1px;margin-bottom:8px}
 .cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
 .cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
 .cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.site-footer{text-align:center;padding:16px;font-size:.8rem;color:#9ca3af;border-top:1px solid #e5e7eb;margin-top:10px}
+.lf-grid{display:grid;gap:12px;margin-bottom:18px}
+.lf-card{background:#fff;border-left:4px solid var(--lc1);border-radius:0 12px 12px 0;padding:12px 14px}
+.lf-rule{font-size:.72rem;font-weight:900;color:var(--lc1);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.lf-body{font-size:.9rem;font-weight:700;color:var(--lt);line-height:1.5;margin-bottom:6px}
+.lf-ex{font-size:.82rem;font-weight:700;color:var(--ld);background:var(--lb);border-radius:8px;padding:5px 10px}
 </style>
 </head>
 <body class="cpage">
@@ -31,107 +47,35 @@
 </header>
 <main>
 
-<section class="cs">
-  <h2>1. Qu'est-ce qu'un axe de symétrie ?</h2>
-  <div class="dbox"><div class="lbl">Définition</div>
-  <p>Un <strong>axe de symétrie</strong> est une droite qui partage une figure en <strong>deux parties identiques</strong>. Si on plie la figure sur l'axe, les deux parties se <strong>superposent exactement</strong>.</p></div>
-  <div class="visbox">
-    <svg viewBox="0 0 280 120" width="280" height="120">
-      <line x1="140" y1="10" x2="140" y2="110" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="6,3"/>
-      <path d="M 80,60 L 140,20 L 200,60 L 140,100 Z" fill="#ddd6fe" stroke="#7c3aed" stroke-width="2"/>
-      <text x="40" y="64" font-family="Nunito" font-weight="900" font-size="11" fill="#4c1d95">partie 1</text>
-      <text x="170" y="64" font-family="Nunito" font-weight="900" font-size="11" fill="#4c1d95">partie 2</text>
-      <text x="145" y="18" font-family="Nunito" font-weight="800" font-size="10" fill="#7c3aed">axe</text>
-    </svg>
-    <div class="vis-caption">Le losange a un axe de symétrie vertical</div>
+<div class="lf-grid">
+  <div class="lf-card">
+    <div class="lf-rule">📌 La symétrie axiale</div>
+    <div class="lf-body">Une figure est symétrique par rapport à un axe si les deux moitiés se superposent exactement quand on la plie sur cet axe. L'axe s'appelle axe de symétrie.</div>
+    <div class="lf-ex">Ex : le carré, le rectangle, la lettre A ont des axes de symétrie</div>
   </div>
-  <div class="ebox"><div class="lbl">Dans la nature</div>
-  <ul>
-    <li>Le <strong>papillon</strong> : axe vertical au milieu du corps</li>
-    <li>Le <strong>visage humain</strong> (approximativement) : axe vertical</li>
-    <li>Une <strong>feuille d'arbre</strong> : axe le long de la nervure centrale</li>
-  </ul></div>
-</section>
-
-<section class="cs">
-  <h2>2. Compter les axes de symétrie</h2>
-  <div class="dbox"><div class="lbl">Méthode</div>
-  <p>Pour trouver les axes d'une figure : imaginer toutes les façons de la plier pour que les deux moitiés coïncident.</p></div>
-  <div class="vgrid">
-    <div class="vcrd"><div class="vl">Rectangle</div><div class="vv">2 axes</div><div class="vs">horizontal et vertical</div></div>
-    <div class="vcrd"><div class="vl">Carré</div><div class="vv">4 axes</div><div class="vs">+ les 2 diagonales</div></div>
-    <div class="vcrd"><div class="vl">Triangle isocèle</div><div class="vv">1 axe</div><div class="vs">axe médian</div></div>
-    <div class="vcrd"><div class="vl">Triangle équilatéral</div><div class="vv">3 axes</div><div class="vs">1 par sommet</div></div>
-    <div class="vcrd"><div class="vl">Cercle</div><div class="vv">∞ axes</div><div class="vs">tout diamètre</div></div>
-    <div class="vcrd"><div class="vl">Losange</div><div class="vv">2 axes</div><div class="vs">les 2 diagonales</div></div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Construire un symétrique</div>
+    <div class="lf-body">Chaque point est à la même distance de l'axe, de l'autre côté. Sur un quadrillage, on compte les carreaux.</div>
+    <div class="lf-ex">Ex : si A est à 3 carreaux de l'axe, A' est aussi à 3 carreaux de l'autre côté</div>
   </div>
-  <div class="wbox"><div class="lbl">Attention !</div>
-  <p>Un rectangle n'a <strong>pas</strong> d'axe diagonal (contrairement au carré) ! Vérifie toujours en imaginant le pliage.</p></div>
-</section>
-
-<section class="cs">
-  <h2>3. Construire le symétrique d'un point</h2>
-  <div class="frise">
-    <div class="frise-item"><div class="frise-dot">1</div><div class="frise-content"><div class="frise-date">Tracer la perpendiculaire</div><div class="frise-text">De ton point A, tracer une droite <strong>perpendiculaire</strong> à l'axe de symétrie (utilise ton équerre).</div></div></div>
-    <div class="frise-item"><div class="frise-dot">2</div><div class="frise-content"><div class="frise-date">Mesurer la distance</div><div class="frise-text">Mesurer la distance entre A et l'axe (en comptant les carreaux ou au compas).</div></div></div>
-    <div class="frise-item"><div class="frise-dot">3</div><div class="frise-content"><div class="frise-date">Reporter la distance</div><div class="frise-text">De l'autre côté de l'axe, reporter la <strong>même distance</strong> pour trouver A', le symétrique de A.</div></div></div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Axes dans les figures</div>
+    <div class="lf-body">Carré : 4 axes · Rectangle : 2 axes · Triangle équilatéral : 3 axes · Cercle : infinité · Losange : 2 axes.</div>
+    <div class="lf-ex">Ex : la lettre M a 1 axe vertical · le rectangle n'a pas d'axe diagonal</div>
   </div>
-  <div class="visbox">
-    <svg viewBox="0 0 300 120" width="300" height="120">
-      <line x1="150" y1="10" x2="150" y2="110" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="5,3"/>
-      <circle cx="80" cy="60" r="6" fill="#1d4ed8"/>
-      <text x="65" y="52" font-family="Nunito" font-weight="900" font-size="13" fill="#1d4ed8">A</text>
-      <line x1="80" y1="60" x2="220" y2="60" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
-      <circle cx="220" cy="60" r="6" fill="#dc2626"/>
-      <text x="228" y="52" font-family="Nunito" font-weight="900" font-size="13" fill="#dc2626">A'</text>
-      <line x1="80" y1="55" x2="150" y2="55" stroke="#059669" stroke-width="2"/>
-      <line x1="150" y1="55" x2="220" y2="55" stroke="#059669" stroke-width="2"/>
-      <text x="105" y="48" font-family="Nunito" font-weight="800" font-size="10" fill="#059669">d</text>
-      <text x="175" y="48" font-family="Nunito" font-weight="800" font-size="10" fill="#059669">d</text>
-    </svg>
-    <div class="vis-caption">A et A' sont à la même distance de l'axe</div>
-  </div>
-</section>
-
-<section class="cs">
-  <h2>4. Construire le symétrique d'une figure</h2>
-  <div class="dbox"><div class="lbl">Méthode</div>
-  <p>Pour construire le symétrique d'une figure : construire le symétrique de <strong>chaque sommet</strong> (point par point), puis relier les sommets obtenus dans le même ordre.</p></div>
-  <div class="rbox"><div class="lbl">Conseil pratique</div>
-  <p>Sur papier quadrillé, compte les <strong>carreaux</strong> entre chaque sommet et l'axe pour reporter la même distance de l'autre côté. C'est plus simple qu'avec une règle !</p></div>
-  <div class="ebox"><div class="lbl">Propriétés du symétrique</div>
-  <ul>
-    <li>La figure et son symétrique ont la <strong>même forme</strong> et la <strong>même taille</strong></li>
-    <li>Les longueurs sont <strong>conservées</strong></li>
-    <li>Les angles sont <strong>conservés</strong></li>
-    <li>La figure est comme dans un <strong>miroir</strong> !</li>
-  </ul></div>
-</section>
-
-<section class="cs">
-  <h2>5. Figures et transformations</h2>
-  <div class="dbox"><div class="lbl">Les 3 transformations géométriques</div>
-  <p>Il existe trois façons de déplacer une figure sans la déformer :</p></div>
-  <div class="vgrid">
-    <div class="vcrd"><div class="vl">Translation</div><div class="vv">→ Glisser</div><div class="vs">même direction, même distance</div></div>
-    <div class="vcrd"><div class="vl">Rotation</div><div class="vv">↻ Tourner</div><div class="vs">autour d'un point fixe</div></div>
-    <div class="vcrd"><div class="vl">Symétrie</div><div class="vv">🪞 Retourner</div><div class="vs">par rapport à un axe</div></div>
-  </div>
-</section>
+</div>
 
 <div class="retenir">
   <h3>📌 À retenir</h3>
   <ul>
-    <li>Axe de symétrie = droite qui partage une figure en 2 parties identiques</li>
-    <li>Rectangle : 2 axes | Carré : 4 axes | Cercle : infinité d'axes</li>
+    <li>Axe de symétrie = ligne de pliage : les deux moitiés se superposent</li>
     <li>Symétrique d'un point : même distance de l'axe, de l'autre côté</li>
-    <li>Pour une figure : construire le symétrique sommet par sommet, puis relier</li>
-    <li>La figure et son symétrique ont la même forme et la même taille</li>
+    <li>Carré : 4 axes · Rectangle : 2 axes · Cercle : infini</li>
   </ul>
 </div>
 
 <div class="cta">
-  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
+  <p>Tu as compris ? Entraîne-toi !</p>
   <a href="symetrie-ce2.html" class="btn-ex">Faire les exercices CE2 →</a>
 </div>
 

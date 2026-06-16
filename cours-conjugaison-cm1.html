@@ -17,16 +17,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-:root{--lc1:#1d4ed8;--lc2:#3b82f6;--lb:#93c5fd;--la:#1d4ed8;--ld:#1e3a8a;--lbg:#eff6ff;--lt:#172554;--ls:rgba(29,78,216,.3)}
-.conj-table{width:100%;border-collapse:collapse;margin:10px 0;font-size:0.83rem}
-.conj-table th{background:var(--lb);color:var(--ld);font-weight:900;padding:7px 10px;text-align:left;border:1.5px solid var(--lb)}
-.conj-table td{padding:6px 10px;border:1.5px solid #bfdbfe;vertical-align:top}
-.conj-table tr:nth-child(even) td{background:#eff6ff}
-.pronoun{font-weight:900;color:var(--lc1);white-space:nowrap}
-.term{color:#2563eb;font-weight:900}
+:root{--lc1:#1d4ed8;--lc2:#3b82f6;--lb:#93c5fd;--la:#1d4ed8;--ld:#1e3a8a;--lbg:#eff6ff;--lt:#1e3a8a;--ls:rgba(29,78,216,.3)}
 .cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
 .cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
 .cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.lf-grid{display:grid;gap:12px;margin-bottom:18px}
+.lf-card{background:#fff;border-left:4px solid var(--lc1);border-radius:0 12px 12px 0;padding:12px 14px}
+.lf-rule{font-size:.72rem;font-weight:900;color:var(--lc1);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.lf-body{font-size:.9rem;font-weight:700;color:var(--lt);line-height:1.5;margin-bottom:6px}
+.lf-ex{font-size:.82rem;font-weight:700;color:var(--ld);background:var(--lb);border-radius:8px;padding:5px 10px}
 </style>
 </head>
 <body class="cpage">
@@ -37,109 +36,41 @@
 </header>
 <main>
 
-<section class="cs">
-  <h2>1. Vue d'ensemble des temps</h2>
-  <div class="dbox"><div class="lbl">Les 4 temps essentiels au CM1</div>
-  <table class="conj-table">
-    <tr><th>Temps</th><th>Usage</th><th>Repère</th></tr>
-    <tr><td><strong>Présent</strong></td><td>Action en cours, vérité générale</td><td><em>maintenant, en ce moment</em></td></tr>
-    <tr><td><strong>Imparfait</strong></td><td>Action passée qui durait, description, habitude</td><td><em>autrefois, chaque jour, pendant que…</em></td></tr>
-    <tr><td><strong>Futur simple</strong></td><td>Action à venir</td><td><em>demain, dans, bientôt</em></td></tr>
-    <tr><td><strong>Passé composé</strong></td><td>Action passée et terminée</td><td><em>hier, ce matin, il y a…</em></td></tr>
-  </table></div>
-</section>
-
-<section class="cs">
-  <h2>2. Présent de l'indicatif</h2>
-  <table class="conj-table">
-    <tr><th>Pronom</th><th>chanter (1er)</th><th>finir (2e)</th><th>faire (3e)</th><th>aller (3e)</th></tr>
-    <tr><td class="pronoun">je/j'</td><td>chant<span class="term">e</span></td><td>fin<span class="term">is</span></td><td>f<span class="term">ais</span></td><td>v<span class="term">ais</span></td></tr>
-    <tr><td class="pronoun">tu</td><td>chant<span class="term">es</span></td><td>fin<span class="term">is</span></td><td>f<span class="term">ais</span></td><td>v<span class="term">as</span></td></tr>
-    <tr><td class="pronoun">il/elle</td><td>chant<span class="term">e</span></td><td>fin<span class="term">it</span></td><td>f<span class="term">ait</span></td><td>v<span class="term">a</span></td></tr>
-    <tr><td class="pronoun">nous</td><td>chant<span class="term">ons</span></td><td>fin<span class="term">issons</span></td><td>f<span class="term">aisons</span></td><td>all<span class="term">ons</span></td></tr>
-    <tr><td class="pronoun">vous</td><td>chant<span class="term">ez</span></td><td>fin<span class="term">issez</span></td><td>f<span class="term">aites</span></td><td>all<span class="term">ez</span></td></tr>
-    <tr><td class="pronoun">ils/elles</td><td>chant<span class="term">ent</span></td><td>fin<span class="term">issent</span></td><td>f<span class="term">ont</span></td><td>v<span class="term">ont</span></td></tr>
-  </table>
-  <div class="ebox"><div class="lbl">Autres irréguliers à connaître</div>
-  <table class="conj-table">
-    <tr><th>Pronom</th><th>dire</th><th>venir</th><th>voir</th><th>pouvoir</th><th>vouloir</th><th>prendre</th></tr>
-    <tr><td class="pronoun">je</td><td>dis</td><td>viens</td><td>vois</td><td>peux</td><td>veux</td><td>prends</td></tr>
-    <tr><td class="pronoun">tu</td><td>dis</td><td>viens</td><td>vois</td><td>peux</td><td>veux</td><td>prends</td></tr>
-    <tr><td class="pronoun">il</td><td>dit</td><td>vient</td><td>voit</td><td>peut</td><td>veut</td><td>prend</td></tr>
-    <tr><td class="pronoun">nous</td><td>disons</td><td>venons</td><td>voyons</td><td>pouvons</td><td>voulons</td><td>prenons</td></tr>
-    <tr><td class="pronoun">vous</td><td>dites</td><td>venez</td><td>voyez</td><td>pouvez</td><td>voulez</td><td>prenez</td></tr>
-    <tr><td class="pronoun">ils</td><td>disent</td><td>viennent</td><td>voient</td><td>peuvent</td><td>veulent</td><td>prennent</td></tr>
-  </table></div>
-</section>
-
-<section class="cs">
-  <h2>3. Imparfait de l'indicatif</h2>
-  <div class="dbox"><div class="lbl">Terminaisons (tous groupes)</div>
-  <p>Radical de la 1re pers. du pluriel (présent) + <strong class="term">-ais / -ais / -ait / -ions / -iez / -aient</strong></p></div>
-  <table class="conj-table">
-    <tr><th>Pronom</th><th>chanter</th><th>finir</th><th>faire</th><th>être</th></tr>
-    <tr><td class="pronoun">je</td><td>chant<span class="term">ais</span></td><td>finiss<span class="term">ais</span></td><td>fais<span class="term">ais</span></td><td>ét<span class="term">ais</span></td></tr>
-    <tr><td class="pronoun">tu</td><td>chant<span class="term">ais</span></td><td>finiss<span class="term">ais</span></td><td>fais<span class="term">ais</span></td><td>ét<span class="term">ais</span></td></tr>
-    <tr><td class="pronoun">il/elle</td><td>chant<span class="term">ait</span></td><td>finiss<span class="term">ait</span></td><td>fais<span class="term">ait</span></td><td>ét<span class="term">ait</span></td></tr>
-    <tr><td class="pronoun">nous</td><td>chant<span class="term">ions</span></td><td>finiss<span class="term">ions</span></td><td>fais<span class="term">ions</span></td><td>ét<span class="term">ions</span></td></tr>
-    <tr><td class="pronoun">vous</td><td>chant<span class="term">iez</span></td><td>finiss<span class="term">iez</span></td><td>fais<span class="term">iez</span></td><td>ét<span class="term">iez</span></td></tr>
-    <tr><td class="pronoun">ils/elles</td><td>chant<span class="term">aient</span></td><td>finiss<span class="term">aient</span></td><td>fais<span class="term">aient</span></td><td>ét<span class="term">aient</span></td></tr>
-  </table>
-  <div class="wbox"><div class="lbl">Marque de temps de l'imparfait</div>
-  <p>La marque de temps de l'imparfait est <strong>-ai-</strong> (je chant<strong>ai</strong>s) ou <strong>-i-</strong> pour les verbes en -ier (nous étudi<strong>i</strong>ons).</p></div>
-</section>
-
-<section class="cs">
-  <h2>4. Futur simple</h2>
-  <div class="dbox"><div class="lbl">Terminaisons (tous groupes)</div>
-  <p>Base du futur (= infinitif en général) + <strong class="term">-ai / -as / -a / -ons / -ez / -ont</strong><br>
-  La marque de temps du futur est <strong>-r-</strong>.</p></div>
-  <table class="conj-table">
-    <tr><th>Pronom</th><th>chanter</th><th>finir</th><th>être</th><th>avoir</th><th>aller</th><th>faire</th></tr>
-    <tr><td class="pronoun">je</td><td>chanterai</td><td>finirai</td><td>serai</td><td>aurai</td><td>irai</td><td>ferai</td></tr>
-    <tr><td class="pronoun">tu</td><td>chanteras</td><td>finiras</td><td>seras</td><td>auras</td><td>iras</td><td>feras</td></tr>
-    <tr><td class="pronoun">il</td><td>chantera</td><td>finira</td><td>sera</td><td>aura</td><td>ira</td><td>fera</td></tr>
-    <tr><td class="pronoun">nous</td><td>chanterons</td><td>finirons</td><td>serons</td><td>aurons</td><td>irons</td><td>ferons</td></tr>
-    <tr><td class="pronoun">vous</td><td>chanterez</td><td>finirez</td><td>serez</td><td>aurez</td><td>irez</td><td>ferez</td></tr>
-    <tr><td class="pronoun">ils</td><td>chanteront</td><td>finiront</td><td>seront</td><td>auront</td><td>iront</td><td>feront</td></tr>
-  </table>
-  <div class="ebox"><div class="lbl">Bases irrégulières au futur</div>
-  <p>voir → verr- · venir → viendr- · pouvoir → pourr- · vouloir → voudr- · prendre → prendr-</p></div>
-</section>
-
-<section class="cs">
-  <h2>5. Passé composé</h2>
-  <div class="dbox"><div class="lbl">Formation</div>
-  <p><strong>Auxiliaire avoir ou être (au présent) + participe passé</strong></p></div>
-  <div class="ebox"><div class="lbl">Avec avoir (la majorité des verbes)</div>
-  <p>J'ai chanté · tu as fini · il a fait · nous avons pris · vous avez vu · ils ont voulu</p></div>
-  <div class="wbox"><div class="lbl">Avec être (déplacement + pronominaux)</div>
-  <p>aller/venir · partir/arriver · entrer/sortir · monter/descendre · naître/mourir · tomber · rester<br>
-  → Le participe passé <strong>s'accorde avec le sujet</strong> : Elle est <strong>partie</strong>. Ils sont <strong>venus</strong>.</p></div>
-  <div class="dbox" style="margin-top:10px"><div class="lbl">Participes passés courants</div>
-  <table class="conj-table">
-    <tr><th>Infinitif</th><th>PP</th><th>Infinitif</th><th>PP</th><th>Infinitif</th><th>PP</th></tr>
-    <tr><td>chanter</td><td><span class="term">chanté</span></td><td>faire</td><td><span class="term">fait</span></td><td>prendre</td><td><span class="term">pris</span></td></tr>
-    <tr><td>finir</td><td><span class="term">fini</span></td><td>voir</td><td><span class="term">vu</span></td><td>venir</td><td><span class="term">venu</span></td></tr>
-    <tr><td>être</td><td><span class="term">été</span></td><td>vouloir</td><td><span class="term">voulu</span></td><td>dire</td><td><span class="term">dit</span></td></tr>
-    <tr><td>avoir</td><td><span class="term">eu</span></td><td>pouvoir</td><td><span class="term">pu</span></td><td>aller</td><td><span class="term">allé</span></td></tr>
-  </table></div>
-</section>
+<div class="lf-grid">
+  <div class="lf-card">
+    <div class="lf-rule">📌 Présent (révision)</div>
+    <div class="lf-body">Irréguliers à retenir par cœur : faire / aller / venir / voir / pouvoir / vouloir / prendre.</div>
+    <div class="lf-ex">Ex : je veux · tu peux · il vient · nous allons · vous faites · ils prennent</div>
+  </div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Imparfait</div>
+    <div class="lf-body">Radical du présent + terminaisons : -ais / -ais / -ait / -ions / -iez / -aient. Marque : -ai- devant la terminaison.</div>
+    <div class="lf-ex">Ex : je chantais · il finissait · nous voyions · vous parliez</div>
+  </div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Futur simple</div>
+    <div class="lf-body">Infinitif + terminaisons : -rai / -ras / -ra / -rons / -rez / -ront. Bases irrégulières : être→ser- · avoir→aur- · aller→ir-.</div>
+    <div class="lf-ex">Ex : il sera · j'aurai · nous irons · vous ferez · ils viendront</div>
+  </div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Passé composé</div>
+    <div class="lf-body">Avoir ou être + participe passé. Avec être : le participe s'accorde avec le sujet.</div>
+    <div class="lf-ex">Ex : Elle est arrivée. · Ils sont partis. · Nous avons fini. · J'ai vu.</div>
+  </div>
+</div>
 
 <div class="retenir">
   <h3>📌 À retenir</h3>
   <ul>
-    <li>Imparfait : marque -ai- → je chantais, il finissait, nous faisions</li>
-    <li>Futur : marque -r- → je chanterai, il ira, nous ferons</li>
-    <li>Passé composé : avoir/être + PP — avec être : PP s'accorde avec le sujet</li>
-    <li>Irréguliers : faire/fait, voir/vu, prendre/pris, vouloir/voulu, pouvoir/pu</li>
-    <li>Futur irrégulier : voir→verr-, venir→viendr-, pouvoir→pourr-, aller→ir-</li>
+    <li>Présent : irréguliers par cœur (vouloir, pouvoir, venir…)</li>
+    <li>Imparfait : -ais / -ait / -ions / -aient</li>
+    <li>Futur : -rai / -rons / -ront · ser-, aur-, ir- (irréguliers)</li>
+    <li>Passé composé : avoir ou être + PP · accord avec être</li>
   </ul>
 </div>
-<div class="cta">
-  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
-  <a href="conjugaison-cm1.html" class="btn-ex">Faire les exercices CM1 →</a>
-</div>
+
+<div class="cta"><p>Tu as compris ? Entraîne-toi !</p><a href="conjugaison-cm1.html" class="btn-ex">Faire les exercices CM1 →</a></div>
+
 </main>
 <footer class="site-footer">École Facile — Cours CM1 · Conjugaison</footer>
 <script src="sync.js"></script>

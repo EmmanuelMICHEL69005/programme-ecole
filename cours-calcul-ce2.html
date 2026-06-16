@@ -10,488 +10,74 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ecolefacile.fr/cours-calcul-ce2.html">
 <meta property="og:title" content="Les 4 opérations – Calcul CE2 | École Facile">
-<meta property="og:description" content="Cours de calcul CE2 : addition, soustraction, multiplication et division posées. Méthodes pas-à-pas, exemples détaillés et retenues.">
+<meta property="og:description" content="Cours de calcul CE2 : addition, soustraction, multiplication et division posées.">
 <meta property="og:image" content="https://ecolefacile.fr/og-image.png">
 <meta property="og:site_name" content="École Facile">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-:root{--lc1:#5b21b6;--lc2:#7c3aed;--lb:#ddd6fe;--la:#7c3aed;--ld:#5b21b6;--lbg:#faf5ff;--lt:#1e1b4b;--ls:rgba(91,33,182,.3)}
-.cpage .dbox{background:#ede9fe;border-left-color:#7c3aed}
-.cpage .dbox .lbl{color:#5b21b6}
-.cpage .dbox p,.cpage .dbox ul{color:#3b0764}
-.formula-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.85rem}
-.formula-table th{background:linear-gradient(135deg,#5b21b6,#7c3aed);color:white;padding:9px 12px;font-weight:900;text-align:left}
-.formula-table td{border:1.5px solid #e5e7eb;padding:8px 12px;font-weight:700;background:white}
-.formula-table tr:nth-child(even) td{background:#faf5ff}
-.pose-box{display:flex;gap:16px;flex-wrap:wrap;margin:10px 0}
-.pose-card{background:#fff;border:2px solid #e5e7eb;border-radius:12px;padding:12px 16px;flex:1;min-width:140px;text-align:center}
-.pose-card .pc-title{font-size:.68rem;font-weight:900;color:#7c3aed;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px}
-.pose-card pre{font-family:'Nunito',sans-serif;font-size:.95rem;font-weight:900;color:#1e1b4b;margin:0;text-align:right;line-height:1.7}
-.op-tag{display:inline-block;background:linear-gradient(135deg,#5b21b6,#7c3aed);color:#fff;border-radius:8px;padding:3px 10px;font-size:.72rem;font-weight:900;margin-right:5px}
+:root{--lc1:#5b21b6;--lc2:#7c3aed;--lb:#ddd6fe;--la:#7c3aed;--ld:#4c1d95;--lbg:#f5f3ff;--lt:#1e1b4b;--ls:rgba(124,58,237,.3)}
+body{font-family:'Nunito',sans-serif;background:#fffbf0;color:#1e1b4b;margin:0}
+main{max-width:720px;margin:0 auto;padding:22px 18px 60px}
+.retenir{background:#fff;border:2.5px solid var(--lc1);border-radius:16px;padding:16px 18px;margin:22px 0 18px}
+.retenir h3{font-size:.78rem;font-weight:900;color:var(--lc2);text-transform:uppercase;letter-spacing:1px;margin:0 0 10px}
+.retenir ul{margin:0;padding-left:18px}
+.retenir li{font-size:.88rem;font-weight:700;color:var(--lt);line-height:1.7}
+.cta{text-align:center;margin-top:26px;padding:18px;background:#fff;border-radius:16px;border:2px solid #e5e7eb}
+.cta p{font-size:.82rem;color:#6b7280;font-weight:700;margin:0 0 10px}
+.btn-ex{display:inline-block;background:linear-gradient(135deg,var(--lc1),var(--lc2));color:#fff;padding:13px 26px;border-radius:13px;font-size:.95rem;font-weight:900;text-decoration:none;box-shadow:0 4px 16px var(--ls)}
+.badge-niveau{display:inline-block;background:rgba(255,255,255,.2);border-radius:20px;padding:4px 14px;font-size:.72rem;font-weight:900;letter-spacing:1px;margin-bottom:8px}
 .cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
 .cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
 .cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.site-footer{text-align:center;padding:16px;font-size:.8rem;color:#9ca3af;border-top:1px solid #e5e7eb;margin-top:10px}
+.lf-grid{display:grid;gap:12px;margin-bottom:18px}
+.lf-card{background:#fff;border-left:4px solid var(--lc1);border-radius:0 12px 12px 0;padding:12px 14px}
+.lf-rule{font-size:.72rem;font-weight:900;color:var(--lc1);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.lf-body{font-size:.9rem;font-weight:700;color:var(--lt);line-height:1.5;margin-bottom:6px}
+.lf-ex{font-size:.82rem;font-weight:700;color:var(--ld);background:var(--lb);border-radius:8px;padding:5px 10px}
 </style>
 </head>
 <body class="cpage">
-<header class="cours-header">
-  <div class="badge-niveau">CE2 · MATHÉMATIQUES</div>
-  <h1>🔢 Les 4 opérations</h1>
-  <p>Addition, soustraction, multiplication et division — toutes les méthodes</p>
+<header class="cours-header" style="background:linear-gradient(135deg,#5b21b6,#7c3aed)">
+  <div class="badge-niveau">CE2</div>
+  <h1>🔢 Calcul CE2</h1>
+  <p>Priorités, calcul mental, opérations posées</p>
 </header>
 <main>
 
-<!-- SECTION 1 : LES 4 OPÉRATIONS -->
-<section class="cs">
-  <h2>1. Les 4 opérations — tableau récapitulatif</h2>
-  <p style="font-size:.88rem;font-weight:700;margin:0 0 10px">En maths, on utilise <strong>4 opérations</strong>. Chacune a un symbole, des termes spéciaux et un résultat qui a son propre nom.</p>
-
-  <table class="formula-table">
-    <tr>
-      <th>Opération</th>
-      <th>Symbole</th>
-      <th>Les termes</th>
-      <th>Le résultat</th>
-    </tr>
-    <tr>
-      <td>➕ Addition</td>
-      <td style="font-size:1.3rem">+</td>
-      <td>addende + addende</td>
-      <td><strong>la somme</strong></td>
-    </tr>
-    <tr>
-      <td>➖ Soustraction</td>
-      <td style="font-size:1.3rem">−</td>
-      <td>minuende − soustrahende</td>
-      <td><strong>la différence</strong></td>
-    </tr>
-    <tr>
-      <td>✖️ Multiplication</td>
-      <td style="font-size:1.3rem">×</td>
-      <td>facteur × facteur</td>
-      <td><strong>le produit</strong></td>
-    </tr>
-    <tr>
-      <td>➗ Division</td>
-      <td style="font-size:1.3rem">÷</td>
-      <td>dividende ÷ diviseur</td>
-      <td><strong>le quotient (+ reste)</strong></td>
-    </tr>
-  </table>
-
-  <div class="vgrid">
-    <div class="vcrd">
-      <div class="vl">➕ ADDITION</div>
-      <div class="vv">+</div>
-      <div class="vs">addende + addende<br>= <strong>somme</strong></div>
-    </div>
-    <div class="vcrd">
-      <div class="vl">➖ SOUSTRACTION</div>
-      <div class="vv">−</div>
-      <div class="vs">minuende − soustrahende<br>= <strong>différence</strong></div>
-    </div>
-    <div class="vcrd">
-      <div class="vl">✖️ MULTIPLICATION</div>
-      <div class="vv">×</div>
-      <div class="vs">facteur × facteur<br>= <strong>produit</strong></div>
-    </div>
-    <div class="vcrd">
-      <div class="vl">➗ DIVISION</div>
-      <div class="vv">÷</div>
-      <div class="vs">dividende ÷ diviseur<br>= <strong>quotient</strong></div>
-    </div>
+<div class="lf-grid">
+  <div class="lf-card">
+    <div class="lf-rule">📌 Priorité des opérations</div>
+    <div class="lf-body">Sans parenthèses, on fait × et ÷ avant + et −. Avec parenthèses, on commence par ce qui est à l'intérieur.</div>
+    <div class="lf-ex">Ex : 3 + 4 × 2 = 3 + 8 = 11 · (3+4) × 2 = 7 × 2 = 14</div>
   </div>
-
-  <div class="ebox">
-    <div class="lbl">💡 Vocabulaire important</div>
-    <p>Dans <strong>456 + 378 = 834</strong> : 456 et 378 sont les <strong>addendes</strong>, 834 est la <strong>somme</strong>.<br>
-    Dans <strong>7 × 9 = 63</strong> : 7 et 9 sont les <strong>facteurs</strong>, 63 est le <strong>produit</strong>.<br>
-    Dans <strong>156 ÷ 7 = 22 reste 2</strong> : 156 est le <strong>dividende</strong>, 7 le <strong>diviseur</strong>, 22 le <strong>quotient</strong>, 2 le <strong>reste</strong>.</p>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Calcul mental</div>
+    <div class="lf-body">Astuces : +9 = +10−1 · ×5 = ×10÷2 · doubles et moitiés · ×9 = ×10 − une fois le nombre.</div>
+    <div class="lf-ex">Ex : 47 + 9 = 56 · 6 × 5 = 30 · 9 × 7 = 63</div>
   </div>
-</section>
-
-<!-- SECTION 2 : ADDITION POSÉE -->
-<section class="cs">
-  <h2>2. L'addition posée avec retenue</h2>
-
-  <div class="formula-card">
-    <div class="fc-label">Règle d'or</div>
-    <div class="fc-formula">Toujours commencer par les UNITÉS !</div>
-    <div class="fc-desc">On pose, on calcule colonne par colonne, de droite à gauche.</div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Opérations posées</div>
+    <div class="lf-body">Addition et soustraction : on aligne les colonnes et on commence par les unités, en gérant les retenues / emprunts.</div>
+    <div class="lf-ex">Ex : 347 + 285 → unités 7+5=12 (pose 2, retiens 1) → résultat 632</div>
   </div>
+</div>
 
-  <p style="font-size:.88rem;font-weight:700;margin:8px 0">Exemple : <strong>456 + 378 = ?</strong></p>
+<div class="retenir">
+  <h3>📌 À retenir</h3>
+  <ul>
+    <li>× et ÷ avant + et − (sauf parenthèses)</li>
+    <li>Calcul mental : +9 = +10−1 · ×5 = ×10÷2</li>
+    <li>Poser en colonnes : unités sous unités, de droite à gauche</li>
+  </ul>
+</div>
 
-  <div class="frise">
-    <div class="frise-item">
-      <div class="frise-dot">1</div>
-      <div class="frise-content">
-        <div class="frise-title">Poser l'opération</div>
-        <div class="frise-text">On aligne les chiffres colonne par colonne : unités sous unités, dizaines sous dizaines, centaines sous centaines. On trace un trait horizontal.</div>
-      </div>
-    </div>
-    <div class="frise-item">
-      <div class="frise-dot">2</div>
-      <div class="frise-content">
-        <div class="frise-title">Additionner les unités</div>
-        <div class="frise-text"><strong>6 + 8 = 14</strong> → On écrit <strong>4</strong> dans la colonne des unités et on <strong>retient 1</strong> (la dizaine) au-dessus de la colonne des dizaines.</div>
-      </div>
-    </div>
-    <div class="frise-item">
-      <div class="frise-dot">3</div>
-      <div class="frise-content">
-        <div class="frise-title">Additionner les dizaines (avec la retenue)</div>
-        <div class="frise-text"><strong>5 + 7 + 1 (retenue) = 13</strong> → On écrit <strong>3</strong> dans la colonne des dizaines et on retient <strong>1</strong>.</div>
-      </div>
-    </div>
-    <div class="frise-item">
-      <div class="frise-dot">4</div>
-      <div class="frise-content">
-        <div class="frise-title">Additionner les centaines (avec la retenue)</div>
-        <div class="frise-text"><strong>4 + 3 + 1 (retenue) = 8</strong> → On écrit <strong>8</strong> dans la colonne des centaines. Résultat : <strong>834</strong> ✓</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="visbox">
-    <svg width="200" height="130" viewBox="0 0 200 130">
-      <text x="100" y="22" text-anchor="middle" font-family="Nunito" font-size="11" fill="#6b7280" font-weight="900">POSÉE</text>
-      <!-- colonnes -->
-      <text x="68" y="45" text-anchor="middle" font-family="Nunito" font-size="11" fill="#a78bfa" font-weight="900">C</text>
-      <text x="98" y="45" text-anchor="middle" font-family="Nunito" font-size="11" fill="#7c3aed" font-weight="900">D</text>
-      <text x="128" y="45" text-anchor="middle" font-family="Nunito" font-size="11" fill="#5b21b6" font-weight="900">U</text>
-      <!-- retenues -->
-      <text x="98" y="62" text-anchor="middle" font-family="Nunito" font-size="13" fill="#dc2626" font-weight="900">1</text>
-      <text x="68" y="62" text-anchor="middle" font-family="Nunito" font-size="13" fill="#dc2626" font-weight="900">1</text>
-      <!-- nombre 1 -->
-      <text x="68" y="80" text-anchor="middle" font-family="Nunito" font-size="20" fill="#1e1b4b" font-weight="900">4</text>
-      <text x="98" y="80" text-anchor="middle" font-family="Nunito" font-size="20" fill="#1e1b4b" font-weight="900">5</text>
-      <text x="128" y="80" text-anchor="middle" font-family="Nunito" font-size="20" fill="#1e1b4b" font-weight="900">6</text>
-      <!-- signe + -->
-      <text x="45" y="100" text-anchor="middle" font-family="Nunito" font-size="20" fill="#7c3aed" font-weight="900">+</text>
-      <!-- nombre 2 -->
-      <text x="68" y="100" text-anchor="middle" font-family="Nunito" font-size="20" fill="#1e1b4b" font-weight="900">3</text>
-      <text x="98" y="100" text-anchor="middle" font-family="Nunito" font-size="20" fill="#1e1b4b" font-weight="900">7</text>
-      <text x="128" y="100" text-anchor="middle" font-family="Nunito" font-size="20" fill="#1e1b4b" font-weight="900">8</text>
-      <!-- trait -->
-      <line x1="38" y1="108" x2="145" y2="108" stroke="#1e1b4b" stroke-width="2"/>
-      <!-- résultat -->
-      <text x="68" y="125" text-anchor="middle" font-family="Nunito" font-size="20" fill="#16a34a" font-weight="900">8</text>
-      <text x="98" y="125" text-anchor="middle" font-family="Nunito" font-size="20" fill="#16a34a" font-weight="900">3</text>
-      <text x="128" y="125" text-anchor="middle" font-family="Nunito" font-size="20" fill="#16a34a" font-weight="900">4</text>
-    </svg>
-    <div class="vis-caption">456 + 378 = 834</div>
-  </div>
-
-  <div class="rbox">
-    <div class="lbl">✅ Vérification</div>
-    <p>Pour vérifier une addition, on peut faire la soustraction inverse : <strong>834 − 378 = 456</strong> ✓</p>
-  </div>
-</section>
-
-<!-- SECTION 3 : SOUSTRACTION POSÉE -->
-<section class="cs">
-  <h2>3. La soustraction posée avec emprunt</h2>
-
-  <div class="wbox">
-    <div class="lbl">⚠️ L'emprunt</div>
-    <p>Quand un chiffre du haut est plus petit que celui du bas, on <strong>emprunte 1 dizaine = 10 unités</strong> à la colonne de gauche. On ajoute 10 au chiffre du haut et on réduit de 1 le chiffre de la colonne suivante.</p>
-  </div>
-
-  <p style="font-size:.88rem;font-weight:700;margin:8px 0">Exemple : <strong>523 − 167 = ?</strong></p>
-
-  <div class="frise">
-    <div class="frise-item">
-      <div class="frise-dot">1</div>
-      <div class="frise-content">
-        <div class="frise-title">Poser la soustraction</div>
-        <div class="frise-text">Le grand nombre (523) en haut, le petit (167) en bas, bien alignés par colonnes. On ne peut pas inverser !</div>
-      </div>
-    </div>
-    <div class="frise-item">
-      <div class="frise-dot">2</div>
-      <div class="frise-content">
-        <div class="frise-title">Soustraire les unités</div>
-        <div class="frise-text"><strong>3 − 7</strong> : impossible ! On emprunte. <strong>13 − 7 = 6</strong> ✓ On pose 6. On réduit la dizaine de 523 : le 2 devient <strong>1</strong>.</div>
-      </div>
-    </div>
-    <div class="frise-item">
-      <div class="frise-dot">3</div>
-      <div class="frise-content">
-        <div class="frise-title">Soustraire les dizaines</div>
-        <div class="frise-text"><strong>1 − 6</strong> (le 2 est devenu 1 à cause de l'emprunt) : impossible ! On emprunte encore. <strong>11 − 6 = 5</strong> ✓ La centaine passe de 5 à <strong>4</strong>.</div>
-      </div>
-    </div>
-    <div class="frise-item">
-      <div class="frise-dot">4</div>
-      <div class="frise-content">
-        <div class="frise-title">Soustraire les centaines</div>
-        <div class="frise-text"><strong>4 − 1 = 3</strong> ✓ Résultat : <strong>356</strong></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="visbox">
-    <svg width="200" height="120" viewBox="0 0 200 120">
-      <text x="100" y="20" text-anchor="middle" font-family="Nunito" font-size="11" fill="#6b7280" font-weight="900">POSÉE AVEC EMPRUNT</text>
-      <!-- barré et corrigé -->
-      <text x="62" y="50" text-anchor="middle" font-family="Nunito" font-size="13" fill="#dc2626" font-weight="900" text-decoration="line-through">5</text>
-      <text x="75" y="44" text-anchor="middle" font-family="Nunito" font-size="11" fill="#16a34a" font-weight="900">4</text>
-      <text x="94" y="50" text-anchor="middle" font-family="Nunito" font-size="13" fill="#dc2626" font-weight="900" text-decoration="line-through">2</text>
-      <text x="107" y="44" text-anchor="middle" font-family="Nunito" font-size="11" fill="#16a34a" font-weight="900">1</text>
-      <!-- nombres -->
-      <text x="62" y="68" text-anchor="middle" font-family="Nunito" font-size="22" fill="#1e1b4b" font-weight="900">5</text>
-      <text x="92" y="68" text-anchor="middle" font-family="Nunito" font-size="22" fill="#1e1b4b" font-weight="900">2</text>
-      <text x="122" y="68" text-anchor="middle" font-family="Nunito" font-size="22" fill="#1e1b4b" font-weight="900">3</text>
-      <text x="40" y="90" text-anchor="middle" font-family="Nunito" font-size="22" fill="#7c3aed" font-weight="900">−</text>
-      <text x="62" y="90" text-anchor="middle" font-family="Nunito" font-size="22" fill="#1e1b4b" font-weight="900">1</text>
-      <text x="92" y="90" text-anchor="middle" font-family="Nunito" font-size="22" fill="#1e1b4b" font-weight="900">6</text>
-      <text x="122" y="90" text-anchor="middle" font-family="Nunito" font-size="22" fill="#1e1b4b" font-weight="900">7</text>
-      <line x1="32" y1="97" x2="140" y2="97" stroke="#1e1b4b" stroke-width="2"/>
-      <text x="62" y="116" text-anchor="middle" font-family="Nunito" font-size="22" fill="#16a34a" font-weight="900">3</text>
-      <text x="92" y="116" text-anchor="middle" font-family="Nunito" font-size="22" fill="#16a34a" font-weight="900">5</text>
-      <text x="122" y="116" text-anchor="middle" font-family="Nunito" font-size="22" fill="#16a34a" font-weight="900">6</text>
-    </svg>
-    <div class="vis-caption">523 − 167 = 356</div>
-  </div>
-
-  <div class="rbox">
-    <div class="lbl">✅ Vérification</div>
-    <p>Pour vérifier : <strong>356 + 167 = 523</strong> ✓ (l'addition inverse doit redonner le grand nombre)</p>
-  </div>
-</section>
-
-<!-- SECTION 4 : MULTIPLICATION -->
-<section class="cs">
-  <h2>4. La multiplication par 1 chiffre</h2>
-
-  <p style="font-size:.88rem;font-weight:700;margin:0 0 8px">Exemple : <strong>34 × 7 = ?</strong></p>
-
-  <div class="frise">
-    <div class="frise-item">
-      <div class="frise-dot">1</div>
-      <div class="frise-content">
-        <div class="frise-title">Poser la multiplication</div>
-        <div class="frise-text">On pose le nombre à plusieurs chiffres (34) au-dessus et le chiffre multiplicateur (7) en dessous à droite.</div>
-      </div>
-    </div>
-    <div class="frise-item">
-      <div class="frise-dot">2</div>
-      <div class="frise-content">
-        <div class="frise-title">Multiplier les unités</div>
-        <div class="frise-text"><strong>4 × 7 = 28</strong> → On écrit <strong>8</strong> (unités) et on retient <strong>2</strong> (dizaines).</div>
-      </div>
-    </div>
-    <div class="frise-item">
-      <div class="frise-dot">3</div>
-      <div class="frise-content">
-        <div class="frise-title">Multiplier les dizaines + retenue</div>
-        <div class="frise-text"><strong>3 × 7 = 21</strong>, puis <strong>21 + 2 (retenue) = 23</strong> → On écrit <strong>23</strong>.</div>
-      </div>
-    </div>
-    <div class="frise-item">
-      <div class="frise-dot">4</div>
-      <div class="frise-content">
-        <div class="frise-title">Lire le résultat</div>
-        <div class="frise-text">Résultat : <strong>238</strong> ✓</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="dbox">
-    <div class="lbl">📐 Multiplier par 10, 100, 1000</div>
-    <p>× 10 → on ajoute un <strong>zéro</strong> à la fin : 34 × 10 = 340<br>
-    × 100 → on ajoute <strong>deux zéros</strong> : 34 × 100 = 3 400<br>
-    × 1000 → on ajoute <strong>trois zéros</strong> : 34 × 1 000 = 34 000</p>
-  </div>
-
-  <table class="formula-table">
-    <tr>
-      <th>Calcul</th>
-      <th>Méthode</th>
-      <th>Résultat</th>
-    </tr>
-    <tr>
-      <td>56 × 10</td>
-      <td>Ajouter 1 zéro</td>
-      <td><strong>560</strong></td>
-    </tr>
-    <tr>
-      <td>27 × 100</td>
-      <td>Ajouter 2 zéros</td>
-      <td><strong>2 700</strong></td>
-    </tr>
-    <tr>
-      <td>8 × 1 000</td>
-      <td>Ajouter 3 zéros</td>
-      <td><strong>8 000</strong></td>
-    </tr>
-    <tr>
-      <td>45 × 20</td>
-      <td>45 × 2 × 10 = 90 × 10</td>
-      <td><strong>900</strong></td>
-    </tr>
-  </table>
-</section>
-
-<!-- SECTION 5 : DIVISION EUCLIDIENNE -->
-<section class="cs">
-  <h2>5. La division euclidienne</h2>
-
-  <div class="dbox">
-    <div class="lbl">📖 Définition</div>
-    <p>La division euclidienne donne un <strong>quotient entier</strong> et un <strong>reste</strong> (qui peut être 0). Le reste est toujours <strong>strictement inférieur au diviseur</strong>.</p>
-  </div>
-
-  <p style="font-size:.88rem;font-weight:700;margin:8px 0">Exemple : <strong>156 ÷ 7 = ?</strong></p>
-
-  <div class="frise">
-    <div class="frise-item">
-      <div class="frise-dot">1</div>
-      <div class="frise-content">
-        <div class="frise-title">Poser la division</div>
-        <div class="frise-text">On pose 156 à gauche, le signe ÷ ou une barre verticale, et 7 à droite. Le quotient s'écrira en dessous à droite.</div>
-      </div>
-    </div>
-    <div class="frise-item">
-      <div class="frise-dot">2</div>
-      <div class="frise-content">
-        <div class="frise-title">Diviser le premier chiffre</div>
-        <div class="frise-text"><strong>1 ÷ 7</strong> : impossible (1 &lt; 7). On prend <strong>15</strong>. Combien de fois 7 entre dans 15 ? <strong>2 fois</strong> (car 2×7=14). On écrit <strong>2</strong> au quotient.</div>
-      </div>
-    </div>
-    <div class="frise-item">
-      <div class="frise-dot">3</div>
-      <div class="frise-content">
-        <div class="frise-title">Multiplier et soustraire</div>
-        <div class="frise-text"><strong>2 × 7 = 14</strong>. On soustrait : <strong>15 − 14 = 1</strong>. Le reste partiel est 1.</div>
-      </div>
-    </div>
-    <div class="frise-item">
-      <div class="frise-dot">4</div>
-      <div class="frise-content">
-        <div class="frise-title">Abaisser le chiffre suivant</div>
-        <div class="frise-text">On abaisse le <strong>6</strong> à côté du 1 : on obtient <strong>16</strong>. Combien de fois 7 dans 16 ? <strong>2 fois</strong> (2×7=14). On écrit <strong>2</strong> au quotient : quotient = <strong>22</strong>.</div>
-      </div>
-    </div>
-    <div class="frise-item">
-      <div class="frise-dot">5</div>
-      <div class="frise-content">
-        <div class="frise-title">Vérifier</div>
-        <div class="frise-text"><strong>16 − 14 = 2</strong> (reste). Vérification : <strong>7 × 22 + 2 = 154 + 2 = 156</strong> ✓</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="formula-card">
-    <div class="fc-label">Formule de vérification</div>
-    <div class="fc-formula">diviseur × quotient + reste = dividende</div>
-    <div class="fc-desc">7 × 22 + 2 = 156 ✓ — le reste (2) est bien &lt; au diviseur (7) ✓</div>
-  </div>
-
-  <div class="wbox">
-    <div class="lbl">⚠️ Attention</div>
-    <p>Le reste doit toujours être <strong>plus petit que le diviseur</strong>. Si reste ≥ diviseur, tu t'es trompé dans le quotient : augmente-le de 1 !</p>
-  </div>
-</section>
-
-<!-- SECTION 6 : PRIORITÉ DES OPÉRATIONS -->
-<section class="cs">
-  <h2>6. La priorité des opérations</h2>
-
-  <div class="formula-card">
-    <div class="fc-label">Règle de priorité</div>
-    <div class="fc-formula">( ) → × et ÷ → + et −</div>
-    <div class="fc-desc">Les parenthèses d'abord, puis × et ÷, puis + et −, toujours de gauche à droite.</div>
-  </div>
-
-  <div class="frise">
-    <div class="frise-item">
-      <div class="frise-dot">1</div>
-      <div class="frise-content">
-        <div class="frise-title">Calculer les parenthèses en premier</div>
-        <div class="frise-text"><strong>(3 + 4) × 2</strong> → d'abord 3 + 4 = 7, puis 7 × 2 = <strong>14</strong></div>
-      </div>
-    </div>
-    <div class="frise-item">
-      <div class="frise-dot">2</div>
-      <div class="frise-content">
-        <div class="frise-title">Sans parenthèses : × et ÷ avant + et −</div>
-        <div class="frise-text"><strong>3 + 4 × 2</strong> → d'abord 4 × 2 = 8, puis 3 + 8 = <strong>11</strong></div>
-      </div>
-    </div>
-    <div class="frise-item">
-      <div class="frise-dot">3</div>
-      <div class="frise-content">
-        <div class="frise-title">À priorité égale : de gauche à droite</div>
-        <div class="frise-text"><strong>12 − 4 + 3</strong> → d'abord 12 − 4 = 8, puis 8 + 3 = <strong>11</strong></div>
-      </div>
-    </div>
-  </div>
-
-  <table class="formula-table">
-    <tr>
-      <th>Calcul</th>
-      <th>Ce qu'on fait d'abord</th>
-      <th>Résultat</th>
-    </tr>
-    <tr>
-      <td>(3 + 4) × 2</td>
-      <td>Parenthèses : 3 + 4 = 7</td>
-      <td><strong>14</strong></td>
-    </tr>
-    <tr>
-      <td>3 + 4 × 2</td>
-      <td>Multiplication : 4 × 2 = 8</td>
-      <td><strong>11</strong></td>
-    </tr>
-    <tr>
-      <td>20 ÷ 4 + 6</td>
-      <td>Division : 20 ÷ 4 = 5</td>
-      <td><strong>11</strong></td>
-    </tr>
-    <tr>
-      <td>20 ÷ (4 + 6)</td>
-      <td>Parenthèses : 4 + 6 = 10</td>
-      <td><strong>2</strong></td>
-    </tr>
-    <tr>
-      <td>2 × 3 + 4 × 5</td>
-      <td>Les deux × : 6 et 20</td>
-      <td><strong>26</strong></td>
-    </tr>
-  </table>
-
-  <div class="ebox">
-    <div class="lbl">💡 Astuce mémoire</div>
-    <p>Retiens : <strong>"Parenthèses, Puis Multiplications et Divisions, Puis Additions et Soustractions"</strong><br>
-    Les parenthèses changent tout ! (3+4)×2 ≠ 3+4×2</p>
-  </div>
-</section>
-
-<!-- SECTION 7 : À RETENIR + CTA -->
-<section class="cs">
-  <h2>7. À retenir</h2>
-  <div class="retenir">
-    <h3>📌 L'essentiel du calcul CE2</h3>
-    <ul>
-      <li>Il y a <strong>4 opérations</strong> : +, −, ×, ÷ avec des termes spéciaux pour chacune.</li>
-      <li>Pour l'<strong>addition posée</strong> : on commence par les unités, on retient les dizaines.</li>
-      <li>Pour la <strong>soustraction posée</strong> : quand c'est impossible, on emprunte (1 dizaine = 10 unités).</li>
-      <li>Pour la <strong>multiplication posée</strong> : on multiplie chiffre par chiffre en ajoutant les retenues.</li>
-      <li>Pour la <strong>division euclidienne</strong> : diviseur × quotient + reste = dividende, et reste &lt; diviseur.</li>
-      <li>× 10 → ajouter un zéro ; × 100 → ajouter deux zéros ; × 1000 → ajouter trois zéros.</li>
-      <li><strong>Priorité</strong> : parenthèses d'abord, puis × et ÷, puis + et −.</li>
-    </ul>
-  </div>
-
-  <div class="cta">
-    <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
-    <a class="btn-ex" href="calcul.html">✏️ Faire les exercices</a>
-  </div>
-</section>
+<div class="cta">
+  <p>Tu as compris ? Entraîne-toi !</p>
+  <a href="calcul.html" class="btn-ex">Faire les exercices CE2 →</a>
+</div>
 
 </main>
 <footer class="site-footer">École Facile — Cours CE2 · Calcul</footer>

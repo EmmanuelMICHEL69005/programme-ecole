@@ -17,10 +17,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-:root{--lc1:#b45309;--lc2:#f59e0b;--lb:#fde68a;--la:#b45309;--ld:#92400e;--lbg:#fffbeb;--lt:#1e1b4b;--ls:rgba(180,83,9,.3)}
+:root{--lc1:#b45309;--lc2:#f59e0b;--lb:#fde68a;--la:#b45309;--ld:#78350f;--lbg:#fffbeb;--lt:#78350f;--ls:rgba(180,83,9,.3)}
 .cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
 .cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
 .cours-header p{font-size:.87rem;opacity:.88;margin:0}
+.lf-grid{display:grid;gap:12px;margin-bottom:18px}
+.lf-card{background:#fff;border-left:4px solid var(--lc1);border-radius:0 12px 12px 0;padding:12px 14px}
+.lf-rule{font-size:.72rem;font-weight:900;color:var(--lc1);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.lf-body{font-size:.9rem;font-weight:700;color:var(--lt);line-height:1.5;margin-bottom:6px}
+.lf-ex{font-size:.82rem;font-weight:700;color:var(--ld);background:var(--lb);border-radius:8px;padding:5px 10px}
 </style>
 </head>
 <body class="cpage">
@@ -30,122 +35,32 @@
   <p>Quadrilatères, volumes, transformations, repérage</p>
 </header>
 <main>
-
-<section class="cs">
-  <h2>1. Quadrilatères — propriétés complètes</h2>
-  <div class="conv-table">
-    <tr><th>Nom</th><th>Côtés</th><th>Angles</th><th>Diagonales</th></tr>
-    <tr><td><strong>Carré</strong></td><td>4 égaux</td><td>4 droits (90°)</td><td>égales et perpendiculaires</td></tr>
-    <tr><td><strong>Rectangle</strong></td><td>2 paires égales</td><td>4 droits</td><td>égales</td></tr>
-    <tr><td><strong>Losange</strong></td><td>4 égaux</td><td>2 paires égales</td><td>perpendiculaires</td></tr>
-    <tr><td><strong>Parallélogramme</strong></td><td>2 paires parallèles</td><td>2 paires égales</td><td>se coupent en leur milieu</td></tr>
-    <tr><td><strong>Trapèze</strong></td><td>1 paire parallèle</td><td>variables</td><td>-</td></tr>
+<div class="lf-grid">
+  <div class="lf-card">
+    <div class="lf-rule">📌 Quadrilatères</div>
+    <div class="lf-body">Carré : 4 côtés égaux, 4 angles droits · Rectangle : 2 paires de côtés égaux, 4 angles droits · Losange : 4 côtés égaux, angles non forcément droits · Parallélogramme : 2 paires de côtés parallèles · Trapèze : 1 seule paire de côtés parallèles.</div>
+    <div class="lf-ex">Ex : losange : 4 côtés égaux mais angles pas forcément droits</div>
   </div>
-  <div class="rbox"><div class="lbl">Hiérarchie des quadrilatères</div>
-  <p>Carré ⊂ Rectangle ⊂ Parallélogramme ⊂ Trapèze ⊂ Quadrilatère<br>
-  (Un carré est un rectangle particulier, etc.)</p></div>
-</section>
-
-<section class="cs">
-  <h2>2. Aires — formules complètes</h2>
-  <div class="formula-card">
-    <div class="fc-label">Aire du disque</div>
-    <div class="fc-formula">A = π × r² ≈ 3,14 × r²</div>
-    <div class="fc-desc">r = rayon | disque = intérieur du cercle</div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Volumes</div>
+    <div class="lf-body">Cube : V = a³ · Pavé droit : V = L × l × h. Unités : cm³, m³, dm³ (= 1 litre).</div>
+    <div class="lf-ex">Ex : boîte 5 × 4 × 3 = 60 cm³</div>
   </div>
-  <div class="formula-card">
-    <div class="fc-label">Parallélogramme et losange</div>
-    <div class="fc-formula">A = base × hauteur</div>
-    <div class="fc-desc">La hauteur est perpendiculaire à la base</div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Repérage dans le plan</div>
+    <div class="lf-body">Axe des abscisses (x) horizontal, axe des ordonnées (y) vertical. Un point se note (x ; y).</div>
+    <div class="lf-ex">Ex : point A(3 ; 5) → 3 sur x, 5 sur y</div>
   </div>
-  <div class="ebox"><div class="lbl">Exemples</div>
-  <ul>
-    <li>Disque r = 5 cm : A = 3,14 × 25 = <strong>78,5 cm²</strong></li>
-    <li>Parallélogramme base 8 cm, h = 4 cm : A = 8 × 4 = <strong>32 cm²</strong></li>
-  </ul></div>
-</section>
-
-<section class="cs">
-  <h2>3. Volume des solides</h2>
-  <div class="dbox"><div class="lbl">Définition</div>
-  <p>Le <strong>volume</strong> d'un solide = la place qu'il occupe dans l'espace. Unités : cm³, m³, L (1 L = 1 dm³).</p></div>
-  <div class="formula-card">
-    <div class="fc-label">Cube (arête a)</div>
-    <div class="fc-formula">V = a³ = a × a × a</div>
-    <div class="fc-desc">Exemple : cube a = 3 cm → V = 27 cm³</div>
-  </div>
-  <div class="formula-card">
-    <div class="fc-label">Pavé droit (L × l × h)</div>
-    <div class="fc-formula">V = L × l × h</div>
-    <div class="fc-desc">Exemple : 4 × 3 × 2 cm → V = 24 cm³</div>
-  </div>
-  <div class="rbox"><div class="lbl">Conversions de volumes</div>
-  <p>1 m³ = 1 000 L = 1 000 000 cm³<br>
-  1 L = 1 dm³ = 1 000 cm³</p></div>
-</section>
-
-<section class="cs">
-  <h2>4. Transformations géométriques</h2>
-  <div class="dbox"><div class="lbl">Les 4 isométries</div>
-  <ul>
-    <li><strong>Translation</strong> : glisser la figure sans la tourner (vecteur de déplacement)</li>
-    <li><strong>Rotation</strong> : tourner autour d'un point fixe (centre, angle, sens)</li>
-    <li><strong>Symétrie axiale</strong> : miroir par rapport à une droite (axe)</li>
-    <li><strong>Symétrie centrale</strong> : rotation de 180° autour d'un point (centre)</li>
-  </ul></div>
-  <div class="rbox"><div class="lbl">Propriété commune</div>
-  <p>Toutes ces transformations <strong>conservent</strong> les longueurs, les angles, et les surfaces — la figure est congruente à son image.</p></div>
-</section>
-
-<section class="cs">
-  <h2>5. Repérage dans le plan</h2>
-  <div class="visbox">
-    <svg viewBox="0 0 280 240" width="280" height="240">
-      <line x1="20" y1="120" x2="260" y2="120" stroke="#b45309" stroke-width="2"/>
-      <line x1="140" y1="20" x2="140" y2="230" stroke="#b45309" stroke-width="2"/>
-      <line x1="260" y1="120" x2="252" y2="114" stroke="#b45309" stroke-width="2"/>
-      <line x1="260" y1="120" x2="252" y2="126" stroke="#b45309" stroke-width="2"/>
-      <line x1="140" y1="20" x2="134" y2="28" stroke="#b45309" stroke-width="2"/>
-      <line x1="140" y1="20" x2="146" y2="28" stroke="#b45309" stroke-width="2"/>
-      <text x="262" y="118" font-family="Nunito" font-weight="900" font-size="13" fill="#b45309">x</text>
-      <text x="144" y="18" font-family="Nunito" font-weight="900" font-size="13" fill="#b45309">y</text>
-      <text x="132" y="130" font-family="Nunito" font-weight="900" font-size="12" fill="#92400e">O</text>
-      <line x1="180" y1="115" x2="180" y2="125" stroke="#6b7280" stroke-width="1.5"/>
-      <text x="178" y="138" font-family="Nunito" font-weight="800" font-size="11" fill="#6b7280">2</text>
-      <line x1="100" y1="115" x2="100" y2="125" stroke="#6b7280" stroke-width="1.5"/>
-      <text x="96" y="138" font-family="Nunito" font-weight="800" font-size="11" fill="#6b7280">-2</text>
-      <line x1="135" y1="80" x2="145" y2="80" stroke="#6b7280" stroke-width="1.5"/>
-      <text x="148" y="84" font-family="Nunito" font-weight="800" font-size="11" fill="#6b7280">2</text>
-      <line x1="135" y1="160" x2="145" y2="160" stroke="#6b7280" stroke-width="1.5"/>
-      <text x="148" y="164" font-family="Nunito" font-weight="800" font-size="11" fill="#6b7280">-2</text>
-      <circle cx="220" cy="80" r="6" fill="#dc2626"/>
-      <text x="224" y="75" font-family="Nunito" font-weight="900" font-size="12" fill="#dc2626">A(4;2)</text>
-      <circle cx="100" cy="160" r="6" fill="#1d4ed8"/>
-      <text x="60" y="155" font-family="Nunito" font-weight="900" font-size="12" fill="#1d4ed8">B(-2;-2)</text>
-    </svg>
-    <div class="vis-caption">Repère orthonormé — abscisse (x) et ordonnée (y)</div>
-  </div>
-  <div class="dbox"><div class="lbl">Lire les coordonnées</div>
-  <p>Le point A(4 ; 2) : abscisse = <strong>4</strong> (horizontal), ordonnée = <strong>2</strong> (vertical).<br>
-  Toujours : <strong>abscisse d'abord</strong>, ordonnée ensuite.</p></div>
-</section>
-
+</div>
 <div class="retenir">
   <h3>📌 À retenir</h3>
   <ul>
-    <li>Aire disque : A = π × r² ≈ 3,14 × r²</li>
-    <li>Volume pavé : V = L × l × h | Volume cube : V = a³</li>
-    <li>1 L = 1 dm³ | 1 m³ = 1 000 L</li>
-    <li>Repère : point A(x ; y) → x = abscisse, y = ordonnée</li>
-    <li>4 transformations : translation, rotation, symétrie axiale, symétrie centrale</li>
+    <li>Quadrilatères : propriétés des côtés et des angles</li>
+    <li>V = L × l × h (pavé) · V = a³ (cube)</li>
+    <li>Repérage : point (x ; y)</li>
   </ul>
 </div>
-
-<div class="cta">
-  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
-  <a href="geometrie-cm2.html" class="btn-ex">Faire les exercices CM2 →</a>
-</div>
-
+<div class="cta"><p>Tu as compris ? Entraîne-toi !</p><a href="geometrie-cm2.html" class="btn-ex">Faire les exercices CM2 →</a></div>
 </main>
 <footer class="site-footer">École Facile — Cours CM2 · Géométrie</footer>
 <script src="sync.js"></script>

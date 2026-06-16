@@ -11,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
+:root{--lc1:#b45309;--lc2:#f59e0b;--lb:#fde68a;--la:#b45309;--ld:#78350f;--lbg:#fffbeb;--lt:#78350f;--ls:rgba(180,83,9,.3)}
 body{font-family:'Nunito',sans-serif;background:#fffbeb;color:#1e1b4b;margin:0}
 main{max-width:720px;margin:0 auto;padding:22px 18px 60px}
 .cs{margin-bottom:26px}
@@ -68,6 +69,12 @@ main{max-width:720px;margin:0 auto;padding:22px 18px 60px}
 .num-table th{background:#92400e;color:#fff;padding:6px 8px;font-weight:900;text-align:center;white-space:nowrap}
 .num-table td{border:1.5px solid #fde68a;padding:6px 8px;font-weight:700;text-align:center;background:#fff;white-space:nowrap}
 .num-table .classe{background:#fef3c7;font-weight:900;color:#92400e}
+
+.lf-grid{display:grid;gap:12px;margin-bottom:18px}
+.lf-card{background:#fff;border-left:4px solid var(--lc1);border-radius:0 12px 12px 0;padding:12px 14px}
+.lf-rule{font-size:.72rem;font-weight:900;color:var(--lc1);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.lf-body{font-size:.9rem;font-weight:700;color:var(--lt);line-height:1.5;margin-bottom:6px}
+.lf-ex{font-size:.82rem;font-weight:700;color:var(--ld);background:var(--lb);border-radius:8px;padding:5px 10px}
 </style>
 </head>
 <body>
@@ -79,356 +86,32 @@ main{max-width:720px;margin:0 auto;padding:22px 18px 60px}
 </div>
 
 <main>
-
-<!-- SECTION 1 -->
-<div class="cs">
-  <h2>1. Les très grands nombres (millions et milliards)</h2>
-
-  <div class="dbox">
-    <div class="lbl">À retenir</div>
-    <p>1 million = 1 000 000 (6 zéros) · 1 milliard = 1 000 000 000 (9 zéros)</p>
+<div class="lf-grid">
+  <div class="lf-card">
+    <div class="lf-rule">📌 Très grands nombres</div>
+    <div class="lf-body">Millier = 1 000 · Million = 1 000 000 · Milliard = 1 000 000 000. On regroupe les chiffres par tranches de 3 en partant de la droite.</div>
+    <div class="lf-ex">Ex : 1 milliard = 1 000 000 000 · 3,5 millions = 3 500 000</div>
   </div>
-
-  <p style="font-size:.9rem;font-weight:700">Le <strong>tableau de numération</strong> organise les chiffres par classes de 3 rangs :</p>
-
-  <div style="overflow-x:auto;margin:12px 0">
-  <table class="num-table">
-    <tr>
-      <th class="classe" colspan="3">Milliards</th>
-      <th class="classe" colspan="3">Millions</th>
-      <th class="classe" colspan="3">Mille</th>
-      <th class="classe" colspan="3">Unités</th>
-    </tr>
-    <tr>
-      <th>M</th><th>C</th><th>U</th>
-      <th>C.M</th><th>D.M</th><th>U.M</th>
-      <th>C.m</th><th>D.m</th><th>U.m</th>
-      <th>C</th><th>D</th><th>U</th>
-    </tr>
-    <tr>
-      <td colspan="3"></td>
-      <td>1</td><td>2</td><td>3</td>
-      <td>4</td><td>5</td><td>6</td>
-      <td>7</td><td>8</td><td>9</td>
-    </tr>
-  </table>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Entiers relatifs</div>
+    <div class="lf-body">Les entiers relatifs sont positifs ou négatifs. Sur l'axe : plus on va à gauche, plus le nombre est petit. La valeur absolue |n| est la distance à zéro.</div>
+    <div class="lf-ex">Ex : −3 &lt; 0 &lt; 5 · |−7| = 7</div>
   </div>
-
-  <div class="ebox">
-    <div class="lbl">Exemple — lecture du nombre</div>
-    <p><strong>1 234 567 890</strong> se lit : un milliard deux cent trente-quatre millions cinq cent soixante-sept mille huit cent quatre-vingt-dix.</p>
-  </div>
-
-  <p style="font-size:.9rem;font-weight:700">La <strong>décomposition additive</strong> exprime chaque chiffre selon son rang :</p>
-
-  <div class="ebox">
-    <div class="lbl">Décomposition</div>
-    <p>1 234 567 = 1 000 000 + 200 000 + 30 000 + 4 000 + 500 + 60 + 7</p>
-  </div>
-
-  <div class="rbox">
-    <div class="lbl">Astuce</div>
-    <p>Pour lire un grand nombre, regroupe les chiffres par 3 depuis la droite : 1 234 567 → 1 · 234 · 567. Chaque groupe se lit en centaines.</p>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Règles de signes</div>
+    <div class="lf-body">(−) × (−) = (+) · (+) × (−) = (−) · Pour l'addition : on soustrait le plus petit du plus grand et on garde le signe du plus grand.</div>
+    <div class="lf-ex">Ex : −3 × −4 = 12 · −5 + 8 = 3</div>
   </div>
 </div>
-
-<!-- SECTION 2 -->
-<div class="cs">
-  <h2>2. Notation scientifique simplifiée et ordre de grandeur</h2>
-
-  <div class="dbox">
-    <div class="lbl">Principe</div>
-    <p>On peut écrire un grand nombre comme un entier multiplié par une puissance de 10.</p>
-  </div>
-
-  <div class="vgrid">
-    <div class="vcrd">
-      <div class="vl">3 millions</div>
-      <div class="vv">3×10⁶</div>
-      <div class="vs">3 000 000</div>
-    </div>
-    <div class="vcrd">
-      <div class="vl">7 milliards</div>
-      <div class="vv">7×10⁹</div>
-      <div class="vs">7 000 000 000</div>
-    </div>
-    <div class="vcrd">
-      <div class="vl">45 millions</div>
-      <div class="vv">4,5×10⁷</div>
-      <div class="vs">45 000 000</div>
-    </div>
-    <div class="vcrd">
-      <div class="vl">1 500</div>
-      <div class="vv">1,5×10³</div>
-      <div class="vs">1 500</div>
-    </div>
-  </div>
-
-  <div class="method-card">
-    <div class="mc-title">Méthode — trouver l'ordre de grandeur</div>
-    <ul class="mc-steps">
-      <li>1. Repère la puissance de 10 la plus proche</li>
-      <li>2. 4 700 → entre 10³=1000 et 10⁴=10 000 → ordre de grandeur : 10³ ou 5 000</li>
-      <li>3. 67 000 000 → ordre de grandeur : 10⁷ (dizaine de millions)</li>
-    </ul>
-  </div>
-
-  <div class="ebox">
-    <div class="lbl">Exemple concret</div>
-    <p>La Terre est à environ <strong>150 000 000 km</strong> du Soleil, soit <strong>1,5 × 10⁸ km</strong>. La population mondiale dépasse <strong>8 × 10⁹</strong> habitants.</p>
-  </div>
-</div>
-
-<!-- SECTION 3 -->
-<div class="cs">
-  <h2>3. Fractions et décimaux — les liens</h2>
-
-  <div class="dbox">
-    <div class="lbl">Propriété fondamentale</div>
-    <p>Tout nombre décimal peut s'écrire comme une fraction dont le dénominateur est une puissance de 10.</p>
-  </div>
-
-  <table class="cmp-table">
-    <tr><th>Décimal</th><th>Fraction</th><th>Simplification</th></tr>
-    <tr><td>0,5</td><td>5/10</td><td>= 1/2</td></tr>
-    <tr><td>0,25</td><td>25/100</td><td>= 1/4</td></tr>
-    <tr><td>3,14</td><td>314/100</td><td>= 157/50</td></tr>
-    <tr><td>0,75</td><td>75/100</td><td>= 3/4</td></tr>
-    <tr><td>2,6</td><td>26/10</td><td>= 13/5</td></tr>
-  </table>
-
-  <p style="font-size:.9rem;font-weight:700">Pour <strong>simplifier une fraction</strong>, on divise le numérateur et le dénominateur par leur <strong>PGCD</strong> (Plus Grand Commun Diviseur).</p>
-
-  <div class="method-card">
-    <div class="mc-title">Méthode — trouver le PGCD par liste des diviseurs</div>
-    <ul class="mc-steps">
-      <li>1. Liste les diviseurs de chaque nombre</li>
-      <li>2. Diviseurs de 12 : 1, 2, 3, 4, 6, 12</li>
-      <li>3. Diviseurs de 18 : 1, 2, 3, 6, 9, 18</li>
-      <li>4. Le plus grand diviseur commun est 6 → PGCD(12,18) = 6</li>
-      <li>5. 12/18 = (12÷6)/(18÷6) = 2/3 ← fraction irréductible</li>
-    </ul>
-  </div>
-
-  <div class="rbox">
-    <div class="lbl">Fraction irréductible</div>
-    <p>Une fraction est <strong>irréductible</strong> quand le numérateur et le dénominateur n'ont aucun diviseur commun autre que 1 (PGCD = 1).</p>
-  </div>
-</div>
-
-<!-- SECTION 4 -->
-<div class="cs">
-  <h2>4. Nombres relatifs — introduction</h2>
-
-  <div class="dbox">
-    <div class="lbl">Définition</div>
-    <p>Les <strong>nombres relatifs</strong> sont des nombres qui peuvent être positifs, négatifs, ou nuls. Ils permettent de mesurer des grandeurs qui peuvent être "en dessous" d'une référence.</p>
-  </div>
-
-  <div class="vgrid">
-    <div class="vcrd">
-      <div class="vl">Température</div>
-      <div class="vv">−5°C</div>
-      <div class="vs">5° sous zéro</div>
-    </div>
-    <div class="vcrd">
-      <div class="vl">Altitude</div>
-      <div class="vv">−200 m</div>
-      <div class="vs">sous le niveau mer</div>
-    </div>
-    <div class="vcrd">
-      <div class="vl">Banque</div>
-      <div class="vv">−50 €</div>
-      <div class="vs">découvert</div>
-    </div>
-    <div class="vcrd">
-      <div class="vl">Positif</div>
-      <div class="vv">+3</div>
-      <div class="vs">au-dessus de 0</div>
-    </div>
-  </div>
-
-  <div class="visbox">
-    <svg viewBox="0 0 500 90" xmlns="http://www.w3.org/2000/svg" width="500" height="90">
-      <!-- Axe -->
-      <line x1="20" y1="45" x2="480" y2="45" stroke="#b45309" stroke-width="2.5"/>
-      <!-- Flèche droite -->
-      <polygon points="480,45 470,40 470,50" fill="#b45309"/>
-      <!-- Flèche gauche -->
-      <polygon points="20,45 30,40 30,50" fill="#b45309"/>
-      <!-- Graduations et labels de -5 à +5 -->
-      <g font-family="Nunito,sans-serif" font-weight="900" font-size="13" fill="#1e1b4b">
-        <!-- -5 -->
-        <line x1="65" y1="38" x2="65" y2="52" stroke="#b45309" stroke-width="2"/>
-        <text x="65" y="70" text-anchor="middle">−5</text>
-        <!-- -4 -->
-        <line x1="107" y1="38" x2="107" y2="52" stroke="#b45309" stroke-width="1.5"/>
-        <text x="107" y="70" text-anchor="middle">−4</text>
-        <!-- -3 -->
-        <line x1="149" y1="38" x2="149" y2="52" stroke="#b45309" stroke-width="1.5"/>
-        <text x="149" y="70" text-anchor="middle">−3</text>
-        <!-- -2 -->
-        <line x1="191" y1="38" x2="191" y2="52" stroke="#b45309" stroke-width="1.5"/>
-        <text x="191" y="70" text-anchor="middle">−2</text>
-        <!-- -1 -->
-        <line x1="233" y1="38" x2="233" y2="52" stroke="#b45309" stroke-width="1.5"/>
-        <text x="233" y="70" text-anchor="middle">−1</text>
-        <!-- 0 en gras -->
-        <line x1="275" y1="33" x2="275" y2="57" stroke="#1e1b4b" stroke-width="3"/>
-        <text x="275" y="72" text-anchor="middle" font-size="14" fill="#1e1b4b" font-weight="900">0</text>
-        <!-- +1 -->
-        <line x1="317" y1="38" x2="317" y2="52" stroke="#b45309" stroke-width="1.5"/>
-        <text x="317" y="70" text-anchor="middle">+1</text>
-        <!-- +2 -->
-        <line x1="359" y1="38" x2="359" y2="52" stroke="#b45309" stroke-width="1.5"/>
-        <text x="359" y="70" text-anchor="middle">+2</text>
-        <!-- +3 -->
-        <line x1="401" y1="38" x2="401" y2="52" stroke="#b45309" stroke-width="1.5"/>
-        <text x="401" y="70" text-anchor="middle">+3</text>
-        <!-- +4 -->
-        <line x1="443" y1="38" x2="443" y2="52" stroke="#b45309" stroke-width="1.5"/>
-        <text x="443" y="70" text-anchor="middle">+4</text>
-      </g>
-      <!-- Point -3 -->
-      <circle cx="149" cy="45" r="6" fill="#dc2626"/>
-      <!-- Point +2 -->
-      <circle cx="359" cy="45" r="6" fill="#16a34a"/>
-      <!-- Label points -->
-      <text x="149" y="25" text-anchor="middle" font-family="Nunito,sans-serif" font-size="11" font-weight="900" fill="#dc2626">−3</text>
-      <text x="359" y="25" text-anchor="middle" font-family="Nunito,sans-serif" font-size="11" font-weight="900" fill="#16a34a">+2</text>
-    </svg>
-    <div class="vis-caption">Droite numérique graduée de −5 à +4 — les négatifs sont à gauche du zéro</div>
-  </div>
-</div>
-
-<!-- SECTION 5 -->
-<div class="cs">
-  <h2>5. Comparaison, ordre et valeur absolue</h2>
-
-  <div class="dbox">
-    <div class="lbl">Règle de comparaison</div>
-    <p>Sur la droite numérique, un nombre est <strong>plus grand</strong> que tous ceux qui sont à sa gauche. Les négatifs sont toujours inférieurs à zéro.</p>
-  </div>
-
-  <div class="ebox">
-    <div class="lbl">Exemple d'ordre croissant</div>
-    <p>−5 &lt; −3 &lt; −1 &lt; 0 &lt; 2 &lt; 5</p>
-  </div>
-
-  <p style="font-size:.9rem;font-weight:700">La <strong>valeur absolue</strong> d'un nombre, notée |n|, est sa distance à zéro — toujours positive ou nulle :</p>
-
-  <table class="cmp-table">
-    <tr><th>Nombre</th><th>Valeur absolue</th><th>Signification</th></tr>
-    <tr><td>|−4|</td><td>4</td><td>−4 est à 4 unités de 0</td></tr>
-    <tr><td>|+7|</td><td>7</td><td>+7 est à 7 unités de 0</td></tr>
-    <tr><td>|0|</td><td>0</td><td>0 est à 0 unité de 0</td></tr>
-    <tr><td>|−12|</td><td>12</td><td>−12 est à 12 unités de 0</td></tr>
-  </table>
-
-  <div class="wbox">
-    <div class="lbl">Attention</div>
-    <p>−5 &lt; −2 : entre deux négatifs, le plus grand est celui dont la valeur absolue est la plus petite. |−5|=5 &gt; |−2|=2, donc −5 &lt; −2.</p>
-  </div>
-</div>
-
-<!-- SECTION 6 -->
-<div class="cs">
-  <h2>6. Arrondir et estimer</h2>
-
-  <div class="dbox">
-    <div class="lbl">Règle d'arrondi</div>
-    <p>Pour arrondir à un rang donné : regarde le chiffre suivant. S'il est ≥ 5, on arrondit par excès. S'il est ≤ 4, on arrondit par défaut.</p>
-  </div>
-
-  <table class="cmp-table">
-    <tr><th>Nombre</th><th>À l'unité</th><th>À la dizaine</th><th>À la centaine</th></tr>
-    <tr><td>3 467</td><td>3 467</td><td>3 470</td><td>3 500</td></tr>
-    <tr><td>12 843</td><td>12 843</td><td>12 840</td><td>12 800</td></tr>
-    <tr><td>5,678</td><td>6</td><td>10</td><td>0</td></tr>
-  </table>
-
-  <div class="method-card">
-    <div class="mc-title">Méthode — calcul approché et estimation</div>
-    <ul class="mc-steps">
-      <li>1. Remplace chaque nombre par une valeur simple proche</li>
-      <li>2. 48 × 19 ≈ 50 × 20 = 1 000 (ordre de grandeur)</li>
-      <li>3. 25% d'une valeur ≈ diviser par 4 (25% = 1/4)</li>
-      <li>4. Vérifie que ton résultat exact est cohérent avec l'estimation</li>
-    </ul>
-  </div>
-
-  <div class="vgrid">
-    <div class="vcrd">
-      <div class="vl">25% ≈</div>
-      <div class="vv">÷ 4</div>
-      <div class="vs">un quart</div>
-    </div>
-    <div class="vcrd">
-      <div class="vl">50% ≈</div>
-      <div class="vv">÷ 2</div>
-      <div class="vs">moitié</div>
-    </div>
-    <div class="vcrd">
-      <div class="vl">10% ≈</div>
-      <div class="vv">÷ 10</div>
-      <div class="vs">dixième</div>
-    </div>
-    <div class="vcrd">
-      <div class="vl">75% ≈</div>
-      <div class="vv">÷4×3</div>
-      <div class="vs">trois quarts</div>
-    </div>
-  </div>
-
-  <div class="rbox">
-    <div class="lbl">Ordre de grandeur en puissances de 10</div>
-    <p>3 200 → ordre de grandeur 10³ (=1 000) · 87 000 → ordre de grandeur 10⁵ (=100 000)</p>
-  </div>
-</div>
-
-<!-- RETENIR -->
 <div class="retenir">
-  <h3>À retenir absolument</h3>
+  <h3>📌 À retenir</h3>
   <ul>
-    <li>1 million = 10⁶ = 1 000 000 · 1 milliard = 10⁹ = 1 000 000 000</li>
-    <li>Tout décimal = fraction (ex : 3,14 = 314/100)</li>
-    <li>Pour simplifier une fraction, divise par le PGCD</li>
-    <li>Les nombres négatifs sont à gauche du zéro sur la droite numérique</li>
-    <li>|−n| = n : la valeur absolue est toujours positive</li>
-    <li>Entre deux négatifs, le plus proche de 0 est le plus grand</li>
-    <li>Pour arrondir : regarde le chiffre suivant (≥5 → arrondi supérieur)</li>
+    <li>milliards / millions / milliers : tranches de 3 chiffres</li>
+    <li>Entiers relatifs : − à gauche, + à droite de zéro</li>
+    <li>Règles de signes : (−) × (−) = (+)</li>
   </ul>
 </div>
-
-<!-- CTA -->
-<div class="cta">
-  <p>Tu as compris le cours ? Mets tes connaissances à l'épreuve !</p>
-  <a href="nombres-cm2.html" class="btn-ex">🎯 Faire les exercices →</a>
-</div>
-
-<!-- FICHE RÉCAP -->
-<div class="cs" style="margin-top:30px">
-  <h2>Fiche récap — Nombres CM2</h2>
-  <div style="display:grid;gap:10px;grid-template-columns:1fr 1fr">
-    <div style="background:#fff;border:2px solid #fde68a;border-radius:12px;padding:12px">
-      <div style="font-size:.68rem;font-weight:900;color:#b45309;text-transform:uppercase;margin-bottom:6px">Puissances de 10</div>
-      <div style="font-size:.85rem;font-weight:700;line-height:1.7">10¹ = 10<br>10² = 100<br>10³ = 1 000<br>10⁶ = 1 000 000<br>10⁹ = 1 000 000 000</div>
-    </div>
-    <div style="background:#fff;border:2px solid #fde68a;border-radius:12px;padding:12px">
-      <div style="font-size:.68rem;font-weight:900;color:#b45309;text-transform:uppercase;margin-bottom:6px">Fractions utiles</div>
-      <div style="font-size:.85rem;font-weight:700;line-height:1.7">1/2 = 0,5 = 50%<br>1/4 = 0,25 = 25%<br>3/4 = 0,75 = 75%<br>1/5 = 0,2 = 20%<br>1/10 = 0,1 = 10%</div>
-    </div>
-    <div style="background:#fff;border:2px solid #fde68a;border-radius:12px;padding:12px">
-      <div style="font-size:.68rem;font-weight:900;color:#b45309;text-transform:uppercase;margin-bottom:6px">Valeur absolue</div>
-      <div style="font-size:.85rem;font-weight:700;line-height:1.7">|−7| = 7<br>|+3| = 3<br>|0| = 0<br>Distance à zéro<br>Toujours ≥ 0</div>
-    </div>
-    <div style="background:#fff;border:2px solid #fde68a;border-radius:12px;padding:12px">
-      <div style="font-size:.68rem;font-weight:900;color:#b45309;text-transform:uppercase;margin-bottom:6px">Arrondi</div>
-      <div style="font-size:.85rem;font-weight:700;line-height:1.7">Chiffre suivant ≥ 5 → +1<br>Chiffre suivant &lt; 5 → 0<br>3 467 → 3 500 (c.)<br>3 467 → 3 470 (diz.)</div>
-    </div>
-  </div>
-</div>
-
+<div class="cta"><p>Tu as compris ? Entraîne-toi !</p><a href="nombres-cm2.html" class="btn-ex">Faire les exercices CM2 →</a></div>
 </main>
 
 <footer class="site-footer">

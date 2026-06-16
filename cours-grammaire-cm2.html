@@ -26,6 +26,12 @@
 .cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
 .cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
 .cours-header p{font-size:.87rem;opacity:.88;margin:0}
+
+.lf-grid{display:grid;gap:12px;margin-bottom:18px}
+.lf-card{background:#fff;border-left:4px solid var(--lc1);border-radius:0 12px 12px 0;padding:12px 14px}
+.lf-rule{font-size:.72rem;font-weight:900;color:var(--lc1);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.lf-body{font-size:.9rem;font-weight:700;color:var(--lt);line-height:1.5;margin-bottom:6px}
+.lf-ex{font-size:.82rem;font-weight:700;color:var(--ld);background:var(--lb);border-radius:8px;padding:5px 10px}
 </style>
 </head>
 <body class="cpage">
@@ -35,82 +41,32 @@
   <p>Phrase complexe, attribut du sujet, CC</p>
 </header>
 <main>
-
-<section class="cs">
-  <h2>1. L'attribut du sujet</h2>
-  <div class="dbox"><div class="lbl">Définition</div>
-  <p>L'attribut du sujet est un mot ou groupe qui <strong>qualifie ou identifie le sujet</strong> par l'intermédiaire d'un <strong>verbe d'état</strong>.</p>
-  <p><strong>Verbes d'état</strong> : être · paraître · sembler · devenir · rester · demeurer · avoir l'air</p></div>
-  <div class="ebox"><div class="lbl">Attribut vs COD</div>
-  <table class="gt">
-    <tr><th>Attribut du sujet</th><th>COD</th></tr>
-    <tr><td>Verbe d'état + qualité/identité du sujet</td><td>Verbe d'action + objet de l'action</td></tr>
-    <tr><td><em>Il <strong>est</strong> médecin.</em> → médecin = attribut</td><td><em>Il <strong>mange</strong> une pomme.</em> → pomme = COD</td></tr>
-    <tr><td><em>Elle <strong>semble</strong> fatiguée.</em> → fatiguée = attribut</td><td><em>Elle <strong>lit</strong> un roman.</em> → roman = COD</td></tr>
-  </table></div>
-  <div class="wbox"><div class="lbl">Test</div>
-  <p>Avec un verbe d'état, on peut remplacer l'attribut par <strong>"le/la/l'"</strong> : <em>Il est médecin → il l'est</em> ✓</p></div>
-</section>
-
-<section class="cs">
-  <h2>2. La phrase complexe</h2>
-  <div class="dbox"><div class="lbl">Définition</div>
-  <p>Une <strong>phrase simple</strong> contient <strong>un seul verbe conjugué</strong> → une seule proposition.<br>
-  Une <strong>phrase complexe</strong> contient <strong>plusieurs verbes conjugués</strong> → plusieurs propositions.</p></div>
-  <div class="ebox"><div class="lbl">Les 3 types de liaisons</div>
-  <table class="gt">
-    <tr><th>Type</th><th>Définition</th><th>Exemples</th></tr>
-    <tr><td><strong>Juxtaposition</strong></td><td>Propositions séparées par une virgule, un point-virgule ou deux-points</td><td><em>Il pleut ; je reste.</em></td></tr>
-    <tr><td><strong>Coordination</strong></td><td>Propositions reliées par une conjonction de coordination</td><td><em>Il pleut <strong>mais</strong> il sort.</em></td></tr>
-    <tr><td><strong>Subordination</strong></td><td>Une proposition dépend de l'autre (conjonction de subordination)</td><td><em>Je sors <strong>bien que</strong> il pleuve.</em></td></tr>
-  </table></div>
-</section>
-
-<section class="cs">
-  <h2>3. Les compléments circonstanciels — CC de cause</h2>
-  <div class="dbox"><div class="lbl">Rappel des CC</div>
-  <table class="gt">
-    <tr><th>CC</th><th>Question</th><th>Mots introducteurs</th></tr>
-    <tr><td><strong>Lieu</strong></td><td>Où ?</td><td>dans, sur, sous, à, chez…</td></tr>
-    <tr><td><strong>Temps</strong></td><td>Quand ?</td><td>quand, lorsque, avant que, après que…</td></tr>
-    <tr><td><strong>Manière</strong></td><td>Comment ?</td><td>avec, sans, rapidement, en courant…</td></tr>
-    <tr><td><strong>Cause</strong></td><td>Pourquoi ?</td><td>parce que, car, puisque, grâce à, à cause de…</td></tr>
-  </table></div>
-  <div class="ebox"><div class="lbl">Ne pas confondre cause et conséquence</div>
-  <table class="gt">
-    <tr><th>Cause (pourquoi ?)</th><th>Conséquence (qu'est-ce qui en résulte ?)</th></tr>
-    <tr><td>parce que · car · puisque · grâce à</td><td>donc · ainsi · alors · c'est pourquoi</td></tr>
-    <tr><td><em>Il est absent <strong>parce qu'il est malade</strong>.</em></td><td><em>Il est malade, <strong>donc</strong> il est absent.</em></td></tr>
-  </table></div>
-</section>
-
-<section class="cs">
-  <h2>4. Conjonctions de subordination (notion)</h2>
-  <div class="dbox"><div class="lbl">Conjonctions importantes</div>
-  <table class="gt">
-    <tr><th>Sens</th><th>Conjonctions</th></tr>
-    <tr><td>Temps</td><td>quand, lorsque, dès que, avant que, après que, pendant que</td></tr>
-    <tr><td>Cause</td><td>parce que, puisque, comme, vu que</td></tr>
-    <tr><td>But</td><td>pour que, afin que</td></tr>
-    <tr><td>Opposition</td><td>bien que, quoique, alors que</td></tr>
-    <tr><td>Condition</td><td>si, à condition que, pourvu que</td></tr>
-  </table></div>
-</section>
-
+<div class="lf-grid">
+  <div class="lf-card">
+    <div class="lf-rule">📌 Attribut du sujet</div>
+    <div class="lf-body">L'attribut du sujet qualifie le sujet via un verbe d'état (être, paraître, sembler, devenir, rester…). Ne pas confondre avec le COD.</div>
+    <div class="lf-ex">Ex : Elle est [belle] (attribut) ≠ Elle mange une pomme (COD)</div>
+  </div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 Phrase complexe</div>
+    <div class="lf-body">3 types de liaisons : juxtaposition (,/;) · coordination (mais/ou/et/donc/or/ni/car) · subordination (que/quand/si/parce que…).</div>
+    <div class="lf-ex">Ex : Il part parce qu'il est fatigué. (subordination)</div>
+  </div>
+  <div class="lf-card">
+    <div class="lf-rule">📌 CC de cause</div>
+    <div class="lf-body">Introduit par : parce que · car · puisque · étant donné que. Répond à la question « pourquoi ? ».</div>
+    <div class="lf-ex">Ex : Il reste car il pleut. · Puisque tu es là, entrons.</div>
+  </div>
+</div>
 <div class="retenir">
   <h3>📌 À retenir</h3>
   <ul>
-    <li>Attribut du sujet : verbe d'état + caractéristique du sujet (être, sembler, paraître…)</li>
-    <li>COD : verbe d'action + objet (manger quoi ?, voir qui ?)</li>
-    <li>Phrase complexe = plusieurs propositions = plusieurs verbes conjugués</li>
-    <li>3 liaisons : juxtaposition (,/;) · coordination (conj. coord.) · subordination (conj. subord.)</li>
-    <li>CC de cause : parce que, car, puisque, grâce à → répond à "pourquoi ?"</li>
+    <li>Attribut : qualifie le sujet via verbe d'état</li>
+    <li>Phrase complexe : juxtaposition / coordination / subordination</li>
+    <li>CC cause : parce que · car · puisque</li>
   </ul>
 </div>
-<div class="cta">
-  <p>Tu as compris le cours ? Entraîne-toi maintenant !</p>
-  <a href="grammaire-cm2.html" class="btn-ex">Faire les exercices CM2 →</a>
-</div>
+<div class="cta"><p>Tu as compris ? Entraîne-toi !</p><a href="grammaire-cm2.html" class="btn-ex">Faire les exercices CM2 →</a></div>
 </main>
 <footer class="site-footer">École Facile — Cours CM2 · Grammaire</footer>
 <script src="sync.js"></script>
