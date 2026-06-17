@@ -155,49 +155,6 @@ buildPaires([
   { q:'Associe chaque durée à sa conversion.',
     pairs:[['1 décennie','10 ans'],['1 siècle','100 ans'],['1 millénaire','1 000 ans'],['3 siècles','300 ans']] },
 ], 'ex7');
-
-
-buildQCM([
-  { q:'Quelle est la première grande période de l'histoire ?', correct:'La Préhistoire', choices:['L'Antiquité','La Préhistoire','Le Moyen Âge','L'époque contemporaine'] },
-  { q:'Quand commence la Préhistoire ?', correct:'Il y a environ 3 millions d'années', choices:['Il y a 500 ans','Il y a 2 000 ans','Il y a environ 3 millions d'années','Il y a 100 000 ans'] },
-  { q:'Qu'est-ce que l'écriture a permis de marquer ?', correct:'La fin de la Préhistoire', choices:['La fin de l'Antiquité','La fin du Moyen Âge','La fin de la Préhistoire','La fin des temps modernes'] },
-  { q:'Qui vivait en France avant les Romains ?', correct:'Les Gaulois', choices:['Les Vikings','Les Grecs','Les Gaulois','Les Egyptiens'] },
-  { q:'Quel est l'animal symbole des Gaulois ?', correct:'Le coq', choices:['L'aigle','Le lion','Le coq','Le cerf'] },
-  { q:'Comment appelle-t-on les hommes qui vivaient avant l'écriture ?', correct:'Les hommes préhistoriques', choices:['Les Romains','Les hommes préhistoriques','Les Gaulois','Les chevaliers'] },
-], 'ex8');
-
-buildQCM([
-  { q:'Combien y a-t-il de continents sur Terre ?', correct:'6', choices:['4','5','6','7'] },
-  { q:'Quel est le plus grand océan ?', correct:'Le Pacifique', choices:['L'Atlantique','L'Indien','Le Pacifique','L'Arctique'] },
-  { q:'Quel continent est le plus peuplé ?', correct:'L'Asie', choices:['L'Europe','L'Afrique','L'Asie','Les Amériques'] },
-  { q:'La France est entourée par combien de pays voisins ?', correct:'6 pays terrestres', choices:['2 pays','4 pays','6 pays terrestres','10 pays'] },
-  { q:'Quelle mer borde la France au sud ?', correct:'La Méditerranée', choices:['La mer du Nord','La mer Baltique','La Méditerranée','La mer des Caraïbes'] },
-  { q:'Quel est le plus haut sommet de France ?', correct:'Le Mont-Blanc', choices:['Le Mont-Blanc','Le Massif central','Les Pyrénées','Le Jura'] },
-], 'ex9');
-
-buildVF([
-  { q:'La Préhistoire est la période avant l'écriture.', correct:true },
-  { q:'Les Romains ont colonisé la Gaule (France).', correct:true },
-  { q:'Un siècle dure 10 ans.', correct:false, expl:'Un siècle dure 100 ans. Une décennie dure 10 ans.' },
-  { q:'La Méditerranée est un océan.', correct:false, expl:'La Méditerranée est une mer.' },
-  { q:'Les hommes préhistoriques dessinaient sur les parois des grottes.', correct:true },
-  { q:'L'Asie est le plus grand continent.', correct:true },
-  { q:'La France est sur le continent africain.', correct:false, expl:'La France est en Europe.' },
-], 'ex10');
-
-buildOrdre([
-  { q:'Range ces grandes périodes de l'histoire dans l'ordre :',
-    items:['Préhistoire','Antiquité','Moyen Âge','Temps modernes','Époque contemporaine'] },
-  { q:'Range ces inventions de la PLUS ANCIENNE à la PLUS RÉCENTE :',
-    items:['L'écriture','L'imprimerie','La machine à vapeur','Internet'] },
-], 'ex11');
-
-buildPaires([
-  { q:'Associe chaque période à sa durée approximative.',
-    pairs:[['Préhistoire','-3 000 000 à -3300'],['Antiquité','-3300 à 476'],['Moyen Âge','476 à 1492'],['Époque contemporaine','1789 à aujourd'hui']] },
-  { q:'Associe chaque continent à son océan principal.',
-    pairs:[['Europe','Atlantique'],['Asie','Pacifique'],['Afrique','Indien'],['Amériques','Atlantique & Pacifique']] },
-], 'ex12');
 </script>
 
 <script src="sync.js"></script>

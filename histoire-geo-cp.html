@@ -159,49 +159,6 @@ buildPaires([
   { q:'Associe chaque mois à sa saison.',
     pairs:[['Janvier','Hiver ❄️'],['Avril','Printemps 🌸'],['Juillet','Été ☀️'],['Octobre','Automne 🍂']] },
 ], 'ex7');
-
-
-buildQCM([
-  { q:'Comment s'appelle le pays où nous vivons ?', correct:'La France', choices:['La Belgique','L'Espagne','La France','L'Italie'] },
-  { q:'Quelles sont les couleurs du drapeau français ?', correct:'Bleu, blanc, rouge', choices:['Rouge et blanc','Vert, blanc, rouge','Bleu, blanc, rouge','Bleu, jaune, rouge'] },
-  { q:'Comment s'appelle la capitale de la France ?', correct:'Paris', choices:['Lyon','Bordeaux','Marseille','Paris'] },
-  { q:'Quel fleuve traverse Paris ?', correct:'La Seine', choices:['Le Rhône','La Loire','La Seine','La Garonne'] },
-  { q:'Comment appelle-t-on le chef de l'État en France ?', correct:'Le Président de la République', choices:['Le Roi','Le Président de la République','Le Maire','Le Général'] },
-  { q:'La France est sur quel continent ?', correct:'L'Europe', choices:['L'Asie','L'Afrique','L'Europe','Les Amériques'] },
-], 'ex8');
-
-buildQCM([
-  { q:'Comment s'appelle la sœur de ton père ou de ta mère ?', correct:'Ta tante', choices:['Ta cousine','Ta grand-mère','Ta tante','Ta marraine'] },
-  { q:'Comment s'appelle l'enfant de ton oncle ou ta tante ?', correct:'Ton cousin / ta cousine', choices:['Ton frère','Ton neveu','Ton cousin / ta cousine','Ton parrain'] },
-  { q:'Qui est le plus âgé, tes parents ou tes grands-parents ?', correct:'Tes grands-parents', choices:['Tes parents','Tes grands-parents','C'est pareil','Tes cousins'] },
-  { q:'Comment s'appelle l'enfant de tes enfants (plus tard) ?', correct:'Ton petit-enfant', choices:['Ton neveu','Ton petit-enfant','Ton cousin','Ton frère'] },
-  { q:'Dans quelle école es-tu en CP ?', correct:'À l'école primaire', choices:['Au collège','Au lycée','À l'école primaire','À l'université'] },
-], 'ex9');
-
-buildVF([
-  { q:'Paris est la capitale de la France.', correct:true },
-  { q:'Le drapeau français est vert, blanc et rouge.', correct:false, expl:'Le drapeau français est bleu, blanc et rouge.' },
-  { q:'La France est en Europe.', correct:true },
-  { q:'La Seine est un fleuve qui traverse Paris.', correct:true },
-  { q:'Il y a 8 jours dans une semaine.', correct:false, expl:'Il y a 7 jours dans une semaine.' },
-  { q:'En été, il fait généralement chaud.', correct:true },
-  { q:'Le Président est le chef de l'État en France.', correct:true },
-  { q:'On va à l'école le samedi et le dimanche.', correct:false, expl:'Le samedi et le dimanche sont les jours du week-end, on ne va pas à l'école.' },
-], 'ex10');
-
-buildOrdre([
-  { q:'Range ces étapes de la vie dans l'ordre :',
-    items:['Naissance 👶','Bébé 🍼','Enfant 🧒','Adolescent 🧑','Adulte 👨'] },
-  { q:'Range ces événements de la journée dans l'ordre :',
-    items:['Lever du soleil 🌅','Petit-déjeuner 🥐','École le matin 📚','Déjeuner 🍽️','Coucher du soleil 🌇'] },
-], 'ex11');
-
-buildPaires([
-  { q:'Associe chaque pays à sa capitale.',
-    pairs:[['France','Paris'],['Espagne','Madrid'],['Italie','Rome'],['Allemagne','Berlin']] },
-  { q:'Associe chaque mot à sa définition.',
-    pairs:[['Continent','Grande étendue de terre'],['Océan','Grande étendue d'eau salée'],['Capitale','Ville principale d'un pays'],['Frontière','Limite entre deux pays']] },
-], 'ex12');
 </script>
 
 <script src="sync.js"></script>

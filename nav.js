@@ -20,6 +20,7 @@
         ]},
         { label: '🏛️ Histoire & Géographie', color: '#86efac', pages: [
           { emoji: '🌍', title: 'Histoire & Géographie',      href: 'histoire-geo-cp.html' },
+          { emoji: '🗺️', title: 'Géographie & France',         href: 'geographie-cp.html' },
         ]},
         { label: '🏃 EPS', color: '#86efac', pages: [
           { emoji: '🏃', title: 'EPS — Éducation Physique',   href: 'eps-cycle2.html' },
@@ -46,6 +47,7 @@
         ]},
         { label: '🏛️ Histoire & Géographie', color: '#6ee7b7', pages: [
           { emoji: '🏛️', title: 'Histoire & Géographie',      href: 'histoire-geo-ce1.html' },
+          { emoji: '🌍', title: 'Géographie du monde',           href: 'geographie-ce1.html' },
         ]},
         { label: '🏃 EPS', color: '#6ee7b7', pages: [
           { emoji: '🏃', title: 'EPS — Éducation Physique',   href: 'eps-cycle2.html' },
@@ -84,6 +86,7 @@
         ]},
         { label: '🏛️ Histoire & Géographie', color: '#a78bfa', pages: [
           { emoji: '🏰', title: 'Histoire & Géographie',      href: 'histoire-geo-ce2.html' },
+          { emoji: '⚔️', title: 'Le Moyen Âge',                  href: 'moyen-age-ce2.html' },
         ]},
         { label: '🏃 EPS', color: '#a78bfa', pages: [
           { emoji: '🏃', title: 'EPS — Éducation Physique',   href: 'eps-cycle2.html' },
@@ -114,6 +117,7 @@
         ]},
         { label: '🏛️ Histoire & Géographie', color: '#93c5fd', pages: [
           { emoji: '🏛️', title: 'Histoire & Géographie',      href: 'histoire-geo-cm1.html' },
+          { emoji: '⚔️', title: 'Le Moyen Âge',                  href: 'moyen-age-cm1.html' },
         ]},
         { label: '🏃 EPS', color: '#93c5fd', pages: [
           { emoji: '🏆', title: 'EPS — Éducation Physique',   href: 'eps-cycle3.html' },
@@ -142,6 +146,7 @@
         ]},
         { label: '🏛️ Histoire & Géographie', color: '#fcd34d', pages: [
           { emoji: '⚜️', title: 'Histoire & Géographie',      href: 'histoire-geo-cm2.html' },
+          { emoji: '🏛️', title: 'Révolution & monde contemporain', href: 'histoire-contemporaine-cm2.html' },
         ]},
         { label: '🏃 EPS', color: '#fcd34d', pages: [
           { emoji: '🏆', title: 'EPS — Éducation Physique',   href: 'eps-cycle3.html' },
@@ -167,6 +172,7 @@
         ]},
         { label: '🏛️ Histoire & Géographie', color: '#f9a8d4', pages: [
           { emoji: '🌍', title: 'Histoire & Géographie',      href: 'histoire-geo-6e.html' },
+          { emoji: '🏛️', title: 'Grèce et Rome antiques',         href: 'antiquite-6e.html' },
         ]},
         { label: '🏃 EPS', color: '#f9a8d4', pages: [
           { emoji: '🏆', title: 'EPS — Éducation Physique',   href: 'eps-cycle3.html' },

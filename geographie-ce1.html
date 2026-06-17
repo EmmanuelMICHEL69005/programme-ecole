@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="École Facile">
+<meta name="application-name" content="École Facile">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/geographie-ce1.html">
+<meta property="og:title" content="Géographie du monde — CE1 | École Facile">
+<meta property="og:description" content="Exercices géographie CE1 : continents, France, pays voisins — correction immédiate.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/geographie-ce1.html">
+<meta name="description" content="Exercices géographie CE1 : continents, France, pays voisins — correction immédiate.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Géographie du monde — CE1 | École Facile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header" style="background: linear-gradient(135deg, #065f46, #059669);">
+  <span class="emoji-header">🌍</span>
+  <h1>Géographie du monde</h1>
+  <p>Continents, France, pays voisins, relief</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+  <div class="badge-niveau">🌿 CE1 — Géographie</div>
+
+</main>
+<footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a></div></footer>
+
+<script src="exercises.js"></script>
+<script>
+buildQCM([
+  { q:'Quelle est la première grande période de l'histoire ?', correct:'La Préhistoire', choices:['L'Antiquité','La Préhistoire','Le Moyen Âge','L'époque contemporaine'] },
+  { q:'Quand commence la Préhistoire ?', correct:'Il y a environ 3 millions d'années', choices:['Il y a 500 ans','Il y a 2 000 ans','Il y a environ 3 millions d'années','Il y a 100 000 ans'] },
+  { q:'Qu'est-ce que l'écriture a permis de marquer ?', correct:'La fin de la Préhistoire', choices:['La fin de l'Antiquité','La fin du Moyen Âge','La fin de la Préhistoire','La fin des temps modernes'] },
+  { q:'Qui vivait en France avant les Romains ?', correct:'Les Gaulois', choices:['Les Vikings','Les Grecs','Les Gaulois','Les Egyptiens'] },
+  { q:'Quel est l'animal symbole des Gaulois ?', correct:'Le coq', choices:['L'aigle','Le lion','Le coq','Le cerf'] },
+  { q:'Comment appelle-t-on les hommes qui vivaient avant l'écriture ?', correct:'Les hommes préhistoriques', choices:['Les Romains','Les hommes préhistoriques','Les Gaulois','Les chevaliers'] },
+], 'ex1');
+
+buildQCM([
+  { q:'Combien y a-t-il de continents sur Terre ?', correct:'6', choices:['4','5','6','7'] },
+  { q:'Quel est le plus grand océan ?', correct:'Le Pacifique', choices:['L'Atlantique','L'Indien','Le Pacifique','L'Arctique'] },
+  { q:'Quel continent est le plus peuplé ?', correct:'L'Asie', choices:['L'Europe','L'Afrique','L'Asie','Les Amériques'] },
+  { q:'La France est entourée par combien de pays voisins ?', correct:'6 pays terrestres', choices:['2 pays','4 pays','6 pays terrestres','10 pays'] },
+  { q:'Quelle mer borde la France au sud ?', correct:'La Méditerranée', choices:['La mer du Nord','La mer Baltique','La Méditerranée','La mer des Caraïbes'] },
+  { q:'Quel est le plus haut sommet de France ?', correct:'Le Mont-Blanc', choices:['Le Mont-Blanc','Le Massif central','Les Pyrénées','Le Jura'] },
+], 'ex2');
+
+buildVF([
+  { q:'La Préhistoire est la période avant l'écriture.', correct:true },
+  { q:'Les Romains ont colonisé la Gaule (France).', correct:true },
+  { q:'Un siècle dure 10 ans.', correct:false, expl:'Un siècle dure 100 ans. Une décennie dure 10 ans.' },
+  { q:'La Méditerranée est un océan.', correct:false, expl:'La Méditerranée est une mer.' },
+  { q:'Les hommes préhistoriques dessinaient sur les parois des grottes.', correct:true },
+  { q:'L'Asie est le plus grand continent.', correct:true },
+  { q:'La France est sur le continent africain.', correct:false, expl:'La France est en Europe.' },
+], 'ex3');
+
+buildOrdre([
+  { q:'Range ces grandes périodes de l'histoire dans l'ordre :',
+    items:['Préhistoire','Antiquité','Moyen Âge','Temps modernes','Époque contemporaine'] },
+  { q:'Range ces inventions de la PLUS ANCIENNE à la PLUS RÉCENTE :',
+    items:['L'écriture','L'imprimerie','La machine à vapeur','Internet'] },
+], 'ex4');
+
+buildPaires([
+  { q:'Associe chaque période à sa durée approximative.',
+    pairs:[['Préhistoire','-3 000 000 à -3300'],['Antiquité','-3300 à 476'],['Moyen Âge','476 à 1492'],['Époque contemporaine','1789 à aujourd'hui']] },
+  { q:'Associe chaque continent à son océan principal.',
+    pairs:[['Europe','Atlantique'],['Asie','Pacifique'],['Afrique','Indien'],['Amériques','Atlantique & Pacifique']] },
+], 'ex5');
+</script>
+
+<script src="sync.js"></script>
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>

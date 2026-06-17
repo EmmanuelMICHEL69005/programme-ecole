@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="École Facile">
+<meta name="application-name" content="École Facile">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/geographie-cp.html">
+<meta property="og:title" content="La France et le monde — CP | École Facile">
+<meta property="og:description" content="Exercices géographie CP : France, capitales, continents, famille — correction immédiate.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/geographie-cp.html">
+<meta name="description" content="Exercices géographie CP : France, capitales, continents, famille — correction immédiate.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La France et le monde — CP | École Facile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header" style="background: linear-gradient(135deg, #059669, #6ee7b7);">
+  <span class="emoji-header">🗺️</span>
+  <h1>La France et le monde</h1>
+  <p>Capitale, drapeau, famille, continents</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+  <div class="badge-niveau">🌱 CP — Géographie</div>
+
+</main>
+<footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a></div></footer>
+
+<script src="exercises.js"></script>
+<script>
+buildQCM([
+  { q:'Comment s'appelle le pays où nous vivons ?', correct:'La France', choices:['La Belgique','L'Espagne','La France','L'Italie'] },
+  { q:'Quelles sont les couleurs du drapeau français ?', correct:'Bleu, blanc, rouge', choices:['Rouge et blanc','Vert, blanc, rouge','Bleu, blanc, rouge','Bleu, jaune, rouge'] },
+  { q:'Comment s'appelle la capitale de la France ?', correct:'Paris', choices:['Lyon','Bordeaux','Marseille','Paris'] },
+  { q:'Quel fleuve traverse Paris ?', correct:'La Seine', choices:['Le Rhône','La Loire','La Seine','La Garonne'] },
+  { q:'Comment appelle-t-on le chef de l'État en France ?', correct:'Le Président de la République', choices:['Le Roi','Le Président de la République','Le Maire','Le Général'] },
+  { q:'La France est sur quel continent ?', correct:'L'Europe', choices:['L'Asie','L'Afrique','L'Europe','Les Amériques'] },
+], 'ex1');
+
+buildQCM([
+  { q:'Comment s'appelle la sœur de ton père ou de ta mère ?', correct:'Ta tante', choices:['Ta cousine','Ta grand-mère','Ta tante','Ta marraine'] },
+  { q:'Comment s'appelle l'enfant de ton oncle ou ta tante ?', correct:'Ton cousin / ta cousine', choices:['Ton frère','Ton neveu','Ton cousin / ta cousine','Ton parrain'] },
+  { q:'Qui est le plus âgé, tes parents ou tes grands-parents ?', correct:'Tes grands-parents', choices:['Tes parents','Tes grands-parents','C'est pareil','Tes cousins'] },
+  { q:'Comment s'appelle l'enfant de tes enfants (plus tard) ?', correct:'Ton petit-enfant', choices:['Ton neveu','Ton petit-enfant','Ton cousin','Ton frère'] },
+  { q:'Dans quelle école es-tu en CP ?', correct:'À l'école primaire', choices:['Au collège','Au lycée','À l'école primaire','À l'université'] },
+], 'ex2');
+
+buildVF([
+  { q:'Paris est la capitale de la France.', correct:true },
+  { q:'Le drapeau français est vert, blanc et rouge.', correct:false, expl:'Le drapeau français est bleu, blanc et rouge.' },
+  { q:'La France est en Europe.', correct:true },
+  { q:'La Seine est un fleuve qui traverse Paris.', correct:true },
+  { q:'Il y a 8 jours dans une semaine.', correct:false, expl:'Il y a 7 jours dans une semaine.' },
+  { q:'En été, il fait généralement chaud.', correct:true },
+  { q:'Le Président est le chef de l'État en France.', correct:true },
+  { q:'On va à l'école le samedi et le dimanche.', correct:false, expl:'Le samedi et le dimanche sont les jours du week-end, on ne va pas à l'école.' },
+], 'ex3');
+
+buildOrdre([
+  { q:'Range ces étapes de la vie dans l'ordre :',
+    items:['Naissance 👶','Bébé 🍼','Enfant 🧒','Adolescent 🧑','Adulte 👨'] },
+  { q:'Range ces événements de la journée dans l'ordre :',
+    items:['Lever du soleil 🌅','Petit-déjeuner 🥐','École le matin 📚','Déjeuner 🍽️','Coucher du soleil 🌇'] },
+], 'ex4');
+
+buildPaires([
+  { q:'Associe chaque pays à sa capitale.',
+    pairs:[['France','Paris'],['Espagne','Madrid'],['Italie','Rome'],['Allemagne','Berlin']] },
+  { q:'Associe chaque mot à sa définition.',
+    pairs:[['Continent','Grande étendue de terre'],['Océan','Grande étendue d'eau salée'],['Capitale','Ville principale d'un pays'],['Frontière','Limite entre deux pays']] },
+], 'ex5');
+</script>
+
+<script src="sync.js"></script>
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>

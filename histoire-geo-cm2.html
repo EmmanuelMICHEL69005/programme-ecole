@@ -185,49 +185,6 @@ buildTri([
     ]
   },
 ], 'ex7');
-
-
-buildQCM([
-  { q:'En quelle année Christophe Colomb découvrit-il l'Amérique ?', correct:'1492', choices:['1415','1492','1519','1620'] },
-  { q:'Qui fut le premier à faire le tour du monde ?', correct:'Magellan / Elcano', choices:['Christophe Colomb','Vasco de Gama','Magellan / Elcano','James Cook'] },
-  { q:'Qui était Louis XIV ?', correct:'Le Roi-Soleil, roi absolu de France', choices:['Un Empereur romain','Le Roi-Soleil, roi absolu de France','Un révolutionnaire','Un général napoléonien'] },
-  { q:'Quelle est la date de la Révolution française ?', correct:'1789', choices:['1715','1789','1804','1815'] },
-  { q:'Que représente la Déclaration des droits de l'homme (1789) ?', correct:'Un texte garantissant la liberté et l'égalité', choices:['Le couronnement de Napoléon','Un texte garantissant la liberté et l'égalité','La capitulation de la France','La création de la République'] },
-  { q:'En quelle année Napoléon fut-il couronné Empereur ?', correct:'1804', choices:['1789','1800','1804','1815'] },
-], 'ex8');
-
-buildQCM([
-  { q:'Quand a eu lieu la Première Guerre mondiale ?', correct:'1914–1918', choices:['1870–1871','1914–1918','1939–1945','1950–1953'] },
-  { q:'Quand a eu lieu la Seconde Guerre mondiale ?', correct:'1939–1945', choices:['1914–1918','1929–1935','1939–1945','1950–1955'] },
-  { q:'Qui était Charles de Gaulle ?', correct:'Le chef de la résistance française pendant la WWII et président de la Ve République', choices:['Un maréchal de Napoléon','Le chef de la résistance française pendant la WWII et président de la Ve République','Un roi de France','Un général de la Révolution'] },
-  { q:'En quelle année la France a-t-elle fêté le 100e anniversaire de la Révolution en construisant la Tour Eiffel ?', correct:'1889', choices:['1850','1889','1900','1914'] },
-  { q:'Qu'est-ce que la colonisation ?', correct:'L'établissement de la domination d'un pays sur d'autres territoires', choices:['Un traité de paix','L'établissement de la domination d'un pays sur d'autres territoires','Un mouvement artistique','La construction de colonies spatiales'] },
-  { q:'Quel événement a mis fin à la Seconde Guerre mondiale en Europe ?', correct:'La capitulation de l'Allemagne le 8 mai 1945', choices:['La bataille de la Marne','La capitulation de l'Allemagne le 8 mai 1945','Le débarquement du 6 juin 1944','La bombe atomique sur Berlin'] },
-], 'ex9');
-
-buildVF([
-  { q:'Louis XIV a fait construire le château de Versailles.', correct:true },
-  { q:'La Révolution française a eu lieu en 1789.', correct:true },
-  { q:'Napoléon Bonaparte est né en Corse.', correct:true },
-  { q:'La Première Guerre mondiale a duré 6 ans.', correct:false, expl:'La Première Guerre mondiale a duré 4 ans (1914–1918).' },
-  { q:'Le débarquement de Normandie a eu lieu le 6 juin 1944.', correct:true },
-  { q:'La France a toujours été une République depuis 1789.', correct:false, expl:'La France a connu plusieurs régimes : République, Empire (Napoléon), Royauté... La Ve République date de 1958.' },
-  { q:'Charles de Gaulle a été le premier président de la Ve République.', correct:true },
-], 'ex10');
-
-buildOrdre([
-  { q:'Range ces événements dans l'ordre chronologique :',
-    items:['Découverte de l'Amérique (1492)','Règne de Louis XIV (1661)','Révolution française (1789)','Première Guerre mondiale (1914)','Seconde Guerre mondiale (1939)'] },
-  { q:'Range ces inventions de la PLUS ANCIENNE à la PLUS RÉCENTE :',
-    items:['Imprimerie (1450)','Machines à vapeur (1769)','Électricité (1879)','Automobile (1885)','Internet (1991)'] },
-], 'ex11');
-
-buildPaires([
-  { q:'Associe chaque personnage à sa période.',
-    pairs:[['Christophe Colomb','Grandes Découvertes (1492)'],['Louis XIV','Temps modernes (XVIIe s.)'],['Napoléon Bonaparte','Empire français (1804–1815)'],['Charles de Gaulle','XXe siècle – Résistance et Ve République']] },
-  { q:'Associe chaque événement à sa date.',
-    pairs:[['Prise de la Bastille','14 juillet 1789'],['Débarquement de Normandie','6 juin 1944'],['Armistice de la WWI','11 novembre 1918'],['Création de la Ve République','1958']] },
-], 'ex12');
 </script>
 
 <script src="sync.js"></script>
