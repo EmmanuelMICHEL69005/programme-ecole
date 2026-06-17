@@ -157,8 +157,22 @@
   };
 
   var cur = window.location.pathname.split('/').pop() || 'index.html';
-  var links = RELATED[cur];
-  if (!links || !links.length) return;
+  var links = RELATED[cur] ? RELATED[cur].slice() : [];
+
+  // Auto-inject pillar page link based on current page's level
+  var levelSuffixes = [['-cp','CP'],['-ce1','CE1'],['-ce2','CE2'],['-cm1','CM1'],['-cm2','CM2'],['-6e','6e']];
+  var pillarPages = {CP:'programme-cp.html',CE1:'programme-ce1.html',CE2:'programme-ce2.html',CM1:'programme-cm1.html',CM2:'programme-cm2.html','6e':'programme-6e.html'};
+  for (var i=0;i<levelSuffixes.length;i++){
+    if (cur.slice(0,-5).endsWith(levelSuffixes[i][0])){
+      var lvl=levelSuffixes[i][1];
+      if (!links.some(function(l){return l.h===pillarPages[lvl];})){
+        links.push({h:pillarPages[lvl],l:'🗂️ Tout le programme '+lvl});
+      }
+      break;
+    }
+  }
+
+  if (!links.length) return;
 
   var css = '<style>.related-section{margin:32px 0 0;padding:18px 16px 14px;background:#f8f7ff;border-top:3px solid #e0e7ff;}.related-title{font-size:0.78rem;font-weight:900;text-transform:uppercase;letter-spacing:1.5px;color:#6b7280;margin-bottom:10px;}.related-links{display:flex;flex-wrap:wrap;gap:8px;}.related-link{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1.5px solid #e0e7ff;border-radius:20px;padding:6px 14px;font-size:0.8rem;font-weight:800;color:#4f46e5;text-decoration:none;transition:background 0.15s,border-color 0.15s;}.related-link:hover{background:#eef2ff;border-color:#a5b4fc;color:#3730a3;}.related-link-arrow{font-size:0.7rem;opacity:0.5;}</style>';
   document.head.insertAdjacentHTML('beforeend', css);

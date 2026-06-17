@@ -657,6 +657,13 @@
       section.appendChild(catDiv);
     });
 
+    // Pillar page link at bottom of each level section
+    const pillarHref = 'programme-' + lvKey.toLowerCase() + '.html';
+    const pillarLink = document.createElement('div');
+    pillarLink.style.cssText = 'margin:10px 10px 6px';
+    pillarLink.innerHTML = `<a href="${pillarHref}" onclick="closeNav()" style="display:flex;align-items:center;gap:10px;padding:9px 13px;background:rgba(255,255,255,.1);border:1.5px solid ${lvData.color};border-radius:10px;color:#fff;font-size:.82rem;font-weight:900;text-decoration:none;">🗂️ Tout le programme ${lvKey}</a>`;
+    section.appendChild(pillarLink);
+
     levelSections[lvKey] = section;
     body.appendChild(section);
   });
