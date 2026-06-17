@@ -34,6 +34,28 @@
 .pil-links a{font-size:.72rem;font-weight:800;padding:3px 9px;border-radius:7px;text-decoration:none;white-space:nowrap}
 .pil-ex{background:var(--lc1);color:#fff}
 .pil-cours{background:var(--lbg);color:var(--ld);border:1px solid var(--lb)}
+.pil-seo{padding:0 12px 32px;max-width:680px;margin:0 auto}
+.pil-seo-block{margin-bottom:28px}
+.pil-seo-block h2{font-size:.95rem;font-weight:900;color:var(--ld);margin:0 0 10px;padding:0 0 6px;border-bottom:2px solid var(--lb)}
+.pil-seo-block p{font-size:.85rem;font-weight:500;color:#374151;line-height:1.75;margin:0 0 10px}
+.pil-seo-block p b{color:var(--ld);font-weight:800}
+.pil-matiere-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+@media(min-width:480px){.pil-matiere-grid{grid-template-columns:repeat(3,1fr)}}
+.pil-matiere-card{background:#fff;border-radius:10px;padding:10px 12px;box-shadow:0 1px 4px rgba(0,0,0,.06);border-left:4px solid var(--lc1)}
+.pil-matiere-card strong{display:block;font-size:.82rem;font-weight:900;color:var(--ld);margin-bottom:4px}
+.pil-matiere-card span{font-size:.76rem;font-weight:700;color:#4b5563;line-height:1.5}
+.pil-tags-wrap{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0 12px}
+.pil-tag{background:var(--lbg);color:var(--ld);border:1px solid var(--lb);border-radius:20px;padding:3px 10px;font-size:.74rem;font-weight:800}
+.pil-tip-box{background:#fef9c3;border-radius:10px;padding:10px 13px;margin:10px 0;font-size:.82rem;font-weight:800;color:#713f12;line-height:1.5}
+.pil-faq{margin-top:8px}
+.pil-faq-item{background:#fff;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,.06);margin-bottom:8px;overflow:hidden}
+.pil-faq-item h3{font-size:.84rem;font-weight:900;color:var(--ld);margin:0;padding:11px 14px;cursor:pointer;background:var(--lbg);border-left:4px solid var(--lc1)}
+.pil-faq-item p{font-size:.82rem;font-weight:700;color:#374151;line-height:1.65;margin:0;padding:10px 14px}
+.pil-steps{counter-reset:step;margin:8px 0}
+.pil-step{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px;font-size:.84rem;font-weight:500;color:#374151;line-height:1.65}
+.pil-step b{color:var(--ld);font-weight:800}
+.pil-step > span{flex:1;min-width:0}
+.pil-step::before{counter-increment:step;content:counter(step);flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--lc1);color:#fff;font-size:.75rem;font-weight:900;display:flex;align-items:center;justify-content:center;margin-top:1px}
 </style>
 </head>
 <body>
@@ -115,6 +137,172 @@
     </div>
   </div>
 </section>
+
+<!-- ═══════════════════════════════════════════════
+     CONTENU SEO — Intentions de recherche CP
+════════════════════════════════════════════════ -->
+<div class="pil-seo">
+
+  <!-- 1. Qu'est-ce que le cours préparatoire ? -->
+  <div class="pil-seo-block">
+    <h2>Qu'est-ce que le cours préparatoire (CP) ?</h2>
+    <p>Le <b>cours préparatoire</b> (CP) est la <b>première année</b> de l'<b>école primaire élémentaire</b>, généralement suivie par des <b>enfants</b> de 6 ans. Il appartient au <b>cycle des apprentissages fondamentaux</b> (cycle 2, avec le CE1 et le CE2). Le CP est une <b>année</b> absolument décisive dans la <b>scolarité</b> de l'<b>enfant</b> : c'est là qu'il apprend à <b>lire</b>, à <b>écrire</b> et à calculer — trois <b>apprentissages</b> qui conditionneront sa réussite dans toutes les <b>matières</b> futures.</p>
+    <p>Le <b>programme scolaire</b> du CP est défini par l'<b>Éducation nationale</b>. Il couvre principalement le <b>français</b> (apprentissage de la lecture, écriture, phonologie, grammaire élémentaire) et les <b>mathématiques</b> (numération jusqu'à 100, addition, soustraction, géométrie simple, mesures). Le CP introduit également le <b>questionner le monde</b> (premières notions de sciences et d'histoire), l'<b>enseignement moral et civique</b> (EMC), l'<b>éducation physique et sportive</b> (EPS), l'<b>éducation musicale</b> et les arts. Contrairement aux <b>classes préparatoires</b> de <b>grandes écoles</b>, le <b>cours préparatoire</b> désigne bien la première <b>année</b> de l'<b>école élémentaire</b>, accessible à tous les <b>enfants</b> sans sélection.</p>
+    <div class="pil-matiere-grid">
+      <div class="pil-matiere-card">
+        <strong>📝 Français CP</strong>
+        <span>Apprentissage de la lecture (décodage, déchiffrage) · conscience phonologique · écriture cursive · copie · grammaire élémentaire (nom, verbe) · vocabulaire</span>
+      </div>
+      <div class="pil-matiere-card">
+        <strong>📐 Mathématiques CP</strong>
+        <span>Numération jusqu'à 100 · addition et soustraction (sans retenue) · géométrie plane (figures simples) · mesures (longueur, masse) · problèmes simples</span>
+      </div>
+      <div class="pil-matiere-card">
+        <strong>🌍 Questionner le monde</strong>
+        <span>Se repérer dans le temps et l'espace · monde du vivant · matière et objets · corps humain · espace proche (école, quartier)</span>
+      </div>
+      <div class="pil-matiere-card">
+        <strong>🏅 EPS</strong>
+        <span>Éducation physique et sportive · jeux collectifs · activités gymniques · natation · coordination · coopération</span>
+      </div>
+      <div class="pil-matiere-card">
+        <strong>🎨 Arts & musique</strong>
+        <span>Arts visuels · éducation musicale · écoute active · activités plastiques et créatives · culture artistique de la petite enfance</span>
+      </div>
+      <div class="pil-matiere-card">
+        <strong>🌐 EMC & anglais</strong>
+        <span>Enseignement moral et civique : règles de vie · vivre ensemble · premiers mots en anglais (langue vivante) · écoute et répétition</span>
+      </div>
+    </div>
+    <div class="pil-tags-wrap">
+      <span class="pil-tag">cours préparatoire</span>
+      <span class="pil-tag">école élémentaire</span>
+      <span class="pil-tag">cycle des apprentissages fondamentaux</span>
+      <span class="pil-tag">enseignement primaire</span>
+      <span class="pil-tag">apprentissage de la lecture</span>
+      <span class="pil-tag">éducation nationale</span>
+      <span class="pil-tag">programme scolaire CP</span>
+    </div>
+  </div>
+
+  <!-- 2. Quel est le programme scolaire du CP ? -->
+  <div class="pil-seo-block">
+    <h2>Quel est le programme scolaire du CP ?</h2>
+    <p>Le <b>programme</b> du <b>cours préparatoire</b> est centré sur deux <b>apprentissages</b> fondamentaux : la <b>lecture</b> et les <b>mathématiques</b>. En <b>français</b>, le cœur du <b>programme</b> CP est l'<b>apprentissage de la lecture</b> : l'<b>enfant</b> apprend à reconnaître et associer les lettres et les sons (phonèmes), à déchiffrer des syllabes, puis des <b>mots</b>, puis des phrases courtes. La méthode principale est la méthode syllabique (ou phonique), privilégiée par l'<b>Éducation nationale</b>. En parallèle, l'<b>élève</b> apprend l'<b>écriture</b> cursive, la copie, et les premières <b>notions</b> de grammaire (le nom, le verbe, la phrase).</p>
+    <p>En <b>mathématiques</b>, le <b>programme</b> CP couvre la <b>numération</b> jusqu'à 100, les opérations de base (addition et soustraction sans retenue), la résolution de <b>problèmes</b> simples, la <b>géométrie</b> élémentaire (cercle, carré, triangle, rectangle) et les premières <b>mesures</b>. Le tout s'appuie sur des activités concrètes et ludiques adaptées à l'âge de l'<b>enfant</b>. La <b>langue vivante</b> (anglais) fait son apparition de manière orale, avec des comptines et des expressions simples. L'<b>éducation physique et sportive</b>, les arts et l'<b>enseignement moral et civique</b> complètent le <b>programme de la classe</b>.</p>
+    <div class="pil-tags-wrap">
+      <span class="pil-tag">programme CP</span>
+      <span class="pil-tag">lecture CP</span>
+      <span class="pil-tag">numération CP</span>
+      <span class="pil-tag">mathématiques CP</span>
+      <span class="pil-tag">langue vivante CP</span>
+      <span class="pil-tag">éducation physique et sportive</span>
+      <span class="pil-tag">programme de la classe</span>
+      <span class="pil-tag">cycle 2</span>
+    </div>
+  </div>
+
+  <!-- 3. Comment aider mon enfant en CP ? -->
+  <div class="pil-seo-block">
+    <h2>Comment aider votre enfant en CP ?</h2>
+    <p><b>Aider votre enfant</b> en CP ne signifie pas faire les exercices à sa place, mais créer les conditions pour qu'il <b>progresse</b> en confiance. Les <b>parents</b> jouent un rôle essentiel dans l'<b>apprentissage de la lecture</b> : lire ensemble chaque soir, même 10 minutes, est l'un des gestes les plus puissants pour <b>réussir</b> au CP. Montrez-lui que la <b>lecture</b> est un plaisir, pas une contrainte.</p>
+    <div class="pil-steps">
+      <div class="pil-step"><span>Lire ensemble chaque soir : l'<b>enfant</b> lit à voix haute un passage de son livre de <b>lecture</b>, vous lisez la suite si besoin. 10 à 15 minutes suffisent. L'essentiel est la régularité.</span></div>
+      <div class="pil-step"><span>Pratiquer la <b>conscience phonologique</b> : jouer avec les sons ("quel mot rime avec chat ?", "combien de syllabes dans 'papillon' ?"). Ce jeu verbal accélère considérablement l'<b>apprentissage</b> de la lecture.</span></div>
+      <div class="pil-step"><span>Soutenir les <b>mathématiques</b> avec des situations concrètes : compter les marches d'escalier, les légumes dans l'assiette, la monnaie au supermarché. Les <b>enfants</b> comprennent mieux les <b>nombres</b> quand ils les manipulent dans la vie réelle.</span></div>
+      <div class="pil-step"><span>Valoriser chaque <b>progrès</b>, même petit. En CP, l'<b>enfant</b> apprend à une vitesse incroyable — mais les difficultés peuvent décourager. Une attitude positive et des encouragements font toute la différence pour <b>développer</b> la confiance.</span></div>
+      <div class="pil-step"><span>Maintenir un rythme régulier : coucher tôt (les <b>enfants</b> de 6 ans ont besoin de 10-11 heures de sommeil), un goûter tranquille avant de travailler, et une courte <b>activité</b> scolaire (pas plus de 20 minutes) avant le dîner.</span></div>
+    </div>
+    <div class="pil-tip-box">💡 Le conseil le plus important : lire ensemble chaque soir, même 10 minutes. Les enfants qui ont la lecture à la maison progressent en moyenne 2 fois plus vite que ceux qui ne l'ont pas.</div>
+  </div>
+
+  <!-- 4. Quels sont les objectifs du CP ? -->
+  <div class="pil-seo-block">
+    <h2>Quels sont les objectifs du CP ?</h2>
+    <p>À la fin du <b>cours préparatoire</b>, l'<b>élève</b> doit avoir atteint plusieurs <b>objectifs</b> fondamentaux définis par l'<b>Éducation nationale</b>. Ces <b>objectifs</b> constituent le socle sur lequel s'appuient tous les <b>apprentissages</b> des <b>années</b> suivantes — c'est pourquoi la <b>fin de cycle</b> 1 (grande section de maternelle) puis la <b>fin du CP</b> sont des moments clés dans la <b>scolarité</b> de l'<b>enfant</b>.</p>
+    <p>En <b>français</b>, l'<b>objectif</b> principal est de savoir <b>lire</b> couramment des textes courts adaptés au niveau CP (déchiffrage fluide, compréhension de textes simples) et de savoir <b>écrire</b> (copie soignée, premières productions autonomes). En <b>mathématiques</b>, l'<b>objectif</b> est de maîtriser la <b>numération</b> jusqu'à 100, de savoir calculer mentalement des additions et soustractions simples, et de résoudre des <b>problèmes</b> élémentaires. L'<b>élève</b> doit aussi avoir acquis les premiers repères dans le <b>temps</b> et dans l'<b>espace</b>, et comprendre les règles de base du vivre ensemble (<b>enseignement moral et civique</b>).</p>
+    <div class="pil-matiere-grid">
+      <div class="pil-matiere-card">
+        <strong>🎯 Objectifs lecture CP</strong>
+        <span>Déchiffrer des mots inconnus · lire des textes courts à voix haute · comprendre un texte lu · associer sons et lettres (phonèmes/graphèmes)</span>
+      </div>
+      <div class="pil-matiere-card">
+        <strong>🎯 Objectifs maths CP</strong>
+        <span>Connaître les nombres jusqu'à 100 · additionner et soustraire sans retenue · comparer des quantités · résoudre des problèmes simples</span>
+      </div>
+      <div class="pil-matiere-card">
+        <strong>🎯 Objectifs vie scolaire</strong>
+        <span>Respecter les règles de classe · s'exprimer à l'oral · travailler en groupe · écouter · gérer ses affaires · cycle l'enfant citoyen</span>
+      </div>
+    </div>
+    <div class="pil-tags-wrap">
+      <span class="pil-tag">objectifs CP</span>
+      <span class="pil-tag">fin de cycle 2</span>
+      <span class="pil-tag">apprentissage lecture</span>
+      <span class="pil-tag">numération CP</span>
+      <span class="pil-tag">enseignement moral et civique</span>
+      <span class="pil-tag">scolarité CP</span>
+    </div>
+  </div>
+
+  <!-- 5. Comment se déroule la rentrée en CP ? -->
+  <div class="pil-seo-block">
+    <h2>Comment se déroule la rentrée en CP ?</h2>
+    <p>La <b>rentrée</b> en CP est un moment important pour l'<b>enfant</b> et sa famille. C'est la première <b>rentrée</b> à l'<b>école élémentaire</b>, après la maternelle — un vrai changement de cadre. Pour bien la <b>préparer</b>, plusieurs étapes sont conseillées.</p>
+    <p>En <b>mois de septembre</b>, les premières semaines du <b>cours préparatoire</b> sont consacrées à la mise en place du cadre de vie scolaire : découverte des locaux, des <b>règles</b> de la <b>classe</b>, présentation des <b>enseignants</b>. L'<b>apprentissage</b> de la lecture démarre progressivement, souvent en révisant les lettres et les sons acquis en grande section de maternelle. Les premières semaines peuvent être fatigantes pour les <b>enfants</b> — il est important de maintenir un <b>rythme</b> de vie régulier (sommeil, alimentation, temps calme).</p>
+    <div class="pil-matiere-grid">
+      <div class="pil-matiere-card">
+        <strong>📅 Avant la rentrée</strong>
+        <span>Acheter les fournitures scolaires · repérer le chemin de l'école · revoir les lettres et les chiffres · lire des albums ensemble · parler positivement du CP</span>
+      </div>
+      <div class="pil-matiere-card">
+        <strong>🏫 Premiers jours de CP</strong>
+        <span>Découverte de la classe et des camarades · installation des rituels scolaires · premières leçons de lecture · règles de vie collective</span>
+      </div>
+      <div class="pil-matiere-card">
+        <strong>🌙 À la maison</strong>
+        <span>Coucher à 20h30 maximum · goûter calme · 10 min de lecture ensemble · rassurer et écouter · ne pas surcharger d'activités</span>
+      </div>
+    </div>
+    <div class="pil-tags-wrap">
+      <span class="pil-tag">rentrée CP</span>
+      <span class="pil-tag">préparer la rentrée CP</span>
+      <span class="pil-tag">mois de septembre CP</span>
+      <span class="pil-tag">grande section maternelle</span>
+      <span class="pil-tag">école primaire rentrée</span>
+      <span class="pil-tag">fin de cycle maternelle</span>
+    </div>
+  </div>
+
+  <!-- 6. FAQ -->
+  <div class="pil-seo-block">
+    <h2>Questions fréquentes sur le CP</h2>
+    <div class="pil-faq">
+
+      <div class="pil-faq-item">
+        <h3>Quels livres choisir pour le cours préparatoire ?</h3>
+        <p>Pour accompagner l'<b>apprentissage</b> de la <b>lecture</b> en CP, il est utile de choisir des albums adaptés au niveau de l'<b>enfant</b> : d'abord des livres avec peu de texte et de grandes illustrations (niveau CP début), puis des textes de plus en plus longs au fil de l'<b>année</b>. Les collections de <b>lecture</b> parascolaires (J'apprends à lire, Je lis avec Sami et Julie, Ribambelle, Phonics…) sont populaires. Pour les <b>mathématiques</b>, des <b>livres</b> de jeux et de puzzles numériques stimulent l'<b>enfant</b> de façon ludique. Les <b>ressources</b> numériques gratuites (comme École Facile) complètent ces supports avec des <b>exercices</b> interactifs et une correction immédiate.</p>
+      </div>
+
+      <div class="pil-faq-item">
+        <h3>Quelles activités pour les enfants de CP ?</h3>
+        <p>Les meilleures <b>activités</b> pour les <b>enfants</b> de CP combinent <b>apprentissage</b> et plaisir. En lien avec la <b>lecture</b> : bibliothèque, lecture d'albums à voix haute, jeux de rimes et de sons. En lien avec les <b>mathématiques</b> : jeux de société (dominos, dés, cartes), jeux de tri et de classement, manipulation de la monnaie ou de la mesure dans la vie quotidienne. Pour l'<b>éducation artistique</b> : dessin, peinture, musique, activités de bricolage. L'<b>éducation physique et sportive</b> (natation, activités gymniques) est également importante pour le <b>développement</b> moteur. Toutes ces <b>activités</b> <b>ludiques</b> et <b>éducatives</b> soutiennent l'<b>apprentissage</b> scolaire de manière naturelle.</p>
+      </div>
+
+      <div class="pil-faq-item">
+        <h3>Comment repérer les difficultés en CP et trouver du soutien ?</h3>
+        <p>Les premières difficultés en CP apparaissent souvent autour de novembre-décembre : certains <b>enfants</b> peinent à mémoriser les correspondances sons-lettres, à identifier les syllabes ou à mémoriser les <b>nombres</b>. Ces difficultés sont normales et peuvent être compensées rapidement avec un <b>soutien scolaire</b> adapté. Le premier réflexe est d'en parler à l'<b>enseignant</b>, qui peut orienter vers des <b>ressources</b> pédagogiques ou un accompagnement spécialisé. Des <b>activités</b> ludiques à la maison (jeux de sons, jeux de <b>calcul</b>) et l'utilisation d'exercices interactifs en <b>ligne</b> (comme sur ce <b>site</b>) permettent souvent de débloquer la situation rapidement. En cas de difficulté persistante, une orientation vers un <b>soutien</b> orthophonique peut être recommandée par l'<b>enseignant</b>.</p>
+      </div>
+
+      <div class="pil-faq-item">
+        <h3>Comment se préparer pour passer en CE1 ?</h3>
+        <p>La <b>fin de cycle</b> du CP (passage en CE1) est validée quand l'<b>élève</b> maîtrise les <b>fondamentaux</b> : lire couramment des textes courts, <b>écrire</b> des phrases simples sous dictée, connaître les <b>nombres</b> jusqu'à 100 et savoir additionner et soustraire. Pour bien <b>préparer</b> ce passage, les mois d'avril, mai et juin sont idéaux pour consolider ces acquis. Un <b>cahier de vacances</b> CP→CE1 pendant l'été aide à maintenir les <b>apprentissages</b> et à aborder la rentrée en CE1 avec sérénité. Les exercices interactifs disponibles sur École Facile permettent aussi de réviser chaque <b>notion</b> du <b>programme</b> CP à son rythme, gratuitement et en ligne.</p>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /.pil-seo -->
 
 </main>
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a></div></footer>
