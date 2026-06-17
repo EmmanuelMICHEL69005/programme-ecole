@@ -2,20 +2,20 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="apple-mobile-web-app-title" content="École Facile">
-<meta name="application-name" content="École Facile">
+<meta name="apple-mobile-web-app-title" content="Ãcole Facile">
+<meta name="application-name" content="Ãcole Facile">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ecolefacile.fr/nombres-cp.html">
-<meta property="og:title" content="Les nombres — CP | École Facile">
-<meta property="og:description" content="Exercices interactifs Nombres CP — correction immédiate, XP et badges. Gratuit sur École Facile.">
+<meta property="og:title" content="Les nombres â CP | Ãcole Facile">
+<meta property="og:description" content="Exercices interactifs Nombres CP â correction immÃ©diate, XP et badges. Gratuit sur Ãcole Facile.">
 <meta property="og:image" content="https://ecolefacile.fr/og-image.png">
-<meta property="og:site_name" content="École Facile">
+<meta property="og:site_name" content="Ãcole Facile">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://ecolefacile.fr/nombres-cp.html">
-<meta name="description" content="Exercices interactifs Nombres CP — correction immédiate, XP et badges. Gratuit sur École Facile.">
+<meta name="description" content="Exercices interactifs Nombres CP â correction immÃ©diate, XP et badges. Gratuit sur Ãcole Facile.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Les nombres — CP | École Facile</title>
+<title>Les nombres â CP | Ãcole Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -28,7 +28,7 @@
   .btn-vrai { background:#dcfce7!important; border-color:#22c55e!important; color:#166534!important; box-shadow:0 4px 0 #bbf7d0!important; }
   .btn-faux { background:#fee2e2!important; border-color:#ef4444!important; color:#991b1b!important; box-shadow:0 4px 0 #fecaca!important; }
 
-  /* Grille dizaines-unités */
+  /* Grille dizaines-unitÃ©s */
   .du-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:12px 0; }
   .du-card { background:#dcfce7; border:2.5px solid #22c55e; border-radius:14px; padding:14px; text-align:center; box-shadow:0 4px 0 #bbf7d0; }
   .du-card .du-num { font-size:2.8rem; font-weight:900; color:#166534; line-height:1; }
@@ -37,7 +37,7 @@
   .du-d { background:#4ade80; border-radius:10px; padding:6px 14px; color:white; }
   .du-u { background:#86efac; border-radius:10px; padding:6px 14px; color:#14532d; }
 
-  /* Frise numérique */
+  /* Frise numÃ©rique */
   .frise { display:flex; gap:4px; flex-wrap:wrap; margin:12px 0; justify-content:center; }
   .frise-num { width:40px; height:40px; border-radius:10px; display:flex; align-items:center; justify-content:center;
                font-size:0.9rem; font-weight:900; border:2px solid; }
@@ -50,7 +50,7 @@
   .main-svg { text-align:center; }
   .main-svg .lbl { font-size:0.78rem; font-weight:800; color:#166534; margin-top:4px; }
 
-  /* Droite graduée */
+  /* Droite graduÃ©e */
   .droite-nb { background:#f0fdf4; border:2.5px solid #4ade80; border-radius:14px; padding:18px 20px 12px; margin:12px 0; }
   .droite-nb .tick-row { display:flex; justify-content:space-between; padding:0 4px; }
   .droite-nb .ligne { height:6px; background:linear-gradient(90deg,#4ade80,#16a34a); border-radius:3px; margin:6px 0; }
@@ -60,31 +60,31 @@
 <body>
 
 <header class="site-header" style="background:linear-gradient(135deg,#16a34a,#4ade80);">
-  <span class="emoji-header">🔢</span>
-  <h1>Les nombres jusqu'à 100</h1>
-  <p>Compter, lire, écrire et comparer</p>
-  <a href="index.html" class="nav-back">← Accueil</a>
+  <span class="emoji-header">ð¢</span>
+  <h1>Les nombres jusqu'Ã  100</h1>
+  <p>Compter, lire, Ã©crire et comparer</p>
+  <a href="index.html" class="nav-back">â Accueil</a>
 </header>
 
 <main>
-  <div class="badge-niveau">🌱 CP — Nombres et calculs</div>
+  <div class="badge-niveau">ð± CP â Nombres et calculs</div>
 
-  <!-- ═══ JE RETIENS ═══ -->
+  <!-- âââ JE RETIENS âââ -->
   <div class="retiens-box">
-    <div class="retiens-title">💡 Je retiens</div>
+    <div class="retiens-title">ð¡ Je retiens</div>
     <div style="font-size:0.9rem;color:#555;margin-top:8px;line-height:1.9;">
-      🔢 <strong>47</strong> = <strong>4 dizaines</strong> et <strong>7 unités</strong> = 40 + 7<br>
-      📏 Pour <strong>comparer</strong> : on regarde d'abord les dizaines, puis les unités<br>
-      🔄 <strong>Sauter de 2 en 2</strong> → 2, 4, 6, 8, 10…<br>
-      🔄 <strong>Sauter de 10 en 10</strong> → 10, 20, 30, 40…<br>
-      🌟 <strong>Pair</strong> : divisible par 2 (se termine par 0, 2, 4, 6, 8)<br>
-      🌟 <strong>Impair</strong> : pas divisible par 2 (se termine par 1, 3, 5, 7, 9)
+      ð¢ <strong>47</strong> = <strong>4 dizaines</strong> et <strong>7 unitÃ©s</strong> = 40 + 7<br>
+      ð Pour <strong>comparer</strong> : on regarde d'abord les dizaines, puis les unitÃ©s<br>
+      ð <strong>Sauter de 2 en 2</strong> â 2, 4, 6, 8, 10â¦<br>
+      ð <strong>Sauter de 10 en 10</strong> â 10, 20, 30, 40â¦<br>
+      ð <strong>Pair</strong> : divisible par 2 (se termine par 0, 2, 4, 6, 8)<br>
+      ð <strong>Impair</strong> : pas divisible par 2 (se termine par 1, 3, 5, 7, 9)
     </div>
     <div class="du-grid" style="margin-top:14px">
       <div class="du-card">
         <div class="du-num">47</div>
         <div class="du-label">Le nombre</div>
-        <div class="du-decomp"><span class="du-d">4 dizaines = 40</span><span class="du-u">7 unités</span></div>
+        <div class="du-decomp"><span class="du-d">4 dizaines = 40</span><span class="du-u">7 unitÃ©s</span></div>
       </div>
       <div class="du-card" style="background:#dbeafe;border-color:#60a5fa;">
         <div class="du-num" style="color:#1d4ed8">62</div>
@@ -95,7 +95,7 @@
         </div>
       </div>
     </div>
-    <!-- Droite graduée visuelle -->
+    <!-- Droite graduÃ©e visuelle -->
     <div class="droite-nb">
       <div class="num-row">
         <span>0</span><span>10</span><span>20</span><span>30</span><span>40</span>
@@ -109,27 +109,27 @@
     </div>
   </div>
 
-  <!-- ═══ EX 1 : Dizaines et unités ═══ -->
+  <!-- âââ EX 1 : Dizaines et unitÃ©s âââ -->
   <div class="exercice-block" style="--accent:#16a34a">
     <div class="ex-title">
       <span class="ex-badge" style="background:#16a34a">Ex 1</span>
-      Dizaines et unités
+      Dizaines et unitÃ©s
       <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span>
     </div>
     <div id="ex1"></div>
   </div>
 
-  <!-- ═══ EX 2 : Lire et écrire ═══ -->
+  <!-- âââ EX 2 : Lire et Ã©crire âââ -->
   <div class="exercice-block" style="--accent:#0ea5e9">
     <div class="ex-title">
       <span class="ex-badge" style="background:#0ea5e9">Ex 2</span>
-      Lire et écrire les nombres
+      Lire et Ã©crire les nombres
       <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span>
     </div>
     <div id="ex2"></div>
   </div>
 
-  <!-- ═══ EX 3 : Vrai ou Faux ═══ -->
+  <!-- âââ EX 3 : Vrai ou Faux âââ -->
   <div class="exercice-block" style="--accent:#f59e0b">
     <div class="ex-title">
       <span class="ex-badge" style="background:#f59e0b">Ex 3</span>
@@ -139,7 +139,7 @@
     <div id="ex3"></div>
   </div>
 
-  <!-- ═══ EX 4 : Pair ou Impair (TRI) ═══ -->
+  <!-- âââ EX 4 : Pair ou Impair (TRI) âââ -->
   <div class="exercice-block" style="--accent:#10b981">
     <div class="ex-title">
       <span class="ex-badge" style="background:#10b981">Ex 4</span>
@@ -149,17 +149,17 @@
     <div id="ex4"></div>
   </div>
 
-  <!-- ═══ EX 5 : Compléter la suite ═══ -->
+  <!-- âââ EX 5 : ComplÃ©ter la suite âââ -->
   <div class="exercice-block" style="--accent:#8b5cf6">
     <div class="ex-title">
       <span class="ex-badge" style="background:#8b5cf6">Ex 5</span>
-      Compléter la suite
+      ComplÃ©ter la suite
       <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span>
     </div>
     <div id="ex5"></div>
   </div>
 
-  <!-- ═══ EX 6 : Range dans l'ordre (ORDRE) ═══ -->
+  <!-- âââ EX 6 : Range dans l'ordre (ORDRE) âââ -->
   <div class="exercice-block" style="--accent:#ec4899">
     <div class="ex-title">
       <span class="ex-badge" style="background:#ec4899">Ex 6</span>
@@ -169,7 +169,7 @@
     <div id="ex6"></div>
   </div>
 
-  <!-- ═══ EX 7 : Associer (PAIRES) ═══ -->
+  <!-- âââ EX 7 : Associer (PAIRES) âââ -->
   <div class="exercice-block" style="--accent:#f97316">
     <div class="ex-title">
       <span class="ex-badge" style="background:#f97316">Ex 7</span>
@@ -179,7 +179,7 @@
     <div id="ex7"></div>
   </div>
 
-  <!-- ═══ EX 8 : Comparer ═══ -->
+  <!-- âââ EX 8 : Comparer âââ -->
   <div class="exercice-block" style="--accent:#16a34a">
     <div class="ex-title">
       <span class="ex-badge" style="background:#16a34a">Ex 8</span>
@@ -189,11 +189,11 @@
     <div id="ex8"></div>
   </div>
 
-  <!-- ═══ EX 9 : Problèmes ═══ -->
+  <!-- âââ EX 9 : ProblÃ¨mes âââ -->
   <div class="exercice-block" style="--accent:#7c3aed">
     <div class="ex-title">
       <span class="ex-badge" style="background:#7c3aed">Ex 9</span>
-      Problèmes de dénombrement
+      ProblÃ¨mes de dÃ©nombrement
       <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span>
     </div>
     <div id="ex9"></div>
@@ -201,96 +201,96 @@
 
 </main>
 
-<footer class="site-footer">Fait avec ❤️ pour Clémence — CP</footer>
+<footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a></div></footer>
 
 <script src="exercises.js"></script>
 <script>
-// ── EX 1 : Dizaines et unités (QCM) ──────────────────────────────────
+// ââ EX 1 : Dizaines et unitÃ©s (QCM) ââââââââââââââââââââââââââââââââââ
 buildQCM([
   { card:'35', q:'Combien y a-t-il de dizaines dans 35 ?',
     correct:'3 dizaines', choices:['2 dizaines','3 dizaines','4 dizaines','5 dizaines'],
-    hint:'35 = 30 + 5 → 30 = 3 dizaines' },
-  { card:'47', q:'Combien y a-t-il d\'unités dans 47 ?',
-    correct:'7 unités', choices:['4 unités','6 unités','7 unités','8 unités'] },
+    hint:'35 = 30 + 5 â 30 = 3 dizaines' },
+  { card:'47', q:'Combien y a-t-il d\'unitÃ©s dans 47 ?',
+    correct:'7 unitÃ©s', choices:['4 unitÃ©s','6 unitÃ©s','7 unitÃ©s','8 unitÃ©s'] },
   { card:'60', q:'Le nombre 60 a combien de dizaines ?',
     correct:'6 dizaines', choices:['0 dizaine','3 dizaines','6 dizaines','10 dizaines'] },
-  { q:'5 dizaines et 2 unités, c\'est le nombre…',
+  { q:'5 dizaines et 2 unitÃ©s, c\'est le nombreâ¦',
     correct:'52', choices:['25','52','520','502'] },
-  { q:'Quel nombre a 8 dizaines et 0 unité ?',
+  { q:'Quel nombre a 8 dizaines et 0 unitÃ© ?',
     correct:'80', choices:['8','18','80','800'] },
-  { q:'Dans 74, la valeur du chiffre des dizaines est…',
+  { q:'Dans 74, la valeur du chiffre des dizaines estâ¦',
     correct:'70', choices:['7','17','70','74'] },
-  { q:'3 dizaines + 9 unités = ?',
+  { q:'3 dizaines + 9 unitÃ©s = ?',
     correct:'39', choices:['30','39','93','309'] },
 ], 'ex1');
 
-// ── EX 2 : Lire et écrire (QCM) ──────────────────────────────────────
+// ââ EX 2 : Lire et Ã©crire (QCM) ââââââââââââââââââââââââââââââââââââââ
 buildQCM([
-  { q:'Comment s\'écrit "trente-deux" en chiffres ?',
+  { q:'Comment s\'Ã©crit "trente-deux" en chiffres ?',
     correct:'32', choices:['23','32','302','320'] },
   { q:'Comment se lit le nombre 78 ?',
     correct:'soixante-dix-huit', choices:['septante-huit','soixante-dix-huit','soixante-huit','quatre-vingt-huit'] },
   { q:'Quel est le nombre juste avant 50 ?',
     correct:'49', choices:['48','49','51','40'] },
-  { q:'Quel est le nombre juste après 99 ?',
+  { q:'Quel est le nombre juste aprÃ¨s 99 ?',
     correct:'100', choices:['98','99','100','101'] },
-  { q:'Comment s\'écrit "quatre-vingt-sept" ?',
+  { q:'Comment s\'Ã©crit "quatre-vingt-sept" ?',
     correct:'87', choices:['47','78','87','97'] },
-  { q:'Le nombre qui vient juste avant 30 est…',
+  { q:'Le nombre qui vient juste avant 30 estâ¦',
     correct:'29', choices:['20','28','29','31'] },
   { q:'Comment se lit 56 ?',
     correct:'cinquante-six', choices:['cinquante-cinq','cinquante-six','soixante-cinq','soixante-six'] },
 ], 'ex2');
 
-// ── EX 3 : Vrai ou Faux ───────────────────────────────────────────────
+// ââ EX 3 : Vrai ou Faux âââââââââââââââââââââââââââââââââââââââââââââââ
 buildVF([
   { q:'43 est plus grand que 34.', correct:true,  expl:'4 dizaines > 3 dizaines' },
-  { q:'70 est plus petit que 7.', correct:false, expl:'70 a 7 dizaines, 7 n\'a que 7 unités' },
+  { q:'70 est plus petit que 7.', correct:false, expl:'70 a 7 dizaines, 7 n\'a que 7 unitÃ©s' },
   { q:'Le nombre 50 a 5 dizaines.', correct:true },
-  { q:'25 et 52 sont le même nombre.', correct:false, expl:'25 = 2 diz + 5 unit ; 52 = 5 diz + 2 unit' },
-  { q:'99 est le plus grand nombre à deux chiffres.', correct:true },
-  { q:'Sauter de 10 en 10 depuis 0 : on passe par 35.', correct:false, expl:'On obtient 0,10,20,30,40… pas 35' },
+  { q:'25 et 52 sont le mÃªme nombre.', correct:false, expl:'25 = 2 diz + 5 unit ; 52 = 5 diz + 2 unit' },
+  { q:'99 est le plus grand nombre Ã  deux chiffres.', correct:true },
+  { q:'Sauter de 10 en 10 depuis 0 : on passe par 35.', correct:false, expl:'On obtient 0,10,20,30,40â¦ pas 35' },
   { q:'Le nombre 46 se lit "quarante-six".', correct:true },
 ], 'ex3');
 
-// ── EX 4 : Tri Pair / Impair ──────────────────────────────────────────
+// ââ EX 4 : Tri Pair / Impair ââââââââââââââââââââââââââââââââââââââââââ
 buildTri([
   { q:'Range chaque nombre dans la bonne colonne.',
-    cats:['Pair 🟢','Impair 🔴'],
+    cats:['Pair ð¢','Impair ð´'],
     items:[
-      {v:'4',  cat:'Pair 🟢'}, {v:'7',  cat:'Impair 🔴'},
-      {v:'12', cat:'Pair 🟢'}, {v:'9',  cat:'Impair 🔴'},
-      {v:'20', cat:'Pair 🟢'}, {v:'15', cat:'Impair 🔴'},
-      {v:'33', cat:'Impair 🔴'},{v:'48', cat:'Pair 🟢'},
+      {v:'4',  cat:'Pair ð¢'}, {v:'7',  cat:'Impair ð´'},
+      {v:'12', cat:'Pair ð¢'}, {v:'9',  cat:'Impair ð´'},
+      {v:'20', cat:'Pair ð¢'}, {v:'15', cat:'Impair ð´'},
+      {v:'33', cat:'Impair ð´'},{v:'48', cat:'Pair ð¢'},
     ]
   },
-  { q:'Trie ces nombres : pairs d\'un côté, impairs de l\'autre.',
-    cats:['Pair 🟢','Impair 🔴'],
+  { q:'Trie ces nombres : pairs d\'un cÃ´tÃ©, impairs de l\'autre.',
+    cats:['Pair ð¢','Impair ð´'],
     items:[
-      {v:'6',  cat:'Pair 🟢'}, {v:'11', cat:'Impair 🔴'},
-      {v:'18', cat:'Pair 🟢'}, {v:'25', cat:'Impair 🔴'},
-      {v:'30', cat:'Pair 🟢'}, {v:'43', cat:'Impair 🔴'},
+      {v:'6',  cat:'Pair ð¢'}, {v:'11', cat:'Impair ð´'},
+      {v:'18', cat:'Pair ð¢'}, {v:'25', cat:'Impair ð´'},
+      {v:'30', cat:'Pair ð¢'}, {v:'43', cat:'Impair ð´'},
     ]
   },
 ], 'ex4');
 
-// ── EX 5 : Compléter la suite (QCM) ──────────────────────────────────
+// ââ EX 5 : ComplÃ©ter la suite (QCM) ââââââââââââââââââââââââââââââââââ
 buildQCM([
-  { enonce:'Suite de 2 en 2 : 4, 6, 8, ☐, 12',
+  { enonce:'Suite de 2 en 2 : 4, 6, 8, â, 12',
     q:'Quel nombre manque ?', correct:'10', choices:['9','10','11','13'] },
-  { enonce:'Suite de 10 en 10 : 10, 20, ☐, 40, 50',
+  { enonce:'Suite de 10 en 10 : 10, 20, â, 40, 50',
     q:'Quel nombre manque ?', correct:'30', choices:['25','28','30','32'] },
-  { enonce:'Suite de 5 en 5 : 5, 10, 15, ☐, 25',
+  { enonce:'Suite de 5 en 5 : 5, 10, 15, â, 25',
     q:'Quel nombre manque ?', correct:'20', choices:['16','18','20','22'] },
-  { enonce:'Compte à rebours : 10, 9, ☐, 7, 6',
+  { enonce:'Compte Ã  rebours : 10, 9, â, 7, 6',
     q:'Quel nombre manque ?', correct:'8', choices:['7','8','9','10'] },
-  { enonce:'Suite : 20, 30, 40, ☐, 60',
+  { enonce:'Suite : 20, 30, 40, â, 60',
     q:'Quel nombre manque ?', correct:'50', choices:['45','48','50','55'] },
-  { enonce:'Suite : 1, 3, 5, ☐, 9 (nombres impairs)',
+  { enonce:'Suite : 1, 3, 5, â, 9 (nombres impairs)',
     q:'Quel nombre manque ?', correct:'7', choices:['6','7','8','10'] },
 ], 'ex5');
 
-// ── EX 6 : Ordre ─────────────────────────────────────────────────────
+// ââ EX 6 : Ordre âââââââââââââââââââââââââââââââââââââââââââââââââââââ
 buildOrdre([
   { q:'Range du plus petit au plus grand : 25, 52, 15, 37',
     items:['15','25','37','52'] },
@@ -300,15 +300,15 @@ buildOrdre([
     items:['11','33','44','66'] },
 ], 'ex6');
 
-// ── EX 7 : Paires nombre ↔ écriture ──────────────────────────────────
+// ââ EX 7 : Paires nombre â Ã©criture ââââââââââââââââââââââââââââââââââ
 buildPaires([
-  { q:'Associe chaque nombre à son écriture en lettres.',
+  { q:'Associe chaque nombre Ã  son Ã©criture en lettres.',
     pairs:[
       ['12','douze'], ['25','vingt-cinq'],
       ['40','quarante'], ['73','soixante-treize'],
     ]
   },
-  { q:'Associe chaque nombre à sa décomposition.',
+  { q:'Associe chaque nombre Ã  sa dÃ©composition.',
     pairs:[
       ['36','30 + 6'], ['58','50 + 8'],
       ['71','70 + 1'], ['84','80 + 4'],
@@ -316,33 +316,33 @@ buildPaires([
   },
 ], 'ex7');
 
-// ── EX 8 : Comparer ───────────────────────────────────────────────────
+// ââ EX 8 : Comparer âââââââââââââââââââââââââââââââââââââââââââââââââââ
 buildQCM([
   { q:'Lequel est le plus grand : 43 ou 34 ?',
     correct:'43', choices:['43','34','Ils sont pareils'] },
   { q:'Lequel est le plus petit : 68 ou 86 ?',
     correct:'68', choices:['68','86','Ils sont pareils'] },
-  { q:'Range du plus petit au plus grand : 25, 52, 15. La plus petite valeur est…',
+  { q:'Range du plus petit au plus grand : 25, 52, 15. La plus petite valeur estâ¦',
     correct:'15', choices:['15','25','52'] },
   { q:'Lequel est le plus grand : 90 ou 9 ?',
     correct:'90', choices:['9','90','Ils sont pareils'] },
   { q:'Entre 45 et 54, lequel est plus proche de 50 ?',
-    correct:'54', choices:['45','54','Ils sont à égale distance'] },
+    correct:'54', choices:['45','54','Ils sont Ã  Ã©gale distance'] },
   { q:'Quel est le plus grand nombre avec les chiffres 3 et 7 ?',
     correct:'73', choices:['37','73','77'] },
 ], 'ex8');
 
-// ── EX 9 : Problèmes ─────────────────────────────────────────────────
+// ââ EX 9 : ProblÃ¨mes âââââââââââââââââââââââââââââââââââââââââââââââââ
 buildQCM([
-  { enonce:'🍎 Il y a 3 dizaines et 7 unités de pommes dans la caisse.',
+  { enonce:'ð Il y a 3 dizaines et 7 unitÃ©s de pommes dans la caisse.',
     q:'Combien y a-t-il de pommes en tout ?', correct:'37', choices:['30','37','73','307'] },
-  { enonce:'🎈 On organise une fête. Les enfants sont assis par tables de 10. Il y a 4 tables pleines et 6 enfants debout.',
+  { enonce:'ð On organise une fÃªte. Les enfants sont assis par tables de 10. Il y a 4 tables pleines et 6 enfants debout.',
     q:'Combien d\'enfants y a-t-il au total ?', correct:'46', choices:['40','44','46','406'] },
-  { enonce:'🚌 Un bus a 50 places. Il y a 23 voyageurs.',
+  { enonce:'ð Un bus a 50 places. Il y a 23 voyageurs.',
     q:'Combien de places vides reste-t-il ?', correct:'27', choices:['13','27','37','73'] },
-  { enonce:'📚 Léa a lu 35 pages. Son livre en a 60.',
-    q:'Combien de pages lui reste-t-il à lire ?', correct:'25', choices:['15','25','35','95'] },
-  { enonce:'🌟 Pour le jeu, on doit compter de 2 en 2 depuis 0. On arrive à 18.',
+  { enonce:'ð LÃ©a a lu 35 pages. Son livre en a 60.',
+    q:'Combien de pages lui reste-t-il Ã  lire ?', correct:'25', choices:['15','25','35','95'] },
+  { enonce:'ð Pour le jeu, on doit compter de 2 en 2 depuis 0. On arrive Ã  18.',
     q:'Combien de bonds de 2 a-t-on fait ?', correct:'9', choices:['7','8','9','18'] },
 ], 'ex9');
 </script>

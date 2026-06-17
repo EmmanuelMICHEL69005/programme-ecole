@@ -2,25 +2,25 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="apple-mobile-web-app-title" content="École Facile">
-<meta name="application-name" content="École Facile">
+<meta name="apple-mobile-web-app-title" content="Ãcole Facile">
+<meta name="application-name" content="Ãcole Facile">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ecolefacile.fr/profile.html">
-<meta property="og:title" content="Mon Profil — Les Maths de Clémence | École Facile">
-<meta property="og:description" content="Exercices interactifs Profile  — correction immédiate, XP et badges. Gratuit sur École Facile.">
+<meta property="og:title" content="Mon Profil â Les Maths de ClÃ©mence | Ãcole Facile">
+<meta property="og:description" content="Exercices interactifs Profile  â correction immÃ©diate, XP et badges. Gratuit sur Ãcole Facile.">
 <meta property="og:image" content="https://ecolefacile.fr/og-image.png">
-<meta property="og:site_name" content="École Facile">
+<meta property="og:site_name" content="Ãcole Facile">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://ecolefacile.fr/profile.html">
-<meta name="description" content="Exercices interactifs Profile  — correction immédiate, XP et badges. Gratuit sur École Facile.">
+<meta name="description" content="Exercices interactifs Profile  â correction immÃ©diate, XP et badges. Gratuit sur Ãcole Facile.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mon Profil — Les Maths de Clémence | École Facile</title>
+<title>Mon Profil â Les Maths de ClÃ©mence | Ãcole Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  /* ── Profile switcher bar ── */
+  /* ââ Profile switcher bar ââ */
   .profiles-bar {
     background: linear-gradient(135deg, #1e1b4b, #312e81);
     padding: 16px 16px 14px;
@@ -61,7 +61,7 @@
   }
   .profile-add-btn:hover { background: rgba(255,255,255,0.2); color: white; }
 
-  /* ── Profile hero ── */
+  /* ââ Profile hero ââ */
   .profile-hero {
     background: linear-gradient(150deg, #1e1b4b, #4c1d95 50%, #1e3a5f);
     color: white; padding: 36px 24px 48px; text-align: center;
@@ -114,7 +114,7 @@
     border-radius: 8px; transition: width 0.8s cubic-bezier(0.22,1,0.36,1);
   }
 
-  /* ── Stats cards ── */
+  /* ââ Stats cards ââ */
   .stats-grid {
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
     margin: -28px 16px 0; position: relative; z-index: 10;
@@ -126,13 +126,13 @@
   .stat-card .stat-val { font-size: 1.7rem; font-weight: 900; color: #5b21b6; display: block; }
   .stat-card .stat-lbl { font-size: 0.72rem; font-weight: 700; color: #888; margin-top: 2px; }
 
-  /* ── Section titles ── */
+  /* ââ Section titles ââ */
   .section-label {
     font-size: 0.8rem; font-weight: 900; text-transform: uppercase;
     letter-spacing: 1.2px; color: #888; margin: 28px 0 12px;
   }
 
-  /* ── Classe selector ── */
+  /* ââ Classe selector ââ */
   .classe-selector { display: flex; gap: 8px; flex-wrap: wrap; }
   .classe-opt {
     flex: 1; min-width: 56px; padding: 10px 6px; font-size: 0.9rem; font-weight: 900;
@@ -142,7 +142,7 @@
   .classe-opt:hover { background: #ede9fe; border-color: #a78bfa; }
   .classe-opt.active { background: #7c3aed; border-color: #7c3aed; color: white; }
 
-  /* ── Badges ── */
+  /* ââ Badges ââ */
   .badges-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
   .badge-card {
     background: white; border-radius: 18px; padding: 16px 12px;
@@ -161,7 +161,7 @@
     padding: 2px 7px; margin-top: 5px;
   }
 
-  /* ── Topics ── */
+  /* ââ Topics ââ */
   .topics-list { display: flex; flex-direction: column; gap: 10px; }
   .topic-row {
     background: white; border-radius: 14px; padding: 12px 16px;
@@ -173,7 +173,7 @@
   .topic-count { font-size: 0.75rem; color: #888; margin-top: 1px; }
   .topic-stars { font-size: 1.2rem; flex-shrink: 0; }
 
-  /* ── Levels roadmap ── */
+  /* ââ Levels roadmap ââ */
   .levels-road { display: flex; flex-direction: column; }
   .level-row {
     display: flex; align-items: center; gap: 14px;
@@ -196,7 +196,7 @@
   .lr-xp    { font-size: 0.75rem; color: #888; }
   .lr-done  { font-size: 0.75rem; color: #7c3aed; font-weight: 700; }
 
-  /* ── Avatar picker ── */
+  /* ââ Avatar picker ââ */
   .avatar-picker-overlay {
     position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 5000;
     display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px);
@@ -220,7 +220,7 @@
   }
   .btn-close-picker:hover { background: #5b21b6; }
 
-  /* ── Name editor ── */
+  /* ââ Name editor ââ */
   .name-input {
     font-size: 1.9rem; font-weight: 900; background: transparent; border: none;
     border-bottom: 3px solid rgba(255,255,255,0.5); color: white; font-family: inherit;
@@ -228,7 +228,7 @@
   }
   .name-input::placeholder { color: rgba(255,255,255,0.4); }
 
-  /* ── Danger zone ── */
+  /* ââ Danger zone ââ */
   .danger-zone {
     background: #fef2f2; border: 2px solid #fecaca; border-radius: 18px;
     padding: 18px 20px; margin-top: 16px;
@@ -267,7 +267,7 @@
 
   <div class="profile-name-wrap">
     <span class="profile-name" id="profileNameDisplay"></span>
-    <button class="btn-edit-name" id="btnEditName">✏️ Modifier</button>
+    <button class="btn-edit-name" id="btnEditName">âï¸ Modifier</button>
   </div>
   <div id="profileClasseTag" class="profile-classe-tag" title="Changer de classe"></div>
   <div class="profile-level-label" id="profileLevelLabel"></div>
@@ -287,53 +287,53 @@
 <div class="stats-grid">
   <div class="stat-card">
     <span class="stat-val" id="statCorrect">0</span>
-    <span class="stat-lbl">Bonnes<br>réponses</span>
+    <span class="stat-lbl">Bonnes<br>rÃ©ponses</span>
   </div>
   <div class="stat-card">
     <span class="stat-val" id="statBadges">0</span>
-    <span class="stat-lbl">Badges<br>débloqués</span>
+    <span class="stat-lbl">Badges<br>dÃ©bloquÃ©s</span>
   </div>
   <div class="stat-card">
     <span class="stat-val" id="statStreak">0</span>
-    <span class="stat-lbl">Meilleure<br>série 🔥</span>
+    <span class="stat-lbl">Meilleure<br>sÃ©rie ð¥</span>
   </div>
 </div>
 
 <main>
 
   <!-- Badges -->
-  <div class="section-label">🏅 Mes badges</div>
+  <div class="section-label">ð Mes badges</div>
   <div class="badges-grid" id="badgesGrid"></div>
 
   <!-- Topics -->
-  <div class="section-label">📚 Mes matières</div>
+  <div class="section-label">ð Mes matiÃ¨res</div>
   <div class="topics-list" id="topicsList"></div>
 
   <!-- Levels roadmap -->
-  <div class="section-label">🗺️ Ma progression</div>
+  <div class="section-label">ðºï¸ Ma progression</div>
   <div class="levels-road" id="levelsRoad"></div>
 
   <!-- Settings -->
-  <div class="section-label">⚙️ Paramètres</div>
+  <div class="section-label">âï¸ ParamÃ¨tres</div>
   <div id="classeSection">
     <p style="font-size:0.85rem;color:#888;margin-bottom:10px;">Ma classe :</p>
     <div class="classe-selector" id="classeSelector"></div>
   </div>
 
   <!-- Sauvegarde / Restauration -->
-  <div class="section-label">💾 Sauvegarde des données</div>
+  <div class="section-label">ð¾ Sauvegarde des donnÃ©es</div>
   <div style="background:white;border-radius:18px;padding:18px 20px;border:2px solid #e0e7ff;margin-bottom:8px;">
     <p style="font-size:0.85rem;color:#555;margin-bottom:14px;line-height:1.6;">
-      Les profils et scores sont sauvegardés automatiquement dans ce navigateur.<br>
+      Les profils et scores sont sauvegardÃ©s automatiquement dans ce navigateur.<br>
       Exporte une sauvegarde pour ne rien perdre si tu changes d'appareil.
     </p>
     <div style="display:flex;gap:10px;flex-wrap:wrap;">
       <button onclick="exportData()" style="flex:1;padding:11px 14px;font-size:0.9rem;font-weight:800;background:linear-gradient(135deg,#7c3aed,#a855f7);color:white;border:none;border-radius:14px;cursor:pointer;font-family:inherit;">
-        📥 Exporter la sauvegarde
+        ð¥ Exporter la sauvegarde
       </button>
       <label style="flex:1;display:block;">
         <span style="display:block;padding:11px 14px;font-size:0.9rem;font-weight:800;background:#f5f3ff;border:2px solid #ddd6fe;color:#7c3aed;border-radius:14px;cursor:pointer;text-align:center;">
-          📤 Importer une sauvegarde
+          ð¤ Importer une sauvegarde
         </span>
         <input type="file" accept=".json" id="importInput" style="display:none;" onchange="importData(this)">
       </label>
@@ -344,21 +344,21 @@
   <div class="danger-zone">
     <h3>Zone danger</h3>
     <div class="danger-btns">
-      <button class="btn-danger" onclick="confirmReset()">🔄 Remettre ce profil à zéro</button>
-      <button class="btn-danger" onclick="confirmDelete()">🗑️ Supprimer ce profil</button>
+      <button class="btn-danger" onclick="confirmReset()">ð Remettre ce profil Ã  zÃ©ro</button>
+      <button class="btn-danger" onclick="confirmDelete()">ðï¸ Supprimer ce profil</button>
     </div>
   </div>
 
 </main>
 
-<footer class="site-footer">Fait avec ❤️ pour Clémence</footer>
+<footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a></div></footer>
 
 <!-- Avatar picker -->
 <div class="avatar-picker-overlay" id="avatarPicker" style="display:none;">
   <div class="avatar-picker-card">
     <div class="avatar-picker-title">Choisis ton avatar</div>
     <div class="avatar-grid" id="avatarGrid"></div>
-    <button class="btn-close-picker" onclick="closePicker()">Valider ✓</button>
+    <button class="btn-close-picker" onclick="closePicker()">Valider â</button>
   </div>
 </div>
 
@@ -395,7 +395,7 @@
         <span class="profile-chip-avatar">${prof.avatar}</span>
         <div class="profile-chip-info">
           <span class="profile-chip-name">${prof.name}</span>
-          <span class="profile-chip-meta">${prof.classe} · ${lv.emoji} Niv.${prof.level}</span>
+          <span class="profile-chip-meta">${prof.classe} Â· ${lv.emoji} Niv.${prof.level}</span>
         </div>
       `;
       chip.addEventListener('click', () => {
@@ -410,10 +410,10 @@
     // Hero
     document.getElementById('avatarCircle').textContent = P.avatar;
     document.getElementById('profileNameDisplay').textContent = P.name;
-    document.getElementById('profileClasseTag').textContent = '📚 ' + (P.classe || 'CE2');
-    document.getElementById('profileLevelLabel').textContent = `${lvl.emoji} Niveau ${lvl.n} — ${lvl.title}`;
+    document.getElementById('profileClasseTag').textContent = 'ð ' + (P.classe || 'CE2');
+    document.getElementById('profileLevelLabel').textContent = `${lvl.emoji} Niveau ${lvl.n} â ${lvl.title}`;
     document.getElementById('xpCurrent').textContent = `${P.xp} XP`;
-    document.getElementById('xpNext').textContent    = nxt ? `Prochain : ${nxt.xp} XP` : '🌟 Niveau max !';
+    document.getElementById('xpNext').textContent    = nxt ? `Prochain : ${nxt.xp} XP` : 'ð Niveau max !';
     setTimeout(() => { document.getElementById('xpFill').style.width = p + '%'; }, 100);
 
     // Stats
@@ -432,7 +432,7 @@
         <span class="badge-emoji">${b.emoji}</span>
         <div class="badge-name">${b.name}</div>
         <div class="badge-desc">${b.desc}</div>
-        ${earned ? '<span class="badge-unlocked-tag">✓ Débloqué</span>' : ''}
+        ${earned ? '<span class="badge-unlocked-tag">â DÃ©bloquÃ©</span>' : ''}
       `;
       grid.appendChild(card);
     });
@@ -442,7 +442,7 @@
     topicsList.innerHTML = '';
     Object.entries(GS.PAGE_LABELS).filter(([k]) => k !== 'index.html').forEach(([href, info]) => {
       const count = P.pages[href] || 0;
-      const stars = count >= 20 ? '⭐⭐⭐' : count >= 8 ? '⭐⭐' : count >= 2 ? '⭐' : '☆';
+      const stars = count >= 20 ? 'â­â­â­' : count >= 8 ? 'â­â­' : count >= 2 ? 'â­' : 'â';
       const row = document.createElement('div');
       row.className = 'topic-row';
       row.style.cursor = 'pointer';
@@ -451,7 +451,7 @@
         <span class="topic-emoji">${info.emoji}</span>
         <div class="topic-info">
           <div class="topic-title">${info.title}</div>
-          <div class="topic-count">${count === 0 ? 'Pas encore visité' : count + ' bonne' + (count > 1 ? 's' : '') + ' réponse' + (count > 1 ? 's' : '')}</div>
+          <div class="topic-count">${count === 0 ? 'Pas encore visitÃ©' : count + ' bonne' + (count > 1 ? 's' : '') + ' rÃ©ponse' + (count > 1 ? 's' : '')}</div>
         </div>
         <div class="topic-stars">${stars}</div>
       `;
@@ -469,10 +469,10 @@
       row.innerHTML = `
         <span class="lr-emoji">${l.emoji}</span>
         <div class="lr-info">
-          <div class="lr-title">Niveau ${l.n} — ${l.title}</div>
+          <div class="lr-title">Niveau ${l.n} â ${l.title}</div>
           <div class="lr-xp">${l.xp} XP requis</div>
         </div>
-        <span class="lr-done">${done ? '✓' : current ? '← ici !' : ''}</span>
+        <span class="lr-done">${done ? 'â' : current ? 'â ici !' : ''}</span>
       `;
       road.appendChild(row);
     });
@@ -488,7 +488,7 @@
         GS.setClasse(c);
         document.querySelectorAll('.classe-opt').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        document.getElementById('profileClasseTag').textContent = '📚 ' + c;
+        document.getElementById('profileClasseTag').textContent = 'ð ' + c;
       });
       cs.appendChild(btn);
     });
@@ -511,18 +511,18 @@
     });
   }
 
-  // ── Name editing ──────────────────────────────────────────────────
+  // ââ Name editing ââââââââââââââââââââââââââââââââââââââââââââââââââ
   document.getElementById('btnEditName').addEventListener('click', function handler() {
     const display = document.getElementById('profileNameDisplay');
     const current = GS.profile().name;
     const input = document.createElement('input');
     input.className = 'name-input';
     input.value = current;
-    input.placeholder = 'Ton prénom';
+    input.placeholder = 'Ton prÃ©nom';
     display.replaceWith(input);
     input.focus();
     const btn = document.getElementById('btnEditName');
-    btn.textContent = '✓ OK';
+    btn.textContent = 'â OK';
     const confirm = () => {
       const name = input.value.trim() || GS.profile().name;
       GS.setName(name);
@@ -531,7 +531,7 @@
       newSpan.id = 'profileNameDisplay';
       newSpan.textContent = name;
       input.replaceWith(newSpan);
-      btn.textContent = '✏️ Modifier';
+      btn.textContent = 'âï¸ Modifier';
       btn.removeEventListener('click', confirm);
       btn.addEventListener('click', handler);
       render();
@@ -541,7 +541,7 @@
     input.addEventListener('keydown', e => { if (e.key === 'Enter') confirm(); });
   });
 
-  // ── Avatar picker ─────────────────────────────────────────────────
+  // ââ Avatar picker âââââââââââââââââââââââââââââââââââââââââââââââââ
   document.getElementById('avatarCircle').addEventListener('click', () => {
     document.getElementById('avatarPicker').style.display = 'flex';
   });
@@ -550,7 +550,7 @@
     if (e.target === document.getElementById('avatarPicker')) closePicker();
   });
 
-  // ── Classe picker ─────────────────────────────────────────────────
+  // ââ Classe picker âââââââââââââââââââââââââââââââââââââââââââââââââ
   document.getElementById('profileClasseTag').addEventListener('click', () => {
     const grid = document.getElementById('classePicker-grid');
     grid.innerHTML = '';
@@ -568,20 +568,20 @@
     document.getElementById('classePicker').style.display = 'flex';
   });
 
-  // ── Danger zone ───────────────────────────────────────────────────
+  // ââ Danger zone âââââââââââââââââââââââââââââââââââââââââââââââââââ
   function confirmReset() {
-    if (confirm('Veux-tu vraiment remettre ce profil à zéro ?\nTes points et badges seront perdus.')) {
+    if (confirm('Veux-tu vraiment remettre ce profil Ã  zÃ©ro ?\nTes points et badges seront perdus.')) {
       GS.resetAll();
     }
   }
   function confirmDelete() {
     const P = GS.profile();
-    if (confirm('Supprimer le profil de ' + P.name + ' ?\nCette action est irréversible.')) {
+    if (confirm('Supprimer le profil de ' + P.name + ' ?\nCette action est irrÃ©versible.')) {
       GS.deleteProfile(P.id);
     }
   }
 
-  // ── Export / Import ───────────────────────────────────────────────
+  // ââ Export / Import âââââââââââââââââââââââââââââââââââââââââââââââ
   function exportData() {
     const st = GS.store();
     const json = JSON.stringify(st, null, 2);
@@ -603,11 +603,11 @@
       try {
         const data = JSON.parse(e.target.result);
         if (!data.profiles || !data.active) throw new Error('Format invalide');
-        if (!confirm(`Importer ${Object.keys(data.profiles).length} profil(s) ?\nCela remplacera les données actuelles.`)) return;
+        if (!confirm(`Importer ${Object.keys(data.profiles).length} profil(s) ?\nCela remplacera les donnÃ©es actuelles.`)) return;
         localStorage.setItem('clemence_maths_v2', JSON.stringify(data));
         location.reload();
       } catch(err) {
-        alert('❌ Fichier invalide ou corrompu.');
+        alert('â Fichier invalide ou corrompu.');
       }
     };
     reader.readAsText(file);

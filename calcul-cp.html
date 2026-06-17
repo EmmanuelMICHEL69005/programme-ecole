@@ -2,20 +2,20 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="apple-mobile-web-app-title" content="École Facile">
-<meta name="application-name" content="École Facile">
+<meta name="apple-mobile-web-app-title" content="Ãcole Facile">
+<meta name="application-name" content="Ãcole Facile">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ecolefacile.fr/calcul-cp.html">
-<meta property="og:title" content="Addition et soustraction — CP | École Facile">
-<meta property="og:description" content="Exercices interactifs Calcul CP — correction immédiate, XP et badges. Gratuit sur École Facile.">
+<meta property="og:title" content="Addition et soustraction â CP | Ãcole Facile">
+<meta property="og:description" content="Exercices interactifs Calcul CP â correction immÃ©diate, XP et badges. Gratuit sur Ãcole Facile.">
 <meta property="og:image" content="https://ecolefacile.fr/og-image.png">
-<meta property="og:site_name" content="École Facile">
+<meta property="og:site_name" content="Ãcole Facile">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://ecolefacile.fr/calcul-cp.html">
-<meta name="description" content="Exercices interactifs Calcul CP — correction immédiate, XP et badges. Gratuit sur École Facile.">
+<meta name="description" content="Exercices interactifs Calcul CP â correction immÃ©diate, XP et badges. Gratuit sur Ãcole Facile.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Addition et soustraction — CP | École Facile</title>
+<title>Addition et soustraction â CP | Ãcole Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -28,13 +28,13 @@
   .btn-vrai { background:#dcfce7!important; border-color:#22c55e!important; color:#166534!important; box-shadow:0 4px 0 #bbf7d0!important; }
   .btn-faux { background:#fee2e2!important; border-color:#ef4444!important; color:#991b1b!important; box-shadow:0 4px 0 #fecaca!important; }
 
-  /* Illustration opération posée */
+  /* Illustration opÃ©ration posÃ©e */
   .op-illus { background:#dcfce7; border:2.5px solid #22c55e; border-radius:14px; padding:16px;
               font-size:1.8rem; font-weight:900; color:#166534; text-align:center;
               margin-bottom:12px; box-shadow:0 4px 0 #bbf7d0; font-family:monospace; line-height:1.7; }
   .op-illus .op-line { border-top:3px solid #166534; padding-top:4px; margin-top:4px; }
 
-  /* Compléments à 10 visual */
+  /* ComplÃ©ments Ã  10 visual */
   .comp-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:4px; margin:12px 0; }
   .comp-box { height:34px; border-radius:8px; display:flex; align-items:center; justify-content:center;
               font-weight:900; font-size:0.9rem; border:2px solid; }
@@ -45,33 +45,33 @@
 <body>
 
 <header class="site-header" style="background:linear-gradient(135deg,#16a34a,#4ade80);">
-  <span class="emoji-header">➕</span>
+  <span class="emoji-header">â</span>
   <h1>Addition et soustraction</h1>
-  <p>Calculer avec des nombres jusqu'à 100</p>
-  <a href="index.html" class="nav-back">← Accueil</a>
+  <p>Calculer avec des nombres jusqu'Ã  100</p>
+  <a href="index.html" class="nav-back">â Accueil</a>
 </header>
 
 <main>
-  <div class="badge-niveau">🌱 CP — Nombres et calculs</div>
+  <div class="badge-niveau">ð± CP â Nombres et calculs</div>
 
-  <!-- ═══ JE RETIENS ═══ -->
+  <!-- âââ JE RETIENS âââ -->
   <div class="retiens-box">
-    <div class="retiens-title">💡 Je retiens</div>
+    <div class="retiens-title">ð¡ Je retiens</div>
     <div style="font-size:0.9rem;color:#555;margin-top:8px;line-height:1.9;">
-      ➕ <strong>Additionner</strong> : mettre ensemble → 5 + 3 = <strong>8</strong><br>
-      ➖ <strong>Soustraire</strong> : enlever → 8 − 3 = <strong>5</strong><br>
-      🔟 <strong>Compléments à 10</strong> : 6 + <strong>4</strong> = 10 · 7 + <strong>3</strong> = 10<br>
-      ✅ <strong>Vérifier</strong> : 5 + 3 = 8 ↔ 8 − 3 = 5 (opérations inverses)
+      â <strong>Additionner</strong> : mettre ensemble â 5 + 3 = <strong>8</strong><br>
+      â <strong>Soustraire</strong> : enlever â 8 â 3 = <strong>5</strong><br>
+      ð <strong>ComplÃ©ments Ã  10</strong> : 6 + <strong>4</strong> = 10 Â· 7 + <strong>3</strong> = 10<br>
+      â <strong>VÃ©rifier</strong> : 5 + 3 = 8 â 8 â 3 = 5 (opÃ©rations inverses)
     </div>
     <div class="concept-cards" style="margin-top:14px">
-      <div class="concept-card"><div class="c-big">5+3</div><div class="c-label">= 8 ✅</div></div>
-      <div class="concept-card"><div class="c-big">8−3</div><div class="c-label">= 5 ✅</div></div>
-      <div class="concept-card"><div class="c-big">6+?</div><div class="c-label">= 10 → 4</div></div>
-      <div class="concept-card"><div class="c-big">20+7</div><div class="c-label">= 27 ✅</div></div>
+      <div class="concept-card"><div class="c-big">5+3</div><div class="c-label">= 8 â</div></div>
+      <div class="concept-card"><div class="c-big">8â3</div><div class="c-label">= 5 â</div></div>
+      <div class="concept-card"><div class="c-big">6+?</div><div class="c-label">= 10 â 4</div></div>
+      <div class="concept-card"><div class="c-big">20+7</div><div class="c-label">= 27 â</div></div>
     </div>
-    <!-- Compléments à 10 visuels -->
+    <!-- ComplÃ©ments Ã  10 visuels -->
     <div style="margin-top:14px">
-      <div style="font-size:0.8rem;font-weight:800;color:#92400e;margin-bottom:6px">Compléments à 10 :</div>
+      <div style="font-size:0.8rem;font-weight:800;color:#92400e;margin-bottom:6px">ComplÃ©ments Ã  10 :</div>
       <div class="comp-grid">
         <div class="comp-box plein">1</div><div class="comp-box plein">2</div>
         <div class="comp-box plein">3</div><div class="comp-box plein">4</div>
@@ -80,21 +80,21 @@
         <div class="comp-box plein">8</div><div class="comp-box vide">?</div>
         <div class="comp-box vide">?</div>
       </div>
-      <div style="font-size:0.78rem;color:#555;margin-top:4px">8 cases rouges + 2 cases vides = 10 → 8 + <strong>2</strong> = 10</div>
+      <div style="font-size:0.78rem;color:#555;margin-top:4px">8 cases rouges + 2 cases vides = 10 â 8 + <strong>2</strong> = 10</div>
     </div>
   </div>
 
-  <!-- ═══ EX 1 : Petites additions ═══ -->
+  <!-- âââ EX 1 : Petites additions âââ -->
   <div class="exercice-block" style="--accent:#16a34a">
     <div class="ex-title">
       <span class="ex-badge" style="background:#16a34a">Ex 1</span>
-      Petites additions (résultat ≤ 20)
+      Petites additions (rÃ©sultat â¤ 20)
       <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span>
     </div>
     <div id="ex1"></div>
   </div>
 
-  <!-- ═══ EX 2 : Petites soustractions ═══ -->
+  <!-- âââ EX 2 : Petites soustractions âââ -->
   <div class="exercice-block" style="--accent:#ef4444">
     <div class="ex-title">
       <span class="ex-badge" style="background:#ef4444">Ex 2</span>
@@ -104,7 +104,7 @@
     <div id="ex2"></div>
   </div>
 
-  <!-- ═══ EX 3 : Vrai ou Faux ═══ -->
+  <!-- âââ EX 3 : Vrai ou Faux âââ -->
   <div class="exercice-block" style="--accent:#f59e0b">
     <div class="ex-title">
       <span class="ex-badge" style="background:#f59e0b">Ex 3</span>
@@ -114,17 +114,17 @@
     <div id="ex3"></div>
   </div>
 
-  <!-- ═══ EX 4 : Compléments ═══ -->
+  <!-- âââ EX 4 : ComplÃ©ments âââ -->
   <div class="exercice-block" style="--accent:#0ea5e9">
     <div class="ex-title">
       <span class="ex-badge" style="background:#0ea5e9">Ex 4</span>
-      Compléments à 10 et à 20
+      ComplÃ©ments Ã  10 et Ã  20
       <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span>
     </div>
     <div id="ex4"></div>
   </div>
 
-  <!-- ═══ EX 5 : Additions avec dizaines ═══ -->
+  <!-- âââ EX 5 : Additions avec dizaines âââ -->
   <div class="exercice-block" style="--accent:#7c3aed">
     <div class="ex-title">
       <span class="ex-badge" style="background:#7c3aed">Ex 5</span>
@@ -134,31 +134,31 @@
     <div id="ex5"></div>
   </div>
 
-  <!-- ═══ EX 6 : Associer addition ↔ résultat (PAIRES) ═══ -->
+  <!-- âââ EX 6 : Associer addition â rÃ©sultat (PAIRES) âââ -->
   <div class="exercice-block" style="--accent:#ec4899">
     <div class="ex-title">
       <span class="ex-badge" style="background:#ec4899">Ex 6</span>
-      Associer opération et résultat
+      Associer opÃ©ration et rÃ©sultat
       <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span>
     </div>
     <div id="ex6"></div>
   </div>
 
-  <!-- ═══ EX 7 : Mini-problèmes ═══ -->
+  <!-- âââ EX 7 : Mini-problÃ¨mes âââ -->
   <div class="exercice-block" style="--accent:#f97316">
     <div class="ex-title">
       <span class="ex-badge" style="background:#f97316">Ex 7</span>
-      Mini-problèmes
+      Mini-problÃ¨mes
       <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span>
     </div>
     <div id="ex7"></div>
   </div>
 
-  <!-- ═══ EX 8 : Quel signe ? (TRI) ═══ -->
+  <!-- âââ EX 8 : Quel signe ? (TRI) âââ -->
   <div class="exercice-block" style="--accent:#10b981">
     <div class="ex-title">
       <span class="ex-badge" style="background:#10b981">Ex 8</span>
-      Quel signe faut-il ? (+, −)
+      Quel signe faut-il ? (+, â)
       <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span>
     </div>
     <div id="ex8"></div>
@@ -166,111 +166,111 @@
 
 </main>
 
-<footer class="site-footer">Fait avec ❤️ pour Clémence — CP</footer>
+<footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a></div></footer>
 
 <script src="exercises.js"></script>
 <script>
-// ── EX 1 : Petites additions ──────────────────────────────────────────
+// ââ EX 1 : Petites additions ââââââââââââââââââââââââââââââââââââââââââ
 buildQCM([
   { card:'3 + 4 = ?', q:'Calcule 3 + 4', correct:'7', choices:['6','7','8','9'] },
   { card:'6 + 5 = ?', q:'Calcule 6 + 5', correct:'11', choices:['10','11','12','13'] },
   { card:'8 + 7 = ?', q:'Calcule 8 + 7', correct:'15', choices:['13','14','15','16'] },
   { card:'9 + 6 = ?', q:'Calcule 9 + 6', correct:'15', choices:['13','15','16','18'] },
-  { q:'Quel nombre manque ? 4 + ☐ = 9', correct:'5', choices:['3','4','5','6'] },
-  { q:'Quel nombre manque ? ☐ + 7 = 13', correct:'6', choices:['5','6','7','8'] },
+  { q:'Quel nombre manque ? 4 + â = 9', correct:'5', choices:['3','4','5','6'] },
+  { q:'Quel nombre manque ? â + 7 = 13', correct:'6', choices:['5','6','7','8'] },
   { card:'14 + 5 = ?', q:'Calcule 14 + 5', correct:'19', choices:['17','18','19','20'] },
 ], 'ex1');
 
-// ── EX 2 : Petites soustractions ─────────────────────────────────────
+// ââ EX 2 : Petites soustractions âââââââââââââââââââââââââââââââââââââ
 buildQCM([
-  { card:'9 − 4 = ?', q:'Calcule 9 − 4', correct:'5', choices:['3','4','5','6'] },
-  { card:'12 − 5 = ?', q:'Calcule 12 − 5', correct:'7', choices:['6','7','8','9'] },
-  { card:'15 − 8 = ?', q:'Calcule 15 − 8', correct:'7', choices:['5','6','7','8'] },
-  { q:'Quel nombre manque ? ☐ − 3 = 6', correct:'9', choices:['7','8','9','10'] },
-  { card:'18 − 9 = ?', q:'Calcule 18 − 9', correct:'9', choices:['7','8','9','10'] },
-  { q:'Quel nombre manque ? 14 − ☐ = 8', correct:'6', choices:['4','5','6','7'] },
-  { card:'20 − 7 = ?', q:'Calcule 20 − 7', correct:'13', choices:['11','12','13','14'] },
+  { card:'9 â 4 = ?', q:'Calcule 9 â 4', correct:'5', choices:['3','4','5','6'] },
+  { card:'12 â 5 = ?', q:'Calcule 12 â 5', correct:'7', choices:['6','7','8','9'] },
+  { card:'15 â 8 = ?', q:'Calcule 15 â 8', correct:'7', choices:['5','6','7','8'] },
+  { q:'Quel nombre manque ? â â 3 = 6', correct:'9', choices:['7','8','9','10'] },
+  { card:'18 â 9 = ?', q:'Calcule 18 â 9', correct:'9', choices:['7','8','9','10'] },
+  { q:'Quel nombre manque ? 14 â â = 8', correct:'6', choices:['4','5','6','7'] },
+  { card:'20 â 7 = ?', q:'Calcule 20 â 7', correct:'13', choices:['11','12','13','14'] },
 ], 'ex2');
 
-// ── EX 3 : Vrai ou Faux ───────────────────────────────────────────────
+// ââ EX 3 : Vrai ou Faux âââââââââââââââââââââââââââââââââââââââââââââââ
 buildVF([
   { q:'5 + 8 = 13', correct:true },
   { q:'7 + 6 = 14', correct:false, expl:'7 + 6 = 13' },
-  { q:'15 − 7 = 8', correct:true },
-  { q:'12 − 5 = 6', correct:false, expl:'12 − 5 = 7' },
+  { q:'15 â 7 = 8', correct:true },
+  { q:'12 â 5 = 6', correct:false, expl:'12 â 5 = 7' },
   { q:'4 + 9 = 9 + 4 (on peut changer l\'ordre)', correct:true, expl:'L\'addition est commutative' },
   { q:'0 + 13 = 13', correct:true, expl:'Ajouter 0 ne change rien' },
-  { q:'10 − 10 = 1', correct:false, expl:'10 − 10 = 0' },
-  { q:'6 + 4 = 10 (complément à 10)', correct:true },
+  { q:'10 â 10 = 1', correct:false, expl:'10 â 10 = 0' },
+  { q:'6 + 4 = 10 (complÃ©ment Ã  10)', correct:true },
 ], 'ex3');
 
-// ── EX 4 : Compléments ───────────────────────────────────────────────
+// ââ EX 4 : ComplÃ©ments âââââââââââââââââââââââââââââââââââââââââââââââ
 buildQCM([
-  { q:'Quel nombre complète 6 + ☐ = 10 ?', correct:'4', choices:['3','4','5','6'],
-    hint:'Combien faut-il ajouter à 6 pour arriver à 10 ?' },
-  { q:'Quel nombre complète 3 + ☐ = 10 ?', correct:'7', choices:['5','6','7','8'] },
-  { q:'Quel nombre complète 8 + ☐ = 10 ?', correct:'2', choices:['1','2','3','4'] },
-  { q:'Quel nombre complète 7 + ☐ = 10 ?', correct:'3', choices:['2','3','4','5'] },
-  { q:'Quel nombre complète ☐ + 5 = 10 ?', correct:'5', choices:['4','5','6','7'] },
-  { q:'Quel nombre complète 9 + ☐ = 20 ?', correct:'11', choices:['9','10','11','12'] },
-  { q:'Quel nombre complète 15 + ☐ = 20 ?', correct:'5', choices:['4','5','6','7'] },
+  { q:'Quel nombre complÃ¨te 6 + â = 10 ?', correct:'4', choices:['3','4','5','6'],
+    hint:'Combien faut-il ajouter Ã  6 pour arriver Ã  10 ?' },
+  { q:'Quel nombre complÃ¨te 3 + â = 10 ?', correct:'7', choices:['5','6','7','8'] },
+  { q:'Quel nombre complÃ¨te 8 + â = 10 ?', correct:'2', choices:['1','2','3','4'] },
+  { q:'Quel nombre complÃ¨te 7 + â = 10 ?', correct:'3', choices:['2','3','4','5'] },
+  { q:'Quel nombre complÃ¨te â + 5 = 10 ?', correct:'5', choices:['4','5','6','7'] },
+  { q:'Quel nombre complÃ¨te 9 + â = 20 ?', correct:'11', choices:['9','10','11','12'] },
+  { q:'Quel nombre complÃ¨te 15 + â = 20 ?', correct:'5', choices:['4','5','6','7'] },
 ], 'ex4');
 
-// ── EX 5 : Additions avec dizaines ───────────────────────────────────
+// ââ EX 5 : Additions avec dizaines âââââââââââââââââââââââââââââââââââ
 buildQCM([
   { card:'20 + 30 = ?', q:'Calcule 20 + 30', correct:'50', choices:['40','50','60','23'] },
   { card:'45 + 10 = ?', q:'Calcule 45 + 10', correct:'55', choices:['46','54','55','56'] },
-  { card:'60 − 20 = ?', q:'Calcule 60 − 20', correct:'40', choices:['30','40','42','80'] },
+  { card:'60 â 20 = ?', q:'Calcule 60 â 20', correct:'40', choices:['30','40','42','80'] },
   { card:'30 + 17 = ?', q:'Calcule 30 + 17', correct:'47', choices:['37','47','48','57'] },
   { card:'50 + 25 = ?', q:'Calcule 50 + 25', correct:'75', choices:['55','70','75','80'] },
-  { card:'80 − 30 = ?', q:'Calcule 80 − 30', correct:'50', choices:['40','50','55','60'] },
+  { card:'80 â 30 = ?', q:'Calcule 80 â 30', correct:'50', choices:['40','50','55','60'] },
   { q:'J\'ai 40 billes et j\'en trouve 23 autres. Combien en ai-je ?',
     correct:'63', choices:['57','63','67','73'] },
 ], 'ex5');
 
-// ── EX 6 : Paires opération ↔ résultat ────────────────────────────────
+// ââ EX 6 : Paires opÃ©ration â rÃ©sultat ââââââââââââââââââââââââââââââââ
 buildPaires([
-  { q:'Associe chaque opération à son résultat.',
+  { q:'Associe chaque opÃ©ration Ã  son rÃ©sultat.',
     pairs:[
-      ['3 + 7', '10'], ['14 − 6', '8'],
-      ['9 + 8', '17'], ['20 − 5', '15'],
+      ['3 + 7', '10'], ['14 â 6', '8'],
+      ['9 + 8', '17'], ['20 â 5', '15'],
     ]
   },
-  { q:'Associe chaque opération à son résultat.',
+  { q:'Associe chaque opÃ©ration Ã  son rÃ©sultat.',
     pairs:[
-      ['6 + 6', '12'], ['18 − 9', '9'],
-      ['25 + 5', '30'], ['40 − 15', '25'],
+      ['6 + 6', '12'], ['18 â 9', '9'],
+      ['25 + 5', '30'], ['40 â 15', '25'],
     ]
   },
 ], 'ex6');
 
-// ── EX 7 : Mini-problèmes ─────────────────────────────────────────────
+// ââ EX 7 : Mini-problÃ¨mes âââââââââââââââââââââââââââââââââââââââââââââ
 buildQCM([
-  { enonce:'🍎 Il y a 6 pommes dans le panier et Tom en ajoute 4.',
+  { enonce:'ð Il y a 6 pommes dans le panier et Tom en ajoute 4.',
     q:'Combien y en a-t-il maintenant ?', correct:'10', choices:['8','9','10','11'] },
-  { enonce:'🎮 Léa a 13 billes. Elle en perd 5.',
+  { enonce:'ð® LÃ©a a 13 billes. Elle en perd 5.',
     q:'Combien lui en reste-t-il ?', correct:'8', choices:['7','8','9','18'] },
-  { enonce:'🏫 Il y a 11 filles et 9 garçons dans la classe.',
-    q:'Combien d\'élèves y a-t-il en tout ?', correct:'20', choices:['18','19','20','21'] },
-  { enonce:'🚌 Un bus a 15 passagers. 6 descendent à l\'arrêt.',
+  { enonce:'ð« Il y a 11 filles et 9 garÃ§ons dans la classe.',
+    q:'Combien d\'Ã©lÃ¨ves y a-t-il en tout ?', correct:'20', choices:['18','19','20','21'] },
+  { enonce:'ð Un bus a 15 passagers. 6 descendent Ã  l\'arrÃªt.',
     q:'Combien de passagers restent dans le bus ?', correct:'9', choices:['7','8','9','10'] },
-  { enonce:'🍬 Hugo avait 20 bonbons. Il en a donné 8 à ses amis.',
+  { enonce:'ð¬ Hugo avait 20 bonbons. Il en a donnÃ© 8 Ã  ses amis.',
     q:'Combien lui en reste-t-il ?', correct:'12', choices:['10','11','12','13'] },
-  { enonce:'📚 Chloé a lu 14 pages lundi et 6 pages mardi.',
+  { enonce:'ð ChloÃ© a lu 14 pages lundi et 6 pages mardi.',
     q:'Combien de pages a-t-elle lues en tout ?', correct:'20', choices:['18','19','20','21'] },
 ], 'ex7');
 
-// ── EX 8 : Quel signe ? TRI ───────────────────────────────────────────
+// ââ EX 8 : Quel signe ? TRI âââââââââââââââââââââââââââââââââââââââââââ
 buildTri([
-  { q:'Chaque opération utilise + (addition) ou − (soustraction). Classe-les !',
-    cats:['➕ Addition','➖ Soustraction'],
+  { q:'Chaque opÃ©ration utilise + (addition) ou â (soustraction). Classe-les !',
+    cats:['â Addition','â Soustraction'],
     items:[
-      {v:'5 + 3',  cat:'➕ Addition'},
-      {v:'12 − 4', cat:'➖ Soustraction'},
-      {v:'7 + 8',  cat:'➕ Addition'},
-      {v:'15 − 7', cat:'➖ Soustraction'},
-      {v:'20 + 3', cat:'➕ Addition'},
-      {v:'9 − 2',  cat:'➖ Soustraction'},
+      {v:'5 + 3',  cat:'â Addition'},
+      {v:'12 â 4', cat:'â Soustraction'},
+      {v:'7 + 8',  cat:'â Addition'},
+      {v:'15 â 7', cat:'â Soustraction'},
+      {v:'20 + 3', cat:'â Addition'},
+      {v:'9 â 2',  cat:'â Soustraction'},
     ]
   },
 ], 'ex8');

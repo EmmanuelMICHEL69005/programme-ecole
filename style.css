@@ -385,6 +385,10 @@ main { max-width: 720px; margin: 0 auto; padding: 30px 20px 60px; }
   margin-top: 40px;
 }
 .site-footer a { color: var(--violet); text-decoration: none; font-weight: 700; }
+.footer-levels { margin-top: 8px; font-size: 0.82rem; }
+.footer-levels a { color: #9ca3af; font-weight: 800; padding: 2px 4px; border-radius: 4px; transition: color .15s; }
+.footer-levels a:hover { color: var(--violet); }
+body.cpage .site-footer .footer-levels a { color: #9ca3af; }
 
 /* Responsive */
 @media (max-width: 500px) {

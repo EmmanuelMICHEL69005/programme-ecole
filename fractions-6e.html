@@ -2,20 +2,20 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="apple-mobile-web-app-title" content="École Facile">
-<meta name="application-name" content="École Facile">
+<meta name="apple-mobile-web-app-title" content="Ãcole Facile">
+<meta name="application-name" content="Ãcole Facile">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ecolefacile.fr/fractions-6e.html">
-<meta property="og:title" content="Fractions — 6ème | École Facile">
-<meta property="og:description" content="Exercices interactifs Fractions 6E — correction immédiate, XP et badges. Gratuit sur École Facile.">
+<meta property="og:title" content="Fractions â 6Ã¨me | Ãcole Facile">
+<meta property="og:description" content="Exercices interactifs Fractions 6E â correction immÃ©diate, XP et badges. Gratuit sur Ãcole Facile.">
 <meta property="og:image" content="https://ecolefacile.fr/og-image.png">
-<meta property="og:site_name" content="École Facile">
+<meta property="og:site_name" content="Ãcole Facile">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://ecolefacile.fr/fractions-6e.html">
-<meta name="description" content="Exercices interactifs Fractions 6E — correction immédiate, XP et badges. Gratuit sur École Facile.">
+<meta name="description" content="Exercices interactifs Fractions 6E â correction immÃ©diate, XP et badges. Gratuit sur Ãcole Facile.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fractions — 6ème | École Facile</title>
+<title>Fractions â 6Ã¨me | Ãcole Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -39,24 +39,24 @@
 <body>
 
 <header class="site-header" style="background: linear-gradient(135deg, #9d174d, #ec4899);">
-  <span class="emoji-header">🍕</span>
+  <span class="emoji-header">ð</span>
   <h1>Fractions</h1>
   <p>Simplifier, additionner, comparer</p>
-  <a href="index.html" class="nav-back">← Accueil</a>
+  <a href="index.html" class="nav-back">â Accueil</a>
 </header>
 
 <main>
 
-  <div class="badge-niveau">6ème — Fractions</div>
+  <div class="badge-niveau">6Ã¨me â Fractions</div>
 
   <div class="retiens-box">
-    <div class="retiens-title">💡 Je retiens</div>
+    <div class="retiens-title">ð¡ Je retiens</div>
     <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
-      ✂️ <strong>Simplifier</strong> : diviser numérateur et dénominateur par leur PGCD<br>
-      ➕ <strong>Même dénominateur</strong> : additionner les numérateurs directement<br>
-      🔄 <strong>Dénominateurs différents</strong> : trouver le dénominateur commun d'abord<br>
-      ✖️ <strong>Multiplier</strong> : numérateur × numérateur et dénominateur × dénominateur<br>
-      ÷ <strong>Diviser par une fraction</strong> : multiplier par l'inverse
+      âï¸ <strong>Simplifier</strong> : diviser numÃ©rateur et dÃ©nominateur par leur PGCD<br>
+      â <strong>MÃªme dÃ©nominateur</strong> : additionner les numÃ©rateurs directement<br>
+      ð <strong>DÃ©nominateurs diffÃ©rents</strong> : trouver le dÃ©nominateur commun d'abord<br>
+      âï¸ <strong>Multiplier</strong> : numÃ©rateur Ã numÃ©rateur et dÃ©nominateur Ã dÃ©nominateur<br>
+      Ã· <strong>Diviser par une fraction</strong> : multiplier par l'inverse
     </div>
   </div>
 
@@ -82,7 +82,7 @@
 
 </main>
 
-<footer class="site-footer">Fait avec ❤️ pour Clémence — 6ème</footer>
+<footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a></div></footer>
 
 <script>
 function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
@@ -110,9 +110,9 @@ function check(btn, chosen, correct, rowId, fbId) {
   document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
   const fb = document.getElementById(fbId);
   if (chosen === correct) {
-    btn.classList.add('correct'); fb.innerHTML = '✅ Bravo !'; fb.style.color = '#166534';
+    btn.classList.add('correct'); fb.innerHTML = 'â Bravo !'; fb.style.color = '#166534';
   } else {
-    btn.classList.add('wrong'); fb.innerHTML = '❌ C\'était ' + formatFrac(correct); fb.style.color = '#991b1b';
+    btn.classList.add('wrong'); fb.innerHTML = 'â C\'Ã©tait ' + formatFrac(correct); fb.style.color = '#991b1b';
     document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.dataset.val === correct) b.classList.add('correct'); });
   }
 }
@@ -125,22 +125,22 @@ buildQ([
 ], 'ex1');
 
 buildQ([
-  { card: '1/4 + 2/4 = ?', q: 'Additionne 1/4 + 2/4 (même dénominateur)', correct: '3/4', choices: ['3/8','3/4','2/4','1/2'] },
+  { card: '1/4 + 2/4 = ?', q: 'Additionne 1/4 + 2/4 (mÃªme dÃ©nominateur)', correct: '3/4', choices: ['3/8','3/4','2/4','1/2'] },
   { card: '1/3 + 1/6 = ?', q: 'Additionne 1/3 + 1/6 (convertis d\'abord : 1/3 = 2/6)', correct: '3/6 = 1/2', choices: ['2/9','2/6','3/6 = 1/2','3/9'] },
-  { card: '3/4 − 1/4 = ?', q: 'Calcule 3/4 − 1/4', correct: '2/4 = 1/2', choices: ['1/4','2/4 = 1/2','4/4','2/8'] },
-  { card: '5/6 − 1/3 = ?', q: 'Calcule 5/6 − 1/3 (convertis : 1/3 = 2/6)', correct: '3/6 = 1/2', choices: ['4/6','3/6 = 1/2','4/3','2/6'] },
+  { card: '3/4 â 1/4 = ?', q: 'Calcule 3/4 â 1/4', correct: '2/4 = 1/2', choices: ['1/4','2/4 = 1/2','4/4','2/8'] },
+  { card: '5/6 â 1/3 = ?', q: 'Calcule 5/6 â 1/3 (convertis : 1/3 = 2/6)', correct: '3/6 = 1/2', choices: ['4/6','3/6 = 1/2','4/3','2/6'] },
 ], 'ex2');
 
 buildQ([
-  { card: '2/3 × 3/4 = ?', q: 'Multiplie 2/3 × 3/4', correct: '6/12 = 1/2', choices: ['5/7','6/12 = 1/2','2/4','8/12'] },
-  { card: '3/5 × 5/6 = ?', q: 'Multiplie 3/5 × 5/6', correct: '15/30 = 1/2', choices: ['8/11','15/30 = 1/2','1/3','9/30'] },
-  { q: 'Pour calculer 4/7 × 14/8, on peut simplifier d\'abord. Résultat ?', correct: '1', choices: ['1/2','1','2','7/4'] },
-  { q: '1/2 divisé par 1/4 (multiplier par l\'inverse : 1/2 × 4/1)', correct: '2', choices: ['1/8','1/2','2','4'] },
+  { card: '2/3 Ã 3/4 = ?', q: 'Multiplie 2/3 Ã 3/4', correct: '6/12 = 1/2', choices: ['5/7','6/12 = 1/2','2/4','8/12'] },
+  { card: '3/5 Ã 5/6 = ?', q: 'Multiplie 3/5 Ã 5/6', correct: '15/30 = 1/2', choices: ['8/11','15/30 = 1/2','1/3','9/30'] },
+  { q: 'Pour calculer 4/7 Ã 14/8, on peut simplifier d\'abord. RÃ©sultat ?', correct: '1', choices: ['1/2','1','2','7/4'] },
+  { q: '1/2 divisÃ© par 1/4 (multiplier par l\'inverse : 1/2 Ã 4/1)', correct: '2', choices: ['1/8','1/2','2','4'] },
 ], 'ex3');
 
 buildQ([
-  { q: 'Laquelle de ces fractions est la plus grande : 2/3 ou 3/4 ?', correct: '3/4 (8/12 > 9/12… attention : 3/4 = 9/12)', choices: ['2/3','3/4 (8/12 > 9/12… attention : 3/4 = 9/12)','Elles sont égales'] },
-  { q: 'Range dans l\'ordre croissant : 1/2, 1/3, 3/4. La plus petite est…', correct: '1/3', choices: ['1/4','1/3','1/2','3/4'] },
+  { q: 'Laquelle de ces fractions est la plus grande : 2/3 ou 3/4 ?', correct: '3/4 (8/12 > 9/12â¦ attention : 3/4 = 9/12)', choices: ['2/3','3/4 (8/12 > 9/12â¦ attention : 3/4 = 9/12)','Elles sont Ã©gales'] },
+  { q: 'Range dans l\'ordre croissant : 1/2, 1/3, 3/4. La plus petite estâ¦', correct: '1/3', choices: ['1/4','1/3','1/2','3/4'] },
   { q: '7/8 et 3/4 : quelle relation est vraie ?', correct: '7/8 > 3/4', choices: ['7/8 < 3/4','7/8 = 3/4','7/8 > 3/4','On ne peut pas comparer'] },
   { q: 'Entre 1/2 et 2/3, quelle fraction est entre les deux ?', correct: '7/12', choices: ['3/12','7/12','10/12','4/6'] },
 ], 'ex4');

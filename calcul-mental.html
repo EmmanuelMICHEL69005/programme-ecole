@@ -2,20 +2,20 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="apple-mobile-web-app-title" content="École Facile">
-<meta name="application-name" content="École Facile">
+<meta name="apple-mobile-web-app-title" content="Ãcole Facile">
+<meta name="application-name" content="Ãcole Facile">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ecolefacile.fr/calcul-mental.html">
-<meta property="og:title" content="Calcul mental — CE2 | École Facile">
-<meta property="og:description" content="Exercices interactifs Calcul Mental  — correction immédiate, XP et badges. Gratuit sur École Facile.">
+<meta property="og:title" content="Calcul mental â CE2 | Ãcole Facile">
+<meta property="og:description" content="Exercices interactifs Calcul Mental  â correction immÃ©diate, XP et badges. Gratuit sur Ãcole Facile.">
 <meta property="og:image" content="https://ecolefacile.fr/og-image.png">
-<meta property="og:site_name" content="École Facile">
+<meta property="og:site_name" content="Ãcole Facile">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://ecolefacile.fr/calcul-mental.html">
-<meta name="description" content="Exercices interactifs Calcul Mental  — correction immédiate, XP et badges. Gratuit sur École Facile.">
+<meta name="description" content="Exercices interactifs Calcul Mental  â correction immÃ©diate, XP et badges. Gratuit sur Ãcole Facile.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Calcul mental — CE2 | École Facile</title>
+<title>Calcul mental â CE2 | Ãcole Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -70,63 +70,63 @@
 <body>
 
 <header class="site-header" style="background: linear-gradient(135deg, #1d4ed8, #3b82f6);">
-  <span class="emoji-header">⚡</span>
+  <span class="emoji-header">â¡</span>
   <h1>Calcul mental</h1>
-  <p>Tables, doubles, compléments à 100</p>
-  <a href="index.html" class="nav-back">← Accueil</a>
+  <p>Tables, doubles, complÃ©ments Ã  100</p>
+  <a href="index.html" class="nav-back">â Accueil</a>
 </header>
 
 <main>
 
-  <div class="badge-niveau">CE2 — Nombres et calculs</div>
+  <div class="badge-niveau">CE2 â Nombres et calculs</div>
 
   <div class="retiens-box">
-    <div class="retiens-title">💡 Je retiens</div>
+    <div class="retiens-title">ð¡ Je retiens</div>
     <div style="font-size:0.9rem; color:#555; display:flex; flex-direction:column; gap:6px; margin-top:8px;">
-      <div>➕ <strong>Tables d'addition</strong> : bien connaître de 0+0 à 10+10</div>
-      <div>✖️ <strong>Tables de multiplication</strong> : bien connaître de 1×1 à 10×10</div>
-      <div>✌️ <strong>Double</strong> = nombre × 2 &nbsp;|&nbsp; <strong>Moitié</strong> = nombre ÷ 2</div>
-      <div>💯 <strong>Complément à 100</strong> : trouver ce qu'il faut ajouter pour arriver à 100</div>
+      <div>â <strong>Tables d'addition</strong> : bien connaÃ®tre de 0+0 Ã  10+10</div>
+      <div>âï¸ <strong>Tables de multiplication</strong> : bien connaÃ®tre de 1Ã1 Ã  10Ã10</div>
+      <div>âï¸ <strong>Double</strong> = nombre Ã 2 &nbsp;|&nbsp; <strong>MoitiÃ©</strong> = nombre Ã· 2</div>
+      <div>ð¯ <strong>ComplÃ©ment Ã  100</strong> : trouver ce qu'il faut ajouter pour arriver Ã  100</div>
     </div>
   </div>
 
   <!-- EXERCICE 1 : tables d'addition flash -->
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#3b82f6;">Ex 1</span> Tables d'addition — 10 questions rapides</div>
+    <div class="ex-title"><span class="ex-badge" style="background:#3b82f6;">Ex 1</span> Tables d'addition â 10 questions rapides</div>
     <div class="flash-progress" id="add-progress">Question 1 / 10</div>
     <div class="flash-display" id="add-question">?</div>
     <div class="flash-choices" id="add-choices"></div>
     <div class="feedback-line" id="add-fb" style="text-align:center;"></div>
-    <button class="btn-next" id="add-next" onclick="nextAddQuestion()" disabled>Question suivante →</button>
+    <button class="btn-next" id="add-next" onclick="nextAddQuestion()" disabled>Question suivante â</button>
     <div class="flash-score" id="add-score">Score : 0 / 10</div>
   </div>
 
   <!-- EXERCICE 2 : tables de multiplication flash -->
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#3b82f6;">Ex 2</span> Tables de multiplication — 10 questions rapides</div>
+    <div class="ex-title"><span class="ex-badge" style="background:#3b82f6;">Ex 2</span> Tables de multiplication â 10 questions rapides</div>
     <div class="flash-progress" id="mul-progress">Question 1 / 10</div>
     <div class="flash-display" id="mul-question">?</div>
     <div class="flash-choices" id="mul-choices"></div>
     <div class="feedback-line" id="mul-fb" style="text-align:center;"></div>
-    <button class="btn-next" id="mul-next" onclick="nextMulQuestion()" disabled>Question suivante →</button>
+    <button class="btn-next" id="mul-next" onclick="nextMulQuestion()" disabled>Question suivante â</button>
     <div class="flash-score" id="mul-score">Score : 0 / 10</div>
   </div>
 
-  <!-- EXERCICE 3 : doubles et moitiés -->
+  <!-- EXERCICE 3 : doubles et moitiÃ©s -->
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#3b82f6;">Ex 3</span> Doubles et moitiés</div>
+    <div class="ex-title"><span class="ex-badge" style="background:#3b82f6;">Ex 3</span> Doubles et moitiÃ©s</div>
     <div class="score-bar" id="score-dm">Score : 0 / 8</div>
     <div id="ex3-container"></div>
   </div>
 
-  <!-- EXERCICE 4 : compléments à 100 -->
+  <!-- EXERCICE 4 : complÃ©ments Ã  100 -->
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#3b82f6;">Ex 4</span> Compléments à 100</div>
+    <div class="ex-title"><span class="ex-badge" style="background:#3b82f6;">Ex 4</span> ComplÃ©ments Ã  100</div>
     <div class="score-bar" id="score-c100">Score : 0 / 6</div>
     <div id="ex4-container"></div>
   </div>
 
-  <!-- EXERCICE 5 : ×10, ×100 -->
+  <!-- EXERCICE 5 : Ã10, Ã100 -->
   <div class="exercice-block">
     <div class="ex-title"><span class="ex-badge" style="background:#3b82f6;">Ex 5</span> Multiplier par 10 et par 100</div>
     <div id="ex5-container"></div>
@@ -134,7 +134,7 @@
 
 </main>
 
-<footer class="site-footer">Fait avec ❤️ pour Clémence</footer>
+<footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a></div></footer>
 
 <script>
 function shuffle(arr) { return [...arr].sort(() => Math.random() - 0.5); }
@@ -161,18 +161,18 @@ function buildFlashEngine(questionsData, questionId, choicesId, fbId, nextId, sc
         choicesDiv.querySelectorAll('.btn-flash').forEach(b => b.disabled = true);
         if (c === q.correct) {
           btn.classList.add('correct');
-          document.getElementById(fbId).textContent = '✅ Bravo !';
+          document.getElementById(fbId).textContent = 'â Bravo !';
           document.getElementById(fbId).style.color = '#166534';
           score++;
           document.getElementById(scoreId).textContent = `Score : ${score} / ${total}`;
         } else {
           btn.classList.add('wrong');
-          document.getElementById(fbId).textContent = `❌ C'était ${q.correct}`;
+          document.getElementById(fbId).textContent = `â C'Ã©tait ${q.correct}`;
           document.getElementById(fbId).style.color = '#991b1b';
           choicesDiv.querySelectorAll('.btn-flash').forEach(b => { if (parseInt(b.textContent) === q.correct) b.classList.add('correct'); });
         }
         if (idx < total - 1) document.getElementById(nextId).disabled = false;
-        else { document.getElementById(nextId).textContent = `Terminé ! ${score}/${total} ✅`; document.getElementById(nextId).disabled = true; }
+        else { document.getElementById(nextId).textContent = `TerminÃ© ! ${score}/${total} â`; document.getElementById(nextId).disabled = true; }
       });
       choicesDiv.appendChild(btn);
     });
@@ -215,13 +215,13 @@ function genMulQuestions(n) {
   while (questions.length < n) {
     const a = tables[Math.floor(Math.random()*tables.length)];
     const b = Math.floor(Math.random()*9)+2;
-    const key = `${Math.min(a,b)}×${Math.max(a,b)}`;
+    const key = `${Math.min(a,b)}Ã${Math.max(a,b)}`;
     if (used.has(key)) continue;
     used.add(key);
     const correct = a * b;
     const wrongs = new Set();
     while (wrongs.size < 3) { const w = correct + (Math.floor(Math.random()*4)+1)*(Math.random()<0.5?1:-1); if (w !== correct && w > 0) wrongs.add(w); }
-    questions.push({ q: `${a} × ${b} = ?`, correct, choices: [correct, ...[...wrongs]] });
+    questions.push({ q: `${a} Ã ${b} = ?`, correct, choices: [correct, ...[...wrongs]] });
   }
   return questions;
 }
@@ -229,16 +229,16 @@ function genMulQuestions(n) {
 const mulQuestions = genMulQuestions(10);
 const nextMulQuestion = buildFlashEngine(mulQuestions, 'mul-question', 'mul-choices', 'mul-fb', 'mul-next', 'mul-score', 'mul-progress');
 
-// ======== DOUBLES ET MOITIÉS ========
+// ======== DOUBLES ET MOITIÃS ========
 const dmData = [
   { q: 'Le double de 14 = ?', correct: 28, choices: [26, 27, 28, 29] },
   { q: 'Le double de 35 = ?', correct: 70, choices: [65, 70, 75, 60] },
-  { q: 'La moitié de 18 = ?', correct: 9, choices: [8, 9, 10, 11] },
-  { q: 'La moitié de 50 = ?', correct: 25, choices: [20, 25, 30, 15] },
+  { q: 'La moitiÃ© de 18 = ?', correct: 9, choices: [8, 9, 10, 11] },
+  { q: 'La moitiÃ© de 50 = ?', correct: 25, choices: [20, 25, 30, 15] },
   { q: 'Le double de 120 = ?', correct: 240, choices: [220, 230, 240, 250] },
-  { q: 'La moitié de 64 = ?', correct: 32, choices: [28, 30, 32, 34] },
+  { q: 'La moitiÃ© de 64 = ?', correct: 32, choices: [28, 30, 32, 34] },
   { q: 'Le double de 45 = ?', correct: 90, choices: [80, 85, 90, 95] },
-  { q: 'La moitié de 100 = ?', correct: 50, choices: [40, 45, 50, 55] },
+  { q: 'La moitiÃ© de 100 = ?', correct: 50, choices: [40, 45, 50, 55] },
 ];
 
 let scoreDm = 0;
@@ -261,17 +261,17 @@ function checkDm(btn, chosen, correct, rowId, fbId) {
   document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
   if (chosen === correct) {
     btn.classList.add('correct');
-    document.getElementById(fbId).textContent = '✅ Bravo !'; document.getElementById(fbId).style.color = '#166534';
+    document.getElementById(fbId).textContent = 'â Bravo !'; document.getElementById(fbId).style.color = '#166534';
     scoreDm++;
     document.getElementById('score-dm').textContent = `Score : ${scoreDm} / 8`;
   } else {
     btn.classList.add('wrong');
-    document.getElementById(fbId).textContent = `❌ C'était ${correct}`; document.getElementById(fbId).style.color = '#991b1b';
+    document.getElementById(fbId).textContent = `â C'Ã©tait ${correct}`; document.getElementById(fbId).style.color = '#991b1b';
     document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (parseInt(b.textContent) === correct) b.classList.add('correct'); });
   }
 }
 
-// ======== COMPLÉMENTS À 100 ========
+// ======== COMPLÃMENTS Ã 100 ========
 const c100Data = [
   { q: '45 + __ = 100', correct: 55, choices: [45, 55, 65, 60] },
   { q: '73 + __ = 100', correct: 27, choices: [23, 27, 33, 37] },
@@ -301,24 +301,24 @@ function checkC100(btn, chosen, correct, rowId, fbId) {
   document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
   if (chosen === correct) {
     btn.classList.add('correct');
-    document.getElementById(fbId).textContent = '✅ Bravo !'; document.getElementById(fbId).style.color = '#166534';
+    document.getElementById(fbId).textContent = 'â Bravo !'; document.getElementById(fbId).style.color = '#166534';
     scoreC100++;
     document.getElementById('score-c100').textContent = `Score : ${scoreC100} / 6`;
   } else {
     btn.classList.add('wrong');
-    document.getElementById(fbId).textContent = `❌ C'était ${correct}`; document.getElementById(fbId).style.color = '#991b1b';
+    document.getElementById(fbId).textContent = `â C'Ã©tait ${correct}`; document.getElementById(fbId).style.color = '#991b1b';
     document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (parseInt(b.textContent) === correct) b.classList.add('correct'); });
   }
 }
 
-// ======== ×10 ×100 ========
+// ======== Ã10 Ã100 ========
 const times10Data = [
-  { q: '34 × 10 = ?', correct: 340, choices: [34, 304, 340, 3400] },
-  { q: '7 × 100 = ?', correct: 700, choices: [70, 700, 7000, 170] },
-  { q: '56 × 10 = ?', correct: 560, choices: [506, 560, 5060, 56] },
-  { q: '12 × 100 = ?', correct: 1200, choices: [120, 1002, 1200, 12000] },
-  { q: '9 × 10 = ?', correct: 90, choices: [9, 19, 90, 900] },
-  { q: '40 × 10 = ?', correct: 400, choices: [40, 400, 4000, 44] },
+  { q: '34 Ã 10 = ?', correct: 340, choices: [34, 304, 340, 3400] },
+  { q: '7 Ã 100 = ?', correct: 700, choices: [70, 700, 7000, 170] },
+  { q: '56 Ã 10 = ?', correct: 560, choices: [506, 560, 5060, 56] },
+  { q: '12 Ã 100 = ?', correct: 1200, choices: [120, 1002, 1200, 12000] },
+  { q: '9 Ã 10 = ?', correct: 90, choices: [9, 19, 90, 900] },
+  { q: '40 Ã 10 = ?', correct: 400, choices: [40, 400, 4000, 44] },
 ];
 
 const ex5Container = document.getElementById('ex5-container');
@@ -340,10 +340,10 @@ function checkT10(btn, chosen, correct, rowId, fbId) {
   document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
   if (chosen === correct) {
     btn.classList.add('correct');
-    document.getElementById(fbId).textContent = '✅ Bravo !'; document.getElementById(fbId).style.color = '#166534';
+    document.getElementById(fbId).textContent = 'â Bravo !'; document.getElementById(fbId).style.color = '#166534';
   } else {
     btn.classList.add('wrong');
-    document.getElementById(fbId).textContent = `❌ C'était ${correct}`; document.getElementById(fbId).style.color = '#991b1b';
+    document.getElementById(fbId).textContent = `â C'Ã©tait ${correct}`; document.getElementById(fbId).style.color = '#991b1b';
     document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (parseInt(b.textContent) === correct) b.classList.add('correct'); });
   }
 }

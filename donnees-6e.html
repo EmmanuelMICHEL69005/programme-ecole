@@ -2,20 +2,20 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="apple-mobile-web-app-title" content="École Facile">
-<meta name="application-name" content="École Facile">
+<meta name="apple-mobile-web-app-title" content="Ãcole Facile">
+<meta name="application-name" content="Ãcole Facile">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ecolefacile.fr/donnees-6e.html">
-<meta property="og:title" content="Statistiques et probabilités — 6ème | École Facile">
-<meta property="og:description" content="Exercices interactifs Donnees 6E — correction immédiate, XP et badges. Gratuit sur École Facile.">
+<meta property="og:title" content="Statistiques et probabilitÃ©s â 6Ã¨me | Ãcole Facile">
+<meta property="og:description" content="Exercices interactifs Donnees 6E â correction immÃ©diate, XP et badges. Gratuit sur Ãcole Facile.">
 <meta property="og:image" content="https://ecolefacile.fr/og-image.png">
-<meta property="og:site_name" content="École Facile">
+<meta property="og:site_name" content="Ãcole Facile">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://ecolefacile.fr/donnees-6e.html">
-<meta name="description" content="Exercices interactifs Donnees 6E — correction immédiate, XP et badges. Gratuit sur École Facile.">
+<meta name="description" content="Exercices interactifs Donnees 6E â correction immÃ©diate, XP et badges. Gratuit sur Ãcole Facile.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Statistiques et probabilités — 6ème | École Facile</title>
+<title>Statistiques et probabilitÃ©s â 6Ã¨me | Ãcole Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -41,28 +41,28 @@
 <body>
 
 <header class="site-header" style="background: linear-gradient(135deg, #9d174d, #f472b6);">
-  <span class="emoji-header">📊</span>
-  <h1>Données et probabilités</h1>
+  <span class="emoji-header">ð</span>
+  <h1>DonnÃ©es et probabilitÃ©s</h1>
   <p>Statistiques, lecture de graphiques</p>
-  <a href="index.html" class="nav-back">← Accueil</a>
+  <a href="index.html" class="nav-back">â Accueil</a>
 </header>
 
 <main>
 
-  <div class="badge-niveau">6ème — Organisation et gestion des données</div>
+  <div class="badge-niveau">6Ã¨me â Organisation et gestion des donnÃ©es</div>
 
   <div class="retiens-box">
-    <div class="retiens-title">💡 Je retiens</div>
+    <div class="retiens-title">ð¡ Je retiens</div>
     <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
-      🧮 <strong>Moyenne</strong> = somme ÷ nombre de valeurs<br>
-      📊 <strong>Mode</strong> = valeur la plus fréquente<br>
-      📈 <strong>Effectif</strong> = nombre d'individus dans une catégorie<br>
-      🎲 <strong>Probabilité</strong> = nombre de cas favorables ÷ nombre de cas possibles
+      ð§® <strong>Moyenne</strong> = somme Ã· nombre de valeurs<br>
+      ð <strong>Mode</strong> = valeur la plus frÃ©quente<br>
+      ð <strong>Effectif</strong> = nombre d'individus dans une catÃ©gorie<br>
+      ð² <strong>ProbabilitÃ©</strong> = nombre de cas favorables Ã· nombre de cas possibles
     </div>
   </div>
 
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#9d174d;">Ex 1</span> Lire et compléter des tableaux</div>
+    <div class="ex-title"><span class="ex-badge" style="background:#9d174d;">Ex 1</span> Lire et complÃ©ter des tableaux</div>
     <div id="ex1"></div>
   </div>
 
@@ -72,18 +72,18 @@
   </div>
 
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#9d174d;">Ex 3</span> Diagrammes et représentations</div>
+    <div class="ex-title"><span class="ex-badge" style="background:#9d174d;">Ex 3</span> Diagrammes et reprÃ©sentations</div>
     <div id="ex3"></div>
   </div>
 
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#9d174d;">Ex 4</span> Probabilités</div>
+    <div class="ex-title"><span class="ex-badge" style="background:#9d174d;">Ex 4</span> ProbabilitÃ©s</div>
     <div id="ex4"></div>
   </div>
 
 </main>
 
-<footer class="site-footer">Fait avec ❤️ pour Clémence — 6ème</footer>
+<footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a></div></footer>
 
 <script>
 function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
@@ -108,45 +108,45 @@ function check(btn, chosen, correct, rowId, fbId) {
   document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
   const fb = document.getElementById(fbId);
   if (chosen === correct) {
-    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+    btn.classList.add('correct'); fb.textContent = 'â Bravo !'; fb.style.color = '#166534';
   } else {
-    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
+    btn.classList.add('wrong'); fb.textContent = 'â C\'Ã©tait ' + correct; fb.style.color = '#991b1b';
     document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
   }
 }
 
 buildQ([
   {
-    tableau: `<table class="tableau"><tr><th>Sport préféré</th><th>Football</th><th>Natation</th><th>Tennis</th><th>Autre</th></tr><tr><td>Effectif</td><td>12</td><td>8</td><td>5</td><td>?</td></tr></table>`,
-    q: 'Il y a 30 élèves au total. Combien ont choisi "Autre" ?',
+    tableau: `<table class="tableau"><tr><th>Sport prÃ©fÃ©rÃ©</th><th>Football</th><th>Natation</th><th>Tennis</th><th>Autre</th></tr><tr><td>Effectif</td><td>12</td><td>8</td><td>5</td><td>?</td></tr></table>`,
+    q: 'Il y a 30 Ã©lÃ¨ves au total. Combien ont choisi "Autre" ?',
     correct: '5', choices: ['3','5','7','10']
   },
   {
-    tableau: `<table class="tableau"><tr><th>Note /20</th><th>8</th><th>10</th><th>12</th><th>15</th><th>18</th></tr><tr><td>Nb d\'élèves</td><td>2</td><td>5</td><td>8</td><td>4</td><td>1</td></tr></table>`,
-    q: 'Combien d\'élèves ont obtenu une note strictement supérieure à 12 ?',
+    tableau: `<table class="tableau"><tr><th>Note /20</th><th>8</th><th>10</th><th>12</th><th>15</th><th>18</th></tr><tr><td>Nb d\'Ã©lÃ¨ves</td><td>2</td><td>5</td><td>8</td><td>4</td><td>1</td></tr></table>`,
+    q: 'Combien d\'Ã©lÃ¨ves ont obtenu une note strictement supÃ©rieure Ã  12 ?',
     correct: '5', choices: ['4','5','8','13']
   },
-  { q: 'L\'effectif total d\'une classe est 28. 7 élèves aiment la musique. Quelle est la fréquence ?', correct: '1/4 = 25%', choices: ['1/5','1/4 = 25%','1/3','7/100'] },
+  { q: 'L\'effectif total d\'une classe est 28. 7 Ã©lÃ¨ves aiment la musique. Quelle est la frÃ©quence ?', correct: '1/4 = 25%', choices: ['1/5','1/4 = 25%','1/3','7/100'] },
 ], 'ex1');
 
 buildQ([
   { q: 'Notes de Thomas : 8, 12, 14, 10, 16. Quelle est sa moyenne ?', correct: '12', choices: ['11','12','14','16'] },
-  { q: 'Températures sur 4 jours : 18°, 22°, 25°, 19°. Quelle est la température moyenne ?', correct: '21°', choices: ['19°','21°','22°','84°'] },
-  { q: 'Pour avoir 13 de moyenne sur 4 contrôles (notes : 10, 14, 12 et ?), quelle note faut-il au 4e contrôle ?', correct: '16', choices: ['13','15','16','18'] },
-  { q: 'Série : 5, 9, 5, 14, 5, 12. Quel est le mode de cette série ?', correct: '5', choices: ['5','9','12','14'] },
+  { q: 'TempÃ©ratures sur 4 jours : 18Â°, 22Â°, 25Â°, 19Â°. Quelle est la tempÃ©rature moyenne ?', correct: '21Â°', choices: ['19Â°','21Â°','22Â°','84Â°'] },
+  { q: 'Pour avoir 13 de moyenne sur 4 contrÃ´les (notes : 10, 14, 12 et ?), quelle note faut-il au 4e contrÃ´le ?', correct: '16', choices: ['13','15','16','18'] },
+  { q: 'SÃ©rie : 5, 9, 5, 14, 5, 12. Quel est le mode de cette sÃ©rie ?', correct: '5', choices: ['5','9','12','14'] },
 ], 'ex2');
 
 buildQ([
-  { q: 'Dans un diagramme circulaire, une part représente 25% de l\'ensemble. Quel angle du secteur cela correspond-il ?', correct: '90°', choices: ['25°','45°','90°','180°'] },
-  { q: 'Un diagramme en barres montre 45 élèves pour "Lecture" et 30 pour "Jeux vidéo". Quelle barre est la plus haute ?', correct: 'Lecture (45 > 30)', choices: ['Jeux vidéo','Lecture (45 > 30)','Elles sont égales','On ne peut pas savoir'] },
-  { q: 'Sur 200 élèves sondés, 60 vont au collège à pied. Quel est ce pourcentage ?', correct: '30%', choices: ['25%','30%','60%','40%'] },
+  { q: 'Dans un diagramme circulaire, une part reprÃ©sente 25% de l\'ensemble. Quel angle du secteur cela correspond-il ?', correct: '90Â°', choices: ['25Â°','45Â°','90Â°','180Â°'] },
+  { q: 'Un diagramme en barres montre 45 Ã©lÃ¨ves pour "Lecture" et 30 pour "Jeux vidÃ©o". Quelle barre est la plus haute ?', correct: 'Lecture (45 > 30)', choices: ['Jeux vidÃ©o','Lecture (45 > 30)','Elles sont Ã©gales','On ne peut pas savoir'] },
+  { q: 'Sur 200 Ã©lÃ¨ves sondÃ©s, 60 vont au collÃ¨ge Ã  pied. Quel est ce pourcentage ?', correct: '30%', choices: ['25%','30%','60%','40%'] },
 ], 'ex3');
 
 buildQ([
-  { q: 'On lance un dé à 6 faces. Probabilité d\'obtenir un 3 ?', correct: '1/6', choices: ['1/3','1/6','3/6','6/1'] },
-  { q: 'On tire au hasard une carte dans un jeu de 52. Probabilité de tirer un as ?', correct: '4/52 = 1/13', choices: ['1/4','4/52 = 1/13','1/52','4/13'] },
-  { q: 'Un sac contient 5 billes rouges et 3 billes bleues. Probabilité de tirer une bille rouge ?', correct: '5/8', choices: ['3/5','5/8','3/8','5/3'] },
-  { q: 'On lance une pièce. Probabilité d\'obtenir pile deux fois de suite ?', correct: '1/4', choices: ['1/2','1/4','1/6','2/4'] },
+  { q: 'On lance un dÃ© Ã  6 faces. ProbabilitÃ© d\'obtenir un 3 ?', correct: '1/6', choices: ['1/3','1/6','3/6','6/1'] },
+  { q: 'On tire au hasard une carte dans un jeu de 52. ProbabilitÃ© de tirer un as ?', correct: '4/52 = 1/13', choices: ['1/4','4/52 = 1/13','1/52','4/13'] },
+  { q: 'Un sac contient 5 billes rouges et 3 billes bleues. ProbabilitÃ© de tirer une bille rouge ?', correct: '5/8', choices: ['3/5','5/8','3/8','5/3'] },
+  { q: 'On lance une piÃ¨ce. ProbabilitÃ© d\'obtenir pile deux fois de suite ?', correct: '1/4', choices: ['1/2','1/4','1/6','2/4'] },
 ], 'ex4');
 </script>
 
