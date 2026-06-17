@@ -31,7 +31,7 @@
 
   var items = [{ '@type': 'ListItem', 'position': 1, 'name': 'Accueil', 'item': BASE + '/' }];
   if (level) {
-    items.push({ '@type': 'ListItem', 'position': 2, 'name': LEVELS[level], 'item': BASE + '/index.html#lc-' + level });
+    items.push({ '@type': 'ListItem', 'position': 2, 'name': LEVELS[level], 'item': BASE + '/programme-' + level + '.html' });
   }
   var pageTitle = document.title.replace(' | École Facile', '').replace('— École Facile', '').trim();
   items.push({ '@type': 'ListItem', 'position': items.length + 1, 'name': pageTitle, 'item': BASE + '/' + fname });
@@ -62,8 +62,8 @@
   bar.setAttribute('aria-label', 'Fil d\'Ariane');
   bar.style.cssText = 'padding:4px 18px 8px;font-size:.72rem;font-weight:800;color:#9ca3af;display:flex;align-items:center;gap:5px;flex-wrap:wrap';
   var crumbs = [{ label: 'Accueil', href: 'index.html' }];
-  if (level) crumbs.push({ label: LEVELS[level], href: 'index.html#lc-' + level });
-  if (isCours) crumbs.push({ label: 'Cours', href: null });
+  if (level) crumbs.push({ label: LEVELS[level], href: 'programme-' + level + '.html' });
+  if (isCours) crumbs.push({ label: 'Cours', href: 'programme-' + level + '.html' });
   crumbs.push({ label: pageTitle.split('—')[0].trim(), href: null });
 
   bar.innerHTML = crumbs.map(function (c, i) {
