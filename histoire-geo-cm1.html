@@ -190,6 +190,49 @@ buildTri([
     ]
   },
 ], 'ex7');
+
+
+buildQCM([
+  { q:'Quelle civilisation a construit les pyramides ?', correct:'L'Égypte antique', choices:['La Grèce','Rome','L'Égypte antique','La Mésopotamie'] },
+  { q:'Comment s'appelait le chef suprême en Égypte antique ?', correct:'Le Pharaon', choices:['L'Empereur','Le Pharaon','Le Sultan','Le Roi'] },
+  { q:'Qu'est-ce qu'un hiéroglyphe ?', correct:'Un signe d'écriture égyptien', choices:['Un monument romain','Un signe d'écriture égyptien','Un dieu grec','Un type de colonne'] },
+  { q:'Quelle ville était le centre de la démocratie en Grèce antique ?', correct:'Athènes', choices:['Sparte','Troie','Athènes','Corinthe'] },
+  { q:'Qui a fondé la démocratie à Athènes ?', correct:'Clisthène', choices:['Socrate','Alexandre','Périclès','Clisthène'] },
+  { q:'En quelle année Rome fut-elle fondée (selon la tradition) ?', correct:'-753 avant J.-C.', choices:['-100 avant J.-C.','-753 avant J.-C.','-2000 avant J.-C.','476 après J.-C.'] },
+], 'ex8');
+
+buildQCM([
+  { q:'Qui était Charlemagne ?', correct:'Un roi franc couronné Empereur en 800', choices:['Un Pharaon égyptien','Un gladiateur romain','Un roi franc couronné Empereur en 800','Un chef viking'] },
+  { q:'Qu'est-ce qu'une croisade au Moyen Âge ?', correct:'Une expédition militaire en Terre Sainte', choices:['Une révolte des paysans','Une expédition militaire en Terre Sainte','Un tournoi de chevaliers','Une fête médiévale'] },
+  { q:'Qu'est-ce que la Magna Carta (1215) ?', correct:'Un texte limitant le pouvoir du roi en Angleterre', choices:['Un traité de paix entre Rome et la Gaule','Un texte limitant le pouvoir du roi en Angleterre','La première constitution française','Un hymne national médiéval'] },
+  { q:'Comment s'appelait la grande maladie qui tua 1/3 des Européens au XIVe s. ?', correct:'La Peste noire', choices:['La variole','La grippe espagnole','La Peste noire','La lèpre'] },
+  { q:'Quelle invention de Gutenberg (XVe s.) révolutionna la diffusion des idées ?', correct:'L'imprimerie', choices:['La boussole','La poudre à canon','L'imprimerie','Le papier'] },
+  { q:'En quelle année Christophe Colomb découvrit-il l'Amérique ?', correct:'1492', choices:['1415','1492','1519','1588'] },
+], 'ex9');
+
+buildVF([
+  { q:'Les Égyptiens construisaient des pyramides comme tombeaux pour les Pharaons.', correct:true },
+  { q:'Athènes était connue pour être une cité guerrière et militaire.', correct:false, expl:'C'est Sparte qui était connue pour sa discipline militaire. Athènes était connue pour la démocratie et la culture.' },
+  { q:'Charlemagne était analphabète mais favorisait l'éducation.', correct:true },
+  { q:'La Peste noire venait d'Asie et arriva en Europe au XIVe siècle.', correct:true },
+  { q:'L'imprimerie a été inventée au XVe siècle par Gutenberg.', correct:true },
+  { q:'Le Moyen Âge se termine en 1789.', correct:false, expl:'Le Moyen Âge se termine en 1492 (découverte de l'Amérique) ou 1453 (chute de Constantinople).' },
+  { q:'Alexandre le Grand a conquis un empire allant de la Grèce jusqu'à l'Inde.', correct:true },
+], 'ex10');
+
+buildOrdre([
+  { q:'Range ces civilisations de la plus ancienne à la plus récente :',
+    items:['Mésopotamie (-3500)','Égypte antique (-3100)','Grèce antique (-800)','Rome (-753)','Empire romain d'Occident (476)'] },
+  { q:'Range ces inventions du Moyen Âge dans l'ordre chronologique :',
+    items:['Épée en acier','Château fort','Université','Imprimerie de Gutenberg'] },
+], 'ex11');
+
+buildPaires([
+  { q:'Associe chaque civilisation à sa réalisation majeure.',
+    pairs:[['Égypte','Les pyramides et les hiéroglyphes'],['Grèce','La démocratie et la philosophie'],['Rome','Les routes et le droit romain'],['Charlemagne','La renaissance carolingienne']] },
+  { q:'Associe chaque terme à sa définition.',
+    pairs:[['Féodalité','Système où les seigneurs protègent les serfs'],['Croisade','Expédition vers la Terre Sainte'],['Cathédrale','Grande église gothique du Moyen Âge'],['Serf','Paysan lié à la terre d'un seigneur']] },
+], 'ex12');
 </script>
 
 <script src="sync.js"></script>

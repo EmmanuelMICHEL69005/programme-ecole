@@ -189,6 +189,49 @@ buildTri([
     ]
   },
 ], 'ex7');
+
+
+buildQCM([
+  { q:'Quelle est la première civilisation à avoir inventé l'écriture ?', correct:'La Mésopotamie (Sumériens)', choices:['L'Égypte','La Chine','La Mésopotamie (Sumériens)','La Grèce'] },
+  { q:'Comment s'appelait l'écriture des Sumériens ?', correct:'L'écriture cunéiforme', choices:['Les hiéroglyphes','Le latin','L'écriture cunéiforme','L'alphabet phénicien'] },
+  { q:'Entre quels deux fleuves se trouvait la Mésopotamie ?', correct:'Le Tigre et l'Euphrate', choices:['Le Nil et le Congo','Le Tigre et l'Euphrate','Le Rhin et la Seine','L'Indus et le Gange'] },
+  { q:'Qu'est-ce qu'une cité-État en Mésopotamie ?', correct:'Une ville indépendante avec son gouvernement', choices:['Une région agricole','Un temple babylonien','Une ville indépendante avec son gouvernement','Un camp militaire'] },
+  { q:'Quel roi mésopotamien est célèbre pour son code de lois ?', correct:'Hammourabi', choices:['Sargon','Hammourabi','Nabuchodonosor','Gilgamesh'] },
+  { q:'Qu'est-ce qu'une ziggurat ?', correct:'Un temple en forme de pyramide à étages en Mésopotamie', choices:['Un palais babylonien','Un tombeau royal','Un temple en forme de pyramide à étages en Mésopotamie','Une bibliothèque sumérienne'] },
+], 'ex8');
+
+buildQCM([
+  { q:'Qu'est-ce que la démocratie athénienne (Ve s. av. J.-C.) ?', correct:'Un régime où les citoyens participent aux décisions', choices:['Un régime où le roi décide de tout','Un régime où les généraux gouvernent','Un régime où les citoyens participent aux décisions','Un régime militaire comme Sparte'] },
+  { q:'Qui était Périclès ?', correct:'Le stratège qui développa la démocratie à Athènes', choices:['Un philosophe','Un conquérant romain','Le stratège qui développa la démocratie à Athènes','Un roi de Sparte'] },
+  { q:'Qu'est-ce que les Jeux Olympiques antiques ?', correct:'Des jeux sportifs organisés à Olympie en l'honneur de Zeus', choices:['Un marché annuel à Athènes','Des jeux sportifs organisés à Olympie en l'honneur de Zeus','Un concours de philosophie','Des joutes militaires entre cités'] },
+  { q:'Quelle cité grecque était connue pour son armée d'élite ?', correct:'Sparte', choices:['Athènes','Corinthe','Sparte','Troie'] },
+  { q:'Qui fut Alexandre le Grand ?', correct:'Un roi macédonien qui conquit un empire de la Grèce à l'Inde', choices:['Un Pharaon égyptien','Un roi macédonien qui conquit un empire de la Grèce à l'Inde','Un consul romain','Un philosophe d'Athènes'] },
+  { q:'En quelle année Alexandre le Grand mourut-il ?', correct:'-323 av. J.-C.', choices:['-500 av. J.-C.','-323 av. J.-C.','-100 av. J.-C.','476 ap. J.-C.'] },
+], 'ex9');
+
+buildVF([
+  { q:'L'écriture cunéiforme fut inventée par les Sumériens en Mésopotamie.', correct:true },
+  { q:'Le Nil coule du nord au sud en Égypte.', correct:false, expl:'Le Nil coule du sud au nord (de l'Afrique centrale vers la Méditerranée).' },
+  { q:'La démocratie athénienne accordait le droit de vote à tous les habitants.', correct:false, expl:'Seuls les citoyens libres (hommes adultes, nés à Athènes) pouvaient voter. Les femmes, esclaves et étrangers en étaient exclus.' },
+  { q:'Les Jeux Olympiques antiques se déroulaient à Olympie en Grèce.', correct:true },
+  { q:'Alexandre le Grand a conquis l'Égypte et la Perse.', correct:true },
+  { q:'Rome est passée d'une République à un Empire sous Jules César.', correct:false, expl:'Jules César fut dictateur mais ne fut jamais Empereur. C'est Auguste (son neveu adopté) qui devint le premier Empereur en -27.' },
+  { q:'La chute de l'Empire romain d'Occident a lieu en 476 après J.-C.', correct:true },
+], 'ex10');
+
+buildOrdre([
+  { q:'Range ces civilisations de la plus ancienne à la plus récente :',
+    items:['Sumériens (Mésopotamie) -3500','Égypte des Pharaons -3100','Grèce classique -500','Rome républicaine -509','Empire romain 27 av. J.-C.'] },
+  { q:'Range ces grands conquérants dans l'ordre chronologique :',
+    items:['Sargon d'Akkad (-2300)','Ramsès II (-1300)','Alexandre le Grand (-336)','Jules César (-58)','Auguste (-27)'] },
+], 'ex11');
+
+buildPaires([
+  { q:'Associe chaque civilisation à sa localisation géographique.',
+    pairs:[['Mésopotamie','Entre le Tigre et l'Euphrate (Irak actuel)'],['Égypte antique','Vallée du Nil (Afrique)'],['Grèce antique','Péninsule balkanique et mer Égée'],['Empire romain','Méditerranée, Rome (Italie)']] },
+  { q:'Associe chaque terme à sa définition.',
+    pairs:[['Hiéroglyphe','Écriture sacrée des Égyptiens'],['Agora','Place publique de la cité grecque'],['Sénat','Assemblée de gouvernement à Rome'],['Ziggurat','Temple mésopotamien en forme de pyramide à étages']] },
+], 'ex12');
 </script>
 
 <script src="sync.js"></script>
