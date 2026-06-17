@@ -2,20 +2,20 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="apple-mobile-web-app-title" content="Ãcole Facile">
-<meta name="application-name" content="Ãcole Facile">
+<meta name="apple-mobile-web-app-title" content="École Facile">
+<meta name="application-name" content="École Facile">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ecolefacile.fr/geometrie.html">
-<meta property="og:title" content="GÃ©omÃ©trie plane â CE2 | Ãcole Facile">
-<meta property="og:description" content="Exercices interactifs Geometrie  â correction immÃ©diate, XP et badges. Gratuit sur Ãcole Facile.">
+<meta property="og:title" content="Géométrie plane — CE2 | École Facile">
+<meta property="og:description" content="Exercices interactifs Geometrie  — correction immédiate, XP et badges. Gratuit sur École Facile.">
 <meta property="og:image" content="https://ecolefacile.fr/og-image.png">
-<meta property="og:site_name" content="Ãcole Facile">
+<meta property="og:site_name" content="École Facile">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://ecolefacile.fr/geometrie.html">
-<meta name="description" content="Exercices interactifs Geometrie  â correction immÃ©diate, XP et badges. Gratuit sur Ãcole Facile.">
+<meta name="description" content="Exercices interactifs Geometrie  — correction immédiate, XP et badges. Gratuit sur École Facile.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GÃ©omÃ©trie plane â CE2 | Ãcole Facile</title>
+<title>Géométrie plane — CE2 | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -67,54 +67,54 @@
 <body>
 
 <header class="site-header" style="background: linear-gradient(135deg, #16a34a, #0d9488);">
-  <span class="emoji-header">ð·</span>
-  <h1>GÃ©omÃ©trie plane</h1>
-  <p>Figures, angles droits, pÃ©rimÃ¨tre, symÃ©trie</p>
-  <a href="index.html" class="nav-back">â Accueil</a>
+  <span class="emoji-header">🔷</span>
+  <h1>Géométrie plane</h1>
+  <p>Figures, angles droits, périmètre, symétrie</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
 </header>
 
 <main>
 
-  <div class="badge-niveau">CE2 â Espace et gÃ©omÃ©trie</div>
+  <div class="badge-niveau">CE2 — Espace et géométrie</div>
 
   <!-- JE RETIENS -->
   <div class="retiens-box">
-    <div class="retiens-title">ð¡ Je retiens</div>
+    <div class="retiens-title">💡 Je retiens</div>
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; font-size:0.88rem; color:#555; margin-top:10px;">
       <div>
         <strong style="color:#166534;">Figures planes</strong><br>
-        âªï¸ CarrÃ© : 4 cÃ´tÃ©s Ã©gaux, 4 angles droits<br>
-        âªï¸ Rectangle : 4 angles droits, cÃ´tÃ©s opposÃ©s Ã©gaux<br>
-        âªï¸ Triangle : 3 cÃ´tÃ©s<br>
-        âªï¸ Cercle : pas de cÃ´tÃ©<br>
-        âªï¸ Losange : 4 cÃ´tÃ©s Ã©gaux
+        ▪️ Carré : 4 côtés égaux, 4 angles droits<br>
+        ▪️ Rectangle : 4 angles droits, côtés opposés égaux<br>
+        ▪️ Triangle : 3 côtés<br>
+        ▪️ Cercle : pas de côté<br>
+        ▪️ Losange : 4 côtés égaux
       </div>
       <div>
-        <strong style="color:#166534;">PropriÃ©tÃ©s</strong><br>
-        âªï¸ Angle droit = coin d'un carrÃ©<br>
-        âªï¸ PÃ©rimÃ¨tre = somme des cÃ´tÃ©s<br>
-        âªï¸ Axe de symÃ©trie = pliage qui superpose les 2 parties<br>
-        âªï¸ CarrÃ© pÃ©rimÃ¨tre = 4 Ã cÃ´tÃ©
+        <strong style="color:#166534;">Propriétés</strong><br>
+        ▪️ Angle droit = coin d'un carré<br>
+        ▪️ Périmètre = somme des côtés<br>
+        ▪️ Axe de symétrie = pliage qui superpose les 2 parties<br>
+        ▪️ Carré périmètre = 4 × côté
       </div>
     </div>
   </div>
 
-  <!-- EXERCICE 1 : reconnaÃ®tre les figures -->
+  <!-- EXERCICE 1 : reconnaître les figures -->
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 1</span> Quel est le nom de cette figure ? (clique sur la bonne rÃ©ponse)</div>
+    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 1</span> Quel est le nom de cette figure ? (clique sur la bonne réponse)</div>
     <div class="score-bar" id="score-fig">Score : 0 / 5</div>
     <div id="ex1-container"></div>
   </div>
 
-  <!-- EXERCICE 2 : propriÃ©tÃ©s VF -->
+  <!-- EXERCICE 2 : propriétés VF -->
   <div class="exercice-block">
     <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 2</span> Vrai ou Faux sur les figures ?</div>
     <div id="ex2-container"></div>
   </div>
 
-  <!-- EXERCICE 3 : pÃ©rimÃ¨tre -->
+  <!-- EXERCICE 3 : périmètre -->
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 3</span> Calcule le pÃ©rimÃ¨tre</div>
+    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 3</span> Calcule le périmètre</div>
     <div class="score-bar" id="score-perim">Score : 0 / 5</div>
     <div id="ex3-container"></div>
   </div>
@@ -125,9 +125,9 @@
     <div id="ex4-container"></div>
   </div>
 
-  <!-- EXERCICE 5 : symÃ©trie VF -->
+  <!-- EXERCICE 5 : symétrie VF -->
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 5</span> La symÃ©trie</div>
+    <div class="ex-title"><span class="ex-badge" style="background:#16a34a;">Ex 5</span> La symétrie</div>
     <div id="ex5-container"></div>
   </div>
 

@@ -2,20 +2,20 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="apple-mobile-web-app-title" content="Ãcole Facile">
-<meta name="application-name" content="Ãcole Facile">
+<meta name="apple-mobile-web-app-title" content="École Facile">
+<meta name="application-name" content="École Facile">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ecolefacile.fr/fiche1.html">
-<meta property="og:title" content="Fiche 1 â Je dÃ©coupe | Ãcole Facile">
-<meta property="og:description" content="Exercices interactifs Fiche1  â correction immÃ©diate, XP et badges. Gratuit sur Ãcole Facile.">
+<meta property="og:title" content="Fiche 1 — Je découpe | École Facile">
+<meta property="og:description" content="Exercices interactifs Fiche1  — correction immédiate, XP et badges. Gratuit sur École Facile.">
 <meta property="og:image" content="https://ecolefacile.fr/og-image.png">
-<meta property="og:site_name" content="Ãcole Facile">
+<meta property="og:site_name" content="École Facile">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://ecolefacile.fr/fiche1.html">
-<meta name="description" content="Exercices interactifs Fiche1  â correction immÃ©diate, XP et badges. Gratuit sur Ãcole Facile.">
+<meta name="description" content="Exercices interactifs Fiche1  — correction immédiate, XP et badges. Gratuit sur École Facile.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fiche 1 â Je dÃ©coupe | Ãcole Facile</title>
+<title>Fiche 1 — Je découpe | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -30,7 +30,7 @@
   .pizza-card .hint { font-size:0.78rem; color:#888; margin-top:2px; }
   .pizza-feedback { font-size:0.82rem; font-weight:800; min-height:18px; margin-top:4px; }
 
-  /* Ex 2 â mini quiz fraction */
+  /* Ex 2 — mini quiz fraction */
   .frac-quiz { display:flex; flex-direction:column; gap:14px; }
   .frac-quiz-item { background:#f8f7ff; border:2px solid #ede9fe; border-radius:14px; padding:16px; display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
   .frac-quiz-item .pizza-vis { flex-shrink:0; }
@@ -47,7 +47,7 @@
   .btn-frac.wrong   { background:var(--rouge); color:white; border-color:#b91c1c; }
   .quiz-feedback { font-size:0.82rem; font-weight:800; margin-top:8px; min-height:16px; }
 
-  /* Ex 4 â problÃ¨me avec boutons */
+  /* Ex 4 — problème avec boutons */
   .pb-choix { margin-bottom:14px; }
   .pb-choix p { font-size:0.93rem; margin-bottom:8px; }
   .pb-choix .question { font-size:0.95rem; margin-bottom:8px; }
@@ -65,55 +65,55 @@
 <body>
 
 <header class="site-header">
-  <span class="emoji-header">ð</span>
-  <h1>Fiche 1 â Je dÃ©coupe</h1>
-  <p>Comprendre le partage en parts Ã©gales</p>
-  <a href="index.html" class="nav-back">â Retour Ã  l'accueil</a>
+  <span class="emoji-header">🍕</span>
+  <h1>Fiche 1 — Je découpe</h1>
+  <p>Comprendre le partage en parts égales</p>
+  <a href="index.html" class="nav-back">← Retour à l'accueil</a>
 </header>
 
 <main>
-  <span class="badge-niveau">â­ Facile â CE2</span>
+  <span class="badge-niveau">⭐ Facile — CE2</span>
 
   <!-- JE RETIENS -->
   <div class="retiens-box">
-    <div class="retiens-title">ð Je retiens</div>
-    <p>Quand on partage une pizza en parts <strong>Ã©gales</strong>, chaque part s'appelle une <strong>fraction</strong>.</p>
+    <div class="retiens-title">📌 Je retiens</div>
+    <p>Quand on partage une pizza en parts <strong>égales</strong>, chaque part s'appelle une <strong>fraction</strong>.</p>
     <div class="pizza-retiens">
       <div class="pizza-retiens-item">
-        <div class="frac-sym">Â½</div>
+        <div class="frac-sym">½</div>
         <div id="pz-r1"></div>
-        <div class="frac-nom">un demi â 1 part sur 2</div>
+        <div class="frac-nom">un demi — 1 part sur 2</div>
       </div>
       <div class="pizza-retiens-item">
-        <div class="frac-sym">Â¼</div>
+        <div class="frac-sym">¼</div>
         <div id="pz-r2"></div>
-        <div class="frac-nom">un quart â 1 part sur 4</div>
+        <div class="frac-nom">un quart — 1 part sur 4</div>
       </div>
       <div class="pizza-retiens-item">
-        <div class="frac-sym">â</div>
+        <div class="frac-sym">⅓</div>
         <div id="pz-r3"></div>
-        <div class="frac-nom">un tiers â 1 part sur 3</div>
+        <div class="frac-nom">un tiers — 1 part sur 3</div>
       </div>
     </div>
   </div>
 
   <!-- EXERCICE 1 -->
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge">Ex 1</span> Colorie la bonne part de pizza ð</div>
+    <div class="ex-title"><span class="ex-badge">Ex 1</span> Colorie la bonne part de pizza 🍕</div>
     <p style="font-size:0.9rem;color:#666;margin-bottom:14px">Clique sur le bon nombre de parts.</p>
     <div class="pizza-grid">
       <div class="pizza-card">
-        <div class="frac-big">Â½</div>
+        <div class="frac-big">½</div>
         <div id="pz-1a" class="pizza-container"><div class="pizza-feedback"></div></div>
         <div class="hint">1 part sur 2</div>
       </div>
       <div class="pizza-card">
-        <div class="frac-big">Â¼</div>
+        <div class="frac-big">¼</div>
         <div id="pz-1b" class="pizza-container"><div class="pizza-feedback"></div></div>
         <div class="hint">1 part sur 4</div>
       </div>
       <div class="pizza-card">
-        <div class="frac-big">â</div>
+        <div class="frac-big">⅓</div>
         <div id="pz-1c" class="pizza-container"><div class="pizza-feedback"></div></div>
         <div class="hint">1 part sur 3</div>
       </div>
@@ -141,35 +141,35 @@
   <div class="exercice-block">
     <div class="ex-title"><span class="ex-badge">Ex 3</span> Vrai ou Faux ?</div>
     <div class="vf-item" id="vf1">
-      <span>Â½ veut dire 1 part sur 2 parts Ã©gales.</span>
+      <span>½ veut dire 1 part sur 2 parts égales.</span>
       <div class="vf-btns">
         <button class="btn-v" onclick="checkVF(this,'vrai','vf1')">VRAI</button>
         <button class="btn-f" onclick="checkVF(this,'faux','vf1')">FAUX</button>
       </div>
     </div>
     <div class="vf-item" id="vf2">
-      <span>Â¼ est plus grand que Â½.</span>
+      <span>¼ est plus grand que ½.</span>
       <div class="vf-btns">
         <button class="btn-v" onclick="checkVF(this,'vrai','vf2')">VRAI</button>
         <button class="btn-f" onclick="checkVF(this,'faux','vf2')">FAUX</button>
       </div>
     </div>
     <div class="vf-item" id="vf3">
-      <span>Quand on partage en 3 parts Ã©gales, chaque part est â.</span>
+      <span>Quand on partage en 3 parts égales, chaque part est ⅓.</span>
       <div class="vf-btns">
         <button class="btn-v" onclick="checkVF(this,'vrai','vf3')">VRAI</button>
         <button class="btn-f" onclick="checkVF(this,'faux','vf3')">FAUX</button>
       </div>
     </div>
     <div class="vf-item" id="vf4">
-      <span>2/4 c'est la mÃªme chose que Â½.</span>
+      <span>2/4 c'est la même chose que ½.</span>
       <div class="vf-btns">
         <button class="btn-v" onclick="checkVF(this,'vrai','vf4')">VRAI</button>
         <button class="btn-f" onclick="checkVF(this,'faux','vf4')">FAUX</button>
       </div>
     </div>
     <div class="vf-item" id="vf5">
-      <span>Â¼ veut dire 1 part sur 4 parts Ã©gales.</span>
+      <span>¼ veut dire 1 part sur 4 parts égales.</span>
       <div class="vf-btns">
         <button class="btn-v" onclick="checkVF(this,'vrai','vf5')">VRAI</button>
         <button class="btn-f" onclick="checkVF(this,'faux','vf5')">FAUX</button>
@@ -179,25 +179,25 @@
 
   <!-- EXERCICE 4 -->
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge">Ex 4</span> ProblÃ¨me ð</div>
+    <div class="ex-title"><span class="ex-badge">Ex 4</span> Problème 🍕</div>
     <div class="probleme-box">
-      <p class="pb-enonce">Une pizza est coupÃ©e en <strong>4 parts Ã©gales</strong>. ClÃ©mence mange <strong>1 part</strong>.</p>
+      <p class="pb-enonce">Une pizza est coupée en <strong>4 parts égales</strong>. Clémence mange <strong>1 part</strong>.</p>
 
       <div class="pb-choix">
-        <div class="question">1. Quelle fraction ClÃ©mence a-t-elle mangÃ©e ?</div>
-        <button class="btn-rep" onclick="checkRep(this,'Â¼','Â¼','rep1')">Â¼</button>
-        <button class="btn-rep" onclick="checkRep(this,'Â½','Â¼','rep1')">Â½</button>
-        <button class="btn-rep" onclick="checkRep(this,'â','Â¼','rep1')">â</button>
-        <button class="btn-rep" onclick="checkRep(this,'Â¾','Â¼','rep1')">Â¾</button>
+        <div class="question">1. Quelle fraction Clémence a-t-elle mangée ?</div>
+        <button class="btn-rep" onclick="checkRep(this,'¼','¼','rep1')">¼</button>
+        <button class="btn-rep" onclick="checkRep(this,'½','¼','rep1')">½</button>
+        <button class="btn-rep" onclick="checkRep(this,'⅓','¼','rep1')">⅓</button>
+        <button class="btn-rep" onclick="checkRep(this,'¾','¼','rep1')">¾</button>
         <div class="pb-fb" id="rep1"></div>
       </div>
 
       <div class="pb-choix">
         <div class="question">2. Quelle fraction de pizza reste-t-il ?</div>
-        <button class="btn-rep" onclick="checkRep(this,'Â¼','Â¾','rep2')">Â¼</button>
-        <button class="btn-rep" onclick="checkRep(this,'Â½','Â¾','rep2')">Â½</button>
-        <button class="btn-rep" onclick="checkRep(this,'â','Â¾','rep2')">â</button>
-        <button class="btn-rep" onclick="checkRep(this,'Â¾','Â¾','rep2')">Â¾</button>
+        <button class="btn-rep" onclick="checkRep(this,'¼','¾','rep2')">¼</button>
+        <button class="btn-rep" onclick="checkRep(this,'½','¾','rep2')">½</button>
+        <button class="btn-rep" onclick="checkRep(this,'⅓','¾','rep2')">⅓</button>
+        <button class="btn-rep" onclick="checkRep(this,'¾','¾','rep2')">¾</button>
         <div class="pb-fb" id="rep2"></div>
       </div>
     </div>

@@ -2,25 +2,25 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="apple-mobile-web-app-title" content="Ãcole Facile">
-<meta name="application-name" content="Ãcole Facile">
+<meta name="apple-mobile-web-app-title" content="École Facile">
+<meta name="application-name" content="École Facile">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ecolefacile.fr/index.html">
-<meta property="og:title" content="Ãcole Facile â Exercices interactifs CPâ6e">
-<meta property="og:description" content="Exercices interactifs de maths, histoire-gÃ©o et EPS du CP Ã  la 6Ã¨me. Gratuit, sans publicitÃ©. Correction immÃ©diate, XP et badges.">
+<meta property="og:title" content="École Facile — Exercices interactifs CP→6e">
+<meta property="og:description" content="Exercices interactifs de maths, histoire-géo et EPS du CP à la 6ème. Gratuit, sans publicité. Correction immédiate, XP et badges.">
 <meta property="og:image" content="https://ecolefacile.fr/og-image.png">
-<meta property="og:site_name" content="Ãcole Facile">
-<meta name="description" content="Exercices interactifs de maths, histoire-gÃ©o et EPS du CP Ã  la 6Ã¨me. Gratuit, sans publicitÃ©.">
+<meta property="og:site_name" content="École Facile">
+<meta name="description" content="Exercices interactifs de maths, histoire-géo et EPS du CP à la 6ème. Gratuit, sans publicité.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://ecolefacile.fr/index.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ãcole Facile â Exercices interactifs CPâ6e</title>
+<title>École Facile — Exercices interactifs CP→6e</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-/* ââ Hero header ââ */
+/* ── Hero header ── */
 .home-header {
   background: linear-gradient(135deg, #5b21b6 0%, #7c3aed 50%, #3b82f6 100%);
   color: white;
@@ -56,7 +56,7 @@
 }
 .home-pitch em { font-style: italic; opacity: 0.82; font-weight: 700; }
 
-/* ââ SEO pills dans le header ââ */
+/* ── SEO pills dans le header ── */
 .seo-pills {
   display: flex;
   flex-wrap: wrap;
@@ -78,7 +78,7 @@
 }
 .seo-pill:hover { background: rgba(255,255,255,0.32); }
 
-/* ââ Level picker ââ */
+/* ── Level picker ── */
 .level-picker {
   background: white;
   border-radius: 20px;
@@ -134,12 +134,12 @@
 .lp-cm2.active { background:#b45309; color:white; border-color:#b45309; box-shadow:0 4px 14px rgba(180,83,9,.35); }
 .lp-6e.active  { background:#9d174d; color:white; border-color:#9d174d; box-shadow:0 4px 14px rgba(157,23,77,.35); }
 
-/* ââ Level content ââ */
+/* ── Level content ── */
 .lc { animation: lcIn 0.22s ease; }
 .lc[hidden] { display:none; }
 @keyframes lcIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
 
-/* ââ Category ââ */
+/* ── Category ── */
 .lc-cat { margin-bottom: 26px; }
 .lc-cat-title {
   font-size: 0.72rem;
@@ -155,14 +155,14 @@
   gap: 8px;
 }
 
-/* ââ Card grid ââ */
+/* ── Card grid ── */
 .lc-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   gap: 11px;
 }
 
-/* ââ Card ââ */
+/* ── Card ── */
 .lc-card {
   background: white;
   border-radius: 16px;
@@ -208,20 +208,20 @@
   line-height: 1.3;
 }
 
-/* ââ Responsive ââ */
+/* ── Responsive ── */
 @media (max-width: 480px) {
   .lc-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 9px; }
   .lp-btn { min-width: 52px; padding: 10px 10px 8px; }
   .lp-emoji { font-size: 1.3rem; }
 }
 
-/* ââ Cours card variant ââ */
-/* (seo-intro supprimÃ© â contenu intÃ©grÃ© dans .home-header) */
+/* ── Cours card variant ── */
+/* (seo-intro supprimé — contenu intégré dans .home-header) */
 .lc-card-cours { border-color:#c4b5fd; background:#faf5ff; }
 .lc-card-cours:hover { border-color:#7c3aed; }
 .lcc-badge { font-size:0.6rem; font-weight:900; background:#7c3aed; color:white; border-radius:6px; padding:2px 6px; text-transform:uppercase; letter-spacing:.5px; margin-left:6px; vertical-align:middle; }
 
-/* ââ Welcome ââ */
+/* ── Welcome ── */
 .welcome { text-align:center; margin-bottom:24px; padding-top:4px; }
 .welcome .bonjour { font-size:1.4rem; font-weight:900; }
 .welcome p { font-size:0.92rem; color:#6b7280; margin-top:5px; }
@@ -231,394 +231,394 @@
 
 <header class="home-header">
   <div class="home-logo">
-    <span class="home-logo-icon">ð</span>
-    Ãcole Facile
+    <span class="home-logo-icon">📚</span>
+    École Facile
   </div>
-  <p class="home-tagline">Exercices interactifs du CP Ã  la 6Ã¨me â Maths Â· FranÃ§ais Â· Histoire Â· EPS</p>
+  <p class="home-tagline">Exercices interactifs du CP à la 6ème — Maths · Français · Histoire · EPS</p>
 <div style="display:flex;justify-content:center;gap:10px;margin-top:12px">
-    <span style="background:white;color:#5b21b6;font-size:0.78rem;font-weight:800;border-radius:20px;padding:6px 18px">ð Exercices</span>
-    <a href="cours.html" style="background:rgba(255,255,255,.18);border:1.5px solid rgba(255,255,255,.35);color:white;font-size:0.78rem;font-weight:800;border-radius:20px;padding:6px 18px;text-decoration:none">ð Cours</a>
+    <span style="background:white;color:#5b21b6;font-size:0.78rem;font-weight:800;border-radius:20px;padding:6px 18px">📝 Exercices</span>
+    <a href="cours.html" style="background:rgba(255,255,255,.18);border:1.5px solid rgba(255,255,255,.35);color:white;font-size:0.78rem;font-weight:800;border-radius:20px;padding:6px 18px;text-decoration:none">📖 Cours</a>
   </div>
 </header>
 
 <main>
 
   <div class="welcome">
-    <div class="bonjour">Quel est ton niveau ? ð</div>
+    <div class="bonjour">Quel est ton niveau ? 👇</div>
     <p>Clique sur ta classe pour voir tous tes exercices et tes cours.</p>
   </div>
 
-  <!-- ââ SÃ©lecteur de niveau ââ -->
+  <!-- ── Sélecteur de niveau ── -->
   <div class="level-picker">
     <div class="lp-label">Choisis ta classe</div>
     <div class="lp-btns">
       <button class="lp-btn lp-cp"  onclick="selectLvl('cp', this)">
-        <span class="lp-emoji">ð±</span><span class="lp-name">CP</span>
+        <span class="lp-emoji">🌱</span><span class="lp-name">CP</span>
       </button>
       <button class="lp-btn lp-ce1" onclick="selectLvl('ce1', this)">
-        <span class="lp-emoji">ð¿</span><span class="lp-name">CE1</span>
+        <span class="lp-emoji">🌿</span><span class="lp-name">CE1</span>
       </button>
       <button class="lp-btn lp-ce2" onclick="selectLvl('ce2', this)">
-        <span class="lp-emoji">ð</span><span class="lp-name">CE2</span>
+        <span class="lp-emoji">📚</span><span class="lp-name">CE2</span>
       </button>
       <button class="lp-btn lp-cm1" onclick="selectLvl('cm1', this)">
-        <span class="lp-emoji">ð¯</span><span class="lp-name">CM1</span>
+        <span class="lp-emoji">🎯</span><span class="lp-name">CM1</span>
       </button>
       <button class="lp-btn lp-cm2" onclick="selectLvl('cm2', this)">
-        <span class="lp-emoji">ð</span><span class="lp-name">CM2</span>
+        <span class="lp-emoji">🏆</span><span class="lp-name">CM2</span>
       </button>
       <button class="lp-btn lp-6e"  onclick="selectLvl('6e', this)">
-        <span class="lp-emoji">â­</span><span class="lp-name">6Ã¨me</span>
+        <span class="lp-emoji">⭐</span><span class="lp-name">6ème</span>
       </button>
     </div>
   </div>
 
-  <!-- ââââââââââââââââââââââââ CP ââââââââââââââââââââââââ -->
+  <!-- ════════════════════════ CP ════════════════════════ -->
   <div id="lc-cp" class="lc" hidden>
     <div class="lc-cat">
-      <div class="lc-cat-title">ð MathÃ©matiques</div>
+      <div class="lc-cat-title">📐 Mathématiques</div>
       <div class="lc-grid">
-        <a href="nombres-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">ð¢</div><div class="lcc-body"><div class="lcc-title">Nombres</div><div class="lcc-desc">jusqu'Ã  100 Â· 9 ex.</div></div></a>
-        <a href="calcul-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">â</div><div class="lcc-body"><div class="lcc-title">Calcul</div><div class="lcc-desc">+ et â Â· 8 ex.</div></div></a>
-        <a href="calcul-mental-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">â¡</div><div class="lcc-body"><div class="lcc-title">Calcul mental</div><div class="lcc-desc">doubles, +10 Â· 6 ex.</div></div></a>
-        <a href="mesures-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">ð</div><div class="lcc-body"><div class="lcc-title">Mesures</div><div class="lcc-desc">cm, kg, euros Â· 7 ex.</div></div></a>
-        <a href="geometrie-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">ð·</div><div class="lcc-body"><div class="lcc-title">GÃ©omÃ©trie</div><div class="lcc-desc">formes Â· 8 ex.</div></div></a>
-        <a href="donnees-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">ð</div><div class="lcc-body"><div class="lcc-title">DonnÃ©es</div><div class="lcc-desc">tableaux Â· 5 ex.</div></div></a>
-        <a href="problemes-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">ð§©</div><div class="lcc-body"><div class="lcc-title">ProblÃ¨mes</div><div class="lcc-desc">contexte Â· 6 ex.</div></div></a>
+        <a href="nombres-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">🔢</div><div class="lcc-body"><div class="lcc-title">Nombres</div><div class="lcc-desc">jusqu'à 100 · 9 ex.</div></div></a>
+        <a href="calcul-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">➕</div><div class="lcc-body"><div class="lcc-title">Calcul</div><div class="lcc-desc">+ et − · 8 ex.</div></div></a>
+        <a href="calcul-mental-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">⚡</div><div class="lcc-body"><div class="lcc-title">Calcul mental</div><div class="lcc-desc">doubles, +10 · 6 ex.</div></div></a>
+        <a href="mesures-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">📏</div><div class="lcc-body"><div class="lcc-title">Mesures</div><div class="lcc-desc">cm, kg, euros · 7 ex.</div></div></a>
+        <a href="geometrie-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">🔷</div><div class="lcc-body"><div class="lcc-title">Géométrie</div><div class="lcc-desc">formes · 8 ex.</div></div></a>
+        <a href="donnees-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">📊</div><div class="lcc-body"><div class="lcc-title">Données</div><div class="lcc-desc">tableaux · 5 ex.</div></div></a>
+        <a href="problemes-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">🧩</div><div class="lcc-body"><div class="lcc-title">Problèmes</div><div class="lcc-desc">contexte · 6 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">ðï¸ Histoire &amp; GÃ©ographie</div>
+      <div class="lc-cat-title">🏛️ Histoire &amp; Géographie</div>
       <div class="lc-grid">
-        <a href="histoire-geo-cp.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">ð</div><div class="lcc-body"><div class="lcc-title">Histoire-GÃ©o</div><div class="lcc-desc">saisons, continents Â· 7 ex.</div></div></a>
+        <a href="histoire-geo-cp.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">🌍</div><div class="lcc-body"><div class="lcc-title">Histoire-Géo</div><div class="lcc-desc">saisons, continents · 7 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">ð FranÃ§ais</div>
+      <div class="lc-cat-title">📝 Français</div>
       <div class="lc-grid">
-        <a href="conjugaison-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">ð</div><div class="lcc-body"><div class="lcc-title">Conjugaison</div><div class="lcc-desc">Ãªtre, avoir, 1er groupe au prÃ©sent Â· 7 ex.</div></div></a>
-        <a href="grammaire-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">ð¤</div><div class="lcc-body"><div class="lcc-title">Grammaire</div><div class="lcc-desc">la phrase, nom, verbe, genre, nombre Â· 7 ex.</div></div></a>
-        <a href="orthographe-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">âï¸</div><div class="lcc-body"><div class="lcc-title">Orthographe</div><div class="lcc-desc">majuscule, pluriel, fÃ©minin, sons Â· 7 ex.</div></div></a>
-        <a href="vocabulaire-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">ð</div><div class="lcc-body"><div class="lcc-title">Vocabulaire</div><div class="lcc-desc">alphabet, contraires, gÃ©nÃ©riques Â· 7 ex.</div></div></a>
+        <a href="conjugaison-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">📝</div><div class="lcc-body"><div class="lcc-title">Conjugaison</div><div class="lcc-desc">être, avoir, 1er groupe au présent · 7 ex.</div></div></a>
+        <a href="grammaire-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">🔤</div><div class="lcc-body"><div class="lcc-title">Grammaire</div><div class="lcc-desc">la phrase, nom, verbe, genre, nombre · 7 ex.</div></div></a>
+        <a href="orthographe-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">✏️</div><div class="lcc-body"><div class="lcc-title">Orthographe</div><div class="lcc-desc">majuscule, pluriel, féminin, sons · 7 ex.</div></div></a>
+        <a href="vocabulaire-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">📚</div><div class="lcc-body"><div class="lcc-title">Vocabulaire</div><div class="lcc-desc">alphabet, contraires, génériques · 7 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">ð Cours Ã  retenir</div>
+      <div class="lc-cat-title">📖 Cours à retenir</div>
       <div class="lc-grid" style="grid-template-columns:1fr">
         <a href="cours.html#cp" class="lc-card lc-card-cours" style="flex-direction:row;align-items:center;gap:14px;padding:14px 18px;text-align:left">
-          <div class="lcc-icon" style="background:#dcfce7;flex-shrink:0">ð</div>
-          <div class="lcc-body"><div class="lcc-title">Voir les 9 fiches de cours CP <span class="lcc-badge">cours</span></div><div class="lcc-desc">nombres Â· calcul Â· gÃ©omÃ©trie Â· mesures Â· conjugaison Â· grammaire Â· orthographe Â· vocabulaire</div></div>
+          <div class="lcc-icon" style="background:#dcfce7;flex-shrink:0">📖</div>
+          <div class="lcc-body"><div class="lcc-title">Voir les 9 fiches de cours CP <span class="lcc-badge">cours</span></div><div class="lcc-desc">nombres · calcul · géométrie · mesures · conjugaison · grammaire · orthographe · vocabulaire</div></div>
         </a>
         <a href="programme-cp.html" class="lc-card lc-card-cours" style="flex-direction:row;align-items:center;gap:14px;padding:14px 18px;text-align:left">
-          <div class="lcc-icon" style="background:#dcfce7;flex-shrink:0">ðï¸</div>
+          <div class="lcc-icon" style="background:#dcfce7;flex-shrink:0">🗂️</div>
           <div class="lcc-body"><div class="lcc-title">Tout le programme CP <span class="lcc-badge">pilier</span></div><div class="lcc-desc">tous les exercices et cours CP en une page</div></div>
         </a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">ð EPS</div>
+      <div class="lc-cat-title">🏃 EPS</div>
       <div class="lc-grid">
-        <a href="eps-cycle2.html" class="lc-card"><div class="lcc-icon" style="background:#fee2e2">ð</div><div class="lcc-body"><div class="lcc-title">EPS Cycle 2</div><div class="lcc-desc">courir, nager, jouer Â· 7 ex.</div></div></a>
+        <a href="eps-cycle2.html" class="lc-card"><div class="lcc-icon" style="background:#fee2e2">🏃</div><div class="lcc-body"><div class="lcc-title">EPS Cycle 2</div><div class="lcc-desc">courir, nager, jouer · 7 ex.</div></div></a>
       </div>
     </div>
   </div>
 
-  <!-- ââââââââââââââââââââââââ CE1 ââââââââââââââââââââââââ -->
+  <!-- ════════════════════════ CE1 ════════════════════════ -->
   <div id="lc-ce1" class="lc" hidden>
     <div class="lc-cat">
-      <div class="lc-cat-title">ð MathÃ©matiques</div>
+      <div class="lc-cat-title">📐 Mathématiques</div>
       <div class="lc-grid">
-        <a href="nombres-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">ð¢</div><div class="lcc-body"><div class="lcc-title">Nombres</div><div class="lcc-desc">jusqu'Ã  1000 Â· 8 ex.</div></div></a>
-        <a href="calcul-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">â</div><div class="lcc-body"><div class="lcc-title">Calcul</div><div class="lcc-desc">4 opÃ©rations Â· 7 ex.</div></div></a>
-        <a href="calcul-mental-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">â¡</div><div class="lcc-body"><div class="lcc-title">Calcul mental</div><div class="lcc-desc">tables Ã2 Ã5 Â· 7 ex.</div></div></a>
-        <a href="operations-posees-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">ðï¸</div><div class="lcc-body"><div class="lcc-title">OpÃ©rations posÃ©es</div><div class="lcc-desc">colonnes Â· 7 ex.</div></div></a>
-        <a href="multiplication-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">âï¸</div><div class="lcc-body"><div class="lcc-title">Multiplication</div><div class="lcc-desc">sens, tables Â· 7 ex.</div></div></a>
-        <a href="fractions-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">âï¸</div><div class="lcc-body"><div class="lcc-title">Fractions</div><div class="lcc-desc">Â½, Â¼, Â¾ Â· 4 ex.</div></div></a>
-        <a href="mesures-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">ð</div><div class="lcc-body"><div class="lcc-title">Mesures</div><div class="lcc-desc">m, kg, euros Â· 7 ex.</div></div></a>
-        <a href="geometrie-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">ð·</div><div class="lcc-body"><div class="lcc-title">GÃ©omÃ©trie</div><div class="lcc-desc">angles, pÃ©rimÃ¨tre Â· 7 ex.</div></div></a>
-        <a href="donnees-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">ð</div><div class="lcc-body"><div class="lcc-title">DonnÃ©es</div><div class="lcc-desc">graphiques Â· 5 ex.</div></div></a>
-        <a href="problemes-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">ð§©</div><div class="lcc-body"><div class="lcc-title">ProblÃ¨mes</div><div class="lcc-desc">contexte Â· 7 ex.</div></div></a>
+        <a href="nombres-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">🔢</div><div class="lcc-body"><div class="lcc-title">Nombres</div><div class="lcc-desc">jusqu'à 1000 · 8 ex.</div></div></a>
+        <a href="calcul-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">➕</div><div class="lcc-body"><div class="lcc-title">Calcul</div><div class="lcc-desc">4 opérations · 7 ex.</div></div></a>
+        <a href="calcul-mental-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">⚡</div><div class="lcc-body"><div class="lcc-title">Calcul mental</div><div class="lcc-desc">tables ×2 ×5 · 7 ex.</div></div></a>
+        <a href="operations-posees-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">🖊️</div><div class="lcc-body"><div class="lcc-title">Opérations posées</div><div class="lcc-desc">colonnes · 7 ex.</div></div></a>
+        <a href="multiplication-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">✖️</div><div class="lcc-body"><div class="lcc-title">Multiplication</div><div class="lcc-desc">sens, tables · 7 ex.</div></div></a>
+        <a href="fractions-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">✂️</div><div class="lcc-body"><div class="lcc-title">Fractions</div><div class="lcc-desc">½, ¼, ¾ · 4 ex.</div></div></a>
+        <a href="mesures-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">📏</div><div class="lcc-body"><div class="lcc-title">Mesures</div><div class="lcc-desc">m, kg, euros · 7 ex.</div></div></a>
+        <a href="geometrie-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">🔷</div><div class="lcc-body"><div class="lcc-title">Géométrie</div><div class="lcc-desc">angles, périmètre · 7 ex.</div></div></a>
+        <a href="donnees-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">📊</div><div class="lcc-body"><div class="lcc-title">Données</div><div class="lcc-desc">graphiques · 5 ex.</div></div></a>
+        <a href="problemes-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">🧩</div><div class="lcc-body"><div class="lcc-title">Problèmes</div><div class="lcc-desc">contexte · 7 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">ðï¸ Histoire &amp; GÃ©ographie</div>
+      <div class="lc-cat-title">🏛️ Histoire &amp; Géographie</div>
       <div class="lc-grid">
-        <a href="histoire-geo-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">ðï¸</div><div class="lcc-body"><div class="lcc-title">Histoire-GÃ©o</div><div class="lcc-desc">Gaule, France Â· 7 ex.</div></div></a>
+        <a href="histoire-geo-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">🏛️</div><div class="lcc-body"><div class="lcc-title">Histoire-Géo</div><div class="lcc-desc">Gaule, France · 7 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">ð FranÃ§ais</div>
+      <div class="lc-cat-title">📝 Français</div>
       <div class="lc-grid">
-        <a href="conjugaison-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">ð</div><div class="lcc-body"><div class="lcc-title">Conjugaison</div><div class="lcc-desc">prÃ©sent, futur proche, passÃ© composÃ© Â· 7 ex.</div></div></a>
-        <a href="grammaire-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">ð¤</div><div class="lcc-body"><div class="lcc-title">Grammaire</div><div class="lcc-desc">nature des mots, sujet, verbe Â· 7 ex.</div></div></a>
-        <a href="orthographe-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">âï¸</div><div class="lcc-body"><div class="lcc-title">Orthographe</div><div class="lcc-desc">homophones, pluriel, accord Â· 7 ex.</div></div></a>
-        <a href="vocabulaire-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">ð</div><div class="lcc-body"><div class="lcc-title">Vocabulaire</div><div class="lcc-desc">ordre alpha., familles, synonymes Â· 7 ex.</div></div></a>
+        <a href="conjugaison-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">📝</div><div class="lcc-body"><div class="lcc-title">Conjugaison</div><div class="lcc-desc">présent, futur proche, passé composé · 7 ex.</div></div></a>
+        <a href="grammaire-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">🔤</div><div class="lcc-body"><div class="lcc-title">Grammaire</div><div class="lcc-desc">nature des mots, sujet, verbe · 7 ex.</div></div></a>
+        <a href="orthographe-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">✏️</div><div class="lcc-body"><div class="lcc-title">Orthographe</div><div class="lcc-desc">homophones, pluriel, accord · 7 ex.</div></div></a>
+        <a href="vocabulaire-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">📚</div><div class="lcc-body"><div class="lcc-title">Vocabulaire</div><div class="lcc-desc">ordre alpha., familles, synonymes · 7 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">ð Cours Ã  retenir</div>
+      <div class="lc-cat-title">📖 Cours à retenir</div>
       <div class="lc-grid" style="grid-template-columns:1fr">
         <a href="cours.html#ce1" class="lc-card lc-card-cours" style="flex-direction:row;align-items:center;gap:14px;padding:14px 18px;text-align:left">
-          <div class="lcc-icon" style="background:#d1fae5;flex-shrink:0">ð</div>
-          <div class="lcc-body"><div class="lcc-title">Voir les 10 fiches de cours CE1 <span class="lcc-badge">cours</span></div><div class="lcc-desc">maths Â· conjugaison Â· grammaire Â· orthographe Â· vocabulaire Â· histoire-gÃ©o</div></div>
+          <div class="lcc-icon" style="background:#d1fae5;flex-shrink:0">📖</div>
+          <div class="lcc-body"><div class="lcc-title">Voir les 10 fiches de cours CE1 <span class="lcc-badge">cours</span></div><div class="lcc-desc">maths · conjugaison · grammaire · orthographe · vocabulaire · histoire-géo</div></div>
         </a>
         <a href="programme-ce1.html" class="lc-card lc-card-cours" style="flex-direction:row;align-items:center;gap:14px;padding:14px 18px;text-align:left">
-          <div class="lcc-icon" style="background:#d1fae5;flex-shrink:0">ðï¸</div>
+          <div class="lcc-icon" style="background:#d1fae5;flex-shrink:0">🗂️</div>
           <div class="lcc-body"><div class="lcc-title">Tout le programme CE1 <span class="lcc-badge">pilier</span></div><div class="lcc-desc">tous les exercices et cours CE1 en une page</div></div>
         </a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">ð EPS</div>
+      <div class="lc-cat-title">🏃 EPS</div>
       <div class="lc-grid">
-        <a href="eps-cycle2.html" class="lc-card"><div class="lcc-icon" style="background:#fee2e2">ð</div><div class="lcc-body"><div class="lcc-title">EPS Cycle 2</div><div class="lcc-desc">courir, nager, jouer Â· 7 ex.</div></div></a>
+        <a href="eps-cycle2.html" class="lc-card"><div class="lcc-icon" style="background:#fee2e2">🏃</div><div class="lcc-body"><div class="lcc-title">EPS Cycle 2</div><div class="lcc-desc">courir, nager, jouer · 7 ex.</div></div></a>
       </div>
     </div>
   </div>
 
-  <!-- ââââââââââââââââââââââââ CE2 ââââââââââââââââââââââââ -->
+  <!-- ════════════════════════ CE2 ════════════════════════ -->
   <div id="lc-ce2" class="lc" hidden>
     <div class="lc-cat">
-      <div class="lc-cat-title">ð MathÃ©matiques â Nombres &amp; Calcul</div>
+      <div class="lc-cat-title">📐 Mathématiques — Nombres &amp; Calcul</div>
       <div class="lc-grid">
-        <a href="nombres.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">ð¢</div><div class="lcc-body"><div class="lcc-title">Nombres entiers</div><div class="lcc-desc">jusqu'Ã  9999 Â· 7 ex.</div></div></a>
-        <a href="decimaux-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">ð£</div><div class="lcc-body"><div class="lcc-title">DÃ©cimaux</div><div class="lcc-desc">dixiÃ¨mes, centiÃ¨mes Â· 7 ex.</div></div></a>
-        <a href="fiche1.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">âï¸</div><div class="lcc-body"><div class="lcc-title">Fractions â DÃ©couper</div><div class="lcc-desc">Â½, â, Â¼ Â· 3 ex.</div></div></a>
-        <a href="fiche2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">âï¸</div><div class="lcc-body"><div class="lcc-title">Fractions â Comparer</div><div class="lcc-desc">placer, ordonner Â· 3 ex.</div></div></a>
-        <a href="fiche3.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">ð</div><div class="lcc-body"><div class="lcc-title">Fractions â Calculer</div><div class="lcc-desc">+, â fractions Â· 3 ex.</div></div></a>
-        <a href="calcul.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">â</div><div class="lcc-body"><div class="lcc-title">Les 4 opÃ©rations</div><div class="lcc-desc">+, â, Ã, Ã· Â· 7 ex.</div></div></a>
-        <a href="calcul-mental-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">â¡</div><div class="lcc-body"><div class="lcc-title">Calcul mental</div><div class="lcc-desc">tables 6â9 Â· ÃÃ·10/100 Â· 7 ex.</div></div></a>
-        <a href="operations-posees-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">ðï¸</div><div class="lcc-body"><div class="lcc-title">OpÃ©rations posÃ©es</div><div class="lcc-desc">colonnes Â· 7 ex.</div></div></a>
-        <a href="multiplication-division-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">âï¸</div><div class="lcc-body"><div class="lcc-title">Ã et Ã·</div><div class="lcc-desc">sens, propriÃ©tÃ©s Â· 7 ex.</div></div></a>
-        <a href="tables-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">ð¢</div><div class="lcc-body"><div class="lcc-title">Tables de Ã</div><div class="lcc-desc">tables 2 Ã  9 Â· 7 ex.</div></div></a>
-        <a href="division-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">â</div><div class="lcc-body"><div class="lcc-title">Division euclidienne</div><div class="lcc-desc">quotient, reste Â· 7 ex.</div></div></a>
-        <a href="problemes.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">ð§©</div><div class="lcc-body"><div class="lcc-title">ProblÃ¨mes</div><div class="lcc-desc">contexte Â· 5 ex.</div></div></a>
+        <a href="nombres.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">🔢</div><div class="lcc-body"><div class="lcc-title">Nombres entiers</div><div class="lcc-desc">jusqu'à 9999 · 7 ex.</div></div></a>
+        <a href="decimaux-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">🔣</div><div class="lcc-body"><div class="lcc-title">Décimaux</div><div class="lcc-desc">dixièmes, centièmes · 7 ex.</div></div></a>
+        <a href="fiche1.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">✂️</div><div class="lcc-body"><div class="lcc-title">Fractions — Découper</div><div class="lcc-desc">½, ⅓, ¼ · 3 ex.</div></div></a>
+        <a href="fiche2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">⚖️</div><div class="lcc-body"><div class="lcc-title">Fractions — Comparer</div><div class="lcc-desc">placer, ordonner · 3 ex.</div></div></a>
+        <a href="fiche3.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">🍕</div><div class="lcc-body"><div class="lcc-title">Fractions — Calculer</div><div class="lcc-desc">+, − fractions · 3 ex.</div></div></a>
+        <a href="calcul.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">➕</div><div class="lcc-body"><div class="lcc-title">Les 4 opérations</div><div class="lcc-desc">+, −, ×, ÷ · 7 ex.</div></div></a>
+        <a href="calcul-mental-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">⚡</div><div class="lcc-body"><div class="lcc-title">Calcul mental</div><div class="lcc-desc">tables 6→9 · ×÷10/100 · 7 ex.</div></div></a>
+        <a href="operations-posees-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">🖊️</div><div class="lcc-body"><div class="lcc-title">Opérations posées</div><div class="lcc-desc">colonnes · 7 ex.</div></div></a>
+        <a href="multiplication-division-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">✖️</div><div class="lcc-body"><div class="lcc-title">× et ÷</div><div class="lcc-desc">sens, propriétés · 7 ex.</div></div></a>
+        <a href="tables-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">🔢</div><div class="lcc-body"><div class="lcc-title">Tables de ×</div><div class="lcc-desc">tables 2 à 9 · 7 ex.</div></div></a>
+        <a href="division-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">➗</div><div class="lcc-body"><div class="lcc-title">Division euclidienne</div><div class="lcc-desc">quotient, reste · 7 ex.</div></div></a>
+        <a href="problemes.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">🧩</div><div class="lcc-body"><div class="lcc-title">Problèmes</div><div class="lcc-desc">contexte · 5 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">ð MathÃ©matiques â GÃ©omÃ©trie &amp; Mesures</div>
+      <div class="lc-cat-title">📐 Mathématiques — Géométrie &amp; Mesures</div>
       <div class="lc-grid">
-        <a href="geometrie.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">ð·</div><div class="lcc-body"><div class="lcc-title">GÃ©omÃ©trie plane</div><div class="lcc-desc">figures Â· 5 ex.</div></div></a>
-        <a href="geometrie-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">ð</div><div class="lcc-body"><div class="lcc-title">Formes gÃ©omÃ©triques</div><div class="lcc-desc">angles, droites Â· 6 ex.</div></div></a>
-        <a href="symetrie-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">ðª</div><div class="lcc-body"><div class="lcc-title">SymÃ©trie axiale</div><div class="lcc-desc">axes, rÃ©flexion Â· 7 ex.</div></div></a>
-        <a href="solides.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">ð§</div><div class="lcc-body"><div class="lcc-title">Les solides</div><div class="lcc-desc">3D, faces Â· 4 ex.</div></div></a>
-        <a href="mesures.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">ð</div><div class="lcc-body"><div class="lcc-title">Longueurs &amp; masses</div><div class="lcc-desc">conversions Â· 5 ex.</div></div></a>
-        <a href="mesures-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">âï¸</div><div class="lcc-body"><div class="lcc-title">Grandeurs &amp; mesures</div><div class="lcc-desc">km, g, L Â· 7 ex.</div></div></a>
-        <a href="temps.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">â±ï¸</div><div class="lcc-body"><div class="lcc-title">Temps &amp; monnaie</div><div class="lcc-desc">h, min, euros Â· 5 ex.</div></div></a>
-        <a href="donnees.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">ð</div><div class="lcc-body"><div class="lcc-title">Tableaux &amp; graphiques</div><div class="lcc-desc">lire, interprÃ©ter Â· 5 ex.</div></div></a>
+        <a href="geometrie.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">🔷</div><div class="lcc-body"><div class="lcc-title">Géométrie plane</div><div class="lcc-desc">figures · 5 ex.</div></div></a>
+        <a href="geometrie-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">📐</div><div class="lcc-body"><div class="lcc-title">Formes géométriques</div><div class="lcc-desc">angles, droites · 6 ex.</div></div></a>
+        <a href="symetrie-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">🪞</div><div class="lcc-body"><div class="lcc-title">Symétrie axiale</div><div class="lcc-desc">axes, réflexion · 7 ex.</div></div></a>
+        <a href="solides.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">🧊</div><div class="lcc-body"><div class="lcc-title">Les solides</div><div class="lcc-desc">3D, faces · 4 ex.</div></div></a>
+        <a href="mesures.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">📏</div><div class="lcc-body"><div class="lcc-title">Longueurs &amp; masses</div><div class="lcc-desc">conversions · 5 ex.</div></div></a>
+        <a href="mesures-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">⚖️</div><div class="lcc-body"><div class="lcc-title">Grandeurs &amp; mesures</div><div class="lcc-desc">km, g, L · 7 ex.</div></div></a>
+        <a href="temps.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">⏱️</div><div class="lcc-body"><div class="lcc-title">Temps &amp; monnaie</div><div class="lcc-desc">h, min, euros · 5 ex.</div></div></a>
+        <a href="donnees.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">📊</div><div class="lcc-body"><div class="lcc-title">Tableaux &amp; graphiques</div><div class="lcc-desc">lire, interpréter · 5 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">ðï¸ Histoire &amp; GÃ©ographie</div>
+      <div class="lc-cat-title">🏛️ Histoire &amp; Géographie</div>
       <div class="lc-grid">
-        <a href="histoire-geo-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">ð°</div><div class="lcc-body"><div class="lcc-title">Histoire-GÃ©o</div><div class="lcc-desc">PrÃ©histoire, Gaule, Moyen Ãge Â· 7 ex.</div></div></a>
+        <a href="histoire-geo-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">🏰</div><div class="lcc-body"><div class="lcc-title">Histoire-Géo</div><div class="lcc-desc">Préhistoire, Gaule, Moyen Âge · 7 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">ð FranÃ§ais</div>
+      <div class="lc-cat-title">📝 Français</div>
       <div class="lc-grid">
-        <a href="conjugaison-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">ð</div><div class="lcc-body"><div class="lcc-title">Conjugaison</div><div class="lcc-desc">prÃ©sent, imparfait, futur Â· 7 ex.</div></div></a>
-        <a href="grammaire-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">ð¤</div><div class="lcc-body"><div class="lcc-title">Grammaire</div><div class="lcc-desc">nature, GN, accord Â· 7 ex.</div></div></a>
-        <a href="orthographe-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">âï¸</div><div class="lcc-body"><div class="lcc-title">Orthographe</div><div class="lcc-desc">homophones, pluriels Â· 7 ex.</div></div></a>
-        <a href="vocabulaire-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">ð</div><div class="lcc-body"><div class="lcc-title">Vocabulaire</div><div class="lcc-desc">familles, synonymes, prÃ©fixes Â· 7 ex.</div></div></a>
+        <a href="conjugaison-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">📝</div><div class="lcc-body"><div class="lcc-title">Conjugaison</div><div class="lcc-desc">présent, imparfait, futur · 7 ex.</div></div></a>
+        <a href="grammaire-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">🔤</div><div class="lcc-body"><div class="lcc-title">Grammaire</div><div class="lcc-desc">nature, GN, accord · 7 ex.</div></div></a>
+        <a href="orthographe-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">✏️</div><div class="lcc-body"><div class="lcc-title">Orthographe</div><div class="lcc-desc">homophones, pluriels · 7 ex.</div></div></a>
+        <a href="vocabulaire-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">📚</div><div class="lcc-body"><div class="lcc-title">Vocabulaire</div><div class="lcc-desc">familles, synonymes, préfixes · 7 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">ð Cours Ã  retenir</div>
+      <div class="lc-cat-title">📖 Cours à retenir</div>
       <div class="lc-grid" style="grid-template-columns:1fr">
         <a href="cours.html#ce2" class="lc-card lc-card-cours" style="flex-direction:row;align-items:center;gap:14px;padding:14px 18px;text-align:left">
-          <div class="lcc-icon" style="background:#ede9fe;flex-shrink:0">ð</div>
-          <div class="lcc-body"><div class="lcc-title">Voir les 13 fiches de cours CE2 <span class="lcc-badge">cours</span></div><div class="lcc-desc">maths Â· conjugaison Â· grammaire Â· orthographe Â· vocabulaire Â· histoire-gÃ©o</div></div>
+          <div class="lcc-icon" style="background:#ede9fe;flex-shrink:0">📖</div>
+          <div class="lcc-body"><div class="lcc-title">Voir les 13 fiches de cours CE2 <span class="lcc-badge">cours</span></div><div class="lcc-desc">maths · conjugaison · grammaire · orthographe · vocabulaire · histoire-géo</div></div>
         </a>
         <a href="programme-ce2.html" class="lc-card lc-card-cours" style="flex-direction:row;align-items:center;gap:14px;padding:14px 18px;text-align:left">
-          <div class="lcc-icon" style="background:#ede9fe;flex-shrink:0">ðï¸</div>
+          <div class="lcc-icon" style="background:#ede9fe;flex-shrink:0">🗂️</div>
           <div class="lcc-body"><div class="lcc-title">Tout le programme CE2 <span class="lcc-badge">pilier</span></div><div class="lcc-desc">tous les exercices et cours CE2 en une page</div></div>
         </a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">ð EPS</div>
+      <div class="lc-cat-title">🏃 EPS</div>
       <div class="lc-grid">
-        <a href="eps-cycle2.html" class="lc-card"><div class="lcc-icon" style="background:#fee2e2">ð</div><div class="lcc-body"><div class="lcc-title">EPS Cycle 2</div><div class="lcc-desc">courir, nager, jouer Â· 7 ex.</div></div></a>
+        <a href="eps-cycle2.html" class="lc-card"><div class="lcc-icon" style="background:#fee2e2">🏃</div><div class="lcc-body"><div class="lcc-title">EPS Cycle 2</div><div class="lcc-desc">courir, nager, jouer · 7 ex.</div></div></a>
       </div>
     </div>
   </div>
 
-  <!-- ââââââââââââââââââââââââ CM1 ââââââââââââââââââââââââ -->
+  <!-- ════════════════════════ CM1 ════════════════════════ -->
   <div id="lc-cm1" class="lc" hidden>
     <div class="lc-cat">
-      <div class="lc-cat-title">ð MathÃ©matiques â Nombres &amp; Calcul</div>
+      <div class="lc-cat-title">📐 Mathématiques — Nombres &amp; Calcul</div>
       <div class="lc-grid">
-        <a href="nombres-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">ð¢</div><div class="lcc-body"><div class="lcc-title">Grands nombres</div><div class="lcc-desc">â¤ 999 999 Â· 7 ex.</div></div></a>
-        <a href="decimaux-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">ð£</div><div class="lcc-body"><div class="lcc-title">DÃ©cimaux</div><div class="lcc-desc">opÃ©rations Â· 7 ex.</div></div></a>
-        <a href="fractions-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">âï¸</div><div class="lcc-body"><div class="lcc-title">Fractions</div><div class="lcc-desc">+, â, simplifier Â· 7 ex.</div></div></a>
-        <a href="calcul-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">â</div><div class="lcc-body"><div class="lcc-title">Les 4 opÃ©rations</div><div class="lcc-desc">+, â, Ã, Ã· Â· 7 ex.</div></div></a>
-        <a href="calcul-mental-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">â¡</div><div class="lcc-body"><div class="lcc-title">Calcul mental</div><div class="lcc-desc">rapiditÃ© Â· 7 ex.</div></div></a>
-        <a href="calcul-pose-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">ðï¸</div><div class="lcc-body"><div class="lcc-title">OpÃ©rations posÃ©es</div><div class="lcc-desc">dÃ©cimaux Â· 7 ex.</div></div></a>
-        <a href="proportionnalite-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">âï¸</div><div class="lcc-body"><div class="lcc-title">ProportionnalitÃ©</div><div class="lcc-desc">tableaux, rÃ¨gle de 3 Â· 7 ex.</div></div></a>
-        <a href="problemes-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">ð§©</div><div class="lcc-body"><div class="lcc-title">RÃ©solution problÃ¨mes</div><div class="lcc-desc">stratÃ©gies Â· 7 ex.</div></div></a>
+        <a href="nombres-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">🔢</div><div class="lcc-body"><div class="lcc-title">Grands nombres</div><div class="lcc-desc">≤ 999 999 · 7 ex.</div></div></a>
+        <a href="decimaux-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">🔣</div><div class="lcc-body"><div class="lcc-title">Décimaux</div><div class="lcc-desc">opérations · 7 ex.</div></div></a>
+        <a href="fractions-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">✂️</div><div class="lcc-body"><div class="lcc-title">Fractions</div><div class="lcc-desc">+, −, simplifier · 7 ex.</div></div></a>
+        <a href="calcul-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">➕</div><div class="lcc-body"><div class="lcc-title">Les 4 opérations</div><div class="lcc-desc">+, −, ×, ÷ · 7 ex.</div></div></a>
+        <a href="calcul-mental-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">⚡</div><div class="lcc-body"><div class="lcc-title">Calcul mental</div><div class="lcc-desc">rapidité · 7 ex.</div></div></a>
+        <a href="calcul-pose-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">🖊️</div><div class="lcc-body"><div class="lcc-title">Opérations posées</div><div class="lcc-desc">décimaux · 7 ex.</div></div></a>
+        <a href="proportionnalite-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">⚖️</div><div class="lcc-body"><div class="lcc-title">Proportionnalité</div><div class="lcc-desc">tableaux, règle de 3 · 7 ex.</div></div></a>
+        <a href="problemes-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">🧩</div><div class="lcc-body"><div class="lcc-title">Résolution problèmes</div><div class="lcc-desc">stratégies · 7 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">ð MathÃ©matiques â GÃ©omÃ©trie &amp; Mesures</div>
+      <div class="lc-cat-title">📐 Mathématiques — Géométrie &amp; Mesures</div>
       <div class="lc-grid">
-        <a href="geometrie-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">ð·</div><div class="lcc-body"><div class="lcc-title">GÃ©omÃ©trie</div><div class="lcc-desc">parallÃ¨les, cercle Â· 7 ex.</div></div></a>
-        <a href="angles-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">ð</div><div class="lcc-body"><div class="lcc-title">Les angles</div><div class="lcc-desc">aigu, droit, obtus Â· 7 ex.</div></div></a>
-        <a href="solides-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">ð§</div><div class="lcc-body"><div class="lcc-title">Les solides</div><div class="lcc-desc">cube, prisme Â· 6 ex.</div></div></a>
-        <a href="mesures-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">ð</div><div class="lcc-body"><div class="lcc-title">PÃ©rimÃ¨tres &amp; aires</div><div class="lcc-desc">calcul Â· 7 ex.</div></div></a>
-        <a href="temps-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">â±ï¸</div><div class="lcc-body"><div class="lcc-title">DurÃ©es &amp; conversions</div><div class="lcc-desc">h, min, s Â· 7 ex.</div></div></a>
-        <a href="donnees-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">ð</div><div class="lcc-body"><div class="lcc-title">DonnÃ©es &amp; statistiques</div><div class="lcc-desc">moyenne, graphiques Â· 6 ex.</div></div></a>
+        <a href="geometrie-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">🔷</div><div class="lcc-body"><div class="lcc-title">Géométrie</div><div class="lcc-desc">parallèles, cercle · 7 ex.</div></div></a>
+        <a href="angles-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">📐</div><div class="lcc-body"><div class="lcc-title">Les angles</div><div class="lcc-desc">aigu, droit, obtus · 7 ex.</div></div></a>
+        <a href="solides-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">🧊</div><div class="lcc-body"><div class="lcc-title">Les solides</div><div class="lcc-desc">cube, prisme · 6 ex.</div></div></a>
+        <a href="mesures-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">📏</div><div class="lcc-body"><div class="lcc-title">Périmètres &amp; aires</div><div class="lcc-desc">calcul · 7 ex.</div></div></a>
+        <a href="temps-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">⏱️</div><div class="lcc-body"><div class="lcc-title">Durées &amp; conversions</div><div class="lcc-desc">h, min, s · 7 ex.</div></div></a>
+        <a href="donnees-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">📊</div><div class="lcc-body"><div class="lcc-title">Données &amp; statistiques</div><div class="lcc-desc">moyenne, graphiques · 6 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">ðï¸ Histoire &amp; GÃ©ographie</div>
+      <div class="lc-cat-title">🏛️ Histoire &amp; Géographie</div>
       <div class="lc-grid">
-        <a href="histoire-geo-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">ðï¸</div><div class="lcc-body"><div class="lcc-title">Histoire-GÃ©o</div><div class="lcc-desc">AntiquitÃ©, Moyen Ãge Â· 7 ex.</div></div></a>
+        <a href="histoire-geo-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">🏛️</div><div class="lcc-body"><div class="lcc-title">Histoire-Géo</div><div class="lcc-desc">Antiquité, Moyen Âge · 7 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">ð FranÃ§ais</div>
+      <div class="lc-cat-title">📝 Français</div>
       <div class="lc-grid">
-        <a href="conjugaison-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">ð</div><div class="lcc-body"><div class="lcc-title">Conjugaison</div><div class="lcc-desc">prÃ©sent, imparfait, futur, passÃ© composÃ© Â· 7 ex.</div></div></a>
-        <a href="grammaire-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">ð¤</div><div class="lcc-body"><div class="lcc-title">Grammaire</div><div class="lcc-desc">COD, COI, CC, nature des mots Â· 7 ex.</div></div></a>
-        <a href="orthographe-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">âï¸</div><div class="lcc-body"><div class="lcc-title">Orthographe</div><div class="lcc-desc">accords, homophones, participe passÃ© Â· 7 ex.</div></div></a>
-        <a href="vocabulaire-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">ð</div><div class="lcc-body"><div class="lcc-title">Vocabulaire</div><div class="lcc-desc">synonymes, antonymes, prÃ©fixes, suffixes Â· 7 ex.</div></div></a>
+        <a href="conjugaison-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">📝</div><div class="lcc-body"><div class="lcc-title">Conjugaison</div><div class="lcc-desc">présent, imparfait, futur, passé composé · 7 ex.</div></div></a>
+        <a href="grammaire-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">🔤</div><div class="lcc-body"><div class="lcc-title">Grammaire</div><div class="lcc-desc">COD, COI, CC, nature des mots · 7 ex.</div></div></a>
+        <a href="orthographe-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">✏️</div><div class="lcc-body"><div class="lcc-title">Orthographe</div><div class="lcc-desc">accords, homophones, participe passé · 7 ex.</div></div></a>
+        <a href="vocabulaire-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">📚</div><div class="lcc-body"><div class="lcc-title">Vocabulaire</div><div class="lcc-desc">synonymes, antonymes, préfixes, suffixes · 7 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">ð Cours Ã  retenir</div>
+      <div class="lc-cat-title">📖 Cours à retenir</div>
       <div class="lc-grid" style="grid-template-columns:1fr">
         <a href="cours.html#cm1" class="lc-card lc-card-cours" style="flex-direction:row;align-items:center;gap:14px;padding:14px 18px;text-align:left">
-          <div class="lcc-icon" style="background:#dbeafe;flex-shrink:0">ð</div>
-          <div class="lcc-body"><div class="lcc-title">Voir les 14 fiches de cours CM1 <span class="lcc-badge">cours</span></div><div class="lcc-desc">calcul Â· fractions Â· gÃ©omÃ©trie Â· mesures Â· conjugaison Â· grammaire Â· orthographe Â· vocabulaire</div></div>
+          <div class="lcc-icon" style="background:#dbeafe;flex-shrink:0">📖</div>
+          <div class="lcc-body"><div class="lcc-title">Voir les 14 fiches de cours CM1 <span class="lcc-badge">cours</span></div><div class="lcc-desc">calcul · fractions · géométrie · mesures · conjugaison · grammaire · orthographe · vocabulaire</div></div>
         </a>
         <a href="programme-cm1.html" class="lc-card lc-card-cours" style="flex-direction:row;align-items:center;gap:14px;padding:14px 18px;text-align:left">
-          <div class="lcc-icon" style="background:#dbeafe;flex-shrink:0">ðï¸</div>
+          <div class="lcc-icon" style="background:#dbeafe;flex-shrink:0">🗂️</div>
           <div class="lcc-body"><div class="lcc-title">Tout le programme CM1 <span class="lcc-badge">pilier</span></div><div class="lcc-desc">tous les exercices et cours CM1 en une page</div></div>
         </a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">ð EPS</div>
+      <div class="lc-cat-title">🏃 EPS</div>
       <div class="lc-grid">
-        <a href="eps-cycle3.html" class="lc-card"><div class="lcc-icon" style="background:#fee2e2">ð</div><div class="lcc-body"><div class="lcc-title">EPS Cycle 3</div><div class="lcc-desc">performance, jeux, natation Â· 7 ex.</div></div></a>
+        <a href="eps-cycle3.html" class="lc-card"><div class="lcc-icon" style="background:#fee2e2">🏆</div><div class="lcc-body"><div class="lcc-title">EPS Cycle 3</div><div class="lcc-desc">performance, jeux, natation · 7 ex.</div></div></a>
       </div>
     </div>
   </div>
 
-  <!-- ââââââââââââââââââââââââ CM2 ââââââââââââââââââââââââ -->
+  <!-- ════════════════════════ CM2 ════════════════════════ -->
   <div id="lc-cm2" class="lc" hidden>
     <div class="lc-cat">
-      <div class="lc-cat-title">ð MathÃ©matiques â Nombres &amp; Calcul</div>
+      <div class="lc-cat-title">📐 Mathématiques — Nombres &amp; Calcul</div>
       <div class="lc-grid">
-        <a href="nombres-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">ð¢</div><div class="lcc-body"><div class="lcc-title">TrÃ¨s grands nombres</div><div class="lcc-desc">milliards Â· 7 ex.</div></div></a>
-        <a href="decimaux-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">ð£</div><div class="lcc-body"><div class="lcc-title">DÃ©cimaux avancÃ©s</div><div class="lcc-desc">opÃ©rations Â· 7 ex.</div></div></a>
-        <a href="fractions-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">âï¸</div><div class="lcc-body"><div class="lcc-title">Fractions avancÃ©es</div><div class="lcc-desc">Ã, Ã·, simplifier Â· 7 ex.</div></div></a>
-        <a href="calcul-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">â</div><div class="lcc-body"><div class="lcc-title">Les 4 opÃ©rations</div><div class="lcc-desc">complexes Â· 7 ex.</div></div></a>
-        <a href="calcul-mental-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">â¡</div><div class="lcc-body"><div class="lcc-title">Calcul mental</div><div class="lcc-desc">rapiditÃ© Â· 7 ex.</div></div></a>
-        <a href="calcul-pose-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">ðï¸</div><div class="lcc-body"><div class="lcc-title">OpÃ©rations posÃ©es</div><div class="lcc-desc">dÃ©cimaux Â· 6 ex.</div></div></a>
-        <a href="proportionnalite-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">âï¸</div><div class="lcc-body"><div class="lcc-title">ProportionnalitÃ© &amp; %</div><div class="lcc-desc">pourcentages Â· 7 ex.</div></div></a>
-        <a href="problemes-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">ð§©</div><div class="lcc-body"><div class="lcc-title">ProblÃ¨mes</div><div class="lcc-desc">multi-Ã©tapes Â· 7 ex.</div></div></a>
+        <a href="nombres-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">🔢</div><div class="lcc-body"><div class="lcc-title">Très grands nombres</div><div class="lcc-desc">milliards · 7 ex.</div></div></a>
+        <a href="decimaux-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">🔣</div><div class="lcc-body"><div class="lcc-title">Décimaux avancés</div><div class="lcc-desc">opérations · 7 ex.</div></div></a>
+        <a href="fractions-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">✂️</div><div class="lcc-body"><div class="lcc-title">Fractions avancées</div><div class="lcc-desc">×, ÷, simplifier · 7 ex.</div></div></a>
+        <a href="calcul-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">➕</div><div class="lcc-body"><div class="lcc-title">Les 4 opérations</div><div class="lcc-desc">complexes · 7 ex.</div></div></a>
+        <a href="calcul-mental-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">⚡</div><div class="lcc-body"><div class="lcc-title">Calcul mental</div><div class="lcc-desc">rapidité · 7 ex.</div></div></a>
+        <a href="calcul-pose-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">🖊️</div><div class="lcc-body"><div class="lcc-title">Opérations posées</div><div class="lcc-desc">décimaux · 6 ex.</div></div></a>
+        <a href="proportionnalite-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">⚖️</div><div class="lcc-body"><div class="lcc-title">Proportionnalité &amp; %</div><div class="lcc-desc">pourcentages · 7 ex.</div></div></a>
+        <a href="problemes-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">🧩</div><div class="lcc-body"><div class="lcc-title">Problèmes</div><div class="lcc-desc">multi-étapes · 7 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">ð MathÃ©matiques â GÃ©omÃ©trie &amp; Mesures</div>
+      <div class="lc-cat-title">📐 Mathématiques — Géométrie &amp; Mesures</div>
       <div class="lc-grid">
-        <a href="geometrie-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#ffedd5">ð·</div><div class="lcc-body"><div class="lcc-title">GÃ©omÃ©trie avancÃ©e</div><div class="lcc-desc">constructions Â· 7 ex.</div></div></a>
-        <a href="mesures-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#ffedd5">ð</div><div class="lcc-body"><div class="lcc-title">Aires &amp; volumes</div><div class="lcc-desc">formules Â· 7 ex.</div></div></a>
-        <a href="temps-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#ffedd5">â³</div><div class="lcc-body"><div class="lcc-title">DurÃ©es &amp; conversions</div><div class="lcc-desc">calculs Â· 7 ex.</div></div></a>
-        <a href="donnees-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#ffedd5">ð</div><div class="lcc-body"><div class="lcc-title">Statistiques</div><div class="lcc-desc">moyenne, mÃ©diane Â· 6 ex.</div></div></a>
+        <a href="geometrie-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#ffedd5">🔷</div><div class="lcc-body"><div class="lcc-title">Géométrie avancée</div><div class="lcc-desc">constructions · 7 ex.</div></div></a>
+        <a href="mesures-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#ffedd5">📏</div><div class="lcc-body"><div class="lcc-title">Aires &amp; volumes</div><div class="lcc-desc">formules · 7 ex.</div></div></a>
+        <a href="temps-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#ffedd5">⏳</div><div class="lcc-body"><div class="lcc-title">Durées &amp; conversions</div><div class="lcc-desc">calculs · 7 ex.</div></div></a>
+        <a href="donnees-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#ffedd5">📊</div><div class="lcc-body"><div class="lcc-title">Statistiques</div><div class="lcc-desc">moyenne, médiane · 6 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">ðï¸ Histoire &amp; GÃ©ographie</div>
+      <div class="lc-cat-title">🏛️ Histoire &amp; Géographie</div>
       <div class="lc-grid">
-        <a href="histoire-geo-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">âï¸</div><div class="lcc-body"><div class="lcc-title">Histoire-GÃ©o</div><div class="lcc-desc">RÃ©volution, guerres Â· 7 ex.</div></div></a>
+        <a href="histoire-geo-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">⚜️</div><div class="lcc-body"><div class="lcc-title">Histoire-Géo</div><div class="lcc-desc">Révolution, guerres · 7 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">ð FranÃ§ais</div>
+      <div class="lc-cat-title">📝 Français</div>
       <div class="lc-grid">
-        <a href="conjugaison-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">ð</div><div class="lcc-body"><div class="lcc-title">Conjugaison</div><div class="lcc-desc">passÃ© simple, plus-que-parfait, conditionnel Â· 7 ex.</div></div></a>
-        <a href="grammaire-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">ð¤</div><div class="lcc-body"><div class="lcc-title">Grammaire</div><div class="lcc-desc">attribut, phrase complexe, CC cause Â· 7 ex.</div></div></a>
-        <a href="orthographe-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">âï¸</div><div class="lcc-body"><div class="lcc-title">Orthographe</div><div class="lcc-desc">PP avoir, homophones avancÃ©s, accords Â· 7 ex.</div></div></a>
-        <a href="vocabulaire-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">ð</div><div class="lcc-body"><div class="lcc-title">Vocabulaire</div><div class="lcc-desc">Ã©tymologie, polysÃ©mie, registres Â· 7 ex.</div></div></a>
+        <a href="conjugaison-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">📝</div><div class="lcc-body"><div class="lcc-title">Conjugaison</div><div class="lcc-desc">passé simple, plus-que-parfait, conditionnel · 7 ex.</div></div></a>
+        <a href="grammaire-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">🔤</div><div class="lcc-body"><div class="lcc-title">Grammaire</div><div class="lcc-desc">attribut, phrase complexe, CC cause · 7 ex.</div></div></a>
+        <a href="orthographe-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">✏️</div><div class="lcc-body"><div class="lcc-title">Orthographe</div><div class="lcc-desc">PP avoir, homophones avancés, accords · 7 ex.</div></div></a>
+        <a href="vocabulaire-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">📚</div><div class="lcc-body"><div class="lcc-title">Vocabulaire</div><div class="lcc-desc">étymologie, polysémie, registres · 7 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">ð Cours Ã  retenir</div>
+      <div class="lc-cat-title">📖 Cours à retenir</div>
       <div class="lc-grid" style="grid-template-columns:1fr">
         <a href="cours.html#cm2" class="lc-card lc-card-cours" style="flex-direction:row;align-items:center;gap:14px;padding:14px 18px;text-align:left">
-          <div class="lcc-icon" style="background:#fef9c3;flex-shrink:0">ð</div>
-          <div class="lcc-body"><div class="lcc-title">Voir les 13 fiches de cours CM2 <span class="lcc-badge">cours</span></div><div class="lcc-desc">calcul Â· fractions Â· gÃ©omÃ©trie Â· mesures Â· conjugaison Â· grammaire Â· orthographe Â· vocabulaire</div></div>
+          <div class="lcc-icon" style="background:#fef9c3;flex-shrink:0">📖</div>
+          <div class="lcc-body"><div class="lcc-title">Voir les 13 fiches de cours CM2 <span class="lcc-badge">cours</span></div><div class="lcc-desc">calcul · fractions · géométrie · mesures · conjugaison · grammaire · orthographe · vocabulaire</div></div>
         </a>
         <a href="programme-cm2.html" class="lc-card lc-card-cours" style="flex-direction:row;align-items:center;gap:14px;padding:14px 18px;text-align:left">
-          <div class="lcc-icon" style="background:#fef9c3;flex-shrink:0">ðï¸</div>
+          <div class="lcc-icon" style="background:#fef9c3;flex-shrink:0">🗂️</div>
           <div class="lcc-body"><div class="lcc-title">Tout le programme CM2 <span class="lcc-badge">pilier</span></div><div class="lcc-desc">tous les exercices et cours CM2 en une page</div></div>
         </a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">ð EPS</div>
+      <div class="lc-cat-title">🏃 EPS</div>
       <div class="lc-grid">
-        <a href="eps-cycle3.html" class="lc-card"><div class="lcc-icon" style="background:#fee2e2">ð</div><div class="lcc-body"><div class="lcc-title">EPS Cycle 3</div><div class="lcc-desc">performance, jeux Â· 7 ex.</div></div></a>
+        <a href="eps-cycle3.html" class="lc-card"><div class="lcc-icon" style="background:#fee2e2">🏆</div><div class="lcc-body"><div class="lcc-title">EPS Cycle 3</div><div class="lcc-desc">performance, jeux · 7 ex.</div></div></a>
       </div>
     </div>
   </div>
 
-  <!-- ââââââââââââââââââââââââ 6e ââââââââââââââââââââââââ -->
+  <!-- ════════════════════════ 6e ════════════════════════ -->
   <div id="lc-6e" class="lc" hidden>
     <div class="lc-cat">
-      <div class="lc-cat-title">ð MathÃ©matiques â Nombres &amp; Calcul</div>
+      <div class="lc-cat-title">📐 Mathématiques — Nombres &amp; Calcul</div>
       <div class="lc-grid">
-        <a href="nombres-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">ð¢</div><div class="lcc-body"><div class="lcc-title">Nombres &amp; relatifs</div><div class="lcc-desc">entiers, â, + Â· 4 ex.</div></div></a>
-        <a href="fractions-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">âï¸</div><div class="lcc-body"><div class="lcc-title">Fractions</div><div class="lcc-desc">quotients Â· 4 ex.</div></div></a>
-        <a href="algebre-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">ð</div><div class="lcc-body"><div class="lcc-title">AlgÃ¨bre</div><div class="lcc-desc">expressions littÃ©rales Â· 4 ex.</div></div></a>
-        <a href="calcul-mental-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">â¡</div><div class="lcc-body"><div class="lcc-title">Calcul mental</div><div class="lcc-desc">rapiditÃ© Â· 4 ex.</div></div></a>
-        <a href="probabilites-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">ð²</div><div class="lcc-body"><div class="lcc-title">ProbabilitÃ©s</div><div class="lcc-desc">chances Â· 5 ex.</div></div></a>
-        <a href="proportionnalite-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">âï¸</div><div class="lcc-body"><div class="lcc-title">ProportionnalitÃ© &amp; %</div><div class="lcc-desc">pourcentages Â· 4 ex.</div></div></a>
+        <a href="nombres-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">🔢</div><div class="lcc-body"><div class="lcc-title">Nombres &amp; relatifs</div><div class="lcc-desc">entiers, −, + · 4 ex.</div></div></a>
+        <a href="fractions-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">✂️</div><div class="lcc-body"><div class="lcc-title">Fractions</div><div class="lcc-desc">quotients · 4 ex.</div></div></a>
+        <a href="algebre-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">📘</div><div class="lcc-body"><div class="lcc-title">Algèbre</div><div class="lcc-desc">expressions littérales · 4 ex.</div></div></a>
+        <a href="calcul-mental-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">⚡</div><div class="lcc-body"><div class="lcc-title">Calcul mental</div><div class="lcc-desc">rapidité · 4 ex.</div></div></a>
+        <a href="probabilites-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">🎲</div><div class="lcc-body"><div class="lcc-title">Probabilités</div><div class="lcc-desc">chances · 5 ex.</div></div></a>
+        <a href="proportionnalite-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">⚖️</div><div class="lcc-body"><div class="lcc-title">Proportionnalité &amp; %</div><div class="lcc-desc">pourcentages · 4 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">ð MathÃ©matiques â GÃ©omÃ©trie &amp; Mesures</div>
+      <div class="lc-cat-title">📐 Mathématiques — Géométrie &amp; Mesures</div>
       <div class="lc-grid">
-        <a href="geometrie-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fdf4ff">ð·</div><div class="lcc-body"><div class="lcc-title">GÃ©omÃ©trie</div><div class="lcc-desc">constructions Â· 4 ex.</div></div></a>
-        <a href="mesures-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fdf4ff">ð</div><div class="lcc-body"><div class="lcc-title">Aires &amp; volumes</div><div class="lcc-desc">formules Â· 4 ex.</div></div></a>
-        <a href="donnees-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fdf4ff">ð</div><div class="lcc-body"><div class="lcc-title">Statistiques</div><div class="lcc-desc">moyenne Â· 4 ex.</div></div></a>
+        <a href="geometrie-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fdf4ff">🔷</div><div class="lcc-body"><div class="lcc-title">Géométrie</div><div class="lcc-desc">constructions · 4 ex.</div></div></a>
+        <a href="mesures-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fdf4ff">📏</div><div class="lcc-body"><div class="lcc-title">Aires &amp; volumes</div><div class="lcc-desc">formules · 4 ex.</div></div></a>
+        <a href="donnees-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fdf4ff">📊</div><div class="lcc-body"><div class="lcc-title">Statistiques</div><div class="lcc-desc">moyenne · 4 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">ðï¸ Histoire &amp; GÃ©ographie</div>
+      <div class="lc-cat-title">🏛️ Histoire &amp; Géographie</div>
       <div class="lc-grid">
-        <a href="histoire-geo-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">ð</div><div class="lcc-body"><div class="lcc-title">Histoire-GÃ©o</div><div class="lcc-desc">AntiquitÃ©, continents Â· 7 ex.</div></div></a>
+        <a href="histoire-geo-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">🌍</div><div class="lcc-body"><div class="lcc-title">Histoire-Géo</div><div class="lcc-desc">Antiquité, continents · 7 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">ð FranÃ§ais</div>
+      <div class="lc-cat-title">📝 Français</div>
       <div class="lc-grid">
-        <a href="conjugaison-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">ð</div><div class="lcc-body"><div class="lcc-title">Conjugaison</div><div class="lcc-desc">modes, impÃ©ratif, valeur des temps Â· 7 ex.</div></div></a>
-        <a href="grammaire-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">ð¤</div><div class="lcc-body"><div class="lcc-title">Grammaire</div><div class="lcc-desc">pronoms relatifs, sub. relatives, conjonctives Â· 7 ex.</div></div></a>
-        <a href="orthographe-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">âï¸</div><div class="lcc-body"><div class="lcc-title">Orthographe</div><div class="lcc-desc">PP avec "que", "mÃªme", homophones avancÃ©s Â· 7 ex.</div></div></a>
-        <a href="vocabulaire-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">ð</div><div class="lcc-body"><div class="lcc-title">Vocabulaire</div><div class="lcc-desc">champs lexicaux, Ã©tymologie, figures de style Â· 7 ex.</div></div></a>
+        <a href="conjugaison-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">📝</div><div class="lcc-body"><div class="lcc-title">Conjugaison</div><div class="lcc-desc">modes, impératif, valeur des temps · 7 ex.</div></div></a>
+        <a href="grammaire-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">🔤</div><div class="lcc-body"><div class="lcc-title">Grammaire</div><div class="lcc-desc">pronoms relatifs, sub. relatives, conjonctives · 7 ex.</div></div></a>
+        <a href="orthographe-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">✏️</div><div class="lcc-body"><div class="lcc-title">Orthographe</div><div class="lcc-desc">PP avec "que", "même", homophones avancés · 7 ex.</div></div></a>
+        <a href="vocabulaire-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">📚</div><div class="lcc-body"><div class="lcc-title">Vocabulaire</div><div class="lcc-desc">champs lexicaux, étymologie, figures de style · 7 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">ð Cours Ã  retenir</div>
+      <div class="lc-cat-title">📖 Cours à retenir</div>
       <div class="lc-grid" style="grid-template-columns:1fr">
         <a href="cours.html#6e" class="lc-card lc-card-cours" style="flex-direction:row;align-items:center;gap:14px;padding:14px 18px;text-align:left">
-          <div class="lcc-icon" style="background:#fce7f3;flex-shrink:0">ð</div>
-          <div class="lcc-body"><div class="lcc-title">Voir les 12 fiches de cours 6Ã¨me <span class="lcc-badge">cours</span></div><div class="lcc-desc">algÃ¨bre Â· fractions Â· gÃ©omÃ©trie Â· conjugaison Â· grammaire Â· orthographe Â· vocabulaire</div></div>
+          <div class="lcc-icon" style="background:#fce7f3;flex-shrink:0">📖</div>
+          <div class="lcc-body"><div class="lcc-title">Voir les 12 fiches de cours 6ème <span class="lcc-badge">cours</span></div><div class="lcc-desc">algèbre · fractions · géométrie · conjugaison · grammaire · orthographe · vocabulaire</div></div>
         </a>
         <a href="programme-6e.html" class="lc-card lc-card-cours" style="flex-direction:row;align-items:center;gap:14px;padding:14px 18px;text-align:left">
-          <div class="lcc-icon" style="background:#fce7f3;flex-shrink:0">ðï¸</div>
+          <div class="lcc-icon" style="background:#fce7f3;flex-shrink:0">🗂️</div>
           <div class="lcc-body"><div class="lcc-title">Tout le programme 6e <span class="lcc-badge">pilier</span></div><div class="lcc-desc">tous les exercices et cours 6e en une page</div></div>
         </a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">ð EPS</div>
+      <div class="lc-cat-title">🏃 EPS</div>
       <div class="lc-grid">
-        <a href="eps-cycle3.html" class="lc-card"><div class="lcc-icon" style="background:#fee2e2">ð</div><div class="lcc-body"><div class="lcc-title">EPS Cycle 3</div><div class="lcc-desc">4 champs, natation Â· 7 ex.</div></div></a>
+        <a href="eps-cycle3.html" class="lc-card"><div class="lcc-icon" style="background:#fee2e2">🏆</div><div class="lcc-body"><div class="lcc-title">EPS Cycle 3</div><div class="lcc-desc">4 champs, natation · 7 ex.</div></div></a>
       </div>
     </div>
   </div>
