@@ -34,6 +34,28 @@
 .pil-links a{font-size:.72rem;font-weight:800;padding:3px 9px;border-radius:7px;text-decoration:none;white-space:nowrap}
 .pil-ex{background:var(--lc1);color:#fff}
 .pil-cours{background:var(--lbg);color:var(--ld);border:1px solid var(--lb)}
+.pil-seo{padding:0 12px 32px;max-width:680px;margin:0 auto}
+.pil-seo-block{margin-bottom:28px}
+.pil-seo-block h2{font-size:.95rem;font-weight:900;color:var(--ld);margin:0 0 10px;padding:0 0 6px;border-bottom:2px solid var(--lb)}
+.pil-seo-block p{font-size:.85rem;font-weight:500;color:#374151;line-height:1.75;margin:0 0 10px}
+.pil-seo-block p b{color:var(--ld);font-weight:800}
+.pil-matiere-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+@media(min-width:480px){.pil-matiere-grid{grid-template-columns:repeat(3,1fr)}}
+.pil-matiere-card{background:#fff;border-radius:10px;padding:10px 12px;box-shadow:0 1px 4px rgba(0,0,0,.06);border-left:4px solid var(--lc1)}
+.pil-matiere-card strong{display:block;font-size:.82rem;font-weight:900;color:var(--ld);margin-bottom:4px}
+.pil-matiere-card span{font-size:.76rem;font-weight:700;color:#4b5563;line-height:1.5}
+.pil-tags-wrap{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0 12px}
+.pil-tag{background:var(--lbg);color:var(--ld);border:1px solid var(--lb);border-radius:20px;padding:3px 10px;font-size:.74rem;font-weight:800}
+.pil-tip-box{background:#fef9c3;border-radius:10px;padding:10px 13px;margin:10px 0;font-size:.82rem;font-weight:800;color:#713f12;line-height:1.5}
+.pil-faq{margin-top:8px}
+.pil-faq-item{background:#fff;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,.06);margin-bottom:8px;overflow:hidden}
+.pil-faq-item h3{font-size:.84rem;font-weight:900;color:var(--ld);margin:0;padding:11px 14px;cursor:pointer;background:var(--lbg);border-left:4px solid var(--lc1)}
+.pil-faq-item p{font-size:.82rem;font-weight:700;color:#374151;line-height:1.65;margin:0;padding:10px 14px}
+.pil-steps{counter-reset:step;margin:8px 0}
+.pil-step{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px;font-size:.84rem;font-weight:500;color:#374151;line-height:1.65}
+.pil-step b{color:var(--ld);font-weight:800}
+.pil-step > span{flex:1;min-width:0}
+.pil-step::before{counter-increment:step;content:counter(step);flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--lc1);color:#fff;font-size:.75rem;font-weight:900;display:flex;align-items:center;justify-content:center;margin-top:1px}
 </style>
 </head>
 <body>
@@ -127,6 +149,209 @@
     </div>
   </div>
 </section>
+
+<!-- ═══════════════════════════════════════════════
+     CONTENU SEO — Intentions de recherche CE1
+════════════════════════════════════════════════ -->
+<div class="pil-seo">
+
+  <!-- 1. Quelles matières sont enseignées en CE1 ? -->
+  <div class="pil-seo-block">
+    <h2>Quelles matières sont enseignées en CE1 ?</h2>
+    <p>Le <b>CE1</b> (cours élémentaire 1re année) est suivi par des <b>élèves</b> de 7-8 ans, en <b>cycle 2</b> dit « cycle des apprentissages fondamentaux ». C'est une année décisive : les <b>fondamentaux</b> de la lecture, de l'écriture et du calcul s'affirment, et les <b>notions</b> sont beaucoup plus riches qu'au CP. Le <b>programme</b> de l'<b>Éducation nationale</b> couvre plusieurs domaines d'<b>enseignement</b>.</p>
+    <p>En <b>mathématiques</b>, les <b>élèves</b> apprennent la numération jusqu'à 1 000, l'addition et la soustraction avec retenue, l'introduction à la <b>multiplication</b> (tables de 2, 5 et 10), les <b>mesures</b> (longueurs, masses, volumes) et les premières <b>notions</b> de géométrie. En <b>français</b>, le travail porte sur la <b>lecture</b> (fluidité et compréhension), l'<b>écriture</b> (production de textes courts), la <b>grammaire</b> (nom, verbe, adjectif), la <b>conjugaison</b> (présent, passé composé, futur) et l'<b>orthographe</b>. Les autres matières incluent le <b>questionner le monde</b> (sciences et géographie), l'<b>enseignement moral et civique</b> (EMC), l'<b>éducation physique et sportive</b> (EPS) et une <b>langue vivante</b> (anglais).</p>
+    <div class="pil-matiere-grid">
+      <div class="pil-matiere-card">
+        <strong>📐 Mathématiques</strong>
+        <span>Numération jusqu'à 1 000 · addition et soustraction avec retenue · introduction multiplication · tables de 2, 5, 10 · mesures · géométrie plane · problèmes</span>
+      </div>
+      <div class="pil-matiere-card">
+        <strong>📝 Français</strong>
+        <span>Lecture fluide · écriture de textes · grammaire (nom, verbe, adjectif) · conjugaison (présent, futur, passé composé) · orthographe · vocabulaire · dictée</span>
+      </div>
+      <div class="pil-matiere-card">
+        <strong>🌍 Questionner le monde</strong>
+        <span>Passé et présent · espace proche · monde du vivant · matière et objets · corps humain · repères dans le temps et l'espace</span>
+      </div>
+      <div class="pil-matiere-card">
+        <strong>🏅 EPS</strong>
+        <span>Éducation physique et sportive · jeux collectifs · athlétisme · natation · arts du cirque · coopération et règles sportives</span>
+      </div>
+      <div class="pil-matiere-card">
+        <strong>🎨 Arts & culture</strong>
+        <span>Éducation musicale · arts visuels · projets artistiques · expression créative · culture artistique et littérature de jeunesse</span>
+      </div>
+      <div class="pil-matiere-card">
+        <strong>🌐 Anglais & EMC</strong>
+        <span>Langue vivante : premiers mots et expressions · écoute active · enseignement moral et civique : règles de vie, droits et devoirs</span>
+      </div>
+    </div>
+    <div class="pil-tags-wrap">
+      <span class="pil-tag">cycle 2</span>
+      <span class="pil-tag">apprentissages fondamentaux</span>
+      <span class="pil-tag">programme CE1</span>
+      <span class="pil-tag">enseignement primaire</span>
+      <span class="pil-tag">questionner le monde</span>
+      <span class="pil-tag">éducation morale et civique</span>
+      <span class="pil-tag">langue vivante</span>
+      <span class="pil-tag">éducation physique et sportive</span>
+    </div>
+  </div>
+
+  <!-- 2. Comment réussir en CE1 ? -->
+  <div class="pil-seo-block">
+    <h2>Comment réussir en CE1 ?</h2>
+    <p>Réussir en <b>CE1</b> repose sur la maîtrise de deux piliers : la <b>lecture</b> (lire à voix haute avec fluidité et comprendre ce qu'on lit) et le <b>calcul</b> (mémoriser les tables, maîtriser l'addition et la soustraction avec retenue). Quand ces deux <b>fondamentaux</b> sont solides, toutes les autres <b>matières</b> deviennent plus accessibles.</p>
+    <p>Un <b>soutien scolaire</b> régulier à la maison fait une vraie différence : quelques minutes de <b>révision</b> chaque <b>jour</b> (lecture à voix haute, tables de multiplication, <b>dictée</b> courte) consolident les <b>apprentissages</b> bien mieux qu'une longue session hebdomadaire. Les <b>exercices</b> interactifs sur École Facile permettent de travailler chaque notion avec une correction immédiate, ce qui aide l'<b>élève</b> à comprendre ses erreurs et à progresser en autonomie.</p>
+    <div class="pil-matiere-grid">
+      <div class="pil-matiere-card">
+        <strong>📖 Lecture CE1</strong>
+        <span>Lire à voix haute tous les jours · lecture silencieuse + questions de compréhension · livres adaptés au niveau CE1</span>
+      </div>
+      <div class="pil-matiere-card">
+        <strong>🧮 Calcul CE1</strong>
+        <span>Tables de 2, 5, 10 · additions et soustractions posées · calcul mental quotidien · résolution de problèmes simples</span>
+      </div>
+      <div class="pil-matiere-card">
+        <strong>✏️ Écriture CE1</strong>
+        <span>Dictée courte 2-3 fois par semaine · copie soignée · production de textes courts · maîtrise des accords simples</span>
+      </div>
+    </div>
+    <div class="pil-tip-box">💡 Le secret pour réussir en CE1 : 10 minutes de lecture + 5 minutes de calcul mental chaque soir, 5 jours sur 7. La régularité prime sur la durée.</div>
+  </div>
+
+  <!-- 3. Comment évaluer les acquis en CE1 ? -->
+  <div class="pil-seo-block">
+    <h2>Comment évaluer les acquis en CE1 ?</h2>
+    <p>L'<b>évaluation</b> des <b>acquis</b> en CE1 est importante pour identifier ce que l'<b>élève</b> maîtrise et ce qui nécessite encore du travail. À l'<b>école</b>, les enseignants réalisent des <b>bilans</b> réguliers (évaluations diagnostiques, formatives et sommatives) sur toutes les <b>matières</b>. À la maison, il est possible de faire un <b>bilan</b> rapide avec des <b>quiz</b> et des exercices interactifs.</p>
+    <p>Sur École Facile, chaque série d'<b>exercices</b> fonctionne comme un mini-<b>test</b> de niveau : l'élève répond aux <b>questions</b>, voit sa correction immédiatement et obtient un score. C'est une façon simple d'évaluer les <b>connaissances</b> acquises en <b>mathématiques</b>, en <b>français</b> et en <b>histoire-géographie</b>, sans pression et avec un retour constructif. Les évaluations nationales CE1 portent particulièrement sur la <b>lecture</b> et les <b>mathématiques</b> — nos exercices couvrent exactement ces domaines.</p>
+    <div class="pil-matiere-grid">
+      <div class="pil-matiere-card">
+        <strong>📊 Évaluation maths CE1</strong>
+        <span>Numération (jusqu'à 1 000) · addition/soustraction avec retenue · tables de 2, 5, 10 · problèmes à une étape · mesures simples</span>
+      </div>
+      <div class="pil-matiere-card">
+        <strong>📊 Évaluation français CE1</strong>
+        <span>Lecture à voix haute · compréhension de texte · dictée (accords singulier/pluriel, masculin/féminin) · conjugaison présent · grammaire (nom/verbe)</span>
+      </div>
+      <div class="pil-matiere-card">
+        <strong>📊 Bilan fin du CE1</strong>
+        <span>Évaluation des acquis fin de cycle 2 · connaissances en lecture, calcul, orthographe · préparation à l'entrée en CE2</span>
+      </div>
+    </div>
+    <div class="pil-tags-wrap">
+      <span class="pil-tag">évaluation CE1</span>
+      <span class="pil-tag">bilan CE1</span>
+      <span class="pil-tag">connaissance des acquis</span>
+      <span class="pil-tag">évaluation nationale CE1</span>
+      <span class="pil-tag">fin du CE1</span>
+      <span class="pil-tag">quiz CE1</span>
+    </div>
+  </div>
+
+  <!-- 4. Quels outils pour le soutien scolaire en CE1 ? -->
+  <div class="pil-seo-block">
+    <h2>Quels outils pour le soutien scolaire en CE1 ?</h2>
+    <p>Le <b>soutien scolaire</b> en CE1 est plus efficace quand il s'appuie sur des outils variés et adaptés à l'âge de l'<b>élève</b>. Les meilleurs outils combinent des <b>ressources pédagogiques</b> structurées (fiches de <b>cours</b>, exercices progressifs) avec des activités motivantes (jeux éducatifs, défis, badges). Il est important que l'<b>enfant</b> se sente en confiance et progresse à son rythme.</p>
+    <p>Parmi les <b>ressources</b> disponibles : les <b>fiches</b> de cours imprimables ou à consulter en ligne, les exercices interactifs (comme sur ce <b>site</b>), les <b>cahiers de vacances CE1</b> (utiles pendant l'été entre le CE1 et le CE2), et les jeux de <b>calcul</b> mental (cartes, dés, jeux de société éducatifs). Les <b>vidéos</b> pédagogiques peuvent aussi aider pour expliquer certaines <b>notions</b> de façon visuelle et dynamique.</p>
+    <div class="pil-matiere-grid">
+      <div class="pil-matiere-card">
+        <strong>📚 Fiches de cours CE1</strong>
+        <span>Cours structurés par notion · résumé "À retenir" · exemples clairs · tableaux · adaptés au niveau CE1 cycle 2</span>
+      </div>
+      <div class="pil-matiere-card">
+        <strong>✅ Exercices interactifs</strong>
+        <span>QCM avec correction immédiate · sans PDF à imprimer · accessibles sur tous les écrans · gratuits et sans inscription</span>
+      </div>
+      <div class="pil-matiere-card">
+        <strong>📓 Cahier de vacances CE1</strong>
+        <span>Révision complète entre CE1 et CE2 · maths et français · activités variées · idéal pour consolider les acquis pendant les vacances</span>
+      </div>
+    </div>
+    <div class="pil-tags-wrap">
+      <span class="pil-tag">cahier de vacances CE1</span>
+      <span class="pil-tag">soutien scolaire CE1</span>
+      <span class="pil-tag">fiche pédagogique CE1</span>
+      <span class="pil-tag">outil numérique école</span>
+      <span class="pil-tag">ressource enseignant CE1</span>
+      <span class="pil-tag">exercice CE1 gratuit</span>
+    </div>
+  </div>
+
+  <!-- 5. Comment apprendre le vocabulaire et la langue en CE1 ? -->
+  <div class="pil-seo-block">
+    <h2>Comment apprendre le vocabulaire, la grammaire et la conjugaison en CE1 ?</h2>
+    <p>L'<b>étude de la langue</b> en CE1 couvre quatre grandes composantes : le <b>vocabulaire</b>, la <b>grammaire</b>, la <b>conjugaison</b> et l'<b>orthographe</b>. Ces domaines sont étroitement liés à la <b>lecture</b> et à l'<b>écriture</b> : plus l'<b>élève</b> lit, plus il enrichit son <b>vocabulaire</b> naturellement ; et pratiquer l'<b>écriture</b> régulièrement consolide l'orthographe et la grammaire.</p>
+    <p>Pour le <b>vocabulaire</b> en CE1, l'<b>apprentissage</b> passe par la lecture d'histoires variées, l'utilisation du dictionnaire pour chercher le sens des <b>mots</b> inconnus, et des exercices de classement et de définition. Pour la <b>grammaire</b>, les <b>notions</b> clés du CE1 sont : identifier le nom, le verbe, l'adjectif et le déterminant dans une phrase ; comprendre le groupe nominal et le groupe verbal. Pour la <b>conjugaison</b>, les temps prioritaires sont le <b>présent</b>, le <b>futur</b> et le <b>passé composé</b> des verbes courants (être, avoir, aller, faire…). En <b>anglais</b> (langue vivante), les <b>élèves</b> apprennent les premiers mots et expressions de la vie quotidienne à travers des chansons, des comptines et des jeux.</p>
+    <div class="pil-tags-wrap">
+      <span class="pil-tag">vocabulaire CE1</span>
+      <span class="pil-tag">grammaire CE1</span>
+      <span class="pil-tag">conjugaison CE1</span>
+      <span class="pil-tag">orthographe CE1</span>
+      <span class="pil-tag">étude de la langue</span>
+      <span class="pil-tag">lecture CE1</span>
+      <span class="pil-tag">écriture CE1</span>
+      <span class="pil-tag">anglais CE1</span>
+    </div>
+  </div>
+
+  <!-- 6. Projets artistiques et activités en CE1 -->
+  <div class="pil-seo-block">
+    <h2>Projets artistiques et activités en CE1</h2>
+    <p>Les <b>projets artistiques</b> font partie intégrante du <b>programme</b> CE1. L'<b>éducation artistique et culturelle</b> couvre deux grands domaines : les <b>arts visuels</b> (peinture, dessin, sculpture, photographie, arts numériques) et l'<b>éducation musicale</b> (chant, écoute, rythme, instruments). Ces <b>activités</b> favorisent le <b>développement</b> de la créativité, de l'<b>expression</b> et de la sensibilité artistique chez l'<b>enfant</b>.</p>
+    <p>En CE1, les <b>activités artistiques</b> s'articulent souvent autour d'un thème fédérateur travaillé sur plusieurs semaines (projet de classe). L'élève apprend à observer, à expérimenter des techniques et à partager ses créations. La <b>culture</b> artistique est aussi enrichie par des rencontres avec des œuvres (visites, lectures d'albums illustrés, écoute musicale). Ces <b>projets</b> développent des <b>compétences</b> transversales précieuses : concentration, persévérance, coopération et confiance en soi.</p>
+    <div class="pil-matiere-grid">
+      <div class="pil-matiere-card">
+        <strong>🎨 Arts visuels CE1</strong>
+        <span>Dessin · peinture · collage · sculptures avec matériaux du quotidien · arts numériques · observation d'œuvres d'art</span>
+      </div>
+      <div class="pil-matiere-card">
+        <strong>🎵 Éducation musicale CE1</strong>
+        <span>Chant choral · écoute active · jeux rythmiques · instruments simples · comptines et chansons en français et en anglais</span>
+      </div>
+      <div class="pil-matiere-card">
+        <strong>🤝 Projets de classe</strong>
+        <span>Projets pluridisciplinaires · expression orale · coopération · expositions · livres fabriqués par les élèves</span>
+      </div>
+    </div>
+    <div class="pil-tags-wrap">
+      <span class="pil-tag">projet artistique CE1</span>
+      <span class="pil-tag">arts visuels cycle 2</span>
+      <span class="pil-tag">éducation musicale CE1</span>
+      <span class="pil-tag">activité créative CE1</span>
+      <span class="pil-tag">culture artistique primaire</span>
+    </div>
+  </div>
+
+  <!-- 7. FAQ -->
+  <div class="pil-seo-block">
+    <h2>Questions fréquentes sur le CE1</h2>
+    <div class="pil-faq">
+
+      <div class="pil-faq-item">
+        <h3>Comment réviser pour le CE1 ?</h3>
+        <p>La <b>révision</b> en CE1 doit être courte, régulière et variée. Idéalement 10 à 15 minutes par <b>jour</b>, en alternant : lecture à voix haute (5 minutes), <b>calcul</b> mental (5 minutes) et un petit <b>exercice</b> de <b>grammaire</b> ou d'<b>orthographe</b> (5 minutes). Les <b>cahiers</b> d'exercices CE1, les <b>quiz</b> interactifs en ligne et les jeux de mots sont d'excellents outils de <b>révision</b>. Pour préparer la <b>fin de cycle</b> 2 (fin du CE1), il est utile de revoir les points essentiels : tables de 2, 5 et 10, accord singulier/pluriel, conjugaison au présent.</p>
+      </div>
+
+      <div class="pil-faq-item">
+        <h3>Quels livres et cahiers choisir pour le CE1 ?</h3>
+        <p>Pour le <b>soutien scolaire</b> en CE1, plusieurs types de ressources sont utiles : les <b>cahiers</b> d'exercices parascolaires (Hachette, Hatier, Larousse…) qui suivent le programme officiel, les <b>cahiers de vacances CE1→CE2</b> pour réviser pendant l'été, et les applications ou <b>sites</b> interactifs (comme École Facile) qui proposent des exercices avec correction immédiate. Les livres de littérature de jeunesse adaptés au niveau CE1 sont aussi indispensables pour progresser en <b>lecture</b>.</p>
+      </div>
+
+      <div class="pil-faq-item">
+        <h3>Quelles sont les difficultés courantes en CE1 ?</h3>
+        <p>Les difficultés les plus fréquentes en CE1 concernent : la <b>lecture</b> (fluidité et compréhension — certains élèves déchiffrent encore laborieusement), le <b>calcul</b> posé avec retenue (l'addition et la soustraction à 2 chiffres), la mémorisation des <b>tables</b> de multiplication (2, 5, 10), et l'<b>orthographe</b> (accord en genre et en nombre). Un <b>soutien</b> ciblé sur ces points, avec des <b>exercices</b> réguliers et progressifs, permet de combler rapidement ces lacunes.</p>
+      </div>
+
+      <div class="pil-faq-item">
+        <h3>Comment se déroule une journée scolaire en CE1 ?</h3>
+        <p>En CE1, la <b>journée</b> scolaire dure généralement de 8h30 à 16h30 avec une pause méridienne. Le matin est souvent consacré aux <b>matières</b> principales (maths et français), qui demandent le plus de concentration. L'après-midi alterne entre étude de la langue (grammaire, vocabulaire), découverte du <b>monde</b> (sciences, histoire-géo), <b>arts</b>, <b>musique</b> et EPS. Le rythme hebdomadaire est de 24 heures de cours réparties sur 4 ou 5 <b>jours</b> selon le calendrier scolaire de la <b>classe</b>.</p>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /.pil-seo -->
 
 </main>
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a></div></footer>
