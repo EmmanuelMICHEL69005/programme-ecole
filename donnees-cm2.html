@@ -97,55 +97,55 @@
 buildQCM([
   { enonce:'Diagramme semaine : Lun=35, Mar=50, Mer=25, Jeu=45, Ven=55',
     q:'Quel est le total de la semaine ?', correct:'210', choices:['200','210','220','180'] },
-  { enonce:'MÃªme diagramme.',
-    q:'Quel est l\'Ã©cart entre le meilleur et le pire jour ?', correct:'30', choices:['20','25','30','35'] },
+  { enonce:'Même diagramme.',
+    q:'Quel est l\'écart entre le meilleur et le pire jour ?', correct:'30', choices:['20','25','30','35'] },
   { enonce:'Diagramme circulaire : 50% sport, 30% musique, 20% lecture',
-    q:'Sur 200 Ã©lÃ¨ves, combien font du sport ?', correct:'100', choices:['50','100','150','200'] },
-  { enonce:'Diagramme en ligne : tempÃ©ratures 8h=12Â°, 12h=20Â°, 16h=18Â°, 20h=14Â°',
-    q:'Quelle est la plage horaire la plus chaude ?', correct:'12h (20Â°)', choices:['8h (12Â°)','12h (20Â°)','16h (18Â°)','20h (14Â°)'] },
+    q:'Sur 200 élèves, combien font du sport ?', correct:'100', choices:['50','100','150','200'] },
+  { enonce:'Diagramme en ligne : températures 8h=12°, 12h=20°, 16h=18°, 20h=14°',
+    q:'Quelle est la plage horaire la plus chaude ?', correct:'12h (20°)', choices:['8h (12°)','12h (20°)','16h (18°)','20h (14°)'] },
 ], 'ex1');
 
 buildQCM([
   { enonce:'Notes : 14, 16, 12, 18, 10', q:'Moyenne = ?', correct:'14', choices:['12','13','14','16'] },
-  { enonce:'TempÃ©ratures (Â°C) : 8, 12, 15, 19, 16', q:'Moyenne = ?', correct:'14Â°C', choices:['12Â°C','14Â°C','15Â°C','70Â°C'] },
+  { enonce:'Températures (°C) : 8, 12, 15, 19, 16', q:'Moyenne = ?', correct:'14°C', choices:['12°C','14°C','15°C','70°C'] },
   { enonce:'Temps de sport (min) par jour : 45, 60, 30, 75, 90', q:'Moyenne = ?', correct:'60 min', choices:['45 min','60 min','75 min','300 min'] },
   { enonce:'Livres lus : 8, 12, 7, 9, 14', q:'Moyenne = ?', correct:'10', choices:['8','9','10','12'] },
-  { enonce:'Prix articles : 12,50, 8,50, 15, 9', q:'Moyenne = ?', correct:'11,25 â¬', choices:['10,50 â¬','11 â¬','11,25 â¬','12 â¬'] },
+  { enonce:'Prix articles : 12,50, 8,50, 15, 9', q:'Moyenne = ?', correct:'11,25 €', choices:['10,50 €','11 €','11,25 €','12 €'] },
 ], 'ex2');
 
 buildQCM([
-  { enonce:'DonnÃ©es : 8, 12, 15, 19, 16', q:'Ãtendue = ?', correct:'11', choices:['8','11','15','19'] },
-  { enonce:'DonnÃ©es : 5, 9, 3, 11, 7, 3', q:'Mode = ?', correct:'3', choices:['3','5','7','11'] },
-  { enonce:'DonnÃ©es rangÃ©es : 10, 12, 15, 18, 20', q:'MÃ©diane = ?', correct:'15', choices:['12','15','17','18'] },
-  { enonce:'DonnÃ©es : 14, 16, 12, 18, 10', q:'Ãtendue = ?', correct:'8', choices:['4','6','8','10'] },
-  { enonce:'DonnÃ©es rangÃ©es : 3, 5, 7, 9, 11, 13', q:'MÃ©diane = ?', correct:'8 (moy. de 7 et 9)', choices:['7','8 (moy. de 7 et 9)','9','10'] },
+  { enonce:'Données : 8, 12, 15, 19, 16', q:'Étendue = ?', correct:'11', choices:['8','11','15','19'] },
+  { enonce:'Données : 5, 9, 3, 11, 7, 3', q:'Mode = ?', correct:'3', choices:['3','5','7','11'] },
+  { enonce:'Données rangées : 10, 12, 15, 18, 20', q:'Médiane = ?', correct:'15', choices:['12','15','17','18'] },
+  { enonce:'Données : 14, 16, 12, 18, 10', q:'Étendue = ?', correct:'8', choices:['4','6','8','10'] },
+  { enonce:'Données rangées : 3, 5, 7, 9, 11, 13', q:'Médiane = ?', correct:'8 (moy. de 7 et 9)', choices:['7','8 (moy. de 7 et 9)','9','10'] },
 ], 'ex3');
 
 buildQCM([
   { enonce:'Tableau sports :\nNatation : CM1=25, CM2=30\nFootball : CM1=35, CM2=28',
-    q:'Combien d\'Ã©lÃ¨ves au total font du sport en CM2 ?', correct:'58', choices:['53','55','58','63'] },
-  { enonce:'MÃªme tableau.',
-    q:'Quel sport est plus pratiquÃ© en CM1 ?', correct:'Football (35)', choices:['Natation (25)','Football (35)','Identique','On ne sait pas'] },
-  { enonce:'Tableau notes : Maths CM1=14, CM2=16 Â· FranÃ§ais CM1=12, CM2=15',
-    q:'Dans quelle matiÃ¨re l\'amÃ©lioration de CM1 Ã  CM2 est la plus grande ?', correct:'FranÃ§ais (3 points)', choices:['Maths (2 points)','FranÃ§ais (3 points)','Identique','On ne sait pas'] },
+    q:'Combien d\'élèves au total font du sport en CM2 ?', correct:'58', choices:['53','55','58','63'] },
+  { enonce:'Même tableau.',
+    q:'Quel sport est plus pratiqué en CM1 ?', correct:'Football (35)', choices:['Natation (25)','Football (35)','Identique','On ne sait pas'] },
+  { enonce:'Tableau notes : Maths CM1=14, CM2=16 · Français CM1=12, CM2=15',
+    q:'Dans quelle matière l\'amélioration de CM1 à CM2 est la plus grande ?', correct:'Français (3 points)', choices:['Maths (2 points)','Français (3 points)','Identique','On ne sait pas'] },
   { enonce:'Tableau ventes : lundi 45, mardi 60, mercredi 30, jeudi 55, vendredi 70',
     q:'Moyenne des ventes = ?', correct:'52', choices:['45','52','60','260'] },
 ], 'ex4');
 
 buildVF([
-  { q:'La moyenne de 14, 16, 12, 18, 10 est 14.', correct:true, expl:'(14+16+12+18+10)Ã·5 = 70Ã·5 = 14' },
-  { q:'L\'Ã©tendue = max â min.', correct:true },
-  { q:'La mÃ©diane de 10, 12, 15, 18, 20 est 12.', correct:false, expl:'La valeur centrale (5 donnÃ©es) est la 3e : 15' },
-  { q:'Le mode est la valeur la plus frÃ©quente.', correct:true },
-  { q:'50% de 200 Ã©lÃ¨ves = 100 Ã©lÃ¨ves.', correct:true },
-  { q:'La moyenne de 3, 5, 7 est 5.', correct:true, expl:'(3+5+7)Ã·3 = 15Ã·3 = 5' },
+  { q:'La moyenne de 14, 16, 12, 18, 10 est 14.', correct:true, expl:'(14+16+12+18+10)÷5 = 70÷5 = 14' },
+  { q:'L\'étendue = max − min.', correct:true },
+  { q:'La médiane de 10, 12, 15, 18, 20 est 12.', correct:false, expl:'La valeur centrale (5 données) est la 3e : 15' },
+  { q:'Le mode est la valeur la plus fréquente.', correct:true },
+  { q:'50% de 200 élèves = 100 élèves.', correct:true },
+  { q:'La moyenne de 3, 5, 7 est 5.', correct:true, expl:'(3+5+7)÷3 = 15÷3 = 5' },
 ], 'ex5');
 
 buildPaires([
-  { q:'Associe chaque terme statistique Ã  sa dÃ©finition.',
-    pairs:[['Moyenne','Somme Ã· nombre de valeurs'],['Ãtendue','Valeur max â valeur min'],['MÃ©diane','Valeur centrale des donnÃ©es rangÃ©es'],['Mode','Valeur la plus frÃ©quente']] },
-  { q:'Associe chaque calcul Ã  son rÃ©sultat (notes : 14, 16, 12, 18, 10).',
-    pairs:[['Moyenne','14'],['Ãtendue','8'],['MÃ©diane','14'],['Mode','Aucun (toutes uniques)']] },
+  { q:'Associe chaque terme statistique à sa définition.',
+    pairs:[['Moyenne','Somme ÷ nombre de valeurs'],['Étendue','Valeur max − valeur min'],['Médiane','Valeur centrale des données rangées'],['Mode','Valeur la plus fréquente']] },
+  { q:'Associe chaque calcul à son résultat (notes : 14, 16, 12, 18, 10).',
+    pairs:[['Moyenne','14'],['Étendue','8'],['Médiane','14'],['Mode','Aucun (toutes uniques)']] },
 ], 'ex6');
 </script>
 

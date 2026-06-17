@@ -132,59 +132,59 @@ buildQCM([
 ], 'ex1');
 
 buildQCM([
-  { card:'524 â 187 = ?', q:'Calcule', correct:'337', choices:['317','327','337','347'] },
-  { card:'803 â 256 = ?', q:'Calcule', correct:'547', choices:['537','547','557','647'] },
-  { card:'1 000 â 347 = ?', q:'Calcule', correct:'653', choices:['643','653','663','753'] },
-  { card:'4 521 â 1 876 = ?', q:'Calcule', correct:'2 645', choices:['2 635','2 645','2 655','2 745'] },
-  { card:'7 000 â 3 456 = ?', q:'Calcule', correct:'3 544', choices:['3 444','3 534','3 544','3 644'] },
-  { card:'5 200 â 1 867 = ?', q:'Calcule', correct:'3 333', choices:['3 233','3 323','3 333','3 433'] },
+  { card:'524 − 187 = ?', q:'Calcule', correct:'337', choices:['317','327','337','347'] },
+  { card:'803 − 256 = ?', q:'Calcule', correct:'547', choices:['537','547','557','647'] },
+  { card:'1 000 − 347 = ?', q:'Calcule', correct:'653', choices:['643','653','663','753'] },
+  { card:'4 521 − 1 876 = ?', q:'Calcule', correct:'2 645', choices:['2 635','2 645','2 655','2 745'] },
+  { card:'7 000 − 3 456 = ?', q:'Calcule', correct:'3 544', choices:['3 444','3 534','3 544','3 644'] },
+  { card:'5 200 − 1 867 = ?', q:'Calcule', correct:'3 333', choices:['3 233','3 323','3 333','3 433'] },
 ], 'ex2');
 
 buildQCM([
-  { card:'24 Ã 6 = ?', q:'Multiplication posÃ©e', correct:'144', choices:['124','134','144','154'] },
-  { card:'53 Ã 7 = ?', q:'Multiplication posÃ©e', correct:'371', choices:['351','361','371','381'] },
-  { card:'126 Ã 4 = ?', q:'Multiplication posÃ©e', correct:'504', choices:['484','494','504','514'] },
-  { card:'235 Ã 3 = ?', q:'Multiplication posÃ©e', correct:'705', choices:['685','695','705','715'] },
-  { card:'348 Ã 5 = ?', q:'Multiplication posÃ©e', correct:'1 740', choices:['1 720','1 730','1 740','1 750'] },
-  { card:'467 Ã 8 = ?', q:'Multiplication posÃ©e', correct:'3 736', choices:['3 716','3 726','3 736','3 746'] },
-  { card:'125 Ã 9 = ?', q:'Multiplication posÃ©e', correct:'1 125', choices:['1 105','1 115','1 125','1 135'] },
+  { card:'24 × 6 = ?', q:'Multiplication posée', correct:'144', choices:['124','134','144','154'] },
+  { card:'53 × 7 = ?', q:'Multiplication posée', correct:'371', choices:['351','361','371','381'] },
+  { card:'126 × 4 = ?', q:'Multiplication posée', correct:'504', choices:['484','494','504','514'] },
+  { card:'235 × 3 = ?', q:'Multiplication posée', correct:'705', choices:['685','695','705','715'] },
+  { card:'348 × 5 = ?', q:'Multiplication posée', correct:'1 740', choices:['1 720','1 730','1 740','1 750'] },
+  { card:'467 × 8 = ?', q:'Multiplication posée', correct:'3 736', choices:['3 716','3 726','3 736','3 746'] },
+  { card:'125 × 9 = ?', q:'Multiplication posée', correct:'1 125', choices:['1 105','1 115','1 125','1 135'] },
 ], 'ex3');
 
 buildVF([
   { card:'347 + 186 = 533', q:'347 + 186 = 533', correct:true },
-  { card:'524 â 187 = 347', q:'524 â 187 = 347', correct:false, expl:'524 â 187 = 337' },
-  { card:'24 Ã 6 = 144', q:'24 Ã 6 = 144', correct:true },
-  { card:'1 000 â 347 = 663', q:'1 000 â 347 = 663', correct:false, expl:'1 000 â 347 = 653' },
-  { card:'53 Ã 7 = 371', q:'53 Ã 7 = 371', correct:true },
+  { card:'524 − 187 = 347', q:'524 − 187 = 347', correct:false, expl:'524 − 187 = 337' },
+  { card:'24 × 6 = 144', q:'24 × 6 = 144', correct:true },
+  { card:'1 000 − 347 = 663', q:'1 000 − 347 = 663', correct:false, expl:'1 000 − 347 = 653' },
+  { card:'53 × 7 = 371', q:'53 × 7 = 371', correct:true },
   { card:'456 + 278 = 724', q:'456 + 278 = 724', correct:false, expl:'456 + 278 = 734' },
-  { q:'Pour vÃ©rifier 524 â 187 = 337, je calcule 337 + 187.', correct:true, expl:'337 + 187 = 524 â' },
+  { q:'Pour vérifier 524 − 187 = 337, je calcule 337 + 187.', correct:true, expl:'337 + 187 = 524 ✅' },
 ], 'ex4');
 
 buildQCM([
-  { card:'â + 186 = 533', q:'Nombre manquant ?', correct:'347', choices:['317','337','347','357'] },
-  { card:'24 Ã â = 144', q:'Nombre manquant ?', correct:'6', choices:['4','5','6','7'] },
-  { card:'1 000 â â = 653', q:'Nombre manquant ?', correct:'347', choices:['327','337','347','357'] },
-  { card:'â Ã 7 = 371', q:'Nombre manquant ?', correct:'53', choices:['43','48','53','63'] },
-  { card:'3 458 + â = 4 734', q:'Nombre manquant ?', correct:'1 276', choices:['1 256','1 266','1 276','1 286'] },
+  { card:'☐ + 186 = 533', q:'Nombre manquant ?', correct:'347', choices:['317','337','347','357'] },
+  { card:'24 × ☐ = 144', q:'Nombre manquant ?', correct:'6', choices:['4','5','6','7'] },
+  { card:'1 000 − ☐ = 653', q:'Nombre manquant ?', correct:'347', choices:['327','337','347','357'] },
+  { card:'☐ × 7 = 371', q:'Nombre manquant ?', correct:'53', choices:['43','48','53','63'] },
+  { card:'3 458 + ☐ = 4 734', q:'Nombre manquant ?', correct:'1 276', choices:['1 256','1 266','1 276','1 286'] },
 ], 'ex5');
 
 buildPaires([
-  { q:'Associe chaque opÃ©ration Ã  son rÃ©sultat.',
-    pairs:[['347 + 186','533'],['524 â 187','337'],['24 Ã 6','144'],['53 Ã 7','371']] },
-  { q:'Associe chaque opÃ©ration Ã  son rÃ©sultat.',
-    pairs:[['1 000 â 347','653'],['126 Ã 4','504'],['456 + 278','734'],['235 Ã 3','705']] },
+  { q:'Associe chaque opération à son résultat.',
+    pairs:[['347 + 186','533'],['524 − 187','337'],['24 × 6','144'],['53 × 7','371']] },
+  { q:'Associe chaque opération à son résultat.',
+    pairs:[['1 000 − 347','653'],['126 × 4','504'],['456 + 278','734'],['235 × 3','705']] },
 ], 'ex6');
 
 buildTri([
-  { q:'Le rÃ©sultat de cette opÃ©ration est-il > ou < 1 000 ?',
+  { q:'Le résultat de cette opération est-il > ou < 1 000 ?',
     cats:['> 1 000','< 1 000'],
     items:[
       {v:'347 + 186', cat:'< 1 000'},
       {v:'456 + 278', cat:'< 1 000'},
       {v:'3 458 + 1 276', cat:'> 1 000'},
-      {v:'348 Ã 5', cat:'> 1 000'},
-      {v:'24 Ã 6', cat:'< 1 000'},
-      {v:'467 Ã 8', cat:'> 1 000'},
+      {v:'348 × 5', cat:'> 1 000'},
+      {v:'24 × 6', cat:'< 1 000'},
+      {v:'467 × 8', cat:'> 1 000'},
     ]
   },
 ], 'ex7');

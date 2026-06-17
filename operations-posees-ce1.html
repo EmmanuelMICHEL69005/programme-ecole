@@ -113,25 +113,25 @@
 <script src="exercises.js"></script>
 <script>
 buildQCM([
-  { card:'213 + 145 = ?', q:'Addition posÃ©e', correct:'358', choices:['348','356','358','368'] },
-  { card:'324 + 253 = ?', q:'Addition posÃ©e', correct:'577', choices:['567','575','577','587'] },
-  { card:'431 + 248 = ?', q:'Addition posÃ©e', correct:'679', choices:['669','677','679','689'] },
-  { card:'512 + 267 = ?', q:'Addition posÃ©e', correct:'779', choices:['769','777','779','789'] },
-  { card:'120 + 346 = ?', q:'Addition posÃ©e', correct:'466', choices:['446','456','466','476'] },
-  { card:'304 + 185 = ?', q:'Addition posÃ©e', correct:'489', choices:['479','487','489','499'] },
+  { card:'213 + 145 = ?', q:'Addition posée', correct:'358', choices:['348','356','358','368'] },
+  { card:'324 + 253 = ?', q:'Addition posée', correct:'577', choices:['567','575','577','587'] },
+  { card:'431 + 248 = ?', q:'Addition posée', correct:'679', choices:['669','677','679','689'] },
+  { card:'512 + 267 = ?', q:'Addition posée', correct:'779', choices:['769','777','779','789'] },
+  { card:'120 + 346 = ?', q:'Addition posée', correct:'466', choices:['446','456','466','476'] },
+  { card:'304 + 185 = ?', q:'Addition posée', correct:'489', choices:['479','487','489','499'] },
 ], 'ex1');
 
 buildQCM([
-  { card:'578 â 243 = ?', q:'Soustraction posÃ©e', correct:'335', choices:'325,333,335,345'.split(',') },
-  { card:'697 â 354 = ?', q:'Soustraction posÃ©e', correct:'343', choices:'333,341,343,353'.split(',') },
-  { card:'869 â 521 = ?', q:'Soustraction posÃ©e', correct:'348', choices:'338,346,348,358'.split(',') },
-  { card:'485 â 231 = ?', q:'Soustraction posÃ©e', correct:'254', choices:'244,252,254,264'.split(',') },
-  { card:'796 â 452 = ?', q:'Soustraction posÃ©e', correct:'344', choices:'334,342,344,354'.split(',') },
-  { card:'900 â 400 = ?', q:'Soustraction posÃ©e', correct:'500', choices:'400,450,500,600'.split(',') },
+  { card:'578 − 243 = ?', q:'Soustraction posée', correct:'335', choices:'325,333,335,345'.split(',') },
+  { card:'697 − 354 = ?', q:'Soustraction posée', correct:'343', choices:'333,341,343,353'.split(',') },
+  { card:'869 − 521 = ?', q:'Soustraction posée', correct:'348', choices:'338,346,348,358'.split(',') },
+  { card:'485 − 231 = ?', q:'Soustraction posée', correct:'254', choices:'244,252,254,264'.split(',') },
+  { card:'796 − 452 = ?', q:'Soustraction posée', correct:'344', choices:'334,342,344,354'.split(',') },
+  { card:'900 − 400 = ?', q:'Soustraction posée', correct:'500', choices:'400,450,500,600'.split(',') },
 ], 'ex2');
 
 buildQCM([
-  { card:'247 + 136 = ?', q:'Avec retenue aux unitÃ©s', correct:'383', choices:['373','381','383','393'] },
+  { card:'247 + 136 = ?', q:'Avec retenue aux unités', correct:'383', choices:['373','381','383','393'] },
   { card:'158 + 234 = ?', q:'Avec retenue', correct:'392', choices:['382','390','392','402'] },
   { card:'375 + 248 = ?', q:'Avec retenue', correct:'623', choices:'613,621,623,633'.split(',') },
   { card:'467 + 165 = ?', q:'Avec retenue', correct:'632', choices:'622,630,632,642'.split(',') },
@@ -142,37 +142,37 @@ buildQCM([
 
 buildVF([
   { card:'213 + 145 = 358', q:'213 + 145 = 358', correct:true },
-  { card:'578 â 243 = 325', q:'578 â 243 = 325', correct:false, expl:'578 â 243 = 335' },
+  { card:'578 − 243 = 325', q:'578 − 243 = 325', correct:false, expl:'578 − 243 = 335' },
   { card:'247 + 136 = 383', q:'247 + 136 = 383', correct:true },
   { card:'467 + 165 = 622', q:'467 + 165 = 622', correct:false, expl:'467 + 165 = 632' },
-  { card:'900 â 400 = 500', q:'900 â 400 = 500', correct:true },
-  { card:'358 â 145 = 213', q:'358 â 145 = 213', correct:true, expl:'On vÃ©rifie l\'addition : 213 + 145 = 358 â' },
+  { card:'900 − 400 = 500', q:'900 − 400 = 500', correct:true },
+  { card:'358 − 145 = 213', q:'358 − 145 = 213', correct:true, expl:'On vérifie l\'addition : 213 + 145 = 358 ✅' },
 ], 'ex4');
 
 buildQCM([
   { enonce:'Marie calcule 158 + 234 et trouve 382.', q:'Marie a-t-elle bon ?', correct:'Non, il faut 392', choices:['Oui, 382 est correct','Non, il faut 392','Non, il faut 402','On ne peut pas savoir'] },
   { enonce:'Paul calcule 375 + 248 et trouve 623.', q:'Paul a-t-il bon ?', correct:'Oui, 623 est correct', choices:['Oui, 623 est correct','Non, il faut 613','Non, il faut 633','Non, il faut 523'] },
-  { enonce:'Lola calcule 697 â 354 et trouve 353.', q:'Lola a-t-elle bon ?', correct:'Non, il faut 343', choices:['Oui, 353 est correct','Non, il faut 343','Non, il faut 333','Non, il faut 363'] },
-  { q:'Dans 247 + 136 = 383, quel chiffre est au rang des unitÃ©s du rÃ©sultat ?', correct:'3', choices:['2','8','3','1'] },
+  { enonce:'Lola calcule 697 − 354 et trouve 353.', q:'Lola a-t-elle bon ?', correct:'Non, il faut 343', choices:['Oui, 353 est correct','Non, il faut 343','Non, il faut 333','Non, il faut 363'] },
+  { q:'Dans 247 + 136 = 383, quel chiffre est au rang des unités du résultat ?', correct:'3', choices:['2','8','3','1'] },
 ], 'ex5');
 
 buildPaires([
-  { q:'Associe chaque opÃ©ration Ã  son rÃ©sultat.',
-    pairs:[['213 + 145','358'],['578 â 243','335'],['247 + 136','383'],['697 â 354','343']] },
-  { q:'Associe chaque opÃ©ration Ã  son rÃ©sultat.',
-    pairs:[['375 + 248','623'],['869 â 521','348'],['158 + 234','392'],['485 â 231','254']] },
+  { q:'Associe chaque opération à son résultat.',
+    pairs:[['213 + 145','358'],['578 − 243','335'],['247 + 136','383'],['697 − 354','343']] },
+  { q:'Associe chaque opération à son résultat.',
+    pairs:[['375 + 248','623'],['869 − 521','348'],['158 + 234','392'],['485 − 231','254']] },
 ], 'ex6');
 
 buildTri([
-  { q:'Cette addition nÃ©cessite-t-elle une retenue ?',
-    cats:['Avec retenue (U+U > 9)','Sans retenue (U+U â¤ 9)'],
+  { q:'Cette addition nécessite-t-elle une retenue ?',
+    cats:['Avec retenue (U+U > 9)','Sans retenue (U+U ≤ 9)'],
     items:[
       {v:'247 + 136', cat:'Avec retenue (U+U > 9)'},
-      {v:'213 + 145', cat:'Sans retenue (U+U â¤ 9)'},
+      {v:'213 + 145', cat:'Sans retenue (U+U ≤ 9)'},
       {v:'158 + 234', cat:'Avec retenue (U+U > 9)'},
-      {v:'324 + 253', cat:'Sans retenue (U+U â¤ 9)'},
+      {v:'324 + 253', cat:'Sans retenue (U+U ≤ 9)'},
       {v:'375 + 248', cat:'Avec retenue (U+U > 9)'},
-      {v:'431 + 248', cat:'Sans retenue (U+U â¤ 9)'},
+      {v:'431 + 248', cat:'Sans retenue (U+U ≤ 9)'},
     ]
   },
 ], 'ex7');

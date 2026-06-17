@@ -91,10 +91,10 @@
 <script>
 buildQCM([
   { card:'"Le chat dort."', q:'Est-ce une phrase correcte ?', correct:'oui (majuscule + point + sens)', choices:['oui (majuscule + point + sens)','non (pas de majuscule)','non (pas de point)','non (sans sens)'] },
-  { card:'"chien mange le"', q:'Est-ce une phrase correcte ?', correct:'non (mots dans le dÃ©sordre, pas de majuscule)', choices:['oui','non (mots dans le dÃ©sordre, pas de majuscule)','oui si on ajoute un point','oui si on ajoute une majuscule'] },
+  { card:'"chien mange le"', q:'Est-ce une phrase correcte ?', correct:'non (mots dans le désordre, pas de majuscule)', choices:['oui','non (mots dans le désordre, pas de majuscule)','oui si on ajoute un point','oui si on ajoute une majuscule'] },
   { card:'"La petite fille joue dans le jardin."', q:'Est-ce une phrase correcte ?', correct:'oui (majuscule + point + sens complet)', choices:['oui (majuscule + point + sens complet)','non (pas de majuscule)','non (pas de verbe)','non (trop longue)'] },
-  { card:'"il court vite"', q:'Que manque-t-il pour que ce soit une phrase ?', correct:'une majuscule au dÃ©but et un point Ã  la fin', choices:['un verbe','une majuscule au dÃ©but et un point Ã  la fin','un nom','un dÃ©terminant'] },
-  { card:'"?! le soleil brille"', q:'Est-ce une phrase correcte ?', correct:'non (les signes de ponctuation sont Ã  la fin)', choices:['oui','non (les signes de ponctuation sont Ã  la fin)','oui avec une majuscule','oui si on enlÃ¨ve ?!'] },
+  { card:'"il court vite"', q:'Que manque-t-il pour que ce soit une phrase ?', correct:'une majuscule au début et un point à la fin', choices:['un verbe','une majuscule au début et un point à la fin','un nom','un déterminant'] },
+  { card:'"?! le soleil brille"', q:'Est-ce une phrase correcte ?', correct:'non (les signes de ponctuation sont à la fin)', choices:['oui','non (les signes de ponctuation sont à la fin)','oui avec une majuscule','oui si on enlève ?!'] },
 ], 'ex1');
 
 buildQCM([
@@ -106,20 +106,20 @@ buildQCM([
 ], 'ex2');
 
 buildQCM([
-  { card:'"Le chat dort sur le canapÃ©."', q:'Quel est le verbe ?', correct:'dort', choices:['chat','dort','canapÃ©','sur'] },
+  { card:'"Le chat dort sur le canapé."', q:'Quel est le verbe ?', correct:'dort', choices:['chat','dort','canapé','sur'] },
   { card:'"Elle mange une pomme."', q:'Quel est le verbe ?', correct:'mange', choices:['Elle','mange','pomme','une'] },
   { card:'"Les enfants jouent dehors."', q:'Quel est le verbe ?', correct:'jouent', choices:['enfants','jouent','dehors','les'] },
-  { card:'"Il est content."', q:'Quel est le verbe ?', correct:'est', choices:['Il','est','content','trÃ¨s'] },
+  { card:'"Il est content."', q:'Quel est le verbe ?', correct:'est', choices:['Il','est','content','très'] },
   { card:'"Tu as un beau dessin."', q:'Quel est le verbe ?', correct:'as', choices:['Tu','as','beau','dessin'] },
 ], 'ex3');
 
 buildQCM([
-  { card:'"la maison"', q:'La maison estâ¦', correct:'fÃ©minin (la)', choices:['masculin (le)','fÃ©minin (la)'] },
-  { card:'"le soleil"', q:'Le soleil estâ¦', correct:'masculin (le)', choices:['masculin (le)','fÃ©minin (la)'] },
-  { card:'"une Ã©cole"', q:'Une Ã©cole estâ¦', correct:'fÃ©minin (une)', choices:['masculin (un)','fÃ©minin (une)'] },
-  { card:'"un ballon"', q:'Un ballon estâ¦', correct:'masculin (un)', choices:['masculin (un)','fÃ©minin (une)'] },
-  { card:'"la forÃªt"', q:'La forÃªt estâ¦', correct:'fÃ©minin (la)', choices:['masculin (le)','fÃ©minin (la)'] },
-  { card:'"le lion"', q:'Le lion estâ¦', correct:'masculin (le)', choices:['masculin (le)','fÃ©minin (la)'] },
+  { card:'"la maison"', q:'La maison est…', correct:'féminin (la)', choices:['masculin (le)','féminin (la)'] },
+  { card:'"le soleil"', q:'Le soleil est…', correct:'masculin (le)', choices:['masculin (le)','féminin (la)'] },
+  { card:'"une école"', q:'Une école est…', correct:'féminin (une)', choices:['masculin (un)','féminin (une)'] },
+  { card:'"un ballon"', q:'Un ballon est…', correct:'masculin (un)', choices:['masculin (un)','féminin (une)'] },
+  { card:'"la forêt"', q:'La forêt est…', correct:'féminin (la)', choices:['masculin (le)','féminin (la)'] },
+  { card:'"le lion"', q:'Le lion est…', correct:'masculin (le)', choices:['masculin (le)','féminin (la)'] },
 ], 'ex4');
 
 buildQCM([
@@ -132,48 +132,48 @@ buildQCM([
 
 buildVF([
   { q:'Une phrase commence toujours par une majuscule', correct:true },
-  { q:'Un nom peut Ãªtre prÃ©cÃ©dÃ© de "le", "la", "les", "un", "une", "des"', correct:true },
-  { q:'"Joue" est un nom', correct:false, expl:'"Joue" est un verbe conjuguÃ© (il/elle joue)' },
-  { q:'"La" devant un nom indique que ce nom est fÃ©minin', correct:true },
-  { q:'Au pluriel, on ajoute souvent un -s Ã  la fin du nom', correct:true },
-  { q:'"Le" peut Ãªtre placÃ© devant un nom fÃ©minin', correct:false, expl:'"Le" est masculin. Devant un nom fÃ©minin on utilise "la" (ou "l\'" devant une voyelle)' },
+  { q:'Un nom peut être précédé de "le", "la", "les", "un", "une", "des"', correct:true },
+  { q:'"Joue" est un nom', correct:false, expl:'"Joue" est un verbe conjugué (il/elle joue)' },
+  { q:'"La" devant un nom indique que ce nom est féminin', correct:true },
+  { q:'Au pluriel, on ajoute souvent un -s à la fin du nom', correct:true },
+  { q:'"Le" peut être placé devant un nom féminin', correct:false, expl:'"Le" est masculin. Devant un nom féminin on utilise "la" (ou "l\'" devant une voyelle)' },
 ], 'ex6');
 
 buildPaires([
-  { left:'le / la / les', right:'dÃ©terminant' },
-  { left:'chat / maison / Ã©cole', right:'nom' },
+  { left:'le / la / les', right:'déterminant' },
+  { left:'chat / maison / école', right:'nom' },
   { left:'mange / court / est', right:'verbe' },
   { left:'le (article)', right:'masculin singulier' },
-  { left:'la (article)', right:'fÃ©minin singulier' },
+  { left:'la (article)', right:'féminin singulier' },
   { left:'les (article)', right:'pluriel' },
 ], 'ex7');
 
 buildQCM([
-  { card:'"le chat mange"', q:'Quel est le dÃ©terminant ?', correct:'le', choices:['le','chat','mange','une'] },
-  { card:'"une belle maison"', q:'Quel est le dÃ©terminant ?', correct:'une', choices:['une','belle','maison','la'] },
-  { card:'"des enfants jouent"', q:'Quel est le dÃ©terminant ?', correct:'des', choices:['des','enfants','jouent','les'] },
-  { card:'"mon livre est rouge"', q:'Quel est le dÃ©terminant ?', correct:'mon', choices:['mon','livre','est','rouge'] },
-  { card:'"cette fleur est belle"', q:'Quel est le dÃ©terminant ?', correct:'cette', choices:['cette','fleur','est','belle'] },
+  { card:'"le chat mange"', q:'Quel est le déterminant ?', correct:'le', choices:['le','chat','mange','une'] },
+  { card:'"une belle maison"', q:'Quel est le déterminant ?', correct:'une', choices:['une','belle','maison','la'] },
+  { card:'"des enfants jouent"', q:'Quel est le déterminant ?', correct:'des', choices:['des','enfants','jouent','les'] },
+  { card:'"mon livre est rouge"', q:'Quel est le déterminant ?', correct:'mon', choices:['mon','livre','est','rouge'] },
+  { card:'"cette fleur est belle"', q:'Quel est le déterminant ?', correct:'cette', choices:['cette','fleur','est','belle'] },
 ], 'ex8');
 
 buildQCM([
-  { card:'"___ soleil brille." (masc. sing.)', q:'Quel dÃ©terminant choisir ?', correct:'Le', choices:['Le','La','Les','Une'] },
-  { card:'"___ lune est ronde." (fÃ©m. sing.)', q:'Quel dÃ©terminant choisir ?', correct:'La', choices:['Le','La','Les','Un'] },
-  { card:'"___ enfants jouent." (pluriel)', q:'Quel dÃ©terminant choisir ?', correct:'Les', choices:['Le','La','Les','Des'] },
-  { card:'"Je vois ___ fleur rouge." (fÃ©m. sing. indÃ©fini)', q:'Quel dÃ©terminant choisir ?', correct:'une', choices:['un','une','des','la'] },
-  { card:'"Il y a ___ arbres dans le jardin." (plur. indÃ©fini)', q:'Quel dÃ©terminant choisir ?', correct:'des', choices:['un','une','des','les'] },
+  { card:'"___ soleil brille." (masc. sing.)', q:'Quel déterminant choisir ?', correct:'Le', choices:['Le','La','Les','Une'] },
+  { card:'"___ lune est ronde." (fém. sing.)', q:'Quel déterminant choisir ?', correct:'La', choices:['Le','La','Les','Un'] },
+  { card:'"___ enfants jouent." (pluriel)', q:'Quel déterminant choisir ?', correct:'Les', choices:['Le','La','Les','Des'] },
+  { card:'"Je vois ___ fleur rouge." (fém. sing. indéfini)', q:'Quel déterminant choisir ?', correct:'une', choices:['un','une','des','la'] },
+  { card:'"Il y a ___ arbres dans le jardin." (plur. indéfini)', q:'Quel déterminant choisir ?', correct:'des', choices:['un','une','des','les'] },
 ], 'ex9');
 
 buildTri([
-  { q:'Classe chaque groupe nominal : masculin ou fÃ©minin ?', cats:['Masculin','FÃ©minin'], items:[
+  { q:'Classe chaque groupe nominal : masculin ou féminin ?', cats:['Masculin','Féminin'], items:[
     { v:'le soleil', cat:'Masculin' },
     { v:'un livre', cat:'Masculin' },
     { v:'le chien', cat:'Masculin' },
     { v:'mon stylo', cat:'Masculin' },
-    { v:'la lune', cat:'FÃ©minin' },
-    { v:'une Ã©cole', cat:'FÃ©minin' },
-    { v:'la chatte', cat:'FÃ©minin' },
-    { v:'ma maison', cat:'FÃ©minin' },
+    { v:'la lune', cat:'Féminin' },
+    { v:'une école', cat:'Féminin' },
+    { v:'la chatte', cat:'Féminin' },
+    { v:'ma maison', cat:'Féminin' },
   ]}
 ], 'ex10');
 </script>

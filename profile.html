@@ -358,7 +358,7 @@
   <div class="avatar-picker-card">
     <div class="avatar-picker-title">Choisis ton avatar</div>
     <div class="avatar-grid" id="avatarGrid"></div>
-    <button class="btn-close-picker" onclick="closePicker()">Valider â</button>
+    <button class="btn-close-picker" onclick="closePicker()">Valider ✓</button>
   </div>
 </div>
 
@@ -395,7 +395,7 @@
         <span class="profile-chip-avatar">${prof.avatar}</span>
         <div class="profile-chip-info">
           <span class="profile-chip-name">${prof.name}</span>
-          <span class="profile-chip-meta">${prof.classe} Â· ${lv.emoji} Niv.${prof.level}</span>
+          <span class="profile-chip-meta">${prof.classe} · ${lv.emoji} Niv.${prof.level}</span>
         </div>
       `;
       chip.addEventListener('click', () => {
@@ -410,10 +410,10 @@
     // Hero
     document.getElementById('avatarCircle').textContent = P.avatar;
     document.getElementById('profileNameDisplay').textContent = P.name;
-    document.getElementById('profileClasseTag').textContent = 'ð ' + (P.classe || 'CE2');
-    document.getElementById('profileLevelLabel').textContent = `${lvl.emoji} Niveau ${lvl.n} â ${lvl.title}`;
+    document.getElementById('profileClasseTag').textContent = '📚 ' + (P.classe || 'CE2');
+    document.getElementById('profileLevelLabel').textContent = `${lvl.emoji} Niveau ${lvl.n} — ${lvl.title}`;
     document.getElementById('xpCurrent').textContent = `${P.xp} XP`;
-    document.getElementById('xpNext').textContent    = nxt ? `Prochain : ${nxt.xp} XP` : 'ð Niveau max !';
+    document.getElementById('xpNext').textContent    = nxt ? `Prochain : ${nxt.xp} XP` : '🌟 Niveau max !';
     setTimeout(() => { document.getElementById('xpFill').style.width = p + '%'; }, 100);
 
     // Stats
@@ -432,7 +432,7 @@
         <span class="badge-emoji">${b.emoji}</span>
         <div class="badge-name">${b.name}</div>
         <div class="badge-desc">${b.desc}</div>
-        ${earned ? '<span class="badge-unlocked-tag">â DÃ©bloquÃ©</span>' : ''}
+        ${earned ? '<span class="badge-unlocked-tag">✓ Débloqué</span>' : ''}
       `;
       grid.appendChild(card);
     });
@@ -442,7 +442,7 @@
     topicsList.innerHTML = '';
     Object.entries(GS.PAGE_LABELS).filter(([k]) => k !== 'index.html').forEach(([href, info]) => {
       const count = P.pages[href] || 0;
-      const stars = count >= 20 ? 'â­â­â­' : count >= 8 ? 'â­â­' : count >= 2 ? 'â­' : 'â';
+      const stars = count >= 20 ? '⭐⭐⭐' : count >= 8 ? '⭐⭐' : count >= 2 ? '⭐' : '☆';
       const row = document.createElement('div');
       row.className = 'topic-row';
       row.style.cursor = 'pointer';
@@ -451,7 +451,7 @@
         <span class="topic-emoji">${info.emoji}</span>
         <div class="topic-info">
           <div class="topic-title">${info.title}</div>
-          <div class="topic-count">${count === 0 ? 'Pas encore visitÃ©' : count + ' bonne' + (count > 1 ? 's' : '') + ' rÃ©ponse' + (count > 1 ? 's' : '')}</div>
+          <div class="topic-count">${count === 0 ? 'Pas encore visité' : count + ' bonne' + (count > 1 ? 's' : '') + ' réponse' + (count > 1 ? 's' : '')}</div>
         </div>
         <div class="topic-stars">${stars}</div>
       `;
@@ -469,10 +469,10 @@
       row.innerHTML = `
         <span class="lr-emoji">${l.emoji}</span>
         <div class="lr-info">
-          <div class="lr-title">Niveau ${l.n} â ${l.title}</div>
+          <div class="lr-title">Niveau ${l.n} — ${l.title}</div>
           <div class="lr-xp">${l.xp} XP requis</div>
         </div>
-        <span class="lr-done">${done ? 'â' : current ? 'â ici !' : ''}</span>
+        <span class="lr-done">${done ? '✓' : current ? '← ici !' : ''}</span>
       `;
       road.appendChild(row);
     });
@@ -488,7 +488,7 @@
         GS.setClasse(c);
         document.querySelectorAll('.classe-opt').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        document.getElementById('profileClasseTag').textContent = 'ð ' + c;
+        document.getElementById('profileClasseTag').textContent = '📚 ' + c;
       });
       cs.appendChild(btn);
     });
@@ -511,18 +511,18 @@
     });
   }
 
-  // ââ Name editing ââââââââââââââââââââââââââââââââââââââââââââââââââ
+  // ── Name editing ──────────────────────────────────────────────────
   document.getElementById('btnEditName').addEventListener('click', function handler() {
     const display = document.getElementById('profileNameDisplay');
     const current = GS.profile().name;
     const input = document.createElement('input');
     input.className = 'name-input';
     input.value = current;
-    input.placeholder = 'Ton prÃ©nom';
+    input.placeholder = 'Ton prénom';
     display.replaceWith(input);
     input.focus();
     const btn = document.getElementById('btnEditName');
-    btn.textContent = 'â OK';
+    btn.textContent = '✓ OK';
     const confirm = () => {
       const name = input.value.trim() || GS.profile().name;
       GS.setName(name);
@@ -531,7 +531,7 @@
       newSpan.id = 'profileNameDisplay';
       newSpan.textContent = name;
       input.replaceWith(newSpan);
-      btn.textContent = 'âï¸ Modifier';
+      btn.textContent = '✏️ Modifier';
       btn.removeEventListener('click', confirm);
       btn.addEventListener('click', handler);
       render();
@@ -541,7 +541,7 @@
     input.addEventListener('keydown', e => { if (e.key === 'Enter') confirm(); });
   });
 
-  // ââ Avatar picker âââââââââââââââââââââââââââââââââââââââââââââââââ
+  // ── Avatar picker ─────────────────────────────────────────────────
   document.getElementById('avatarCircle').addEventListener('click', () => {
     document.getElementById('avatarPicker').style.display = 'flex';
   });
@@ -550,7 +550,7 @@
     if (e.target === document.getElementById('avatarPicker')) closePicker();
   });
 
-  // ââ Classe picker âââââââââââââââââââââââââââââââââââââââââââââââââ
+  // ── Classe picker ─────────────────────────────────────────────────
   document.getElementById('profileClasseTag').addEventListener('click', () => {
     const grid = document.getElementById('classePicker-grid');
     grid.innerHTML = '';
@@ -568,20 +568,20 @@
     document.getElementById('classePicker').style.display = 'flex';
   });
 
-  // ââ Danger zone âââââââââââââââââââââââââââââââââââââââââââââââââââ
+  // ── Danger zone ───────────────────────────────────────────────────
   function confirmReset() {
-    if (confirm('Veux-tu vraiment remettre ce profil Ã  zÃ©ro ?\nTes points et badges seront perdus.')) {
+    if (confirm('Veux-tu vraiment remettre ce profil à zéro ?\nTes points et badges seront perdus.')) {
       GS.resetAll();
     }
   }
   function confirmDelete() {
     const P = GS.profile();
-    if (confirm('Supprimer le profil de ' + P.name + ' ?\nCette action est irrÃ©versible.')) {
+    if (confirm('Supprimer le profil de ' + P.name + ' ?\nCette action est irréversible.')) {
       GS.deleteProfile(P.id);
     }
   }
 
-  // ââ Export / Import âââââââââââââââââââââââââââââââââââââââââââââââ
+  // ── Export / Import ───────────────────────────────────────────────
   function exportData() {
     const st = GS.store();
     const json = JSON.stringify(st, null, 2);
@@ -603,11 +603,11 @@
       try {
         const data = JSON.parse(e.target.result);
         if (!data.profiles || !data.active) throw new Error('Format invalide');
-        if (!confirm(`Importer ${Object.keys(data.profiles).length} profil(s) ?\nCela remplacera les donnÃ©es actuelles.`)) return;
+        if (!confirm(`Importer ${Object.keys(data.profiles).length} profil(s) ?\nCela remplacera les données actuelles.`)) return;
         localStorage.setItem('clemence_maths_v2', JSON.stringify(data));
         location.reload();
       } catch(err) {
-        alert('â Fichier invalide ou corrompu.');
+        alert('❌ Fichier invalide ou corrompu.');
       }
     };
     reader.readAsText(file);

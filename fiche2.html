@@ -267,7 +267,7 @@
   pizzaStatic('pz-cmp2', 4, 1);
 
   // ---- Ex 1 : place sur la droite ----
-  const slotMap = { 'slot-25':'Â¼', 'slot-50':'Â½', 'slot-75':'Â¾' };
+  const slotMap = { 'slot-25':'¼', 'slot-50':'½', 'slot-75':'¾' };
   let selectedChip = null;
   const placed = {};
 
@@ -280,7 +280,7 @@
 
   function placeOnDroite(slotId, pos) {
     if (!selectedChip) {
-      document.getElementById('droite-fb').textContent = 'ð Clique d\'abord sur une fraction !';
+      document.getElementById('droite-fb').textContent = '👆 Clique d\'abord sur une fraction !';
       document.getElementById('droite-fb').style.color = '#92400e';
       return;
     }
@@ -304,11 +304,11 @@
       selectedChip = null;
       const fb = document.getElementById('droite-fb');
       const total = Object.keys(placed).length;
-      if (total === 3) { fb.textContent = 'ð Parfait ! Toutes les fractions sont bien placÃ©es !'; fb.style.color = '#166534'; }
-      else { fb.textContent = 'â Bonne place !'; fb.style.color = '#166534'; }
+      if (total === 3) { fb.textContent = '🎉 Parfait ! Toutes les fractions sont bien placées !'; fb.style.color = '#166534'; }
+      else { fb.textContent = '✅ Bonne place !'; fb.style.color = '#166534'; }
     } else {
       const fb = document.getElementById('droite-fb');
-      fb.textContent = `â ${val} ne va pas ici ! Essaie une autre place.`;
+      fb.textContent = `❌ ${val} ne va pas ici ! Essaie une autre place.`;
       fb.style.color = '#991b1b';
       slotEl.querySelector('.slot-rect').setAttribute('fill', '#fee2e2');
       setTimeout(() => slotEl.querySelector('.slot-rect').setAttribute('fill', 'white'), 600);
@@ -317,11 +317,11 @@
 
   // ---- Ex 2 : plus grande fraction ----
   const ex2Data = [
-    { q:'1', a:'Â½', b:'Â¼', correct:'Â½' },
-    { q:'2', a:'Â¾', b:'Â½', correct:'Â¾' },
-    { q:'3', a:'â', b:'Â¼', correct:'â' },
-    { q:'4', a:'Â¼', b:'Â¾', correct:'Â¾' },
-    { q:'5', a:'1', b:'Â½', correct:'1'  },
+    { q:'1', a:'½', b:'¼', correct:'½' },
+    { q:'2', a:'¾', b:'½', correct:'¾' },
+    { q:'3', a:'⅓', b:'¼', correct:'⅓' },
+    { q:'4', a:'¼', b:'¾', correct:'¾' },
+    { q:'5', a:'1', b:'½', correct:'1'  },
   ];
   const ex2c = document.getElementById('ex2-container');
   ex2Data.forEach(d => {
@@ -345,7 +345,7 @@
     item.style.background = ok ? '#f0fdf4' : '#fff1f2';
     item.style.borderColor = ok ? '#86efac' : '#fca5a5';
     const fb = item.querySelector('.choix-feedback');
-    fb.textContent = ok ? 'â Bravo !' : `â C'est ${correct} la plus grande !`;
+    fb.textContent = ok ? '✅ Bravo !' : `❌ C'est ${correct} la plus grande !`;
     fb.style.color = ok ? '#166534' : '#991b1b';
   }
 
@@ -356,7 +356,7 @@
     const fbEl    = document.getElementById(fbId);
     let nextIdx = 0;
 
-    // CrÃ©er les slots de sÃ©quence
+    // Créer les slots de séquence
     order.forEach(() => {
       const slot = document.createElement('div');
       slot.className = 'tri-slot';
@@ -365,7 +365,7 @@
     });
     const slots = seqEl.querySelectorAll('.tri-slot');
 
-    // CrÃ©er les chips (ordre mÃ©langÃ©)
+    // Créer les chips (ordre mélangé)
     items.forEach(val => {
       const chip = document.createElement('button');
       chip.className = 'tri-chip';
@@ -378,15 +378,15 @@
           slots[nextIdx].classList.add('filled');
           nextIdx++;
           if (nextIdx === order.length) {
-            fbEl.textContent = 'ð Parfait ! Tu as tout bien classÃ© !';
+            fbEl.textContent = '🎉 Parfait ! Tu as tout bien classé !';
             fbEl.style.color = '#166534';
           } else {
-            fbEl.textContent = 'â Bonne rÃ©ponse ! Continueâ¦';
+            fbEl.textContent = '✅ Bonne réponse ! Continue…';
             fbEl.style.color = '#166534';
           }
         } else {
           chip.classList.add('wrong-flash');
-          fbEl.textContent = `â Pas encoreâ¦ lequel est le plus petit ?`;
+          fbEl.textContent = `❌ Pas encore… lequel est le plus petit ?`;
           fbEl.style.color = '#991b1b';
           setTimeout(() => chip.classList.remove('wrong-flash'), 400);
         }
@@ -395,8 +395,8 @@
     });
   }
 
-  buildTri('chips-A','seq-A','fb-A', ['Â½','0','Â¾','Â¼','1'],   ['0','Â¼','Â½','Â¾','1']);
-  buildTri('chips-B','seq-B','fb-B', ['â','1','â','0'],       ['0','â','â','1']);
+  buildTri('chips-A','seq-A','fb-A', ['½','0','¾','¼','1'],   ['0','¼','½','¾','1']);
+  buildTri('chips-B','seq-B','fb-B', ['⅓','1','⅔','0'],       ['0','⅓','⅔','1']);
 
   // ---- Ex 4 : signes ----
   function checkSign(btn, chosen, correct, id) {
@@ -413,14 +413,14 @@
     }
   }
 
-  // ---- Ex 5 : QCM problÃ¨mes ----
+  // ---- Ex 5 : QCM problèmes ----
   function checkQCM(btn, chosen, correct, fbId) {
     const group = btn.parentElement;
     group.querySelectorAll('.btn-qcm').forEach(b => b.classList.remove('correct','wrong'));
     const ok = chosen === correct;
     btn.classList.add(ok ? 'correct' : 'wrong');
     const fb = document.getElementById(fbId);
-    fb.textContent = ok ? 'â Bonne rÃ©ponse !' : `â Pas tout Ã  faitâ¦ rÃ©essaie !`;
+    fb.textContent = ok ? '✅ Bonne réponse !' : `❌ Pas tout à fait… réessaie !`;
     fb.style.color = ok ? '#166534' : '#991b1b';
   }
 </script>

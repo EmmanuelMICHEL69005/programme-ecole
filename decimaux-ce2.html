@@ -126,66 +126,66 @@
 <script>
 buildQCM([
   { q:'Comment lit-on 2,5 ?', correct:'Deux virgule cinq', choices:['Vingt-cinq','Deux virgule cinq','Deux et demi','Deux cinq'] },
-  { q:'Comment Ã©crit-on "trois virgule sept" ?', correct:'3,7', choices:['37','3.7','3,7','3/7'] },
-  { q:'Dans 4,63, quel chiffre est au rang des dixiÃ¨mes ?', correct:'6', choices:['4','6','3','63'] },
-  { q:'Dans 7,09, quel chiffre est au rang des centiÃ¨mes ?', correct:'9', choices:['7','0','9','09'] },
-  { q:'Comment se lit 0,5 ?', correct:'ZÃ©ro virgule cinq (= un demi)', choices:['Cinq','ZÃ©ro cinq','ZÃ©ro virgule cinq (= un demi)','Cinq dixiÃ¨mes uniquement'] },
-  { q:'Dans 12,34, quelle est la partie entiÃ¨re ?', correct:'12', choices:['1','12','34','2'] },
-  { q:'Comment Ã©crit-on "huit dixiÃ¨mes" ?', correct:'0,8', choices:['8','80','0,08','0,8'] },
+  { q:'Comment écrit-on "trois virgule sept" ?', correct:'3,7', choices:['37','3.7','3,7','3/7'] },
+  { q:'Dans 4,63, quel chiffre est au rang des dixièmes ?', correct:'6', choices:['4','6','3','63'] },
+  { q:'Dans 7,09, quel chiffre est au rang des centièmes ?', correct:'9', choices:['7','0','9','09'] },
+  { q:'Comment se lit 0,5 ?', correct:'Zéro virgule cinq (= un demi)', choices:['Cinq','Zéro cinq','Zéro virgule cinq (= un demi)','Cinq dixièmes uniquement'] },
+  { q:'Dans 12,34, quelle est la partie entière ?', correct:'12', choices:['1','12','34','2'] },
+  { q:'Comment écrit-on "huit dixièmes" ?', correct:'0,8', choices:['8','80','0,08','0,8'] },
 ], 'ex1');
 
 buildQCM([
-  { q:'Combien y a-t-il de dixiÃ¨mes dans 3,7 ?', correct:'37 dixiÃ¨mes', choices:['3 dixiÃ¨mes','7 dixiÃ¨mes','37 dixiÃ¨mes','30 dixiÃ¨mes'] },
-  { q:'0,1 = ?', correct:'1 dixiÃ¨me', choices:['1 centiÃ¨me','1 dixiÃ¨me','10 centiÃ¨mes... et aussi 1 dixiÃ¨me !','1 unitÃ©'] },
-  { q:'5 dixiÃ¨mes = ?', correct:'0,5', choices:['5,0','0,05','0,5','50'] },
-  { q:'Combien y a-t-il de centiÃ¨mes dans 0,47 ?', correct:'47 centiÃ¨mes', choices:['4 centiÃ¨mes','7 centiÃ¨mes','47 centiÃ¨mes','40 centiÃ¨mes'] },
+  { q:'Combien y a-t-il de dixièmes dans 3,7 ?', correct:'37 dixièmes', choices:['3 dixièmes','7 dixièmes','37 dixièmes','30 dixièmes'] },
+  { q:'0,1 = ?', correct:'1 dixième', choices:['1 centième','1 dixième','10 centièmes... et aussi 1 dixième !','1 unité'] },
+  { q:'5 dixièmes = ?', correct:'0,5', choices:['5,0','0,05','0,5','50'] },
+  { q:'Combien y a-t-il de centièmes dans 0,47 ?', correct:'47 centièmes', choices:['4 centièmes','7 centièmes','47 centièmes','40 centièmes'] },
   { q:'1,0 = ?', correct:'1 (un entier)', choices:['0,1','10','1 (un entier)','0,10'] },
   { q:'0,30 = ?', correct:'0,3', choices:['0,03','0,30 seulement','0,3','3'] },
 ], 'ex2');
 
 buildQCM([
-  { q:'Lequel est le plus grand : 3,7 ou 3,2 ?', correct:'3,7', choices:['3,2','3,7','Ãgaux'] },
-  { q:'Lequel est le plus grand : 2,45 ou 2,54 ?', correct:'2,54', choices:['2,45','2,54','Ãgaux'] },
-  { q:'Range du plus petit au plus grand : 1,3 Â· 1,03 Â· 1,30', correct:'1,03 < 1,3 = 1,30', choices:['1,3 < 1,03 < 1,30','1,03 < 1,3 = 1,30','1,30 < 1,3 < 1,03'] },
-  { q:'0,8 â 0,75 : quel signe ?', correct:'>', choices:['<','=','>','On ne peut pas comparer'] },
-  { q:'Lequel est le plus petit : 5,09 ou 5,9 ?', correct:'5,09', choices:['5,09','5,9','Ils sont Ã©gaux'] },
+  { q:'Lequel est le plus grand : 3,7 ou 3,2 ?', correct:'3,7', choices:['3,2','3,7','Égaux'] },
+  { q:'Lequel est le plus grand : 2,45 ou 2,54 ?', correct:'2,54', choices:['2,45','2,54','Égaux'] },
+  { q:'Range du plus petit au plus grand : 1,3 · 1,03 · 1,30', correct:'1,03 < 1,3 = 1,30', choices:['1,3 < 1,03 < 1,30','1,03 < 1,3 = 1,30','1,30 < 1,3 < 1,03'] },
+  { q:'0,8 ☐ 0,75 : quel signe ?', correct:'>', choices:['<','=','>','On ne peut pas comparer'] },
+  { q:'Lequel est le plus petit : 5,09 ou 5,9 ?', correct:'5,09', choices:['5,09','5,9','Ils sont égaux'] },
   { q:'Lequel est entre 2 et 3 ? 2,7 ou 3,2 ou 1,9', correct:'2,7', choices:['2,7','3,2','1,9','Aucun'] },
 ], 'ex3');
 
 buildVF([
-  { q:'2,50 = 2,5', correct:true, expl:'Les zÃ©ros en fin de partie dÃ©cimale ne changent pas la valeur.' },
-  { q:'0,3 > 0,25', correct:true, expl:'0,30 > 0,25 (dixiÃ¨mes : 3 > 2)' },
-  { q:'1,09 > 1,9', correct:false, expl:'1,09 < 1,9 (dixiÃ¨mes : 0 < 9)' },
-  { q:'5 dixiÃ¨mes = 0,5', correct:true },
-  { q:'3,7 = 3 + 7', correct:false, expl:'3,7 = 3 + 0,7 (sept dixiÃ¨mes, pas sept unitÃ©s)' },
+  { q:'2,50 = 2,5', correct:true, expl:'Les zéros en fin de partie décimale ne changent pas la valeur.' },
+  { q:'0,3 > 0,25', correct:true, expl:'0,30 > 0,25 (dixièmes : 3 > 2)' },
+  { q:'1,09 > 1,9', correct:false, expl:'1,09 < 1,9 (dixièmes : 0 < 9)' },
+  { q:'5 dixièmes = 0,5', correct:true },
+  { q:'3,7 = 3 + 7', correct:false, expl:'3,7 = 3 + 0,7 (sept dixièmes, pas sept unités)' },
   { q:'0,1 + 0,1 + 0,1 = 0,3', correct:true },
-  { q:'2,45 < 2,54', correct:true, expl:'MÃªme entier (2), mÃªme dixiÃ¨me (4 = 4), centiÃ¨mes : 5 > â¦ non ! C\'est la virgule : 2,4_ vs 2,5_ â 2,45 < 2,54' },
+  { q:'2,45 < 2,54', correct:true, expl:'Même entier (2), même dixième (4 = 4), centièmes : 5 > … non ! C\'est la virgule : 2,4_ vs 2,5_ → 2,45 < 2,54' },
 ], 'ex4');
 
 buildOrdre([
   { q:'Range ces nombres du PLUS PETIT au PLUS GRAND :',
     items:['1,03','1,15','1,30','1,33'] },
   { q:'Range ces prix du MOINS CHER au PLUS CHER :',
-    items:['3,05 â¬','3,15 â¬','3,50 â¬','3,55 â¬'] },
+    items:['3,05 €','3,15 €','3,50 €','3,55 €'] },
 ], 'ex5');
 
 buildPaires([
-  { q:'Associe chaque nombre Ã  une forme Ã©quivalente.',
-    pairs:[['2,5','2 + 5 dixiÃ¨mes'],['0,75','75 centiÃ¨mes'],['3,0','3 entiers'],['1,08','1 + 8 centiÃ¨mes']] },
-  { q:'Associe chaque forme Ã  son Ã©criture dÃ©cimale.',
-    pairs:[['7 dixiÃ¨mes','0,7'],['45 centiÃ¨mes','0,45'],['3 et 2 dixiÃ¨mes','3,2'],['10 centiÃ¨mes','0,1 = 0,10']] },
+  { q:'Associe chaque nombre à une forme équivalente.',
+    pairs:[['2,5','2 + 5 dixièmes'],['0,75','75 centièmes'],['3,0','3 entiers'],['1,08','1 + 8 centièmes']] },
+  { q:'Associe chaque forme à son écriture décimale.',
+    pairs:[['7 dixièmes','0,7'],['45 centièmes','0,45'],['3 et 2 dixièmes','3,2'],['10 centièmes','0,1 = 0,10']] },
 ], 'ex6');
 
 buildTri([
-  { q:'La partie entiÃ¨re de ce nombre est-elle 1, 2 ou 3 ?',
-    cats:['Partie entiÃ¨re = 1','Partie entiÃ¨re = 2','Partie entiÃ¨re = 3'],
+  { q:'La partie entière de ce nombre est-elle 1, 2 ou 3 ?',
+    cats:['Partie entière = 1','Partie entière = 2','Partie entière = 3'],
     items:[
-      {v:'1,7', cat:'Partie entiÃ¨re = 1'},
-      {v:'2,45', cat:'Partie entiÃ¨re = 2'},
-      {v:'3,08', cat:'Partie entiÃ¨re = 3'},
-      {v:'1,99', cat:'Partie entiÃ¨re = 1'},
-      {v:'2,1', cat:'Partie entiÃ¨re = 2'},
-      {v:'3,5', cat:'Partie entiÃ¨re = 3'},
+      {v:'1,7', cat:'Partie entière = 1'},
+      {v:'2,45', cat:'Partie entière = 2'},
+      {v:'3,08', cat:'Partie entière = 3'},
+      {v:'1,99', cat:'Partie entière = 1'},
+      {v:'2,1', cat:'Partie entière = 2'},
+      {v:'3,5', cat:'Partie entière = 3'},
     ]
   },
 ], 'ex7');

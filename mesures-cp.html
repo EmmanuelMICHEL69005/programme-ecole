@@ -124,70 +124,70 @@
 <script src="exercises.js"></script>
 <script>
 buildQCM([
-  { q:'Quelle unitÃ© pour mesurer la longueur d\'un stylo ?', correct:'centimÃ¨tre (cm)', choices:['gramme (g)','centimÃ¨tre (cm)','litre (L)','heure (h)'] },
-  { q:'Combien y a-t-il de centimÃ¨tres dans 1 mÃ¨tre ?', correct:'100 cm', choices:['10 cm','100 cm','1 000 cm','50 cm'], hint:'1 m = 100 cm' },
-  { q:'La porte de la classe mesure environâ¦', correct:'2 m', choices:['2 cm','20 cm','2 m','20 m'] },
-  { q:'Un stylo mesure environâ¦', correct:'15 cm', choices:['15 mm','15 cm','15 m','1 m 50'] },
-  { q:'50 cm est â¦ que 1 m.', correct:'plus court', choices:['plus long','plus court','Ã©gal','impossible Ã  savoir'] },
-  { q:'Un crayon de 18 cm est â¦ qu\'un crayon de 12 cm.', correct:'plus long', choices:['plus court','plus long','de la mÃªme longueur'] },
-  { q:'Ma table mesure 60 cm et la fenÃªtre mesure 1 m 20. Laquelle est la plus grande ?', correct:'La fenÃªtre (120 cm > 60 cm)', choices:['La table (60 cm)','La fenÃªtre (120 cm > 60 cm)','Elles sont Ã©gales'] },
+  { q:'Quelle unité pour mesurer la longueur d\'un stylo ?', correct:'centimètre (cm)', choices:['gramme (g)','centimètre (cm)','litre (L)','heure (h)'] },
+  { q:'Combien y a-t-il de centimètres dans 1 mètre ?', correct:'100 cm', choices:['10 cm','100 cm','1 000 cm','50 cm'], hint:'1 m = 100 cm' },
+  { q:'La porte de la classe mesure environ…', correct:'2 m', choices:['2 cm','20 cm','2 m','20 m'] },
+  { q:'Un stylo mesure environ…', correct:'15 cm', choices:['15 mm','15 cm','15 m','1 m 50'] },
+  { q:'50 cm est … que 1 m.', correct:'plus court', choices:['plus long','plus court','égal','impossible à savoir'] },
+  { q:'Un crayon de 18 cm est … qu\'un crayon de 12 cm.', correct:'plus long', choices:['plus court','plus long','de la même longueur'] },
+  { q:'Ma table mesure 60 cm et la fenêtre mesure 1 m 20. Laquelle est la plus grande ?', correct:'La fenêtre (120 cm > 60 cm)', choices:['La table (60 cm)','La fenêtre (120 cm > 60 cm)','Elles sont égales'] },
 ], 'ex1');
 
 buildVF([
   { q:'1 m = 100 cm', correct:true },
-  { q:'Un Ã©lÃ©phant pÃ¨se moins qu\'une souris.', correct:false, expl:'Un Ã©lÃ©phant est bien plus lourd' },
+  { q:'Un éléphant pèse moins qu\'une souris.', correct:false, expl:'Un éléphant est bien plus lourd' },
   { q:'50 cm est plus petit que 1 m.', correct:true, expl:'50 cm < 100 cm = 1 m' },
   { q:'1 kg = 100 g', correct:false, expl:'1 kg = 1 000 g' },
   { q:'Une plume est plus lourde qu\'un livre.', correct:false },
-  { q:'La hauteur d\'une maison se mesure en mÃ¨tres.', correct:true },
-  { q:'Un livre de maths pÃ¨se environ 500 g.', correct:true },
+  { q:'La hauteur d\'une maison se mesure en mètres.', correct:true },
+  { q:'Un livre de maths pèse environ 500 g.', correct:true },
 ], 'ex2');
 
 buildQCM([
   { q:'Combien de minutes dans 1 heure ?', correct:'60 minutes', choices:['10 minutes','30 minutes','60 minutes','100 minutes'] },
   { q:'Combien de jours dans une semaine ?', correct:'7 jours', choices:['5 jours','6 jours','7 jours','8 jours'] },
-  { q:'Quel jour vient juste aprÃ¨s mercredi ?', correct:'Jeudi', choices:['Mardi','Mercredi','Jeudi','Vendredi'] },
-  { q:'Combien de mois dans une annÃ©e ?', correct:'12 mois', choices:['7','10','12','24'] },
-  { q:'L\'Ã©cole commence Ã  8h30 et la rÃ©crÃ© est Ã  10h30. DurÃ©e ?', correct:'2 heures', choices:['1 heure','2 heures','3 heures','30 min'] },
-  { q:'Le premier mois de l\'annÃ©e estâ¦', correct:'Janvier', choices:['DÃ©cembre','Janvier','Mars','Septembre'] },
-  { q:'AprÃ¨s samedi vientâ¦', correct:'Dimanche', choices:['Lundi','Vendredi','Dimanche','Mercredi'] },
+  { q:'Quel jour vient juste après mercredi ?', correct:'Jeudi', choices:['Mardi','Mercredi','Jeudi','Vendredi'] },
+  { q:'Combien de mois dans une année ?', correct:'12 mois', choices:['7','10','12','24'] },
+  { q:'L\'école commence à 8h30 et la récré est à 10h30. Durée ?', correct:'2 heures', choices:['1 heure','2 heures','3 heures','30 min'] },
+  { q:'Le premier mois de l\'année est…', correct:'Janvier', choices:['Décembre','Janvier','Mars','Septembre'] },
+  { q:'Après samedi vient…', correct:'Dimanche', choices:['Lundi','Vendredi','Dimanche','Mercredi'] },
 ], 'ex3');
 
 buildOrdre([
   { q:'Range les jours dans l\'ordre (lundi en premier) :',
     items:['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi','Dimanche'] },
-  { q:'Range ces mois dans l\'ordre (du plus tÃ´t au plus tard dans l\'annÃ©e) :',
-    items:['Janvier','Avril','Juillet','Octobre','DÃ©cembre'] },
+  { q:'Range ces mois dans l\'ordre (du plus tôt au plus tard dans l\'année) :',
+    items:['Janvier','Avril','Juillet','Octobre','Décembre'] },
 ], 'ex4');
 
 buildQCM([
-  { q:'Combien font 2 piÃ¨ces de 1 â¬ ?', correct:'2 â¬', choices:['1 â¬','2 â¬','3 â¬','20 c'] },
-  { q:'Combien font 5 piÃ¨ces de 20 centimes ?', correct:'1 â¬', choices:['20 c','50 c','1 â¬','2 â¬'], hint:'5 Ã 20 c = 100 c = 1 â¬' },
-  { q:'J\'ai un billet de 5 â¬ et une piÃ¨ce de 2 â¬. Total ?', correct:'7 â¬', choices:['5 â¬','6 â¬','7 â¬','10 â¬'] },
-  { q:'Une gomme coÃ»te 50 c. Je paie avec 1 â¬. Ma monnaie ?', correct:'50 centimes', choices:['10 c','50 c','1 â¬','2 â¬'] },
-  { q:'Combien font 2 piÃ¨ces de 50 centimes ?', correct:'1 â¬', choices:['50 c','1 â¬','1,50 â¬','2 â¬'] },
-  { q:'J\'ai 3 piÃ¨ces de 2 â¬. Total ?', correct:'6 â¬', choices:['2 â¬','3 â¬','5 â¬','6 â¬'] },
+  { q:'Combien font 2 pièces de 1 € ?', correct:'2 €', choices:['1 €','2 €','3 €','20 c'] },
+  { q:'Combien font 5 pièces de 20 centimes ?', correct:'1 €', choices:['20 c','50 c','1 €','2 €'], hint:'5 × 20 c = 100 c = 1 €' },
+  { q:'J\'ai un billet de 5 € et une pièce de 2 €. Total ?', correct:'7 €', choices:['5 €','6 €','7 €','10 €'] },
+  { q:'Une gomme coûte 50 c. Je paie avec 1 €. Ma monnaie ?', correct:'50 centimes', choices:['10 c','50 c','1 €','2 €'] },
+  { q:'Combien font 2 pièces de 50 centimes ?', correct:'1 €', choices:['50 c','1 €','1,50 €','2 €'] },
+  { q:'J\'ai 3 pièces de 2 €. Total ?', correct:'6 €', choices:['2 €','3 €','5 €','6 €'] },
 ], 'ex5');
 
 buildPaires([
-  { q:'Associe chaque grandeur Ã  son unitÃ©.',
-    pairs:[['Longueur','cm ou m'],['Masse','g ou kg'],['Temps','min ou h'],['Argent','â¬']] },
-  { q:'Associe chaque objet Ã  l\'unitÃ© la mieux adaptÃ©e.',
-    pairs:[['Longueur d\'un livre','cm'],['Distance ParisâLyon','km'],['Masse d\'un chat','kg'],['DurÃ©e d\'un film','minutes']] },
+  { q:'Associe chaque grandeur à son unité.',
+    pairs:[['Longueur','cm ou m'],['Masse','g ou kg'],['Temps','min ou h'],['Argent','€']] },
+  { q:'Associe chaque objet à l\'unité la mieux adaptée.',
+    pairs:[['Longueur d\'un livre','cm'],['Distance Paris–Lyon','km'],['Masse d\'un chat','kg'],['Durée d\'un film','minutes']] },
 ], 'ex6');
 
 buildTri([
-  { q:'Classe chaque objet : pÃ¨se-t-il plus ou moins d\'1 kg ?',
-    cats:['â¬ï¸ Plus d\'1 kg','â¬ï¸ Moins d\'1 kg'],
+  { q:'Classe chaque objet : pèse-t-il plus ou moins d\'1 kg ?',
+    cats:['⬆️ Plus d\'1 kg','⬇️ Moins d\'1 kg'],
     items:[
-      {v:'ð Une pomme', cat:'â¬ï¸ Moins d\'1 kg'},
-      {v:'ð Un sac d\'Ã©cole', cat:'â¬ï¸ Plus d\'1 kg'},
-      {v:'ð± Un chat', cat:'â¬ï¸ Plus d\'1 kg'},
-      {v:'âï¸ Un crayon', cat:'â¬ï¸ Moins d\'1 kg'},
-      {v:'ð§ 1 L d\'eau', cat:'â¬ï¸ Plus d\'1 kg'},
-      {v:'ð Une feuille', cat:'â¬ï¸ Moins d\'1 kg'},
-      {v:'ðª¶ Une plume', cat:'â¬ï¸ Moins d\'1 kg'},
-      {v:'ð¦ 1 kg de farine', cat:'â¬ï¸ Plus d\'1 kg'},
+      {v:'🍎 Une pomme', cat:'⬇️ Moins d\'1 kg'},
+      {v:'📚 Un sac d\'école', cat:'⬆️ Plus d\'1 kg'},
+      {v:'🐱 Un chat', cat:'⬆️ Plus d\'1 kg'},
+      {v:'✏️ Un crayon', cat:'⬇️ Moins d\'1 kg'},
+      {v:'💧 1 L d\'eau', cat:'⬆️ Plus d\'1 kg'},
+      {v:'🍃 Une feuille', cat:'⬇️ Moins d\'1 kg'},
+      {v:'🪶 Une plume', cat:'⬇️ Moins d\'1 kg'},
+      {v:'📦 1 kg de farine', cat:'⬆️ Plus d\'1 kg'},
     ]
   },
 ], 'ex7');

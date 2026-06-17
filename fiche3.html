@@ -212,9 +212,9 @@ function buildClickables(containerId, feedbackId, symbol, count, correct) {
         container.querySelectorAll('span').forEach(s => {
           if (s.dataset.on === '1') s.style.background = '#86efac';
         });
-        fb.textContent = 'â Bravo !'; fb.style.color = '#166534';
+        fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
       } else if (selected > correct) {
-        fb.textContent = `â Trop ! (${selected}/${correct})`; fb.style.color = '#991b1b';
+        fb.textContent = `❌ Trop ! (${selected}/${correct})`; fb.style.color = '#991b1b';
       } else {
         container.querySelectorAll('[data-on="1"]').forEach(s => s.style.background = '#fbbf24');
         fb.textContent = '';
@@ -224,8 +224,8 @@ function buildClickables(containerId, feedbackId, symbol, count, correct) {
     container.appendChild(span);
   }
 }
-buildClickables('etoiles', 'fb-etoiles', 'â', 8, 4);
-buildClickables('ronds',   'fb-ronds',   'â', 12, 3);
+buildClickables('etoiles', 'fb-etoiles', '★', 8, 4);
+buildClickables('ronds',   'fb-ronds',   '●', 12, 3);
 
 // ---- Vrai / Faux ----
 const correctAnswers = { vf1:'vrai', vf2:'faux', vf3:'faux', vf4:'vrai', vf5:'vrai' };
@@ -239,11 +239,11 @@ function checkVF(btn, chosen, id) {
   if (chosen === correctAnswers[id]) {
     item.style.background = '#f0fdf4';
     item.style.borderColor = '#86efac';
-    showFeedback(item, 'â Bonne rÃ©ponse !', '#166534');
+    showFeedback(item, '✅ Bonne réponse !', '#166534');
   } else {
     item.style.background = '#fff1f2';
     item.style.borderColor = '#fca5a5';
-    showFeedback(item, 'â Essaie encore !', '#991b1b');
+    showFeedback(item, '❌ Essaie encore !', '#991b1b');
   }
 }
 
@@ -259,16 +259,16 @@ function showFeedback(item, msg, color) {
   fb.style.color = color;
 }
 
-// ---- Ex 4 : problÃ¨mes avec input ----
+// ---- Ex 4 : problèmes avec input ----
 function checkInput(inputId, correct, fbId) {
   const inp = document.getElementById(inputId);
   const fb  = document.getElementById(fbId);
   const val = inp.value.trim();
-  if (!val) { fb.textContent = 'âï¸ Ãcris ta rÃ©ponse !'; fb.style.color = '#92400e'; return; }
+  if (!val) { fb.textContent = '✏️ Écris ta réponse !'; fb.style.color = '#92400e'; return; }
   const ok = val === correct;
   inp.style.borderColor = ok ? '#22c55e' : '#ef4444';
   inp.style.color = ok ? '#166534' : '#991b1b';
-  fb.textContent = ok ? 'â Bravo !' : `â Pas tout Ã  faitâ¦ la bonne rÃ©ponse est ${correct}.`;
+  fb.textContent = ok ? '✅ Bravo !' : `❌ Pas tout à fait… la bonne réponse est ${correct}.`;
   fb.style.color = ok ? '#166534' : '#991b1b';
 }
 
@@ -276,28 +276,28 @@ function checkInputDouble(id1, c1, id2, c2, fbId) {
   const v1 = document.getElementById(id1).value.trim();
   const v2 = document.getElementById(id2).value.trim();
   const fb = document.getElementById(fbId);
-  if (!v1 || !v2) { fb.textContent = 'âï¸ Remplis les deux cases !'; fb.style.color = '#92400e'; return; }
+  if (!v1 || !v2) { fb.textContent = '✏️ Remplis les deux cases !'; fb.style.color = '#92400e'; return; }
   const ok1 = v1 === c1, ok2 = v2 === c2;
   document.getElementById(id1).style.borderColor = ok1 ? '#22c55e' : '#ef4444';
   document.getElementById(id2).style.borderColor = ok2 ? '#22c55e' : '#ef4444';
   document.getElementById(id1).style.color = ok1 ? '#166534' : '#991b1b';
   document.getElementById(id2).style.color = ok2 ? '#166534' : '#991b1b';
-  if (ok1 && ok2) { fb.textContent = 'â Bravo ! Les deux rÃ©ponses sont correctes !'; fb.style.color = '#166534'; }
-  else { fb.textContent = `â VÃ©rifieâ¦ rÃ©ponses attendues : ${c1} et ${c2}.`; fb.style.color = '#991b1b'; }
+  if (ok1 && ok2) { fb.textContent = '✅ Bravo ! Les deux réponses sont correctes !'; fb.style.color = '#166534'; }
+  else { fb.textContent = `❌ Vérifie… réponses attendues : ${c1} et ${c2}.`; fb.style.color = '#991b1b'; }
 }
 
 // ---- Ex 1 : QCM calculs ----
 const calculData = [
-  { label:'Â½ de 4',   correct:2,  choices:[1,2,3,4]    },
-  { label:'Â½ de 10',  correct:5,  choices:[4,5,6,7]    },
-  { label:'Â½ de 16',  correct:8,  choices:[6,7,8,9]    },
-  { label:'Â¼ de 4',   correct:1,  choices:[1,2,3,4]    },
-  { label:'Â¼ de 12',  correct:3,  choices:[2,3,4,6]    },
-  { label:'Â¼ de 20',  correct:5,  choices:[4,5,6,8]    },
-  { label:'â de 6',   correct:2,  choices:[1,2,3,4]    },
-  { label:'â de 12',  correct:4,  choices:[3,4,5,6]    },
-  { label:'â de 15',  correct:5,  choices:[4,5,6,7]    },
-  { label:'Â¾ de 8',   correct:6,  choices:[4,5,6,8]    },
+  { label:'½ de 4',   correct:2,  choices:[1,2,3,4]    },
+  { label:'½ de 10',  correct:5,  choices:[4,5,6,7]    },
+  { label:'½ de 16',  correct:8,  choices:[6,7,8,9]    },
+  { label:'¼ de 4',   correct:1,  choices:[1,2,3,4]    },
+  { label:'¼ de 12',  correct:3,  choices:[2,3,4,6]    },
+  { label:'¼ de 20',  correct:5,  choices:[4,5,6,8]    },
+  { label:'⅓ de 6',   correct:2,  choices:[1,2,3,4]    },
+  { label:'⅓ de 12',  correct:4,  choices:[3,4,5,6]    },
+  { label:'⅓ de 15',  correct:5,  choices:[4,5,6,7]    },
+  { label:'¾ de 8',   correct:6,  choices:[4,5,6,8]    },
 ];
 
 let score1 = 0;
@@ -322,7 +322,7 @@ calculData.forEach((q, i) => {
   const fb = document.createElement('span');
   fb.style.cssText = 'font-size:1rem;font-weight:800;min-width:24px;';
 
-  // MÃ©langer les choix
+  // Mélanger les choix
   const shuffled = [...q.choices].sort(() => Math.random() - 0.5);
   shuffled.forEach(val => {
     const btn = document.createElement('button');
@@ -339,16 +339,16 @@ calculData.forEach((q, i) => {
       btn.style.color = 'white';
       btn.style.borderColor = ok ? '#16a34a' : '#b91c1c';
       if (!ok) {
-        // Montrer la bonne rÃ©ponse
+        // Montrer la bonne réponse
         btns.querySelectorAll('button').forEach(b => {
           if (parseInt(b.textContent) === q.correct) { b.style.background='#22c55e'; b.style.color='white'; b.style.borderColor='#16a34a'; }
         });
       }
-      fb.textContent = ok ? 'â' : 'â';
+      fb.textContent = ok ? '✅' : '❌';
       fb.style.color = ok ? '#166534' : '#991b1b';
       card.style.borderColor = ok ? '#86efac' : '#fca5a5';
       if (ok) { score1++; scoreEl.textContent = `${score1} / 10`; }
-      if (score1 === 10) { scoreEl.textContent = '10 / 10 ð'; scoreEl.style.background = '#dcfce7'; scoreEl.style.borderColor = '#86efac'; scoreEl.style.color = '#166534'; }
+      if (score1 === 10) { scoreEl.textContent = '10 / 10 🎉'; scoreEl.style.background = '#dcfce7'; scoreEl.style.borderColor = '#86efac'; scoreEl.style.color = '#166534'; }
     });
     btns.appendChild(btn);
   });

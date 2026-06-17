@@ -150,7 +150,7 @@ function makeSVG(type, size) {
   const path = document.createElementNS(ns, 'path');
   path.setAttribute('fill', fill); path.setAttribute('stroke', stroke); path.setAttribute('stroke-width', sw);
 
-  if (type === 'carrÃ©') {
+  if (type === 'carré') {
     path.setAttribute('d', 'M 15 15 L 65 15 L 65 65 L 15 65 Z');
   } else if (type === 'rectangle') {
     path.setAttribute('d', 'M 8 22 L 72 22 L 72 58 L 8 58 Z');
@@ -172,10 +172,10 @@ function makeSVG(type, size) {
 
 // EXERCICE 1
 const figData = [
-  { type: 'carrÃ©', choices: ['CarrÃ©', 'Rectangle', 'Losange', 'Triangle'], correct: 'CarrÃ©' },
-  { type: 'rectangle', choices: ['CarrÃ©', 'Rectangle', 'Triangle', 'Losange'], correct: 'Rectangle' },
+  { type: 'carré', choices: ['Carré', 'Rectangle', 'Losange', 'Triangle'], correct: 'Carré' },
+  { type: 'rectangle', choices: ['Carré', 'Rectangle', 'Triangle', 'Losange'], correct: 'Rectangle' },
   { type: 'triangle', choices: ['Triangle', 'Losange', 'Cercle', 'Rectangle'], correct: 'Triangle' },
-  { type: 'losange', choices: ['CarrÃ©', 'Losange', 'Rectangle', 'Triangle'], correct: 'Losange' },
+  { type: 'losange', choices: ['Carré', 'Losange', 'Rectangle', 'Triangle'], correct: 'Losange' },
   { type: 'cercle', choices: ['Ovale', 'Disque', 'Cercle', 'Triangle'], correct: 'Cercle' },
 ];
 
@@ -203,23 +203,23 @@ function checkFig(btn, chosen, correct, idx) {
   document.getElementById(`fig-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
   if (chosen === correct) {
     btn.classList.add('correct');
-    document.getElementById(`fig-fb-${idx}`).textContent = 'â Bravo !'; document.getElementById(`fig-fb-${idx}`).style.color = '#166534';
+    document.getElementById(`fig-fb-${idx}`).textContent = '✅ Bravo !'; document.getElementById(`fig-fb-${idx}`).style.color = '#166534';
     scoreFig++; document.getElementById('score-fig').textContent = `Score : ${scoreFig} / 5`;
   } else {
     btn.classList.add('wrong');
-    document.getElementById(`fig-fb-${idx}`).textContent = `â C'Ã©tait ${correct}`; document.getElementById(`fig-fb-${idx}`).style.color = '#991b1b';
+    document.getElementById(`fig-fb-${idx}`).textContent = `❌ C'était ${correct}`; document.getElementById(`fig-fb-${idx}`).style.color = '#991b1b';
     document.getElementById(`fig-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
   }
 }
 
-// EXERCICE 2 : VF propriÃ©tÃ©s
+// EXERCICE 2 : VF propriétés
 const vfData = [
-  { txt: 'Un carrÃ© a 4 cÃ´tÃ©s Ã©gaux.', correct: true },
+  { txt: 'Un carré a 4 côtés égaux.', correct: true },
   { txt: 'Un rectangle a 3 angles droits.', correct: false, exp: '4 angles droits' },
-  { txt: 'Un triangle a 4 cÃ´tÃ©s.', correct: false, exp: '3 cÃ´tÃ©s' },
-  { txt: 'Un losange a 4 cÃ´tÃ©s Ã©gaux.', correct: true },
-  { txt: 'Un carrÃ© est aussi un rectangle.', correct: true },
-  { txt: 'Le cercle a des cÃ´tÃ©s droits.', correct: false, exp: 'pas de cÃ´tÃ© droit' },
+  { txt: 'Un triangle a 4 côtés.', correct: false, exp: '3 côtés' },
+  { txt: 'Un losange a 4 côtés égaux.', correct: true },
+  { txt: 'Un carré est aussi un rectangle.', correct: true },
+  { txt: 'Le cercle a des côtés droits.', correct: false, exp: 'pas de côté droit' },
 ];
 
 const ex2Container = document.getElementById('ex2-container');
@@ -245,21 +245,21 @@ function checkVF(btn, chosen, correct, fbId, exp) {
   const fb = document.getElementById(fbId);
   if (chosen === correct) {
     btn.style.background = '#22c55e'; btn.style.color = 'white';
-    fb.textContent = 'â Bravo !'; fb.style.color = '#166534';
+    fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
   } else {
     btn.style.background = '#ef4444'; btn.style.color = 'white'; btn.style.borderColor = '#b91c1c';
-    const msg = exp ? `â Faux â ${exp}` : 'â Pas tout Ã  fait !';
+    const msg = exp ? `❌ Faux — ${exp}` : '❌ Pas tout à fait !';
     fb.textContent = msg; fb.style.color = '#991b1b';
   }
 }
 
-// EXERCICE 3 : pÃ©rimÃ¨tre
+// EXERCICE 3 : périmètre
 const perimData = [
-  { desc: 'CarrÃ© de cÃ´tÃ© <strong>5 cm</strong>', correct: '20 cm', choices: ['10 cm', '15 cm', '20 cm', '25 cm'] },
+  { desc: 'Carré de côté <strong>5 cm</strong>', correct: '20 cm', choices: ['10 cm', '15 cm', '20 cm', '25 cm'] },
   { desc: 'Rectangle : longueur <strong>8 cm</strong>, largeur <strong>3 cm</strong>', correct: '22 cm', choices: ['24 cm', '22 cm', '11 cm', '18 cm'] },
-  { desc: 'Triangle Ã©quilatÃ©ral de cÃ´tÃ© <strong>6 cm</strong>', correct: '18 cm', choices: ['12 cm', '18 cm', '24 cm', '36 cm'] },
+  { desc: 'Triangle équilatéral de côté <strong>6 cm</strong>', correct: '18 cm', choices: ['12 cm', '18 cm', '24 cm', '36 cm'] },
   { desc: 'Rectangle : longueur <strong>10 cm</strong>, largeur <strong>4 cm</strong>', correct: '28 cm', choices: ['28 cm', '40 cm', '14 cm', '20 cm'] },
-  { desc: 'CarrÃ© de cÃ´tÃ© <strong>9 cm</strong>', correct: '36 cm', choices: ['18 cm', '27 cm', '36 cm', '81 cm'] },
+  { desc: 'Carré de côté <strong>9 cm</strong>', correct: '36 cm', choices: ['18 cm', '27 cm', '36 cm', '81 cm'] },
 ];
 
 let scorePerim = 0;
@@ -269,7 +269,7 @@ perimData.forEach((item, idx) => {
   div.className = 'q-block';
   const shuffled = shuffle(item.choices);
   div.innerHTML = `
-    <div class="q-text">${item.desc} â PÃ©rimÃ¨tre = ?</div>
+    <div class="q-text">${item.desc} → Périmètre = ?</div>
     <div class="qcm-row" id="per-choices-${idx}">
       ${shuffled.map(c => `<button class="btn-choice" onclick="checkPerim(this,'${c}','${item.correct}',${idx})">${c}</button>`).join('')}
     </div>
@@ -282,22 +282,22 @@ function checkPerim(btn, chosen, correct, idx) {
   document.getElementById(`per-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
   if (chosen === correct) {
     btn.classList.add('correct');
-    document.getElementById(`per-fb-${idx}`).textContent = 'â Bravo !'; document.getElementById(`per-fb-${idx}`).style.color = '#166534';
+    document.getElementById(`per-fb-${idx}`).textContent = '✅ Bravo !'; document.getElementById(`per-fb-${idx}`).style.color = '#166534';
     scorePerim++; document.getElementById('score-perim').textContent = `Score : ${scorePerim} / 5`;
   } else {
     btn.classList.add('wrong');
-    document.getElementById(`per-fb-${idx}`).textContent = `â C'Ã©tait ${correct}`; document.getElementById(`per-fb-${idx}`).style.color = '#991b1b';
+    document.getElementById(`per-fb-${idx}`).textContent = `❌ C'était ${correct}`; document.getElementById(`per-fb-${idx}`).style.color = '#991b1b';
     document.getElementById(`per-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
   }
 }
 
 // EXERCICE 4 : angles droits
 const angData = [
-  { q: 'Combien d\'angles droits a un carrÃ© ?', correct: '4', choices: ['1', '2', '3', '4'] },
+  { q: 'Combien d\'angles droits a un carré ?', correct: '4', choices: ['1', '2', '3', '4'] },
   { q: 'Combien d\'angles droits a un rectangle ?', correct: '4', choices: ['2', '3', '4', '0'] },
   { q: 'Combien d\'angles droits a un triangle quelconque ?', correct: '0', choices: ['0', '1', '2', '3'] },
   { q: 'Combien d\'angles droits a un triangle rectangle ?', correct: '1', choices: ['0', '1', '2', '3'] },
-  { q: 'Combien d\'angles droits a un losange (non carrÃ©) ?', correct: '0', choices: ['0', '2', '4', '1'] },
+  { q: 'Combien d\'angles droits a un losange (non carré) ?', correct: '0', choices: ['0', '2', '4', '1'] },
 ];
 
 const ex4Container = document.getElementById('ex4-container');
@@ -319,21 +319,21 @@ function checkAng(btn, chosen, correct, idx) {
   document.getElementById(`ang-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
   if (chosen === correct) {
     btn.classList.add('correct');
-    document.getElementById(`ang-fb-${idx}`).textContent = 'â Bravo !'; document.getElementById(`ang-fb-${idx}`).style.color = '#166534';
+    document.getElementById(`ang-fb-${idx}`).textContent = '✅ Bravo !'; document.getElementById(`ang-fb-${idx}`).style.color = '#166534';
   } else {
     btn.classList.add('wrong');
-    document.getElementById(`ang-fb-${idx}`).textContent = `â C'Ã©tait ${correct}`; document.getElementById(`ang-fb-${idx}`).style.color = '#991b1b';
+    document.getElementById(`ang-fb-${idx}`).textContent = `❌ C'était ${correct}`; document.getElementById(`ang-fb-${idx}`).style.color = '#991b1b';
     document.getElementById(`ang-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
   }
 }
 
-// EXERCICE 5 : symÃ©trie
+// EXERCICE 5 : symétrie
 const symData = [
-  { txt: 'Un carrÃ© a au moins un axe de symÃ©trie.', correct: true },
-  { txt: 'Un rectangle a exactement 2 axes de symÃ©trie.', correct: true },
-  { txt: 'Un triangle quelconque a toujours un axe de symÃ©trie.', correct: false, exp: 'Pas forcÃ©ment !' },
-  { txt: 'Un cercle a une infinitÃ© d\'axes de symÃ©trie.', correct: true },
-  { txt: 'Pour vÃ©rifier la symÃ©trie, on peut plier la figure.', correct: true },
+  { txt: 'Un carré a au moins un axe de symétrie.', correct: true },
+  { txt: 'Un rectangle a exactement 2 axes de symétrie.', correct: true },
+  { txt: 'Un triangle quelconque a toujours un axe de symétrie.', correct: false, exp: 'Pas forcément !' },
+  { txt: 'Un cercle a une infinité d\'axes de symétrie.', correct: true },
+  { txt: 'Pour vérifier la symétrie, on peut plier la figure.', correct: true },
 ];
 
 const ex5Container = document.getElementById('ex5-container');

@@ -112,48 +112,48 @@
 <script>
 buildQCM([
   { card:'234,56 + 78,345 = ?', q:'Additionne', correct:'312,905', choices:['311,905','312,905','312,915','313,905'] },
-  { card:'1 000,000 â 345,678 = ?', q:'Soustrait', correct:'654,322', choices:['644,322','654,322','655,322','664,322'] },
+  { card:'1 000,000 − 345,678 = ?', q:'Soustrait', correct:'654,322', choices:['644,322','654,322','655,322','664,322'] },
   { card:'45,67 + 123,456 = ?', q:'Additionne', correct:'169,126', choices:['168,126','169,026','169,126','170,126'] },
-  { card:'7 000,00 â 1 234,56 = ?', q:'Soustrait', correct:'5 765,44', choices:['5 665,44','5 765,44','5 875,44','5 966,44'] },
+  { card:'7 000,00 − 1 234,56 = ?', q:'Soustrait', correct:'5 765,44', choices:['5 665,44','5 765,44','5 875,44','5 966,44'] },
 ], 'ex1');
 
 buildQCM([
-  { card:'345 Ã 67 = ?', q:'Multiplie', correct:'23 115', choices:['23 015','23 115','23 215','24 115'] },
-  { card:'456 Ã 123 = ?', q:'Multiplie', correct:'56 088', choices:['55 088','56 088','57 088','56 188'] },
-  { card:'2,34 Ã 56 = ?', q:'Multiplie un dÃ©cimal', correct:'131,04', choices:['131,04','130,14','132,04','131,40'] },
-  { card:'7,8 Ã 45 = ?', q:'Multiplie un dÃ©cimal', correct:'351', choices:['340','351','360','370'] },
-  { card:'1,25 Ã 8 = ?', q:'Multiplie un dÃ©cimal', correct:'10', choices:['8','9','10','12'] },
+  { card:'345 × 67 = ?', q:'Multiplie', correct:'23 115', choices:['23 015','23 115','23 215','24 115'] },
+  { card:'456 × 123 = ?', q:'Multiplie', correct:'56 088', choices:['55 088','56 088','57 088','56 188'] },
+  { card:'2,34 × 56 = ?', q:'Multiplie un décimal', correct:'131,04', choices:['131,04','130,14','132,04','131,40'] },
+  { card:'7,8 × 45 = ?', q:'Multiplie un décimal', correct:'351', choices:['340','351','360','370'] },
+  { card:'1,25 × 8 = ?', q:'Multiplie un décimal', correct:'10', choices:['8','9','10','12'] },
 ], 'ex2');
 
 buildQCM([
-  { card:'17,4 Ã· 4 = ?', q:'Division dÃ©cimale', correct:'4,35', choices:['4,3','4,35','4,4','4,5'] },
-  { card:'23,1 Ã· 6 = ?', q:'Division dÃ©cimale', correct:'3,85', choices:['3,7','3,8','3,85','4'] },
-  { card:'45,6 Ã· 8 = ?', q:'Division dÃ©cimale', correct:'5,7', choices:['5,6','5,7','5,8','6'] },
-  { card:'12,5 Ã· 4 = ?', q:'Division dÃ©cimale', correct:'3,125', choices:['3,1','3,12','3,125','3,25'] },
-  { card:'7,2 Ã· 5 = ?', q:'Division dÃ©cimale', correct:'1,44', choices:['1,4','1,44','1,45','1,5'] },
+  { card:'17,4 ÷ 4 = ?', q:'Division décimale', correct:'4,35', choices:['4,3','4,35','4,4','4,5'] },
+  { card:'23,1 ÷ 6 = ?', q:'Division décimale', correct:'3,85', choices:['3,7','3,8','3,85','4'] },
+  { card:'45,6 ÷ 8 = ?', q:'Division décimale', correct:'5,7', choices:['5,6','5,7','5,8','6'] },
+  { card:'12,5 ÷ 4 = ?', q:'Division décimale', correct:'3,125', choices:['3,1','3,12','3,125','3,25'] },
+  { card:'7,2 ÷ 5 = ?', q:'Division décimale', correct:'1,44', choices:['1,4','1,44','1,45','1,5'] },
 ], 'ex3');
 
 buildVF([
   { q:'234,56 + 78,345 = 312,905', correct:true },
-  { q:'345 Ã 67 = 23 115', correct:true },
-  { q:'17,4 Ã· 4 = 4,35', correct:true },
-  { q:'1 000,000 â 345,678 = 654,322', correct:true },
-  { q:'7,8 Ã 45 = 360', correct:false, expl:'7,8 Ã 45 = 351' },
-  { q:'23,1 Ã· 6 = 3,85', correct:true },
+  { q:'345 × 67 = 23 115', correct:true },
+  { q:'17,4 ÷ 4 = 4,35', correct:true },
+  { q:'1 000,000 − 345,678 = 654,322', correct:true },
+  { q:'7,8 × 45 = 360', correct:false, expl:'7,8 × 45 = 351' },
+  { q:'23,1 ÷ 6 = 3,85', correct:true },
 ], 'ex4');
 
 buildQCM([
-  { card:'3â5 Ã 67 = 23 115', q:'Chiffre manquant', correct:'4', choices:['3','4','5','6'] },
-  { card:'17,â Ã· 4 = 4,35', q:'Chiffre manquant', correct:'4', choices:['0','2','4','6'] },
-  { card:'â,8 Ã 45 = 351', q:'Chiffre manquant', correct:'7', choices:['5','6','7','8'] },
-  { card:'23â,56 + 78,345 = 312,905', q:'Chiffre manquant', correct:'4', choices:['2','3','4','5'] },
+  { card:'3☐5 × 67 = 23 115', q:'Chiffre manquant', correct:'4', choices:['3','4','5','6'] },
+  { card:'17,☐ ÷ 4 = 4,35', q:'Chiffre manquant', correct:'4', choices:['0','2','4','6'] },
+  { card:'☐,8 × 45 = 351', q:'Chiffre manquant', correct:'7', choices:['5','6','7','8'] },
+  { card:'23☐,56 + 78,345 = 312,905', q:'Chiffre manquant', correct:'4', choices:['2','3','4','5'] },
 ], 'ex5');
 
 buildPaires([
-  { q:'Associe chaque opÃ©ration Ã  son rÃ©sultat.',
-    pairs:[['345 Ã 67','23 115'],['17,4 Ã· 4','4,35'],['234,56 + 78,345','312,905'],['7,8 Ã 45','351']] },
-  { q:'Associe chaque opÃ©ration Ã  son rÃ©sultat.',
-    pairs:[['456 Ã 123','56 088'],['45,6 Ã· 8','5,7'],['1,25 Ã 8','10'],['7 000 â 1 234,56','5 765,44']] },
+  { q:'Associe chaque opération à son résultat.',
+    pairs:[['345 × 67','23 115'],['17,4 ÷ 4','4,35'],['234,56 + 78,345','312,905'],['7,8 × 45','351']] },
+  { q:'Associe chaque opération à son résultat.',
+    pairs:[['456 × 123','56 088'],['45,6 ÷ 8','5,7'],['1,25 × 8','10'],['7 000 − 1 234,56','5 765,44']] },
 ], 'ex6');
 </script>
 

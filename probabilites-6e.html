@@ -127,46 +127,46 @@ function check(btn, chosen, correct, rowId, fbId) {
   document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
   const fb = document.getElementById(fbId);
   if (chosen === correct) {
-    btn.classList.add('correct'); fb.innerHTML = 'â Bravo !'; fb.style.color = '#166534';
+    btn.classList.add('correct'); fb.innerHTML = '✅ Bravo !'; fb.style.color = '#166534';
   } else {
-    btn.classList.add('wrong'); fb.innerHTML = 'â C\'Ã©tait ' + formatFrac(correct); fb.style.color = '#991b1b';
+    btn.classList.add('wrong'); fb.innerHTML = '❌ C\'était ' + formatFrac(correct); fb.style.color = '#991b1b';
     document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.dataset.val === correct) b.classList.add('correct'); });
   }
 }
 
 buildQ([
-  { enonce: 'ð² On lance un dÃ© Ã  6 faces numÃ©rotÃ©es de 1 Ã  6.', q: 'Obtenir un nombre entre 1 et 6, c\'estâ¦', correct: 'Certain', choices: ['Certain','Impossible','Possible mais pas certain','TrÃ¨s probable'] },
-  { enonce: 'ð² On lance un dÃ© Ã  6 faces numÃ©rotÃ©es de 1 Ã  6.', q: 'Obtenir le chiffre 8, c\'estâ¦', correct: 'Impossible', choices: ['Certain','Impossible','Possible','TrÃ¨s rare'] },
-  { enonce: 'ð² On lance un dÃ© Ã  6 faces numÃ©rotÃ©es de 1 Ã  6.', q: 'Obtenir un nombre impair, c\'estâ¦', correct: 'Possible mais pas certain', choices: ['Certain','Impossible','Possible mais pas certain','TrÃ¨s probable'] },
-  { enonce: 'ð Un sac contient 5 boules rouges. On tire une boule au hasard.', q: 'Obtenir une boule rouge, c\'estâ¦', correct: 'Certain', choices: ['Certain','Impossible','Possible','TrÃ¨s probable'] },
-  { enonce: 'ð Un sac contient 3 boules rouges et 2 boules bleues.', q: 'Tirer une boule verte, c\'estâ¦', correct: 'Impossible', choices: ['Certain','Impossible','Possible','Peu probable'] },
+  { enonce: '🎲 On lance un dé à 6 faces numérotées de 1 à 6.', q: 'Obtenir un nombre entre 1 et 6, c\'est…', correct: 'Certain', choices: ['Certain','Impossible','Possible mais pas certain','Très probable'] },
+  { enonce: '🎲 On lance un dé à 6 faces numérotées de 1 à 6.', q: 'Obtenir le chiffre 8, c\'est…', correct: 'Impossible', choices: ['Certain','Impossible','Possible','Très rare'] },
+  { enonce: '🎲 On lance un dé à 6 faces numérotées de 1 à 6.', q: 'Obtenir un nombre impair, c\'est…', correct: 'Possible mais pas certain', choices: ['Certain','Impossible','Possible mais pas certain','Très probable'] },
+  { enonce: '👜 Un sac contient 5 boules rouges. On tire une boule au hasard.', q: 'Obtenir une boule rouge, c\'est…', correct: 'Certain', choices: ['Certain','Impossible','Possible','Très probable'] },
+  { enonce: '👜 Un sac contient 3 boules rouges et 2 boules bleues.', q: 'Tirer une boule verte, c\'est…', correct: 'Impossible', choices: ['Certain','Impossible','Possible','Peu probable'] },
 ], 'ex1');
 
 buildQ([
-  { enonce: 'ð² On lance un dÃ© Ã©quilibrÃ© Ã  6 faces (de 1 Ã  6).', q: 'Quelle est la probabilitÃ© d\'obtenir le 6 ?', correct: '1/6', choices: ['1/3','1/4','1/6','6/6'] },
-  { enonce: 'ð² On lance un dÃ© Ã©quilibrÃ© Ã  6 faces (de 1 Ã  6).', q: 'Quelle est la probabilitÃ© d\'obtenir un nombre pair ?', correct: '1/2', choices: ['1/6','1/3','1/2','2/3'] },
-  { enonce: 'ðª On lance une piÃ¨ce de monnaie Ã©quilibrÃ©e (face/pile).', q: 'Quelle est la probabilitÃ© d\'obtenir Â« pile Â» ?', correct: '1/2', choices: ['1/3','1/2','2/3','3/4'] },
-  { enonce: 'ð² On lance un dÃ© Ã  6 faces.', q: 'Quelle est la probabilitÃ© d\'obtenir un nombre supÃ©rieur Ã  4 ?', correct: '1/3', choices: ['1/6','1/4','1/3','1/2'] },
+  { enonce: '🎲 On lance un dé équilibré à 6 faces (de 1 à 6).', q: 'Quelle est la probabilité d\'obtenir le 6 ?', correct: '1/6', choices: ['1/3','1/4','1/6','6/6'] },
+  { enonce: '🎲 On lance un dé équilibré à 6 faces (de 1 à 6).', q: 'Quelle est la probabilité d\'obtenir un nombre pair ?', correct: '1/2', choices: ['1/6','1/3','1/2','2/3'] },
+  { enonce: '🪙 On lance une pièce de monnaie équilibrée (face/pile).', q: 'Quelle est la probabilité d\'obtenir « pile » ?', correct: '1/2', choices: ['1/3','1/2','2/3','3/4'] },
+  { enonce: '🎲 On lance un dé à 6 faces.', q: 'Quelle est la probabilité d\'obtenir un nombre supérieur à 4 ?', correct: '1/3', choices: ['1/6','1/4','1/3','1/2'] },
 ], 'ex2');
 
 buildQ([
-  { enonce: 'ð Un sac contient 10 boules : 4 rouges, 3 bleues, 2 vertes et 1 jaune. On tire une boule au hasard.', q: 'Quelle est la probabilitÃ© de tirer une boule rouge ?', correct: '4/10 = 2/5', choices: ['1/10','3/10','4/10 = 2/5','5/10'] },
-  { enonce: 'ð Dans ce mÃªme sac (4 rouges, 3 bleues, 2 vertes, 1 jaune).', q: 'Quelle est la probabilitÃ© de NE PAS tirer une boule verte ?', correct: '8/10 = 4/5', choices: ['2/10','4/10','6/10','8/10 = 4/5'] },
-  { enonce: 'ð Dans un jeu de 32 cartes, il y a 8 as (1 par couleur Ã 2 jeux de 4). On tire une carte au hasard.', q: 'Quelle est la probabilitÃ© de tirer un as ?', correct: '1/4', choices: ['1/8','1/4','1/32','8/32'] },
-  { enonce: 'ð² On lance deux dÃ©s Ã  6 faces et on additionne les rÃ©sultats.', q: 'Quelle probabilitÃ© a-t-on d\'obtenir un total de 2 ? (obtenir 1+1)', correct: '1/36', choices: ['1/6','1/12','1/36','2/36'] },
+  { enonce: '👜 Un sac contient 10 boules : 4 rouges, 3 bleues, 2 vertes et 1 jaune. On tire une boule au hasard.', q: 'Quelle est la probabilité de tirer une boule rouge ?', correct: '4/10 = 2/5', choices: ['1/10','3/10','4/10 = 2/5','5/10'] },
+  { enonce: '👜 Dans ce même sac (4 rouges, 3 bleues, 2 vertes, 1 jaune).', q: 'Quelle est la probabilité de NE PAS tirer une boule verte ?', correct: '8/10 = 4/5', choices: ['2/10','4/10','6/10','8/10 = 4/5'] },
+  { enonce: '🃏 Dans un jeu de 32 cartes, il y a 8 as (1 par couleur × 2 jeux de 4). On tire une carte au hasard.', q: 'Quelle est la probabilité de tirer un as ?', correct: '1/4', choices: ['1/8','1/4','1/32','8/32'] },
+  { enonce: '🎲 On lance deux dés à 6 faces et on additionne les résultats.', q: 'Quelle probabilité a-t-on d\'obtenir un total de 2 ? (obtenir 1+1)', correct: '1/36', choices: ['1/6','1/12','1/36','2/36'] },
 ], 'ex3');
 
 buildQ([
-  { enonce: 'ð Sac A : 3 boules rouges sur 10. Sac B : 2 boules rouges sur 6.', q: 'Dans quel sac la probabilitÃ© de tirer une boule rouge est-elle plus grande ?', correct: 'Sac B (2/6 = 1/3 > 3/10)', choices: ['Sac A (3/10)','Sac B (2/6 = 1/3 > 3/10)','Ils sont Ã©quivalents','Impossible Ã  comparer'] },
-  { enonce: 'ð² On lance un dÃ© Ã  6 faces.', q: 'Quel Ã©vÃ¨nement est le plus probable ?', correct: 'Obtenir un nombre â¤ 4 (prob = 2/3)', choices: ['Obtenir le 6 (prob = 1/6)','Obtenir un nombre pair (prob = 1/2)','Obtenir un nombre â¤ 4 (prob = 2/3)','Obtenir un multiple de 3 (prob = 1/3)'] },
-  { enonce: 'On place 0, 1/4, 1/2, 3/4 et 1 sur une Ã©chelle de probabilitÃ©.', q: 'Un Ã©vÃ¨nement "trÃ¨s probable mais pas certain" correspond Ã  une probabilitÃ© proche deâ¦', correct: 'proche de 1', choices: ['proche de 0','proche de 1/4','proche de 1/2','proche de 1'] },
+  { enonce: '👜 Sac A : 3 boules rouges sur 10. Sac B : 2 boules rouges sur 6.', q: 'Dans quel sac la probabilité de tirer une boule rouge est-elle plus grande ?', correct: 'Sac B (2/6 = 1/3 > 3/10)', choices: ['Sac A (3/10)','Sac B (2/6 = 1/3 > 3/10)','Ils sont équivalents','Impossible à comparer'] },
+  { enonce: '🎲 On lance un dé à 6 faces.', q: 'Quel évènement est le plus probable ?', correct: 'Obtenir un nombre ≤ 4 (prob = 2/3)', choices: ['Obtenir le 6 (prob = 1/6)','Obtenir un nombre pair (prob = 1/2)','Obtenir un nombre ≤ 4 (prob = 2/3)','Obtenir un multiple de 3 (prob = 1/3)'] },
+  { enonce: 'On place 0, 1/4, 1/2, 3/4 et 1 sur une échelle de probabilité.', q: 'Un évènement "très probable mais pas certain" correspond à une probabilité proche de…', correct: 'proche de 1', choices: ['proche de 0','proche de 1/4','proche de 1/2','proche de 1'] },
 ], 'ex4');
 
 buildQ([
-  { enonce: 'ð² On lance un dÃ© 60 fois. Le 3 sort 12 fois.', q: 'Quelle est la frÃ©quence d\'apparition du 3 ?', correct: '1/5 = 20%', choices: ['1/6','1/5 = 20%','1/3','12%'] },
-  { enonce: 'ðª On lance une piÃ¨ce 200 fois. Â« Face Â» apparaÃ®t 97 fois.', q: 'Cette frÃ©quence est-elle proche de la probabilitÃ© thÃ©orique ?', correct: 'Oui, 97/200 = 48,5% â 50%', choices: ['Non, le rÃ©sultat devrait Ãªtre exactement 100/200','Oui, 97/200 = 48,5% â 50%','Non, la probabilitÃ© est 1/6','Oui, mais seulement si on relance'] },
-  { enonce: 'ð Dans une classe de 25 Ã©lÃ¨ves, 10 ont les yeux bleus.', q: 'Quelle est la frÃ©quence d\'Ã©lÃ¨ves aux yeux bleus dans cette classe ?', correct: '2/5 = 40%', choices: ['1/5','2/5 = 40%','1/2','10%'] },
-  { enonce: 'On tire au hasard une lettre du mot MATHEMATIQUES (13 lettres).', q: 'Quelle est la probabilitÃ© de tirer la lettre M ? (il y a 2 M)', correct: '2/13', choices: ['1/13','2/13','1/12','1/6'] },
+  { enonce: '🎲 On lance un dé 60 fois. Le 3 sort 12 fois.', q: 'Quelle est la fréquence d\'apparition du 3 ?', correct: '1/5 = 20%', choices: ['1/6','1/5 = 20%','1/3','12%'] },
+  { enonce: '🪙 On lance une pièce 200 fois. « Face » apparaît 97 fois.', q: 'Cette fréquence est-elle proche de la probabilité théorique ?', correct: 'Oui, 97/200 = 48,5% ≈ 50%', choices: ['Non, le résultat devrait être exactement 100/200','Oui, 97/200 = 48,5% ≈ 50%','Non, la probabilité est 1/6','Oui, mais seulement si on relance'] },
+  { enonce: '📊 Dans une classe de 25 élèves, 10 ont les yeux bleus.', q: 'Quelle est la fréquence d\'élèves aux yeux bleus dans cette classe ?', correct: '2/5 = 40%', choices: ['1/5','2/5 = 40%','1/2','10%'] },
+  { enonce: 'On tire au hasard une lettre du mot MATHEMATIQUES (13 lettres).', q: 'Quelle est la probabilité de tirer la lettre M ? (il y a 2 M)', correct: '2/13', choices: ['1/13','2/13','1/12','1/6'] },
 ], 'ex5');
 </script>
 

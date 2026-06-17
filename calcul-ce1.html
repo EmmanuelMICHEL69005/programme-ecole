@@ -112,13 +112,13 @@ buildQCM([
 ], 'ex1');
 
 buildQCM([
-  { card:'87 â 34 = ?', q:'Calcule', correct:'53', choices:['43','53','57','63'] },
-  { card:'95 â 42 = ?', q:'Calcule', correct:'53', choices:['43','53','57','63'] },
-  { card:'76 â 51 = ?', q:'Calcule', correct:'25', choices:['15','25','35','27'] },
-  { card:'68 â 35 = ?', q:'Calcule', correct:'33', choices:['23','33','43','32'] },
-  { card:'89 â 46 = ?', q:'Calcule', correct:'43', choices:['33','43','53','47'] },
-  { card:'57 â 24 = ?', q:'Calcule', correct:'33', choices:['23','33','43','34'] },
-  { card:'100 â 40 = ?', q:'Calcule', correct:'60', choices:['40','50','60','70'] },
+  { card:'87 − 34 = ?', q:'Calcule', correct:'53', choices:['43','53','57','63'] },
+  { card:'95 − 42 = ?', q:'Calcule', correct:'53', choices:['43','53','57','63'] },
+  { card:'76 − 51 = ?', q:'Calcule', correct:'25', choices:['15','25','35','27'] },
+  { card:'68 − 35 = ?', q:'Calcule', correct:'33', choices:['23','33','43','32'] },
+  { card:'89 − 46 = ?', q:'Calcule', correct:'43', choices:['33','43','53','47'] },
+  { card:'57 − 24 = ?', q:'Calcule', correct:'33', choices:['23','33','43','34'] },
+  { card:'100 − 40 = ?', q:'Calcule', correct:'60', choices:['40','50','60','70'] },
 ], 'ex2');
 
 buildQCM([
@@ -128,37 +128,37 @@ buildQCM([
   { card:'256 + 234 = ?', q:'Calcule', correct:'490', choices:['480','488','490','500'] },
   { card:'175 + 225 = ?', q:'Calcule', correct:'400', choices:['390','398','400','410'] },
   { card:'348 + 47 = ?', q:'Calcule', correct:'395', choices:['385','393','395','405'] },
-  { card:'500 â 200 = ?', q:'Calcule', correct:'300', choices:['200','300','400','700'] },
+  { card:'500 − 200 = ?', q:'Calcule', correct:'300', choices:['200','300','400','700'] },
 ], 'ex3');
 
 buildVF([
   { card:'45 + 38 = 83', q:'45 + 38 = 83', correct:true },
-  { card:'76 â 29 = 57', q:'76 â 29 = 57', correct:false, expl:'76 â 29 = 47' },
-  { card:'100 â 35 = 65', q:'100 â 35 = 65', correct:true },
+  { card:'76 − 29 = 57', q:'76 − 29 = 57', correct:false, expl:'76 − 29 = 47' },
+  { card:'100 − 35 = 65', q:'100 − 35 = 65', correct:true },
   { card:'247 + 153 = 400', q:'247 + 153 = 400', correct:true },
   { card:'58 + 47 = 95', q:'58 + 47 = 95', correct:false, expl:'58 + 47 = 105' },
-  { card:'300 â 150 = 200', q:'300 â 150 = 200', correct:false, expl:'300 â 150 = 150' },
+  { card:'300 − 150 = 200', q:'300 − 150 = 200', correct:false, expl:'300 − 150 = 150' },
   { q:'63 + 28 = 91', correct:true },
 ], 'ex4');
 
 buildQCM([
-  { card:'â + 23 = 50', q:'Quel nombre manque ?', correct:'27', choices:['23','25','27','29'] },
-  { card:'45 + â = 80', q:'Quel nombre manque ?', correct:'35', choices:['25','35','45','37'] },
-  { card:'100 â â = 40', q:'Quel nombre manque ?', correct:'60', choices:['40','50','60','70'] },
-  { card:'â â 34 = 51', q:'Quel nombre manque ?', correct:'85', choices:['17','75','83','85'] },
-  { card:'â + 125 = 300', q:'Quel nombre manque ?', correct:'175', choices:['155','165','175','185'] },
-  { card:'250 + â = 400', q:'Quel nombre manque ?', correct:'150', choices:['100','140','150','160'] },
+  { card:'☐ + 23 = 50', q:'Quel nombre manque ?', correct:'27', choices:['23','25','27','29'] },
+  { card:'45 + ☐ = 80', q:'Quel nombre manque ?', correct:'35', choices:['25','35','45','37'] },
+  { card:'100 − ☐ = 40', q:'Quel nombre manque ?', correct:'60', choices:['40','50','60','70'] },
+  { card:'☐ − 34 = 51', q:'Quel nombre manque ?', correct:'85', choices:['17','75','83','85'] },
+  { card:'☐ + 125 = 300', q:'Quel nombre manque ?', correct:'175', choices:['155','165','175','185'] },
+  { card:'250 + ☐ = 400', q:'Quel nombre manque ?', correct:'150', choices:['100','140','150','160'] },
 ], 'ex5');
 
 buildPaires([
-  { q:'Associe chaque calcul Ã  son rÃ©sultat.',
-    pairs:[['34 + 47','81'],['85 â 32','53'],['56 + 28','84'],['97 â 44','53']] },
-  { q:'Associe chaque calcul Ã  son rÃ©sultat.',
-    pairs:[['124 + 76','200'],['300 â 125','175'],['246 + 54','300'],['500 â 250','250']] },
+  { q:'Associe chaque calcul à son résultat.',
+    pairs:[['34 + 47','81'],['85 − 32','53'],['56 + 28','84'],['97 − 44','53']] },
+  { q:'Associe chaque calcul à son résultat.',
+    pairs:[['124 + 76','200'],['300 − 125','175'],['246 + 54','300'],['500 − 250','250']] },
 ], 'ex6');
 
 buildTri([
-  { q:'Le rÃ©sultat est-il > 100 ou < 100 ?',
+  { q:'Le résultat est-il > 100 ou < 100 ?',
     cats:['> 100','< 100'],
     items:[
       {v:'67 + 48', cat:'> 100'},

@@ -117,30 +117,30 @@ function check(btn, chosen, correct, rowId, fbId) {
   document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
   const fb = document.getElementById(fbId);
   if (chosen === correct) {
-    btn.classList.add('correct'); fb.innerHTML = 'â Bravo !'; fb.style.color = '#166534';
+    btn.classList.add('correct'); fb.innerHTML = '✅ Bravo !'; fb.style.color = '#166534';
   } else {
-    btn.classList.add('wrong'); fb.innerHTML = 'â C\'Ã©tait ' + formatFrac(correct); fb.style.color = '#991b1b';
+    btn.classList.add('wrong'); fb.innerHTML = '❌ C\'était ' + formatFrac(correct); fb.style.color = '#991b1b';
     document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.dataset.val === correct) b.classList.add('correct'); });
   }
 }
 
 buildQ([
-  { card: '(+5) + (â8) = ?', q: 'Calcule (+5) + (â8)', correct: 'â3', choices: ['â3','3','â13','13'] },
-  { card: '(â4) + (â6) = ?', q: 'Calcule (â4) + (â6)', correct: 'â10', choices: ['â2','2','â10','10'] },
-  { card: '(â7) + (+12) = ?', q: 'Calcule (â7) + (+12)', correct: '+5', choices: ['â5','+5','â19','+19'] },
-  { card: '(â3) Ã (â4) = ?', q: 'Calcule (â3) Ã (â4)', correct: '+12', choices: ['â12','+12','+7','â7'] },
-  { card: '(+6) Ã (â5) = ?', q: 'Calcule (+6) Ã (â5)', correct: 'â30', choices: ['â30','+30','â11','+1'] },
-  { card: '(â18) Ã· (+3) = ?', q: 'Calcule (â18) Ã· (+3)', correct: 'â6', choices: ['â6','+6','â15','+15'] },
-  { enonce: 'La tempÃ©rature est de â5 Â°C. Elle monte de 8 Â°C.', q: 'Quelle est la nouvelle tempÃ©rature ?', correct: '+3 Â°C', choices: ['â13 Â°C','â3 Â°C','+3 Â°C','+13 Â°C'] },
+  { card: '(+5) + (−8) = ?', q: 'Calcule (+5) + (−8)', correct: '−3', choices: ['−3','3','−13','13'] },
+  { card: '(−4) + (−6) = ?', q: 'Calcule (−4) + (−6)', correct: '−10', choices: ['−2','2','−10','10'] },
+  { card: '(−7) + (+12) = ?', q: 'Calcule (−7) + (+12)', correct: '+5', choices: ['−5','+5','−19','+19'] },
+  { card: '(−3) × (−4) = ?', q: 'Calcule (−3) × (−4)', correct: '+12', choices: ['−12','+12','+7','−7'] },
+  { card: '(+6) × (−5) = ?', q: 'Calcule (+6) × (−5)', correct: '−30', choices: ['−30','+30','−11','+1'] },
+  { card: '(−18) ÷ (+3) = ?', q: 'Calcule (−18) ÷ (+3)', correct: '−6', choices: ['−6','+6','−15','+15'] },
+  { enonce: 'La température est de −5 °C. Elle monte de 8 °C.', q: 'Quelle est la nouvelle température ?', correct: '+3 °C', choices: ['−13 °C','−3 °C','+3 °C','+13 °C'] },
 ], 'ex1');
 
 buildQ([
-  { card: '10Â² = ?', q: 'Calcule 10Â²', correct: '100', choices: ['20','100','1 000','10 000'] },
-  { card: '10Â³ = ?', q: 'Calcule 10Â³', correct: '1 000', choices: ['30','100','1 000','10 000'] },
-  { card: '2â´ = ?', q: 'Calcule 2â´', correct: '16', choices: ['8','16','32','64'] },
-  { card: '3Â³ = ?', q: 'Calcule 3Â³', correct: '27', choices: ['9','18','27','81'] },
-  { card: '5Â² = ?', q: 'Calcule 5Â²', correct: '25', choices: ['10','25','50','125'] },
-  { enonce: '10â´ Ã 10Â² = 10â¶ car on ajoute les exposants.', q: 'Calcule 10âµ Ã 10Â³', correct: '10â¸ = 100 000 000', choices: ['10Â¹âµ','10â¸ = 100 000 000','10Â² = 100','10Â¹âµ = 1 000 000 000 000 000'] },
+  { card: '10² = ?', q: 'Calcule 10²', correct: '100', choices: ['20','100','1 000','10 000'] },
+  { card: '10³ = ?', q: 'Calcule 10³', correct: '1 000', choices: ['30','100','1 000','10 000'] },
+  { card: '2⁴ = ?', q: 'Calcule 2⁴', correct: '16', choices: ['8','16','32','64'] },
+  { card: '3³ = ?', q: 'Calcule 3³', correct: '27', choices: ['9','18','27','81'] },
+  { card: '5² = ?', q: 'Calcule 5²', correct: '25', choices: ['10','25','50','125'] },
+  { enonce: '10⁴ × 10² = 10⁶ car on ajoute les exposants.', q: 'Calcule 10⁵ × 10³', correct: '10⁸ = 100 000 000', choices: ['10¹⁵','10⁸ = 100 000 000','10² = 100','10¹⁵ = 1 000 000 000 000 000'] },
 ], 'ex2');
 
 buildQ([
@@ -148,17 +148,17 @@ buildQ([
   { card: '3/4 de 200 = ?', q: 'Calcule 3/4 de 200', correct: '150', choices: ['100','125','150','175'] },
   { card: '2/3 de 300 = ?', q: 'Calcule 2/3 de 300', correct: '200', choices: ['100','150','200','250'] },
   { card: '1/5 de 80 = ?', q: 'Calcule 1/5 de 80', correct: '16', choices: ['8','16','20','40'] },
-  { enonce: 'ð Une pizza coÃ»te 12 â¬. LÃ©a paie 3/4 du prix.', q: 'Combien paie LÃ©a ?', correct: '9 â¬', choices: ['3 â¬','6 â¬','9 â¬','12 â¬'] },
-  { enonce: 'ð® Un jeu coÃ»te 48 â¬. AprÃ¨s rÃ©duction, il coÃ»te les 5/6 du prix.', q: 'Quel est le nouveau prix ?', correct: '40 â¬', choices: ['36 â¬','40 â¬','42 â¬','44 â¬'] },
+  { enonce: '🍕 Une pizza coûte 12 €. Léa paie 3/4 du prix.', q: 'Combien paie Léa ?', correct: '9 €', choices: ['3 €','6 €','9 €','12 €'] },
+  { enonce: '🎮 Un jeu coûte 48 €. Après réduction, il coûte les 5/6 du prix.', q: 'Quel est le nouveau prix ?', correct: '40 €', choices: ['36 €','40 €','42 €','44 €'] },
 ], 'ex3');
 
 buildQ([
   { card: '10% de 350 = ?', q: 'Calcule 10% de 350', correct: '35', choices: ['3,5','35','105','350'] },
   { card: '25% de 80 = ?', q: 'Calcule 25% de 80', correct: '20', choices: ['8','20','25','40'] },
   { card: '50% de 1 400 = ?', q: 'Calcule 50% de 1 400', correct: '700', choices: ['70','700','750','1 400'] },
-  { enonce: 'ð¬ Un article coÃ»te 120 â¬. Il est soldÃ© Ã  â20%.', q: 'Quel est le prix soldÃ© ?', correct: '96 â¬', choices: ['80 â¬','96 â¬','100 â¬','110 â¬'] },
-  { enonce: 'ð Une population de 2 500 habitants augmente de 4%.', q: 'Combien d\'habitants y a-t-il aprÃ¨s l\'augmentation ?', correct: '2 600 habitants', choices: ['2 400 habitants','2 504 habitants','2 600 habitants','2 650 habitants'] },
-  { enonce: 'ð° Un livre est vendu 15 â¬. La TVA est de 20%.', q: 'Quel est le montant de la TVA ?', correct: '3 â¬', choices: ['1,5 â¬','2 â¬','3 â¬','5 â¬'] },
+  { enonce: '🏬 Un article coûte 120 €. Il est soldé à −20%.', q: 'Quel est le prix soldé ?', correct: '96 €', choices: ['80 €','96 €','100 €','110 €'] },
+  { enonce: '📈 Une population de 2 500 habitants augmente de 4%.', q: 'Combien d\'habitants y a-t-il après l\'augmentation ?', correct: '2 600 habitants', choices: ['2 400 habitants','2 504 habitants','2 600 habitants','2 650 habitants'] },
+  { enonce: '💰 Un livre est vendu 15 €. La TVA est de 20%.', q: 'Quel est le montant de la TVA ?', correct: '3 €', choices: ['1,5 €','2 €','3 €','5 €'] },
 ], 'ex4');
 </script>
 

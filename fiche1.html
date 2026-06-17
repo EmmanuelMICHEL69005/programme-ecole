@@ -221,12 +221,12 @@
   pizzaInteractive('pz-1d', 4, 2);
   pizzaInteractive('pz-1e', 3, 2);
 
-  // Ex 2 â quiz fraction (pizza statique + choix)
+  // Ex 2 — quiz fraction (pizza statique + choix)
   const quizData = [
-    { n:2, filled:1, correct:'Â½',  choices:['Â½','Â¼','â','2/3'],  label:'Pizza coupÃ©e en 2, 1 part coloriÃ©e' },
-    { n:4, filled:1, correct:'Â¼',  choices:['Â½','Â¼','â','3/4'],  label:'Pizza coupÃ©e en 4, 1 part coloriÃ©e' },
-    { n:3, filled:2, correct:'2/3',choices:['Â½','â','2/3','3/4'], label:'Pizza coupÃ©e en 3, 2 parts coloriÃ©es' },
-    { n:4, filled:3, correct:'3/4',choices:['Â½','Â¼','2/4','3/4'], label:'Pizza coupÃ©e en 4, 3 parts coloriÃ©es' },
+    { n:2, filled:1, correct:'½',  choices:['½','¼','⅓','2/3'],  label:'Pizza coupée en 2, 1 part coloriée' },
+    { n:4, filled:1, correct:'¼',  choices:['½','¼','⅓','3/4'],  label:'Pizza coupée en 4, 1 part coloriée' },
+    { n:3, filled:2, correct:'2/3',choices:['½','⅓','2/3','3/4'], label:'Pizza coupée en 3, 2 parts coloriées' },
+    { n:4, filled:3, correct:'3/4',choices:['½','¼','2/4','3/4'], label:'Pizza coupée en 4, 3 parts coloriées' },
   ];
 
   const quizContainer = document.getElementById('quiz2');
@@ -240,7 +240,7 @@
 
     const right = document.createElement('div');
     right.className = 'quiz-right';
-    right.innerHTML = `<div class="question">${q.label} â</div>`;
+    right.innerHTML = `<div class="question">${q.label} →</div>`;
 
     const btns = document.createElement('div');
     btns.className = 'frac-btns';
@@ -255,7 +255,7 @@
         btns.querySelectorAll('button').forEach(b => b.classList.remove('correct','wrong'));
         const ok = ch === q.correct;
         btn.classList.add(ok ? 'correct' : 'wrong');
-        fb.textContent = ok ? 'â Bravo !' : `â Ce n'est pas ${ch}â¦ rÃ©essaie !`;
+        fb.textContent = ok ? '✅ Bravo !' : `❌ Ce n'est pas ${ch}… réessaie !`;
         fb.style.color = ok ? '#166534' : '#991b1b';
       });
       btns.appendChild(btn);
@@ -268,7 +268,7 @@
     quizContainer.appendChild(item);
   });
 
-  // Ex 3 â Vrai/Faux
+  // Ex 3 — Vrai/Faux
   const correctVF = { vf1:'vrai', vf2:'faux', vf3:'vrai', vf4:'vrai', vf5:'vrai' };
   function checkVF(btn, chosen, id) {
     const item = document.getElementById(id);
@@ -279,21 +279,21 @@
     item.style.borderColor = ok ? '#86efac' : '#fca5a5';
     let fb = item.querySelector('.feedback');
     if (!fb) { fb = document.createElement('div'); fb.className='feedback'; fb.style.cssText='font-size:0.85rem;font-weight:800;margin-top:6px;width:100%'; item.appendChild(fb); }
-    fb.textContent = ok ? 'â Bonne rÃ©ponse !' : 'â Essaie encore !';
+    fb.textContent = ok ? '✅ Bonne réponse !' : '❌ Essaie encore !';
     fb.style.color = ok ? '#166534' : '#991b1b';
   }
 
-  // Ex 4 â choix multiple problÃ¨me
+  // Ex 4 — choix multiple problème
   function checkRep(btn, chosen, correct, fbId) {
     const group = btn.parentElement;
     group.querySelectorAll('.btn-rep').forEach(b => b.classList.remove('correct','wrong'));
     const ok = chosen === correct;
     btn.classList.add(ok ? 'correct' : 'wrong');
     const fb = document.getElementById(fbId);
-    fb.textContent = ok ? 'â Bravo !' : `â Pas tout Ã  faitâ¦ rÃ©essaie !`;
+    fb.textContent = ok ? '✅ Bravo !' : `❌ Pas tout à fait… réessaie !`;
     fb.style.color = ok ? '#166534' : '#991b1b';
     if (!ok) {
-      // AprÃ¨s 1 seconde, montrer la bonne rÃ©ponse
+      // Après 1 seconde, montrer la bonne réponse
       setTimeout(() => {
         group.querySelectorAll('.btn-rep').forEach(b => {
           if (b.textContent === correct) b.style.outline = '3px solid #22c55e';

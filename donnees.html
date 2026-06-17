@@ -186,9 +186,9 @@ function shuffle(arr) { return [...arr].sort(() => Math.random() - 0.5); }
 // EXERCICE 1
 const ex1Data = [
   { q: 'Quel sport est le plus populaire dans la classe ?', correct: 'Football', choices: ['Natation', 'Football', 'Judo', 'Tennis'] },
-  { q: 'Combien d\'Ã©lÃ¨ves prÃ©fÃ¨rent la natation ou le tennis ?', correct: '15 Ã©lÃ¨ves', choices: ['12 Ã©lÃ¨ves', '15 Ã©lÃ¨ves', '17 Ã©lÃ¨ves', '13 Ã©lÃ¨ves'] },
-  { q: 'Combien d\'Ã©lÃ¨ves ont Ã©tÃ© interrogÃ©s au total ?', correct: '35 Ã©lÃ¨ves', choices: ['30 Ã©lÃ¨ves', '33 Ã©lÃ¨ves', '35 Ã©lÃ¨ves', '40 Ã©lÃ¨ves'] },
-  { q: 'Quel est le sport le moins populaire ?', correct: 'VÃ©lo', choices: ['Judo', 'VÃ©lo', 'Tennis', 'Natation'] },
+  { q: 'Combien d\'élèves préfèrent la natation ou le tennis ?', correct: '15 élèves', choices: ['12 élèves', '15 élèves', '17 élèves', '13 élèves'] },
+  { q: 'Combien d\'élèves ont été interrogés au total ?', correct: '35 élèves', choices: ['30 élèves', '33 élèves', '35 élèves', '40 élèves'] },
+  { q: 'Quel est le sport le moins populaire ?', correct: 'Vélo', choices: ['Judo', 'Vélo', 'Tennis', 'Natation'] },
 ];
 
 const ex1Container = document.getElementById('ex1-container');
@@ -196,18 +196,18 @@ ex1Data.forEach((item, idx) => buildQBlock(item, ex1Container, `tab1-${idx}`, nu
 
 // EXERCICE 2
 const ex2Data = [
-  { q: 'Quel sport a la barre la plus haute ?', correct: 'Football', choices: ['Natation', 'Tennis', 'Football', 'VÃ©lo'] },
-  { q: 'Combien d\'Ã©lÃ¨ves pratiquent le judo ou le vÃ©lo ?', correct: '8 Ã©lÃ¨ves', choices: ['5 Ã©lÃ¨ves', '7 Ã©lÃ¨ves', '8 Ã©lÃ¨ves', '10 Ã©lÃ¨ves'] },
-  { q: 'Quelle est la diffÃ©rence entre Football et Natation ?', correct: '4 Ã©lÃ¨ves', choices: ['3 Ã©lÃ¨ves', '4 Ã©lÃ¨ves', '5 Ã©lÃ¨ves', '6 Ã©lÃ¨ves'] },
+  { q: 'Quel sport a la barre la plus haute ?', correct: 'Football', choices: ['Natation', 'Tennis', 'Football', 'Vélo'] },
+  { q: 'Combien d\'élèves pratiquent le judo ou le vélo ?', correct: '8 élèves', choices: ['5 élèves', '7 élèves', '8 élèves', '10 élèves'] },
+  { q: 'Quelle est la différence entre Football et Natation ?', correct: '4 élèves', choices: ['3 élèves', '4 élèves', '5 élèves', '6 élèves'] },
 ];
 const ex2Container = document.getElementById('ex2-container');
 ex2Data.forEach((item, idx) => buildQBlock(item, ex2Container, `tab2-${idx}`, null));
 
 // EXERCICE 3
 const ex3Data = [
-  { q: 'Combien d\'Ã©lÃ¨ves de CE2 B ont un chat ?', correct: '8', choices: ['3', '5', '8', '6'] },
+  { q: 'Combien d\'élèves de CE2 B ont un chat ?', correct: '8', choices: ['3', '5', '8', '6'] },
   { q: 'Dans quelle classe y a-t-il le plus de chiens ?', correct: 'CE2 C', choices: ['CE2 A', 'CE2 B', 'CE2 C'] },
-  { q: 'Combien d\'Ã©lÃ¨ves ont un lapin en tout (les 3 classes) ?', correct: '7', choices: ['5', '6', '7', '8'] },
+  { q: 'Combien d\'élèves ont un lapin en tout (les 3 classes) ?', correct: '7', choices: ['5', '6', '7', '8'] },
   { q: 'Combien d\'animaux y a-t-il en tout dans CE2 A ?', correct: '13', choices: ['11', '12', '13', '14'] },
 ];
 const ex3Container = document.getElementById('ex3-container');
@@ -215,20 +215,20 @@ ex3Data.forEach((item, idx) => buildQBlock(item, ex3Container, `tab3-${idx}`, nu
 
 // EXERCICE 4
 const ex4Data = [
-  { q: 'Quel mois a la tempÃ©rature la plus Ã©levÃ©e sur ce graphique ?', correct: 'Juin', choices: ['Mai', 'Juin', 'Avril', 'Mars'] },
-  { q: 'Quelle est la tempÃ©rature en janvier ?', correct: '4Â°C', choices: ['2Â°C', '4Â°C', '5Â°C', '6Â°C'] },
-  { q: 'De combien de degrÃ©s la tempÃ©rature monte-t-elle entre Mars et Mai ?', correct: '8Â°C', choices: ['4Â°C', '6Â°C', '8Â°C', '10Â°C'] },
-  { q: 'Quel est le mois le plus froid de ce graphique ?', correct: 'Janvier', choices: ['Janvier', 'FÃ©vrier', 'Mars', 'Avril'] },
+  { q: 'Quel mois a la température la plus élevée sur ce graphique ?', correct: 'Juin', choices: ['Mai', 'Juin', 'Avril', 'Mars'] },
+  { q: 'Quelle est la température en janvier ?', correct: '4°C', choices: ['2°C', '4°C', '5°C', '6°C'] },
+  { q: 'De combien de degrés la température monte-t-elle entre Mars et Mai ?', correct: '8°C', choices: ['4°C', '6°C', '8°C', '10°C'] },
+  { q: 'Quel est le mois le plus froid de ce graphique ?', correct: 'Janvier', choices: ['Janvier', 'Février', 'Mars', 'Avril'] },
 ];
 const ex4Container = document.getElementById('ex4-container');
 ex4Data.forEach((item, idx) => buildQBlock(item, ex4Container, `tab4-${idx}`, null));
 
 // EXERCICE 5
 const ex5Data = [
-  { q: 'Combien d\'Ã©lÃ¨ves ont un chien ou un chat ?', correct: '21 Ã©lÃ¨ves', choices: ['18 Ã©lÃ¨ves', '19 Ã©lÃ¨ves', '21 Ã©lÃ¨ves', '23 Ã©lÃ¨ves'] },
-  { q: 'Combien d\'Ã©lÃ¨ves ont un animal de compagnie (n\'importe lequel) ?', correct: '25 Ã©lÃ¨ves', choices: ['20 Ã©lÃ¨ves', '25 Ã©lÃ¨ves', '27 Ã©lÃ¨ves', '30 Ã©lÃ¨ves'] },
-  { q: 'Quel animal est le plus rÃ©pandu dans la classe ?', correct: 'Chien', choices: ['Chat', 'Chien', 'Poisson', 'Lapin'] },
-  { q: 'Quelle fraction des Ã©lÃ¨ves a un chat ?', correct: '9/30', choices: ['9/10', '9/30', '1/3', '3/10'] },
+  { q: 'Combien d\'élèves ont un chien ou un chat ?', correct: '21 élèves', choices: ['18 élèves', '19 élèves', '21 élèves', '23 élèves'] },
+  { q: 'Combien d\'élèves ont un animal de compagnie (n\'importe lequel) ?', correct: '25 élèves', choices: ['20 élèves', '25 élèves', '27 élèves', '30 élèves'] },
+  { q: 'Quel animal est le plus répandu dans la classe ?', correct: 'Chien', choices: ['Chat', 'Chien', 'Poisson', 'Lapin'] },
+  { q: 'Quelle fraction des élèves a un chat ?', correct: '9/30', choices: ['9/10', '9/30', '1/3', '3/10'] },
 ];
 const ex5Container = document.getElementById('ex5-container');
 ex5Data.forEach((item, idx) => buildQBlock(item, ex5Container, `tab5-${idx}`, null));
@@ -252,10 +252,10 @@ function checkQ(btn, chosen, correct, rowId, fbId) {
   const fb = document.getElementById(fbId);
   if (chosen === correct) {
     btn.classList.add('correct');
-    fb.textContent = 'â Bravo !'; fb.style.color = '#166534';
+    fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
   } else {
     btn.classList.add('wrong');
-    fb.textContent = `â C'Ã©tait ${correct}`; fb.style.color = '#991b1b';
+    fb.textContent = `❌ C'était ${correct}`; fb.style.color = '#991b1b';
     document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
   }
 }

@@ -133,52 +133,52 @@ buildQCM([
 ], 'ex1');
 
 buildQCM([
-  { enonce:'DÃ©part 9h35 Â· ArrivÃ©e 12h10', q:'Quelle est la durÃ©e du trajet ?', correct:'2h35', choices:['2h25','2h35','2h45','3h35'] },
-  { enonce:'Film : 14h25 â durÃ©e 1h55', q:'Heure de fin ?', correct:'16h20', choices:['15h25','15h80','16h20','16h25'] },
-  { enonce:'DÃ©part 8h15 Â· ArrivÃ©e 11h45', q:'DurÃ©e ?', correct:'3h30', choices:['3h20','3h30','3h40','4h30'] },
-  { enonce:'SÃ©ance de sport : 16h30 â 18h15', q:'DurÃ©e ?', correct:'1h45', choices:['1h35','1h45','1h55','2h15'] },
-  { enonce:'DÃ©part 7h50 Â· ArrivÃ©e 12h05', q:'DurÃ©e du voyage ?', correct:'4h15', choices:['4h05','4h15','4h25','5h15'] },
-  { enonce:'DÃ©but du match 15h30 Â· DurÃ©e 1h30', q:'Heure de fin ?', correct:'17h00', choices:['16h30','16h60','17h00','17h30'] },
+  { enonce:'Départ 9h35 · Arrivée 12h10', q:'Quelle est la durée du trajet ?', correct:'2h35', choices:['2h25','2h35','2h45','3h35'] },
+  { enonce:'Film : 14h25 → durée 1h55', q:'Heure de fin ?', correct:'16h20', choices:['15h25','15h80','16h20','16h25'] },
+  { enonce:'Départ 8h15 · Arrivée 11h45', q:'Durée ?', correct:'3h30', choices:['3h20','3h30','3h40','4h30'] },
+  { enonce:'Séance de sport : 16h30 → 18h15', q:'Durée ?', correct:'1h45', choices:['1h35','1h45','1h55','2h15'] },
+  { enonce:'Départ 7h50 · Arrivée 12h05', q:'Durée du voyage ?', correct:'4h15', choices:['4h05','4h15','4h25','5h15'] },
+  { enonce:'Début du match 15h30 · Durée 1h30', q:'Heure de fin ?', correct:'17h00', choices:['16h30','16h60','17h00','17h30'] },
 ], 'ex2');
 
 buildQCM([
   { q:'3 h 45 min = combien de minutes ?', correct:'225 min', choices:['145 min','185 min','225 min','345 min'] },
   { q:'185 minutes = combien d\'heures et minutes ?', correct:'3h05', choices:['1h85','3h05','3h25','3h85'] },
   { q:'2 jours 6 heures = combien d\'heures ?', correct:'54 h', choices:['26 h','46 h','54 h','62 h'] },
-  { q:'1 siÃ¨cle = ?', correct:'100 ans', choices:['10 ans','100 ans','1 000 ans','10 000 ans'] },
+  { q:'1 siècle = ?', correct:'100 ans', choices:['10 ans','100 ans','1 000 ans','10 000 ans'] },
   { q:'4 minutes 30 secondes = combien de secondes ?', correct:'270 s', choices:['34 s','270 s','430 s','4 300 s'] },
   { q:'1 an bissextile = combien de jours ?', correct:'366 jours', choices:['354 jours','365 jours','366 jours','370 jours'] },
 ], 'ex3');
 
 buildQCM([
-  { q:'Combien y a-t-il de semaines dans une annÃ©e (environ) ?', correct:'52 semaines', choices:['48 semaines','52 semaines','56 semaines','60 semaines'] },
-  { q:'En quelle annÃ©e sommes-nous si nous sommes en 2025 et on recule de 1 siÃ¨cle ?', correct:'1925', choices:['1825','1900','1925','1950'] },
-  { q:'Quel mois vient aprÃ¨s novembre ?', correct:'DÃ©cembre', choices:['Octobre','Novembre','DÃ©cembre','Janvier'] },
-  { q:'Combien y a-t-il de jours en fÃ©vrier d\'une annÃ©e non-bissextile ?', correct:'28 jours', choices:['27 jours','28 jours','29 jours','30 jours'] },
+  { q:'Combien y a-t-il de semaines dans une année (environ) ?', correct:'52 semaines', choices:['48 semaines','52 semaines','56 semaines','60 semaines'] },
+  { q:'En quelle année sommes-nous si nous sommes en 2025 et on recule de 1 siècle ?', correct:'1925', choices:['1825','1900','1925','1950'] },
+  { q:'Quel mois vient après novembre ?', correct:'Décembre', choices:['Octobre','Novembre','Décembre','Janvier'] },
+  { q:'Combien y a-t-il de jours en février d\'une année non-bissextile ?', correct:'28 jours', choices:['27 jours','28 jours','29 jours','30 jours'] },
   { q:'Si aujourd\'hui c\'est le 28 mars, quelle date sera-t-il dans 2 semaines ?', correct:'11 avril', choices:['11 mars','11 avril','14 avril','4 avril'] },
 ], 'ex4');
 
 buildVF([
   { q:'1 heure = 60 minutes', correct:true },
-  { q:'3 h 45 min = 225 min', correct:true, expl:'3Ã60 + 45 = 225 min' },
-  { q:'1 siÃ¨cle = 10 ans', correct:false, expl:'1 siÃ¨cle = 100 ans' },
-  { q:'Un film commence Ã  14h25 et dure 1h55. Il finit Ã  16h20.', correct:true, expl:'14h25 + 1h35 = 16h00 + 20 min = 16h20 â' },
-  { q:'Minuit s\'Ã©crit 12h00', correct:false, expl:'Minuit = 0h00 (ou 24h00). 12h00 = midi.' },
-  { q:'FÃ©vrier a toujours 28 jours.', correct:false, expl:'FÃ©vrier a 28 jours, sauf les annÃ©es bissextiles (29 j).' },
+  { q:'3 h 45 min = 225 min', correct:true, expl:'3×60 + 45 = 225 min' },
+  { q:'1 siècle = 10 ans', correct:false, expl:'1 siècle = 100 ans' },
+  { q:'Un film commence à 14h25 et dure 1h55. Il finit à 16h20.', correct:true, expl:'14h25 + 1h35 = 16h00 + 20 min = 16h20 ✅' },
+  { q:'Minuit s\'écrit 12h00', correct:false, expl:'Minuit = 0h00 (ou 24h00). 12h00 = midi.' },
+  { q:'Février a toujours 28 jours.', correct:false, expl:'Février a 28 jours, sauf les années bissextiles (29 j).' },
   { q:'1 an = 12 mois = 52 semaines environ', correct:true },
 ], 'ex5');
 
 buildOrdre([
-  { q:'Range ces durÃ©es de la PLUS COURTE Ã  la PLUS LONGUE :',
+  { q:'Range ces durées de la PLUS COURTE à la PLUS LONGUE :',
     items:['45 min','90 min','2 h','2 h 30 min','3 h 20 min'] },
-  { q:'Range ces durÃ©es de la PLUS COURTE Ã  la PLUS LONGUE :',
-    items:['1 journÃ©e','1 semaine','1 an','1 dÃ©cennie','1 siÃ¨cle'] },
+  { q:'Range ces durées de la PLUS COURTE à la PLUS LONGUE :',
+    items:['1 journée','1 semaine','1 an','1 décennie','1 siècle'] },
 ], 'ex6');
 
 buildPaires([
-  { q:'Associe chaque dÃ©part+durÃ©e Ã  l\'heure d\'arrivÃ©e.',
+  { q:'Associe chaque départ+durée à l\'heure d\'arrivée.',
     pairs:[['8h15 + 1h45','10h00'],['14h25 + 1h55','16h20'],['16h30 + 1h45','18h15'],['9h35 + 2h35','12h10']] },
-  { q:'Associe chaque durÃ©e Ã  sa conversion.',
+  { q:'Associe chaque durée à sa conversion.',
     pairs:[['3h45','225 min'],['185 min','3h05'],['2 jours 6 h','54 h'],['4 min 30 s','270 s']] },
 ], 'ex7');
 </script>

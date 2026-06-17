@@ -103,42 +103,42 @@
 <script>
 buildQCM([
   { enonce:'Tableau sports :\nNatation : lundi 12, mardi 8, mercredi 15\nFootball : lundi 18, mardi 20, mercredi 10',
-    q:'Combien d\'Ã©lÃ¨ves ont fait de la natation mardi ?', correct:'8', choices:['8','12','15','18'] },
-  { enonce:'MÃªme tableau.',
+    q:'Combien d\'élèves ont fait de la natation mardi ?', correct:'8', choices:['8','12','15','18'] },
+  { enonce:'Même tableau.',
     q:'Quel sport a le plus grand total sur 3 jours ?', correct:'Football (48)', choices:['Natation (35)','Football (48)','Judo (27)'] },
-  { enonce:'Tableau de tempÃ©ratures :\nParis : lundi 18Â°, mardi 22Â°, mercredi 20Â°\nLyon : lundi 21Â°, mardi 25Â°, mercredi 23Â°',
-    q:'Quel Ã©tait l\'Ã©cart de tempÃ©rature entre Paris et Lyon mardi ?', correct:'3Â°', choices:['2Â°','3Â°','4Â°','7Â°'] },
-  { enonce:'MÃªme tableau.',
-    q:'Quelle ville a la tempÃ©rature moyenne la plus haute sur 3 jours ?', correct:'Lyon (23Â°)', choices:['Paris (20Â°)','Lyon (23Â°)','Elles sont Ã©gales'] },
+  { enonce:'Tableau de températures :\nParis : lundi 18°, mardi 22°, mercredi 20°\nLyon : lundi 21°, mardi 25°, mercredi 23°',
+    q:'Quel était l\'écart de température entre Paris et Lyon mardi ?', correct:'3°', choices:['2°','3°','4°','7°'] },
+  { enonce:'Même tableau.',
+    q:'Quelle ville a la température moyenne la plus haute sur 3 jours ?', correct:'Lyon (23°)', choices:['Paris (20°)','Lyon (23°)','Elles sont égales'] },
 ], 'ex1');
 
 buildQCM([
-  { enonce:'Diagramme livres lus : LÃ©a=12, Tom=8, Emma=15, Noah=10',
-    q:'Qui a lu le plus de livres ?', correct:'Emma (15)', choices:['LÃ©a (12)','Tom (8)','Emma (15)','Noah (10)'] },
-  { enonce:'MÃªme diagramme.',
+  { enonce:'Diagramme livres lus : Léa=12, Tom=8, Emma=15, Noah=10',
+    q:'Qui a lu le plus de livres ?', correct:'Emma (15)', choices:['Léa (12)','Tom (8)','Emma (15)','Noah (10)'] },
+  { enonce:'Même diagramme.',
     q:'Combien de livres de plus Emma a-t-elle lus que Tom ?', correct:'7', choices:['3','5','7','10'] },
-  { enonce:'Diagramme notes : Maths=14, FranÃ§ais=16, Histoire=12, Sciences=15',
-    q:'Quelle matiÃ¨re a la plus basse note ?', correct:'Histoire (12)', choices:['Maths (14)','FranÃ§ais (16)','Histoire (12)','Sciences (15)'] },
-  { enonce:'MÃªme diagramme.',
+  { enonce:'Diagramme notes : Maths=14, Français=16, Histoire=12, Sciences=15',
+    q:'Quelle matière a la plus basse note ?', correct:'Histoire (12)', choices:['Maths (14)','Français (16)','Histoire (12)','Sciences (15)'] },
+  { enonce:'Même diagramme.',
     q:'Quelle est la somme des 4 notes ?', correct:'57', choices:['47','57','67','77'] },
 ], 'ex2');
 
 buildQCM([
   { enonce:'Ventes de jus : lundi 45, mardi 30, mercredi 60, jeudi 25, vendredi 50.',
     q:'Quel est le total de la semaine ?', correct:'210', choices:['180','200','210','220'] },
-  { enonce:'MÃªme tableau.',
-    q:'Quel est l\'Ã©cart entre le meilleur et le pire jour ?', correct:'35', choices:['25','30','35','45'] },
+  { enonce:'Même tableau.',
+    q:'Quel est l\'écart entre le meilleur et le pire jour ?', correct:'35', choices:['25','30','35','45'] },
   { enonce:'Scores au jeu : 120, 95, 135, 110, 100.',
     q:'Quel est le score total ?', correct:'560', choices:['520','540','560','580'] },
-  { enonce:'Budget de 120 â¬ : livres 35 â¬, jeux 45 â¬, musique 28 â¬.',
-    q:'Combien reste-t-il ?', correct:'12 â¬', choices:['8 â¬','10 â¬','12 â¬','22 â¬'] },
+  { enonce:'Budget de 120 € : livres 35 €, jeux 45 €, musique 28 €.',
+    q:'Combien reste-t-il ?', correct:'12 €', choices:['8 €','10 €','12 €','22 €'] },
 ], 'ex3');
 
 buildQCM([
-  { enonce:'Notes de ClÃ©mence : 14, 16, 12, 18.',
+  { enonce:'Notes de Clémence : 14, 16, 12, 18.',
     q:'Quelle est sa moyenne ?', correct:'15', choices:['14','15','16','60'] },
-  { enonce:'TempÃ©ratures : lundi 18Â°, mardi 22Â°, mercredi 20Â°.',
-    q:'Quelle est la tempÃ©rature moyenne ?', correct:'20Â°', choices:['18Â°','20Â°','22Â°','60Â°'] },
+  { enonce:'Températures : lundi 18°, mardi 22°, mercredi 20°.',
+    q:'Quelle est la température moyenne ?', correct:'20°', choices:['18°','20°','22°','60°'] },
   { enonce:'Livres lus par mois : 8, 5, 9, 6.',
     q:'Quelle est la moyenne mensuelle ?', correct:'7', choices:['5','6','7','8'] },
   { enonce:'Vitesses : 45 km/h, 55 km/h, 50 km/h.',
@@ -148,18 +148,18 @@ buildQCM([
 ], 'ex4');
 
 buildVF([
-  { q:'Dans un tableau Ã  double entrÃ©e, on lit Ã  l\'intersection d\'une ligne et d\'une colonne.', correct:true },
-  { q:'La moyenne de 12, 16 et 14 est 42.', correct:false, expl:'Moyenne = (12+16+14)Ã·3 = 42Ã·3 = 14' },
+  { q:'Dans un tableau à double entrée, on lit à l\'intersection d\'une ligne et d\'une colonne.', correct:true },
+  { q:'La moyenne de 12, 16 et 14 est 42.', correct:false, expl:'Moyenne = (12+16+14)÷3 = 42÷3 = 14' },
   { q:'Un diagramme en barres permet de comparer des valeurs.', correct:true },
-  { q:'La moyenne de 14, 16, 12, 18 est 15.', correct:true, expl:'(14+16+12+18)Ã·4 = 60Ã·4 = 15' },
-  { q:'Dans un diagramme, la barre la plus haute correspond Ã  la valeur la plus grande.', correct:true },
+  { q:'La moyenne de 14, 16, 12, 18 est 15.', correct:true, expl:'(14+16+12+18)÷4 = 60÷4 = 15' },
+  { q:'Dans un diagramme, la barre la plus haute correspond à la valeur la plus grande.', correct:true },
   { q:'Pour calculer une moyenne, on divise la somme par le plus grand nombre.', correct:false, expl:'On divise par le nombre de valeurs.' },
 ], 'ex5');
 
 buildPaires([
-  { q:'Associe chaque terme Ã  sa dÃ©finition.',
-    pairs:[['Diagramme en barres','ReprÃ©sentation avec des rectangles de diffÃ©rentes hauteurs'],['Tableau Ã  double entrÃ©e','Croisement lignes et colonnes'],['Moyenne','Somme Ã· nombre de valeurs'],['Pictogramme','Dessin reprÃ©sentant une quantitÃ©']] },
-  { q:'Associe chaque donnÃ©e Ã  sa valeur.',
+  { q:'Associe chaque terme à sa définition.',
+    pairs:[['Diagramme en barres','Représentation avec des rectangles de différentes hauteurs'],['Tableau à double entrée','Croisement lignes et colonnes'],['Moyenne','Somme ÷ nombre de valeurs'],['Pictogramme','Dessin représentant une quantité']] },
+  { q:'Associe chaque donnée à sa valeur.',
     pairs:[['Natation total (L+M+Me)','35'],['Football lundi','18'],['Total 3 sports lundi','37'],['Judo total','27']] },
 ], 'ex6');
 </script>

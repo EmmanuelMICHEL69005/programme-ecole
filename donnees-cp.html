@@ -123,39 +123,39 @@
 <script src="exercises.js"></script>
 <script>
 buildQCM([
-  { q:'Quel fruit est le plus nombreux dans le panier ?', correct:'ð Oranges (7)', choices:['ð Pommes (5)','ð Bananes (3)','ð Oranges (7)','ð Raisins (2)'] },
+  { q:'Quel fruit est le plus nombreux dans le panier ?', correct:'🍊 Oranges (7)', choices:['🍎 Pommes (5)','🍌 Bananes (3)','🍊 Oranges (7)','🍇 Raisins (2)'] },
   { q:'Combien y a-t-il de pommes et bananes en tout ?', correct:'8', choices:['6','7','8','9'] },
-  { q:'Quel fruit est le moins nombreux ?', correct:'ð Raisins (2)', choices:['ð Pommes','ð Bananes','ð Oranges','ð Raisins (2)'] },
+  { q:'Quel fruit est le moins nombreux ?', correct:'🍇 Raisins (2)', choices:['🍎 Pommes','🍌 Bananes','🍊 Oranges','🍇 Raisins (2)'] },
   { q:'Combien y a-t-il de fruits en tout dans le panier ?', correct:'17', choices:['14','15','17','20'] },
-  { q:'Si on enlÃ¨ve toutes les oranges, combien reste-t-il de fruits ?', correct:'10', choices:['8','10','12','14'] },
+  { q:'Si on enlève toutes les oranges, combien reste-t-il de fruits ?', correct:'10', choices:['8','10','12','14'] },
 ], 'ex1');
 
 buildQCM([
-  { q:'Quel animal est le plus nombreux Ã  la ferme ?', correct:'ð Poules (10)', choices:['ð Vaches (4)','ð· Cochons (6)','ð Poules (10)','ð Moutons (8)'] },
-  { q:'Combien y a-t-il d\'animaux en tout Ã  la ferme ?', correct:'28', choices:['24','26','28','30'] },
+  { q:'Quel animal est le plus nombreux à la ferme ?', correct:'🐔 Poules (10)', choices:['🐄 Vaches (4)','🐷 Cochons (6)','🐔 Poules (10)','🐑 Moutons (8)'] },
+  { q:'Combien y a-t-il d\'animaux en tout à la ferme ?', correct:'28', choices:['24','26','28','30'] },
   { q:'Y a-t-il plus de vaches ou de cochons ?', correct:'Cochons (6 > 4)', choices:['Vaches (4)','Cochons (6 > 4)','Ils sont pareils'] },
   { q:'Combien y a-t-il de moutons et de cochons ensemble ?', correct:'14', choices:['12','13','14','15'] },
 ], 'ex2');
 
 buildQCM([
-  { q:'Combien de jours de beau temps y a-t-il en janvier ? (1 âï¸ = 2 jours)', correct:'4 jours', choices:['2 jours','4 jours','6 jours','8 jours'] },
-  { q:'Quel mois a eu le plus de beau temps ?', correct:'Mars (8 jours)', choices:['Janvier (4 j)','FÃ©vrier (6 j)','Mars (8 jours)'] },
+  { q:'Combien de jours de beau temps y a-t-il en janvier ? (1 ☀️ = 2 jours)', correct:'4 jours', choices:['2 jours','4 jours','6 jours','8 jours'] },
+  { q:'Quel mois a eu le plus de beau temps ?', correct:'Mars (8 jours)', choices:['Janvier (4 j)','Février (6 j)','Mars (8 jours)'] },
   { q:'En tout sur les 3 mois, combien de jours de beau temps ?', correct:'18 jours', choices:['9 jours','16 jours','18 jours','24 jours'] },
-  { q:'En fÃ©vrier, combien de soleil de PLUS qu\'en janvier ?', correct:'2 jours de plus', choices:['1 jour de plus','2 jours de plus','4 jours de plus','6 jours de plus'] },
+  { q:'En février, combien de soleil de PLUS qu\'en janvier ?', correct:'2 jours de plus', choices:['1 jour de plus','2 jours de plus','4 jours de plus','6 jours de plus'] },
 ], 'ex3');
 
 buildQCM([
-  { q:'Quel sport est le prÃ©fÃ©rÃ© des Ã©lÃ¨ves ?', correct:'Le foot (8)', choices:['La natation (5)','Le vÃ©lo (7)','Le foot (8)'] },
-  { q:'Combien d\'Ã©lÃ¨ves aiment la natation OU le vÃ©lo ?', correct:'12', choices:['10','11','12','13'] },
-  { q:'Combien d\'Ã©lÃ¨ves ont Ã©tÃ© interrogÃ©s en tout ?', correct:'20', choices:['15','18','20','21'] },
-  { q:'Quel sport est le moins populaire ?', correct:'La natation (5)', choices:['Le foot (8)','La natation (5)','Le vÃ©lo (7)'] },
-  { q:'Combien d\'Ã©lÃ¨ves de PLUS aiment le foot que la natation ?', correct:'3 Ã©lÃ¨ves', choices:['1 Ã©lÃ¨ve','2 Ã©lÃ¨ves','3 Ã©lÃ¨ves','5 Ã©lÃ¨ves'] },
+  { q:'Quel sport est le préféré des élèves ?', correct:'Le foot (8)', choices:['La natation (5)','Le vélo (7)','Le foot (8)'] },
+  { q:'Combien d\'élèves aiment la natation OU le vélo ?', correct:'12', choices:['10','11','12','13'] },
+  { q:'Combien d\'élèves ont été interrogés en tout ?', correct:'20', choices:['15','18','20','21'] },
+  { q:'Quel sport est le moins populaire ?', correct:'La natation (5)', choices:['Le foot (8)','La natation (5)','Le vélo (7)'] },
+  { q:'Combien d\'élèves de PLUS aiment le foot que la natation ?', correct:'3 élèves', choices:['1 élève','2 élèves','3 élèves','5 élèves'] },
 ], 'ex4');
 
 buildOrdre([
   { q:'Range les animaux du PLUS petit au PLUS grand (taille approximative) :',
-    items:['ð­ Souris','ð± Chat','ð Chien','ð Vache','ð ÃlÃ©phant'] },
-  { q:'Range ces quantitÃ©s du PLUS PETIT au PLUS GRAND :',
+    items:['🐭 Souris','🐱 Chat','🐕 Chien','🐄 Vache','🐘 Éléphant'] },
+  { q:'Range ces quantités du PLUS PETIT au PLUS GRAND :',
     items:['1','2','3','5','8'] },
 ], 'ex5');
 </script>

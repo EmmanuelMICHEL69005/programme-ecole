@@ -165,7 +165,7 @@ function buildOpCards(data, containerId, scoreId, scoreVar, type) {
     const choices = shuffle([item.result, wrong1, wrong2, wrong3]);
     const card = document.createElement('div');
     card.className = 'op-card';
-    const sign = type === 'add' ? '+' : type === 'sub' ? 'â' : 'Ã';
+    const sign = type === 'add' ? '+' : type === 'sub' ? '−' : '×';
     card.innerHTML = `
       <div class="op-posee">
         ${item.a.toLocaleString('fr')}<br>
@@ -208,12 +208,12 @@ function checkOp(btn, chosen, correct, rowId, fbId, scoreId, type) {
   const fb = document.getElementById(fbId);
   if (chosen === correct) {
     btn.classList.add('correct');
-    fb.textContent = 'â Bravo !'; fb.style.color = '#166534';
+    fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
     scores[type]++;
     document.getElementById(scoreId).textContent = `Score : ${scores[type]} / 5`;
   } else {
     btn.classList.add('wrong');
-    fb.textContent = `â C'Ã©tait ${correct.toLocaleString('fr')}`; fb.style.color = '#991b1b';
+    fb.textContent = `❌ C'était ${correct.toLocaleString('fr')}`; fb.style.color = '#991b1b';
     document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => {
       if (parseInt(b.textContent.replace(/\s/g,'')) === correct) b.classList.add('correct');
     });
@@ -222,11 +222,11 @@ function checkOp(btn, chosen, correct, rowId, fbId, scoreId, type) {
 
 // ======== EXERCICE 4 : sens division ========
 const divData = [
-  { q: '24 Ã· 6 = ?', correct: 4, choices: [3, 4, 5, 6] },
-  { q: '35 Ã· 7 = ?', correct: 5, choices: [4, 5, 6, 7] },
-  { q: '48 Ã· 8 = ?', correct: 6, choices: [5, 6, 7, 8] },
-  { q: '36 Ã· 4 = ?', correct: 9, choices: [7, 8, 9, 12] },
-  { q: 'Si je partage 30 bonbons en 5 parts Ã©gales, chaque part = ?', correct: 6, choices: [5, 6, 7, 25] },
+  { q: '24 ÷ 6 = ?', correct: 4, choices: [3, 4, 5, 6] },
+  { q: '35 ÷ 7 = ?', correct: 5, choices: [4, 5, 6, 7] },
+  { q: '48 ÷ 8 = ?', correct: 6, choices: [5, 6, 7, 8] },
+  { q: '36 ÷ 4 = ?', correct: 9, choices: [7, 8, 9, 12] },
+  { q: 'Si je partage 30 bonbons en 5 parts égales, chaque part = ?', correct: 6, choices: [5, 6, 7, 25] },
   { q: 'J\'ai 56 images, je les range en groupes de 8. Combien de groupes ?', correct: 7, choices: [6, 7, 8, 9] },
 ];
 
@@ -248,11 +248,11 @@ divData.forEach((item, idx) => {
 // ======== EXERCICE 5 : vrai/faux ========
 const vfData = [
   { txt: '365 + 135 = 500', correct: true },
-  { txt: '800 â 450 = 360', correct: false, exp: '350' },
-  { txt: '124 Ã 3 = 372', correct: true },
-  { txt: '5 Ã 8 = 38', correct: false, exp: '40' },
-  { txt: '100 â 47 = 53', correct: true },
-  { txt: '6 Ã 7 = 48', correct: false, exp: '42' },
+  { txt: '800 − 450 = 360', correct: false, exp: '350' },
+  { txt: '124 × 3 = 372', correct: true },
+  { txt: '5 × 8 = 38', correct: false, exp: '40' },
+  { txt: '100 − 47 = 53', correct: true },
+  { txt: '6 × 7 = 48', correct: false, exp: '42' },
 ];
 
 const ex5Container = document.getElementById('ex5-container');
@@ -278,11 +278,11 @@ function checkVF(btn, chosen, correct, fbId, exp) {
   const fb = document.getElementById(fbId);
   if (chosen === correct) {
     btn.classList.add('active');
-    fb.textContent = 'â Bravo !'; fb.style.color = '#166534';
+    fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
   } else {
     btn.classList.add('active');
     btn.style.background = '#ef4444'; btn.style.color = 'white'; btn.style.borderColor = '#b91c1c';
-    const msg = exp ? `â Faux â c'est ${exp}` : 'â Pas tout Ã  fait !';
+    const msg = exp ? `❌ Faux — c'est ${exp}` : '❌ Pas tout à fait !';
     fb.textContent = msg; fb.style.color = '#991b1b';
   }
 }
@@ -291,11 +291,11 @@ function checkBasic(btn, chosen, correct, rowId, fbId) {
   document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
   if (chosen === correct) {
     btn.classList.add('correct');
-    document.getElementById(fbId).textContent = 'â Bravo !';
+    document.getElementById(fbId).textContent = '✅ Bravo !';
     document.getElementById(fbId).style.color = '#166534';
   } else {
     btn.classList.add('wrong');
-    document.getElementById(fbId).textContent = `â C'Ã©tait ${correct}`;
+    document.getElementById(fbId).textContent = `❌ C'était ${correct}`;
     document.getElementById(fbId).style.color = '#991b1b';
     document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => {
       if (parseInt(b.textContent.replace(/\s/g,'')) === correct) b.classList.add('correct');

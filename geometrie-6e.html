@@ -105,39 +105,39 @@ function check(btn, chosen, correct, rowId, fbId) {
   document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
   const fb = document.getElementById(fbId);
   if (chosen === correct) {
-    btn.classList.add('correct'); fb.textContent = 'â Bravo !'; fb.style.color = '#166534';
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
   } else {
-    btn.classList.add('wrong'); fb.textContent = 'â C\'Ã©tait ' + correct; fb.style.color = '#991b1b';
+    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
     document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
   }
 }
 
 buildQ([
-  { q: 'Un angle de 47Â° est un angleâ¦', correct: 'Aigu', choices: ['Droit','Aigu','Obtus','Plat'] },
-  { q: 'Deux angles qui forment un angle plat sont ditsâ¦', correct: 'SupplÃ©mentaires', choices: ['ComplÃ©mentaires','SupplÃ©mentaires','Alternes-internes','Adjacents'] },
-  { q: 'Deux angles sont complÃ©mentaires. L\'un mesure 35Â°. Combien mesure l\'autre ?', correct: '55Â°', choices: ['45Â°','55Â°','65Â°','145Â°'] },
-  { q: 'La somme de deux angles supplÃ©mentaires vaut toujoursâ¦', correct: '180Â°', choices: ['90Â°','120Â°','180Â°','360Â°'] },
+  { q: 'Un angle de 47° est un angle…', correct: 'Aigu', choices: ['Droit','Aigu','Obtus','Plat'] },
+  { q: 'Deux angles qui forment un angle plat sont dits…', correct: 'Supplémentaires', choices: ['Complémentaires','Supplémentaires','Alternes-internes','Adjacents'] },
+  { q: 'Deux angles sont complémentaires. L\'un mesure 35°. Combien mesure l\'autre ?', correct: '55°', choices: ['45°','55°','65°','145°'] },
+  { q: 'La somme de deux angles supplémentaires vaut toujours…', correct: '180°', choices: ['90°','120°','180°','360°'] },
 ], 'ex1');
 
 buildQ([
-  { q: 'Un triangle a des angles de 50Â° et 70Â°. Son 3e angle mesureâ¦', correct: '60Â°', choices: ['40Â°','60Â°','80Â°','120Â°'] },
-  { q: 'Un triangle Ã©quilatÃ©ral a tous ses cÃ´tÃ©s Ã©gaux. Ses angles mesurent chacunâ¦', correct: '60Â°', choices: ['45Â°','60Â°','90Â°','120Â°'] },
-  { q: 'Un triangle isocÃ¨le a deux angles de 75Â°. Le 3e angle vautâ¦', correct: '30Â°', choices: ['15Â°','30Â°','45Â°','75Â°'] },
-  { q: 'Un triangle peut-il avoir deux angles droits ?', correct: 'Non (Ã§a ferait 180Â° rien que pour deux angles)', choices: ['Oui','Non (Ã§a ferait 180Â° rien que pour deux angles)','Seulement dans certains cas'] },
+  { q: 'Un triangle a des angles de 50° et 70°. Son 3e angle mesure…', correct: '60°', choices: ['40°','60°','80°','120°'] },
+  { q: 'Un triangle équilatéral a tous ses côtés égaux. Ses angles mesurent chacun…', correct: '60°', choices: ['45°','60°','90°','120°'] },
+  { q: 'Un triangle isocèle a deux angles de 75°. Le 3e angle vaut…', correct: '30°', choices: ['15°','30°','45°','75°'] },
+  { q: 'Un triangle peut-il avoir deux angles droits ?', correct: 'Non (ça ferait 180° rien que pour deux angles)', choices: ['Oui','Non (ça ferait 180° rien que pour deux angles)','Seulement dans certains cas'] },
 ], 'ex2');
 
 buildQ([
-  { q: 'Un cercle a un rayon de 6 cm. Son diamÃ¨tre estâ¦', correct: '12 cm', choices: ['3 cm','6 cm','12 cm','36 cm'] },
-  { q: 'Un cercle a un diamÃ¨tre de 14 cm. Son rayon estâ¦', correct: '7 cm', choices: ['7 cm','14 cm','28 cm','4,67 cm'] },
-  { q: 'Quelle est la circonfÃ©rence d\'un cercle de rayon 5 cm ? (Ï â 3,14)', correct: '31,4 cm', choices: ['15,7 cm','31,4 cm','78,5 cm','314 cm'] },
-  { q: 'Un segment qui relie deux points du cercle sans passer par le centre s\'appelleâ¦', correct: 'Une corde', choices: ['Un rayon','Un diamÃ¨tre','Une corde','Un arc'] },
+  { q: 'Un cercle a un rayon de 6 cm. Son diamètre est…', correct: '12 cm', choices: ['3 cm','6 cm','12 cm','36 cm'] },
+  { q: 'Un cercle a un diamètre de 14 cm. Son rayon est…', correct: '7 cm', choices: ['7 cm','14 cm','28 cm','4,67 cm'] },
+  { q: 'Quelle est la circonférence d\'un cercle de rayon 5 cm ? (π ≈ 3,14)', correct: '31,4 cm', choices: ['15,7 cm','31,4 cm','78,5 cm','314 cm'] },
+  { q: 'Un segment qui relie deux points du cercle sans passer par le centre s\'appelle…', correct: 'Une corde', choices: ['Un rayon','Un diamètre','Une corde','Un arc'] },
 ], 'ex3');
 
 buildQ([
-  { q: 'La mÃ©diatrice d\'un segment estâ¦', correct: 'La perpendiculaire en son milieu', choices: ['Une parallÃ¨le au segment','La perpendiculaire en son milieu','La bissectrice du segment','La diagonale du segment'] },
-  { q: 'Deux droites perpendiculaires forment un angle deâ¦', correct: '90Â°', choices: ['45Â°','60Â°','90Â°','180Â°'] },
-  { q: 'La bissectrice d\'un angle le divise enâ¦', correct: 'Deux angles Ã©gaux', choices: ['Deux segments','Deux angles Ã©gaux','Un triangle isocÃ¨le','Deux parties inÃ©gales'] },
-  { q: 'Le milieu du segment [AB] avec A(0 ; 0) et B(6 ; 4) estâ¦', correct: '(3 ; 2)', choices: ['(6 ; 4)','(2 ; 3)','(3 ; 2)','(1,5 ; 1)'] },
+  { q: 'La médiatrice d\'un segment est…', correct: 'La perpendiculaire en son milieu', choices: ['Une parallèle au segment','La perpendiculaire en son milieu','La bissectrice du segment','La diagonale du segment'] },
+  { q: 'Deux droites perpendiculaires forment un angle de…', correct: '90°', choices: ['45°','60°','90°','180°'] },
+  { q: 'La bissectrice d\'un angle le divise en…', correct: 'Deux angles égaux', choices: ['Deux segments','Deux angles égaux','Un triangle isocèle','Deux parties inégales'] },
+  { q: 'Le milieu du segment [AB] avec A(0 ; 0) et B(6 ; 4) est…', correct: '(3 ; 2)', choices: ['(6 ; 4)','(2 ; 3)','(3 ; 2)','(1,5 ; 1)'] },
 ], 'ex4');
 </script>
 

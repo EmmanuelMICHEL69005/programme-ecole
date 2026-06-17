@@ -103,54 +103,54 @@
 <script>
 buildQCM([
   { card:'34 567 + 12 345 = ?', q:'Additionne', correct:'46 912', choices:['46 802','46 912','47 012','48 912'] },
-  { card:'78 453 â 23 127 = ?', q:'Soustrait', correct:'55 326', choices:['55 226','55 326','55 426','56 326'] },
+  { card:'78 453 − 23 127 = ?', q:'Soustrait', correct:'55 326', choices:['55 226','55 326','55 426','56 326'] },
   { card:'123 456 + 234 567 = ?', q:'Additionne', correct:'358 023', choices:['357 023','357 923','358 023','359 023'] },
-  { card:'500 000 â 234 567 = ?', q:'Soustrait', correct:'265 433', choices:['265 333','265 433','266 433','275 433'] },
+  { card:'500 000 − 234 567 = ?', q:'Soustrait', correct:'265 433', choices:['265 333','265 433','266 433','275 433'] },
   { card:'345 678 + 123 456 = ?', q:'Additionne', correct:'469 134', choices:['468 034','469 034','469 134','470 134'] },
 ], 'ex1');
 
 buildQCM([
-  { card:'234 Ã 45 = ?', q:'Multiplie', correct:'10 530', choices:['10 430','10 530','10 630','11 530'] },
-  { card:'567 Ã 32 = ?', q:'Multiplie', correct:'18 144', choices:['18 044','18 144','18 244','19 144'] },
-  { card:'1 234 Ã 56 = ?', q:'Multiplie', correct:'69 104', choices:['68 904','69 004','69 104','70 104'] },
-  { card:'345 Ã 67 = ?', q:'Multiplie', correct:'23 115', choices:['23 015','23 115','23 215','24 115'] },
-  { card:'789 Ã 23 = ?', q:'Multiplie', correct:'18 147', choices:['18 047','18 147','18 247','19 147'] },
+  { card:'234 × 45 = ?', q:'Multiplie', correct:'10 530', choices:['10 430','10 530','10 630','11 530'] },
+  { card:'567 × 32 = ?', q:'Multiplie', correct:'18 144', choices:['18 044','18 144','18 244','19 144'] },
+  { card:'1 234 × 56 = ?', q:'Multiplie', correct:'69 104', choices:['68 904','69 004','69 104','70 104'] },
+  { card:'345 × 67 = ?', q:'Multiplie', correct:'23 115', choices:['23 015','23 115','23 215','24 115'] },
+  { card:'789 × 23 = ?', q:'Multiplie', correct:'18 147', choices:['18 047','18 147','18 247','19 147'] },
 ], 'ex2');
 
 buildQCM([
-  { card:'4 567 Ã· 7 = ?', q:'Quotient exact ou approchÃ©', correct:'652 reste 3', choices:['651 reste 0','652 reste 3','653 reste 0','652 reste 1'] },
-  { card:'8 736 Ã· 8 = ?', q:'Division exacte', correct:'1 092', choices:['1 082','1 090','1 092','1 102'] },
-  { card:'12 345 Ã· 9 = ?', q:'Quotient et reste', correct:'1 371 reste 6', choices:['1 370 reste 0','1 371 reste 6','1 372 reste 0','1 371 reste 3'] },
-  { card:'5 678 Ã· 6 = ?', q:'Quotient et reste', correct:'946 reste 2', choices:['945 reste 8','946 reste 2','947 reste 0','946 reste 4'] },
-  { card:'3 465 Ã· 5 = ?', q:'Division exacte', correct:'693', choices:['691','692','693','694'] },
+  { card:'4 567 ÷ 7 = ?', q:'Quotient exact ou approché', correct:'652 reste 3', choices:['651 reste 0','652 reste 3','653 reste 0','652 reste 1'] },
+  { card:'8 736 ÷ 8 = ?', q:'Division exacte', correct:'1 092', choices:['1 082','1 090','1 092','1 102'] },
+  { card:'12 345 ÷ 9 = ?', q:'Quotient et reste', correct:'1 371 reste 6', choices:['1 370 reste 0','1 371 reste 6','1 372 reste 0','1 371 reste 3'] },
+  { card:'5 678 ÷ 6 = ?', q:'Quotient et reste', correct:'946 reste 2', choices:['945 reste 8','946 reste 2','947 reste 0','946 reste 4'] },
+  { card:'3 465 ÷ 5 = ?', q:'Division exacte', correct:'693', choices:['691','692','693','694'] },
 ], 'ex3');
 
 buildVF([
   { q:'34 567 + 12 345 = 46 912', correct:true },
-  { q:'234 Ã 45 = 10 530', correct:true },
-  { q:'4 567 Ã· 7 = 652 reste 1', correct:false, expl:'7Ã652 = 4 564, reste 4 567â4 564 = 3' },
-  { q:'500 000 â 234 567 = 265 433', correct:true },
-  { q:'567 Ã 32 = 18 244', correct:false, expl:'567 Ã 32 = 18 144' },
-  { q:'Pour vÃ©rifier une division, on fait : quotient Ã diviseur + reste = dividende', correct:true },
+  { q:'234 × 45 = 10 530', correct:true },
+  { q:'4 567 ÷ 7 = 652 reste 1', correct:false, expl:'7×652 = 4 564, reste 4 567−4 564 = 3' },
+  { q:'500 000 − 234 567 = 265 433', correct:true },
+  { q:'567 × 32 = 18 244', correct:false, expl:'567 × 32 = 18 144' },
+  { q:'Pour vérifier une division, on fait : quotient × diviseur + reste = dividende', correct:true },
 ], 'ex4');
 
 buildQCM([
-  { card:'2â4 Ã 45 = 10 530', q:'Chiffre manquant', correct:'3', choices:['1','2','3','4'] },
-  { card:'4 567 Ã· 7 = 65â reste 3', q:'Chiffre manquant', correct:'2', choices:['0','1','2','3'] },
-  { card:'34 5â7 + 12 345 = 46 912', q:'Chiffre manquant', correct:'6', choices:['5','6','7','8'] },
-  { card:'56â Ã 32 = 18 144', q:'Chiffre manquant', correct:'7', choices:['5','6','7','8'] },
-  { card:'8 7â6 Ã· 8 = 1 092', q:'Chiffre manquant', correct:'3', choices:['2','3','4','5'] },
+  { card:'2☐4 × 45 = 10 530', q:'Chiffre manquant', correct:'3', choices:['1','2','3','4'] },
+  { card:'4 567 ÷ 7 = 65☐ reste 3', q:'Chiffre manquant', correct:'2', choices:['0','1','2','3'] },
+  { card:'34 5☐7 + 12 345 = 46 912', q:'Chiffre manquant', correct:'6', choices:['5','6','7','8'] },
+  { card:'56☐ × 32 = 18 144', q:'Chiffre manquant', correct:'7', choices:['5','6','7','8'] },
+  { card:'8 7☐6 ÷ 8 = 1 092', q:'Chiffre manquant', correct:'3', choices:['2','3','4','5'] },
 ], 'ex5');
 
 buildPaires([
-  { q:'Associe chaque opÃ©ration Ã  son rÃ©sultat.',
-    pairs:[['234 Ã 45','10 530'],['4 567 Ã· 7','652 r.3'],['34 567 + 12 345','46 912'],['8 736 Ã· 8','1 092']] },
-  { q:'Associe chaque opÃ©ration Ã  son rÃ©sultat.',
-    pairs:[['567 Ã 32','18 144'],['78 453 â 23 127','55 326'],['3 465 Ã· 5','693'],['345 Ã 67','23 115']] },
+  { q:'Associe chaque opération à son résultat.',
+    pairs:[['234 × 45','10 530'],['4 567 ÷ 7','652 r.3'],['34 567 + 12 345','46 912'],['8 736 ÷ 8','1 092']] },
+  { q:'Associe chaque opération à son résultat.',
+    pairs:[['567 × 32','18 144'],['78 453 − 23 127','55 326'],['3 465 ÷ 5','693'],['345 × 67','23 115']] },
 ], 'ex6');
 
 buildTri([
-  { q:'Cette addition nÃ©cessite-t-elle une retenue ?',
+  { q:'Cette addition nécessite-t-elle une retenue ?',
     cats:['Avec retenue','Sans retenue'],
     items:[
       {v:'35 + 47', cat:'Avec retenue'},

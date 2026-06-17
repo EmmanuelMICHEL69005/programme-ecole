@@ -85,40 +85,40 @@
 <script src="exercises.js"></script>
 <script>
 buildQCM([
-  { card:'35 + â = 100', q:'ComplÃ©ment Ã  100', correct:'65', choices:['55','60','65','75'] },
-  { card:'72 + â = 100', q:'ComplÃ©ment Ã  100', correct:'28', choices:['18','22','28','38'] },
-  { card:'48 + â = 100', q:'ComplÃ©ment Ã  100', correct:'52', choices:['42','48','52','62'] },
-  { card:'19 + â = 100', q:'ComplÃ©ment Ã  100', correct:'81', choices:['71','79','81','91'] },
-  { card:'56 + â = 100', q:'ComplÃ©ment Ã  100', correct:'44', choices:['34','44','54','64'] },
-  { card:'â + 63 = 100', q:'ComplÃ©ment Ã  100', correct:'37', choices:['27','33','37','43'] },
-  { card:'84 + â = 100', q:'ComplÃ©ment Ã  100', correct:'16', choices:['6','14','16','26'] },
+  { card:'35 + ☐ = 100', q:'Complément à 100', correct:'65', choices:['55','60','65','75'] },
+  { card:'72 + ☐ = 100', q:'Complément à 100', correct:'28', choices:['18','22','28','38'] },
+  { card:'48 + ☐ = 100', q:'Complément à 100', correct:'52', choices:['42','48','52','62'] },
+  { card:'19 + ☐ = 100', q:'Complément à 100', correct:'81', choices:['71','79','81','91'] },
+  { card:'56 + ☐ = 100', q:'Complément à 100', correct:'44', choices:['34','44','54','64'] },
+  { card:'☐ + 63 = 100', q:'Complément à 100', correct:'37', choices:['27','33','37','43'] },
+  { card:'84 + ☐ = 100', q:'Complément à 100', correct:'16', choices:['6','14','16','26'] },
 ], 'ex1');
 
 buildQCM([
-  { card:'36 + 9 = ?', q:'Astuce : +10 puis â1', correct:'45', choices:['44','45','46','47'] },
+  { card:'36 + 9 = ?', q:'Astuce : +10 puis −1', correct:'45', choices:['44','45','46','47'] },
   { card:'52 + 11 = ?', q:'Astuce : +10 puis +1', correct:'63', choices:['61','62','63','64'] },
-  { card:'78 â 9 = ?', q:'Astuce : â10 puis +1', correct:'69', choices:['67','68','69','70'] },
-  { card:'45 + 19 = ?', q:'Astuce : +20 puis â1', correct:'64', choices:['54','63','64','65'] },
-  { card:'83 â 11 = ?', q:'Astuce : â10 puis â1', correct:'72', choices:['70','71','72','73'] },
+  { card:'78 − 9 = ?', q:'Astuce : −10 puis +1', correct:'69', choices:['67','68','69','70'] },
+  { card:'45 + 19 = ?', q:'Astuce : +20 puis −1', correct:'64', choices:['54','63','64','65'] },
+  { card:'83 − 11 = ?', q:'Astuce : −10 puis −1', correct:'72', choices:['70','71','72','73'] },
   { card:'67 + 21 = ?', q:'Astuce : +20 puis +1', correct:'88', choices:['86','87','88','89'] },
 ], 'ex2');
 
 buildQCM([
   { card:'Double de 14', q:'Double de 14 = ?', correct:'28', choices:['18','24','28','32'] },
   { card:'Double de 23', q:'Double de 23 = ?', correct:'46', choices:['36','43','46','56'] },
-  { card:'MoitiÃ© de 36', q:'MoitiÃ© de 36 = ?', correct:'18', choices:['12','16','18','20'] },
+  { card:'Moitié de 36', q:'Moitié de 36 = ?', correct:'18', choices:['12','16','18','20'] },
   { card:'Double de 45', q:'Double de 45 = ?', correct:'90', choices:['80','85','90','95'] },
-  { card:'MoitiÃ© de 80', q:'MoitiÃ© de 80 = ?', correct:'40', choices:['20','30','40','45'] },
+  { card:'Moitié de 80', q:'Moitié de 80 = ?', correct:'40', choices:['20','30','40','45'] },
   { card:'Double de 37', q:'Double de 37 = ?', correct:'74', choices:['64','70','74','80'] },
-  { card:'MoitiÃ© de 46', q:'MoitiÃ© de 46 = ?', correct:'23', choices:['18','21','23','25'] },
+  { card:'Moitié de 46', q:'Moitié de 46 = ?', correct:'23', choices:['18','21','23','25'] },
 ], 'ex3');
 
 buildVF([
   { card:'37 + 9 = 46', q:'37 + 9 = 46', correct:true },
   { card:'Double de 18 = 38', q:'Double de 18 = 38', correct:false, expl:'Double de 18 = 36' },
   { card:'54 + 19 = 73', q:'54 + 19 = 73', correct:true },
-  { card:'MoitiÃ© de 50 = 30', q:'MoitiÃ© de 50 = 30', correct:false, expl:'MoitiÃ© de 50 = 25' },
-  { card:'63 â 11 = 52', q:'63 â 11 = 52', correct:true },
+  { card:'Moitié de 50 = 30', q:'Moitié de 50 = 30', correct:false, expl:'Moitié de 50 = 25' },
+  { card:'63 − 11 = 52', q:'63 − 11 = 52', correct:true },
   { card:'27 + 21 = 49', q:'27 + 21 = 49', correct:false, expl:'27 + 21 = 48' },
   { q:'48 + 9 = 57', correct:true },
 ], 'ex4');
@@ -126,22 +126,22 @@ buildVF([
 buildQCM([
   { card:'34 + 20 = ?', q:'Calcule', correct:'54', choices:['44','52','54','56'] },
   { card:'67 + 30 = ?', q:'Calcule', correct:'97', choices:['87','94','97','100'] },
-  { card:'85 â 40 = ?', q:'Calcule', correct:'45', choices:['35','43','45','55'] },
+  { card:'85 − 40 = ?', q:'Calcule', correct:'45', choices:['35','43','45','55'] },
   { card:'246 + 50 = ?', q:'Calcule', correct:'296', choices:['256','286','296','346'] },
-  { card:'373 â 70 = ?', q:'Calcule', correct:'303', choices:['293','300','303','313'] },
+  { card:'373 − 70 = ?', q:'Calcule', correct:'303', choices:['293','300','303','313'] },
   { card:'158 + 200 = ?', q:'Calcule', correct:'358', choices:['348','356','358','368'] },
-  { card:'524 â 300 = ?', q:'Calcule', correct:'224', choices:['194','214','224','234'] },
+  { card:'524 − 300 = ?', q:'Calcule', correct:'224', choices:['194','214','224','234'] },
 ], 'ex5');
 
 buildPaires([
-  { q:'Associe chaque calcul Ã  son rÃ©sultat.',
-    pairs:[['36 + 9','45'],['MoitiÃ© de 36','18'],['45 + 19','64'],['Double de 23','46']] },
-  { q:'Associe chaque calcul Ã  son rÃ©sultat.',
-    pairs:[['72 + â = 100','28'],['Double de 45','90'],['83 â 11','72'],['35 + â = 100','65']] },
+  { q:'Associe chaque calcul à son résultat.',
+    pairs:[['36 + 9','45'],['Moitié de 36','18'],['45 + 19','64'],['Double de 23','46']] },
+  { q:'Associe chaque calcul à son résultat.',
+    pairs:[['72 + ☐ = 100','28'],['Double de 45','90'],['83 − 11','72'],['35 + ☐ = 100','65']] },
 ], 'ex6');
 
 buildOrdre([
-  { q:'Range ces calculs du PLUS PETIT rÃ©sultat au PLUS GRAND :',
+  { q:'Range ces calculs du PLUS PETIT résultat au PLUS GRAND :',
     items:['18 + 9','25 + 6','30 + 5','40 + 7','50 + 3'] },
 ], 'ex7');
 </script>

@@ -106,39 +106,39 @@ function check(btn, chosen, correct, rowId, fbId) {
   document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
   const fb = document.getElementById(fbId);
   if (chosen === correct) {
-    btn.classList.add('correct'); fb.textContent = 'â Bravo !'; fb.style.color = '#166534';
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
   } else {
-    btn.classList.add('wrong'); fb.textContent = 'â C\'Ã©tait ' + correct; fb.style.color = '#991b1b';
+    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
     document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
   }
 }
 
 buildQ([
-  { q: 'Comment s\'Ã©crit "3 fois un nombre x" en algÃ¨bre ?', correct: '3x', choices: ['x + 3','3 + x','3x','x Ã· 3'] },
-  { q: '"Le double d\'un nombre y augmentÃ© de 5" s\'Ã©critâ¦', correct: '2y + 5', choices: ['y + 5','2y + 5','2y Ã 5','y Ã 2 + 5'] },
-  { q: 'L\'expression "4a â 3b" contientâ¦', correct: '2 termes (4a et â3b)', choices: ['1 terme','2 termes (4a et â3b)','3 termes (4, a et 3b)','4 termes'] },
-  { q: 'Dans l\'expression 5x + 7, si on remplace x par 0, on obtientâ¦', correct: '7', choices: ['0','5','7','12'] },
+  { q: 'Comment s\'écrit "3 fois un nombre x" en algèbre ?', correct: '3x', choices: ['x + 3','3 + x','3x','x ÷ 3'] },
+  { q: '"Le double d\'un nombre y augmenté de 5" s\'écrit…', correct: '2y + 5', choices: ['y + 5','2y + 5','2y × 5','y × 2 + 5'] },
+  { q: 'L\'expression "4a − 3b" contient…', correct: '2 termes (4a et −3b)', choices: ['1 terme','2 termes (4a et −3b)','3 termes (4, a et 3b)','4 termes'] },
+  { q: 'Dans l\'expression 5x + 7, si on remplace x par 0, on obtient…', correct: '7', choices: ['0','5','7','12'] },
 ], 'ex1');
 
 buildQ([
   { card: '3x + 2 si x = 4', q: 'Calcule 3x + 2 pour x = 4', correct: '14', choices: ['10','12','14','18'] },
-  { card: 'xÂ² â 1 si x = 3', q: 'Calcule xÂ² â 1 pour x = 3', correct: '8', choices: ['5','8','9','10'] },
+  { card: 'x² − 1 si x = 3', q: 'Calcule x² − 1 pour x = 3', correct: '8', choices: ['5','8','9','10'] },
   { card: '2a + 3b si a=5, b=2', q: 'Calcule 2a + 3b pour a = 5 et b = 2', correct: '16', choices: ['12','14','16','20'] },
-  { card: '(n + 1)(n â 1) si n=5', q: 'Calcule (n+1)(nâ1) pour n = 5', correct: '24', choices: ['20','24','25','30'] },
+  { card: '(n + 1)(n − 1) si n=5', q: 'Calcule (n+1)(n−1) pour n = 5', correct: '24', choices: ['20','24','25','30'] },
 ], 'ex2');
 
 buildQ([
-  { card: 'x + 7 = 12', q: 'Est-ce que x = 5 est une solution de x + 7 = 12 ?', correct: 'Oui (5 + 7 = 12 â)', choices: ['Non','Oui (5 + 7 = 12 â)','On ne peut pas savoir'] },
-  { card: '2x = 14', q: 'Est-ce que x = 6 est une solution de 2x = 14 ?', correct: 'Non (2 Ã 6 = 12 â  14)', choices: ['Non (2 Ã 6 = 12 â  14)','Oui','On ne peut pas savoir'] },
-  { card: '3x â 1 = 8', q: 'Quelle valeur de x vÃ©rifie 3x â 1 = 8 ?', correct: 'x = 3 (car 3Ã3â1=8)', choices: ['x = 2','x = 3 (car 3Ã3â1=8)','x = 4','x = 9'] },
-  { card: 'x/2 + 1 = 4', q: 'Quelle valeur de x vÃ©rifie x/2 + 1 = 4 ?', correct: 'x = 6 (car 6/2+1=4)', choices: ['x = 4','x = 5','x = 6 (car 6/2+1=4)','x = 8'] },
+  { card: 'x + 7 = 12', q: 'Est-ce que x = 5 est une solution de x + 7 = 12 ?', correct: 'Oui (5 + 7 = 12 ✓)', choices: ['Non','Oui (5 + 7 = 12 ✓)','On ne peut pas savoir'] },
+  { card: '2x = 14', q: 'Est-ce que x = 6 est une solution de 2x = 14 ?', correct: 'Non (2 × 6 = 12 ≠ 14)', choices: ['Non (2 × 6 = 12 ≠ 14)','Oui','On ne peut pas savoir'] },
+  { card: '3x − 1 = 8', q: 'Quelle valeur de x vérifie 3x − 1 = 8 ?', correct: 'x = 3 (car 3×3−1=8)', choices: ['x = 2','x = 3 (car 3×3−1=8)','x = 4','x = 9'] },
+  { card: 'x/2 + 1 = 4', q: 'Quelle valeur de x vérifie x/2 + 1 = 4 ?', correct: 'x = 6 (car 6/2+1=4)', choices: ['x = 4','x = 5','x = 6 (car 6/2+1=4)','x = 8'] },
 ], 'ex3');
 
 buildQ([
-  { card: 'x + 9 = 15', q: 'RÃ©sous x + 9 = 15', correct: 'x = 6', choices: ['x = 4','x = 6','x = 7','x = 24'] },
-  { card: '4x = 28', q: 'RÃ©sous 4x = 28', correct: 'x = 7', choices: ['x = 4','x = 7','x = 8','x = 24'] },
-  { card: 'x â 5 = 11', q: 'RÃ©sous x â 5 = 11', correct: 'x = 16', choices: ['x = 6','x = 11','x = 16','x = 55'] },
-  { q: 'LÃ©a a x billes. Elle en donne 8 et il lui en reste 15. Quelle Ã©quation reprÃ©sente cette situation ?', correct: 'x â 8 = 15', choices: ['x + 8 = 15','x â 8 = 15','8x = 15','x + 15 = 8'] },
+  { card: 'x + 9 = 15', q: 'Résous x + 9 = 15', correct: 'x = 6', choices: ['x = 4','x = 6','x = 7','x = 24'] },
+  { card: '4x = 28', q: 'Résous 4x = 28', correct: 'x = 7', choices: ['x = 4','x = 7','x = 8','x = 24'] },
+  { card: 'x − 5 = 11', q: 'Résous x − 5 = 11', correct: 'x = 16', choices: ['x = 6','x = 11','x = 16','x = 55'] },
+  { q: 'Léa a x billes. Elle en donne 8 et il lui en reste 15. Quelle équation représente cette situation ?', correct: 'x − 8 = 15', choices: ['x + 8 = 15','x − 8 = 15','8x = 15','x + 15 = 8'] },
 ], 'ex4');
 </script>
 

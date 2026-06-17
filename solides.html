@@ -143,12 +143,12 @@ function shuffle(arr) { return [...arr].sort(() => Math.random() - 0.5); }
 
 // EXERCICE 1
 const solData = [
-  { q: 'J\'ai 6 faces carrÃ©es, 8 sommets et 12 arÃªtes.', correct: 'Cube', choices: ['Cube', 'PavÃ© droit', 'Pyramide', 'Cylindre'] },
-  { q: 'J\'ai 2 faces circulaires et une face courbÃ©e. Pas de sommet.', correct: 'Cylindre', choices: ['Cylindre', 'Boule', 'CÃ´ne', 'Cube'] },
-  { q: 'J\'ai 1 seule face courbÃ©e, 0 arÃªte, 0 sommet.', correct: 'Boule', choices: ['Boule', 'Cylindre', 'CÃ´ne', 'Cube'] },
-  { q: 'J\'ai une base carrÃ©e et 4 faces triangulaires.', correct: 'Pyramide', choices: ['Pyramide', 'Cube', 'PavÃ© droit', 'Prisme'] },
-  { q: 'J\'ai 6 faces rectangulaires (pas toutes Ã©gales), 8 sommets.', correct: 'PavÃ© droit', choices: ['Cube', 'PavÃ© droit', 'Prisme', 'Pyramide'] },
-  { q: 'J\'ai 1 base circulaire, 1 face courbÃ©e et 1 sommet.', correct: 'CÃ´ne', choices: ['CÃ´ne', 'Pyramide', 'Cylindre', 'Boule'] },
+  { q: 'J\'ai 6 faces carrées, 8 sommets et 12 arêtes.', correct: 'Cube', choices: ['Cube', 'Pavé droit', 'Pyramide', 'Cylindre'] },
+  { q: 'J\'ai 2 faces circulaires et une face courbée. Pas de sommet.', correct: 'Cylindre', choices: ['Cylindre', 'Boule', 'Cône', 'Cube'] },
+  { q: 'J\'ai 1 seule face courbée, 0 arête, 0 sommet.', correct: 'Boule', choices: ['Boule', 'Cylindre', 'Cône', 'Cube'] },
+  { q: 'J\'ai une base carrée et 4 faces triangulaires.', correct: 'Pyramide', choices: ['Pyramide', 'Cube', 'Pavé droit', 'Prisme'] },
+  { q: 'J\'ai 6 faces rectangulaires (pas toutes égales), 8 sommets.', correct: 'Pavé droit', choices: ['Cube', 'Pavé droit', 'Prisme', 'Pyramide'] },
+  { q: 'J\'ai 1 base circulaire, 1 face courbée et 1 sommet.', correct: 'Cône', choices: ['Cône', 'Pyramide', 'Cylindre', 'Boule'] },
 ];
 
 let scoreSol = 0;
@@ -171,22 +171,22 @@ function checkSol(btn, chosen, correct, idx) {
   document.getElementById(`sol-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
   if (chosen === correct) {
     btn.classList.add('correct');
-    document.getElementById(`sol-fb-${idx}`).textContent = 'â Bravo !'; document.getElementById(`sol-fb-${idx}`).style.color = '#166534';
+    document.getElementById(`sol-fb-${idx}`).textContent = '✅ Bravo !'; document.getElementById(`sol-fb-${idx}`).style.color = '#166534';
     scoreSol++; document.getElementById('score-sol').textContent = `Score : ${scoreSol} / 6`;
   } else {
     btn.classList.add('wrong');
-    document.getElementById(`sol-fb-${idx}`).textContent = `â C'Ã©tait ${correct}`; document.getElementById(`sol-fb-${idx}`).style.color = '#991b1b';
+    document.getElementById(`sol-fb-${idx}`).textContent = `❌ C'était ${correct}`; document.getElementById(`sol-fb-${idx}`).style.color = '#991b1b';
     document.getElementById(`sol-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
   }
 }
 
 // EXERCICE 2 : objets du quotidien
 const objData = [
-  { q: 'ð Une boÃ®te cadeau ressemble Ã â¦', correct: 'PavÃ© droit', choices: ['Cube', 'PavÃ© droit', 'Pyramide', 'Cylindre'] },
-  { q: 'ð¥« Une boÃ®te de conserve ressemble Ã â¦', correct: 'Cylindre', choices: ['Cylindre', 'Boule', 'Prisme', 'CÃ´ne'] },
-  { q: 'â½ Un ballon ressemble Ã â¦', correct: 'Boule', choices: ['Boule', 'Cube', 'Cylindre', 'CÃ´ne'] },
-  { q: 'ð¦ Un cornet de glace ressemble Ã â¦', correct: 'CÃ´ne', choices: ['CÃ´ne', 'Cylindre', 'Pyramide', 'Cube'] },
-  { q: 'ð² Un dÃ© ressemble Ã â¦', correct: 'Cube', choices: ['Cube', 'PavÃ© droit', 'SphÃ¨re', 'Pyramide'] },
+  { q: '🎁 Une boîte cadeau ressemble à…', correct: 'Pavé droit', choices: ['Cube', 'Pavé droit', 'Pyramide', 'Cylindre'] },
+  { q: '🥫 Une boîte de conserve ressemble à…', correct: 'Cylindre', choices: ['Cylindre', 'Boule', 'Prisme', 'Cône'] },
+  { q: '⚽ Un ballon ressemble à…', correct: 'Boule', choices: ['Boule', 'Cube', 'Cylindre', 'Cône'] },
+  { q: '🍦 Un cornet de glace ressemble à…', correct: 'Cône', choices: ['Cône', 'Cylindre', 'Pyramide', 'Cube'] },
+  { q: '🎲 Un dé ressemble à…', correct: 'Cube', choices: ['Cube', 'Pavé droit', 'Sphère', 'Pyramide'] },
 ];
 
 const ex2Container = document.getElementById('ex2-container');
@@ -208,21 +208,21 @@ function checkObj(btn, chosen, correct, idx) {
   document.getElementById(`obj-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
   if (chosen === correct) {
     btn.classList.add('correct');
-    document.getElementById(`obj-fb-${idx}`).textContent = 'â Bravo !'; document.getElementById(`obj-fb-${idx}`).style.color = '#166534';
+    document.getElementById(`obj-fb-${idx}`).textContent = '✅ Bravo !'; document.getElementById(`obj-fb-${idx}`).style.color = '#166534';
   } else {
     btn.classList.add('wrong');
-    document.getElementById(`obj-fb-${idx}`).textContent = `â C'Ã©tait ${correct}`; document.getElementById(`obj-fb-${idx}`).style.color = '#991b1b';
+    document.getElementById(`obj-fb-${idx}`).textContent = `❌ C'était ${correct}`; document.getElementById(`obj-fb-${idx}`).style.color = '#991b1b';
     document.getElementById(`obj-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
   }
 }
 
-// EXERCICE 3 : faces sommets arÃªtes
+// EXERCICE 3 : faces sommets arêtes
 const fsaData = [
   { q: 'Combien de faces a un cube ?', correct: '6', choices: ['4', '6', '8', '12'] },
-  { q: 'Combien d\'arÃªtes a un cube ?', correct: '12', choices: ['6', '8', '10', '12'] },
-  { q: 'Combien de sommets a un pavÃ© droit ?', correct: '8', choices: ['4', '6', '8', '10'] },
-  { q: 'Combien de faces a une pyramide Ã  base carrÃ©e ?', correct: '5', choices: ['4', '5', '6', '8'] },
-  { q: 'Combien de sommets a une pyramide Ã  base carrÃ©e ?', correct: '5', choices: ['4', '5', '6', '8'] },
+  { q: 'Combien d\'arêtes a un cube ?', correct: '12', choices: ['6', '8', '10', '12'] },
+  { q: 'Combien de sommets a un pavé droit ?', correct: '8', choices: ['4', '6', '8', '10'] },
+  { q: 'Combien de faces a une pyramide à base carrée ?', correct: '5', choices: ['4', '5', '6', '8'] },
+  { q: 'Combien de sommets a une pyramide à base carrée ?', correct: '5', choices: ['4', '5', '6', '8'] },
 ];
 
 const ex3Container = document.getElementById('ex3-container');
@@ -244,21 +244,21 @@ function checkFsa(btn, chosen, correct, idx) {
   document.getElementById(`fsa-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
   if (chosen === correct) {
     btn.classList.add('correct');
-    document.getElementById(`fsa-fb-${idx}`).textContent = 'â Bravo !'; document.getElementById(`fsa-fb-${idx}`).style.color = '#166534';
+    document.getElementById(`fsa-fb-${idx}`).textContent = '✅ Bravo !'; document.getElementById(`fsa-fb-${idx}`).style.color = '#166534';
   } else {
     btn.classList.add('wrong');
-    document.getElementById(`fsa-fb-${idx}`).textContent = `â C'Ã©tait ${correct}`; document.getElementById(`fsa-fb-${idx}`).style.color = '#991b1b';
+    document.getElementById(`fsa-fb-${idx}`).textContent = `❌ C'était ${correct}`; document.getElementById(`fsa-fb-${idx}`).style.color = '#991b1b';
     document.getElementById(`fsa-choices-${idx}`).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
   }
 }
 
 // EXERCICE 4 : VF
 const vfData = [
-  { txt: 'Un cube est un cas particulier de pavÃ© droit.', correct: true },
-  { txt: 'Une boule a des arÃªtes.', correct: false, exp: '0 arÃªte' },
+  { txt: 'Un cube est un cas particulier de pavé droit.', correct: true },
+  { txt: 'Une boule a des arêtes.', correct: false, exp: '0 arête' },
   { txt: 'Un cylindre a 2 faces circulaires.', correct: true },
   { txt: 'Une pyramide a des faces triangulaires.', correct: true },
-  { txt: 'Un cÃ´ne a 2 sommets.', correct: false, exp: '1 seul sommet' },
+  { txt: 'Un cône a 2 sommets.', correct: false, exp: '1 seul sommet' },
 ];
 
 const ex4Container = document.getElementById('ex4-container');
@@ -284,10 +284,10 @@ function checkVF(btn, chosen, correct, fbId, exp) {
   const fb = document.getElementById(fbId);
   if (chosen === correct) {
     btn.style.background = '#22c55e'; btn.style.color = 'white';
-    fb.textContent = 'â Bravo !'; fb.style.color = '#166534';
+    fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
   } else {
     btn.style.background = '#ef4444'; btn.style.color = 'white'; btn.style.borderColor = '#b91c1c';
-    fb.textContent = exp ? `â Faux â ${exp}` : 'â Pas tout Ã  fait !'; fb.style.color = '#991b1b';
+    fb.textContent = exp ? `❌ Faux — ${exp}` : '❌ Pas tout à fait !'; fb.style.color = '#991b1b';
   }
 }
 </script>

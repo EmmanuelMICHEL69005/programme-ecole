@@ -170,107 +170,107 @@
 
 <script src="exercises.js"></script>
 <script>
-// ââ EX 1 : Petites additions ââââââââââââââââââââââââââââââââââââââââââ
+// ── EX 1 : Petites additions ──────────────────────────────────────────
 buildQCM([
   { card:'3 + 4 = ?', q:'Calcule 3 + 4', correct:'7', choices:['6','7','8','9'] },
   { card:'6 + 5 = ?', q:'Calcule 6 + 5', correct:'11', choices:['10','11','12','13'] },
   { card:'8 + 7 = ?', q:'Calcule 8 + 7', correct:'15', choices:['13','14','15','16'] },
   { card:'9 + 6 = ?', q:'Calcule 9 + 6', correct:'15', choices:['13','15','16','18'] },
-  { q:'Quel nombre manque ? 4 + â = 9', correct:'5', choices:['3','4','5','6'] },
-  { q:'Quel nombre manque ? â + 7 = 13', correct:'6', choices:['5','6','7','8'] },
+  { q:'Quel nombre manque ? 4 + ☐ = 9', correct:'5', choices:['3','4','5','6'] },
+  { q:'Quel nombre manque ? ☐ + 7 = 13', correct:'6', choices:['5','6','7','8'] },
   { card:'14 + 5 = ?', q:'Calcule 14 + 5', correct:'19', choices:['17','18','19','20'] },
 ], 'ex1');
 
-// ââ EX 2 : Petites soustractions âââââââââââââââââââââââââââââââââââââ
+// ── EX 2 : Petites soustractions ─────────────────────────────────────
 buildQCM([
-  { card:'9 â 4 = ?', q:'Calcule 9 â 4', correct:'5', choices:['3','4','5','6'] },
-  { card:'12 â 5 = ?', q:'Calcule 12 â 5', correct:'7', choices:['6','7','8','9'] },
-  { card:'15 â 8 = ?', q:'Calcule 15 â 8', correct:'7', choices:['5','6','7','8'] },
-  { q:'Quel nombre manque ? â â 3 = 6', correct:'9', choices:['7','8','9','10'] },
-  { card:'18 â 9 = ?', q:'Calcule 18 â 9', correct:'9', choices:['7','8','9','10'] },
-  { q:'Quel nombre manque ? 14 â â = 8', correct:'6', choices:['4','5','6','7'] },
-  { card:'20 â 7 = ?', q:'Calcule 20 â 7', correct:'13', choices:['11','12','13','14'] },
+  { card:'9 − 4 = ?', q:'Calcule 9 − 4', correct:'5', choices:['3','4','5','6'] },
+  { card:'12 − 5 = ?', q:'Calcule 12 − 5', correct:'7', choices:['6','7','8','9'] },
+  { card:'15 − 8 = ?', q:'Calcule 15 − 8', correct:'7', choices:['5','6','7','8'] },
+  { q:'Quel nombre manque ? ☐ − 3 = 6', correct:'9', choices:['7','8','9','10'] },
+  { card:'18 − 9 = ?', q:'Calcule 18 − 9', correct:'9', choices:['7','8','9','10'] },
+  { q:'Quel nombre manque ? 14 − ☐ = 8', correct:'6', choices:['4','5','6','7'] },
+  { card:'20 − 7 = ?', q:'Calcule 20 − 7', correct:'13', choices:['11','12','13','14'] },
 ], 'ex2');
 
-// ââ EX 3 : Vrai ou Faux âââââââââââââââââââââââââââââââââââââââââââââââ
+// ── EX 3 : Vrai ou Faux ───────────────────────────────────────────────
 buildVF([
   { q:'5 + 8 = 13', correct:true },
   { q:'7 + 6 = 14', correct:false, expl:'7 + 6 = 13' },
-  { q:'15 â 7 = 8', correct:true },
-  { q:'12 â 5 = 6', correct:false, expl:'12 â 5 = 7' },
+  { q:'15 − 7 = 8', correct:true },
+  { q:'12 − 5 = 6', correct:false, expl:'12 − 5 = 7' },
   { q:'4 + 9 = 9 + 4 (on peut changer l\'ordre)', correct:true, expl:'L\'addition est commutative' },
   { q:'0 + 13 = 13', correct:true, expl:'Ajouter 0 ne change rien' },
-  { q:'10 â 10 = 1', correct:false, expl:'10 â 10 = 0' },
-  { q:'6 + 4 = 10 (complÃ©ment Ã  10)', correct:true },
+  { q:'10 − 10 = 1', correct:false, expl:'10 − 10 = 0' },
+  { q:'6 + 4 = 10 (complément à 10)', correct:true },
 ], 'ex3');
 
-// ââ EX 4 : ComplÃ©ments âââââââââââââââââââââââââââââââââââââââââââââââ
+// ── EX 4 : Compléments ───────────────────────────────────────────────
 buildQCM([
-  { q:'Quel nombre complÃ¨te 6 + â = 10 ?', correct:'4', choices:['3','4','5','6'],
-    hint:'Combien faut-il ajouter Ã  6 pour arriver Ã  10 ?' },
-  { q:'Quel nombre complÃ¨te 3 + â = 10 ?', correct:'7', choices:['5','6','7','8'] },
-  { q:'Quel nombre complÃ¨te 8 + â = 10 ?', correct:'2', choices:['1','2','3','4'] },
-  { q:'Quel nombre complÃ¨te 7 + â = 10 ?', correct:'3', choices:['2','3','4','5'] },
-  { q:'Quel nombre complÃ¨te â + 5 = 10 ?', correct:'5', choices:['4','5','6','7'] },
-  { q:'Quel nombre complÃ¨te 9 + â = 20 ?', correct:'11', choices:['9','10','11','12'] },
-  { q:'Quel nombre complÃ¨te 15 + â = 20 ?', correct:'5', choices:['4','5','6','7'] },
+  { q:'Quel nombre complète 6 + ☐ = 10 ?', correct:'4', choices:['3','4','5','6'],
+    hint:'Combien faut-il ajouter à 6 pour arriver à 10 ?' },
+  { q:'Quel nombre complète 3 + ☐ = 10 ?', correct:'7', choices:['5','6','7','8'] },
+  { q:'Quel nombre complète 8 + ☐ = 10 ?', correct:'2', choices:['1','2','3','4'] },
+  { q:'Quel nombre complète 7 + ☐ = 10 ?', correct:'3', choices:['2','3','4','5'] },
+  { q:'Quel nombre complète ☐ + 5 = 10 ?', correct:'5', choices:['4','5','6','7'] },
+  { q:'Quel nombre complète 9 + ☐ = 20 ?', correct:'11', choices:['9','10','11','12'] },
+  { q:'Quel nombre complète 15 + ☐ = 20 ?', correct:'5', choices:['4','5','6','7'] },
 ], 'ex4');
 
-// ââ EX 5 : Additions avec dizaines âââââââââââââââââââââââââââââââââââ
+// ── EX 5 : Additions avec dizaines ───────────────────────────────────
 buildQCM([
   { card:'20 + 30 = ?', q:'Calcule 20 + 30', correct:'50', choices:['40','50','60','23'] },
   { card:'45 + 10 = ?', q:'Calcule 45 + 10', correct:'55', choices:['46','54','55','56'] },
-  { card:'60 â 20 = ?', q:'Calcule 60 â 20', correct:'40', choices:['30','40','42','80'] },
+  { card:'60 − 20 = ?', q:'Calcule 60 − 20', correct:'40', choices:['30','40','42','80'] },
   { card:'30 + 17 = ?', q:'Calcule 30 + 17', correct:'47', choices:['37','47','48','57'] },
   { card:'50 + 25 = ?', q:'Calcule 50 + 25', correct:'75', choices:['55','70','75','80'] },
-  { card:'80 â 30 = ?', q:'Calcule 80 â 30', correct:'50', choices:['40','50','55','60'] },
+  { card:'80 − 30 = ?', q:'Calcule 80 − 30', correct:'50', choices:['40','50','55','60'] },
   { q:'J\'ai 40 billes et j\'en trouve 23 autres. Combien en ai-je ?',
     correct:'63', choices:['57','63','67','73'] },
 ], 'ex5');
 
-// ââ EX 6 : Paires opÃ©ration â rÃ©sultat ââââââââââââââââââââââââââââââââ
+// ── EX 6 : Paires opération ↔ résultat ────────────────────────────────
 buildPaires([
-  { q:'Associe chaque opÃ©ration Ã  son rÃ©sultat.',
+  { q:'Associe chaque opération à son résultat.',
     pairs:[
-      ['3 + 7', '10'], ['14 â 6', '8'],
-      ['9 + 8', '17'], ['20 â 5', '15'],
+      ['3 + 7', '10'], ['14 − 6', '8'],
+      ['9 + 8', '17'], ['20 − 5', '15'],
     ]
   },
-  { q:'Associe chaque opÃ©ration Ã  son rÃ©sultat.',
+  { q:'Associe chaque opération à son résultat.',
     pairs:[
-      ['6 + 6', '12'], ['18 â 9', '9'],
-      ['25 + 5', '30'], ['40 â 15', '25'],
+      ['6 + 6', '12'], ['18 − 9', '9'],
+      ['25 + 5', '30'], ['40 − 15', '25'],
     ]
   },
 ], 'ex6');
 
-// ââ EX 7 : Mini-problÃ¨mes âââââââââââââââââââââââââââââââââââââââââââââ
+// ── EX 7 : Mini-problèmes ─────────────────────────────────────────────
 buildQCM([
-  { enonce:'ð Il y a 6 pommes dans le panier et Tom en ajoute 4.',
+  { enonce:'🍎 Il y a 6 pommes dans le panier et Tom en ajoute 4.',
     q:'Combien y en a-t-il maintenant ?', correct:'10', choices:['8','9','10','11'] },
-  { enonce:'ð® LÃ©a a 13 billes. Elle en perd 5.',
+  { enonce:'🎮 Léa a 13 billes. Elle en perd 5.',
     q:'Combien lui en reste-t-il ?', correct:'8', choices:['7','8','9','18'] },
-  { enonce:'ð« Il y a 11 filles et 9 garÃ§ons dans la classe.',
-    q:'Combien d\'Ã©lÃ¨ves y a-t-il en tout ?', correct:'20', choices:['18','19','20','21'] },
-  { enonce:'ð Un bus a 15 passagers. 6 descendent Ã  l\'arrÃªt.',
+  { enonce:'🏫 Il y a 11 filles et 9 garçons dans la classe.',
+    q:'Combien d\'élèves y a-t-il en tout ?', correct:'20', choices:['18','19','20','21'] },
+  { enonce:'🚌 Un bus a 15 passagers. 6 descendent à l\'arrêt.',
     q:'Combien de passagers restent dans le bus ?', correct:'9', choices:['7','8','9','10'] },
-  { enonce:'ð¬ Hugo avait 20 bonbons. Il en a donnÃ© 8 Ã  ses amis.',
+  { enonce:'🍬 Hugo avait 20 bonbons. Il en a donné 8 à ses amis.',
     q:'Combien lui en reste-t-il ?', correct:'12', choices:['10','11','12','13'] },
-  { enonce:'ð ChloÃ© a lu 14 pages lundi et 6 pages mardi.',
+  { enonce:'📚 Chloé a lu 14 pages lundi et 6 pages mardi.',
     q:'Combien de pages a-t-elle lues en tout ?', correct:'20', choices:['18','19','20','21'] },
 ], 'ex7');
 
-// ââ EX 8 : Quel signe ? TRI âââââââââââââââââââââââââââââââââââââââââââ
+// ── EX 8 : Quel signe ? TRI ───────────────────────────────────────────
 buildTri([
-  { q:'Chaque opÃ©ration utilise + (addition) ou â (soustraction). Classe-les !',
-    cats:['â Addition','â Soustraction'],
+  { q:'Chaque opération utilise + (addition) ou − (soustraction). Classe-les !',
+    cats:['➕ Addition','➖ Soustraction'],
     items:[
-      {v:'5 + 3',  cat:'â Addition'},
-      {v:'12 â 4', cat:'â Soustraction'},
-      {v:'7 + 8',  cat:'â Addition'},
-      {v:'15 â 7', cat:'â Soustraction'},
-      {v:'20 + 3', cat:'â Addition'},
-      {v:'9 â 2',  cat:'â Soustraction'},
+      {v:'5 + 3',  cat:'➕ Addition'},
+      {v:'12 − 4', cat:'➖ Soustraction'},
+      {v:'7 + 8',  cat:'➕ Addition'},
+      {v:'15 − 7', cat:'➖ Soustraction'},
+      {v:'20 + 3', cat:'➕ Addition'},
+      {v:'9 − 2',  cat:'➖ Soustraction'},
     ]
   },
 ], 'ex8');

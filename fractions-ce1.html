@@ -144,39 +144,39 @@ function check(btn, chosen, correct, rowId, fbId) {
   document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
   const fb = document.getElementById(fbId);
   if (chosen === correct) {
-    btn.classList.add('correct'); fb.innerHTML = 'â Bravo !'; fb.style.color = '#166534';
+    btn.classList.add('correct'); fb.innerHTML = '✅ Bravo !'; fb.style.color = '#166534';
   } else {
-    btn.classList.add('wrong'); fb.innerHTML = 'â C\'Ã©tait ' + formatFrac(correct); fb.style.color = '#991b1b';
+    btn.classList.add('wrong'); fb.innerHTML = '❌ C\'était ' + formatFrac(correct); fb.style.color = '#991b1b';
     document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.dataset.val === correct) b.classList.add('correct'); });
   }
 }
 
 buildQ([
-  { q: 'Un gÃ¢teau est coupÃ© en 2 parts Ã©gales. Je mange une part. Quelle fraction j\'ai mangÃ©e ?', correct: '1/2', choices: ['1/3','1/2','2/3','1/4'] },
-  { q: 'Une orange est partagÃ©e en 4 quartiers Ã©gaux. Je prends un quartier. C\'estâ¦', correct: '1/4', choices: ['1/2','1/3','1/4','4/1'] },
-  { q: 'Une barre de chocolat est divisÃ©e en 3 parties Ã©gales. Je mange une partie. C\'estâ¦', correct: '1/3', choices: ['1/2','1/3','3/1','1/4'] },
-  { q: 'Une pizza est coupÃ©e en 4. Je prends 3 parts. Quelle fraction as-tu prise ?', correct: '3/4', choices: ['1/4','2/4','3/4','4/4'] },
+  { q: 'Un gâteau est coupé en 2 parts égales. Je mange une part. Quelle fraction j\'ai mangée ?', correct: '1/2', choices: ['1/3','1/2','2/3','1/4'] },
+  { q: 'Une orange est partagée en 4 quartiers égaux. Je prends un quartier. C\'est…', correct: '1/4', choices: ['1/2','1/3','1/4','4/1'] },
+  { q: 'Une barre de chocolat est divisée en 3 parties égales. Je mange une partie. C\'est…', correct: '1/3', choices: ['1/2','1/3','3/1','1/4'] },
+  { q: 'Une pizza est coupée en 4. Je prends 3 parts. Quelle fraction as-tu prise ?', correct: '3/4', choices: ['1/4','2/4','3/4','4/4'] },
 ], 'ex1');
 
 buildQ([
-  { q: 'Je coupe une feuille en 2 parties Ã©gales. Chaque partie estâ¦', correct: 'une moitiÃ© (1/2)', choices: ['un tiers (1/3)','un quart (1/4)','une moitiÃ© (1/2)','un entier'] },
-  { q: 'Pour partager une tarte en 4 parts Ã©gales, je la coupe enâ¦', correct: '4 morceaux Ã©gaux', choices: ['2 morceaux','4 morceaux Ã©gaux','4 morceaux inÃ©gaux','3 morceaux'] },
-  { q: 'Si je partage 12 billes en 4 groupes Ã©gaux, combien dans chaque groupe ?', correct: '3 billes', choices: ['2 billes','3 billes','4 billes','6 billes'] },
-  { q: 'La moitiÃ© de 10, c\'estâ¦', correct: '5', choices: ['2','4','5','6'] },
+  { q: 'Je coupe une feuille en 2 parties égales. Chaque partie est…', correct: 'une moitié (1/2)', choices: ['un tiers (1/3)','un quart (1/4)','une moitié (1/2)','un entier'] },
+  { q: 'Pour partager une tarte en 4 parts égales, je la coupe en…', correct: '4 morceaux égaux', choices: ['2 morceaux','4 morceaux égaux','4 morceaux inégaux','3 morceaux'] },
+  { q: 'Si je partage 12 billes en 4 groupes égaux, combien dans chaque groupe ?', correct: '3 billes', choices: ['2 billes','3 billes','4 billes','6 billes'] },
+  { q: 'La moitié de 10, c\'est…', correct: '5', choices: ['2','4','5','6'] },
 ], 'ex2');
 
 buildQ([
-  { q: 'Il y a 8 bonbons. Le quart de 8, c\'estâ¦', correct: '2', choices: ['1','2','4','8'] },
-  { q: 'Il y a 6 fruits. Le tiers de 6, c\'estâ¦', correct: '2', choices: ['1','2','3','6'] },
-  { q: 'Il y a 12 Ã©lÃ¨ves. La moitiÃ© joue. Combien jouent ?', correct: '6', choices: ['4','5','6','8'] },
-  { q: 'Le quart de 20, c\'estâ¦', correct: '5', choices: ['4','5','6','8'] },
+  { q: 'Il y a 8 bonbons. Le quart de 8, c\'est…', correct: '2', choices: ['1','2','4','8'] },
+  { q: 'Il y a 6 fruits. Le tiers de 6, c\'est…', correct: '2', choices: ['1','2','3','6'] },
+  { q: 'Il y a 12 élèves. La moitié joue. Combien jouent ?', correct: '6', choices: ['4','5','6','8'] },
+  { q: 'Le quart de 20, c\'est…', correct: '5', choices: ['4','5','6','8'] },
 ], 'ex3');
 
 buildQ([
-  { q: '1/2 est-il plus grand ou plus petit que 1/4 ?', correct: '1/2 > 1/4 (plus grand)', choices: ['1/2 > 1/4 (plus grand)','1/2 < 1/4 (plus petit)','1/2 = 1/4 (Ã©gaux)'] },
-  { q: 'Quelle est la plus petite fraction : 1/2 ou 1/3 ?', correct: '1/3', choices: ['1/2','1/3','Elles sont Ã©gales'] },
+  { q: '1/2 est-il plus grand ou plus petit que 1/4 ?', correct: '1/2 > 1/4 (plus grand)', choices: ['1/2 > 1/4 (plus grand)','1/2 < 1/4 (plus petit)','1/2 = 1/4 (égaux)'] },
+  { q: 'Quelle est la plus petite fraction : 1/2 ou 1/3 ?', correct: '1/3', choices: ['1/2','1/3','Elles sont égales'] },
   { q: 'Si tu as 1/2 d\'une pizza et ton ami a 1/4, qui a plus ?', correct: 'Moi (1/2 > 1/4)', choices: ['Moi (1/2 > 1/4)','Mon ami (1/4 > 1/2)','Nous avons pareil'] },
-  { q: '2/4 est-il Ã©gal Ã  1/2 ?', correct: 'Oui, 2/4 = 1/2', choices: ['Non, 2/4 < 1/2','Oui, 2/4 = 1/2','Non, 2/4 > 1/2'] },
+  { q: '2/4 est-il égal à 1/2 ?', correct: 'Oui, 2/4 = 1/2', choices: ['Non, 2/4 < 1/2','Oui, 2/4 = 1/2','Non, 2/4 > 1/2'] },
 ], 'ex4');
 </script>
 

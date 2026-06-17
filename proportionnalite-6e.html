@@ -111,44 +111,44 @@ function check(btn, chosen, correct, rowId, fbId) {
   document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
   const fb = document.getElementById(fbId);
   if (chosen === correct) {
-    btn.classList.add('correct'); fb.textContent = 'â Bravo !'; fb.style.color = '#166534';
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
   } else {
-    btn.classList.add('wrong'); fb.textContent = 'â C\'Ã©tait ' + correct; fb.style.color = '#991b1b';
+    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
     document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
   }
 }
 
 buildQ([
   {
-    tableau: `<table class="tableau-prop"><tr><th>Nombre de cahiers</th><td>1</td><td>3</td><td>5</td><td>?</td></tr><tr><th>Prix en â¬</th><td>2,50</td><td>7,50</td><td>12,50</td><td>?</td></tr></table>`,
-    q: 'Quel est le coefficient de proportionnalitÃ© (prix par cahier) ?',
+    tableau: `<table class="tableau-prop"><tr><th>Nombre de cahiers</th><td>1</td><td>3</td><td>5</td><td>?</td></tr><tr><th>Prix en €</th><td>2,50</td><td>7,50</td><td>12,50</td><td>?</td></tr></table>`,
+    q: 'Quel est le coefficient de proportionnalité (prix par cahier) ?',
     correct: '2,50', choices: ['1,50','2,50','3','5']
   },
   {
     tableau: `<table class="tableau-prop"><tr><th>Distance (km)</th><td>50</td><td>100</td><td>?</td></tr><tr><th>Carburant (L)</th><td>4</td><td>8</td><td>20</td></tr></table>`,
-    q: 'Quelle distance correspond Ã  20 L de carburant ?',
+    q: 'Quelle distance correspond à 20 L de carburant ?',
     correct: '250 km', choices: ['200 km','250 km','300 km','160 km']
   },
-  { q: 'Un tableau est proportionnel si : 1â5, 2â10, 3â15. Quelle est la valeur pour 7 ?', correct: '35', choices: ['21','28','35','42'] },
+  { q: 'Un tableau est proportionnel si : 1→5, 2→10, 3→15. Quelle est la valeur pour 7 ?', correct: '35', choices: ['21','28','35','42'] },
 ], 'ex1');
 
 buildQ([
-  { enonce: '5 pizzas coÃ»tent 37,50 â¬.', q: 'Combien coÃ»tent 8 pizzas ?', correct: '60 â¬', choices: ['45 â¬','50 â¬','60 â¬','75 â¬'] },
+  { enonce: '5 pizzas coûtent 37,50 €.', q: 'Combien coûtent 8 pizzas ?', correct: '60 €', choices: ['45 €','50 €','60 €','75 €'] },
   { enonce: 'Un robinet remplit 15 L en 3 minutes.', q: 'En combien de minutes remplit-il 45 L ?', correct: '9 minutes', choices: ['6 minutes','9 minutes','12 minutes','15 minutes'] },
-  { enonce: '8 ouvriers font un travail en 6 jours.', q: 'Combien de jours faut-il Ã  12 ouvriers ?', correct: '4 jours', choices: ['3 jours','4 jours','5 jours','8 jours'] },
+  { enonce: '8 ouvriers font un travail en 6 jours.', q: 'Combien de jours faut-il à 12 ouvriers ?', correct: '4 jours', choices: ['3 jours','4 jours','5 jours','8 jours'] },
 ], 'ex2');
 
 buildQ([
   { q: '20% de 150 = ?', correct: '30', choices: ['15','20','30','50'] },
-  { q: 'Un vÃªtement de 80 â¬ est soldÃ© Ã  â30%. Prix soldÃ© ?', correct: '56 â¬', choices: ['50 â¬','56 â¬','60 â¬','24 â¬'] },
-  { q: '40 Ã©lÃ¨ves sur 200 ont les yeux verts. Quel pourcentage est-ce ?', correct: '20%', choices: ['15%','20%','25%','40%'] },
-  { q: 'Le prix d\'un article passe de 50 â¬ Ã  60 â¬. Quelle est l\'augmentation en % ?', correct: '20%', choices: ['10%','20%','25%','60%'] },
+  { q: 'Un vêtement de 80 € est soldé à −30%. Prix soldé ?', correct: '56 €', choices: ['50 €','56 €','60 €','24 €'] },
+  { q: '40 élèves sur 200 ont les yeux verts. Quel pourcentage est-ce ?', correct: '20%', choices: ['15%','20%','25%','40%'] },
+  { q: 'Le prix d\'un article passe de 50 € à 60 €. Quelle est l\'augmentation en % ?', correct: '20%', choices: ['10%','20%','25%','60%'] },
 ], 'ex3');
 
 buildQ([
-  { enonce: 'Une voiture roule Ã  90 km/h.', q: 'Quelle distance parcourt-elle en 2h30 min ?', correct: '225 km', choices: ['180 km','200 km','225 km','270 km'] },
-  { enonce: 'Sur une carte Ã  l\'Ã©chelle 1/50 000, une route mesure 4 cm.', q: 'Quelle est la longueur rÃ©elle ?', correct: '2 km', choices: ['200 m','1 km','2 km','4 km'] },
-  { enonce: 'Un coureur fait 10 km en 50 minutes.', q: 'Ã quelle vitesse court-il (km/h) ?', correct: '12 km/h', choices: ['10 km/h','12 km/h','15 km/h','20 km/h'] },
+  { enonce: 'Une voiture roule à 90 km/h.', q: 'Quelle distance parcourt-elle en 2h30 min ?', correct: '225 km', choices: ['180 km','200 km','225 km','270 km'] },
+  { enonce: 'Sur une carte à l\'échelle 1/50 000, une route mesure 4 cm.', q: 'Quelle est la longueur réelle ?', correct: '2 km', choices: ['200 m','1 km','2 km','4 km'] },
+  { enonce: 'Un coureur fait 10 km en 50 minutes.', q: 'À quelle vitesse court-il (km/h) ?', correct: '12 km/h', choices: ['10 km/h','12 km/h','15 km/h','20 km/h'] },
 ], 'ex4');
 </script>
 

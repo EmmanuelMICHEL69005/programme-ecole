@@ -131,12 +131,12 @@ function checkQ(btn, chosen, correct, rowId, fbId, scoreKey, total) {
   document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
   if (chosen === correct) {
     btn.classList.add('correct');
-    document.getElementById(fbId).textContent = 'â Bravo !'; document.getElementById(fbId).style.color = '#166534';
+    document.getElementById(fbId).textContent = '✅ Bravo !'; document.getElementById(fbId).style.color = '#166534';
     scores[scoreKey]++;
     document.getElementById(`score-${scoreKey}`).textContent = `Score : ${scores[scoreKey]} / ${total}`;
   } else {
     btn.classList.add('wrong');
-    document.getElementById(fbId).textContent = `â C'Ã©tait ${correct}`; document.getElementById(fbId).style.color = '#991b1b';
+    document.getElementById(fbId).textContent = `❌ C'était ${correct}`; document.getElementById(fbId).style.color = '#991b1b';
     document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => {
       if (b.textContent.trim() === String(correct)) b.classList.add('correct');
     });
@@ -175,7 +175,7 @@ const masseData = [
   { q: '2 kg = __ g', correct: '2 000 g', choices: ['200 g', '2 000 g', '20 g', '20 000 g'] },
   { q: '500 g = __ kg', correct: '0,5 kg', choices: ['5 kg', '50 kg', '0,5 kg', '0,05 kg'] },
   { q: '3 t = __ kg', correct: '3 000 kg', choices: ['300 kg', '3 000 kg', '30 000 kg', '30 kg'] },
-  { q: 'Un sac de pommes pÃ¨se environâ¦', correct: '2 kg', choices: ['2 g', '2 kg', '200 kg', '2 t'] },
+  { q: 'Un sac de pommes pèse environ…', correct: '2 kg', choices: ['2 g', '2 kg', '200 kg', '2 t'] },
   { q: '1 500 g = __ kg __ g', correct: '1 kg 500 g', choices: ['15 kg 0 g', '1 kg 500 g', '1 kg 50 g', '0 kg 150 g'] },
 ];
 buildQCM(document.getElementById('ex2-container'), masseData, 'masse', 'masse', 5);
@@ -185,7 +185,7 @@ const contData = [
   { q: '2 L = __ dL', correct: '20 dL', choices: ['2 dL', '20 dL', '200 dL', '0,2 dL'] },
   { q: '5 dL = __ cL', correct: '50 cL', choices: ['5 cL', '50 cL', '500 cL', '0,5 cL'] },
   { q: '150 cL = __ L', correct: '1,5 L', choices: ['150 L', '15 L', '1,5 L', '0,15 L'] },
-  { q: 'Une bouteille d\'eau fait environâ¦', correct: '1,5 L', choices: ['1,5 L', '15 L', '150 L', '0,15 L'] },
+  { q: 'Une bouteille d\'eau fait environ…', correct: '1,5 L', choices: ['1,5 L', '15 L', '150 L', '0,15 L'] },
 ];
 buildQCM(document.getElementById('ex3-container'), contData, 'cont', 'cont', 4);
 
@@ -220,20 +220,20 @@ function checkSign(btn, chosen, correct, rowId, fbId) {
   document.getElementById(rowId).querySelectorAll('button').forEach(b => b.disabled = true);
   if (chosen === correct) {
     btn.style.background = '#22c55e'; btn.style.color = 'white'; btn.style.borderColor = '#16a34a';
-    document.getElementById(fbId).textContent = 'â Bravo !'; document.getElementById(fbId).style.color = '#166534';
+    document.getElementById(fbId).textContent = '✅ Bravo !'; document.getElementById(fbId).style.color = '#166534';
   } else {
     btn.style.background = '#ef4444'; btn.style.color = 'white'; btn.style.borderColor = '#b91c1c';
-    document.getElementById(fbId).textContent = `â C'Ã©tait ${correct}`; document.getElementById(fbId).style.color = '#991b1b';
+    document.getElementById(fbId).textContent = `❌ C'était ${correct}`; document.getElementById(fbId).style.color = '#991b1b';
     document.getElementById(rowId).querySelectorAll('button').forEach(b => { if (b.textContent === correct) { b.style.background='#22c55e'; b.style.color='white'; b.style.borderColor='#16a34a'; } });
   }
 }
 
-// PROBLÃMES DE MESURES
+// PROBLÈMES DE MESURES
 const pbData = [
   { q: 'Lucie a un ruban de <strong>3 m</strong>. Elle en utilise <strong>120 cm</strong>. Combien de cm lui reste-t-il ?', correct: '180 cm', choices: ['80 cm', '120 cm', '180 cm', '300 cm'] },
-  { q: 'Un colis pÃ¨se <strong>2 kg 500 g</strong>. Un autre pÃ¨se <strong>1 kg 800 g</strong>. Quel est leur poids total ?', correct: '4 kg 300 g', choices: ['3 kg 300 g', '4 kg 300 g', '4 kg 700 g', '3 kg 700 g'] },
+  { q: 'Un colis pèse <strong>2 kg 500 g</strong>. Un autre pèse <strong>1 kg 800 g</strong>. Quel est leur poids total ?', correct: '4 kg 300 g', choices: ['3 kg 300 g', '4 kg 300 g', '4 kg 700 g', '3 kg 700 g'] },
   { q: 'Une bouteille contient <strong>1,5 L</strong> de jus. On verse <strong>75 cL</strong>. Combien reste-t-il en cL ?', correct: '75 cL', choices: ['25 cL', '75 cL', '125 cL', '150 cL'] },
-  { q: 'Le tour du jardin mesure <strong>24 m</strong>. Chaque cÃ´tÃ© fait la mÃªme longueur. Si c\'est un carrÃ©, quel est le cÃ´tÃ© ?', correct: '6 m', choices: ['4 m', '5 m', '6 m', '8 m'] },
+  { q: 'Le tour du jardin mesure <strong>24 m</strong>. Chaque côté fait la même longueur. Si c\'est un carré, quel est le côté ?', correct: '6 m', choices: ['4 m', '5 m', '6 m', '8 m'] },
 ];
 
 const ex5Container = document.getElementById('ex5-container');
@@ -255,10 +255,10 @@ function checkPb(btn, chosen, correct, rowId, fbId) {
   document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
   if (chosen === correct) {
     btn.classList.add('correct');
-    document.getElementById(fbId).textContent = 'â Bravo !'; document.getElementById(fbId).style.color = '#166534';
+    document.getElementById(fbId).textContent = '✅ Bravo !'; document.getElementById(fbId).style.color = '#166534';
   } else {
     btn.classList.add('wrong');
-    document.getElementById(fbId).textContent = `â C'Ã©tait ${correct}`; document.getElementById(fbId).style.color = '#991b1b';
+    document.getElementById(fbId).textContent = `❌ C'était ${correct}`; document.getElementById(fbId).style.color = '#991b1b';
     document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
   }
 }

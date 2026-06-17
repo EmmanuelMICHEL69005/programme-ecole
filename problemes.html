@@ -124,7 +124,7 @@ function buildPbBlocks(data, containerId, scoreKey, total) {
     const shuffled = shuffle(item.choices);
     div.innerHTML = `
       <div class="pb-enonce">${item.enonce}</div>
-      <div class="pb-question">â¡ï¸ ${item.question}</div>
+      <div class="pb-question">➡️ ${item.question}</div>
       <div class="qcm-row" id="${scoreKey}-choices-${idx}">
         ${shuffled.map(c => `<button class="btn-choice" onclick="checkPb(this,'${c}','${item.correct}','${scoreKey}-choices-${idx}','${scoreKey}-fb-${idx}','${scoreKey}',${total})">${c}</button>`).join('')}
       </div>
@@ -139,17 +139,17 @@ function checkPb(btn, chosen, correct, rowId, fbId, key, total) {
   const fb = document.getElementById(fbId);
   if (chosen === correct) {
     btn.classList.add('correct');
-    fb.textContent = 'â Bravo !'; fb.style.color = '#166534';
+    fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
     scores[key]++;
     document.getElementById(`score-${key}`).textContent = `Score : ${scores[key]} / ${total}`;
   } else {
     btn.classList.add('wrong');
-    fb.textContent = `â C'Ã©tait ${correct}`; fb.style.color = '#991b1b';
+    fb.textContent = `❌ C'était ${correct}`; fb.style.color = '#991b1b';
     document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
   }
 }
 
-// PROBLÃMES ADDITIFS
+// PROBLÈMES ADDITIFS
 buildPbBlocks([
   {
     enonce: 'Lola a lu <strong>124 pages</strong> de son livre. Demain elle lit <strong>37 pages</strong> de plus.',
@@ -157,28 +157,28 @@ buildPbBlocks([
     correct: '161 pages', choices: ['151 pages', '161 pages', '167 pages', '148 pages'],
   },
   {
-    enonce: 'Dans une classe, il y a <strong>15 filles</strong> et <strong>14 garÃ§ons</strong>.',
-    question: 'Combien d\'Ã©lÃ¨ves y a-t-il en tout ?',
-    correct: '29 Ã©lÃ¨ves', choices: ['27 Ã©lÃ¨ves', '28 Ã©lÃ¨ves', '29 Ã©lÃ¨ves', '30 Ã©lÃ¨ves'],
+    enonce: 'Dans une classe, il y a <strong>15 filles</strong> et <strong>14 garçons</strong>.',
+    question: 'Combien d\'élèves y a-t-il en tout ?',
+    correct: '29 élèves', choices: ['27 élèves', '28 élèves', '29 élèves', '30 élèves'],
   },
   {
-    enonce: 'Le matin il y a <strong>1 350</strong> voitures sur le parking. L\'aprÃ¨s-midi <strong>480</strong> voitures de plus arrivent.',
+    enonce: 'Le matin il y a <strong>1 350</strong> voitures sur le parking. L\'après-midi <strong>480</strong> voitures de plus arrivent.',
     question: 'Combien de voitures y a-t-il ?',
     correct: '1 830 voitures', choices: ['1 730 voitures', '1 830 voitures', '1 880 voitures', '1 800 voitures'],
   },
 ], 'ex1-container', 'add', 3);
 
-// PROBLÃMES SOUSTRACTIFS
+// PROBLÈMES SOUSTRACTIFS
 buildPbBlocks([
   {
-    enonce: 'La bibliothÃ¨que avait <strong>540 livres</strong>. Les enfants ont empruntÃ© <strong>127 livres</strong>.',
+    enonce: 'La bibliothèque avait <strong>540 livres</strong>. Les enfants ont emprunté <strong>127 livres</strong>.',
     question: 'Combien de livres reste-t-il ?',
     correct: '413 livres', choices: ['403 livres', '413 livres', '423 livres', '437 livres'],
   },
   {
-    enonce: 'Paul avait <strong>8,50 â¬</strong>. Il a achetÃ© un stylo qui coÃ»tait <strong>2,30 â¬</strong>.',
+    enonce: 'Paul avait <strong>8,50 €</strong>. Il a acheté un stylo qui coûtait <strong>2,30 €</strong>.',
     question: 'Combien lui reste-t-il ?',
-    correct: '6,20 â¬', choices: ['5,80 â¬', '6,00 â¬', '6,20 â¬', '6,30 â¬'],
+    correct: '6,20 €', choices: ['5,80 €', '6,00 €', '6,20 €', '6,30 €'],
   },
   {
     enonce: 'Une corde mesure <strong>4 m</strong>. On coupe <strong>155 cm</strong>.',
@@ -187,7 +187,7 @@ buildPbBlocks([
   },
 ], 'ex2-container', 'sub', 3);
 
-// PROBLÃMES MULTIPLICATIFS
+// PROBLÈMES MULTIPLICATIFS
 buildPbBlocks([
   {
     enonce: 'Il y a <strong>6 tables</strong> dans la classe. Chaque table a <strong>4 chaises</strong>.',
@@ -195,31 +195,31 @@ buildPbBlocks([
     correct: '24 chaises', choices: ['20 chaises', '22 chaises', '24 chaises', '28 chaises'],
   },
   {
-    enonce: 'Un paquet contient <strong>8 biscuits</strong>. ClÃ©mence achÃ¨te <strong>5 paquets</strong>.',
+    enonce: 'Un paquet contient <strong>8 biscuits</strong>. Clémence achète <strong>5 paquets</strong>.',
     question: 'Combien de biscuits a-t-elle ?',
     correct: '40 biscuits', choices: ['35 biscuits', '38 biscuits', '40 biscuits', '45 biscuits'],
   },
   {
-    enonce: 'Un livre coÃ»te <strong>7 â¬</strong>. La maÃ®tresse en commande <strong>24</strong>.',
-    question: 'Combien coÃ»tent-ils en tout ?',
-    correct: '168 â¬', choices: ['148 â¬', '158 â¬', '168 â¬', '178 â¬'],
+    enonce: 'Un livre coûte <strong>7 €</strong>. La maîtresse en commande <strong>24</strong>.',
+    question: 'Combien coûtent-ils en tout ?',
+    correct: '168 €', choices: ['148 €', '158 €', '168 €', '178 €'],
   },
 ], 'ex3-container', 'mul', 3);
 
-// PROBLÃMES Ã 2 ÃTAPES
+// PROBLÈMES À 2 ÉTAPES
 const pb2Data = [
   {
-    enonce: 'LÃ©a a <strong>45 images</strong>. Elle en donne <strong>12</strong> Ã  sa sÅur et <strong>8</strong> Ã  son frÃ¨re.',
+    enonce: 'Léa a <strong>45 images</strong>. Elle en donne <strong>12</strong> à sa sœur et <strong>8</strong> à son frère.',
     question: 'Combien d\'images lui reste-t-il ?',
     correct: '25 images', choices: ['20 images', '25 images', '30 images', '35 images'],
   },
   {
-    enonce: 'Une boÃ®te contient <strong>6 rangÃ©es de 8 chocolats</strong>. Noah a dÃ©jÃ  mangÃ© <strong>14 chocolats</strong>.',
-    question: 'Combien de chocolats reste-t-il dans la boÃ®te ?',
+    enonce: 'Une boîte contient <strong>6 rangées de 8 chocolats</strong>. Noah a déjà mangé <strong>14 chocolats</strong>.',
+    question: 'Combien de chocolats reste-t-il dans la boîte ?',
     correct: '34 chocolats', choices: ['30 chocolats', '32 chocolats', '34 chocolats', '38 chocolats'],
   },
   {
-    enonce: 'Ce matin, <strong>3 cars de 32 enfants</strong> arrivent au zoo. Ã midi, <strong>17 enfants</strong> repartent.',
+    enonce: 'Ce matin, <strong>3 cars de 32 enfants</strong> arrivent au zoo. À midi, <strong>17 enfants</strong> repartent.',
     question: 'Combien d\'enfants restent au zoo ?',
     correct: '79 enfants', choices: ['75 enfants', '77 enfants', '79 enfants', '83 enfants'],
   },
@@ -232,7 +232,7 @@ pb2Data.forEach((item, idx) => {
   const shuffled = shuffle(item.choices);
   div.innerHTML = `
     <div class="pb-enonce">${item.enonce}</div>
-    <div class="pb-question">â¡ï¸ ${item.question}</div>
+    <div class="pb-question">➡️ ${item.question}</div>
     <div class="qcm-row" id="pb2-choices-${idx}">
       ${shuffled.map(c => `<button class="btn-choice" onclick="checkSimple(this,'${c}','${item.correct}','pb2-choices-${idx}','pb2-fb-${idx}')">${c}</button>`).join('')}
     </div>
@@ -245,20 +245,20 @@ function checkSimple(btn, chosen, correct, rowId, fbId) {
   document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
   if (chosen === correct) {
     btn.classList.add('correct');
-    document.getElementById(fbId).textContent = 'â Bravo !'; document.getElementById(fbId).style.color = '#166534';
+    document.getElementById(fbId).textContent = '✅ Bravo !'; document.getElementById(fbId).style.color = '#166534';
   } else {
     btn.classList.add('wrong');
-    document.getElementById(fbId).textContent = `â C'Ã©tait ${correct}`; document.getElementById(fbId).style.color = '#991b1b';
+    document.getElementById(fbId).textContent = `❌ C'était ${correct}`; document.getElementById(fbId).style.color = '#991b1b';
     document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
   }
 }
 
-// EXERCICE 5 : quelle opÃ©ration ?
+// EXERCICE 5 : quelle opération ?
 const opData = [
-  { q: 'J\'ai 24 bonbons Ã  partager en 4 parts Ã©gales. Je dois faireâ¦', correct: 'une division', choices: ['une addition', 'une soustraction', 'une multiplication', 'une division'] },
-  { q: 'J\'ai 35 billes et j\'en reÃ§ois 18. Je dois faireâ¦', correct: 'une addition', choices: ['une addition', 'une soustraction', 'une multiplication', 'une division'] },
-  { q: '3 enfants ont chacun 7 crayons. Je veux savoir le total. Je dois faireâ¦', correct: 'une multiplication', choices: ['une addition', 'une soustraction', 'une multiplication', 'une division'] },
-  { q: 'J\'avais 50 â¬, j\'en ai dÃ©pensÃ© 17 â¬. Je veux savoir ce qu\'il reste. Je dois faireâ¦', correct: 'une soustraction', choices: ['une addition', 'une soustraction', 'une multiplication', 'une division'] },
+  { q: 'J\'ai 24 bonbons à partager en 4 parts égales. Je dois faire…', correct: 'une division', choices: ['une addition', 'une soustraction', 'une multiplication', 'une division'] },
+  { q: 'J\'ai 35 billes et j\'en reçois 18. Je dois faire…', correct: 'une addition', choices: ['une addition', 'une soustraction', 'une multiplication', 'une division'] },
+  { q: '3 enfants ont chacun 7 crayons. Je veux savoir le total. Je dois faire…', correct: 'une multiplication', choices: ['une addition', 'une soustraction', 'une multiplication', 'une division'] },
+  { q: 'J\'avais 50 €, j\'en ai dépensé 17 €. Je veux savoir ce qu\'il reste. Je dois faire…', correct: 'une soustraction', choices: ['une addition', 'une soustraction', 'une multiplication', 'une division'] },
 ];
 
 const ex5Container = document.getElementById('ex5-container');

@@ -100,10 +100,10 @@
 <script src="exercises.js"></script>
 <script>
 buildQCM([
-  { q:'Comment s\'Ã©crit "deux cent trente-quatre millions cinq cent soixante-sept mille huit cent quatre-vingt-onze" ?', correct:'234 567 891', choices:['23 456 789','234 567 891','2 345 678 910','234 568'] },
+  { q:'Comment s\'écrit "deux cent trente-quatre millions cinq cent soixante-sept mille huit cent quatre-vingt-onze" ?', correct:'234 567 891', choices:['23 456 789','234 567 891','2 345 678 910','234 568'] },
   { q:'Comment se lit 1 000 000 000 ?', correct:'Un milliard', choices:['Un million','Dix millions','Un milliard','Cent millions'] },
-  { q:'Quel est le nombre aprÃ¨s 999 999 999 ?', correct:'1 000 000 000', choices:['999 999 000','1 000 000 000','10 000 000 000','999 000 000'] },
-  { q:'Comment s\'Ã©crit "cinq milliards" ?', correct:'5 000 000 000', choices:['5 000 000','50 000 000','500 000 000','5 000 000 000'] },
+  { q:'Quel est le nombre après 999 999 999 ?', correct:'1 000 000 000', choices:['999 999 000','1 000 000 000','10 000 000 000','999 000 000'] },
+  { q:'Comment s\'écrit "cinq milliards" ?', correct:'5 000 000 000', choices:['5 000 000','50 000 000','500 000 000','5 000 000 000'] },
   { q:'Comment se lit 7 450 320 ?', correct:'Sept millions quatre cent cinquante mille trois cent vingt', choices:['Sept milliards...','Sept millions quatre cent cinquante mille trois cent vingt','Sept millions quarante-cinq mille trois cent vingt','Sept cent millions...'] },
 ], 'ex1');
 
@@ -115,16 +115,16 @@ buildQCM([
 ], 'ex2');
 
 buildQCM([
-  { q:'Lequel est le plus grand : 7 234 500 ou 7 243 500 ?', correct:'7 243 500', choices:['7 234 500','7 243 500','Ils sont Ã©gaux'] },
+  { q:'Lequel est le plus grand : 7 234 500 ou 7 243 500 ?', correct:'7 243 500', choices:['7 234 500','7 243 500','Ils sont égaux'] },
   { q:'Range du plus petit : 3 456 789, 3 465 789, 3 546 789', correct:'3 456 789 < 3 465 789 < 3 546 789', choices:['3 456 789 < 3 465 789 < 3 546 789','3 546 789 < 3 465 789 < 3 456 789','3 465 789 < 3 456 789 < 3 546 789'] },
   { q:'Lequel est entre 8 millions et 9 millions ?', correct:'8 500 000', choices:['7 900 000','8 500 000','9 100 000','80 000 000'] },
-  { q:'Quel est le plus grand nombre Ã  7 chiffres ?', correct:'9 999 999', choices:['9 000 000','9 900 000','9 990 000','9 999 999'] },
+  { q:'Quel est le plus grand nombre à 7 chiffres ?', correct:'9 999 999', choices:['9 000 000','9 900 000','9 990 000','9 999 999'] },
 ], 'ex3');
 
 buildQCM([
   { q:'Arrondis 3 456 789 au million le plus proche.', correct:'3 000 000', choices:['3 000 000','3 500 000','4 000 000','3 456 000'] },
-  { q:'Arrondis 7 845 231 Ã  la dizaine de millions.', correct:'80 000 000', choices:['70 000 000','78 000 000','80 000 000','90 000 000'] },
-  { q:'Arrondis 234 567 891 au milliard le plus proche.', correct:'0 (arrondit Ã  0)', choices:['0 (arrondit Ã  0)','1 000 000 000','200 000 000','300 000 000'] },
+  { q:'Arrondis 7 845 231 à la dizaine de millions.', correct:'80 000 000', choices:['70 000 000','78 000 000','80 000 000','90 000 000'] },
+  { q:'Arrondis 234 567 891 au milliard le plus proche.', correct:'0 (arrondit à 0)', choices:['0 (arrondit à 0)','1 000 000 000','200 000 000','300 000 000'] },
   { q:'Arrondis 1 500 000 au million le plus proche.', correct:'2 000 000', choices:['1 000 000','1 500 000','2 000 000','3 000 000'] },
 ], 'ex4');
 
@@ -133,8 +133,8 @@ buildVF([
   { q:'234 567 891 > 234 576 891', correct:false, expl:'234 567 891 < 234 576 891 (dizaines de milliers : 6 < 7)' },
   { q:'Le chiffre des millions dans 7 450 320 est 7.', correct:true },
   { q:'9 999 999 + 1 = 10 000 000', correct:true },
-  { q:'3 456 789 arrondi au million vaut 4 000 000.', correct:false, expl:'456 789 < 500 000, donc on arrondit Ã  3 000 000.' },
-  { q:'Un milliard s\'Ã©crit avec 10 chiffres.', correct:true, expl:'1 000 000 000 = 10 chiffres.' },
+  { q:'3 456 789 arrondi au million vaut 4 000 000.', correct:false, expl:'456 789 < 500 000, donc on arrondit à 3 000 000.' },
+  { q:'Un milliard s\'écrit avec 10 chiffres.', correct:true, expl:'1 000 000 000 = 10 chiffres.' },
 ], 'ex5');
 
 buildOrdre([
@@ -145,9 +145,9 @@ buildOrdre([
 ], 'ex6');
 
 buildPaires([
-  { q:'Associe chaque nombre Ã  sa dÃ©composition.',
+  { q:'Associe chaque nombre à sa décomposition.',
     pairs:[['234 567 891','200M + 34M + 567K + 891'],['7 000 000','7 millions'],['1 008 045','1M + 8K + 45'],['5 000 000 000','5 milliards']] },
-  { q:'Associe chaque nombre Ã  sa valeur arrondie au million.',
+  { q:'Associe chaque nombre à sa valeur arrondie au million.',
     pairs:[['3 456 789','3 000 000'],['7 845 231','8 000 000'],['1 500 000','2 000 000'],['9 999 999','10 000 000']] },
 ], 'ex7');
 </script>

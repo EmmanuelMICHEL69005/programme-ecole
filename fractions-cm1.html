@@ -115,18 +115,18 @@
 <script src="exercises.js"></script>
 <script>
 buildQCM([
-  { q:'Comment s\'Ã©crit "trois quarts" ?', correct:'3/4', choices:['3/4','4/3','3+4','34'] },
-  { q:'Quelle fraction reprÃ©sente 2 parts sur 5 ?', correct:'2/5', choices:['5/2','2/5','2+5','25'] },
+  { q:'Comment s\'écrit "trois quarts" ?', correct:'3/4', choices:['3/4','4/3','3+4','34'] },
+  { q:'Quelle fraction représente 2 parts sur 5 ?', correct:'2/5', choices:['5/2','2/5','2+5','25'] },
   { q:'Combien font 3 demis ?', correct:'1 et demi (3/2)', choices:['1 entier','1 et demi (3/2)','3 entiers','1/3'] },
-  { q:'Que reprÃ©sente le numÃ©rateur d\'une fraction ?', correct:'Le nombre de parts prises', choices:['Le nombre total de parts','Le nombre de parts prises','La valeur de la fraction','La diffÃ©rence'] },
-  { q:'Que reprÃ©sente le dÃ©nominateur ?', correct:'Le nombre total de parts Ã©gales', choices:['Le nombre de parts prises','Le nombre total de parts Ã©gales','La moitiÃ©','Le double'] },
+  { q:'Que représente le numérateur d\'une fraction ?', correct:'Le nombre de parts prises', choices:['Le nombre total de parts','Le nombre de parts prises','La valeur de la fraction','La différence'] },
+  { q:'Que représente le dénominateur ?', correct:'Le nombre total de parts égales', choices:['Le nombre de parts prises','Le nombre total de parts égales','La moitié','Le double'] },
 ], 'ex1');
 
 buildQCM([
-  { q:'7/4 est-elle supÃ©rieure Ã  1 ?', correct:'Oui (7 > 4)', choices:['Non (7 < 4)','Oui (7 > 4)','On ne sait pas','Non, elle est Ã©gale Ã  1'] },
+  { q:'7/4 est-elle supérieure à 1 ?', correct:'Oui (7 > 4)', choices:['Non (7 < 4)','Oui (7 > 4)','On ne sait pas','Non, elle est égale à 1'] },
   { q:'Combien fait 7/4 en entier + fraction ?', correct:'1 entier + 3/4', choices:['1 entier + 1/4','1 entier + 3/4','2 entiers','3 entiers + 1/4'] },
   { q:'Combien font 5/3 en entier + fraction ?', correct:'1 entier + 2/3', choices:['1 entier + 1/3','1 entier + 2/3','2 entiers','2 entiers + 2/3'] },
-  { q:'Laquelle est supÃ©rieure Ã  1 ?', correct:'9/7', choices:['3/4','5/8','9/7','2/3'] },
+  { q:'Laquelle est supérieure à 1 ?', correct:'9/7', choices:['3/4','5/8','9/7','2/3'] },
   { q:'Combien font 9/3 ?', correct:'3 entiers', choices:['1 entier + 2/3','2 entiers','3 entiers','9 entiers'] },
 ], 'ex2');
 
@@ -134,8 +134,8 @@ buildQCM([
   { q:'1/2 = ?/4', correct:'2/4', choices:['1/4','2/4','3/4','4/4'] },
   { q:'2/3 = ?/6', correct:'4/6', choices:['2/6','3/6','4/6','5/6'] },
   { q:'1/3 = 2/?', correct:'2/6', choices:['2/3','2/6','2/9','2/12'] },
-  { q:'Laquelle est Ã©quivalente Ã  1/2 ?', correct:'3/6', choices:['2/5','3/5','3/6','4/6'] },
-  { q:'Laquelle est Ã©quivalente Ã  3/4 ?', correct:'6/8', choices:['4/6','5/8','6/8','6/9'] },
+  { q:'Laquelle est équivalente à 1/2 ?', correct:'3/6', choices:['2/5','3/5','3/6','4/6'] },
+  { q:'Laquelle est équivalente à 3/4 ?', correct:'6/8', choices:['4/6','5/8','6/8','6/9'] },
   { q:'2/5 = ?/10', correct:'4/10', choices:['2/10','3/10','4/10','5/10'] },
 ], 'ex3');
 
@@ -149,32 +149,32 @@ buildQCM([
 ], 'ex4');
 
 buildVF([
-  { q:'7/4 est supÃ©rieure Ã  1.', correct:true, expl:'7 > 4, donc 7/4 > 1' },
-  { q:'1/2 = 2/4', correct:true, expl:'Ã2 au numÃ©rateur et au dÃ©nominateur' },
-  { q:'3/5 + 2/5 = 5/10', correct:false, expl:'On additionne les numÃ©rateurs : 3/5 + 2/5 = 5/5 = 1' },
+  { q:'7/4 est supérieure à 1.', correct:true, expl:'7 > 4, donc 7/4 > 1' },
+  { q:'1/2 = 2/4', correct:true, expl:'×2 au numérateur et au dénominateur' },
+  { q:'3/5 + 2/5 = 5/10', correct:false, expl:'On additionne les numérateurs : 3/5 + 2/5 = 5/5 = 1' },
   { q:'5/5 = 1 entier', correct:true },
   { q:'9/7 < 1', correct:false, expl:'9 > 7, donc 9/7 > 1' },
   { q:'2/3 = 4/6', correct:true },
-  { q:'1/4 + 2/4 = 3/8', correct:false, expl:'1/4 + 2/4 = 3/4 (on garde le dÃ©nominateur)' },
+  { q:'1/4 + 2/4 = 3/8', correct:false, expl:'1/4 + 2/4 = 3/4 (on garde le dénominateur)' },
 ], 'ex5');
 
 buildOrdre([
-  { q:'Range ces fractions de la PLUS PETITE Ã  la PLUS GRANDE (mÃªme dÃ©nominateur) :',
+  { q:'Range ces fractions de la PLUS PETITE à la PLUS GRANDE (même dénominateur) :',
     items:['1/5','2/5','3/5','4/5','5/5'] },
-  { q:'Range ces fractions de la PLUS PETITE Ã  la PLUS GRANDE :',
+  { q:'Range ces fractions de la PLUS PETITE à la PLUS GRANDE :',
     items:['1/4','2/4','3/4','5/4','7/4'] },
 ], 'ex6');
 
 buildTri([
-  { q:'Cette fraction est-elle infÃ©rieure ou supÃ©rieure Ã  1 ?',
-    cats:['< 1 (infÃ©rieure)','> 1 (supÃ©rieure)'],
+  { q:'Cette fraction est-elle inférieure ou supérieure à 1 ?',
+    cats:['< 1 (inférieure)','> 1 (supérieure)'],
     items:[
-      {v:'3/4', cat:'< 1 (infÃ©rieure)'},
-      {v:'7/4', cat:'> 1 (supÃ©rieure)'},
-      {v:'5/3', cat:'> 1 (supÃ©rieure)'},
-      {v:'2/5', cat:'< 1 (infÃ©rieure)'},
-      {v:'9/7', cat:'> 1 (supÃ©rieure)'},
-      {v:'1/2', cat:'< 1 (infÃ©rieure)'},
+      {v:'3/4', cat:'< 1 (inférieure)'},
+      {v:'7/4', cat:'> 1 (supérieure)'},
+      {v:'5/3', cat:'> 1 (supérieure)'},
+      {v:'2/5', cat:'< 1 (inférieure)'},
+      {v:'9/7', cat:'> 1 (supérieure)'},
+      {v:'1/2', cat:'< 1 (inférieure)'},
     ]
   },
 ], 'ex7');

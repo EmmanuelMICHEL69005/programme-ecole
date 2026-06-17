@@ -125,25 +125,25 @@
 buildQCM([
   { q:'Dans 356, combien y a-t-il de centaines ?', correct:'3 centaines', choices:['5 centaines','6 centaines','3 centaines','1 centaine'] },
   { q:'Dans 472, quel chiffre est au rang des dizaines ?', correct:'7', choices:['4','7','2','47'] },
-  { q:'5 centaines + 0 dizaine + 8 unitÃ©s = ?', correct:'508', choices:['58','580','508','5 008'] },
-  { q:'Dans 703, combien y a-t-il d\'unitÃ©s ?', correct:'3 unitÃ©s', choices:['7 unitÃ©s','0 unitÃ©s','3 unitÃ©s','10 unitÃ©s'] },
+  { q:'5 centaines + 0 dizaine + 8 unités = ?', correct:'508', choices:['58','580','508','5 008'] },
+  { q:'Dans 703, combien y a-t-il d\'unités ?', correct:'3 unités', choices:['7 unités','0 unités','3 unités','10 unités'] },
   { q:'Dans 840, quel chiffre est au rang des centaines ?', correct:'8', choices:['8','4','0','84'] },
   { q:'Combien y a-t-il de dizaines dans 267 ?', correct:'6 dizaines', choices:['2 dizaines','6 dizaines','7 dizaines','26 dizaines'] },
-  { q:'2 centaines + 3 dizaines + 5 unitÃ©s = ?', correct:'235', choices:['253','325','235','2 035'] },
+  { q:'2 centaines + 3 dizaines + 5 unités = ?', correct:'235', choices:['253','325','235','2 035'] },
 ], 'ex1');
 
 buildQCM([
-  { q:'Comment s\'Ã©crit "deux cent trente-six" ?', correct:'236', choices:['200360','236','2036','2360'] },
+  { q:'Comment s\'écrit "deux cent trente-six" ?', correct:'236', choices:['200360','236','2036','2360'] },
   { q:'Comment se lit 819 ?', correct:'huit cent dix-neuf', choices:['huit dix-neuf','huit cent dix-neuf','huit cent quatre-vingt-dix','huit mille dix-neuf'] },
   { q:'Quel est le nombre juste avant 500 ?', correct:'499', choices:['498','499','501','400'] },
-  { q:'Quel est le nombre juste aprÃ¨s 999 ?', correct:'1 000', choices:['998','1 000','9 999','100'] },
-  { q:'Comment s\'Ã©crit "sept cents" ?', correct:'700', choices:['70','7 000','700','7 00'] },
-  { q:'Comment se lit 450 ?', correct:'quatre cent cinquante', choices:['quatre-cinq-zÃ©ro','quatre cent cinq','quatre cent cinquante','quarante-cinq'] },
+  { q:'Quel est le nombre juste après 999 ?', correct:'1 000', choices:['998','1 000','9 999','100'] },
+  { q:'Comment s\'écrit "sept cents" ?', correct:'700', choices:['70','7 000','700','7 00'] },
+  { q:'Comment se lit 450 ?', correct:'quatre cent cinquante', choices:['quatre-cinq-zéro','quatre cent cinq','quatre cent cinquante','quarante-cinq'] },
   { q:'Quel est le nombre entre 399 et 401 ?', correct:'400', choices:['398','399','400','402'] },
 ], 'ex2');
 
 buildQCM([
-  { q:'Lequel est le plus grand : 487 ou 478 ?', correct:'487', choices:['487','478','Ils sont Ã©gaux'] },
+  { q:'Lequel est le plus grand : 487 ou 478 ?', correct:'487', choices:['487','478','Ils sont égaux'] },
   { q:'Range du plus petit au plus grand : 521, 251, 512', correct:'251 < 512 < 521', choices:['251 < 512 < 521','521 < 512 < 251','512 < 251 < 521'] },
   { q:'Entre 200 et 300, lequel se place : 256 ou 562 ?', correct:'256', choices:['256','562','Les deux','Aucun'] },
   { q:'Quel nombre est entre 340 et 360 ?', correct:'350', choices:['330','350','370','380'] },
@@ -160,8 +160,8 @@ buildOrdre([
 
 buildQCM([
   { q:'Encadre 347 entre deux centaines : ___ < 347 < ___', correct:'300 < 347 < 400', choices:['200 < 347 < 300','300 < 347 < 400','400 < 347 < 500','340 < 347 < 350'] },
-  { q:'Quel nombre est Ã  mi-chemin entre 200 et 300 ?', correct:'250', choices:['220','240','250','260'] },
-  { q:'ComplÃ¨te : 100, 200, ___, 400', correct:'300', choices:['250','300','350','400'] },
+  { q:'Quel nombre est à mi-chemin entre 200 et 300 ?', correct:'250', choices:['220','240','250','260'] },
+  { q:'Complète : 100, 200, ___, 400', correct:'300', choices:['250','300','350','400'] },
   { q:'Encadre 875 entre deux dizaines : ___ < 875 < ___', correct:'870 < 875 < 880', choices:['860 < 875 < 870','870 < 875 < 880','880 < 875 < 890','800 < 875 < 900'] },
   { q:'Intercale un nombre entre 640 et 660.', correct:'650', choices:['630','650','670','700'] },
   { q:'Encadre 523 entre deux dizaines.', correct:'520 < 523 < 530', choices:['510 < 523 < 520','520 < 523 < 530','500 < 523 < 600','530 < 523 < 540'] },
@@ -174,29 +174,29 @@ buildVF([
   { q:'Le chiffre des dizaines dans 583 est 5.', correct:false, expl:'Le chiffre des dizaines dans 583 est 8.' },
   { q:'250 est entre 200 et 300.', correct:true },
   { q:'800 > 799', correct:true },
-  { q:'3 centaines + 5 unitÃ©s = 350', correct:false, expl:'3 centaines + 5 unitÃ©s = 305 (pas de dizaines)' },
+  { q:'3 centaines + 5 unités = 350', correct:false, expl:'3 centaines + 5 unités = 305 (pas de dizaines)' },
 ], 'ex5');
 
 buildTri([
   { q:'Ces nombres sont-ils pairs ou impairs ?',
-    cats:['ð¢ Pair (se divise par 2)','ð´ Impair (ne se divise pas par 2)'],
+    cats:['🟢 Pair (se divise par 2)','🔴 Impair (ne se divise pas par 2)'],
     items:[
-      {v:'124', cat:'ð¢ Pair (se divise par 2)'},
-      {v:'357', cat:'ð´ Impair (ne se divise pas par 2)'},
-      {v:'440', cat:'ð¢ Pair (se divise par 2)'},
-      {v:'231', cat:'ð´ Impair (ne se divise pas par 2)'},
-      {v:'508', cat:'ð¢ Pair (se divise par 2)'},
-      {v:'775', cat:'ð´ Impair (ne se divise pas par 2)'},
-      {v:'666', cat:'ð¢ Pair (se divise par 2)'},
-      {v:'903', cat:'ð´ Impair (ne se divise pas par 2)'},
+      {v:'124', cat:'🟢 Pair (se divise par 2)'},
+      {v:'357', cat:'🔴 Impair (ne se divise pas par 2)'},
+      {v:'440', cat:'🟢 Pair (se divise par 2)'},
+      {v:'231', cat:'🔴 Impair (ne se divise pas par 2)'},
+      {v:'508', cat:'🟢 Pair (se divise par 2)'},
+      {v:'775', cat:'🔴 Impair (ne se divise pas par 2)'},
+      {v:'666', cat:'🟢 Pair (se divise par 2)'},
+      {v:'903', cat:'🔴 Impair (ne se divise pas par 2)'},
     ]
   },
 ], 'ex6');
 
 buildPaires([
-  { q:'Associe chaque nombre Ã  sa dÃ©composition.',
+  { q:'Associe chaque nombre à sa décomposition.',
     pairs:[['347','300 + 40 + 7'],['508','500 + 8'],['230','200 + 30'],['619','600 + 10 + 9']] },
-  { q:'Associe chaque nombre Ã  sa forme Ã©crite.',
+  { q:'Associe chaque nombre à sa forme écrite.',
     pairs:[['250','deux cent cinquante'],['801','huit cent un'],['470','quatre cent soixante-dix'],['165','cent soixante-cinq']] },
 ], 'ex7');
 </script>

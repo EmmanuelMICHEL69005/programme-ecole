@@ -107,39 +107,39 @@ function check(btn, chosen, correct, rowId, fbId) {
   document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
   const fb = document.getElementById(fbId);
   if (chosen === correct) {
-    btn.classList.add('correct'); fb.textContent = 'â Bravo !'; fb.style.color = '#166534';
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
   } else {
-    btn.classList.add('wrong'); fb.textContent = 'â C\'Ã©tait ' + correct; fb.style.color = '#991b1b';
+    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
     document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
   }
 }
 
 buildQ([
-  { q: 'Range dans l\'ordre croissant : â3 ; +5 ; 0 ; â7 ; +2. Quel est le plus petit ?', correct: 'â7', choices: ['â3','0','â7','+5'] },
-  { q: 'Quel est le plus grand parmi : â10, â4, â1, â100 ?', correct: 'â1', choices: ['â10','â4','â1','â100'] },
-  { q: 'Sur la droite numÃ©rique, quel nombre est Ã  3 unitÃ©s Ã  gauche de 0 ?', correct: 'â3', choices: ['+3','â3','0','3'] },
-  { q: 'La valeur absolue de â8 (sa distance Ã  0) estâ¦', correct: '8', choices: ['â8','0','8','â0'] },
+  { q: 'Range dans l\'ordre croissant : −3 ; +5 ; 0 ; −7 ; +2. Quel est le plus petit ?', correct: '−7', choices: ['−3','0','−7','+5'] },
+  { q: 'Quel est le plus grand parmi : −10, −4, −1, −100 ?', correct: '−1', choices: ['−10','−4','−1','−100'] },
+  { q: 'Sur la droite numérique, quel nombre est à 3 unités à gauche de 0 ?', correct: '−3', choices: ['+3','−3','0','3'] },
+  { q: 'La valeur absolue de −8 (sa distance à 0) est…', correct: '8', choices: ['−8','0','8','−0'] },
 ], 'ex1');
 
 buildQ([
-  { q: '24 est-il un multiple de 6 ?', correct: 'Oui, 24 = 6 Ã 4', choices: ['Oui, 24 = 6 Ã 4','Non, 24 n\'est pas divisible par 6','On ne peut pas savoir'] },
+  { q: '24 est-il un multiple de 6 ?', correct: 'Oui, 24 = 6 × 4', choices: ['Oui, 24 = 6 × 4','Non, 24 n\'est pas divisible par 6','On ne peut pas savoir'] },
   { q: 'Parmi ces nombres, lequel est un diviseur de 36 ?', correct: '9', choices: ['7','8','9','11'] },
   { q: 'Quels sont les diviseurs communs de 12 et 18 ?', correct: '1, 2, 3, 6', choices: ['1, 2, 6','1, 2, 3, 6','2, 6 seulement','6 seulement'] },
-  { q: 'Le PGCD de 12 et 18 estâ¦', correct: '6', choices: ['2','3','6','9'] },
+  { q: 'Le PGCD de 12 et 18 est…', correct: '6', choices: ['2','3','6','9'] },
 ], 'ex2');
 
 buildQ([
-  { card: '10Â³ = ?', q: 'Quelle est la valeur de 10Â³ ?', correct: '1 000', choices: ['30','100','1 000','10 000'] },
-  { card: '10â´ = ?', q: 'Quelle est la valeur de 10â´ ?', correct: '10 000', choices: ['100','1 000','10 000','100 000'] },
-  { q: '3,5 Ã 10Â² = ?', correct: '350', choices: ['35','350','3 500','0,035'] },
-  { q: '4,72 Ã 10Â³ = ?', correct: '4 720', choices: ['47,2','472','4 720','47 200'] },
+  { card: '10³ = ?', q: 'Quelle est la valeur de 10³ ?', correct: '1 000', choices: ['30','100','1 000','10 000'] },
+  { card: '10⁴ = ?', q: 'Quelle est la valeur de 10⁴ ?', correct: '10 000', choices: ['100','1 000','10 000','100 000'] },
+  { q: '3,5 × 10² = ?', correct: '350', choices: ['35','350','3 500','0,035'] },
+  { q: '4,72 × 10³ = ?', correct: '4 720', choices: ['47,2','472','4 720','47 200'] },
 ], 'ex3');
 
 buildQ([
-  { card: '(+5) + (â8) = ?', q: 'Calcule (+ 5) + (â 8)', correct: 'â3', choices: ['â3','+3','â13','+13'] },
-  { card: '(â4) + (â6) = ?', q: 'Calcule (â 4) + (â 6)', correct: 'â10', choices: ['â10','+10','+2','â2'] },
-  { card: '(â3) Ã (+4) = ?', q: 'Calcule (â 3) Ã (+ 4)', correct: 'â12', choices: ['â12','+12','â7','+7'] },
-  { card: '(â5) Ã (â3) = ?', q: 'Calcule (â 5) Ã (â 3)', correct: '+15', choices: ['â15','+15','â8','+8'] },
+  { card: '(+5) + (−8) = ?', q: 'Calcule (+ 5) + (− 8)', correct: '−3', choices: ['−3','+3','−13','+13'] },
+  { card: '(−4) + (−6) = ?', q: 'Calcule (− 4) + (− 6)', correct: '−10', choices: ['−10','+10','+2','−2'] },
+  { card: '(−3) × (+4) = ?', q: 'Calcule (− 3) × (+ 4)', correct: '−12', choices: ['−12','+12','−7','+7'] },
+  { card: '(−5) × (−3) = ?', q: 'Calcule (− 5) × (− 3)', correct: '+15', choices: ['−15','+15','−8','+8'] },
 ], 'ex4');
 </script>
 
