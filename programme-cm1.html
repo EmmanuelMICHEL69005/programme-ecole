@@ -34,6 +34,28 @@
 .pil-links a{font-size:.72rem;font-weight:800;padding:3px 9px;border-radius:7px;text-decoration:none;white-space:nowrap}
 .pil-ex{background:var(--lc1);color:#fff}
 .pil-cours{background:var(--lbg);color:var(--ld);border:1px solid var(--lb)}
+
+/* ── SEO content ── */
+.pil-seo{padding:0 12px 32px;max-width:680px;margin:0 auto}
+.pil-seo-block{margin-bottom:28px}
+.pil-seo-block h2{font-size:.95rem;font-weight:900;color:var(--ld);margin:0 0 10px;padding:0 0 6px;border-bottom:2px solid var(--lb)}
+.pil-seo-block p{font-size:.85rem;font-weight:700;color:#374151;line-height:1.7;margin:0 0 10px}
+.pil-seo-block p b{color:var(--ld)}
+.pil-matiere-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+@media(min-width:480px){.pil-matiere-grid{grid-template-columns:repeat(3,1fr)}}
+.pil-matiere-card{background:#fff;border-radius:10px;padding:10px 12px;box-shadow:0 1px 4px rgba(0,0,0,.06);border-left:4px solid var(--lc1)}
+.pil-matiere-card strong{display:block;font-size:.82rem;font-weight:900;color:var(--ld);margin-bottom:4px}
+.pil-matiere-card span{font-size:.76rem;font-weight:700;color:#4b5563;line-height:1.5}
+.pil-tags-wrap{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0 12px}
+.pil-tag{background:var(--lbg);color:var(--ld);border:1px solid var(--lb);border-radius:20px;padding:3px 10px;font-size:.74rem;font-weight:800}
+.pil-tip-box{background:#fef9c3;border-radius:10px;padding:10px 13px;margin:10px 0;font-size:.82rem;font-weight:800;color:#713f12;line-height:1.5}
+.pil-faq{margin-top:8px}
+.pil-faq-item{background:#fff;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,.06);margin-bottom:8px;overflow:hidden}
+.pil-faq-item h3{font-size:.84rem;font-weight:900;color:var(--ld);margin:0;padding:11px 14px;cursor:pointer;background:var(--lbg);border-left:4px solid var(--lc1)}
+.pil-faq-item p{font-size:.82rem;font-weight:700;color:#374151;line-height:1.65;margin:0;padding:10px 14px}
+.pil-steps{counter-reset:step;margin:8px 0}
+.pil-step{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px;font-size:.82rem;font-weight:700;color:#374151;line-height:1.5}
+.pil-step::before{counter-increment:step;content:counter(step);flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--lc1);color:#fff;font-size:.72rem;font-weight:900;display:flex;align-items:center;justify-content:center}
 </style>
 </head>
 <body>
@@ -143,6 +165,165 @@
     </div>
   </div>
 </section>
+
+<!-- ═══════════════════════════════════════════════
+     CONTENU SEO — Intentions de recherche CM1
+════════════════════════════════════════════════ -->
+<div class="pil-seo">
+
+  <!-- 1. Programme CM1 -->
+  <div class="pil-seo-block">
+    <h2>Quelles leçons sont enseignées en CM1 ?</h2>
+    <p>Le <b>CM1</b> (cours moyen 1re année) correspond à la <b>4e année du cycle 3</b> à l'école primaire, généralement suivi par des élèves de 9-10 ans. C'est une année charnière : les notions apprises en <b>CE2</b> s'approfondissent et les enfants se préparent progressivement au CM2, puis au collège.</p>
+    <p>Le programme CM1 de l'<b>Éducation nationale</b> couvre trois grands enseignements. En <b>mathématiques</b>, les élèves travaillent la numération jusqu'au million, la multiplication posée par deux chiffres, la division euclidienne, les fractions et les premiers <b>nombres décimaux</b>. En <b>français</b>, l'étude de la langue s'articule autour de la <b>grammaire</b> (COD, COI, compléments circonstanciels), de la <b>conjugaison</b> (imparfait, futur, passé composé, conditionnel), de l'<b>orthographe</b> et du <b>vocabulaire</b>. En <b>histoire-géographie</b>, les élèves étudient le <b>Moyen Âge</b>, la féodalité, les cathédrales et les Croisades.</p>
+    <div class="pil-matiere-grid">
+      <div class="pil-matiere-card">
+        <strong>📐 Mathématiques</strong>
+        <span>Nombres jusqu'à 1 000 000 · calcul mental · multiplication posée · division euclidienne · fractions · décimaux · géométrie · angles · mesures · proportionnalité · temps</span>
+      </div>
+      <div class="pil-matiere-card">
+        <strong>📝 Français</strong>
+        <span>Grammaire (COD, COI, CC) · conjugaison (conditionnel, passé simple) · orthographe (leur/leurs, tout) · vocabulaire (étymologie, figures de style) · lecture · écriture</span>
+      </div>
+      <div class="pil-matiere-card">
+        <strong>🌍 Histoire-Géo</strong>
+        <span>Moyen Âge · système féodal · cathédrales gothiques · Croisades · Jeanne d'Arc · carte de France · enseignement moral et civique</span>
+      </div>
+      <div class="pil-matiere-card">
+        <strong>🔬 Sciences</strong>
+        <span>Le vivant · matière et objets · technologie · espace et temps · corps humain · écosystèmes · énergie</span>
+      </div>
+      <div class="pil-matiere-card">
+        <strong>🎨 Arts & autres</strong>
+        <span>Éducation musicale · arts visuels · EPS · anglais (langue vivante) · numérique · enseignement moral et civique</span>
+      </div>
+      <div class="pil-matiere-card">
+        <strong>🗓️ Organisation</strong>
+        <span>Cycle 3 · 24h de cours par semaine · par semaine : 10h maths+français · 3h histoire-géo · 3h sciences · 3h arts · 2h anglais · 3h EPS</span>
+      </div>
+    </div>
+    <div class="pil-tags-wrap">
+      <span class="pil-tag">cycle 3</span>
+      <span class="pil-tag">cours moyen</span>
+      <span class="pil-tag">classe de CM1</span>
+      <span class="pil-tag">étude de la langue</span>
+      <span class="pil-tag">calcul mental</span>
+      <span class="pil-tag">niveau CM1 CM2</span>
+      <span class="pil-tag">éducation nationale</span>
+      <span class="pil-tag">primaire</span>
+      <span class="pil-tag">enseignement moral et civique</span>
+    </div>
+  </div>
+
+  <!-- 2. Exercices et évaluations -->
+  <div class="pil-seo-block">
+    <h2>Exercices CM1 : entraînement interactif, évaluations et corrections</h2>
+    <p>Sur <b>École Facile</b>, tous les <b>exercices CM1</b> sont <b>interactifs</b> : l'élève répond directement en ligne, sans avoir besoin d'imprimer ni de télécharger de <b>PDF</b>. La correction est immédiate, avec une explication pour chaque bonne et mauvaise réponse — idéal pour progresser en autonomie ou avec l'aide d'un adulte.</p>
+    <p>Les <b>évaluations CM1</b> couvrent l'ensemble des <b>matières</b> du programme : <b>calcul</b> (mental et posé), <b>problèmes</b>, <b>grammaire</b>, <b>conjugaison</b>, <b>orthographe</b>, <b>vocabulaire</b> et <b>histoire-géographie</b>. Chaque fiche exercice est conçue par niveau de difficulté progressif pour s'adapter à chaque <b>élève</b>.</p>
+    <div class="pil-matiere-grid">
+      <div class="pil-matiere-card">
+        <strong>🧠 Calcul mental</strong>
+        <span>Tables · additions · soustractions · multiplications rapides · division par 10, 100 · estimations</span>
+      </div>
+      <div class="pil-matiere-card">
+        <strong>📝 Calcul posé</strong>
+        <span>Multiplication par 2 chiffres · division euclidienne · opérations sur décimaux</span>
+      </div>
+      <div class="pil-matiere-card">
+        <strong>🔤 Étude de la langue</strong>
+        <span>Accord du PP avec être · leur/leurs · tout/toute · classes grammaticales · analyse de phrase</span>
+      </div>
+    </div>
+    <div class="pil-tip-box">💡 Pas besoin d'imprimer : tous les exercices CM1 fonctionnent sur smartphone, tablette et ordinateur — sans inscription, sans publicité, gratuitement.</div>
+  </div>
+
+  <!-- 3. Comment réviser en CM1 -->
+  <div class="pil-seo-block">
+    <h2>Comment réviser le programme CM1 efficacement ?</h2>
+    <p>La <b>révision</b> en CM1 repose sur trois piliers : revoir les <b>leçons</b> (les cours et définitions clés), s'entraîner avec des <b>exercices</b> variés, et identifier les <b>notions</b> qui posent encore problème pour les travailler en priorité. Voici une méthode simple pour organiser le <b>soutien scolaire</b> à la maison.</p>
+    <div class="pil-steps">
+      <div class="pil-step">Lire la <b>leçon</b> (fiches cours disponibles sur cette page pour chaque matière) et repérer les définitions et règles à retenir.</div>
+      <div class="pil-step">Faire les <b>exercices interactifs</b> correspondants pour tester sa compréhension. Lire attentivement la <b>correction</b> en cas d'erreur.</div>
+      <div class="pil-step">Répéter 2 à 3 fois par <b>semaine</b> pendant 15 à 20 <b>minutes</b> : régularité > durée. Un travail quotidien court est plus efficace qu'une longue séance le week-end.</div>
+      <div class="pil-step">Pour le <b>calcul mental</b>, s'entraîner quotidiennement : 5 minutes par jour suffisent pour mémoriser les tables et les automatismes de calcul.</div>
+      <div class="pil-step">En fin de semaine, faire un <b>exercice de révision</b> qui mélange plusieurs notions (calcul + problème + grammaire) pour consolider les <b>apprentissages</b>.</div>
+    </div>
+    <div class="pil-tags-wrap">
+      <span class="pil-tag">révision CM1</span>
+      <span class="pil-tag">soutien scolaire</span>
+      <span class="pil-tag">cahier de vacances CM1</span>
+      <span class="pil-tag">fin du CM1</span>
+      <span class="pil-tag">apprentissage autonome</span>
+      <span class="pil-tag">calcul mental</span>
+      <span class="pil-tag">problèmes CM1</span>
+    </div>
+  </div>
+
+  <!-- 4. Ressources pédagogiques -->
+  <div class="pil-seo-block">
+    <h2>Ressources pédagogiques CM1 pour enseignants et parents</h2>
+    <p>Les <b>enseignants</b> de CM1 et les parents qui accompagnent leurs enfants trouveront sur École Facile un ensemble de <b>ressources pédagogiques</b> structurées autour du programme officiel. Contrairement à un <b>manuel CM1</b> classique ou à un <b>cahier</b> d'exercices papier, nos contenus interactifs permettent un retour immédiat et une progression adaptée au rythme de chaque élève.</p>
+    <p>Pour les <b>professeurs</b>, les fiches cours peuvent servir de support de révision ou de remédiation, notamment en <b>soutien</b> individualisé ou en groupes de besoins. Chaque fiche couvre une <b>notion</b> précise du <b>cycle 3</b> avec des exemples clairs, des tableaux de synthèse et un résumé "À retenir".</p>
+    <div class="pil-matiere-grid">
+      <div class="pil-matiere-card">
+        <strong>📚 Fiches leçons</strong>
+        <span>Cours structurés pour chaque notion : grammaire, conjugaison, maths, histoire. Adaptés au niveau CM1 · CM2 cycle 3.</span>
+      </div>
+      <div class="pil-matiere-card">
+        <strong>✅ Exercices corrigés</strong>
+        <span>QCM interactifs avec correction immédiate. Format adapté aux élèves en autonomie ou en accompagnement.</span>
+      </div>
+      <div class="pil-matiere-card">
+        <strong>📊 Suivi de progression</strong>
+        <span>Étoiles et badges pour motiver les élèves. Historique des exercices réalisés pour suivre les progrès.</span>
+      </div>
+    </div>
+    <div class="pil-tags-wrap">
+      <span class="pil-tag">outil pédagogique CM1</span>
+      <span class="pil-tag">ressource enseignant</span>
+      <span class="pil-tag">guide CM1</span>
+      <span class="pil-tag">cycle 3 collection</span>
+      <span class="pil-tag">CM1 évaluation</span>
+      <span class="pil-tag">interactif numérique</span>
+      <span class="pil-tag">éducation nationale</span>
+      <span class="pil-tag">école primaire</span>
+    </div>
+  </div>
+
+  <!-- 5. FAQ -->
+  <div class="pil-seo-block">
+    <h2>Questions fréquentes sur le CM1</h2>
+    <div class="pil-faq">
+
+      <div class="pil-faq-item">
+        <h3>Quels exercices pour le CM1 ?</h3>
+        <p>Les exercices CM1 essentiels couvrent le <b>calcul mental</b> (tables, additions, multiplications rapides), le <b>calcul posé</b> (multiplication par 2 chiffres, division), les <b>problèmes mathématiques</b>, la <b>grammaire</b> (COD, COI, compléments circonstanciels), la <b>conjugaison</b> (conditionnel, passé simple), l'<b>orthographe</b> (leur/leurs, tout/toute, accord du participe passé avec être) et le <b>vocabulaire</b> (étymologie, figures de style). Sur École Facile, tous ces exercices sont accessibles directement en ligne, sans inscription.</p>
+      </div>
+
+      <div class="pil-faq-item">
+        <h3>Comment évaluer un élève en CM1 ?</h3>
+        <p>Une <b>évaluation CM1</b> efficace combine plusieurs approches : des exercices d'application directe (calcul, conjugaison, orthographe), des problèmes ouverts qui évaluent la <b>compréhension</b> et la capacité à raisonner, et des questions à choix multiples pour identifier rapidement les lacunes. Les enseignants peuvent utiliser nos fiches interactives comme outil de diagnostic : l'élève les fait seul, la correction automatique permet de repérer les notions à retravailler en <b>soutien pédagogique</b>.</p>
+      </div>
+
+      <div class="pil-faq-item">
+        <h3>Quels manuels utiliser pour le CM1 ?</h3>
+        <p>En France, plusieurs <b>manuels CM1</b> sont utilisés à l'école selon les éditions (Nathan, Magnard, Hachette, Retz…). En complément d'un <b>manuel</b> papier ou d'un <b>cahier</b> d'exercices, les ressources numériques interactives comme École Facile permettent un entraînement supplémentaire à la maison. L'avantage du numérique : la <b>correction immédiate</b> et la possibilité de recommencer autant de fois que nécessaire sans gaspiller de papier.</p>
+      </div>
+
+      <div class="pil-faq-item">
+        <h3>Comment réviser pour le CM1 (et préparer la fin du CM1) ?</h3>
+        <p>Pour bien préparer la <b>fin du CM1</b> et l'entrée en CM2, il est conseillé de réviser régulièrement plutôt qu'en grande quantité au dernier moment. Un travail de 15 à 20 minutes par <b>jour</b>, quelques fois par <b>semaine</b>, est idéal. Commencer par les notions les plus fragiles (souvent le <b>calcul</b> ou la <b>grammaire</b>), puis élargir aux autres matières. Les <b>cahiers de vacances CM1</b> sont aussi utiles pour consolider l'<b>apprentissage</b> entre deux années scolaires.</p>
+      </div>
+
+      <div class="pil-faq-item">
+        <h3>Quels outils pédagogiques pour le CM1 ?</h3>
+        <p>Les meilleurs <b>outils pédagogiques</b> pour le CM1 combinent des ressources <b>numériques</b> interactives (exercices en ligne avec correction immédiate, comme sur ce site), des fiches leçons claires, et des activités variées (jeux éducatifs, problèmes concrets, manipulations). Pour les enseignants, les ressources pédagogiques structurées par notion et par niveau permettent un travail différencié adapté à chaque élève. Pour les parents, un espace simple et sans publicité comme École Facile aide l'enfant à travailler en autonomie.</p>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /.pil-seo -->
 
 </main>
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a></div></footer>
