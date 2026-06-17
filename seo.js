@@ -60,7 +60,7 @@
   if (fname === 'index.html') return;
   var bar = document.createElement('nav');
   bar.setAttribute('aria-label', 'Fil d\'Ariane');
-  bar.style.cssText = 'background:#f8f7ff;border-bottom:1.5px solid #ede9fe;padding:7px 18px;font-size:.72rem;font-weight:800;color:#6b7280;display:flex;align-items:center;gap:5px;flex-wrap:wrap';
+  bar.style.cssText = 'background:#f8f7ff;border-bottom:1.5px solid #ede9fe;padding:7px 18px;margin-top:14px;font-size:.72rem;font-weight:800;color:#6b7280;display:flex;align-items:center;gap:5px;flex-wrap:wrap';
   var crumbs = [{ label: 'Accueil', href: 'index.html' }];
   if (level) crumbs.push({ label: LEVELS[level], href: 'index.html#lc-' + level });
   if (isCours) crumbs.push({ label: 'Cours', href: null });
