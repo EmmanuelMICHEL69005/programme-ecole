@@ -17,54 +17,105 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-:root{--lc1:#1d4ed8;--lc2:#3b82f6;--lb:#93c5fd;--la:#1d4ed8;--ld:#1e3a8a;--lbg:#eff6ff;--lt:#1e3a8a;--ls:rgba(29,78,216,.3)}
-.cours-header{text-align:center;padding:20px 20px 16px;color:#fff}
-.cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
-.cours-header p{font-size:.87rem;opacity:.88;margin:0}
-.lf-grid{display:grid;gap:12px;margin-bottom:18px}
-.lf-card{background:#fff;border-left:4px solid var(--lc1);border-radius:0 12px 12px 0;padding:12px 14px}
-.lf-rule{font-size:.72rem;font-weight:900;color:var(--lc1);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
-.lf-body{font-size:.9rem;font-weight:700;color:var(--lt);line-height:1.5;margin-bottom:6px}
-.lf-ex{font-size:.82rem;font-weight:700;color:var(--ld);background:var(--lb);border-radius:8px;padding:5px 10px}
+:root{--lc1:#1d4ed8;--lc2:#3b82f6;--lb:#bfdbfe;--ld:#1e3a8a;--lbg:#eff6ff;--lt:#1e3a8a}
 </style>
 </head>
 <body class="cpage">
 <header class="cours-header" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6)">
   <div class="badge-niveau">CM1</div>
   <h1>📖 Grammaire</h1>
-  <p>Phrases, COD, COI, CC et nature des mots</p>
+  <p>Phrases · COD · COI · Compléments circonstanciels · Nature des mots</p>
 </header>
-<main>
+<main class="cs">
 
-<div class="lf-grid">
-  <div class="lf-card">
-    <div class="lf-rule">📌 Types et formes de phrases</div>
-    <div class="lf-body">4 types : déclaratif · interrogatif · exclamatif · impératif. 2 formes : affirmative / négative.</div>
-    <div class="lf-ex">Ex : Il ne mange pas. → déclaratif négatif · Viens ! → impératif affirmatif</div>
-  </div>
-  <div class="lf-card">
-    <div class="lf-rule">📌 COD et COI</div>
-    <div class="lf-body">COD : quoi ? (sans préposition) · COI : à qui ? de quoi ? (avec préposition à ou de).</div>
-    <div class="lf-ex">Ex : Je mange une pomme. (COD) · Je parle à Pierre. (COI)</div>
-  </div>
-  <div class="lf-card">
-    <div class="lf-rule">📌 Compléments circonstanciels</div>
-    <div class="lf-body">CCL (où ?) · CCT (quand ?) · CCM (comment ?). On peut les déplacer ou supprimer.</div>
-    <div class="lf-ex">Ex : Elle court [dans le parc] (CCL) [le matin] (CCT) [vite] (CCM).</div>
-  </div>
-  <div class="lf-card">
-    <div class="lf-rule">📌 Nature des mots</div>
-    <div class="lf-body">Nom · verbe · adjectif · déterminant · adverbe · pronom · préposition · conjonction.</div>
-    <div class="lf-ex">Ex : Mais [conj.] il [pronom] court [verbe] très [adv.] vite [adv.].</div>
+<div class="cs-block">
+  <div class="cs-head" style="background:#1d4ed8">📝 Les types et formes de phrases</div>
+  <div class="cs-body">
+    <div class="cs-text">Il existe <b>4 types</b> de phrases et <b>2 formes</b>. Chaque phrase a un type ET une forme.</div>
+    <table class="cs-table">
+      <tr><th>Type</th><th>Sert à…</th><th>Exemple</th><th>Signe</th></tr>
+      <tr><td>Déclaratif</td><td>donner une info</td><td>Il fait beau.</td><td>.</td></tr>
+      <tr><td>Interrogatif</td><td>poser une question</td><td>Fait-il beau ?</td><td>?</td></tr>
+      <tr><td>Exclamatif</td><td>exprimer un sentiment</td><td>Quel beau temps !</td><td>!</td></tr>
+      <tr><td>Impératif</td><td>donner un ordre</td><td>Sors vite !</td><td>!</td></tr>
+    </table>
+    <div class="cs-grid2" style="margin-top:10px">
+      <div class="cs-mini"><div class="cs-mini-label">Forme affirmative</div>Il mange. · Elle vient.</div>
+      <div class="cs-mini"><div class="cs-mini-label">Forme négative</div>Il ne mange pas. · Elle ne vient jamais.</div>
+    </div>
+    <div class="cs-tip">💡 <b>Il ne mange pas.</b> → déclaratif <b>négatif</b> · <b>Ne viens pas !</b> → impératif <b>négatif</b></div>
   </div>
 </div>
 
-<div class="retenir">
+<div class="cs-block">
+  <div class="cs-head" style="background:#1d4ed8">🎯 Le COD — Complément d'Objet Direct</div>
+  <div class="cs-body">
+    <div class="cs-text">Le COD complète le verbe <b>sans préposition</b>. Il répond à la question <b>Quoi ?</b> ou <b>Qui ?</b> posée après le verbe.</div>
+    <div class="cs-ex">🔍 Méthode : <b>Sujet + verbe + quoi ?</b><br>
+    Je mange <b>une pomme</b>. → Je mange quoi ? → une pomme = COD<br>
+    Elle regarde <b>son frère</b>. → Elle regarde qui ? → son frère = COD</div>
+    <div class="cs-tip">💡 Astuce : tu peux remplacer le COD par <b>le, la, les</b> ou <b>lui, leur</b>.<br>Elle mange une pomme → Elle <b>la</b> mange. ✅ C'est bien un COD !</div>
+  </div>
+</div>
+
+<div class="cs-block">
+  <div class="cs-head" style="background:#1d4ed8">🎯 Le COI — Complément d'Objet Indirect</div>
+  <div class="cs-body">
+    <div class="cs-text">Le COI complète le verbe <b>avec une préposition</b> (à, de). Il répond à <b>À qui ? À quoi ? De qui ? De quoi ?</b></div>
+    <div class="cs-ex">Je parle <b>à Pierre</b>. → Je parle à qui ? → à Pierre = COI<br>
+    Elle rêve <b>de vacances</b>. → Elle rêve de quoi ? → de vacances = COI<br>
+    Il se souvient <b>de toi</b>. → Il se souvient de qui ? → de toi = COI</div>
+    <div class="cs-grid2" style="margin-top:10px">
+      <div class="cs-mini"><div class="cs-mini-label">COD (sans prépo)</div>manger une pizza · voir un ami · lire un livre</div>
+      <div class="cs-mini"><div class="cs-mini-label">COI (avec à / de)</div>parler à maman · rêver de voyage · manquer à quelqu'un</div>
+    </div>
+  </div>
+</div>
+
+<div class="cs-block">
+  <div class="cs-head" style="background:#1d4ed8">📍 Les Compléments Circonstanciels</div>
+  <div class="cs-body">
+    <div class="cs-text">Les CC apportent des informations sur le <b>lieu</b>, le <b>temps</b> ou la <b>manière</b>. On peut les <b>déplacer</b> et les <b>supprimer</b> sans changer le sens principal.</div>
+    <table class="cs-table">
+      <tr><th>Sigle</th><th>Question</th><th>Exemple</th></tr>
+      <tr><td><b>CCL</b> — Lieu</td><td>Où ?</td><td>Elle court <b>dans le parc</b>.</td></tr>
+      <tr><td><b>CCT</b> — Temps</td><td>Quand ? Combien de temps ?</td><td>Il travaille <b>le matin</b>.</td></tr>
+      <tr><td><b>CCM</b> — Manière</td><td>Comment ?</td><td>Il parle <b>doucement</b>.</td></tr>
+    </table>
+    <div class="cs-ex"><b>Dans le parc</b> (CCL), <b>le matin</b> (CCT), elle court <b>vite</b> (CCM).<br>→ <b>Le matin</b>, dans le parc, elle court vite. (déplacés : même sens ✅)</div>
+    <div class="cs-tip">💡 Test : si tu peux <b>déplacer</b> le groupe en début de phrase sans perdre le sens → c'est un CC !</div>
+  </div>
+</div>
+
+<div class="cs-block">
+  <div class="cs-head" style="background:#1d4ed8">🔤 La Nature des mots</div>
+  <div class="cs-body">
+    <div class="cs-text">La <b>nature</b> d'un mot = ce que ce mot <b>est</b> (toujours pareil). La <b>fonction</b> = le rôle qu'il joue dans la phrase (change selon la phrase).</div>
+    <div class="cs-tags">
+      <span class="cs-tag">Nom</span>
+      <span class="cs-tag">Verbe</span>
+      <span class="cs-tag">Adjectif</span>
+      <span class="cs-tag">Déterminant</span>
+      <span class="cs-tag">Adverbe</span>
+      <span class="cs-tag">Pronom</span>
+      <span class="cs-tag">Préposition</span>
+      <span class="cs-tag">Conjonction</span>
+    </div>
+    <div class="cs-ex"><b>le</b> [déterminant] <b>chat</b> [nom] <b>noir</b> [adjectif] <b>dort</b> [verbe] <b>tranquillement</b> [adverbe].<br>
+    <b>Mais</b> [conjonction] <b>il</b> [pronom] court <b>très</b> [adverbe] <b>vite</b> [adverbe] <b>dans</b> [préposition] le jardin.</div>
+    <div class="cs-tip">💡 <b>Nature ≠ Fonction !</b> Le mot <b>chat</b> est toujours un nom (nature) mais peut être sujet, COD ou CC selon la phrase (fonction).</div>
+  </div>
+</div>
+
+<div class="cs-retenir">
   <h3>📌 À retenir</h3>
   <ul>
-    <li>COD : quoi ? (sans préposition) · COI : à qui ? (avec préposition)</li>
-    <li>CCL / CCT / CCM : déplaçables et supprimables</li>
-    <li>Nature ≠ fonction (un nom peut être sujet, COD, CC…)</li>
+    <li>4 types de phrases : déclaratif · interrogatif · exclamatif · impératif</li>
+    <li>2 formes : affirmative / négative — indépendantes du type</li>
+    <li>COD : <em>Quoi ? Qui ?</em> → <b>sans préposition</b> · remplaçable par le/la/les</li>
+    <li>COI : <em>À qui ? De quoi ?</em> → <b>avec à ou de</b></li>
+    <li>CC : <b>déplaçables et supprimables</b> (lieu / temps / manière)</li>
+    <li>Nature = ce qu'est le mot · Fonction = son rôle dans la phrase</li>
   </ul>
 </div>
 
