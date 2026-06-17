@@ -5,121 +5,75 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://ecolefacile.fr/cours-nombres-cm2.html">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>🔢 Nombres jusqu'aux milliards — Cours CM2 — École Facile</title>
-<meta name="description" content="Cours nombres CM2 : grands nombres, millions, milliards, fractions et décimaux, nombres relatifs, valeur absolue, arrondi.">
+<title>Nombres et numération — Cours CM2 | École Facile</title>
+<meta name="description" content="Cours CM2 : milliards, fractions, premières notions de nombres négatifs.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/cours-nombres-cm2.html">
+<meta property="og:title" content="Nombres et numération — Cours CM2 | École Facile">
+<meta property="og:description" content="Cours CM2 : milliards, fractions, premières notions de nombres négatifs.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<style>
-:root{--lc1:#b45309;--lc2:#f59e0b;--lb:#fde68a;--la:#b45309;--ld:#78350f;--lbg:#fffbeb;--lt:#78350f;--ls:rgba(180,83,9,.3)}
-body{font-family:'Nunito',sans-serif;background:#fffbeb;color:#1e1b4b;margin:0}
-main{max-width:720px;margin:0 auto;padding:22px 18px 60px}
-.cs{margin-bottom:26px}
-.cs h2{font-size:1.1rem;font-weight:900;margin:0 0 12px;padding-bottom:7px;border-bottom:2.5px solid #fde68a;color:#92400e}
-.dbox{background:#dbeafe;border-left:4px solid #1d4ed8;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
-.dbox .lbl{font-size:.65rem;font-weight:900;color:#1d4ed8;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
-.dbox p,.dbox ul{font-size:.9rem;font-weight:700;color:#1e3a8a;margin:0;line-height:1.55}
-.ebox{background:#fef9c3;border-left:4px solid #ca8a04;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
-.ebox .lbl{font-size:.65rem;font-weight:900;color:#92400e;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
-.ebox p,.ebox ul{font-size:.9rem;font-weight:700;color:#713f12;margin:0;line-height:1.55}
-.rbox{background:#dcfce7;border-left:4px solid #16a34a;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
-.rbox .lbl{font-size:.65rem;font-weight:900;color:#15803d;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
-.rbox p,.rbox ul{font-size:.9rem;font-weight:700;color:#14532d;margin:0;line-height:1.55}
-.wbox{background:#fee2e2;border-left:4px solid #dc2626;border-radius:0 12px 12px 0;padding:12px 15px;margin:10px 0}
-.wbox .lbl{font-size:.65rem;font-weight:900;color:#dc2626;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
-.wbox p,.wbox ul{font-size:.9rem;font-weight:700;color:#991b1b;margin:0;line-height:1.55}
-.retenir{background:#fff;border:2.5px solid #b45309;border-radius:16px;padding:16px 18px;margin:22px 0 18px}
-.retenir h3{font-size:.78rem;font-weight:900;color:#b45309;text-transform:uppercase;letter-spacing:1px;margin:0 0 10px}
-.retenir ul{margin:0;padding-left:18px}
-.retenir li{font-size:.88rem;font-weight:700;color:#1e1b4b;line-height:1.7}
-.cta{text-align:center;margin-top:26px;padding:18px;background:#fff;border-radius:16px;border:2px solid #fde68a}
-.cta p{font-size:.82rem;color:#6b7280;font-weight:700;margin:0 0 10px}
-.btn-ex{display:inline-block;background:linear-gradient(135deg,#b45309,#f59e0b);color:#fff;padding:13px 26px;border-radius:13px;font-size:.95rem;font-weight:900;text-decoration:none;box-shadow:0 4px 16px rgba(180,83,9,.4)}
-.vgrid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));margin:10px 0}
-.vcrd{background:#fff;border:2px solid #fde68a;border-radius:11px;padding:9px;text-align:center}
-.vcrd .vl{font-size:.7rem;font-weight:900;color:#92400e;margin-bottom:4px}
-.vcrd .vv{font-size:1.3rem;font-weight:900;color:#b45309}
-.vcrd .vs{font-size:.68rem;font-weight:700;color:#9ca3af;margin-top:2px}
-.frise{display:flex;flex-direction:column;gap:0;margin:12px 0}
-.frise-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid #fde68a}
-.frise-item:last-child{border-bottom:none}
-.frise-dot{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:900;flex-shrink:0;margin-top:2px}
-.frise-content{flex:1}
-.frise-date{font-size:.68rem;font-weight:900;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px;color:#b45309}
-.frise-text{font-size:.88rem;font-weight:700;line-height:1.5}
-.visbox{background:#fffbf0;border:2px solid #fde68a;border-radius:14px;padding:14px 10px 10px;margin:12px 0;text-align:center;overflow:hidden}
-.visbox svg{max-width:100%;height:auto;display:block;margin:0 auto}
-.visbox .vis-caption{font-size:.72rem;font-weight:900;color:#92400e;margin-top:8px}
-.method-card{background:linear-gradient(135deg,#1e1b4b,#3730a3);color:white;border-radius:16px;padding:16px 20px;margin:14px 0}
-.method-card .mc-title{font-size:.68rem;font-weight:900;opacity:.7;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
-.method-card .mc-steps{list-style:none;padding:0;margin:0}
-.method-card .mc-steps li{padding:4px 0;font-size:.9rem;font-weight:700;border-bottom:1px solid rgba(255,255,255,.1)}
-.method-card .mc-steps li:last-child{border-bottom:none}
-.cmp-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.85rem}
-.cmp-table th{background:#b45309;color:white;padding:8px 10px;font-weight:900;text-align:center}
-.cmp-table td{border:1.5px solid #fde68a;padding:8px 10px;font-weight:700;text-align:center;background:#fff}
-.cmp-table tr:nth-child(even) td{background:#fffbeb}
-.badge-niveau{display:inline-block;background:rgba(255,255,255,.2);border-radius:20px;padding:4px 14px;font-size:.72rem;font-weight:900;letter-spacing:1px;margin-bottom:8px}
-.cours-header{text-align:center;padding:20px 20px 16px;color:#fff;background:linear-gradient(135deg,#b45309,#f59e0b);border-radius:0 0 24px 24px;margin-bottom:20px}
-.cours-header h1{font-size:1.7rem;font-weight:900;margin:6px 0 4px}
-.cours-header p{font-size:.87rem;opacity:.88;margin:0}
-.site-footer{text-align:center;padding:16px;font-size:.8rem;color:#9ca3af;border-top:1px solid #e5e7eb;margin-top:10px}
-/* Tableau numération */
-.num-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.8rem;overflow-x:auto;display:block}
-.num-table th{background:#92400e;color:#fff;padding:6px 8px;font-weight:900;text-align:center;white-space:nowrap}
-.num-table td{border:1.5px solid #fde68a;padding:6px 8px;font-weight:700;text-align:center;background:#fff;white-space:nowrap}
-.num-table .classe{background:#fef3c7;font-weight:900;color:#92400e}
-
-.lf-grid{display:grid;gap:12px;margin-bottom:18px}
-.lf-card{background:#fff;border-left:4px solid var(--lc1);border-radius:0 12px 12px 0;padding:12px 14px}
-.lf-rule{font-size:.72rem;font-weight:900;color:var(--lc1);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
-.lf-body{font-size:.9rem;font-weight:700;color:var(--lt);line-height:1.5;margin-bottom:6px}
-.lf-ex{font-size:.82rem;font-weight:700;color:var(--ld);background:var(--lb);border-radius:8px;padding:5px 10px}
-</style>
+<style>:root{--lc1:#b45309;--lc2:#f59e0b;--lb:#fde68a;--ld:#78350f;--lbg:#fffbeb;--lt:#78350f}</style>
 </head>
-<body>
-
-<div class="cours-header">
-  <div class="badge-niveau">CM2 · MATHÉMATIQUES</div>
-  <h1>🔢 Nombres jusqu'aux milliards</h1>
-  <p>Grands nombres · Fractions · Relatifs · Arrondi</p>
+<body class="cpage">
+<header class="cours-header" style="background:linear-gradient(135deg,#b45309,#f59e0b)">
+  <div class="badge-niveau">CM2</div>
+  <h1>🔢 Nombres et numération</h1>
+  <p>Milliards · fractions · nombres négatifs (intro)</p>
+</header>
+<main class="cs">
+<div class="cs-block">
+<div class="cs-head" style="background:#b45309">🌍 Les milliards</div>
+<div class="cs-body">
+<div class="cs-text">Au-delà du million, on compte les <b>milliards</b>.</div>
+<table class="cs-table"><tr><th>Nombre</th><th>Écriture</th><th>Lecture</th></tr><tr><td>1 000 000</td><td>1 million</td><td>un million</td></tr><tr><td>1 000 000 000</td><td>1 milliard</td><td>un milliard</td></tr><tr><td>7 800 000 000</td><td>7,8 milliards</td><td>sept virgule huit milliards</td></tr></table>
+<div class="cs-ex">La population mondiale ≈ 8 000 000 000 = 8 milliards</div>
+<div class="cs-tip">💡 milliard = 1 000 millions. Toujours écrire les nombres avec des espaces.</div>
 </div>
-
-<main>
-<div class="lf-grid">
-  <div class="lf-card">
-    <div class="lf-rule">📌 Très grands nombres</div>
-    <div class="lf-body">Millier = 1 000 · Million = 1 000 000 · Milliard = 1 000 000 000. On regroupe les chiffres par tranches de 3 en partant de la droite.</div>
-    <div class="lf-ex">Ex : 1 milliard = 1 000 000 000 · 3,5 millions = 3 500 000</div>
-  </div>
-  <div class="lf-card">
-    <div class="lf-rule">📌 Entiers relatifs</div>
-    <div class="lf-body">Les entiers relatifs sont positifs ou négatifs. Sur l'axe : plus on va à gauche, plus le nombre est petit. La valeur absolue |n| est la distance à zéro.</div>
-    <div class="lf-ex">Ex : −3 &lt; 0 &lt; 5 · |−7| = 7</div>
-  </div>
-  <div class="lf-card">
-    <div class="lf-rule">📌 Règles de signes</div>
-    <div class="lf-body">(−) × (−) = (+) · (+) × (−) = (−) · Pour l'addition : on soustrait le plus petit du plus grand et on garde le signe du plus grand.</div>
-    <div class="lf-ex">Ex : −3 × −4 = 12 · −5 + 8 = 3</div>
-  </div>
 </div>
-<div class="retenir">
-  <h3>📌 À retenir</h3>
-  <ul>
-    <li>milliards / millions / milliers : tranches de 3 chiffres</li>
-    <li>Entiers relatifs : − à gauche, + à droite de zéro</li>
-    <li>Règles de signes : (−) × (−) = (+)</li>
-  </ul>
+<div class="cs-block">
+<div class="cs-head" style="background:#b45309">½ Les fractions comme nombres</div>
+<div class="cs-body">
+<div class="cs-text">Une <b>fraction</b> est un nombre situé <b>entre deux entiers</b> sur la droite numérique.</div>
+<table class="cs-table"><tr><th>Fraction</th><th>Valeur décimale</th><th>Sur la droite numérique</th></tr><tr><td>1/2</td><td>0,5</td><td>entre 0 et 1</td></tr><tr><td>3/4</td><td>0,75</td><td>entre 0 et 1</td></tr><tr><td>5/2</td><td>2,5</td><td>entre 2 et 3</td></tr><tr><td>7/3</td><td>≈ 2,33</td><td>entre 2 et 3</td></tr></table>
+<div class="cs-tip">💡 Numérateur ÷ dénominateur = valeur décimale : 3/4 = 3 ÷ 4 = 0,75</div>
+</div>
+</div>
+<div class="cs-block">
+<div class="cs-head" style="background:#b45309">➖ Les nombres négatifs (introduction)</div>
+<div class="cs-body">
+<div class="cs-text">Les nombres <b>négatifs</b> sont plus petits que 0. On les écrit avec un signe <b>−</b>.</div>
+<div class="cs-ex">Température : −5°C = 5 degrés <b>sous</b> zéro<br>Droite numérique : … −3 · −2 · −1 · 0 · 1 · 2 · 3 …</div>
+<div class="cs-grid2"><div class="cs-mini"><div class="cs-mini-label">Nombres négatifs</div>… −5 · −4 · −3 · −2 · −1<br>Plus petit que 0</div><div class="cs-mini"><div class="cs-mini-label">Nombres positifs</div>1 · 2 · 3 · 4 · 5 …<br>Plus grand que 0</div></div>
+</div>
+</div>
+<div class="cs-block">
+<div class="cs-head" style="background:#b45309">⚖️ Comparaison étendue</div>
+<div class="cs-body">
+<div class="cs-text">Un <b>négatif</b> est toujours plus petit qu'un <b>positif</b>. Entre deux négatifs, le plus proche de 0 est le plus grand.</div>
+<div class="cs-ex">−3 &lt; 0 &lt; 5<br>−1 &gt; −8 (−1 plus proche de 0)</div>
+<div class="cs-tip">💡 Sur la droite numérique : toujours plus grand vers la droite.</div>
+</div>
+</div>
+<div class="cs-retenir">
+<h3>📌 À retenir</h3>
+<ul>
+<li>1 milliard = 1 000 millions = 1 000 000 000</li>
+<li>Fraction = nombre entre deux entiers · 3/4 = 3 ÷ 4 = 0,75</li>
+<li>Nombres négatifs : −5 < −3 < 0 < 3 < 5</li>
+<li>Droite numérique : toujours croissant de gauche à droite</li>
+</ul>
 </div>
 <div class="cta"><p>Tu as compris ? Entraîne-toi !</p><a href="nombres-cm2.html" class="btn-ex">Faire les exercices CM2 →</a></div>
 </main>
-
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a></div></footer>
-
-<script src="sync.js" defer></script>
-<script src="gamification.js" defer></script>
-<script src="nav.js" defer></script>
-<script src="related.js" defer></script>
-<script src="seo.js" defer></script>
+<script src="sync.js"></script>
+<script src="gamification.js"></script>
+<script src="nav.js"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
 </body>
 </html>
