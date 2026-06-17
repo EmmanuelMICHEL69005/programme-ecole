@@ -218,6 +218,7 @@
       font-size: 1.35rem;
       cursor: pointer;
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: center;
       transition: background 0.2s, transform 0.15s;
@@ -257,6 +258,7 @@
       transform: translateX(-100%);
       transition: transform 0.28s cubic-bezier(0.4,0,0.2,1);
       display: flex;
+      flex-wrap: wrap;
       flex-direction: column;
       overflow: hidden;
     }
@@ -265,6 +267,7 @@
     }
     .nav-drawer-header {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
       padding: 16px 14px;
@@ -275,6 +278,7 @@
     }
     .nav-drawer-home {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       gap: 9px;
       text-decoration: none;
@@ -293,6 +297,7 @@
       font-size: 1.1rem;
       cursor: pointer;
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: center;
       transition: background 0.15s;
@@ -315,6 +320,7 @@
     }
     .nav-home-item a {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       gap: 10px;
       padding: 10px 12px;
@@ -334,6 +340,7 @@
     }
     .nav-cat-btn {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
       width: 100%;
@@ -372,6 +379,7 @@
     }
     .nav-page-link {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       gap: 10px;
       padding: 9px 12px 9px 22px;
@@ -411,13 +419,12 @@
     /* ===== LEVEL TABS ===== */
     .nav-level-tabs {
       display: flex;
+      flex-wrap: wrap;
       gap: 5px;
       padding: 8px 10px 6px;
-      overflow-x: auto;
       flex-shrink: 0;
       border-bottom: 1px solid rgba(255,255,255,0.1);
     }
-    .nav-level-tabs::-webkit-scrollbar { display: none; }
     .nav-level-tab {
       flex-shrink: 0;
       background: rgba(255,255,255,0.07);
@@ -449,6 +456,7 @@
     }
     .nav-profile-link {
       display: flex;
+      flex-wrap: wrap;
       align-items: flex-start;
       gap: 12px;
       padding: 16px 16px 10px;
@@ -485,6 +493,7 @@
     }
     .nav-profile-xprow {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       gap: 7px;
     }
@@ -516,12 +525,14 @@
     }
     .nav-profile-stats {
       display: flex;
+      flex-wrap: wrap;
       border-top: 1px solid rgba(255,255,255,0.08);
       margin: 0 10px 10px;
     }
     .nav-profile-stat {
       flex: 1;
       display: flex;
+      flex-wrap: wrap;
       flex-direction: column;
       align-items: center;
       padding: 10px 6px 8px;
