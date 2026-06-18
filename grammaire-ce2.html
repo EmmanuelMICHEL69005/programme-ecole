@@ -122,14 +122,14 @@ buildQCM([
 buildQCM([
   { card:'"le petit chien"', q:'Combien ce GN contient-il de mots ?', correct:'3 mots', choices:['1 mot','2 mots','3 mots','4 mots'] },
   { card:'"les maisons rouges"', q:'Quel est le nom dans ce GN ?', correct:'maisons', choices:['les','maisons','rouges','les maisons'] },
-  { card:'"une belle fleur"', q:'Quel est l'adjectif dans ce GN ?', correct:'belle', choices:['une','belle','fleur','une belle'] },
+  { card:'"une belle fleur"', q:"Quel est l'adjectif dans ce GN ?", correct:'belle', choices:['une','belle','fleur','une belle'] },
   { card:'Quel déterminant convient ? "_____ enfants jouent."', q:'Choisis le bon déterminant', correct:'Les', choices:['Le','La','Les','Un'] },
   { card:'"mon chien"', q:'Quel est le déterminant possessif ?', correct:'mon', choices:['chien','mon','le','un'] },
   { card:'"des fleurs blanches"', q:'Quel est le nom noyau du GN ?', correct:'fleurs', choices:['des','fleurs','blanches','des fleurs'] },
 ], 'ex2');
 
 buildQCM([
-  { card:'"Il pleut aujourd'hui."', q:'Quel type de phrase est-ce ?', correct:'déclarative', choices:['déclarative','interrogative','exclamative','impérative'] },
+  { card:'"Il pleut aujourd\'hui."', q:'Quel type de phrase est-ce ?', correct:'déclarative', choices:['déclarative','interrogative','exclamative','impérative'] },
   { card:'"Viens ici !"', q:'Quel type de phrase est-ce ?', correct:'impérative', choices:['déclarative','interrogative','exclamative','impérative'] },
   { card:'"Est-ce que tu viens ?"', q:'Quel type de phrase est-ce ?', correct:'interrogative', choices:['déclarative','interrogative','exclamative','impérative'] },
   { card:'"Quelle belle journée !"', q:'Quel type de phrase est-ce ?', correct:'exclamative', choices:['déclarative','interrogative','exclamative','impérative'] },
@@ -140,7 +140,7 @@ buildQCM([
   { card:'"Les chats _____ dans le jardin."', q:'Conjugue le verbe "dormir" avec "les chats"', correct:'dorment', choices:['dort','dorment','dormez','dormions'] },
   { card:'"Mon frère _____ du vélo."', q:'Conjugue le verbe "faire" avec "mon frère"', correct:'fait', choices:['font','fais','fait','faites'] },
   { card:'"Nous _____ très bien."', q:'Conjugue le verbe "chanter" avec "nous"', correct:'chantons', choices:['chante','chantes','chantons','chantent'] },
-  { card:'"Elle et moi _____ à l'école."', q:'Elle et moi = quel pronom ?', correct:'nous (→ chantons)', choices:['nous (→ chantons)','elles (→ chantent)','vous (→ chantez)','je (→ chante)'] },
+  { card:'"Elle et moi _____ à l\'école."', q:'Elle et moi = quel pronom ?', correct:'nous (→ chantons)', choices:['nous (→ chantons)','elles (→ chantent)','vous (→ chantez)','je (→ chante)'] },
   { card:'"Le chien et le chat _____ ensemble."', q:'Conjugue "jouer" — sujet = le chien et le chat', correct:'jouent', choices:['joue','joues','jouons','jouent'] },
 ], 'ex4');
 
@@ -156,10 +156,10 @@ buildVF([
   { q:'"mange" est un verbe', correct:true },
   { q:'"le" est un adjectif', correct:false, expl:'"le" est un déterminant' },
   { q:'Un GN contient toujours un nom', correct:true },
-  { q:'La phrase "Mange ta soupe !" est déclarative', correct:false, expl:'C'est une phrase impérative' },
-  { q:'Dans "les beaux arbres", arbres s'accorde au pluriel', correct:true },
+  { q:'La phrase "Mange ta soupe !" est déclarative', correct:false, expl:"C'est une phrase impérative" },
+  { q:"Dans les beaux arbres, le mot arbres s'accorde au pluriel", correct:true },
   { q:'"Paris" est un nom commun', correct:false, expl:'"Paris" est un nom propre' },
-  { q:'Le verbe s'accorde avec le sujet', correct:true },
+  { q:"Le verbe s'accorde avec le sujet", correct:true },
 ], 'ex6');
 
 buildPaires([
