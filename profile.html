@@ -372,6 +372,8 @@
 </div>
 
 <script src="sync.js"></script>
+<script src="firebase-keys.js"></script>
+<script src="auth.js"></script>
 <script src="gamification.js"></script>
 <script src="nav.js"></script>
 <script>
@@ -382,30 +384,23 @@
     const nxt = GS.getNextLevel(P.xp);
     const p   = GS.pct(P.xp);
 
-    // Profiles bar
+    // Profiles bar — one profile (Firebase account)
     const bar = document.getElementById('profilesBar');
-    const addBtn = bar.querySelector('.profile-add-btn');
-    bar.querySelectorAll('.profile-chip').forEach(el => el.remove());
-    const st = GS.store();
-    Object.values(st.profiles||{}).forEach(prof => {
-      const lv = GS.getLevel(prof.xp);
-      const chip = document.createElement('button');
-      chip.className = 'profile-chip' + (prof.id === st.active ? ' active' : '');
+    if (bar) {
+      bar.querySelectorAll('.profile-chip').forEach(el => el.remove());
+      const addBtn = bar.querySelector('.profile-add-btn');
+      const lv0 = GS.getLevel(P.xp);
+      const chip = document.createElement('div');
+      chip.className = 'profile-chip active';
       chip.innerHTML = `
-        <span class="profile-chip-avatar">${prof.avatar}</span>
+        <span class="profile-chip-avatar">${P.avatar}</span>
         <div class="profile-chip-info">
-          <span class="profile-chip-name">${prof.name}</span>
-          <span class="profile-chip-meta">${prof.classe} · ${lv.emoji} Niv.${prof.level}</span>
+          <span class="profile-chip-name">${P.name}</span>
+          <span class="profile-chip-meta">${P.classe} · ${lv0.emoji} Niv.${P.level}</span>
         </div>
       `;
-      chip.addEventListener('click', () => {
-        if (prof.id === st.active) return;
-        st.active = prof.id;
-        GS.save();
-        location.reload();
-      });
-      bar.insertBefore(chip, addBtn);
-    });
+      if (addBtn) bar.insertBefore(chip, addBtn); else bar.appendChild(chip);
+    }
 
     // Hero
     document.getElementById('avatarCircle').textContent = P.avatar;
@@ -576,15 +571,14 @@
   }
   function confirmDelete() {
     const P = GS.profile();
-    if (confirm('Supprimer le profil de ' + P.name + ' ?\nCette action est irréversible.')) {
-      GS.deleteProfile(P.id);
+    if (confirm('Se déconnecter du compte de ' + P.name + ' ?')) {
+      if (window.EF_AUTH) window.EF_AUTH.signOut();
     }
   }
 
   // ── Export / Import ───────────────────────────────────────────────
   function exportData() {
-    const st = GS.store();
-    const json = JSON.stringify(st, null, 2);
+    const json = JSON.stringify(GS.profile(), null, 2);
     const blob = new Blob([json], { type: 'application/json' });
     const url  = URL.createObjectURL(blob);
     const a    = document.createElement('a');

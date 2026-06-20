@@ -7,8 +7,6 @@
   'use strict';
 
   // ── Config ───────────────────────────────────────────────────────
-  const STORE_KEY  = 'clemence_maths_v2';
-  const LEGACY_KEY = 'clemence_maths_v1';
   const XP_CORRECT = 10;
 
   const PAGE_SEQUENCE = [
@@ -156,66 +154,30 @@
   }
 
   // ── Store helpers ────────────────────────────────────────────────
-  function genId() {
-    return 'p' + Date.now().toString(36) + Math.random().toString(36).slice(2,6);
-  }
-
   function blank(name, avatar, classe) {
-    const id = genId();
     return {
-      id, name: name||'', avatar: avatar||'🌟', classe: classe||'CE2',
+      id: 'local_' + Date.now().toString(36),
+      name: name||'', avatar: avatar||'🌟', classe: classe||'CE2',
       xp:0, level:1, badges:[], tot:0, streak:0, maxStreak:0,
       pages:{}, days:[], completedPages:{}, createdAt: Date.now()
     };
   }
 
-  let store;
-  let P;
-
-  function loadStore() {
-    try {
-      const raw = localStorage.getItem(STORE_KEY);
-      if (raw) {
-        store = JSON.parse(raw);
-        P = store.profiles[store.active] || null;
-        if (!P) {
-          const ids = Object.keys(store.profiles||{});
-          if (ids.length) { store.active = ids[0]; P = store.profiles[ids[0]]; }
-        }
-        return;
-      }
-    } catch(e) {}
-    // Migrate v1
-    try {
-      const oldRaw = localStorage.getItem(LEGACY_KEY);
-      if (oldRaw) {
-        const old = JSON.parse(oldRaw);
-        const p = blank(old.name||'Clémence', old.avatar||'🌟', 'CE2');
-        Object.assign(p, {
-          xp: old.xp||0, level: old.level||1, badges: old.badges||[],
-          tot: old.tot||0, streak: old.streak||0, maxStreak: old.maxStreak||0,
-          pages: old.pages||{}, days: old.days||[]
-        });
-        store = { active: p.id, profiles: { [p.id]: p } };
-        saveStore();
-        P = p;
-        return;
-      }
-    } catch(e) {}
-    store = { active: null, profiles: {} };
-    P = null;
-  }
+  let P = null;
 
   function saveStore() {
-    try { localStorage.setItem(STORE_KEY, JSON.stringify(store)); } catch(e) {}
-    // Sync to Firebase if enabled and profile has a syncCode
-    if (P && P.syncCode && window.EF_SYNC && window.EF_SYNC.enabled) {
-      clearTimeout(saveStore._syncTimer);
-      saveStore._syncTimer = setTimeout(function () {
-        window.EF_SYNC.saveProfile(P.syncCode, P, function (ok) {
-          if (ok) showSyncIndicator('✅ Synchronisé');
-        });
-      }, 1500);
+    if (!P) return;
+    if (window.EF_AUTH && window.EF_AUTH.enabled && window.EF_AUTH.getUser()) {
+      window.EF_AUTH.saveProfile(P, function (ok) {
+        if (ok) showSyncIndicator('✅ Sauvegardé');
+      });
+    } else {
+      // Fallback localStorage quand Firebase non configuré
+      try {
+        localStorage.setItem('clemence_maths_v2', JSON.stringify({
+          active: P.id, profiles: { [P.id]: P }
+        }));
+      } catch(e) {}
     }
   }
 
@@ -983,8 +945,10 @@
         return;
       }
       const p = blank(name, selAvatar, selClasse);
-      store.profiles[p.id] = p;
-      store.active = p.id;
+      // Si l'utilisateur est connecté via Firebase, utiliser son uid
+      if (window.EF_AUTH && window.EF_AUTH.getUser()) {
+        p.id = window.EF_AUTH.getUser().uid;
+      }
       P = p;
       saveStore();
       overlay.remove();
@@ -1000,126 +964,74 @@
     const overlay = document.createElement('div');
     overlay.className = 'gs-picker-overlay';
 
-    function buildItems() {
-      return Object.values(store.profiles||{}).map(p => {
-        const lv = getLevel(p.xp);
-        const active = p.id === store.active;
-        return `
-          <button class="gs-picker-item${active?' active':''}" onclick="window._gsActivate('${p.id}')">
-            <span class="gs-picker-avatar">${p.avatar}</span>
-            <div class="gs-picker-info">
-              <div class="gs-picker-name">${p.name}</div>
-              <div class="gs-picker-meta">${p.classe} · ${lv.emoji} Niv.${p.level} · ${p.xp} XP · ${p.tot} réponses</div>
-            </div>
-            ${active ? '<span class="gs-picker-check">✓</span>' : ''}
-          </button>
-        `;
-      }).join('');
-    }
+    const user = window.EF_AUTH && window.EF_AUTH.getUser ? window.EF_AUTH.getUser() : null;
+    const lv = P ? getLevel(P.xp) : null;
 
-    const syncEnabled = window.EF_SYNC && window.EF_SYNC.enabled;
-    const syncCode = P && P.syncCode ? P.syncCode : '';
-    const syncSection = `
-      <div style="margin-top:14px;padding:14px;background:rgba(255,255,255,.08);border-radius:14px;border:1.5px solid rgba(255,255,255,.15)">
-        <div style="font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.5);margin-bottom:10px">📱 Multi-appareils</div>
-        ${syncEnabled ? `
-          <div style="margin-bottom:10px">
-            <div style="font-size:.78rem;font-weight:700;color:rgba(255,255,255,.7);margin-bottom:6px">Ton code de synchronisation :</div>
-            <div style="display:flex;gap:8px;align-items:center">
-              <div id="gs-sync-code-display" style="background:rgba(255,255,255,.15);border-radius:10px;padding:8px 14px;font-size:1.2rem;font-weight:900;letter-spacing:3px;color:white;font-family:monospace;min-width:100px;text-align:center">
-                ${syncCode || '—'}
-              </div>
-              ${syncCode ? `<button onclick="window._gsCopyCode('${syncCode}')" style="background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.8);border-radius:8px;padding:7px 12px;font-size:.8rem;font-weight:800;cursor:pointer;font-family:inherit">Copier</button>` : `<button onclick="window._gsGenCode()" style="background:rgba(124,58,237,.5);border:1px solid rgba(124,58,237,.7);color:white;border-radius:8px;padding:7px 12px;font-size:.8rem;font-weight:800;cursor:pointer;font-family:inherit">Générer</button>`}
-            </div>
-          </div>
-          <div>
-            <div style="font-size:.78rem;font-weight:700;color:rgba(255,255,255,.7);margin-bottom:6px">Reprendre sur un autre appareil :</div>
-            <div style="display:flex;gap:8px">
-              <input id="gs-sync-input" type="text" placeholder="Entre ton code (ex: AB3Z7K)" maxlength="8"
-                style="flex:1;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.25);border-radius:10px;padding:8px 12px;color:white;font-size:.9rem;font-weight:800;font-family:inherit;outline:none;text-transform:uppercase"
-                oninput="this.value=this.value.toUpperCase()">
-              <button onclick="window._gsLoadCode()" style="background:linear-gradient(135deg,#7c3aed,#a855f7);border:none;color:white;border-radius:10px;padding:8px 14px;font-size:.85rem;font-weight:900;cursor:pointer;font-family:inherit">Charger</button>
-            </div>
-            <div id="gs-sync-msg" style="font-size:.75rem;font-weight:700;margin-top:6px;min-height:18px;color:rgba(255,255,255,.65)"></div>
-          </div>
-        ` : `
-          <div style="font-size:.82rem;font-weight:700;color:rgba(255,255,255,.5);line-height:1.5">
-            Sync désactivé — configure Firebase dans <code style="font-size:.75rem">sync.js</code> pour activer la synchronisation multi-appareils.
-          </div>
-        `}
+    const accountSection = user ? `
+      <div style="margin-top:14px;padding:13px;background:rgba(255,255,255,.07);border-radius:13px;border:1.5px solid rgba(255,255,255,.12)">
+        <div style="font-size:.7rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.45);margin-bottom:8px">📧 Compte</div>
+        <div style="font-size:.82rem;font-weight:700;color:rgba(255,255,255,.65);margin-bottom:12px;word-break:break-all">${user.email}</div>
+        <button id="gs-signout-btn" style="width:100%;padding:9px;background:rgba(239,68,68,.18);border:1.5px solid rgba(239,68,68,.35);color:#fca5a5;border-radius:10px;font-family:inherit;font-size:.82rem;font-weight:800;cursor:pointer">
+          Se déconnecter
+        </button>
+      </div>
+    ` : `
+      <div style="margin-top:14px;padding:13px;background:rgba(255,255,255,.07);border-radius:13px;border:1.5px solid rgba(255,255,255,.12)">
+        <div style="font-size:.82rem;font-weight:700;color:rgba(255,255,255,.5);line-height:1.5;margin-bottom:10px">
+          🔒 Connecte-toi pour sauvegarder ta progression sur tous tes appareils.
+        </div>
+        <a href="#" id="gs-signin-link" style="display:block;text-align:center;padding:9px;background:linear-gradient(135deg,#7c3aed,#a855f7);border-radius:10px;color:white;font-weight:900;font-size:.85rem;text-decoration:none">
+          Créer un compte / Se connecter →
+        </a>
+      </div>
+    `;
       </div>`;
 
     overlay.innerHTML = `
       <div class="gs-picker-panel">
         <div class="gs-picker-header">
-          <span class="gs-picker-title">👤 Profils</span>
+          <span class="gs-picker-title">👤 Mon profil</span>
           <button class="gs-picker-close" onclick="this.closest('.gs-picker-overlay').remove()">✕</button>
         </div>
-        <div class="gs-picker-list">${buildItems()}</div>
-        <button class="gs-picker-add" onclick="window._gsNewProfile()">+ Nouveau profil</button>
+        ${P ? `
+        <div class="gs-picker-list">
+          <div class="gs-picker-item active" style="cursor:default">
+            <span class="gs-picker-avatar">${P.avatar}</span>
+            <div class="gs-picker-info">
+              <div class="gs-picker-name">${P.name}</div>
+              <div class="gs-picker-meta">${P.classe} · ${lv ? lv.emoji : ''} Niv.${P.level} · ${P.xp} XP · ${P.tot} réponses</div>
+            </div>
+          </div>
+        </div>
+        ` : ''}
         <a href="profile.html" class="gs-picker-full" onclick="this.closest('.gs-picker-overlay').remove()">Voir le profil complet →</a>
-        ${syncSection}
+        ${accountSection}
       </div>
     `;
 
     overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
     document.body.appendChild(overlay);
 
-    window._gsActivate = id => {
-      if (id === store.active) { overlay.remove(); return; }
-      store.active = id;
-      P = store.profiles[id];
-      saveStore();
-      location.reload();
-    };
-    window._gsNewProfile = () => {
-      overlay.remove();
-      showCreateProfileModal(p => {
-        renderHeaderChip();
-        checkBadges();
-        save();
+    const signOutBtn = document.getElementById('gs-signout-btn');
+    if (signOutBtn) {
+      signOutBtn.addEventListener('click', function () {
+        if (window.EF_AUTH) window.EF_AUTH.signOut();
       });
-    };
+    }
 
-    window._gsCopyCode = code => {
-      navigator.clipboard.writeText(code).catch(() => {});
-      const msg = document.getElementById('gs-sync-msg');
-      if (msg) { msg.textContent = '✅ Code copié !'; setTimeout(() => { msg.textContent = ''; }, 2000); }
-    };
-
-    window._gsGenCode = () => {
-      if (!window.EF_SYNC || !window.EF_SYNC.enabled) return;
-      const code = window.EF_SYNC.generateCode();
-      P.syncCode = code;
-      saveStore();
-      const display = document.getElementById('gs-sync-code-display');
-      if (display) display.textContent = code;
-      const msg = document.getElementById('gs-sync-msg');
-      if (msg) { msg.textContent = '✅ Code généré et sauvegardé !'; setTimeout(() => { msg.textContent = ''; }, 3000); }
-    };
-
-    window._gsLoadCode = () => {
-      if (!window.EF_SYNC || !window.EF_SYNC.enabled) return;
-      const input = document.getElementById('gs-sync-input');
-      const msg = document.getElementById('gs-sync-msg');
-      const code = (input ? input.value : '').trim().toUpperCase();
-      if (code.length < 4) {
-        if (msg) msg.textContent = '⚠️ Entre un code valide (4 à 8 caractères)';
-        return;
-      }
-      if (msg) msg.textContent = '⏳ Chargement…';
-      window.EF_SYNC.loadProfile(code, data => {
-        if (!data) {
-          if (msg) msg.textContent = '❌ Code introuvable — vérifie-le';
-          return;
-        }
-        P = Object.assign({}, P, data, { syncCode: code });
-        store.profiles[store.active] = P;
-        saveStore();
-        if (msg) msg.textContent = '✅ Profil chargé ! Rechargement…';
-        setTimeout(() => location.reload(), 1200);
+    const signInLink = document.getElementById('gs-signin-link');
+    if (signInLink) {
+      signInLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        overlay.remove();
+        window.EF_AUTH.showAuthModal(function (user, profile) {
+          P = profile;
+          renderHeaderChip();
+          checkBadges();
+          save();
+        });
       });
-    };
+    }
   }
 
   // ── Toasts ───────────────────────────────────────────────────────
@@ -1506,38 +1418,70 @@
   }
 
   // ── Init ─────────────────────────────────────────────────────────
-  loadStore();
-
-  function init() {
+  function afterAuth() {
     injectCSS();
     initPageProgress();
-    if (!P) {
-      showCreateProfileModal(() => {
-        createHeaderProfile();
-        setupObserver();
-        checkBadges();
-        save();
-        initIndexProgress();
+    createHeaderProfile();
+    setupObserver();
+    checkBadges();
+    save();
+    initIndexProgress();
+  }
+
+  function domReady(cb) {
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', cb);
+    else cb();
+  }
+
+  function startWithAuth() {
+    const auth = window.EF_AUTH;
+
+    if (auth && auth.enabled) {
+      auth.onReady(function (user, profile) {
+        if (user && profile) {
+          P = profile;
+          domReady(afterAuth);
+        } else if (user) {
+          // Connecté mais pas encore de profil (cas rare) → demander nom/avatar/classe
+          P = null;
+          domReady(function () {
+            showCreateProfileModal(function () { afterAuth(); });
+          });
+        } else {
+          // Non connecté → afficher modal d'inscription / connexion
+          P = null;
+          domReady(function () {
+            auth.showAuthModal(function (user, profile) {
+              P = profile;
+              afterAuth();
+            });
+          });
+        }
       });
     } else {
-      createHeaderProfile();
-      setupObserver();
-      checkBadges();
-      save();
-      initIndexProgress();
+      // Firebase non configuré — fallback localStorage
+      try {
+        const raw = localStorage.getItem('clemence_maths_v2');
+        if (raw) {
+          const s = JSON.parse(raw);
+          P = (s.profiles && s.profiles[s.active]) || Object.values(s.profiles||{})[0] || null;
+        }
+      } catch(e) {}
+      domReady(function () {
+        if (!P) {
+          showCreateProfileModal(function () { afterAuth(); });
+        } else {
+          afterAuth();
+        }
+      });
     }
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
+  startWithAuth();
 
   // ── Public API ───────────────────────────────────────────────────
   window.GS = {
     profile:    () => P,
-    store:      () => store,
     save,
     LEVELS, BADGES, PAGE_LABELS, CLASSE_LIST, AVATARS,
     getLevel, getNextLevel, pct,
@@ -1548,24 +1492,11 @@
     setName:   name   => { if (P) { P.name   = name;   save(); renderHeaderChip(); } },
     setAvatar: avatar => { if (P) { P.avatar = avatar; save(); renderHeaderChip(); } },
     setClasse: classe => { if (P) { P.classe = classe; save(); } },
-    deleteProfile: id => {
-      if (!store.profiles[id]) return;
-      delete store.profiles[id];
-      if (store.active === id) {
-        const ids = Object.keys(store.profiles);
-        store.active = ids[0] || null;
-        P = ids.length ? store.profiles[store.active] : null;
-      }
-      saveStore();
-      if (!P) showCreateProfileModal(() => { createHeaderProfile(); setupObserver(); checkBadges(); save(); });
-      else { renderHeaderChip(); location.reload(); }
-    },
     resetAll: () => {
       if (!P) return;
-      const id = P.id;
+      const uid = P.id;
       const fresh = blank(P.name, P.avatar, P.classe);
-      fresh.id = id;
-      store.profiles[id] = fresh;
+      fresh.id = uid;
       P = fresh;
       saveStore();
       location.reload();
