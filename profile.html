@@ -251,15 +251,18 @@
 </head>
 <body>
 
-<!-- Profiles switcher bar -->
-<div class="profiles-bar" id="profilesBar">
-  <span class="profiles-bar-label">Profils</span>
-  <!-- Chips injected by JS -->
-  <button class="profile-add-btn" title="Nouveau profil" onclick="GS.showCreateProfileModal(function(){ location.reload(); })">+</button>
+<!-- Account bar -->
+<div id="accountBar" style="background:linear-gradient(135deg,#1e1b4b,#312e81);padding:10px 16px;display:flex;align-items:center;gap:10px;color:white;font-size:0.85rem;font-weight:700;min-height:44px;"></div>
+
+<!-- Loading spinner (hidden once ready) -->
+<div id="profileLoading" style="text-align:center;padding:60px 24px;color:#888;font-size:0.95rem;font-weight:700;">
+  <div style="font-size:2.5rem;margin-bottom:12px;animation:spin 1s linear infinite;display:inline-block;">⏳</div><br>
+  Chargement du profil…
 </div>
+<style>@keyframes spin{to{transform:rotate(360deg)}}</style>
 
 <!-- Hero header -->
-<div class="profile-hero">
+<div class="profile-hero" style="display:none">
   <div class="avatar-wrap">
     <div class="avatar-circle" id="avatarCircle" title="Changer l'avatar"></div>
     <div class="avatar-edit-hint">Appuie pour changer</div>
@@ -284,7 +287,7 @@
 </div>
 
 <!-- Stats cards -->
-<div class="stats-grid">
+<div class="stats-grid" style="display:none">
   <div class="stat-card">
     <span class="stat-val" id="statCorrect">0</span>
     <span class="stat-lbl">Bonnes<br>réponses</span>
@@ -299,7 +302,17 @@
   </div>
 </div>
 
-<main>
+<!-- Not logged in state (hidden by default) -->
+<div id="notLoggedIn" style="display:none;text-align:center;padding:48px 24px 80px;">
+  <div style="font-size:4rem;margin-bottom:16px;">🔐</div>
+  <h2 style="font-size:1.4rem;font-weight:900;color:#1e1b4b;margin-bottom:10px;">Tu n'es pas connecté</h2>
+  <p style="font-size:0.9rem;color:#666;line-height:1.6;max-width:280px;margin:0 auto 24px;">Crée un compte ou connecte-toi pour voir et sauvegarder ta progression.</p>
+  <button onclick="window.EF_AUTH.showAuthModal(function(){location.reload();})" style="background:linear-gradient(135deg,#7c3aed,#a855f7);color:white;border:none;border-radius:16px;padding:14px 32px;font-size:1rem;font-weight:900;cursor:pointer;font-family:inherit;box-shadow:0 4px 20px rgba(124,58,237,0.35);">
+    Se connecter / Créer un compte
+  </button>
+</div>
+
+<main style="display:none">
 
   <!-- Badges -->
   <div class="section-label">🏅 Mes badges</div>
@@ -324,8 +337,8 @@
   <div class="section-label">💾 Sauvegarde des données</div>
   <div style="background:white;border-radius:18px;padding:18px 20px;border:2px solid #e0e7ff;margin-bottom:8px;">
     <p style="font-size:0.85rem;color:#555;margin-bottom:14px;line-height:1.6;">
-      Les profils et scores sont sauvegardés automatiquement dans ce navigateur.<br>
-      Exporte une sauvegarde pour ne rien perdre si tu changes d'appareil.
+      Ta progression est sauvegardée automatiquement sur ton compte — accessible sur tous tes appareils.<br>
+      Tu peux aussi exporter une sauvegarde locale en cas de besoin.
     </p>
     <div style="display:flex;gap:10px;flex-wrap:wrap;">
       <button onclick="exportData()" style="flex:1;padding:11px 14px;font-size:0.9rem;font-weight:800;background:linear-gradient(135deg,#7c3aed,#a855f7);color:white;border:none;border-radius:14px;cursor:pointer;font-family:inherit;">
@@ -377,39 +390,56 @@
 <script src="gamification.js"></script>
 <script src="nav.js"></script>
 <script>
+  // ── Account bar ───────────────────────────────────────────────────
+  function updateAccountBar() {
+    const bar  = document.getElementById('accountBar');
+    if (!bar) return;
+    const auth = window.EF_AUTH;
+    const user = auth && auth.enabled && auth.getUser();
+    if (user) {
+      bar.innerHTML = '<span style="flex:1;font-size:0.82rem;color:rgba(255,255,255,0.75)">📧 ' + user.email + '</span>'
+        + '<a href="index.html" style="color:rgba(255,255,255,0.75);font-size:0.82rem;font-weight:700;text-decoration:none;white-space:nowrap;">← Accueil</a>';
+    } else if (auth && auth.enabled) {
+      bar.innerHTML = '<span style="flex:1;font-size:0.82rem;color:rgba(255,255,255,0.55)">Non connecté</span>'
+        + '<button onclick="window.EF_AUTH.showAuthModal(function(){location.reload();})" style="background:rgba(167,139,250,0.25);border:1.5px solid #a78bfa;color:white;border-radius:10px;padding:6px 14px;font-size:0.8rem;font-weight:800;cursor:pointer;font-family:inherit;white-space:nowrap;">Se connecter</button>';
+    } else {
+      bar.style.display = 'none';
+    }
+  }
+
+  // ── Main render ───────────────────────────────────────────────────
   function render() {
-    const P   = GS.profile();
-    if (!P) return;
+    updateAccountBar();
+    const loading = document.getElementById('profileLoading');
+    if (loading) loading.style.display = 'none';
+    const P = GS.profile();
+
+    if (!P) {
+      // Show not-logged-in state
+      document.getElementById('notLoggedIn').style.display = 'block';
+      document.querySelector('.profile-hero').style.display = 'none';
+      document.querySelector('.stats-grid').style.display   = 'none';
+      document.querySelector('main').style.display          = 'none';
+      return;
+    }
+
+    document.getElementById('notLoggedIn').style.display   = 'none';
+    document.querySelector('.profile-hero').style.display  = '';
+    document.querySelector('.stats-grid').style.display    = '';
+    document.querySelector('main').style.display           = '';
+
     const lvl = GS.getLevel(P.xp);
     const nxt = GS.getNextLevel(P.xp);
     const p   = GS.pct(P.xp);
 
-    // Profiles bar — one profile (Firebase account)
-    const bar = document.getElementById('profilesBar');
-    if (bar) {
-      bar.querySelectorAll('.profile-chip').forEach(el => el.remove());
-      const addBtn = bar.querySelector('.profile-add-btn');
-      const lv0 = GS.getLevel(P.xp);
-      const chip = document.createElement('div');
-      chip.className = 'profile-chip active';
-      chip.innerHTML = `
-        <span class="profile-chip-avatar">${P.avatar}</span>
-        <div class="profile-chip-info">
-          <span class="profile-chip-name">${P.name}</span>
-          <span class="profile-chip-meta">${P.classe} · ${lv0.emoji} Niv.${P.level}</span>
-        </div>
-      `;
-      if (addBtn) bar.insertBefore(chip, addBtn); else bar.appendChild(chip);
-    }
-
     // Hero
-    document.getElementById('avatarCircle').textContent = P.avatar;
+    document.getElementById('avatarCircle').textContent    = P.avatar;
     document.getElementById('profileNameDisplay').textContent = P.name;
-    document.getElementById('profileClasseTag').textContent = '📚 ' + (P.classe || 'CE2');
-    document.getElementById('profileLevelLabel').textContent = `${lvl.emoji} Niveau ${lvl.n} — ${lvl.title}`;
-    document.getElementById('xpCurrent').textContent = `${P.xp} XP`;
-    document.getElementById('xpNext').textContent    = nxt ? `Prochain : ${nxt.xp} XP` : '🌟 Niveau max !';
-    setTimeout(() => { document.getElementById('xpFill').style.width = p + '%'; }, 100);
+    document.getElementById('profileClasseTag').textContent   = '📚 ' + (P.classe || 'CE2');
+    document.getElementById('profileLevelLabel').textContent  = lvl.emoji + ' Niveau ' + lvl.n + ' — ' + lvl.title;
+    document.getElementById('xpCurrent').textContent = P.xp + ' XP';
+    document.getElementById('xpNext').textContent    = nxt ? 'Prochain : ' + nxt.xp + ' XP' : '🌟 Niveau max !';
+    setTimeout(function() { document.getElementById('xpFill').style.width = p + '%'; }, 100);
 
     // Stats
     document.getElementById('statCorrect').textContent = P.tot;
@@ -419,69 +449,60 @@
     // Badges
     const grid = document.getElementById('badgesGrid');
     grid.innerHTML = '';
-    GS.BADGES.forEach(b => {
+    GS.BADGES.forEach(function(b) {
       const earned = P.badges.includes(b.id);
       const card = document.createElement('div');
-      card.className = `badge-card ${earned ? 'earned' : 'locked'}`;
-      card.innerHTML = `
-        <span class="badge-emoji">${b.emoji}</span>
-        <div class="badge-name">${b.name}</div>
-        <div class="badge-desc">${b.desc}</div>
-        ${earned ? '<span class="badge-unlocked-tag">✓ Débloqué</span>' : ''}
-      `;
+      card.className = 'badge-card ' + (earned ? 'earned' : 'locked');
+      card.innerHTML = '<span class="badge-emoji">' + b.emoji + '</span>'
+        + '<div class="badge-name">' + b.name + '</div>'
+        + '<div class="badge-desc">' + b.desc + '</div>'
+        + (earned ? '<span class="badge-unlocked-tag">✓ Débloqué</span>' : '');
       grid.appendChild(card);
     });
 
     // Topics
     const topicsList = document.getElementById('topicsList');
     topicsList.innerHTML = '';
-    Object.entries(GS.PAGE_LABELS).filter(([k]) => k !== 'index.html').forEach(([href, info]) => {
+    Object.entries(GS.PAGE_LABELS).filter(function(e) { return e[0] !== 'index.html'; }).forEach(function(e) {
+      const href = e[0], info = e[1];
       const count = P.pages[href] || 0;
       const stars = count >= 20 ? '⭐⭐⭐' : count >= 8 ? '⭐⭐' : count >= 2 ? '⭐' : '☆';
       const row = document.createElement('div');
       row.className = 'topic-row';
       row.style.cursor = 'pointer';
-      row.addEventListener('click', () => { window.location.href = href; });
-      row.innerHTML = `
-        <span class="topic-emoji">${info.emoji}</span>
-        <div class="topic-info">
-          <div class="topic-title">${info.title}</div>
-          <div class="topic-count">${count === 0 ? 'Pas encore visité' : count + ' bonne' + (count > 1 ? 's' : '') + ' réponse' + (count > 1 ? 's' : '')}</div>
-        </div>
-        <div class="topic-stars">${stars}</div>
-      `;
+      row.addEventListener('click', function() { window.location.href = href; });
+      row.innerHTML = '<span class="topic-emoji">' + info.emoji + '</span>'
+        + '<div class="topic-info"><div class="topic-title">' + info.title + '</div>'
+        + '<div class="topic-count">' + (count === 0 ? 'Pas encore visité' : count + ' bonne' + (count > 1 ? 's' : '') + ' réponse' + (count > 1 ? 's' : '')) + '</div></div>'
+        + '<div class="topic-stars">' + stars + '</div>';
       topicsList.appendChild(row);
     });
 
     // Levels roadmap
     const road = document.getElementById('levelsRoad');
     road.innerHTML = '';
-    GS.LEVELS.forEach(l => {
+    GS.LEVELS.forEach(function(l) {
       const done    = P.xp >= l.xp && l.n < lvl.n;
       const current = l.n === lvl.n;
       const row = document.createElement('div');
-      row.className = `level-row${done ? ' done' : current ? ' current' : ''}`;
-      row.innerHTML = `
-        <span class="lr-emoji">${l.emoji}</span>
-        <div class="lr-info">
-          <div class="lr-title">Niveau ${l.n} — ${l.title}</div>
-          <div class="lr-xp">${l.xp} XP requis</div>
-        </div>
-        <span class="lr-done">${done ? '✓' : current ? '← ici !' : ''}</span>
-      `;
+      row.className = 'level-row' + (done ? ' done' : current ? ' current' : '');
+      row.innerHTML = '<span class="lr-emoji">' + l.emoji + '</span>'
+        + '<div class="lr-info"><div class="lr-title">Niveau ' + l.n + ' — ' + l.title + '</div>'
+        + '<div class="lr-xp">' + l.xp + ' XP requis</div></div>'
+        + '<span class="lr-done">' + (done ? '✓' : current ? '← ici !' : '') + '</span>';
       road.appendChild(row);
     });
 
     // Classe selector
     const cs = document.getElementById('classeSelector');
     cs.innerHTML = '';
-    GS.CLASSE_LIST.forEach(c => {
+    GS.CLASSE_LIST.forEach(function(c) {
       const btn = document.createElement('button');
       btn.className = 'classe-opt' + (P.classe === c ? ' active' : '');
       btn.textContent = c;
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', function() {
         GS.setClasse(c);
-        document.querySelectorAll('.classe-opt').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.classe-opt').forEach(function(b) { b.classList.remove('active'); });
         btn.classList.add('active');
         document.getElementById('profileClasseTag').textContent = '📚 ' + c;
       });
@@ -491,13 +512,13 @@
     // Avatar grid
     const ag = document.getElementById('avatarGrid');
     ag.innerHTML = '';
-    GS.AVATARS.forEach(a => {
+    GS.AVATARS.forEach(function(a) {
       const el = document.createElement('div');
-      el.className = `avatar-opt${P.avatar === a ? ' selected' : ''}`;
+      el.className = 'avatar-opt' + (P.avatar === a ? ' selected' : '');
       el.textContent = a;
-      el.addEventListener('click', () => {
+      el.addEventListener('click', function() {
         GS.setAvatar(a);
-        document.querySelectorAll('.avatar-opt').forEach(o => o.classList.remove('selected'));
+        document.querySelectorAll('.avatar-opt').forEach(function(o) { o.classList.remove('selected'); });
         el.classList.add('selected');
         document.getElementById('avatarCircle').textContent = a;
         render();
@@ -509,7 +530,7 @@
   // ── Name editing ──────────────────────────────────────────────────
   document.getElementById('btnEditName').addEventListener('click', function handler() {
     const display = document.getElementById('profileNameDisplay');
-    const current = GS.profile().name;
+    const current = GS.profile() ? GS.profile().name : '';
     const input = document.createElement('input');
     input.className = 'name-input';
     input.value = current;
@@ -518,8 +539,8 @@
     input.focus();
     const btn = document.getElementById('btnEditName');
     btn.textContent = '✓ OK';
-    const confirm = () => {
-      const name = input.value.trim() || GS.profile().name;
+    const save = function() {
+      const name = input.value.trim() || (GS.profile() ? GS.profile().name : 'Élève');
       GS.setName(name);
       const newSpan = document.createElement('span');
       newSpan.className = 'profile-name';
@@ -527,38 +548,41 @@
       newSpan.textContent = name;
       input.replaceWith(newSpan);
       btn.textContent = '✏️ Modifier';
-      btn.removeEventListener('click', confirm);
+      btn.removeEventListener('click', save);
       btn.addEventListener('click', handler);
       render();
     };
     btn.removeEventListener('click', handler);
-    btn.addEventListener('click', confirm);
-    input.addEventListener('keydown', e => { if (e.key === 'Enter') confirm(); });
+    btn.addEventListener('click', save);
+    input.addEventListener('keydown', function(e) { if (e.key === 'Enter') save(); });
   });
 
   // ── Avatar picker ─────────────────────────────────────────────────
-  document.getElementById('avatarCircle').addEventListener('click', () => {
+  document.getElementById('avatarCircle').addEventListener('click', function() {
+    if (!GS.profile()) return;
     document.getElementById('avatarPicker').style.display = 'flex';
   });
   function closePicker() { document.getElementById('avatarPicker').style.display = 'none'; }
-  document.getElementById('avatarPicker').addEventListener('click', e => {
+  document.getElementById('avatarPicker').addEventListener('click', function(e) {
     if (e.target === document.getElementById('avatarPicker')) closePicker();
   });
 
   // ── Classe picker ─────────────────────────────────────────────────
-  document.getElementById('profileClasseTag').addEventListener('click', () => {
-    const grid = document.getElementById('classePicker-grid');
-    grid.innerHTML = '';
-    GS.CLASSE_LIST.forEach(c => {
+  document.getElementById('profileClasseTag').addEventListener('click', function() {
+    if (!GS.profile()) return;
+    const g = document.getElementById('classePicker-grid');
+    g.innerHTML = '';
+    GS.CLASSE_LIST.forEach(function(c) {
       const btn = document.createElement('button');
-      btn.style.cssText = 'flex:1;min-width:64px;padding:12px 8px;font-size:1rem;font-weight:900;background:' + (GS.profile().classe===c?'#7c3aed':'#f5f3ff') + ';border:2px solid ' + (GS.profile().classe===c?'#7c3aed':'#ddd6fe') + ';border-radius:12px;color:' + (GS.profile().classe===c?'white':'#5b21b6') + ';cursor:pointer;font-family:inherit;';
+      const active = GS.profile().classe === c;
+      btn.style.cssText = 'flex:1;min-width:64px;padding:12px 8px;font-size:1rem;font-weight:900;background:' + (active?'#7c3aed':'#f5f3ff') + ';border:2px solid ' + (active?'#7c3aed':'#ddd6fe') + ';border-radius:12px;color:' + (active?'white':'#5b21b6') + ';cursor:pointer;font-family:inherit;';
       btn.textContent = c;
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', function() {
         GS.setClasse(c);
         document.getElementById('classePicker').style.display = 'none';
         render();
       });
-      grid.appendChild(btn);
+      g.appendChild(btn);
     });
     document.getElementById('classePicker').style.display = 'flex';
   });
@@ -571,20 +595,22 @@
   }
   function confirmDelete() {
     const P = GS.profile();
-    if (confirm('Se déconnecter du compte de ' + P.name + ' ?')) {
+    const name = P ? P.name : 'ce compte';
+    if (confirm('Se déconnecter du compte de ' + name + ' ?')) {
       if (window.EF_AUTH) window.EF_AUTH.signOut();
     }
   }
 
   // ── Export / Import ───────────────────────────────────────────────
   function exportData() {
-    const json = JSON.stringify(GS.profile(), null, 2);
+    const profile = GS.profile();
+    if (!profile) { alert('Connecte-toi d\'abord pour exporter tes données.'); return; }
+    const json = JSON.stringify(profile, null, 2);
     const blob = new Blob([json], { type: 'application/json' });
     const url  = URL.createObjectURL(blob);
     const a    = document.createElement('a');
-    const date = new Date().toISOString().slice(0,10);
-    a.href = url;
-    a.download = `maths-clemence-sauvegarde-${date}.json`;
+    a.href     = url;
+    a.download = 'maths-clemence-sauvegarde-' + new Date().toISOString().slice(0,10) + '.json';
     a.click();
     URL.revokeObjectURL(url);
   }
@@ -593,13 +619,22 @@
     const file = input.files[0];
     if (!file) return;
     const reader = new FileReader();
-    reader.onload = e => {
+    reader.onload = function(e) {
       try {
         const data = JSON.parse(e.target.result);
-        if (!data.profiles || !data.active) throw new Error('Format invalide');
-        if (!confirm(`Importer ${Object.keys(data.profiles).length} profil(s) ?\nCela remplacera les données actuelles.`)) return;
-        localStorage.setItem('clemence_maths_v2', JSON.stringify(data));
-        location.reload();
+        // Support both new format (direct profile) and old localStorage format
+        const profile = (data.profiles && data.active) ? data.profiles[data.active] : data;
+        if (!profile || !profile.name) throw new Error('Format invalide');
+        if (!confirm('Importer la sauvegarde de ' + profile.name + ' ?\nCela remplacera les données actuelles.')) return;
+        if (window.EF_AUTH && window.EF_AUTH.enabled && window.EF_AUTH.getUser()) {
+          window.EF_AUTH.saveProfileNow(profile, function(ok) {
+            if (ok) { alert('✅ Sauvegarde importée !'); location.reload(); }
+            else { alert('❌ Erreur lors de l\'import.'); }
+          });
+        } else {
+          localStorage.setItem('clemence_maths_v2', JSON.stringify({ active: profile.id || 'local', profiles: { [profile.id || 'local']: profile } }));
+          location.reload();
+        }
       } catch(err) {
         alert('❌ Fichier invalide ou corrompu.');
       }
@@ -608,8 +643,12 @@
     input.value = '';
   }
 
-  // Init
-  render();
+  // ── Init (wait for gamification.js to finish auth) ────────────────
+  if (window.GS_READY) {
+    render();
+  } else {
+    document.addEventListener('gs:ready', render);
+  }
 </script>
 <script src="seo.js"></script>
 </body>

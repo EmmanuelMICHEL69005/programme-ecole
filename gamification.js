@@ -985,7 +985,6 @@
         </a>
       </div>
     `;
-      </div>`;
 
     overlay.innerHTML = `
       <div class="gs-picker-panel">
@@ -1418,14 +1417,30 @@
   }
 
   // ── Init ─────────────────────────────────────────────────────────
+  function showGuestBanner() {
+    if (P) return;
+    const auth = window.EF_AUTH;
+    if (!auth || !auth.enabled) return;
+    if (document.getElementById('ef-guest-bar')) return;
+    const bar = document.createElement('div');
+    bar.id = 'ef-guest-bar';
+    bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:2000;background:linear-gradient(135deg,#1e1b4b,#4c1d95);color:white;display:flex;align-items:center;gap:12px;padding:12px 16px;font-family:inherit;font-size:0.85rem;font-weight:700;box-shadow:0 -4px 20px rgba(0,0,0,0.2);';
+    bar.innerHTML = '<span style="flex:1">🔓 Non connecté — ta progression ne sera pas sauvegardée</span>'
+      + '<button style="background:rgba(167,139,250,0.25);border:1.5px solid #a78bfa;color:white;border-radius:10px;padding:7px 16px;font-size:0.82rem;font-weight:800;cursor:pointer;font-family:inherit;white-space:nowrap;" onclick="window.EF_AUTH.showAuthModal(function(){location.reload();})">Se connecter</button>'
+      + '<button style="background:none;border:none;color:rgba(255,255,255,0.55);font-size:1.2rem;cursor:pointer;padding:0 4px;line-height:1;" onclick="document.getElementById(\'ef-guest-bar\').remove()" title="Fermer">✕</button>';
+    document.body.appendChild(bar);
+  }
+
   function afterAuth() {
     injectCSS();
     initPageProgress();
     createHeaderProfile();
     setupObserver();
-    checkBadges();
-    save();
+    if (P) { checkBadges(); save(); }
+    else showGuestBanner();
     initIndexProgress();
+    window.GS_READY = true;
+    document.dispatchEvent(new CustomEvent('gs:ready'));
   }
 
   function domReady(cb) {
@@ -1442,20 +1457,15 @@
           P = profile;
           domReady(afterAuth);
         } else if (user) {
-          // Connecté mais pas encore de profil (cas rare) → demander nom/avatar/classe
+          // Connecté mais pas encore de profil → demander nom/avatar/classe
           P = null;
           domReady(function () {
             showCreateProfileModal(function () { afterAuth(); });
           });
         } else {
-          // Non connecté → afficher modal d'inscription / connexion
+          // Non connecté → mode invité (pas de sauvegarde)
           P = null;
-          domReady(function () {
-            auth.showAuthModal(function (user, profile) {
-              P = profile;
-              afterAuth();
-            });
-          });
+          domReady(afterAuth);
         }
       });
     } else {
