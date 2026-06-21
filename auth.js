@@ -276,6 +276,7 @@ window.EF_AUTH = (function () {
               showError('Compte créé mais erreur de sauvegarde. Réessaie ou vérifie les règles Firebase Database.');
               return;
             }
+            cred.user.sendEmailVerification().catch(function () {});
             overlay.remove();
             onSignedIn(cred.user, profile);
           });
