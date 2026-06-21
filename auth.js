@@ -254,6 +254,7 @@ window.EF_AUTH = (function () {
 
     function doSignup() {
       if (!ENABLED) { showError('Firebase non configuré — vérifie firebase-keys.js.'); return; }
+      if (!_auth)   { showError('Connexion Firebase impossible. Vérifie ta connexion Internet et réessaie.'); return; }
       const name     = (overlay.querySelector('#ef-name')?.value || '').trim();
       const email    = (overlay.querySelector('#ef-email')?.value || '').trim();
       const password =  overlay.querySelector('#ef-password')?.value || '';
@@ -269,9 +270,15 @@ window.EF_AUTH = (function () {
             pages: {}, days: [], completedPages: {}, createdAt: Date.now(),
           };
           _profile = profile;
-          writeProfile(cred.user.uid, profile, function () {});
-          overlay.remove();
-          onSignedIn(cred.user, profile);
+          writeProfile(cred.user.uid, profile, function (ok) {
+            if (!ok) {
+              setLoading(false);
+              showError('Compte créé mais erreur de sauvegarde. Réessaie ou vérifie les règles Firebase Database.');
+              return;
+            }
+            overlay.remove();
+            onSignedIn(cred.user, profile);
+          });
         })
         .catch(function (err) {
           setLoading(false);
@@ -281,6 +288,7 @@ window.EF_AUTH = (function () {
 
     function doLogin() {
       if (!ENABLED) { showError('Firebase non configuré — vérifie firebase-keys.js.'); return; }
+      if (!_auth)   { showError('Connexion Firebase impossible. Vérifie ta connexion Internet et réessaie.'); return; }
       const email    = (overlay.querySelector('#ef-email')?.value || '').trim();
       const password =  overlay.querySelector('#ef-password')?.value || '';
       if (!email || !password) { showError('Remplis tous les champs.'); return; }
@@ -300,6 +308,7 @@ window.EF_AUTH = (function () {
     }
 
     function doForgot() {
+      if (!_auth) { showError('Connexion Firebase impossible. Vérifie ta connexion Internet et réessaie.'); return; }
       const email = (overlay.querySelector('#ef-email')?.value || '').trim();
       if (!email) { showError('Entre ton e-mail pour réinitialiser le mot de passe.'); return; }
       _auth.sendPasswordResetEmail(email)
