@@ -213,10 +213,10 @@ window.EF_AUTH = (function () {
   }
 
   // ── Auth modal ────────────────────────────────────────────────
-  function showAuthModal(onSignedIn) {
+  function showAuthModal(onSignedIn, defaultTab) {
     injectCSS();
 
-    let tab = 'signup';
+    let tab = defaultTab || 'login';
     let selAvatar = '🌟';
     let selClasse = 'CE2';
 
