@@ -603,8 +603,9 @@
   toggleBtn.innerHTML = '☰';
   document.body.appendChild(toggleBtn);
 
-  // Profile button (top-left) — hidden on profile.html itself
-  if (current !== 'profile.html') {
+  // Profile button (top-left) — hidden on profile.html and on pages that already
+  // have a .site-header (where the gamification chip appears at the same position)
+  if (current !== 'profile.html' && !document.querySelector('.site-header')) {
     const profileBtn = document.createElement('a');
     profileBtn.className = 'nav-profile-btn';
     profileBtn.href = 'profile.html';
