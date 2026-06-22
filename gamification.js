@@ -261,6 +261,7 @@
   // ── Badge check ──────────────────────────────────────────────────
   function checkBadges() {
     if (!P) return [];
+    if (!Array.isArray(P.badges)) P.badges = [];
     const fresh = [];
     BADGES.forEach(b => {
       if (!P.badges.includes(b.id) && b.check(P)) {
@@ -1455,6 +1456,8 @@
       auth.onReady(function (user, profile) {
         if (user && profile) {
           P = profile;
+          if (!Array.isArray(P.badges)) P.badges = [];
+          if (!P.pages) P.pages = {};
           domReady(afterAuth);
         } else if (user) {
           // Connecté mais pas encore de profil → demander nom/avatar/classe
