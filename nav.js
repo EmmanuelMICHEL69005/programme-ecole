@@ -603,13 +603,15 @@
   toggleBtn.innerHTML = '☰';
   document.body.appendChild(toggleBtn);
 
-  // Profile button (top-left)
-  const profileBtn = document.createElement('a');
-  profileBtn.className = 'nav-profile-btn';
-  profileBtn.href = 'profile.html';
-  profileBtn.setAttribute('aria-label', 'Mon profil');
-  profileBtn.innerHTML = '👤';
-  document.body.appendChild(profileBtn);
+  // Profile button (top-left) — hidden on profile.html itself
+  if (current !== 'profile.html') {
+    const profileBtn = document.createElement('a');
+    profileBtn.className = 'nav-profile-btn';
+    profileBtn.href = 'profile.html';
+    profileBtn.setAttribute('aria-label', 'Mon profil');
+    profileBtn.innerHTML = '👤';
+    document.body.appendChild(profileBtn);
+  }
 
   // Overlay
   const overlay = document.createElement('div');

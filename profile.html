@@ -388,7 +388,7 @@
 <script src="firebase-keys.js"></script>
 <script src="auth.js?v=3"></script>
 <script src="gamification.js?v=3"></script>
-<script src="nav.js?v=3"></script>
+<script src="nav.js?v=4"></script>
 <script>
   // ── Account bar ───────────────────────────────────────────────────
   function updateAccountBar() {
@@ -442,15 +442,16 @@
     setTimeout(function() { document.getElementById('xpFill').style.width = p + '%'; }, 100);
 
     // Stats
-    document.getElementById('statCorrect').textContent = P.tot;
-    document.getElementById('statBadges').textContent  = P.badges.length;
-    document.getElementById('statStreak').textContent  = P.maxStreak;
+    const badges = Array.isArray(P.badges) ? P.badges : [];
+    document.getElementById('statCorrect').textContent = P.tot || 0;
+    document.getElementById('statBadges').textContent  = badges.length;
+    document.getElementById('statStreak').textContent  = P.maxStreak || 0;
 
     // Badges
     const grid = document.getElementById('badgesGrid');
     grid.innerHTML = '';
     GS.BADGES.forEach(function(b) {
-      const earned = P.badges.includes(b.id);
+      const earned = badges.includes(b.id);
       const card = document.createElement('div');
       card.className = 'badge-card ' + (earned ? 'earned' : 'locked');
       card.innerHTML = '<span class="badge-emoji">' + b.emoji + '</span>'
