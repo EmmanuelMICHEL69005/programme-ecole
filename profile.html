@@ -358,7 +358,7 @@
     <h3>Zone danger</h3>
     <div class="danger-btns">
       <button class="btn-danger" onclick="confirmReset()">🔄 Remettre ce profil à zéro</button>
-      <button class="btn-danger" onclick="confirmDelete()">🗑️ Supprimer ce profil</button>
+      <button class="btn-danger" onclick="confirmDelete()">🚪 Se déconnecter</button>
     </div>
   </div>
 
@@ -398,6 +398,7 @@
     const user = auth && auth.enabled && auth.getUser();
     if (user) {
       bar.innerHTML = '<span style="flex:1;font-size:0.82rem;color:rgba(255,255,255,0.75)">📧 ' + user.email + '</span>'
+        + '<button onclick="confirmDelete()" style="background:rgba(255,255,255,0.1);border:1.5px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.75);border-radius:10px;padding:5px 12px;font-size:0.78rem;font-weight:800;cursor:pointer;font-family:inherit;white-space:nowrap;margin-right:8px;">🚪 Déconnexion</button>'
         + '<a href="index.html" style="color:rgba(255,255,255,0.75);font-size:0.82rem;font-weight:700;text-decoration:none;white-space:nowrap;">← Accueil</a>';
     } else if (auth && auth.enabled) {
       bar.innerHTML = '<span style="flex:1;font-size:0.82rem;color:rgba(255,255,255,0.55)">Non connecté</span>'
