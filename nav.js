@@ -710,6 +710,10 @@
       return;
     }
     const p = gs.profile();
+    if (!p) {
+      profileFooter.innerHTML = `<a href="profile.html" class="nav-profile-link" onclick="closeNav()">👤 Mon profil</a>`;
+      return;
+    }
     const lv = gs.getLevel(p.xp);
     const nx = gs.getNextLevel(p.xp);
     const xpPct = nx ? Math.round(((p.xp - lv.xp) / (nx.xp - lv.xp)) * 100) : 100;
