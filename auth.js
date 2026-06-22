@@ -245,7 +245,8 @@ window.EF_AUTH = (function () {
         'auth/weak-password':        'Mot de passe trop court (6 caractères minimum).',
         'auth/user-not-found':       'Aucun compte avec cette adresse e-mail.',
         'auth/wrong-password':       'Mot de passe incorrect.',
-        'auth/invalid-credential':   'E-mail ou mot de passe incorrect.',
+        'auth/invalid-credential':        'E-mail ou mot de passe incorrect.',
+        'auth/invalid-login-credentials': 'E-mail ou mot de passe incorrect.',
         'auth/too-many-requests':    'Trop de tentatives. Réessaie dans quelques minutes.',
         'auth/network-request-failed': 'Erreur réseau — vérifie ta connexion.',
       };
