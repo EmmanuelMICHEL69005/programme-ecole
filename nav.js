@@ -558,6 +558,32 @@
       text-align: center;
     }
 
+    /* ===== PROFILE BUTTON ===== */
+    .nav-profile-btn {
+      position: fixed;
+      top: 14px;
+      left: 14px;
+      z-index: 1200;
+      width: 46px;
+      height: 46px;
+      background: rgba(255,255,255,0.22);
+      border: 2px solid rgba(255,255,255,0.45);
+      border-radius: 12px;
+      color: white;
+      font-size: 1.35rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: background 0.2s;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    .nav-profile-btn:hover { background: rgba(255,255,255,0.38); }
+
     /* ===== DESKTOP: menu bar ===== */
     @media (min-width: 768px) {
       /* Slightly bigger drawer on desktop */
@@ -576,6 +602,14 @@
   toggleBtn.setAttribute('aria-label', 'Ouvrir le menu');
   toggleBtn.innerHTML = '☰';
   document.body.appendChild(toggleBtn);
+
+  // Profile button (top-left)
+  const profileBtn = document.createElement('a');
+  profileBtn.className = 'nav-profile-btn';
+  profileBtn.href = 'profile.html';
+  profileBtn.setAttribute('aria-label', 'Mon profil');
+  profileBtn.innerHTML = '👤';
+  document.body.appendChild(profileBtn);
 
   // Overlay
   const overlay = document.createElement('div');
@@ -704,39 +738,44 @@
   profileFooter.className = 'nav-profile-footer';
 
   function renderProfileFooter() {
-    const gs = window.GS;
-    if (!gs) {
-      profileFooter.innerHTML = `<a href="profile.html" class="nav-profile-link" onclick="closeNav()">👤 Mon profil</a>`;
-      return;
-    }
-    const p = gs.profile();
-    if (!p) {
-      profileFooter.innerHTML = `<a href="profile.html" class="nav-profile-link" onclick="closeNav()">👤 Mon profil</a>`;
-      return;
-    }
-    const lv = gs.getLevel(p.xp);
-    const nx = gs.getNextLevel(p.xp);
-    const xpPct = nx ? Math.round(((p.xp - lv.xp) / (nx.xp - lv.xp)) * 100) : 100;
-    const xpLeft = nx ? (nx.xp - p.xp) + ' XP pour le niveau suivant' : 'Niveau max atteint !';
-    profileFooter.innerHTML = `
-      <a href="profile.html" class="nav-profile-link" onclick="closeNav()">
-        <span class="nav-profile-avatar">${p.avatar || '⭐'}</span>
-        <div class="nav-profile-info">
-          <div class="nav-profile-name">${p.name || 'Clémence'}</div>
-          <div class="nav-profile-level">${lv.emoji} ${lv.title} &mdash; Niveau ${p.level}</div>
-          <div class="nav-profile-xprow">
-            <div class="nav-profile-xpbar"><div class="nav-profile-xpfill" style="width:${xpPct}%"></div></div>
-            <span class="nav-profile-xpnum">${p.xp} XP</span>
+    try {
+      const gs = window.GS;
+      if (!gs) {
+        profileFooter.innerHTML = `<a href="profile.html" class="nav-profile-link" onclick="closeNav()">👤 Mon profil</a>`;
+        return;
+      }
+      const p = gs.profile();
+      if (!p) {
+        profileFooter.innerHTML = `<a href="profile.html" class="nav-profile-link" onclick="closeNav()">👤 Mon profil</a>`;
+        return;
+      }
+      const lv = gs.getLevel(p.xp);
+      const nx = gs.getNextLevel(p.xp);
+      const xpPct = nx ? Math.round(((p.xp - lv.xp) / (nx.xp - lv.xp)) * 100) : 100;
+      const xpLeft = nx ? (nx.xp - p.xp) + ' XP pour le niveau suivant' : 'Niveau max atteint !';
+      const badges = Array.isArray(p.badges) ? p.badges : [];
+      profileFooter.innerHTML = `
+        <a href="profile.html" class="nav-profile-link" onclick="closeNav()">
+          <span class="nav-profile-avatar">${p.avatar || '⭐'}</span>
+          <div class="nav-profile-info">
+            <div class="nav-profile-name">${p.name || 'Clémence'}</div>
+            <div class="nav-profile-level">${lv.emoji} ${lv.title} &mdash; Niveau ${p.level}</div>
+            <div class="nav-profile-xprow">
+              <div class="nav-profile-xpbar"><div class="nav-profile-xpfill" style="width:${xpPct}%"></div></div>
+              <span class="nav-profile-xpnum">${p.xp} XP</span>
+            </div>
+            <div class="nav-profile-xpleft">${xpLeft}</div>
           </div>
-          <div class="nav-profile-xpleft">${xpLeft}</div>
+        </a>
+        <div class="nav-profile-stats">
+          <div class="nav-profile-stat"><span class="nav-profile-stat-val">${p.tot || 0}</span><span class="nav-profile-stat-lbl">réponses</span></div>
+          <div class="nav-profile-stat"><span class="nav-profile-stat-val">${badges.length}</span><span class="nav-profile-stat-lbl">badges</span></div>
+          <div class="nav-profile-stat"><span class="nav-profile-stat-val">${p.maxStreak > 0 ? '🔥' : '—'}${p.maxStreak > 0 ? p.maxStreak : ''}</span><span class="nav-profile-stat-lbl">meilleure série</span></div>
         </div>
-      </a>
-      <div class="nav-profile-stats">
-        <div class="nav-profile-stat"><span class="nav-profile-stat-val">${p.tot}</span><span class="nav-profile-stat-lbl">réponses</span></div>
-        <div class="nav-profile-stat"><span class="nav-profile-stat-val">${p.badges.length}</span><span class="nav-profile-stat-lbl">badges</span></div>
-        <div class="nav-profile-stat"><span class="nav-profile-stat-val">${p.maxStreak > 0 ? '🔥' : '—'}${p.maxStreak > 0 ? p.maxStreak : ''}</span><span class="nav-profile-stat-lbl">meilleure série</span></div>
-      </div>
-    `;
+      `;
+    } catch(e) {
+      profileFooter.innerHTML = `<a href="profile.html" class="nav-profile-link" onclick="closeNav()">👤 Mon profil</a>`;
+    }
   }
 
   renderProfileFooter();
