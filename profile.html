@@ -359,6 +359,7 @@
     <div class="danger-btns">
       <button class="btn-danger" onclick="confirmReset()">🔄 Remettre ce profil à zéro</button>
       <button class="btn-danger" onclick="confirmDelete()">🚪 Se déconnecter</button>
+      <button class="btn-danger" onclick="confirmDeleteAccount()" style="border-color:#ef4444;color:#b91c1c;">🗑️ Supprimer le compte</button>
     </div>
   </div>
 
@@ -601,6 +602,26 @@
     if (confirm('Se déconnecter du compte de ' + name + ' ?')) {
       if (window.EF_AUTH) window.EF_AUTH.signOut();
     }
+  }
+  function confirmDeleteAccount() {
+    const auth = window.EF_AUTH;
+    if (!auth || !auth.enabled || !auth.getUser()) {
+      alert('Tu dois être connecté pour supprimer ton compte.');
+      return;
+    }
+    const email = auth.getUser().email;
+    if (!confirm('⚠️ Supprimer définitivement le compte ' + email + ' ?\n\nToutes tes données (XP, badges, progression) seront effacées et cette action est irréversible.')) return;
+    if (!confirm('Dernière confirmation : supprimer le compte ' + email + ' ?')) return;
+    auth.deleteAccount(function (ok, errCode) {
+      if (ok) {
+        alert('✅ Compte supprimé. À bientôt !');
+        window.location.href = 'index.html';
+      } else if (errCode === 'auth/requires-recent-login') {
+        alert('⚠️ Pour supprimer ton compte, déconnecte-toi puis reconnecte-toi, et réessaie.');
+      } else {
+        alert('❌ Erreur lors de la suppression. Réessaie ou contacte le support.');
+      }
+    });
   }
 
   // ── Export / Import ───────────────────────────────────────────────

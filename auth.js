@@ -464,5 +464,20 @@ window.EF_AUTH = (function () {
         });
       }
     },
+
+    deleteAccount: function (cb) {
+      if (!_auth || !_auth.currentUser) { if (cb) cb(false, 'non-connecté'); return; }
+      const uid = _auth.currentUser.uid;
+      function deleteAuthUser() {
+        _auth.currentUser.delete()
+          .then(function () { _user = null; _profile = null; if (cb) cb(true); })
+          .catch(function (err) { if (cb) cb(false, err.code); });
+      }
+      if (_db) {
+        _db.ref('users/' + uid).remove().then(deleteAuthUser).catch(deleteAuthUser);
+      } else {
+        deleteAuthUser();
+      }
+    },
   };
 })();
