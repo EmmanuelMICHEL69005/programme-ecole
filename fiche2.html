@@ -18,7 +18,7 @@
 <title>Fiche 2 — Je compare | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 <style>
   /* Ex 1 — place sur la droite */
   .droite-interactive { background:#f0fdf4; border:2px solid #86efac; border-radius:14px; padding:20px; margin:14px 0; }
@@ -27,7 +27,7 @@
   .droite-chips { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:14px; }
   .chip {
     border:2px solid #059669; border-radius:20px; padding:8px 20px;
-    font-size:1.1rem; font-weight:900; background:white; color:#059669;
+    font-size:1.1rem; font-weight:900; background:white; color:#047857;
     cursor:pointer; font-family:inherit; transition:all 0.15s; user-select:none;
   }
   .chip:hover { background:#dcfce7; }
@@ -41,9 +41,9 @@
 
   /* Ex 2 — choix */
   .choix-item { background:#f0fdf4; border:2px solid #bbf7d0; border-radius:12px; padding:14px 16px; margin-bottom:10px; }
-  .choix-num { font-weight:800; color:#059669; }
+  .choix-num { font-weight:800; color:#047857; }
   .choix-btns { display:flex; gap:10px; margin-top:8px; flex-wrap:wrap; }
-  .btn-choix { border:2px solid #059669; border-radius:12px; padding:8px 20px; font-size:1.1rem; font-weight:900; background:white; color:#059669; cursor:pointer; font-family:inherit; transition:background 0.15s; }
+  .btn-choix { border:2px solid #059669; border-radius:12px; padding:8px 20px; font-size:1.1rem; font-weight:900; background:white; color:#047857; cursor:pointer; font-family:inherit; transition:background 0.15s; }
   .btn-choix:hover { background:#dcfce7; }
   .btn-choix.correct { background:#22c55e; color:white; border-color:#16a34a; }
   .btn-choix.wrong   { background:#fca5a5; color:#7f1d1d; border-color:#ef4444; }
@@ -54,14 +54,14 @@
   .tri-chips { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin:12px 0; }
   .tri-chip {
     border:2px solid #059669; border-radius:20px; padding:8px 18px;
-    font-size:1.1rem; font-weight:900; background:white; color:#059669;
+    font-size:1.1rem; font-weight:900; background:white; color:#047857;
     cursor:pointer; font-family:inherit; transition:all 0.15s;
   }
   .tri-chip:hover:not(.done):not(.wrong-flash) { background:#dcfce7; }
   .tri-chip.done { background:#22c55e; color:white; border-color:#16a34a; cursor:default; }
   .tri-chip.wrong-flash { background:#fca5a5; border-color:#ef4444; animation:shake 0.3s; }
   .tri-sequence { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; min-height:44px; align-items:center; margin-top:10px; border-top:2px dashed #bbf7d0; padding-top:10px; }
-  .tri-slot { border:2px dashed #059669; border-radius:12px; padding:6px 14px; font-size:1rem; font-weight:800; color:#059669; min-width:40px; text-align:center; }
+  .tri-slot { border:2px dashed #059669; border-radius:12px; padding:6px 14px; font-size:1rem; font-weight:800; color:#047857; min-width:40px; text-align:center; }
   .tri-slot.filled { background:#22c55e; color:white; border-color:#16a34a; }
   .tri-feedback { text-align:center; font-size:0.9rem; font-weight:800; min-height:20px; margin-top:8px; }
   @keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)} }
@@ -69,7 +69,7 @@
   /* Ex 4 — signes */
   .sign-interactive { background:#f0fdf4; border:2px solid #bbf7d0; border-radius:12px; padding:12px 16px; margin-bottom:10px; display:flex; align-items:center; gap:10px; flex-wrap:wrap; font-size:1.1rem; font-weight:700; }
   .sign-btns { display:flex; gap:6px; }
-  .btn-sign { border:2px solid #059669; border-radius:8px; padding:4px 12px; font-size:1rem; font-weight:900; background:white; color:#059669; cursor:pointer; font-family:inherit; transition:background 0.15s; min-width:36px; }
+  .btn-sign { border:2px solid #059669; border-radius:8px; padding:4px 12px; font-size:1rem; font-weight:900; background:white; color:#047857; cursor:pointer; font-family:inherit; transition:background 0.15s; min-width:36px; }
   .btn-sign:hover { background:#dcfce7; }
   .btn-sign.correct { background:#22c55e; color:white; border-color:#16a34a; }
   .btn-sign.wrong   { background:#fca5a5; color:#7f1d1d; border-color:#ef4444; }
@@ -79,7 +79,7 @@
   .pb-qcm .enonce { font-style:italic; color:#555; margin-bottom:10px; font-size:0.93rem; line-height:1.6; }
   .pb-qcm .question { font-size:0.95rem; font-weight:700; margin-bottom:8px; }
   .pb-qcm-btns { display:flex; gap:8px; flex-wrap:wrap; }
-  .btn-qcm { border:2px solid #059669; border-radius:10px; padding:8px 18px; font-size:0.95rem; font-weight:800; background:white; color:#059669; cursor:pointer; font-family:inherit; transition:background 0.15s; }
+  .btn-qcm { border:2px solid #059669; border-radius:10px; padding:8px 18px; font-size:0.95rem; font-weight:800; background:white; color:#047857; cursor:pointer; font-family:inherit; transition:background 0.15s; }
   .btn-qcm:hover { background:#dcfce7; }
   .btn-qcm.correct { background:#22c55e; color:white; border-color:#16a34a; }
   .btn-qcm.wrong   { background:#fca5a5; color:#7f1d1d; border-color:#ef4444; }
@@ -88,9 +88,9 @@
   /* Comparaison pizza */
   .pizza-compare-row { display:flex; align-items:center; gap:16px; justify-content:center; flex-wrap:wrap; margin-top:14px; }
   .pizza-compare-item { text-align:center; }
-  .pizza-compare-item .lbl { font-size:1.3rem; font-weight:900; color:#059669; margin-bottom:4px; }
+  .pizza-compare-item .lbl { font-size:1.3rem; font-weight:900; color:#047857; margin-bottom:4px; }
   .pizza-compare-item .sublbl { font-size:0.78rem; color:#555; margin-top:4px; }
-  .vs-sign { font-size:2rem; font-weight:900; color:#059669; }
+  .vs-sign { font-size:2rem; font-weight:900; color:#047857; }
 </style>
 </head>
 <body>
@@ -187,7 +187,7 @@
     <p style="font-size:0.9rem;color:#666;margin-bottom:14px">Clique sur les fractions dans l'ordre, du plus petit au plus grand.</p>
 
     <div class="tri-container" id="triA">
-      <strong style="color:#059669">Série A :</strong>
+      <strong style="color:#047857">Série A :</strong>
       <div class="tri-chips" id="chips-A"></div>
       <div style="font-size:0.82rem;color:#777;margin-top:4px;text-align:center">→ Clique dans l'ordre croissant</div>
       <div class="tri-sequence" id="seq-A"></div>
@@ -195,7 +195,7 @@
     </div>
 
     <div class="tri-container" id="triB">
-      <strong style="color:#059669">Série B :</strong>
+      <strong style="color:#047857">Série B :</strong>
       <div class="tri-chips" id="chips-B"></div>
       <div style="font-size:0.82rem;color:#777;margin-top:4px;text-align:center">→ Clique dans l'ordre croissant</div>
       <div class="tri-sequence" id="seq-B"></div>
@@ -428,9 +428,9 @@
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>
 <script src="auth.js?v=7"></script>
-<script src="gamification.js?v=6"></script>
+<script src="gamification.js?v=7"></script>
 <script src="nav.js?v=6"></script>
-<script src="related.js"></script>
+<script src="related.js?v=2"></script>
 <script src="seo.js"></script>
 </body>
 </html>

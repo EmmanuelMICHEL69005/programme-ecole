@@ -12,7 +12,7 @@
 <title>Géométrie — CP | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 <style>
   :root { --accent: #16a34a; }
   .qcm-row { display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; }
@@ -24,17 +24,17 @@
 
   /* Galerie formes */
   .shapes-gallery { display:grid; grid-template-columns:repeat(auto-fill,minmax(100px,1fr)); gap:10px; margin:14px 0; }
-  .shape-tile { background:white; border:2.5px solid #bbf7d0; border-radius:16px; padding:12px 8px; text-align:center; box-shadow:0 4px 0 #bbf7d0; }
+  .shape-tile { background:#f0fdf4; border-radius:16px; padding:12px 8px; text-align:center; }
   .shape-tile svg { display:block; margin:0 auto 6px; }
-  .shape-tile .s-name { font-size:0.78rem; font-weight:900; color:#166534; }
-  .shape-tile .s-info { font-size:0.68rem; color:#555; margin-top:2px; }
+  .shape-tile .s-name { font-size:0.95rem; font-weight:900; color:#166534; }
+  .shape-tile .s-info { font-size:0.85rem; color:#4b5563; margin-top:2px; }
 
   /* Grille formes dans exercice */
   .forme-choix { display:flex; gap:12px; flex-wrap:wrap; margin:10px 0; justify-content:center; }
   .forme-choix svg { display:block; }
 
   /* Axe symétrie visuel */
-  .sym-box { background:#f0fdf4; border:2.5px dashed #4ade80; border-radius:14px; padding:16px;
+  .sym-box { background:#f0fdf4; outline:2px dashed #86c99c; outline-offset:-2px; border:0; border-radius:14px; padding:16px;
              display:flex; align-items:center; justify-content:center; gap:20px; margin:12px 0; }
   .sym-left, .sym-right { text-align:center; }
   .sym-axis { width:3px; height:80px; background:#4ade80; border-radius:3px; }
@@ -50,7 +50,6 @@
 </header>
 
 <main>
-  <div class="badge-niveau">🌱 CP — Espace et géométrie</div>
 
   <!-- ═══ JE RETIENS ═══ -->
   <div class="retiens-box">
@@ -115,7 +114,7 @@
     <div class="ex-title">
       <span class="ex-badge" style="background:#16a34a">Ex 1</span>
       Reconnaître les formes
-      <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span>
+      <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span>
     </div>
     <div id="ex1"></div>
   </div>
@@ -125,7 +124,7 @@
     <div class="ex-title">
       <span class="ex-badge" style="background:#0ea5e9">Ex 2</span>
       Vrai ou Faux sur les formes
-      <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span>
+      <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">VRAI / FAUX</span>
     </div>
     <div id="ex2"></div>
   </div>
@@ -135,7 +134,7 @@
     <div class="ex-title">
       <span class="ex-badge" style="background:#7c3aed">Ex 3</span>
       Compter les côtés et les angles
-      <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span>
+      <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span>
     </div>
     <div id="ex3"></div>
   </div>
@@ -145,7 +144,7 @@
     <div class="ex-title">
       <span class="ex-badge" style="background:#10b981">Ex 4</span>
       Trier : avec ou sans angles droits
-      <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span>
+      <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">TRI</span>
     </div>
     <div id="ex4"></div>
   </div>
@@ -155,7 +154,7 @@
     <div class="ex-title">
       <span class="ex-badge" style="background:#f59e0b">Ex 5</span>
       Positions dans l'espace
-      <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span>
+      <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span>
     </div>
     <div id="ex5"></div>
   </div>
@@ -165,7 +164,7 @@
     <div class="ex-title">
       <span class="ex-badge" style="background:#ec4899">Ex 6</span>
       Associer forme et propriété
-      <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span>
+      <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">PAIRES</span>
     </div>
     <div id="ex6"></div>
   </div>
@@ -175,7 +174,7 @@
     <div class="ex-title">
       <span class="ex-badge" style="background:#f97316">Ex 7</span>
       Ces formes dans la vie
-      <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span>
+      <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span>
     </div>
     <div id="ex7"></div>
   </div>
@@ -185,7 +184,7 @@
     <div class="ex-title">
       <span class="ex-badge" style="background:#8b5cf6">Ex 8</span>
       Symétrie
-      <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span>
+      <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">VRAI / FAUX</span>
     </div>
     <!-- Visuel symétrie -->
     <div class="sym-box">
@@ -210,7 +209,7 @@
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a> · <a href="programme-5e.html">5ème</a> · <a href="programme-4e.html">4ème</a> · <a href="programme-3e.html">3ème</a></div></footer>
 
-<script src="exercises.js"></script>
+<script src="exercises.js?v=2"></script>
 <script>
 // ── EX 1 : Reconnaître les formes ────────────────────────────────────
 buildQCM([
@@ -344,9 +343,9 @@ buildVF([
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>
 <script src="auth.js?v=7"></script>
-<script src="gamification.js?v=6"></script>
+<script src="gamification.js?v=7"></script>
 <script src="nav.js?v=6"></script>
-<script src="related.js"></script>
+<script src="related.js?v=2"></script>
 <script src="seo.js"></script>
 </body>
 </html>

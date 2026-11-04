@@ -456,7 +456,7 @@ body.cpage .site-footer .footer-levels a { color: #9ca3af; }
 .btn-choice.correct {
   background: #16a34a; border-color: #15803d; color: white;
   box-shadow: 0 4px 0 #166534;
-  animation: _bounce 0.35s ease;
+  animation: _pop .3s cubic-bezier(.16,1,.3,1);
 }
 .btn-choice.wrong {
   background: #ef4444; border-color: #dc2626; color: white;
@@ -510,14 +510,6 @@ body.cpage .site-footer .footer-levels a { color: #9ca3af; }
   border: 2.5px solid #f0f0f0;
   position: relative;
   overflow: hidden;
-}
-.exercice-block::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 6px;
-  background: var(--accent, var(--violet));
-  border-radius: 20px 0 0 20px;
 }
 .exercice-block .ex-title {
   font-size: 1.05rem;
@@ -962,7 +954,6 @@ p, li, .cs-text, .cs-ex, .cs-tip { text-wrap: pretty; }
   border: 1px solid var(--trait);
   box-shadow: 0 1px 2px rgba(23,45,102,.05), 0 8px 24px rgba(23,45,102,.05);
 }
-.exercice-block::before { display: none; }
 .exercice-block .ex-title { border-bottom: 1px solid var(--trait); font-size: 1.12rem; }
 .ex-badge { background: var(--accent, var(--encre)); box-shadow: none; }
 .q-block {
@@ -972,7 +963,7 @@ p, li, .cs-text, .cs-ex, .cs-tip { text-wrap: pretty; }
 }
 .q-block:first-child { border-top: 0; padding-top: 6px; }
 .frac-card { box-shadow: none; }
-.pb-enonce { background: #fef6d8; border: 1px solid #f6df98; border-left-width: 1px; color: #713f12; font-weight: 600; }
+.pb-enonce { background: #fef6d8; border: 0; color: #713f12; font-weight: 600; }
 
 /* Boutons : on garde le relief « à presser » (le monde du jeu), en encre */
 .btn-choice:hover:not([disabled]) { border-color: var(--encre); color: var(--encre); background: var(--encre-pale); box-shadow: 0 6px 0 #b9c3e3; }
@@ -986,7 +977,7 @@ p, li, .cs-text, .cs-ex, .cs-tip { text-wrap: pretty; }
 .paires-btn:hover:not([disabled]):not(.p-ok) { border-color: var(--encre); background: var(--encre-pale); color: var(--encre); }
 .ordre-chip { background: var(--encre-pale); border-color: var(--encre); }
 .tri-chip.tri-sel, .paires-btn.p-sel { border-color: var(--encre); background: var(--encre-pale); color: var(--encre); box-shadow: 0 0 0 3px rgba(31,60,136,.18); }
-.tri-col.tri-target { border-color: var(--encre); background: var(--encre-pale); }
+.tri-col.tri-target { background: var(--encre-pale); }
 .ordre-hint, .tri-hint, .figure-card .hint, .ex-hint { color: var(--texte-2); }
 
 /* ── Encadrés : fond teinté + filet fin, plus de barre latérale ─ */
@@ -1059,3 +1050,72 @@ main.cs .cs-retenir { margin: 6px 20px 22px; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
 }
+
+/* ================================================================
+   CORRECTIONS DÉTECTEUR IMPECCABLE (nov. 2026)
+   ================================================================ */
+
+/* ── Contrastes : en-têtes et boutons posés dessus ───────── */
+.site-header p, .cpage .cours-header p { opacity: 1; font-size: .9rem; }
+.nav-back { background: rgba(0,0,0,.2); border-color: rgba(255,255,255,.45); }
+.nav-back:hover { background: rgba(0,0,0,.32); }
+
+/* Pastilles « Ex 1, Ex 2… » : une seule couleur, celle de l'encre (fini l'arc-en-ciel illisible) */
+.ex-badge { background: var(--encre) !important; color: #fff; }
+
+/* Réponse juste / fausse : vert et rouge assez foncés pour du texte blanc, et pas grisés une fois choisis */
+.btn-choice.correct { background: #15803d !important; border-color: #166534 !important; color: #fff !important; box-shadow: 0 4px 0 #14532d !important; animation: _pop .3s cubic-bezier(.16,1,.3,1); }
+.btn-choice.wrong   { background: #dc2626 !important; border-color: #b91c1c !important; color: #fff !important; box-shadow: 0 4px 0 #991b1b !important; }
+.btn-choice.correct:disabled, .btn-choice.wrong:disabled { opacity: 1; }
+@keyframes _pop { 0% { transform: scale(1); } 40% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
+/* ── Cours : les titres de partie sont de vrais h2 ───────── */
+main.cs h2.cs-head { margin: 0; line-height: 1.3; border-bottom: 0; }
+main.cs .cs-retenir h2 { border-bottom: 0; padding-bottom: 0; margin: 0 0 8px; color: var(--encre); font-size: 1.1rem; }
+.cs-retenir h2, .cpage .retenir h2 {
+  text-transform: none; letter-spacing: 0; margin: 0 0 8px;
+  font-size: 1.1rem; font-weight: 900; color: var(--encre);
+}
+/* Le « À retenir » est une bande de la même feuille, pas une carte posée dessus */
+main.cs .cs-retenir {
+  margin: 8px 0 22px; border-radius: 0; border-width: 1px 0; box-shadow: none;
+}
+/* Exemples et astuces : du texte mis en valeur, pas des boîtes dans la feuille */
+main.cs .cs-ex, main.cs .cs-tip {
+  background: transparent; border: 0; border-radius: 0; box-shadow: none;
+  padding: 4px 0 4px 16px; margin: 10px 0;
+  background-image: linear-gradient(var(--lb, #dfe3f1), var(--lb, #dfe3f1));
+  background-size: 1px 100%; background-repeat: no-repeat;
+}
+main.cs .cs-tip { background-image: linear-gradient(#f0c94d, #f0c94d); color: #713f12; }
+
+/* ── Exercices de tri : une zone de dépôt, pas une carte dans la carte ─ */
+.tri-col { background: #f3f5fb; border: 0; outline: 2px dashed #c3cadf; outline-offset: -2px; }
+.tri-col.tri-target { outline-color: var(--encre); }
+.tri-col-title { background: none; border: 0; padding: 2px 4px; font-size: .95rem; }
+
+/* ── Pages programme : aplat de niveau, titres neutres, lignes lisibles ─ */
+body .pil-hero { background: var(--lc1) !important; }
+body .pil-hero p { opacity: 1; font-size: .95rem; }
+/* « ← Accueil » doublonne le fil d'Ariane et passe sous le bouton profil */
+body .pil-back { display: none; }
+body .pil-anchors a { background: rgba(0,0,0,.18); font-size: .88rem; }
+body .pil-section h2, body .pil-seo-block h2 {
+  text-transform: none; letter-spacing: 0; color: var(--texte);
+  font-size: 1.15rem; border-bottom: 1px solid var(--trait); padding-bottom: 6px;
+}
+body .pil-card, body .pil-matiere-card { border: 1px solid var(--trait); box-shadow: none; }
+body .pil-card-name { font-size: .98rem; color: var(--texte); }
+body .pil-links a { font-size: .85rem; padding: 4px 10px; }
+body .pil-matiere-card strong { color: var(--texte); font-size: .95rem; }
+body .pil-matiere-card span { font-size: .88rem; }
+body .pil-seo-block p, body .pil-step { font-size: 1rem; max-width: 60ch; }
+body .pil-seo-block p b, body .pil-step b { color: var(--texte); }
+body .pil-tag { font-size: .85rem; }
+body .pil-tip-box { font-size: .95rem; }
+body .pil-faq-item { border: 1px solid var(--trait); box-shadow: none; }
+body .pil-faq-item h3 { border-left: 0; color: var(--texte); font-size: 1rem; }
+body .pil-faq-item p { font-size: .95rem; font-weight: 600; max-width: 60ch; }
+
+/* Gras dans les exemples : teinte foncée du niveau pour rester lisible */
+main.cs .cs-ex b { color: var(--ld, var(--encre)); }

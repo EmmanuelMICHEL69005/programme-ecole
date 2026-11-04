@@ -18,7 +18,7 @@
 <title>Calcul mental — CP | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 <style>
   .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
   .btn-choice {
@@ -27,8 +27,8 @@
     transition: background 0.15s;
   }
   .btn-choice:hover { background: #dcfce7; }
-  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
-  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice.correct { background: #15803d; border-color: #166534; color: white; }
+  .btn-choice.wrong   { background: #dc2626; border-color: #b91c1c; color: white; }
   .btn-choice:disabled { opacity: 0.6; cursor: default; }
   .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
   .q-block { background: #f0fdf4; border: 2px solid #bbf7d0; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
@@ -50,7 +50,6 @@
 
 <main>
 
-  <div class="badge-niveau">CP — Calcul mental</div>
 
   <div class="retiens-box">
     <div class="retiens-title">💡 Mes astuces</div>
@@ -63,34 +62,34 @@
   </div>
 
   <div class="exercice-block" style="--accent:#059669">
-    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 1</span> Les doubles et moitiés <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 1</span> Les doubles et moitiés <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
     <div id="ex1"></div>
   </div>
   <div class="exercice-block" style="--accent:#0ea5e9">
-    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 2</span> Compléments à 10 <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 2</span> Compléments à 10 <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
     <div id="ex2"></div>
   </div>
   <div class="exercice-block" style="--accent:#f59e0b">
-    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 3</span> Vrai ou Faux — calculs rapides <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 3</span> Vrai ou Faux — calculs rapides <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">VRAI / FAUX</span></div>
     <div id="ex3"></div>
   </div>
   <div class="exercice-block" style="--accent:#7c3aed">
-    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 4</span> Ajouter ou ôter 10 <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 4</span> Ajouter ou ôter 10 <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
     <div id="ex4"></div>
   </div>
   <div class="exercice-block" style="--accent:#ec4899">
-    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 5</span> Associer le calcul et son résultat <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 5</span> Associer le calcul et son résultat <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">PAIRES</span></div>
     <div id="ex5"></div>
   </div>
   <div class="exercice-block" style="--accent:#10b981">
-    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Calculs en tête — résultat > ou < 10 ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Calculs en tête — résultat > ou < 10 ? <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">TRI</span></div>
     <div id="ex6"></div>
   </div>
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a> · <a href="programme-5e.html">5ème</a> · <a href="programme-4e.html">4ème</a> · <a href="programme-3e.html">3ème</a></div></footer>
 
-<script src="exercises.js"></script>
+<script src="exercises.js?v=2"></script>
 <script>
 buildQCM([
   { card:'3 + 3 = ?', q:'Double de 3', correct:'6', choices:['5','6','7','8'] },
@@ -156,9 +155,9 @@ buildTri([
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>
 <script src="auth.js?v=7"></script>
-<script src="gamification.js?v=6"></script>
+<script src="gamification.js?v=7"></script>
 <script src="nav.js?v=6"></script>
-<script src="related.js"></script>
+<script src="related.js?v=2"></script>
 <script src="seo.js"></script>
 </body>
 </html>

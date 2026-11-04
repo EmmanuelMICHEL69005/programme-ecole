@@ -325,8 +325,8 @@
         top: 12px; left: 12px;
         z-index: 100;
         display: flex; align-items: center; gap: 7px;
-        background: rgba(255,255,255,0.18);
-        border: 2px solid rgba(255,255,255,0.35);
+        background: rgba(0,0,0,0.2);
+        border: 2px solid rgba(255,255,255,0.45);
         border-radius: 30px;
         padding: 6px 13px 6px 6px;
         cursor: pointer; color: white;
@@ -335,11 +335,11 @@
         max-width: calc(55vw - 24px);
         text-align: left; line-height: 1.2;
       }
-      .gs-header-chip:hover { background: rgba(255,255,255,0.28); transform: scale(1.02); }
+      .gs-header-chip:hover { background: rgba(0,0,0,0.32); transform: scale(1.02); }
       .gs-chip-avatar { font-size: 1.6rem; line-height: 1; flex-shrink: 0; }
       .gs-chip-info   { display: flex; flex-direction: column; min-width: 0; }
       .gs-chip-name   { font-size: 0.84rem; font-weight: 900; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-      .gs-chip-meta   { font-size: 0.66rem; font-weight: 700; color: rgba(255,255,255,0.78); white-space: nowrap; }
+      .gs-chip-meta   { font-size: 0.72rem; font-weight: 700; color: rgba(255,255,255,0.92); white-space: nowrap; }
 
       /* ===== XP TOAST ===== */
       .gs-xp-toast {
@@ -401,7 +401,7 @@
         color: white; border-radius: 28px; padding: 44px 32px 36px;
         text-align: center; max-width: 340px; width: 88%;
         box-shadow: 0 24px 80px rgba(31,60,136,0.6), 0 0 0 1px rgba(183,196,240,0.3);
-        animation: gsCardPop 0.45s cubic-bezier(0.175,0.885,0.32,1.275);
+        animation: gsCardPop 0.45s cubic-bezier(0.16,1,0.3,1);
         position: relative; overflow: hidden;
       }
       .gs-levelup-card::before {
@@ -410,7 +410,7 @@
         background: radial-gradient(ellipse, rgba(183,196,240,0.12) 0%, transparent 65%);
         pointer-events: none;
       }
-      .gs-levelup-emoji { font-size: 4.5rem; display: block; margin-bottom: 10px; animation: gsBounce 0.6s 0.4s ease both; }
+      .gs-levelup-emoji { font-size: 4.5rem; display: block; margin-bottom: 10px; animation: gsBounce 0.6s 0.4s cubic-bezier(0.16,1,0.3,1) both; }
       .gs-levelup-sup   { font-size: 0.82rem; font-weight: 700; color: #b7c4f0; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px; }
       .gs-levelup-title { font-size: 2.2rem; font-weight: 900; margin-bottom: 4px; }
       .gs-levelup-sub   { font-size: 1.1rem; color: #c3cdf0; font-weight: 700; margin-bottom: 16px; }
@@ -425,7 +425,7 @@
 
       @keyframes gsFadeIn  { from { opacity:0 } to { opacity:1 } }
       @keyframes gsCardPop { from { opacity:0; transform:scale(0.7) } to { opacity:1; transform:scale(1) } }
-      @keyframes gsBounce  { 0% { transform:scale(0.5); opacity:0 } 70% { transform:scale(1.2) } 100% { transform:scale(1); opacity:1 } }
+      @keyframes gsBounce  { 0% { transform:scale(0.6); opacity:0 } 100% { transform:scale(1); opacity:1 } }
 
       /* ===== CONFETTI ===== */
       .gs-confetti {
@@ -456,7 +456,7 @@
         border-radius: 28px 28px 0 0;
         padding: 32px 24px 44px;
         box-shadow: 0 -12px 60px rgba(31,60,136,0.55);
-        animation: gsNextSlideUp 0.45s cubic-bezier(0.175,0.885,0.32,1.275) forwards;
+        animation: gsNextSlideUp 0.45s cubic-bezier(0.16,1,0.3,1) forwards;
         position: relative; overflow: hidden;
       }
       .gs-next-panel::before {
@@ -477,7 +477,7 @@
         transition: background 0.15s; font-family: inherit;
       }
       .gs-next-close:hover { background: rgba(255,255,255,0.25); color: white; }
-      .gs-next-stars { font-size: 2.6rem; text-align: center; margin-bottom: 10px; letter-spacing: 6px; animation: gsBounce 0.5s 0.1s ease both; }
+      .gs-next-stars { font-size: 2.6rem; text-align: center; margin-bottom: 10px; letter-spacing: 6px; animation: gsBounce 0.5s 0.1s cubic-bezier(0.16,1,0.3,1) both; }
       .gs-next-star-empty { opacity: 0.25; }
       .gs-next-bravo { font-size: 1.8rem; font-weight: 900; text-align: center; margin-bottom: 4px; }
       .gs-next-sub   { font-size: 0.9rem; text-align: center; color: rgba(255,255,255,0.6); margin-bottom: 18px; }
@@ -486,7 +486,7 @@
         border-radius: 30px; padding: 9px 24px; font-size: 1.15rem; font-weight: 900;
         text-align: center; margin: 0 auto 12px; display: table;
         box-shadow: 0 4px 18px rgba(31,60,136,0.4);
-        animation: gsBounce 0.5s 0.25s ease both;
+        animation: gsBounce 0.5s 0.25s cubic-bezier(0.16,1,0.3,1) both;
       }
       .gs-next-streak { text-align: center; font-size: 0.9rem; font-weight: 800; color: #fcd34d; margin-bottom: 16px; }
       .gs-next-main-btn {
@@ -495,7 +495,7 @@
         border-radius: 20px; padding: 17px 20px; text-decoration: none; color: white;
         margin-bottom: 14px; box-shadow: 0 6px 24px rgba(5,150,105,0.4);
         transition: transform 0.15s, box-shadow 0.15s;
-        animation: gsBounce 0.5s 0.35s ease both;
+        animation: gsBounce 0.5s 0.35s cubic-bezier(0.16,1,0.3,1) both;
       }
       .gs-next-main-btn:hover { transform: scale(1.02); box-shadow: 0 8px 32px rgba(5,150,105,0.55); }
       .gs-next-main-btn--gold { background: #b45309; box-shadow: 0 6px 24px rgba(217,119,6,0.4); }
@@ -532,10 +532,10 @@
         border: 1.5px solid rgba(255,255,255,0.18);
         border-radius: 28px; padding: 36px 26px 32px;
         width: 100%; max-width: 440px; color: white;
-        animation: gsCardPop 0.45s cubic-bezier(0.175,0.885,0.32,1.275);
+        animation: gsCardPop 0.45s cubic-bezier(0.16,1,0.3,1);
         max-height: 90vh; overflow-y: auto;
       }
-      .gs-create-hero { font-size: 3rem; text-align: center; display: block; margin-bottom: 10px; animation: gsBounce 0.6s ease both; }
+      .gs-create-hero { font-size: 3rem; text-align: center; display: block; margin-bottom: 10px; animation: gsBounce 0.6s cubic-bezier(0.16,1,0.3,1) both; }
       .gs-create-title { font-size: 1.7rem; font-weight: 900; text-align: center; margin-bottom: 4px; }
       .gs-create-sub   { font-size: 0.9rem; text-align: center; color: rgba(255,255,255,0.6); margin-bottom: 28px; }
       .gs-create-field { margin-bottom: 22px; }
@@ -597,7 +597,7 @@
         width: 100%; max-width: 480px;
         border-radius: 28px 28px 0 0; padding: 24px 20px 36px;
         box-shadow: 0 -8px 40px rgba(31,60,136,0.45);
-        animation: gsNextSlideUp 0.35s cubic-bezier(0.175,0.885,0.32,1.275);
+        animation: gsNextSlideUp 0.35s cubic-bezier(0.16,1,0.3,1);
         color: white; max-height: 80vh; overflow-y: auto;
       }
       .gs-picker-header {
@@ -678,13 +678,13 @@
       .gs-sec-count {
         font-size: 0.78rem;
         font-weight: 900;
-        color: rgba(0,0,0,0.38);
+        color: #5f6472;
         white-space: nowrap;
         flex-shrink: 0;
         min-width: 36px;
         text-align: right;
       }
-      .gs-sec-count.done { color: #16a34a; }
+      .gs-sec-count.done { color: #15803d; }
       .gs-sec-bar-wrap {
         height: 5px;
         background: rgba(0,0,0,0.08);

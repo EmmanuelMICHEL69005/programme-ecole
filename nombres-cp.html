@@ -18,7 +18,7 @@
 <title>Les nombres — CP | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 <style>
   :root { --accent: #16a34a; }
   .qcm-row { display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; }
@@ -30,11 +30,11 @@
 
   /* Grille dizaines-unités */
   .du-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:12px 0; }
-  .du-card { background:#dcfce7; border:2.5px solid #22c55e; border-radius:14px; padding:14px; text-align:center; box-shadow:0 4px 0 #bbf7d0; }
+  .du-card { background:#dcfce7; border-radius:14px; padding:14px; text-align:center; }
   .du-card .du-num { font-size:2.8rem; font-weight:900; color:#166534; line-height:1; }
-  .du-card .du-label { font-size:0.78rem; font-weight:800; color:#14532d; margin-top:4px; }
+  .du-card .du-label { font-size:0.9rem; font-weight:800; color:#14532d; margin-top:4px; }
   .du-decomp { display:flex; align-items:center; justify-content:center; gap:8px; font-size:1.1rem; font-weight:900; color:#166534; margin-top:10px; flex-wrap:wrap; }
-  .du-d { background:#4ade80; border-radius:10px; padding:6px 14px; color:white; }
+  .du-d { background:#15803d; border-radius:10px; padding:6px 14px; color:white; }
   .du-u { background:#86efac; border-radius:10px; padding:6px 14px; color:#14532d; }
 
   /* Frise numérique */
@@ -51,7 +51,7 @@
   .main-svg .lbl { font-size:0.78rem; font-weight:800; color:#166534; margin-top:4px; }
 
   /* Droite graduée */
-  .droite-nb { background:#f0fdf4; border:2.5px solid #4ade80; border-radius:14px; padding:18px 20px 12px; margin:12px 0; }
+  .droite-nb { background:#f0fdf4; border:0; border-radius:14px; padding:18px 20px 12px; margin:12px 0; }
   .droite-nb .tick-row { display:flex; justify-content:space-between; padding:0 4px; }
   .droite-nb .ligne { height:6px; background:linear-gradient(90deg,#4ade80,#16a34a); border-radius:3px; margin:6px 0; }
   .droite-nb .num-row { display:flex; justify-content:space-between; padding:0 4px; font-size:0.82rem; font-weight:900; color:#166534; }
@@ -67,7 +67,6 @@
 </header>
 
 <main>
-  <div class="badge-niveau">🌱 CP — Nombres et calculs</div>
 
   <!-- ═══ JE RETIENS ═══ -->
   <div class="retiens-box">
@@ -90,7 +89,7 @@
         <div class="du-num" style="color:#1d4ed8">62</div>
         <div class="du-label" style="color:#1e3a8a">Le nombre</div>
         <div class="du-decomp" style="color:#1d4ed8">
-          <span style="background:#60a5fa;border-radius:10px;padding:6px 14px;color:white">6 diz = 60</span>
+          <span style="background:#2563eb;border-radius:10px;padding:6px 14px;color:white">6 diz = 60</span>
           <span style="background:#93c5fd;border-radius:10px;padding:6px 14px;color:#1e3a8a">2 unit</span>
         </div>
       </div>
@@ -114,7 +113,7 @@
     <div class="ex-title">
       <span class="ex-badge" style="background:#16a34a">Ex 1</span>
       Dizaines et unités
-      <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span>
+      <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span>
     </div>
     <div id="ex1"></div>
   </div>
@@ -124,7 +123,7 @@
     <div class="ex-title">
       <span class="ex-badge" style="background:#0ea5e9">Ex 2</span>
       Lire et écrire les nombres
-      <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span>
+      <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span>
     </div>
     <div id="ex2"></div>
   </div>
@@ -134,7 +133,7 @@
     <div class="ex-title">
       <span class="ex-badge" style="background:#f59e0b">Ex 3</span>
       Vrai ou Faux ?
-      <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span>
+      <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">VRAI / FAUX</span>
     </div>
     <div id="ex3"></div>
   </div>
@@ -144,7 +143,7 @@
     <div class="ex-title">
       <span class="ex-badge" style="background:#10b981">Ex 4</span>
       Pair ou impair ?
-      <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span>
+      <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">TRI</span>
     </div>
     <div id="ex4"></div>
   </div>
@@ -154,7 +153,7 @@
     <div class="ex-title">
       <span class="ex-badge" style="background:#8b5cf6">Ex 5</span>
       Compléter la suite
-      <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span>
+      <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span>
     </div>
     <div id="ex5"></div>
   </div>
@@ -164,7 +163,7 @@
     <div class="ex-title">
       <span class="ex-badge" style="background:#ec4899">Ex 6</span>
       Range du plus petit au plus grand
-      <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">ORDRE</span>
+      <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">ORDRE</span>
     </div>
     <div id="ex6"></div>
   </div>
@@ -174,7 +173,7 @@
     <div class="ex-title">
       <span class="ex-badge" style="background:#f97316">Ex 7</span>
       Associe chiffres et mots
-      <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span>
+      <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">PAIRES</span>
     </div>
     <div id="ex7"></div>
   </div>
@@ -184,7 +183,7 @@
     <div class="ex-title">
       <span class="ex-badge" style="background:#16a34a">Ex 8</span>
       Comparer les nombres
-      <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span>
+      <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span>
     </div>
     <div id="ex8"></div>
   </div>
@@ -194,7 +193,7 @@
     <div class="ex-title">
       <span class="ex-badge" style="background:#7c3aed">Ex 9</span>
       Problèmes de dénombrement
-      <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span>
+      <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span>
     </div>
     <div id="ex9"></div>
   </div>
@@ -203,7 +202,7 @@
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a> · <a href="programme-5e.html">5ème</a> · <a href="programme-4e.html">4ème</a> · <a href="programme-3e.html">3ème</a></div></footer>
 
-<script src="exercises.js"></script>
+<script src="exercises.js?v=2"></script>
 <script>
 // ── EX 1 : Dizaines et unités (QCM) ──────────────────────────────────
 buildQCM([
@@ -350,9 +349,9 @@ buildQCM([
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>
 <script src="auth.js?v=7"></script>
-<script src="gamification.js?v=6"></script>
+<script src="gamification.js?v=7"></script>
 <script src="nav.js?v=6"></script>
-<script src="related.js"></script>
+<script src="related.js?v=2"></script>
 <script src="seo.js"></script>
 </body>
 </html>

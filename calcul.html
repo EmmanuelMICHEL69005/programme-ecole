@@ -18,7 +18,7 @@
 <title>Les opérations — CE2 | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 <style>
   .op-posee {
     display: inline-block;
@@ -49,8 +49,8 @@
     transition: background 0.15s, color 0.15s, border-color 0.15s;
   }
   .btn-choice:hover { background: #ede9fe; }
-  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
-  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice.correct { background: #15803d; border-color: #166534; color: white; }
+  .btn-choice.wrong   { background: #dc2626; border-color: #b91c1c; color: white; }
   .btn-choice:disabled { opacity: 0.6; cursor: default; }
   .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
   .q-block { background: #f5f3ff; border: 2px solid #ddd6fe; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
@@ -72,8 +72,8 @@
     border-radius: 20px; padding: 5px 16px; font-weight: 800; font-size: 0.85rem;
     border: 2px solid; cursor: pointer; transition: background 0.15s;
   }
-  .btn-v { border-color: #22c55e; color: #22c55e; background: white; }
-  .btn-f { border-color: #ef4444; color: #ef4444; background: white; }
+  .btn-v { border-color: #22c55e; color: #15803d; background: white; }
+  .btn-f { border-color: #ef4444; color: #dc2626; background: white; }
   .btn-v:hover { background: #22c55e; color: white; }
   .btn-f:hover { background: #ef4444; color: white; }
   .btn-v.active { background: #22c55e; color: white; }
@@ -91,7 +91,6 @@
 
 <main>
 
-  <div class="badge-niveau">CE2 — Nombres et calculs</div>
 
   <!-- JE RETIENS -->
   <div class="retiens-box">
@@ -307,9 +306,9 @@ function checkBasic(btn, chosen, correct, rowId, fbId) {
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>
 <script src="auth.js?v=7"></script>
-<script src="gamification.js?v=6"></script>
+<script src="gamification.js?v=7"></script>
 <script src="nav.js?v=6"></script>
-<script src="related.js"></script>
+<script src="related.js?v=2"></script>
 <script src="seo.js"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
    Stratégie : cache-first pour les assets statiques,
    network-first pour les pages HTML */
 
-var CACHE = 'ef-v3';
+var CACHE = 'ef-v4';
 
 var PRECACHE = [
   '/',

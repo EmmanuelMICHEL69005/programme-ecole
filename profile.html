@@ -18,11 +18,11 @@
 <title>Mon Profil — Les Maths de Clémence | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 <style>
   /* ── Profile switcher bar ── */
   .profiles-bar {
-    background: linear-gradient(135deg, #1e1b4b, #312e81);
+    background: #172d66;
     padding: 16px 16px 14px;
     overflow-x: auto;
     display: flex;
@@ -47,7 +47,7 @@
     flex-shrink: 0;
   }
   .profile-chip:hover { background: rgba(255,255,255,0.16); }
-  .profile-chip.active { border-color: #a78bfa; background: rgba(167,139,250,0.2); }
+  .profile-chip.active { border-color: #b7c4f0; background: rgba(183,196,240,0.2); }
   .profile-chip-avatar { font-size: 1.4rem; line-height: 1; }
   .profile-chip-info { display: flex; flex-direction: column; line-height: 1.3; }
   .profile-chip-name  { font-size: 0.82rem; font-weight: 900; }
@@ -63,13 +63,13 @@
 
   /* ── Profile hero ── */
   .profile-hero {
-    background: linear-gradient(150deg, #1e1b4b, #4c1d95 50%, #1e3a5f);
+    background: #172d66;
     color: white; padding: 36px 24px 48px; text-align: center;
     position: relative; overflow: hidden;
   }
   .profile-hero::before {
     content: ''; position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 50% 0%, rgba(167,139,250,0.25), transparent 65%);
+    background: none;
     pointer-events: none;
   }
   .avatar-wrap { position: relative; display: inline-block; margin-bottom: 14px; }
@@ -102,7 +102,7 @@
     transition: background 0.15s;
   }
   .btn-edit-name:hover { background: rgba(255,255,255,0.28); }
-  .profile-level-label { font-size: 1rem; color: #c4b5fd; font-weight: 700; margin-bottom: 20px; }
+  .profile-level-label { font-size: 1rem; color: #c3cdf0; font-weight: 700; margin-bottom: 20px; }
   .xp-hero-bar-wrap { max-width: 340px; margin: 0 auto; }
   .xp-hero-labels {
     display: flex; justify-content: space-between;
@@ -110,7 +110,7 @@
   }
   .xp-hero-bar { height: 12px; background: rgba(255,255,255,0.18); border-radius: 8px; overflow: hidden; }
   .xp-hero-fill {
-    height: 100%; background: linear-gradient(90deg, #a78bfa, #e879f9);
+    height: 100%; background: #93a8e8;
     border-radius: 8px; transition: width 0.8s cubic-bezier(0.22,1,0.36,1);
   }
 
@@ -123,7 +123,7 @@
     background: white; border-radius: 18px; padding: 14px 10px;
     text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.12);
   }
-  .stat-card .stat-val { font-size: 1.7rem; font-weight: 900; color: #5b21b6; display: block; }
+  .stat-card .stat-val { font-size: 1.7rem; font-weight: 900; color: #172d66; display: block; }
   .stat-card .stat-lbl { font-size: 0.72rem; font-weight: 700; color: #888; margin-top: 2px; }
 
   /* ── Section titles ── */
@@ -136,11 +136,11 @@
   .classe-selector { display: flex; gap: 8px; flex-wrap: wrap; }
   .classe-opt {
     flex: 1; min-width: 56px; padding: 10px 6px; font-size: 0.9rem; font-weight: 900;
-    background: #f5f3ff; border: 2px solid #ddd6fe; border-radius: 12px;
-    color: #5b21b6; cursor: pointer; transition: all 0.15s; font-family: inherit; text-align: center;
+    background: #f4f6fc; border: 2px solid #d5dcf2; border-radius: 12px;
+    color: #172d66; cursor: pointer; transition: all 0.15s; font-family: inherit; text-align: center;
   }
-  .classe-opt:hover { background: #ede9fe; border-color: #a78bfa; }
-  .classe-opt.active { background: #7c3aed; border-color: #7c3aed; color: white; }
+  .classe-opt:hover { background: #e9edf8; border-color: #b7c4f0; }
+  .classe-opt.active { background: #1f3c88; border-color: #1f3c88; color: white; }
 
   /* ── Badges ── */
   .badges-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
@@ -149,11 +149,11 @@
     text-align: center; border: 2px solid #f0f0f0;
     transition: transform 0.15s, box-shadow 0.15s;
   }
-  .badge-card.earned { border-color: #ddd6fe; box-shadow: 0 3px 12px rgba(124,58,237,0.12); }
-  .badge-card.earned:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(124,58,237,0.2); }
+  .badge-card.earned { border-color: #d5dcf2; box-shadow: 0 3px 12px rgba(31,60,136,0.12); }
+  .badge-card.earned:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(31,60,136,0.2); }
   .badge-card.locked { opacity: 0.4; filter: grayscale(1); }
   .badge-emoji { font-size: 2.2rem; display: block; margin-bottom: 8px; }
-  .badge-name  { font-size: 0.82rem; font-weight: 900; color: #5b21b6; margin-bottom: 3px; }
+  .badge-name  { font-size: 0.82rem; font-weight: 900; color: #172d66; margin-bottom: 3px; }
   .badge-desc  { font-size: 0.72rem; color: #888; line-height: 1.3; }
   .badge-unlocked-tag {
     display: inline-block; background: #dcfce7; color: #166534;
@@ -169,7 +169,7 @@
   }
   .topic-emoji { font-size: 1.5rem; flex-shrink: 0; }
   .topic-info  { flex: 1; min-width: 0; }
-  .topic-title { font-size: 0.9rem; font-weight: 800; color: #1e1b4b; }
+  .topic-title { font-size: 0.9rem; font-weight: 800; color: #172d66; }
   .topic-count { font-size: 0.75rem; color: #888; margin-top: 1px; }
   .topic-stars { font-size: 1.2rem; flex-shrink: 0; }
 
@@ -177,7 +177,7 @@
   .levels-road { display: flex; flex-direction: column; }
   .level-row {
     display: flex; align-items: center; gap: 14px;
-    padding: 10px 0; border-left: 3px solid #e5e7eb;
+    padding: 10px 0; border:1px solid #e5e7eb55;
     margin-left: 18px; padding-left: 20px; position: relative;
   }
   .level-row::before {
@@ -185,16 +185,16 @@
     transform: translateY(-50%); width: 14px; height: 14px;
     border-radius: 50%; background: #e5e7eb; border: 3px solid white; box-shadow: 0 0 0 2px #e5e7eb;
   }
-  .level-row.done    { border-color: #7c3aed; }
-  .level-row.done::before { background: #7c3aed; box-shadow: 0 0 0 2px #ede9fe; }
-  .level-row.current { border-color: #a855f7; }
-  .level-row.current::before { background: #a855f7; box-shadow: 0 0 0 2px #e9d5ff; width: 18px; height: 18px; left: -10px; }
+  .level-row.done    { border-color: #1f3c88; }
+  .level-row.done::before { background: #1f3c88; box-shadow: 0 0 0 2px #e9edf8; }
+  .level-row.current { border-color: #3d63c9; }
+  .level-row.current::before { background: #3d63c9; box-shadow: 0 0 0 2px #e9d5ff; width: 18px; height: 18px; left: -10px; }
   .level-row:last-child { border-color: transparent; }
   .lr-emoji { font-size: 1.6rem; flex-shrink: 0; }
   .lr-info  { flex: 1; }
-  .lr-title { font-size: 0.9rem; font-weight: 900; color: #1e1b4b; }
+  .lr-title { font-size: 0.9rem; font-weight: 900; color: #172d66; }
   .lr-xp    { font-size: 0.75rem; color: #888; }
-  .lr-done  { font-size: 0.75rem; color: #7c3aed; font-weight: 700; }
+  .lr-done  { font-size: 0.75rem; color: #1f3c88; font-weight: 700; }
 
   /* ── Avatar picker ── */
   .avatar-picker-overlay {
@@ -205,20 +205,20 @@
     background: white; border-radius: 24px; padding: 28px 24px;
     max-width: 340px; width: 90%; box-shadow: 0 20px 60px rgba(0,0,0,0.3);
   }
-  .avatar-picker-title { font-size: 1.1rem; font-weight: 900; color: #1e1b4b; text-align: center; margin-bottom: 16px; }
+  .avatar-picker-title { font-size: 1.1rem; font-weight: 900; color: #172d66; text-align: center; margin-bottom: 16px; }
   .avatar-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 16px; }
   .avatar-opt {
     font-size: 1.8rem; text-align: center; cursor: pointer; border-radius: 12px;
     padding: 8px; border: 3px solid transparent; transition: border-color 0.15s, background 0.15s;
   }
-  .avatar-opt:hover { background: #ede9fe; }
-  .avatar-opt.selected { border-color: #7c3aed; background: #ede9fe; }
+  .avatar-opt:hover { background: #e9edf8; }
+  .avatar-opt.selected { border-color: #1f3c88; background: #e9edf8; }
   .btn-close-picker {
-    display: block; width: 100%; background: #7c3aed; color: white;
+    display: block; width: 100%; background: #1f3c88; color: white;
     border: none; border-radius: 16px; padding: 11px; font-size: 1rem;
     font-weight: 800; cursor: pointer; font-family: inherit; transition: background 0.15s;
   }
-  .btn-close-picker:hover { background: #5b21b6; }
+  .btn-close-picker:hover { background: #172d66; }
 
   /* ── Name editor ── */
   .name-input {
@@ -252,7 +252,7 @@
 <body>
 
 <!-- Account bar -->
-<div id="accountBar" style="background:linear-gradient(135deg,#1e1b4b,#312e81);padding:10px 16px;display:flex;align-items:center;gap:10px;color:white;font-size:0.85rem;font-weight:700;min-height:44px;"></div>
+<div id="accountBar" style="background:#172d66;padding:10px 16px;display:flex;align-items:center;gap:10px;color:white;font-size:0.85rem;font-weight:700;min-height:44px;"></div>
 
 <!-- Profile switcher bar -->
 <div class="profiles-bar" id="profilesBar" style="display:none"></div>
@@ -308,9 +308,9 @@
 <!-- Not logged in state (hidden by default) -->
 <div id="notLoggedIn" style="display:none;text-align:center;padding:48px 24px 80px;">
   <div style="font-size:4rem;margin-bottom:16px;">🔐</div>
-  <h2 style="font-size:1.4rem;font-weight:900;color:#1e1b4b;margin-bottom:10px;">Tu n'es pas connecté</h2>
+  <h2 style="font-size:1.4rem;font-weight:900;color:#172d66;margin-bottom:10px;">Tu n'es pas connecté</h2>
   <p style="font-size:0.9rem;color:#666;line-height:1.6;max-width:280px;margin:0 auto 24px;">Crée un compte ou connecte-toi pour voir et sauvegarder ta progression.</p>
-  <button onclick="window.EF_AUTH.showAuthModal(function(){location.reload();})" style="background:linear-gradient(135deg,#7c3aed,#a855f7);color:white;border:none;border-radius:16px;padding:14px 32px;font-size:1rem;font-weight:900;cursor:pointer;font-family:inherit;box-shadow:0 4px 20px rgba(124,58,237,0.35);">
+  <button onclick="window.EF_AUTH.showAuthModal(function(){location.reload();})" style="background:#1f3c88;color:white;border:none;border-radius:16px;padding:14px 32px;font-size:1rem;font-weight:900;cursor:pointer;font-family:inherit;box-shadow:0 4px 20px rgba(31,60,136,0.35);">
     Se connecter / Créer un compte
   </button>
 </div>
@@ -344,11 +344,11 @@
       Tu peux aussi exporter une sauvegarde locale en cas de besoin.
     </p>
     <div style="display:flex;gap:10px;flex-wrap:wrap;">
-      <button onclick="exportData()" style="flex:1;padding:11px 14px;font-size:0.9rem;font-weight:800;background:linear-gradient(135deg,#7c3aed,#a855f7);color:white;border:none;border-radius:14px;cursor:pointer;font-family:inherit;">
+      <button onclick="exportData()" style="flex:1;padding:11px 14px;font-size:0.9rem;font-weight:800;background:#1f3c88;color:white;border:none;border-radius:14px;cursor:pointer;font-family:inherit;">
         📥 Exporter la sauvegarde
       </button>
       <label style="flex:1;display:block;">
-        <span style="display:block;padding:11px 14px;font-size:0.9rem;font-weight:800;background:#f5f3ff;border:2px solid #ddd6fe;color:#7c3aed;border-radius:14px;cursor:pointer;text-align:center;">
+        <span style="display:block;padding:11px 14px;font-size:0.9rem;font-weight:800;background:#f4f6fc;border:2px solid #d5dcf2;color:#1f3c88;border-radius:14px;cursor:pointer;text-align:center;">
           📤 Importer une sauvegarde
         </span>
         <input type="file" accept=".json" id="importInput" style="display:none;" onchange="importData(this)">
@@ -391,7 +391,7 @@
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>
 <script src="auth.js?v=7"></script>
-<script src="gamification.js?v=6"></script>
+<script src="gamification.js?v=7"></script>
 <script src="nav.js?v=6"></script>
 <script>
   // ── Account bar ───────────────────────────────────────────────────
@@ -406,7 +406,7 @@
         + '<a href="index.html" style="color:rgba(255,255,255,0.75);font-size:0.82rem;font-weight:700;text-decoration:none;white-space:nowrap;">← Accueil</a>';
     } else if (auth && auth.enabled) {
       bar.innerHTML = '<span style="flex:1;font-size:0.82rem;color:rgba(255,255,255,0.55)">Non connecté</span>'
-        + '<button onclick="window.EF_AUTH.showAuthModal(function(){location.reload();})" style="background:rgba(167,139,250,0.25);border:1.5px solid #a78bfa;color:white;border-radius:10px;padding:6px 14px;font-size:0.8rem;font-weight:800;cursor:pointer;font-family:inherit;white-space:nowrap;">Se connecter</button>';
+        + '<button onclick="window.EF_AUTH.showAuthModal(function(){location.reload();})" style="background:rgba(183,196,240,0.25);border:1.5px solid #b7c4f0;color:white;border-radius:10px;padding:6px 14px;font-size:0.8rem;font-weight:800;cursor:pointer;font-family:inherit;white-space:nowrap;">Se connecter</button>';
     } else {
       bar.style.display = 'none';
     }
@@ -610,7 +610,7 @@
     GS.CLASSE_LIST.forEach(function(c) {
       const btn = document.createElement('button');
       const active = GS.profile().classe === c;
-      btn.style.cssText = 'flex:1;min-width:64px;padding:12px 8px;font-size:1rem;font-weight:900;background:' + (active?'#7c3aed':'#f5f3ff') + ';border:2px solid ' + (active?'#7c3aed':'#ddd6fe') + ';border-radius:12px;color:' + (active?'white':'#5b21b6') + ';cursor:pointer;font-family:inherit;';
+      btn.style.cssText = 'flex:1;min-width:64px;padding:12px 8px;font-size:1rem;font-weight:900;background:' + (active?'#1f3c88':'#f4f6fc') + ';border:2px solid ' + (active?'#1f3c88':'#d5dcf2') + ';border-radius:12px;color:' + (active?'white':'#172d66') + ';cursor:pointer;font-family:inherit;';
       btn.textContent = c;
       btn.addEventListener('click', function() {
         GS.setClasse(c);

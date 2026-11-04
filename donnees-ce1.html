@@ -18,7 +18,7 @@
 <title>Données — CE1 | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 <style>
   .bar-chart {
     display:flex;align-items:flex-end;gap:12px;height:120px;
@@ -26,8 +26,8 @@
   }
   .bar-col { display:flex;flex-direction:column;align-items:center;gap:4px; }
   .bar-fill { width:36px;border-radius:6px 6px 0 0; min-height:4px; transition:height 0.4s; }
-  .bar-lbl { font-size:0.68rem;font-weight:900;color:#065f46; }
-  .bar-val { font-size:0.72rem;font-weight:900;color:#059669; }
+  .bar-lbl { font-size:0.75rem;font-weight:900;color:#065f46; }
+  .bar-val { font-size:0.75rem;font-weight:900;color:#047857; }
 </style>
 </head>
 <body>
@@ -40,7 +40,6 @@
 </header>
 
 <main>
-  <div class="badge-niveau">🌿 CE1 — Organisation et gestion des données</div>
 
   <div class="retiens-box">
     <div class="retiens-title">💡 Je retiens</div>
@@ -79,9 +78,9 @@
   </div>
 
   <div class="exercice-block" style="--accent:#059669">
-    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 1</span> Lire un tableau — fruits vendus <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 1</span> Lire un tableau — fruits vendus <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
     <table style="border-collapse:collapse;width:100%;margin:10px 0;font-size:0.88rem;">
-      <thead><tr style="background:#059669;color:white">
+      <thead><tr style="background:#047857;color:white">
         <th style="padding:8px;border:2px solid #065f46">Fruit</th>
         <th style="padding:8px;border:2px solid #065f46">🍎 Pommes</th>
         <th style="padding:8px;border:2px solid #065f46">🍌 Bananes</th>
@@ -106,7 +105,7 @@
   </div>
 
   <div class="exercice-block" style="--accent:#7c3aed">
-    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 2</span> Lire un diagramme en barres <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 2</span> Lire un diagramme en barres <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
     <div style="background:#f5f3ff;border-radius:14px;padding:14px;margin-bottom:12px;border:2px solid #c4b5fd;">
       <div style="font-size:0.78rem;font-weight:800;color:#5b21b6;margin-bottom:8px">Couleurs préférées (diagramme ci-dessus) :</div>
       <div style="font-size:0.82rem;color:#6b7280;font-weight:700">🔵 Bleu=8 · 🟢 Vert=12 · 🔴 Rouge=5 · 🟡 Jaune=7</div>
@@ -115,7 +114,7 @@
   </div>
 
   <div class="exercice-block" style="--accent:#f59e0b">
-    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 3</span> Lire un pictogramme <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 3</span> Lire un pictogramme <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
     <div style="background:#fef9c3;border-radius:14px;padding:14px;margin-bottom:12px;border:2px solid #fbbf24;">
       <div style="font-size:0.78rem;font-weight:800;color:#78350f;margin-bottom:8px">Livres lus par les élèves (🌟 = 5 livres) :</div>
       <div style="display:grid;gap:6px;font-size:0.82rem;font-weight:700">
@@ -129,12 +128,12 @@
   </div>
 
   <div class="exercice-block" style="--accent:#0ea5e9">
-    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 4</span> Vrai ou Faux — lecture de données <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 4</span> Vrai ou Faux — lecture de données <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">VRAI / FAUX</span></div>
     <div id="ex4"></div>
   </div>
 
   <div class="exercice-block" style="--accent:#10b981">
-    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 5</span> Range les données dans l'ordre <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">ORDRE</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 5</span> Range les données dans l'ordre <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">ORDRE</span></div>
     <div id="ex5"></div>
   </div>
 
@@ -142,7 +141,7 @@
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a> · <a href="programme-5e.html">5ème</a> · <a href="programme-4e.html">4ème</a> · <a href="programme-3e.html">3ème</a></div></footer>
 
-<script src="exercises.js"></script>
+<script src="exercises.js?v=2"></script>
 <script>
 buildQCM([
   { q:'Combien de pommes le lundi ?', correct:'24 pommes', choices:['15 pommes','18 pommes','24 pommes','31 pommes'] },
@@ -187,9 +186,9 @@ buildOrdre([
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>
 <script src="auth.js?v=7"></script>
-<script src="gamification.js?v=6"></script>
+<script src="gamification.js?v=7"></script>
 <script src="nav.js?v=6"></script>
-<script src="related.js"></script>
+<script src="related.js?v=2"></script>
 <script src="seo.js"></script>
 </body>
 </html>

@@ -306,6 +306,10 @@ window._triCheck = function(poolId, gridId, fbId, eid) {
 let _pairSel = null;
 function buildPaires(data, containerId) {
   const container = document.getElementById(containerId);
+  // Format court accepté : [{left, right}, …] = un seul tableau de paires
+  if (data.length && !data[0].pairs && 'left' in data[0]) {
+    data = [{ q: 'Relie chaque élément à celui qui lui correspond.', pairs: data.map(p => [p.left, p.right]) }];
+  }
   data.forEach((item, i) => {
     const eid = `${containerId}__${i}`;
     _EX[eid] = item;

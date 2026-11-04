@@ -18,7 +18,7 @@
 <title>Géométrie — CE2 | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 <style>
   .geo-gallery {
     display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:12px 0;
@@ -28,8 +28,8 @@
     padding:10px 12px;text-align:center;min-width:80px;
   }
   .geo-card svg{display:block;margin:0 auto 4px;}
-  .geo-card .name{font-size:0.7rem;font-weight:900;color:#5b21b6;}
-  .geo-card .info{font-size:0.58rem;color:#6b7280;font-weight:700;}
+  .geo-card .name{font-size:0.75rem;font-weight:900;color:#5b21b6;}
+  .geo-card .info{font-size:0.75rem;color:#6b7280;font-weight:700;}
 </style>
 </head>
 <body>
@@ -42,7 +42,6 @@
 </header>
 
 <main>
-  <div class="badge-niveau">📚 CE2 — Géométrie</div>
 
   <div class="retiens-box">
     <div class="retiens-title">💡 Je retiens</div>
@@ -77,32 +76,32 @@
   </div>
 
   <div class="exercice-block" style="--accent:#7c3aed">
-    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 1</span> Périmètre des figures <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 1</span> Périmètre des figures <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
     <div id="ex1"></div>
   </div>
 
   <div class="exercice-block" style="--accent:#059669">
-    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 2</span> Aire — compter les carreaux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 2</span> Aire — compter les carreaux <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
     <div id="ex2"></div>
   </div>
 
   <div class="exercice-block" style="--accent:#0ea5e9">
-    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 3</span> Cercle : rayon et diamètre <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 3</span> Cercle : rayon et diamètre <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
     <div id="ex3"></div>
   </div>
 
   <div class="exercice-block" style="--accent:#f59e0b">
-    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 4</span> Vrai ou Faux — géométrie <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 4</span> Vrai ou Faux — géométrie <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">VRAI / FAUX</span></div>
     <div id="ex4"></div>
   </div>
 
   <div class="exercice-block" style="--accent:#ef4444">
-    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 5</span> Droites : parallèles ou perpendiculaires ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 5</span> Droites : parallèles ou perpendiculaires ? <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">TRI</span></div>
     <div id="ex5"></div>
   </div>
 
   <div class="exercice-block" style="--accent:#10b981">
-    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Associer figure et formule <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Associer figure et formule <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">PAIRES</span></div>
     <div id="ex6"></div>
   </div>
 
@@ -110,7 +109,7 @@
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a> · <a href="programme-5e.html">5ème</a> · <a href="programme-4e.html">4ème</a> · <a href="programme-3e.html">3ème</a></div></footer>
 
-<script src="exercises.js"></script>
+<script src="exercises.js?v=2"></script>
 <script>
 buildQCM([
   { q:'Un carré de côté 7 cm. Périmètre ?', correct:'28 cm', choices:['14 cm','21 cm','28 cm','49 cm'] },
@@ -173,9 +172,9 @@ buildPaires([
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>
 <script src="auth.js?v=7"></script>
-<script src="gamification.js?v=6"></script>
+<script src="gamification.js?v=7"></script>
 <script src="nav.js?v=6"></script>
-<script src="related.js"></script>
+<script src="related.js?v=2"></script>
 <script src="seo.js"></script>
 </body>
 </html>

@@ -18,18 +18,18 @@
 <title>Cours — CP à 6ème | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 <style>
-.home-header{background:linear-gradient(135deg,#5b21b6 0%,#7c3aed 50%,#3b82f6 100%);color:white;text-align:center;padding:18px 20px 22px}
+.home-header{background:var(--encre);color:white;text-align:center;padding:18px 20px 22px}
 .home-logo{font-size:1.35rem;font-weight:900;letter-spacing:-0.3px;display:flex;align-items:center;justify-content:center;gap:8px}
 .home-logo-icon{width:26px;height:26px;background:white;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;font-size:0.95rem;flex-shrink:0}
-.home-tagline{font-size:0.78rem;opacity:.82;margin-top:4px}
+.home-tagline{font-size:0.9rem;opacity:1;margin-top:4px}
 .page-tabs{display:flex;justify-content:center;gap:10px;margin-top:14px}
 .page-tab{font-size:0.78rem;font-weight:800;border-radius:20px;padding:6px 18px;text-decoration:none;border:1.5px solid rgba(255,255,255,.35);color:white;background:rgba(255,255,255,.18);transition:background .15s}
-.page-tab.active{background:white;color:#5b21b6;border-color:white}
+.page-tab.active{background:white;color:var(--encre);border-color:white}
 .page-tab:hover:not(.active){background:rgba(255,255,255,.32)}
 .level-picker{background:white;border-radius:20px;padding:18px 16px 16px;box-shadow:0 4px 24px rgba(0,0,0,.07);margin:0 0 28px;text-align:center}
-.lp-label{font-size:.75rem;font-weight:900;color:#9ca3af;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px}
+.lp-label{font-size:.75rem;font-weight:900;color:#5f6472;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px}
 .lp-btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
 .lp-btn{display:flex;flex-direction:column;align-items:center;gap:2px;padding:12px 14px 10px;border-radius:14px;border:2.5px solid transparent;cursor:pointer;font-family:inherit;font-weight:900;min-width:64px;transition:transform .15s,box-shadow .15s}
 .lp-btn:hover{transform:scale(1.07);box-shadow:0 6px 18px rgba(0,0,0,.12)}
@@ -58,14 +58,37 @@
 .lcc-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.75rem;flex-shrink:0}
 .lcc-body{text-align:center}
 .lcc-title{font-size:.85rem;font-weight:900;line-height:1.25;margin-bottom:3px;color:#111827}
-.lcc-desc{font-size:.68rem;color:#9ca3af;font-weight:700;line-height:1.3}
-.lc-card-cours{border-color:#c4b5fd;background:#faf5ff}
-.lc-card-cours:hover{border-color:#7c3aed}
-.lcc-badge{font-size:.6rem;font-weight:900;background:#7c3aed;color:white;border-radius:6px;padding:2px 6px;text-transform:uppercase;letter-spacing:.5px;margin-left:6px;vertical-align:middle}
+.lcc-desc{font-size:.8rem;color:var(--texte-2);font-weight:600;line-height:1.35}
+.lc-card-cours{border-color:#d5dcf2;background:#f4f6fc}
+.lc-card-cours:hover{border-color:var(--encre)}
+.lcc-badge{font-size:.75rem;font-weight:800;background:var(--encre);color:white;border-radius:6px;padding:1px 7px;margin-left:6px;vertical-align:middle}
 @media(max-width:480px){.lc-grid{grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:9px}.lp-btn{min-width:52px;padding:10px 10px 8px}.lp-emoji{font-size:1.3rem}}
 .welcome{text-align:center;margin-bottom:24px;padding-top:4px}
 .welcome .bonjour{font-size:1.4rem;font-weight:900}
-.welcome p{font-size:.92rem;color:#6b7280;margin-top:5px}
+.welcome p{font-size:.95rem;color:var(--texte-2);margin-top:5px}
+/* ── Refonte « cahier » : une liste lisible plutôt que des tuiles-icônes ── */
+.level-picker { background: none; box-shadow: none; padding: 0; margin: 0 0 32px; }
+.welcome .bonjour { font-size: 1.6rem; color: var(--encre-fonce); }
+.lc-cat { margin-bottom: 30px; }
+.lc-cat-title {
+  font-size: 1.12rem; text-transform: none; letter-spacing: 0;
+  color: var(--texte); border-bottom: 0; padding-bottom: 0; margin-bottom: 10px;
+}
+.lc-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; }
+.lc-card {
+  flex-direction: row; align-items: center; gap: 12px;
+  padding: 11px 14px; border: 1px solid var(--trait); border-radius: 14px;
+  box-shadow: none; text-align: left;
+}
+.lc-card:hover { transform: translateY(-1px); border-color: #b9c3e3; box-shadow: 0 1px 2px rgba(23,45,102,.06), 0 6px 16px rgba(23,45,102,.07); }
+.lcc-icon { background: none !important; width: 34px; height: 34px; font-size: 1.55rem; border-radius: 0; }
+.lcc-body { text-align: left; min-width: 0; }
+.lcc-title { font-size: .98rem; margin-bottom: 1px; }
+.lcc-desc { font-size: .8rem; color: var(--texte-2); font-weight: 600; line-height: 1.35; }
+.lp-btn:hover { transform: translateY(-2px); }
+@media (max-width: 480px) {
+  .lc-grid { grid-template-columns: 1fr; gap: 6px; }
+}
 </style>
 </head>
 <body>
@@ -90,8 +113,7 @@
   </div>
 
   <div class="level-picker">
-    <div class="lp-label">Choisis ta classe</div>
-    <div class="lp-btns">
+    <div class="lp-btns" role="group" aria-label="Choisis ta classe">
       <button class="lp-btn lp-cp"  onclick="selectLvl('cp', this)"><span class="lp-emoji">🌱</span><span class="lp-name">CP</span></button>
       <button class="lp-btn lp-ce1" onclick="selectLvl('ce1', this)"><span class="lp-emoji">🌿</span><span class="lp-name">CE1</span></button>
       <button class="lp-btn lp-ce2" onclick="selectLvl('ce2', this)"><span class="lp-emoji">📚</span><span class="lp-name">CE2</span></button>
@@ -313,7 +335,7 @@ function selectLvl(lvl, btn) {
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>
 <script src="auth.js?v=7"></script>
-<script src="gamification.js?v=6"></script>
+<script src="gamification.js?v=7"></script>
 <script src="nav.js?v=6"></script>
 <script src="seo.js"></script>
 </body>

@@ -18,15 +18,15 @@
 <title>Opérations posées — CM2 | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 <style>
 .op-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
 .op-card{background:#fef3c7;border:2.5px solid #fcd34d;border-radius:12px;padding:10px;text-align:center;}
-.op-card .op-title{font-size:0.68rem;font-weight:900;color:#78350f;margin-bottom:6px;}
+.op-card .op-title{font-size:0.75rem;font-weight:900;color:#78350f;margin-bottom:6px;}
 .op-card table{margin:0 auto;border-collapse:collapse;}
 .op-card td{width:22px;height:22px;text-align:center;font-size:0.9rem;font-weight:900;color:#1e3a8a;}
 .op-card .op-line td{border-bottom:2.5px solid #b45309;}
-.op-card .ret{font-size:0.6rem;color:#b45309;}
+.op-card .ret{font-size:0.75rem;color:#b45309;}
 </style>
 </head>
 <body>
@@ -39,7 +39,6 @@
 </header>
 
 <main>
-  <div class="badge-niveau">🎯 CM2 — Calcul posé</div>
 
   <div class="retiens-box">
     <div class="retiens-title">💡 Je retiens</div>
@@ -75,32 +74,32 @@
   </div>
 
   <div class="exercice-block" style="--accent:#b45309">
-    <div class="ex-title"><span class="ex-badge" style="background:#b45309">Ex 1</span> Additions et soustractions de grands décimaux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309">Ex 1</span> Additions et soustractions de grands décimaux <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
     <div id="ex1"></div>
   </div>
 
   <div class="exercice-block" style="--accent:#7c3aed">
-    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 2</span> Multiplication ×2 et ×3 chiffres <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 2</span> Multiplication ×2 et ×3 chiffres <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
     <div id="ex2"></div>
   </div>
 
   <div class="exercice-block" style="--accent:#f59e0b">
-    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 3</span> Division décimale posée <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 3</span> Division décimale posée <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
     <div id="ex3"></div>
   </div>
 
   <div class="exercice-block" style="--accent:#059669">
-    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 4</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 4</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">VRAI / FAUX</span></div>
     <div id="ex4"></div>
   </div>
 
   <div class="exercice-block" style="--accent:#ef4444">
-    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 5</span> Chiffre manquant <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 5</span> Chiffre manquant <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
     <div id="ex5"></div>
   </div>
 
   <div class="exercice-block" style="--accent:#10b981">
-    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Associer opération et résultat <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Associer opération et résultat <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">PAIRES</span></div>
     <div id="ex6"></div>
   </div>
 
@@ -108,7 +107,7 @@
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a> · <a href="programme-5e.html">5ème</a> · <a href="programme-4e.html">4ème</a> · <a href="programme-3e.html">3ème</a></div></footer>
 
-<script src="exercises.js"></script>
+<script src="exercises.js?v=2"></script>
 <script>
 buildQCM([
   { card:'234,56 + 78,345 = ?', q:'Additionne', correct:'312,905', choices:['311,905','312,905','312,915','313,905'] },
@@ -160,9 +159,9 @@ buildPaires([
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>
 <script src="auth.js?v=7"></script>
-<script src="gamification.js?v=6"></script>
+<script src="gamification.js?v=7"></script>
 <script src="nav.js?v=6"></script>
-<script src="related.js"></script>
+<script src="related.js?v=2"></script>
 <script src="seo.js"></script>
 </body>
 </html>

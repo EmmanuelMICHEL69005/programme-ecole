@@ -18,7 +18,7 @@
 <title>Géométrie — CE1 | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 <style>
   .shapes-row {
     display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin:14px 0;
@@ -28,11 +28,11 @@
     text-align:center;border:2.5px solid #6ee7b7;min-width:80px;
   }
   .shape-card svg { display:block;margin:0 auto 6px; }
-  .shape-card .name { font-size:0.72rem;font-weight:900;color:#065f46; }
-  .shape-card .props { font-size:0.62rem;color:#6b7280;font-weight:700; }
+  .shape-card .name { font-size:0.75rem;font-weight:900;color:#065f46; }
+  .shape-card .props { font-size:0.75rem;color:#6b7280;font-weight:700; }
   .angle-droit {
     display:inline-block;width:14px;height:14px;
-    border-left:3px solid #dc2626;border-bottom:3px solid #dc2626;
+    border:1px solid #dc262655;border-bottom:3px solid #dc2626;
     vertical-align:middle;margin:0 2px;
   }
 </style>
@@ -47,7 +47,6 @@
 </header>
 
 <main>
-  <div class="badge-niveau">🌿 CE1 — Géométrie</div>
 
   <div class="retiens-box">
     <div class="retiens-title">💡 Je retiens</div>
@@ -86,37 +85,37 @@
   </div>
 
   <div class="exercice-block" style="--accent:#059669">
-    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 1</span> Reconnaître les figures <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 1</span> Reconnaître les figures <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
     <div id="ex1"></div>
   </div>
 
   <div class="exercice-block" style="--accent:#7c3aed">
-    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 2</span> Propriétés des figures <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 2</span> Propriétés des figures <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">VRAI / FAUX</span></div>
     <div id="ex2"></div>
   </div>
 
   <div class="exercice-block" style="--accent:#f59e0b">
-    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 3</span> Périmètre <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 3</span> Périmètre <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
     <div id="ex3"></div>
   </div>
 
   <div class="exercice-block" style="--accent:#0ea5e9">
-    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 4</span> Angles droits — combien ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 4</span> Angles droits — combien ? <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
     <div id="ex4"></div>
   </div>
 
   <div class="exercice-block" style="--accent:#ec4899">
-    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 5</span> Associer figure et propriétés <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">PAIRES</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 5</span> Associer figure et propriétés <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">PAIRES</span></div>
     <div id="ex5"></div>
   </div>
 
   <div class="exercice-block" style="--accent:#10b981">
-    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Trier : avec ou sans angle droit ? <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">TRI</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Trier : avec ou sans angle droit ? <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">TRI</span></div>
     <div id="ex6"></div>
   </div>
 
   <div class="exercice-block" style="--accent:#f97316">
-    <div class="ex-title"><span class="ex-badge" style="background:#f97316">Ex 7</span> Symétrie <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">VRAI / FAUX</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#f97316">Ex 7</span> Symétrie <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">VRAI / FAUX</span></div>
     <div id="ex7"></div>
   </div>
 
@@ -124,7 +123,7 @@
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a> · <a href="programme-5e.html">5ème</a> · <a href="programme-4e.html">4ème</a> · <a href="programme-3e.html">3ème</a></div></footer>
 
-<script src="exercises.js"></script>
+<script src="exercises.js?v=2"></script>
 <script>
 buildQCM([
   { q:'Une figure à 4 côtés égaux et 4 angles droits est…', correct:'Un carré', choices:['Un triangle','Un carré','Un rectangle','Un losange'] },
@@ -195,9 +194,9 @@ buildVF([
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>
 <script src="auth.js?v=7"></script>
-<script src="gamification.js?v=6"></script>
+<script src="gamification.js?v=7"></script>
 <script src="nav.js?v=6"></script>
-<script src="related.js"></script>
+<script src="related.js?v=2"></script>
 <script src="seo.js"></script>
 </body>
 </html>

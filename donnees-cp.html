@@ -18,7 +18,7 @@
 <title>Données et tableaux — CP | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 <style>
   .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
   .btn-choice {
@@ -27,8 +27,8 @@
     transition: background 0.15s;
   }
   .btn-choice:hover { background: #dcfce7; }
-  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
-  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice.correct { background: #15803d; border-color: #166534; color: white; }
+  .btn-choice.wrong   { background: #dc2626; border-color: #b91c1c; color: white; }
   .btn-choice:disabled { opacity: 0.6; cursor: default; }
   .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
   .q-block { background: #f0fdf4; border: 2px solid #bbf7d0; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
@@ -51,7 +51,6 @@
 
 <main>
 
-  <div class="badge-niveau">CP — Organisation des données</div>
 
   <div class="retiens-box">
     <div class="retiens-title">💡 Je retiens</div>
@@ -64,7 +63,7 @@
 
   <!-- EX 1 : Tableau fruits -->
   <div class="exercice-block" style="--accent:#16a34a">
-    <div class="ex-title"><span class="ex-badge" style="background:#16a34a">Ex 1</span> Fruits dans le panier <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#16a34a">Ex 1</span> Fruits dans le panier <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
     <table class="simple-table">
       <thead><tr><th>Fruit</th><th>🍎 Pommes</th><th>🍌 Bananes</th><th>🍊 Oranges</th><th>🍇 Raisins</th></tr></thead>
       <tbody><tr><td>Nombre</td><td>5</td><td>3</td><td>7</td><td>2</td></tr></tbody>
@@ -74,7 +73,7 @@
 
   <!-- EX 2 : Animaux de la ferme -->
   <div class="exercice-block" style="--accent:#0ea5e9">
-    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 2</span> Animaux à la ferme <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM + VF</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 2</span> Animaux à la ferme <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM + VF</span></div>
     <table class="simple-table">
       <thead><tr><th>Animal</th><th>🐄 Vaches</th><th>🐷 Cochons</th><th>🐔 Poules</th><th>🐑 Moutons</th></tr></thead>
       <tbody><tr><td>Nombre</td><td>4</td><td>6</td><td>10</td><td>8</td></tr></tbody>
@@ -84,7 +83,7 @@
 
   <!-- EX 3 : Pictogramme -->
   <div class="exercice-block" style="--accent:#7c3aed">
-    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 3</span> Lire un pictogramme <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 3</span> Lire un pictogramme <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
     <div style="background:#dcfce7;border-radius:14px;padding:16px;margin-bottom:14px;border:2px solid #4ade80;">
       <p style="font-size:0.88rem;font-weight:800;margin:0 0 10px;color:#166534;">Jours de beau temps (chaque ☀️ = 2 jours)</p>
       <div style="display:grid;gap:8px;">
@@ -98,7 +97,7 @@
 
   <!-- EX 4 : Sport préféré -->
   <div class="exercice-block" style="--accent:#f59e0b">
-    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 4</span> Sport préféré — lire les données <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">QCM</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 4</span> Sport préféré — lire les données <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
     <div style="background:#fef9c3;border-radius:14px;padding:14px;margin-bottom:14px;border:2px solid #fbbf24;">
       <p style="font-size:0.88rem;font-weight:800;margin:0 0 8px;color:#78350f;">Sports préférés des élèves de la classe :</p>
       <div style="display:flex;gap:14px;flex-wrap:wrap;">
@@ -112,7 +111,7 @@
 
   <!-- EX 5 : TRI données -->
   <div class="exercice-block" style="--accent:#10b981">
-    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 5</span> Trier les animaux par taille <span style="margin-left:auto;font-size:0.72rem;color:#9ca3af;font-weight:700">ORDRE</span></div>
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 5</span> Trier les animaux par taille <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">ORDRE</span></div>
     <div id="ex5"></div>
   </div>
 
@@ -120,7 +119,7 @@
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a> · <a href="programme-5e.html">5ème</a> · <a href="programme-4e.html">4ème</a> · <a href="programme-3e.html">3ème</a></div></footer>
 
-<script src="exercises.js"></script>
+<script src="exercises.js?v=2"></script>
 <script>
 buildQCM([
   { q:'Quel fruit est le plus nombreux dans le panier ?', correct:'🍊 Oranges (7)', choices:['🍎 Pommes (5)','🍌 Bananes (3)','🍊 Oranges (7)','🍇 Raisins (2)'] },
@@ -163,9 +162,9 @@ buildOrdre([
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>
 <script src="auth.js?v=7"></script>
-<script src="gamification.js?v=6"></script>
+<script src="gamification.js?v=7"></script>
 <script src="nav.js?v=6"></script>
-<script src="related.js"></script>
+<script src="related.js?v=2"></script>
 <script src="seo.js"></script>
 </body>
 </html>

@@ -15,10 +15,10 @@
 <meta property="og:site_name" content="École Facile">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 <style>
 :root{--lc1:#1d4ed8;--lc2:#3b82f6;--lb:#93c5fd;--ld:#1e3a8a;--lbg:#eff6ff;--lt:#1e3a8a}
-.pil-hero{background:linear-gradient(135deg,#1d4ed8,#3b82f6);color:#fff;text-align:center;padding:24px 16px 20px;position:relative}
+.pil-hero{background:var(--lc1);color:#fff;text-align:center;padding:24px 16px 20px;position:relative}
 .pil-hero h1{font-size:1.8rem;font-weight:900;margin:6px 0 6px}
 .pil-hero p{font-size:.87rem;opacity:.9;margin:0 0 14px}
 .pil-back{position:absolute;top:12px;left:12px;background:rgba(255,255,255,.2);color:#fff;font-size:.75rem;font-weight:800;border-radius:14px;padding:5px 11px;text-decoration:none}
@@ -28,7 +28,7 @@
 .pil-section h2{font-size:.9rem;font-weight:900;color:var(--ld);text-transform:uppercase;letter-spacing:.5px;margin:0 0 10px;padding:0 0 5px;border-bottom:2px solid var(--lb)}
 .pil-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
 @media(min-width:480px){.pil-grid{grid-template-columns:repeat(3,1fr)}}
-.pil-card{background:#fff;border-radius:10px;padding:10px 11px;box-shadow:0 1px 4px rgba(0,0,0,.06);border-top:3px solid var(--lc1)}
+.pil-card{background:#fff;border-radius:10px;padding:10px 11px;border:1px solid #ece6d6}
 .pil-card-name{font-size:.85rem;font-weight:900;color:var(--lt);margin-bottom:7px}
 .pil-links{display:flex;gap:5px;flex-wrap:wrap}
 .pil-links a{font-size:.72rem;font-weight:800;padding:3px 9px;border-radius:7px;text-decoration:none;white-space:nowrap}
@@ -43,15 +43,15 @@
 .pil-seo-block p b{color:var(--ld);font-weight:800}
 .pil-matiere-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
 @media(min-width:480px){.pil-matiere-grid{grid-template-columns:repeat(3,1fr)}}
-.pil-matiere-card{background:#fff;border-radius:10px;padding:10px 12px;box-shadow:0 1px 4px rgba(0,0,0,.06);border-left:4px solid var(--lc1)}
+.pil-matiere-card{background:#fff;border-radius:10px;padding:10px 12px;border:1px solid #ece6d6}
 .pil-matiere-card strong{display:block;font-size:.82rem;font-weight:900;color:var(--ld);margin-bottom:4px}
 .pil-matiere-card span{font-size:.76rem;font-weight:700;color:#4b5563;line-height:1.5}
 .pil-tags-wrap{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0 12px}
 .pil-tag{background:var(--lbg);color:var(--ld);border:1px solid var(--lb);border-radius:20px;padding:3px 10px;font-size:.74rem;font-weight:800}
 .pil-tip-box{background:#fef9c3;border-radius:10px;padding:10px 13px;margin:10px 0;font-size:.82rem;font-weight:800;color:#713f12;line-height:1.5}
 .pil-faq{margin-top:8px}
-.pil-faq-item{background:#fff;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,.06);margin-bottom:8px;overflow:hidden}
-.pil-faq-item h3{font-size:.84rem;font-weight:900;color:var(--ld);margin:0;padding:11px 14px;cursor:pointer;background:var(--lbg);border-left:4px solid var(--lc1)}
+.pil-faq-item{background:#fff;border-radius:10px;border:1px solid #ece6d6;margin-bottom:8px;overflow:hidden}
+.pil-faq-item h3{font-size:.84rem;font-weight:900;color:var(--ld);margin:0;padding:11px 14px;cursor:pointer;background:var(--lbg)}
 .pil-faq-item p{font-size:.82rem;font-weight:700;color:#374151;line-height:1.65;margin:0;padding:10px 14px}
 .pil-steps{counter-reset:step;margin:8px 0}
 .pil-step{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px;font-size:.84rem;font-weight:500;color:#374151;line-height:1.65}
@@ -63,7 +63,6 @@
 <body>
 <header class="pil-hero">
   <a href="index.html" class="pil-back">← Accueil</a>
-  <div class="badge-niveau">CM1</div>
   <h1>Tout le programme CM1</h1>
   <p>Exercices interactifs · Fiches leçon · Maths · Français · Histoire</p>
   <div class="pil-anchors">
@@ -352,9 +351,9 @@
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>
 <script src="auth.js?v=7"></script>
-<script src="gamification.js?v=6"></script>
+<script src="gamification.js?v=7"></script>
 <script src="nav.js?v=6"></script>
-<script src="related.js"></script>
+<script src="related.js?v=2"></script>
 <script src="seo.js"></script>
 </body>
 </html>
