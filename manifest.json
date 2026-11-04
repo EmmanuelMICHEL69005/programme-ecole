@@ -1,7 +1,7 @@
 {
   "name": "École Facile",
   "short_name": "École Facile",
-  "description": "Exercices interactifs CP → 6ème — Maths, Histoire-Géo, EPS",
+  "description": "Exercices interactifs du CP à la 3e : maths, français, histoire-géo, anglais, EPS",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
