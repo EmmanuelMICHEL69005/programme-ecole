@@ -2,14 +2,14 @@
    Stratégie : cache-first pour les assets statiques,
    network-first pour les pages HTML */
 
-var CACHE = 'ef-v2';
+var CACHE = 'ef-v3';
 
 var PRECACHE = [
   '/',
   '/index.html',
   '/favicon.svg',
   '/manifest.json',
-  'https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap'
+  'https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap'
 ];
 
 // ── Installation : précache des assets essentiels ─────────────

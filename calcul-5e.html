@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="École Facile">
+<meta name="application-name" content="École Facile">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/calcul-5e.html">
+<meta property="og:title" content="Calcul & divisibilité — 5ème | École Facile">
+<meta property="og:description" content="Exercices interactifs priorités opératoires et divisibilité 5e — correction immédiate, XP et badges. Gratuit sur École Facile.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/calcul-5e.html">
+<meta name="description" content="Exercices interactifs priorités opératoires et divisibilité 5e — correction immédiate, XP et badges. Gratuit sur École Facile.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calcul & divisibilité — 5ème | École Facile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=4">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #bae6fd; border-radius: 22px;
+    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #0c4a6e;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #f0f9ff; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #f0f9ff; border: 2px solid #bae6fd; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .alg-card { font-size: 1.5rem; font-weight: 900; color: #0c4a6e; text-align: center; padding: 14px; background: #e0f2fe; border-radius: 14px; margin-bottom: 14px; }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: #0369a1;">
+  <span class="emoji-header">➗</span>
+  <h1>Calcul & divisibilité</h1>
+  <p>Priorités · distributivité · division · multiples et diviseurs</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">5ème — Opérations</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
+      🧮 <strong>Priorités</strong> : d'abord les parenthèses, puis × et ÷, enfin + et −<br>
+      🔁 <strong>Distributivité</strong> : k × (a + b) = k×a + k×b<br>
+      ➗ Dans <strong>17 = 3 × 5 + 2</strong>, le quotient est 5 et le reste est 2<br>
+      ✅ Divisible par <strong>3</strong> (ou <strong>9</strong>) si la somme des chiffres l'est · par <strong>5</strong> si finit par 0 ou 5
+    </div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 1</span> Priorités opératoires</div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 2</span> Distributivité</div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 3</span> Division euclidienne</div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 4</span> Multiples, diviseurs, divisibilité</div>
+    <div id="ex4"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a> · <a href="programme-5e.html">5ème</a> · <a href="programme-4e.html">4ème</a> · <a href="programme-3e.html">3ème</a></div></footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    d.innerHTML = `
+      ${item.card ? `<div class="alg-card">${item.card}</div>` : ''}
+      <div class="q-text">${item.q}</div>
+      <div class="qcm-row" id="${id}-r${i}">
+        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+      </div>
+      <div class="feedback-line" id="${id}-f${i}"></div>
+    `;
+    c.appendChild(d);
+  });
+}
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([{"q": "Calcule : 3 + 4 × 2", "correct": "11", "choices": ["11", "14", "10", "24"]}, {"q": "Calcule : (3 + 4) × 2", "correct": "14", "choices": ["14", "11", "10", "24"]}, {"q": "Calcule : 20 − 12 ÷ 4", "correct": "17", "choices": ["17", "2", "8", "5"]}, {"q": "Calcule : 2 × (5 + 3) − 6", "correct": "10", "choices": ["10", "12", "7", "16"]}], 'ex1');
+buildQ([{"q": "Développe : 5 × (10 + 2)", "correct": "5×10 + 5×2", "choices": ["5×10 + 5×2", "5×10 + 2", "5 + 10 × 2", "5×10 × 5×2"]}, {"q": "Calcule malin : 7 × 102 = 7 × (100 + 2)", "correct": "714", "choices": ["714", "702", "728", "7002"]}, {"q": "Calcule malin : 25 × 8 + 25 × 2 = 25 × (8 + 2)", "correct": "250", "choices": ["250", "200", "50", "260"]}, {"q": "4 × 99 = 4 × (100 − 1) = ?", "correct": "396", "choices": ["396", "400", "404", "3996"]}], 'ex2');
+buildQ([{"q": "Dans la division de 47 par 6 : quotient et reste ?", "correct": "quotient 7, reste 5", "choices": ["quotient 7, reste 5", "quotient 6, reste 5", "quotient 7, reste 6", "quotient 8, reste 1"]}, {"q": "Complète : 100 = 8 × 12 + …", "correct": "4", "choices": ["4", "0", "8", "12"]}, {"q": "Quel est le quotient de 6,4 ÷ 0,8 ? (indice : ×10)", "correct": "8", "choices": ["8", "0,8", "80", "0,08"]}, {"q": "Divise : 12 ÷ 0,5", "correct": "24", "choices": ["24", "6", "2,4", "0,24"]}], 'ex3');
+buildQ([{"q": "Le nombre 738 est-il divisible par 3 ? (7+3+8 = 18)", "correct": "Oui", "choices": ["Oui", "Non"]}, {"q": "Lequel est divisible par 9 ?", "correct": "504", "choices": ["504", "511", "480", "533"]}, {"q": "Quel nombre est un diviseur commun à 12 et 18 ?", "correct": "6", "choices": ["6", "8", "5", "12"]}, {"q": "Lequel est un nombre premier ?", "correct": "17", "choices": ["17", "21", "15", "9"]}], 'ex4');
+</script>
+
+<script src="sync.js"></script>
+<script src="firebase-keys.js"></script>
+<script src="auth.js?v=7"></script>
+<script src="gamification.js?v=6"></script>
+<script src="nav.js?v=6"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>

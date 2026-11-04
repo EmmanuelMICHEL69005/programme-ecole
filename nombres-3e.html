@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="École Facile">
+<meta name="application-name" content="École Facile">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/nombres-3e.html">
+<meta property="og:title" content="Rationnels, puissances et notation scientifique — 3ème | École Facile">
+<meta property="og:description" content="Exercices interactifs 3e — correction immédiate, XP et badges. Gratuit sur École Facile.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/nombres-3e.html">
+<meta name="description" content="Exercices interactifs 3e — correction immédiate, XP et badges. Gratuit sur École Facile.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rationnels, puissances et notation scientifique — 3ème | École Facile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=4">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #bae6fd; border-radius: 22px;
+    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #0c4a6e;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #f0f9ff; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #f0f9ff; border: 2px solid #bae6fd; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .alg-card { font-size: 1.5rem; font-weight: 900; color: #0c4a6e; text-align: center; padding: 14px; background: #e0f2fe; border-radius: 14px; margin-bottom: 14px; }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: #0369a1;">
+  <span class="emoji-header">🔢</span>
+  <h1>Rationnels, puissances et notation scientifique</h1>
+  <p>Fractions irréductibles · puissances négatives · notation scientifique</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">3ème — Nombres et calculs</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
+      ✂️ <strong>Fraction irréductible</strong> : numérateur et dénominateur sans diviseur commun<br>
+      ⬇️ <strong>a^(−n)</strong> = 1 / a^n · 10^(−2) = 0,01<br>
+      🔬 <strong>Notation scientifique</strong> : a × 10^n avec 1 ≤ a < 10
+    </div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 1</span> Fractions</div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 2</span> Puissances négatives</div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 3</span> Notation scientifique</div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 4</span> Problèmes</div>
+    <div id="ex4"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a> · <a href="programme-5e.html">5ème</a> · <a href="programme-4e.html">4ème</a> · <a href="programme-3e.html">3ème</a></div></footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    d.innerHTML = `
+      ${item.card ? `<div class="alg-card">${item.card}</div>` : ''}
+      <div class="q-text">${item.q}</div>
+      <div class="qcm-row" id="${id}-r${i}">
+        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+      </div>
+      <div class="feedback-line" id="${id}-f${i}"></div>
+    `;
+    c.appendChild(d);
+  });
+}
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ La bonne réponse : ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([{"q": "Simplifie 36/48.", "correct": "3/4", "choices": ["3/4", "2/3", "4/5", "5/6"]}, {"q": "5/8 + 1/4 = ?", "correct": "7/8", "choices": ["7/8", "3/8", "6/12", "1/2"]}, {"q": "(2/3) × (9/4) = ?", "correct": "3/2", "choices": ["3/2", "18/7", "2/3", "6/12"]}, {"q": "Simplifie 84/126.", "correct": "2/3", "choices": ["2/3", "3/2", "7/9", "1/2"]}], 'ex1');
+buildQ([{"q": "2^(−3) = ?", "correct": "1/8", "choices": ["1/8", "−8", "−1/8", "8"]}, {"q": "10^(−2) = ?", "correct": "0,01", "choices": ["0,01", "−100", "0,1", "100"]}, {"q": "x^3 × x^(−5) = ?", "correct": "x^(−2)", "choices": ["x^(−2)", "x^(−8)", "x^8", "x²"]}, {"q": "(−3)^(−1) = ?", "correct": "−1/3", "choices": ["−1/3", "1/3", "−3", "3"]}], 'ex2');
+buildQ([{"q": "Écris 4500 en notation scientifique.", "correct": "4,5 × 10³", "choices": ["4,5 × 10³", "45 × 10²", "0,45 × 10⁴", "4,5 × 10⁴"]}, {"q": "Écris 0,0032 en notation scientifique.", "correct": "3,2 × 10⁻³", "choices": ["3,2 × 10⁻³", "3,2 × 10³", "32 × 10⁻⁴", "0,32 × 10⁻²"]}, {"q": "Écriture décimale de 3 × 10⁵ ?", "correct": "300 000", "choices": ["300 000", "30 000", "3 000 000", "3 × 10 000"]}, {"q": "Un ordre de grandeur de 6,2 × 10⁶ est…", "correct": "6 millions", "choices": ["6 millions", "62 000", "600", "62 millions"]}], 'ex3');
+buildQ([{"q": "Le nombre dont l'inverse vaut 4/7 est…", "correct": "7/4", "choices": ["7/4", "4/7", "−7/4", "−4/7"]}, {"q": "(2/5) ÷ (4/15) = ?", "correct": "3/2", "choices": ["3/2", "8/75", "2/3", "6/20"]}, {"q": "Quel pourcentage d'une heure représente un quart d'heure ?", "correct": "25 %", "choices": ["25 %", "15 %", "4 %", "75 %"]}, {"q": "Une fraction est égale à 0,125. Laquelle ?", "correct": "1/8", "choices": ["1/8", "1/4", "1/5", "5/8"]}], 'ex4');
+</script>
+
+<script src="sync.js"></script>
+<script src="firebase-keys.js"></script>
+<script src="auth.js?v=7"></script>
+<script src="gamification.js?v=6"></script>
+<script src="nav.js?v=6"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>

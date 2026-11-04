@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="École Facile">
+<meta name="application-name" content="École Facile">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/espace-5e.html">
+<meta property="og:title" content="Espace & volumes — 5ème | École Facile">
+<meta property="og:description" content="Exercices interactifs solides, volumes et aire du disque 5e — correction immédiate, XP et badges. Gratuit sur École Facile.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/espace-5e.html">
+<meta name="description" content="Exercices interactifs solides, volumes et aire du disque 5e — correction immédiate, XP et badges. Gratuit sur École Facile.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Espace & volumes — 5ème | École Facile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=4">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #bae6fd; border-radius: 22px;
+    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #0c4a6e;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #f0f9ff; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #f0f9ff; border: 2px solid #bae6fd; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .alg-card { font-size: 1.5rem; font-weight: 900; color: #0c4a6e; text-align: center; padding: 14px; background: #e0f2fe; border-radius: 14px; margin-bottom: 14px; }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: #0369a1;">
+  <span class="emoji-header">🧊</span>
+  <h1>Espace & volumes</h1>
+  <p>Solides · patrons · volumes · aire du disque</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">5ème — Espace et géométrie</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
+      🧊 <strong>Volume du pavé</strong> = Longueur × largeur × hauteur<br>
+      📦 <strong>Prisme droit et cylindre</strong> : Volume = aire de la base × hauteur<br>
+      ⚪ <strong>Aire du disque</strong> = π × rayon × rayon (π ≈ 3,14)<br>
+      🥤 <strong>1 L = 1 dm³</strong> · 1 000 L = 1 m³
+    </div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 1</span> Reconnaître solides et patrons</div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 2</span> Volume du cube et du pavé</div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 3</span> Volume du prisme et du cylindre</div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 4</span> Aire du disque et conversions</div>
+    <div id="ex4"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a> · <a href="programme-5e.html">5ème</a> · <a href="programme-4e.html">4ème</a> · <a href="programme-3e.html">3ème</a></div></footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    d.innerHTML = `
+      ${item.card ? `<div class="alg-card">${item.card}</div>` : ''}
+      <div class="q-text">${item.q}</div>
+      <div class="qcm-row" id="${id}-r${i}">
+        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+      </div>
+      <div class="feedback-line" id="${id}-f${i}"></div>
+    `;
+    c.appendChild(d);
+  });
+}
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ C\'était ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([{"q": "Un solide avec 6 faces rectangulaires est un…", "correct": "pavé droit", "choices": ["pavé droit", "cylindre", "pyramide", "cône"]}, {"q": "Le patron d'un cylindre est composé de…", "correct": "2 disques et 1 rectangle", "choices": ["2 disques et 1 rectangle", "6 carrés", "2 triangles et 3 rectangles", "1 disque et 1 triangle"]}, {"q": "Un prisme droit dont la base est un triangle a … faces.", "correct": "5", "choices": ["5", "4", "6", "3"]}, {"q": "En perspective cavalière, les arêtes cachées se dessinent…", "correct": "en pointillés", "choices": ["en pointillés", "en rouge", "en gras", "on ne les dessine pas"]}], 'ex1');
+buildQ([{"q": "Volume d'un cube d'arête 3 cm ?", "correct": "27 cm³", "choices": ["27 cm³", "9 cm³", "18 cm³", "12 cm³"]}, {"q": "Volume d'un pavé 5 × 4 × 2 (cm) ?", "correct": "40 cm³", "choices": ["40 cm³", "11 cm³", "20 cm³", "22 cm³"]}, {"q": "Volume d'un cube d'arête 10 cm ?", "correct": "1 000 cm³", "choices": ["1 000 cm³", "100 cm³", "300 cm³", "30 cm³"]}, {"q": "Un pavé a un volume de 24 cm³ et une base d'aire 6 cm². Sa hauteur ?", "correct": "4 cm", "choices": ["4 cm", "18 cm", "144 cm", "3 cm"]}], 'ex2');
+buildQ([{"q": "Prisme droit : aire de base 12 cm², hauteur 5 cm. Volume ?", "correct": "60 cm³", "choices": ["60 cm³", "17 cm³", "24 cm³", "30 cm³"]}, {"q": "Cylindre : aire de base 10 cm², hauteur 7 cm. Volume ?", "correct": "70 cm³", "choices": ["70 cm³", "17 cm³", "35 cm³", "700 cm³"]}, {"q": "La formule du volume d'un prisme droit est…", "correct": "aire de base × hauteur", "choices": ["aire de base × hauteur", "périmètre × hauteur", "base + hauteur", "base × base"]}, {"q": "Un cylindre de rayon 2 cm (base ≈ 12,56 cm²) et de hauteur 10 cm a un volume ≈…", "correct": "125,6 cm³", "choices": ["125,6 cm³", "62,8 cm³", "251,2 cm³", "40 cm³"]}], 'ex3');
+buildQ([{"q": "Aire d'un disque de rayon 5 cm (π ≈ 3,14) ≈", "correct": "78,5 cm²", "choices": ["78,5 cm²", "31,4 cm²", "15,7 cm²", "25 cm²"]}, {"q": "Aire d'un disque de rayon 10 cm (π ≈ 3,14) ≈", "correct": "314 cm²", "choices": ["314 cm²", "62,8 cm²", "31,4 cm²", "100 cm²"]}, {"q": "Combien de litres dans 1 m³ ?", "correct": "1 000 L", "choices": ["1 000 L", "100 L", "10 L", "1 L"]}, {"q": "2,5 L = … cm³", "correct": "2 500 cm³", "choices": ["2 500 cm³", "250 cm³", "25 cm³", "25 000 cm³"]}], 'ex4');
+</script>
+
+<script src="sync.js"></script>
+<script src="firebase-keys.js"></script>
+<script src="auth.js?v=7"></script>
+<script src="gamification.js?v=6"></script>
+<script src="nav.js?v=6"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>

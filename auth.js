@@ -1,6 +1,10 @@
 /* ============================================================
    AUTH — Firebase Authentication (email + mot de passe)
-   Profil stocké dans Firebase Realtime Database sous users/{uid}/profile
+   Un compte peut porter PLUSIEURS profils (un par enfant) :
+     users/{uid}/profiles/{pid}   → chaque profil
+     users/{uid}/activeProfile    → pid du profil actif
+   L'ancien users/{uid}/profile (profil unique) est migré automatiquement
+   vers users/{uid}/profiles/main au premier chargement.
 
    CONFIG dans firebase-keys.js (non versionné) ou via window.* :
      window.EF_FIREBASE_API_KEY
@@ -23,13 +27,16 @@ window.EF_AUTH = (function () {
 
   let _auth = null, _db = null;
   let _user = null;
-  let _profile = null;
+  let _profile = null;          // profil actif (rétro-compatible)
+  let _profiles = {};           // { pid: profil } — plusieurs profils par compte
+  let _activeId = null;         // pid du profil actif
+  let _loadedUid = null;        // uid pour lequel _profiles a été chargé
   let _ready = false;
   let _readyCbs = [];
   let _changeCbs = [];
 
   const AVATARS = ['🌟','⭐','🦋','🌈','🦄','🐱','🐼','🐸','🦊','🐢','🌺','🍭','🎀','🚀','⚡','🎯','🏆','💎','🌙','🦸‍♀️'];
-  const CLASSES = ['CP','CE1','CE2','CM1','CM2','6e'];
+  const CLASSES = ['CP','CE1','CE2','CM1','CM2','6e','5e','4e','3e'];
 
   // ── SDK loading ───────────────────────────────────────────────
   function loadScript(src, cb) {
@@ -61,17 +68,69 @@ window.EF_AUTH = (function () {
     });
   }
 
-  // ── Profile DB ────────────────────────────────────────────────
-  function readProfile(uid, cb) {
-    _db.ref('users/' + uid + '/profile').once('value')
-      .then(snap => cb(snap.exists() ? snap.val() : null))
-      .catch(() => cb(null));
+  // ── Profils DB (plusieurs profils par compte) ────────────────
+  function genPid() {
+    return 'p_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
   }
 
-  function writeProfile(uid, data, cb) {
+  function blankProfile(uid, data) {
+    data = data || {};
+    return {
+      id: uid, pid: data.pid || genPid(),
+      name: data.name || '', avatar: data.avatar || '🌟', classe: data.classe || 'CE2',
+      xp: 0, level: 1, badges: [], tot: 0, streak: 0, maxStreak: 0,
+      pages: {}, days: [], completedPages: {}, createdAt: Date.now(),
+    };
+  }
+
+  function profilesList() {
+    return Object.keys(_profiles)
+      .map(pid => Object.assign({}, _profiles[pid], { pid }))
+      .sort((a, b) => (a.createdAt || 0) - (b.createdAt || 0));
+  }
+
+  // Charge tous les profils du compte + migre l'ancien profil unique si besoin
+  function loadAll(uid, cb) {
+    _db.ref('users/' + uid).once('value').then(function (snap) {
+      const root = snap.val() || {};
+      let profiles = (root.profiles && typeof root.profiles === 'object') ? root.profiles : null;
+      let activeId = root.activeProfile || null;
+
+      if (!profiles || !Object.keys(profiles).length) {
+        if (root.profile && root.profile.name) {
+          // Migration : l'ancien profil unique devient le profil "principal"
+          const migrated = Object.assign({}, root.profile, { pid: 'main' });
+          profiles = { main: migrated };
+          activeId = 'main';
+          _db.ref('users/' + uid + '/profiles/main').set(migrated).catch(() => {});
+          _db.ref('users/' + uid + '/activeProfile').set('main').catch(() => {});
+        } else {
+          profiles = {};
+          activeId = null;
+        }
+      }
+      if (!activeId || !profiles[activeId]) activeId = Object.keys(profiles)[0] || null;
+
+      _profiles  = profiles;
+      _activeId  = activeId;
+      _profile   = activeId ? Object.assign({}, profiles[activeId], { pid: activeId }) : null;
+      _loadedUid = uid;
+      cb();
+    }).catch(function () {
+      _profiles = {}; _activeId = null; _profile = null; _loadedUid = uid;
+      cb();
+    });
+  }
+
+  // Écrit le profil actif dans users/{uid}/profiles/{activeId}
+  function writeActive(data, cb) {
+    if (!_user || !_db || !_activeId) { if (cb) cb(false); return; }
     const clean = JSON.parse(JSON.stringify(data));
-    _db.ref('users/' + uid + '/profile')
-      .set(Object.assign({}, clean, { _updatedAt: Date.now() }))
+    clean.pid = _activeId;
+    clean._updatedAt = Date.now();
+    _profiles[_activeId] = clean;
+    _profile = Object.assign({}, clean);
+    _db.ref('users/' + _user.uid + '/profiles/' + _activeId).set(clean)
       .then(() => { if (cb) cb(true); })
       .catch(() => { if (cb) cb(false); });
   }
@@ -95,17 +154,16 @@ window.EF_AUTH = (function () {
       _auth.onAuthStateChanged(function (user) {
         _user = user;
         if (user) {
-          // If we already have this user's profile in memory (e.g. just signed up), don't re-fetch
-          if (_profile && _profile.id === user.uid) {
+          // Profils déjà chargés pour cet utilisateur (ex : inscription qui vient d'avoir lieu)
+          if (_loadedUid === user.uid) {
             if (!_ready) fireReady(); else fireChange();
             return;
           }
-          readProfile(user.uid, function (profile) {
-            _profile = profile;
+          loadAll(user.uid, function () {
             if (!_ready) fireReady(); else fireChange();
           });
         } else {
-          _profile = null;
+          _profiles = {}; _activeId = null; _profile = null; _loadedUid = null;
           if (!_ready) fireReady(); else fireChange();
         }
       });
@@ -127,8 +185,8 @@ window.EF_AUTH = (function () {
       }
       @keyframes efFadeIn { from { opacity:0 } to { opacity:1 } }
       .ef-auth-card {
-        background: linear-gradient(160deg, #1e1b4b 0%, #312e81 55%, #1e3a5f 100%);
-        border: 1.5px solid rgba(167,139,250,0.3);
+        background: #172d66;
+        border: 1.5px solid rgba(183,196,240,0.3);
         border-radius: 24px; padding: 28px 24px 24px;
         width: 100%; max-width: 390px; color: white;
         box-shadow: 0 24px 64px rgba(0,0,0,0.55);
@@ -148,7 +206,7 @@ window.EF_AUTH = (function () {
         font-family:inherit; font-weight:800; font-size:0.85rem;
         cursor:pointer; transition:all 0.15s;
       }
-      .ef-auth-tab.active { background:rgba(167,139,250,0.22); border-color:#a78bfa; color:white; }
+      .ef-auth-tab.active { background:rgba(183,196,240,0.22); border-color:#b7c4f0; color:white; }
       .ef-auth-field { margin-bottom:13px; }
       .ef-auth-label {
         display:block; font-size:0.7rem; font-weight:900;
@@ -162,7 +220,7 @@ window.EF_AUTH = (function () {
         font-family:inherit; font-size:0.92rem; font-weight:700;
         outline:none; transition:border-color 0.15s;
       }
-      .ef-auth-input:focus { border-color:#a78bfa; }
+      .ef-auth-input:focus { border-color:#b7c4f0; }
       .ef-auth-input::placeholder { color:rgba(255,255,255,0.3); }
       .ef-auth-sep {
         text-align:center; color:rgba(255,255,255,0.28);
@@ -176,7 +234,7 @@ window.EF_AUTH = (function () {
         cursor:pointer; display:flex; align-items:center; justify-content:center;
         transition:all 0.12s; line-height:1;
       }
-      .ef-auth-avatar-btn.selected { border-color:#a78bfa; background:rgba(167,139,250,0.25); }
+      .ef-auth-avatar-btn.selected { border-color:#b7c4f0; background:rgba(183,196,240,0.25); }
       .ef-auth-classe-row { display:flex; gap:5px; flex-wrap:wrap; }
       .ef-auth-classe-btn {
         padding:6px 12px; border-radius:9px;
@@ -185,14 +243,14 @@ window.EF_AUTH = (function () {
         font-family:inherit; font-size:0.8rem; font-weight:900;
         cursor:pointer; transition:all 0.12s;
       }
-      .ef-auth-classe-btn.selected { border-color:#a78bfa; background:rgba(167,139,250,0.22); color:white; }
+      .ef-auth-classe-btn.selected { border-color:#b7c4f0; background:rgba(183,196,240,0.22); color:white; }
       .ef-auth-btn {
         width:100%; padding:13px; border-radius:13px; border:none;
-        background:linear-gradient(135deg, #7c3aed, #a855f7);
-        color:white; font-family:inherit; font-size:0.98rem; font-weight:900;
+        background:#fff;
+        color:#172d66; font-family:inherit; font-size:0.98rem; font-weight:900;
         cursor:pointer; margin-top:4px;
         transition:opacity 0.15s, transform 0.15s;
-        box-shadow:0 4px 20px rgba(124,58,237,0.38);
+        box-shadow:0 4px 0 rgba(0,0,0,0.28);
       }
       .ef-auth-btn:hover { opacity:0.92; transform:translateY(-1px); }
       .ef-auth-btn:disabled { opacity:0.45; cursor:default; transform:none; }
@@ -265,21 +323,26 @@ window.EF_AUTH = (function () {
       setLoading(true);
       _auth.createUserWithEmailAndPassword(email, password)
         .then(function (cred) {
+          const pid = 'main';
           const profile = {
-            id: cred.user.uid, name, avatar: selAvatar, classe: selClasse,
+            id: cred.user.uid, pid, name, avatar: selAvatar, classe: selClasse,
             xp: 0, level: 1, badges: [], tot: 0, streak: 0, maxStreak: 0,
             pages: {}, days: [], completedPages: {}, createdAt: Date.now(),
           };
-          _profile = profile;
-          writeProfile(cred.user.uid, profile, function (ok) {
-            if (!ok) {
-              setLoading(false);
-              showError('Compte créé mais erreur de sauvegarde. Réessaie ou vérifie les règles Firebase Database.');
-              return;
-            }
+          _profiles  = { main: profile };
+          _activeId  = pid;
+          _profile   = profile;
+          _loadedUid = cred.user.uid;
+          const updates = {};
+          updates['users/' + cred.user.uid + '/profiles/' + pid] = profile;
+          updates['users/' + cred.user.uid + '/activeProfile']   = pid;
+          _db.ref().update(updates).then(function () {
             cred.user.sendEmailVerification().catch(function () {});
             overlay.remove();
             onSignedIn(cred.user, profile);
+          }).catch(function () {
+            setLoading(false);
+            showError('Compte créé mais erreur de sauvegarde. Réessaie ou vérifie les règles Firebase Database.');
           });
         })
         .catch(function (err) {
@@ -297,10 +360,9 @@ window.EF_AUTH = (function () {
       setLoading(true);
       _auth.signInWithEmailAndPassword(email, password)
         .then(function (cred) {
-          readProfile(cred.user.uid, function (profile) {
-            _profile = profile || null;
+          loadAll(cred.user.uid, function () {
             overlay.remove();
-            onSignedIn(cred.user, profile);
+            onSignedIn(cred.user, _profile);
           });
         })
         .catch(function (err) {
@@ -440,17 +502,60 @@ window.EF_AUTH = (function () {
     getUser:    function () { return _user; },
     getProfile: function () { return _profile; },
 
+    // ── Plusieurs profils par compte ──────────────────────────
+    getProfiles:  function () { return profilesList(); },
+    getActivePid: function () { return _activeId; },
+
+    switchProfile: function (pid, cb) {
+      if (!_user || !_db || !_profiles[pid]) { if (cb) cb(null); return; }
+      _activeId = pid;
+      _profile  = Object.assign({}, _profiles[pid], { pid });
+      _db.ref('users/' + _user.uid + '/activeProfile').set(pid).catch(function () {});
+      fireChange();
+      if (cb) cb(_profile);
+    },
+
+    createProfile: function (data, cb) {
+      if (!_user || !_db) { if (cb) cb(null); return; }
+      const profile = blankProfile(_user.uid, data);
+      const pid = profile.pid;
+      _profiles[pid] = profile;
+      _activeId = pid;
+      _profile  = profile;
+      const updates = {};
+      updates['users/' + _user.uid + '/profiles/' + pid] = profile;
+      updates['users/' + _user.uid + '/activeProfile']   = pid;
+      _db.ref().update(updates)
+        .then(function () { fireChange(); if (cb) cb(profile); })
+        .catch(function () { if (cb) cb(null); });
+    },
+
+    deleteProfile: function (pid, cb) {
+      if (!_user || !_db || !_profiles[pid]) { if (cb) cb(false, 'introuvable'); return; }
+      if (Object.keys(_profiles).length <= 1) { if (cb) cb(false, 'dernier'); return; }
+      delete _profiles[pid];
+      const updates = {};
+      updates['users/' + _user.uid + '/profiles/' + pid] = null;
+      if (_activeId === pid) {
+        _activeId = Object.keys(_profiles)[0];
+        _profile  = Object.assign({}, _profiles[_activeId], { pid: _activeId });
+        updates['users/' + _user.uid + '/activeProfile'] = _activeId;
+      }
+      _db.ref().update(updates)
+        .then(function () { fireChange(); if (cb) cb(true, _activeId); })
+        .catch(function () { if (cb) cb(false, 'erreur'); });
+    },
+
     saveProfile: function (data, cb) {
-      if (!_user || !_db) { if (cb) cb(false); return; }
+      if (!_user || !_db || !_activeId) { if (cb) cb(false); return; }
       clearTimeout(window._efSaveTimer);
       window._efSaveTimer = setTimeout(function () {
-        writeProfile(_user.uid, data, cb);
+        writeActive(data, cb);
       }, 1200);
     },
 
     saveProfileNow: function (data, cb) {
-      if (!_user || !_db) { if (cb) cb(false); return; }
-      writeProfile(_user.uid, data, cb);
+      writeActive(data, cb);
     },
 
     showAuthModal: showAuthModal,
@@ -465,18 +570,48 @@ window.EF_AUTH = (function () {
       }
     },
 
-    deleteAccount: function (cb) {
+    // deleteAccount(password, cb) — le mot de passe sert à se ré-authentifier
+    // (Firebase exige une connexion récente pour supprimer un compte).
+    // Ancienne signature deleteAccount(cb) encore acceptée.
+    deleteAccount: function (password, cb) {
+      if (typeof password === 'function') { cb = password; password = null; }
       if (!_auth || !_auth.currentUser) { if (cb) cb(false, 'non-connecté'); return; }
-      const uid = _auth.currentUser.uid;
-      function deleteAuthUser() {
-        _auth.currentUser.delete()
-          .then(function () { _user = null; _profile = null; if (cb) cb(true); })
-          .catch(function (err) { if (cb) cb(false, err.code); });
+      const user = _auth.currentUser;
+      const uid  = user.uid;
+
+      function finish() {
+        _user = null; _profile = null; _profiles = {}; _activeId = null; _loadedUid = null;
+        if (cb) cb(true);
       }
-      if (_db) {
-        _db.ref('users/' + uid).remove().then(deleteAuthUser).catch(deleteAuthUser);
+
+      function wipeThenDelete() {
+        // On efface les données pendant qu'on est encore authentifié,
+        // puis on supprime le compte Auth.
+        function deleteAuthUser() {
+          user.delete()
+            .then(finish)
+            .catch(function (err) { if (cb) cb(false, err.code || 'delete-failed'); });
+        }
+        if (_db) {
+          _db.ref('users/' + uid).remove().then(deleteAuthUser).catch(deleteAuthUser);
+        } else {
+          deleteAuthUser();
+        }
+      }
+
+      if (password && user.email && window.firebase &&
+          firebase.auth && firebase.auth.EmailAuthProvider) {
+        const cred = firebase.auth.EmailAuthProvider.credential(user.email, password);
+        user.reauthenticateWithCredential(cred)
+          .then(wipeThenDelete)
+          .catch(function (err) {
+            const bad = err.code === 'auth/wrong-password' ||
+                        err.code === 'auth/invalid-credential' ||
+                        err.code === 'auth/invalid-login-credentials';
+            if (cb) cb(false, bad ? 'mauvais-mot-de-passe' : (err.code || 'reauth-failed'));
+          });
       } else {
-        deleteAuthUser();
+        wipeThenDelete();
       }
     },
   };

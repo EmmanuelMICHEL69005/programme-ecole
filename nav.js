@@ -56,9 +56,9 @@
     },
     CE2: {
       label: '📚 CE2',
-      color: '#a78bfa',
+      color: '#b7c4f0',
       cats: [
-        { label: '🔢 Nombres et calculs', color: '#a78bfa', pages: [
+        { label: '🔢 Nombres et calculs', color: '#b7c4f0', pages: [
           { emoji: '🔢', title: 'Les nombres entiers',        href: 'nombres.html' },
           { emoji: '🔣', title: 'Nombres décimaux',           href: 'decimaux-ce2.html' },
           { emoji: '✂️', title: 'Fractions — Je découpe',     href: 'fiche1.html' },
@@ -84,11 +84,11 @@
         { label: '📊 Organisation des données', color: '#fcd34d', pages: [
           { emoji: '📊', title: 'Tableaux et graphiques', href: 'donnees.html' },
         ]},
-        { label: '🏛️ Histoire & Géographie', color: '#a78bfa', pages: [
+        { label: '🏛️ Histoire & Géographie', color: '#b7c4f0', pages: [
           { emoji: '🏰', title: 'Histoire & Géographie',      href: 'histoire-geo-ce2.html' },
           { emoji: '⚔️', title: 'Le Moyen Âge',                  href: 'moyen-age-ce2.html' },
         ]},
-        { label: '🏃 EPS', color: '#a78bfa', pages: [
+        { label: '🏃 EPS', color: '#b7c4f0', pages: [
           { emoji: '🏃', title: 'EPS — Éducation Physique',   href: 'eps-cycle2.html' },
         ]},
       ],
@@ -174,14 +174,87 @@
           { emoji: '🌍', title: 'Histoire & Géographie',      href: 'histoire-geo-6e.html' },
           { emoji: '🏛️', title: 'Grèce et Rome antiques',         href: 'antiquite-6e.html' },
         ]},
+        { label: '🇬🇧 Anglais', color: '#f9a8d4', pages: [
+          { emoji: '🇬🇧', title: 'Anglais — les bases',          href: 'anglais-6e.html' },
+        ]},
         { label: '🏃 EPS', color: '#f9a8d4', pages: [
           { emoji: '🏆', title: 'EPS — Éducation Physique',   href: 'eps-cycle3.html' },
         ]},
       ],
     },
+    '5e': {
+      label: '🚀 5ème',
+      color: '#7dd3fc',
+      cats: [
+        { label: '🔢 Nombres et calculs', color: '#7dd3fc', pages: [
+          { emoji: '🌡️', title: 'Nombres relatifs',            href: 'nombres-5e.html' },
+          { emoji: '➗', title: 'Calcul & divisibilité',        href: 'calcul-5e.html' },
+          { emoji: '½', title: 'Fractions',                     href: 'fractions-5e.html' },
+          { emoji: '²', title: 'Puissances (carrés, cubes)',    href: 'puissances-5e.html' },
+          { emoji: '🔤', title: 'Calcul littéral',              href: 'calcul-litteral-5e.html' },
+        ]},
+        { label: '📐 Géométrie & mesures', color: '#7dd3fc', pages: [
+          { emoji: '📐', title: 'Angles & triangles',           href: 'geometrie-5e.html' },
+          { emoji: '🧊', title: 'Espace & volumes',             href: 'espace-5e.html' },
+        ]},
+        { label: '📊 Données & proportionnalité', color: '#7dd3fc', pages: [
+          { emoji: '📊', title: 'Statistiques & probabilités',  href: 'donnees-5e.html' },
+          { emoji: '⚖️', title: 'Proportionnalité & fonctions', href: 'proportionnalite-5e.html' },
+        ]},
+        { label: '🇬🇧 Anglais', color: '#7dd3fc', pages: [
+          { emoji: '🇬🇧', title: 'Anglais — passé et modaux',    href: 'anglais-5e.html' },
+        ]},
+      ],
+    },
+    '4e': {
+      label: '🔶 4ème',
+      color: '#67e8f9',
+      cats: [
+        { label: '🔢 Nombres et calculs', color: '#67e8f9', pages: [
+          { emoji: '🔢', title: 'Relatifs et rationnels', href: 'nombres-4e.html' },
+          { emoji: '²', title: 'Puissances et racines', href: 'puissances-4e.html' },
+          { emoji: '🔤', title: 'Calcul littéral', href: 'calcul-litteral-4e.html' },
+        ]},
+        { label: '📐 Géométrie & mesures', color: '#67e8f9', pages: [
+          { emoji: '🔷', title: 'Transformations', href: 'geometrie-4e.html' },
+          { emoji: '📐', title: 'Triangles et Pythagore', href: 'triangles-4e.html' },
+          { emoji: '🧊', title: 'Pyramides et volumes', href: 'espace-4e.html' },
+        ]},
+        { label: '📊 Données & proportionnalité', color: '#67e8f9', pages: [
+          { emoji: '📊', title: 'Statistiques et probabilités', href: 'donnees-4e.html' },
+          { emoji: '⚖️', title: 'Pourcentages et fonctions', href: 'proportionnalite-4e.html' },
+        ]},
+        { label: '🇬🇧 Anglais', color: '#67e8f9', pages: [
+          { emoji: '🇬🇧', title: 'Anglais — comparatifs, present perfect', href: 'anglais-4e.html' },
+        ]},
+      ],
+    },
+    '3e': {
+      label: '🎓 3ème',
+      color: '#5eead4',
+      cats: [
+        { label: '🔢 Nombres et calculs', color: '#5eead4', pages: [
+          { emoji: '🔢', title: 'Rationnels et notation scientifique', href: 'nombres-3e.html' },
+          { emoji: '√', title: 'Racines et équations', href: 'racines-3e.html' },
+          { emoji: '🔤', title: 'Identités remarquables', href: 'calcul-litteral-3e.html' },
+        ]},
+        { label: '📐 Géométrie & mesures', color: '#5eead4', pages: [
+          { emoji: '📐', title: 'Thalès et vecteurs', href: 'geometrie-3e.html' },
+          { emoji: '📐', title: 'Trigonométrie', href: 'trigonometrie-3e.html' },
+          { emoji: '🧊', title: 'Boule, pyramide, cône', href: 'espace-3e.html' },
+        ]},
+        { label: '📊 Données & fonctions', color: '#5eead4', pages: [
+          { emoji: '📊', title: 'Quartiles et probabilités', href: 'donnees-3e.html' },
+          { emoji: '📈', title: 'Fonctions linéaires et affines', href: 'proportionnalite-3e.html' },
+        ]},
+        { label: '🇬🇧 Anglais', color: '#5eead4', pages: [
+          { emoji: '🇬🇧', title: 'Anglais — passif, conditionnel', href: 'anglais-3e.html' },
+        ]},
+      ],
+    },
   };
 
-  const LEVEL_ORDER = ['CP','CE1','CE2','CM1','CM2','6e'];
+  const LEVEL_ORDER = ['CP','CE1','CE2','CM1','CM2','6e','5e','4e','3e'];
 
   const current = window.location.pathname.split('/').pop() || 'index.html';
 
@@ -217,8 +290,9 @@
       z-index: 1200;
       width: 46px;
       height: 46px;
-      background: rgba(255,255,255,0.22);
-      border: 2px solid rgba(255,255,255,0.45);
+      background: #1f3c88;
+      border: 2px solid rgba(255,255,255,0.28);
+      box-shadow: 0 2px 8px rgba(23,45,102,0.28);
       border-radius: 12px;
       color: white;
       font-size: 1.35rem;
@@ -228,11 +302,9 @@
       align-items: center;
       justify-content: center;
       transition: background 0.2s, transform 0.15s;
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
       flex-shrink: 0;
     }
-    .nav-toggle:hover { background: rgba(255,255,255,0.38); }
+    .nav-toggle:hover { background: #172d66; }
     .nav-toggle.is-open { transform: rotate(90deg); }
 
     /* ===== OVERLAY ===== */
@@ -259,7 +331,7 @@
       max-width: 88vw;
       height: 100%;
       height: 100dvh;
-      background: linear-gradient(170deg, #1e1b4b 0%, #312e81 50%, #1e3a5f 100%);
+      background: #172d66;
       z-index: 1220;
       transform: translateX(-100%);
       transition: transform 0.28s cubic-bezier(0.4,0,0.2,1);
@@ -494,7 +566,7 @@
     .nav-profile-level {
       font-size: 0.78rem;
       font-weight: 700;
-      color: #c4b5fd;
+      color: #c3cdf0;
       margin-bottom: 7px;
     }
     .nav-profile-xprow {
@@ -512,14 +584,14 @@
     }
     .nav-profile-xpfill {
       height: 100%;
-      background: linear-gradient(90deg, #a78bfa, #60a5fa);
+      background: #93a8e8;
       border-radius: 4px;
       transition: width 0.5s ease;
     }
     .nav-profile-xpnum {
       font-size: 0.72rem;
       font-weight: 900;
-      color: #a78bfa;
+      color: #b7c4f0;
       white-space: nowrap;
       flex-shrink: 0;
     }
@@ -566,8 +638,9 @@
       z-index: 1200;
       width: 46px;
       height: 46px;
-      background: rgba(255,255,255,0.22);
-      border: 2px solid rgba(255,255,255,0.45);
+      background: #1f3c88;
+      border: 2px solid rgba(255,255,255,0.28);
+      box-shadow: 0 2px 8px rgba(23,45,102,0.28);
       border-radius: 12px;
       color: white;
       font-size: 1.35rem;
@@ -577,12 +650,10 @@
       justify-content: center;
       text-decoration: none;
       transition: background 0.2s;
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
       flex-shrink: 0;
       line-height: 1;
     }
-    .nav-profile-btn:hover { background: rgba(255,255,255,0.38); }
+    .nav-profile-btn:hover { background: #172d66; }
 
     /* ===== DESKTOP: menu bar ===== */
     @media (min-width: 768px) {

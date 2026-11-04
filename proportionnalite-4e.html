@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="École Facile">
+<meta name="application-name" content="École Facile">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/proportionnalite-4e.html">
+<meta property="og:title" content="Pourcentages, coefficients et fonctions — 4ème | École Facile">
+<meta property="og:description" content="Exercices interactifs 4e — correction immédiate, XP et badges. Gratuit sur École Facile.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/proportionnalite-4e.html">
+<meta name="description" content="Exercices interactifs 4e — correction immédiate, XP et badges. Gratuit sur École Facile.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pourcentages, coefficients et fonctions — 4ème | École Facile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=4">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #bae6fd; border-radius: 22px;
+    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #0c4a6e;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #f0f9ff; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #f0f9ff; border: 2px solid #bae6fd; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .alg-card { font-size: 1.5rem; font-weight: 900; color: #0c4a6e; text-align: center; padding: 14px; background: #e0f2fe; border-radius: 14px; margin-bottom: 14px; }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: #0369a1;">
+  <span class="emoji-header">⚖️</span>
+  <h1>Pourcentages, coefficients et fonctions</h1>
+  <p>Pourcentages · coefficient multiplicateur · partage · fonctions</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">4ème — Proportionnalité et fonctions</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
+      💯 <strong>Hausse de t %</strong> : coefficient 1 + t/100 · <strong>baisse de t %</strong> : 1 − t/100<br>
+      ➗ <strong>Partage proportionnel</strong> dans le rapport a:b : parts proportionnelles à a et b<br>
+      🧮 <strong>Fonction</strong> : à chaque x associe f(x) · antécédent de y : x tel que f(x) = y
+    </div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 1</span> Pourcentages</div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 2</span> Partage et quatrième proportionnelle</div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 3</span> Fonctions et programmes de calcul</div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 4</span> Lire et calculer</div>
+    <div id="ex4"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a> · <a href="programme-5e.html">5ème</a> · <a href="programme-4e.html">4ème</a> · <a href="programme-3e.html">3ème</a></div></footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    d.innerHTML = `
+      ${item.card ? `<div class="alg-card">${item.card}</div>` : ''}
+      <div class="q-text">${item.q}</div>
+      <div class="qcm-row" id="${id}-r${i}">
+        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+      </div>
+      <div class="feedback-line" id="${id}-f${i}"></div>
+    `;
+    c.appendChild(d);
+  });
+}
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ La bonne réponse : ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([{"q": "15 % de 200 = ?", "correct": "30", "choices": ["30", "15", "300", "20"]}, {"q": "Hausse de 20 % d'un prix de 50 €. Nouveau prix ?", "correct": "60 €", "choices": ["60 €", "70 €", "10 €", "40 €"]}, {"q": "Coefficient multiplicateur d'une baisse de 25 % ?", "correct": "0,75", "choices": ["0,75", "1,25", "0,25", "25"]}, {"q": "Coefficient multiplicateur d'une hausse de 5 % ?", "correct": "1,05", "choices": ["1,05", "0,95", "1,5", "5"]}], 'ex1');
+buildQ([{"q": "Partager 120 € dans le rapport 3 : 5. Part de la première personne ?", "correct": "45 €", "choices": ["45 €", "75 €", "30 €", "60 €"]}, {"q": "7 stylos coûtent 14 €. Prix de 12 stylos ?", "correct": "24 €", "choices": ["24 €", "21 €", "28 €", "12 €"]}, {"q": "Un mélange 2 : 3 pour 25 kg : la part de 2 est…", "correct": "10 kg", "choices": ["10 kg", "15 kg", "5 kg", "12,5 kg"]}, {"q": "Une recette pour 4 personnes utilise 200 g de farine. Pour 6 personnes ?", "correct": "300 g", "choices": ["300 g", "250 g", "400 g", "150 g"]}], 'ex2');
+buildQ([{"q": "Soit f(x) = 3x − 2. Calcule f(4).", "correct": "10", "choices": ["10", "12", "14", "2"]}, {"q": "Pour f(x) = 3x − 2, quel est l'antécédent de 7 ?", "correct": "3", "choices": ["3", "9", "5", "−3"]}, {"q": "Programme : choisir x, ajouter 3, multiplier par 2. Résultat pour x = 5 ?", "correct": "16", "choices": ["16", "13", "10", "11"]}, {"q": "Une fonction linéaire est de la forme…", "correct": "f(x) = a × x", "choices": ["f(x) = a × x", "f(x) = x + a", "f(x) = x²", "f(x) = a / x"]}], 'ex3');
+buildQ([{"q": "Pour f(x) = 2x, f(3) = ?", "correct": "6", "choices": ["6", "5", "3", "9"]}, {"q": "Une baisse de 10 % suivie d'une hausse de 10 % donne un coefficient global de…", "correct": "0,99", "choices": ["0,99", "1", "1,01", "0,9"]}, {"q": "Un prix passe de 80 € à 100 €. Taux d'augmentation ?", "correct": "25 %", "choices": ["25 %", "20 %", "80 %", "125 %"]}, {"q": "La proportion de 30 % sur 150 élèves représente…", "correct": "45 élèves", "choices": ["45 élèves", "30 élèves", "50 élèves", "15 élèves"]}], 'ex4');
+</script>
+
+<script src="sync.js"></script>
+<script src="firebase-keys.js"></script>
+<script src="auth.js?v=7"></script>
+<script src="gamification.js?v=6"></script>
+<script src="nav.js?v=6"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>

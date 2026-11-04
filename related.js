@@ -83,16 +83,27 @@
     'histoire-geo-cm2.html':[{h:'histoire-geo-cm1.html',l:'Histoire-Géo CM1 — révision'},{h:'histoire-geo-6e.html',l:'Histoire-Géo 6e — étape suivante'},{h:'eps-cycle3.html',l:'EPS Cycle 3'}],
 
     /* ── 6e ── */
-    'nombres-6e.html':      [{h:'fractions-6e.html',l:'Fractions 6e'},{h:'algebre-6e.html',l:'Algèbre 6e'},{h:'nombres-cm2.html',l:'Très grands nombres CM2 — révision'}],
-    'fractions-6e.html':    [{h:'nombres-6e.html',l:'Nombres 6e'},{h:'calcul-mental-6e.html',l:'Calcul mental 6e'},{h:'fractions-cm2.html',l:'Fractions CM2 — révision'}],
-    'algebre-6e.html':      [{h:'nombres-6e.html',l:'Nombres 6e'},{h:'proportionnalite-6e.html',l:'Proportionnalité 6e'}],
+    'nombres-6e.html':      [{h:'fractions-6e.html',l:'Fractions 6e'},{h:'algebre-6e.html',l:'Algèbre 6e'},{h:'nombres-cm2.html',l:'Très grands nombres CM2 — révision'},{h:'nombres-5e.html',l:'Nombres relatifs 5e — étape suivante'}],
+    'fractions-6e.html':    [{h:'nombres-6e.html',l:'Nombres 6e'},{h:'calcul-mental-6e.html',l:'Calcul mental 6e'},{h:'fractions-cm2.html',l:'Fractions CM2 — révision'},{h:'fractions-5e.html',l:'Fractions 5e — étape suivante'}],
+    'algebre-6e.html':      [{h:'nombres-6e.html',l:'Nombres 6e'},{h:'proportionnalite-6e.html',l:'Proportionnalité 6e'},{h:'calcul-litteral-5e.html',l:'Calcul littéral 5e — étape suivante'}],
     'calcul-mental-6e.html':[{h:'fractions-6e.html',l:'Fractions 6e'},{h:'nombres-6e.html',l:'Nombres 6e'},{h:'calcul-mental-cm2.html',l:'Calcul mental CM2 — révision'}],
     'probabilites-6e.html': [{h:'donnees-6e.html',l:'Statistiques 6e'},{h:'donnees-cm2.html',l:'Données CM2 — révision'}],
-    'geometrie-6e.html':    [{h:'mesures-6e.html',l:'Mesures 6e'},{h:'geometrie-cm2.html',l:'Géométrie CM2 — révision'}],
-    'mesures-6e.html':      [{h:'geometrie-6e.html',l:'Géométrie 6e'},{h:'mesures-cm2.html',l:'Mesures CM2 — révision'}],
-    'donnees-6e.html':      [{h:'probabilites-6e.html',l:'Probabilités 6e'},{h:'proportionnalite-6e.html',l:'Proportionnalité 6e'},{h:'donnees-cm2.html',l:'Données CM2 — révision'}],
-    'proportionnalite-6e.html':[{h:'fractions-6e.html',l:'Fractions 6e'},{h:'algebre-6e.html',l:'Algèbre 6e'},{h:'proportionnalite-cm2.html',l:'Proportionnalité CM2 — révision'}],
+    'geometrie-6e.html':    [{h:'mesures-6e.html',l:'Mesures 6e'},{h:'geometrie-cm2.html',l:'Géométrie CM2 — révision'},{h:'geometrie-5e.html',l:'Angles & triangles 5e — étape suivante'}],
+    'mesures-6e.html':      [{h:'geometrie-6e.html',l:'Géométrie 6e'},{h:'mesures-cm2.html',l:'Mesures CM2 — révision'},{h:'espace-5e.html',l:'Espace & volumes 5e — étape suivante'}],
+    'donnees-6e.html':      [{h:'probabilites-6e.html',l:'Probabilités 6e'},{h:'proportionnalite-6e.html',l:'Proportionnalité 6e'},{h:'donnees-cm2.html',l:'Données CM2 — révision'},{h:'donnees-5e.html',l:'Stats & probabilités 5e — étape suivante'}],
+    'proportionnalite-6e.html':[{h:'fractions-6e.html',l:'Fractions 6e'},{h:'algebre-6e.html',l:'Algèbre 6e'},{h:'proportionnalite-cm2.html',l:'Proportionnalité CM2 — révision'},{h:'proportionnalite-5e.html',l:'Proportionnalité 5e — étape suivante'}],
     'histoire-geo-6e.html': [{h:'histoire-geo-cm2.html',l:'Histoire-Géo CM2 — révision'},{h:'eps-cycle3.html',l:'EPS Cycle 3'}],
+
+    /* ── 5e ── */
+    'nombres-5e.html':          [{h:'calcul-5e.html',l:'Calcul & divisibilité 5e'},{h:'calcul-litteral-5e.html',l:'Calcul littéral 5e'},{h:'nombres-6e.html',l:'Nombres 6e — révision'}],
+    'calcul-5e.html':           [{h:'nombres-5e.html',l:'Nombres relatifs 5e'},{h:'puissances-5e.html',l:'Puissances 5e'},{h:'fractions-5e.html',l:'Fractions 5e'}],
+    'fractions-5e.html':        [{h:'calcul-5e.html',l:'Calcul & divisibilité 5e'},{h:'proportionnalite-5e.html',l:'Proportionnalité 5e'},{h:'fractions-6e.html',l:'Fractions 6e — révision'}],
+    'puissances-5e.html':       [{h:'calcul-5e.html',l:'Calcul & divisibilité 5e'},{h:'calcul-litteral-5e.html',l:'Calcul littéral 5e'}],
+    'calcul-litteral-5e.html':  [{h:'nombres-5e.html',l:'Nombres relatifs 5e'},{h:'proportionnalite-5e.html',l:'Proportionnalité & fonctions 5e'},{h:'algebre-6e.html',l:'Algèbre 6e — révision'}],
+    'geometrie-5e.html':        [{h:'espace-5e.html',l:'Espace & volumes 5e'},{h:'geometrie-6e.html',l:'Géométrie 6e — révision'}],
+    'espace-5e.html':           [{h:'geometrie-5e.html',l:'Angles & triangles 5e'},{h:'mesures-6e.html',l:'Aires & volumes 6e — révision'}],
+    'donnees-5e.html':          [{h:'proportionnalite-5e.html',l:'Proportionnalité 5e'},{h:'donnees-6e.html',l:'Statistiques 6e — révision'}],
+    'proportionnalite-5e.html': [{h:'fractions-5e.html',l:'Fractions 5e'},{h:'donnees-5e.html',l:'Stats & probabilités 5e'},{h:'proportionnalite-6e.html',l:'Proportionnalité 6e — révision'}],
 
     /* ── EPS ── */
     'eps-cycle2.html':      [{h:'eps-cycle3.html',l:'EPS Cycle 3 — CM1/CM2/6e'},{h:'histoire-geo-cp.html',l:'Histoire-Géo CP'},{h:'histoire-geo-ce1.html',l:'Histoire-Géo CE1'},{h:'histoire-geo-ce2.html',l:'Histoire-Géo CE2'}],
@@ -160,8 +171,8 @@
   var links = RELATED[cur] ? RELATED[cur].slice() : [];
 
   // Auto-inject pillar page link based on current page's level
-  var levelSuffixes = [['-cp','CP'],['-ce1','CE1'],['-ce2','CE2'],['-cm1','CM1'],['-cm2','CM2'],['-6e','6e']];
-  var pillarPages = {CP:'programme-cp.html',CE1:'programme-ce1.html',CE2:'programme-ce2.html',CM1:'programme-cm1.html',CM2:'programme-cm2.html','6e':'programme-6e.html'};
+  var levelSuffixes = [['-cp','CP'],['-ce1','CE1'],['-ce2','CE2'],['-cm1','CM1'],['-cm2','CM2'],['-6e','6e'],['-5e','5e'],['-4e','4e'],['-3e','3e']];
+  var pillarPages = {CP:'programme-cp.html',CE1:'programme-ce1.html',CE2:'programme-ce2.html',CM1:'programme-cm1.html',CM2:'programme-cm2.html','6e':'programme-6e.html','5e':'programme-5e.html','4e':'programme-4e.html','3e':'programme-3e.html'};
   for (var i=0;i<levelSuffixes.length;i++){
     if (cur.slice(0,-5).endsWith(levelSuffixes[i][0])){
       var lvl=levelSuffixes[i][1];

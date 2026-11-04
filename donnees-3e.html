@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="École Facile">
+<meta name="application-name" content="École Facile">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/donnees-3e.html">
+<meta property="og:title" content="Quartiles, boîtes et probabilités — 3ème | École Facile">
+<meta property="og:description" content="Exercices interactifs 3e — correction immédiate, XP et badges. Gratuit sur École Facile.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/donnees-3e.html">
+<meta name="description" content="Exercices interactifs 3e — correction immédiate, XP et badges. Gratuit sur École Facile.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quartiles, boîtes et probabilités — 3ème | École Facile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=4">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #bae6fd; border-radius: 22px;
+    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #0c4a6e;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #f0f9ff; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #f0f9ff; border: 2px solid #bae6fd; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .alg-card { font-size: 1.5rem; font-weight: 900; color: #0c4a6e; text-align: center; padding: 14px; background: #e0f2fe; border-radius: 14px; margin-bottom: 14px; }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: #0369a1;">
+  <span class="emoji-header">📊</span>
+  <h1>Quartiles, boîtes et probabilités</h1>
+  <p>Quartiles · boîte à moustaches · effectifs cumulés · probabilités</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">3ème — Données et probabilités</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
+      📦 <strong>Quartiles</strong> : Q1 = 25 % des valeurs sont inférieures · Q3 = 75 % · la boîte contient 50 % des valeurs<br>
+      ➕ <strong>Effectifs cumulés croissants</strong> : on additionne les effectifs au fur et à mesure<br>
+      🎲 P(A ∪ B) + P(A ∩ B) = P(A) + P(B) · P(contraire de A) = 1 − P(A)
+    </div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 1</span> Médiane et quartiles</div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 2</span> Boîte à moustaches</div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 3</span> Effectifs cumulés</div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 4</span> Probabilités</div>
+    <div id="ex4"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a> · <a href="programme-5e.html">5ème</a> · <a href="programme-4e.html">4ème</a> · <a href="programme-3e.html">3ème</a></div></footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    d.innerHTML = `
+      ${item.card ? `<div class="alg-card">${item.card}</div>` : ''}
+      <div class="q-text">${item.q}</div>
+      <div class="qcm-row" id="${id}-r${i}">
+        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+      </div>
+      <div class="feedback-line" id="${id}-f${i}"></div>
+    `;
+    c.appendChild(d);
+  });
+}
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ La bonne réponse : ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([{"q": "Série 2 ; 4 ; 6 ; 8 ; 10 ; 12 ; 14. Q1 et Q3 ?", "correct": "Q1 = 4 et Q3 = 12", "choices": ["Q1 = 4 et Q3 = 12", "Q1 = 6 et Q3 = 10", "Q1 = 2 et Q3 = 14", "Q1 = 4 et Q3 = 10"]}, {"q": "Médiane de la série 2 ; 4 ; 6 ; 8 ; 10 ; 12 ; 14 ?", "correct": "8", "choices": ["8", "6", "10", "7"]}, {"q": "Médiane de 1 ; 2 ; 3 ; 4 ; 5 ; 6 ; 7 ; 8 ?", "correct": "4,5", "choices": ["4,5", "4", "5", "8"]}, {"q": "Étendue de la série 2 ; 4 ; 6 ; 8 ; 10 ; 12 ; 14 ?", "correct": "12", "choices": ["12", "14", "2", "8"]}], 'ex1');
+buildQ([{"q": "Dans une boîte à moustaches, la boîte représente…", "correct": "50 % des valeurs", "choices": ["50 % des valeurs", "25 % des valeurs", "100 % des valeurs", "la médiane seulement"]}, {"q": "L'écart interquartile est…", "correct": "Q3 − Q1", "choices": ["Q3 − Q1", "Q1 − Q3", "max − min", "la médiane"]}, {"q": "Les moustaches vont jusqu'à…", "correct": "le minimum et le maximum", "choices": ["le minimum et le maximum", "Q1 et Q3", "la moyenne", "la médiane"]}, {"q": "Si les quartiles sont proches, la série est…", "correct": "concentrée", "choices": ["concentrée", "très dispersée", "vide", "fausse"]}], 'ex2');
+buildQ([{"q": "Effectifs 2 ; 3 ; 5. Effectifs cumulés croissants ?", "correct": "2 ; 5 ; 10", "choices": ["2 ; 5 ; 10", "2 ; 3 ; 5", "5 ; 8 ; 10", "2 ; 6 ; 11"]}, {"q": "Dans un tableau, l'effectif cumulé de la dernière valeur est…", "correct": "l'effectif total", "choices": ["l'effectif total", "0", "la moyenne", "la médiane"]}, {"q": "Un élève a 60 % de réussite sur 20 exercices : nombre de réussites ?", "correct": "12", "choices": ["12", "6", "8", "15"]}, {"q": "Une fréquence cumulée de 0,5 correspond…", "correct": "à la médiane", "choices": ["à la médiane", "au maximum", "à l'étendue", "à la moyenne"]}], 'ex3');
+buildQ([{"q": "P(A) = 0,6 ; P(B) = 0,5 ; P(A ∩ B) = 0,3. P(A ∪ B) = ?", "correct": "0,8", "choices": ["0,8", "1,1", "0,2", "0,3"]}, {"q": "P(A) = 0,35. Probabilité de l'événement contraire ?", "correct": "0,65", "choices": ["0,65", "0,35", "0,7", "1,35"]}, {"q": "Dé équilibré : P(obtenir un nombre premier) ?", "correct": "1/2", "choices": ["1/2", "1/3", "1/6", "1/4"]}, {"q": "Deux dés : P(somme = 7) ?", "correct": "1/6", "choices": ["1/6", "1/12", "7/36", "1/7"]}], 'ex4');
+</script>
+
+<script src="sync.js"></script>
+<script src="firebase-keys.js"></script>
+<script src="auth.js?v=7"></script>
+<script src="gamification.js?v=6"></script>
+<script src="nav.js?v=6"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>

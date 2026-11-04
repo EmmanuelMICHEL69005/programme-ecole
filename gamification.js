@@ -27,7 +27,7 @@
     'nombres-6e.html','fractions-6e.html','algebre-6e.html','calcul-mental-6e.html','geometrie-6e.html','mesures-6e.html','donnees-6e.html','proportionnalite-6e.html','probabilites-6e.html',
   ];
   const NEXT_LESSON_THRESHOLD = 5;
-  const CLASSE_LIST = ['CP','CE1','CE2','CM1','CM2','6e'];
+  const CLASSE_LIST = ['CP','CE1','CE2','CM1','CM2','6e','5e','4e','3e'];
   const AVATARS = ['🌟','⭐','🦋','🌈','🦄','🐱','🐼','🐸','🦊','🐢','🌺','🍭','🎀','🚀','⚡','🎯','🏆','💎','🌙','🦸‍♀️'];
 
   const LEVELS = [
@@ -135,6 +135,38 @@
     'proportionnalite-6e.html':    { title:'Proportionnalité 6e',          emoji:'⚖️' },
     'probabilites-6e.html':        { title:'Probabilités 6e',              emoji:'🎲' },
     'calcul-mental-6e.html':       { title:'Calcul mental 6e',             emoji:'⚡' },
+    // 5e
+    'nombres-5e.html':             { title:'Nombres relatifs 5e',          emoji:'🌡️' },
+    'calcul-5e.html':              { title:'Calcul & divisibilité 5e',     emoji:'➗' },
+    'fractions-5e.html':           { title:'Fractions 5e',                 emoji:'½' },
+    'puissances-5e.html':          { title:'Puissances 5e',                emoji:'²' },
+    'calcul-litteral-5e.html':     { title:'Calcul littéral 5e',           emoji:'🔤' },
+    'geometrie-5e.html':           { title:'Géométrie 5e',                 emoji:'📐' },
+    'espace-5e.html':              { title:'Espace & volumes 5e',          emoji:'🧊' },
+    'donnees-5e.html':             { title:'Stats & probabilités 5e',      emoji:'📊' },
+    'proportionnalite-5e.html':    { title:'Proportionnalité 5e',          emoji:'⚖️' },
+    // Anglais
+    'anglais-6e.html':             { title:'Anglais 6e',                   emoji:'🇬🇧' },
+    'anglais-5e.html':             { title:'Anglais 5e',                   emoji:'🇬🇧' },
+    // 4e et 3e
+    'nombres-4e.html': { title:'Nombres relatifs 4e', emoji:'🔢' },
+    'puissances-4e.html': { title:'Puissances 4e', emoji:'²' },
+    'calcul-litteral-4e.html': { title:'Calcul littéral 4e', emoji:'🔤' },
+    'geometrie-4e.html': { title:'Transformations 4e', emoji:'🔷' },
+    'triangles-4e.html': { title:'Triangles & Pythagore 4e', emoji:'📐' },
+    'espace-4e.html': { title:'Pyramides & volumes 4e', emoji:'🧊' },
+    'donnees-4e.html': { title:'Stats & probabilités 4e', emoji:'📊' },
+    'proportionnalite-4e.html': { title:'Pourcentages & fonctions 4e', emoji:'⚖️' },
+    'anglais-4e.html': { title:'Anglais 4e', emoji:'🇬🇧' },
+    'nombres-3e.html': { title:'Rationnels 3e', emoji:'🔢' },
+    'racines-3e.html': { title:'Racines & équations 3e', emoji:'√' },
+    'calcul-litteral-3e.html': { title:'Identités remarquables 3e', emoji:'🔤' },
+    'geometrie-3e.html': { title:'Thalès & vecteurs 3e', emoji:'📐' },
+    'trigonometrie-3e.html': { title:'Trigonométrie 3e', emoji:'📐' },
+    'espace-3e.html': { title:'Boule & cône 3e', emoji:'🧊' },
+    'donnees-3e.html': { title:'Quartiles & probabilités 3e', emoji:'📊' },
+    'proportionnalite-3e.html': { title:'Fonctions 3e', emoji:'📈' },
+    'anglais-3e.html': { title:'Anglais 3e', emoji:'🇬🇧' },
   };
 
   const LEVEL_PAGES = {
@@ -143,7 +175,10 @@
     CE2: ['nombres.html','decimaux-ce2.html','fiche1.html','fiche2.html','fiche3.html','calcul.html','calcul-mental.html','problemes.html','operations-posees-ce2.html','multiplication-division-ce2.html','mesures.html','temps.html','geometrie.html','solides.html','donnees.html'],
     CM1: ['nombres-cm1.html','decimaux-cm1.html','fractions-cm1.html','calcul-cm1.html','calcul-mental-cm1.html','calcul-pose-cm1.html','mesures-cm1.html','temps-cm1.html','geometrie-cm1.html','solides-cm1.html','donnees-cm1.html','proportionnalite-cm1.html','problemes-cm1.html'],
     CM2: ['nombres-cm2.html','decimaux-cm2.html','fractions-cm2.html','calcul-cm2.html','calcul-mental-cm2.html','calcul-pose-cm2.html','mesures-cm2.html','temps-cm2.html','geometrie-cm2.html','donnees-cm2.html','proportionnalite-cm2.html','problemes-cm2.html'],
-    '6e': ['nombres-6e.html','fractions-6e.html','algebre-6e.html','calcul-mental-6e.html','geometrie-6e.html','mesures-6e.html','donnees-6e.html','proportionnalite-6e.html','probabilites-6e.html'],
+    '6e': ['nombres-6e.html','fractions-6e.html','algebre-6e.html','calcul-mental-6e.html','geometrie-6e.html','mesures-6e.html','donnees-6e.html','proportionnalite-6e.html','probabilites-6e.html','anglais-6e.html'],
+    '4e': ['nombres-4e.html','puissances-4e.html','calcul-litteral-4e.html','geometrie-4e.html','triangles-4e.html','espace-4e.html','donnees-4e.html','proportionnalite-4e.html','anglais-4e.html'],
+    '3e': ['nombres-3e.html','racines-3e.html','calcul-litteral-3e.html','geometrie-3e.html','trigonometrie-3e.html','espace-3e.html','donnees-3e.html','proportionnalite-3e.html','anglais-3e.html'],
+    '5e': ['nombres-5e.html','calcul-5e.html','fractions-5e.html','puissances-5e.html','calcul-litteral-5e.html','geometrie-5e.html','espace-5e.html','donnees-5e.html','proportionnalite-5e.html','anglais-5e.html'],
   };
 
   function getPageLevel() {
@@ -165,6 +200,11 @@
 
   let P = null;
 
+  function readLocalStore() {
+    try { return JSON.parse(localStorage.getItem('clemence_maths_v2') || 'null'); }
+    catch (e) { return null; }
+  }
+
   function saveStore() {
     if (!P) return;
     if (window.EF_AUTH && window.EF_AUTH.enabled && window.EF_AUTH.getUser()) {
@@ -172,11 +212,13 @@
         if (ok) showSyncIndicator('✅ Sauvegardé');
       });
     } else {
-      // Fallback localStorage quand Firebase non configuré
+      // Fallback localStorage — conserve les autres profils enregistrés
       try {
-        localStorage.setItem('clemence_maths_v2', JSON.stringify({
-          active: P.id, profiles: { [P.id]: P }
-        }));
+        const store = readLocalStore() || { active: P.id, profiles: {} };
+        if (!store.profiles) store.profiles = {};
+        store.profiles[P.id] = P;
+        store.active = P.id;
+        localStorage.setItem('clemence_maths_v2', JSON.stringify(store));
       } catch(e) {}
     }
   }
@@ -290,7 +332,6 @@
         cursor: pointer; color: white;
         font-family: inherit; font-weight: 800;
         transition: background 0.15s, transform 0.15s;
-        backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
         max-width: calc(55vw - 24px);
         text-align: left; line-height: 1.2;
       }
@@ -303,10 +344,10 @@
       /* ===== XP TOAST ===== */
       .gs-xp-toast {
         position: fixed; top: 68px; left: 14px; z-index: 9800;
-        background: linear-gradient(135deg, #7c3aed, #a855f7);
+        background: #1f3c88;
         color: white; border-radius: 20px; padding: 7px 16px;
         font-size: 0.95rem; font-weight: 900; pointer-events: none;
-        box-shadow: 0 4px 18px rgba(124,58,237,0.5);
+        box-shadow: 0 4px 18px rgba(31,60,136,0.5);
         animation: gsXpPop 1.9s ease forwards;
       }
       @keyframes gsXpPop {
@@ -320,7 +361,7 @@
       /* ===== STREAK TOAST ===== */
       .gs-streak-toast {
         position: fixed; top: 110px; left: 14px; z-index: 9801;
-        background: linear-gradient(135deg, #dc2626, #f97316);
+        background: #c2410c;
         color: white; border-radius: 20px; padding: 8px 18px;
         font-size: 1rem; font-weight: 900; pointer-events: none;
         box-shadow: 0 4px 18px rgba(239,68,68,0.5);
@@ -330,7 +371,7 @@
       /* ===== BADGE TOAST ===== */
       .gs-badge-toast {
         position: fixed; bottom: 16px; right: 14px; z-index: 9802;
-        background: linear-gradient(135deg, #065f46, #059669);
+        background: #047857;
         color: white; border-radius: 18px; padding: 12px 18px;
         display: flex; align-items: center; gap: 12px;
         box-shadow: 0 6px 24px rgba(5,150,105,0.45);
@@ -356,31 +397,31 @@
         animation: gsFadeIn 0.25s ease; backdrop-filter: blur(4px);
       }
       .gs-levelup-card {
-        background: linear-gradient(150deg, #1e1b4b, #4c1d95 50%, #1e3a5f);
+        background: #172d66;
         color: white; border-radius: 28px; padding: 44px 32px 36px;
         text-align: center; max-width: 340px; width: 88%;
-        box-shadow: 0 24px 80px rgba(124,58,237,0.6), 0 0 0 1px rgba(167,139,250,0.3);
+        box-shadow: 0 24px 80px rgba(31,60,136,0.6), 0 0 0 1px rgba(183,196,240,0.3);
         animation: gsCardPop 0.45s cubic-bezier(0.175,0.885,0.32,1.275);
         position: relative; overflow: hidden;
       }
       .gs-levelup-card::before {
         content: ''; position: absolute; top: -40%; left: -40%;
         width: 180%; height: 180%;
-        background: radial-gradient(ellipse, rgba(167,139,250,0.12) 0%, transparent 65%);
+        background: radial-gradient(ellipse, rgba(183,196,240,0.12) 0%, transparent 65%);
         pointer-events: none;
       }
       .gs-levelup-emoji { font-size: 4.5rem; display: block; margin-bottom: 10px; animation: gsBounce 0.6s 0.4s ease both; }
-      .gs-levelup-sup   { font-size: 0.82rem; font-weight: 700; color: #a78bfa; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px; }
+      .gs-levelup-sup   { font-size: 0.82rem; font-weight: 700; color: #b7c4f0; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px; }
       .gs-levelup-title { font-size: 2.2rem; font-weight: 900; margin-bottom: 4px; }
-      .gs-levelup-sub   { font-size: 1.1rem; color: #c4b5fd; font-weight: 700; margin-bottom: 16px; }
+      .gs-levelup-sub   { font-size: 1.1rem; color: #c3cdf0; font-weight: 700; margin-bottom: 16px; }
       .gs-levelup-msg   { font-size: 0.95rem; color: rgba(255,255,255,0.75); margin-bottom: 28px; line-height: 1.5; }
       .gs-levelup-btn {
-        background: linear-gradient(135deg, #7c3aed, #a855f7); color: white; border: none;
+        background: #fff; color: #172d66; border: none;
         border-radius: 24px; padding: 13px 36px; font-size: 1.05rem; font-weight: 900;
         cursor: pointer; font-family: inherit; transition: transform 0.15s, box-shadow 0.15s;
-        box-shadow: 0 4px 16px rgba(124,58,237,0.4);
+        box-shadow: 0 4px 16px rgba(31,60,136,0.4);
       }
-      .gs-levelup-btn:hover { transform: scale(1.04); box-shadow: 0 6px 24px rgba(124,58,237,0.5); }
+      .gs-levelup-btn:hover { transform: scale(1.04); box-shadow: 0 6px 24px rgba(31,60,136,0.5); }
 
       @keyframes gsFadeIn  { from { opacity:0 } to { opacity:1 } }
       @keyframes gsCardPop { from { opacity:0; transform:scale(0.7) } to { opacity:1; transform:scale(1) } }
@@ -410,18 +451,18 @@
         backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
       }
       .gs-next-panel {
-        background: linear-gradient(160deg, #1e1b4b 0%, #312e81 45%, #1e3a5f 100%);
+        background: #172d66;
         color: white; width: 100%; max-width: 560px;
         border-radius: 28px 28px 0 0;
         padding: 32px 24px 44px;
-        box-shadow: 0 -12px 60px rgba(124,58,237,0.55);
+        box-shadow: 0 -12px 60px rgba(31,60,136,0.55);
         animation: gsNextSlideUp 0.45s cubic-bezier(0.175,0.885,0.32,1.275) forwards;
         position: relative; overflow: hidden;
       }
       .gs-next-panel::before {
         content: ''; position: absolute; top: -50%; left: -20%;
         width: 140%; height: 100%;
-        background: radial-gradient(ellipse, rgba(167,139,250,0.12) 0%, transparent 65%);
+        background: radial-gradient(ellipse, rgba(183,196,240,0.12) 0%, transparent 65%);
         pointer-events: none;
       }
       @keyframes gsNextSlideUp {
@@ -441,23 +482,23 @@
       .gs-next-bravo { font-size: 1.8rem; font-weight: 900; text-align: center; margin-bottom: 4px; }
       .gs-next-sub   { font-size: 0.9rem; text-align: center; color: rgba(255,255,255,0.6); margin-bottom: 18px; }
       .gs-next-xp-badge {
-        background: linear-gradient(135deg, #7c3aed, #a855f7);
+        background: #ffd84d; color: #172d66;
         border-radius: 30px; padding: 9px 24px; font-size: 1.15rem; font-weight: 900;
         text-align: center; margin: 0 auto 12px; display: table;
-        box-shadow: 0 4px 18px rgba(124,58,237,0.4);
+        box-shadow: 0 4px 18px rgba(31,60,136,0.4);
         animation: gsBounce 0.5s 0.25s ease both;
       }
       .gs-next-streak { text-align: center; font-size: 0.9rem; font-weight: 800; color: #fcd34d; margin-bottom: 16px; }
       .gs-next-main-btn {
         display: flex; align-items: center; gap: 14px;
-        background: linear-gradient(135deg, #059669, #10b981);
+        background: #047857;
         border-radius: 20px; padding: 17px 20px; text-decoration: none; color: white;
         margin-bottom: 14px; box-shadow: 0 6px 24px rgba(5,150,105,0.4);
         transition: transform 0.15s, box-shadow 0.15s;
         animation: gsBounce 0.5s 0.35s ease both;
       }
       .gs-next-main-btn:hover { transform: scale(1.02); box-shadow: 0 8px 32px rgba(5,150,105,0.55); }
-      .gs-next-main-btn--gold { background: linear-gradient(135deg, #d97706, #f59e0b); box-shadow: 0 6px 24px rgba(217,119,6,0.4); }
+      .gs-next-main-btn--gold { background: #b45309; box-shadow: 0 6px 24px rgba(217,119,6,0.4); }
       .gs-next-main-btn--gold:hover { box-shadow: 0 8px 32px rgba(217,119,6,0.55); }
       .gs-next-main-emoji { font-size: 2.2rem; flex-shrink: 0; }
       .gs-next-main-info  { flex: 1; }
@@ -482,7 +523,7 @@
       /* ===== PROFILE CREATION ===== */
       .gs-create-overlay {
         position: fixed; inset: 0; z-index: 9950;
-        background: linear-gradient(160deg, #0f0c29, #302b63, #24243e);
+        background: #172d66;
         display: flex; align-items: center; justify-content: center;
         padding: 16px; overflow-y: auto;
       }
@@ -507,7 +548,7 @@
         transition: border-color 0.15s, background 0.15s;
       }
       .gs-create-input::placeholder { color: rgba(255,255,255,0.35); }
-      .gs-create-input:focus { border-color: #a78bfa; background: rgba(167,139,250,0.12); }
+      .gs-create-input:focus { border-color: #b7c4f0; background: rgba(183,196,240,0.12); }
       .gs-create-input.gs-input-error { border-color: #ef4444; animation: gsShake 0.35s ease; }
       @keyframes gsShake {
         0%,100% { transform: translateX(0); }
@@ -523,7 +564,7 @@
         display: flex; align-items: center; justify-content: center; line-height: 1;
       }
       .gs-avatar-btn:hover  { background: rgba(255,255,255,0.18); transform: scale(1.1); }
-      .gs-avatar-btn.selected { border-color: #a78bfa; background: rgba(167,139,250,0.25); transform: scale(1.1); }
+      .gs-avatar-btn.selected { border-color: #b7c4f0; background: rgba(183,196,240,0.25); transform: scale(1.1); }
       .gs-classe-row { display: flex; gap: 8px; flex-wrap: wrap; }
       .gs-classe-btn {
         flex: 1; min-width: 56px; padding: 10px 6px; font-size: 0.9rem; font-weight: 900;
@@ -533,15 +574,15 @@
         font-family: inherit; text-align: center;
       }
       .gs-classe-btn:hover  { background: rgba(255,255,255,0.18); transform: scale(1.04); }
-      .gs-classe-btn.selected { background: rgba(167,139,250,0.3); border-color: #a78bfa; transform: scale(1.04); }
+      .gs-classe-btn.selected { background: rgba(183,196,240,0.3); border-color: #b7c4f0; transform: scale(1.04); }
       .gs-create-btn {
         width: 100%; padding: 16px; font-size: 1.15rem; font-weight: 900;
-        background: linear-gradient(135deg, #7c3aed, #a855f7); color: white; border: none;
+        background: #fff; color: #172d66; border: none;
         border-radius: 18px; cursor: pointer; font-family: inherit;
-        box-shadow: 0 6px 24px rgba(124,58,237,0.45);
+        box-shadow: 0 6px 24px rgba(31,60,136,0.45);
         transition: transform 0.15s, box-shadow 0.15s; margin-top: 6px;
       }
-      .gs-create-btn:hover { transform: scale(1.02); box-shadow: 0 8px 32px rgba(124,58,237,0.55); }
+      .gs-create-btn:hover { transform: scale(1.02); box-shadow: 0 8px 32px rgba(31,60,136,0.55); }
 
       /* ===== PROFILE PICKER ===== */
       .gs-picker-overlay {
@@ -552,10 +593,10 @@
         backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
       }
       .gs-picker-panel {
-        background: linear-gradient(160deg, #1e1b4b, #312e81);
+        background: #172d66;
         width: 100%; max-width: 480px;
         border-radius: 28px 28px 0 0; padding: 24px 20px 36px;
-        box-shadow: 0 -8px 40px rgba(124,58,237,0.45);
+        box-shadow: 0 -8px 40px rgba(31,60,136,0.45);
         animation: gsNextSlideUp 0.35s cubic-bezier(0.175,0.885,0.32,1.275);
         color: white; max-height: 80vh; overflow-y: auto;
       }
@@ -580,12 +621,12 @@
         transition: background 0.15s, border-color 0.15s;
       }
       .gs-picker-item:hover  { background: rgba(255,255,255,0.14); }
-      .gs-picker-item.active { border-color: #a78bfa; background: rgba(167,139,250,0.15); }
+      .gs-picker-item.active { border-color: #b7c4f0; background: rgba(183,196,240,0.15); }
       .gs-picker-avatar { font-size: 2.2rem; flex-shrink: 0; }
       .gs-picker-info   { flex: 1; min-width: 0; }
       .gs-picker-name   { font-size: 1rem; font-weight: 900; }
       .gs-picker-meta   { font-size: 0.75rem; font-weight: 700; color: rgba(255,255,255,0.6); margin-top: 2px; }
-      .gs-picker-check  { font-size: 1.1rem; color: #a78bfa; font-weight: 900; flex-shrink: 0; }
+      .gs-picker-check  { font-size: 1.1rem; color: #b7c4f0; font-weight: 900; flex-shrink: 0; }
       .gs-picker-add {
         width: 100%; padding: 12px; font-size: 0.95rem; font-weight: 800;
         background: rgba(255,255,255,0.1); border: 2px dashed rgba(255,255,255,0.25);
@@ -593,6 +634,11 @@
         font-family: inherit; margin-bottom: 10px; transition: background 0.15s;
       }
       .gs-picker-add:hover { background: rgba(255,255,255,0.18); }
+      .gs-picker-del {
+        font-size: 1rem; flex-shrink: 0; opacity: 0.5;
+        padding: 5px 6px; border-radius: 8px; transition: opacity 0.15s, background 0.15s;
+      }
+      .gs-picker-del:hover { opacity: 1; background: rgba(239,68,68,0.22); }
       .gs-picker-full {
         display: block; text-align: center; color: rgba(255,255,255,0.5);
         font-size: 0.85rem; font-weight: 700; text-decoration: none;
@@ -737,11 +783,11 @@
       .gs-score-bar-fill {
         height: 100%;
         border-radius: 4px;
-        background: linear-gradient(90deg, #7c3aed, #a855f7);
+        background: #1f3c88;
         transition: width 0.55s ease, background 0.4s;
         width: 0%;
       }
-      .gs-score-bar-fill.complete { background: linear-gradient(90deg, #16a34a, #22c55e); }
+      .gs-score-bar-fill.complete { background: #16a34a; }
       .gs-score-sections {
         display: flex;
         gap: 5px;
@@ -854,7 +900,7 @@
       .gs-related-card:hover {
         border-color: #7c3aed;
         transform: translateY(-2px);
-        box-shadow: 0 4px 16px rgba(124,58,237,0.15);
+        box-shadow: 0 4px 16px rgba(31,60,136,0.15);
       }
       .gs-related-emoji { font-size: 1.2rem; flex-shrink: 0; }
     `;
@@ -893,7 +939,8 @@
   }
 
   // ── Profile creation modal ────────────────────────────────────────
-  function showCreateProfileModal(onDone) {
+  function showCreateProfileModal(onDone, opts) {
+    opts = opts || {};
     const overlay = document.createElement('div');
     overlay.className = 'gs-create-overlay';
 
@@ -903,8 +950,8 @@
     overlay.innerHTML = `
       <div class="gs-create-panel">
         <span class="gs-create-hero">✨</span>
-        <h2 class="gs-create-title">Bienvenue !</h2>
-        <p class="gs-create-sub">Crée ton profil pour commencer à gagner des points</p>
+        <h2 class="gs-create-title">${opts.title || 'Bienvenue !'}</h2>
+        <p class="gs-create-sub">${opts.sub || 'Crée ton profil pour commencer à gagner des points'}</p>
         <div class="gs-create-field">
           <label class="gs-create-label">Ton prénom</label>
           <input class="gs-create-input" id="gs-name-input" type="text" placeholder="Ex : Clémence" maxlength="20" autocomplete="off">
@@ -945,11 +992,18 @@
         if (input) { input.classList.add('gs-input-error'); input.placeholder = '⚠️ Entre ton prénom !'; input.focus(); }
         return;
       }
-      const p = blank(name, selAvatar, selClasse);
-      // Si l'utilisateur est connecté via Firebase, utiliser son uid
-      if (window.EF_AUTH && window.EF_AUTH.getUser()) {
-        p.id = window.EF_AUTH.getUser().uid;
+      // Connecté : créer un nouveau profil rattaché au compte
+      if (window.EF_AUTH && window.EF_AUTH.enabled && window.EF_AUTH.getUser()) {
+        window.EF_AUTH.createProfile({ name, avatar: selAvatar, classe: selClasse }, function (profile) {
+          if (!profile) { alert('Erreur lors de la création du profil. Réessaie.'); return; }
+          P = profile;
+          overlay.remove();
+          onDone(profile);
+        });
+        return;
       }
+      // Hors-ligne : profil local
+      const p = blank(name, selAvatar, selClasse);
       P = p;
       saveStore();
       overlay.remove();
@@ -960,13 +1014,75 @@
     if (input) input.addEventListener('keydown', e => { if (e.key === 'Enter') window._gsSubmitCreate(); });
   }
 
+  // ── Plusieurs profils ────────────────────────────────────────────
+  function usingAuth() {
+    return !!(window.EF_AUTH && window.EF_AUTH.enabled && window.EF_AUTH.getUser());
+  }
+
+  function listProfiles() {
+    if (usingAuth()) {
+      return (window.EF_AUTH.getProfiles() || []).map(pr => Object.assign({ __key: pr.pid }, pr));
+    }
+    const store = readLocalStore();
+    if (store && store.profiles && Object.keys(store.profiles).length) {
+      return Object.keys(store.profiles)
+        .map(k => Object.assign({ __key: k }, store.profiles[k]))
+        .sort((a, b) => (a.createdAt || 0) - (b.createdAt || 0));
+    }
+    return P ? [Object.assign({ __key: P.id }, P)] : [];
+  }
+
+  function activeProfileId() {
+    if (usingAuth()) return window.EF_AUTH.getActivePid();
+    const store = readLocalStore();
+    return store ? store.active : (P ? P.id : null);
+  }
+
+  function switchProfile(key) {
+    if (!key || key === activeProfileId()) return;
+    if (usingAuth()) {
+      window.EF_AUTH.switchProfile(key, function () { location.reload(); });
+    } else {
+      const store = readLocalStore();
+      if (store && store.profiles && store.profiles[key]) {
+        store.active = key;
+        try { localStorage.setItem('clemence_maths_v2', JSON.stringify(store)); } catch (e) {}
+        location.reload();
+      }
+    }
+  }
+
+  function addProfile() {
+    showCreateProfileModal(function () { location.reload(); }, {
+      title: 'Nouveau profil',
+      sub: 'Ajoute un enfant — chacun garde sa propre progression'
+    });
+  }
+
+  function deleteProfileByKey(key) {
+    if (usingAuth()) {
+      window.EF_AUTH.deleteProfile(key, function (ok, info) {
+        if (!ok && info === 'dernier') { alert('Impossible de supprimer le dernier profil.'); return; }
+        if (!ok) { alert('Erreur lors de la suppression du profil.'); return; }
+        location.reload();
+      });
+      return;
+    }
+    const store = readLocalStore();
+    if (!store || !store.profiles) return;
+    if (Object.keys(store.profiles).length <= 1) { alert('Impossible de supprimer le dernier profil.'); return; }
+    delete store.profiles[key];
+    if (store.active === key) store.active = Object.keys(store.profiles)[0];
+    try { localStorage.setItem('clemence_maths_v2', JSON.stringify(store)); } catch (e) {}
+    location.reload();
+  }
+
   // ── Profile picker modal ──────────────────────────────────────────
   function showProfilePicker() {
     const overlay = document.createElement('div');
     overlay.className = 'gs-picker-overlay';
 
     const user = window.EF_AUTH && window.EF_AUTH.getUser ? window.EF_AUTH.getUser() : null;
-    const lv = P ? getLevel(P.xp) : null;
 
     const accountSection = user ? `
       <div style="margin-top:14px;padding:13px;background:rgba(255,255,255,.07);border-radius:13px;border:1.5px solid rgba(255,255,255,.12)">
@@ -981,29 +1097,38 @@
         <div style="font-size:.82rem;font-weight:700;color:rgba(255,255,255,.5);line-height:1.5;margin-bottom:10px">
           🔒 Connecte-toi pour sauvegarder ta progression sur tous tes appareils.
         </div>
-        <a href="#" id="gs-signin-link" style="display:block;text-align:center;padding:9px;background:linear-gradient(135deg,#7c3aed,#a855f7);border-radius:10px;color:white;font-weight:900;font-size:.85rem;text-decoration:none">
+        <a href="#" id="gs-signin-link" style="display:block;text-align:center;padding:9px;background:#fff;border-radius:10px;color:#172d66;font-weight:900;font-size:.85rem;text-decoration:none">
           Créer un compte / Se connecter →
         </a>
       </div>
     `;
 
+    const profiles = listProfiles();
+    const activeKey = activeProfileId();
+    const canDelete = profiles.length > 1;
+    const listHtml = profiles.map(function (pr) {
+      const isActive = pr.__key === activeKey;
+      const plv = getLevel(pr.xp || 0);
+      return `
+        <div class="gs-picker-item${isActive ? ' active' : ''}" data-key="${pr.__key}">
+          <span class="gs-picker-avatar">${pr.avatar || '⭐'}</span>
+          <div class="gs-picker-info">
+            <div class="gs-picker-name">${pr.name || 'Élève'}</div>
+            <div class="gs-picker-meta">${pr.classe || 'CE2'} · ${plv.emoji} Niv.${pr.level || 1} · ${pr.xp || 0} XP</div>
+          </div>
+          ${isActive ? '<span class="gs-picker-check">✓</span>'
+            : (canDelete ? `<span class="gs-picker-del" data-del="${pr.__key}" title="Supprimer ce profil">🗑️</span>` : '')}
+        </div>`;
+    }).join('');
+
     overlay.innerHTML = `
       <div class="gs-picker-panel">
         <div class="gs-picker-header">
-          <span class="gs-picker-title">👤 Mon profil</span>
+          <span class="gs-picker-title">👤 Mes profils</span>
           <button class="gs-picker-close" onclick="this.closest('.gs-picker-overlay').remove()">✕</button>
         </div>
-        ${P ? `
-        <div class="gs-picker-list">
-          <div class="gs-picker-item active" style="cursor:default">
-            <span class="gs-picker-avatar">${P.avatar}</span>
-            <div class="gs-picker-info">
-              <div class="gs-picker-name">${P.name}</div>
-              <div class="gs-picker-meta">${P.classe} · ${lv ? lv.emoji : ''} Niv.${P.level} · ${P.xp} XP · ${P.tot} réponses</div>
-            </div>
-          </div>
-        </div>
-        ` : ''}
+        <div class="gs-picker-list">${listHtml}</div>
+        <button class="gs-picker-add" id="gs-picker-add">➕ Ajouter un profil</button>
         <a href="profile.html" class="gs-picker-full" onclick="this.closest('.gs-picker-overlay').remove()">Voir le profil complet →</a>
         ${accountSection}
       </div>
@@ -1011,6 +1136,25 @@
 
     overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
     document.body.appendChild(overlay);
+
+    overlay.querySelectorAll('.gs-picker-item').forEach(function (item) {
+      item.addEventListener('click', function (e) {
+        const del = e.target.closest('.gs-picker-del');
+        if (del) {
+          e.stopPropagation();
+          const k = del.dataset.del;
+          const pr = profiles.find(function (x) { return x.__key === k; });
+          if (confirm('Supprimer le profil de ' + (pr ? pr.name : 'cet élève') + ' ?\nSa progression sera définitivement perdue.')) {
+            deleteProfileByKey(k);
+          }
+          return;
+        }
+        if (item.dataset.key !== activeKey) switchProfile(item.dataset.key);
+      });
+    });
+
+    const addBtn = document.getElementById('gs-picker-add');
+    if (addBtn) addBtn.addEventListener('click', function () { overlay.remove(); addProfile(); });
 
     const signOutBtn = document.getElementById('gs-signout-btn');
     if (signOutBtn) {
@@ -1425,9 +1569,9 @@
     if (document.getElementById('ef-guest-bar')) return;
     const bar = document.createElement('div');
     bar.id = 'ef-guest-bar';
-    bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:2000;background:linear-gradient(135deg,#1e1b4b,#4c1d95);color:white;display:flex;align-items:center;gap:12px;padding:12px 16px;font-family:inherit;font-size:0.85rem;font-weight:700;box-shadow:0 -4px 20px rgba(0,0,0,0.2);';
+    bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:2000;background:#172d66;color:white;display:flex;align-items:center;gap:12px;padding:12px 16px;font-family:inherit;font-size:0.85rem;font-weight:700;box-shadow:0 -4px 20px rgba(0,0,0,0.2);';
     bar.innerHTML = '<span style="flex:1">🔓 Non connecté — ta progression ne sera pas sauvegardée</span>'
-      + '<button style="background:rgba(167,139,250,0.25);border:1.5px solid #a78bfa;color:white;border-radius:10px;padding:7px 16px;font-size:0.82rem;font-weight:800;cursor:pointer;font-family:inherit;white-space:nowrap;" onclick="window.EF_AUTH.showAuthModal(function(){location.reload();})">Se connecter</button>'
+      + '<button style="background:rgba(183,196,240,0.25);border:1.5px solid #b7c4f0;color:white;border-radius:10px;padding:7px 16px;font-size:0.82rem;font-weight:800;cursor:pointer;font-family:inherit;white-space:nowrap;" onclick="window.EF_AUTH.showAuthModal(function(){location.reload();})">Se connecter</button>'
       + '<button style="background:none;border:none;color:rgba(255,255,255,0.55);font-size:1.2rem;cursor:pointer;padding:0 4px;line-height:1;" onclick="document.getElementById(\'ef-guest-bar\').remove()" title="Fermer">✕</button>';
     document.body.appendChild(bar);
   }
@@ -1502,14 +1646,20 @@
     spawnConfetti,
     showProfilePicker,
     showCreateProfileModal,
+    listProfiles,
+    activeProfileId,
+    switchProfile,
+    addProfile,
+    deleteProfile: deleteProfileByKey,
     setName:   name   => { if (P) { P.name   = name;   save(); renderHeaderChip(); } },
     setAvatar: avatar => { if (P) { P.avatar = avatar; save(); renderHeaderChip(); } },
     setClasse: classe => { if (P) { P.classe = classe; save(); } },
     resetAll: () => {
       if (!P) return;
-      const uid = P.id;
+      const uid = P.id, pid = P.pid;
       const fresh = blank(P.name, P.avatar, P.classe);
       fresh.id = uid;
+      if (pid) fresh.pid = pid;
       P = fresh;
       saveStore();
       location.reload();

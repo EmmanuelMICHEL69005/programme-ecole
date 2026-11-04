@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="École Facile">
+<meta name="application-name" content="École Facile">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/triangles-4e.html">
+<meta property="og:title" content="Triangles et théorème de Pythagore — 4ème | École Facile">
+<meta property="og:description" content="Exercices interactifs 4e — correction immédiate, XP et badges. Gratuit sur École Facile.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/triangles-4e.html">
+<meta name="description" content="Exercices interactifs 4e — correction immédiate, XP et badges. Gratuit sur École Facile.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Triangles et théorème de Pythagore — 4ème | École Facile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=4">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #bae6fd; border-radius: 22px;
+    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #0c4a6e;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #f0f9ff; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #f0f9ff; border: 2px solid #bae6fd; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .alg-card { font-size: 1.5rem; font-weight: 900; color: #0c4a6e; text-align: center; padding: 14px; background: #e0f2fe; border-radius: 14px; margin-bottom: 14px; }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: #0369a1;">
+  <span class="emoji-header">📐</span>
+  <h1>Triangles et théorème de Pythagore</h1>
+  <p>Pythagore · réciproque · droite des milieux · triangles particuliers</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">4ème — Espace et géométrie</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
+      📐 <strong>Pythagore</strong> : si ABC est rectangle en A, alors BC² = AB² + AC²<br>
+      🔁 <strong>Réciproque</strong> : si BC² = AB² + AC², alors ABC est rectangle en A<br>
+      ➗ <strong>Droite des milieux</strong> : si I et J sont les milieux de [AB] et [AC], alors (IJ) // (BC) et IJ = BC / 2
+    </div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 1</span> Pythagore</div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 2</span> Réciproque et droite des milieux</div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 3</span> Triangles particuliers</div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 4</span> Problèmes</div>
+    <div id="ex4"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a> · <a href="programme-5e.html">5ème</a> · <a href="programme-4e.html">4ème</a> · <a href="programme-3e.html">3ème</a></div></footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    d.innerHTML = `
+      ${item.card ? `<div class="alg-card">${item.card}</div>` : ''}
+      <div class="q-text">${item.q}</div>
+      <div class="qcm-row" id="${id}-r${i}">
+        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+      </div>
+      <div class="feedback-line" id="${id}-f${i}"></div>
+    `;
+    c.appendChild(d);
+  });
+}
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ La bonne réponse : ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([{"q": "Triangle rectangle de côtés de l'angle droit 3 et 4 : hypoténuse ?", "correct": "5", "choices": ["5", "7", "12", "25"]}, {"q": "Hypoténuse 13 et côté 5 : l'autre côté de l'angle droit mesure…", "correct": "12", "choices": ["12", "8", "18", "169"]}, {"q": "Un triangle de côtés 5, 12 et 13 est-il rectangle ?", "correct": "Oui", "choices": ["Oui", "Non"]}, {"q": "Un triangle de côtés 4, 5 et 6 est-il rectangle ?", "correct": "Non", "choices": ["Non", "Oui"]}], 'ex1');
+buildQ([{"q": "La réciproque de « si ABC est rectangle en A, alors BC² = AB² + AC² » est…", "correct": "si BC² = AB² + AC², alors ABC est rectangle en A", "choices": ["si BC² = AB² + AC², alors ABC est rectangle en A", "si ABC est isocèle, alors BC² = AB² + AC²", "si BC² = 2AB², alors ABC est rectangle en B", "si AC² = AB² + BC², alors ABC est isocèle"]}, {"q": "I milieu de [AB], J milieu de [AC] : (IJ) est parallèle à…", "correct": "(BC)", "choices": ["(BC)", "(AB)", "(AC)", "(AI)"]}, {"q": "Si IJ = 4 cm alors BC = …", "correct": "8 cm", "choices": ["8 cm", "4 cm", "2 cm", "16 cm"]}, {"q": "Dans un triangle rectangle, le cercle circonscrit a pour diamètre…", "correct": "l'hypoténuse", "choices": ["l'hypoténuse", "un côté de l'angle droit", "la hauteur", "le rayon"]}], 'ex2');
+buildQ([{"q": "Un triangle isocèle a…", "correct": "deux côtés égaux", "choices": ["deux côtés égaux", "trois côtés égaux", "trois angles droits", "deux angles droits"]}, {"q": "Une médiane d'un triangle relie…", "correct": "un sommet au milieu du côté opposé", "choices": ["un sommet au milieu du côté opposé", "deux milieux", "un sommet à la perpendiculaire", "deux sommets"]}, {"q": "Les médianes d'un triangle se coupent en un point appelé…", "correct": "le centre de gravité", "choices": ["le centre de gravité", "le centre du cercle inscrit", "l'orthocentre", "le milieu d'un côté"]}, {"q": "Les hauteurs d'un triangle sont…", "correct": "concourantes", "choices": ["concourantes", "parallèles", "égales", "confondues"]}], 'ex3');
+buildQ([{"q": "Une échelle de 5 m est appuyée à 3 m du mur. Hauteur atteinte ?", "correct": "4 m", "choices": ["4 m", "8 m", "2 m", "√34 m"]}, {"q": "Diagonale d'un carré de côté 4 cm ?", "correct": "4√2 cm", "choices": ["4√2 cm", "8 cm", "16 cm", "2√2 cm"]}, {"q": "Aire d'un triangle de base 6 cm et de hauteur 5 cm ?", "correct": "15 cm²", "choices": ["15 cm²", "30 cm²", "11 cm²", "5 cm²"]}, {"q": "Triangle rectangle de côtés 6 et 8 : hypoténuse ?", "correct": "10", "choices": ["10", "14", "√14", "48"]}], 'ex4');
+</script>
+
+<script src="sync.js"></script>
+<script src="firebase-keys.js"></script>
+<script src="auth.js?v=7"></script>
+<script src="gamification.js?v=6"></script>
+<script src="nav.js?v=6"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>

@@ -17,8 +17,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mon Profil — Les Maths de Clémence | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=2">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=4">
 <style>
   /* ── Profile switcher bar ── */
   .profiles-bar {
@@ -254,6 +254,9 @@
 <!-- Account bar -->
 <div id="accountBar" style="background:linear-gradient(135deg,#1e1b4b,#312e81);padding:10px 16px;display:flex;align-items:center;gap:10px;color:white;font-size:0.85rem;font-weight:700;min-height:44px;"></div>
 
+<!-- Profile switcher bar -->
+<div class="profiles-bar" id="profilesBar" style="display:none"></div>
+
 <!-- Loading spinner (hidden once ready) -->
 <div id="profileLoading" style="text-align:center;padding:60px 24px;color:#888;font-size:0.95rem;font-weight:700;">
   <div style="font-size:2.5rem;margin-bottom:12px;animation:spin 1s linear infinite;display:inline-block;">⏳</div><br>
@@ -365,7 +368,7 @@
 
 </main>
 
-<footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a></div></footer>
+<footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a> · <a href="programme-5e.html">5ème</a> · <a href="programme-4e.html">4ème</a> · <a href="programme-3e.html">3ème</a></div></footer>
 
 <!-- Avatar picker -->
 <div class="avatar-picker-overlay" id="avatarPicker" style="display:none;">
@@ -387,9 +390,9 @@
 
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>
-<script src="auth.js?v=4"></script>
-<script src="gamification.js?v=4"></script>
-<script src="nav.js?v=5"></script>
+<script src="auth.js?v=7"></script>
+<script src="gamification.js?v=6"></script>
+<script src="nav.js?v=6"></script>
 <script>
   // ── Account bar ───────────────────────────────────────────────────
   function updateAccountBar() {
@@ -409,9 +412,38 @@
     }
   }
 
+  // ── Profile switcher bar ─────────────────────────────────────────
+  function renderProfilesBar() {
+    const bar = document.getElementById('profilesBar');
+    if (!bar || !GS.listProfiles) return;
+    const list = GS.listProfiles();
+    const activeKey = GS.activeProfileId();
+    if (list.length < 1) { bar.style.display = 'none'; return; }
+    bar.style.display = 'flex';
+    bar.innerHTML = '<span class="profiles-bar-label">Profils</span>'
+      + list.map(function (pr) {
+          const a = pr.__key === activeKey;
+          return '<button class="profile-chip' + (a ? ' active' : '') + '" data-key="' + pr.__key + '">'
+            + '<span class="profile-chip-avatar">' + (pr.avatar || '⭐') + '</span>'
+            + '<span class="profile-chip-info">'
+            +   '<span class="profile-chip-name">' + (pr.name || 'Élève') + '</span>'
+            +   '<span class="profile-chip-meta">' + (pr.classe || 'CE2') + ' · ' + (pr.xp || 0) + ' XP</span>'
+            + '</span></button>';
+        }).join('')
+      + '<button class="profile-add-btn" id="profileAddBtn" title="Ajouter un profil">＋</button>';
+    bar.querySelectorAll('.profile-chip').forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        if (chip.dataset.key !== activeKey) GS.switchProfile(chip.dataset.key);
+      });
+    });
+    const add = document.getElementById('profileAddBtn');
+    if (add) add.addEventListener('click', function () { GS.addProfile(); });
+  }
+
   // ── Main render ───────────────────────────────────────────────────
   function render() {
     updateAccountBar();
+    renderProfilesBar();
     const loading = document.getElementById('profileLoading');
     if (loading) loading.style.display = 'none';
     const P = GS.profile();
@@ -610,16 +642,22 @@
       return;
     }
     const email = auth.getUser().email;
-    if (!confirm('⚠️ Supprimer définitivement le compte ' + email + ' ?\n\nToutes tes données (XP, badges, progression) seront effacées et cette action est irréversible.')) return;
-    if (!confirm('Dernière confirmation : supprimer le compte ' + email + ' ?')) return;
-    auth.deleteAccount(function (ok, errCode) {
+    if (!confirm('⚠️ Supprimer définitivement le compte ' + email + ' ?\n\nToutes les données (XP, badges, progression) de TOUS les profils seront effacées. Cette action est irréversible.')) return;
+    const pwd = prompt('Pour confirmer, entre le mot de passe du compte ' + email + ' :');
+    if (pwd === null) return;
+    if (!pwd) { alert('Mot de passe requis pour supprimer le compte.'); return; }
+    auth.deleteAccount(pwd, function (ok, errCode) {
       if (ok) {
         alert('✅ Compte supprimé. À bientôt !');
         window.location.href = 'index.html';
+      } else if (errCode === 'mauvais-mot-de-passe') {
+        alert('❌ Mot de passe incorrect — le compte n\'a pas été supprimé.');
+      } else if (errCode === 'non-connecté') {
+        alert('⚠️ Tu n\'es plus connecté. Reconnecte-toi et réessaie.');
       } else if (errCode === 'auth/requires-recent-login') {
-        alert('⚠️ Pour supprimer ton compte, déconnecte-toi puis reconnecte-toi, et réessaie.');
+        alert('⚠️ Déconnecte-toi, reconnecte-toi, puis réessaie tout de suite.');
       } else {
-        alert('❌ Erreur lors de la suppression. Réessaie ou contacte le support.');
+        alert('❌ Erreur lors de la suppression (' + (errCode || 'inconnue') + '). Réessaie.');
       }
     });
   }

@@ -842,6 +842,10 @@ body.cpage .site-footer{text-align:center;padding:16px;font-size:.8rem;color:#9c
 .cs-text{font-size:.88rem;font-weight:500;color:#1f2937;line-height:1.75;margin-bottom:10px}
 .cs-text b{color:var(--lc1,#5b21b6);font-weight:800}
 
+/* Surligneur — mots-clés / règles importantes */
+.cs-hl{background:linear-gradient(180deg,transparent 10%,#fde68a 10%,#fce38f 90%,transparent 90%);padding:0 .14em;border-radius:2px;font-weight:700;color:#1f2937;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.cs-hl b{color:#1f2937}
+
 /* Example box */
 .cs-ex{background:var(--lbg,#f5f3ff);border-left:4px solid var(--lc1,#5b21b6);border-radius:0 10px 10px 0;padding:10px 14px;font-size:.84rem;font-weight:500;color:var(--ld,#4c1d95);margin:8px 0;line-height:1.65}
 .cs-ex b{color:var(--lc1,#5b21b6);font-weight:800}
@@ -881,3 +885,177 @@ body.cpage .site-footer{text-align:center;padding:16px;font-size:.8rem;color:#9c
 .cs-mini .cs-mini-label{font-size:.69rem;font-weight:900;text-transform:uppercase;letter-spacing:.6px;color:var(--lc1);margin-bottom:4px}
 .cs-mini b{color:var(--ld,#4c1d95);font-weight:800}
 
+
+/* ================================================================
+   REFONTE « CAHIER » — principes Impeccable (nov. 2026)
+   Monde : l'école française. Encre bleue, papier crème, cahier Seyès.
+   Geste signature : les encadrés « Je retiens / À retenir » sont
+   des pages de cahier Seyès (marge rouge) — c'est ce qu'on recopie.
+   Ce bloc surcharge les règles précédentes ; le retirer = revenir.
+   ================================================================ */
+:root {
+  --encre: #1f3c88;          /* bleu encre de stylo plume — couleur d'action */
+  --encre-fonce: #172d66;
+  --encre-pale: #e9edf8;
+  --marge: #d94848;          /* marge rouge du cahier */
+  --seyes: rgba(60,80,170,.09);
+  --seyes-fort: rgba(60,80,170,.22);
+  --papier: #fffbf0;
+  --trait: #ece6d6;          /* filets sur papier */
+  --texte-2: #5f6472;        /* texte secondaire ≥ 4,5:1 sur blanc et crème */
+  --violet: var(--encre);
+}
+
+/* ── Surfaces navigateur ─────────────────────────────────── */
+html { accent-color: var(--encre); caret-color: var(--encre); scrollbar-color: #b9c3e3 transparent; -webkit-text-size-adjust: 100%; }
+body { font-weight: 500; }
+::selection { background: #cdd6f3; color: var(--encre-fonce); }
+a { text-underline-offset: .18em; }
+:focus-visible { outline: 3px solid var(--encre); outline-offset: 2px; }
+.site-header :focus-visible, .home-header :focus-visible, .cours-header :focus-visible { outline-color: #fff; }
+table, input, .cs-ex, .calcul-item, .ex-card, .frac-card { font-variant-numeric: tabular-nums; }
+h1, h2, h3, .ex-title, .cs-head, .bonjour { text-wrap: balance; }
+p, li, .cs-text, .cs-ex, .cs-tip { text-wrap: pretty; }
+
+/* ── En-têtes : aplat d'encre, plus de dégradé ni de vague ─ */
+.site-header { background: var(--encre); padding: 14px 20px 26px; }
+.site-header::after { display: none; }
+.cpage .cours-header { background: var(--lc1, var(--encre)) !important; padding: 34px 20px 30px; }
+.cpage .cours-header::before, .cpage .cours-header::after { display: none; }
+.cpage .cours-header h1 { text-shadow: none; }
+
+/* Pastilles de niveau au-dessus des titres : redondantes avec le fil d'Ariane */
+.badge-niveau, body.cpage .badge-niveau { display: none; }
+
+/* ── Signature : la page de cahier Seyès ─────────────────── */
+.retiens-box, .cs-retenir, .cpage .retenir {
+  background-color: #fff;
+  background-image:
+    linear-gradient(90deg, transparent 43px, var(--marge) 43px, var(--marge) 45px, transparent 45px),
+    repeating-linear-gradient(180deg, transparent 0 31px, var(--seyes-fort) 31px 32px),
+    repeating-linear-gradient(180deg, transparent 0 7px, var(--seyes) 7px 8px),
+    repeating-linear-gradient(90deg, transparent 0 31px, var(--seyes) 31px 32px);
+  border: 1px solid #dfe3f1;
+  border-radius: 14px;
+  padding: 18px 20px 18px 62px;
+  box-shadow: 0 1px 2px rgba(23,45,102,.06), 0 8px 22px rgba(23,45,102,.06);
+}
+.retiens-box .retiens-title, .cs-retenir h3, .cpage .retenir h3 {
+  text-transform: none; letter-spacing: 0;
+  font-size: 1.1rem; font-weight: 900; color: var(--encre);
+}
+.cs-retenir ul, .cpage .retenir ul { font-size: 1rem; line-height: 2; }
+.cs-retenir ul li, .cpage .retenir li { font-size: 1rem; font-weight: 600; color: #1f2937; }
+.concept-card { box-shadow: none; border: 1px solid #f3d27a; }
+@media (max-width: 500px) {
+  .retiens-box, .cs-retenir, .cpage .retenir {
+    background-image:
+      linear-gradient(90deg, transparent 25px, var(--marge) 25px, var(--marge) 27px, transparent 27px),
+      repeating-linear-gradient(180deg, transparent 0 31px, var(--seyes-fort) 31px 32px),
+      repeating-linear-gradient(180deg, transparent 0 7px, var(--seyes) 7px 8px);
+    padding-left: 40px;
+  }
+}
+
+/* ── Page d'exercices : une carte par exercice, pas de cartes dans les cartes ─ */
+.exercice-block {
+  border: 1px solid var(--trait);
+  box-shadow: 0 1px 2px rgba(23,45,102,.05), 0 8px 24px rgba(23,45,102,.05);
+}
+.exercice-block::before { display: none; }
+.exercice-block .ex-title { border-bottom: 1px solid var(--trait); font-size: 1.12rem; }
+.ex-badge { background: var(--accent, var(--encre)); box-shadow: none; }
+.q-block {
+  background: transparent; border: 0; border-top: 1px solid var(--trait);
+  border-radius: 0; box-shadow: none; animation: none;
+  padding: 18px 2px; margin: 0;
+}
+.q-block:first-child { border-top: 0; padding-top: 6px; }
+.frac-card { box-shadow: none; }
+.pb-enonce { background: #fef6d8; border: 1px solid #f6df98; border-left-width: 1px; color: #713f12; font-weight: 600; }
+
+/* Boutons : on garde le relief « à presser » (le monde du jeu), en encre */
+.btn-choice:hover:not([disabled]) { border-color: var(--encre); color: var(--encre); background: var(--encre-pale); box-shadow: 0 6px 0 #b9c3e3; }
+.btn-validate { background: var(--encre); box-shadow: 0 4px 0 var(--encre-fonce); }
+.btn-validate:hover { background: #24459c; box-shadow: 0 6px 0 var(--encre-fonce); }
+.btn-validate:active { box-shadow: 0 2px 0 var(--encre-fonce); }
+.btn-reset { background: #fff; color: var(--texte-2); border: 2px solid #d6d3cb; box-shadow: 0 4px 0 #d6d3cb; }
+.btn-reset:hover { background: #f6f4ee; color: #1f2937; }
+.ordre-item:hover:not([disabled]):not(.used),
+.tri-chip:hover:not(.tri-used),
+.paires-btn:hover:not([disabled]):not(.p-ok) { border-color: var(--encre); background: var(--encre-pale); color: var(--encre); }
+.ordre-chip { background: var(--encre-pale); border-color: var(--encre); }
+.tri-chip.tri-sel, .paires-btn.p-sel { border-color: var(--encre); background: var(--encre-pale); color: var(--encre); box-shadow: 0 0 0 3px rgba(31,60,136,.18); }
+.tri-col.tri-target { border-color: var(--encre); background: var(--encre-pale); }
+.ordre-hint, .tri-hint, .figure-card .hint, .ex-hint { color: var(--texte-2); }
+
+/* ── Encadrés : fond teinté + filet fin, plus de barre latérale ─ */
+.cpage .dbox, .cpage .ebox, .cpage .rbox, .cpage .wbox, .cs-ex, .cs-tip {
+  border-left: 0; border-radius: 12px; border-style: solid; border-width: 1px;
+}
+.cpage .dbox { border-color: #bfdbfe; }
+.cpage .ebox { border-color: #fde68a; }
+.cpage .rbox { border-color: #bbf7d0; }
+.cpage .wbox { border-color: #fecaca; }
+.cpage .dbox .lbl, .cpage .ebox .lbl, .cpage .rbox .lbl, .cpage .wbox .lbl {
+  text-transform: none; letter-spacing: 0; font-size: .85rem;
+}
+.cpage .dbox p, .cpage .dbox ul, .cpage .ebox p, .cpage .ebox ul,
+.cpage .rbox p, .cpage .rbox ul, .cpage .wbox p, .cpage .wbox ul { font-size: 1rem; font-weight: 600; }
+.cs-ex { border-color: var(--lb, #dfe3f1); font-size: .98rem; padding: 12px 16px; }
+.cs-tip { border-color: #f6df98; font-size: .95rem; padding: 12px 16px; }
+
+/* ── Cours : une seule feuille de lecture au lieu d'une pile de cartes ─ */
+main.cs {
+  background: #fff; border-radius: 20px;
+  width: calc(100% - 24px); max-width: 720px;
+  margin: 22px auto 44px; padding: 6px 0 26px;
+  box-shadow: 0 1px 2px rgba(23,45,102,.06), 0 10px 30px rgba(23,45,102,.07);
+}
+main.cs .cs-block { background: transparent; box-shadow: none; border-radius: 0; margin: 0; border-top: 1px solid var(--lb, var(--trait)); }
+main.cs .cs-block:first-child { border-top: 0; }
+main.cs .cs-head {
+  background: transparent !important; color: var(--ld, var(--texte));
+  font-size: 1.2rem; font-weight: 900; padding: 24px 24px 4px; border-radius: 0;
+}
+main.cs .cs-body { padding: 8px 24px 22px; }
+.cs-text { font-size: 1.02rem; color: #1f2937; line-height: 1.7; max-width: 68ch; }
+.cs-table, .cs-table th, .cs-table td { font-size: .92rem; }
+.cs-mini { font-size: .92rem; }
+.cs-mini .cs-mini-label { text-transform: none; letter-spacing: 0; font-size: .8rem; }
+main.cs .cs-retenir { margin: 6px 20px 22px; }
+.cpage .cta { background: var(--lbg, var(--encre-pale)); border: 0; margin: 0 20px; }
+.cpage .cta p { opacity: 1; font-size: .95rem; }
+.cpage .btn-ex { background: var(--lc1, var(--encre)); box-shadow: 0 4px 0 var(--ld, var(--encre-fonce)); }
+.cpage .btn-ex:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--ld, var(--encre-fonce)); }
+.cpage .formula-card { background: var(--ld, var(--encre)); }
+.cpage .formula-card .fc-label { text-transform: none; letter-spacing: 0; font-size: .8rem; }
+.cpage .conv-table th { background: var(--ld, var(--encre)); }
+.cpage .frise-dot { background: var(--lc1, var(--encre)); }
+.cpage .frise-text { font-size: .98rem; font-weight: 600; }
+.cpage .frise-date, .cpage .frise-title { text-transform: none; letter-spacing: 0; font-size: .82rem; }
+.cpage .vcrd .vs { color: var(--texte-2); }
+.cpage .vcrd .vl { font-size: .78rem; }
+.visbox .vis-caption, .cpage .visbox .vis-caption { letter-spacing: 0; font-size: .82rem; }
+
+/* ── Pied de page ────────────────────────────────────────── */
+.site-footer, body.cpage .site-footer { color: var(--texte-2); border-top: 1px solid var(--trait); }
+.footer-levels a, body.cpage .site-footer .footer-levels a { color: var(--texte-2); }
+.footer-levels a:hover, .site-footer a { color: var(--encre); }
+
+/* ── Petits écrans ───────────────────────────────────────── */
+.ex-badge { white-space: nowrap; flex-shrink: 0; }
+@media (max-width: 500px) {
+  .site-header { padding-top: 66px; }
+  .site-header .emoji-header { display: none; }
+  .cpage .cours-header { padding-top: 66px; }
+  main.cs { width: calc(100% - 16px); margin-top: 14px; }
+  main.cs .cs-head { padding: 20px 16px 4px; }
+  main.cs .cs-body { padding: 8px 16px 18px; }
+  main.cs .cs-retenir, .cpage .cta { margin-left: 12px; margin-right: 12px; }
+}
+
+/* ── Mouvement : respecter la préférence système ─────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}

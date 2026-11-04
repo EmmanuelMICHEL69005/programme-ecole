@@ -17,12 +17,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>École Facile — Exercices interactifs CP→6e</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=2">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=4">
 <style>
 /* ── Hero header ── */
 .home-header {
-  background: linear-gradient(135deg, #5b21b6 0%, #7c3aed 50%, #3b82f6 100%);
+  background: var(--encre);
   color: white;
   text-align: center;
   padding: 18px 20px 22px;
@@ -126,6 +126,7 @@
 .lp-cm1 { background:#dbeafe; color:#1e3a8a; border-color:#93c5fd; }
 .lp-cm2 { background:#fef9c3; color:#713f12; border-color:#fde68a; }
 .lp-6e  { background:#fce7f3; color:#9d174d; border-color:#fbcfe8; }
+.lp-5e  { background:#e0f2fe; color:#0369a1; border-color:#bae6fd; }
 
 .lp-cp.active  { background:#16a34a; color:white; border-color:#16a34a; box-shadow:0 4px 14px rgba(22,163,74,.35); }
 .lp-ce1.active { background:#059669; color:white; border-color:#059669; box-shadow:0 4px 14px rgba(5,150,105,.35); }
@@ -133,6 +134,11 @@
 .lp-cm1.active { background:#1d4ed8; color:white; border-color:#1d4ed8; box-shadow:0 4px 14px rgba(29,78,216,.35); }
 .lp-cm2.active { background:#b45309; color:white; border-color:#b45309; box-shadow:0 4px 14px rgba(180,83,9,.35); }
 .lp-6e.active  { background:#9d174d; color:white; border-color:#9d174d; box-shadow:0 4px 14px rgba(157,23,77,.35); }
+.lp-5e.active  { background:#0369a1; color:white; border-color:#0369a1; box-shadow:0 4px 14px rgba(3,105,161,.35); }
+.lp-4e  { background:#cffafe; color:#0e7490; border-color:#a5f3fc; }
+.lp-3e  { background:#ccfbf1; color:#0f766e; border-color:#99f6e4; }
+.lp-4e.active  { background:#0e7490; color:white; border-color:#0e7490; box-shadow:0 4px 14px rgba(14,116,144,.35); }
+.lp-3e.active  { background:#0f766e; color:white; border-color:#0f766e; box-shadow:0 4px 14px rgba(15,118,110,.35); }
 
 /* ── Level content ── */
 .lc { animation: lcIn 0.22s ease; }
@@ -217,14 +223,38 @@
 
 /* ── Cours card variant ── */
 /* (seo-intro supprimé — contenu intégré dans .home-header) */
-.lc-card-cours { border-color:#c4b5fd; background:#faf5ff; }
-.lc-card-cours:hover { border-color:#7c3aed; }
-.lcc-badge { font-size:0.6rem; font-weight:900; background:#7c3aed; color:white; border-radius:6px; padding:2px 6px; text-transform:uppercase; letter-spacing:.5px; margin-left:6px; vertical-align:middle; }
+.lc-card-cours { border-color:#d5dcf2; background:#f4f6fc; }
+.lc-card-cours:hover { border-color:var(--encre); }
+.lcc-badge { font-size:0.6rem; font-weight:900; background:var(--encre); color:white; border-radius:6px; padding:2px 6px; margin-left:6px; vertical-align:middle; }
 
 /* ── Welcome ── */
 .welcome { text-align:center; margin-bottom:24px; padding-top:4px; }
 .welcome .bonjour { font-size:1.4rem; font-weight:900; }
-.welcome p { font-size:0.92rem; color:#6b7280; margin-top:5px; }
+.welcome p { font-size:0.92rem; color:var(--texte-2); margin-top:5px; }
+
+/* ── Refonte « cahier » : une liste lisible plutôt que des tuiles-icônes ── */
+.level-picker { background: none; box-shadow: none; padding: 0; margin: 0 0 32px; }
+.welcome .bonjour { font-size: 1.6rem; color: var(--encre-fonce); }
+.lc-cat { margin-bottom: 30px; }
+.lc-cat-title {
+  font-size: 1.12rem; text-transform: none; letter-spacing: 0;
+  color: var(--texte); border-bottom: 0; padding-bottom: 0; margin-bottom: 10px;
+}
+.lc-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; }
+.lc-card {
+  flex-direction: row; align-items: center; gap: 12px;
+  padding: 11px 14px; border: 1px solid var(--trait); border-radius: 14px;
+  box-shadow: none; text-align: left;
+}
+.lc-card:hover { transform: translateY(-1px); border-color: #b9c3e3; box-shadow: 0 1px 2px rgba(23,45,102,.06), 0 6px 16px rgba(23,45,102,.07); }
+.lcc-icon { background: none !important; width: 34px; height: 34px; font-size: 1.55rem; border-radius: 0; }
+.lcc-body { text-align: left; min-width: 0; }
+.lcc-title { font-size: .98rem; margin-bottom: 1px; }
+.lcc-desc { font-size: .8rem; color: var(--texte-2); font-weight: 600; line-height: 1.35; }
+.lp-btn:hover { transform: translateY(-2px); }
+@media (max-width: 480px) {
+  .lc-grid { grid-template-columns: 1fr; gap: 6px; }
+}
 </style>
 </head>
 <body>
@@ -236,7 +266,7 @@
   </div>
   <p class="home-tagline">Exercices interactifs du CP à la 6ème — Maths · Français · Histoire · EPS</p>
 <div style="display:flex;justify-content:center;gap:10px;margin-top:12px">
-    <span style="background:white;color:#5b21b6;font-size:0.78rem;font-weight:800;border-radius:20px;padding:6px 18px">📝 Exercices</span>
+    <span style="background:white;color:#1f3c88;font-size:0.78rem;font-weight:800;border-radius:20px;padding:6px 18px">📝 Exercices</span>
     <a href="cours.html" style="background:rgba(255,255,255,.18);border:1.5px solid rgba(255,255,255,.35);color:white;font-size:0.78rem;font-weight:800;border-radius:20px;padding:6px 18px;text-decoration:none">📖 Cours</a>
   </div>
 </header>
@@ -250,8 +280,7 @@
 
   <!-- ── Sélecteur de niveau ── -->
   <div class="level-picker">
-    <div class="lp-label">Choisis ta classe</div>
-    <div class="lp-btns">
+    <div class="lp-btns" role="group" aria-label="Choisis ta classe">
       <button class="lp-btn lp-cp"  onclick="selectLvl('cp', this)">
         <span class="lp-emoji">🌱</span><span class="lp-name">CP</span>
       </button>
@@ -269,6 +298,15 @@
       </button>
       <button class="lp-btn lp-6e"  onclick="selectLvl('6e', this)">
         <span class="lp-emoji">⭐</span><span class="lp-name">6ème</span>
+      </button>
+      <button class="lp-btn lp-5e"  onclick="selectLvl('5e', this)">
+        <span class="lp-emoji">🚀</span><span class="lp-name">5ème</span>
+      </button>
+      <button class="lp-btn lp-4e"  onclick="selectLvl('4e', this)">
+        <span class="lp-emoji">🔶</span><span class="lp-name">4ème</span>
+      </button>
+      <button class="lp-btn lp-3e"  onclick="selectLvl('3e', this)">
+        <span class="lp-emoji">🎓</span><span class="lp-name">3ème</span>
       </button>
     </div>
   </div>
@@ -588,6 +626,12 @@
       </div>
     </div>
     <div class="lc-cat">
+      <div class="lc-cat-title">🇬🇧 Anglais</div>
+      <div class="lc-grid">
+        <a href="anglais-6e.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">🇬🇧</div><div class="lcc-body"><div class="lcc-title">Anglais — les bases</div><div class="lcc-desc">be, have got, present simple · 4 ex.</div></div></a>
+      </div>
+    </div>
+    <div class="lc-cat">
       <div class="lc-cat-title">🏛️ Histoire &amp; Géographie</div>
       <div class="lc-grid">
         <a href="histoire-geo-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">🌍</div><div class="lcc-body"><div class="lcc-title">Histoire-Géo</div><div class="lcc-desc">Antiquité, continents · 7 ex.</div></div></a>
@@ -623,9 +667,93 @@
     </div>
   </div>
 
+  <!-- ════════════════════════ 5e ════════════════════════ -->
+  <div id="lc-5e" class="lc">
+    <div class="lc-cat">
+      <div class="lc-cat-title">📐 Mathématiques — Nombres &amp; Calcul</div>
+      <div class="lc-grid">
+        <a href="nombres-5e.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">🌡️</div><div class="lcc-body"><div class="lcc-title">Nombres relatifs</div><div class="lcc-desc">opposé, +, − · 4 ex.</div></div></a>
+        <a href="calcul-5e.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">➗</div><div class="lcc-body"><div class="lcc-title">Calcul &amp; divisibilité</div><div class="lcc-desc">priorités, diviseurs · 4 ex.</div></div></a>
+        <a href="fractions-5e.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">½</div><div class="lcc-body"><div class="lcc-title">Fractions</div><div class="lcc-desc">comparer, + et − · 4 ex.</div></div></a>
+        <a href="puissances-5e.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">²</div><div class="lcc-body"><div class="lcc-title">Puissances</div><div class="lcc-desc">carrés, cubes · 4 ex.</div></div></a>
+        <a href="calcul-litteral-5e.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">🔤</div><div class="lcc-body"><div class="lcc-title">Calcul littéral</div><div class="lcc-desc">formules, développer · 4 ex.</div></div></a>
+      </div>
+    </div>
+    <div class="lc-cat">
+      <div class="lc-cat-title">📐 Mathématiques — Géométrie &amp; Mesures</div>
+      <div class="lc-grid">
+        <a href="geometrie-5e.html" class="lc-card"><div class="lcc-icon" style="background:#eff6ff">📐</div><div class="lcc-body"><div class="lcc-title">Angles &amp; triangles</div><div class="lcc-desc">somme des angles · 4 ex.</div></div></a>
+        <a href="espace-5e.html" class="lc-card"><div class="lcc-icon" style="background:#eff6ff">🧊</div><div class="lcc-body"><div class="lcc-title">Espace &amp; volumes</div><div class="lcc-desc">prisme, cylindre, disque · 4 ex.</div></div></a>
+        <a href="donnees-5e.html" class="lc-card"><div class="lcc-icon" style="background:#eff6ff">📊</div><div class="lcc-body"><div class="lcc-title">Stats &amp; probabilités</div><div class="lcc-desc">moyenne, hasard · 4 ex.</div></div></a>
+        <a href="proportionnalite-5e.html" class="lc-card"><div class="lcc-icon" style="background:#eff6ff">⚖️</div><div class="lcc-body"><div class="lcc-title">Proportionnalité</div><div class="lcc-desc">%, fonctions · 4 ex.</div></div></a>
+      </div>
+    </div>
+    <div class="lc-cat">
+      <div class="lc-cat-title">🇬🇧 Anglais</div>
+      <div class="lc-grid">
+        <a href="anglais-5e.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">🇬🇧</div><div class="lcc-body"><div class="lcc-title">Anglais — passé et modaux</div><div class="lcc-desc">past simple, must, be + -ing · 4 ex.</div></div></a>
+      </div>
+    </div>
+    <div class="lc-cat">
+      <div class="lc-cat-title">📖 Cours à retenir</div>
+      <div class="lc-grid" style="grid-template-columns:1fr">
+        <a href="programme-5e.html" class="lc-card lc-card-cours" style="flex-direction:row;align-items:center;gap:14px;padding:14px 18px;text-align:left">
+          <div class="lcc-icon" style="background:#e0f2fe;flex-shrink:0">🗂️</div>
+          <div class="lcc-body"><div class="lcc-title">Tout le programme 5e <span class="lcc-badge">pilier</span></div><div class="lcc-desc">tous les exercices de maths 5e en une page</div></div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════ 4e ════════════════════════ -->
+  <div id="lc-4e" class="lc">
+    <div class="lc-cat">
+      <div class="lc-cat-title">📐 Mathématiques</div>
+      <div class="lc-grid">
+        <a href="nombres-4e.html" class="lc-card"><div class="lcc-icon" style="background:#cffafe">🔢</div><div class="lcc-body"><div class="lcc-title">Nombres relatifs &amp; rationnels</div><div class="lcc-desc">produits, fractions · 4 ex.</div></div></a>
+        <a href="puissances-4e.html" class="lc-card"><div class="lcc-icon" style="background:#cffafe">²</div><div class="lcc-body"><div class="lcc-title">Puissances &amp; racines</div><div class="lcc-desc">produits, √ · 4 ex.</div></div></a>
+        <a href="calcul-litteral-4e.html" class="lc-card"><div class="lcc-icon" style="background:#cffafe">🔤</div><div class="lcc-body"><div class="lcc-title">Calcul littéral</div><div class="lcc-desc">développer, factoriser · 4 ex.</div></div></a>
+        <a href="geometrie-4e.html" class="lc-card"><div class="lcc-icon" style="background:#cffafe">🔷</div><div class="lcc-body"><div class="lcc-title">Transformations</div><div class="lcc-desc">demi-tour, translations · 4 ex.</div></div></a>
+        <a href="triangles-4e.html" class="lc-card"><div class="lcc-icon" style="background:#cffafe">📐</div><div class="lcc-body"><div class="lcc-title">Triangles &amp; Pythagore</div><div class="lcc-desc">Pythagore, milieux · 4 ex.</div></div></a>
+        <a href="espace-4e.html" class="lc-card"><div class="lcc-icon" style="background:#cffafe">🧊</div><div class="lcc-body"><div class="lcc-title">Pyramides &amp; volumes</div><div class="lcc-desc">pyramide, cône · 4 ex.</div></div></a>
+        <a href="donnees-4e.html" class="lc-card"><div class="lcc-icon" style="background:#cffafe">📊</div><div class="lcc-body"><div class="lcc-title">Statistiques &amp; probabilités</div><div class="lcc-desc">moyenne pondérée · 4 ex.</div></div></a>
+        <a href="proportionnalite-4e.html" class="lc-card"><div class="lcc-icon" style="background:#cffafe">⚖️</div><div class="lcc-body"><div class="lcc-title">Pourcentages &amp; fonctions</div><div class="lcc-desc">coefficients, f(x) · 4 ex.</div></div></a>
+      </div>
+    </div>
+    <div class="lc-cat">
+      <div class="lc-cat-title">🇬🇧 Anglais</div>
+      <div class="lc-grid">
+        <a href="anglais-4e.html" class="lc-card"><div class="lcc-icon" style="background:#cffafe">🇬🇧</div><div class="lcc-body"><div class="lcc-title">Anglais</div><div class="lcc-desc">comparatifs, present perfect · 4 ex.</div></div></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════ 3e ════════════════════════ -->
+  <div id="lc-3e" class="lc">
+    <div class="lc-cat">
+      <div class="lc-cat-title">📐 Mathématiques</div>
+      <div class="lc-grid">
+        <a href="nombres-3e.html" class="lc-card"><div class="lcc-icon" style="background:#ccfbf1">🔢</div><div class="lcc-body"><div class="lcc-title">Rationnels &amp; notation sci.</div><div class="lcc-desc">fractions, 10ⁿ · 4 ex.</div></div></a>
+        <a href="racines-3e.html" class="lc-card"><div class="lcc-icon" style="background:#ccfbf1">√</div><div class="lcc-body"><div class="lcc-title">Racines &amp; équations</div><div class="lcc-desc">√, x² = a, PGCD · 4 ex.</div></div></a>
+        <a href="calcul-litteral-3e.html" class="lc-card"><div class="lcc-icon" style="background:#ccfbf1">🔤</div><div class="lcc-body"><div class="lcc-title">Identités remarquables</div><div class="lcc-desc">factoriser, inéquations · 4 ex.</div></div></a>
+        <a href="geometrie-3e.html" class="lc-card"><div class="lcc-icon" style="background:#ccfbf1">📐</div><div class="lcc-body"><div class="lcc-title">Thalès &amp; vecteurs</div><div class="lcc-desc">Thalès, Chasles · 4 ex.</div></div></a>
+        <a href="trigonometrie-3e.html" class="lc-card"><div class="lcc-icon" style="background:#ccfbf1">📐</div><div class="lcc-body"><div class="lcc-title">Trigonométrie</div><div class="lcc-desc">cos, sin, tan · 4 ex.</div></div></a>
+        <a href="espace-3e.html" class="lc-card"><div class="lcc-icon" style="background:#ccfbf1">🧊</div><div class="lcc-body"><div class="lcc-title">Boule &amp; cône</div><div class="lcc-desc">volumes, sections · 4 ex.</div></div></a>
+        <a href="donnees-3e.html" class="lc-card"><div class="lcc-icon" style="background:#ccfbf1">📊</div><div class="lcc-body"><div class="lcc-title">Quartiles &amp; probabilités</div><div class="lcc-desc">boîtes, union · 4 ex.</div></div></a>
+        <a href="proportionnalite-3e.html" class="lc-card"><div class="lcc-icon" style="background:#ccfbf1">📈</div><div class="lcc-body"><div class="lcc-title">Fonctions</div><div class="lcc-desc">linéaire, affine, carré · 4 ex.</div></div></a>
+      </div>
+    </div>
+    <div class="lc-cat">
+      <div class="lc-cat-title">🇬🇧 Anglais</div>
+      <div class="lc-grid">
+        <a href="anglais-3e.html" class="lc-card"><div class="lcc-icon" style="background:#ccfbf1">🇬🇧</div><div class="lcc-body"><div class="lcc-title">Anglais</div><div class="lcc-desc">passif, conditionnel, discours indirect · 4 ex.</div></div></a>
+      </div>
+    </div>
+  </div>
+
 </main>
 
-<footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a></div></footer>
+<footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a> · <a href="programme-5e.html">5ème</a> · <a href="programme-4e.html">4ème</a> · <a href="programme-3e.html">3ème</a></div></footer>
 
 <script>
 function selectLvl(lvl, btn) {
@@ -679,9 +807,9 @@ if ('serviceWorker' in navigator) {
 </script>
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>
-<script src="auth.js?v=4"></script>
-<script src="gamification.js?v=4"></script>
-<script src="nav.js?v=5"></script>
+<script src="auth.js?v=7"></script>
+<script src="gamification.js?v=6"></script>
+<script src="nav.js?v=6"></script>
 <script src="seo.js"></script>
 </body>
 </html>

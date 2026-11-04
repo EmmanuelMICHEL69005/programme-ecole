@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="apple-mobile-web-app-title" content="École Facile">
+<meta name="application-name" content="École Facile">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ecolefacile.fr/geometrie-3e.html">
+<meta property="og:title" content="Théorème de Thalès et vecteurs — 3ème | École Facile">
+<meta property="og:description" content="Exercices interactifs 3e — correction immédiate, XP et badges. Gratuit sur École Facile.">
+<meta property="og:image" content="https://ecolefacile.fr/og-image.png">
+<meta property="og:site_name" content="École Facile">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://ecolefacile.fr/geometrie-3e.html">
+<meta name="description" content="Exercices interactifs 3e — correction immédiate, XP et badges. Gratuit sur École Facile.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Théorème de Thalès et vecteurs — 3ème | École Facile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=4">
+<style>
+  .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .btn-choice {
+    background: white; border: 2px solid #bae6fd; border-radius: 22px;
+    padding: 10px 22px; font-size: 1rem; font-weight: 800; cursor: pointer; color: #0c4a6e;
+    transition: background 0.15s;
+  }
+  .btn-choice:hover { background: #f0f9ff; }
+  .btn-choice.correct { background: #22c55e; border-color: #16a34a; color: white; }
+  .btn-choice.wrong   { background: #ef4444; border-color: #b91c1c; color: white; }
+  .btn-choice:disabled { opacity: 0.6; cursor: default; }
+  .feedback-line { font-size: 0.9rem; font-weight: 800; margin-top: 10px; min-height: 22px; }
+  .q-block { background: #f0f9ff; border: 2px solid #bae6fd; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .q-text { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .alg-card { font-size: 1.5rem; font-weight: 900; color: #0c4a6e; text-align: center; padding: 14px; background: #e0f2fe; border-radius: 14px; margin-bottom: 14px; }
+</style>
+</head>
+<body>
+
+<header class="site-header" style="background: #0369a1;">
+  <span class="emoji-header">📐</span>
+  <h1>Théorème de Thalès et vecteurs</h1>
+  <p>Thalès · configurations en papillon · relation de Chasles</p>
+  <a href="index.html" class="nav-back">← Accueil</a>
+</header>
+
+<main>
+
+  <div class="badge-niveau">3ème — Espace et géométrie</div>
+
+  <div class="retiens-box">
+    <div class="retiens-title">💡 Je retiens</div>
+    <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
+      📏 <strong>Thalès</strong> : si (MN) // (BC) avec M sur (AB) et N sur (AC), alors AM/AB = AN/AC = MN/BC<br>
+      ➡️ <strong>Chasles</strong> : AB + BC = AC · AB − AC = CB<br>
+      ↔️ Vecteur opposé de AB : BA
+    </div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 1</span> Thalès : calculs</div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 2</span> Thalès : hypothèses et réciproque</div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 3</span> Vecteurs</div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 4</span> Problèmes</div>
+    <div id="ex4"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a> · <a href="programme-5e.html">5ème</a> · <a href="programme-4e.html">4ème</a> · <a href="programme-3e.html">3ème</a></div></footer>
+
+<script>
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+function buildQ(data, id) {
+  const c = document.getElementById(id);
+  data.forEach((item, i) => {
+    const d = document.createElement('div');
+    d.className = 'q-block';
+    const sh = shuffle(item.choices);
+    d.innerHTML = `
+      ${item.card ? `<div class="alg-card">${item.card}</div>` : ''}
+      <div class="q-text">${item.q}</div>
+      <div class="qcm-row" id="${id}-r${i}">
+        ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
+      </div>
+      <div class="feedback-line" id="${id}-f${i}"></div>
+    `;
+    c.appendChild(d);
+  });
+}
+function check(btn, chosen, correct, rowId, fbId) {
+  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (chosen === correct) {
+    btn.classList.add('correct'); fb.textContent = '✅ Bravo !'; fb.style.color = '#166534';
+  } else {
+    btn.classList.add('wrong'); fb.textContent = '❌ La bonne réponse : ' + correct; fb.style.color = '#991b1b';
+    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
+  }
+}
+
+buildQ([{"q": "A, M sur (AB) et N sur (AC) avec AM = 2, AB = 6, AN = 3. Alors AC = ?", "correct": "9", "choices": ["9", "4", "6", "12"]}, {"q": "AB = 10, AM = 4, AN = 6, BC = 9, (MN) // (BC). Alors MN = ?", "correct": "3,6", "choices": ["3,6", "5,4", "2,4", "4"]}, {"q": "AM = 4, AB = 8, AN = 5. Alors AC = ?", "correct": "10", "choices": ["10", "7,5", "6", "8"]}, {"q": "Si (MN) // (BC), alors AM/AB est égal à…", "correct": "AN/AC", "choices": ["AN/AC", "MN/AB", "AM/AN", "AB/AC"]}], 'ex1');
+buildQ([{"q": "Pour appliquer le théorème de Thalès, il faut…", "correct": "des droites parallèles", "choices": ["des droites parallèles", "des angles droits", "des médianes", "des aires égales"]}, {"q": "Si M ∈ [AB], N ∈ [AC] et AM/AB = AN/AC, alors…", "correct": "(MN) et (BC) sont parallèles", "choices": ["(MN) et (BC) sont parallèles", "(MN) et (BC) sont perpendiculaires", "(MN) et (AB) sont parallèles", "MN = BC"]}, {"q": "Une réciproque de Thalès permet de…", "correct": "prouver que deux droites sont parallèles", "choices": ["prouver que deux droites sont parallèles", "prouver que deux droites sont perpendiculaires", "calculer une aire", "trouver un angle"]}, {"q": "Pour prouver que deux droites sont parallèles avec Thalès, on compare…", "correct": "des rapports de longueurs égaux", "choices": ["des rapports de longueurs égaux", "des angles droits", "des aires", "des périmètres"]}], 'ex2');
+buildQ([{"q": "AB + BC = ?", "correct": "AC", "choices": ["AC", "CA", "AB", "BC"]}, {"q": "AB − AC = ?", "correct": "CB", "choices": ["CB", "BC", "AC", "BA"]}, {"q": "Le vecteur opposé de AB est…", "correct": "BA", "choices": ["BA", "AB", "CB", "0"]}, {"q": "Si ABDC est un parallélogramme, alors AB = …", "correct": "CD", "choices": ["CD", "DC", "BD", "AD"]}], 'ex3');
+buildQ([{"q": "Un arbre de 6 m projette une ombre de 4 m. Un poteau de 1,5 m projette une ombre de… ?", "correct": "1 m", "choices": ["1 m", "2 m", "0,5 m", "6 m"]}, {"q": "Une maquette à l'échelle 1/50 mesure 12 cm. Taille réelle ?", "correct": "6 m", "choices": ["6 m", "60 cm", "600 m", "0,6 m"]}, {"q": "Dans un triangle, une droite parallèle au côté [BC] coupe [AB] en M avec AM = 3 et MB = 2. Si BC = 10, MN = ?", "correct": "6", "choices": ["6", "4", "2,5", "10"]}, {"q": "Le rapport AM/AB dans le cas précédent vaut…", "correct": "3/5", "choices": ["3/5", "2/5", "3/2", "5/3"]}], 'ex4');
+</script>
+
+<script src="sync.js"></script>
+<script src="firebase-keys.js"></script>
+<script src="auth.js?v=7"></script>
+<script src="gamification.js?v=6"></script>
+<script src="nav.js?v=6"></script>
+<script src="related.js"></script>
+<script src="seo.js"></script>
+</body>
+</html>
