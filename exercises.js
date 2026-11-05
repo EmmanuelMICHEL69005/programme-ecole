@@ -1,6 +1,6 @@
 /* ============================================================
    exercises.js — Moteur d'exercices interactifs
-   Site Les Maths de Clémence — Inspiré Duolingo
+   Site École Facile
    ============================================================ */
 
 // ── Stockage des données par ID d'exercice ──────────────────
@@ -25,6 +25,7 @@ const FIRE  = ['🔥 En feu !','🔥 Combo x'+0,'⚡ Incroyable !'];
 
 // ── Animation XP flottante ───────────────────────────────────
 function _xp(el) {
+  if (!window.GS_HAS_PROFILE) return; // pas de faux XP pour un invité
   const label = _combo >= 5 ? '+10 XP 🔥🔥' : _combo >= 3 ? '+10 XP 🔥' : '+10 XP';
   const r = el.getBoundingClientRect();
   const f = document.createElement('div');
@@ -43,9 +44,12 @@ function _ok(el, fb, correct) {
   _combo++;
   _xp(el);
 }
-function _ko(el, fb, correct) {
+function _lessonLink() {
+  return window.EF_LESSON ? ` <a class="fb-lesson" href="${window.EF_LESSON}">📖 Revoir la leçon</a>` : '';
+}
+function _ko(el, fb, correct, expl) {
   el.classList.add('ex-wrong');
-  fb.innerHTML = '❌ C\'était ' + formatFrac(correct);
+  fb.innerHTML = '❌ La bonne réponse : ' + formatFrac(correct) + (expl ? '. ' + expl : '') + _lessonLink();
   fb.className = 'feedback-line fb-ko';
   _combo = 0;
 }
@@ -72,23 +76,36 @@ function buildQCM(data, containerId) {
           onclick="_qcmCheck(this,'${containerId}-r${i}','${containerId}-f${i}','${eid}')"
         >${formatFrac(c)}</button>`).join('')}
       </div>
-      <div class="feedback-line" id="${containerId}-f${i}"></div>`;
+      <div class="retry-line" id="${containerId}-t${i}" aria-live="polite"></div>
+      <div class="feedback-line" aria-live="polite" id="${containerId}-f${i}"></div>`;
     container.appendChild(d);
   });
 }
 window._qcmCheck = function(btn, rowId, fbId, eid) {
   const item = _EX[eid];
-  document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  const row = document.getElementById(rowId);
   const fb = document.getElementById(fbId);
+  const retry = document.getElementById(fbId.replace(/-f(\d+)$/, '-t$1'));
+  const nChoices = row.querySelectorAll('.btn-choice').length;
+  if (btn.dataset.val !== item.correct && !row.dataset.tried && nChoices > 2) {
+    // Premier essai raté : on barre ce choix et on laisse réessayer
+    row.dataset.tried = '1';
+    btn.disabled = true;
+    btn.classList.add('tried');
+    if (retry) retry.innerHTML = '🤔 Pas tout à fait. Réessaie !' + (item.hint ? ' <span class="retry-hint">💡 ' + item.hint + '</span>' : '');
+    return;
+  }
+  row.querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+  if (retry) retry.innerHTML = '';
   if (btn.dataset.val === item.correct) {
     btn.classList.add('correct');
     _ok(btn, fb, item.correct);
   } else {
     btn.classList.add('wrong');
-    document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => {
+    row.querySelectorAll('.btn-choice').forEach(b => {
       if (b.dataset.val === item.correct) b.classList.add('correct');
     });
-    _ko(btn, fb, item.correct);
+    _ko(btn, fb, item.correct, item.expl);
   }
 };
 
@@ -113,7 +130,8 @@ function buildVF(data, containerId) {
         <button class="btn-choice btn-faux" data-val="faux"
           onclick="_vfCheck(this,'${containerId}-r${i}','${containerId}-f${i}','${eid}')">✗ Faux</button>
       </div>
-      <div class="feedback-line" id="${containerId}-f${i}"></div>`;
+      <div class="retry-line" id="${containerId}-t${i}" aria-live="polite"></div>
+      <div class="feedback-line" aria-live="polite" id="${containerId}-f${i}"></div>`;
     container.appendChild(d);
   });
 }
@@ -130,8 +148,8 @@ window._vfCheck = function(btn, rowId, fbId, eid) {
     document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => {
       if (b.dataset.val === expected) b.classList.add('correct');
     });
-    const expl = item.expl ? ` (${item.expl})` : '';
-    fb.innerHTML = '❌ C\'était ' + (item.correct ? 'Vrai' : 'Faux') + expl;
+    const expl = item.expl ? `. ${item.expl}` : '';
+    fb.innerHTML = '❌ C\'était ' + (item.correct ? 'Vrai' : 'Faux') + expl + _lessonLink();
     fb.className = 'feedback-line fb-ko';
     _combo = 0;
   }
@@ -157,13 +175,14 @@ function buildOrdre(data, containerId) {
         ${sh.map(v => `<button class="ordre-item" data-val="${v.replace(/"/g,'&quot;')}"
           onclick="_ordreAdd(this,'${poolId}','${zoneId}')">${formatFrac(v)}</button>`).join('')}
       </div>
-      <div class="ordre-hint">Clique dans l'ordre souhaité ↓ (clique sur un élement placé pour l'enlever)</div>
+      <div class="ordre-hint">Touche les éléments dans le bon ordre ↓ (touche un élément placé pour l'enlever)</div>
       <div class="ordre-zone" id="${zoneId}"></div>
       <div class="ex-actions">
         <button class="btn-validate" onclick="_ordreCheck('${poolId}','${zoneId}','${containerId}-f${i}','${eid}')">Valider ✔</button>
         <button class="btn-reset" onclick="_ordreReset('${poolId}','${zoneId}')">↺ Recommencer</button>
       </div>
-      <div class="feedback-line" id="${containerId}-f${i}"></div>`;
+      <div class="retry-line" id="${containerId}-t${i}" aria-live="polite"></div>
+      <div class="feedback-line" aria-live="polite" id="${containerId}-f${i}"></div>`;
     container.appendChild(d);
   });
 }
@@ -241,12 +260,13 @@ function buildTri(data, containerId) {
         ${sh.map(it => `<button class="tri-chip" data-val="${it.v.replace(/"/g,'&quot;')}" data-cat="${it.cat}"
           onclick="_triPick(this,'${gridId}')">${formatFrac(it.v)}</button>`).join('')}
       </div>
-      <div class="tri-hint">① Sélectionne un élément · ② Clique sur sa colonne</div>
+      <div class="tri-hint">Touche un élément, puis la colonne où il va</div>
       <div class="tri-grid" id="${gridId}">${colsHtml}</div>
       <div class="ex-actions">
         <button class="btn-validate" onclick="_triCheck('${poolId}','${gridId}','${containerId}-f${i}','${eid}')">Valider ✔</button>
       </div>
-      <div class="feedback-line" id="${containerId}-f${i}"></div>`;
+      <div class="retry-line" id="${containerId}-t${i}" aria-live="polite"></div>
+      <div class="feedback-line" aria-live="polite" id="${containerId}-f${i}"></div>`;
     container.appendChild(d);
   });
 }
@@ -297,7 +317,7 @@ window._triCheck = function(poolId, gridId, fbId, eid) {
   pool.querySelectorAll('.tri-chip').forEach(b => { b.disabled = true; b.onclick = null; });
   grid.querySelectorAll('.tri-col').forEach(c => { c.onclick = null; c.classList.remove('tri-target'); });
   if (allOk) { _ok(grid, fb, ''); fb.innerHTML = rnd(BRAVO); fb.className = 'feedback-line fb-ok'; }
-  else { fb.innerHTML = '❌ Certains éléments sont mal classés (en rouge) !'; fb.className = 'feedback-line fb-ko'; _combo = 0; }
+  else { fb.innerHTML = '❌ Certains éléments sont mal classés (en rouge).' + _lessonLink(); fb.className = 'feedback-line fb-ko'; _combo = 0; }
 };
 
 // ═══════════════════════════════════════════════════════════
@@ -321,7 +341,7 @@ function buildPaires(data, containerId) {
     const rights = shuffle(item.pairs.map(p => p[1]));
     d.innerHTML = `
       <div class="q-text">${item.q}</div>
-      <div class="tri-hint">Clique à gauche · puis à droite pour associer ↓</div>
+      <div class="tri-hint">Touche un élément à gauche, puis celui qui va avec à droite ↓</div>
       <div class="paires-wrap" id="${wrapId}">
         <div class="paires-col">
           ${lefts.map(v => `<button class="paires-btn" data-val="${v.replace(/"/g,'&quot;')}" data-side="L"
@@ -332,7 +352,8 @@ function buildPaires(data, containerId) {
             onclick="_pairClick(this,'${wrapId}','${containerId}-f${i}','${eid}')">${formatFrac(v)}</button>`).join('')}
         </div>
       </div>
-      <div class="feedback-line" id="${containerId}-f${i}"></div>`;
+      <div class="retry-line" id="${containerId}-t${i}" aria-live="polite"></div>
+      <div class="feedback-line" aria-live="polite" id="${containerId}-f${i}"></div>`;
     container.appendChild(d);
   });
 }

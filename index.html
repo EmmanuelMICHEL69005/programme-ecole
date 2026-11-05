@@ -18,7 +18,7 @@
 <title>École Facile — Exercices interactifs du CP à la 3e</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=7">
 <style>
 /* ── Hero header ── */
 .home-header {
@@ -240,7 +240,7 @@
   font-size: 1.12rem; text-transform: none; letter-spacing: 0;
   color: var(--texte); border-bottom: 0; padding-bottom: 0; margin-bottom: 10px;
 }
-.lc-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; }
+.lc-grid { grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 8px; }
 .lc-card {
   flex-direction: row; align-items: center; gap: 12px;
   padding: 11px 14px; border: 1px solid var(--trait); border-radius: 14px;
@@ -266,17 +266,19 @@
   </div>
   <p class="home-tagline">Exercices interactifs du CP à la 3e : maths, français, histoire-géo, anglais, EPS</p>
 <div style="display:flex;justify-content:center;gap:10px;margin-top:12px">
-    <span style="background:white;color:#1f3c88;font-size:0.78rem;font-weight:800;border-radius:20px;padding:6px 18px">📝 Exercices</span>
-    <a href="cours.html" style="background:rgba(255,255,255,.18);border:1.5px solid rgba(255,255,255,.35);color:white;font-size:0.78rem;font-weight:800;border-radius:20px;padding:6px 18px;text-decoration:none">📖 Cours</a>
+    <a href="index.html" aria-current="page" style="background:white;color:#1f3c88;font-size:0.85rem;font-weight:800;border-radius:20px;padding:6px 18px;text-decoration:none">Exercices</a>
+    <a href="cours.html" style="background:rgba(255,255,255,.18);border:1.5px solid rgba(255,255,255,.35);color:white;font-size:0.78rem;font-weight:800;border-radius:20px;padding:6px 18px;text-decoration:none">Leçons</a>
   </div>
 </header>
 
 <main>
 
   <div class="welcome">
-    <div class="bonjour">Quel est ton niveau ? 👇</div>
-    <p>Clique sur ta classe pour voir tous tes exercices et tes cours.</p>
+    <h1 class="bonjour">Quelle est ta classe ?</h1>
+    <p>Choisis-la : tu verras ses leçons et ses exercices.</p>
   </div>
+
+  <a class="lc-continue" id="lc-continue" hidden href="#"></a>
 
   <!-- ── Sélecteur de niveau ── -->
   <div class="level-picker">
@@ -297,16 +299,16 @@
         <span class="lp-emoji">🏆</span><span class="lp-name">CM2</span>
       </button>
       <button class="lp-btn lp-6e"  onclick="selectLvl('6e', this)">
-        <span class="lp-emoji">⭐</span><span class="lp-name">6ème</span>
+        <span class="lp-emoji">⭐</span><span class="lp-name">6e</span>
       </button>
       <button class="lp-btn lp-5e"  onclick="selectLvl('5e', this)">
-        <span class="lp-emoji">🚀</span><span class="lp-name">5ème</span>
+        <span class="lp-emoji">🚀</span><span class="lp-name">5e</span>
       </button>
       <button class="lp-btn lp-4e"  onclick="selectLvl('4e', this)">
-        <span class="lp-emoji">🔶</span><span class="lp-name">4ème</span>
+        <span class="lp-emoji">🔶</span><span class="lp-name">4e</span>
       </button>
       <button class="lp-btn lp-3e"  onclick="selectLvl('3e', this)">
-        <span class="lp-emoji">🎓</span><span class="lp-name">3ème</span>
+        <span class="lp-emoji">🎓</span><span class="lp-name">3e</span>
       </button>
     </div>
   </div>
@@ -314,47 +316,47 @@
   <!-- ════════════════════════ CP ════════════════════════ -->
   <div id="lc-cp" class="lc">
     <div class="lc-cat">
-      <div class="lc-cat-title">📐 Mathématiques</div>
+      <h2 class="lc-cat-title">Mathématiques</h2>
       <div class="lc-grid">
-        <a href="nombres-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">🔢</div><div class="lcc-body"><div class="lcc-title">Nombres</div><div class="lcc-desc">jusqu'à 100 · 9 ex.</div></div></a>
-        <a href="calcul-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">➕</div><div class="lcc-body"><div class="lcc-title">Calcul</div><div class="lcc-desc">+ et − · 8 ex.</div></div></a>
+        <div class="lc-pair"><a href="nombres-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">🔢</div><div class="lcc-body"><div class="lcc-title">Nombres</div><div class="lcc-desc">jusqu'à 100 · 9 ex.</div></div></a><a class="lc-lesson" href="cours-nombres-cp.html" aria-label="Leçon : Nombres">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="calcul-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">➕</div><div class="lcc-body"><div class="lcc-title">Calcul</div><div class="lcc-desc">+ et − · 8 ex.</div></div></a><a class="lc-lesson" href="cours-calcul-cp.html" aria-label="Leçon : Calcul">📖 Leçon</a></div>
         <a href="calcul-mental-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">⚡</div><div class="lcc-body"><div class="lcc-title">Calcul mental</div><div class="lcc-desc">doubles, +10 · 6 ex.</div></div></a>
-        <a href="mesures-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">📏</div><div class="lcc-body"><div class="lcc-title">Mesures</div><div class="lcc-desc">cm, kg, euros · 7 ex.</div></div></a>
-        <a href="geometrie-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">🔷</div><div class="lcc-body"><div class="lcc-title">Géométrie</div><div class="lcc-desc">formes · 8 ex.</div></div></a>
+        <div class="lc-pair"><a href="mesures-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">📏</div><div class="lcc-body"><div class="lcc-title">Mesures</div><div class="lcc-desc">cm, kg, euros · 7 ex.</div></div></a><a class="lc-lesson" href="cours-mesures-cp.html" aria-label="Leçon : Mesures">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="geometrie-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">🔷</div><div class="lcc-body"><div class="lcc-title">Géométrie</div><div class="lcc-desc">formes · 8 ex.</div></div></a><a class="lc-lesson" href="cours-geometrie-cp.html" aria-label="Leçon : Géométrie">📖 Leçon</a></div>
         <a href="donnees-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">📊</div><div class="lcc-body"><div class="lcc-title">Données</div><div class="lcc-desc">tableaux · 5 ex.</div></div></a>
         <a href="problemes-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">🧩</div><div class="lcc-body"><div class="lcc-title">Problèmes</div><div class="lcc-desc">contexte · 6 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">🏛️ Histoire &amp; Géographie</div>
+      <h2 class="lc-cat-title">Histoire &amp; Géographie</h2>
       <div class="lc-grid">
-        <a href="histoire-geo-cp.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">🌍</div><div class="lcc-body"><div class="lcc-title">Histoire-Géo</div><div class="lcc-desc">saisons, continents · 7 ex.</div></div></a>
+        <div class="lc-pair"><a href="histoire-geo-cp.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">🌍</div><div class="lcc-body"><div class="lcc-title">Histoire-Géo</div><div class="lcc-desc">saisons, continents · 7 ex.</div></div></a><a class="lc-lesson" href="cours-histoire-geo-cp.html" aria-label="Leçon : Histoire-Géo">📖 Leçon</a></div>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">📝 Français</div>
+      <h2 class="lc-cat-title">Français</h2>
       <div class="lc-grid">
-        <a href="conjugaison-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">📝</div><div class="lcc-body"><div class="lcc-title">Conjugaison</div><div class="lcc-desc">être, avoir, 1er groupe au présent · 7 ex.</div></div></a>
-        <a href="grammaire-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">🔤</div><div class="lcc-body"><div class="lcc-title">Grammaire</div><div class="lcc-desc">la phrase, nom, verbe, genre, nombre · 7 ex.</div></div></a>
-        <a href="orthographe-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">✏️</div><div class="lcc-body"><div class="lcc-title">Orthographe</div><div class="lcc-desc">majuscule, pluriel, féminin, sons · 7 ex.</div></div></a>
-        <a href="vocabulaire-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">📚</div><div class="lcc-body"><div class="lcc-title">Vocabulaire</div><div class="lcc-desc">alphabet, contraires, génériques · 7 ex.</div></div></a>
+        <div class="lc-pair"><a href="conjugaison-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">📝</div><div class="lcc-body"><div class="lcc-title">Conjugaison</div><div class="lcc-desc">être, avoir, 1er groupe au présent · 7 ex.</div></div></a><a class="lc-lesson" href="cours-conjugaison-cp.html" aria-label="Leçon : Conjugaison">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="grammaire-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">🔤</div><div class="lcc-body"><div class="lcc-title">Grammaire</div><div class="lcc-desc">la phrase, nom, verbe, genre, nombre · 7 ex.</div></div></a><a class="lc-lesson" href="cours-grammaire-cp.html" aria-label="Leçon : Grammaire">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="orthographe-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">✏️</div><div class="lcc-body"><div class="lcc-title">Orthographe</div><div class="lcc-desc">majuscule, pluriel, féminin, sons · 7 ex.</div></div></a><a class="lc-lesson" href="cours-orthographe-cp.html" aria-label="Leçon : Orthographe">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="vocabulaire-cp.html" class="lc-card"><div class="lcc-icon" style="background:#dcfce7">📚</div><div class="lcc-body"><div class="lcc-title">Vocabulaire</div><div class="lcc-desc">alphabet, contraires, génériques · 7 ex.</div></div></a><a class="lc-lesson" href="cours-vocabulaire-cp.html" aria-label="Leçon : Vocabulaire">📖 Leçon</a></div>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">📖 Cours à retenir</div>
+      <h2 class="lc-cat-title">Leçons et programme</h2>
       <div class="lc-grid" style="grid-template-columns:1fr">
         <a href="cours.html#cp" class="lc-card lc-card-cours" style="flex-direction:row;align-items:center;gap:14px;padding:14px 18px;text-align:left">
           <div class="lcc-icon" style="background:#dcfce7;flex-shrink:0">📖</div>
-          <div class="lcc-body"><div class="lcc-title">Voir les 9 fiches de cours CP <span class="lcc-badge">cours</span></div><div class="lcc-desc">nombres · calcul · géométrie · mesures · conjugaison · grammaire · orthographe · vocabulaire</div></div>
+          <div class="lcc-body"><div class="lcc-title">Toutes les leçons de CP</div><div class="lcc-desc">nombres · calcul · géométrie · mesures · conjugaison · grammaire · orthographe · vocabulaire</div></div>
         </a>
         <a href="programme-cp.html" class="lc-card lc-card-cours" style="flex-direction:row;align-items:center;gap:14px;padding:14px 18px;text-align:left">
           <div class="lcc-icon" style="background:#dcfce7;flex-shrink:0">🗂️</div>
-          <div class="lcc-body"><div class="lcc-title">Tout le programme CP <span class="lcc-badge">pilier</span></div><div class="lcc-desc">tous les exercices et cours CP en une page</div></div>
+          <div class="lcc-body"><div class="lcc-title">Tout le programme CP</div><div class="lcc-desc">tous les exercices et cours CP en une page</div></div>
         </a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">🏃 EPS</div>
+      <h2 class="lc-cat-title">EPS</h2>
       <div class="lc-grid">
         <a href="eps-cycle2.html" class="lc-card"><div class="lcc-icon" style="background:#fee2e2">🏃</div><div class="lcc-body"><div class="lcc-title">EPS Cycle 2</div><div class="lcc-desc">courir, nager, jouer · 7 ex.</div></div></a>
       </div>
@@ -364,50 +366,50 @@
   <!-- ════════════════════════ CE1 ════════════════════════ -->
   <div id="lc-ce1" class="lc">
     <div class="lc-cat">
-      <div class="lc-cat-title">📐 Mathématiques</div>
+      <h2 class="lc-cat-title">Mathématiques</h2>
       <div class="lc-grid">
-        <a href="nombres-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">🔢</div><div class="lcc-body"><div class="lcc-title">Nombres</div><div class="lcc-desc">jusqu'à 1000 · 8 ex.</div></div></a>
-        <a href="calcul-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">➕</div><div class="lcc-body"><div class="lcc-title">Calcul</div><div class="lcc-desc">4 opérations · 7 ex.</div></div></a>
+        <div class="lc-pair"><a href="nombres-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">🔢</div><div class="lcc-body"><div class="lcc-title">Nombres</div><div class="lcc-desc">jusqu'à 1000 · 8 ex.</div></div></a><a class="lc-lesson" href="cours-nombres-ce1.html" aria-label="Leçon : Nombres">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="calcul-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">➕</div><div class="lcc-body"><div class="lcc-title">Calcul</div><div class="lcc-desc">4 opérations · 7 ex.</div></div></a><a class="lc-lesson" href="cours-calcul-ce1.html" aria-label="Leçon : Calcul">📖 Leçon</a></div>
         <a href="calcul-mental-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">⚡</div><div class="lcc-body"><div class="lcc-title">Calcul mental</div><div class="lcc-desc">tables ×2 ×5 · 7 ex.</div></div></a>
         <a href="operations-posees-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">🖊️</div><div class="lcc-body"><div class="lcc-title">Opérations posées</div><div class="lcc-desc">colonnes · 7 ex.</div></div></a>
         <a href="multiplication-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">✖️</div><div class="lcc-body"><div class="lcc-title">Multiplication</div><div class="lcc-desc">sens, tables · 7 ex.</div></div></a>
-        <a href="fractions-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">✂️</div><div class="lcc-body"><div class="lcc-title">Fractions</div><div class="lcc-desc">½, ¼, ¾ · 4 ex.</div></div></a>
-        <a href="mesures-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">📏</div><div class="lcc-body"><div class="lcc-title">Mesures</div><div class="lcc-desc">m, kg, euros · 7 ex.</div></div></a>
-        <a href="geometrie-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">🔷</div><div class="lcc-body"><div class="lcc-title">Géométrie</div><div class="lcc-desc">angles, périmètre · 7 ex.</div></div></a>
+        <div class="lc-pair"><a href="fractions-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">✂️</div><div class="lcc-body"><div class="lcc-title">Fractions</div><div class="lcc-desc">½, ¼, ¾ · 4 ex.</div></div></a><a class="lc-lesson" href="cours-fractions-ce1.html" aria-label="Leçon : Fractions">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="mesures-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">📏</div><div class="lcc-body"><div class="lcc-title">Mesures</div><div class="lcc-desc">m, kg, euros · 7 ex.</div></div></a><a class="lc-lesson" href="cours-mesures-ce1.html" aria-label="Leçon : Mesures">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="geometrie-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">🔷</div><div class="lcc-body"><div class="lcc-title">Géométrie</div><div class="lcc-desc">angles, périmètre · 7 ex.</div></div></a><a class="lc-lesson" href="cours-geometrie-ce1.html" aria-label="Leçon : Géométrie">📖 Leçon</a></div>
         <a href="donnees-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">📊</div><div class="lcc-body"><div class="lcc-title">Données</div><div class="lcc-desc">graphiques · 5 ex.</div></div></a>
         <a href="problemes-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">🧩</div><div class="lcc-body"><div class="lcc-title">Problèmes</div><div class="lcc-desc">contexte · 7 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">🏛️ Histoire &amp; Géographie</div>
+      <h2 class="lc-cat-title">Histoire &amp; Géographie</h2>
       <div class="lc-grid">
-        <a href="histoire-geo-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">🏛️</div><div class="lcc-body"><div class="lcc-title">Histoire-Géo</div><div class="lcc-desc">Gaule, France · 7 ex.</div></div></a>
+        <div class="lc-pair"><a href="histoire-geo-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">🏛️</div><div class="lcc-body"><div class="lcc-title">Histoire-Géo</div><div class="lcc-desc">Gaule, France · 7 ex.</div></div></a><a class="lc-lesson" href="cours-histoire-geo-ce1.html" aria-label="Leçon : Histoire-Géo">📖 Leçon</a></div>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">📝 Français</div>
+      <h2 class="lc-cat-title">Français</h2>
       <div class="lc-grid">
-        <a href="conjugaison-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">📝</div><div class="lcc-body"><div class="lcc-title">Conjugaison</div><div class="lcc-desc">présent, futur proche, passé composé · 7 ex.</div></div></a>
-        <a href="grammaire-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">🔤</div><div class="lcc-body"><div class="lcc-title">Grammaire</div><div class="lcc-desc">nature des mots, sujet, verbe · 7 ex.</div></div></a>
-        <a href="orthographe-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">✏️</div><div class="lcc-body"><div class="lcc-title">Orthographe</div><div class="lcc-desc">homophones, pluriel, accord · 7 ex.</div></div></a>
-        <a href="vocabulaire-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">📚</div><div class="lcc-body"><div class="lcc-title">Vocabulaire</div><div class="lcc-desc">ordre alpha., familles, synonymes · 7 ex.</div></div></a>
+        <div class="lc-pair"><a href="conjugaison-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">📝</div><div class="lcc-body"><div class="lcc-title">Conjugaison</div><div class="lcc-desc">présent, futur proche, passé composé · 7 ex.</div></div></a><a class="lc-lesson" href="cours-conjugaison-ce1.html" aria-label="Leçon : Conjugaison">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="grammaire-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">🔤</div><div class="lcc-body"><div class="lcc-title">Grammaire</div><div class="lcc-desc">nature des mots, sujet, verbe · 7 ex.</div></div></a><a class="lc-lesson" href="cours-grammaire-ce1.html" aria-label="Leçon : Grammaire">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="orthographe-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">✏️</div><div class="lcc-body"><div class="lcc-title">Orthographe</div><div class="lcc-desc">homophones, pluriel, accord · 7 ex.</div></div></a><a class="lc-lesson" href="cours-orthographe-ce1.html" aria-label="Leçon : Orthographe">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="vocabulaire-ce1.html" class="lc-card"><div class="lcc-icon" style="background:#d1fae5">📚</div><div class="lcc-body"><div class="lcc-title">Vocabulaire</div><div class="lcc-desc">ordre alpha., familles, synonymes · 7 ex.</div></div></a><a class="lc-lesson" href="cours-vocabulaire-ce1.html" aria-label="Leçon : Vocabulaire">📖 Leçon</a></div>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">📖 Cours à retenir</div>
+      <h2 class="lc-cat-title">Leçons et programme</h2>
       <div class="lc-grid" style="grid-template-columns:1fr">
         <a href="cours.html#ce1" class="lc-card lc-card-cours" style="flex-direction:row;align-items:center;gap:14px;padding:14px 18px;text-align:left">
           <div class="lcc-icon" style="background:#d1fae5;flex-shrink:0">📖</div>
-          <div class="lcc-body"><div class="lcc-title">Voir les 10 fiches de cours CE1 <span class="lcc-badge">cours</span></div><div class="lcc-desc">maths · conjugaison · grammaire · orthographe · vocabulaire · histoire-géo</div></div>
+          <div class="lcc-body"><div class="lcc-title">Toutes les leçons de CE1</div><div class="lcc-desc">maths · conjugaison · grammaire · orthographe · vocabulaire · histoire-géo</div></div>
         </a>
         <a href="programme-ce1.html" class="lc-card lc-card-cours" style="flex-direction:row;align-items:center;gap:14px;padding:14px 18px;text-align:left">
           <div class="lcc-icon" style="background:#d1fae5;flex-shrink:0">🗂️</div>
-          <div class="lcc-body"><div class="lcc-title">Tout le programme CE1 <span class="lcc-badge">pilier</span></div><div class="lcc-desc">tous les exercices et cours CE1 en une page</div></div>
+          <div class="lcc-body"><div class="lcc-title">Tout le programme CE1</div><div class="lcc-desc">tous les exercices et cours CE1 en une page</div></div>
         </a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">🏃 EPS</div>
+      <h2 class="lc-cat-title">EPS</h2>
       <div class="lc-grid">
         <a href="eps-cycle2.html" class="lc-card"><div class="lcc-icon" style="background:#fee2e2">🏃</div><div class="lcc-body"><div class="lcc-title">EPS Cycle 2</div><div class="lcc-desc">courir, nager, jouer · 7 ex.</div></div></a>
       </div>
@@ -417,65 +419,65 @@
   <!-- ════════════════════════ CE2 ════════════════════════ -->
   <div id="lc-ce2" class="lc">
     <div class="lc-cat">
-      <div class="lc-cat-title">📐 Mathématiques : nombres et calcul</div>
+      <h2 class="lc-cat-title">Mathématiques : nombres et calcul</h2>
       <div class="lc-grid">
         <a href="nombres.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">🔢</div><div class="lcc-body"><div class="lcc-title">Nombres entiers</div><div class="lcc-desc">jusqu'à 9999 · 7 ex.</div></div></a>
-        <a href="decimaux-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">🔣</div><div class="lcc-body"><div class="lcc-title">Décimaux</div><div class="lcc-desc">dixièmes, centièmes · 7 ex.</div></div></a>
+        <div class="lc-pair"><a href="decimaux-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">🔣</div><div class="lcc-body"><div class="lcc-title">Décimaux</div><div class="lcc-desc">dixièmes, centièmes · 7 ex.</div></div></a><a class="lc-lesson" href="cours-decimaux-ce2.html" aria-label="Leçon : Décimaux">📖 Leçon</a></div>
         <a href="fiche1.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">✂️</div><div class="lcc-body"><div class="lcc-title">Fractions : découper</div><div class="lcc-desc">½, ⅓, ¼ · 3 ex.</div></div></a>
         <a href="fiche2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">⚖️</div><div class="lcc-body"><div class="lcc-title">Fractions : comparer</div><div class="lcc-desc">placer, ordonner · 3 ex.</div></div></a>
         <a href="fiche3.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">🍕</div><div class="lcc-body"><div class="lcc-title">Fractions : calculer</div><div class="lcc-desc">+, − fractions · 3 ex.</div></div></a>
         <a href="calcul.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">➕</div><div class="lcc-body"><div class="lcc-title">Les 4 opérations</div><div class="lcc-desc">+, −, ×, ÷ · 7 ex.</div></div></a>
-        <a href="calcul-mental-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">⚡</div><div class="lcc-body"><div class="lcc-title">Calcul mental</div><div class="lcc-desc">tables 6→9 · ×÷10/100 · 7 ex.</div></div></a>
+        <div class="lc-pair"><a href="calcul-mental-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">⚡</div><div class="lcc-body"><div class="lcc-title">Calcul mental</div><div class="lcc-desc">tables 6→9 · ×÷10/100 · 7 ex.</div></div></a><a class="lc-lesson" href="cours-calcul-ce2.html" aria-label="Leçon : Calcul mental">📖 Leçon</a></div>
         <a href="operations-posees-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">🖊️</div><div class="lcc-body"><div class="lcc-title">Opérations posées</div><div class="lcc-desc">colonnes · 7 ex.</div></div></a>
-        <a href="multiplication-division-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">✖️</div><div class="lcc-body"><div class="lcc-title">× et ÷</div><div class="lcc-desc">sens, propriétés · 7 ex.</div></div></a>
+        <div class="lc-pair"><a href="multiplication-division-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">✖️</div><div class="lcc-body"><div class="lcc-title">× et ÷</div><div class="lcc-desc">sens, propriétés · 7 ex.</div></div></a><a class="lc-lesson" href="cours-multiplication-ce2.html" aria-label="Leçon : × et ÷">📖 Leçon</a></div>
         <a href="tables-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">🔢</div><div class="lcc-body"><div class="lcc-title">Tables de ×</div><div class="lcc-desc">tables 2 à 9 · 7 ex.</div></div></a>
         <a href="division-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">➗</div><div class="lcc-body"><div class="lcc-title">Division euclidienne</div><div class="lcc-desc">quotient, reste · 7 ex.</div></div></a>
         <a href="problemes.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">🧩</div><div class="lcc-body"><div class="lcc-title">Problèmes</div><div class="lcc-desc">contexte · 5 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">📐 Mathématiques : géométrie et mesures</div>
+      <h2 class="lc-cat-title">Mathématiques : géométrie et mesures</h2>
       <div class="lc-grid">
         <a href="geometrie.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">🔷</div><div class="lcc-body"><div class="lcc-title">Géométrie plane</div><div class="lcc-desc">figures · 5 ex.</div></div></a>
-        <a href="geometrie-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">📐</div><div class="lcc-body"><div class="lcc-title">Formes géométriques</div><div class="lcc-desc">angles, droites · 6 ex.</div></div></a>
-        <a href="symetrie-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">🪞</div><div class="lcc-body"><div class="lcc-title">Symétrie axiale</div><div class="lcc-desc">axes, réflexion · 7 ex.</div></div></a>
+        <div class="lc-pair"><a href="geometrie-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">📐</div><div class="lcc-body"><div class="lcc-title">Formes géométriques</div><div class="lcc-desc">angles, droites · 6 ex.</div></div></a><a class="lc-lesson" href="cours-geometrie-ce2.html" aria-label="Leçon : Formes géométriques">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="symetrie-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">🪞</div><div class="lcc-body"><div class="lcc-title">Symétrie axiale</div><div class="lcc-desc">axes, réflexion · 7 ex.</div></div></a><a class="lc-lesson" href="cours-symetrie-ce2.html" aria-label="Leçon : Symétrie axiale">📖 Leçon</a></div>
         <a href="solides.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">🧊</div><div class="lcc-body"><div class="lcc-title">Les solides</div><div class="lcc-desc">3D, faces · 4 ex.</div></div></a>
         <a href="mesures.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">📏</div><div class="lcc-body"><div class="lcc-title">Longueurs &amp; masses</div><div class="lcc-desc">conversions · 5 ex.</div></div></a>
-        <a href="mesures-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">⚖️</div><div class="lcc-body"><div class="lcc-title">Grandeurs &amp; mesures</div><div class="lcc-desc">km, g, L · 7 ex.</div></div></a>
+        <div class="lc-pair"><a href="mesures-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">⚖️</div><div class="lcc-body"><div class="lcc-title">Grandeurs &amp; mesures</div><div class="lcc-desc">km, g, L · 7 ex.</div></div></a><a class="lc-lesson" href="cours-mesures-ce2.html" aria-label="Leçon : Grandeurs &amp; mesures">📖 Leçon</a></div>
         <a href="temps.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">⏱️</div><div class="lcc-body"><div class="lcc-title">Temps &amp; monnaie</div><div class="lcc-desc">h, min, euros · 5 ex.</div></div></a>
         <a href="donnees.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">📊</div><div class="lcc-body"><div class="lcc-title">Tableaux &amp; graphiques</div><div class="lcc-desc">lire, interpréter · 5 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">🏛️ Histoire &amp; Géographie</div>
+      <h2 class="lc-cat-title">Histoire &amp; Géographie</h2>
       <div class="lc-grid">
-        <a href="histoire-geo-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">🏰</div><div class="lcc-body"><div class="lcc-title">Histoire-Géo</div><div class="lcc-desc">Préhistoire, Gaule, Moyen Âge · 7 ex.</div></div></a>
+        <div class="lc-pair"><a href="histoire-geo-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">🏰</div><div class="lcc-body"><div class="lcc-title">Histoire-Géo</div><div class="lcc-desc">Préhistoire, Gaule, Moyen Âge · 7 ex.</div></div></a><a class="lc-lesson" href="cours-histoire-geo-ce2.html" aria-label="Leçon : Histoire-Géo">📖 Leçon</a></div>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">📝 Français</div>
+      <h2 class="lc-cat-title">Français</h2>
       <div class="lc-grid">
-        <a href="conjugaison-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">📝</div><div class="lcc-body"><div class="lcc-title">Conjugaison</div><div class="lcc-desc">présent, imparfait, futur · 7 ex.</div></div></a>
-        <a href="grammaire-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">🔤</div><div class="lcc-body"><div class="lcc-title">Grammaire</div><div class="lcc-desc">nature, GN, accord · 7 ex.</div></div></a>
-        <a href="orthographe-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">✏️</div><div class="lcc-body"><div class="lcc-title">Orthographe</div><div class="lcc-desc">homophones, pluriels · 7 ex.</div></div></a>
-        <a href="vocabulaire-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">📚</div><div class="lcc-body"><div class="lcc-title">Vocabulaire</div><div class="lcc-desc">familles, synonymes, préfixes · 7 ex.</div></div></a>
+        <div class="lc-pair"><a href="conjugaison-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">📝</div><div class="lcc-body"><div class="lcc-title">Conjugaison</div><div class="lcc-desc">présent, imparfait, futur · 7 ex.</div></div></a><a class="lc-lesson" href="cours-conjugaison-ce2.html" aria-label="Leçon : Conjugaison">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="grammaire-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">🔤</div><div class="lcc-body"><div class="lcc-title">Grammaire</div><div class="lcc-desc">nature, GN, accord · 7 ex.</div></div></a><a class="lc-lesson" href="cours-grammaire-ce2.html" aria-label="Leçon : Grammaire">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="orthographe-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">✏️</div><div class="lcc-body"><div class="lcc-title">Orthographe</div><div class="lcc-desc">homophones, pluriels · 7 ex.</div></div></a><a class="lc-lesson" href="cours-orthographe-ce2.html" aria-label="Leçon : Orthographe">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="vocabulaire-ce2.html" class="lc-card"><div class="lcc-icon" style="background:#ede9fe">📚</div><div class="lcc-body"><div class="lcc-title">Vocabulaire</div><div class="lcc-desc">familles, synonymes, préfixes · 7 ex.</div></div></a><a class="lc-lesson" href="cours-vocabulaire-ce2.html" aria-label="Leçon : Vocabulaire">📖 Leçon</a></div>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">📖 Cours à retenir</div>
+      <h2 class="lc-cat-title">Leçons et programme</h2>
       <div class="lc-grid" style="grid-template-columns:1fr">
         <a href="cours.html#ce2" class="lc-card lc-card-cours" style="flex-direction:row;align-items:center;gap:14px;padding:14px 18px;text-align:left">
           <div class="lcc-icon" style="background:#ede9fe;flex-shrink:0">📖</div>
-          <div class="lcc-body"><div class="lcc-title">Voir les 13 fiches de cours CE2 <span class="lcc-badge">cours</span></div><div class="lcc-desc">maths · conjugaison · grammaire · orthographe · vocabulaire · histoire-géo</div></div>
+          <div class="lcc-body"><div class="lcc-title">Toutes les leçons de CE2</div><div class="lcc-desc">maths · conjugaison · grammaire · orthographe · vocabulaire · histoire-géo</div></div>
         </a>
         <a href="programme-ce2.html" class="lc-card lc-card-cours" style="flex-direction:row;align-items:center;gap:14px;padding:14px 18px;text-align:left">
           <div class="lcc-icon" style="background:#ede9fe;flex-shrink:0">🗂️</div>
-          <div class="lcc-body"><div class="lcc-title">Tout le programme CE2 <span class="lcc-badge">pilier</span></div><div class="lcc-desc">tous les exercices et cours CE2 en une page</div></div>
+          <div class="lcc-body"><div class="lcc-title">Tout le programme CE2</div><div class="lcc-desc">tous les exercices et cours CE2 en une page</div></div>
         </a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">🏃 EPS</div>
+      <h2 class="lc-cat-title">EPS</h2>
       <div class="lc-grid">
         <a href="eps-cycle2.html" class="lc-card"><div class="lcc-icon" style="background:#fee2e2">🏃</div><div class="lcc-body"><div class="lcc-title">EPS Cycle 2</div><div class="lcc-desc">courir, nager, jouer · 7 ex.</div></div></a>
       </div>
@@ -485,59 +487,59 @@
   <!-- ════════════════════════ CM1 ════════════════════════ -->
   <div id="lc-cm1" class="lc">
     <div class="lc-cat">
-      <div class="lc-cat-title">📐 Mathématiques : nombres et calcul</div>
+      <h2 class="lc-cat-title">Mathématiques : nombres et calcul</h2>
       <div class="lc-grid">
-        <a href="nombres-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">🔢</div><div class="lcc-body"><div class="lcc-title">Grands nombres</div><div class="lcc-desc">≤ 999 999 · 7 ex.</div></div></a>
-        <a href="decimaux-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">🔣</div><div class="lcc-body"><div class="lcc-title">Décimaux</div><div class="lcc-desc">opérations · 7 ex.</div></div></a>
-        <a href="fractions-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">✂️</div><div class="lcc-body"><div class="lcc-title">Fractions</div><div class="lcc-desc">+, −, simplifier · 7 ex.</div></div></a>
-        <a href="calcul-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">➕</div><div class="lcc-body"><div class="lcc-title">Les 4 opérations</div><div class="lcc-desc">+, −, ×, ÷ · 7 ex.</div></div></a>
+        <div class="lc-pair"><a href="nombres-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">🔢</div><div class="lcc-body"><div class="lcc-title">Grands nombres</div><div class="lcc-desc">≤ 999 999 · 7 ex.</div></div></a><a class="lc-lesson" href="cours-nombres-cm1.html" aria-label="Leçon : Grands nombres">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="decimaux-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">🔣</div><div class="lcc-body"><div class="lcc-title">Décimaux</div><div class="lcc-desc">opérations · 7 ex.</div></div></a><a class="lc-lesson" href="cours-decimaux-cm1.html" aria-label="Leçon : Décimaux">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="fractions-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">✂️</div><div class="lcc-body"><div class="lcc-title">Fractions</div><div class="lcc-desc">+, −, simplifier · 7 ex.</div></div></a><a class="lc-lesson" href="cours-fractions-cm1.html" aria-label="Leçon : Fractions">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="calcul-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">➕</div><div class="lcc-body"><div class="lcc-title">Les 4 opérations</div><div class="lcc-desc">+, −, ×, ÷ · 7 ex.</div></div></a><a class="lc-lesson" href="cours-calcul-cm1.html" aria-label="Leçon : Les 4 opérations">📖 Leçon</a></div>
         <a href="calcul-mental-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">⚡</div><div class="lcc-body"><div class="lcc-title">Calcul mental</div><div class="lcc-desc">rapidité · 7 ex.</div></div></a>
         <a href="calcul-pose-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">🖊️</div><div class="lcc-body"><div class="lcc-title">Opérations posées</div><div class="lcc-desc">décimaux · 7 ex.</div></div></a>
-        <a href="proportionnalite-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">⚖️</div><div class="lcc-body"><div class="lcc-title">Proportionnalité</div><div class="lcc-desc">tableaux, règle de 3 · 7 ex.</div></div></a>
+        <div class="lc-pair"><a href="proportionnalite-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">⚖️</div><div class="lcc-body"><div class="lcc-title">Proportionnalité</div><div class="lcc-desc">tableaux, règle de 3 · 7 ex.</div></div></a><a class="lc-lesson" href="cours-proportionnalite-cm1.html" aria-label="Leçon : Proportionnalité">📖 Leçon</a></div>
         <a href="problemes-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">🧩</div><div class="lcc-body"><div class="lcc-title">Résolution problèmes</div><div class="lcc-desc">stratégies · 7 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">📐 Mathématiques : géométrie et mesures</div>
+      <h2 class="lc-cat-title">Mathématiques : géométrie et mesures</h2>
       <div class="lc-grid">
-        <a href="geometrie-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">🔷</div><div class="lcc-body"><div class="lcc-title">Géométrie</div><div class="lcc-desc">parallèles, cercle · 7 ex.</div></div></a>
-        <a href="angles-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">📐</div><div class="lcc-body"><div class="lcc-title">Les angles</div><div class="lcc-desc">aigu, droit, obtus · 7 ex.</div></div></a>
+        <div class="lc-pair"><a href="geometrie-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">🔷</div><div class="lcc-body"><div class="lcc-title">Géométrie</div><div class="lcc-desc">parallèles, cercle · 7 ex.</div></div></a><a class="lc-lesson" href="cours-geometrie-cm1.html" aria-label="Leçon : Géométrie">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="angles-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">📐</div><div class="lcc-body"><div class="lcc-title">Les angles</div><div class="lcc-desc">aigu, droit, obtus · 7 ex.</div></div></a><a class="lc-lesson" href="cours-angles-cm1.html" aria-label="Leçon : Les angles">📖 Leçon</a></div>
         <a href="solides-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">🧊</div><div class="lcc-body"><div class="lcc-title">Les solides</div><div class="lcc-desc">cube, prisme · 6 ex.</div></div></a>
-        <a href="mesures-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">📏</div><div class="lcc-body"><div class="lcc-title">Périmètres &amp; aires</div><div class="lcc-desc">calcul · 7 ex.</div></div></a>
-        <a href="temps-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">⏱️</div><div class="lcc-body"><div class="lcc-title">Durées &amp; conversions</div><div class="lcc-desc">h, min, s · 7 ex.</div></div></a>
+        <div class="lc-pair"><a href="mesures-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">📏</div><div class="lcc-body"><div class="lcc-title">Périmètres &amp; aires</div><div class="lcc-desc">calcul · 7 ex.</div></div></a><a class="lc-lesson" href="cours-mesures-cm1.html" aria-label="Leçon : Périmètres &amp; aires">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="temps-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">⏱️</div><div class="lcc-body"><div class="lcc-title">Durées &amp; conversions</div><div class="lcc-desc">h, min, s · 7 ex.</div></div></a><a class="lc-lesson" href="cours-temps-cm1.html" aria-label="Leçon : Durées &amp; conversions">📖 Leçon</a></div>
         <a href="donnees-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">📊</div><div class="lcc-body"><div class="lcc-title">Données &amp; statistiques</div><div class="lcc-desc">moyenne, graphiques · 6 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">🏛️ Histoire &amp; Géographie</div>
+      <h2 class="lc-cat-title">Histoire &amp; Géographie</h2>
       <div class="lc-grid">
-        <a href="histoire-geo-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">🏛️</div><div class="lcc-body"><div class="lcc-title">Histoire-Géo</div><div class="lcc-desc">Antiquité, Moyen Âge · 7 ex.</div></div></a>
+        <div class="lc-pair"><a href="histoire-geo-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">🏛️</div><div class="lcc-body"><div class="lcc-title">Histoire-Géo</div><div class="lcc-desc">Antiquité, Moyen Âge · 7 ex.</div></div></a><a class="lc-lesson" href="cours-histoire-geo-cm1.html" aria-label="Leçon : Histoire-Géo">📖 Leçon</a></div>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">📝 Français</div>
+      <h2 class="lc-cat-title">Français</h2>
       <div class="lc-grid">
-        <a href="conjugaison-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">📝</div><div class="lcc-body"><div class="lcc-title">Conjugaison</div><div class="lcc-desc">présent, imparfait, futur, passé composé · 7 ex.</div></div></a>
-        <a href="grammaire-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">🔤</div><div class="lcc-body"><div class="lcc-title">Grammaire</div><div class="lcc-desc">COD, COI, CC, nature des mots · 7 ex.</div></div></a>
-        <a href="orthographe-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">✏️</div><div class="lcc-body"><div class="lcc-title">Orthographe</div><div class="lcc-desc">accords, homophones, participe passé · 7 ex.</div></div></a>
-        <a href="vocabulaire-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">📚</div><div class="lcc-body"><div class="lcc-title">Vocabulaire</div><div class="lcc-desc">synonymes, antonymes, préfixes, suffixes · 7 ex.</div></div></a>
+        <div class="lc-pair"><a href="conjugaison-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">📝</div><div class="lcc-body"><div class="lcc-title">Conjugaison</div><div class="lcc-desc">présent, imparfait, futur, passé composé · 7 ex.</div></div></a><a class="lc-lesson" href="cours-conjugaison-cm1.html" aria-label="Leçon : Conjugaison">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="grammaire-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">🔤</div><div class="lcc-body"><div class="lcc-title">Grammaire</div><div class="lcc-desc">COD, COI, CC, nature des mots · 7 ex.</div></div></a><a class="lc-lesson" href="cours-grammaire-cm1.html" aria-label="Leçon : Grammaire">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="orthographe-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">✏️</div><div class="lcc-body"><div class="lcc-title">Orthographe</div><div class="lcc-desc">accords, homophones, participe passé · 7 ex.</div></div></a><a class="lc-lesson" href="cours-orthographe-cm1.html" aria-label="Leçon : Orthographe">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="vocabulaire-cm1.html" class="lc-card"><div class="lcc-icon" style="background:#dbeafe">📚</div><div class="lcc-body"><div class="lcc-title">Vocabulaire</div><div class="lcc-desc">synonymes, antonymes, préfixes, suffixes · 7 ex.</div></div></a><a class="lc-lesson" href="cours-vocabulaire-cm1.html" aria-label="Leçon : Vocabulaire">📖 Leçon</a></div>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">📖 Cours à retenir</div>
+      <h2 class="lc-cat-title">Leçons et programme</h2>
       <div class="lc-grid" style="grid-template-columns:1fr">
         <a href="cours.html#cm1" class="lc-card lc-card-cours" style="flex-direction:row;align-items:center;gap:14px;padding:14px 18px;text-align:left">
           <div class="lcc-icon" style="background:#dbeafe;flex-shrink:0">📖</div>
-          <div class="lcc-body"><div class="lcc-title">Voir les 14 fiches de cours CM1 <span class="lcc-badge">cours</span></div><div class="lcc-desc">calcul · fractions · géométrie · mesures · conjugaison · grammaire · orthographe · vocabulaire</div></div>
+          <div class="lcc-body"><div class="lcc-title">Toutes les leçons de CM1</div><div class="lcc-desc">calcul · fractions · géométrie · mesures · conjugaison · grammaire · orthographe · vocabulaire</div></div>
         </a>
         <a href="programme-cm1.html" class="lc-card lc-card-cours" style="flex-direction:row;align-items:center;gap:14px;padding:14px 18px;text-align:left">
           <div class="lcc-icon" style="background:#dbeafe;flex-shrink:0">🗂️</div>
-          <div class="lcc-body"><div class="lcc-title">Tout le programme CM1 <span class="lcc-badge">pilier</span></div><div class="lcc-desc">tous les exercices et cours CM1 en une page</div></div>
+          <div class="lcc-body"><div class="lcc-title">Tout le programme CM1</div><div class="lcc-desc">tous les exercices et cours CM1 en une page</div></div>
         </a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">🏃 EPS</div>
+      <h2 class="lc-cat-title">EPS</h2>
       <div class="lc-grid">
         <a href="eps-cycle3.html" class="lc-card"><div class="lcc-icon" style="background:#fee2e2">🏆</div><div class="lcc-body"><div class="lcc-title">EPS Cycle 3</div><div class="lcc-desc">performance, jeux, natation · 7 ex.</div></div></a>
       </div>
@@ -547,57 +549,57 @@
   <!-- ════════════════════════ CM2 ════════════════════════ -->
   <div id="lc-cm2" class="lc">
     <div class="lc-cat">
-      <div class="lc-cat-title">📐 Mathématiques : nombres et calcul</div>
+      <h2 class="lc-cat-title">Mathématiques : nombres et calcul</h2>
       <div class="lc-grid">
-        <a href="nombres-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">🔢</div><div class="lcc-body"><div class="lcc-title">Très grands nombres</div><div class="lcc-desc">milliards · 7 ex.</div></div></a>
-        <a href="decimaux-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">🔣</div><div class="lcc-body"><div class="lcc-title">Décimaux avancés</div><div class="lcc-desc">opérations · 7 ex.</div></div></a>
-        <a href="fractions-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">✂️</div><div class="lcc-body"><div class="lcc-title">Fractions avancées</div><div class="lcc-desc">×, ÷, simplifier · 7 ex.</div></div></a>
-        <a href="calcul-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">➕</div><div class="lcc-body"><div class="lcc-title">Les 4 opérations</div><div class="lcc-desc">complexes · 7 ex.</div></div></a>
+        <div class="lc-pair"><a href="nombres-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">🔢</div><div class="lcc-body"><div class="lcc-title">Très grands nombres</div><div class="lcc-desc">milliards · 7 ex.</div></div></a><a class="lc-lesson" href="cours-nombres-cm2.html" aria-label="Leçon : Très grands nombres">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="decimaux-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">🔣</div><div class="lcc-body"><div class="lcc-title">Décimaux avancés</div><div class="lcc-desc">opérations · 7 ex.</div></div></a><a class="lc-lesson" href="cours-decimaux-cm2.html" aria-label="Leçon : Décimaux avancés">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="fractions-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">✂️</div><div class="lcc-body"><div class="lcc-title">Fractions avancées</div><div class="lcc-desc">×, ÷, simplifier · 7 ex.</div></div></a><a class="lc-lesson" href="cours-fractions-cm2.html" aria-label="Leçon : Fractions avancées">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="calcul-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">➕</div><div class="lcc-body"><div class="lcc-title">Les 4 opérations</div><div class="lcc-desc">complexes · 7 ex.</div></div></a><a class="lc-lesson" href="cours-calcul-cm2.html" aria-label="Leçon : Les 4 opérations">📖 Leçon</a></div>
         <a href="calcul-mental-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">⚡</div><div class="lcc-body"><div class="lcc-title">Calcul mental</div><div class="lcc-desc">rapidité · 7 ex.</div></div></a>
         <a href="calcul-pose-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">🖊️</div><div class="lcc-body"><div class="lcc-title">Opérations posées</div><div class="lcc-desc">décimaux · 6 ex.</div></div></a>
-        <a href="proportionnalite-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">⚖️</div><div class="lcc-body"><div class="lcc-title">Proportionnalité &amp; %</div><div class="lcc-desc">pourcentages · 7 ex.</div></div></a>
+        <div class="lc-pair"><a href="proportionnalite-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">⚖️</div><div class="lcc-body"><div class="lcc-title">Proportionnalité &amp; %</div><div class="lcc-desc">pourcentages · 7 ex.</div></div></a><a class="lc-lesson" href="cours-proportionnalite-cm2.html" aria-label="Leçon : Proportionnalité &amp; %">📖 Leçon</a></div>
         <a href="problemes-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">🧩</div><div class="lcc-body"><div class="lcc-title">Problèmes</div><div class="lcc-desc">multi-étapes · 7 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">📐 Mathématiques : géométrie et mesures</div>
+      <h2 class="lc-cat-title">Mathématiques : géométrie et mesures</h2>
       <div class="lc-grid">
-        <a href="geometrie-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#ffedd5">🔷</div><div class="lcc-body"><div class="lcc-title">Géométrie avancée</div><div class="lcc-desc">constructions · 7 ex.</div></div></a>
-        <a href="mesures-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#ffedd5">📏</div><div class="lcc-body"><div class="lcc-title">Aires &amp; volumes</div><div class="lcc-desc">formules · 7 ex.</div></div></a>
-        <a href="temps-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#ffedd5">⏳</div><div class="lcc-body"><div class="lcc-title">Durées &amp; conversions</div><div class="lcc-desc">calculs · 7 ex.</div></div></a>
+        <div class="lc-pair"><a href="geometrie-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#ffedd5">🔷</div><div class="lcc-body"><div class="lcc-title">Géométrie avancée</div><div class="lcc-desc">constructions · 7 ex.</div></div></a><a class="lc-lesson" href="cours-geometrie-cm2.html" aria-label="Leçon : Géométrie avancée">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="mesures-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#ffedd5">📏</div><div class="lcc-body"><div class="lcc-title">Aires &amp; volumes</div><div class="lcc-desc">formules · 7 ex.</div></div></a><a class="lc-lesson" href="cours-mesures-cm2.html" aria-label="Leçon : Aires &amp; volumes">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="temps-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#ffedd5">⏳</div><div class="lcc-body"><div class="lcc-title">Durées &amp; conversions</div><div class="lcc-desc">calculs · 7 ex.</div></div></a><a class="lc-lesson" href="cours-temps-cm2.html" aria-label="Leçon : Durées &amp; conversions">📖 Leçon</a></div>
         <a href="donnees-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#ffedd5">📊</div><div class="lcc-body"><div class="lcc-title">Statistiques</div><div class="lcc-desc">moyenne, médiane · 6 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">🏛️ Histoire &amp; Géographie</div>
+      <h2 class="lc-cat-title">Histoire &amp; Géographie</h2>
       <div class="lc-grid">
-        <a href="histoire-geo-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">⚜️</div><div class="lcc-body"><div class="lcc-title">Histoire-Géo</div><div class="lcc-desc">Révolution, guerres · 7 ex.</div></div></a>
+        <div class="lc-pair"><a href="histoire-geo-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">⚜️</div><div class="lcc-body"><div class="lcc-title">Histoire-Géo</div><div class="lcc-desc">Révolution, guerres · 7 ex.</div></div></a><a class="lc-lesson" href="cours-histoire-geo-cm2.html" aria-label="Leçon : Histoire-Géo">📖 Leçon</a></div>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">📝 Français</div>
+      <h2 class="lc-cat-title">Français</h2>
       <div class="lc-grid">
-        <a href="conjugaison-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">📝</div><div class="lcc-body"><div class="lcc-title">Conjugaison</div><div class="lcc-desc">passé simple, plus-que-parfait, conditionnel · 7 ex.</div></div></a>
-        <a href="grammaire-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">🔤</div><div class="lcc-body"><div class="lcc-title">Grammaire</div><div class="lcc-desc">attribut, phrase complexe, CC cause · 7 ex.</div></div></a>
-        <a href="orthographe-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">✏️</div><div class="lcc-body"><div class="lcc-title">Orthographe</div><div class="lcc-desc">PP avoir, homophones avancés, accords · 7 ex.</div></div></a>
-        <a href="vocabulaire-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">📚</div><div class="lcc-body"><div class="lcc-title">Vocabulaire</div><div class="lcc-desc">étymologie, polysémie, registres · 7 ex.</div></div></a>
+        <div class="lc-pair"><a href="conjugaison-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">📝</div><div class="lcc-body"><div class="lcc-title">Conjugaison</div><div class="lcc-desc">passé simple, plus-que-parfait, conditionnel · 7 ex.</div></div></a><a class="lc-lesson" href="cours-conjugaison-cm2.html" aria-label="Leçon : Conjugaison">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="grammaire-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">🔤</div><div class="lcc-body"><div class="lcc-title">Grammaire</div><div class="lcc-desc">attribut, phrase complexe, CC cause · 7 ex.</div></div></a><a class="lc-lesson" href="cours-grammaire-cm2.html" aria-label="Leçon : Grammaire">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="orthographe-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">✏️</div><div class="lcc-body"><div class="lcc-title">Orthographe</div><div class="lcc-desc">PP avoir, homophones avancés, accords · 7 ex.</div></div></a><a class="lc-lesson" href="cours-orthographe-cm2.html" aria-label="Leçon : Orthographe">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="vocabulaire-cm2.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">📚</div><div class="lcc-body"><div class="lcc-title">Vocabulaire</div><div class="lcc-desc">étymologie, polysémie, registres · 7 ex.</div></div></a><a class="lc-lesson" href="cours-vocabulaire-cm2.html" aria-label="Leçon : Vocabulaire">📖 Leçon</a></div>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">📖 Cours à retenir</div>
+      <h2 class="lc-cat-title">Leçons et programme</h2>
       <div class="lc-grid" style="grid-template-columns:1fr">
         <a href="cours.html#cm2" class="lc-card lc-card-cours" style="flex-direction:row;align-items:center;gap:14px;padding:14px 18px;text-align:left">
           <div class="lcc-icon" style="background:#fef9c3;flex-shrink:0">📖</div>
-          <div class="lcc-body"><div class="lcc-title">Voir les 13 fiches de cours CM2 <span class="lcc-badge">cours</span></div><div class="lcc-desc">calcul · fractions · géométrie · mesures · conjugaison · grammaire · orthographe · vocabulaire</div></div>
+          <div class="lcc-body"><div class="lcc-title">Toutes les leçons de CM2</div><div class="lcc-desc">calcul · fractions · géométrie · mesures · conjugaison · grammaire · orthographe · vocabulaire</div></div>
         </a>
         <a href="programme-cm2.html" class="lc-card lc-card-cours" style="flex-direction:row;align-items:center;gap:14px;padding:14px 18px;text-align:left">
           <div class="lcc-icon" style="background:#fef9c3;flex-shrink:0">🗂️</div>
-          <div class="lcc-body"><div class="lcc-title">Tout le programme CM2 <span class="lcc-badge">pilier</span></div><div class="lcc-desc">tous les exercices et cours CM2 en une page</div></div>
+          <div class="lcc-body"><div class="lcc-title">Tout le programme CM2</div><div class="lcc-desc">tous les exercices et cours CM2 en une page</div></div>
         </a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">🏃 EPS</div>
+      <h2 class="lc-cat-title">EPS</h2>
       <div class="lc-grid">
         <a href="eps-cycle3.html" class="lc-card"><div class="lcc-icon" style="background:#fee2e2">🏆</div><div class="lcc-body"><div class="lcc-title">EPS Cycle 3</div><div class="lcc-desc">performance, jeux · 7 ex.</div></div></a>
       </div>
@@ -607,60 +609,60 @@
   <!-- ════════════════════════ 6e ════════════════════════ -->
   <div id="lc-6e" class="lc">
     <div class="lc-cat">
-      <div class="lc-cat-title">📐 Mathématiques : nombres et calcul</div>
+      <h2 class="lc-cat-title">Mathématiques : nombres et calcul</h2>
       <div class="lc-grid">
-        <a href="nombres-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">🔢</div><div class="lcc-body"><div class="lcc-title">Nombres &amp; relatifs</div><div class="lcc-desc">entiers, −, + · 4 ex.</div></div></a>
-        <a href="fractions-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">✂️</div><div class="lcc-body"><div class="lcc-title">Fractions</div><div class="lcc-desc">quotients · 4 ex.</div></div></a>
-        <a href="algebre-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">📘</div><div class="lcc-body"><div class="lcc-title">Algèbre</div><div class="lcc-desc">expressions littérales · 4 ex.</div></div></a>
+        <div class="lc-pair"><a href="nombres-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">🔢</div><div class="lcc-body"><div class="lcc-title">Nombres &amp; relatifs</div><div class="lcc-desc">entiers, −, + · 4 ex.</div></div></a><a class="lc-lesson" href="cours-nombres-6e.html" aria-label="Leçon : Nombres &amp; relatifs">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="fractions-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">✂️</div><div class="lcc-body"><div class="lcc-title">Fractions</div><div class="lcc-desc">quotients · 4 ex.</div></div></a><a class="lc-lesson" href="cours-fractions-6e.html" aria-label="Leçon : Fractions">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="algebre-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">📘</div><div class="lcc-body"><div class="lcc-title">Algèbre</div><div class="lcc-desc">expressions littérales · 4 ex.</div></div></a><a class="lc-lesson" href="cours-algebre-6e.html" aria-label="Leçon : Algèbre">📖 Leçon</a></div>
         <a href="calcul-mental-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">⚡</div><div class="lcc-body"><div class="lcc-title">Calcul mental</div><div class="lcc-desc">rapidité · 4 ex.</div></div></a>
-        <a href="probabilites-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">🎲</div><div class="lcc-body"><div class="lcc-title">Probabilités</div><div class="lcc-desc">chances · 5 ex.</div></div></a>
-        <a href="proportionnalite-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">⚖️</div><div class="lcc-body"><div class="lcc-title">Proportionnalité &amp; %</div><div class="lcc-desc">pourcentages · 4 ex.</div></div></a>
+        <div class="lc-pair"><a href="probabilites-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">🎲</div><div class="lcc-body"><div class="lcc-title">Probabilités</div><div class="lcc-desc">chances · 5 ex.</div></div></a><a class="lc-lesson" href="cours-probabilites-6e.html" aria-label="Leçon : Probabilités">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="proportionnalite-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">⚖️</div><div class="lcc-body"><div class="lcc-title">Proportionnalité &amp; %</div><div class="lcc-desc">pourcentages · 4 ex.</div></div></a><a class="lc-lesson" href="cours-proportionnalite-6e.html" aria-label="Leçon : Proportionnalité &amp; %">📖 Leçon</a></div>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">📐 Mathématiques : géométrie et mesures</div>
+      <h2 class="lc-cat-title">Mathématiques : géométrie et mesures</h2>
       <div class="lc-grid">
-        <a href="geometrie-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fdf4ff">🔷</div><div class="lcc-body"><div class="lcc-title">Géométrie</div><div class="lcc-desc">constructions · 4 ex.</div></div></a>
-        <a href="mesures-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fdf4ff">📏</div><div class="lcc-body"><div class="lcc-title">Aires &amp; volumes</div><div class="lcc-desc">formules · 4 ex.</div></div></a>
+        <div class="lc-pair"><a href="geometrie-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fdf4ff">🔷</div><div class="lcc-body"><div class="lcc-title">Géométrie</div><div class="lcc-desc">constructions · 4 ex.</div></div></a><a class="lc-lesson" href="cours-geometrie-6e.html" aria-label="Leçon : Géométrie">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="mesures-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fdf4ff">📏</div><div class="lcc-body"><div class="lcc-title">Aires &amp; volumes</div><div class="lcc-desc">formules · 4 ex.</div></div></a><a class="lc-lesson" href="cours-mesures-6e.html" aria-label="Leçon : Aires &amp; volumes">📖 Leçon</a></div>
         <a href="donnees-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fdf4ff">📊</div><div class="lcc-body"><div class="lcc-title">Statistiques</div><div class="lcc-desc">moyenne · 4 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">🇬🇧 Anglais</div>
+      <h2 class="lc-cat-title">Anglais</h2>
       <div class="lc-grid">
         <a href="anglais-6e.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">🇬🇧</div><div class="lcc-body"><div class="lcc-title">Anglais : les bases</div><div class="lcc-desc">be, have got, present simple · 4 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">🏛️ Histoire &amp; Géographie</div>
+      <h2 class="lc-cat-title">Histoire &amp; Géographie</h2>
       <div class="lc-grid">
-        <a href="histoire-geo-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">🌍</div><div class="lcc-body"><div class="lcc-title">Histoire-Géo</div><div class="lcc-desc">Antiquité, continents · 7 ex.</div></div></a>
+        <div class="lc-pair"><a href="histoire-geo-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fef9c3">🌍</div><div class="lcc-body"><div class="lcc-title">Histoire-Géo</div><div class="lcc-desc">Antiquité, continents · 7 ex.</div></div></a><a class="lc-lesson" href="cours-histoire-geo-6e.html" aria-label="Leçon : Histoire-Géo">📖 Leçon</a></div>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">📝 Français</div>
+      <h2 class="lc-cat-title">Français</h2>
       <div class="lc-grid">
-        <a href="conjugaison-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">📝</div><div class="lcc-body"><div class="lcc-title">Conjugaison</div><div class="lcc-desc">modes, impératif, valeur des temps · 7 ex.</div></div></a>
-        <a href="grammaire-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">🔤</div><div class="lcc-body"><div class="lcc-title">Grammaire</div><div class="lcc-desc">pronoms relatifs, sub. relatives, conjonctives · 7 ex.</div></div></a>
-        <a href="orthographe-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">✏️</div><div class="lcc-body"><div class="lcc-title">Orthographe</div><div class="lcc-desc">PP avec "que", "même", homophones avancés · 7 ex.</div></div></a>
-        <a href="vocabulaire-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">📚</div><div class="lcc-body"><div class="lcc-title">Vocabulaire</div><div class="lcc-desc">champs lexicaux, étymologie, figures de style · 7 ex.</div></div></a>
+        <div class="lc-pair"><a href="conjugaison-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">📝</div><div class="lcc-body"><div class="lcc-title">Conjugaison</div><div class="lcc-desc">modes, impératif, valeur des temps · 7 ex.</div></div></a><a class="lc-lesson" href="cours-conjugaison-6e.html" aria-label="Leçon : Conjugaison">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="grammaire-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">🔤</div><div class="lcc-body"><div class="lcc-title">Grammaire</div><div class="lcc-desc">pronoms relatifs, sub. relatives, conjonctives · 7 ex.</div></div></a><a class="lc-lesson" href="cours-grammaire-6e.html" aria-label="Leçon : Grammaire">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="orthographe-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">✏️</div><div class="lcc-body"><div class="lcc-title">Orthographe</div><div class="lcc-desc">PP avec "que", "même", homophones avancés · 7 ex.</div></div></a><a class="lc-lesson" href="cours-orthographe-6e.html" aria-label="Leçon : Orthographe">📖 Leçon</a></div>
+        <div class="lc-pair"><a href="vocabulaire-6e.html" class="lc-card"><div class="lcc-icon" style="background:#fce7f3">📚</div><div class="lcc-body"><div class="lcc-title">Vocabulaire</div><div class="lcc-desc">champs lexicaux, étymologie, figures de style · 7 ex.</div></div></a><a class="lc-lesson" href="cours-vocabulaire-6e.html" aria-label="Leçon : Vocabulaire">📖 Leçon</a></div>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">📖 Cours à retenir</div>
+      <h2 class="lc-cat-title">Leçons et programme</h2>
       <div class="lc-grid" style="grid-template-columns:1fr">
         <a href="cours.html#6e" class="lc-card lc-card-cours" style="flex-direction:row;align-items:center;gap:14px;padding:14px 18px;text-align:left">
           <div class="lcc-icon" style="background:#fce7f3;flex-shrink:0">📖</div>
-          <div class="lcc-body"><div class="lcc-title">Voir les 12 fiches de cours 6ème <span class="lcc-badge">cours</span></div><div class="lcc-desc">algèbre · fractions · géométrie · conjugaison · grammaire · orthographe · vocabulaire</div></div>
+          <div class="lcc-body"><div class="lcc-title">Toutes les leçons de 6e</div><div class="lcc-desc">algèbre · fractions · géométrie · conjugaison · grammaire · orthographe · vocabulaire</div></div>
         </a>
         <a href="programme-6e.html" class="lc-card lc-card-cours" style="flex-direction:row;align-items:center;gap:14px;padding:14px 18px;text-align:left">
           <div class="lcc-icon" style="background:#fce7f3;flex-shrink:0">🗂️</div>
-          <div class="lcc-body"><div class="lcc-title">Tout le programme 6e <span class="lcc-badge">pilier</span></div><div class="lcc-desc">tous les exercices et cours 6e en une page</div></div>
+          <div class="lcc-body"><div class="lcc-title">Tout le programme 6e</div><div class="lcc-desc">tous les exercices et cours 6e en une page</div></div>
         </a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">🏃 EPS</div>
+      <h2 class="lc-cat-title">EPS</h2>
       <div class="lc-grid">
         <a href="eps-cycle3.html" class="lc-card"><div class="lcc-icon" style="background:#fee2e2">🏆</div><div class="lcc-body"><div class="lcc-title">EPS Cycle 3</div><div class="lcc-desc">4 champs, natation · 7 ex.</div></div></a>
       </div>
@@ -670,7 +672,7 @@
   <!-- ════════════════════════ 5e ════════════════════════ -->
   <div id="lc-5e" class="lc">
     <div class="lc-cat">
-      <div class="lc-cat-title">📐 Mathématiques : nombres et calcul</div>
+      <h2 class="lc-cat-title">Mathématiques : nombres et calcul</h2>
       <div class="lc-grid">
         <a href="nombres-5e.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">🌡️</div><div class="lcc-body"><div class="lcc-title">Nombres relatifs</div><div class="lcc-desc">opposé, +, − · 4 ex.</div></div></a>
         <a href="calcul-5e.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">➗</div><div class="lcc-body"><div class="lcc-title">Calcul &amp; divisibilité</div><div class="lcc-desc">priorités, diviseurs · 4 ex.</div></div></a>
@@ -680,7 +682,7 @@
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">📐 Mathématiques : géométrie et mesures</div>
+      <h2 class="lc-cat-title">Mathématiques : géométrie et mesures</h2>
       <div class="lc-grid">
         <a href="geometrie-5e.html" class="lc-card"><div class="lcc-icon" style="background:#eff6ff">📐</div><div class="lcc-body"><div class="lcc-title">Angles &amp; triangles</div><div class="lcc-desc">somme des angles · 4 ex.</div></div></a>
         <a href="espace-5e.html" class="lc-card"><div class="lcc-icon" style="background:#eff6ff">🧊</div><div class="lcc-body"><div class="lcc-title">Espace &amp; volumes</div><div class="lcc-desc">prisme, cylindre, disque · 4 ex.</div></div></a>
@@ -689,17 +691,17 @@
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">🇬🇧 Anglais</div>
+      <h2 class="lc-cat-title">Anglais</h2>
       <div class="lc-grid">
         <a href="anglais-5e.html" class="lc-card"><div class="lcc-icon" style="background:#e0f2fe">🇬🇧</div><div class="lcc-body"><div class="lcc-title">Anglais : passé et modaux</div><div class="lcc-desc">past simple, must, be + -ing · 4 ex.</div></div></a>
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">📖 Cours à retenir</div>
+      <h2 class="lc-cat-title">Leçons et programme</h2>
       <div class="lc-grid" style="grid-template-columns:1fr">
         <a href="programme-5e.html" class="lc-card lc-card-cours" style="flex-direction:row;align-items:center;gap:14px;padding:14px 18px;text-align:left">
           <div class="lcc-icon" style="background:#e0f2fe;flex-shrink:0">🗂️</div>
-          <div class="lcc-body"><div class="lcc-title">Tout le programme 5e <span class="lcc-badge">pilier</span></div><div class="lcc-desc">tous les exercices de maths 5e en une page</div></div>
+          <div class="lcc-body"><div class="lcc-title">Tout le programme 5e</div><div class="lcc-desc">tous les exercices de maths 5e en une page</div></div>
         </a>
       </div>
     </div>
@@ -708,7 +710,7 @@
   <!-- ════════════════════════ 4e ════════════════════════ -->
   <div id="lc-4e" class="lc">
     <div class="lc-cat">
-      <div class="lc-cat-title">📐 Mathématiques</div>
+      <h2 class="lc-cat-title">Mathématiques</h2>
       <div class="lc-grid">
         <a href="nombres-4e.html" class="lc-card"><div class="lcc-icon" style="background:#cffafe">🔢</div><div class="lcc-body"><div class="lcc-title">Nombres relatifs &amp; rationnels</div><div class="lcc-desc">produits, fractions · 4 ex.</div></div></a>
         <a href="puissances-4e.html" class="lc-card"><div class="lcc-icon" style="background:#cffafe">²</div><div class="lcc-body"><div class="lcc-title">Puissances &amp; racines</div><div class="lcc-desc">produits, √ · 4 ex.</div></div></a>
@@ -721,7 +723,7 @@
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">🇬🇧 Anglais</div>
+      <h2 class="lc-cat-title">Anglais</h2>
       <div class="lc-grid">
         <a href="anglais-4e.html" class="lc-card"><div class="lcc-icon" style="background:#cffafe">🇬🇧</div><div class="lcc-body"><div class="lcc-title">Anglais</div><div class="lcc-desc">comparatifs, present perfect · 4 ex.</div></div></a>
       </div>
@@ -731,7 +733,7 @@
   <!-- ════════════════════════ 3e ════════════════════════ -->
   <div id="lc-3e" class="lc">
     <div class="lc-cat">
-      <div class="lc-cat-title">📐 Mathématiques</div>
+      <h2 class="lc-cat-title">Mathématiques</h2>
       <div class="lc-grid">
         <a href="nombres-3e.html" class="lc-card"><div class="lcc-icon" style="background:#ccfbf1">🔢</div><div class="lcc-body"><div class="lcc-title">Rationnels &amp; notation sci.</div><div class="lcc-desc">fractions, 10ⁿ · 4 ex.</div></div></a>
         <a href="racines-3e.html" class="lc-card"><div class="lcc-icon" style="background:#ccfbf1">√</div><div class="lcc-body"><div class="lcc-title">Racines &amp; équations</div><div class="lcc-desc">√, x² = a, PGCD · 4 ex.</div></div></a>
@@ -744,7 +746,7 @@
       </div>
     </div>
     <div class="lc-cat">
-      <div class="lc-cat-title">🇬🇧 Anglais</div>
+      <h2 class="lc-cat-title">Anglais</h2>
       <div class="lc-grid">
         <a href="anglais-3e.html" class="lc-card"><div class="lcc-icon" style="background:#ccfbf1">🇬🇧</div><div class="lcc-body"><div class="lcc-title">Anglais</div><div class="lcc-desc">passif, conditionnel, discours indirect · 4 ex.</div></div></a>
       </div>
@@ -773,10 +775,60 @@ function selectLvl(lvl, btn) {
     var p = JSON.parse(localStorage.getItem('clemence_maths_v2') || '{}');
     if (p.classe) profile = p.classe.toLowerCase();
   } catch(e){}
-  var lvl = saved || profile || 'ce2';
-  var btn = document.querySelector('.lp-btn.lp-' + (lvl === '6e' ? '6e' : lvl));
+  var lvl = saved || profile;
+  var btn = lvl && document.querySelector('.lp-btn.lp-' + lvl);
   if (btn) selectLvl(lvl, btn);
-  else selectLvl('ce2', document.querySelector('.lp-btn.lp-ce2'));
+  // Reprendre la dernière page d'exercices
+  try {
+    var last = JSON.parse(localStorage.getItem('ef_last_page') || 'null');
+    var c = document.getElementById('lc-continue');
+    if (last && last.href && c) {
+      c.href = last.href;
+      c.innerHTML = '<span>Reprendre</span><b>' + String(last.title).replace(/</g,'&lt;') + '</b><span aria-hidden="true">→</span>';
+      c.hidden = false;
+    }
+  } catch(e){}
+})();
+
+// Onglets par matière : une matière à la fois
+(function(){
+  function subjectOf(t){
+    t = t.toLowerCase();
+    if (t.indexOf('math') === 0) return 'Maths';
+    if (t.indexOf('fran') === 0) return 'Français';
+    if (t.indexOf('histoire') === 0 || t.indexOf('géo') === 0) return 'Histoire-géo';
+    if (t.indexOf('anglais') === 0) return 'Anglais';
+    if (t.indexOf('eps') === 0) return 'EPS';
+    return null; // leçons et programme : toujours visibles
+  }
+  var savedSubj; try { savedSubj = localStorage.getItem('ef_last_subject'); } catch(e){}
+  document.querySelectorAll('.lc').forEach(function(lc){
+    var cats = [].slice.call(lc.querySelectorAll('.lc-cat'));
+    var subjects = [];
+    cats.forEach(function(cat){
+      var h = cat.querySelector('.lc-cat-title');
+      var sub = subjectOf(h ? h.textContent.trim() : '');
+      cat.dataset.subject = sub || '';
+      if (sub && subjects.indexOf(sub) < 0) subjects.push(sub);
+      if (!sub) { lc.appendChild(cat); cat.classList.add('lc-cat-more'); }
+    });
+    if (subjects.length < 2) return;
+    var tabs = document.createElement('div');
+    tabs.className = 'lc-tabs'; tabs.setAttribute('role', 'tablist'); tabs.setAttribute('aria-label', 'Matières');
+    function show(sub){
+      cats.forEach(function(cat){ if (cat.dataset.subject) cat.hidden = cat.dataset.subject !== sub; });
+      [].forEach.call(tabs.children, function(b){ b.setAttribute('aria-selected', b.dataset.subject === sub ? 'true' : 'false'); });
+    }
+    subjects.forEach(function(sub){
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'lc-tab'; b.setAttribute('role', 'tab');
+      b.dataset.subject = sub; b.textContent = sub;
+      b.addEventListener('click', function(){ show(sub); try { localStorage.setItem('ef_last_subject', sub); } catch(e){} });
+      tabs.appendChild(b);
+    });
+    lc.insertBefore(tabs, lc.firstChild);
+    show(subjects.indexOf(savedSubj) >= 0 ? savedSubj : subjects[0]);
+  });
 })();
 </script>
 <script type="application/ld+json">
@@ -808,8 +860,8 @@ if ('serviceWorker' in navigator) {
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>
 <script src="auth.js?v=7"></script>
-<script src="gamification.js?v=7"></script>
-<script src="nav.js?v=6"></script>
-<script src="seo.js"></script>
+<script src="gamification.js?v=9"></script>
+<script src="nav.js?v=7"></script>
+<script src="seo.js?v=3"></script>
 </body>
 </html>

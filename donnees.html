@@ -18,7 +18,7 @@
 <title>Tableaux et graphiques — CE2 | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=7">
 <style>
   .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
   .btn-choice {
@@ -83,7 +83,7 @@
 
 
   <div class="retiens-box">
-    <div class="retiens-title">💡 Je retiens</div>
+    <div class="retiens-title">Je retiens</div>
     <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
       📋 Un <strong>tableau</strong> organise des données en lignes et colonnes.<br>
       📊 Un <strong>diagramme en barres</strong> permet de comparer des quantités visuellement.<br>
@@ -241,7 +241,7 @@ function buildQBlock(item, container, id, scoreEl) {
     <div class="qcm-row" id="${id}-choices">
       ${shuffled.map(c => `<button class="btn-choice" onclick="checkQ(this,'${c}','${item.correct}','${id}-choices','${id}-fb')">${c}</button>`).join('')}
     </div>
-    <div class="feedback-line" id="${id}-fb"></div>
+    <div class="feedback-line" aria-live="polite" id="${id}-fb"></div>
   `;
   container.appendChild(div);
 }
@@ -263,9 +263,9 @@ function checkQ(btn, chosen, correct, rowId, fbId) {
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>
 <script src="auth.js?v=7"></script>
-<script src="gamification.js?v=7"></script>
-<script src="nav.js?v=6"></script>
+<script src="gamification.js?v=9"></script>
+<script src="nav.js?v=7"></script>
 <script src="related.js?v=2"></script>
-<script src="seo.js"></script>
+<script src="seo.js?v=3"></script>
 </body>
 </html>

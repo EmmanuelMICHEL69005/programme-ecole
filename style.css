@@ -1119,3 +1119,136 @@ body .pil-faq-item p { font-size: .95rem; font-weight: 600; max-width: 60ch; }
 
 /* Gras dans les exemples : teinte foncée du niveau pour rester lisible */
 main.cs .cs-ex b { color: var(--ld, var(--encre)); }
+
+/* ================================================================
+   DIAGNOSTIC IMPECCABLE (nov. 2026) — une seule identité, du CP à la 3e
+   Une encre, un papier. Le cahier va jusqu'à la correction.
+   ================================================================ */
+
+/* ── Une seule encre, un seul papier ─────────────────────── */
+.site-header, .home-header, .cpage .cours-header, body .pil-hero { background: var(--encre) !important; }
+.site-header .emoji-header { display: none; }
+body.cpage, body:has(.pil-hero) {
+  background: var(--papier);
+  --lc1: var(--encre); --lc2: #4a6fd1; --ld: var(--encre-fonce);
+  --lb: #d5dcf2; --lbg: var(--encre-pale); --lt: var(--encre-fonce);
+}
+.exercice-block { --accent: var(--encre) !important; }
+
+/* ── Boutons ☰ et profil : rangés dans l'en-tête (ils défilent avec lui) ─ */
+.site-header, .home-header, .cours-header, .pil-hero { position: relative; }
+
+/* ── Note « sans profil » : une ligne discrète sous l'en-tête ─ */
+.ef-guest-note {
+  position: relative; display: flex; align-items: center; justify-content: center;
+  flex-wrap: wrap; gap: 4px 12px; padding: 9px 48px 9px 16px;
+  background: var(--encre-pale); color: var(--encre-fonce);
+  font-size: .9rem; font-weight: 600; text-align: center;
+}
+.ef-guest-link {
+  background: none; border: 0; padding: 0; font: inherit; font-weight: 800;
+  color: var(--encre); text-decoration: underline; text-underline-offset: .18em; cursor: pointer;
+}
+.ef-guest-x {
+  position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
+  width: 36px; height: 36px; background: none; border: 0; border-radius: 8px;
+  color: var(--texte-2); font-size: 1rem; cursor: pointer;
+}
+.ef-guest-x:hover { background: rgba(31,60,136,.08); }
+
+/* ── Lien « Revoir la leçon » dans l'en-tête d'exercices ─── */
+.nav-back + .nav-lesson { margin-left: 8px; }
+
+/* ── Deuxième essai et correction ─────────────────────────── */
+.btn-choice.tried { opacity: 1; text-decoration: line-through; text-decoration-color: var(--marge); text-decoration-thickness: 2px; color: var(--texte-2); background: #fbf7ee; box-shadow: none; transform: none; }
+.retry-line:not(:empty) { margin-top: 8px; font-size: .98rem; font-weight: 700; color: var(--encre-fonce); }
+.retry-hint { display: block; margin-top: 4px; font-weight: 600; color: var(--texte-2); }
+.fb-lesson { display: inline-block; margin-left: 8px; font-weight: 800; color: var(--encre); text-decoration: underline; text-underline-offset: .18em; white-space: nowrap; }
+.qcm-row { align-items: stretch; }
+
+/* ── Fin d'exercice : une copie corrigée, pas des confettis ─ */
+body .gs-next-panel {
+  color: var(--encre-fonce);
+  background-color: #fff;
+  background-image:
+    linear-gradient(90deg, transparent 42px, var(--marge) 42px, var(--marge) 44px, transparent 44px),
+    repeating-linear-gradient(180deg, transparent 0 31px, var(--seyes-fort) 31px 32px);
+  box-shadow: 0 -12px 50px rgba(23,45,102,.35);
+  padding: 30px 24px 40px 60px; text-align: center;
+}
+body .gs-stamp {
+  display: inline-block; margin: 2px auto 14px; padding: 4px 16px;
+  border: 3px solid currentColor; border-radius: 12px;
+  color: var(--marge); font-size: 1.7rem; font-weight: 900; line-height: 1.2;
+  transform: rotate(-6deg);
+  animation: gsStamp .45s cubic-bezier(.16,1,.3,1) both;
+}
+@keyframes gsStamp { from { transform: rotate(-6deg) scale(1.6); opacity: 0; } to { transform: rotate(-6deg) scale(1); opacity: 1; } }
+body .gs-next-bravo { font-size: 1.45rem; color: var(--encre-fonce); }
+body .gs-next-sub { color: var(--texte-2); font-size: 1rem; font-weight: 700; }
+body .gs-next-guest {
+  display: block; margin: 0 auto 16px; background: none; border: 0; padding: 0;
+  font: inherit; font-size: .95rem; font-weight: 800; color: var(--encre);
+  text-decoration: underline; text-underline-offset: .18em; cursor: pointer;
+}
+body .gs-next-main-btn { background: var(--encre); box-shadow: 0 4px 0 var(--encre-fonce); text-align: left; }
+body .gs-next-main-label { text-transform: none; letter-spacing: 0; font-size: .85rem; }
+body .gs-next-close { background: #fff; border-color: var(--trait); color: var(--texte-2); }
+body .gs-next-secondary-btn, body .gs-next-continue {
+  background: #fff; border: 1.5px solid #d5dcf2; color: var(--encre); font-family: inherit; cursor: pointer;
+}
+
+/* ── Accueil : une décision à la fois ─────────────────────── */
+.welcome .bonjour { margin: 0; }
+.lp-btn, .lp-btn[class*="lp-"] {
+  background: #fff !important; color: var(--encre) !important; border: 1.5px solid #d5dcf2 !important;
+  box-shadow: none !important; min-width: 58px; padding: 12px 12px;
+}
+.lp-btn.active, .lp-btn[class*="lp-"].active { background: var(--encre) !important; color: #fff !important; border-color: var(--encre) !important; }
+.lp-emoji { display: none; }
+.lp-name { font-size: 1rem; letter-spacing: 0; }
+.lc-continue {
+  display: flex; align-items: center; gap: 10px; max-width: 520px; margin: 0 auto 24px;
+  padding: 14px 18px; border-radius: 14px; background: var(--encre); color: #fff;
+  text-decoration: none; box-shadow: 0 4px 0 var(--encre-fonce); font-size: 1rem;
+}
+.lc-continue span:first-child { font-weight: 600; opacity: .85; }
+.lc-continue b { flex: 1; font-weight: 900; }
+.lc-continue[hidden] { display: none; }
+.lc-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 20px; border-bottom: 1px solid var(--trait); }
+.lc-tab {
+  background: none; border: 0; border-bottom: 3px solid transparent; margin-bottom: -1px;
+  padding: 10px 14px; font: inherit; font-size: 1rem; font-weight: 800; color: var(--texte-2); cursor: pointer;
+}
+.lc-tab[aria-selected="true"] { color: var(--encre); border-bottom-color: var(--encre); }
+.lc-tab:hover { color: var(--encre); }
+.lc-cat[hidden] { display: none; }
+.lc-cat-more { margin-top: 8px; }
+.lc-cat-more .lc-cat-title { font-size: 1rem; color: var(--texte-2); }
+.lc-pair { position: relative; display: flex; }
+.lc-pair > .lc-card { flex: 1; padding-right: 86px; }
+.lc-lesson {
+  position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+  padding: 6px 10px; border-radius: 10px; background: var(--encre-pale);
+  color: var(--encre); font-size: .85rem; font-weight: 800; text-decoration: none; white-space: nowrap;
+}
+.lc-lesson:hover { background: #d5dcf2; }
+.gs-card-status { font-size: .8rem; font-weight: 700; color: var(--texte-2); margin-top: 2px; }
+.gs-card-done { color: #15803d; }
+
+/* ── Cours : figures et tableaux ──────────────────────────── */
+.cs-fig { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin: 12px 0; font-size: 1rem; font-weight: 600; }
+.cs-fig-op { font-size: 1.4rem; font-weight: 900; color: var(--encre); }
+main.cs .cs-ex .f, main.cs .cs-retenir .f { font-size: .95em; }
+main.cs table, .cpage table { display: block; max-width: 100%; overflow-x: auto; }
+/* Accueil : cartes assez larges pour le titre + la pastille Leçon ; onglets sur une ligne */
+.lc-grid { grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); }
+.lc-pair > .lc-card { padding-right: 80px; }
+.lc-lesson { right: 8px; padding: 5px 9px; font-size: .82rem; }
+.lc-tabs { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+.lc-tab { flex-shrink: 0; padding: 10px 12px; }
+@media (max-width: 480px) { .lc-grid { grid-template-columns: 1fr; } }
+/* Une seule identité : les styles de couleur propres à certaines pages (vert CP…) sont neutralisés */
+body .q-block { background: transparent; border-color: transparent; }
+body .btn-choice:not(.correct):not(.wrong):not(.tried):not(.btn-vrai):not(.btn-faux) { background: #fff; color: var(--texte); border-color: #d6d3cb; box-shadow: 0 4px 0 #d6d3cb; }
+body .btn-choice:not(.correct):not(.wrong):not(.tried):not(.btn-vrai):not(.btn-faux):hover:not([disabled]) { border-color: var(--encre); color: var(--encre); background: var(--encre-pale); box-shadow: 0 6px 0 #b9c3e3; }

@@ -18,7 +18,7 @@
 <title>Les nombres entiers — CE2 | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=7">
 <style>
   .decomp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .decomp-item {
@@ -131,7 +131,7 @@
 
   <!-- JE RETIENS -->
   <div class="retiens-box">
-    <div class="retiens-title">💡 Je retiens</div>
+    <div class="retiens-title">Je retiens</div>
     <p style="font-size:0.95rem; margin-bottom:12px;">Un nombre peut avoir jusqu'à 4 chiffres :</p>
     <div class="tableau-pos" style="margin-bottom:10px;">
       <div class="pos-cell"><div class="pos-label">Milliers</div><div class="pos-val">M</div></div>
@@ -216,7 +216,7 @@ ex1Data.forEach((item, idx) => {
     <div class="qcm-row" id="ex1-choices-${idx}">
       ${shuffled.map(c => `<button class="btn-choice" onclick="checkEx1(this, ${c}, ${item.correct}, ${idx})">${c}</button>`).join('')}
     </div>
-    <div class="feedback-line" id="ex1-fb-${idx}"></div>
+    <div class="feedback-line" aria-live="polite" id="ex1-fb-${idx}"></div>
   `;
   ex1Container.appendChild(div);
 });
@@ -256,7 +256,7 @@ ex2Data.forEach((item, idx) => {
     <div class="qcm-row" id="ex2-choices-${idx}">
       ${shuffled.map(c => `<button class="btn-choice" onclick="checkBasic(this, ${c}, ${item.correct}, 'ex2-choices-${idx}', 'ex2-fb-${idx}')">${c.toLocaleString('fr')}</button>`).join('')}
     </div>
-    <div class="feedback-line" id="ex2-fb-${idx}"></div>
+    <div class="feedback-line" aria-live="polite" id="ex2-fb-${idx}"></div>
   `;
   ex2Container.appendChild(div);
 });
@@ -283,7 +283,7 @@ ex3Data.forEach((item, idx) => {
       </div>
       <span style="font-size:1.3rem; font-weight:900;">${item.b.toLocaleString('fr')}</span>
     </div>
-    <div class="feedback-line" id="ex3-fb-${idx}"></div>
+    <div class="feedback-line" aria-live="polite" id="ex3-fb-${idx}"></div>
   `;
   ex3Container.appendChild(div);
 });
@@ -436,7 +436,7 @@ ex5Data.forEach((item, idx) => {
     <div class="qcm-row" id="ex5-choices-${idx}">
       ${shuffled.map(c => `<button class="btn-choice" onclick="checkBasic(this, ${c}, ${item.correct}, 'ex5-choices-${idx}', 'ex5-fb-${idx}')">${c.toLocaleString('fr')}</button>`).join('')}
     </div>
-    <div class="feedback-line" id="ex5-fb-${idx}"></div>
+    <div class="feedback-line" aria-live="polite" id="ex5-fb-${idx}"></div>
   `;
   ex5Container.appendChild(div);
 });
@@ -462,9 +462,9 @@ function checkBasic(btn, chosen, correct, rowId, fbId) {
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>
 <script src="auth.js?v=7"></script>
-<script src="gamification.js?v=7"></script>
-<script src="nav.js?v=6"></script>
+<script src="gamification.js?v=9"></script>
+<script src="nav.js?v=7"></script>
 <script src="related.js?v=2"></script>
-<script src="seo.js"></script>
+<script src="seo.js?v=3"></script>
 </body>
 </html>

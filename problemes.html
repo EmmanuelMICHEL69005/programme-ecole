@@ -18,7 +18,7 @@
 <title>Résolution de problèmes — CE2 | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=7">
 <style>
   .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
   .btn-choice {
@@ -64,7 +64,7 @@
 
 
   <div class="retiens-box">
-    <div class="retiens-title">💡 Comment résoudre un problème</div>
+    <div class="retiens-title">Comment résoudre un problème</div>
     <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
       1️⃣ <strong>Je lis</strong> l'énoncé attentivement<br>
       2️⃣ <strong>J'identifie</strong> ce que je cherche<br>
@@ -127,7 +127,7 @@ function buildPbBlocks(data, containerId, scoreKey, total) {
       <div class="qcm-row" id="${scoreKey}-choices-${idx}">
         ${shuffled.map(c => `<button class="btn-choice" onclick="checkPb(this,'${c}','${item.correct}','${scoreKey}-choices-${idx}','${scoreKey}-fb-${idx}','${scoreKey}',${total})">${c}</button>`).join('')}
       </div>
-      <div class="feedback-line" id="${scoreKey}-fb-${idx}"></div>
+      <div class="feedback-line" aria-live="polite" id="${scoreKey}-fb-${idx}"></div>
     `;
     container.appendChild(div);
   });
@@ -235,7 +235,7 @@ pb2Data.forEach((item, idx) => {
     <div class="qcm-row" id="pb2-choices-${idx}">
       ${shuffled.map(c => `<button class="btn-choice" onclick="checkSimple(this,'${c}','${item.correct}','pb2-choices-${idx}','pb2-fb-${idx}')">${c}</button>`).join('')}
     </div>
-    <div class="feedback-line" id="pb2-fb-${idx}"></div>
+    <div class="feedback-line" aria-live="polite" id="pb2-fb-${idx}"></div>
   `;
   ex4Container.appendChild(div);
 });
@@ -270,7 +270,7 @@ opData.forEach((item, idx) => {
     <div class="qcm-row" id="op-choices-${idx}">
       ${shuffled.map(c => `<button class="btn-choice" onclick="checkSimple(this,'${c}','${item.correct}','op-choices-${idx}','op-fb-${idx}')">${c}</button>`).join('')}
     </div>
-    <div class="feedback-line" id="op-fb-${idx}"></div>
+    <div class="feedback-line" aria-live="polite" id="op-fb-${idx}"></div>
   `;
   ex5Container.appendChild(div);
 });
@@ -279,9 +279,9 @@ opData.forEach((item, idx) => {
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>
 <script src="auth.js?v=7"></script>
-<script src="gamification.js?v=7"></script>
-<script src="nav.js?v=6"></script>
+<script src="gamification.js?v=9"></script>
+<script src="nav.js?v=7"></script>
 <script src="related.js?v=2"></script>
-<script src="seo.js"></script>
+<script src="seo.js?v=3"></script>
 </body>
 </html>

@@ -18,7 +18,7 @@
 <title>Longueurs, masses et contenances — CE2 | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=7">
 <style>
   .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
   .btn-choice {
@@ -64,7 +64,7 @@
 
   <!-- JE RETIENS -->
   <div class="retiens-box">
-    <div class="retiens-title">💡 Je retiens</div>
+    <div class="retiens-title">Je retiens</div>
     <p style="font-size:0.85rem; font-weight:800; color:#1d4ed8; margin-bottom:6px;">📏 Longueurs</p>
     <div class="tableau-unites">
       <div class="unite-card"><div class="val">1 km</div><div class="equ">= 1 000 m</div></div>
@@ -152,7 +152,7 @@ function buildQCM(container, data, prefix, scoreKey, total) {
       <div class="qcm-row" id="${prefix}-${idx}">
         ${shuffled.map(c => `<button class="btn-choice" onclick="checkQ(this,'${c}','${item.correct}','${prefix}-${idx}','${prefix}-fb-${idx}','${scoreKey}',${total})">${c}</button>`).join('')}
       </div>
-      <div class="feedback-line" id="${prefix}-fb-${idx}"></div>
+      <div class="feedback-line" aria-live="polite" id="${prefix}-fb-${idx}"></div>
     `;
     container.appendChild(div);
   });
@@ -210,7 +210,7 @@ compareData.forEach((item, idx) => {
       </div>
       <span style="font-size:1.1rem; font-weight:900;">${item.b}</span>
     </div>
-    <div class="feedback-line" id="cmp-fb-${idx}"></div>
+    <div class="feedback-line" aria-live="polite" id="cmp-fb-${idx}"></div>
   `;
   ex4Container.appendChild(div);
 });
@@ -245,7 +245,7 @@ pbData.forEach((item, idx) => {
     <div class="qcm-row" id="pb-choices-${idx}">
       ${shuffled.map(c => `<button class="btn-choice" onclick="checkPb(this,'${c}','${item.correct}','pb-choices-${idx}','pb-fb-${idx}')">${c}</button>`).join('')}
     </div>
-    <div class="feedback-line" id="pb-fb-${idx}"></div>
+    <div class="feedback-line" aria-live="polite" id="pb-fb-${idx}"></div>
   `;
   ex5Container.appendChild(div);
 });
@@ -266,9 +266,9 @@ function checkPb(btn, chosen, correct, rowId, fbId) {
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>
 <script src="auth.js?v=7"></script>
-<script src="gamification.js?v=7"></script>
-<script src="nav.js?v=6"></script>
+<script src="gamification.js?v=9"></script>
+<script src="nav.js?v=7"></script>
 <script src="related.js?v=2"></script>
-<script src="seo.js"></script>
+<script src="seo.js?v=3"></script>
 </body>
 </html>

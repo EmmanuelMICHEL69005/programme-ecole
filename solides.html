@@ -18,7 +18,7 @@
 <title>Les solides — CE2 | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=7">
 <style>
   .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
   .btn-choice {
@@ -73,7 +73,7 @@
 
   <!-- JE RETIENS -->
   <div class="retiens-box">
-    <div class="retiens-title">💡 Je retiens</div>
+    <div class="retiens-title">Je retiens</div>
     <div class="solides-gallery" style="margin-top:12px;">
       <div class="solide-card">
         <span class="solide-emoji">🧊</span>
@@ -161,7 +161,7 @@ solData.forEach((item, idx) => {
     <div class="qcm-row" id="sol-choices-${idx}">
       ${shuffled.map(c => `<button class="btn-choice" onclick="checkSol(this,'${c}','${item.correct}',${idx})">${c}</button>`).join('')}
     </div>
-    <div class="feedback-line" id="sol-fb-${idx}"></div>
+    <div class="feedback-line" aria-live="polite" id="sol-fb-${idx}"></div>
   `;
   ex1Container.appendChild(div);
 });
@@ -198,7 +198,7 @@ objData.forEach((item, idx) => {
     <div class="qcm-row" id="obj-choices-${idx}">
       ${shuffled.map(c => `<button class="btn-choice" onclick="checkObj(this,'${c}','${item.correct}',${idx})">${c}</button>`).join('')}
     </div>
-    <div class="feedback-line" id="obj-fb-${idx}"></div>
+    <div class="feedback-line" aria-live="polite" id="obj-fb-${idx}"></div>
   `;
   ex2Container.appendChild(div);
 });
@@ -234,7 +234,7 @@ fsaData.forEach((item, idx) => {
     <div class="qcm-row" id="fsa-choices-${idx}">
       ${shuffled.map(c => `<button class="btn-choice" onclick="checkFsa(this,'${c}','${item.correct}',${idx})">${c}</button>`).join('')}
     </div>
-    <div class="feedback-line" id="fsa-fb-${idx}"></div>
+    <div class="feedback-line" aria-live="polite" id="fsa-fb-${idx}"></div>
   `;
   ex3Container.appendChild(div);
 });
@@ -271,7 +271,7 @@ vfData.forEach((item, idx) => {
         <button class="btn-v" onclick="checkVF(this, true, ${item.correct}, 'vf4-fb-${idx}', '${item.exp || ''}')">Vrai</button>
         <button class="btn-f" onclick="checkVF(this, false, ${item.correct}, 'vf4-fb-${idx}', '${item.exp || ''}')">Faux</button>
       </div>
-      <div class="feedback-line" id="vf4-fb-${idx}"></div>
+      <div class="feedback-line" aria-live="polite" id="vf4-fb-${idx}"></div>
     </div>
   `;
   ex4Container.appendChild(div);
@@ -294,9 +294,9 @@ function checkVF(btn, chosen, correct, fbId, exp) {
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>
 <script src="auth.js?v=7"></script>
-<script src="gamification.js?v=7"></script>
-<script src="nav.js?v=6"></script>
+<script src="gamification.js?v=9"></script>
+<script src="nav.js?v=7"></script>
 <script src="related.js?v=2"></script>
-<script src="seo.js"></script>
+<script src="seo.js?v=3"></script>
 </body>
 </html>

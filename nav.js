@@ -284,7 +284,7 @@
   const css = `
     /* ===== NAV TOGGLE BUTTON ===== */
     .nav-toggle {
-      position: fixed;
+      position: absolute;
       top: 14px;
       right: 14px;
       z-index: 1200;
@@ -326,15 +326,15 @@
     .nav-drawer {
       position: fixed;
       top: 0;
-      left: 0;
+      right: 0;
       width: 310px;
       max-width: 88vw;
       height: 100%;
       height: 100dvh;
       background: #172d66;
       z-index: 1220;
-      transform: translateX(-100%);
-      transition: transform 0.28s cubic-bezier(0.4,0,0.2,1);
+      transform: translateX(100%);
+      transition: transform 0.28s cubic-bezier(0.16,1,0.3,1);
       display: flex;
       flex-wrap: wrap;
       flex-direction: column;
@@ -632,7 +632,7 @@
 
     /* ===== PROFILE BUTTON ===== */
     .nav-profile-btn {
-      position: fixed;
+      position: absolute;
       top: 14px;
       left: 14px;
       z-index: 1200;
@@ -671,6 +671,7 @@
   const toggleBtn = document.createElement('button');
   toggleBtn.className = 'nav-toggle';
   toggleBtn.setAttribute('aria-label', 'Ouvrir le menu');
+  toggleBtn.setAttribute('aria-expanded', 'false');
   toggleBtn.innerHTML = '☰';
   document.body.appendChild(toggleBtn);
 
@@ -870,6 +871,7 @@
     overlay.classList.add('open');
     toggleBtn.classList.add('is-open');
     toggleBtn.setAttribute('aria-label', 'Fermer le menu');
+    toggleBtn.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
   }
 
@@ -878,6 +880,7 @@
     overlay.classList.remove('open');
     toggleBtn.classList.remove('is-open');
     toggleBtn.setAttribute('aria-label', 'Ouvrir le menu');
+    toggleBtn.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
   }
 

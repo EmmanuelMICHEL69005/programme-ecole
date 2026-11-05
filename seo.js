@@ -68,11 +68,11 @@
 
   bar.innerHTML = crumbs.map(function (c, i) {
     var sep = i > 0 ? '<span style="color:#c4b5fd">›</span>' : '';
-    if (c.href) return sep + '<a href="' + c.href + '" style="color:#7c3aed;text-decoration:none;font-weight:900">' + c.label + '</a>';
+    if (c.href) return sep + '<a href="' + c.href + '" style="color:#1f3c88;text-decoration:underline;text-underline-offset:.18em;font-weight:800">' + c.label + '</a>';
     return sep + '<span style="color:#1e1b4b">' + c.label + '</span>';
   }).join('');
 
-  var header = document.querySelector('.site-header, .cours-header');
+  var header = document.querySelector('.site-header, .cours-header, .pil-hero, .home-header');
   if (header && header.nextSibling) {
     header.parentNode.insertBefore(bar, header.nextSibling);
   } else {

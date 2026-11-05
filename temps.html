@@ -18,7 +18,7 @@
 <title>Le temps et la monnaie — CE2 | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=7">
 <style>
   .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
   .btn-choice {
@@ -68,7 +68,7 @@
 
   <!-- JE RETIENS -->
   <div class="retiens-box">
-    <div class="retiens-title">💡 Je retiens</div>
+    <div class="retiens-title">Je retiens</div>
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:10px; font-size:0.9rem; color:#555;">
       <div>
         <strong style="color:#166534;">⏰ Durées</strong><br>
@@ -206,7 +206,7 @@ heureData.forEach((item, idx) => {
     <div class="qcm-row" id="heure-choices-${idx}">
       ${shuffled.map(c => `<button class="btn-choice" onclick="checkHeure(this,'${c}','${item.correct}',${idx})">${c}</button>`).join('')}
     </div>
-    <div class="feedback-line" id="heure-fb-${idx}"></div>
+    <div class="feedback-line" aria-live="polite" id="heure-fb-${idx}"></div>
   `;
   wrap.appendChild(right);
   div.appendChild(wrap);
@@ -246,7 +246,7 @@ dureeData.forEach((item, idx) => {
     <div class="qcm-row" id="duree-choices-${idx}">
       ${shuffled.map(c => `<button class="btn-choice" onclick="checkDuree(this,'${c}','${item.correct}',${idx})">${c}</button>`).join('')}
     </div>
-    <div class="feedback-line" id="duree-fb-${idx}"></div>
+    <div class="feedback-line" aria-live="polite" id="duree-fb-${idx}"></div>
   `;
   ex2Container.appendChild(div);
 });
@@ -283,7 +283,7 @@ calData.forEach((item, idx) => {
     <div class="qcm-row" id="cal-choices-${idx}">
       ${shuffled.map(c => `<button class="btn-choice" onclick="checkCal(this,'${c}','${item.correct}',${idx})">${c}</button>`).join('')}
     </div>
-    <div class="feedback-line" id="cal-fb-${idx}"></div>
+    <div class="feedback-line" aria-live="polite" id="cal-fb-${idx}"></div>
   `;
   ex3Container.appendChild(div);
 });
@@ -320,7 +320,7 @@ monnaieData.forEach((item, idx) => {
     <div class="qcm-row" id="mon-choices-${idx}">
       ${shuffled.map(c => `<button class="btn-choice" onclick="checkMonnaie(this,'${c}','${item.correct}',${idx})">${c}</button>`).join('')}
     </div>
-    <div class="feedback-line" id="mon-fb-${idx}"></div>
+    <div class="feedback-line" aria-live="polite" id="mon-fb-${idx}"></div>
   `;
   ex4Container.appendChild(div);
 });
@@ -354,7 +354,7 @@ pbData.forEach((item, idx) => {
     <div class="qcm-row" id="pb2-choices-${idx}">
       ${shuffled.map(c => `<button class="btn-choice" onclick="checkPb2(this,'${c}','${item.correct}',${idx})">${c}</button>`).join('')}
     </div>
-    <div class="feedback-line" id="pb2-fb-${idx}"></div>
+    <div class="feedback-line" aria-live="polite" id="pb2-fb-${idx}"></div>
   `;
   ex5Container.appendChild(div);
 });
@@ -375,9 +375,9 @@ function checkPb2(btn, chosen, correct, idx) {
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>
 <script src="auth.js?v=7"></script>
-<script src="gamification.js?v=7"></script>
-<script src="nav.js?v=6"></script>
+<script src="gamification.js?v=9"></script>
+<script src="nav.js?v=7"></script>
 <script src="related.js?v=2"></script>
-<script src="seo.js"></script>
+<script src="seo.js?v=3"></script>
 </body>
 </html>

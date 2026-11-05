@@ -18,7 +18,7 @@
 <title>Calcul mental — CE2 | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=7">
 <style>
   .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
   .btn-choice {
@@ -80,7 +80,7 @@
 
 
   <div class="retiens-box">
-    <div class="retiens-title">💡 Je retiens</div>
+    <div class="retiens-title">Je retiens</div>
     <div style="font-size:0.9rem; color:#555; display:flex; flex-direction:column; gap:6px; margin-top:8px;">
       <div>➕ <strong>Tables d'addition</strong> : bien connaître de 0+0 à 10+10</div>
       <div>✖️ <strong>Tables de multiplication</strong> : bien connaître de 1×1 à 10×10</div>
@@ -95,7 +95,7 @@
     <div class="flash-progress" id="add-progress">Question 1 / 10</div>
     <div class="flash-display" id="add-question">?</div>
     <div class="flash-choices" id="add-choices"></div>
-    <div class="feedback-line" id="add-fb" style="text-align:center;"></div>
+    <div class="feedback-line" aria-live="polite" id="add-fb" style="text-align:center;"></div>
     <button class="btn-next" id="add-next" onclick="nextAddQuestion()" disabled>Question suivante →</button>
     <div class="flash-score" id="add-score">Score : 0 / 10</div>
   </div>
@@ -106,7 +106,7 @@
     <div class="flash-progress" id="mul-progress">Question 1 / 10</div>
     <div class="flash-display" id="mul-question">?</div>
     <div class="flash-choices" id="mul-choices"></div>
-    <div class="feedback-line" id="mul-fb" style="text-align:center;"></div>
+    <div class="feedback-line" aria-live="polite" id="mul-fb" style="text-align:center;"></div>
     <button class="btn-next" id="mul-next" onclick="nextMulQuestion()" disabled>Question suivante →</button>
     <div class="flash-score" id="mul-score">Score : 0 / 10</div>
   </div>
@@ -251,7 +251,7 @@ dmData.forEach((item, idx) => {
     <div class="qcm-row" id="dm-choices-${idx}">
       ${shuffled.map(c => `<button class="btn-choice" onclick="checkDm(this,${c},${item.correct},'dm-choices-${idx}','dm-fb-${idx}')">${c}</button>`).join('')}
     </div>
-    <div class="feedback-line" id="dm-fb-${idx}"></div>
+    <div class="feedback-line" aria-live="polite" id="dm-fb-${idx}"></div>
   `;
   ex3Container.appendChild(div);
 });
@@ -291,7 +291,7 @@ c100Data.forEach((item, idx) => {
     <div class="qcm-row" id="c100-choices-${idx}">
       ${shuffled.map(c => `<button class="btn-choice" onclick="checkC100(this,${c},${item.correct},'c100-choices-${idx}','c100-fb-${idx}')">${c}</button>`).join('')}
     </div>
-    <div class="feedback-line" id="c100-fb-${idx}"></div>
+    <div class="feedback-line" aria-live="polite" id="c100-fb-${idx}"></div>
   `;
   ex4Container.appendChild(div);
 });
@@ -330,7 +330,7 @@ times10Data.forEach((item, idx) => {
     <div class="qcm-row" id="t10-choices-${idx}">
       ${shuffled.map(c => `<button class="btn-choice" onclick="checkT10(this,${c},${item.correct},'t10-choices-${idx}','t10-fb-${idx}')">${c}</button>`).join('')}
     </div>
-    <div class="feedback-line" id="t10-fb-${idx}"></div>
+    <div class="feedback-line" aria-live="polite" id="t10-fb-${idx}"></div>
   `;
   ex5Container.appendChild(div);
 });
@@ -351,9 +351,9 @@ function checkT10(btn, chosen, correct, rowId, fbId) {
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>
 <script src="auth.js?v=7"></script>
-<script src="gamification.js?v=7"></script>
-<script src="nav.js?v=6"></script>
+<script src="gamification.js?v=9"></script>
+<script src="nav.js?v=7"></script>
 <script src="related.js?v=2"></script>
-<script src="seo.js"></script>
+<script src="seo.js?v=3"></script>
 </body>
 </html>

@@ -31,14 +31,14 @@
   const AVATARS = ['🌟','⭐','🦋','🌈','🦄','🐱','🐼','🐸','🦊','🐢','🌺','🍭','🎀','🚀','⚡','🎯','🏆','💎','🌙','🦸‍♀️'];
 
   const LEVELS = [
-    { n:1, xp:0,    title:'Apprentie',       emoji:'🌱' },
-    { n:2, xp:120,  title:'Exploratrice',    emoji:'🔭' },
-    { n:3, xp:350,  title:'Calculatrice',    emoji:'🧮' },
-    { n:4, xp:750,  title:'Géomètre',        emoji:'📐' },
-    { n:5, xp:1400, title:'Mathématicienne', emoji:'🏆' },
-    { n:6, xp:2300, title:'Experte',         emoji:'⭐' },
-    { n:7, xp:3500, title:'Championne',      emoji:'🥇' },
-    { n:8, xp:5000, title:'Légende',         emoji:'🌟' },
+    { n:1, xp:0,    title:'Cahier neuf',        emoji:'📒' },
+    { n:2, xp:120,  title:'Première page',      emoji:'✏️' },
+    { n:3, xp:350,  title:'Bonne copie',        emoji:'📝' },
+    { n:4, xp:750,  title:'Encouragements',     emoji:'👍' },
+    { n:5, xp:1400, title:'Compliments',        emoji:'🌟' },
+    { n:6, xp:2300, title:'Félicitations',      emoji:'🏅' },
+    { n:7, xp:3500, title:'Tableau d\'honneur', emoji:'🏆' },
+    { n:8, xp:5000, title:'Mention très bien',  emoji:'🎓' },
   ];
 
   const BADGES = [
@@ -47,19 +47,21 @@
     { id:'hot5',      emoji:'⚡', name:'Inarrêtable !',      desc:'5 de suite',                      check: p => p.maxStreak >= 5 },
     { id:'hot10',     emoji:'🌪️',name:'Tornade !',          desc:'10 de suite',                     check: p => p.maxStreak >= 10 },
     { id:'c10',       emoji:'🚀', name:'Décollage !',        desc:'10 bonnes réponses',              check: p => p.tot >= 10 },
-    { id:'c25',       emoji:'💪', name:'Costaude !',         desc:'25 bonnes réponses',              check: p => p.tot >= 25 },
-    { id:'c50',       emoji:'🦸‍♀️',name:'Super héroïne',   desc:'50 bonnes réponses',              check: p => p.tot >= 50 },
+    { id:'c25',       emoji:'💪', name:'Bien lancé !',         desc:'25 bonnes réponses',              check: p => p.tot >= 25 },
+    { id:'c50',       emoji:'🦸',name:'Cap des 50',   desc:'50 bonnes réponses',              check: p => p.tot >= 50 },
     { id:'c100',      emoji:'💯', name:'Centenaire !',       desc:'100 bonnes réponses',             check: p => p.tot >= 100 },
-    { id:'lv3',       emoji:'🧮', name:'Calculatrice',       desc:'Niveau 3 atteint',                check: p => p.level >= 3 },
-    { id:'lv5',       emoji:'🏆', name:'Mathématicienne',    desc:'Niveau 5 atteint',                check: p => p.level >= 5 },
-    { id:'fractions', emoji:'🍕', name:'Reine des fractions',desc:'Terminer les 3 fiches fractions', check: p => ['fiche1.html','fiche2.html','fiche3.html'].every(f => (p.pages[f]||0) >= 3) },
+    { id:'lv3',       emoji:'🧮', name:'Machine à calculer',       desc:'Niveau 3 atteint',                check: p => p.level >= 3 },
+    { id:'lv5',       emoji:'🏆', name:'Tête bien faite',    desc:'Niveau 5 atteint',                check: p => p.level >= 5 },
+    { id:'fractions', emoji:'🍕', name:'As des fractions',desc:'Terminer les 3 fiches fractions', check: p => ['fiche1.html','fiche2.html','fiche3.html'].every(f => (p.pages[f]||0) >= 3) },
     { id:'geometry',  emoji:'🔷', name:'Architecte',         desc:'Compléter géométrie + solides',   check: p => (p.pages['geometrie.html']||0) >= 3 && (p.pages['solides.html']||0) >= 3 },
     { id:'allTopics', emoji:'🌈', name:'Programme complet !',desc:'Visiter 10 thèmes différents',    check: p => Object.keys(p.pages).filter(k => (p.pages[k]||0) >= 1).length >= 10 },
     { id:'mentalMath',emoji:'🧠', name:'Calcul éclair',      desc:'20 bonnes en calcul mental',      check: p => (p.pages['calcul-mental.html']||0) >= 20 },
     { id:'earlyBird', emoji:'🌅', name:'Lève-tôt',           desc:'Réviser avant 8h',                check: () => new Date().getHours() < 8 },
     { id:'nightOwl',  emoji:'🦉', name:'Chouette studieuse', desc:'Réviser après 21h',               check: () => new Date().getHours() >= 21 },
-    { id:'consistent',emoji:'📅', name:'Assidue !',          desc:'Revenir 3 jours différents',      check: p => (p.days||[]).length >= 3 },
+    { id:'consistent',emoji:'📅', name:'Fidèle au poste',          desc:'Revenir 3 jours différents',      check: p => (p.days||[]).length >= 3 },
   ];
+
+  const LESSON_OF = {"nombres-6e.html": "cours-nombres-6e.html", "algebre-6e.html": "cours-algebre-6e.html", "fractions-6e.html": "cours-fractions-6e.html", "geometrie-6e.html": "cours-geometrie-6e.html", "mesures-6e.html": "cours-mesures-6e.html", "proportionnalite-6e.html": "cours-proportionnalite-6e.html", "probabilites-6e.html": "cours-probabilites-6e.html", "conjugaison-6e.html": "cours-conjugaison-6e.html", "grammaire-6e.html": "cours-grammaire-6e.html", "orthographe-6e.html": "cours-orthographe-6e.html", "vocabulaire-6e.html": "cours-vocabulaire-6e.html", "histoire-geo-6e.html": "cours-histoire-geo-6e.html", "nombres-ce2.html": "cours-nombres-ce2.html", "calcul-mental-ce2.html": "cours-calcul-ce2.html", "multiplication-division-ce2.html": "cours-multiplication-ce2.html", "decimaux-ce2.html": "cours-decimaux-ce2.html", "geometrie-ce2.html": "cours-geometrie-ce2.html", "symetrie-ce2.html": "cours-symetrie-ce2.html", "mesures-ce2.html": "cours-mesures-ce2.html", "conjugaison-ce2.html": "cours-conjugaison-ce2.html", "grammaire-ce2.html": "cours-grammaire-ce2.html", "orthographe-ce2.html": "cours-orthographe-ce2.html", "vocabulaire-ce2.html": "cours-vocabulaire-ce2.html", "histoire-geo-ce2.html": "cours-histoire-geo-ce2.html", "nombres-cm1.html": "cours-nombres-cm1.html", "calcul-cm1.html": "cours-calcul-cm1.html", "decimaux-cm1.html": "cours-decimaux-cm1.html", "fractions-cm1.html": "cours-fractions-cm1.html", "geometrie-cm1.html": "cours-geometrie-cm1.html", "angles-cm1.html": "cours-angles-cm1.html", "mesures-cm1.html": "cours-mesures-cm1.html", "proportionnalite-cm1.html": "cours-proportionnalite-cm1.html", "temps-cm1.html": "cours-temps-cm1.html", "conjugaison-cm1.html": "cours-conjugaison-cm1.html", "grammaire-cm1.html": "cours-grammaire-cm1.html", "orthographe-cm1.html": "cours-orthographe-cm1.html", "vocabulaire-cm1.html": "cours-vocabulaire-cm1.html", "histoire-geo-cm1.html": "cours-histoire-geo-cm1.html", "nombres-cm2.html": "cours-nombres-cm2.html", "calcul-cm2.html": "cours-calcul-cm2.html", "decimaux-cm2.html": "cours-decimaux-cm2.html", "fractions-cm2.html": "cours-fractions-cm2.html", "geometrie-cm2.html": "cours-geometrie-cm2.html", "mesures-cm2.html": "cours-mesures-cm2.html", "proportionnalite-cm2.html": "cours-proportionnalite-cm2.html", "temps-cm2.html": "cours-temps-cm2.html", "conjugaison-cm2.html": "cours-conjugaison-cm2.html", "grammaire-cm2.html": "cours-grammaire-cm2.html", "orthographe-cm2.html": "cours-orthographe-cm2.html", "vocabulaire-cm2.html": "cours-vocabulaire-cm2.html", "histoire-geo-cm2.html": "cours-histoire-geo-cm2.html", "nombres-ce1.html": "cours-nombres-ce1.html", "calcul-ce1.html": "cours-calcul-ce1.html", "fractions-ce1.html": "cours-fractions-ce1.html", "geometrie-ce1.html": "cours-geometrie-ce1.html", "mesures-ce1.html": "cours-mesures-ce1.html", "conjugaison-ce1.html": "cours-conjugaison-ce1.html", "grammaire-ce1.html": "cours-grammaire-ce1.html", "orthographe-ce1.html": "cours-orthographe-ce1.html", "vocabulaire-ce1.html": "cours-vocabulaire-ce1.html", "histoire-geo-ce1.html": "cours-histoire-geo-ce1.html", "nombres-cp.html": "cours-nombres-cp.html", "calcul-cp.html": "cours-calcul-cp.html", "geometrie-cp.html": "cours-geometrie-cp.html", "mesures-cp.html": "cours-mesures-cp.html", "conjugaison-cp.html": "cours-conjugaison-cp.html", "grammaire-cp.html": "cours-grammaire-cp.html", "orthographe-cp.html": "cours-orthographe-cp.html", "vocabulaire-cp.html": "cours-vocabulaire-cp.html", "histoire-geo-cp.html": "cours-histoire-geo-cp.html"};
 
   const PAGE_LABELS = {
     'index.html':                  { title:'Accueil',                      emoji:'🏠' },
@@ -269,6 +271,8 @@
   let feedbackChanged = false;
 
   function award(xp) {
+    pageSessionCorrect++;
+    pageSessionAnswered++;
     if (!P) return;
     const oldLevel = getLevel(P.xp);
     P.xp  += xp;
@@ -277,8 +281,6 @@
     if (P.streak > P.maxStreak) P.maxStreak = P.streak;
     P.pages[page] = (P.pages[page] || 0) + 1;
     P.level = getLevel(P.xp).n;
-    pageSessionCorrect++;
-    pageSessionAnswered++;
 
     save();
     const newBadges = checkBadges();
@@ -293,8 +295,8 @@
   }
 
   function wrongAnswer() {
-    if (!P) return;
     pageSessionAnswered++;
+    if (!P) return;
     P.streak = 0;
     save();
     renderHeaderChip();
@@ -694,7 +696,7 @@
       .gs-sec-bar-fill {
         height: 100%;
         border-radius: 3px;
-        background: #7c3aed;
+        background: #1f3c88;
         transition: width 0.5s ease, background 0.4s;
         width: 0%;
       }
@@ -769,7 +771,7 @@
       .gs-score-pct {
         font-size: 1.55rem;
         font-weight: 900;
-        color: #7c3aed;
+        color: #1f3c88;
         min-width: 54px;
         text-align: right;
       }
@@ -898,7 +900,7 @@
         line-height: 1.3;
       }
       .gs-related-card:hover {
-        border-color: #7c3aed;
+        border-color: #1f3c88;
         transform: translateY(-2px);
         box-shadow: 0 4px 16px rgba(31,60,136,0.15);
       }
@@ -1213,7 +1215,6 @@
 
   // ── Level-up modal ───────────────────────────────────────────────
   function showLevelUp(lvl) {
-    spawnConfetti();
     const overlay = document.createElement('div');
     overlay.className = 'gs-levelup-overlay';
     overlay.innerHTML = `
@@ -1235,54 +1236,70 @@
     const curIdx   = PAGE_SEQUENCE.indexOf(page);
     const nextPage = curIdx >= 0 && curIdx < PAGE_SEQUENCE.length - 1 ? PAGE_SEQUENCE[curIdx + 1] : null;
     const nextInfo = nextPage ? PAGE_LABELS[nextPage] : null;
-    const totalQ   = document.querySelectorAll('.feedback-line').length || pageSessionAnswered;
-    const pct      = totalQ > 0 ? Math.round((pageSessionCorrect / totalQ) * 100) : 0;
-    const stars    = pct === 100 ? 3 : pct >= 70 ? 2 : 1;
-    const xpEarned = pageSessionCorrect * XP_CORRECT;
-    const bravoMsg = pct === 100 ? 'Parfait ! 🎯' : pct >= 70 ? 'Très bien !' : 'Continue comme ça !';
+    const lines    = [...document.querySelectorAll('.feedback-line')];
+    const totalQ   = lines.length || pageSessionAnswered;
+    const correct  = lines.length ? lines.filter(l => l.textContent.includes('✅')).length : pageSessionCorrect;
+    const pct      = totalQ > 0 ? Math.round((correct / totalQ) * 100) : 0;
+    const xpEarned = correct * XP_CORRECT;
+    const stamp    = pct === 100 ? 'Parfait' : pct >= 80 ? 'Très bien' : pct >= 60 ? 'Bien' : 'À revoir';
+    const bravoMsg = pct === 100 ? 'Tout juste, bravo !' : pct >= 60 ? 'Beau travail !' : 'Relis la leçon, puis réessaie : tu vas y arriver.';
+    const lesson   = LESSON_OF[page];
+    const needHelp = pct < 60;
 
-    spawnConfetti();
+    const mainBtn = (needHelp && lesson) ? `
+          <a href="${lesson}" class="gs-next-main-btn">
+            <span class="gs-next-main-emoji">📖</span>
+            <div class="gs-next-main-info">
+              <div class="gs-next-main-label">Pour bien comprendre</div>
+              <div class="gs-next-main-title">Revoir la leçon</div>
+            </div>
+            <span class="gs-next-main-arrow">→</span>
+          </a>` : nextPage && nextInfo ? `
+          <a href="${nextPage}" class="gs-next-main-btn">
+            <span class="gs-next-main-emoji">${nextInfo.emoji}</span>
+            <div class="gs-next-main-info">
+              <div class="gs-next-main-label">Thème suivant</div>
+              <div class="gs-next-main-title">${nextInfo.title}</div>
+            </div>
+            <span class="gs-next-main-arrow">→</span>
+          </a>` : `
+          <a href="index.html" class="gs-next-main-btn">
+            <span class="gs-next-main-emoji">🏠</span>
+            <div class="gs-next-main-info">
+              <div class="gs-next-main-label">Bravo !</div>
+              <div class="gs-next-main-title">Choisir un autre thème</div>
+            </div>
+            <span class="gs-next-main-arrow">→</span>
+          </a>`;
 
     const overlay = document.createElement('div');
     overlay.className = 'gs-next-overlay';
     overlay.innerHTML = `
-      <div class="gs-next-panel">
-        <button class="gs-next-close" onclick="this.closest('.gs-next-overlay').remove()">✕</button>
-        <div class="gs-next-stars">
-          ${'⭐'.repeat(stars)}<span class="gs-next-star-empty">${'☆'.repeat(3 - stars)}</span>
-        </div>
-        <div class="gs-next-bravo">${bravoMsg}</div>
-        <div class="gs-next-sub">${pageSessionCorrect} / ${totalQ} bonnes réponses</div>
-        <div class="gs-next-xp-badge">+${xpEarned} XP 🎉</div>
+      <div class="gs-next-panel" role="dialog" aria-modal="true" aria-labelledby="gs-next-title">
+        <button class="gs-next-close" aria-label="Fermer" onclick="this.closest('.gs-next-overlay').remove()">✕</button>
+        <div class="gs-stamp gs-stamp--${needHelp ? 'revoir' : 'ok'}" aria-hidden="true">${stamp}</div>
+        <div class="gs-next-bravo" id="gs-next-title">${bravoMsg}</div>
+        <div class="gs-next-sub">${correct} bonne${correct > 1 ? 's' : ''} réponse${correct > 1 ? 's' : ''} sur ${totalQ}</div>
+        ${P ? `<div class="gs-next-xp-badge">+${xpEarned} XP</div>` : `<button class="gs-next-guest" onclick="window.EF_AUTH && window.EF_AUTH.showAuthModal(function(){location.reload();})">Crée un profil pour garder tes résultats</button>`}
         ${P && P.streak >= 3 ? `<div class="gs-next-streak">🔥 Série de ${P.streak} bonnes réponses !</div>` : ''}
-        ${nextPage ? `
-          <a href="${nextPage}" class="gs-next-main-btn">
-            <span class="gs-next-main-emoji">${nextInfo.emoji}</span>
-            <div class="gs-next-main-info">
-              <div class="gs-next-main-label">Leçon suivante</div>
-              <div class="gs-next-main-title">${nextInfo.title}</div>
-            </div>
-            <span class="gs-next-main-arrow">→</span>
-          </a>
-        ` : `
-          <a href="profile.html" class="gs-next-main-btn gs-next-main-btn--gold">
-            <span class="gs-next-main-emoji">🏆</span>
-            <div class="gs-next-main-info">
-              <div class="gs-next-main-label">Programme terminé !</div>
-              <div class="gs-next-main-title">Voir mon profil</div>
-            </div>
-            <span class="gs-next-main-arrow">→</span>
-          </a>
-        `}
+        ${mainBtn}
         <div class="gs-next-actions">
-          <a href="index.html" class="gs-next-secondary-btn">🏠 Toutes les leçons</a>
-          <button class="gs-next-continue" onclick="this.closest('.gs-next-overlay').remove()">Continuer à pratiquer</button>
+          ${needHelp ? `<button class="gs-next-secondary-btn" onclick="location.reload()">↺ Recommencer</button>` : `<a href="index.html" class="gs-next-secondary-btn">🏠 Tous les thèmes</a>`}
+          <button class="gs-next-continue" onclick="this.closest('.gs-next-overlay').remove()">Revoir mes réponses</button>
         </div>
       </div>
     `;
     overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
     document.body.appendChild(overlay);
+    const first = overlay.querySelector('.gs-next-main-btn');
+    if (first) first.focus();
   }
+
+  // Échap ferme les fenêtres
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    document.querySelectorAll('.gs-next-overlay, .gs-levelup-overlay').forEach(o => o.remove());
+  });
 
   // ── Confetti ─────────────────────────────────────────────────────
   function spawnConfetti() {
@@ -1426,14 +1443,14 @@
     const pageScores = P.pages || {};
 
     // Badge on each card
-    document.querySelectorAll('a.card[href]').forEach(card => {
+    document.querySelectorAll('a.lc-card[href], a.card[href]').forEach(card => {
       const href = card.getAttribute('href');
       if (!href || href.startsWith('#') || href.startsWith('http')) return;
 
       const done  = completed[href];
       const score = pageScores[href] || 0;
 
-      const body = card.querySelector('.card-body');
+      const body = card.querySelector('.lcc-body, .card-body');
       if (!body) return;
 
       if (done) {
@@ -1567,13 +1584,33 @@
     const auth = window.EF_AUTH;
     if (!auth || !auth.enabled) return;
     if (document.getElementById('ef-guest-bar')) return;
+    try { if (sessionStorage.getItem('ef_guest_hidden')) return; } catch (e) {}
     const bar = document.createElement('div');
     bar.id = 'ef-guest-bar';
-    bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:2000;background:#172d66;color:white;display:flex;align-items:center;gap:12px;padding:12px 16px;font-family:inherit;font-size:0.85rem;font-weight:700;box-shadow:0 -4px 20px rgba(0,0,0,0.2);';
-    bar.innerHTML = '<span style="flex:1">🔓 Non connecté — ta progression ne sera pas sauvegardée</span>'
-      + '<button style="background:rgba(183,196,240,0.25);border:1.5px solid #b7c4f0;color:white;border-radius:10px;padding:7px 16px;font-size:0.82rem;font-weight:800;cursor:pointer;font-family:inherit;white-space:nowrap;" onclick="window.EF_AUTH.showAuthModal(function(){location.reload();})">Se connecter</button>'
-      + '<button style="background:none;border:none;color:rgba(255,255,255,0.55);font-size:1.2rem;cursor:pointer;padding:0 4px;line-height:1;" onclick="document.getElementById(\'ef-guest-bar\').remove()" title="Fermer">✕</button>';
-    document.body.appendChild(bar);
+    bar.className = 'ef-guest-note';
+    bar.innerHTML = '<span>Sans profil, tes résultats ne sont pas gardés.</span>'
+      + '<button class="ef-guest-link" onclick="window.EF_AUTH.showAuthModal(function(){location.reload();})">Créer un profil</button>'
+      + '<button class="ef-guest-x" aria-label="Masquer ce message" onclick="try{sessionStorage.setItem(\'ef_guest_hidden\',1)}catch(e){};document.getElementById(\'ef-guest-bar\').remove()">✕</button>';
+    const header = document.querySelector('body > header, .site-header, .cours-header, .home-header, .pil-hero');
+    if (header) header.insertAdjacentElement('afterend', bar);
+    else document.body.prepend(bar);
+  }
+
+  // Lien « Revoir la leçon » sur les pages d'exercices + mémoire de la dernière page
+  function initLessonLink() {
+    if (!document.querySelector('.exercice-block')) return;
+    const lesson = LESSON_OF[page];
+    window.EF_LESSON = lesson || null;
+    try {
+      const h1 = document.querySelector('header h1');
+      localStorage.setItem('ef_last_page', JSON.stringify({ href: page, title: h1 ? h1.textContent.trim() : page, lvl: getPageLevel() }));
+    } catch (e) {}
+    if (!lesson) return;
+    const back = document.querySelector('header .nav-back');
+    if (!back || document.querySelector('.nav-lesson')) return;
+    const a = document.createElement('a');
+    a.href = lesson; a.className = 'nav-back nav-lesson'; a.textContent = '📖 Revoir la leçon';
+    back.insertAdjacentElement('afterend', a);
   }
 
   function afterAuth() {
@@ -1581,6 +1618,8 @@
     initPageProgress();
     createHeaderProfile();
     setupObserver();
+    window.GS_HAS_PROFILE = !!P;
+    initLessonLink();
     if (P) { checkBadges(); save(); }
     else showGuestBanner();
     initIndexProgress();

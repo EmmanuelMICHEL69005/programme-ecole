@@ -18,7 +18,7 @@
 <title>Géométrie plane — CE2 | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=7">
 <style>
   .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
   .btn-choice {
@@ -78,7 +78,7 @@
 
   <!-- JE RETIENS -->
   <div class="retiens-box">
-    <div class="retiens-title">💡 Je retiens</div>
+    <div class="retiens-title">Je retiens</div>
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; font-size:0.88rem; color:#555; margin-top:10px;">
       <div>
         <strong style="color:#166534;">Figures planes</strong><br>
@@ -192,7 +192,7 @@ figData.forEach((item, idx) => {
     <div class="qcm-row" id="fig-choices-${idx}">
       ${shuffled.map(c => `<button class="btn-choice" onclick="checkFig(this,'${c}','${item.correct}',${idx})">${c}</button>`).join('')}
     </div>
-    <div class="feedback-line" id="fig-fb-${idx}"></div>
+    <div class="feedback-line" aria-live="polite" id="fig-fb-${idx}"></div>
   `;
   div.appendChild(right);
   ex1Container.appendChild(div);
@@ -232,7 +232,7 @@ vfData.forEach((item, idx) => {
         <button class="btn-v" onclick="checkVF(this, true, ${item.correct}, 'vf2-fb-${idx}', '${item.exp || ''}')">Vrai</button>
         <button class="btn-f" onclick="checkVF(this, false, ${item.correct}, 'vf2-fb-${idx}', '${item.exp || ''}')">Faux</button>
       </div>
-      <div class="feedback-line" id="vf2-fb-${idx}"></div>
+      <div class="feedback-line" aria-live="polite" id="vf2-fb-${idx}"></div>
     </div>
   `;
   ex2Container.appendChild(div);
@@ -272,7 +272,7 @@ perimData.forEach((item, idx) => {
     <div class="qcm-row" id="per-choices-${idx}">
       ${shuffled.map(c => `<button class="btn-choice" onclick="checkPerim(this,'${c}','${item.correct}',${idx})">${c}</button>`).join('')}
     </div>
-    <div class="feedback-line" id="per-fb-${idx}"></div>
+    <div class="feedback-line" aria-live="polite" id="per-fb-${idx}"></div>
   `;
   ex3Container.appendChild(div);
 });
@@ -309,7 +309,7 @@ angData.forEach((item, idx) => {
     <div class="qcm-row" id="ang-choices-${idx}">
       ${shuffled.map(c => `<button class="btn-choice" onclick="checkAng(this,'${c}','${item.correct}',${idx})">${c}</button>`).join('')}
     </div>
-    <div class="feedback-line" id="ang-fb-${idx}"></div>
+    <div class="feedback-line" aria-live="polite" id="ang-fb-${idx}"></div>
   `;
   ex4Container.appendChild(div);
 });
@@ -346,7 +346,7 @@ symData.forEach((item, idx) => {
         <button class="btn-v" onclick="checkVF(this, true, ${item.correct}, 'sym-fb-${idx}', '${item.exp || ''}')">Vrai</button>
         <button class="btn-f" onclick="checkVF(this, false, ${item.correct}, 'sym-fb-${idx}', '${item.exp || ''}')">Faux</button>
       </div>
-      <div class="feedback-line" id="sym-fb-${idx}"></div>
+      <div class="feedback-line" aria-live="polite" id="sym-fb-${idx}"></div>
     </div>
   `;
   ex5Container.appendChild(div);
@@ -356,9 +356,9 @@ symData.forEach((item, idx) => {
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>
 <script src="auth.js?v=7"></script>
-<script src="gamification.js?v=7"></script>
-<script src="nav.js?v=6"></script>
+<script src="gamification.js?v=9"></script>
+<script src="nav.js?v=7"></script>
 <script src="related.js?v=2"></script>
-<script src="seo.js"></script>
+<script src="seo.js?v=3"></script>
 </body>
 </html>

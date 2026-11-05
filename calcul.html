@@ -18,7 +18,7 @@
 <title>Les opérations — CE2 | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=7">
 <style>
   .op-posee {
     display: inline-block;
@@ -94,7 +94,7 @@
 
   <!-- JE RETIENS -->
   <div class="retiens-box">
-    <div class="retiens-title">💡 Je retiens</div>
+    <div class="retiens-title">Je retiens</div>
     <div style="display:flex; gap:20px; flex-wrap:wrap; font-size:0.9rem; color:#555; margin-top:8px;">
       <div>➕ <strong>Addition</strong> : je pose, j'additionne colonne par colonne, je retiens si besoin.</div>
       <div>➖ <strong>Soustraction</strong> : je pose, je soustrait colonne par colonne, j'emprunte si besoin.</div>
@@ -175,7 +175,7 @@ function buildOpCards(data, containerId, scoreId, scoreVar, type) {
       <div class="qcm-row" id="${id}-choices" style="justify-content:center;">
         ${choices.map(c => `<button class="btn-choice" onclick="checkOp(this,${c},${item.result},'${id}-choices','${id}-fb','${scoreId}','${type}')">${c.toLocaleString('fr')}</button>`).join('')}
       </div>
-      <div class="feedback-line" id="${id}-fb"></div>
+      <div class="feedback-line" aria-live="polite" id="${id}-fb"></div>
     `;
     container.appendChild(card);
   });
@@ -239,7 +239,7 @@ divData.forEach((item, idx) => {
     <div class="qcm-row" id="div-choices-${idx}">
       ${choices.map(c => `<button class="btn-choice" onclick="checkBasic(this,${c},${item.correct},'div-choices-${idx}','div-fb-${idx}')">${c}</button>`).join('')}
     </div>
-    <div class="feedback-line" id="div-fb-${idx}"></div>
+    <div class="feedback-line" aria-live="polite" id="div-fb-${idx}"></div>
   `;
   ex4Container.appendChild(div);
 });
@@ -265,7 +265,7 @@ vfData.forEach((item, idx) => {
         <button class="btn-v" onclick="checkVF(this, true, ${item.correct}, 'vf-fb-${idx}', ${JSON.stringify(item.exp || '')})">Vrai</button>
         <button class="btn-f" onclick="checkVF(this, false, ${item.correct}, 'vf-fb-${idx}', ${JSON.stringify(item.exp || '')})">Faux</button>
       </div>
-      <div class="feedback-line" id="vf-fb-${idx}"></div>
+      <div class="feedback-line" aria-live="polite" id="vf-fb-${idx}"></div>
     </div>
   `;
   ex5Container.appendChild(div);
@@ -306,9 +306,9 @@ function checkBasic(btn, chosen, correct, rowId, fbId) {
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>
 <script src="auth.js?v=7"></script>
-<script src="gamification.js?v=7"></script>
-<script src="nav.js?v=6"></script>
+<script src="gamification.js?v=9"></script>
+<script src="nav.js?v=7"></script>
 <script src="related.js?v=2"></script>
-<script src="seo.js"></script>
+<script src="seo.js?v=3"></script>
 </body>
 </html>

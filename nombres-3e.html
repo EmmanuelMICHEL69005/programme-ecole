@@ -18,7 +18,7 @@
 <title>Rationnels, puissances et notation scientifique — 3ème | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=7">
 <style>
   .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
   .btn-choice {
@@ -49,7 +49,7 @@
 
 
   <div class="retiens-box">
-    <div class="retiens-title">💡 Je retiens</div>
+    <div class="retiens-title">Je retiens</div>
     <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
       ✂️ <strong>Fraction irréductible</strong> : numérateur et dénominateur sans diviseur commun<br>
       ⬇️ <strong>a^(−n)</strong> = 1 / a^n · 10^(−2) = 0,01<br>
@@ -95,7 +95,7 @@ function buildQ(data, id) {
       <div class="qcm-row" id="${id}-r${i}">
         ${sh.map(c => `<button class="btn-choice" onclick="check(this,'${c.replace(/'/g,"\\'")}','${item.correct.replace(/'/g,"\\'")}','${id}-r${i}','${id}-f${i}')">${c}</button>`).join('')}
       </div>
-      <div class="feedback-line" id="${id}-f${i}"></div>
+      <div class="feedback-line" aria-live="polite" id="${id}-f${i}"></div>
     `;
     c.appendChild(d);
   });
@@ -120,9 +120,9 @@ buildQ([{"q": "Le nombre dont l'inverse vaut 4/7 est…", "correct": "7/4", "cho
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>
 <script src="auth.js?v=7"></script>
-<script src="gamification.js?v=7"></script>
-<script src="nav.js?v=6"></script>
+<script src="gamification.js?v=9"></script>
+<script src="nav.js?v=7"></script>
 <script src="related.js?v=2"></script>
-<script src="seo.js"></script>
+<script src="seo.js?v=3"></script>
 </body>
 </html>
