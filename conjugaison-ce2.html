@@ -93,6 +93,11 @@
     <div id="ex10"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#dc2626">
+    <div class="ex-title"><span class="ex-badge" style="background:#dc2626">Ex 11</span> Présent — dire, venir, prendre, pouvoir, voir <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
+    <div id="ex11"></div>
+  </div>
+
   <div style="background:#f5f3ff;border:1px solid #7c3aed55;border-radius:10px;padding:14px 16px;margin:16px 0">
     <div style="font-weight:900;color:#4c1d95;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CE2</div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
@@ -211,6 +216,14 @@ buildTri([
     ]
   }
 ], 'ex10');
+
+buildQCM([
+  { card:'Vous _____ (dire)', q:'Présent de dire', correct:'dites', choices:['disez','dites','disons','disent'] },
+  { card:'Ils _____ (venir)', q:'Présent de venir', correct:'viennent', choices:['venent','viennent','vienent','venont'] },
+  { card:'Nous _____ (prendre)', q:'Présent de prendre', correct:'prenons', choices:['prendons','prenons','prennons','prenez'] },
+  { card:'Tu _____ (pouvoir)', q:'Présent de pouvoir', correct:'peux', choices:['peut','peux','pouvez','peuvent'] },
+  { card:'Je _____ (voir)', q:'Présent de voir', correct:'vois', choices:['voit','vois','voyez','voient'] },
+], 'ex11');
 </script>
 
 <script src="sync.js"></script>

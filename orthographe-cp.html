@@ -76,6 +76,10 @@
     <div class="ex-title"><span class="ex-badge" style="background:#06b6d4">Ex 10</span> Singulier → pluriel — associer <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">PAIRES</span></div>
     <div id="ex10"></div>
   </div>
+  <div class="exercice-block" style="--accent:#06b6d4">
+    <div class="ex-title"><span class="ex-badge" style="background:#06b6d4">Ex 11</span> Le son [o] : o, au ou eau ? <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
+    <div id="ex11"></div>
+  </div>
   <div style="background:#f0fdf4;border:1px solid #16a34a55;border-radius:10px;padding:14px 16px;margin:16px 0">
     <div style="font-weight:900;color:#14532d;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CP</div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
@@ -168,6 +172,14 @@ buildPaires([
   { left:'une fleur', right:'des fleurs' },
   { left:'un gâteau', right:'des gâteaux' },
 ], 'ex10');
+
+buildQCM([
+  { card:'🚲 On roule dessus.', q:'Comment s\'écrit ce mot ?', correct:'un vélo', choices:['un vélo','un vélau','un véleau'] },
+  { card:'⛵ Il flotte sur l\'eau.', q:'Comment s\'écrit ce mot ?', correct:'un bateau', choices:['un bato','un batau','un bateau'] },
+  { card:'🎁 On l\'offre pour un anniversaire.', q:'Comment s\'écrit ce mot ?', correct:'un cadeau', choices:['un cado','un cadeau','un cadau'] },
+  { card:'🍋 C\'est la couleur du citron.', q:'Comment s\'écrit ce mot ?', correct:'jaune', choices:['jaune','jone','jeaune'] },
+  { card:'🏍️ Elle a deux roues et un moteur.', q:'Comment s\'écrit ce mot ?', correct:'une moto', choices:['une mauto','une meauto','une moto'] },
+], 'ex11');
 </script>
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>

@@ -94,6 +94,11 @@
     <div id="ex7"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 8</span> Trouver le quotient et le reste <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
+    <div id="ex8"></div>
+  </div>
+
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a> · <a href="programme-5e.html">5ème</a> · <a href="programme-4e.html">4ème</a> · <a href="programme-3e.html">3ème</a></div></footer>
@@ -161,6 +166,14 @@ buildTri([
     ]
   },
 ], 'ex7');
+
+buildQCM([
+  { q:'Calcule 47 ÷ 5. Quel est le quotient et le reste ?', correct:'quotient 9, reste 2', choices:['quotient 9, reste 2','quotient 8, reste 7','quotient 9, reste 3','quotient 10, reste 2'] },
+  { q:'Calcule 38 ÷ 7. Quel est le quotient et le reste ?', correct:'quotient 5, reste 3', choices:['quotient 4, reste 10','quotient 5, reste 3','quotient 5, reste 2','quotient 6, reste 3'] },
+  { q:'Calcule 59 ÷ 9. Quel est le quotient et le reste ?', correct:'quotient 6, reste 5', choices:['quotient 5, reste 14','quotient 6, reste 4','quotient 6, reste 5','quotient 7, reste 5'] },
+  { q:'Calcule 34 ÷ 4. Quel est le quotient et le reste ?', correct:'quotient 8, reste 2', choices:['quotient 7, reste 6','quotient 8, reste 3','quotient 9, reste 2','quotient 8, reste 2'] },
+  { q:'Calcule 45 ÷ 6. Quel est le quotient et le reste ?', correct:'quotient 7, reste 3', choices:['quotient 7, reste 3','quotient 6, reste 9','quotient 7, reste 2','quotient 8, reste 3'] },
+], 'ex8');
 </script>
 
 <script src="sync.js"></script>

@@ -77,6 +77,10 @@
     <div class="ex-title"><span class="ex-badge" style="background:#dc2626">Ex 10</span> Trier : Sujet / COD / COI / CC <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">TRI</span></div>
     <div id="ex10"></div>
   </div>
+  <div class="exercice-block" style="--accent:#dc2626">
+    <div class="ex-title"><span class="ex-badge" style="background:#dc2626">Ex 11</span> Trouver le sujet du verbe <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
+    <div id="ex11"></div>
+  </div>
   <div style="background:#eff6ff;border:1px solid #3b82f655;border-radius:10px;padding:14px 16px;margin:16px 0">
     <div style="font-weight:900;color:#1e3a8a;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CM1</div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
@@ -182,6 +186,14 @@ buildTri([
     { v:'avec joie', cat:'CC' },
   ]},
 ], 'ex10');
+
+buildQCM([
+  { card:'"Dans la cour jouent les enfants."', q:'Quel est le sujet du verbe "jouent" ?', correct:'les enfants', choices:['Dans la cour','la cour','les enfants','jouent'] },
+  { card:'"Mon frère et ma sœur partent en vacances."', q:'Quel est le sujet du verbe "partent" ?', correct:'Mon frère et ma sœur', choices:['Mon frère','ma sœur','Mon frère et ma sœur','en vacances'] },
+  { card:'"Le chat de mes voisins dort au soleil."', q:'Quel est le sujet du verbe "dort" ?', correct:'Le chat de mes voisins', choices:['mes voisins','Le chat de mes voisins','au soleil','dort'] },
+  { card:'"Chaque matin, Paul prend le bus."', q:'Quel est le sujet du verbe "prend" ?', correct:'Paul', choices:['Chaque matin','Paul','le bus','prend'] },
+  { card:'"Elles chantent une chanson."', q:'Quel est le sujet du verbe "chantent" ?', correct:'Elles', choices:['Elles','une chanson','chantent','chanson'] },
+], 'ex11');
 </script>
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>

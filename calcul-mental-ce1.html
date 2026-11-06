@@ -76,6 +76,10 @@
     <div class="ex-title"><span class="ex-badge" style="background:#f97316">Ex 7</span> Trier par ordre de résultat <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">ORDRE</span></div>
     <div id="ex7"></div>
   </div>
+  <div class="exercice-block" style="--accent:#f97316">
+    <div class="ex-title"><span class="ex-badge" style="background:#f97316">Ex 8</span> Additionner en décomposant <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
+    <div id="ex8"></div>
+  </div>
 
 </main>
 
@@ -143,6 +147,13 @@ buildOrdre([
   { q:'Range ces calculs du PLUS PETIT résultat au PLUS GRAND :',
     items:['18 + 9','25 + 6','30 + 5','40 + 7','50 + 3'] },
 ], 'ex7');
+buildQCM([
+  { card:'26 + 37 = ?', q:'Astuce : 26 + 30 + 7', correct:'63', choices:['53','62','63','73'] },
+  { card:'45 + 28 = ?', q:'Astuce : 45 + 20 + 8', correct:'73', choices:['63','72','73','83'] },
+  { card:'38 + 44 = ?', q:'Astuce : 38 + 40 + 4', correct:'82', choices:['72','81','82','92'] },
+  { card:'56 + 27 = ?', q:'Astuce : 56 + 20 + 7', correct:'83', choices:['73','82','83','93'] },
+  { card:'29 + 36 = ?', q:'Astuce : 29 + 30 + 6', correct:'65', choices:['55','64','65','75'] },
+], 'ex8');
 </script>
 
 <script src="sync.js"></script>

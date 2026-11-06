@@ -94,6 +94,11 @@
     <div id="ex6"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 7</span> Exploiter un tableau de données <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
+    <div id="ex7"></div>
+  </div>
+
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a> · <a href="programme-5e.html">5ème</a> · <a href="programme-4e.html">4ème</a> · <a href="programme-3e.html">3ème</a></div></footer>
@@ -161,6 +166,19 @@ buildPaires([
   { q:'Associe chaque donnée à sa valeur.',
     pairs:[['Natation total (L+M+Me)','35'],['Football lundi','18'],['Total 3 sports lundi','37'],['Judo total','27']] },
 ], 'ex6');
+
+buildQCM([
+  { enonce:'Visiteurs de la bibliothèque : lundi 24, mardi 31, mercredi 48, jeudi 27, vendredi 35.',
+    q:'Quel jour y a-t-il eu le plus de visiteurs ?', correct:'Mercredi', choices:['Lundi','Mardi','Mercredi','Vendredi'] },
+  { enonce:'Même tableau.',
+    q:'Combien de visiteurs sont venus en tout dans la semaine ?', correct:'165', choices:['155','160','165','175'] },
+  { enonce:'Même tableau.',
+    q:'Combien de visiteurs de plus mercredi que lundi ?', correct:'24', choices:['22','24','26','72'] },
+  { enonce:'Même tableau.',
+    q:'Quel est le nombre moyen de visiteurs par jour ?', correct:'33', choices:['31','33','35','165'] },
+  { enonce:'Même tableau.',
+    q:'Combien de jours y a-t-il eu plus de 30 visiteurs ?', correct:'3', choices:['2','3','4','5'] },
+], 'ex7');
 </script>
 
 <script src="sync.js"></script>

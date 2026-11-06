@@ -115,6 +115,16 @@
     <div id="ex5"></div>
   </div>
 
+  <!-- EX 6 : Tableau jouets -->
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Les jouets de la classe <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
+    <table class="simple-table">
+      <thead><tr><th>Jouet</th><th>⚽ Ballons</th><th>🧸 Peluches</th><th>🚗 Voitures</th><th>📕 Livres</th></tr></thead>
+      <tbody><tr><td>Nombre</td><td>6</td><td>4</td><td>9</td><td>3</td></tr></tbody>
+    </table>
+    <div id="ex6"></div>
+  </div>
+
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a> · <a href="programme-5e.html">5ème</a> · <a href="programme-4e.html">4ème</a> · <a href="programme-3e.html">3ème</a></div></footer>
@@ -157,6 +167,14 @@ buildOrdre([
   { q:'Range ces quantités du PLUS PETIT au PLUS GRAND :',
     items:['1','2','3','5','8'] },
 ], 'ex5');
+
+buildQCM([
+  { q:'Combien y a-t-il de voitures ?', correct:'9', choices:['3','4','6','9'] },
+  { q:'Quel jouet est le moins nombreux ?', correct:'📕 Livres (3)', choices:['⚽ Ballons (6)','🧸 Peluches (4)','🚗 Voitures (9)','📕 Livres (3)'] },
+  { q:'Combien y a-t-il de ballons et de peluches en tout ?', correct:'10', choices:['8','9','10','11'] },
+  { q:'Combien y a-t-il de voitures de PLUS que de ballons ?', correct:'3', choices:['2','3','4','5'] },
+  { q:'Combien y a-t-il de jouets en tout ?', correct:'22', choices:['20','21','22','23'] },
+], 'ex6');
 </script>
 
 <script src="sync.js"></script>

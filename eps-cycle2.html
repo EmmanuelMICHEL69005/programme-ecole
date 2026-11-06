@@ -86,6 +86,10 @@
     <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 7</span> Dans quel domaine ? <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">TRI</span></div>
     <div id="ex7"></div>
   </div>
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 8</span> Santé et sécurité <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
+    <div id="ex8"></div>
+  </div>
 
 </main>
 
@@ -158,6 +162,13 @@ buildTri([
     ]
   },
 ], 'ex7');
+buildQCM([
+  { q:'Avant de faire du sport, il faut d\'abord…', correct:'S\'échauffer', choices:['Manger un gros repas','S\'échauffer','Rester assis','Courir le plus vite possible'] },
+  { q:'Pendant un long effort, il est important de…', correct:'Boire de l\'eau', choices:['Ne rien boire','Boire du soda','Boire de l\'eau','Manger des bonbons'] },
+  { q:'Pour faire du vélo en sécurité, on porte…', correct:'Un casque', choices:['Une casquette','Un casque','Une écharpe','Un bonnet'] },
+  { q:'Au bord de la piscine, il faut…', correct:'Marcher sans courir', choices:['Courir pour aller vite','Pousser un camarade dans l\'eau','Marcher sans courir','Sauter sans regarder'] },
+  { q:'Quand tu cours longtemps, ton cœur…', correct:'Bat plus vite', choices:['S\'arrête','Bat plus lentement','Ne change pas','Bat plus vite'] },
+], 'ex8');
 </script>
 
 <script src="sync.js"></script>

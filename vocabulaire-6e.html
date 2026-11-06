@@ -76,6 +76,10 @@
     <div class="ex-title"><span class="ex-badge" style="background:#d97706">Ex 10</span> Classer par registre de langue <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">TRI</span></div>
     <div id="ex10"></div>
   </div>
+  <div class="exercice-block" style="--accent:#d97706">
+    <div class="ex-title"><span class="ex-badge" style="background:#d97706">Ex 11</span> Suffixes et familles de mots <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
+    <div id="ex11"></div>
+  </div>
   <div style="background:#fdf2f8;border:1px solid #ec489955;border-radius:10px;padding:14px 16px;margin:16px 0">
     <div style="font-weight:900;color:#831843;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français 6ème</div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
@@ -176,6 +180,14 @@ buildTri([{ q:'Classer chaque phrase selon son registre de langue', cats:['Soute
   {v:"C'est une belle baraque !", cat:'Familier'},
   {v:"Où c'est ?", cat:'Familier'},
 ]}], 'ex10');
+
+buildQCM([
+  { card:'"-able" (lavable, buvable)', q:'Que signifie le suffixe "-able" ?', correct:'qui peut être…', choices:['qui peut être…','qui n\'est pas','petit','celui qui fait'] },
+  { card:'"-eur" (nageur, chanteur)', q:'Que signifie le suffixe "-eur" dans ces mots ?', correct:'celui qui fait l\'action', choices:['celui qui fait l\'action','petit','qui peut être…','un lieu'] },
+  { card:'"-ette" (fillette, maisonnette)', q:'Que signifie le suffixe "-ette" ?', correct:'petit (diminutif)', choices:['petit (diminutif)','grand','plusieurs','le contraire'] },
+  { card:'"terrain, terrasse, enterrer, terrible"', q:'Quel mot n\'est PAS de la famille de "terre" ?', correct:'terrible', choices:['terrain','terrasse','enterrer','terrible'] },
+  { card:'"lisible"', q:'Quel est le contraire de "lisible", formé avec un préfixe ?', correct:'illisible', choices:['illisible','inlisible','délisible','malisible'] },
+], 'ex11');
 </script>
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>

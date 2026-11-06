@@ -119,6 +119,11 @@
     <div id="ex7"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 8</span> Mythes grecs et monde romain <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
+    <div id="ex8"></div>
+  </div>
+
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a> · <a href="programme-5e.html">5ème</a> · <a href="programme-4e.html">4ème</a> · <a href="programme-3e.html">3ème</a></div></footer>
@@ -188,6 +193,14 @@ buildTri([
     ]
   },
 ], 'ex7');
+
+buildQCM([
+  { q:'Quel poète grec est considéré comme l\'auteur de l\'Iliade et de l\'Odyssée ?', correct:'Homère', choices:['Homère','Platon','Socrate','Virgile'] },
+  { q:'Dans quel sanctuaire grec se déroulaient les Jeux olympiques antiques ?', correct:'Olympie', choices:['Olympie','Delphes','Sparte','Rome'] },
+  { q:'Dans la mythologie grecque, qui est le roi des dieux ?', correct:'Zeus', choices:['Zeus','Poséidon','Apollon','Hermès'] },
+  { q:'Quelle langue parlaient les Romains ?', correct:'Le latin', choices:['Le latin','Le grec','Le gaulois','L\'italien'] },
+  { q:'Quel chef gaulois est vaincu par Jules César à Alésia en 52 av. J.-C. ?', correct:'Vercingétorix', choices:['Vercingétorix','Clovis','Charlemagne','Brennus'] },
+], 'ex8');
 </script>
 
 <script src="sync.js"></script>

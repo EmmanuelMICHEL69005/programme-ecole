@@ -91,6 +91,10 @@
     <div class="ex-title"><span class="ex-badge" style="background:#0891b2">Ex 10</span> Synonymes ou Antonymes ? <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">TRI</span></div>
     <div id="ex10"></div>
   </div>
+  <div class="exercice-block" style="--accent:#0891b2">
+    <div class="ex-title"><span class="ex-badge" style="background:#0891b2">Ex 11</span> L'intrus d'une famille de mots <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
+    <div id="ex11"></div>
+  </div>
 
   <div style="background:#f0fdf4;border:1px solid #05966955;border-radius:10px;padding:14px 16px;margin:16px 0">
     <div style="font-weight:900;color:#064e3b;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CE1</div>
@@ -197,6 +201,13 @@ buildTri([{
     { v:'aimer / détester', cat:'Antonymes' },
   ]
 }], 'ex10');
+buildQCM([
+  { card:'dent, dentiste, dentifrice, danse', q:'Quel mot n\'est pas de la famille de "dent" ?', correct:'danse', choices:['dentiste','dentifrice','danse'] },
+  { card:'terre, terrain, enterrer, tête', q:'Quel mot n\'est pas de la famille de "terre" ?', correct:'tête', choices:['terrain','enterrer','tête'] },
+  { card:'fleur, fleuriste, fleurir, flûte', q:'Quel mot n\'est pas de la famille de "fleur" ?', correct:'flûte', choices:['fleuriste','fleurir','flûte'] },
+  { card:'lait, laitier, laitage, laid', q:'Quel mot n\'est pas de la famille de "lait" ?', correct:'laid', choices:['laitier','laitage','laid'] },
+  { card:'glace, glaçon, glacial, glisser', q:'Quel mot n\'est pas de la famille de "glace" ?', correct:'glisser', choices:['glaçon','glacial','glisser'] },
+], 'ex11');
 </script>
 
 <script src="sync.js"></script>

@@ -76,6 +76,10 @@
     <div class="ex-title"><span class="ex-badge" style="background:#dc2626">Ex 10</span> Associer la règle d'accord du participe passé <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">PAIRES</span></div>
     <div id="ex10"></div>
   </div>
+  <div class="exercice-block" style="--accent:#dc2626">
+    <div class="ex-title"><span class="ex-badge" style="background:#dc2626">Ex 11</span> Homophones : ces, ses, c'est, s'est <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
+    <div id="ex11"></div>
+  </div>
   <div style="background:#fffbeb;border:1px solid #f59e0b55;border-radius:10px;padding:14px 16px;margin:16px 0">
     <div style="font-weight:900;color:#78350f;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CM2</div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
@@ -166,6 +170,14 @@ buildPaires([
   { left:'PP verbe pronominal réfléchi (COD = pronom)', right:'accord avec le sujet (ex : Elle s\'est lavée.)' },
   { left:'PP verbe pronominal (COD ≠ pronom)', right:'pas d\'accord (ex : Elle s\'est lavé les mains.)' },
 ], 'ex10');
+
+buildQCM([
+  { card:'"Chaque matin, Julie brosse ___ dents."', q:'ces, ses, c\'est ou s\'est ?', correct:'ses', choices:['ces','ses','c\'est','s\'est'] },
+  { card:'"Regarde ___ gros nuages noirs, là-bas !"', q:'ces, ses, c\'est ou s\'est ?', correct:'ces', choices:['ces','ses','c\'est','s\'est'] },
+  { card:'"Dépêche-toi, ___ l\'heure de partir !"', q:'ces, ses, c\'est ou s\'est ?', correct:'c\'est', choices:['ces','ses','c\'est','s\'est'] },
+  { card:'"Le chat ___ caché sous le lit."', q:'ces, ses, c\'est ou s\'est ?', correct:'s\'est', choices:['ces','ses','c\'est','s\'est'] },
+  { card:'"Écoute, ___ ma chanson préférée !"', q:'ces, ses, c\'est ou s\'est ?', correct:'c\'est', choices:['ces','ses','c\'est','s\'est'] },
+], 'ex11');
 </script>
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>

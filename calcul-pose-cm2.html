@@ -103,6 +103,11 @@
     <div id="ex6"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 7</span> Problèmes à poser <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
+    <div id="ex7"></div>
+  </div>
+
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a> · <a href="programme-5e.html">5ème</a> · <a href="programme-4e.html">4ème</a> · <a href="programme-3e.html">3ème</a></div></footer>
@@ -154,6 +159,14 @@ buildPaires([
   { q:'Associe chaque opération à son résultat.',
     pairs:[['456 × 123','56 088'],['45,6 ÷ 8','5,7'],['1,25 × 8','10'],['7 000 − 1 234,56','5 765,44']] },
 ], 'ex6');
+
+buildQCM([
+  { card:'Un livre coûte 12,75 €. Tu en achètes 6.', q:'Combien paies-tu ?', correct:'76,50 €', choices:['72,50 €','76,05 €','76,50 €','75,50 €'] },
+  { card:'3 amis se partagent 47,40 € en parts égales.', q:'Combien reçoit chacun ?', correct:'15,80 €', choices:['15,08 €','15,80 €','16,80 €','14,80 €'] },
+  { card:'Une piste mesure 2 345 m. Léa en fait 4 fois le tour.', q:'Quelle distance parcourt-elle ?', correct:'9 380 m', choices:['8 380 m','9 180 m','9 340 m','9 380 m'] },
+  { card:'Tu as 50 €. Tu dépenses 18,65 € puis 7,90 €.', q:'Combien te reste-t-il ?', correct:'23,45 €', choices:['24,45 €','23,45 €','23,55 €','33,45 €'] },
+  { card:'Une école commande 24 boîtes de 125 crayons.', q:'Combien de crayons en tout ?', correct:'3 000', choices:['2 900','3 000','3 125','30 000'] },
+], 'ex7');
 </script>
 
 <script src="sync.js"></script>

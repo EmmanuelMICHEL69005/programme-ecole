@@ -89,6 +89,10 @@
     <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 7</span> Associer période et événement <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">PAIRES</span></div>
     <div id="ex7"></div>
   </div>
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 8</span> Le calendrier et les saisons <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
+    <div id="ex8"></div>
+  </div>
 
 </main>
 
@@ -154,6 +158,14 @@ buildPaires([
   { q:'Associe chaque durée à sa conversion.',
     pairs:[['1 décennie','10 ans'],['1 siècle','100 ans'],['1 millénaire','1 000 ans'],['3 siècles','300 ans']] },
 ], 'ex7');
+
+buildQCM([
+  { q:'Combien y a-t-il de mois dans une année ?', correct:'12 mois', choices:['7 mois','10 mois','12 mois','52 mois'] },
+  { q:'Quel mois vient juste après juin ?', correct:'Juillet', choices:['Mai','Juillet','Août','Septembre'] },
+  { q:'Combien y a-t-il de jours dans une semaine ?', correct:'7 jours', choices:['5 jours','7 jours','10 jours','12 jours'] },
+  { q:'Quelle saison commence à la fin du mois de décembre ?', correct:'L\'hiver', choices:['Le printemps','L\'été','L\'automne','L\'hiver'] },
+  { q:'Quel jour vient juste avant mercredi ?', correct:'Mardi', choices:['Lundi','Mardi','Jeudi','Dimanche'] },
+], 'ex8');
 </script>
 
 <script src="sync.js"></script>

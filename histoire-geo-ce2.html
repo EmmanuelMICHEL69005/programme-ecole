@@ -119,6 +119,11 @@
     <div id="ex7"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#10b981">
+    <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 8</span> Les traces de la Gaule romaine <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
+    <div id="ex8"></div>
+  </div>
+
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a> · <a href="programme-5e.html">5ème</a> · <a href="programme-4e.html">4ème</a> · <a href="programme-3e.html">3ème</a></div></footer>
@@ -195,6 +200,14 @@ buildTri([
     ]
   },
 ], 'ex7');
+
+buildQCM([
+  { q:'Le pont du Gard est un aqueduc romain. À quoi servait-il ?', correct:'À transporter de l\'eau vers une ville', choices:['À transporter de l\'eau vers une ville','À défendre un château fort','À faire passer les trains','À accueillir des spectacles'] },
+  { q:'Les arènes de Nîmes, construites par les Romains, servaient…', correct:'À accueillir des spectacles', choices:['À stocker le blé','À accueillir des spectacles','À loger le roi','À fabriquer des bateaux'] },
+  { q:'Quelle était la langue des Romains ?', correct:'Le latin', choices:['L\'anglais','Le gaulois','Le latin','L\'arabe'] },
+  { q:'Comment appelle-t-on les habitants de la Gaule après la conquête romaine ?', correct:'Les Gallo-Romains', choices:['Les Vikings','Les Gallo-Romains','Les Capétiens','Les Francs'] },
+  { q:'Quel était le nom romain de la ville de Lyon ?', correct:'Lugdunum', choices:['Lutèce','Massilia','Alésia','Lugdunum'] },
+], 'ex8');
 </script>
 
 <script src="sync.js"></script>
