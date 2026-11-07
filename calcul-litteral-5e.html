@@ -17,8 +17,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Calcul littéral — 5e | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=9">
+<link rel="stylesheet" href="style.css?v=6ba191a4">
 <style>
   .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
   .btn-choice {
@@ -49,7 +50,7 @@
 
 
   <div class="retiens-box">
-    <div class="retiens-title">Je retiens</div>
+    <h2 class="retiens-title">Je retiens</h2>
     <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
       🔤 <strong>3x</strong> veut dire 3 × x (on n'écrit pas le ×)<br>
       🧪 <strong>Substituer</strong> : remplacer la lettre par un nombre, puis calculer<br>
@@ -59,26 +60,26 @@
   </div>
 
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 1</span> Produire une formule</div>
+    <h2 class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 1</span> Produire une formule</h2>
     <div id="ex1"></div>
   </div>
 
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 2</span> Calculer par substitution</div>
+    <h2 class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 2</span> Calculer par substitution</h2>
     <div id="ex2"></div>
   </div>
 
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 3</span> Tester une égalité</div>
+    <h2 class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 3</span> Tester une égalité</h2>
     <div id="ex3"></div>
   </div>
 
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 4</span> Développer et réduire</div>
+    <h2 class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 4</span> Développer et réduire</h2>
     <div id="ex4"></div>
   </div>
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 5</span> Réduire, développer, calculer</div>
+    <h2 class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 5</span> Réduire, développer, calculer</h2>
     <div id="ex5"></div>
   </div>
 
@@ -86,7 +87,7 @@
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div></footer>
 
-<script src="exercises.js?v=5"></script>
+<script src="exercises.js?v=87db963d"></script>
 <script>
 function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
 function buildQ(data, id) {
@@ -127,12 +128,13 @@ buildQ([{"q": "Développe 4(x + 3)", "correct": "4x + 12", "choices": ["4x + 12"
 buildQ([{"q": "Réduis 4a + 9a", "correct": "13a", "choices": ["13a", "13a²", "36a", "13"]}, {"q": "Développe 3(x + 5)", "correct": "3x + 15", "choices": ["3x + 15", "3x + 5", "x + 15", "3x + 8"]}, {"q": "Calcule 7 − 2x pour x = 3", "correct": "1", "choices": ["1", "15", "4", "13"]}, {"q": "Réduis 2x + 5 + 3x − 1", "correct": "5x + 4", "choices": ["5x + 4", "5x + 6", "9x", "6x + 4"]}, {"q": "Calcule x² + x pour x = 4", "correct": "20", "choices": ["20", "12", "24", "16"]}], 'ex5');
 </script>
 
-<script src="sync.js"></script>
-<script src="firebase-keys.js"></script>
-<script src="auth.js?v=8"></script>
-<script src="gamification.js?v=11"></script>
-<script src="nav.js?v=8"></script>
-<script src="related.js?v=3"></script>
-<script src="seo.js?v=4"></script>
+<script src="sync.js?v=f881f6bc"></script>
+<script src="firebase-keys.js?v=482e498d"></script>
+<script src="auth.js?v=18f5ebf4"></script>
+<script src="pages.js?v=1e80fc5c"></script>
+<script src="gamification.js?v=5f1499ad"></script>
+<script src="nav.js?v=1465840b"></script>
+<script src="related.js?v=9f615d0d"></script>
+<script src="seo.js?v=1adc2871"></script>
 </body>
 </html>

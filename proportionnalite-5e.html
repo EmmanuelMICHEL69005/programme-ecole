@@ -17,8 +17,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Proportionnalité & fonctions — 5e | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=9">
+<link rel="stylesheet" href="style.css?v=6ba191a4">
 <style>
   .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
   .btn-choice {
@@ -49,7 +50,7 @@
 
 
   <div class="retiens-box">
-    <div class="retiens-title">Je retiens</div>
+    <h2 class="retiens-title">Je retiens</h2>
     <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
       ⚖️ Dans un tableau de <strong>proportionnalité</strong>, on passe d'une ligne à l'autre en multipliant par le même nombre (le <strong>coefficient</strong>)<br>
       🔢 <strong>Quatrième proportionnelle</strong> : produit en croix a×d = b×c<br>
@@ -59,22 +60,22 @@
   </div>
 
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 1</span> Reconnaître la proportionnalité</div>
+    <h2 class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 1</span> Reconnaître la proportionnalité</h2>
     <div id="ex1"></div>
   </div>
 
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 2</span> Quatrième proportionnelle</div>
+    <h2 class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 2</span> Quatrième proportionnelle</h2>
     <div id="ex2"></div>
   </div>
 
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 3</span> Pourcentages</div>
+    <h2 class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 3</span> Pourcentages</h2>
     <div id="ex3"></div>
   </div>
 
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 4</span> Fonctions : en fonction de</div>
+    <h2 class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 4</span> Fonctions : en fonction de</h2>
     <div id="ex4"></div>
   </div>
 
@@ -82,7 +83,7 @@
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div></footer>
 
-<script src="exercises.js?v=5"></script>
+<script src="exercises.js?v=87db963d"></script>
 <script>
 function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
 function buildQ(data, id) {
@@ -122,12 +123,13 @@ buildQ([{"q": "Combien vaut 25 % de 80 ?", "correct": "20", "choices": ["20", "2
 buildQ([{"q": "Un taxi : 3 € + 2 € par km. Le prix p pour d km s'écrit…", "correct": "p = 3 + 2d", "choices": ["p = 3 + 2d", "p = 2 + 3d", "p = 5d", "p = 3 × 2d"]}, {"q": "Avec p = 3 + 2d, combien coûte une course de 4 km ?", "correct": "11 €", "choices": ["11 €", "9 €", "20 €", "14 €"]}, {"q": "Dans un tableau de valeurs, à x = 5 correspond y = 12. On dit que 12 est…", "correct": "l'image de 5", "choices": ["l'image de 5", "l'antécédent de 5", "le coefficient", "la moyenne"]}, {"q": "Le périmètre p d'un carré en fonction de son côté c est…", "correct": "p = 4c", "choices": ["p = 4c", "p = c²", "p = c + 4", "p = 2c"]}], 'ex4');
 </script>
 
-<script src="sync.js"></script>
-<script src="firebase-keys.js"></script>
-<script src="auth.js?v=8"></script>
-<script src="gamification.js?v=11"></script>
-<script src="nav.js?v=8"></script>
-<script src="related.js?v=3"></script>
-<script src="seo.js?v=4"></script>
+<script src="sync.js?v=f881f6bc"></script>
+<script src="firebase-keys.js?v=482e498d"></script>
+<script src="auth.js?v=18f5ebf4"></script>
+<script src="pages.js?v=1e80fc5c"></script>
+<script src="gamification.js?v=5f1499ad"></script>
+<script src="nav.js?v=1465840b"></script>
+<script src="related.js?v=9f615d0d"></script>
+<script src="seo.js?v=1adc2871"></script>
 </body>
 </html>

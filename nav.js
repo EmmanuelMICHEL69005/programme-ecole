@@ -256,6 +256,23 @@
 
   const LEVEL_ORDER = ['CP','CE1','CE2','CM1','CM2','6e','5e','4e','3e'];
 
+  // Pages absentes du menu : ajoutées depuis pages.js (source unique)
+  (function addMissing() {
+    if (!window.EF_PAGES) return;
+    const KEY = { cp:'CP', ce1:'CE1', ce2:'CE2', cm1:'CM1', cm2:'CM2', '6e':'6e', '5e':'5e', '4e':'4e', '3e':'3e' };
+    const CAT = { francais: /Français/, 'histoire-geo': /Histoire/, anglais: /Anglais/, eps: /EPS/ };
+    const NEWCAT = { francais: '📝 Français', 'histoire-geo': '🏛️ Histoire & Géographie', anglais: '🇬🇧 Anglais', eps: '🏃 EPS' };
+    const EMOJI = { maths: '🔢', francais: '📝', 'histoire-geo': '🌍', anglais: '🇬🇧', eps: '🏃' };
+    window.EF_PAGES.filter(p => p.kind === 'exercices' && KEY[p.level]).forEach(p => {
+      const lv = NAV_LEVELS[KEY[p.level]];
+      if (!lv || lv.cats.some(c => c.pages.some(x => x.href === p.href))) return;
+      if (p.subject === 'francais' && /^(conjugaison|grammaire|orthographe|vocabulaire)$/.test(p.theme)) return; // ajoutées plus bas
+      let cat = CAT[p.subject] ? lv.cats.find(c => CAT[p.subject].test(c.label)) : lv.cats[0];
+      if (!cat) { cat = { label: NEWCAT[p.subject], color: lv.color, pages: [] }; lv.cats.push(cat); }
+      cat.pages.push({ emoji: EMOJI[p.subject] || '📄', title: p.title || p.theme, href: p.href });
+    });
+  })();
+
   // Français : présent du CP à la 6e (conjugaison, grammaire, orthographe, vocabulaire)
   (function addFrench() {
     const SUF = { CP:'cp', CE1:'ce1', CE2:'ce2', CM1:'cm1', CM2:'cm2', '6e':'6e' };
@@ -680,6 +697,16 @@
   document.head.appendChild(styleEl);
 
   // ── Build HTML ───────────────────────────────────────────────────
+  // Lien d'évitement : aller directement au contenu au clavier
+  const mainEl = document.querySelector('main');
+  if (mainEl && !document.querySelector('.skip-link')) {
+    if (!mainEl.id) mainEl.id = 'contenu';
+    mainEl.setAttribute('tabindex', '-1');
+    const skip = document.createElement('a');
+    skip.className = 'skip-link'; skip.href = '#' + mainEl.id; skip.textContent = 'Aller au contenu';
+    document.body.prepend(skip);
+  }
+
   // Toggle button
   const toggleBtn = document.createElement('button');
   toggleBtn.className = 'nav-toggle';

@@ -17,8 +17,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Les opérations — CE2 | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=9">
+<link rel="stylesheet" href="style.css?v=6ba191a4">
 <style>
   .op-posee {
     display: inline-block;
@@ -94,7 +95,7 @@
 
   <!-- JE RETIENS -->
   <div class="retiens-box">
-    <div class="retiens-title">Je retiens</div>
+    <h2 class="retiens-title">Je retiens</h2>
     <div style="display:flex; gap:20px; flex-wrap:wrap; font-size:0.9rem; color:#555; margin-top:8px;">
       <div>➕ <strong>Addition</strong> : je pose, j'additionne colonne par colonne, je retiens si besoin.</div>
       <div>➖ <strong>Soustraction</strong> : je pose, je soustrait colonne par colonne, j'emprunte si besoin.</div>
@@ -105,34 +106,34 @@
 
   <!-- EXERCICE 1 : additions -->
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge">Ex 1</span> Additions posées</div>
+    <h2 class="ex-title"><span class="ex-badge">Ex 1</span> Additions posées</h2>
     <div class="score-bar" id="score-add">Score : 0 / 5</div>
     <div class="op-grid" id="ex1-container"></div>
   </div>
 
   <!-- EXERCICE 2 : soustractions -->
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge">Ex 2</span> Soustractions posées</div>
+    <h2 class="ex-title"><span class="ex-badge">Ex 2</span> Soustractions posées</h2>
     <div class="score-bar" id="score-sub">Score : 0 / 5</div>
     <div class="op-grid" id="ex2-container"></div>
   </div>
 
   <!-- EXERCICE 3 : multiplications -->
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge">Ex 3</span> Multiplications posées</div>
+    <h2 class="ex-title"><span class="ex-badge">Ex 3</span> Multiplications posées</h2>
     <div class="score-bar" id="score-mul">Score : 0 / 5</div>
     <div class="op-grid" id="ex3-container"></div>
   </div>
 
   <!-- EXERCICE 4 : division sens -->
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge">Ex 4</span> Le sens de la division</div>
+    <h2 class="ex-title"><span class="ex-badge">Ex 4</span> Le sens de la division</h2>
     <div id="ex4-container"></div>
   </div>
 
   <!-- EXERCICE 5 : vrai/faux -->
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge">Ex 5</span> Vrai ou Faux ?</div>
+    <h2 class="ex-title"><span class="ex-badge">Ex 5</span> Vrai ou Faux ?</h2>
     <div id="ex5-container"></div>
   </div>
 
@@ -303,12 +304,13 @@ function checkBasic(btn, chosen, correct, rowId, fbId) {
 }
 </script>
 
-<script src="sync.js"></script>
-<script src="firebase-keys.js"></script>
-<script src="auth.js?v=8"></script>
-<script src="gamification.js?v=11"></script>
-<script src="nav.js?v=8"></script>
-<script src="related.js?v=3"></script>
-<script src="seo.js?v=4"></script>
+<script src="sync.js?v=f881f6bc"></script>
+<script src="firebase-keys.js?v=482e498d"></script>
+<script src="auth.js?v=18f5ebf4"></script>
+<script src="pages.js?v=1e80fc5c"></script>
+<script src="gamification.js?v=5f1499ad"></script>
+<script src="nav.js?v=1465840b"></script>
+<script src="related.js?v=9f615d0d"></script>
+<script src="seo.js?v=1adc2871"></script>
 </body>
 </html>

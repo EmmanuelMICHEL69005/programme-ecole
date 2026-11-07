@@ -17,8 +17,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>École Facile — Exercices interactifs du CP à la 3e</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=9">
+<link rel="stylesheet" href="style.css?v=6ba191a4">
 <style>
 /* ── Hero header ── */
 .home-header {
@@ -808,6 +809,32 @@ function selectLvl(lvl, btn) {
   } catch(e){}
 })();
 
+// Pages absentes de l'accueil : cartes ajoutées depuis pages.js (source unique, chargé en fin de page)
+document.addEventListener('DOMContentLoaded', function(){
+  if (!window.EF_PAGES) return;
+  var TITLE = { maths: /^math/i, francais: /^fran/i, 'histoire-geo': /^(histoire|géo)/i, anglais: /^anglais/i, eps: /^eps/i };
+  var EMOJI = { maths: '🔢', francais: '📝', 'histoire-geo': '🌍', anglais: '🇬🇧', eps: '🏃' };
+  window.EF_PAGES.forEach(function(p){
+    if (p.kind !== 'exercices' || !p.level) return;
+    var lc = document.getElementById('lc-' + p.level);
+    if (!lc || lc.querySelector('a[href="' + p.href + '"]')) return;
+    var cat = [].slice.call(lc.querySelectorAll('.lc-cat')).find(function(c){
+      var h = c.querySelector('.lc-cat-title'); return h && TITLE[p.subject] && TITLE[p.subject].test(h.textContent.trim());
+    });
+    if (!cat) return;
+    var grid = cat.querySelector('.lc-grid'); if (!grid) return;
+    var a = document.createElement('a');
+    a.href = p.href; a.className = 'lc-card';
+    a.innerHTML = '<div class="lcc-icon">' + (EMOJI[p.subject] || '📄') + '</div><div class="lcc-body"><div class="lcc-title"></div><div class="lcc-desc">exercices</div></div>';
+    a.querySelector('.lcc-title').textContent = p.title || p.theme;
+    if (p.lesson) {
+      var pair = document.createElement('div'); pair.className = 'lc-pair'; pair.appendChild(a);
+      var l = document.createElement('a'); l.className = 'lc-lesson'; l.href = p.lesson; l.textContent = '📖 Leçon'; pair.appendChild(l);
+      grid.appendChild(pair);
+    } else grid.appendChild(a);
+  });
+});
+
 // Onglets par matière : une matière à la fois
 (function(){
   function subjectOf(t){
@@ -875,11 +902,12 @@ if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js').catch(function(){});
 }
 </script>
-<script src="sync.js"></script>
-<script src="firebase-keys.js"></script>
-<script src="auth.js?v=8"></script>
-<script src="gamification.js?v=11"></script>
-<script src="nav.js?v=8"></script>
-<script src="seo.js?v=4"></script>
+<script src="sync.js?v=f881f6bc"></script>
+<script src="firebase-keys.js?v=482e498d"></script>
+<script src="auth.js?v=18f5ebf4"></script>
+<script src="pages.js?v=1e80fc5c"></script>
+<script src="gamification.js?v=5f1499ad"></script>
+<script src="nav.js?v=1465840b"></script>
+<script src="seo.js?v=1adc2871"></script>
 </body>
 </html>

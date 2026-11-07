@@ -1313,3 +1313,18 @@ body :is(.retiens-box, .exercice-block, .probleme-box) :is(.table-card, .solide-
 .lc-lesson { min-height: 40px; display: inline-flex; align-items: center; }
 .gs-create-close { position: absolute; top: 12px; right: 12px; width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(255,255,255,.3); background: rgba(255,255,255,.12); color: #fff; font-size: 1rem; cursor: pointer; }
 .gs-create-panel { position: relative; }
+
+/* Titres d exercice et « Je retiens » : de vrais h2 */
+h2.ex-title, h2.retiens-title { margin-top: 0; line-height: 1.3; font-family: inherit; }
+
+/* ── Adaptation : fil d'Ariane, pied de page, lien d'évitement, pages programme ─ */
+.ef-crumbs { display: flex; align-items: center; flex-wrap: wrap; gap: 2px 6px; padding: 6px 16px 8px; font-size: .9rem; font-weight: 700; color: var(--texte-2); }
+.ef-crumbs a { display: inline-flex; align-items: center; min-height: 36px; padding: 0 4px; color: var(--encre); text-decoration: underline; text-underline-offset: .18em; font-weight: 800; }
+.ef-crumbs [aria-current] { color: var(--encre-fonce); }
+.ef-crumb-sep { color: #9aa3bf; }
+.footer-levels a { display: inline-flex; align-items: center; min-height: 36px; padding: 0 6px; }
+.skip-link { position: absolute; left: 12px; top: -60px; z-index: 3000; padding: 10px 16px; border-radius: 10px; background: #fff; color: var(--encre); font-weight: 800; box-shadow: 0 4px 16px rgba(23,45,102,.25); }
+.skip-link:focus { top: 12px; }
+main:focus { outline: none; }
+body .pil-links { flex-wrap: wrap; }
+@media (max-width: 380px) { body .pil-grid { grid-template-columns: 1fr; } }

@@ -44,6 +44,11 @@ function _ok(el, fb, correct) {
   _combo++;
   _xp(el);
 }
+function _focusMsg(el) {
+  if (!el) return;
+  el.setAttribute('tabindex', '-1');
+  try { el.focus({ preventScroll: true }); } catch (e) { el.focus(); }
+}
 function _lessonLink() {
   return window.EF_LESSON ? ` <a class="fb-lesson" href="${window.EF_LESSON}">📖 Revoir la leçon</a>` : '';
 }
@@ -94,6 +99,8 @@ window._qcmCheck = function(btn, rowId, fbId, eid) {
     btn.disabled = true;
     btn.classList.add('tried');
     if (retry) retry.innerHTML = '🤔 Pas tout à fait. Réessaie !' + (item.hint ? ' <span class="retry-hint">💡 ' + item.hint + '</span>' : '');
+    const other = [...row.querySelectorAll('.btn-choice')].find(b => !b.disabled);
+    if (other) other.focus();
     return;
   }
   row.querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
@@ -113,6 +120,7 @@ window._qcmCheck = function(btn, rowId, fbId, eid) {
     });
     _ko(btn, fb, item.correct, item.expl);
   }
+  _focusMsg(fb);
 };
 
 // ═══════════════════════════════════════════════════════════
@@ -159,6 +167,7 @@ window._vfCheck = function(btn, rowId, fbId, eid) {
     fb.className = 'feedback-line fb-ko';
     _combo = 0;
   }
+  _focusMsg(fb);
 };
 
 // ═══════════════════════════════════════════════════════════

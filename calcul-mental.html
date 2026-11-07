@@ -17,8 +17,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Calcul mental — CE2 | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=9">
+<link rel="stylesheet" href="style.css?v=6ba191a4">
 <style>
   .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
   .btn-choice {
@@ -80,7 +81,7 @@
 
 
   <div class="retiens-box">
-    <div class="retiens-title">Je retiens</div>
+    <h2 class="retiens-title">Je retiens</h2>
     <div style="font-size:0.9rem; color:#555; display:flex; flex-direction:column; gap:6px; margin-top:8px;">
       <div>➕ <strong>Tables d'addition</strong> : bien connaître de 0+0 à 10+10</div>
       <div>✖️ <strong>Tables de multiplication</strong> : bien connaître de 1×1 à 10×10</div>
@@ -91,7 +92,7 @@
 
   <!-- EXERCICE 1 : tables d'addition flash -->
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#3b82f6;">Ex 1</span> Tables d'addition — 10 questions rapides</div>
+    <h2 class="ex-title"><span class="ex-badge" style="background:#3b82f6;">Ex 1</span> Tables d'addition — 10 questions rapides</h2>
     <div class="flash-progress" id="add-progress">Question 1 / 10</div>
     <div class="flash-display" id="add-question">?</div>
     <div class="flash-choices" id="add-choices"></div>
@@ -102,7 +103,7 @@
 
   <!-- EXERCICE 2 : tables de multiplication flash -->
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#3b82f6;">Ex 2</span> Tables de multiplication — 10 questions rapides</div>
+    <h2 class="ex-title"><span class="ex-badge" style="background:#3b82f6;">Ex 2</span> Tables de multiplication — 10 questions rapides</h2>
     <div class="flash-progress" id="mul-progress">Question 1 / 10</div>
     <div class="flash-display" id="mul-question">?</div>
     <div class="flash-choices" id="mul-choices"></div>
@@ -113,21 +114,21 @@
 
   <!-- EXERCICE 3 : doubles et moitiés -->
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#3b82f6;">Ex 3</span> Doubles et moitiés</div>
+    <h2 class="ex-title"><span class="ex-badge" style="background:#3b82f6;">Ex 3</span> Doubles et moitiés</h2>
     <div class="score-bar" id="score-dm">Score : 0 / 8</div>
     <div id="ex3-container"></div>
   </div>
 
   <!-- EXERCICE 4 : compléments à 100 -->
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#3b82f6;">Ex 4</span> Compléments à 100</div>
+    <h2 class="ex-title"><span class="ex-badge" style="background:#3b82f6;">Ex 4</span> Compléments à 100</h2>
     <div class="score-bar" id="score-c100">Score : 0 / 6</div>
     <div id="ex4-container"></div>
   </div>
 
   <!-- EXERCICE 5 : ×10, ×100 -->
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#3b82f6;">Ex 5</span> Multiplier par 10 et par 100</div>
+    <h2 class="ex-title"><span class="ex-badge" style="background:#3b82f6;">Ex 5</span> Multiplier par 10 et par 100</h2>
     <div id="ex5-container"></div>
   </div>
 
@@ -348,12 +349,13 @@ function checkT10(btn, chosen, correct, rowId, fbId) {
 }
 </script>
 
-<script src="sync.js"></script>
-<script src="firebase-keys.js"></script>
-<script src="auth.js?v=8"></script>
-<script src="gamification.js?v=11"></script>
-<script src="nav.js?v=8"></script>
-<script src="related.js?v=3"></script>
-<script src="seo.js?v=4"></script>
+<script src="sync.js?v=f881f6bc"></script>
+<script src="firebase-keys.js?v=482e498d"></script>
+<script src="auth.js?v=18f5ebf4"></script>
+<script src="pages.js?v=1e80fc5c"></script>
+<script src="gamification.js?v=5f1499ad"></script>
+<script src="nav.js?v=1465840b"></script>
+<script src="related.js?v=9f615d0d"></script>
+<script src="seo.js?v=1adc2871"></script>
 </body>
 </html>

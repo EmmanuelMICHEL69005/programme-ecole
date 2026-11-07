@@ -47,24 +47,33 @@ window.EF_AUTH = (function () {
     document.head.appendChild(s);
   }
 
+  const FB_BASE = 'https://www.gstatic.com/firebasejs/9.23.0/';
   function initFirebase(cb) {
     if (!ENABLED) { cb(false); return; }
-    const base = 'https://www.gstatic.com/firebasejs/9.23.0/';
-    loadScript(base + 'firebase-app-compat.js', function () {
-      loadScript(base + 'firebase-auth-compat.js', function () {
-        loadScript(base + 'firebase-database-compat.js', function () {
-          try {
-            if (!window.firebase) { cb(false); return; }
-            if (!firebase.apps.length) firebase.initializeApp(FB_CONFIG);
-            _auth = firebase.auth();
-            _db   = firebase.database();
-            cb(true);
-          } catch (e) {
-            console.warn('[EF Auth] Erreur init Firebase :', e);
-            cb(false);
-          }
-        });
+    // App + Auth seulement : la base de données n'est chargée que pour un compte connecté
+    loadScript(FB_BASE + 'firebase-app-compat.js', function () {
+      loadScript(FB_BASE + 'firebase-auth-compat.js', function () {
+        try {
+          if (!window.firebase) { cb(false); return; }
+          if (!firebase.apps.length) firebase.initializeApp(FB_CONFIG);
+          _auth = firebase.auth();
+          cb(true);
+        } catch (e) {
+          console.warn('[EF Auth] Erreur init Firebase :', e);
+          cb(false);
+        }
       });
+    });
+  }
+  let _dbWaiters = null;
+  function ensureDb(cb) {
+    if (_db) { cb(); return; }
+    if (_dbWaiters) { _dbWaiters.push(cb); return; }
+    _dbWaiters = [cb];
+    loadScript(FB_BASE + 'firebase-database-compat.js', function () {
+      try { if (window.firebase && firebase.database) _db = firebase.database(); }
+      catch (e) { console.warn('[EF Auth] Base de données indisponible :', e); }
+      const w = _dbWaiters; _dbWaiters = null; w.forEach(f => f());
     });
   }
 
@@ -91,6 +100,12 @@ window.EF_AUTH = (function () {
 
   // Charge tous les profils du compte + migre l'ancien profil unique si besoin
   function loadAll(uid, cb) {
+    ensureDb(function () {
+      if (!_db) { _profiles = {}; _activeId = null; _profile = null; _loadedUid = uid; cb(); return; }
+      loadAllNow(uid, cb);
+    });
+  }
+  function loadAllNow(uid, cb) {
     _db.ref('users/' + uid).once('value').then(function (snap) {
       const root = snap.val() || {};
       let profiles = (root.profiles && typeof root.profiles === 'object') ? root.profiles : null;
@@ -261,8 +276,9 @@ window.EF_AUTH = (function () {
       }
       .ef-auth-error.show { display:block; }
       .ef-auth-forgot {
-        display:block; text-align:center; margin-top:12px;
-        color:rgba(255,255,255,0.35); font-size:0.75rem; font-weight:700;
+        display:block; width:100%; text-align:center; margin-top:12px;
+        background:none; border:0; font-family:inherit; text-decoration:underline !important;
+        color:rgba(255,255,255,0.8); font-size:0.85rem; font-weight:700;
         text-decoration:none; cursor:pointer;
       }
       .ef-auth-forgot:hover { color:rgba(255,255,255,0.6); }
@@ -344,6 +360,7 @@ window.EF_AUTH = (function () {
       if (!email)             { showError('Entre ton adresse e-mail !'); return; }
       if (password.length < 6){ showError('Le mot de passe doit avoir au moins 6 caractères.'); return; }
       setLoading(true);
+      ensureDb(function () {
       _auth.createUserWithEmailAndPassword(email, password)
         .then(function (cred) {
           const pid = 'main';
@@ -372,6 +389,7 @@ window.EF_AUTH = (function () {
           setLoading(false);
           showError(friendlyError(err));
         });
+      });
     }
 
     function doLogin() {
@@ -415,42 +433,42 @@ window.EF_AUTH = (function () {
           </div>
           ${tab === 'signup' ? `
             <div class="ef-auth-field">
-              <label class="ef-auth-label">Ton prénom</label>
+              <label class="ef-auth-label" for="ef-name">Ton prénom</label>
               <input class="ef-auth-input" id="ef-name" type="text" placeholder="Ex : Clémence" autocomplete="name" maxlength="30">
             </div>
             <div class="ef-auth-field">
-              <label class="ef-auth-label">Ton avatar</label>
-              <div class="ef-auth-avatar-grid">
+              <div class="ef-auth-label" id="ef-avatar-lbl">Ton avatar</div>
+              <div class="ef-auth-avatar-grid" role="group" aria-labelledby="ef-avatar-lbl">
                 ${AVATARS.map(a => `<button class="ef-auth-avatar-btn${a===selAvatar?' selected':''}" data-avatar="${a}">${a}</button>`).join('')}
               </div>
             </div>
             <div class="ef-auth-field">
-              <label class="ef-auth-label">Ta classe</label>
-              <div class="ef-auth-classe-row">
+              <div class="ef-auth-label" id="ef-classe-lbl">Ta classe</div>
+              <div class="ef-auth-classe-row" role="group" aria-labelledby="ef-classe-lbl">
                 ${CLASSES.map(c => `<button class="ef-auth-classe-btn${c===selClasse?' selected':''}" data-classe="${c}">${c}</button>`).join('')}
               </div>
             </div>
             <div class="ef-auth-sep">── Compte ──</div>
             <div class="ef-auth-field">
-              <label class="ef-auth-label">Adresse e-mail</label>
+              <label class="ef-auth-label" for="ef-email">Adresse e-mail</label>
               <input class="ef-auth-input" id="ef-email" type="email" placeholder="exemple@mail.com" autocomplete="email">
             </div>
             <div class="ef-auth-field">
-              <label class="ef-auth-label">Mot de passe</label>
+              <label class="ef-auth-label" for="ef-password">Mot de passe</label>
               <input class="ef-auth-input" id="ef-password" type="password" placeholder="6 caractères minimum" autocomplete="new-password">
             </div>
             <button class="ef-auth-btn">C'est parti ! →</button>
           ` : `
             <div class="ef-auth-field">
-              <label class="ef-auth-label">Adresse e-mail</label>
+              <label class="ef-auth-label" for="ef-email">Adresse e-mail</label>
               <input class="ef-auth-input" id="ef-email" type="email" placeholder="exemple@mail.com" autocomplete="email">
             </div>
             <div class="ef-auth-field">
-              <label class="ef-auth-label">Mot de passe</label>
+              <label class="ef-auth-label" for="ef-password">Mot de passe</label>
               <input class="ef-auth-input" id="ef-password" type="password" placeholder="Ton mot de passe" autocomplete="current-password">
             </div>
             <button class="ef-auth-btn">Se connecter →</button>
-            <a class="ef-auth-forgot" id="ef-forgot">Mot de passe oublié ?</a>
+            <button type="button" class="ef-auth-forgot" id="ef-forgot">Mot de passe oublié ?</button>
           `}
           <div class="ef-auth-error"></div>
         </div>

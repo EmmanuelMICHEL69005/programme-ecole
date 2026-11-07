@@ -60,16 +60,16 @@
   if (fname === 'index.html') return;
   var bar = document.createElement('nav');
   bar.setAttribute('aria-label', 'Fil d\'Ariane');
-  bar.style.cssText = 'padding:4px 18px 8px;font-size:.72rem;font-weight:800;color:#9ca3af;display:flex;align-items:center;gap:5px;flex-wrap:wrap';
+  bar.className = 'ef-crumbs';
   var crumbs = [{ label: 'Accueil', href: 'index.html' }];
   if (level) crumbs.push({ label: LEVELS[level], href: 'programme-' + level + '.html' });
   if (isCours) crumbs.push({ label: 'Cours', href: 'programme-' + level + '.html' });
   crumbs.push({ label: pageTitle.split('—')[0].trim(), href: null });
 
   bar.innerHTML = crumbs.map(function (c, i) {
-    var sep = i > 0 ? '<span style="color:#c4b5fd">›</span>' : '';
-    if (c.href) return sep + '<a href="' + c.href + '" style="color:#1f3c88;text-decoration:underline;text-underline-offset:.18em;font-weight:800">' + c.label + '</a>';
-    return sep + '<span style="color:#1e1b4b">' + c.label + '</span>';
+    var sep = i > 0 ? '<span class="ef-crumb-sep" aria-hidden="true">›</span>' : '';
+    if (c.href) return sep + '<a href="' + c.href + '">' + c.label + '</a>';
+    return sep + '<span aria-current="page">' + c.label + '</span>';
   }).join('');
 
   var header = document.querySelector('.site-header, .cours-header, .pil-hero, .home-header');

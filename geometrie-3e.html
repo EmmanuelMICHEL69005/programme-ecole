@@ -17,8 +17,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Théorème de Thalès et vecteurs — 3e | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=9">
+<link rel="stylesheet" href="style.css?v=6ba191a4">
 <style>
   .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
   .btn-choice {
@@ -49,7 +50,7 @@
 
 
   <div class="retiens-box">
-    <div class="retiens-title">Je retiens</div>
+    <h2 class="retiens-title">Je retiens</h2>
     <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
       📏 <strong>Thalès</strong> : si (MN) // (BC) avec M sur (AB) et N sur (AC), alors AM/AB = AN/AC = MN/BC<br>
       ➡️ <strong>Chasles</strong> : AB + BC = AC · AB − AC = CB<br>
@@ -58,22 +59,22 @@
   </div>
 
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 1</span> Thalès : calculs</div>
+    <h2 class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 1</span> Thalès : calculs</h2>
     <div id="ex1"></div>
   </div>
 
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 2</span> Thalès : hypothèses et réciproque</div>
+    <h2 class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 2</span> Thalès : hypothèses et réciproque</h2>
     <div id="ex2"></div>
   </div>
 
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 3</span> Vecteurs</div>
+    <h2 class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 3</span> Vecteurs</h2>
     <div id="ex3"></div>
   </div>
 
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 4</span> Problèmes</div>
+    <h2 class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 4</span> Problèmes</h2>
     <div id="ex4"></div>
   </div>
 
@@ -81,7 +82,7 @@
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div></footer>
 
-<script src="exercises.js?v=5"></script>
+<script src="exercises.js?v=87db963d"></script>
 <script>
 function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
 function buildQ(data, id) {
@@ -121,12 +122,13 @@ buildQ([{"q": "AB + BC = ?", "correct": "AC", "choices": ["AC", "CA", "AB", "BC"
 buildQ([{"q": "Un arbre de 6 m projette une ombre de 4 m. Un poteau de 1,5 m projette une ombre de… ?", "correct": "1 m", "choices": ["1 m", "2 m", "0,5 m", "6 m"]}, {"q": "Une maquette à l'échelle 1/50 mesure 12 cm. Taille réelle ?", "correct": "6 m", "choices": ["6 m", "60 cm", "600 m", "0,6 m"]}, {"q": "Dans un triangle, une droite parallèle au côté [BC] coupe [AB] en M avec AM = 3 et MB = 2. Si BC = 10, MN = ?", "correct": "6", "choices": ["6", "4", "2,5", "10"]}, {"q": "Le rapport AM/AB dans le cas précédent vaut…", "correct": "3/5", "choices": ["3/5", "2/5", "3/2", "5/3"]}], 'ex4');
 </script>
 
-<script src="sync.js"></script>
-<script src="firebase-keys.js"></script>
-<script src="auth.js?v=8"></script>
-<script src="gamification.js?v=11"></script>
-<script src="nav.js?v=8"></script>
-<script src="related.js?v=3"></script>
-<script src="seo.js?v=4"></script>
+<script src="sync.js?v=f881f6bc"></script>
+<script src="firebase-keys.js?v=482e498d"></script>
+<script src="auth.js?v=18f5ebf4"></script>
+<script src="pages.js?v=1e80fc5c"></script>
+<script src="gamification.js?v=5f1499ad"></script>
+<script src="nav.js?v=1465840b"></script>
+<script src="related.js?v=9f615d0d"></script>
+<script src="seo.js?v=1adc2871"></script>
 </body>
 </html>

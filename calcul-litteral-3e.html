@@ -17,8 +17,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Identités remarquables et factorisation — 3e | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=9">
+<link rel="stylesheet" href="style.css?v=6ba191a4">
 <style>
   .qcm-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
   .btn-choice {
@@ -49,7 +50,7 @@
 
 
   <div class="retiens-box">
-    <div class="retiens-title">Je retiens</div>
+    <h2 class="retiens-title">Je retiens</h2>
     <div style="font-size:0.9rem; color:#555; margin-top:8px; line-height:1.8;">
       🔁 <strong>(a + b)² = a² + 2ab + b²</strong> · <strong>(a − b)² = a² − 2ab + b²</strong><br>
       ✖️ <strong>(a − b)(a + b) = a² − b²</strong><br>
@@ -58,22 +59,22 @@
   </div>
 
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 1</span> Développer avec les identités</div>
+    <h2 class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 1</span> Développer avec les identités</h2>
     <div id="ex1"></div>
   </div>
 
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 2</span> Factoriser</div>
+    <h2 class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 2</span> Factoriser</h2>
     <div id="ex2"></div>
   </div>
 
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 3</span> Équations produit nul</div>
+    <h2 class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 3</span> Équations produit nul</h2>
     <div id="ex3"></div>
   </div>
 
   <div class="exercice-block">
-    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 4</span> Inéquations</div>
+    <h2 class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 4</span> Inéquations</h2>
     <div id="ex4"></div>
   </div>
 
@@ -81,7 +82,7 @@
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div></footer>
 
-<script src="exercises.js?v=5"></script>
+<script src="exercises.js?v=87db963d"></script>
 <script>
 function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
 function buildQ(data, id) {
@@ -121,12 +122,13 @@ buildQ([{"q": "(x − 3)(x + 5) = 0. Solutions ?", "correct": "x = 3 ou x = −5
 buildQ([{"q": "3x − 2 ≤ 7. Solutions ?", "correct": "x ≤ 3", "choices": ["x ≤ 3", "x ≥ 3", "x ≤ 5/3", "x ≤ 9"]}, {"q": "2x > −4. Solutions ?", "correct": "x > −2", "choices": ["x > −2", "x < −2", "x > −8", "x < 2"]}, {"q": "−2x ≥ 6. Solutions ?", "correct": "x ≤ −3", "choices": ["x ≤ −3", "x ≥ −3", "x ≤ 3", "x ≥ 3"]}, {"q": "5 − x < 2. Solutions ?", "correct": "x > 3", "choices": ["x > 3", "x < 3", "x > −3", "x < −3"]}], 'ex4');
 </script>
 
-<script src="sync.js"></script>
-<script src="firebase-keys.js"></script>
-<script src="auth.js?v=8"></script>
-<script src="gamification.js?v=11"></script>
-<script src="nav.js?v=8"></script>
-<script src="related.js?v=3"></script>
-<script src="seo.js?v=4"></script>
+<script src="sync.js?v=f881f6bc"></script>
+<script src="firebase-keys.js?v=482e498d"></script>
+<script src="auth.js?v=18f5ebf4"></script>
+<script src="pages.js?v=1e80fc5c"></script>
+<script src="gamification.js?v=5f1499ad"></script>
+<script src="nav.js?v=1465840b"></script>
+<script src="related.js?v=9f615d0d"></script>
+<script src="seo.js?v=1adc2871"></script>
 </body>
 </html>

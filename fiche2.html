@@ -17,8 +17,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fiche 2 — Je compare | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=9">
+<link rel="stylesheet" href="style.css?v=6ba191a4">
 <style>
   /* Ex 1 — place sur la droite */
   .droite-interactive { background:#f0fdf4; border:2px solid #86efac; border-radius:14px; padding:20px; margin:14px 0; }
@@ -107,7 +108,7 @@
 
   <!-- JE RETIENS -->
   <div class="retiens-box">
-    <div class="retiens-title">Je retiens</div>
+    <h2 class="retiens-title">Je retiens</h2>
     <p>Une plus <strong>grande</strong> fraction = une plus grande part. Sur la droite, plus c'est à droite, plus c'est grand.</p>
     <div class="pizza-compare-row">
       <div class="pizza-compare-item">
@@ -131,7 +132,7 @@
 
   <!-- EXERCICE 1 — place sur la droite -->
   <div class="exercice-block">
-    <div class="ex-title" style="border-color:#bbf7d0"><span class="ex-badge" style="background:#059669">Ex 1</span> Place les fractions sur la droite</div>
+    <h2 class="ex-title" style="border-color:#bbf7d0"><span class="ex-badge" style="background:#059669">Ex 1</span> Place les fractions sur la droite</h2>
     <p style="font-size:0.9rem;color:#666;margin-bottom:8px">Clique d'abord sur une fraction, puis clique à sa place sur la droite.</p>
     <div class="droite-interactive">
       <div class="droite-chips">
@@ -177,13 +178,13 @@
 
   <!-- EXERCICE 2 — plus grande fraction -->
   <div class="exercice-block">
-    <div class="ex-title" style="border-color:#bbf7d0"><span class="ex-badge" style="background:#059669">Ex 2</span> Clique sur la plus grande fraction</div>
+    <h2 class="ex-title" style="border-color:#bbf7d0"><span class="ex-badge" style="background:#059669">Ex 2</span> Clique sur la plus grande fraction</h2>
     <div id="ex2-container"></div>
   </div>
 
   <!-- EXERCICE 3 — tri par clic -->
   <div class="exercice-block">
-    <div class="ex-title" style="border-color:#bbf7d0"><span class="ex-badge" style="background:#059669">Ex 3</span> Range du plus petit au plus grand</div>
+    <h2 class="ex-title" style="border-color:#bbf7d0"><span class="ex-badge" style="background:#059669">Ex 3</span> Range du plus petit au plus grand</h2>
     <p style="font-size:0.9rem;color:#666;margin-bottom:14px">Clique sur les fractions dans l'ordre, du plus petit au plus grand.</p>
 
     <div class="tri-container" id="triA">
@@ -205,7 +206,7 @@
 
   <!-- EXERCICE 4 — signes -->
   <div class="exercice-block">
-    <div class="ex-title" style="border-color:#bbf7d0"><span class="ex-badge" style="background:#059669">Ex 4</span> Clique sur &lt; , &gt; ou =</div>
+    <h2 class="ex-title" style="border-color:#bbf7d0"><span class="ex-badge" style="background:#059669">Ex 4</span> Clique sur &lt; , &gt; ou =</h2>
     <div class="sign-interactive" id="s1"><span>½</span><div class="sign-btns"><button class="btn-sign" onclick="checkSign(this,'<','>','s1')">&lt;</button><button class="btn-sign" onclick="checkSign(this,'>','>','s1')">&gt;</button><button class="btn-sign" onclick="checkSign(this,'=','>','s1')">=</button></div><span>¼</span></div>
     <div class="sign-interactive" id="s2"><span>¾</span><div class="sign-btns"><button class="btn-sign" onclick="checkSign(this,'<','>','s2')">&lt;</button><button class="btn-sign" onclick="checkSign(this,'>','>','s2')">&gt;</button><button class="btn-sign" onclick="checkSign(this,'=','>','s2')">=</button></div><span>½</span></div>
     <div class="sign-interactive" id="s3"><span>2/4</span><div class="sign-btns"><button class="btn-sign" onclick="checkSign(this,'<','=','s3')">&lt;</button><button class="btn-sign" onclick="checkSign(this,'>','=','s3')">&gt;</button><button class="btn-sign" onclick="checkSign(this,'=','=','s3')">=</button></div><span>½</span></div>
@@ -215,7 +216,7 @@
 
   <!-- EXERCICE 5 — QCM problèmes -->
   <div class="exercice-block">
-    <div class="ex-title" style="border-color:#bbf7d0"><span class="ex-badge" style="background:#059669">Ex 5</span> Problèmes</div>
+    <h2 class="ex-title" style="border-color:#bbf7d0"><span class="ex-badge" style="background:#059669">Ex 5</span> Problèmes</h2>
 
     <div class="probleme-box" style="border-color:#86efac;background:#f0fdf4;margin-bottom:14px">
       <div class="pb-qcm">
@@ -261,7 +262,7 @@
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div></footer>
 
-<script src="pizza.js"></script>
+<script src="pizza.js?v=0c25c2b9"></script>
 <script>
   pizzaStatic('pz-cmp1', 2, 1);
   pizzaStatic('pz-cmp2', 4, 1);
@@ -425,12 +426,13 @@
   }
 </script>
 
-<script src="sync.js"></script>
-<script src="firebase-keys.js"></script>
-<script src="auth.js?v=8"></script>
-<script src="gamification.js?v=11"></script>
-<script src="nav.js?v=8"></script>
-<script src="related.js?v=3"></script>
-<script src="seo.js?v=4"></script>
+<script src="sync.js?v=f881f6bc"></script>
+<script src="firebase-keys.js?v=482e498d"></script>
+<script src="auth.js?v=18f5ebf4"></script>
+<script src="pages.js?v=1e80fc5c"></script>
+<script src="gamification.js?v=5f1499ad"></script>
+<script src="nav.js?v=1465840b"></script>
+<script src="related.js?v=9f615d0d"></script>
+<script src="seo.js?v=1adc2871"></script>
 </body>
 </html>
