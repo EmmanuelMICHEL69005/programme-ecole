@@ -76,6 +76,10 @@
     <div class="ex-title"><span class="ex-badge" style="background:#dc2626">Ex 10</span> Trier les homophones : a/à · on/ont <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">TRI</span></div>
     <div id="ex10"></div>
   </div>
+  <div class="exercice-block" style="--accent:#db2777">
+    <div class="ex-title"><span class="ex-badge" style="background:#db2777">Ex 11</span> Pluriel des noms en -al, -ou, -eu, -au <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
+    <div id="ex11"></div>
+  </div>
   <div style="background:#eff6ff;border:1px solid #3b82f655;border-radius:10px;padding:14px 16px;margin:16px 0">
     <div style="font-weight:900;color:#1e3a8a;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CM1</div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
@@ -178,6 +182,14 @@ buildTri([
     { v:'Mes amis ont raison.', cat:'ont (verbe avoir)' },
   ]},
 ], 'ex10');
+
+buildQCM([
+  { card:'"un journal" → des…', q:'Quel est le bon pluriel ?', correct:'des journaux', choices:['des journals','des journaux','des journeaux','des journaus'] },
+  { card:'"un bijou" → des…', q:'Quel est le bon pluriel ?', correct:'des bijoux', choices:['des bijous','des bijoux','des bijeux'] },
+  { card:'"un clou" → des…', q:'Quel est le bon pluriel ?', correct:'des clous', choices:['des clous','des cloux','des clou'] },
+  { card:'"un cheveu" → des…', q:'Quel est le bon pluriel ?', correct:'des cheveux', choices:['des cheveus','des cheveux','des chevaux'] },
+  { card:'"un tuyau" → des…', q:'Quel est le bon pluriel ?', correct:'des tuyaux', choices:['des tuyaus','des tuyaux','des tuyau'] },
+], 'ex11');
 </script>
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>

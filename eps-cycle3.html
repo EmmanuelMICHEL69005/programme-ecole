@@ -86,6 +86,10 @@
     <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 7</span> Individuel ou collectif ? <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">TRI</span></div>
     <div id="ex7"></div>
   </div>
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 8</span> Santé et sécurité dans le sport <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
+    <div id="ex8"></div>
+  </div>
 
 </main>
 
@@ -157,6 +161,14 @@ buildTri([
     ]
   },
 ], 'ex7');
+
+buildQCM([
+  { q:'Pourquoi s\'échauffe-t-on avant le sport ?', correct:'Pour préparer le corps à l\'effort et éviter les blessures', choices:['Pour préparer le corps à l\'effort et éviter les blessures','Pour être fatigué avant de commencer','Pour gagner à coup sûr','Pour remplacer la séance'] },
+  { q:'Pendant un effort long, que dois-tu faire régulièrement ?', correct:'Boire de l\'eau par petites gorgées', choices:['Boire de l\'eau par petites gorgées','Ne rien boire du tout','Boire un soda d\'un seul coup','Manger des bonbons'] },
+  { q:'Pendant un effort, ton cœur bat…', correct:'Plus vite qu\'au repos', choices:['Plus vite qu\'au repos','Plus lentement qu\'au repos','Exactement comme au repos'] },
+  { q:'En course d\'orientation, quel outil t\'aide à trouver le nord ?', correct:'La boussole', choices:['La boussole','Le chronomètre','Le sifflet','Le témoin'] },
+  { q:'Pour faire du vélo en sécurité, que dois-tu porter ?', correct:'Un casque', choices:['Un casque','Des lunettes de piscine','Un bonnet de bain','Des crampons'] },
+], 'ex8');
 </script>
 
 <script src="sync.js"></script>

@@ -136,6 +136,10 @@
     <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 5</span> Range les données dans l'ordre <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">ORDRE</span></div>
     <div id="ex5"></div>
   </div>
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 6</span> Le goûter préféré de la classe <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
+    <div id="ex6"></div>
+  </div>
 
 </main>
 
@@ -181,6 +185,14 @@ buildOrdre([
   { q:'Range ces élèves du MOINS de livres au PLUS de livres :',
     items:['Théo : 5','Lucas : 10','Emma : 15','Sofia : 20'] },
 ], 'ex5');
+
+buildQCM([
+  { enonce:'🍪 Biscuits : 9 élèves · 🍎 Fruits : 6 élèves · 🥐 Croissants : 8 élèves · 🍫 Chocolat : 4 élèves', q:'Combien d\'élèves préfèrent les croissants ?', correct:'8', choices:['4','6','8','9'] },
+  { enonce:'🍪 Biscuits : 9 élèves · 🍎 Fruits : 6 élèves · 🥐 Croissants : 8 élèves · 🍫 Chocolat : 4 élèves', q:'Quel goûter est le préféré de la classe ?', correct:'🍪 Biscuits (9)', choices:['🍪 Biscuits (9)','🍎 Fruits (6)','🥐 Croissants (8)','🍫 Chocolat (4)'] },
+  { enonce:'🍪 Biscuits : 9 élèves · 🍎 Fruits : 6 élèves · 🥐 Croissants : 8 élèves · 🍫 Chocolat : 4 élèves', q:'Combien d\'élèves préfèrent les fruits ou le chocolat ?', correct:'10', choices:['2','9','10','11'] },
+  { enonce:'🍪 Biscuits : 9 élèves · 🍎 Fruits : 6 élèves · 🥐 Croissants : 8 élèves · 🍫 Chocolat : 4 élèves', q:'Combien d\'élèves de PLUS préfèrent les biscuits plutôt que le chocolat ?', correct:'5', choices:['4','5','6','13'] },
+  { enonce:'🍪 Biscuits : 9 élèves · 🍎 Fruits : 6 élèves · 🥐 Croissants : 8 élèves · 🍫 Chocolat : 4 élèves', q:'Combien d\'élèves ont répondu en tout ?', correct:'27', choices:['25','26','27','28'] },
+], 'ex6');
 </script>
 
 <script src="sync.js"></script>

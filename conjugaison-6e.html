@@ -76,6 +76,10 @@
     <div class="ex-title"><span class="ex-badge" style="background:#d97706">Ex 10</span> Indicatif / Conditionnel / Subjonctif <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">TRI</span></div>
     <div id="ex10"></div>
   </div>
+  <div class="exercice-block" style="--accent:#16a34a">
+    <div class="ex-title"><span class="ex-badge" style="background:#16a34a">Ex 11</span> Le passé simple (3e personne) <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
+    <div id="ex11"></div>
+  </div>
   <div style="background:#fdf2f8;border:1px solid #ec489955;border-radius:10px;padding:14px 16px;margin:16px 0">
     <div style="font-weight:900;color:#831843;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français 6ème</div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
@@ -176,6 +180,14 @@ buildTri([{ q:'Classer chaque phrase selon le mode du verbe en gras', cats:['Ind
   {v:"Bien qu'elle soit là.", cat:'Subjonctif'},
   {v:'Il faut que je parte.', cat:'Subjonctif'},
 ]}], 'ex10');
+
+buildQCM([
+  { card:'"Le chevalier ___ la forêt." (traverser)', q:'Passé simple de "traverser" (3e pers. sing.)', correct:'traversa', choices:['traversa','traversait','traversé','traversera'] },
+  { card:'"Les enfants ___ dans le parc." (jouer)', q:'Passé simple de "jouer" (3e pers. plur.)', correct:'jouèrent', choices:['jouèrent','jouaient','jouarent','joueront'] },
+  { card:'"Elle ___ son repas." (finir)', q:'Passé simple de "finir" (3e pers. sing.)', correct:'finit', choices:['finit','finissait','finira','finissa'] },
+  { card:'"Ils ___ le train." (prendre)', q:'Passé simple de "prendre" (3e pers. plur.)', correct:'prirent', choices:['prirent','prenèrent','prenaient','prendrent'] },
+  { card:'"Le roi ___ très surpris." (être)', q:'Passé simple de "être" (3e pers. sing.)', correct:'fut', choices:['fut','était','eut','sera'] },
+], 'ex11');
 </script>
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>

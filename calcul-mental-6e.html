@@ -83,6 +83,10 @@
     <div class="ex-title"><span class="ex-badge" style="background:#9d174d;">Ex 4</span> Pourcentages mentaux</div>
     <div id="ex4"></div>
   </div>
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#9d174d;">Ex 5</span> Multiplier et diviser par 10, 100, 1 000 ; 0,1</div>
+    <div id="ex5"></div>
+  </div>
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a> · <a href="programme-5e.html">5ème</a> · <a href="programme-4e.html">4ème</a> · <a href="programme-3e.html">3ème</a></div></footer>
@@ -159,6 +163,14 @@ buildQ([
   { enonce: '📈 Une population de 2 500 habitants augmente de 4%.', q: 'Combien d\'habitants y a-t-il après l\'augmentation ?', correct: '2 600 habitants', choices: ['2 400 habitants','2 504 habitants','2 600 habitants','2 650 habitants'] },
   { enonce: '💰 Un livre est vendu 15 €. La TVA est de 20%.', q: 'Quel est le montant de la TVA ?', correct: '3 €', choices: ['1,5 €','2 €','3 €','5 €'] },
 ], 'ex4');
+
+buildQ([
+  { card: '3,7 × 100 = ?', q: 'Calcule 3,7 × 100', correct: '370', choices: ['37','370','3 700','300,7'] },
+  { card: '52 ÷ 10 = ?', q: 'Calcule 52 ÷ 10', correct: '5,2', choices: ['520','5,2','0,52','52,1'] },
+  { card: '0,48 × 1 000 = ?', q: 'Calcule 0,48 × 1 000', correct: '480', choices: ['48','480','4 800','4,8'] },
+  { card: '6,5 ÷ 100 = ?', q: 'Calcule 6,5 ÷ 100', correct: '0,065', choices: ['0,65','0,065','650','0,0065'] },
+  { card: '25 × 0,1 = ?', q: 'Calcule 25 × 0,1', correct: '2,5', choices: ['250','2,5','0,25','25,1'] },
+], 'ex5');
 </script>
 
 <script src="sync.js"></script>

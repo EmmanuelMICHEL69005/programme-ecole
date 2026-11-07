@@ -204,6 +204,12 @@
     </div>
     <div id="ex8"></div>
   </div>
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <div class="ex-title">
+      <span class="ex-badge" style="background:#0ea5e9">Ex 9</span> Reconnaître les solides <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span>
+    </div>
+    <div id="ex9"></div>
+  </div>
 
 </main>
 
@@ -338,6 +344,14 @@ buildVF([
   { q:'Un triangle équilatéral a exactement 1 axe de symétrie.', correct:false,
     expl:'Il en a 3, un par sommet' },
 ], 'ex8');
+
+buildQCM([
+  { q:'Une balle a la forme d\'une…', correct:'boule', choices:['boule','cube','pyramide','cylindre'] },
+  { q:'Un dé à jouer a la forme d\'un…', correct:'cube', choices:['cube','boule','cylindre','cône'] },
+  { q:'Une boîte de conserve a la forme d\'un…', correct:'cylindre', choices:['cylindre','cube','boule','pyramide'] },
+  { q:'Un cornet de glace a la forme d\'un…', correct:'cône', choices:['cône','cube','boule','pavé'] },
+  { q:'Combien de faces a un cube ?', correct:'6', choices:['4','5','6','8'] },
+], 'ex9');
 </script>
 
 <script src="sync.js"></script>

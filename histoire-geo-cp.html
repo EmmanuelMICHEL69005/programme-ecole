@@ -90,6 +90,10 @@
     <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 7</span> Associer saison et description <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">PAIRES</span></div>
     <div id="ex7"></div>
   </div>
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 8</span> Mon quartier et le plan <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
+    <div id="ex8"></div>
+  </div>
 
 </main>
 
@@ -158,6 +162,14 @@ buildPaires([
   { q:'Associe chaque mois à sa saison.',
     pairs:[['Janvier','Hiver ❄️'],['Avril','Printemps 🌸'],['Juillet','Été ☀️'],['Octobre','Automne 🍂']] },
 ], 'ex7');
+
+buildQCM([
+  { q:'Pour te repérer dans ton école, tu peux utiliser…', correct:'Un plan de l\'école', choices:['Un plan de l\'école','Un calendrier','Une horloge','Un thermomètre'] },
+  { q:'Sur un plan, les lieux sont dessinés vus…', correct:'D\'en haut', choices:['D\'en haut','De côté','D\'en bas','De derrière'] },
+  { q:'Où travaille le boulanger ?', correct:'À la boulangerie', choices:['À la boulangerie','À la pharmacie','À la poste','À la bibliothèque'] },
+  { q:'Où vas-tu pour emprunter des livres ?', correct:'À la bibliothèque', choices:['À la piscine','À la bibliothèque','À la boulangerie','À la poste'] },
+  { q:'Beaucoup de maisons, de rues et d\'immeubles : c\'est…', correct:'La ville', choices:['La ville','La campagne','La forêt','La plage'] },
+], 'ex8');
 </script>
 
 <script src="sync.js"></script>

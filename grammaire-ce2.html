@@ -92,6 +92,10 @@
     <div class="ex-title"><span class="ex-badge" style="background:#dc2626">Ex 10</span> Classer les compléments : CCL / CCT / CCM <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">TRI</span></div>
     <div id="ex10"></div>
   </div>
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 11</span> La phrase négative <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
+    <div id="ex11"></div>
+  </div>
 
   <div style="background:#f5f3ff;border:1px solid #7c3aed55;border-radius:10px;padding:14px 16px;margin:16px 0">
     <div style="font-weight:900;color:#4c1d95;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CE2</div>
@@ -203,6 +207,14 @@ buildTri([
     ]
   }
 ], 'ex10');
+
+buildQCM([
+  { card:'"Je mange des carottes."', q:'Quelle est la phrase négative ?', correct:'Je ne mange pas de carottes.', choices:['Je ne mange pas de carottes.','Je mange pas de carottes.','Je ne mange des carottes.','Je mange des carottes.'] },
+  { card:'"Tom ne court jamais."', q:'Cette phrase est…', correct:'négative', choices:['affirmative','négative','interrogative'] },
+  { card:'"Elle n\'aime pas le lait."', q:'Quels mots forment la négation ?', correct:'n\' … pas', choices:['n\' … pas','aime … lait','le … lait','Elle … pas'] },
+  { card:'"Il ne chante pas."', q:'Quelle est la phrase affirmative ?', correct:'Il chante.', choices:['Il chante.','Il ne chante.','Il chante pas.','Il ne chante jamais.'] },
+  { card:'"Lou regarde la télé."', q:'Transforme avec "ne … jamais".', correct:'Lou ne regarde jamais la télé.', choices:['Lou ne regarde jamais la télé.','Lou regarde jamais la télé.','Lou ne jamais regarde la télé.','Lou ne regarde pas la télé.'] },
+], 'ex11');
 </script>
 
 <script src="sync.js"></script>

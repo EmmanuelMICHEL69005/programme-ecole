@@ -95,6 +95,10 @@
     <div class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Trier : fraction &lt;1 ou &gt;1 ? <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">TRI</span></div>
     <div id="ex7"></div>
   </div>
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 8</span> Comparer des fractions <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
+    <div id="ex8"></div>
+  </div>
 
 </main>
 
@@ -166,6 +170,14 @@ buildTri([
     ]
   },
 ], 'ex7');
+
+buildQCM([
+  { card:'3/8 … 5/8', q:'Quel signe faut-il mettre ?', correct:'<', choices:['<','>','='] },
+  { card:'7/6 … 1', q:'Quel signe faut-il mettre ?', correct:'>', choices:['<','>','='] },
+  { card:'2/4 … 1/2', q:'Quel signe faut-il mettre ?', correct:'=', choices:['<','>','='] },
+  { card:'9/10 … 7/10', q:'Quel signe faut-il mettre ?', correct:'>', choices:['<','>','='] },
+  { q:'Quelle est la plus petite fraction ?', correct:'2/9', choices:['5/9','2/9','8/9','4/9'] },
+], 'ex8');
 </script>
 
 <script src="sync.js"></script>

@@ -104,6 +104,10 @@
     <div class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Associer figure et formule <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">PAIRES</span></div>
     <div id="ex6"></div>
   </div>
+  <div class="exercice-block" style="--accent:#0891b2">
+    <div class="ex-title"><span class="ex-badge" style="background:#0891b2">Ex 7</span> Le cube et le pavé droit <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
+    <div id="ex7"></div>
+  </div>
 
 </main>
 
@@ -167,6 +171,14 @@ buildPaires([
   { q:'Associe chaque figure à son aire.',
     pairs:[['Carré de 4 cm','16 cm²'],['Rectangle 6×3 cm','18 cm²'],['Carré de 7 cm','49 cm²'],['Rectangle 8×5 cm','40 cm²']] },
 ], 'ex6');
+
+buildQCM([
+  { q:'Combien de faces a un cube ?', correct:'6', choices:['4','6','8','12'] },
+  { q:'Combien d\'arêtes a un cube ?', correct:'12', choices:['6','8','12','24'] },
+  { q:'Combien de sommets a un pavé droit ?', correct:'8', choices:['4','6','8','12'] },
+  { q:'Les faces d\'un cube sont toutes des…', correct:'carrés', choices:['carrés','triangles','cercles','pentagones'] },
+  { q:'Une boîte à chaussures a la forme d\'un…', correct:'pavé droit', choices:['cube','pavé droit','cylindre','pyramide'] },
+], 'ex7');
 </script>
 
 <script src="sync.js"></script>

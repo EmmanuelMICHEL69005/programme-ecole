@@ -118,6 +118,10 @@
     <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 7</span> Classer dans le temps <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">TRI</span></div>
     <div id="ex7"></div>
   </div>
+  <div class="exercice-block" style="--accent:#b45309">
+    <div class="ex-title"><span class="ex-badge" style="background:#b45309">Ex 8</span> Le temps des rois <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
+    <div id="ex8"></div>
+  </div>
 
 </main>
 
@@ -189,6 +193,14 @@ buildTri([
     ]
   },
 ], 'ex7');
+
+buildQCM([
+  { q:'Quel roi s\'est installé avec sa cour au château de Versailles ?', correct:'Louis XIV', choices:['Louis IX','François Ier','Henri IV','Louis XIV'] },
+  { q:'Quel surnom donne-t-on au roi Louis IX ?', correct:'Saint Louis', choices:['Saint Louis','Le Roi-Soleil','Le Bref','Le Pieux'] },
+  { q:'En 1539, quel roi impose le français dans les actes officiels (ordonnance de Villers-Cotterêts) ?', correct:'François Ier', choices:['Louis XIV','François Ier','Henri IV','Clovis'] },
+  { q:'Quel roi signe l\'édit de Nantes en 1598 pour mettre fin aux guerres de Religion ?', correct:'Henri IV', choices:['Henri IV','Louis IX','Louis XIV','François Ier'] },
+  { q:'Quel grand artiste italien François Ier a-t-il accueilli en France ?', correct:'Léonard de Vinci', choices:['Léonard de Vinci','Michel-Ange','Molière','Charlemagne'] },
+], 'ex8');
 </script>
 
 <script src="sync.js"></script>

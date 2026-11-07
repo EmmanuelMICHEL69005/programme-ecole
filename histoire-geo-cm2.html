@@ -116,6 +116,10 @@
     <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 7</span> Classer dans le temps <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">TRI</span></div>
     <div id="ex7"></div>
   </div>
+  <div class="exercice-block" style="--accent:#1d4ed8">
+    <div class="ex-title"><span class="ex-badge" style="background:#1d4ed8">Ex 8</span> La République et ses symboles <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
+    <div id="ex8"></div>
+  </div>
 
 </main>
 
@@ -184,6 +188,14 @@ buildTri([
     ]
   },
 ], 'ex7');
+
+buildQCM([
+  { q:'Quelle est la devise de la République française ?', correct:'Liberté, Égalité, Fraternité', choices:['Liberté, Égalité, Fraternité','Liberté, Paix, Unité','Force, Courage, Honneur','Égalité, Travail, Justice'] },
+  { q:'Quel ministre a rendu l\'école gratuite, laïque et obligatoire dans les années 1880 ?', correct:'Jules Ferry', choices:['Jules Ferry','Victor Hugo','Napoléon Bonaparte','Louis Pasteur'] },
+  { q:'Quel est l\'hymne national de la France ?', correct:'La Marseillaise', choices:['La Marseillaise','Le Chant du départ','Frère Jacques','L\'Hymne à la joie'] },
+  { q:'En quelle année les femmes obtiennent-elles le droit de vote en France ?', correct:'1944', choices:['1789','1848','1944','1981'] },
+  { q:'Qui est Marianne ?', correct:'Un symbole de la République française', choices:['Un symbole de la République française','Une reine de France','Une chanson révolutionnaire','Une ville du sud de la France'] },
+], 'ex8');
 </script>
 
 <script src="sync.js"></script>

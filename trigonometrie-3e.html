@@ -76,6 +76,10 @@
     <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 4</span> Problèmes</div>
     <div id="ex4"></div>
   </div>
+  <div class="exercice-block">
+    <div class="ex-title"><span class="ex-badge" style="background:#0369a1;">Ex 5</span> Repérer les côtés et choisir la formule</div>
+    <div id="ex5"></div>
+  </div>
 
 </main>
 
@@ -115,6 +119,8 @@ buildQ([{"q": "Triangle rectangle d'hypoténuse 10 et de côté adjacent 6 à l'
 buildQ([{"q": "Triangle rectangle en A, hypoténuse BC = 10, angle B = 30°. Le côté AC (opposé à B) mesure…", "correct": "5", "choices": ["5", "5√3", "10√3", "2,5"]}, {"q": "Même triangle : le côté AB (adjacent à B) mesure…", "correct": "5√3", "choices": ["5√3", "5", "10", "√3"]}, {"q": "tan 45° = ?", "correct": "1", "choices": ["1", "0", "√2", "√3"]}, {"q": "Une échelle de 4 m fait un angle de 60° avec le sol. Hauteur du mur atteinte ?", "correct": "2√3 m", "choices": ["2√3 m", "2 m", "4 m", "√3 m"]}], 'ex2');
 buildQ([{"q": "Hypoténuse 13 et côté 5 : l'autre côté mesure…", "correct": "12", "choices": ["12", "8", "18", "25"]}, {"q": "Triangle de côtés 6, 8 et 9 : rectangle ?", "correct": "Non", "choices": ["Non", "Oui"]}, {"q": "Dans un triangle rectangle, les deux angles aigus sont…", "correct": "complémentaires", "choices": ["complémentaires", "supplémentaires", "égaux à 90°", "égaux à 45°"]}, {"q": "Dans un triangle rectangle, cos(B) = sin(C) est vrai car…", "correct": "B + C = 90°", "choices": ["B + C = 90°", "B = C", "B = 90°", "C = 0"]}], 'ex3');
 buildQ([{"q": "Un ski de 100 m de long monte à 20 m de hauteur sur une pente. Angle de la pente (sin = 0,2) ? arrondi", "correct": "environ 11,5°", "choices": ["environ 11,5°", "20°", "45°", "80°"]}, {"q": "Le cosinus d'un angle est toujours…", "correct": "compris entre −1 et 1", "choices": ["compris entre −1 et 1", "supérieur à 1", "négatif", "égal à la tangente"]}, {"q": "Le sinus de 30° vaut…", "correct": "1/2", "choices": ["1/2", "√3/2", "1", "0"]}, {"q": "Le cosinus de 60° vaut…", "correct": "1/2", "choices": ["1/2", "√3/2", "0", "1"]}], 'ex4');
+
+buildQ([{"q": "Triangle ABC rectangle en A. Le côté opposé à l'angle B est…", "correct": "[AC]", "choices": ["[AC]", "[AB]", "[BC]"]}, {"q": "Triangle ABC rectangle en A. L'hypoténuse est…", "correct": "[BC]", "choices": ["[BC]", "[AB]", "[AC]"]}, {"q": "Triangle ABC rectangle en A, AB = 4 et AC = 3. tan(B) = ?", "correct": "0,75", "choices": ["0,75", "1,33", "0,6", "0,8"]}, {"q": "Triangle ABC rectangle en A, AB = 7 et angle B = 60°. L'hypoténuse BC mesure…", "correct": "14", "choices": ["14", "3,5", "7√3", "12"]}, {"q": "Dans « SOH CAH TOA », « CAH » signifie…", "correct": "cos = adjacent / hypoténuse", "choices": ["cos = adjacent / hypoténuse", "cos = hypoténuse / adjacent", "cos = opposé / hypoténuse", "cos = adjacent / opposé"]}], 'ex5');
 </script>
 
 <script src="sync.js"></script>
