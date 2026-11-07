@@ -1308,3 +1308,8 @@ body :is(.retiens-box, .exercice-block, .probleme-box) :is(.table-card, .solide-
 .lc-soon-note { margin: 0 0 10px; color: var(--texte-2); font-weight: 700; }
 .lc { animation-duration: .12s !important; }
 .retiens-box > div:not([class]) { max-width: 66ch; }
+/* Cibles tactiles : réponses espacées, pastille Leçon assez grande ; sortie de « Nouveau profil » */
+.qcm-row { gap: 10px !important; }
+.lc-lesson { min-height: 40px; display: inline-flex; align-items: center; }
+.gs-create-close { position: absolute; top: 12px; right: 12px; width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(255,255,255,.3); background: rgba(255,255,255,.12); color: #fff; font-size: 1rem; cursor: pointer; }
+.gs-create-panel { position: relative; }

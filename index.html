@@ -18,7 +18,7 @@
 <title>École Facile — Exercices interactifs du CP à la 3e</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=8">
+<link rel="stylesheet" href="style.css?v=9">
 <style>
 /* ── Hero header ── */
 .home-header {
@@ -794,6 +794,7 @@ function selectLvl(lvl, btn) {
   var lvl = saved || profile;
   var btn = lvl && document.querySelector('.lp-btn.lp-' + lvl);
   if (btn) selectLvl(lvl, btn);
+  else document.querySelectorAll('.lc').forEach(function(c){ c.hidden = true; }); // 1re visite : rien tant que la classe n'est pas choisie
   // Reprendre la dernière page d'exercices
   try {
     var last = JSON.parse(localStorage.getItem('ef_last_page') || 'null');
@@ -877,7 +878,7 @@ if ('serviceWorker' in navigator) {
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>
 <script src="auth.js?v=8"></script>
-<script src="gamification.js?v=10"></script>
+<script src="gamification.js?v=11"></script>
 <script src="nav.js?v=8"></script>
 <script src="seo.js?v=4"></script>
 </body>

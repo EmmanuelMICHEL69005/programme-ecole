@@ -13,7 +13,7 @@ function rnd(a) { return a[Math.floor(Math.random() * a.length)]; }
 function formatFrac(s) {
   if (s === null || s === undefined) return '';
   return String(s).replace(/(\d+)\/(\d+)/g,
-    '<span class="f"><span class="fn">$1</span><span class="fd">$2</span></span>');
+    '<span class="f" role="img" aria-label="$1 sur $2"><span class="fn" aria-hidden="true">$1</span><span class="fd" aria-hidden="true">$2</span></span>');
 }
 
 // ── Messages ─────────────────────────────────────────────────
@@ -220,8 +220,14 @@ window._ordreCheck = function(poolId, zoneId, fbId, eid) {
     c.classList.toggle('ok', good); c.classList.toggle('ko', !good);
   });
   if (!ok && !zone.dataset.tried) {
+    // 2e essai : on garde le début juste, on rend le reste à placer
     zone.dataset.tried = '1';
-    if (retry) retry.innerHTML = '🤔 Pas tout à fait : les éléments marqués ✗ ne sont pas à leur place. Touche-les pour les enlever, puis replace-les et valide.';
+    const k = chosen.findIndex((v, j) => v !== item.items[j]);
+    chips.slice(k).forEach(c => { if (c.onclick) c.onclick(); else c.remove(); });
+    chips.slice(0, k).forEach(c => { c.classList.add('ok'); c.classList.remove('ko'); });
+    if (retry) retry.innerHTML = k > 0
+      ? '🤔 Le début est juste (✓). Replace la suite dans le bon ordre, puis valide.'
+      : '🤔 Pas tout à fait. Recommence depuis le début, dans le bon ordre, puis valide.';
     return;
   }
   if (retry) retry.innerHTML = '';

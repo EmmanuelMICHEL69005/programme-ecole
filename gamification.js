@@ -947,15 +947,21 @@
     overlay.className = 'gs-create-overlay';
 
     let selAvatar = AVATARS[0];
-    let selClasse = 'CE2';
+    // Classe proposée : celle de la page en cours, sinon CE2
+    const m = page.match(/-(cp|ce1|ce2|cm1|cm2|6e|5e|4e|3e)\.html$/);
+    let selClasse = (m && CLASSE_LIST.find(c => c.toLowerCase().replace('ème', 'e') === m[1])) || 'CE2';
 
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-labelledby', 'gs-create-title');
     overlay.innerHTML = `
       <div class="gs-create-panel">
+        <button type="button" class="gs-create-close" aria-label="Plus tard">✕</button>
         <span class="gs-create-hero">✨</span>
-        <h2 class="gs-create-title">${opts.title || 'Bienvenue !'}</h2>
+        <h2 class="gs-create-title" id="gs-create-title">${opts.title || 'Bienvenue !'}</h2>
         <p class="gs-create-sub">${opts.sub || 'Crée ton profil pour commencer à gagner des points'}</p>
         <div class="gs-create-field">
-          <label class="gs-create-label">Ton prénom</label>
+          <label class="gs-create-label" for="gs-name-input">Ton prénom</label>
           <input class="gs-create-input" id="gs-name-input" type="text" placeholder="Ex : Clémence" maxlength="20" autocomplete="off">
         </div>
         <div class="gs-create-field">
@@ -967,7 +973,7 @@
         <div class="gs-create-field">
           <label class="gs-create-label">Ta classe</label>
           <div class="gs-classe-row">
-            ${CLASSE_LIST.map(c => `<button class="gs-classe-btn${c==='CE2'?' selected':''}" onclick="window._gsPickClasse(this,'${c}')">${c}</button>`).join('')}
+            ${CLASSE_LIST.map(c => `<button class="gs-classe-btn${c===selClasse?' selected':''}" onclick="window._gsPickClasse(this,'${c}')">${c}</button>`).join('')}
           </div>
         </div>
         <button class="gs-create-btn" onclick="window._gsSubmitCreate()">C'est parti ! →</button>
@@ -976,6 +982,12 @@
 
     document.body.appendChild(overlay);
     setTimeout(() => document.getElementById('gs-name-input')?.focus(), 350);
+    // Toujours une sortie : ✕, Échap, clic à côté
+    const closeCreate = () => { overlay.remove(); document.removeEventListener('keydown', onEsc); };
+    const onEsc = e => { if (e.key === 'Escape') closeCreate(); };
+    document.addEventListener('keydown', onEsc);
+    overlay.querySelector('.gs-create-close').addEventListener('click', closeCreate);
+    overlay.addEventListener('mousedown', e => { if (e.target === overlay) closeCreate(); });
 
     window._gsPickAvatar = (btn, avatar) => {
       selAvatar = avatar;
@@ -1298,7 +1310,7 @@
   // Échap ferme les fenêtres
   document.addEventListener('keydown', e => {
     if (e.key !== 'Escape') return;
-    document.querySelectorAll('.gs-next-overlay, .gs-levelup-overlay').forEach(o => o.remove());
+    document.querySelectorAll('.gs-next-overlay, .gs-levelup-overlay, .gs-picker-overlay').forEach(o => o.remove());
   });
 
   // ── Confetti ─────────────────────────────────────────────────────
@@ -1789,7 +1801,8 @@
       q.appendChild(makeSpeakBtn(() => {
         const qb = q.closest('.q-block') || q.parentElement;
         const choices = qb ? [...qb.querySelectorAll('.btn-choice, .ordre-item, .tri-chip, .paires-btn')].map(speakableText).filter(Boolean) : [];
-        return speakableText(q) + (choices.length ? '. Réponses possibles : ' + choices.join(', ') + '.' : '');
+        const qt = speakableText(q);
+        return qt + (choices.length ? (/[.?!:]$/.test(qt) ? ' ' : '. ') + 'Réponses possibles : ' + choices.join(', ') + '.' : '');
       }, 'Écouter la question'));
     });
   }
