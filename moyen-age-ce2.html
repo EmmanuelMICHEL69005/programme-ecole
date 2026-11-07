@@ -30,6 +30,31 @@
 
 <main>
 
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 1</span> Les Romains en Gaule <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 2</span> La vie au Moyen Âge <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 3</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 4</span> Ranger dans l'ordre <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">ORDRE</span></div>
+    <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 5</span> Associer <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">PAIRES</span></div>
+    <div id="ex5"></div>
+  </div>
+
 </main>
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a> · <a href="programme-5e.html">5ème</a> · <a href="programme-4e.html">4ème</a> · <a href="programme-3e.html">3ème</a></div></footer>
 
@@ -38,43 +63,43 @@
 buildQCM([
   { q:'Quel est le nom de la bataille où Vercingétorix fut vaincu par César ?', correct:'Alésia', choices:['Austerlitz','Waterloo','Alésia','Verdun'] },
   { q:'Qui était Jules César ?', correct:'Un général et homme politique romain', choices:['Un roi gaulois','Un Pharaon','Un général et homme politique romain','Un chevalier du Moyen Âge'] },
-  { q:'Quelle langue parlaient les Romains ?', correct:'Le latin', choices:['Le grec','Le latin','L'araméen','Le gaulois'] },
-  { q:'Comment s'appelaient les habitations romaines collectives dans les villes ?', correct:'Des insulae', choices:['Des domus','Des insulae','Des châteaux','Des abbayes'] },
-  { q:'Qu'est-ce que le Colisée ?', correct:'Un amphithéâtre romain', choices:['Un temple','Un palais','Un amphithéâtre romain','Un marché'] },
-  { q:'Quel animal les soldats romains utilisaient-ils pour traverser les Alpes (selon la légende d'Hannibal) ?', correct:'Des éléphants', choices:['Des chevaux','Des chameaux','Des éléphants','Des bœufs'] },
+  { q:'Quelle langue parlaient les Romains ?', correct:'Le latin', choices:['Le grec','Le latin','L\'araméen','Le gaulois'] },
+  { q:'Comment s\'appelaient les habitations romaines collectives dans les villes ?', correct:'Des insulae', choices:['Des domus','Des insulae','Des châteaux','Des abbayes'] },
+  { q:'Qu\'est-ce que le Colisée ?', correct:'Un amphithéâtre romain', choices:['Un temple','Un palais','Un amphithéâtre romain','Un marché'] },
+  { q:'Hannibal, un ennemi de Rome, a traversé les Alpes avec une armée et quels animaux ?', correct:'Des éléphants', choices:['Des chevaux','Des chameaux','Des éléphants','Des bœufs'] },
 ], 'ex1');
 
 buildQCM([
-  { q:'Qu'est-ce qu'un château fort ?', correct:'Une forteresse médiévale défensive', choices:['Un palais de roi','Une forteresse médiévale défensive','Une école du Moyen Âge','Un temple roman'] },
+  { q:'Qu\'est-ce qu\'un château fort ?', correct:'Une forteresse médiévale défensive', choices:['Un palais de roi','Une forteresse médiévale défensive','Une école du Moyen Âge','Un temple roman'] },
   { q:'Comment appelle-t-on le seigneur qui vivait dans un château fort ?', correct:'Un seigneur féodal', choices:['Un prêtre','Un moine','Un seigneur féodal','Un paysan'] },
-  { q:'Qu'est-ce qu'un serf au Moyen Âge ?', correct:'Un paysan lié à la terre d'un seigneur', choices:['Un chevalier','Un roi','Un paysan lié à la terre d'un seigneur','Un marchand'] },
-  { q:'Quelle est la particularité de l'an 1000 ?', correct:'La peur de la fin du monde en Europe', choices:['L'invention de l'imprimerie','La peur de la fin du monde en Europe','La découverte de l'Amérique','La Révolution française'] },
-  { q:'Qui était Jeanne d'Arc ?', correct:'Une jeune femme qui aida le roi de France à chasser les Anglais', choices:['Une reine de France','Une sainte romaine','Une jeune femme qui aida le roi de France à chasser les Anglais','Une Viking'] },
-  { q:'En quelle année Jeanne d'Arc fut-elle capturée et brûlée ?', correct:'1431', choices:['1215','1431','1492','1789'] },
+  { q:'Qu\'est-ce qu\'un serf au Moyen Âge ?', correct:'Un paysan lié à la terre d\'un seigneur', choices:['Un chevalier','Un roi','Un paysan lié à la terre d\'un seigneur','Un marchand'] },
+  { q:'Vers 1450, quelle invention permet de fabriquer beaucoup de livres ?', correct:'L\'imprimerie', choices:['L\'imprimerie','La machine à vapeur','Le téléphone','L\'électricité'] },
+  { q:'Qui était Jeanne d\'Arc ?', correct:'Une jeune femme qui aida le roi de France à chasser les Anglais', choices:['Une reine de France','Une sainte romaine','Une jeune femme qui aida le roi de France à chasser les Anglais','Une Viking'] },
+  { q:'En quelle année Jeanne d\'Arc est-elle morte ?', correct:'1431', choices:['1215','1431','1492','1789'] },
 ], 'ex2');
 
 buildVF([
   { q:'Vercingétorix était un chef gaulois.', correct:true },
-  { q:'Les Romains ont construit des routes en France (appelée Gaule à l'époque).', correct:true },
-  { q:'Le Moyen Âge commence en 1492.', correct:false, expl:'Le Moyen Âge commence en 476 (chute de Rome) et finit en 1492 (découverte de l'Amérique).' },
-  { q:'Jeanne d'Arc est née à Paris.', correct:false, expl:'Jeanne d'Arc est née à Domrémy, en Lorraine.' },
+  { q:'Les Romains ont construit des routes en France (appelée Gaule à l\'époque).', correct:true },
+  { q:'Le Moyen Âge commence en 1492.', correct:false, expl:'Le Moyen Âge commence en 476 (chute de Rome) et finit en 1492 (découverte de l\'Amérique).' },
+  { q:'Jeanne d\'Arc est née à Paris.', correct:false, expl:'Jeanne d\'Arc est née à Domrémy, en Lorraine.' },
   { q:'Les châteaux forts avaient des douves pour se défendre.', correct:true },
-  { q:'Le latin est une langue encore parlée couramment aujourd'hui.', correct:false, expl:'Le latin est une langue morte, mais il est à l'origine du français, de l'espagnol, de l'italien...' },
-  { q:'La Préhistoire précède l'Antiquité.', correct:true },
+  { q:'Le latin est une langue encore parlée couramment aujourd\'hui.', correct:false, expl:'Le latin est une langue morte, mais il est à l\'origine du français, de l\'espagnol, de l\'italien...' },
+  { q:'La Préhistoire précède l\'Antiquité.', correct:true },
 ], 'ex3');
 
 buildOrdre([
   { q:'Range ces personnages du plus ancien au plus récent :',
-    items:['Hommes des cavernes 🦴','Vercingétorix ⚔️','Jules César 🏛️','Clovis 👑','Jeanne d'Arc 🔥'] },
-  { q:'Range ces étapes d'une bataille au Moyen Âge :',
-    items:['Préparation des armures 🛡️','Rassemblement des chevaliers 🐎','Charge à cheval ⚔️','Siège du château 🏰','Victoire ou défaite 🏳️'] },
+    items:['Hommes des cavernes 🦴','Vercingétorix ⚔️','Jules César 🏛️','Clovis 👑','Jeanne d\'Arc 🔥'] },
+  { q:'Range ces événements du plus ancien au plus récent :',
+    items:['Bataille d\'Alésia (-52)','Baptême de Clovis (vers 496)','Charlemagne empereur (800)','Mort de Jeanne d\'Arc (1431)'] },
 ], 'ex4');
 
 buildPaires([
   { q:'Associe chaque personnage à sa période.',
-    pairs:[['Cro-Magnon','Préhistoire'],['Vercingétorix','Antiquité romaine'],['Charlemagne','Moyen Âge'],['Jeanne d'Arc','Fin du Moyen Âge']] },
+    pairs:[['Cro-Magnon','Préhistoire'],['Vercingétorix','Antiquité romaine'],['Charlemagne','Moyen Âge'],['Jeanne d\'Arc','Fin du Moyen Âge']] },
   { q:'Associe chaque terme médiéval à sa définition.',
-    pairs:[['Donjon','Tour principale du château fort'],['Douves','Fossé rempli d'eau autour du château'],['Hermine','Animal symbole de la noblesse'],['Suzerain','Seigneur au-dessus des seigneurs']] },
+    pairs:[['Donjon','Tour principale du château fort'],['Douves','Fossé rempli d\'eau autour du château'],['Chevalier','Guerrier noble qui combat à cheval'],['Suzerain','Seigneur au-dessus des seigneurs']] },
 ], 'ex5');
 </script>
 
