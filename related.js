@@ -12,7 +12,7 @@
     'geometrie-cp.html':    [{h:'mesures-cp.html',l:'Mesures CP'},{h:'geometrie-ce1.html',l:'Géométrie CE1 (étape suivante)'}],
     'donnees-cp.html':      [{h:'donnees-ce1.html',l:'Données CE1 (étape suivante)'},{h:'problemes-cp.html',l:'Résolution de problèmes CP'}],
     'problemes-cp.html':    [{h:'calcul-cp.html',l:'Addition et soustraction CP'},{h:'mesures-cp.html',l:'Mesures CP'},{h:'problemes-ce1.html',l:'Problèmes CE1 (étape suivante)'}],
-    'histoire-geo-cp.html': [{h:'histoire-geo-ce1.html',l:'Histoire-Géo CE1 (étape suivante)'},{h:'eps-cycle2.html',l:'EPS Cycle 2'}],
+    'histoire-geo-cp.html': [{h:'geographie-cp.html',l:'Géographie CP'},{h:'histoire-geo-ce1.html',l:'Histoire-Géo CE1 (étape suivante)'},{h:'eps-cycle2.html',l:'EPS Cycle 2'}],
 
     /* ── CE1 ── */
     'nombres-ce1.html':     [{h:'calcul-ce1.html',l:'Les opérations CE1'},{h:'fractions-ce1.html',l:'Introduction aux fractions CE1'},{h:'nombres-cp.html',l:'Les nombres CP (révision)'},{h:'nombres-ce2.html',l:'Les nombres CE2 (étape suivante)'}],
@@ -25,7 +25,7 @@
     'geometrie-ce1.html':   [{h:'geometrie-cp.html',l:'Géométrie CP (révision)'},{h:'geometrie-ce2.html',l:'Géométrie CE2 (étape suivante)'},{h:'symetrie-ce2.html',l:'Symétrie CE2'}],
     'donnees-ce1.html':     [{h:'donnees-cp.html',l:'Données CP (révision)'},{h:'donnees.html',l:'Données CE2 (étape suivante)'}],
     'problemes-ce1.html':   [{h:'calcul-ce1.html',l:'Les opérations CE1'},{h:'problemes-cp.html',l:'Problèmes CP (révision)'},{h:'problemes.html',l:'Problèmes CE2 (étape suivante)'}],
-    'histoire-geo-ce1.html':[{h:'histoire-geo-cp.html',l:'Histoire-Géo CP (révision)'},{h:'histoire-geo-ce2.html',l:'Histoire-Géo CE2 (étape suivante)'},{h:'eps-cycle2.html',l:'EPS Cycle 2'}],
+    'histoire-geo-ce1.html':[{h:'geographie-ce1.html',l:'Géographie CE1'},{h:'histoire-geo-cp.html',l:'Histoire-Géo CP (révision)'},{h:'histoire-geo-ce2.html',l:'Histoire-Géo CE2 (étape suivante)'},{h:'eps-cycle2.html',l:'EPS Cycle 2'}],
 
     /* ── CE2 ── */
     'nombres-ce2.html':     [{h:'decimaux-ce2.html',l:'Nombres décimaux CE2'},{h:'calcul.html',l:'Les opérations CE2'},{h:'nombres-ce1.html',l:'Les nombres CE1 (révision)'},{h:'nombres-cm1.html',l:'Grands nombres CM1 (étape suivante)'}],
@@ -48,7 +48,7 @@
     'solides.html':         [{h:'geometrie.html',l:'Géométrie plane CE2'},{h:'geometrie-ce2.html',l:'Géométrie CE2'},{h:'solides-cm1.html',l:'Solides CM1 (étape suivante)'}],
     'donnees.html':         [{h:'donnees-ce1.html',l:'Données CE1 (révision)'},{h:'donnees-cm1.html',l:'Données CM1 (étape suivante)'}],
     'problemes.html':       [{h:'calcul.html',l:'Les opérations CE2'},{h:'division-ce2.html',l:'Division euclidienne CE2'},{h:'problemes-ce1.html',l:'Problèmes CE1 (révision)'},{h:'problemes-cm1.html',l:'Problèmes CM1 (étape suivante)'}],
-    'histoire-geo-ce2.html':[{h:'histoire-geo-ce1.html',l:'Histoire-Géo CE1 (révision)'},{h:'histoire-geo-cm1.html',l:'Histoire-Géo CM1 (étape suivante)'},{h:'eps-cycle2.html',l:'EPS Cycle 2'}],
+    'histoire-geo-ce2.html':[{h:'moyen-age-ce2.html',l:'Moyen Âge CE2'},{h:'histoire-geo-ce1.html',l:'Histoire-Géo CE1 (révision)'},{h:'histoire-geo-cm1.html',l:'Histoire-Géo CM1 (étape suivante)'},{h:'eps-cycle2.html',l:'EPS Cycle 2'}],
 
     /* ── CM1 ── */
     'nombres-cm1.html':     [{h:'decimaux-cm1.html',l:'Nombres décimaux CM1'},{h:'fractions-cm1.html',l:'Fractions CM1'},{h:'nombres-ce2.html',l:'Les nombres CE2 (révision)'},{h:'nombres-cm2.html',l:'Très grands nombres CM2 (étape suivante)'}],
@@ -65,7 +65,7 @@
     'donnees-cm1.html':     [{h:'proportionnalite-cm1.html',l:'Proportionnalité CM1'},{h:'donnees.html',l:'Données CE2 (révision)'},{h:'donnees-cm2.html',l:'Statistiques CM2 (étape suivante)'}],
     'proportionnalite-cm1.html':[{h:'decimaux-cm1.html',l:'Décimaux CM1'},{h:'fractions-cm1.html',l:'Fractions CM1'},{h:'proportionnalite-cm2.html',l:'Proportionnalité CM2 (étape suivante)'}],
     'problemes-cm1.html':   [{h:'calcul-cm1.html',l:'Les 4 opérations CM1'},{h:'proportionnalite-cm1.html',l:'Proportionnalité CM1'},{h:'problemes.html',l:'Problèmes CE2 (révision)'},{h:'problemes-cm2.html',l:'Problèmes CM2 (étape suivante)'}],
-    'histoire-geo-cm1.html':[{h:'histoire-geo-ce2.html',l:'Histoire-Géo CE2 (révision)'},{h:'histoire-geo-cm2.html',l:'Histoire-Géo CM2 (étape suivante)'},{h:'eps-cycle3.html',l:'EPS Cycle 3'}],
+    'histoire-geo-cm1.html':[{h:'moyen-age-cm1.html',l:'Moyen Âge CM1'},{h:'histoire-geo-ce2.html',l:'Histoire-Géo CE2 (révision)'},{h:'histoire-geo-cm2.html',l:'Histoire-Géo CM2 (étape suivante)'},{h:'eps-cycle3.html',l:'EPS Cycle 3'}],
 
     /* ── CM2 ── */
     'nombres-cm2.html':     [{h:'decimaux-cm2.html',l:'Décimaux CM2'},{h:'fractions-cm2.html',l:'Fractions CM2'},{h:'nombres-cm1.html',l:'Grands nombres CM1 (révision)'},{h:'nombres-6e.html',l:'Nombres 6e (étape suivante)'}],
@@ -80,7 +80,7 @@
     'geometrie-cm2.html':   [{h:'mesures-cm2.html',l:'Mesures CM2'},{h:'geometrie-cm1.html',l:'Géométrie CM1 (révision)'},{h:'geometrie-6e.html',l:'Géométrie 6e (étape suivante)'}],
     'donnees-cm2.html':     [{h:'proportionnalite-cm2.html',l:'Proportionnalité CM2'},{h:'donnees-cm1.html',l:'Données CM1 (révision)'},{h:'donnees-6e.html',l:'Statistiques 6e (étape suivante)'}],
     'proportionnalite-cm2.html':[{h:'fractions-cm2.html',l:'Fractions CM2'},{h:'proportionnalite-cm1.html',l:'Proportionnalité CM1 (révision)'},{h:'proportionnalite-6e.html',l:'Proportionnalité 6e (étape suivante)'}],
-    'histoire-geo-cm2.html':[{h:'histoire-geo-cm1.html',l:'Histoire-Géo CM1 (révision)'},{h:'histoire-geo-6e.html',l:'Histoire-Géo 6e (étape suivante)'},{h:'eps-cycle3.html',l:'EPS Cycle 3'}],
+    'histoire-geo-cm2.html':[{h:'histoire-contemporaine-cm2.html',l:'Histoire contemporaine CM2'},{h:'histoire-geo-cm1.html',l:'Histoire-Géo CM1 (révision)'},{h:'histoire-geo-6e.html',l:'Histoire-Géo 6e (étape suivante)'},{h:'eps-cycle3.html',l:'EPS Cycle 3'}],
 
     /* ── 6e ── */
     'nombres-6e.html':      [{h:'fractions-6e.html',l:'Fractions 6e'},{h:'algebre-6e.html',l:'Algèbre 6e'},{h:'nombres-cm2.html',l:'Très grands nombres CM2 (révision)'},{h:'nombres-5e.html',l:'Nombres relatifs 5e (étape suivante)'}],
@@ -92,7 +92,7 @@
     'mesures-6e.html':      [{h:'geometrie-6e.html',l:'Géométrie 6e'},{h:'mesures-cm2.html',l:'Mesures CM2 (révision)'},{h:'espace-5e.html',l:'Espace & volumes 5e (étape suivante)'}],
     'donnees-6e.html':      [{h:'probabilites-6e.html',l:'Probabilités 6e'},{h:'proportionnalite-6e.html',l:'Proportionnalité 6e'},{h:'donnees-cm2.html',l:'Données CM2 (révision)'},{h:'donnees-5e.html',l:'Stats & probabilités 5e (étape suivante)'}],
     'proportionnalite-6e.html':[{h:'fractions-6e.html',l:'Fractions 6e'},{h:'algebre-6e.html',l:'Algèbre 6e'},{h:'proportionnalite-cm2.html',l:'Proportionnalité CM2 (révision)'},{h:'proportionnalite-5e.html',l:'Proportionnalité 5e (étape suivante)'}],
-    'histoire-geo-6e.html': [{h:'histoire-geo-cm2.html',l:'Histoire-Géo CM2 (révision)'},{h:'eps-cycle3.html',l:'EPS Cycle 3'}],
+    'histoire-geo-6e.html': [{h:'antiquite-6e.html',l:'Antiquité 6e'},{h:'histoire-geo-cm2.html',l:'Histoire-Géo CM2 (révision)'},{h:'eps-cycle3.html',l:'EPS Cycle 3'}],
 
     /* ── 5e ── */
     'nombres-5e.html':          [{h:'calcul-5e.html',l:'Calcul & divisibilité 5e'},{h:'calcul-litteral-5e.html',l:'Calcul littéral 5e'},{h:'nombres-6e.html',l:'Nombres 6e (révision)'}],
@@ -165,6 +165,59 @@
     'cours-histoire-geo-cm1.html':  [{h:'histoire-geo-cm1.html',l:'Exercices histoire-géo CM1'},{h:'cours-histoire-geo-ce2.html',l:'Cours histoire-géo CE2 (révision)'},{h:'cours-histoire-geo-cm2.html',l:'Cours histoire-géo CM2 (étape suivante)'}],
     'cours-histoire-geo-cm2.html':  [{h:'histoire-geo-cm2.html',l:'Exercices histoire-géo CM2'},{h:'cours-histoire-geo-cm1.html',l:'Cours histoire-géo CM1 (révision)'},{h:'cours-histoire-geo-6e.html',l:'Cours histoire-géo 6e (étape suivante)'}],
     'cours-histoire-geo-6e.html':   [{h:'histoire-geo-6e.html',l:'Exercices histoire-géo 6e'},{h:'cours-histoire-geo-cm2.html',l:'Cours histoire-géo CM2 (révision)'}],
+
+    /* ── Pages sans entrée : généré (même matière, révision, étape suivante) ── */
+    'anglais-3e.html':               [{h:'anglais-4e.html',l:'Anglais 4e (révision)'}],
+    'anglais-4e.html':               [{h:'anglais-5e.html',l:'Anglais 5e (révision)'},{h:'anglais-3e.html',l:'Anglais 3e (étape suivante)'}],
+    'anglais-5e.html':               [{h:'anglais-6e.html',l:'Anglais 6e (révision)'},{h:'anglais-4e.html',l:'Anglais 4e (étape suivante)'}],
+    'anglais-6e.html':               [{h:'anglais-5e.html',l:'Anglais 5e (étape suivante)'}],
+    'antiquite-6e.html':             [{h:'histoire-geo-6e.html',l:'Histoire-Géo 6e'}],
+    'calcul-litteral-3e.html':       [{h:'donnees-3e.html',l:'Données 3e'},{h:'espace-3e.html',l:'Espace 3e'},{h:'geometrie-3e.html',l:'Géométrie 3e'},{h:'nombres-3e.html',l:'Nombres 3e'},{h:'calcul-litteral-4e.html',l:'Calcul littéral 4e (révision)'}],
+    'calcul-litteral-4e.html':       [{h:'donnees-4e.html',l:'Données 4e'},{h:'espace-4e.html',l:'Espace 4e'},{h:'geometrie-4e.html',l:'Géométrie 4e'},{h:'nombres-4e.html',l:'Nombres 4e'},{h:'calcul-litteral-5e.html',l:'Calcul littéral 5e (révision)'},{h:'calcul-litteral-3e.html',l:'Calcul littéral 3e (étape suivante)'}],
+    'calcul-mental-ce2.html':        [{h:'decimaux-ce2.html',l:'Décimaux CE2'},{h:'division-ce2.html',l:'Division CE2'},{h:'geometrie-ce2.html',l:'Géométrie CE2'},{h:'mesures-ce2.html',l:'Mesures CE2'},{h:'calcul-mental-ce1.html',l:'Calcul mental CE1 (révision)'},{h:'calcul-mental-cm1.html',l:'Calcul mental CM1 (étape suivante)'}],
+    'conjugaison-6e.html':           [{h:'grammaire-6e.html',l:'Grammaire 6e'},{h:'orthographe-6e.html',l:'Orthographe 6e'},{h:'vocabulaire-6e.html',l:'Vocabulaire 6e'},{h:'conjugaison-cm2.html',l:'Conjugaison CM2 (révision)'}],
+    'conjugaison-ce1.html':          [{h:'grammaire-ce1.html',l:'Grammaire CE1'},{h:'orthographe-ce1.html',l:'Orthographe CE1'},{h:'vocabulaire-ce1.html',l:'Vocabulaire CE1'},{h:'conjugaison-cp.html',l:'Conjugaison CP (révision)'},{h:'conjugaison-ce2.html',l:'Conjugaison CE2 (étape suivante)'}],
+    'conjugaison-ce2.html':          [{h:'grammaire-ce2.html',l:'Grammaire CE2'},{h:'orthographe-ce2.html',l:'Orthographe CE2'},{h:'vocabulaire-ce2.html',l:'Vocabulaire CE2'},{h:'conjugaison-ce1.html',l:'Conjugaison CE1 (révision)'},{h:'conjugaison-cm1.html',l:'Conjugaison CM1 (étape suivante)'}],
+    'conjugaison-cm1.html':          [{h:'grammaire-cm1.html',l:'Grammaire CM1'},{h:'orthographe-cm1.html',l:'Orthographe CM1'},{h:'vocabulaire-cm1.html',l:'Vocabulaire CM1'},{h:'conjugaison-ce2.html',l:'Conjugaison CE2 (révision)'},{h:'conjugaison-cm2.html',l:'Conjugaison CM2 (étape suivante)'}],
+    'conjugaison-cm2.html':          [{h:'grammaire-cm2.html',l:'Grammaire CM2'},{h:'orthographe-cm2.html',l:'Orthographe CM2'},{h:'vocabulaire-cm2.html',l:'Vocabulaire CM2'},{h:'conjugaison-cm1.html',l:'Conjugaison CM1 (révision)'},{h:'conjugaison-6e.html',l:'Conjugaison 6e (étape suivante)'}],
+    'conjugaison-cp.html':           [{h:'grammaire-cp.html',l:'Grammaire CP'},{h:'orthographe-cp.html',l:'Orthographe CP'},{h:'vocabulaire-cp.html',l:'Vocabulaire CP'},{h:'conjugaison-ce1.html',l:'Conjugaison CE1 (étape suivante)'}],
+    'donnees-3e.html':               [{h:'espace-3e.html',l:'Espace 3e'},{h:'geometrie-3e.html',l:'Géométrie 3e'},{h:'nombres-3e.html',l:'Nombres 3e'},{h:'proportionnalite-3e.html',l:'Proportionnalité 3e'},{h:'donnees-4e.html',l:'Données 4e (révision)'}],
+    'donnees-4e.html':               [{h:'espace-4e.html',l:'Espace 4e'},{h:'geometrie-4e.html',l:'Géométrie 4e'},{h:'nombres-4e.html',l:'Nombres 4e'},{h:'proportionnalite-4e.html',l:'Proportionnalité 4e'},{h:'donnees-5e.html',l:'Données 5e (révision)'},{h:'donnees-3e.html',l:'Données 3e (étape suivante)'}],
+    'espace-3e.html':                [{h:'geometrie-3e.html',l:'Géométrie 3e'},{h:'nombres-3e.html',l:'Nombres 3e'},{h:'proportionnalite-3e.html',l:'Proportionnalité 3e'},{h:'racines-3e.html',l:'Racines carrées 3e'},{h:'espace-4e.html',l:'Espace 4e (révision)'}],
+    'espace-4e.html':                [{h:'geometrie-4e.html',l:'Géométrie 4e'},{h:'nombres-4e.html',l:'Nombres 4e'},{h:'proportionnalite-4e.html',l:'Proportionnalité 4e'},{h:'puissances-4e.html',l:'Puissances 4e'},{h:'espace-5e.html',l:'Espace 5e (révision)'},{h:'espace-3e.html',l:'Espace 3e (étape suivante)'}],
+    'geographie-ce1.html':           [{h:'histoire-geo-ce1.html',l:'Histoire-Géo CE1'},{h:'geographie-cp.html',l:'Géographie CP (révision)'},{h:'eps-cycle2.html',l:'EPS Cycle 2'}],
+    'geographie-cp.html':            [{h:'histoire-geo-cp.html',l:'Histoire-Géo CP'},{h:'geographie-ce1.html',l:'Géographie CE1 (étape suivante)'},{h:'eps-cycle2.html',l:'EPS Cycle 2'}],
+    'geometrie-3e.html':             [{h:'nombres-3e.html',l:'Nombres 3e'},{h:'proportionnalite-3e.html',l:'Proportionnalité 3e'},{h:'racines-3e.html',l:'Racines carrées 3e'},{h:'trigonometrie-3e.html',l:'Trigonométrie 3e'},{h:'geometrie-4e.html',l:'Géométrie 4e (révision)'}],
+    'geometrie-4e.html':             [{h:'nombres-4e.html',l:'Nombres 4e'},{h:'proportionnalite-4e.html',l:'Proportionnalité 4e'},{h:'puissances-4e.html',l:'Puissances 4e'},{h:'triangles-4e.html',l:'Triangles 4e'},{h:'geometrie-5e.html',l:'Géométrie 5e (révision)'},{h:'geometrie-3e.html',l:'Géométrie 3e (étape suivante)'}],
+    'grammaire-6e.html':             [{h:'orthographe-6e.html',l:'Orthographe 6e'},{h:'vocabulaire-6e.html',l:'Vocabulaire 6e'},{h:'conjugaison-6e.html',l:'Conjugaison 6e'},{h:'grammaire-cm2.html',l:'Grammaire CM2 (révision)'}],
+    'grammaire-ce1.html':            [{h:'orthographe-ce1.html',l:'Orthographe CE1'},{h:'vocabulaire-ce1.html',l:'Vocabulaire CE1'},{h:'conjugaison-ce1.html',l:'Conjugaison CE1'},{h:'grammaire-cp.html',l:'Grammaire CP (révision)'},{h:'grammaire-ce2.html',l:'Grammaire CE2 (étape suivante)'}],
+    'grammaire-ce2.html':            [{h:'orthographe-ce2.html',l:'Orthographe CE2'},{h:'vocabulaire-ce2.html',l:'Vocabulaire CE2'},{h:'conjugaison-ce2.html',l:'Conjugaison CE2'},{h:'grammaire-ce1.html',l:'Grammaire CE1 (révision)'},{h:'grammaire-cm1.html',l:'Grammaire CM1 (étape suivante)'}],
+    'grammaire-cm1.html':            [{h:'orthographe-cm1.html',l:'Orthographe CM1'},{h:'vocabulaire-cm1.html',l:'Vocabulaire CM1'},{h:'conjugaison-cm1.html',l:'Conjugaison CM1'},{h:'grammaire-ce2.html',l:'Grammaire CE2 (révision)'},{h:'grammaire-cm2.html',l:'Grammaire CM2 (étape suivante)'}],
+    'grammaire-cm2.html':            [{h:'orthographe-cm2.html',l:'Orthographe CM2'},{h:'vocabulaire-cm2.html',l:'Vocabulaire CM2'},{h:'conjugaison-cm2.html',l:'Conjugaison CM2'},{h:'grammaire-cm1.html',l:'Grammaire CM1 (révision)'},{h:'grammaire-6e.html',l:'Grammaire 6e (étape suivante)'}],
+    'grammaire-cp.html':             [{h:'orthographe-cp.html',l:'Orthographe CP'},{h:'vocabulaire-cp.html',l:'Vocabulaire CP'},{h:'conjugaison-cp.html',l:'Conjugaison CP'},{h:'grammaire-ce1.html',l:'Grammaire CE1 (étape suivante)'}],
+    'histoire-contemporaine-cm2.html': [{h:'histoire-geo-cm2.html',l:'Histoire-Géo CM2'}],
+    'moyen-age-ce2.html':            [{h:'histoire-geo-ce2.html',l:'Histoire-Géo CE2'},{h:'moyen-age-cm1.html',l:'Moyen Âge CM1 (étape suivante)'},{h:'eps-cycle2.html',l:'EPS Cycle 2'}],
+    'moyen-age-cm1.html':            [{h:'histoire-geo-cm1.html',l:'Histoire-Géo CM1'},{h:'moyen-age-ce2.html',l:'Moyen Âge CE2 (révision)'}],
+    'nombres-3e.html':               [{h:'proportionnalite-3e.html',l:'Proportionnalité 3e'},{h:'racines-3e.html',l:'Racines carrées 3e'},{h:'trigonometrie-3e.html',l:'Trigonométrie 3e'},{h:'calcul-litteral-3e.html',l:'Calcul littéral 3e'},{h:'nombres-4e.html',l:'Nombres 4e (révision)'}],
+    'nombres-4e.html':               [{h:'proportionnalite-4e.html',l:'Proportionnalité 4e'},{h:'puissances-4e.html',l:'Puissances 4e'},{h:'triangles-4e.html',l:'Triangles 4e'},{h:'calcul-litteral-4e.html',l:'Calcul littéral 4e'},{h:'nombres-5e.html',l:'Nombres 5e (révision)'},{h:'nombres-3e.html',l:'Nombres 3e (étape suivante)'}],
+    'orthographe-6e.html':           [{h:'vocabulaire-6e.html',l:'Vocabulaire 6e'},{h:'conjugaison-6e.html',l:'Conjugaison 6e'},{h:'grammaire-6e.html',l:'Grammaire 6e'},{h:'orthographe-cm2.html',l:'Orthographe CM2 (révision)'}],
+    'orthographe-ce1.html':          [{h:'vocabulaire-ce1.html',l:'Vocabulaire CE1'},{h:'conjugaison-ce1.html',l:'Conjugaison CE1'},{h:'grammaire-ce1.html',l:'Grammaire CE1'},{h:'orthographe-cp.html',l:'Orthographe CP (révision)'},{h:'orthographe-ce2.html',l:'Orthographe CE2 (étape suivante)'}],
+    'orthographe-ce2.html':          [{h:'vocabulaire-ce2.html',l:'Vocabulaire CE2'},{h:'conjugaison-ce2.html',l:'Conjugaison CE2'},{h:'grammaire-ce2.html',l:'Grammaire CE2'},{h:'orthographe-ce1.html',l:'Orthographe CE1 (révision)'},{h:'orthographe-cm1.html',l:'Orthographe CM1 (étape suivante)'}],
+    'orthographe-cm1.html':          [{h:'vocabulaire-cm1.html',l:'Vocabulaire CM1'},{h:'conjugaison-cm1.html',l:'Conjugaison CM1'},{h:'grammaire-cm1.html',l:'Grammaire CM1'},{h:'orthographe-ce2.html',l:'Orthographe CE2 (révision)'},{h:'orthographe-cm2.html',l:'Orthographe CM2 (étape suivante)'}],
+    'orthographe-cm2.html':          [{h:'vocabulaire-cm2.html',l:'Vocabulaire CM2'},{h:'conjugaison-cm2.html',l:'Conjugaison CM2'},{h:'grammaire-cm2.html',l:'Grammaire CM2'},{h:'orthographe-cm1.html',l:'Orthographe CM1 (révision)'},{h:'orthographe-6e.html',l:'Orthographe 6e (étape suivante)'}],
+    'orthographe-cp.html':           [{h:'vocabulaire-cp.html',l:'Vocabulaire CP'},{h:'conjugaison-cp.html',l:'Conjugaison CP'},{h:'grammaire-cp.html',l:'Grammaire CP'},{h:'orthographe-ce1.html',l:'Orthographe CE1 (étape suivante)'}],
+    'proportionnalite-3e.html':      [{h:'racines-3e.html',l:'Racines carrées 3e'},{h:'trigonometrie-3e.html',l:'Trigonométrie 3e'},{h:'calcul-litteral-3e.html',l:'Calcul littéral 3e'},{h:'donnees-3e.html',l:'Données 3e'},{h:'proportionnalite-4e.html',l:'Proportionnalité 4e (révision)'}],
+    'proportionnalite-4e.html':      [{h:'puissances-4e.html',l:'Puissances 4e'},{h:'triangles-4e.html',l:'Triangles 4e'},{h:'calcul-litteral-4e.html',l:'Calcul littéral 4e'},{h:'donnees-4e.html',l:'Données 4e'},{h:'proportionnalite-5e.html',l:'Proportionnalité 5e (révision)'},{h:'proportionnalite-3e.html',l:'Proportionnalité 3e (étape suivante)'}],
+    'puissances-4e.html':            [{h:'triangles-4e.html',l:'Triangles 4e'},{h:'calcul-litteral-4e.html',l:'Calcul littéral 4e'},{h:'donnees-4e.html',l:'Données 4e'},{h:'espace-4e.html',l:'Espace 4e'},{h:'puissances-5e.html',l:'Puissances 5e (révision)'}],
+    'racines-3e.html':               [{h:'trigonometrie-3e.html',l:'Trigonométrie 3e'},{h:'calcul-litteral-3e.html',l:'Calcul littéral 3e'},{h:'donnees-3e.html',l:'Données 3e'},{h:'espace-3e.html',l:'Espace 3e'}],
+    'triangles-4e.html':             [{h:'calcul-litteral-4e.html',l:'Calcul littéral 4e'},{h:'donnees-4e.html',l:'Données 4e'},{h:'espace-4e.html',l:'Espace 4e'},{h:'geometrie-4e.html',l:'Géométrie 4e'}],
+    'trigonometrie-3e.html':         [{h:'calcul-litteral-3e.html',l:'Calcul littéral 3e'},{h:'donnees-3e.html',l:'Données 3e'},{h:'espace-3e.html',l:'Espace 3e'},{h:'geometrie-3e.html',l:'Géométrie 3e'}],
+    'vocabulaire-6e.html':           [{h:'conjugaison-6e.html',l:'Conjugaison 6e'},{h:'grammaire-6e.html',l:'Grammaire 6e'},{h:'orthographe-6e.html',l:'Orthographe 6e'},{h:'vocabulaire-cm2.html',l:'Vocabulaire CM2 (révision)'}],
+    'vocabulaire-ce1.html':          [{h:'conjugaison-ce1.html',l:'Conjugaison CE1'},{h:'grammaire-ce1.html',l:'Grammaire CE1'},{h:'orthographe-ce1.html',l:'Orthographe CE1'},{h:'vocabulaire-cp.html',l:'Vocabulaire CP (révision)'},{h:'vocabulaire-ce2.html',l:'Vocabulaire CE2 (étape suivante)'}],
+    'vocabulaire-ce2.html':          [{h:'conjugaison-ce2.html',l:'Conjugaison CE2'},{h:'grammaire-ce2.html',l:'Grammaire CE2'},{h:'orthographe-ce2.html',l:'Orthographe CE2'},{h:'vocabulaire-ce1.html',l:'Vocabulaire CE1 (révision)'},{h:'vocabulaire-cm1.html',l:'Vocabulaire CM1 (étape suivante)'}],
+    'vocabulaire-cm1.html':          [{h:'conjugaison-cm1.html',l:'Conjugaison CM1'},{h:'grammaire-cm1.html',l:'Grammaire CM1'},{h:'orthographe-cm1.html',l:'Orthographe CM1'},{h:'vocabulaire-ce2.html',l:'Vocabulaire CE2 (révision)'},{h:'vocabulaire-cm2.html',l:'Vocabulaire CM2 (étape suivante)'}],
+    'vocabulaire-cm2.html':          [{h:'conjugaison-cm2.html',l:'Conjugaison CM2'},{h:'grammaire-cm2.html',l:'Grammaire CM2'},{h:'orthographe-cm2.html',l:'Orthographe CM2'},{h:'vocabulaire-cm1.html',l:'Vocabulaire CM1 (révision)'},{h:'vocabulaire-6e.html',l:'Vocabulaire 6e (étape suivante)'}],
+    'vocabulaire-cp.html':           [{h:'conjugaison-cp.html',l:'Conjugaison CP'},{h:'grammaire-cp.html',l:'Grammaire CP'},{h:'orthographe-cp.html',l:'Orthographe CP'},{h:'vocabulaire-ce1.html',l:'Vocabulaire CE1 (étape suivante)'}],
   };
 
   var cur = window.location.pathname.split('/').pop() || 'index.html';

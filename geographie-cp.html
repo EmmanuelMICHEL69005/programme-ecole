@@ -30,26 +30,51 @@
 
 <main>
 
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 1</span> La France <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 2</span> Ma famille et mon école <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 3</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 4</span> Ranger dans l'ordre <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">ORDRE</span></div>
+    <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 5</span> Associer <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">PAIRES</span></div>
+    <div id="ex5"></div>
+  </div>
+
 </main>
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a> · <a href="programme-5e.html">5ème</a> · <a href="programme-4e.html">4ème</a> · <a href="programme-3e.html">3ème</a></div></footer>
 
 <script src="exercises.js?v=3"></script>
 <script>
 buildQCM([
-  { q:'Comment s'appelle le pays où nous vivons ?', correct:'La France', choices:['La Belgique','L'Espagne','La France','L'Italie'] },
+  { q:'Comment s\'appelle le pays où nous vivons ?', correct:'La France', choices:['La Belgique','L\'Espagne','La France','L\'Italie'] },
   { q:'Quelles sont les couleurs du drapeau français ?', correct:'Bleu, blanc, rouge', choices:['Rouge et blanc','Vert, blanc, rouge','Bleu, blanc, rouge','Bleu, jaune, rouge'] },
-  { q:'Comment s'appelle la capitale de la France ?', correct:'Paris', choices:['Lyon','Bordeaux','Marseille','Paris'] },
+  { q:'Comment s\'appelle la capitale de la France ?', correct:'Paris', choices:['Lyon','Bordeaux','Marseille','Paris'] },
   { q:'Quel fleuve traverse Paris ?', correct:'La Seine', choices:['Le Rhône','La Loire','La Seine','La Garonne'] },
-  { q:'Comment appelle-t-on le chef de l'État en France ?', correct:'Le Président de la République', choices:['Le Roi','Le Président de la République','Le Maire','Le Général'] },
-  { q:'La France est sur quel continent ?', correct:'L'Europe', choices:['L'Asie','L'Afrique','L'Europe','Les Amériques'] },
+  { q:'Comment appelle-t-on le chef de l\'État en France ?', correct:'Le Président de la République', choices:['Le Roi','Le Président de la République','Le Maire','Le Général'] },
+  { q:'La France est sur quel continent ?', correct:'L\'Europe', choices:['L\'Asie','L\'Afrique','L\'Europe','Les Amériques'] },
 ], 'ex1');
 
 buildQCM([
-  { q:'Comment s'appelle la sœur de ton père ou de ta mère ?', correct:'Ta tante', choices:['Ta cousine','Ta grand-mère','Ta tante','Ta marraine'] },
-  { q:'Comment s'appelle l'enfant de ton oncle ou ta tante ?', correct:'Ton cousin / ta cousine', choices:['Ton frère','Ton neveu','Ton cousin / ta cousine','Ton parrain'] },
-  { q:'Qui est le plus âgé, tes parents ou tes grands-parents ?', correct:'Tes grands-parents', choices:['Tes parents','Tes grands-parents','C'est pareil','Tes cousins'] },
-  { q:'Comment s'appelle l'enfant de tes enfants (plus tard) ?', correct:'Ton petit-enfant', choices:['Ton neveu','Ton petit-enfant','Ton cousin','Ton frère'] },
-  { q:'Dans quelle école es-tu en CP ?', correct:'À l'école primaire', choices:['Au collège','Au lycée','À l'école primaire','À l'université'] },
+  { q:'Comment s\'appelle la sœur de ton père ou de ta mère ?', correct:'Ta tante', choices:['Ta cousine','Ta grand-mère','Ta tante','Ta marraine'] },
+  { q:'Comment s\'appelle l\'enfant de ton oncle ou ta tante ?', correct:'Ton cousin / ta cousine', choices:['Ton frère','Ton neveu','Ton cousin / ta cousine','Ton parrain'] },
+  { q:'Qui est le plus âgé, tes parents ou tes grands-parents ?', correct:'Tes grands-parents', choices:['Tes parents','Tes grands-parents','C\'est pareil','Tes cousins'] },
+  { q:'Comment s\'appelle l\'enfant de tes enfants (plus tard) ?', correct:'Ton petit-enfant', choices:['Ton neveu','Ton petit-enfant','Ton cousin','Ton frère'] },
+  { q:'Dans quelle école es-tu en CP ?', correct:'À l\'école primaire', choices:['Au collège','Au lycée','À l\'école primaire','À l\'université'] },
 ], 'ex2');
 
 buildVF([
@@ -59,14 +84,14 @@ buildVF([
   { q:'La Seine est un fleuve qui traverse Paris.', correct:true },
   { q:'Il y a 8 jours dans une semaine.', correct:false, expl:'Il y a 7 jours dans une semaine.' },
   { q:'En été, il fait généralement chaud.', correct:true },
-  { q:'Le Président est le chef de l'État en France.', correct:true },
-  { q:'On va à l'école le samedi et le dimanche.', correct:false, expl:'Le samedi et le dimanche sont les jours du week-end, on ne va pas à l'école.' },
+  { q:'Le Président est le chef de l\'État en France.', correct:true },
+  { q:'On va à l\'école le samedi et le dimanche.', correct:false, expl:'Le samedi et le dimanche sont les jours du week-end, on ne va pas à l\'école.' },
 ], 'ex3');
 
 buildOrdre([
-  { q:'Range ces étapes de la vie dans l'ordre :',
+  { q:'Range ces étapes de la vie dans l\'ordre :',
     items:['Naissance 👶','Bébé 🍼','Enfant 🧒','Adolescent 🧑','Adulte 👨'] },
-  { q:'Range ces événements de la journée dans l'ordre :',
+  { q:'Range ces événements de la journée dans l\'ordre :',
     items:['Lever du soleil 🌅','Petit-déjeuner 🥐','École le matin 📚','Déjeuner 🍽️','Coucher du soleil 🌇'] },
 ], 'ex4');
 
@@ -74,7 +99,7 @@ buildPaires([
   { q:'Associe chaque pays à sa capitale.',
     pairs:[['France','Paris'],['Espagne','Madrid'],['Italie','Rome'],['Allemagne','Berlin']] },
   { q:'Associe chaque mot à sa définition.',
-    pairs:[['Continent','Grande étendue de terre'],['Océan','Grande étendue d'eau salée'],['Capitale','Ville principale d'un pays'],['Frontière','Limite entre deux pays']] },
+    pairs:[['Continent','Grande étendue de terre'],['Océan','Grande étendue d\'eau salée'],['Capitale','Ville principale d\'un pays'],['Frontière','Limite entre deux pays']] },
 ], 'ex5');
 </script>
 
@@ -83,7 +108,7 @@ buildPaires([
 <script src="auth.js?v=7"></script>
 <script src="gamification.js?v=9"></script>
 <script src="nav.js?v=7"></script>
-<script src="related.js?v=2"></script>
+<script src="related.js?v=3"></script>
 <script src="seo.js?v=3"></script>
 </body>
 </html>

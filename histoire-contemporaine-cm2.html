@@ -30,27 +30,52 @@
 
 <main>
 
+  <div class="exercice-block" style="--accent:#059669">
+    <div class="ex-title"><span class="ex-badge" style="background:#059669">Ex 1</span> Des Grandes Découvertes à Napoléon <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
+    <div id="ex1"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <div class="ex-title"><span class="ex-badge" style="background:#7c3aed">Ex 2</span> Le XIXe et le XXe siècle <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></div>
+    <div id="ex2"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#ef4444">
+    <div class="ex-title"><span class="ex-badge" style="background:#ef4444">Ex 3</span> Vrai ou Faux <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">VRAI / FAUX</span></div>
+    <div id="ex3"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <div class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 4</span> Ranger dans l'ordre <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">ORDRE</span></div>
+    <div id="ex4"></div>
+  </div>
+
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <div class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 5</span> Associer <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">PAIRES</span></div>
+    <div id="ex5"></div>
+  </div>
+
 </main>
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a> · <a href="programme-5e.html">5ème</a> · <a href="programme-4e.html">4ème</a> · <a href="programme-3e.html">3ème</a></div></footer>
 
 <script src="exercises.js?v=3"></script>
 <script>
 buildQCM([
-  { q:'En quelle année Christophe Colomb découvrit-il l'Amérique ?', correct:'1492', choices:['1415','1492','1519','1620'] },
+  { q:'En quelle année Christophe Colomb découvrit-il l\'Amérique ?', correct:'1492', choices:['1415','1492','1519','1620'] },
   { q:'Qui fut le premier à faire le tour du monde ?', correct:'Magellan / Elcano', choices:['Christophe Colomb','Vasco de Gama','Magellan / Elcano','James Cook'] },
   { q:'Qui était Louis XIV ?', correct:'Le Roi-Soleil, roi absolu de France', choices:['Un Empereur romain','Le Roi-Soleil, roi absolu de France','Un révolutionnaire','Un général napoléonien'] },
   { q:'Quelle est la date de la Révolution française ?', correct:'1789', choices:['1715','1789','1804','1815'] },
-  { q:'Que représente la Déclaration des droits de l'homme (1789) ?', correct:'Un texte garantissant la liberté et l'égalité', choices:['Le couronnement de Napoléon','Un texte garantissant la liberté et l'égalité','La capitulation de la France','La création de la République'] },
+  { q:'Que représente la Déclaration des droits de l\'homme (1789) ?', correct:'Un texte garantissant la liberté et l\'égalité', choices:['Le couronnement de Napoléon','Un texte garantissant la liberté et l\'égalité','La capitulation de la France','La création de la République'] },
   { q:'En quelle année Napoléon fut-il couronné Empereur ?', correct:'1804', choices:['1789','1800','1804','1815'] },
 ], 'ex1');
 
 buildQCM([
   { q:'Quand a eu lieu la Première Guerre mondiale ?', correct:'1914–1918', choices:['1870–1871','1914–1918','1939–1945','1950–1953'] },
   { q:'Quand a eu lieu la Seconde Guerre mondiale ?', correct:'1939–1945', choices:['1914–1918','1929–1935','1939–1945','1950–1955'] },
-  { q:'Qui était Charles de Gaulle ?', correct:'Le chef de la résistance française pendant la WWII et président de la Ve République', choices:['Un maréchal de Napoléon','Le chef de la résistance française pendant la WWII et président de la Ve République','Un roi de France','Un général de la Révolution'] },
+  { q:'Qui était Charles de Gaulle ?', correct:'Le chef de la Résistance française pendant la Seconde Guerre mondiale, puis président de la Ve République', choices:['Un maréchal de Napoléon','Le chef de la Résistance française pendant la Seconde Guerre mondiale, puis président de la Ve République','Un roi de France','Un général de la Révolution'] },
   { q:'En quelle année la France a-t-elle fêté le 100e anniversaire de la Révolution en construisant la Tour Eiffel ?', correct:'1889', choices:['1850','1889','1900','1914'] },
-  { q:'Qu'est-ce que la colonisation ?', correct:'L'établissement de la domination d'un pays sur d'autres territoires', choices:['Un traité de paix','L'établissement de la domination d'un pays sur d'autres territoires','Un mouvement artistique','La construction de colonies spatiales'] },
-  { q:'Quel événement a mis fin à la Seconde Guerre mondiale en Europe ?', correct:'La capitulation de l'Allemagne le 8 mai 1945', choices:['La bataille de la Marne','La capitulation de l'Allemagne le 8 mai 1945','Le débarquement du 6 juin 1944','La bombe atomique sur Berlin'] },
+  { q:'Qu\'est-ce que la colonisation ?', correct:'L\'établissement de la domination d\'un pays sur d\'autres territoires', choices:['Un traité de paix','L\'établissement de la domination d\'un pays sur d\'autres territoires','Un mouvement artistique','La construction de colonies spatiales'] },
+  { q:'Quel événement a mis fin à la Seconde Guerre mondiale en Europe ?', correct:'La capitulation de l\'Allemagne le 8 mai 1945', choices:['La bataille de la Marne','La capitulation de l\'Allemagne le 8 mai 1945','Le débarquement du 6 juin 1944','La bombe atomique sur Berlin'] },
 ], 'ex2');
 
 buildVF([
@@ -64,17 +89,17 @@ buildVF([
 ], 'ex3');
 
 buildOrdre([
-  { q:'Range ces événements dans l'ordre chronologique :',
-    items:['Découverte de l'Amérique (1492)','Règne de Louis XIV (1661)','Révolution française (1789)','Première Guerre mondiale (1914)','Seconde Guerre mondiale (1939)'] },
+  { q:'Range ces événements dans l\'ordre chronologique :',
+    items:['Découverte de l\'Amérique (1492)','Règne de Louis XIV (1661)','Révolution française (1789)','Première Guerre mondiale (1914)','Seconde Guerre mondiale (1939)'] },
   { q:'Range ces inventions de la PLUS ANCIENNE à la PLUS RÉCENTE :',
-    items:['Imprimerie (1450)','Machines à vapeur (1769)','Électricité (1879)','Automobile (1885)','Internet (1991)'] },
+    items:['Imprimerie (1450)','Machines à vapeur (1769)','Ampoule électrique (1879)','Automobile (1885)','Internet (1991)'] },
 ], 'ex4');
 
 buildPaires([
   { q:'Associe chaque personnage à sa période.',
     pairs:[['Christophe Colomb','Grandes Découvertes (1492)'],['Louis XIV','Temps modernes (XVIIe s.)'],['Napoléon Bonaparte','Empire français (1804–1815)'],['Charles de Gaulle','XXe siècle – Résistance et Ve République']] },
   { q:'Associe chaque événement à sa date.',
-    pairs:[['Prise de la Bastille','14 juillet 1789'],['Débarquement de Normandie','6 juin 1944'],['Armistice de la WWI','11 novembre 1918'],['Création de la Ve République','1958']] },
+    pairs:[['Prise de la Bastille','14 juillet 1789'],['Débarquement de Normandie','6 juin 1944'],['Armistice de la Première Guerre mondiale','11 novembre 1918'],['Création de la Ve République','1958']] },
 ], 'ex5');
 </script>
 
@@ -83,7 +108,7 @@ buildPaires([
 <script src="auth.js?v=7"></script>
 <script src="gamification.js?v=9"></script>
 <script src="nav.js?v=7"></script>
-<script src="related.js?v=2"></script>
+<script src="related.js?v=3"></script>
 <script src="seo.js?v=3"></script>
 </body>
 </html>
