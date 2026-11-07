@@ -7,7 +7,7 @@
   // ── Breadcrumb mapping ────────────────────────────────────────
   var LEVELS = {
     'cp': 'CP', 'ce1': 'CE1', 'ce2': 'CE2',
-    'cm1': 'CM1', 'cm2': 'CM2', '6e': '6ème'
+    'cm1': 'CM1', 'cm2': 'CM2', '6e': '6e', '5e': '5e', '4e': '4e', '3e': '3e'
   };
   function detectLevel(f) {
     for (var l in LEVELS) {

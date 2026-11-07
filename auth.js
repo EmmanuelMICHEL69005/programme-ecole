@@ -280,7 +280,30 @@ window.EF_AUTH = (function () {
 
     const overlay = document.createElement('div');
     overlay.className = 'ef-auth-overlay';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-labelledby', 'ef-auth-title');
     document.body.appendChild(overlay);
+
+    // Toujours une sortie : ✕, Échap, clic à côté ; le clavier reste dans la fenêtre
+    const prevFocus = document.activeElement;
+    function closeModal() {
+      overlay.remove();
+      document.removeEventListener('keydown', onKey);
+      if (prevFocus && prevFocus.focus) prevFocus.focus();
+    }
+    function onKey(e) {
+      if (!document.body.contains(overlay)) { document.removeEventListener('keydown', onKey); return; }
+      if (e.key === 'Escape') { closeModal(); return; }
+      if (e.key !== 'Tab') return;
+      const f = [...overlay.querySelectorAll('button, input, a')].filter(x => !x.disabled && x.offsetParent !== null);
+      if (!f.length) return;
+      const first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+    document.addEventListener('keydown', onKey);
+    overlay.addEventListener('mousedown', function (e) { if (e.target === overlay) closeModal(); });
 
     function showError(msg) {
       const el = overlay.querySelector('.ef-auth-error');
@@ -383,9 +406,9 @@ window.EF_AUTH = (function () {
     function render() {
       overlay.innerHTML = `
         <div class="ef-auth-card">
-          <div class="ef-auth-logo">✨</div>
-          <div class="ef-auth-title">École Facile</div>
-          <div class="ef-auth-sub">Connecte-toi pour sauvegarder ta progression sur tous tes appareils</div>
+          <button type="button" class="ef-auth-close" aria-label="Fermer">✕</button>
+          <div class="ef-auth-title" id="ef-auth-title">${tab === 'signup' ? 'Créer un compte' : 'Se connecter'}</div>
+          <div class="ef-auth-sub">À faire avec un adulte : le compte garde les résultats de chaque enfant, sur tous les appareils.</div>
           <div class="ef-auth-tabs">
             <button class="ef-auth-tab ${tab==='signup'?'active':''}" data-tab="signup">Créer un compte</button>
             <button class="ef-auth-tab ${tab==='login'?'active':''}"  data-tab="login">Se connecter</button>
@@ -432,6 +455,10 @@ window.EF_AUTH = (function () {
           <div class="ef-auth-error"></div>
         </div>
       `;
+
+      overlay.querySelector('.ef-auth-close').addEventListener('click', closeModal);
+      const firstInput = overlay.querySelector('.ef-auth-input');
+      if (firstInput) firstInput.focus();
 
       // Tab switching
       overlay.querySelectorAll('.ef-auth-tab').forEach(function (btn) {

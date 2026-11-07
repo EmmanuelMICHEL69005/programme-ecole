@@ -1097,10 +1097,10 @@
     ` : `
       <div style="margin-top:14px;padding:13px;background:rgba(255,255,255,.07);border-radius:13px;border:1.5px solid rgba(255,255,255,.12)">
         <div style="font-size:.82rem;font-weight:700;color:rgba(255,255,255,.5);line-height:1.5;margin-bottom:10px">
-          🔒 Connecte-toi pour sauvegarder ta progression sur tous tes appareils.
+          Avec un adulte, crée un compte : tes résultats seront gardés sur tous tes appareils.
         </div>
         <a href="#" id="gs-signin-link" style="display:block;text-align:center;padding:9px;background:#fff;border-radius:10px;color:#172d66;font-weight:900;font-size:.85rem;text-decoration:none">
-          Créer un compte / Se connecter →
+          Compte des parents : créer ou se connecter →
         </a>
       </div>
     `;
@@ -1280,7 +1280,7 @@
         <div class="gs-stamp gs-stamp--${needHelp ? 'revoir' : 'ok'}" aria-hidden="true">${stamp}</div>
         <div class="gs-next-bravo" id="gs-next-title">${bravoMsg}</div>
         <div class="gs-next-sub">${correct} bonne${correct > 1 ? 's' : ''} réponse${correct > 1 ? 's' : ''} sur ${totalQ}</div>
-        ${P ? `<div class="gs-next-xp-badge">+${xpEarned} XP</div>` : `<button class="gs-next-guest" onclick="window.EF_AUTH && window.EF_AUTH.showAuthModal(function(){location.reload();})">Crée un profil pour garder tes résultats</button>`}
+        ${P ? `<div class="gs-next-xp-badge">+${xpEarned} XP</div>` : `<button class="gs-next-guest" onclick="this.closest('.gs-next-overlay').remove(); window.GS.showProfilePicker()">Crée un profil pour garder tes résultats</button>`}
         ${P && P.streak >= 3 ? `<div class="gs-next-streak">🔥 Série de ${P.streak} bonnes réponses !</div>` : ''}
         ${mainBtn}
         <div class="gs-next-actions">
@@ -1502,7 +1502,7 @@
     const relDiv = document.createElement('div');
     relDiv.className = 'gs-related';
     relDiv.innerHTML = `
-      <div class="gs-related-title">📚 Autres exercices — ${lvl === '6e' ? '6ème' : lvl}</div>
+      <div class="gs-related-title">📚 Autres exercices — ${lvl}</div>
       <div class="gs-related-grid">
         ${shuffled.map(p => {
           const info = PAGE_LABELS[p];
@@ -1589,7 +1589,7 @@
     bar.id = 'ef-guest-bar';
     bar.className = 'ef-guest-note';
     bar.innerHTML = '<span>Sans profil, tes résultats ne sont pas gardés.</span>'
-      + '<button class="ef-guest-link" onclick="window.EF_AUTH.showAuthModal(function(){location.reload();})">Créer un profil</button>'
+      + '<button class="ef-guest-link" onclick="window.GS && window.GS.showProfilePicker ? window.GS.showProfilePicker() : window.EF_AUTH.showAuthModal(function(){location.reload();})">Créer un profil</button>'
       + '<button class="ef-guest-x" aria-label="Masquer ce message" onclick="try{sessionStorage.setItem(\'ef_guest_hidden\',1)}catch(e){};document.getElementById(\'ef-guest-bar\').remove()">✕</button>';
     const header = document.querySelector('body > header, .site-header, .cours-header, .home-header, .pil-hero');
     if (header) header.insertAdjacentElement('afterend', bar);
@@ -1598,6 +1598,17 @@
 
   // Lien « Revoir la leçon » sur les pages d'exercices + mémoire de la dernière page
   function initLessonLink() {
+    // Page de cours : lien vers ses exercices dans l'en-tête
+    if (page.startsWith('cours-')) {
+      const ex = Object.keys(LESSON_OF).find(k => LESSON_OF[k] === page);
+      const h = document.querySelector('.cours-header');
+      if (ex && h && !h.querySelector('.nav-lesson')) {
+        const a = document.createElement('a');
+        a.href = ex; a.className = 'nav-back nav-lesson'; a.textContent = '✏️ Faire les exercices';
+        h.appendChild(a);
+      }
+      return;
+    }
     if (!document.querySelector('.exercice-block')) return;
     const lesson = LESSON_OF[page];
     window.EF_LESSON = lesson || null;
@@ -1676,6 +1687,126 @@
   startWithAuth();
 
   // ── Public API ───────────────────────────────────────────────────
+  // ── Un exercice à la fois ───────────────────────────────────────
+  function blockDone(b) {
+    const lines = [...b.querySelectorAll('.feedback-line')];
+    return lines.length > 0 && lines.every(l => l.textContent.trim() !== '');
+  }
+  function initStepper() {
+    const blocks = [...document.querySelectorAll('main .exercice-block')];
+    if (blocks.length < 2 || document.querySelector('.ex-stepper')) return;
+    const n = blocks.length;
+    const key = 'ef_step_' + page;
+    let cur = 0;
+    try { cur = Math.min(n - 1, Math.max(0, parseInt(sessionStorage.getItem(key) || '0', 10) || 0)); } catch (e) {}
+    if (location.hash) {
+      const target = document.getElementById(location.hash.slice(1));
+      const i = target ? blocks.findIndex(b => b.contains(target) || b === target) : -1;
+      if (i >= 0) cur = i;
+    }
+
+    const top = document.createElement('nav');
+    top.className = 'ex-stepper';
+    top.setAttribute('aria-label', 'Exercices de la page');
+    top.innerHTML = '<div class="ex-step-count" aria-live="polite"></div><div class="ex-step-dots"></div>';
+    const dots = top.querySelector('.ex-step-dots');
+    blocks.forEach((b, i) => {
+      const d = document.createElement('button');
+      d.type = 'button'; d.className = 'ex-step-dot'; d.textContent = i + 1;
+      d.setAttribute('aria-label', 'Exercice ' + (i + 1));
+      d.addEventListener('click', () => show(i, true));
+      dots.appendChild(d);
+    });
+    blocks[0].insertAdjacentElement('beforebegin', top);
+
+    const bottom = document.createElement('div');
+    bottom.className = 'ex-step-nav';
+    bottom.innerHTML = '<button type="button" class="ex-step-prev">← Précédent</button><button type="button" class="ex-step-next">Exercice suivant →</button>';
+    blocks[n - 1].insertAdjacentElement('afterend', bottom);
+    const prev = bottom.querySelector('.ex-step-prev'), next = bottom.querySelector('.ex-step-next');
+    prev.addEventListener('click', () => show(cur - 1, true));
+    next.addEventListener('click', () => show(cur + 1, true));
+
+    function refresh() {
+      top.querySelector('.ex-step-count').textContent = 'Exercice ' + (cur + 1) + ' sur ' + n;
+      [...dots.children].forEach((d, i) => {
+        d.classList.toggle('is-current', i === cur);
+        d.classList.toggle('is-done', blockDone(blocks[i]));
+        if (i === cur) d.setAttribute('aria-current', 'step'); else d.removeAttribute('aria-current');
+      });
+      prev.hidden = cur === 0;
+      next.hidden = cur === n - 1;
+      next.classList.toggle('is-ready', blockDone(blocks[cur]));
+    }
+    function show(i, scroll) {
+      if (i < 0 || i >= n) return;
+      cur = i;
+      blocks.forEach((b, j) => { b.hidden = j !== i; });
+      try { sessionStorage.setItem(key, String(i)); } catch (e) {}
+      refresh();
+      addSpeakButtons(blocks[i]);
+      if (scroll) {
+        const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        top.scrollIntoView({ block: 'start', behavior: reduce ? 'auto' : 'smooth' });
+      }
+    }
+    // Mise à jour des pastilles quand l'enfant répond
+    document.addEventListener('click', () => setTimeout(refresh, 60), true);
+    show(cur, false);
+  }
+
+  // ── Lecture à voix haute (CP, CE1, CE2) ─────────────────────────
+  const YOUNG = /-(cp|ce1|ce2)\.html$/.test(page) || (LEVEL_PAGES.CE2 || []).includes(page) || page === 'eps-cycle2.html';
+  function speakableText(el) {
+    const c = el.cloneNode(true);
+    c.querySelectorAll('.f').forEach(f => {
+      const nEl = f.querySelector('.fn'), dEl = f.querySelector('.fd');
+      f.replaceWith(document.createTextNode(' ' + (nEl ? nEl.textContent : '') + ' sur ' + (dEl ? dEl.textContent : '') + ' '));
+    });
+    c.querySelectorAll('.ef-speak, svg, script, style').forEach(x => x.remove());
+    return c.textContent.replace(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{2B00}-\u{2BFF}\u{FE0F}\u{200D}]/gu, ' ').replace(/\s+/g, ' ').trim();
+  }
+  function speak(text) {
+    if (!('speechSynthesis' in window) || !text) return;
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'fr-FR'; u.rate = 0.9;
+    const v = window.speechSynthesis.getVoices().find(x => /^fr/i.test(x.lang));
+    if (v) u.voice = v;
+    window.speechSynthesis.speak(u);
+  }
+  function makeSpeakBtn(getText, label) {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'ef-speak'; b.textContent = '🔊';
+    b.setAttribute('aria-label', label || 'Écouter');
+    b.addEventListener('click', e => { e.stopPropagation(); speak(getText()); });
+    return b;
+  }
+  function addSpeakButtons(root) {
+    if (!YOUNG || !('speechSynthesis' in window) || !root) return;
+    root.querySelectorAll('.q-text').forEach(q => {
+      if (q.querySelector('.ef-speak')) return;
+      q.appendChild(makeSpeakBtn(() => {
+        const qb = q.closest('.q-block') || q.parentElement;
+        const choices = qb ? [...qb.querySelectorAll('.btn-choice, .ordre-item, .tri-chip, .paires-btn')].map(speakableText).filter(Boolean) : [];
+        return speakableText(q) + (choices.length ? '. Réponses possibles : ' + choices.join(', ') + '.' : '');
+      }, 'Écouter la question'));
+    });
+  }
+  function initSpeech() {
+    if (!YOUNG || !('speechSynthesis' in window)) return;
+    document.body.classList.add('lvl-young');
+    const box = document.querySelector('.retiens-box');
+    const title = box && box.querySelector('.retiens-title');
+    if (title && !title.querySelector('.ef-speak')) title.appendChild(makeSpeakBtn(() => speakableText(box), 'Écouter « Je retiens »'));
+    document.querySelectorAll('main .exercice-block:not([hidden])').forEach(addSpeakButtons);
+  }
+  domReady(() => {
+    // Pages d'anglais : les réponses sont en anglais (prononciation des lecteurs d'écran)
+    if (page.startsWith('anglais-')) document.querySelectorAll('.btn-choice, .paires-btn, .ordre-item').forEach(b => { b.lang = 'en'; });
+    initSpeech(); initStepper();
+  });
+
   window.GS = {
     profile:    () => P,
     save,

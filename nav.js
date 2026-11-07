@@ -154,7 +154,7 @@
       ],
     },
     '6e': {
-      label: '⭐ 6ème',
+      label: '⭐ 6e',
       color: '#f9a8d4',
       cats: [
         { label: '🔢 Nombres et calculs', color: '#f9a8d4', pages: [
@@ -183,7 +183,7 @@
       ],
     },
     '5e': {
-      label: '🚀 5ème',
+      label: '🚀 5e',
       color: '#7dd3fc',
       cats: [
         { label: '🔢 Nombres et calculs', color: '#7dd3fc', pages: [
@@ -207,7 +207,7 @@
       ],
     },
     '4e': {
-      label: '🔶 4ème',
+      label: '🔶 4e',
       color: '#67e8f9',
       cats: [
         { label: '🔢 Nombres et calculs', color: '#67e8f9', pages: [
@@ -230,7 +230,7 @@
       ],
     },
     '3e': {
-      label: '🎓 3ème',
+      label: '🎓 3e',
       color: '#5eead4',
       cats: [
         { label: '🔢 Nombres et calculs', color: '#5eead4', pages: [
@@ -255,6 +255,19 @@
   };
 
   const LEVEL_ORDER = ['CP','CE1','CE2','CM1','CM2','6e','5e','4e','3e'];
+
+  // Français : présent du CP à la 6e (conjugaison, grammaire, orthographe, vocabulaire)
+  (function addFrench() {
+    const SUF = { CP:'cp', CE1:'ce1', CE2:'ce2', CM1:'cm1', CM2:'cm2', '6e':'6e' };
+    const FR = [['📝','Conjugaison','conjugaison'],['🔤','Grammaire','grammaire'],['✏️','Orthographe','orthographe'],['📚','Vocabulaire','vocabulaire']];
+    Object.keys(SUF).forEach(k => {
+      const lv = NAV_LEVELS[k];
+      if (!lv || lv.cats.some(c => /Français/.test(c.label))) return;
+      const pages = FR.map(([emoji, title, base]) => ({ emoji, title, href: base + '-' + SUF[k] + '.html' }));
+      const at = lv.cats.findIndex(c => /Histoire/.test(c.label));
+      lv.cats.splice(at >= 0 ? at : lv.cats.length, 0, { label: '📝 Français', color: lv.color, pages });
+    });
+  })();
 
   const current = window.location.pathname.split('/').pop() || 'index.html';
 

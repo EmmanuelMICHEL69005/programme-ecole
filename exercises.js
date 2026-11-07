@@ -69,7 +69,7 @@ function buildQCM(data, containerId) {
     const enonce = item.enonce ? `<div class="pb-enonce">${item.enonce}</div>` : '';
     const hint   = item.hint   ? `<div class="ex-hint">💡 ${item.hint}</div>` : '';
     const sh = shuffle(item.choices);
-    d.innerHTML = `${card}${enonce}${hint}
+    d.innerHTML = `${card}${enonce}
       <div class="q-text">${formatFrac(item.q)}</div>
       <div class="qcm-row" id="${containerId}-r${i}">
         ${sh.map(c => `<button class="btn-choice" data-val="${c.replace(/"/g,'&quot;')}"
@@ -78,6 +78,7 @@ function buildQCM(data, containerId) {
       </div>
       <div class="retry-line" id="${containerId}-t${i}" aria-live="polite"></div>
       <div class="feedback-line" aria-live="polite" id="${containerId}-f${i}"></div>`;
+    if (/^anglais-/.test(location.pathname.split('/').pop())) d.querySelectorAll('.btn-choice').forEach(b => b.lang = 'en');
     container.appendChild(d);
   });
 }
@@ -97,7 +98,12 @@ window._qcmCheck = function(btn, rowId, fbId, eid) {
   }
   row.querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
   if (retry) retry.innerHTML = '';
-  if (btn.dataset.val === item.correct) {
+  if (btn.dataset.val === item.correct && row.dataset.tried) {
+    btn.classList.add('correct');
+    fb.innerHTML = '👍 Trouvé au deuxième essai !' + (item.expl ? ' ' + item.expl : '');
+    fb.className = 'feedback-line fb-ok2';
+    _combo = 0;
+  } else if (btn.dataset.val === item.correct) {
     btn.classList.add('correct');
     _ok(btn, fb, item.correct);
   } else {
@@ -203,24 +209,34 @@ window._ordreCheck = function(poolId, zoneId, fbId, eid) {
   const chips = [...zone.querySelectorAll('.ordre-chip')];
   const chosen = chips.map(c => c.dataset.val);
   const fb = document.getElementById(fbId);
+  const retry = document.getElementById(fbId.replace(/-f(\d+)$/, '-t$1'));
   if (chosen.length < item.items.length) {
-    fb.innerHTML = '⚠️ Place tous les éléments d\'abord !';
-    fb.className = 'feedback-line fb-warn'; return;
+    if (retry) retry.innerHTML = '⚠️ Place tous les éléments d\'abord !';
+    return;
   }
+  const ok = chosen.every((v, j) => v === item.items[j]);
+  chips.forEach((c, j) => {
+    const good = c.dataset.val === item.items[j];
+    c.classList.toggle('ok', good); c.classList.toggle('ko', !good);
+  });
+  if (!ok && !zone.dataset.tried) {
+    zone.dataset.tried = '1';
+    if (retry) retry.innerHTML = '🤔 Pas tout à fait : les éléments marqués ✗ ne sont pas à leur place. Touche-les pour les enlever, puis replace-les et valide.';
+    return;
+  }
+  if (retry) retry.innerHTML = '';
   document.getElementById(poolId).querySelectorAll('.ordre-item').forEach(b => { b.disabled = true; b.onclick = null; });
   chips.forEach(c => c.onclick = null);
-  const ok = chosen.every((v, j) => v === item.items[j]);
-  if (ok) {
-    chips.forEach(c => { c.style.borderColor = '#22c55e'; c.style.background = '#f0fdf4'; });
+  if (ok && zone.dataset.tried) {
+    fb.innerHTML = '👍 Trouvé au deuxième essai !';
+    fb.className = 'feedback-line fb-ok2';
+    _combo = 0;
+  } else if (ok) {
     _ok(zone, fb, '');
     fb.innerHTML = rnd(BRAVO);
     fb.className = 'feedback-line fb-ok';
   } else {
-    chips.forEach((c, j) => {
-      c.style.borderColor = c.dataset.val === item.items[j] ? '#22c55e' : '#ef4444';
-      c.style.background  = c.dataset.val === item.items[j] ? '#f0fdf4' : '#fef2f2';
-    });
-    fb.innerHTML = '❌ Ordre correct : ' + item.items.map(v => formatFrac(v)).join(' → ');
+    fb.innerHTML = '❌ Le bon ordre : ' + item.items.map(v => formatFrac(v)).join(' → ') + (item.expl ? '. ' + item.expl : '') + _lessonLink();
     fb.className = 'feedback-line fb-ko';
     _combo = 0;
   }
@@ -249,8 +265,9 @@ function buildTri(data, containerId) {
     const gridId = `${containerId}-tg${i}`;
     const sh = shuffle([...item.items]);
     const colsHtml = item.cats.map((cat, ci) => `
-      <div class="tri-col" data-cat="${cat}"
-           onclick="_triDrop('${poolId}','${containerId}-tc${i}-${ci}','${gridId}')">
+      <div class="tri-col" data-cat="${cat}" role="button" tabindex="0" aria-label="Colonne ${cat.replace(/<[^>]+>/g,'')}"
+           onclick="_triDrop('${poolId}','${containerId}-tc${i}-${ci}','${gridId}')"
+           onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
         <div class="tri-col-title">${cat}</div>
         <div class="tri-col-items" id="${containerId}-tc${i}-${ci}"></div>
       </div>`).join('');
@@ -284,7 +301,7 @@ window._triDrop = function(poolId, colItemsId, gridId) {
   const colItems = document.getElementById(colItemsId);
   const chip = document.createElement('div');
   chip.className = 'tri-placed';
-  chip.textContent = _triSel.dataset.val;
+  chip.innerHTML = formatFrac(_triSel.dataset.val);
   chip.dataset.val = _triSel.dataset.val;
   chip.dataset.cat = _triSel.dataset.cat;
   const src = _triSel;
@@ -300,25 +317,41 @@ window._triCheck = function(poolId, gridId, fbId, eid) {
   const grid = document.getElementById(gridId);
   const pool = document.getElementById(poolId);
   const fb = document.getElementById(fbId);
-  let placed = 0;
-  grid.querySelectorAll('.tri-placed').forEach(() => placed++);
-  if (placed < item.items.length) {
-    fb.innerHTML = '⚠️ Place tous les éléments !'; fb.className = 'feedback-line fb-warn'; return;
+  const retry = document.getElementById(fbId.replace(/-f(\d+)$/, '-t$1'));
+  if (grid.querySelectorAll('.tri-placed').length < item.items.length) {
+    if (retry) retry.innerHTML = '⚠️ Place tous les éléments d\'abord !';
+    return;
   }
-  let allOk = true;
+  const bad = [];
   grid.querySelectorAll('.tri-col').forEach(col => {
-    const cat = col.dataset.cat;
     col.querySelectorAll('.tri-placed').forEach(chip => {
-      chip.onclick = null;
-      if (chip.dataset.cat !== cat) { allOk = false; chip.classList.add('ko'); }
-      else chip.classList.add('ok');
+      const good = chip.dataset.cat === col.dataset.cat;
+      chip.classList.toggle('ok', good); chip.classList.toggle('ko', !good);
+      if (!good) bad.push(chip);
     });
   });
+  if (bad.length && !grid.dataset.tried) {
+    grid.dataset.tried = '1';
+    if (retry) retry.innerHTML = '🤔 ' + (bad.length > 1
+      ? bad.length + ' éléments sont mal placés (marqués ✗). Touche-les pour les reprendre, replace-les, puis valide.'
+      : '1 élément est mal placé (marqué ✗). Touche-le pour le reprendre, replace-le, puis valide.');
+    return;
+  }
+  if (retry) retry.innerHTML = '';
+  grid.querySelectorAll('.tri-placed').forEach(c => c.onclick = null);
   pool.querySelectorAll('.tri-chip').forEach(b => { b.disabled = true; b.onclick = null; });
   grid.querySelectorAll('.tri-col').forEach(c => { c.onclick = null; c.classList.remove('tri-target'); });
-  if (allOk) { _ok(grid, fb, ''); fb.innerHTML = rnd(BRAVO); fb.className = 'feedback-line fb-ok'; }
-  else { fb.innerHTML = '❌ Certains éléments sont mal classés (en rouge).' + _lessonLink(); fb.className = 'feedback-line fb-ko'; _combo = 0; }
+  if (!bad.length && grid.dataset.tried) {
+    fb.innerHTML = '👍 Trouvé au deuxième essai !'; fb.className = 'feedback-line fb-ok2'; _combo = 0;
+  } else if (!bad.length) {
+    _ok(grid, fb, ''); fb.innerHTML = rnd(BRAVO); fb.className = 'feedback-line fb-ok';
+  } else {
+    const answer = item.cats.map(c => '<b>' + c + '</b> : ' + item.items.filter(it => it.cat === c).map(it => formatFrac(it.v)).join(', ')).join(' · ');
+    fb.innerHTML = '❌ La bonne réponse : ' + answer + '.' + _lessonLink();
+    fb.className = 'feedback-line fb-ko'; _combo = 0;
+  }
 };
+
 
 // ═══════════════════════════════════════════════════════════
 // 5. Paires — Associer deux colonnes

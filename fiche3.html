@@ -18,7 +18,7 @@
 <title>Fiche 3 — Je calcule | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=7">
+<link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
 
@@ -67,8 +67,8 @@
 
       <!-- ½ de 8 étoiles -->
       <div style="background:#fff7ed;border:2px dashed #fb923c;border-radius:12px;padding:16px">
-        <div style="font-weight:800;color:#ea580c;margin-bottom:6px">½ de 8 étoiles</div>
-        <p style="font-size:0.78rem;color:#777;margin-bottom:8px">Clique sur la moitié :</p>
+        <div style="font-weight:800;color:#c2410c;margin-bottom:6px">½ de 8 étoiles</div>
+        <p style="font-size:0.78rem;color:#5f6472;margin-bottom:8px">Clique sur la moitié :</p>
         <div id="etoiles" style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:8px 0"></div>
         <div id="fb-etoiles" style="font-size:0.82rem;font-weight:800;min-height:18px;margin-top:4px;text-align:center"></div>
         <div style="font-size:0.95rem;margin-top:8px;text-align:center">½ de 8 = <span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
@@ -76,8 +76,8 @@
 
       <!-- ¼ de 12 ronds -->
       <div style="background:#fff7ed;border:2px dashed #fb923c;border-radius:12px;padding:16px">
-        <div style="font-weight:800;color:#ea580c;margin-bottom:6px">¼ de 12 ronds</div>
-        <p style="font-size:0.78rem;color:#777;margin-bottom:8px">Clique sur un quart :</p>
+        <div style="font-weight:800;color:#c2410c;margin-bottom:6px">¼ de 12 ronds</div>
+        <p style="font-size:0.78rem;color:#5f6472;margin-bottom:8px">Clique sur un quart :</p>
         <div id="ronds" style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:8px 0"></div>
         <div id="fb-ronds" style="font-size:0.82rem;font-weight:800;min-height:18px;margin-top:4px;text-align:center"></div>
         <div style="font-size:0.95rem;margin-top:8px;text-align:center">¼ de 12 = <span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
@@ -191,7 +191,7 @@
 
 </main>
 
-<footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a> · <a href="programme-5e.html">5ème</a> · <a href="programme-4e.html">4ème</a> · <a href="programme-3e.html">3ème</a></div></footer>
+<footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div></footer>
 
 <script>
 // ---- Ex 2 : objets cliquables ----
@@ -327,7 +327,7 @@ calculData.forEach((q, i) => {
   shuffled.forEach(val => {
     const btn = document.createElement('button');
     btn.textContent = val;
-    btn.style.cssText = 'border:2px solid #fb923c;border-radius:12px;padding:8px 18px;font-size:1.1rem;font-weight:900;background:white;color:#ea580c;cursor:pointer;font-family:inherit;transition:all 0.15s;';
+    btn.style.cssText = 'border:2px solid #fb923c;border-radius:12px;padding:8px 18px;font-size:1.1rem;font-weight:900;background:white;color:#c2410c;cursor:pointer;font-family:inherit;transition:all 0.15s;';
     btn.addEventListener('mouseenter', () => { if (!btn.dataset.done) btn.style.background = '#fff7ed'; });
     btn.addEventListener('mouseleave', () => { if (!btn.dataset.done) btn.style.background = 'white'; });
     btn.addEventListener('click', () => {
@@ -363,10 +363,10 @@ calculData.forEach((q, i) => {
 
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>
-<script src="auth.js?v=7"></script>
-<script src="gamification.js?v=9"></script>
-<script src="nav.js?v=7"></script>
+<script src="auth.js?v=8"></script>
+<script src="gamification.js?v=10"></script>
+<script src="nav.js?v=8"></script>
 <script src="related.js?v=3"></script>
-<script src="seo.js?v=3"></script>
+<script src="seo.js?v=4"></script>
 </body>
 </html>

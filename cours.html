@@ -6,19 +6,19 @@
 <meta name="application-name" content="École Facile">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ecolefacile.fr/cours.html">
-<meta property="og:title" content="Cours — CP à 6ème | École Facile">
-<meta property="og:description" content="Toutes les fiches de cours du CP à la 6ème — maths, histoire-géo. Gratuit, sans publicité.">
+<meta property="og:title" content="Cours — CP à 6e | École Facile">
+<meta property="og:description" content="Toutes les fiches de cours du CP à la 6e — maths, histoire-géo. Gratuit, sans publicité.">
 <meta property="og:image" content="https://ecolefacile.fr/og-image.png">
 <meta property="og:site_name" content="École Facile">
-<meta name="description" content="Toutes les fiches de cours du CP à la 6ème — maths, histoire-géo. Gratuit, sans publicité.">
+<meta name="description" content="Toutes les fiches de cours du CP à la 6e — maths, histoire-géo. Gratuit, sans publicité.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://ecolefacile.fr/cours.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cours — CP à 6ème | École Facile</title>
+<title>Cours — CP à 6e | École Facile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=7">
+<link rel="stylesheet" href="style.css?v=8">
 <style>
 .home-header{background:var(--encre);color:white;text-align:center;padding:18px 20px 22px}
 .home-logo{font-size:1.35rem;font-weight:900;letter-spacing:-0.3px;display:flex;align-items:center;justify-content:center;gap:8px}
@@ -37,7 +37,7 @@
 .lp-name{font-size:.78rem;letter-spacing:.5px}
 .lp-cp{background:#dcfce7;color:#166534;border-color:#bbf7d0}
 .lp-ce1{background:#d1fae5;color:#065f46;border-color:#6ee7b7}
-.lp-ce2{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd}
+.lp-ce2{background:#ede9fe;color:#1f3c88;border-color:#c4b5fd}
 .lp-cm1{background:#dbeafe;color:#1e3a8a;border-color:#93c5fd}
 .lp-cm2{background:#fef9c3;color:#713f12;border-color:#fde68a}
 .lp-6e{background:#fce7f3;color:#9d174d;border-color:#fbcfe8}
@@ -51,7 +51,7 @@
 .lc[hidden]{display:none}
 @keyframes lcIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .lc-cat{margin-bottom:26px}
-.lc-cat-title{font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:2px;color:#6b7280;margin-bottom:12px;padding-bottom:7px;border-bottom:2.5px solid #f3f4f6;display:flex;align-items:center;gap:8px}
+.lc-cat-title{font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:2px;color:#4b5563;margin-bottom:12px;padding-bottom:7px;border-bottom:2.5px solid #f3f4f6;display:flex;align-items:center;gap:8px}
 .lc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:11px}
 .lc-card{background:white;border-radius:16px;border:2.5px solid #f0f0ef;padding:16px 10px 13px;text-decoration:none;color:#1f2937;display:flex;flex-direction:column;align-items:center;gap:9px;transition:transform .14s,box-shadow .14s,border-color .14s;box-shadow:0 2px 6px rgba(0,0,0,.04)}
 .lc-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.1);border-color:#d1d5db}
@@ -98,18 +98,18 @@
     <span class="home-logo-icon">📚</span>
     École Facile
   </div>
-  <p class="home-tagline">Fiches de cours du CP à la 6ème</p>
+  <p class="home-tagline">Les leçons à retenir, du CP à la 6e</p>
   <div class="page-tabs">
-    <a href="index.html" class="page-tab">📝 Exercices</a>
-    <a href="cours.html" class="page-tab active">📖 Cours</a>
+    <a href="index.html" class="page-tab">Exercices</a>
+    <a href="cours.html" class="page-tab active" aria-current="page">Leçons</a>
   </div>
 </header>
 
 <main>
 
   <div class="welcome">
-    <div class="bonjour">Quel est ton niveau ? 👇</div>
-    <p>Clique sur ta classe pour voir toutes tes fiches de cours.</p>
+    <h1 class="bonjour">Quelle est ta classe ?</h1>
+    <p>Choisis-la : tu verras toutes ses leçons.</p>
   </div>
 
   <div class="level-picker">
@@ -119,7 +119,10 @@
       <button class="lp-btn lp-ce2" onclick="selectLvl('ce2', this)"><span class="lp-emoji">📚</span><span class="lp-name">CE2</span></button>
       <button class="lp-btn lp-cm1" onclick="selectLvl('cm1', this)"><span class="lp-emoji">🎯</span><span class="lp-name">CM1</span></button>
       <button class="lp-btn lp-cm2" onclick="selectLvl('cm2', this)"><span class="lp-emoji">🏆</span><span class="lp-name">CM2</span></button>
-      <button class="lp-btn lp-6e"  onclick="selectLvl('6e', this)"><span class="lp-emoji">⭐</span><span class="lp-name">6ème</span></button>
+      <button class="lp-btn lp-6e"  onclick="selectLvl('6e', this)"><span class="lp-emoji">⭐</span><span class="lp-name">6e</span></button>
+      <button class="lp-btn lp-5e" onclick="selectLvl('5e', this)"><span class="lp-emoji">📘</span><span class="lp-name">5e</span></button>
+      <button class="lp-btn lp-4e" onclick="selectLvl('4e', this)"><span class="lp-emoji">📘</span><span class="lp-name">4e</span></button>
+      <button class="lp-btn lp-3e" onclick="selectLvl('3e', this)"><span class="lp-emoji">📘</span><span class="lp-name">3e</span></button>
     </div>
   </div>
 
@@ -308,16 +311,21 @@
     </div>
   </div>
 
+
+  <div id="lc-college" class="lc lc-soon" hidden>
+    <h2 class="lc-cat-title">Les leçons du collège arrivent bientôt</h2>
+    <p>En attendant, entraîne-toi avec <a href="index.html">les exercices de ta classe</a>, ou revois <a href="#6e" onclick="selectLvl('6e', document.querySelector('.lp-btn.lp-6e')); return false;">les leçons de 6e</a>.</p>
+  </div>
 </main>
 
-<footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6ème</a> · <a href="programme-5e.html">5ème</a> · <a href="programme-4e.html">4ème</a> · <a href="programme-3e.html">3ème</a></div></footer>
+<footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div></footer>
 
 <script>
 function selectLvl(lvl, btn) {
   document.querySelectorAll('.lp-btn').forEach(function(b){ b.classList.remove('active'); });
   btn.classList.add('active');
   document.querySelectorAll('.lc').forEach(function(c){ c.hidden = true; });
-  var el = document.getElementById('lc-' + lvl);
+  var el = document.getElementById('lc-' + lvl) || (/^[345]e$/.test(lvl) ? document.getElementById('lc-college') : null);
   if (el) { el.hidden = false; }
   try { localStorage.setItem('ef_last_level', lvl); } catch(e){}
 }
@@ -326,17 +334,16 @@ function selectLvl(lvl, btn) {
   var hash = location.hash.slice(1);
   var saved;
   try { saved = localStorage.getItem('ef_last_level'); } catch(e){}
-  var lvl = hash || saved || 'ce2';
-  var btn = document.querySelector('.lp-btn.lp-' + lvl);
-  if (btn) selectLvl(lvl, btn);
-  else selectLvl('ce2', document.querySelector('.lp-btn.lp-ce2'));
+  var lvl = hash || saved;
+  var btn = lvl && document.querySelector('.lp-btn.lp-' + lvl);
+  if (btn) selectLvl(lvl, btn); // jamais de classe imposée ni écrasée
 })();
 </script>
 <script src="sync.js"></script>
 <script src="firebase-keys.js"></script>
-<script src="auth.js?v=7"></script>
-<script src="gamification.js?v=9"></script>
-<script src="nav.js?v=7"></script>
-<script src="seo.js?v=3"></script>
+<script src="auth.js?v=8"></script>
+<script src="gamification.js?v=10"></script>
+<script src="nav.js?v=8"></script>
+<script src="seo.js?v=4"></script>
 </body>
 </html>

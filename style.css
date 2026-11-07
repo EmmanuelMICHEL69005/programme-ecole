@@ -1252,3 +1252,59 @@ main.cs table, .cpage table { display: block; max-width: 100%; overflow-x: auto;
 body .q-block { background: transparent; border-color: transparent; }
 body .btn-choice:not(.correct):not(.wrong):not(.tried):not(.btn-vrai):not(.btn-faux) { background: #fff; color: var(--texte); border-color: #d6d3cb; box-shadow: 0 4px 0 #d6d3cb; }
 body .btn-choice:not(.correct):not(.wrong):not(.tried):not(.btn-vrai):not(.btn-faux):hover:not([disabled]) { border-color: var(--encre); color: var(--encre); background: var(--encre-pale); box-shadow: 0 6px 0 #b9c3e3; }
+
+/* ── Un exercice à la fois ────────────────────────────────── */
+.exercice-block[hidden] { display: none !important; }
+.ex-stepper {
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+  margin: 8px 0 14px; scroll-margin-top: 12px;
+}
+.ex-step-count { font-size: 1.05rem; font-weight: 900; color: var(--encre-fonce); }
+.ex-step-dots { display: flex; flex-wrap: wrap; gap: 6px; }
+.ex-step-dot {
+  width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid #d5dcf2; background: #fff;
+  color: var(--texte-2); font: inherit; font-size: .9rem; font-weight: 800; cursor: pointer;
+}
+.ex-step-dot.is-done { background: var(--encre-pale); color: var(--encre); border-color: #b9c3e3; }
+.ex-step-dot.is-current { background: var(--encre); color: #fff; border-color: var(--encre); }
+.ex-step-nav { display: flex; justify-content: space-between; gap: 10px; margin: 14px 0 28px; }
+.ex-step-nav button {
+  font: inherit; font-size: 1rem; font-weight: 800; border-radius: 14px; padding: 12px 18px; cursor: pointer;
+  background: #fff; color: var(--encre); border: 1.5px solid #d5dcf2;
+}
+.ex-step-next { margin-left: auto; }
+.ex-step-next.is-ready { background: var(--encre); color: #fff; border-color: var(--encre); box-shadow: 0 4px 0 var(--encre-fonce); }
+.ex-step-nav button[hidden] { display: none; }
+
+/* ── Lecture à voix haute (CP–CE2) ────────────────────────── */
+.ef-speak {
+  display: inline-flex; align-items: center; justify-content: center; vertical-align: middle;
+  width: 40px; height: 40px; margin-left: 8px; border-radius: 50%;
+  border: 1.5px solid #d5dcf2; background: #fff; font-size: 1.1rem; cursor: pointer;
+}
+.ef-speak:hover { background: var(--encre-pale); border-color: var(--encre); }
+
+/* ── Plus gros pour les petits lecteurs ───────────────────── */
+.lvl-young .retiens-box [style*="font-size:0.8"], .lvl-young .retiens-box [style*="font-size:0.9"],
+.lvl-young .retiens-box [style*="font-size: 0.8"], .lvl-young .retiens-box [style*="font-size: 0.9"] { font-size: 1.05rem !important; line-height: 1.9 !important; }
+.lvl-young .q-text { font-size: 1.2rem; }
+
+/* ── Correction homogène : ✓ / ✗ en plus de la couleur ────── */
+.ordre-chip.ok, .tri-placed.ok { border-color: #15803d !important; background: #f0fdf4 !important; }
+.ordre-chip.ko, .tri-placed.ko { border-color: #dc2626 !important; background: #fef2f2 !important; }
+.ordre-chip.ok::after, .tri-placed.ok::after { content: " ✓"; color: #15803d; font-weight: 900; }
+.ordre-chip.ko::after, .tri-placed.ko::after { content: " ✗"; color: #dc2626; font-weight: 900; }
+.feedback-line.fb-ok2 { color: var(--encre-fonce); font-weight: 800; }
+body .btn-choice.tried { border-color: #d6d3cb !important; }
+
+/* ── Anciennes pages : vrai/faux lisibles, pas de cartes dans les cartes ─ */
+.btn-v { border-color: #15803d; color: #15803d; }
+.btn-f { border-color: #dc2626; color: #dc2626; }
+.btn-v:hover, .btn-v.active { background: #15803d; color: #fff; }
+.btn-f:hover, .btn-f.active { background: #dc2626; color: #fff; }
+body :is(.retiens-box, .exercice-block, .probleme-box) :is(.table-card, .solide-card, .vf-item, .geo-card, .pizza-retiens-item, .frac-quiz-item, .frac-pill, .probleme-box, .concept-card, .champ-card, .shape-tile, .du-card) {
+  border-color: transparent !important; box-shadow: none !important;
+}
+.lc-soon-note { margin: 0 0 10px; color: var(--texte-2); font-weight: 700; }
+.lc { animation-duration: .12s !important; }
+.retiens-box > div:not([class]) { max-width: 66ch; }
