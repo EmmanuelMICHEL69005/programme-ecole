@@ -1328,3 +1328,17 @@ h2.ex-title, h2.retiens-title { margin-top: 0; line-height: 1.3; font-family: in
 main:focus { outline: none; }
 body .pil-links { flex-wrap: wrap; }
 @media (max-width: 380px) { body .pil-grid { grid-template-columns: 1fr; } }
+
+/* ── Collège (6e–3e) : le même cahier, en plus sobre ───────── */
+.lvl-college .site-header h1, .lvl-college .cours-header h1, .lvl-college .pil-hero h1 { font-weight: 800; letter-spacing: -0.01em; }
+.lvl-college h2.ex-title, .lvl-college h2.retiens-title, .lvl-college main.cs h2 { font-weight: 800; }
+.lvl-college .btn-choice, .lvl-college .btn-validate, .lvl-college .btn-ex, .lvl-college .ex-step-nav button { font-weight: 700; }
+.lvl-college body .btn-choice:not(.correct):not(.wrong):not(.tried):not(.btn-vrai):not(.btn-faux),
+body.lvl-college .btn-choice:not(.correct):not(.wrong):not(.tried):not(.btn-vrai):not(.btn-faux) { box-shadow: 0 2px 0 #d6d3cb; }
+body.lvl-college .btn-choice.correct { box-shadow: 0 2px 0 #14532d !important; animation: none; }
+body.lvl-college .btn-choice.wrong { box-shadow: 0 2px 0 #991b1b !important; }
+body.lvl-college .btn-validate { box-shadow: 0 2px 0 var(--encre-fonce); }
+body.lvl-college .ex-badge { font-weight: 700; }
+body.lvl-college .feedback-line.fb-ok { font-weight: 700; }
+body.lvl-college ._xpf, body.lvl-college .gs-xp-toast, body.lvl-college .gs-streak-toast { display: none !important; }
+body.lvl-college .site-header .nav-back { font-weight: 700; }

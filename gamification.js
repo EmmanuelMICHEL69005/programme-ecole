@@ -1815,7 +1815,26 @@
     if (title && !title.querySelector('.ef-speak')) title.appendChild(makeSpeakBtn(() => speakableText(box), 'Écouter « Je retiens »'));
     document.querySelectorAll('main .exercice-block:not([hidden])').forEach(addSpeakButtons);
   }
+  // Collège (6e–3e) : même cahier, volume plus bas — pas d'émojis décoratifs en tête de ligne
+  const COLLEGE_PAGE = /-(6e|5e|4e|3e)\.html$/.test(page);
+  function quietCollege() {
+    if (!COLLEGE_PAGE) return;
+    document.body.classList.add('lvl-college');
+    const EMO = /^[\s\u00a0]*(?:[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{2B00}-\u{2BFF}\u{2190}-\u{21FF}\u{2300}-\u{23FF}]\u{FE0F}?\u{200D}?)+[\s\u00a0]*/u;
+    const roots = document.querySelectorAll('.retiens-box, main.cs, .pil-section, .pil-seo');
+    roots.forEach(root => {
+      const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+      const nodes = []; while (w.nextNode()) nodes.push(w.currentNode);
+      nodes.forEach(n => {
+        const prev = n.previousSibling;
+        const atLineStart = !prev || prev.nodeName === 'BR' || !n.parentNode.firstChild || n === n.parentNode.firstChild;
+        if (atLineStart && EMO.test(n.nodeValue)) n.nodeValue = n.nodeValue.replace(EMO, '');
+      });
+    });
+  }
+
   domReady(() => {
+    quietCollege();
     // Pages d'anglais : les réponses sont en anglais (prononciation des lecteurs d'écran)
     if (page.startsWith('anglais-')) document.querySelectorAll('.btn-choice, .paires-btn, .ordre-item').forEach(b => { b.lang = 'en'; });
     initSpeech(); initStepper();

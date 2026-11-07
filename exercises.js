@@ -17,10 +17,15 @@ function formatFrac(s) {
 }
 
 // ── Messages ─────────────────────────────────────────────────
-const BRAVO = [
+const BRAVO_PRIMAIRE = [
   '✅ Parfait !','✅ Excellent !','✅ Bravo !','✅ Super !',
   '✅ Génial !','✅ Trop bien !','✅ Incroyable !','✅ Tu assures !'
 ];
+// Collège : même retour, ton plus sobre
+const COLLEGE = /-(6e|5e|4e|3e)\.html$/.test(location.pathname.split('/').pop());
+const BRAVO = COLLEGE ? ['✅ Juste.','✅ Exact.','✅ Correct.','✅ Bonne réponse.'] : BRAVO_PRIMAIRE;
+const MSG_RETRY = COLLEGE ? 'Pas tout à fait. Réessaie.' : '🤔 Pas tout à fait. Réessaie !';
+const MSG_SECOND = COLLEGE ? '✓ Juste, au deuxième essai.' : '👍 Trouvé au deuxième essai !';
 const FIRE  = ['🔥 En feu !','🔥 Combo x'+0,'⚡ Incroyable !'];
 
 // ── Animation XP flottante ───────────────────────────────────
@@ -98,7 +103,7 @@ window._qcmCheck = function(btn, rowId, fbId, eid) {
     row.dataset.tried = '1';
     btn.disabled = true;
     btn.classList.add('tried');
-    if (retry) retry.innerHTML = '🤔 Pas tout à fait. Réessaie !' + (item.hint ? ' <span class="retry-hint">💡 ' + item.hint + '</span>' : '');
+    if (retry) retry.innerHTML = MSG_RETRY + (item.hint ? ' <span class="retry-hint">💡 ' + item.hint + '</span>' : '');
     const other = [...row.querySelectorAll('.btn-choice')].find(b => !b.disabled);
     if (other) other.focus();
     return;
@@ -107,7 +112,7 @@ window._qcmCheck = function(btn, rowId, fbId, eid) {
   if (retry) retry.innerHTML = '';
   if (btn.dataset.val === item.correct && row.dataset.tried) {
     btn.classList.add('correct');
-    fb.innerHTML = '👍 Trouvé au deuxième essai !' + (item.expl ? ' ' + item.expl : '');
+    fb.innerHTML = MSG_SECOND + (item.expl ? ' ' + item.expl : '');
     fb.className = 'feedback-line fb-ok2';
     _combo = 0;
   } else if (btn.dataset.val === item.correct) {
@@ -243,7 +248,7 @@ window._ordreCheck = function(poolId, zoneId, fbId, eid) {
   document.getElementById(poolId).querySelectorAll('.ordre-item').forEach(b => { b.disabled = true; b.onclick = null; });
   chips.forEach(c => c.onclick = null);
   if (ok && zone.dataset.tried) {
-    fb.innerHTML = '👍 Trouvé au deuxième essai !';
+    fb.innerHTML = MSG_SECOND;
     fb.className = 'feedback-line fb-ok2';
     _combo = 0;
   } else if (ok) {
@@ -357,7 +362,7 @@ window._triCheck = function(poolId, gridId, fbId, eid) {
   pool.querySelectorAll('.tri-chip').forEach(b => { b.disabled = true; b.onclick = null; });
   grid.querySelectorAll('.tri-col').forEach(c => { c.onclick = null; c.classList.remove('tri-target'); });
   if (!bad.length && grid.dataset.tried) {
-    fb.innerHTML = '👍 Trouvé au deuxième essai !'; fb.className = 'feedback-line fb-ok2'; _combo = 0;
+    fb.innerHTML = MSG_SECOND; fb.className = 'feedback-line fb-ok2'; _combo = 0;
   } else if (!bad.length) {
     _ok(grid, fb, ''); fb.innerHTML = rnd(BRAVO); fb.className = 'feedback-line fb-ok';
   } else {
