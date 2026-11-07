@@ -85,6 +85,7 @@
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div></footer>
 
+<script src="exercises.js?v=5"></script>
 <script>
 function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
 function buildQ(data, id) {
@@ -114,6 +115,9 @@ function check(btn, chosen, correct, rowId, fbId) {
     document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
   }
 }
+
+// Moteur commun (exercises.js) : 2e essai, indice, explication, lien leçon
+function buildQ(data, id) { buildQCM(data, id); }
 
 buildQ([{"q": "Triangle rectangle d'hypoténuse 10 et de côté adjacent 6 à l'angle considéré. cos = ?", "correct": "0,6", "choices": ["0,6", "0,8", "0,75", "1,67"]}, {"q": "Hypoténuse 10 et côté opposé 8. sin = ?", "correct": "0,8", "choices": ["0,8", "0,6", "0,64", "1,25"]}, {"q": "Côté opposé 5 et côté adjacent 10. tan = ?", "correct": "0,5", "choices": ["0,5", "2", "0,25", "5"]}, {"q": "cos(x) = 1/2 avec x aigu. x = ?", "correct": "60°", "choices": ["60°", "30°", "45°", "90°"]}], 'ex1');
 buildQ([{"q": "Triangle rectangle en A, hypoténuse BC = 10, angle B = 30°. Le côté AC (opposé à B) mesure…", "correct": "5", "choices": ["5", "5√3", "10√3", "2,5"]}, {"q": "Même triangle : le côté AB (adjacent à B) mesure…", "correct": "5√3", "choices": ["5√3", "5", "10", "√3"]}, {"q": "tan 45° = ?", "correct": "1", "choices": ["1", "0", "√2", "√3"]}, {"q": "Une échelle de 4 m fait un angle de 60° avec le sol. Hauteur du mur atteinte ?", "correct": "2√3 m", "choices": ["2√3 m", "2 m", "4 m", "√3 m"]}], 'ex2');

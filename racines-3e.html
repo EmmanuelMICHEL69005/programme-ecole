@@ -86,6 +86,7 @@
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div></footer>
 
+<script src="exercises.js?v=5"></script>
 <script>
 function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
 function buildQ(data, id) {
@@ -115,6 +116,9 @@ function check(btn, chosen, correct, rowId, fbId) {
     document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
   }
 }
+
+// Moteur commun (exercises.js) : 2e essai, indice, explication, lien leçon
+function buildQ(data, id) { buildQCM(data, id); }
 
 buildQ([{"q": "√72 = ?", "correct": "6√2", "choices": ["6√2", "8√2", "6√3", "36"]}, {"q": "√2 × √8 = ?", "correct": "4", "choices": ["4", "√10", "16", "10"]}, {"q": "(√5)² = ?", "correct": "5", "choices": ["5", "√5", "25", "10"]}, {"q": "√50 = ?", "correct": "5√2", "choices": ["5√2", "2√5", "25√2", "10"]}], 'ex1');
 buildQ([{"q": "x² = 49. Solutions ?", "correct": "x = 7 ou x = −7", "choices": ["x = 7 ou x = −7", "x = 7 seulement", "x = 49", "pas de solution"]}, {"q": "x² = −4. Solutions ?", "correct": "pas de solution", "choices": ["pas de solution", "x = 2", "x = −2", "x = ±4"]}, {"q": "x² = 2. Solutions ?", "correct": "x = √2 ou x = −√2", "choices": ["x = √2 ou x = −√2", "x = 1", "x = 2", "x = 1,41"]}, {"q": "x² = 0,25. Solutions ?", "correct": "x = 0,5 ou x = −0,5", "choices": ["x = 0,5 ou x = −0,5", "x = 0,25", "x = 0,125", "pas de solution"]}], 'ex2');

@@ -82,6 +82,7 @@
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div></footer>
 
+<script src="exercises.js?v=5"></script>
 <script>
 function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
 function buildQ(data, id) {
@@ -111,6 +112,9 @@ function check(btn, chosen, correct, rowId, fbId) {
     document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
   }
 }
+
+// Moteur commun (exercises.js) : 2e essai, indice, explication, lien leçon
+function buildQ(data, id) { buildQCM(data, id); }
 
 buildQ([{"q": "Un solide avec 6 faces rectangulaires est un…", "correct": "pavé droit", "choices": ["pavé droit", "cylindre", "pyramide", "cône"]}, {"q": "Le patron d'un cylindre est composé de…", "correct": "2 disques et 1 rectangle", "choices": ["2 disques et 1 rectangle", "6 carrés", "2 triangles et 3 rectangles", "1 disque et 1 triangle"]}, {"q": "Un prisme droit dont la base est un triangle a … faces.", "correct": "5", "choices": ["5", "4", "6", "3"]}, {"q": "En perspective cavalière, les arêtes cachées se dessinent…", "correct": "en pointillés", "choices": ["en pointillés", "en rouge", "en gras", "on ne les dessine pas"]}], 'ex1');
 buildQ([{"q": "Volume d'un cube d'arête 3 cm ?", "correct": "27 cm³", "choices": ["27 cm³", "9 cm³", "18 cm³", "12 cm³"]}, {"q": "Volume d'un pavé 5 × 4 × 2 (cm) ?", "correct": "40 cm³", "choices": ["40 cm³", "11 cm³", "20 cm³", "22 cm³"]}, {"q": "Volume d'un cube d'arête 10 cm ?", "correct": "1 000 cm³", "choices": ["1 000 cm³", "100 cm³", "300 cm³", "30 cm³"]}, {"q": "Un pavé a un volume de 24 cm³ et une base d'aire 6 cm². Sa hauteur ?", "correct": "4 cm", "choices": ["4 cm", "18 cm", "144 cm", "3 cm"]}], 'ex2');

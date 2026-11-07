@@ -97,6 +97,7 @@
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div></footer>
 
+<script src="exercises.js?v=5"></script>
 <script>
 function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
 function formatFrac(s) {
@@ -132,6 +133,9 @@ function check(btn, chosen, correct, rowId, fbId) {
     document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.dataset.val === correct) b.classList.add('correct'); });
   }
 }
+
+// Moteur commun (exercises.js) : 2e essai, indice, explication, lien leçon
+function buildQ(data, id) { buildQCM(data, id); }
 
 buildQ([
   { enonce: '🎲 On lance un dé à 6 faces numérotées de 1 à 6.', q: 'Obtenir un nombre entre 1 et 6, c\'est…', correct: 'Certain', choices: ['Certain','Impossible','Possible mais pas certain','Très probable'] },

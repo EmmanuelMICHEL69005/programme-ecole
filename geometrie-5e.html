@@ -82,6 +82,7 @@
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div></footer>
 
+<script src="exercises.js?v=5"></script>
 <script>
 function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
 function buildQ(data, id) {
@@ -111,6 +112,9 @@ function check(btn, chosen, correct, rowId, fbId) {
     document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
   }
 }
+
+// Moteur commun (exercises.js) : 2e essai, indice, explication, lien leçon
+function buildQ(data, id) { buildQCM(data, id); }
 
 buildQ([{"q": "Deux angles complémentaires ont une somme de…", "correct": "90°", "choices": ["90°", "180°", "360°", "45°"]}, {"q": "Deux angles supplémentaires ont une somme de…", "correct": "180°", "choices": ["180°", "90°", "360°", "100°"]}, {"q": "Deux droites parallèles sont coupées par une sécante : les angles alternes-internes sont…", "correct": "égaux", "choices": ["égaux", "supplémentaires", "complémentaires", "opposés"]}, {"q": "Un angle mesure 35°. Son supplémentaire mesure…", "correct": "145°", "choices": ["145°", "55°", "125°", "35°"]}], 'ex1');
 buildQ([{"q": "Dans un triangle, deux angles mesurent 40° et 75°. Le troisième mesure…", "correct": "65°", "choices": ["65°", "75°", "45°", "115°"]}, {"q": "Dans un triangle équilatéral, chaque angle mesure…", "correct": "60°", "choices": ["60°", "90°", "45°", "50°"]}, {"q": "Un triangle rectangle a un angle de 90° et un de 30°. Le troisième…", "correct": "60°", "choices": ["60°", "30°", "90°", "45°"]}, {"q": "L'aire d'un triangle de base 8 cm et de hauteur 5 cm est…", "correct": "20 cm²", "choices": ["20 cm²", "40 cm²", "13 cm²", "26 cm²"]}], 'ex2');

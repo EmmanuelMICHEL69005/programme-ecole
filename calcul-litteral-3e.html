@@ -81,6 +81,7 @@
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div></footer>
 
+<script src="exercises.js?v=5"></script>
 <script>
 function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
 function buildQ(data, id) {
@@ -110,6 +111,9 @@ function check(btn, chosen, correct, rowId, fbId) {
     document.getElementById(rowId).querySelectorAll('.btn-choice').forEach(b => { if (b.textContent.trim() === correct) b.classList.add('correct'); });
   }
 }
+
+// Moteur commun (exercises.js) : 2e essai, indice, explication, lien leçon
+function buildQ(data, id) { buildQCM(data, id); }
 
 buildQ([{"q": "(x + 3)² = ?", "correct": "x² + 6x + 9", "choices": ["x² + 6x + 9", "x² + 9", "x² + 3x + 9", "x² + 6x + 3"]}, {"q": "(x − 2)² = ?", "correct": "x² − 4x + 4", "choices": ["x² − 4x + 4", "x² − 4", "x² − 2x + 4", "x² + 4x + 4"]}, {"q": "(x + 5)(x − 5) = ?", "correct": "x² − 25", "choices": ["x² − 25", "x² + 25", "x² − 10x − 25", "x² − 5"]}, {"q": "(2x + 1)² = ?", "correct": "4x² + 4x + 1", "choices": ["4x² + 4x + 1", "2x² + 1", "4x² + 1", "2x² + 4x + 1"]}], 'ex1');
 buildQ([{"q": "x² − 16 = ?", "correct": "(x − 4)(x + 4)", "choices": ["(x − 4)(x + 4)", "(x − 16)(x + 1)", "(x − 4)²", "(x + 4)²"]}, {"q": "x² + 6x + 9 = ?", "correct": "(x + 3)²", "choices": ["(x + 3)²", "(x + 9)(x + 1)", "(x + 3)(x + 6)", "(x − 3)²"]}, {"q": "2x² − 8 = ?", "correct": "2(x − 2)(x + 2)", "choices": ["2(x − 2)(x + 2)", "(2x − 8)(x − 1)", "2(x − 4)(x + 1)", "(x − 4)(x + 4)"]}, {"q": "9 − x² = ?", "correct": "(3 − x)(3 + x)", "choices": ["(3 − x)(3 + x)", "(9 − x)(1 + x)", "(3 − x)²", "(3 + x)²"]}], 'ex2');
