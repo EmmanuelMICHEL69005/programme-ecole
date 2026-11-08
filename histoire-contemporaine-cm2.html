@@ -55,6 +55,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 5</span> Associer <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">PAIRES</span></h2>
     <div id="ex5"></div>
   </div>
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 6</span> Le XIXe siècle : industrie et progrès <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex6"></div>
+  </div>
 
 </main>
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div></footer>
@@ -102,6 +106,13 @@ buildPaires([
   { q:'Associe chaque événement à sa date.',
     pairs:[['Prise de la Bastille','14 juillet 1789'],['Débarquement de Normandie','6 juin 1944'],['Armistice de la Première Guerre mondiale','11 novembre 1918'],['Création de la Ve République','1958']] },
 ], 'ex5');
+buildQCM([
+  { q:'Quelle machine faisait avancer les premières locomotives ?', correct:'La machine à vapeur', choices:['La machine à vapeur','Le moteur électrique','Le moulin à vent','Le moteur à essence'] },
+  { q:'Au XIXe siècle, beaucoup de paysans quittent la campagne pour…', correct:'travailler dans les usines des villes', choices:['travailler dans les usines des villes','devenir chevaliers','partir en croisade','construire des châteaux forts'] },
+  { q:'Avec les lois de Jules Ferry (1881-1882), l\'école primaire devient…', correct:'gratuite, laïque et obligatoire', choices:['payante et réservée aux garçons','gratuite, laïque et obligatoire','réservée aux nobles','facultative pour tous'] },
+  { q:'Quel savant met au point le vaccin contre la rage en 1885 ?', correct:'Louis Pasteur', choices:['Louis Pasteur','Marie Curie','Gustave Eiffel','Victor Hugo'] },
+  { q:'Au XIXe siècle, quel nouveau moyen de transport relie les grandes villes de France ?', correct:'Le chemin de fer', choices:['Le chemin de fer','L\'avion','Le TGV','La fusée'] },
+], 'ex6');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

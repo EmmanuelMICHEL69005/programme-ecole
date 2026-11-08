@@ -80,6 +80,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#9d174d;">Ex 4</span> Probabilités</h2>
     <div id="ex4"></div>
   </div>
+  <div class="exercice-block">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#9d174d;">Ex 5</span> Livres lus par mois</h2>
+    <div id="ex5"></div>
+  </div>
 
 </main>
 
@@ -152,6 +156,13 @@ buildQ([
   { q: 'Un sac contient 5 billes rouges et 3 billes bleues. Probabilité de tirer une bille rouge ?', correct: '5/8', choices: ['3/5','5/8','3/8','5/3'] },
   { q: 'On lance une pièce. Probabilité d\'obtenir pile deux fois de suite ?', correct: '1/4', choices: ['1/2','1/4','1/6','2/4'] },
 ], 'ex4');
+buildQ([
+  { tableau: `<table class="tableau"><tr><th>Mois</th><th>Janvier</th><th>Février</th><th>Mars</th><th>Avril</th></tr><tr><td>Livres lus</td><td>4</td><td>6</td><td>3</td><td>7</td></tr></table>`, q: 'Combien de livres ont été lus en tout sur les 4 mois ?', correct: '20', choices: ['17','20','21','24'] },
+  { tableau: `<table class="tableau"><tr><th>Mois</th><th>Janvier</th><th>Février</th><th>Mars</th><th>Avril</th></tr><tr><td>Livres lus</td><td>4</td><td>6</td><td>3</td><td>7</td></tr></table>`, q: 'Quel mois a-t-on lu le moins de livres ?', correct: 'Mars', choices: ['Janvier','Février','Mars','Avril'] },
+  { tableau: `<table class="tableau"><tr><th>Mois</th><th>Janvier</th><th>Février</th><th>Mars</th><th>Avril</th></tr><tr><td>Livres lus</td><td>4</td><td>6</td><td>3</td><td>7</td></tr></table>`, q: 'Combien de livres de plus ont été lus en avril qu\'en mars ?', correct: '4', choices: ['3','4','7','10'] },
+  { tableau: `<table class="tableau"><tr><th>Mois</th><th>Janvier</th><th>Février</th><th>Mars</th><th>Avril</th></tr><tr><td>Livres lus</td><td>4</td><td>6</td><td>3</td><td>7</td></tr></table>`, q: 'Quel est le nombre moyen de livres lus par mois ?', correct: '5', choices: ['4','5','6','20'] },
+  { tableau: `<table class="tableau"><tr><th>Mois</th><th>Janvier</th><th>Février</th><th>Mars</th><th>Avril</th></tr><tr><td>Livres lus</td><td>4</td><td>6</td><td>3</td><td>7</td></tr></table>`, q: 'Pendant combien de mois a-t-on lu au moins 5 livres ?', correct: '2', choices: ['1','2','3','4'] },
+], 'ex5');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

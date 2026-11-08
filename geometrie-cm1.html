@@ -106,6 +106,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Trier : avec ou sans angle droit ? <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">TRI</span></h2>
     <div id="ex7"></div>
   </div>
+  <div class="exercice-block" style="--accent:#ec4899">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 8</span> Le cercle : rayon et diamètre <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex8"></div>
+  </div>
 
 </main>
 
@@ -176,6 +180,13 @@ buildTri([
     ]
   },
 ], 'ex7');
+buildQCM([
+  { q:'Un cercle a un rayon de 4 cm. Son diamètre mesure…', correct:'8 cm', choices:['2 cm','4 cm','8 cm','16 cm'] },
+  { q:'Un cercle a un diamètre de 10 cm. Son rayon mesure…', correct:'5 cm', choices:['5 cm','10 cm','20 cm','2 cm'] },
+  { q:'Comment s\'appelle le point situé au milieu d\'un cercle ?', correct:'Le centre', choices:['Le centre','Le sommet','Le rayon','Le côté'] },
+  { q:'Quel instrument utilise-t-on pour tracer un cercle ?', correct:'Le compas', choices:['La règle','L\'équerre','Le compas','Le rapporteur'] },
+  { q:'Un segment qui relie le centre à un point du cercle s\'appelle…', correct:'un rayon', choices:['un diamètre','un rayon','un côté','une diagonale'] },
+], 'ex8');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

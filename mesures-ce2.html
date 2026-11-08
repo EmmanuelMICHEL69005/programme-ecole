@@ -108,6 +108,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Trier du plus petit au plus grand <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">ORDRE</span></h2>
     <div id="ex7"></div>
   </div>
+  <div class="exercice-block" style="--accent:#ec4899">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 8</span> Problèmes de mesures <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex8"></div>
+  </div>
 
 </main>
 
@@ -173,6 +177,13 @@ buildOrdre([
   { q:'Range ces masses du MOINS au PLUS LOURDE :',
     items:['500 g','1 kg','1 500 g','2 kg','3 kg'] },
 ], 'ex7');
+buildQCM([
+  { q:'Léo parcourt 800 m le matin et 700 m l\'après-midi. Quelle distance en tout ?', correct:'1 500 m', choices:['1 500 m','1 400 m','15 km','150 m'] },
+  { q:'Une corde de 5 m est coupée en 2 morceaux égaux. Chaque morceau mesure…', correct:'2 m 50 cm', choices:['2 m 50 cm','2 m 5 cm','3 m','25 cm'] },
+  { q:'Un sac pèse 2 kg. Combien pèsent 4 sacs identiques ?', correct:'8 kg', choices:['6 kg','8 kg','800 g','24 kg'] },
+  { q:'Une bouteille contient 1 L. Je verse 25 cL dans un verre. Combien reste-t-il ?', correct:'75 cL', choices:['75 cL','24 cL','85 cL','15 cL'] },
+  { q:'Un paquet contient 1 kg de farine. Maman utilise 250 g. Combien reste-t-il ?', correct:'750 g', choices:['750 g','850 g','1 250 g','250 g'] },
+], 'ex8');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

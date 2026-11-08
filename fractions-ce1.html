@@ -114,6 +114,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 4</span> Comparer des fractions</h2>
     <div id="ex4"></div>
   </div>
+  <div class="exercice-block">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#059669;">Ex 5</span> Reconstituer l'unité</h2>
+    <div id="ex5"></div>
+  </div>
 
 </main>
 
@@ -182,6 +186,13 @@ buildQ([
   { q: 'Si tu as 1/2 d\'une pizza et ton ami a 1/4, qui a plus ?', correct: 'Moi (1/2 > 1/4)', choices: ['Moi (1/2 > 1/4)','Mon ami (1/4 > 1/2)','Nous avons pareil'] },
   { q: '2/4 est-il égal à 1/2 ?', correct: 'Oui, 2/4 = 1/2', choices: ['Non, 2/4 < 1/2','Oui, 2/4 = 1/2','Non, 2/4 > 1/2'] },
 ], 'ex4');
+buildQ([
+  { q: 'Combien faut-il de quarts pour faire une pizza entière ?', correct: '4', choices: ['2','3','4'] },
+  { q: 'Combien faut-il de tiers pour faire un gâteau entier ?', correct: '3', choices: ['2','3','4'] },
+  { q: 'Combien faut-il de moitiés pour faire une pomme entière ?', correct: '2', choices: ['1','2','4'] },
+  { q: 'Je mange 1/4 d\'une pizza. Combien de quarts reste-t-il ?', correct: '3', choices: ['1','2','3'] },
+  { q: 'Je mange 1/3 d\'un gâteau. Combien de tiers reste-t-il ?', correct: '2', choices: ['1','2','3'] },
+], 'ex5');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

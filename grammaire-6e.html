@@ -77,6 +77,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#d97706">Ex 10</span> Classer les subordonnées <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">TRI</span></h2>
     <div id="ex10"></div>
   </div>
+  <div class="exercice-block" style="--accent:#d97706">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#d97706">Ex 11</span> Le complément circonstanciel <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex11"></div>
+  </div>
   <div style="background:#fdf2f8;border:1px solid #ec489955;border-radius:10px;padding:14px 16px;margin:16px 0">
     <div style="font-weight:900;color:#831843;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français 6e</div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
@@ -175,6 +179,13 @@ buildTri([{ q:'Classer chaque groupe de mots selon le type de subordonnée', cat
   {v:'pour que tu comprennes', cat:'But'},
   {v:"afin qu'il réussisse", cat:'But'},
 ]}], 'ex10');
+buildQCM([
+  { card:'"Nous jouons dans le jardin." → dans le jardin', q:'Ce complément circonstanciel indique…', correct:'le lieu', choices:['le lieu','le temps','la manière','la cause'] },
+  { card:'"Le train partira à midi." → à midi', q:'Ce complément circonstanciel indique…', correct:'le temps', choices:['le lieu','le temps','la manière','la cause'] },
+  { card:'"Il marche lentement." → lentement', q:'Ce complément circonstanciel indique…', correct:'la manière', choices:['le lieu','le temps','la manière','la cause'] },
+  { card:'"Elle reste à l\'intérieur à cause de la pluie." → à cause de la pluie', q:'Ce complément circonstanciel indique…', correct:'la cause', choices:['le lieu','le temps','la manière','la cause'] },
+  { card:'"Chaque matin, je bois un verre de lait." → Chaque matin', q:'Ce complément circonstanciel indique…', correct:'le temps', choices:['le lieu','le temps','la manière','la cause'] },
+], 'ex11');
 </script>
 <script src="sync.js?v=f881f6bc"></script>
 <script src="firebase-keys.js?v=482e498d"></script>

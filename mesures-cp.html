@@ -117,6 +117,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#f97316">Ex 7</span> Plus lourd ou plus léger qu'1 kg ? <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">TRI</span></h2>
     <div id="ex7"></div>
   </div>
+  <div class="exercice-block" style="--accent:#f97316">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#f97316">Ex 8</span> Calculer avec des longueurs <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex8"></div>
+  </div>
 
 </main>
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div></footer>
@@ -191,6 +195,13 @@ buildTri([
     ]
   },
 ], 'ex7');
+buildQCM([
+  { q:'Un crayon mesure 12 cm. Une gomme mesure 4 cm. Le crayon mesure combien de plus ?', correct:'8 cm', choices:['8 cm','16 cm','4 cm','12 cm'] },
+  { q:'Je mets bout à bout 2 bâtons de 5 cm. Quelle longueur ?', correct:'10 cm', choices:['7 cm','10 cm','25 cm','5 cm'] },
+  { q:'Un ruban mesure 20 cm. J\'en coupe 5 cm. Il reste…', correct:'15 cm', choices:['25 cm','15 cm','5 cm','10 cm'] },
+  { q:'Léa saute 30 cm. Tom saute 50 cm. Qui saute le plus loin ?', correct:'Tom', choices:['Léa','Tom','Ils sautent aussi loin'] },
+  { q:'Un trait mesure 6 cm. J\'en trace un autre de 3 cm de plus. Il mesure…', correct:'9 cm', choices:['3 cm','9 cm','18 cm','63 cm'] },
+], 'ex8');
 </script>
 <script src="sync.js?v=f881f6bc"></script>
 <script src="firebase-keys.js?v=482e498d"></script>

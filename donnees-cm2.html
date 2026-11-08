@@ -87,6 +87,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Associer terme statistique et définition <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">PAIRES</span></h2>
     <div id="ex6"></div>
   </div>
+  <div class="exercice-block" style="--accent:#10b981">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 7</span> Relevé de températures <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex7"></div>
+  </div>
 
 </main>
 
@@ -147,6 +151,18 @@ buildPaires([
   { q:'Associe chaque calcul à son résultat (notes : 14, 16, 12, 18, 10).',
     pairs:[['Moyenne','14'],['Étendue','8'],['Médiane','14'],['Mode','Aucun (toutes uniques)']] },
 ], 'ex6');
+buildQCM([
+  { enonce:'Températures à midi : Lun 12 °C, Mar 15 °C, Mer 9 °C, Jeu 14 °C, Ven 10 °C',
+    q:'Quel jour a-t-il fait le plus chaud ?', correct:'Mardi', choices:['Lundi','Mardi','Mercredi','Jeudi'] },
+  { enonce:'Même relevé.',
+    q:'Quel est l\'écart entre la température la plus haute et la plus basse ?', correct:'6 °C', choices:['3 °C','5 °C','6 °C','9 °C'] },
+  { enonce:'Même relevé.',
+    q:'Quelle est la température moyenne de la semaine ?', correct:'12 °C', choices:['11 °C','12 °C','13 °C','60 °C'] },
+  { enonce:'Même relevé.',
+    q:'Combien de jours la température a-t-elle dépassé 11 °C ?', correct:'3', choices:['2','3','4','5'] },
+  { enonce:'Même relevé.',
+    q:'De combien la température a-t-elle baissé entre jeudi et vendredi ?', correct:'4 °C', choices:['2 °C','4 °C','5 °C','24 °C'] },
+], 'ex7');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>
