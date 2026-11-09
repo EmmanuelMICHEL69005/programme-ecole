@@ -109,6 +109,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Trier : multiple de 3, 5 ou 7 ? <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">TRI</span></h2>
     <div id="ex7"></div>
   </div>
+  <div class="exercice-block" style="--accent:#ec4899">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 8</span> Problèmes : multiplier ou partager <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex8"></div>
+  </div>
 
 </main>
 
@@ -184,6 +188,13 @@ buildTri([
     ]
   },
 ], 'ex7');
+buildQCM([
+  { q:'On partage 24 billes entre 4 enfants. Combien de billes reçoit chaque enfant ?', correct:'6', choices:['6','20','28','8'] },
+  { q:'35 élèves forment des équipes de 5. Combien y a-t-il d\'équipes ?', correct:'7', choices:['7','30','40','5'] },
+  { q:'Il y a 6 boîtes de 8 œufs. Combien y a-t-il d\'œufs en tout ?', correct:'48', choices:['48','14','42','56'] },
+  { q:'On partage 20 bonbons entre 3 enfants. Chacun en reçoit 6. Combien en reste-t-il ?', correct:'2', choices:['2','3','6','17'] },
+  { q:'Un paquet contient 9 cartes. Combien de cartes y a-t-il dans 7 paquets ?', correct:'63', choices:['63','16','56','72'] },
+], 'ex8');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

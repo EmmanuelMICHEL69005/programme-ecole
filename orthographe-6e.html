@@ -77,6 +77,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#d97706">Ex 10</span> Associe chaque emploi de "même" <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">PAIRES</span></h2>
     <div id="ex10"></div>
   </div>
+  <div class="exercice-block" style="--accent:#d97706">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#d97706">Ex 11</span> Accord sujet-verbe : les pièges <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex11"></div>
+  </div>
   <div style="background:#fdf2f8;border:1px solid #ec489955;border-radius:10px;padding:14px 16px;margin:16px 0">
     <div style="font-weight:900;color:#831843;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français 6e</div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
@@ -167,6 +171,13 @@ buildPaires([
   { left:'Il travaille, même quand il est fatigué.', right:'adverbe (invariable)' },
   { left:'Les mêmes élèves ont réussi.', right:'adjectif (variable)' },
 ], 'ex10');
+buildQCM([
+  { card:'"Dans la forêt ___ des loups." (vivre)', q:'Choisis la forme correcte du verbe au présent.', correct:'vivent', choices:['vit','vivent','vis','vivant'] },
+  { card:'"Les enfants de ma voisine ___ au parc." (jouer)', q:'Choisis la forme correcte du verbe au présent.', correct:'jouent', choices:['joue','joues','jouent','jouer'] },
+  { card:'"Où ___ tes parents ?" (aller)', q:'Choisis la forme correcte du verbe au présent.', correct:'vont', choices:['va','vas','vont','allez'] },
+  { card:'"Je les ___ souvent." (regarder)', q:'Choisis la forme correcte du verbe au présent.', correct:'regarde', choices:['regarde','regardes','regardent','regardé'] },
+  { card:'"Le bruit des vagues me ___." (calmer)', q:'Choisis la forme correcte du verbe au présent.', correct:'calme', choices:['calme','calmes','calment','calmé'] },
+], 'ex11');
 </script>
 <script src="sync.js?v=f881f6bc"></script>
 <script src="firebase-keys.js?v=482e498d"></script>

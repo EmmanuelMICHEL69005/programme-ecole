@@ -77,6 +77,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#dc2626">Ex 10</span> Classer les propositions : principale / subordonnée <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">TRI</span></h2>
     <div id="ex10"></div>
   </div>
+  <div class="exercice-block" style="--accent:#dc2626">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#dc2626">Ex 11</span> Le complément du nom <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex11"></div>
+  </div>
   <div style="background:#fffbeb;border:1px solid #f59e0b55;border-radius:10px;padding:14px 16px;margin:16px 0">
     <div style="font-weight:900;color:#78350f;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CM2</div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
@@ -176,6 +180,13 @@ buildTri([{
     { v:'si tu veux.', cat:'Subordonnée' },
   ]
 }], 'ex10');
+buildQCM([
+  { card:'"Le vélo de Paul est rouge."', q:'Quel groupe est le complément du nom ?', correct:'de Paul', choices:['de Paul','Le vélo','est rouge','rouge'] },
+  { card:'"J\'ai mangé une tarte aux pommes."', q:'Quel groupe est le complément du nom ?', correct:'aux pommes', choices:['aux pommes','une tarte','J\'ai mangé','mangé'] },
+  { card:'"Elle porte un pull en laine."', q:'Quel groupe est le complément du nom ?', correct:'en laine', choices:['en laine','Elle','porte','un pull'] },
+  { card:'"La porte du garage est ouverte."', q:'Quel groupe est le complément du nom ?', correct:'du garage', choices:['du garage','La porte','est ouverte','ouverte'] },
+  { card:'"Nous prenons le train de nuit."', q:'Quel groupe est le complément du nom ?', correct:'de nuit', choices:['de nuit','Nous','prenons','le train'] },
+], 'ex11');
 </script>
 <script src="sync.js?v=f881f6bc"></script>
 <script src="firebase-keys.js?v=482e498d"></script>

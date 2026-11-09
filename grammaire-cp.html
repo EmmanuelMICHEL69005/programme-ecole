@@ -77,6 +77,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#06b6d4">Ex 10</span> Masculin ou féminin ? Trier les groupes nominaux <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">TRI</span></h2>
     <div id="ex10"></div>
   </div>
+  <div class="exercice-block" style="--accent:#06b6d4">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#06b6d4">Ex 11</span> Compter les mots d'une phrase <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex11"></div>
+  </div>
   <div style="background:#f0fdf4;border:1px solid #16a34a55;border-radius:10px;padding:14px 16px;margin:16px 0">
     <div style="font-weight:900;color:#14532d;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CP</div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
@@ -176,6 +180,13 @@ buildTri([
     { v:'ma maison', cat:'Féminin' },
   ]}
 ], 'ex10');
+buildQCM([
+  { card:'"Le bébé rit."', q:'Combien de mots y a-t-il dans cette phrase ?', correct:'3', choices:['2','3','4','5'] },
+  { card:'"Papa lit un livre."', q:'Combien de mots y a-t-il dans cette phrase ?', correct:'4', choices:['3','4','5','6'] },
+  { card:'"Lina mange une pomme rouge."', q:'Combien de mots y a-t-il dans cette phrase ?', correct:'5', choices:['4','5','6','3'] },
+  { card:'"Il pleut."', q:'Combien de mots y a-t-il dans cette phrase ?', correct:'2', choices:['1','2','3','4'] },
+  { card:'"Le petit chien joue dans le jardin."', q:'Combien de mots y a-t-il dans cette phrase ?', correct:'7', choices:['5','6','7','8'] },
+], 'ex11');
 </script>
 <script src="sync.js?v=f881f6bc"></script>
 <script src="firebase-keys.js?v=482e498d"></script>

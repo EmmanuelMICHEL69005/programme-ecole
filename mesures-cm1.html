@@ -100,6 +100,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Ranger du plus court au plus long <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">ORDRE</span></h2>
     <div id="ex7"></div>
   </div>
+  <div class="exercice-block" style="--accent:#ec4899">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 8</span> Calculer un périmètre <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex8"></div>
+  </div>
 
 </main>
 
@@ -165,6 +169,13 @@ buildOrdre([
   { q:'Range ces durées du PLUS COURT au PLUS LONG :',
     items:['45 min','90 min','2 h','2 h 30 min','3 h'] },
 ], 'ex7');
+buildQCM([
+  { q:'Un carré a des côtés de 6 cm. Quel est son périmètre ?', correct:'24 cm', choices:['24 cm','12 cm','36 cm','18 cm'] },
+  { q:'Un rectangle mesure 8 cm de long et 3 cm de large. Quel est son périmètre ?', correct:'22 cm', choices:['22 cm','11 cm','24 cm','16 cm'] },
+  { q:'Un triangle a des côtés de 5 cm, 4 cm et 6 cm. Quel est son périmètre ?', correct:'15 cm', choices:['15 cm','120 cm','11 cm','10 cm'] },
+  { q:'Un terrain carré mesure 15 m de côté. Quel est son périmètre ?', correct:'60 m', choices:['60 m','30 m','225 m','45 m'] },
+  { q:'Le périmètre d\'un carré est 20 cm. Combien mesure un côté ?', correct:'5 cm', choices:['5 cm','10 cm','4 cm','80 cm'] },
+], 'ex8');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

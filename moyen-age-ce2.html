@@ -55,6 +55,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 5</span> Associer <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">PAIRES</span></h2>
     <div id="ex5"></div>
   </div>
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 6</span> La vie au village et en ville <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex6"></div>
+  </div>
 
 </main>
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div></footer>
@@ -102,6 +106,13 @@ buildPaires([
   { q:'Associe chaque terme médiéval à sa définition.',
     pairs:[['Donjon','Tour principale du château fort'],['Douves','Fossé rempli d\'eau autour du château'],['Chevalier','Guerrier noble qui combat à cheval'],['Suzerain','Seigneur au-dessus des seigneurs']] },
 ], 'ex5');
+buildQCM([
+  { q:'Au Moyen Âge, quelle céréale les paysans cultivaient-ils beaucoup pour faire du pain ?', correct:'Le blé', choices:['Le blé','Le maïs','Le riz','Le cacao'] },
+  { q:'Pour labourer les champs, les paysans utilisaient souvent…', correct:'Des bœufs', choices:['Des bœufs','Des tracteurs','Des éléphants','Des chameaux'] },
+  { q:'Comment s\'appellent les hauts murs qui protègent une ville au Moyen Âge ?', correct:'Les remparts', choices:['Les remparts','Les douves','Les vitraux','Les tapisseries'] },
+  { q:'Quel artisan fabrique des objets en fer, comme les fers à cheval ?', correct:'Le forgeron', choices:['Le forgeron','Le boulanger','Le meunier','Le tisserand'] },
+  { q:'Où vivaient les moines au Moyen Âge ?', correct:'Dans un monastère', choices:['Dans un monastère','Dans un donjon','Dans un amphithéâtre','Dans une usine'] },
+], 'ex6');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

@@ -119,6 +119,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#f97316">Ex 7</span> Symétrie <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">VRAI / FAUX</span></h2>
     <div id="ex7"></div>
   </div>
+  <div class="exercice-block" style="--accent:#f97316">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#f97316">Ex 8</span> Les instruments de géométrie <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex8"></div>
+  </div>
 
 </main>
 
@@ -190,6 +194,13 @@ buildVF([
   { q:'Un cercle a une infinité d\'axes de symétrie.', correct:true },
   { q:'Un carré a exactement 2 axes de symétrie.', correct:false, expl:'Un carré a 4 axes de symétrie : 2 qui passent par les côtés et 2 qui passent par les sommets.' },
 ], 'ex7');
+buildQCM([
+  { q:'Pour tracer un trait bien droit, tu utilises…', correct:'La règle', choices:['La règle','Le compas','La gomme','Le taille-crayon'] },
+  { q:'Pour vérifier qu\'un angle est droit, tu utilises…', correct:'L\'équerre', choices:['L\'équerre','Le compas','La gomme','Le crayon de couleur'] },
+  { q:'Pour tracer un cercle, tu utilises…', correct:'Le compas', choices:['Le compas','L\'équerre','La gomme','Le taille-crayon'] },
+  { q:'Avec une règle graduée, tu peux mesurer…', correct:'Une longueur', choices:['Une longueur','Une durée','Une masse','Une température'] },
+  { q:'Un trait droit qui relie deux points s\'appelle…', correct:'Un segment', choices:['Un segment','Un cercle','Un angle','Un carré'] },
+], 'ex8');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

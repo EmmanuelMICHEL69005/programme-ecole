@@ -92,6 +92,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#0891b2">Ex 10</span> Associe chaque homophone à sa règle <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">PAIRES</span></h2>
     <div id="ex10"></div>
   </div>
+  <div class="exercice-block" style="--accent:#0891b2">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#0891b2">Ex 11</span> m devant m, b, p <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex11"></div>
+  </div>
 
   <div style="background:#f0fdf4;border:1px solid #05966955;border-radius:10px;padding:14px 16px;margin:16px 0">
     <div style="font-weight:900;color:#064e3b;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CE1</div>
@@ -193,6 +197,13 @@ buildPaires([
   { left:'est', right:'verbe être (remplaçable par était)' },
   { left:'et', right:'conjonction (remplaçable par et puis)' },
 ], 'ex10');
+buildQCM([
+  { q:'Choisis le mot bien écrit.', correct:'une lampe', choices:['une lampe','une lanpe','une lempe','une lamppe'] },
+  { q:'Choisis le mot bien écrit.', correct:'une ombre', choices:['une ombre','une onbre','une ombbre','une hombre'] },
+  { q:'Choisis le mot bien écrit.', correct:'la chambre', choices:['la chambre','la chanbre','la chembre','la chamber'] },
+  { q:'Choisis le mot bien écrit.', correct:'un timbre', choices:['un timbre','un tinbre','un teimbre','un timbbre'] },
+  { q:'Choisis le mot bien écrit.', correct:'le jambon', choices:['le jambon','le janbon','le jembon','le jambom'] },
+], 'ex11');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>
