@@ -98,6 +98,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 9</span> Les paysages <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
     <div id="ex9"></div>
   </div>
+  <div class="exercice-block" style="--accent:#10b981">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 10</span> Continents, mers et océans <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex10"></div>
+  </div>
 
 </main>
 
@@ -178,6 +182,14 @@ buildQCM([
   { q:'Où trouve-t-on des sommets couverts de neige ?', correct:'À la montagne', choices:['À la montagne','À la plage','Dans un champ','Dans un port'] },
   { q:'Comment appelle-t-on l\'endroit où les bateaux s\'arrêtent ?', correct:'Un port', choices:['Une gare','Un port','Un aéroport','Un parking'] },
 ], 'ex9');
+
+buildQCM([
+  { q:'Sur quel continent se trouve la France ?', correct:'L\'Europe', choices:['L\'Europe','L\'Afrique','L\'Asie','L\'Amérique'] },
+  { q:'Quel est le plus grand océan du monde ?', correct:'L\'océan Pacifique', choices:['L\'océan Pacifique','L\'océan Atlantique','L\'océan Indien','L\'océan Arctique'] },
+  { q:'Quel océan borde l\'ouest de la France ?', correct:'L\'océan Atlantique', choices:['L\'océan Pacifique','L\'océan Atlantique','L\'océan Indien','L\'océan Arctique'] },
+  { q:'Quelle mer borde le sud de la France ?', correct:'La mer Méditerranée', choices:['La mer Méditerranée','La mer du Nord','La mer Rouge','La mer Noire'] },
+  { q:'Sur un globe, la couleur bleue représente le plus souvent…', correct:'les mers et les océans', choices:['les forêts','les mers et les océans','les déserts','les villes'] },
+], 'ex10');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

@@ -81,6 +81,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#d97706">Ex 11</span> Suffixes et familles de mots <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
     <div id="ex11"></div>
   </div>
+  <div class="exercice-block" style="--accent:#d97706">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#d97706">Ex 12</span> Choisir le verbe précis <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex12"></div>
+  </div>
   <div style="background:#fdf2f8;border:1px solid #ec489955;border-radius:10px;padding:14px 16px;margin:16px 0">
     <div style="font-weight:900;color:#831843;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français 6e</div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
@@ -189,6 +193,14 @@ buildQCM([
   { card:'"terrain, terrasse, enterrer, terrible"', q:'Quel mot n\'est PAS de la famille de "terre" ?', correct:'terrible', choices:['terrain','terrasse','enterrer','terrible'] },
   { card:'"lisible"', q:'Quel est le contraire de "lisible", formé avec un préfixe ?', correct:'illisible', choices:['illisible','inlisible','délisible','malisible'] },
 ], 'ex11');
+
+buildQCM([
+  { card:'"Il dit un secret à l\'oreille de son ami."', q:'Quel verbe plus précis peut remplacer « dit » sans changer le sens ?', correct:'murmure', choices:['murmure','hurle','proclame','crie'] },
+  { card:'"Le peintre fait un tableau."', q:'Quel verbe plus précis peut remplacer « fait » sans changer le sens ?', correct:'peint', choices:['peint','vend','achète','décroche'] },
+  { card:'"L\'écrivain fait un roman."', q:'Quel verbe plus précis peut remplacer « fait » sans changer le sens ?', correct:'écrit', choices:['écrit','lit','achète','oublie'] },
+  { card:'"Ma tante a une boulangerie."', q:'Quel verbe plus précis peut remplacer « a » sans changer le sens ?', correct:'possède', choices:['possède','cherche','visite','quitte'] },
+  { card:'"Les enfants mettent leurs jouets dans le coffre."', q:'Quel verbe plus précis peut remplacer « mettent » sans changer le sens ?', correct:'rangent', choices:['rangent','cassent','prêtent','perdent'] },
+], 'ex12');
 </script>
 <script src="sync.js?v=f881f6bc"></script>
 <script src="firebase-keys.js?v=482e498d"></script>

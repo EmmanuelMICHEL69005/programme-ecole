@@ -59,6 +59,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 6</span> Se repérer dans l'espace <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
     <div id="ex6"></div>
   </div>
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 7</span> Les lieux du quartier <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex7"></div>
+  </div>
 
 </main>
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div></footer>
@@ -113,6 +117,14 @@ buildQCM([
   { q:'Le contraire de « à gauche », c\'est…', correct:'À droite', choices:['En haut','À droite','Devant','Dessous'] },
   { q:'Un dessin de la classe vue de dessus s\'appelle…', correct:'Un plan', choices:['Un plan','Un portrait','Un calendrier','Un album'] },
 ], 'ex6');
+
+buildQCM([
+  { q:'Où vas-tu pour emprunter des livres ?', correct:'À la bibliothèque', choices:['À la bibliothèque','À la boulangerie','À la piscine','À la poste'] },
+  { q:'Où achète-t-on du pain ?', correct:'À la boulangerie', choices:['À la pharmacie','À la boulangerie','À la mairie','À la gare'] },
+  { q:'Où va-t-on pour prendre le train ?', correct:'À la gare', choices:['À l\'école','À la gare','Au marché','À la bibliothèque'] },
+  { q:'Où travaille le maire ?', correct:'À la mairie', choices:['À la mairie','À la boulangerie','À la piscine','Au stade'] },
+  { q:'Où les pompiers rangent-ils leurs camions ?', correct:'À la caserne', choices:['À la gare','À la caserne','À la bibliothèque','Au marché'] },
+], 'ex7');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

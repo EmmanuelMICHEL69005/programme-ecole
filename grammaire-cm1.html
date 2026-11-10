@@ -82,6 +82,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#dc2626">Ex 11</span> Trouver le sujet du verbe <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
     <div id="ex11"></div>
   </div>
+  <div class="exercice-block" style="--accent:#dc2626">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#dc2626">Ex 12</span> Trouver le verbe conjugué <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex12"></div>
+  </div>
   <div style="background:#eff6ff;border:1px solid #3b82f655;border-radius:10px;padding:14px 16px;margin:16px 0">
     <div style="font-weight:900;color:#1e3a8a;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CM1</div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
@@ -195,6 +199,14 @@ buildQCM([
   { card:'"Chaque matin, Paul prend le bus."', q:'Quel est le sujet du verbe "prend" ?', correct:'Paul', choices:['Chaque matin','Paul','le bus','prend'] },
   { card:'"Elles chantent une chanson."', q:'Quel est le sujet du verbe "chantent" ?', correct:'Elles', choices:['Elles','une chanson','chantent','chanson'] },
 ], 'ex11');
+
+buildQCM([
+  { card:'"Chaque soir, ma grand-mère lit un roman."', q:'Quel est le verbe conjugué ?', correct:'lit', choices:['soir','lit','grand-mère','roman'] },
+  { card:'"Les oiseaux construisent leur nid au printemps."', q:'Quel est le verbe conjugué ?', correct:'construisent', choices:['oiseaux','construisent','nid','printemps'] },
+  { card:'"Demain, nous partirons à la mer."', q:'Quel est le verbe conjugué ?', correct:'partirons', choices:['Demain','nous','partirons','mer'] },
+  { card:'"Le boulanger a préparé des croissants."', q:'Quel est le verbe conjugué ?', correct:'a préparé', choices:['a préparé','boulanger','croissants','des'] },
+  { card:'"Tu veux jouer avec nous ?"', q:'Quel est le verbe conjugué ?', correct:'veux', choices:['Tu','veux','jouer','nous'], hint:'Un verbe à l\'infinitif n\'est pas conjugué.' },
+], 'ex12');
 </script>
 <script src="sync.js?v=f881f6bc"></script>
 <script src="firebase-keys.js?v=482e498d"></script>

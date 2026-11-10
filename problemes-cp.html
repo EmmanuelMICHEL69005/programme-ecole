@@ -91,6 +91,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 6</span> Trier les problèmes : + ou − ? <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">TRI</span></h2>
     <div id="ex6"></div>
   </div>
+  <div class="exercice-block" style="--accent:#10b981">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 7</span> Problèmes : combien de plus ? <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex7"></div>
+  </div>
 
 </main>
 
@@ -157,6 +161,14 @@ buildTri([
     ]
   },
 ], 'ex6');
+
+buildQCM([
+  { enonce:'🔵 Léo a 8 billes. Sara a 12 billes.', q:'Combien de billes Sara a-t-elle de plus que Léo ?', correct:'4 billes', choices:['4 billes','20 billes','8 billes','12 billes'] },
+  { enonce:'📚 Tom a lu 15 livres. Inès en a lu 9.', q:'Combien de livres Tom a-t-il lus de plus qu\'Inès ?', correct:'6 livres', choices:['5 livres','6 livres','7 livres','24 livres'] },
+  { enonce:'🎂 Lucas a 6 ans. Sa sœur a 4 ans de plus que lui.', q:'Quel âge a sa sœur ?', correct:'10 ans', choices:['2 ans','4 ans','6 ans','10 ans'] },
+  { enonce:'🎈 Nina a 20 ballons. Paul a 5 ballons de moins que Nina.', q:'Combien de ballons Paul a-t-il ?', correct:'15 ballons', choices:['15 ballons','25 ballons','5 ballons','20 ballons'] },
+  { enonce:'🏀 Max a marqué 13 points. Lou a marqué 10 points.', q:'Combien de points Max a-t-il marqués de plus que Lou ?', correct:'3 points', choices:['3 points','4 points','13 points','23 points'] },
+], 'ex7');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

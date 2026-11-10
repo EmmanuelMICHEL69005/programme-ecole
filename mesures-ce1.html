@@ -134,6 +134,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Trier par grandeur <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">TRI</span></h2>
     <div id="ex7"></div>
   </div>
+  <div class="exercice-block" style="--accent:#ec4899">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 8</span> Jours, semaines, mois et heures <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex8"></div>
+  </div>
 
 </main>
 
@@ -207,6 +211,14 @@ buildTri([
     ]
   },
 ], 'ex7');
+
+buildQCM([
+  { q:'Combien y a-t-il d\'heures dans une journée ?', correct:'24 heures', choices:['12 heures','24 heures','60 heures','7 heures'] },
+  { q:'Combien de jours font 2 semaines ?', correct:'14 jours', choices:['7 jours','12 jours','14 jours','21 jours'] },
+  { q:'Combien y a-t-il de mois dans une année ?', correct:'12 mois', choices:['7 mois','10 mois','12 mois','24 mois'] },
+  { q:'Les vacances durent 1 semaine et 3 jours. Combien de jours en tout ?', correct:'10 jours', choices:['4 jours','8 jours','10 jours','13 jours'] },
+  { q:'1 heure et 15 minutes, c\'est combien de minutes ?', correct:'75 minutes', choices:['65 minutes','75 minutes','85 minutes','115 minutes'] },
+], 'ex8');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

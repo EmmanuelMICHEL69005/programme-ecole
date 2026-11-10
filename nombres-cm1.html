@@ -91,6 +91,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 7</span> Associer nombre et décomposition <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">PAIRES</span></h2>
     <div id="ex7"></div>
   </div>
+  <div class="exercice-block" style="--accent:#10b981">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 8</span> Ajouter ou enlever 1 000, 10 000, 100 000 <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex8"></div>
+  </div>
 
 </main>
 
@@ -154,6 +158,14 @@ buildPaires([
   { q:'Associe chaque nombre à sa forme arrondie (au millier).',
     pairs:[['345 678','346 000'],['784 250','784 000'],['291 500','292 000'],['637 420','637 000']] },
 ], 'ex7');
+
+buildQCM([
+  { q:'Ajoute 10 000 à 395 200.', correct:'405 200', choices:['405 200','396 200','395 210','495 200'] },
+  { q:'Enlève 1 000 à 270 450.', correct:'269 450', choices:['260 450','269 450','270 350','279 450'] },
+  { q:'Ajoute 100 000 à 608 000.', correct:'708 000', choices:['609 000','618 000','708 000','808 000'] },
+  { q:'Enlève 10 000 à 503 600.', correct:'493 600', choices:['493 600','502 600','403 600','513 600'] },
+  { q:'Ajoute 1 000 à 999 500.', correct:'1 000 500', choices:['999 600','1 000 500','1 009 500','1 999 500'] },
+], 'ex8');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

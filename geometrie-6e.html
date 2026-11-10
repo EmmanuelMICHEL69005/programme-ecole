@@ -78,6 +78,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#9d174d;">Ex 4</span> Constructions et propriétés</h2>
     <div id="ex4"></div>
   </div>
+  <div class="exercice-block">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#9d174d;">Ex 5</span> Symétrie axiale</h2>
+    <div id="ex5"></div>
+  </div>
 
 </main>
 
@@ -143,6 +147,14 @@ buildQ([
   { q: 'La bissectrice d\'un angle le divise en…', correct: 'Deux angles égaux', choices: ['Deux segments','Deux angles égaux','Un triangle isocèle','Deux parties inégales'] },
   { q: 'Le milieu du segment [AB] avec A(0 ; 0) et B(6 ; 4) est…', correct: '(3 ; 2)', choices: ['(6 ; 4)','(2 ; 3)','(3 ; 2)','(1,5 ; 1)'] },
 ], 'ex4');
+
+buildQ([
+  { q: 'Combien d\'axes de symétrie a un carré ?', correct: '4', choices: ['1', '2', '4', '8'] },
+  { q: 'Combien d\'axes de symétrie a un rectangle qui n\'est pas un carré ?', correct: '2', choices: ['0', '1', '2', '4'] },
+  { q: 'Combien d\'axes de symétrie a un cercle ?', correct: 'Une infinité', choices: ['1', '2', '4', 'Une infinité'] },
+  { q: 'Combien d\'axes de symétrie a un triangle équilatéral ?', correct: '3', choices: ['1', '2', '3', '6'] },
+  { q: 'Par une symétrie axiale, l\'image d\'un segment de 5 cm est un segment de…', correct: '5 cm', choices: ['2,5 cm', '5 cm', '10 cm', 'On ne peut pas savoir'] },
+], 'ex5');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

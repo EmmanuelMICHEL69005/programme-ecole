@@ -93,6 +93,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Trier les angles <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">TRI</span></h2>
     <div id="ex7"></div>
   </div>
+  <div class="exercice-block" style="--accent:#ec4899">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 8</span> Propriétés des quadrilatères <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex8"></div>
+  </div>
 
 </main>
 
@@ -163,6 +167,14 @@ buildTri([
     ]
   },
 ], 'ex7');
+
+buildQCM([
+  { q:'Combien d\'angles droits a un rectangle ?', correct:'4', choices:['1','2','4','0'] },
+  { q:'Un losange a toujours…', correct:'4 côtés de même longueur', choices:['4 côtés de même longueur','4 angles droits','3 côtés','des diagonales de même longueur'] },
+  { q:'Les diagonales d\'un carré…', correct:'sont perpendiculaires et de même longueur', choices:['sont perpendiculaires et de même longueur','ne se coupent pas','sont parallèles','ont des longueurs différentes'] },
+  { q:'Les diagonales d\'un rectangle…', correct:'ont la même longueur', choices:['ont la même longueur','ne se coupent pas','sont parallèles','ont des longueurs différentes'] },
+  { q:'Les côtés opposés d\'un rectangle sont…', correct:'parallèles et de même longueur', choices:['parallèles et de même longueur','perpendiculaires','de longueurs différentes','sécants'] },
+], 'ex8');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>
