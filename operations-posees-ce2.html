@@ -116,6 +116,11 @@
     <div id="ex7"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#ec4899">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 8</span> Multiplication posée (2 chiffres) <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex8"></div>
+  </div>
+
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div></footer>
@@ -188,6 +193,13 @@ buildTri([
     ]
   },
 ], 'ex7');
+buildQCM([
+  { card:'23 × 12 = ?', q:'Multiplication posée', correct:'276', choices:['266','276','286','69'] },
+  { card:'34 × 21 = ?', q:'Multiplication posée', correct:'714', choices:['704','714','724','102'] },
+  { card:'45 × 13 = ?', q:'Multiplication posée', correct:'585', choices:['575','585','595','180'] },
+  { card:'52 × 24 = ?', q:'Multiplication posée', correct:'1 248', choices:['1 148','1 238','1 248','312'] },
+  { card:'18 × 15 = ?', q:'Multiplication posée', correct:'270', choices:['108','260','270','280'] },
+], 'ex8');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

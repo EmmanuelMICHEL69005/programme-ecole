@@ -110,6 +110,11 @@
     <div id="ex7"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#ec4899">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 8</span> Addition répétée et multiplication <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex8"></div>
+  </div>
+
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div></footer>
@@ -185,6 +190,13 @@ buildTri([
     ]
   },
 ], 'ex7');
+buildQCM([
+  { card:'5 + 5 + 5', q:'Quelle multiplication correspond ?', correct:'3 × 5', choices:['3 × 5','5 × 5','3 + 5','5 × 4'] },
+  { card:'2 + 2 + 2 + 2', q:'Quelle multiplication correspond ?', correct:'4 × 2', choices:['4 × 2','2 × 2','4 + 2','4 × 4'] },
+  { card:'4 + 4 + 4', q:'Quelle multiplication correspond ?', correct:'3 × 4', choices:['3 × 4','4 × 4','3 + 4','3 × 3'] },
+  { card:'10 + 10 + 10 + 10 + 10', q:'Quelle multiplication correspond ?', correct:'5 × 10', choices:['5 × 10','10 × 10','5 + 10','4 × 10'] },
+  { card:'3 + 3 + 3 + 3 + 3 + 3', q:'Quelle multiplication correspond ?', correct:'6 × 3', choices:['6 × 3','3 × 3','6 + 3','5 × 3'] },
+], 'ex8');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

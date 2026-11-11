@@ -77,6 +77,11 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#06b6d4">Ex 10</span> Classer par catégories <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">TRI</span></h2>
     <div id="ex10"></div>
   </div>
+
+  <div class="exercice-block" style="--accent:#06b6d4">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#06b6d4">Ex 11</span> Trouver l'intrus <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex11"></div>
+  </div>
   <div style="background:#f0fdf4;border:1px solid #16a34a55;border-radius:10px;padding:14px 16px;margin:16px 0">
     <div style="font-weight:900;color:#14532d;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CP</div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
@@ -180,6 +185,13 @@ buildTri([
     { v:'ceinture', cat:'Vêtement' },
   ]}
 ], 'ex10');
+buildQCM([
+  { card:'"pomme · poire · carotte · banane"', q:'Quel mot n\'est pas un fruit ?', correct:'carotte', choices:['pomme','poire','carotte','banane'] },
+  { card:'"vache · cochon · table · mouton"', q:'Quel mot n\'est pas un animal ?', correct:'table', choices:['vache','cochon','table','mouton'] },
+  { card:'"pull · pantalon · robe · vélo"', q:'Quel mot n\'est pas un vêtement ?', correct:'vélo', choices:['pull','pantalon','robe','vélo'] },
+  { card:'"voiture · bus · train · lit"', q:'Quel mot n\'est pas un moyen de transport ?', correct:'lit', choices:['voiture','bus','train','lit'] },
+  { card:'"rouge · vert · chaise · bleu"', q:'Quel mot n\'est pas une couleur ?', correct:'chaise', choices:['rouge','vert','chaise','bleu'] },
+], 'ex11');
 </script>
 <script src="sync.js?v=f881f6bc"></script>
 <script src="firebase-keys.js?v=482e498d"></script>

@@ -77,6 +77,11 @@
     <div id="ex7"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#10b981">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 8</span> Combien de plus ? Combien de moins ? <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex8"></div>
+  </div>
+
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div></footer>
@@ -157,6 +162,13 @@ buildPaires([
   { q:'Associe chaque calcul intermédiaire.',
     pairs:[['Séances × nageurs par séance','Total nageurs semaine'],['Longueur ÷ durée','Vitesse'],['Prix × quantité','Coût total'],['Somme ÷ nombre de valeurs','Moyenne']] },
 ], 'ex7');
+buildQCM([
+  { enonce:'Lina a 1 250 points. Malo en a 875.', q:'Combien de points Lina a-t-elle de plus que Malo ?', correct:'375 points', choices:['375 points','425 points','2 125 points','385 points'] },
+  { enonce:'Un vélo coûte 289 €. Une trottinette coûte 145 € de moins.', q:'Combien coûte la trottinette ?', correct:'144 €', choices:['144 €','434 €','154 €','134 €'] },
+  { enonce:'La tour A mesure 128 m. La tour B mesure 56 m de plus.', q:'Combien mesure la tour B ?', correct:'184 m', choices:['184 m','72 m','174 m','194 m'] },
+  { enonce:'Zoé a 24 billes. Hugo a 3 fois plus de billes que Zoé.', q:'Combien Hugo a-t-il de billes ?', correct:'72 billes', choices:['72 billes','27 billes','8 billes','48 billes'] },
+  { enonce:'Un livre a 240 pages. Un autre livre a 4 fois moins de pages.', q:'Combien de pages a le second livre ?', correct:'60 pages', choices:['60 pages','236 pages','960 pages','80 pages'] },
+], 'ex8');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>
