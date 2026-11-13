@@ -110,10 +110,11 @@ def sources_html(keys):
             ''.join(f'<li>{esc(S[k][0])} — <a href="{S[k][1]}" rel="noopener" target="_blank">{esc(S[k][1].split("/")[2])}</a></li>' for k in keys) +
             '</ol></section>')
 
-AUTHOR = ('<aside class="g-author"><span class="g-av">📚</span><div><strong>Rédigé par l\'équipe École Facile</strong>, '
+def author(date_fr=UPDATED_FR):
+    return ('<aside class="g-author"><span class="g-av">📚</span><div><strong>Rédigé par l\'équipe École Facile</strong>, '
           'site gratuit et sans publicité d\'exercices du CP à la 3e. Nos guides s\'appuient sur les textes officiels de '
           'l\'Éducation nationale et sur des travaux de recherche publiés, cités en sources. '
-          f'Mis à jour le {UPDATED_FR}. <a href="a-propos.html">Notre méthode de rédaction</a>.</div></aside>')
+          f'Mis à jour le {date_fr}. <a href="a-propos.html">Notre méthode de rédaction</a>.</div></aside>')
 
 def card(href, icon, title, text, extra=''):
     return f'<a class="g-card" href="{href}"><span class="g-ico">{icon}</span><strong>{title}</strong><span>{text}</span>{extra}</a>'
@@ -124,9 +125,10 @@ def article_cards(slugs):
 
 def build_article(a):
     hub = HUBS[a['hub']]
+    d, d_fr = a.get('updated', UPDATED), a.get('updated_fr', UPDATED_FR)  # date propre à l'article, sinon date commune
     siblings = [s for c in CLUSTERS for s in c[2] if a['slug'] in c[2] and s != a['slug']]
     words = len(strip_tags(a['body']).split())
-    main = (f'<div class="g-meta"><span>Par <strong>l\'équipe École Facile</strong></span><span>Mis à jour le <time datetime="{UPDATED}">{UPDATED_FR}</time></span>'
+    main = (f'<div class="g-meta"><span>Par <strong>l\'équipe École Facile</strong></span><span>Mis à jour le <time datetime="{d}">{d_fr}</time></span>'
             f'<span>Lecture : {a["minutes"]} min</span></div>'
             '<section class="g-tldr"><h2>L\'essentiel en 30 secondes</h2><ul>' + ''.join(f'<li>{t}</li>' for t in a['tldr']) + '</ul></section>'
             + a['body'] +
@@ -135,10 +137,10 @@ def build_article(a):
             '<h2>Pour aller plus loin</h2><div class="g-cta">' +
             ''.join(f'<a href="{h}">{esc(t)}<small>{esc(sm)}</small></a>' for h, t, sm in a['cta']) + '</div>'
             + (('<h2>Dans le même dossier</h2>' + article_cards(siblings)) if siblings else '')
-            + sources_html(a['sources']) + AUTHOR)
+            + sources_html(a['sources']) + author(d_fr))
     schemas = [
         {'@context': 'https://schema.org', '@type': 'Article', 'headline': strip_tags(a['title']), 'description': a['description'],
-         'inLanguage': 'fr', 'datePublished': UPDATED, 'dateModified': UPDATED, 'wordCount': words,
+         'inLanguage': 'fr', 'datePublished': d, 'dateModified': d, 'wordCount': words,
          'mainEntityOfPage': f'{BASE}/{a["slug"]}.html', 'image': f'{BASE}/og-image.png',
          'author': {'@type': 'Organization', 'name': 'École Facile', 'url': BASE + '/'},
          'publisher': {'@type': 'Organization', 'name': 'École Facile', 'url': BASE + '/', 'logo': {'@type': 'ImageObject', 'url': f'{BASE}/favicon.svg'}},
@@ -198,7 +200,7 @@ def build_ressources():
                  '<a href="aider-son-enfant-a-faire-ses-devoirs.html">Aider son enfant à faire ses devoirs<small>Le guide complet</small></a>'
                  '<a href="comment-apprendre-une-lecon.html">Comment apprendre une leçon<small>La méthode en 4 étapes</small></a>'
                  '<a href="index.html">Exercices interactifs<small>Corrigés tout de suite</small></a></div>')
-    parts.append(AUTHOR)
+    parts.append(author())
     schemas = [{'@context': 'https://schema.org', '@type': 'CollectionPage', 'name': 'Ressources gratuites à imprimer',
                 'url': f'{BASE}/ressources.html', 'inLanguage': 'fr',
                 'hasPart': [{'@type': 'DigitalDocument', 'name': r['title'], 'encodingFormat': 'application/pdf',
@@ -234,7 +236,7 @@ def build_apropos():
 </ul>
 <h2>Ce que nous ne faisons pas</h2>
 <p>Pas de publicité, pas de vente de données, pas d'abonnement. Un compte est facultatif et sert seulement à garder sa progression.</p>
-{AUTHOR}
+{author()}
 '''
     schemas = [{'@context': 'https://schema.org', '@type': 'AboutPage', 'name': 'À propos d\'École Facile', 'url': f'{BASE}/a-propos.html',
                 'inLanguage': 'fr', 'about': {'@type': 'Organization', 'name': 'École Facile', 'url': BASE + '/'}}]
@@ -245,7 +247,7 @@ def build_apropos():
 
 def update_sitemap(slugs):
     sm = open('sitemap.xml', encoding='utf-8').read()
-    add = ''.join(f'  <url><loc>{BASE}/{s}.html</loc><lastmod>{UPDATED}</lastmod><priority>{p}</priority><changefreq>monthly</changefreq></url>\n'
+    add = ''.join(f'  <url><loc>{BASE}/{s}.html</loc><lastmod>{BY_SLUG.get(s, {}).get("updated", UPDATED)}</lastmod><priority>{p}</priority><changefreq>monthly</changefreq></url>\n'
                   for s, p in slugs if f'{BASE}/{s}.html<' not in sm)
     if add:
         sm = sm.replace('</urlset>', '\n' + add + '</urlset>')
