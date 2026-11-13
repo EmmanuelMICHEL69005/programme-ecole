@@ -37,6 +37,14 @@ S = {
                 'https://www.odilejacob.fr/catalogue/sciences/neurosciences/apprendre-_9782738145420.php'),
     'programmes': ("Éduscol — Programmes et ressources de l'école et du collège",
                    'https://eduscol.education.gouv.fr/'),
+    'sp_ief': ("Service Public — Instruction dans la famille (fiche vérifiée le 30 janvier 2026)",
+               'https://www.service-public.gouv.fr/particuliers/vosdroits/F23429'),
+    'cned_ief': ("Cned — Tout savoir sur l'instruction en famille avec le Cned",
+                 'https://www.cned.fr/l-actualite-de-la-formation/tout-savoir-sur-linstruction-en-famille-avec-le-cned'),
+    'cned_mode': ("Cned — École primaire, collège et lycée au Cned : le mode d'emploi",
+                  'https://www.cned.fr/l-actualite-de-la-formation/ecole-primaire-college-et-lycee-au-cned-le-mode-d-emploi'),
+    'cned_oblig': ("Cned — Informations sur l'obligation scolaire",
+                   'https://www.cned.fr/l-actualite-de-la-formation/informations-sur-lobligation-scolaire'),
 }
 
 def stat(big, text, src):
@@ -1235,6 +1243,96 @@ ARTICLES.append(dict(
          ('exercices-gratuits.html', 'Exercices gratuits', 'Du CP à la 3e'),
          ('entree-en-sixieme.html', "Préparer l'entrée en 6e", 'Guide parents')],
     sources=['dunlosky'],
+))
+
+# ════════════════════════════════════════════════════════════════════
+# CLUSTER PARENTS — COMPRENDRE L'ÉCOLE
+# ════════════════════════════════════════════════════════════════════
+
+ARTICLES.append(dict(
+    slug='cned-cours-par-correspondance-primaire', hub='parents', icon='📬',
+    kicker="Guide parents · Instruction en famille",
+    title="Cours par correspondance en primaire (CP au CM2) : CNED, autorisation et règles",
+    seo_title="Cours par correspondance en primaire : CNED et règles",
+    description="Cours par correspondance en primaire : autorisation d'instruction en famille, motifs, dates, CNED réglementé ou libre, gratuité, contrôles à prévoir.",
+    intro="Vous envisagez des cours par correspondance, par exemple avec le CNED, pour votre enfant du CP au CM2 ? Depuis la rentrée 2022, ce n'est plus un simple choix d'inscription : il faut une autorisation, accordée seulement pour certains motifs. Voici les règles en vigueur, sans jargon.",
+    minutes=7,
+    updated='2026-11-13', updated_fr='13 novembre 2026',
+    tldr=[
+        "De 3 à 16 ans, l'instruction est obligatoire. Suivre des cours à la maison à la place de l'école demande une <strong>autorisation d'instruction dans la famille</strong>, donnée par le Dasen de votre département.",
+        "Cette autorisation n'est accordée que pour des <strong>motifs précis</strong> : santé ou handicap, sport ou art intensif, itinérance ou éloignement d'une école, situation propre à l'enfant.",
+        "La demande se fait en général <strong>entre le 1er mars et le 31 mai</strong> précédant la rentrée, et elle se renouvelle le plus souvent chaque année.",
+        "Au CNED, la <strong>classe complète réglementée</strong> est gratuite avec l'autorisation, mais seulement pour les trois premiers motifs ; la classe complète libre est elle aussi soumise aux règles de l'instruction en famille.",
+        "Votre enfant va à l'école et a juste besoin d'un complément ? Les cours à la carte libres du CNED sont accessibles sans condition, et il existe aussi des ressources gratuites.",
+    ],
+    body=f"""
+<h2>Peut-on remplacer l'école par des cours par correspondance ?</h2>
+<p>Pas librement. Entre 3 et 16 ans, votre enfant est soumis à l'<strong>obligation d'instruction</strong> et doit être inscrit dans un établissement scolaire, public ou privé. Il peut aussi, sous conditions, recevoir cette instruction dans la famille (on parle parfois d'« école à la maison »). Suivre en famille des cours par correspondance, comme ceux du CNED, en fait partie.</p>
+<p>Depuis la rentrée 2022 (décret du 15 février 2022), l'instruction dans la famille est <strong>soumise à une autorisation préalable</strong> du Dasen, le directeur académique des services de l'Éducation nationale de votre département de résidence.</p>
+<div class="g-warn"><strong>Important :</strong> au CNED, la classe complète <strong>réglementée</strong> comme la classe complète <strong>libre</strong> sont soumises aux règles de l'instruction en famille. Inscrire son enfant en classe complète au CNED ne dispense donc pas de demander l'autorisation.</div>
+
+<h2>Pour quels motifs l'autorisation peut-elle être accordée ?</h2>
+<p>Les motifs sont limités. Le CNED les présente ainsi :</p>
+<ul>
+<li>la <strong>pratique intensive</strong> d'une activité sportive ou artistique ;</li>
+<li>l'<strong>état de santé</strong> ou la <strong>situation de handicap</strong> de l'enfant ;</li>
+<li>l'<strong>itinérance</strong> de la famille en France ou l'<strong>éloignement géographique</strong> de tout établissement scolaire public ;</li>
+<li>l'existence d'une <strong>situation propre à l'enfant</strong> motivant le projet éducatif.</li>
+</ul>
+<p>Pour ce dernier motif, le dossier est plus exigeant : il faut notamment présenter par écrit le projet éducatif (méthodes, supports, organisation du temps de l'enfant) et fournir une copie du baccalauréat (ou d'un diplôme équivalent) de la personne qui instruira l'enfant.</p>
+
+<h2>Comment et quand faire la demande ?</h2>
+<ol class="g-steps">
+<li><strong>Remplir le formulaire</strong> « Demande d'autorisation d'instruction dans la famille » et réunir les pièces demandées (justificatifs d'identité et de domicile, et justificatifs propres au motif, par exemple un certificat médical sous pli fermé pour un motif de santé). Dans certaines académies, la demande peut se faire en ligne.</li>
+<li><strong>L'envoyer à la direction des services départementaux de l'Éducation nationale (DSDEN)</strong> entre le 1er mars et le 31 mai inclus précédant la rentrée. Pour certains motifs (santé, handicap, éloignement géographique), une demande hors de cette période est possible si le motif est apparu après le 31 mai, en le justifiant.</li>
+<li><strong>Attendre la décision</strong> : le Dasen répond dans un délai de 2 mois à partir de la réception du dossier complet. Sans réponse dans ce délai, la demande est acceptée.</li>
+<li><strong>En cas de refus</strong>, vous pouvez le contester dans les 15 jours suivant la notification, par un recours administratif préalable obligatoire auprès d'une commission présidée par le recteur d'académie. Si le refus est confirmé, vous pouvez ensuite saisir le juge administratif.</li>
+</ol>
+{stat("1er mars – 31 mai", "Période habituelle de dépôt de la demande d'autorisation, avant la rentrée. L'autorisation vaut en principe pour une année scolaire (jusqu'à 3 ans pour un motif de santé ou de handicap).", "Service Public, fiche « Instruction dans la famille »")}
+<p>Les formulaires, les pièces exactes et les modalités de dépôt sont détaillés sur la fiche officielle <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F23429" rel="noopener">« Instruction dans la famille » de Service Public</a>. En cas de doute, contactez directement votre DSDEN.</p>
+
+<h2>CNED réglementé ou libre : quelle différence ?</h2>
+<div class="g-table-wrap"><table class="g-table">
+<thead><tr><th></th><th>Classe complète réglementée</th><th>Classe complète libre</th></tr></thead>
+<tbody>
+<tr><td>Condition</td><td>Autorisation d'instruction dans la famille pour l'un des <strong>trois premiers motifs</strong> (sport ou art, santé ou handicap, itinérance ou éloignement)</td><td>Aucune condition côté CNED, mais l'enfant reste soumis aux règles de l'instruction en famille</td></tr>
+<tr><td>Coût</td><td><strong>Gratuit</strong> : l'autorisation vaut avis favorable pour une inscription gratuite</td><td>Conditions d'inscription à consulter sur cned.fr</td></tr>
+<tr><td>Suivi</td><td>Certificat de scolarité, conseil de classe et avis d'orientation en fin d'année</td><td>Suivi des devoirs, pas de conseil de classe ; relevé de notes sur demande</td></tr>
+</tbody></table></div>
+<p>Dans les deux formules, les cours suivent les programmes officiels et couvrent tout le programme de la classe. Les inscriptions sont généralement ouvertes entre juin et novembre. Attention : selon le CNED, le choix du statut (réglementé ou libre) est <strong>définitif</strong> une fois l'inscription validée.</p>
+<div class="g-tip"><strong>Bon à savoir :</strong> pour l'inscription réglementée, le CNED demande une copie de l'autorisation elle-même, qui mentionne le niveau de classe et l'autorisation de suivre une classe complète réglementée au CNED. Le formulaire de demande ou l'accusé de réception ne sont pas acceptés.</div>
+
+<h2>Quels contrôles pendant l'année ?</h2>
+<ul>
+<li><strong>Le maire</strong> mène une enquête dès la 1re année, renouvelée tous les 2 ans jusqu'aux 16 ans de l'enfant.</li>
+<li><strong>Un inspecteur</strong> contrôle au moins une fois par an, à partir du 3e mois suivant l'autorisation, les connaissances et compétences de l'enfant, notamment à la fin de chaque cycle (le CP, le CE1 et le CE2 forment le cycle 2 ; le CM1, le CM2 et la 6e, le cycle 3). Le contrôle peut avoir lieu sans prévenir.</li>
+<li><strong>Le CNED</strong>, pour ses élèves en classe complète réglementée, transmet chaque mois la liste de ses élèves de 3 à 16 ans à la DSDEN et suit l'assiduité (devoirs rendus) et les résultats.</li>
+</ul>
+<p>Si deux contrôles pédagogiques successifs sont jugés insuffisants, le Dasen peut mettre la famille en demeure de scolariser l'enfant. Instruire son enfant dans la famille <strong>sans autorisation</strong> expose à une amende de 1 500 €.</p>
+
+<h2>Et les aides financières ?</h2>
+<p>Pour les allocations familiales, il faut envoyer l'autorisation à la Caf. En revanche, dans le cas général, un enfant instruit dans la famille n'ouvre pas droit à l'allocation de rentrée scolaire, ni plus tard aux bourses de collège et de lycée. Si l'enfant est inscrit au CNED en classe réglementée, ces aides restent possibles, sous conditions.</p>
+
+<h2>Votre enfant va à l'école et a besoin d'un complément ?</h2>
+<p>Si vous cherchez plutôt un complément à l'école qu'un remplacement, plusieurs solutions existent sans autorisation d'instruction en famille :</p>
+<ul>
+<li>le CNED propose des <strong>cours à la carte à inscription libre</strong>, accessibles sans condition de la grande section à la terminale, avec des inscriptions ouvertes toute l'année pour le primaire ;</li>
+<li>parlez d'abord à l'<strong>enseignant</strong> : il sait précisément ce qui pose problème et ce qui peut être fait en classe ;</li>
+<li>à la maison, des séances courtes et régulières suffisent souvent. Nos <a href="exercices-gratuits.html">exercices gratuits et corrigés</a>, nos <a href="cours.html">leçons courtes</a> et nos <a href="ressources.html">fiches à imprimer</a> suivent le programme du <a href="programme-cp.html">CP</a> au <a href="programme-cm2.html">CM2</a>, sans inscription ni publicité.</li>
+</ul>
+<p>Pour organiser ce travail du soir sans conflit, lisez aussi <a href="aider-son-enfant-a-faire-ses-devoirs.html">Aider son enfant à faire ses devoirs</a>.</p>
+""",
+    faq=[
+        ("Peut-on inscrire son enfant au CNED en primaire sans autorisation ?", "Pas en classe complète : la classe complète réglementée comme la classe complète libre sont soumises aux règles de l'instruction en famille, qui exigent une autorisation du Dasen. Les cours à la carte à inscription libre, eux, sont accessibles sans condition, par exemple en complément de l'école."),
+        ("Le CNED est-il gratuit en primaire ?", "La classe complète réglementée est gratuite lorsque l'enfant a une autorisation d'instruction dans la famille pour un motif de sport ou d'art intensif, de santé ou de handicap, d'itinérance ou d'éloignement. Pour les autres formules, renseignez-vous directement sur cned.fr."),
+        ("Jusqu'à quand peut-on demander l'autorisation d'instruction dans la famille ?", "En général entre le 1er mars et le 31 mai inclus précédant la rentrée. Pour certains motifs (santé, handicap, éloignement géographique), une demande plus tardive est possible si le motif est apparu après le 31 mai, en le justifiant."),
+        ("Que se passe-t-il si l'administration ne répond pas ?", "Le Dasen doit répondre dans les 2 mois suivant la réception du dossier complet. Sans réponse dans ce délai, la demande est acceptée."),
+        ("Y a-t-il des contrôles quand l'enfant suit des cours à la maison ?", "Oui. Le maire mène une enquête dès la première année, puis tous les 2 ans, et un inspecteur contrôle au moins une fois par an les acquis de l'enfant."),
+    ],
+    cta=[('exercices-gratuits.html', 'Exercices gratuits du CP à la 3e', 'Corrigés, sans inscription'),
+         ('ressources.html', 'Fiches à imprimer', 'Avec corrigé'),
+         ('aider-son-enfant-a-faire-ses-devoirs.html', 'Aider son enfant à faire ses devoirs', 'Le guide complet')],
+    sources=['sp_ief', 'cned_ief', 'cned_mode', 'cned_oblig'],
 ))
 
 # ── Pages hub ─────────────────────────────────────────────────────────
