@@ -47,7 +47,7 @@
  {
   "file": "exercices-conjugaison-present-ce2-corrige.pdf",
   "title": "Présent des verbes en -er (avec corrigé)",
-  "desc": "20 phrases pour conjuguer chanter, jouer, aimer, habiter… au présent. Corrigé en page 2.",
+  "desc": "20 formes à conjuguer au présent (10 verbes : chanter, jouer, aimer, habiter…). Corrigé en page 2.",
   "public": "Conjugaison CE2 avec corrigé",
   "icon": "✍️",
   "tags": [
@@ -56,7 +56,7 @@
    "Français"
   ],
   "group": "Exercices à imprimer, avec corrigé",
-  "bytes": 32263,
+  "bytes": 32324,
   "pages": 2
  },
  {
@@ -100,7 +100,7 @@
    "Collège"
   ],
   "group": "Affiches et fiches méthode",
-  "bytes": 34652,
+  "bytes": 34667,
   "pages": 1
  },
  {
@@ -172,7 +172,7 @@
    "Parents"
   ],
   "group": "Organisation et motivation",
-  "bytes": 27453,
+  "bytes": 27489,
   "pages": 1
  }
 ]

@@ -23,8 +23,10 @@ S = {
                   'https://eduscol.education.gouv.fr/5511/devoirs-faits-un-temps-dedie-pour-accompagner-les-collegiens-dans-la-realisation-de-leurs-devoirs'),
     'pisa': ("DEPP — PISA 2022 : la France ne fait pas exception à la baisse généralisée des performances en culture mathématique",
              'https://www.education.gouv.fr/depp/pisa-2022-la-france-ne-fait-pas-exception-la-baisse-generalisee-des-performances-en-culture-380205'),
-    'sommeil': ("Santé.fr (Santé publique France) — Le sommeil de l'enfant",
-                'https://www.sante.fr/le-sommeil-de-lenfant-0'),
+    'sommeil': ("Ministère de l'Éducation nationale, La Mallette des parents — Le sommeil (durées recommandées, d'après la revue Sleep Health)",
+                'https://mallettedesparents.education.gouv.fr/print/pdf/node/181'),
+    'dunlosky': ("Dunlosky J. et al. (2013), « Improving Students' Learning With Effective Learning Techniques », Psychological Science in the Public Interest, 14(1)",
+                 'https://journals.sagepub.com/doi/10.1177/1529100612453266'),
     'mallette': ("Ministère de l'Éducation nationale — La Mallette des parents",
                  'https://mallettedesparents.education.gouv.fr/'),
     'roediger': ("Roediger H. L. & Karpicke J. D. (2006), « Test-Enhanced Learning », Psychological Science, 17(3) — communiqué de l'université Washington de Saint-Louis",
@@ -60,7 +62,7 @@ ARTICLES.append(dict(
     tldr=[
         "Votre rôle : un <strong>cadre</strong> (lieu, horaire, durée), de l'<strong>encouragement</strong> et des <strong>questions</strong>, pas les réponses.",
         "En primaire, les devoirs <strong>écrits</strong> à la maison sont interdits depuis 1956 : le soir, c'est surtout lire et apprendre ses leçons.",
-        "Au collège, l'étude gratuite <strong>Devoirs faits</strong> existe dans chaque établissement ; elle est obligatoire en 6e depuis 2023.",
+        "Au collège, l'étude gratuite <strong>Devoirs faits</strong> existe dans les collèges publics ; elle est obligatoire en 6e depuis 2023.",
         "La méthode la plus efficace pour retenir : <strong>se tester</strong> plutôt que relire, et réviser en plusieurs petites séances.",
         "Si votre enfant bloque, on fait une pause, on découpe la tâche et on en parle à l'enseignant.",
     ],
@@ -79,7 +81,7 @@ ARTICLES.append(dict(
 <h3>À l'école primaire (CP au CM2)</h3>
 <p>C'est souvent une surprise pour les parents : les devoirs <strong>écrits</strong> à la maison sont interdits à l'école élémentaire depuis 1956. La circulaire du 29 décembre 1956 précise :</p>
 {quote("Aucun devoir écrit, soit obligatoire, soit facultatif, ne sera demandé aux élèves hors de la classe.", "Circulaire du 29 décembre 1956, citée par la circonscription d'Oullins (académie de Lyon)")}
-<p>Cette règle a été étendue au CP en 1964 et rappelée en 1994 : le travail du soir se limite à un <strong>travail oral</strong> ou à des <strong>leçons à apprendre</strong>. Dans la pratique, le soir, votre enfant lit, récite, révise ses mots ou ses tables. C'est précisément là que des exercices courts et corrigés tout de suite, comme ceux d'École Facile, sont utiles.</p>
+<p>Cette règle a été étendue au CP en 1964, puis reprise par la circulaire du 6 septembre 1994 : le travail du soir se limite à un <strong>travail oral</strong> ou à des <strong>leçons à apprendre</strong>. Dans la pratique, le soir, votre enfant lit, récite, révise ses mots ou ses tables. C'est précisément là que des exercices courts et corrigés tout de suite, comme ceux d'École Facile, sont utiles.</p>
 <h3>Au collège (6e à 3e)</h3>
 <p>Les devoirs écrits existent au collège. Pour que tous les élèves puissent les faire dans de bonnes conditions, le ministère a créé en 2017 <strong>Devoirs faits</strong>, un temps d'étude accompagnée et gratuit au collège.</p>
 {stat("6e", "Depuis la rentrée 2023, Devoirs faits est obligatoire pour tous les élèves de 6e. Il reste proposé, sur inscription, aux autres niveaux.", "Bulletin officiel n° 16 du 20 avril 2023")}
@@ -108,13 +110,13 @@ ARTICLES.append(dict(
 <p>Pleurs, colère, « je suis nul » : c'est fréquent et ce n'est pas un échec de votre part. Trois réflexes : <strong>faire une pause</strong>, <strong>découper</strong> la tâche en une toute petite étape réussissable, et <strong>revenir à un exemple</strong> de la leçon. Si les blocages durent, parlez-en à l'enseignant. Notre article <a href="mon-enfant-n-y-arrive-pas.html">Mon enfant dit « je n'y arrive pas »</a> détaille quoi dire et quoi éviter.</p>
 
 <h2>Le sommeil, premier allié des devoirs</h2>
-<p>La consolidation des apprentissages se fait en grande partie pendant le sommeil. Santé publique France recommande <strong>9 à 11 heures de sommeil par nuit entre 6 et 11 ans</strong>, avec un coucher régulier. Des devoirs qui débordent tard le soir sont donc contre-productifs.</p>
+<p>La consolidation des apprentissages se fait en grande partie pendant le sommeil. Le ministère de l'Éducation nationale (La Mallette des parents) indique qu'<strong>entre 6 et 13 ans, un enfant a besoin de 9 à 11 heures de sommeil</strong> ; un coucher régulier aide à les atteindre. Des devoirs qui débordent tard le soir sont donc contre-productifs.</p>
 """,
     faq=[
         ("Dois-je corriger les devoirs de mon enfant ?", "Pas systématiquement. L'enseignant a besoin de voir les vraies erreurs pour adapter son aide. Posez plutôt des questions qui poussent votre enfant à se relire : « Es-tu sûr de ce résultat ? Comment peux-tu vérifier ? »"),
         ("Mon enfant de CE1 a des exercices écrits à faire, est-ce normal ?", "Officiellement, les devoirs écrits à la maison ne doivent pas être donnés à l'école élémentaire (circulaires de 1956, 1964 et 1994). Dans les faits, certaines classes donnent de petits exercices. Si cela pose problème, parlez-en calmement avec l'enseignant."),
         ("Je ne comprends pas moi-même la leçon (maths de 4e, anglais…), comment l'aider ?", "Vous n'avez pas besoin de tout savoir. Demandez à votre enfant de vous expliquer la leçon : expliquer est une excellente façon d'apprendre. Au collège, orientez-le vers Devoirs faits, et utilisez les leçons et exercices corrigés d'École Facile."),
-        ("Combien de temps doivent durer les devoirs en primaire ?", "Il n'y a pas de durée officielle. En pratique, de 10 à 20 minutes en CP-CE1 et de 20 à 30 minutes en CM suffisent largement, dès lors que c'est régulier."),
+        ("Combien de temps doivent durer les devoirs en primaire ?", "Il n'y a pas de durée officielle. En pratique, 10 à 15 minutes en CP, 15 à 20 minutes en CE1-CE2 et 20 à 30 minutes en CM1-CM2 suffisent largement, dès lors que c'est régulier."),
     ],
     cta=[('motiver-son-enfant-pour-les-devoirs.html', 'Motiver son enfant', '7 leviers concrets'),
          ('ressources.html', 'Ressources gratuites', 'Plannings, checklists, exercices à imprimer'),
@@ -155,7 +157,7 @@ ARTICLES.append(dict(
 <p>« Apprendre la leçon de géographie » devient : 1) lire le résumé, 2) cacher et redire les 3 mots clés, 3) répondre à 5 questions. Chaque mission terminée est cochée. Notre <a href="ressources.html">checklist « Mes devoirs du soir »</a> sert exactement à cela.</p>
 
 <h2>3. Donner du choix dans un cadre fixe</h2>
-<p>Le moment et la durée ne se négocient pas ; le reste, si. Votre enfant peut choisir par quoi il commence, s'il travaille à la table de la cuisine ou à son bureau, et quand il prend sa pause de 5 minutes. Se sentir un peu maître de son travail augmente fortement l'engagement.</p>
+<p>Le moment et la durée ne se négocient pas ; le reste, si. Votre enfant peut choisir par quoi il commence, s'il travaille à la table de la cuisine ou à son bureau, et quand il prend sa pause de 5 minutes. Se sentir un peu maître de son travail aide à s'engager davantage.</p>
 
 <h2>4. Féliciter l'effort et la stratégie, pas le « talent »</h2>
 <p>« Tu es trop fort ! » est agréable mais fragile : au premier échec, l'enfant en conclut qu'il n'est plus « fort ». Préférez des encouragements <strong>précis</strong> sur ce qu'il a fait :</p>
@@ -163,7 +165,7 @@ ARTICLES.append(dict(
 <li>« Tu as relu la consigne avant de répondre, c'est pour ça que c'est juste. »</li>
 <li>« Tu t'es trompé, tu as cherché pourquoi et tu as corrigé : c'est comme ça qu'on apprend. »</li>
 </ul>
-<p>Cela rejoint le troisième pilier de l'apprentissage décrit par Stanislas Dehaene : le <strong>retour sur l'erreur</strong>. L'erreur est une information, pas une faute.</p>
+<p>Cela rejoint aussi l'idée, chère à Stanislas Dehaene, que le <strong>retour sur l'erreur</strong> est un moteur de l'apprentissage. L'erreur est une information, pas une faute.</p>
 
 <h2>5. Rendre les progrès visibles</h2>
 <p>Un enfant voit rarement qu'il progresse. Montrez-le-lui : un tableau de réussites sur le frigo, une série de jours d'affilée, les points et badges gagnés sur École Facile. Téléchargez notre <a href="ressources.html">tableau de motivation à imprimer</a>.</p>
@@ -174,7 +176,7 @@ ARTICLES.append(dict(
 <h2>7. Protéger le temps de devoirs des écrans</h2>
 <p>Téléphone dans une autre pièce, télévision éteinte, tablette rangée. Et si possible, l'écran récréatif <strong>après</strong> les devoirs plutôt qu'avant.</p>
 
-<div class="g-warn"><strong>À éviter :</strong> le chantage (« pas de foot si… »), les comparaisons avec les frères et sœurs, les récompenses matérielles à chaque séance. Elles marchent quelques jours, puis l'enfant ne travaille plus que pour la récompense.</div>
+<div class="g-warn"><strong>À éviter :</strong> le chantage (« pas de foot si… »), les comparaisons avec les frères et sœurs, les récompenses matérielles à chaque séance. Elles peuvent marcher quelques jours, mais risquent, à la longue, de faire travailler l'enfant pour la récompense plutôt que pour apprendre.</div>
 
 <h2>Et si rien ne marche ?</h2>
 <p>Si le refus est massif et durable, il cache souvent une difficulté (lecture, attention, anxiété) ou de la fatigue. Parlez-en à l'enseignant, et si besoin au médecin traitant. Lisez aussi <a href="mon-enfant-n-y-arrive-pas.html">Mon enfant dit « je n'y arrive pas » : que faire ?</a></p>
@@ -202,7 +204,7 @@ ARTICLES.append(dict(
         "Primaire : <strong>pas de devoirs écrits</strong> officiellement ; lecture et leçons, environ <strong>10 à 30 minutes</strong> selon la classe.",
         "Collège : environ <strong>30 minutes à 1 h 30</strong> selon le niveau et les jours, avec l'aide gratuite de Devoirs faits.",
         "Plus long n'est pas mieux, surtout pour les plus jeunes : la régularité compte plus que la durée.",
-        "Le sommeil passe avant : 9 à 11 heures par nuit entre 6 et 11 ans.",
+        "Le sommeil passe avant : 9 à 11 heures par nuit entre 6 et 13 ans.",
     ],
     body=f"""
 <h2>Les repères par classe</h2>
@@ -211,23 +213,23 @@ ARTICLES.append(dict(
 <thead><tr><th>Classe</th><th>Durée indicative par soir</th><th>Contenu typique</th></tr></thead>
 <tbody>
 <tr><td>CP</td><td>10 à 15 min</td><td>Lecture à voix haute, mots à apprendre</td></tr>
-<tr><td>CE1 - CE2</td><td>15 à 20 min</td><td>Lecture, leçons courtes, tables, mots</td></tr>
-<tr><td>CM1 - CM2</td><td>20 à 30 min</td><td>Leçons, conjugaison, tables, lecture</td></tr>
-<tr><td>6e - 5e</td><td>30 à 45 min</td><td>Exercices écrits, leçons, préparation des contrôles</td></tr>
-<tr><td>4e - 3e</td><td>45 min à 1 h 30</td><td>Exercices, révisions, préparation du brevet en 3e</td></tr>
+<tr><td>CE1-CE2</td><td>15 à 20 min</td><td>Lecture, leçons courtes, tables, mots</td></tr>
+<tr><td>CM1-CM2</td><td>20 à 30 min</td><td>Leçons, conjugaison, tables, lecture</td></tr>
+<tr><td>6e-5e</td><td>30 à 45 min</td><td>Exercices écrits, leçons, préparation des contrôles</td></tr>
+<tr><td>4e-3e</td><td>45 min à 1 h 30</td><td>Exercices, révisions, préparation du brevet en 3e</td></tr>
 </tbody></table></div>
 <p>Si votre enfant dépasse régulièrement ces durées en travaillant sérieusement, ce n'est pas forcément un problème de volonté : la tâche est peut-être trop difficile ou mal comprise. Parlez-en à l'enseignant.</p>
 
 <h2>Ce que disent les textes officiels</h2>
-<p>À l'école élémentaire, la circulaire du 29 décembre 1956 interdit les devoirs écrits hors de la classe ; cette règle a été étendue au CP en 1964 et rappelée en 1994, qui limite le travail du soir à un travail oral ou à des leçons à apprendre. Au collège, aucun texte ne fixe de durée, mais le ministère a mis en place <strong>Devoirs faits</strong> (2017), obligatoire pour tous les élèves de 6e depuis la rentrée 2023.</p>
+<p>À l'école élémentaire, la circulaire du 29 décembre 1956 interdit les devoirs écrits hors de la classe ; cette règle a été étendue au CP en 1964, puis reprise par la circulaire du 6 septembre 1994, qui limite le travail du soir à un travail oral ou à des leçons à apprendre. Au collège, aucun texte ne fixe de durée, mais le ministère a mis en place <strong>Devoirs faits</strong> (2017), obligatoire pour tous les élèves de 6e depuis la rentrée 2023.</p>
 
 <h2>Ce que dit la recherche</h2>
-<p>La synthèse de référence de Harris Cooper, Jorgianne Robinson et Erika Patall (université Duke, 2006) observe un lien positif entre devoirs et réussite, <strong>nettement plus fort au collège et au lycée qu'à l'école primaire</strong>. Harris Cooper cite aussi un repère répandu aux États-Unis, la « règle des 10 minutes » : environ 10 minutes de devoirs par année de scolarité. C'est une règle empirique, pas une norme ; nos repères français, plus prudents en primaire, en restent proches.</p>
+<p>La synthèse de référence de Harris Cooper, Jorgianne Robinson et Erika Patall (université Duke, 2006) observe un lien positif entre devoirs et réussite, <strong>nettement plus fort au collège et au lycée qu'à l'école primaire</strong>. Harris Cooper cite aussi un repère répandu aux États-Unis, la « règle des 10 minutes » : environ 10 minutes de devoirs par année de scolarité. C'est une règle empirique, pas une norme ; nos repères sont plus prudents, surtout en primaire et au début du collège.</p>
 
 <h2>Une routine du soir type</h2>
 <ol class="g-steps">
-<li><strong>16 h 30 - 17 h</strong> : goûter, jeu dehors, décompression.</li>
-<li><strong>17 h - 17 h 20</strong> (primaire) ou <strong>17 h - 18 h</strong> (collège) : devoirs, le plus difficile en premier.</li>
+<li><strong>De 16 h 30 à 17 h</strong> : goûter, jeu dehors, décompression.</li>
+<li><strong>De 17 h à 17 h 20</strong> (primaire) ou <strong>de 17 h à 18 h</strong> (collège) : devoirs, le plus difficile en premier.</li>
 <li><strong>5 minutes</strong> : on prépare le cartable du lendemain avec la <a href="ressources.html">checklist cartable</a>.</li>
 <li><strong>Le soir</strong> : 5 minutes de relecture rapide avant de dormir (une leçon, quelques mots), puis coucher à heure fixe.</li>
 </ol>
@@ -236,7 +238,7 @@ ARTICLES.append(dict(
 <h2>Et le week-end ?</h2>
 <p>En primaire, une petite séance de lecture ou de jeu éducatif suffit. Au collège, planifiez le travail long (exposé, révisions) sur la semaine plutôt que tout le dimanche soir : notre <a href="ressources.html">planning de devoirs de la semaine</a> aide à répartir.</p>
 
-{stat("9 à 11 h", "de sommeil par nuit recommandées entre 6 et 11 ans, avec un coucher régulier.", "Santé publique France, via Santé.fr")}
+{stat("9 à 11 h", "de sommeil par jour sont nécessaires entre 6 et 13 ans.", "Ministère de l'Éducation nationale, La Mallette des parents")}
 """,
     faq=[
         ("Est-ce que les devoirs sont obligatoires en primaire ?", "Les devoirs écrits à la maison ne doivent pas être donnés à l'école élémentaire (circulaires de 1956, 1964 et 1994). Les leçons à apprendre et la lecture restent attendues."),
@@ -323,12 +325,12 @@ ARTICLES.append(dict(
     title="Comment apprendre une leçon efficacement : la méthode en 4 étapes",
     seo_title="Comment apprendre une leçon efficacement",
     description="Relire ne suffit pas. La méthode en 4 étapes pour retenir une leçon : comprendre, se tester, espacer, dormir. Fiche à imprimer.",
-    intro="Relire sa leçon trois fois donne l'impression de la savoir. Mais une semaine plus tard, presque tout est oublié. La recherche montre une méthode bien plus efficace, et elle tient en 4 étapes.",
+    intro="Relire sa leçon trois fois donne l'impression de la savoir. Mais une semaine plus tard, une grande partie s'est effacée. La recherche montre une méthode bien plus efficace, et elle tient en 4 étapes.",
     minutes=6,
     tldr=[
         "<strong>Comprendre</strong> d'abord : reformuler avec ses mots, trouver un exemple.",
         "<strong>Se tester</strong> : cacher la leçon et la redire, plutôt que la relire.",
-        "<strong>Espacer</strong> : plusieurs petites séances (aujourd'hui, demain, dans 3 jours).",
+        "<strong>Espacer</strong> : plusieurs petites séances (aujourd'hui, demain, puis 3 ou 4 jours plus tard).",
         "<strong>Dormir</strong> : le sommeil consolide ce qui a été appris.",
     ],
     body=f"""
@@ -371,7 +373,7 @@ ARTICLES.append(dict(
     cta=[('ressources.html', 'Fiche méthode à imprimer', 'Apprendre une leçon en 4 étapes'),
          ('cours.html', 'Toutes les leçons', 'Du CP à la 3e'),
          ('aider-son-enfant-a-faire-ses-devoirs.html', 'Le guide des devoirs', 'Pour les parents')],
-    sources=['roediger', 'dehaene', 'sommeil'],
+    sources=['roediger', 'dunlosky', 'dehaene', 'sommeil'],
 ))
 
 # ════════════════════════════════════════════════════════════════════
@@ -381,9 +383,9 @@ ARTICLES.append(dict(
 ARTICLES.append(dict(
     slug='exercices-gratuits', hub='parents', pillar=True, icon='🎁',
     kicker='Guide parents · Ressources gratuites',
-    title="Exercices gratuits du CP à la 3e : conformes au programme et corrigés",
+    title="Exercices gratuits du CP à la 3e : alignés sur le programme et corrigés",
     seo_title="Exercices gratuits du CP à la 3e, corrigés",
-    description="Exercices gratuits et corrigés du CP à la 3e, conformes au programme : maths, français, histoire-géo, anglais. Sans pub, sans inscription.",
+    description="Exercices gratuits et corrigés du CP à la 3e, alignés sur le programme : maths, français, histoire-géo, anglais. Sans pub, sans inscription.",
     intro="École Facile propose gratuitement, sans publicité et sans inscription obligatoire, des exercices interactifs corrigés pour chaque classe du CP à la 3e, des leçons courtes et des fiches à imprimer.",
     minutes=4,
     tldr=[
@@ -410,7 +412,7 @@ ARTICLES.append(dict(
 <h2>Comment sont conçus nos exercices</h2>
 <ul>
 <li><strong>Alignés sur le programme</strong> de l'Éducation nationale pour chaque classe et chaque thème.</li>
-<li><strong>Correction immédiate</strong> : l'enfant voit tout de suite s'il a juste, ce qui en fait de véritables petits tests de mémoire, la méthode la plus efficace pour retenir.</li>
+<li><strong>Correction immédiate</strong> : l'enfant voit tout de suite s'il a juste, ce qui en fait de véritables petits tests de mémoire, l'une des techniques les plus efficaces pour retenir (Dunlosky et al., 2013).</li>
 <li><strong>Courts</strong> : 4 à 5 questions par exercice, pour travailler 10 minutes sans se lasser.</li>
 <li><strong>Vérifiés</strong> : une seule réponse juste par question ; pour les nouveaux exercices, chaque réponse calculable est recalculée par programme avant publication.</li>
 <li><strong>Motivants</strong> : points d'expérience et badges pour rendre les progrès visibles.</li>
@@ -438,7 +440,7 @@ ARTICLES.append(dict(
     cta=[('ressources.html', 'Fiches à imprimer', 'PDF gratuits avec corrigé'),
          ('cours.html', 'Toutes les leçons', 'Courtes et illustrées'),
          ('index.html', 'Commencer les exercices', 'Choisir sa classe')],
-    sources=['programmes', 'roediger'],
+    sources=['programmes', 'roediger', 'dunlosky'],
 ))
 
 ARTICLES.append(dict(
@@ -466,7 +468,7 @@ ARTICLES.append(dict(
 
 <h2>Devoirs faits : une aide gratuite à utiliser</h2>
 {stat("Obligatoire", "Depuis la rentrée 2023, l'accompagnement aux devoirs Devoirs faits est rendu obligatoire pour tous les élèves de 6e.", "Bulletin officiel n° 16 du 20 avril 2023")}
-<p>Ce temps d'étude, encadré au collège, permet à votre enfant de faire une partie de ses devoirs avec un adulte disponible pour l'aider. Demandez-lui ce qu'il y fait, et encouragez-le à y poser ses questions. Le ministère propose aussi <strong>Jules</strong>, un assistant numérique du CNED pour accompagner les collégiens dans le cadre de Devoirs faits.</p>
+<p>Ce temps d'étude, encadré au collège, permet à votre enfant de faire une partie de ses devoirs avec un adulte disponible pour l'aider. Demandez-lui ce qu'il y fait, et encouragez-le à y poser ses questions.</p>
 
 <h2>L'organisation en 5 habitudes</h2>
 <ol class="g-steps">
@@ -570,7 +572,7 @@ ARTICLES.append(dict(
 """,
     faq=[
         ("Quelle est la différence entre numérateur et dénominateur ?", "Le dénominateur (en bas) indique en combien de parts égales on partage. Le numérateur (en haut) indique combien de parts on prend."),
-        ("Pourquoi 1/3 est plus grand que 1/4 ?", "Parce qu'en coupant une pizza en 3, chaque part est plus grosse qu'en la coupant en 4. Avec le même numérateur, plus le dénominateur est petit, plus la fraction est grande."),
+        ("Pourquoi 1/3 est-il plus grand que 1/4 ?", "Parce qu'en coupant une pizza en 3, chaque part est plus grosse qu'en la coupant en 4. Avec le même numérateur, plus le dénominateur est petit, plus la fraction est grande."),
         ("Comment savoir si une fraction est plus grande que 1 ?", "Si le numérateur (en haut) est plus grand que le dénominateur (en bas), la fraction est plus grande que 1. Par exemple, 7/4 > 1."),
     ],
     cta=[('fractions-cm1.html', 'Exercices fractions CM1', 'Corrigés tout de suite'),
@@ -589,7 +591,7 @@ ARTICLES.append(dict(
     minutes=5,
     tldr=[
         "3 × 7 = 7 × 3 : grâce à cela, il ne reste que <strong>36 résultats</strong> à apprendre (tables de 2 à 9).",
-        "Astuces : ×2 = double, ×4 = double du double, ×5 = moitié de ×10, ×9 = ×10 moins une fois.",
+        "Astuces : × 2 = double, × 4 = double du double, × 5 = moitié de × 10, × 9 = × 10 moins une fois.",
         "<strong>5 minutes par jour</strong> à se tester valent mieux qu'une heure le dimanche.",
         "On commence par les tables faciles (2, 5, 10), puis 3, 4, et on finit par 6, 7, 8, 9.",
     ],
@@ -620,10 +622,10 @@ ARTICLES.append(dict(
 <li><strong>Mets de côté</strong> les résultats que tu rates et revois-les le lendemain.</li>
 <li><strong>Chaque jour</strong>, refais aussi deux minutes sur les tables des semaines d'avant.</li>
 </ol>
-<div class="g-tip"><strong>Pourquoi ça marche :</strong> se tester (plutôt que relire) et revoir un peu chaque jour sont les deux méthodes les plus efficaces pour retenir, d'après les recherches sur la mémoire.</div>
+<div class="g-tip"><strong>Pourquoi ça marche :</strong> se tester (plutôt que relire) et revoir un peu chaque jour font partie des techniques les plus efficaces pour retenir, selon une grande synthèse de recherches (Dunlosky et al., 2013).</div>
 
 <h2>Dans quel ordre apprendre les tables ?</h2>
-<p>D'abord les plus faciles : <strong>2, 5 et 10</strong>. Puis <strong>3 et 4</strong>. Enfin <strong>6, 7, 8 et 9</strong>, avec les astuces ci-dessus. La plus difficile est souvent celle de 7 : les autres tables t'en donnent déjà presque tous les résultats (7 × 2, 7 × 3…) !</p>
+<p>D'abord les plus faciles : <strong>2, 5 et 10</strong>. Puis <strong>3 et 4</strong>. Enfin <strong>6, 7, 8 et 9</strong>, avec les astuces ci-dessus. Les plus difficiles sont souvent celles de 7 et de 8 : les autres tables t'en donnent déjà une bonne partie (7 × 2, 7 × 3, 8 × 5…) !</p>
 
 <h2>Je m'entraîne</h2>
 <div class="g-cta">
@@ -642,7 +644,7 @@ ARTICLES.append(dict(
     cta=[('tables-ce2.html', 'Exercices tables CE2', 'Corrigés tout de suite'),
          ('ressources.html', 'Affiche et fiche à imprimer', 'Gratuites'),
          ('aide.html', "Toute l'aide aux élèves", 'Fractions, problèmes…')],
-    sources=['roediger', 'programmes'],
+    sources=['roediger', 'dunlosky', 'programmes'],
 ))
 
 ARTICLES.append(dict(
@@ -735,8 +737,8 @@ HUBS = {
     ),
     'aide': dict(
         slug='aide', icon='🆘', kicker='Aide élèves',
-        title="Je n'y arrive pas ! L'aide des élèves, du CP à la 3e",
-        seo_title="Je n'y arrive pas : l'aide des élèves (CP à 3e)",
+        title="Je n'y arrive pas ! L'aide aux élèves, du CP à la 3e",
+        seo_title="Je n'y arrive pas : l'aide aux élèves (CP à 3e)",
         description="Fractions, tables, problèmes : tu bloques ? Des explications simples, les erreurs à éviter et des exercices corrigés.",
         intro="Tu bloques sur une notion ? Choisis-la : on t'explique simplement, on te montre les erreurs à éviter, puis tu t'entraînes avec des exercices corrigés.",
     ),

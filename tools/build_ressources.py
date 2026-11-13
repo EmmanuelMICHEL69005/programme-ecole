@@ -164,8 +164,8 @@ body = ('<div class="tip">Au présent, les verbes en -er prennent les terminaiso
         'Devant une voyelle ou un h muet, « je » devient « j\' » (j\'aime, j\'habite).</div>'
         '<h2>Conjugue le verbe au présent</h2><div class="grid c2">' + ''.join(f'<div class="q"><b>{i+1}.</b>{q}</div>' for i, q in enumerate(qs)) + '</div>'
         '<div class="pb"></div><h2>Corrigé</h2><div class="grid c2">' + ''.join(f'<div class="q"><b>{i+1}.</b>({v}) <span class="ans">{full}</span></div>' for i, (v, p, full) in enumerate(conj)) + '</div>')
-add('exercices-conjugaison-present-ce2-corrige.pdf', doc('Le présent des verbes en -er', '20 verbes à conjuguer — CE2', body, True),
-    title='Présent des verbes en -er (avec corrigé)', desc='20 phrases pour conjuguer chanter, jouer, aimer, habiter… au présent. Corrigé en page 2.',
+add('exercices-conjugaison-present-ce2-corrige.pdf', doc('Le présent des verbes en -er', '20 formes à conjuguer (10 verbes) — CE2', body, True),
+    title='Présent des verbes en -er (avec corrigé)', desc='20 formes à conjuguer au présent (10 verbes : chanter, jouer, aimer, habiter…). Corrigé en page 2.',
     public='Conjugaison CE2 avec corrigé', icon='✍️', tags=['CE2', 'CM1', 'Français'], group='Exercices à imprimer, avec corrigé')
 
 # ── 5. Affiche des tables ────────────────────────────────────────────
@@ -208,7 +208,7 @@ add('fiche-methode-apprendre-une-lecon.pdf', doc('Apprendre une leçon en 4 éta
 <li><strong>Je dors.</strong><br>Un petit test avant de dormir, puis une vraie nuit : le cerveau range ce que j'ai appris.</li>
 </ol>
 <h2>Mes séances de révision</h2>
-<table><tr><th>Leçon</th><th>Jour 1</th><th>Jour 2</th><th>Jour 5</th><th>Contrôle le…</th></tr>
+<table><tr><th>Leçon</th><th>Jour 1</th><th>Jour 2</th><th>Jour 4 ou 5</th><th>Contrôle le…</th></tr>
 <tr><td style="height:34px"></td><td></td><td></td><td></td><td></td></tr><tr><td style="height:34px"></td><td></td><td></td><td></td><td></td></tr>
 <tr><td style="height:34px"></td><td></td><td></td><td></td><td></td></tr><tr><td style="height:34px"></td><td></td><td></td><td></td><td></td></tr></table>
 <div class="tip">Relire, ce n'est pas apprendre : se tester, c'est apprendre. (Roediger &amp; Karpicke, 2006 : une semaine après, 61 % retenu en se testant contre 40 % en relisant.)</div>'''),
@@ -272,7 +272,7 @@ add('checklist-entree-en-sixieme.pdf', doc('Entrée en 6e : la checklist des par
 <li>Noter le nom du professeur principal et du CPE</li><li>Aller à la réunion de rentrée</li></ul>
 <h2>Ensuite</h2><ul class="check">
 <li>Laisser mon enfant faire seul, et vérifier seulement</li><li>Planifier les révisions des contrôles sur plusieurs jours</li>
-<li>Garder un temps de sommeil suffisant (9 h environ)</li><li>En cas de difficulté : contacter le professeur principal</li></ul>'''),
+<li>Garder un temps de sommeil suffisant (9 à 11 h entre 6 et 13 ans)</li><li>En cas de difficulté : contacter le professeur principal</li></ul>'''),
     title='Checklist entrée en 6e', desc='Pour les parents : avant la rentrée, les premières semaines, puis l\'autonomie.',
     public='Pour les parents de futurs 6e', icon='🏫', tags=['CM2', '6e', 'Parents'], group='Organisation et motivation')
 
