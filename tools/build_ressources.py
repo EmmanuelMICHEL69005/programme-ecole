@@ -340,7 +340,7 @@ for s_, ch, ans, why in HOMO:
 hq = ''.join(f'<div class="q" style="white-space:normal"><b>{i+1}.</b>{s_.replace("___", "<span class=blank></span>")} <span class="small">({ch})</span></div>' for i, (s_, ch, _, _) in enumerate(HOMO))
 hc = ''.join(f'<div class="q" style="white-space:normal"><b>{i+1}.</b>{s_.replace("___", "<span class=ans>" + ans + "</span>")} <span class="small">— {why}</span></div>' for i, (s_, _, ans, why) in enumerate(HOMO))
 add('exercices-homophones-ce2-corrige.pdf', doc('Les homophones', 'a/à, et/est, son/sont, on/ont, ou/où — CE2', '''
-<div class="tip">Je remplace : <strong>a</strong> → avait · <strong>est</strong> → était · <strong>et</strong> → et puis · <strong>sont</strong> → étaient · <strong>son</strong> → mon · <strong>ont</strong> → avaient · <strong>on</strong> → il · <strong>ou</strong> → ou bien · <strong>où</strong> → un lieu.</div>
+<div class="tip">Je remplace : <strong>a</strong> → avait · <strong>est</strong> → était · <strong>et</strong> → et puis · <strong>sont</strong> → étaient · <strong>son</strong> → mon · <strong>ont</strong> → avaient · <strong>on</strong> → il · <strong>ou</strong> → ou bien · <strong>où</strong> → un lieu ou un moment.</div>
 <h2>Complète avec le bon mot</h2><div class="grid c2">''' + hq + '</div><div class="pb"></div><h2>Corrigé</h2><div class="grid c2">' + hc + '</div>', True),
     title='Fiche homophones CE2 (avec corrigé)', desc='18 phrases à compléter : a/à, et/est, son/sont, on/ont, ou/où. Le corrigé explique le test à faire.',
     public='Homophones CE1-CM1 avec corrigé', icon='🔤', tags=['CE1', 'CE2', 'CM1', 'Français'], group='Exercices à imprimer, avec corrigé')
@@ -353,7 +353,7 @@ for (q, (qu, re_)), (a, b) in zip(divq, DIVS):
 dq = ''.join(f'<div class="box" style="height:225px;margin:0;font-size:13pt"><b style="color:#1f3c88">{i+1}.</b> {q}<div style="margin-top:165px;font-size:11pt">q = <span class="blank" style="min-width:44px"></span> r = <span class="blank" style="min-width:30px"></span></div></div>' for i, (q, _) in enumerate(divq))
 dc = ''.join(f'<div class="q"><b>{i+1}.</b>{q} → q = <span class="ans">{qu}</span>, r = <span class="ans">{r}</span> <span class="small">({b} × {qu} + {r} = {a})</span></div>' for i, ((q, (qu, r)), (a, b)) in enumerate(zip(divq, DIVS)))
 add('exercices-divisions-cm1-corrige.pdf', doc('La division posée', '12 divisions par un nombre à un chiffre : trouve le quotient (q) et le reste (r) — CM1 / CM2', '''
-<div class="tip">À chaque étape : combien de fois ? → je multiplie → je soustrais → j'abaisse. Le reste est toujours plus petit que le diviseur. Si le diviseur ne « rentre » pas, j'écris 0 au quotient.
+<div class="tip">À chaque étape : combien de fois ? → je multiplie → je soustrais → j'abaisse. Le reste est toujours plus petit que le diviseur. Après avoir abaissé un chiffre, si le diviseur ne « rentre » pas, j'écris 0 au quotient (au tout début, je prends plutôt un chiffre de plus).
 Pour vérifier : diviseur × quotient + reste = dividende.</div><div class="grid c4" style="gap:8px">''' + dq + '</div><div class="pb"></div><h2>Corrigé</h2><div class="grid c2">' + dc + '</div>', True),
     title='12 divisions posées (avec corrigé)', desc='Quotient et reste, dont des divisions avec un 0 au quotient. Le corrigé montre la vérification.',
     public='Divisions CM1-CM2 avec corrigé', icon='➗', tags=['CM1', 'CM2', '6e', 'Maths'], group='Exercices à imprimer, avec corrigé')
@@ -369,9 +369,9 @@ assert [str(r.normalize()) for *_, r in opd] == ['3.75', '8.3', '7.6', '6.95', '
 def fd(x):
     s = format(x.normalize(), 'f')
     return s.replace('.', ',')
-c1 = ''.join(f'<div class="q"><b>{chr(97+i)}.</b>{fd(a)} <span class="blank" style="min-width:30px"></span> {fd(b)}</div>' for i, (a, b, _) in enumerate(cmpd))
+c1 = ''.join(f'<div class="q"><b>{chr(97+i)}.</b>{sa.replace(".", ",")} <span class="blank" style="min-width:30px"></span> {sb.replace(".", ",")}</div>' for i, (sa, sb) in enumerate(CMP))
 c2 = ''.join(f'<div class="q"><b>{chr(97+i)}.</b>{fd(a)} {op} {fd(b)} = <span class="blank"></span></div>' for i, (a, op, b, _) in enumerate(opd))
-k1 = ''.join(f'<div class="q"><b>{chr(97+i)}.</b>{fd(a)} <span class="ans">{c}</span> {fd(b)}</div>' for i, (a, b, c) in enumerate(cmpd))
+k1 = ''.join(f'<div class="q"><b>{chr(97+i)}.</b>{sa.replace(".", ",")} <span class="ans">{c}</span> {sb.replace(".", ",")}</div>' for i, ((sa, sb), (_, _, c)) in enumerate(zip(CMP, cmpd)))
 k2 = ''.join(f'<div class="q"><b>{chr(97+i)}.</b>{fd(a)} {op} {fd(b)} = <span class="ans">{fd(r)}</span></div>' for i, (a, op, b, r) in enumerate(opd))
 add('exercices-nombres-decimaux-cm2-corrige.pdf', doc('Les nombres décimaux', 'Comparer, additionner et soustraire — CM2', '''
 <div class="tip">Pour comparer, j'écris les deux nombres avec autant de chiffres après la virgule : 3,5 = 3,50 et 3,50 &gt; 3,15. Pour additionner ou soustraire, j'aligne les virgules.</div>
@@ -387,7 +387,7 @@ def wr(n):  # écriture d'un relatif dans un calcul
     return f'(−{abs(n)})' if n < 0 else str(n)
 while len(rel) < 20:
     a, b = rng.randint(-15, 15), rng.randint(-15, 15)
-    if a == 0 or b == 0: continue
+    if a == 0 or b == 0 or (a > 0 and b > 0): continue
     if len(rel) % 2 == 0:
         q, r = f'{wr(a)} + {wr(b)} =', a + b
     else:
@@ -401,7 +401,7 @@ relr = [(q, fr_num(r)) for q, r in rel]
 add('exercices-nombres-relatifs-5e-corrige.pdf', doc('Les nombres relatifs', '20 additions et soustractions — 5e', '''
 <div class="tip">Additionner : même signe → j'ajoute les distances à zéro et je garde le signe ; signes contraires → je soustrais les distances à zéro et je prends le signe de celui qui est le plus loin de zéro.
 Soustraire un nombre, c'est ajouter son opposé : 5 − (−3) = 5 + 3 = 8.</div>''' + ex_grid(relr, 'c3') + '<div class="pb"></div><h2>Corrigé</h2>' + corr_grid(relr, 'c3'), True),
-    title='20 calculs avec des nombres relatifs (avec corrigé)', desc='Additions et soustractions de nombres relatifs, avec la règle des signes rappelée. Corrigé en page 2.',
+    title='20 calculs avec des nombres relatifs (avec corrigé)', desc='Additions et soustractions de nombres relatifs, avec les règles d\'addition et de soustraction rappelées. Corrigé en page 2.',
     public='Relatifs 5e avec corrigé', icon='➖', tags=['5e', '4e', 'Maths'], group='Exercices à imprimer, avec corrigé')
 assert 5 - (-3) == 8
 
@@ -410,24 +410,26 @@ PY = []
 for ab, ac in [(3, 4), (6, 8), (5, 12), (8, 15)]:
     bc = math.isqrt(ab * ab + ac * ac); assert bc * bc == ab * ab + ac * ac
     PY.append((f'ABC est rectangle en A, AB = {ab} cm et AC = {ac} cm. Calcule BC.',
-               f'BC² = AB² + AC² = {ab*ab} + {ac*ac} = {ab*ab+ac*ac}, donc BC = √{ab*ab+ac*ac} = <span class="ans">{bc} cm</span>'))
+               f'ABC est rectangle en A, donc d\'après le théorème de Pythagore : BC² = AB² + AC² = {ab*ab} + {ac*ac} = {ab*ab+ac*ac}, donc BC = √{ab*ab+ac*ac} = <span class="ans">{bc} cm</span>'))
 for bc, ab in [(13, 5), (10, 6), (25, 7)]:
     ac2 = bc * bc - ab * ab; ac = math.isqrt(ac2); assert ac * ac == ac2
     PY.append((f'ABC est rectangle en A, BC = {bc} cm et AB = {ab} cm. Calcule AC.',
-               f'AC² = BC² − AB² = {bc*bc} − {ab*ab} = {ac2}, donc AC = √{ac2} = <span class="ans">{ac} cm</span>'))
+               f'ABC est rectangle en A, donc d\'après le théorème de Pythagore : BC² = AB² + AC², d\'où AC² = BC² − AB² = {bc*bc} − {ab*ab} = {ac2}, donc AC = √{ac2} = <span class="ans">{ac} cm</span>'))
 v = math.sqrt(13); assert round(v, 1) == 3.6
 PY.append(('ABC est rectangle en A, AB = 2 cm et AC = 3 cm. Calcule BC, arrondi au dixième.',
-           'BC² = 4 + 9 = 13, donc BC = √13 ≈ <span class="ans">3,6 cm</span>'))
-for sides in [(9, 12, 15), (5, 6, 8)]:
-    a, b, c = sides; rect = a * a + b * b == c * c
-    PY.append((f'Un triangle a pour côtés {a} cm, {b} cm et {c} cm. Est-il rectangle ?',
-               f'{c}² = {c*c} et {a}² + {b}² = {a*a} + {b*b} = {a*a+b*b}. ' + ('C\'est égal : <span class="ans">il est rectangle</span>.' if rect else 'Ce n\'est pas égal : <span class="ans">il n\'est pas rectangle</span>.')))
+           'ABC est rectangle en A, donc d\'après le théorème de Pythagore : BC² = 4 + 9 = 13, donc BC = √13 ≈ <span class="ans">3,6 cm</span>'))
+for (a, b, c), (P, Q, R) in [((9, 12, 15), 'DEF'), ((5, 6, 8), 'GHI')]:
+    rect = a * a + b * b == c * c
+    PY.append((f'Le triangle {P}{Q}{R} a pour côtés {P}{Q} = {a} cm, {Q}{R} = {b} cm et {P}{R} = {c} cm. Est-il rectangle ?',
+               f'Le plus grand côté est [{P}{R}]. {P}{R}² = {c*c} et {P}{Q}² + {Q}{R}² = {a*a} + {b*b} = {a*a+b*b}. ' +
+               (f'C\'est égal, donc d\'après la réciproque du théorème de Pythagore, <span class="ans">le triangle {P}{Q}{R} est rectangle en {Q}</span>.' if rect
+                else f'Ce n\'est pas égal, donc d\'après la contraposée du théorème de Pythagore, <span class="ans">le triangle {P}{Q}{R} n\'est pas rectangle</span>.')))
 assert 9*9+12*12 == 15*15 and 5*5+6*6 != 8*8
 pq = ''.join(f'<div class="q" style="white-space:normal;padding:6px 0 30px"><b>{i+1}.</b>{q}</div>' for i, (q, _) in enumerate(PY))
 pc = ''.join(f'<div class="q" style="white-space:normal"><b>{i+1}.</b>{a}</div>' for i, (_, a) in enumerate(PY))
 add('exercices-pythagore-4e-corrige.pdf', doc('Le théorème de Pythagore', 'Calculer une longueur et prouver qu\'un triangle est rectangle — 4e', '''
 <div class="tip">Dans un triangle ABC rectangle en A, l'hypoténuse est [BC] (en face de l'angle droit) et BC² = AB² + AC². Pour trouver une longueur, je n'oublie pas la racine carrée.</div>''' + pq + '<div class="pb"></div><h2>Corrigé</h2>' + pc, True),
-    title='Fiche théorème de Pythagore 4e (avec corrigé)', desc='Hypoténuse, côté de l\'angle droit, valeur arrondie et réciproque : 10 exercices avec un corrigé rédigé.',
+    title='Fiche théorème de Pythagore 4e (avec corrigé)', desc='Hypoténuse, côté de l\'angle droit, valeur arrondie et réciproque : 10 exercices avec un corrigé rédigé (justifications comprises).',
     public='Pythagore 4e avec corrigé', icon='📐', tags=['4e', '3e', 'Maths'], group='Exercices à imprimer, avec corrigé')
 
 # ── 19. Proportionnalité CM2 ─────────────────────────────────────────
@@ -460,7 +462,7 @@ body = f'''
 <p><strong>4.</strong> {' · '.join(f'{p_} % de {n} = <span class="ans">{r}</span>' for p_, n, r in pct)}</p>
 <p><strong>5.</strong> 1 cm représente 100 000 cm = 1 km, donc 3 cm représentent <span class="ans">3 km</span>.</p>
 <p><strong>6.</strong> a. <span class="ans">Oui</span> : 2 fois plus de baguettes coûtent 2 fois plus cher. b. <span class="ans">Non</span> : à 10 ans, on ne mesure pas le double de sa taille à 5 ans.</p>'''
-add('exercices-proportionnalite-cm2-corrige.pdf', doc('La proportionnalité', 'Tableau, recette, passage à l\'unité, pourcentages, échelle — CM2', body, True),
+add('exercices-proportionnalite-cm2-corrige.pdf', doc('La proportionnalité', 'Tableau, recette, passage à l\'unité, pourcentages, échelle — CM2 / 6e', body, True),
     title='Fiche proportionnalité CM2 (avec corrigé)', desc='Tableau, recette, passage à l\'unité, pourcentages et échelle, avec un corrigé détaillé.',
     public='Proportionnalité CM2-6e avec corrigé', icon='⚖️', tags=['CM2', '6e', 'Maths'], group='Exercices à imprimer, avec corrigé')
 

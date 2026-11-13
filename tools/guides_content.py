@@ -736,7 +736,7 @@ ARTICLES.append(dict(
     title="a ou à, et ou est, son ou sont… : je ne sais jamais lequel écrire !",
     seo_title="Homophones a/à, et/est, son/sont, on/ont : les astuces",
     description="a ou à ? et ou est ? son ou sont ? on ou ont ? ou ou où ? ces ou ses ? Une astuce simple pour chaque homophone, des exemples et des exercices corrigés.",
-    intro="Ces mots se prononcent pareil mais ne s'écrivent pas pareil. Bonne nouvelle : pour chacun, il existe un petit test qui marche à tous les coups. Il suffit de remplacer le mot.",
+    intro="Ces mots se prononcent pareil mais ne s'écrivent pas pareil. Bonne nouvelle : pour chacun, il existe un petit test qui marche presque toujours. Il suffit de remplacer le mot.",
     minutes=5,
     tldr=[
         "<strong>a / à</strong> : si tu peux dire « avait », c'est <strong>a</strong> (verbe avoir).",
@@ -747,7 +747,7 @@ ARTICLES.append(dict(
     ],
     body="""
 <h2>La méthode : je remplace</h2>
-<p>Quand tu hésites, <strong>remplace le mot</strong> par un autre mot qui ne se prononce pas pareil. Si la phrase a encore du sens, tu as trouvé. Pour <strong>a</strong>, <strong>est</strong>, <strong>sont</strong> et <strong>ont</strong>, ce sont des verbes : on les remplace en mettant la phrase au passé (à l'imparfait).</p>
+<p>Quand tu hésites, <strong>remplace le mot</strong> par un autre mot qui ne se prononce pas pareil. Si la phrase a encore du sens, tu as trouvé. Pour <strong>a</strong>, <strong>est</strong>, <strong>sont</strong> et <strong>ont</strong>, ce sont des verbes : on met le verbe être ou avoir à l'imparfait (avait, était, étaient, avaient).</p>
 
 <h2>a ou à ?</h2>
 <p><strong>a</strong> est le verbe avoir. Je peux le remplacer par <strong>avait</strong>.</p>
@@ -785,9 +785,9 @@ ARTICLES.append(dict(
 </ul>
 
 <h2>ces ou ses ?</h2>
-<p><strong>ses</strong> veut dire « les siens », « à lui » ou « à elle ». <strong>ces</strong> montre quelque chose : je peux ajouter <strong>-là</strong> après le nom.</p>
+<p><strong>ses</strong> veut dire « à lui » ou « à elle » : je peux dire <strong>mes</strong>. <strong>ces</strong> montre quelque chose : je peux ajouter <strong>-là</strong> après le nom.</p>
 <ul>
-<li>Tom a perdu <strong>ses</strong> clés. → les clés <em>de Tom</em> ✔</li>
+<li>Tom a perdu <strong>ses</strong> clés. → Tom a perdu <em>mes</em> clés ✔ (ce sont les clés de Tom)</li>
 <li>Regarde <strong>ces</strong> oiseaux ! → ces oiseaux<em>-là</em> ✔</li>
 </ul>
 
@@ -800,7 +800,7 @@ ARTICLES.append(dict(
 <tr><td>sont / son</td><td><strong>étaient</strong> → sont · <strong>mon</strong> → son</td><td>Ils sont avec son frère.</td></tr>
 <tr><td>ont / on</td><td><strong>avaient</strong> → ont · <strong>il</strong> → on</td><td>On dit qu'ils ont raison.</td></tr>
 <tr><td>ou / où</td><td><strong>ou bien</strong> → ou · lieu, moment → où</td><td>Où vas-tu, à pied ou à vélo ?</td></tr>
-<tr><td>ses / ces</td><td><strong>les siens</strong> → ses · <strong>…-là</strong> → ces</td><td>Ces livres sont ses livres.</td></tr>
+<tr><td>ses / ces</td><td><strong>mes</strong> → ses · <strong>…-là</strong> → ces</td><td>Ces livres sont ses livres.</td></tr>
 </tbody></table></div>
 
 <h2>Je m'entraîne</h2>
@@ -842,7 +842,7 @@ ARTICLES.append(dict(
 <p>C'est la forme du verbe qu'on utilise dans les temps composés, comme le passé composé : j'ai <strong>chanté</strong>, il est <strong>venu</strong>, nous avons <strong>fini</strong>. Il est souvent précédé d'un <strong>auxiliaire</strong> : <strong>être</strong> ou <strong>avoir</strong>.</p>
 
 <h2>Cas 1 : avec l'auxiliaire être</h2>
-<p>Le participe passé s'accorde <strong>avec le sujet</strong>, comme un adjectif.</p>
+<p>Le participe passé s'accorde <strong>avec le sujet</strong>, comme un adjectif (sauf certains verbes pronominaux, comme « elles se sont lavé les mains », vus au collège).</p>
 <ul>
 <li>Le train est arriv<strong>é</strong>. (masculin singulier)</li>
 <li>La fusée est parti<strong>e</strong>. (féminin singulier : + e)</li>
@@ -878,7 +878,7 @@ ARTICLES.append(dict(
 <thead><tr><th>Auxiliaire</th><th>Le participe passé s'accorde avec…</th><th>Exemple</th></tr></thead>
 <tbody>
 <tr><td>être</td><td>le sujet</td><td>Elles sont arrivées.</td></tr>
-<tr><td>avoir</td><td>rien (le sujet, jamais)</td><td>Elles ont chanté.</td></tr>
+<tr><td>avoir</td><td>ne s'accorde pas (jamais avec le sujet)</td><td>Elles ont chanté.</td></tr>
 <tr><td>avoir + COD placé avant</td><td>le COD</td><td>La chanson qu'elles ont chantée.</td></tr>
 </tbody></table></div>
 
@@ -916,13 +916,13 @@ ARTICLES.append(dict(
     tldr=[
         "On répète toujours 3 gestes : <strong>combien de fois ?</strong> → <strong>je multiplie</strong> → <strong>je soustrais</strong>, puis j'abaisse le chiffre suivant.",
         "Le <strong>reste</strong> doit toujours être <strong>plus petit que le diviseur</strong>.",
-        "Piège : si le diviseur ne « rentre » pas, on écrit <strong>0 au quotient</strong>.",
+        "Piège : après avoir abaissé un chiffre, si le diviseur ne « rentre » pas, on écrit <strong>0 au quotient</strong>.",
         "Pour vérifier : diviseur × quotient + reste = dividende.",
     ],
     body="""
 <h2>Les mots de la division</h2>
 <p>Dans <strong>157 ÷ 6</strong> : 157 est le <strong>dividende</strong> (ce qu'on partage), 6 est le <strong>diviseur</strong> (en combien on partage). On cherche le <strong>quotient</strong> (le résultat) et le <strong>reste</strong> (ce qui reste quand on ne peut plus partager).</p>
-<p>Il faut bien connaître ses <a href="apprendre-les-tables-de-multiplication.html">tables de multiplication</a> : c'est elles qui servent à chaque étape.</p>
+<p>Il faut bien connaître ses <a href="apprendre-les-tables-de-multiplication.html">tables de multiplication</a> : ce sont elles qui servent à chaque étape.</p>
 
 <h2>Exemple pas à pas : 157 ÷ 6</h2>
 <ol class="g-steps">
@@ -950,7 +950,7 @@ ARTICLES.append(dict(
 
 <h2>Les erreurs fréquentes</h2>
 <ul>
-<li><strong>Un reste trop grand</strong> (plus grand que le diviseur) : on pouvait mettre un de plus au quotient.</li>
+<li><strong>Un reste trop grand</strong> (plus grand que le diviseur ou égal à lui) : on pouvait mettre un de plus au quotient.</li>
 <li><strong>Oublier le 0</strong> au quotient.</li>
 <li><strong>Une erreur de table</strong> : vérifie toujours avec la multiplication à la fin.</li>
 </ul>
@@ -967,7 +967,7 @@ ARTICLES.append(dict(
     faq=[
         ("Comment vérifier une division ?", "On calcule diviseur × quotient + reste. On doit retrouver le dividende. Et le reste doit être plus petit que le diviseur."),
         ("Pourquoi le reste doit-il être plus petit que le diviseur ?", "Si le reste est plus grand ou égal au diviseur, on peut encore faire une part de plus : le quotient est donc trop petit."),
-        ("En quelle classe apprend-on à poser une division ?", "Le sens de la division (partager, faire des groupes) se construit dès le cycle 2. La division posée est surtout travaillée en CM1 et en CM2, avec des diviseurs de plus en plus grands."),
+        ("En quelle classe apprend-on à poser une division ?", "Le sens de la division (partager, faire des groupes) se construit dès le cycle 2. Une première approche de la division posée peut avoir lieu en CE2 ; elle est surtout travaillée en CM1 et en CM2, avec des diviseurs de plus en plus grands."),
     ],
     cta=[('division-ce2.html', 'Exercices division CE2', 'Corrigés tout de suite'),
          ('ressources.html', 'Fiche divisions à imprimer', 'Avec corrigé'),
@@ -986,7 +986,7 @@ ARTICLES.append(dict(
     tldr=[
         "Deux grandeurs sont proportionnelles si l'on passe de l'une à l'autre en <strong>multipliant toujours par le même nombre</strong>.",
         "<strong>Passage à l'unité</strong> : je calcule pour 1, puis pour ce qu'on demande.",
-        "<strong>Produit en croix</strong> (collège) : 4 kg → 10 €, 6 kg → ? : 6 × 10 ÷ 4 = 15 €.",
+        "<strong>Produit en croix</strong> : 4 kg → 10 €, 6 kg → ? : 6 × 10 ÷ 4 = 15 €.",
         "Attention : tout n'est pas proportionnel (âge et taille, taxi avec prix de départ…).",
     ],
     body="""
@@ -1014,7 +1014,7 @@ ARTICLES.append(dict(
 <h2>Méthode 3 : le coefficient</h2>
 <p>Je cherche par combien on multiplie : 6 ÷ 3 = <strong>2</strong>. Puis je multiplie toutes les quantités par 2 : 7 cahiers → 7 × 2 = 14 €.</p>
 
-<h2>Méthode 4 : le produit en croix (au collège, surtout en 4e)</h2>
+<h2>Méthode 4 : le produit en croix (souvent formalisé au collège)</h2>
 <p><strong>Problème :</strong> 4 kg de pommes coûtent 10 €. Combien coûtent 6 kg ?</p>
 <div class="g-table-wrap"><table class="g-table">
 <thead><tr><th>Masse (kg)</th><td>4</td><td>6</td></tr></thead>
@@ -1033,13 +1033,13 @@ ARTICLES.append(dict(
 <a href="proportionnalite-cm2.html">Proportionnalité CM2<small>Pourcentages, échelles</small></a>
 <a href="proportionnalite-6e.html">Proportionnalité 6e<small>Exercices corrigés</small></a>
 <a href="proportionnalite-5e.html">Proportionnalité 5e<small>Exercices corrigés</small></a>
-<a href="proportionnalite-4e.html">Proportionnalité 4e<small>Produit en croix</small></a>
+<a href="proportionnalite-4e.html">Proportionnalité 4e<small>Pourcentages, coefficients</small></a>
 </div>
 <p>Leçons : <a href="cours-proportionnalite-cm1.html">cours CM1</a> · <a href="cours-proportionnalite-cm2.html">cours CM2</a> · <a href="cours-proportionnalite-6e.html">cours 6e</a>. Sur papier : la <a href="ressources.html">fiche de proportionnalité avec corrigé</a>.</p>
 """,
     faq=[
         ("Comment savoir si un tableau est proportionnel ?", "Divise chaque nombre de la deuxième ligne par le nombre correspondant de la première ligne. Si tu trouves toujours le même résultat, le tableau est proportionnel, et ce résultat est le coefficient."),
-        ("Qu'est-ce que le produit en croix ?", "C'est une méthode pour trouver une quatrième valeur dans un tableau de proportionnalité : on multiplie les deux nombres en diagonale, puis on divise par le troisième. Elle est surtout enseignée au collège, en 4e."),
+        ("Qu'est-ce que le produit en croix ?", "C'est une méthode pour trouver une quatrième valeur dans un tableau de proportionnalité : on multiplie les deux nombres en diagonale, puis on divise par le troisième. Elle peut être vue dès la fin de l'école primaire et est souvent formalisée au collège."),
         ("Comment calculer un pourcentage d'un nombre ?", "On multiplie le nombre par le pourcentage, puis on divise par 100. Par exemple, 30 % de 80 : 80 × 30 ÷ 100 = 24."),
     ],
     cta=[('proportionnalite-cm2.html', 'Exercices proportionnalité CM2', 'Corrigés tout de suite'),
@@ -1090,8 +1090,8 @@ ARTICLES.append(dict(
 <h2>La réciproque : le triangle est-il rectangle ?</h2>
 <p>On compare le carré du <strong>plus grand côté</strong> à la somme des carrés des deux autres.</p>
 <ul>
-<li>Côtés 6, 8 et 10 cm : 10² = 100 et 6² + 8² = 36 + 64 = 100. C'est égal : le triangle <strong>est rectangle</strong>.</li>
-<li>Côtés 4, 5 et 6 cm : 6² = 36 et 4² + 5² = 16 + 25 = 41. Ce n'est pas égal : le triangle <strong>n'est pas rectangle</strong>.</li>
+<li>Côtés 6, 8 et 10 cm : 10² = 100 et 6² + 8² = 36 + 64 = 100. C'est égal : d'après la réciproque du théorème de Pythagore, le triangle <strong>est rectangle</strong>, et l'angle droit est en face du plus grand côté.</li>
+<li>Côtés 4, 5 et 6 cm : 6² = 36 et 4² + 5² = 16 + 25 = 41. Ce n'est pas égal : le triangle <strong>n'est pas rectangle</strong> (on utilise ici la contraposée du théorème).</li>
 </ul>
 
 <h2>Les erreurs fréquentes</h2>
@@ -1113,7 +1113,7 @@ ARTICLES.append(dict(
     faq=[
         ("Comment reconnaître l'hypoténuse ?", "C'est le côté situé en face de l'angle droit. C'est toujours le plus long côté du triangle rectangle."),
         ("Quelle est la différence entre le théorème de Pythagore et sa réciproque ?", "Le théorème sert à calculer une longueur dans un triangle dont on sait qu'il est rectangle. La réciproque sert à prouver qu'un triangle est rectangle quand on connaît ses trois côtés."),
-        ("En quelle classe voit-on le théorème de Pythagore ?", "En 4e, dans le programme de géométrie du cycle 4. Il est réutilisé en 3e, notamment avec la trigonométrie."),
+        ("En quelle classe voit-on le théorème de Pythagore ?", "En général en 4e, dans le programme de géométrie du cycle 4. Il est réutilisé en 3e, notamment avec la trigonométrie."),
     ],
     cta=[('triangles-4e.html', 'Exercices triangles 4e', 'Corrigés tout de suite'),
          ('ressources.html', 'Fiche Pythagore à imprimer', 'Avec corrigé'),
@@ -1142,7 +1142,7 @@ ARTICLES.append(dict(
     body=f"""
 <h2>Pourquoi réviser la veille ne marche pas bien</h2>
 <p>Ce qu'on apprend en une seule fois s'oublie vite. Répartir le travail sur plusieurs jours (la pratique espacée) et se tester plutôt que relire font partie des techniques d'apprentissage les plus efficaces, selon la grande synthèse de John Dunlosky et de ses collègues (2013).</p>
-{stat("61 % vs 40 %", "retenu une semaine plus tard en se testant, contre en relisant.", "Roediger &amp; Karpicke, Psychological Science, 2006")}
+{stat("61 % vs 40 %", "d'un texte retenu une semaine plus tard après 1 lecture et 3 tests, contre 4 relectures.", "Roediger &amp; Karpicke, Psychological Science, 2006")}
 
 <h2>Le plan sur une semaine</h2>
 <ol class="g-steps">
@@ -1151,7 +1151,7 @@ ARTICLES.append(dict(
 <li><strong>J-3 : se tester (20 min).</strong> Répondre à ses questions sans regarder. Refaire 2 ou 3 exercices de classe sans la correction. Noter ce qui coince.</li>
 <li><strong>J-1 : retester seulement ce qui coince (15 min).</strong> Pas de nouvelle leçon. Préparer ses affaires, et se coucher à l'heure.</li>
 </ol>
-<div class="g-tip"><strong>En primaire</strong>, divisez ces durées par deux et faites les questions à l'oral avec votre enfant. Notre <a href="ressources.html">fiche « Apprendre une leçon »</a> contient un tableau pour noter les séances.</div>
+<div class="g-tip"><strong>En primaire</strong>, prévoyez plutôt 2 ou 3 séances de 10 minutes et faites les questions à l'oral avec votre enfant. Notre <a href="ressources.html">fiche « Apprendre une leçon »</a> contient un tableau pour noter les séances.</div>
 
 <h2>Les techniques qui marchent</h2>
 <ul>
@@ -1166,7 +1166,7 @@ ARTICLES.append(dict(
 <ul>
 <li>Aider à <strong>planifier</strong> : noter les 4 séances dans le <a href="ressources.html">planning de la semaine</a>.</li>
 <li><strong>Interroger</strong> à partir des questions préparées par l'enfant.</li>
-<li>Protéger le <strong>sommeil</strong> de la veille : une nuit courte fait perdre une partie du bénéfice des révisions.</li>
+<li>Protéger le <strong>sommeil</strong> de la veille : une nuit courte peut faire perdre une partie du bénéfice des révisions, car le sommeil aide à consolider ce qu'on a appris.</li>
 </ul>
 """,
     faq=[
@@ -1177,7 +1177,7 @@ ARTICLES.append(dict(
     cta=[('comment-apprendre-une-lecon.html', 'Apprendre une leçon', 'La méthode en 4 étapes'),
          ('ressources.html', 'Planning et fiche méthode', 'À imprimer'),
          ('index.html', 'Exercices corrigés', 'Pour se tester')],
-    sources=['dunlosky', 'roediger'],
+    sources=['dunlosky', 'roediger', 'sommeil'],
 ))
 
 ARTICLES.append(dict(
@@ -1196,7 +1196,7 @@ ARTICLES.append(dict(
     ],
     body="""
 <h2>Pourquoi un peu, mais pas trop</h2>
-<p>Ce qu'on n'utilise pas pendant longtemps devient plus difficile à retrouver. C'est vrai pour les tables de multiplication comme pour la conjugaison. Quelques rappels espacés suffisent à garder les connaissances « au chaud ». À l'inverse, transformer les vacances en école du soir fatigue et décourage.</p>
+<p>Ce qu'on n'utilise pas pendant longtemps devient plus difficile à retrouver. C'est vrai pour les tables de multiplication comme pour la conjugaison. Quelques rappels espacés dans le temps (la « pratique espacée », reconnue efficace par la recherche) suffisent à garder les connaissances « au chaud ». À l'inverse, transformer les vacances en école du soir fatigue et décourage.</p>
 
 <h2>Le bon dosage</h2>
 <div class="g-table-wrap"><table class="g-table">
@@ -1227,7 +1227,7 @@ ARTICLES.append(dict(
 <p>Nos <a href="ressources.html">fiches à imprimer</a> (tables, calcul mental, fractions, conjugaison, avec corrigé) et nos <a href="index.html">exercices interactifs</a> courts sont faits pour ce type de séance de 10 minutes. Pour la rentrée en 6e, consultez aussi <a href="entree-en-sixieme.html">notre guide</a>.</p>
 """,
     faq=[
-        ("Les cahiers de vacances sont-ils utiles ?", "Ils peuvent l'être si l'enfant les fait par petites séances et sans pression. Quelques minutes de lecture et de calcul régulières ont le même effet."),
+        ("Les cahiers de vacances sont-ils utiles ?", "Ils peuvent l'être si l'enfant les fait par petites séances et sans pression. Quelques minutes de lecture et de calcul régulières peuvent tout aussi bien faire l'affaire."),
         ("Faut-il faire travailler son enfant pendant les vacances de Noël ?", "Ce n'est pas nécessaire. Un peu de lecture et, si vous le souhaitez, 2 ou 3 petites séances avant la reprise suffisent."),
         ("Mon enfant a eu des difficultés cette année, faut-il en faire plus ?", "Ciblez les 2 ou 3 notions qui ont posé problème (par exemple les tables ou les fractions), par séances courtes et régulières, plutôt que de tout revoir."),
     ],

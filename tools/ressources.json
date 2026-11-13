@@ -203,7 +203,7 @@
    "Français"
   ],
   "group": "Exercices à imprimer, avec corrigé",
-  "bytes": 33632,
+  "bytes": 33649,
   "pages": 2
  },
  {
@@ -219,7 +219,7 @@
    "Maths"
   ],
   "group": "Exercices à imprimer, avec corrigé",
-  "bytes": 39301,
+  "bytes": 39492,
   "pages": 2
  },
  {
@@ -234,13 +234,13 @@
    "Maths"
   ],
   "group": "Exercices à imprimer, avec corrigé",
-  "bytes": 31586,
+  "bytes": 31599,
   "pages": 2
  },
  {
   "file": "exercices-nombres-relatifs-5e-corrige.pdf",
   "title": "20 calculs avec des nombres relatifs (avec corrigé)",
-  "desc": "Additions et soustractions de nombres relatifs, avec la règle des signes rappelée. Corrigé en page 2.",
+  "desc": "Additions et soustractions de nombres relatifs, avec les règles d'addition et de soustraction rappelées. Corrigé en page 2.",
   "public": "Relatifs 5e avec corrigé",
   "icon": "➖",
   "tags": [
@@ -249,13 +249,13 @@
    "Maths"
   ],
   "group": "Exercices à imprimer, avec corrigé",
-  "bytes": 31560,
+  "bytes": 31282,
   "pages": 2
  },
  {
   "file": "exercices-pythagore-4e-corrige.pdf",
   "title": "Fiche théorème de Pythagore 4e (avec corrigé)",
-  "desc": "Hypoténuse, côté de l'angle droit, valeur arrondie et réciproque : 10 exercices avec un corrigé rédigé.",
+  "desc": "Hypoténuse, côté de l'angle droit, valeur arrondie et réciproque : 10 exercices avec un corrigé rédigé (justifications comprises).",
   "public": "Pythagore 4e avec corrigé",
   "icon": "📐",
   "tags": [
@@ -264,7 +264,7 @@
    "Maths"
   ],
   "group": "Exercices à imprimer, avec corrigé",
-  "bytes": 35018,
+  "bytes": 36765,
   "pages": 2
  },
  {
@@ -279,7 +279,7 @@
    "Maths"
   ],
   "group": "Exercices à imprimer, avec corrigé",
-  "bytes": 38249,
+  "bytes": 38269,
   "pages": 2
  }
 ]
