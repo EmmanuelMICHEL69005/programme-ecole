@@ -758,6 +758,9 @@
     <a href="index.html" ${current === 'index.html' ? 'class="active"' : ''}>
       🏠 Accueil — toutes les matières
     </a>
+    <a href="parents.html" ${current === 'parents.html' ? 'class="active"' : ''}>👪 Espace parents</a>
+    <a href="aide.html" ${current === 'aide.html' ? 'class="active"' : ''}>🆘 Je n'y arrive pas : aide</a>
+    <a href="ressources.html" ${current === 'ressources.html' ? 'class="active"' : ''}>📥 Fiches gratuites à imprimer</a>
   `;
   body.appendChild(homeItem);
 

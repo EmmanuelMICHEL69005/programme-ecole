@@ -1,0 +1,178 @@
+[
+ {
+  "file": "exercices-tables-de-multiplication-ce2-corrige.pdf",
+  "title": "40 multiplications à imprimer (avec corrigé)",
+  "desc": "Les tables de 2 à 9 dans le désordre, pour s'entraîner sur papier. Corrigé en page 2.",
+  "public": "Exercices de tables CE2-CM1 avec corrigé",
+  "icon": "✖️",
+  "tags": [
+   "CE2",
+   "CM1",
+   "Maths"
+  ],
+  "group": "Exercices à imprimer, avec corrigé",
+  "bytes": 32518,
+  "pages": 2
+ },
+ {
+  "file": "exercices-calcul-mental-ce1-corrige.pdf",
+  "title": "30 calculs mentaux CE1 (avec corrigé)",
+  "desc": "Additions et soustractions jusqu'à 100, avec une astuce de calcul. Corrigé en page 2.",
+  "public": "Calcul mental CE1 avec corrigé",
+  "icon": "🧮",
+  "tags": [
+   "CE1",
+   "CE2",
+   "Maths"
+  ],
+  "group": "Exercices à imprimer, avec corrigé",
+  "bytes": 30263,
+  "pages": 2
+ },
+ {
+  "file": "exercices-fractions-cm1-corrige.pdf",
+  "title": "Fiche fractions CM1 (avec corrigé)",
+  "desc": "Lire une fraction coloriée, comparer, additionner des fractions de même dénominateur. Corrigé en page 2.",
+  "public": "Fractions CM1 avec corrigé",
+  "icon": "🍕",
+  "tags": [
+   "CM1",
+   "CM2",
+   "Maths"
+  ],
+  "group": "Exercices à imprimer, avec corrigé",
+  "bytes": 34192,
+  "pages": 2
+ },
+ {
+  "file": "exercices-conjugaison-present-ce2-corrige.pdf",
+  "title": "Présent des verbes en -er (avec corrigé)",
+  "desc": "20 phrases pour conjuguer chanter, jouer, aimer, habiter… au présent. Corrigé en page 2.",
+  "public": "Conjugaison CE2 avec corrigé",
+  "icon": "✍️",
+  "tags": [
+   "CE2",
+   "CM1",
+   "Français"
+  ],
+  "group": "Exercices à imprimer, avec corrigé",
+  "bytes": 32263,
+  "pages": 2
+ },
+ {
+  "file": "affiche-tables-de-multiplication.pdf",
+  "title": "Affiche des tables de multiplication",
+  "desc": "Le tableau de Pythagore et les tables de 2 à 9, avec les astuces pour les retenir.",
+  "public": "Affiche des tables de 1 à 10",
+  "icon": "📋",
+  "tags": [
+   "CE1",
+   "CE2",
+   "CM1"
+  ],
+  "group": "Affiches et fiches méthode",
+  "bytes": 33750,
+  "pages": 1
+ },
+ {
+  "file": "fiche-methode-resoudre-un-probleme.pdf",
+  "title": "Fiche méthode : résoudre un problème",
+  "desc": "Les 5 étapes, le tableau « quelle opération ? » et le piège des mots-indices.",
+  "public": "Méthode en 5 étapes, CE1 à 6e",
+  "icon": "🔎",
+  "tags": [
+   "CE1",
+   "CM2",
+   "6e"
+  ],
+  "group": "Affiches et fiches méthode",
+  "bytes": 37848,
+  "pages": 1
+ },
+ {
+  "file": "fiche-methode-apprendre-une-lecon.pdf",
+  "title": "Fiche méthode : apprendre une leçon",
+  "desc": "Comprendre, se tester, espacer, dormir : la méthode qui marche, avec un tableau de révisions.",
+  "public": "Méthode en 4 étapes, primaire et collège",
+  "icon": "🧠",
+  "tags": [
+   "Primaire",
+   "Collège"
+  ],
+  "group": "Affiches et fiches méthode",
+  "bytes": 34652,
+  "pages": 1
+ },
+ {
+  "file": "planning-devoirs-semaine.pdf",
+  "title": "Planning de devoirs de la semaine",
+  "desc": "Un tableau du lundi au dimanche pour noter et cocher ses devoirs, et répartir les révisions.",
+  "public": "Planning hebdomadaire à remplir",
+  "icon": "🗓️",
+  "tags": [
+   "Primaire",
+   "Collège",
+   "Parents"
+  ],
+  "group": "Organisation et motivation",
+  "bytes": 27661,
+  "pages": 1
+ },
+ {
+  "file": "checklist-devoirs-du-soir.pdf",
+  "title": "Checklist « Mes devoirs du soir »",
+  "desc": "Les bons réflexes avant, pendant et après les devoirs, à afficher au bureau.",
+  "public": "Routine du soir à afficher",
+  "icon": "✅",
+  "tags": [
+   "Primaire",
+   "Collège"
+  ],
+  "group": "Organisation et motivation",
+  "bytes": 25658,
+  "pages": 1
+ },
+ {
+  "file": "checklist-cartable.pdf",
+  "title": "Checklist cartable",
+  "desc": "Tout ce qu'il faut vérifier la veille, plus un emploi du temps simplifié à remplir.",
+  "public": "À cocher chaque soir",
+  "icon": "🎒",
+  "tags": [
+   "Primaire",
+   "6e"
+  ],
+  "group": "Organisation et motivation",
+  "bytes": 26377,
+  "pages": 1
+ },
+ {
+  "file": "tableau-de-motivation.pdf",
+  "title": "Tableau de motivation",
+  "desc": "4 semaines d'étoiles à colorier, un objectif du mois et un espace « je suis fier(e) ».",
+  "public": "4 semaines d'étoiles à colorier",
+  "icon": "⭐",
+  "tags": [
+   "Primaire",
+   "Parents"
+  ],
+  "group": "Organisation et motivation",
+  "bytes": 27629,
+  "pages": 1
+ },
+ {
+  "file": "checklist-entree-en-sixieme.pdf",
+  "title": "Checklist entrée en 6e",
+  "desc": "Pour les parents : avant la rentrée, les premières semaines, puis l'autonomie.",
+  "public": "Pour les parents de futurs 6e",
+  "icon": "🏫",
+  "tags": [
+   "CM2",
+   "6e",
+   "Parents"
+  ],
+  "group": "Organisation et motivation",
+  "bytes": 27453,
+  "pages": 1
+ }
+]

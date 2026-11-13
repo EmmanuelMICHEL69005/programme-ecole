@@ -1,1 +1,4 @@
 *.pdf
+# Fiches gratuites publiées sur la page Ressources
+!ressources/*.pdf
+__pycache__/

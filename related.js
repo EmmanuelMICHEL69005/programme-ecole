@@ -223,6 +223,21 @@
   var cur = window.location.pathname.split('/').pop() || 'index.html';
   var links = RELATED[cur] ? RELATED[cur].slice() : [];
 
+  // Maillage vers les pages d'aide (« je n'y arrive pas ») et l'espace parents
+  var AIDE = [
+    [/^(fractions-|fiche[123]\.|cours-fractions-)/, 'je-ne-comprends-pas-les-fractions.html', '🆘 Je ne comprends pas les fractions'],
+    [/^(tables-|multiplication|cours-multiplication-)/, 'apprendre-les-tables-de-multiplication.html', '🆘 Apprendre ses tables de multiplication'],
+    [/^problemes/, 'resoudre-un-probleme-de-maths.html', '🆘 Résoudre un problème : la méthode'],
+    [/^cours-/, 'comment-apprendre-une-lecon.html', '🧠 Comment apprendre une leçon'],
+    [/^programme-(cm2|6e)\./, 'entree-en-sixieme.html', '🎒 Réussir l\'entrée en 6e'],
+    [/^programme-/, 'aider-son-enfant-a-faire-ses-devoirs.html', '👪 Parents : aider son enfant à faire ses devoirs']
+  ];
+  for (var a = 0; a < AIDE.length; a++) {
+    if (AIDE[a][0].test(cur) && !links.some(function (l) { return l.h === AIDE[a][1]; })) {
+      links.push({h: AIDE[a][1], l: AIDE[a][2]});
+    }
+  }
+
   // Auto-inject pillar page link based on current page's level
   var levelSuffixes = [['-cp','CP'],['-ce1','CE1'],['-ce2','CE2'],['-cm1','CM1'],['-cm2','CM2'],['-6e','6e'],['-5e','5e'],['-4e','4e'],['-3e','3e']];
   var pillarPages = {CP:'programme-cp.html',CE1:'programme-ce1.html',CE2:'programme-ce2.html',CM1:'programme-cm1.html',CM2:'programme-cm2.html','6e':'programme-6e.html','5e':'programme-5e.html','4e':'programme-4e.html','3e':'programme-3e.html'};
