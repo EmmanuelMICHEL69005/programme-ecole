@@ -228,6 +228,12 @@
     [/^(fractions-|fiche[123]\.|cours-fractions-)/, 'je-ne-comprends-pas-les-fractions.html', '🆘 Je ne comprends pas les fractions'],
     [/^(tables-|multiplication|cours-multiplication-)/, 'apprendre-les-tables-de-multiplication.html', '🆘 Apprendre ses tables de multiplication'],
     [/^problemes/, 'resoudre-un-probleme-de-maths.html', '🆘 Résoudre un problème : la méthode'],
+    [/^(division-|calcul-pose-|multiplication-division-)/, 'poser-une-division.html', '🆘 Poser une division pas à pas'],
+    [/^(proportionnalite-|cours-proportionnalite-)/, 'proportionnalite-explication.html', '🆘 La proportionnalité expliquée simplement'],
+    [/^(triangles-4e|trigonometrie-3e)\./, 'theoreme-de-pythagore.html', '🆘 Le théorème de Pythagore expliqué'],
+    [/^(orthographe-(ce1|ce2|cm1|cm2)|cours-orthographe-(ce1|ce2|cm1|cm2))\./, 'homophones-a-a-et-est-son-sont.html', '🆘 a/à, et/est, son/sont : les astuces'],
+    [/^(orthographe-(cm2|6e)|cours-orthographe-(cm2|6e)|conjugaison-(cm1|cm2))\./, 'accord-du-participe-passe.html', '🆘 L\'accord du participe passé'],
+    [/^programme-(6e|5e|4e|3e)\./, 'reviser-un-controle.html', '📅 Réviser un contrôle : le plan sur une semaine'],
     [/^cours-/, 'comment-apprendre-une-lecon.html', '🧠 Comment apprendre une leçon'],
     [/^programme-(cm2|6e)\./, 'entree-en-sixieme.html', '🎒 Réussir l\'entrée en 6e'],
     [/^programme-/, 'aider-son-enfant-a-faire-ses-devoirs.html', '👪 Parents : aider son enfant à faire ses devoirs']

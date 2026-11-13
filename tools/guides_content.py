@@ -726,6 +726,517 @@ ARTICLES.append(dict(
     sources=['programmes'],
 ))
 
+# ════════════════════════════════════════════════════════════════════
+# VAGUE 2 — ÉLÈVES : FRANÇAIS
+# ════════════════════════════════════════════════════════════════════
+
+ARTICLES.append(dict(
+    slug='homophones-a-a-et-est-son-sont', hub='aide', icon='🔤',
+    kicker='Aide élèves · Français',
+    title="a ou à, et ou est, son ou sont… : je ne sais jamais lequel écrire !",
+    seo_title="Homophones a/à, et/est, son/sont, on/ont : les astuces",
+    description="a ou à ? et ou est ? son ou sont ? on ou ont ? ou ou où ? ces ou ses ? Une astuce simple pour chaque homophone, des exemples et des exercices corrigés.",
+    intro="Ces mots se prononcent pareil mais ne s'écrivent pas pareil. Bonne nouvelle : pour chacun, il existe un petit test qui marche à tous les coups. Il suffit de remplacer le mot.",
+    minutes=5,
+    tldr=[
+        "<strong>a / à</strong> : si tu peux dire « avait », c'est <strong>a</strong> (verbe avoir).",
+        "<strong>et / est</strong> : si tu peux dire « était », c'est <strong>est</strong> ; si tu peux dire « et puis », c'est <strong>et</strong>.",
+        "<strong>son / sont</strong> : si tu peux dire « étaient », c'est <strong>sont</strong> ; si tu peux dire « mon », c'est <strong>son</strong>.",
+        "<strong>on / ont</strong> : si tu peux dire « avaient », c'est <strong>ont</strong> ; si tu peux dire « il », c'est <strong>on</strong>.",
+        "<strong>ou / où</strong> : si tu peux dire « ou bien », c'est <strong>ou</strong> ; si on parle d'un lieu ou d'un moment, c'est <strong>où</strong>.",
+    ],
+    body="""
+<h2>La méthode : je remplace</h2>
+<p>Quand tu hésites, <strong>remplace le mot</strong> par un autre mot qui ne se prononce pas pareil. Si la phrase a encore du sens, tu as trouvé. Pour <strong>a</strong>, <strong>est</strong>, <strong>sont</strong> et <strong>ont</strong>, ce sont des verbes : on les remplace en mettant la phrase au passé (à l'imparfait).</p>
+
+<h2>a ou à ?</h2>
+<p><strong>a</strong> est le verbe avoir. Je peux le remplacer par <strong>avait</strong>.</p>
+<ul>
+<li>Léo <strong>a</strong> un vélo. → Léo <em>avait</em> un vélo. ✔ Donc « a ».</li>
+<li>Il va <strong>à</strong> la piscine. → Il va <em>avait</em> la piscine. ✘ Donc « à ».</li>
+</ul>
+
+<h2>et ou est ?</h2>
+<p><strong>est</strong> est le verbe être : je peux dire <strong>était</strong>. <strong>et</strong> relie deux mots : je peux dire <strong>et puis</strong>.</p>
+<ul>
+<li>Le chat <strong>est</strong> noir. → Le chat <em>était</em> noir. ✔</li>
+<li>Un chat <strong>et</strong> un chien. → Un chat <em>et puis</em> un chien. ✔</li>
+</ul>
+
+<h2>son ou sont ?</h2>
+<p><strong>sont</strong> est le verbe être : je peux dire <strong>étaient</strong>. <strong>son</strong> veut dire « à lui » ou « à elle » : je peux dire <strong>mon</strong>.</p>
+<ul>
+<li>Les enfants <strong>sont</strong> contents. → Les enfants <em>étaient</em> contents. ✔</li>
+<li>Elle range <strong>son</strong> cartable. → Elle range <em>mon</em> cartable. ✔</li>
+</ul>
+
+<h2>on ou ont ?</h2>
+<p><strong>ont</strong> est le verbe avoir : je peux dire <strong>avaient</strong>. <strong>on</strong> est un pronom, comme « il » : je peux dire <strong>il</strong>.</p>
+<ul>
+<li>Mes amis <strong>ont</strong> gagné. → Mes amis <em>avaient</em> gagné. ✔</li>
+<li><strong>On</strong> joue dehors. → <em>Il</em> joue dehors. ✔</li>
+</ul>
+
+<h2>ou ou où ?</h2>
+<p><strong>ou</strong> propose un choix : je peux dire <strong>ou bien</strong>. <strong>où</strong> (avec un accent) indique un lieu ou un moment.</p>
+<ul>
+<li>Tu veux une pomme <strong>ou</strong> une poire ? → une pomme <em>ou bien</em> une poire ✔</li>
+<li><strong>Où</strong> habites-tu ? → on parle d'un lieu ✔</li>
+</ul>
+
+<h2>ces ou ses ?</h2>
+<p><strong>ses</strong> veut dire « les siens », « à lui » ou « à elle ». <strong>ces</strong> montre quelque chose : je peux ajouter <strong>-là</strong> après le nom.</p>
+<ul>
+<li>Tom a perdu <strong>ses</strong> clés. → les clés <em>de Tom</em> ✔</li>
+<li>Regarde <strong>ces</strong> oiseaux ! → ces oiseaux<em>-là</em> ✔</li>
+</ul>
+
+<h2>Le tableau à retenir</h2>
+<div class="g-table-wrap"><table class="g-table">
+<thead><tr><th>Homophones</th><th>Je remplace par…</th><th>Exemple</th></tr></thead>
+<tbody>
+<tr><td>a / à</td><td><strong>avait</strong> → a</td><td>Il a faim. Il va à l'école.</td></tr>
+<tr><td>est / et</td><td><strong>était</strong> → est · <strong>et puis</strong> → et</td><td>Il est grand et fort.</td></tr>
+<tr><td>sont / son</td><td><strong>étaient</strong> → sont · <strong>mon</strong> → son</td><td>Ils sont avec son frère.</td></tr>
+<tr><td>ont / on</td><td><strong>avaient</strong> → ont · <strong>il</strong> → on</td><td>On dit qu'ils ont raison.</td></tr>
+<tr><td>ou / où</td><td><strong>ou bien</strong> → ou · lieu, moment → où</td><td>Où vas-tu, à pied ou à vélo ?</td></tr>
+<tr><td>ses / ces</td><td><strong>les siens</strong> → ses · <strong>…-là</strong> → ces</td><td>Ces livres sont ses livres.</td></tr>
+</tbody></table></div>
+
+<h2>Je m'entraîne</h2>
+<div class="g-cta">
+<a href="orthographe-ce1.html">Orthographe CE1<small>a/à, et/est, on/ont, son/sont</small></a>
+<a href="orthographe-ce2.html">Orthographe CE2<small>Exercices corrigés</small></a>
+<a href="orthographe-cm1.html">Orthographe CM1<small>Exercices corrigés</small></a>
+<a href="orthographe-cm2.html">Orthographe CM2<small>ces, ses, c'est, s'est…</small></a>
+</div>
+<p>Leçons : <a href="cours-orthographe-ce1.html">cours CE1</a> · <a href="cours-orthographe-ce2.html">cours CE2</a> · <a href="cours-orthographe-cm1.html">cours CM1</a>. Sur papier : la <a href="ressources.html">fiche d'exercices d'homophones avec corrigé</a>.</p>
+""",
+    faq=[
+        ("Comment savoir si on écrit a ou à ?", "Remplace par « avait ». Si la phrase a du sens, écris « a » sans accent (c'est le verbe avoir). Sinon, écris « à »."),
+        ("Quelle est la différence entre et et est ?", "« est » est le verbe être : on peut le remplacer par « était ». « et » relie deux mots ou deux idées : on peut le remplacer par « et puis »."),
+        ("En quelle classe apprend-on les homophones ?", "Les premiers homophones (a/à, et/est, on/ont, son/sont) sont travaillés dès le CE1 et revus jusqu'au CM2. D'autres, comme ces/ses ou c'est/s'est, viennent ensuite."),
+    ],
+    cta=[('orthographe-ce1.html', 'Exercices orthographe CE1', 'Corrigés tout de suite'),
+         ('ressources.html', 'Fiche homophones à imprimer', 'Avec corrigé'),
+         ('aide.html', "Toute l'aide aux élèves", 'Maths et français')],
+    sources=['programmes'],
+))
+
+ARTICLES.append(dict(
+    slug='accord-du-participe-passe', hub='aide', icon='✍️',
+    kicker='Aide élèves · Français',
+    title="L'accord du participe passé : la règle expliquée simplement",
+    seo_title="Accord du participe passé : la règle simple",
+    description="Avec être, avec avoir, COD placé avant : l'accord du participe passé expliqué pas à pas, avec la méthode des questions, les pièges (é ou er ?) et des exercices corrigés.",
+    intro="« Elles sont parties » mais « elles ont mangé » : pourquoi un -es d'un côté et rien de l'autre ? Tout dépend de l'auxiliaire. Voici la règle en trois cas, et la méthode pour ne plus se tromper.",
+    minutes=6,
+    tldr=[
+        "Avec <strong>être</strong> : le participe passé s'accorde avec le <strong>sujet</strong> (elles sont parti<strong>es</strong>).",
+        "Avec <strong>avoir</strong> : il ne s'accorde <strong>pas</strong> avec le sujet (elles ont mang<strong>é</strong>).",
+        "Avec avoir, il s'accorde avec le <strong>COD s'il est placé avant</strong> le verbe (les pommes que j'ai mang<strong>ées</strong>).",
+        "é ou er ? Remplace par un verbe comme <strong>vendre</strong> : vendu → é ; vendre → er.",
+    ],
+    body="""
+<h2>C'est quoi, un participe passé ?</h2>
+<p>C'est la forme du verbe qu'on utilise dans les temps composés, comme le passé composé : j'ai <strong>chanté</strong>, il est <strong>venu</strong>, nous avons <strong>fini</strong>. Il est souvent précédé d'un <strong>auxiliaire</strong> : <strong>être</strong> ou <strong>avoir</strong>.</p>
+
+<h2>Cas 1 : avec l'auxiliaire être</h2>
+<p>Le participe passé s'accorde <strong>avec le sujet</strong>, comme un adjectif.</p>
+<ul>
+<li>Le train est arriv<strong>é</strong>. (masculin singulier)</li>
+<li>La fusée est parti<strong>e</strong>. (féminin singulier : + e)</li>
+<li>Les garçons sont tomb<strong>és</strong>. (masculin pluriel : + s)</li>
+<li>Mes sœurs sont venu<strong>es</strong>. (féminin pluriel : + es)</li>
+</ul>
+<div class="g-tip"><strong>Méthode :</strong> je cherche le sujet en posant la question « Qui est-ce qui… ? ». « Qui est-ce qui est parti ? » → <em>la fusée</em> → féminin singulier → parti<strong>e</strong>.</div>
+
+<h2>Cas 2 : avec l'auxiliaire avoir</h2>
+<p>Le participe passé <strong>ne s'accorde jamais avec le sujet</strong>.</p>
+<ul>
+<li>Elle a mang<strong>é</strong>. · Ils ont jou<strong>é</strong>. · Mes cousines ont dans<strong>é</strong>.</li>
+</ul>
+
+<h2>Cas 3 : avec avoir, quand le COD est placé avant</h2>
+<p>C'est le cas le plus difficile, étudié surtout au collège. Avec avoir, le participe passé s'accorde avec le <strong>complément d'objet direct (COD)</strong>, mais <strong>seulement s'il est placé avant</strong> le verbe.</p>
+<ul>
+<li>J'ai mangé <strong>les pommes</strong>. → le COD est après : pas d'accord → mang<strong>é</strong>.</li>
+<li><strong>Les pommes</strong> que j'ai mang<strong>ées</strong> étaient bonnes. → « que » remplace « les pommes », placé avant : accord → mang<strong>ées</strong>.</li>
+<li>Ces fleurs, je <strong>les</strong> ai cueilli<strong>es</strong>. → « les » remplace « ces fleurs », placé avant : accord.</li>
+</ul>
+<div class="g-tip"><strong>Méthode :</strong> je pose la question « quoi ? » ou « qui ? » après le verbe. « J'ai mangé quoi ? » → les pommes. Puis je regarde : le COD est-il <strong>avant</strong> ou <strong>après</strong> le verbe ?</div>
+
+<h2>Le piège : é ou er ?</h2>
+<p>Les verbes en -er ont un participe passé en <strong>-é</strong> (chanté) et un infinitif en <strong>-er</strong> (chanter). À l'oral, c'est pareil ! Pour choisir, remplace par un verbe comme <strong>vendre</strong> (ou prendre, mordre) :</p>
+<ul>
+<li>Il a <strong>mangé</strong>. → Il a <em>vendu</em>. ✔ participe passé → <strong>é</strong></li>
+<li>Il va <strong>manger</strong>. → Il va <em>vendre</em>. ✔ infinitif → <strong>er</strong></li>
+</ul>
+
+<h2>Le résumé</h2>
+<div class="g-table-wrap"><table class="g-table">
+<thead><tr><th>Auxiliaire</th><th>Le participe passé s'accorde avec…</th><th>Exemple</th></tr></thead>
+<tbody>
+<tr><td>être</td><td>le sujet</td><td>Elles sont arrivées.</td></tr>
+<tr><td>avoir</td><td>rien (le sujet, jamais)</td><td>Elles ont chanté.</td></tr>
+<tr><td>avoir + COD placé avant</td><td>le COD</td><td>La chanson qu'elles ont chantée.</td></tr>
+</tbody></table></div>
+
+<h2>Je m'entraîne</h2>
+<div class="g-cta">
+<a href="orthographe-cm2.html">Orthographe CM2<small>Participe passé avec être et avoir</small></a>
+<a href="orthographe-6e.html">Orthographe 6e<small>COD placé avant, pronoms</small></a>
+<a href="conjugaison-cm1.html">Conjugaison CM1<small>Passé composé avec être</small></a>
+<a href="cours-orthographe-cm2.html">Leçon d'orthographe CM2<small>À relire avant les exercices</small></a>
+</div>
+""",
+    faq=[
+        ("Quand accorder le participe passé avec avoir ?", "Seulement quand le complément d'objet direct (COD) est placé avant le verbe, souvent sous la forme « que », « l' », « la » ou « les ». Sinon, on ne l'accorde pas."),
+        ("Pourquoi écrit-on « elles sont parties » mais « elles ont mangé » ?", "Avec l'auxiliaire être, le participe passé s'accorde avec le sujet (elles → parties). Avec avoir, il ne s'accorde pas avec le sujet."),
+        ("Comment savoir s'il faut écrire é ou er ?", "Remplace le verbe par « vendre » : si tu dirais « vendu », écris -é ; si tu dirais « vendre », écris -er."),
+    ],
+    cta=[('orthographe-cm2.html', 'Exercices orthographe CM2', 'Corrigés tout de suite'),
+         ('homophones-a-a-et-est-son-sont.html', 'Les homophones', 'a/à, et/est, son/sont…'),
+         ('aide.html', "Toute l'aide aux élèves", 'Maths et français')],
+    sources=['programmes'],
+))
+
+# ════════════════════════════════════════════════════════════════════
+# VAGUE 2 — ÉLÈVES : MATHS
+# ════════════════════════════════════════════════════════════════════
+
+ARTICLES.append(dict(
+    slug='poser-une-division', hub='aide', icon='➗',
+    kicker='Aide élèves · Maths',
+    title="Je n'arrive pas à poser une division : la méthode pas à pas",
+    seo_title="Poser une division : méthode pas à pas avec exemples",
+    description="Comment poser une division euclidienne : la méthode pas à pas avec un exemple, le piège du zéro au quotient, comment vérifier son résultat et des exercices corrigés.",
+    intro="La division posée fait peur parce qu'elle mélange tout : multiplication, soustraction, et beaucoup d'étapes. Mais ce sont toujours les mêmes trois gestes qu'on répète. On les voit ensemble.",
+    minutes=6,
+    tldr=[
+        "On répète toujours 3 gestes : <strong>combien de fois ?</strong> → <strong>je multiplie</strong> → <strong>je soustrais</strong>, puis j'abaisse le chiffre suivant.",
+        "Le <strong>reste</strong> doit toujours être <strong>plus petit que le diviseur</strong>.",
+        "Piège : si le diviseur ne « rentre » pas, on écrit <strong>0 au quotient</strong>.",
+        "Pour vérifier : diviseur × quotient + reste = dividende.",
+    ],
+    body="""
+<h2>Les mots de la division</h2>
+<p>Dans <strong>157 ÷ 6</strong> : 157 est le <strong>dividende</strong> (ce qu'on partage), 6 est le <strong>diviseur</strong> (en combien on partage). On cherche le <strong>quotient</strong> (le résultat) et le <strong>reste</strong> (ce qui reste quand on ne peut plus partager).</p>
+<p>Il faut bien connaître ses <a href="apprendre-les-tables-de-multiplication.html">tables de multiplication</a> : c'est elles qui servent à chaque étape.</p>
+
+<h2>Exemple pas à pas : 157 ÷ 6</h2>
+<ol class="g-steps">
+<li><strong>Je prends assez de chiffres.</strong> En 1, combien de fois 6 ? Zéro. Je prends donc <strong>15</strong>.</li>
+<li><strong>Combien de fois 6 dans 15 ?</strong> 6 × 2 = 12 et 6 × 3 = 18, c'est trop. Donc <strong>2</strong>. J'écris 2 au quotient.</li>
+<li><strong>Je multiplie et je soustrais :</strong> 2 × 6 = 12, et 15 − 12 = <strong>3</strong>. 3 est plus petit que 6 : c'est bon.</li>
+<li><strong>J'abaisse le chiffre suivant</strong>, le 7 : j'obtiens <strong>37</strong>.</li>
+<li><strong>Combien de fois 6 dans 37 ?</strong> 6 × 6 = 36 et 6 × 7 = 42, c'est trop. Donc <strong>6</strong>. 37 − 36 = <strong>1</strong>.</li>
+<li><strong>Il n'y a plus de chiffre à abaisser.</strong> Le quotient est <strong>26</strong>, le reste est <strong>1</strong>.</li>
+</ol>
+<div class="g-tip"><strong>Je vérifie :</strong> 6 × 26 + 1 = 156 + 1 = <strong>157</strong>. C'est bien le dividende : ma division est juste.</div>
+
+<h2>Le piège du zéro au quotient</h2>
+<p>Exemple : <strong>618 ÷ 3</strong>.</p>
+<ul>
+<li>6 ÷ 3 = <strong>2</strong>, reste 0.</li>
+<li>J'abaisse le 1 : en 1, combien de fois 3 ? <strong>0 fois</strong>. J'écris <strong>0</strong> au quotient ! Reste 1.</li>
+<li>J'abaisse le 8 : 18 ÷ 3 = <strong>6</strong>, reste 0.</li>
+</ul>
+<p>Le quotient est <strong>206</strong>, pas 26 ! Vérification : 3 × 206 = 618 ✔.</p>
+<div class="g-warn"><strong>Retiens :</strong> chaque fois que tu abaisses un chiffre, tu dois écrire un chiffre au quotient, même si c'est 0.</div>
+
+<h2>Avant de commencer : estimer</h2>
+<p>Combien de chiffres aura le quotient ? Pour 157 ÷ 6 : 6 × 10 = 60 et 6 × 100 = 600. 157 est entre les deux, donc le quotient est entre 10 et 100 : il a <strong>2 chiffres</strong>. Si tu trouves 2 ou 260, tu sais tout de suite qu'il y a une erreur.</p>
+
+<h2>Les erreurs fréquentes</h2>
+<ul>
+<li><strong>Un reste trop grand</strong> (plus grand que le diviseur) : on pouvait mettre un de plus au quotient.</li>
+<li><strong>Oublier le 0</strong> au quotient.</li>
+<li><strong>Une erreur de table</strong> : vérifie toujours avec la multiplication à la fin.</li>
+</ul>
+
+<h2>Je m'entraîne</h2>
+<div class="g-cta">
+<a href="division-ce2.html">Division CE2<small>Partager, quotient et reste</small></a>
+<a href="multiplication-division-ce2.html">Multiplication et division CE2<small>Exercices corrigés</small></a>
+<a href="calcul-pose-cm1.html">Opérations posées CM1<small>Divisions posées</small></a>
+<a href="calcul-pose-cm2.html">Opérations posées CM2<small>Diviseur à 2 chiffres</small></a>
+</div>
+<p>Sur papier : la <a href="ressources.html">fiche de divisions avec corrigé</a>.</p>
+""",
+    faq=[
+        ("Comment vérifier une division ?", "On calcule diviseur × quotient + reste. On doit retrouver le dividende. Et le reste doit être plus petit que le diviseur."),
+        ("Pourquoi le reste doit-il être plus petit que le diviseur ?", "Si le reste est plus grand ou égal au diviseur, on peut encore faire une part de plus : le quotient est donc trop petit."),
+        ("En quelle classe apprend-on à poser une division ?", "Le sens de la division (partager, faire des groupes) se construit dès le cycle 2. La division posée est surtout travaillée en CM1 et en CM2, avec des diviseurs de plus en plus grands."),
+    ],
+    cta=[('division-ce2.html', 'Exercices division CE2', 'Corrigés tout de suite'),
+         ('ressources.html', 'Fiche divisions à imprimer', 'Avec corrigé'),
+         ('apprendre-les-tables-de-multiplication.html', 'Revoir ses tables', '6 astuces')],
+    sources=['programmes'],
+))
+
+ARTICLES.append(dict(
+    slug='proportionnalite-explication', hub='aide', icon='⚖️',
+    kicker='Aide élèves · Maths',
+    title="Je ne comprends pas la proportionnalité : l'explication simple",
+    seo_title="La proportionnalité expliquée simplement (CM1 à 4e)",
+    description="Reconnaître la proportionnalité, passage à l'unité, coefficient, produit en croix, pourcentages, échelles : explications, exemples et exercices corrigés.",
+    intro="La proportionnalité est partout : recettes, prix, vitesses, cartes. L'idée de base est simple : si une quantité double, l'autre double aussi. Voici les méthodes pour calculer, de la plus simple à la plus rapide.",
+    minutes=6,
+    tldr=[
+        "Deux grandeurs sont proportionnelles si l'on passe de l'une à l'autre en <strong>multipliant toujours par le même nombre</strong>.",
+        "<strong>Passage à l'unité</strong> : je calcule pour 1, puis pour ce qu'on demande.",
+        "<strong>Produit en croix</strong> (collège) : 4 kg → 10 €, 6 kg → ? : 6 × 10 ÷ 4 = 15 €.",
+        "Attention : tout n'est pas proportionnel (âge et taille, taxi avec prix de départ…).",
+    ],
+    body="""
+<h2>Reconnaître une situation de proportionnalité</h2>
+<p>3 cahiers coûtent 6 €. Si j'en achète deux fois plus (6 cahiers), je paie deux fois plus (12 €). Le prix est <strong>proportionnel</strong> au nombre de cahiers.</p>
+<div class="g-table-wrap"><table class="g-table">
+<thead><tr><th>Nombre de cahiers</th><td>1</td><td>3</td><td>6</td><td>9</td></tr></thead>
+<tbody><tr><th>Prix (€)</th><td>2</td><td>6</td><td>12</td><td>18</td></tr></tbody></table></div>
+<p>On passe de la première ligne à la deuxième en <strong>multipliant toujours par 2</strong> : 2 est le <strong>coefficient de proportionnalité</strong>.</p>
+<div class="g-warn"><strong>Pas proportionnel :</strong> ta taille et ton âge (à 10 ans, tu ne mesures pas deux fois ta taille de 5 ans) ; un taxi qui fait payer un prix de départ en plus du prix au kilomètre.</div>
+
+<h2>Méthode 1 : le passage à l'unité</h2>
+<p><strong>Problème :</strong> 3 cahiers coûtent 6 €. Combien coûtent 5 cahiers ?</p>
+<ol class="g-steps">
+<li>Je calcule le prix d'<strong>un</strong> cahier : 6 ÷ 3 = <strong>2 €</strong>.</li>
+<li>Je calcule pour 5 : 5 × 2 = <strong>10 €</strong>.</li>
+</ol>
+
+<h2>Méthode 2 : les propriétés (addition, multiplication)</h2>
+<ul>
+<li>Si 3 cahiers coûtent 6 €, alors <strong>9</strong> cahiers (3 fois plus) coûtent 6 × 3 = <strong>18 €</strong>.</li>
+<li>Si 3 cahiers coûtent 6 € et 6 cahiers 12 €, alors <strong>3 + 6 = 9</strong> cahiers coûtent 6 + 12 = <strong>18 €</strong>.</li>
+</ul>
+
+<h2>Méthode 3 : le coefficient</h2>
+<p>Je cherche par combien on multiplie : 6 ÷ 3 = <strong>2</strong>. Puis je multiplie toutes les quantités par 2 : 7 cahiers → 7 × 2 = 14 €.</p>
+
+<h2>Méthode 4 : le produit en croix (au collège, surtout en 4e)</h2>
+<p><strong>Problème :</strong> 4 kg de pommes coûtent 10 €. Combien coûtent 6 kg ?</p>
+<div class="g-table-wrap"><table class="g-table">
+<thead><tr><th>Masse (kg)</th><td>4</td><td>6</td></tr></thead>
+<tbody><tr><th>Prix (€)</th><td>10</td><td>?</td></tr></tbody></table></div>
+<p>On multiplie en diagonale les deux nombres connus (6 × 10 = 60), puis on divise par le troisième (60 ÷ 4) : <strong>? = 15 €</strong>.</p>
+
+<h2>Deux cas qu'on retrouve partout</h2>
+<h3>Les pourcentages</h3>
+<p>« 20 % » veut dire « 20 sur 100 ». 20 % de 50 € : 50 × 20 ÷ 100 = <strong>10 €</strong>. Astuce : 10 % d'un nombre, c'est ce nombre divisé par 10 ; 50 %, c'est la moitié.</p>
+<h3>Les échelles</h3>
+<p>Une carte à l'échelle 1/100 000 : 1 cm sur la carte représente 100 000 cm en vrai, soit <strong>1 km</strong>. Donc 4 cm sur la carte = 4 km.</p>
+
+<h2>Je m'entraîne</h2>
+<div class="g-cta">
+<a href="proportionnalite-cm1.html">Proportionnalité CM1<small>Tableaux, recettes</small></a>
+<a href="proportionnalite-cm2.html">Proportionnalité CM2<small>Pourcentages, échelles</small></a>
+<a href="proportionnalite-6e.html">Proportionnalité 6e<small>Exercices corrigés</small></a>
+<a href="proportionnalite-5e.html">Proportionnalité 5e<small>Exercices corrigés</small></a>
+<a href="proportionnalite-4e.html">Proportionnalité 4e<small>Produit en croix</small></a>
+</div>
+<p>Leçons : <a href="cours-proportionnalite-cm1.html">cours CM1</a> · <a href="cours-proportionnalite-cm2.html">cours CM2</a> · <a href="cours-proportionnalite-6e.html">cours 6e</a>. Sur papier : la <a href="ressources.html">fiche de proportionnalité avec corrigé</a>.</p>
+""",
+    faq=[
+        ("Comment savoir si un tableau est proportionnel ?", "Divise chaque nombre de la deuxième ligne par le nombre correspondant de la première ligne. Si tu trouves toujours le même résultat, le tableau est proportionnel, et ce résultat est le coefficient."),
+        ("Qu'est-ce que le produit en croix ?", "C'est une méthode pour trouver une quatrième valeur dans un tableau de proportionnalité : on multiplie les deux nombres en diagonale, puis on divise par le troisième. Elle est surtout enseignée au collège, en 4e."),
+        ("Comment calculer un pourcentage d'un nombre ?", "On multiplie le nombre par le pourcentage, puis on divise par 100. Par exemple, 30 % de 80 : 80 × 30 ÷ 100 = 24."),
+    ],
+    cta=[('proportionnalite-cm2.html', 'Exercices proportionnalité CM2', 'Corrigés tout de suite'),
+         ('ressources.html', 'Fiche proportionnalité', 'Avec corrigé'),
+         ('resoudre-un-probleme-de-maths.html', 'Résoudre un problème', 'La méthode en 5 étapes')],
+    sources=['programmes'],
+))
+
+ARTICLES.append(dict(
+    slug='theoreme-de-pythagore', hub='aide', icon='📐',
+    kicker='Aide élèves · Maths 4e',
+    title="Je ne comprends pas le théorème de Pythagore : explication et méthode",
+    seo_title="Théorème de Pythagore expliqué simplement (4e)",
+    description="Pythagore expliqué simplement : calculer l'hypoténuse ou un côté de l'angle droit, la réciproque, la rédaction et les erreurs à éviter (4e).",
+    intro="Le théorème de Pythagore sert à calculer une longueur dans un triangle rectangle quand on connaît les deux autres. Il tient en une ligne, mais il faut savoir l'utiliser et le rédiger. On y va pas à pas.",
+    minutes=6,
+    tldr=[
+        "Il ne marche <strong>que dans un triangle rectangle</strong>.",
+        "Le carré de l'<strong>hypoténuse</strong> (le plus grand côté, en face de l'angle droit) est égal à la somme des carrés des deux autres côtés.",
+        "Triangle ABC rectangle en A : <strong>BC² = AB² + AC²</strong>.",
+        "Pour trouver une longueur, n'oublie pas la <strong>racine carrée</strong> à la fin.",
+    ],
+    body="""
+<h2>Le théorème</h2>
+<p>Dans un triangle <strong>rectangle</strong>, le carré de l'<strong>hypoténuse</strong> est égal à la somme des carrés des deux autres côtés.</p>
+<p>Si le triangle ABC est rectangle en A, l'hypoténuse est [BC] (le côté en face de l'angle droit, toujours le plus long) et : <strong>BC² = AB² + AC²</strong>.</p>
+
+<h2>Cas 1 : je cherche l'hypoténuse</h2>
+<p><strong>Exemple :</strong> ABC est rectangle en A, AB = 3 cm et AC = 4 cm. Calcule BC.</p>
+<ol class="g-steps">
+<li><strong>J'écris l'égalité :</strong> le triangle ABC est rectangle en A, donc d'après le théorème de Pythagore : BC² = AB² + AC².</li>
+<li><strong>Je remplace :</strong> BC² = 3² + 4² = 9 + 16 = 25.</li>
+<li><strong>Je prends la racine carrée :</strong> BC = √25 = <strong>5 cm</strong>.</li>
+</ol>
+
+<h2>Cas 2 : je cherche un côté de l'angle droit</h2>
+<p><strong>Exemple :</strong> ABC est rectangle en A, BC = 13 cm et AB = 5 cm. Calcule AC.</p>
+<ol class="g-steps">
+<li>BC² = AB² + AC², donc 13² = 5² + AC².</li>
+<li>169 = 25 + AC², donc AC² = 169 − 25 = 144.</li>
+<li>AC = √144 = <strong>12 cm</strong>.</li>
+</ol>
+<div class="g-tip"><strong>Astuce :</strong> pour un côté de l'angle droit, on fait une <strong>soustraction</strong> (le grand carré moins le petit). Pour l'hypoténuse, une <strong>addition</strong>.</div>
+
+<h2>Quand le résultat ne « tombe pas juste »</h2>
+<p>AB = 2 cm et AC = 3 cm : BC² = 4 + 9 = 13, donc BC = √13 cm, soit environ <strong>3,6 cm</strong> (arrondi au dixième, avec la touche √ de la calculatrice).</p>
+
+<h2>La réciproque : le triangle est-il rectangle ?</h2>
+<p>On compare le carré du <strong>plus grand côté</strong> à la somme des carrés des deux autres.</p>
+<ul>
+<li>Côtés 6, 8 et 10 cm : 10² = 100 et 6² + 8² = 36 + 64 = 100. C'est égal : le triangle <strong>est rectangle</strong>.</li>
+<li>Côtés 4, 5 et 6 cm : 6² = 36 et 4² + 5² = 16 + 25 = 41. Ce n'est pas égal : le triangle <strong>n'est pas rectangle</strong>.</li>
+</ul>
+
+<h2>Les erreurs fréquentes</h2>
+<ul>
+<li><strong>Se tromper d'hypoténuse</strong> : c'est le côté en face de l'angle droit, le plus long.</li>
+<li><strong>Oublier la racine carrée</strong> à la fin : BC² = 25 ne veut pas dire BC = 25 !</li>
+<li><strong>Confondre 3² et 3 × 2</strong> : 3² = 3 × 3 = 9.</li>
+<li><strong>Utiliser le théorème dans un triangle qui n'est pas rectangle.</strong></li>
+</ul>
+
+<h2>Je m'entraîne</h2>
+<div class="g-cta">
+<a href="triangles-4e.html">Triangles 4e<small>Pythagore, réciproque, problèmes</small></a>
+<a href="puissances-5e.html">Les carrés (5e)<small>Revoir 3², 12²…</small></a>
+<a href="programme-4e.html">Programme de 4e<small>Toutes les leçons</small></a>
+</div>
+<p>Sur papier : la <a href="ressources.html">fiche Pythagore avec corrigé</a>.</p>
+""",
+    faq=[
+        ("Comment reconnaître l'hypoténuse ?", "C'est le côté situé en face de l'angle droit. C'est toujours le plus long côté du triangle rectangle."),
+        ("Quelle est la différence entre le théorème de Pythagore et sa réciproque ?", "Le théorème sert à calculer une longueur dans un triangle dont on sait qu'il est rectangle. La réciproque sert à prouver qu'un triangle est rectangle quand on connaît ses trois côtés."),
+        ("En quelle classe voit-on le théorème de Pythagore ?", "En 4e, dans le programme de géométrie du cycle 4. Il est réutilisé en 3e, notamment avec la trigonométrie."),
+    ],
+    cta=[('triangles-4e.html', 'Exercices triangles 4e', 'Corrigés tout de suite'),
+         ('ressources.html', 'Fiche Pythagore à imprimer', 'Avec corrigé'),
+         ('aide.html', "Toute l'aide aux élèves", 'Maths et français')],
+    sources=['programmes'],
+))
+
+# ════════════════════════════════════════════════════════════════════
+# VAGUE 2 — PARENTS : MÉTHODE ET RÉVISIONS
+# ════════════════════════════════════════════════════════════════════
+
+ARTICLES.append(dict(
+    slug='reviser-un-controle', hub='parents', icon='📅',
+    kicker='Méthode · Contrôles',
+    title="Comment réviser un contrôle : le plan sur une semaine",
+    seo_title="Comment réviser un contrôle : plan sur une semaine",
+    description="Réviser la veille ne suffit pas. Le plan sur une semaine pour préparer un contrôle (J-7 à J-1), les techniques qui marchent selon la recherche et le rôle des parents.",
+    intro="Réviser tout la veille donne l'impression de travailler beaucoup, pour un résultat décevant. Mieux vaut quatre petites séances bien placées. Voici un plan simple, du primaire à la 3e.",
+    minutes=5,
+    tldr=[
+        "Commencer <strong>une semaine avant</strong>, avec 3 à 4 séances courtes plutôt qu'une longue.",
+        "À chaque séance : <strong>se tester</strong> (questions, exercices sans regarder), puis corriger.",
+        "Refaire les <strong>exercices faits en classe</strong>, sans regarder la correction.",
+        "La veille : une révision légère et une <strong>bonne nuit</strong>.",
+    ],
+    body=f"""
+<h2>Pourquoi réviser la veille ne marche pas bien</h2>
+<p>Ce qu'on apprend en une seule fois s'oublie vite. Répartir le travail sur plusieurs jours (la pratique espacée) et se tester plutôt que relire font partie des techniques d'apprentissage les plus efficaces, selon la grande synthèse de John Dunlosky et de ses collègues (2013).</p>
+{stat("61 % vs 40 %", "retenu une semaine plus tard en se testant, contre en relisant.", "Roediger &amp; Karpicke, Psychological Science, 2006")}
+
+<h2>Le plan sur une semaine</h2>
+<ol class="g-steps">
+<li><strong>J-7 : faire le tri (15 min).</strong> Lister ce qui tombe au contrôle : leçons, exercices, mots à savoir. Repérer ce qui n'est pas compris et poser la question à l'enseignant.</li>
+<li><strong>J-5 : comprendre et fabriquer ses questions (20 min).</strong> Relire une fois chaque leçon, puis écrire 5 questions par leçon (avec les réponses au dos).</li>
+<li><strong>J-3 : se tester (20 min).</strong> Répondre à ses questions sans regarder. Refaire 2 ou 3 exercices de classe sans la correction. Noter ce qui coince.</li>
+<li><strong>J-1 : retester seulement ce qui coince (15 min).</strong> Pas de nouvelle leçon. Préparer ses affaires, et se coucher à l'heure.</li>
+</ol>
+<div class="g-tip"><strong>En primaire</strong>, divisez ces durées par deux et faites les questions à l'oral avec votre enfant. Notre <a href="ressources.html">fiche « Apprendre une leçon »</a> contient un tableau pour noter les séances.</div>
+
+<h2>Les techniques qui marchent</h2>
+<ul>
+<li><strong>Les questions-réponses</strong> : cartes avec la question d'un côté, la réponse de l'autre.</li>
+<li><strong>Refaire les exercices</strong> de classe et des exercices du même type (nos <a href="index.html">exercices corrigés</a> par classe et par thème servent à cela).</li>
+<li><strong>Expliquer à quelqu'un</strong> : un parent, un frère, une sœur. Si on n'arrive pas à expliquer, c'est qu'il faut revoir.</li>
+<li><strong>Mélanger les types d'exercices</strong> en fin de révision, comme au contrôle.</li>
+</ul>
+<div class="g-warn"><strong>Peu efficace :</strong> relire plusieurs fois, surligner tout le cours, recopier la leçon au propre. Cela donne l'impression de travailler mais aide peu à retenir.</div>
+
+<h2>Le rôle des parents</h2>
+<ul>
+<li>Aider à <strong>planifier</strong> : noter les 4 séances dans le <a href="ressources.html">planning de la semaine</a>.</li>
+<li><strong>Interroger</strong> à partir des questions préparées par l'enfant.</li>
+<li>Protéger le <strong>sommeil</strong> de la veille : une nuit courte fait perdre une partie du bénéfice des révisions.</li>
+</ul>
+""",
+    faq=[
+        ("Combien de temps à l'avance faut-il réviser un contrôle ?", "Idéalement une semaine avant, en 3 ou 4 séances courtes. Pour un petit contrôle en primaire, 2 ou 3 séances de 10 minutes suffisent."),
+        ("Faut-il faire des fiches de révision ?", "Oui, si elles servent à se tester (questions au recto, réponses au verso). Recopier tout le cours prend du temps et aide peu à retenir."),
+        ("Mon enfant dit qu'il « sait tout » mais rate ses contrôles, pourquoi ?", "Il a sans doute relu sa leçon : elle lui paraît familière, mais il ne sait pas encore la retrouver seul. Faites-le se tester sans la leçon sous les yeux."),
+    ],
+    cta=[('comment-apprendre-une-lecon.html', 'Apprendre une leçon', 'La méthode en 4 étapes'),
+         ('ressources.html', 'Planning et fiche méthode', 'À imprimer'),
+         ('index.html', 'Exercices corrigés', 'Pour se tester')],
+    sources=['dunlosky', 'roediger'],
+))
+
+ARTICLES.append(dict(
+    slug='reviser-pendant-les-vacances', hub='parents', icon='☀️',
+    kicker='Guide parents · Vacances',
+    title="Faut-il réviser pendant les vacances ? Le bon dosage",
+    seo_title="Réviser pendant les vacances : le bon dosage",
+    description="Faut-il faire travailler son enfant pendant les vacances ? Le bon dosage (10 à 15 minutes), des activités qui font apprendre et des fiches gratuites.",
+    intro="Les vacances servent d'abord à se reposer. Mais quelques minutes d'entraînement régulier aident à garder ce qu'on a appris et à reprendre sereinement. Tout est dans le dosage.",
+    minutes=4,
+    tldr=[
+        "Les vacances, c'est d'abord du <strong>repos</strong> : la première semaine, on ne fait rien.",
+        "Ensuite, <strong>10 à 15 minutes par jour</strong>, quelques jours par semaine, suffisent largement.",
+        "Priorité : <strong>lire</strong> tous les jours, et entretenir les <strong>calculs</strong> et les <strong>tables</strong>.",
+        "Apprendre peut passer par le jeu, la cuisine, les courses, les voyages.",
+    ],
+    body="""
+<h2>Pourquoi un peu, mais pas trop</h2>
+<p>Ce qu'on n'utilise pas pendant longtemps devient plus difficile à retrouver. C'est vrai pour les tables de multiplication comme pour la conjugaison. Quelques rappels espacés suffisent à garder les connaissances « au chaud ». À l'inverse, transformer les vacances en école du soir fatigue et décourage.</p>
+
+<h2>Le bon dosage</h2>
+<div class="g-table-wrap"><table class="g-table">
+<thead><tr><th>Vacances</th><th>Repère indicatif</th></tr></thead>
+<tbody>
+<tr><td>Petites vacances (2 semaines)</td><td>Rien la première semaine ; 2 ou 3 séances de 10 minutes la seconde, pour reprendre le rythme.</td></tr>
+<tr><td>Vacances d'été</td><td>Repos complet au début, puis 10 à 15 minutes, 3 à 4 jours par semaine, surtout les 2 dernières semaines.</td></tr>
+</tbody></table></div>
+<p>Ces repères sont des conseils d'École Facile, pas une règle officielle : adaptez-les à votre enfant.</p>
+
+<h2>Quoi faire en 10 minutes ?</h2>
+<ul>
+<li><strong>Lire</strong> : un livre, une BD, un magazine, à voix haute pour les plus jeunes.</li>
+<li><strong>Calculer</strong> : une série de <a href="calcul-mental-ce1.html">calcul mental</a> ou de tables, une fiche à imprimer.</li>
+<li><strong>Réviser les bases</strong> de l'année écoulée : une page d'exercices de la classe qu'il vient de terminer.</li>
+<li><strong>Préparer la classe suivante</strong> en douceur, les derniers jours seulement.</li>
+</ul>
+
+<h2>Apprendre sans en avoir l'air</h2>
+<ul>
+<li><strong>Cuisine</strong> : doubler une recette (proportionnalité), peser, mesurer.</li>
+<li><strong>Courses et vacances</strong> : rendre la monnaie, calculer une durée de trajet, lire une carte et son échelle.</li>
+<li><strong>Jeux de société</strong> : jeux de cartes, de dés, de lettres.</li>
+<li><strong>Carnet de vacances</strong> : écrire quelques lignes sur sa journée.</li>
+</ul>
+
+<h2>Des ressources gratuites</h2>
+<p>Nos <a href="ressources.html">fiches à imprimer</a> (tables, calcul mental, fractions, conjugaison, avec corrigé) et nos <a href="index.html">exercices interactifs</a> courts sont faits pour ce type de séance de 10 minutes. Pour la rentrée en 6e, consultez aussi <a href="entree-en-sixieme.html">notre guide</a>.</p>
+""",
+    faq=[
+        ("Les cahiers de vacances sont-ils utiles ?", "Ils peuvent l'être si l'enfant les fait par petites séances et sans pression. Quelques minutes de lecture et de calcul régulières ont le même effet."),
+        ("Faut-il faire travailler son enfant pendant les vacances de Noël ?", "Ce n'est pas nécessaire. Un peu de lecture et, si vous le souhaitez, 2 ou 3 petites séances avant la reprise suffisent."),
+        ("Mon enfant a eu des difficultés cette année, faut-il en faire plus ?", "Ciblez les 2 ou 3 notions qui ont posé problème (par exemple les tables ou les fractions), par séances courtes et régulières, plutôt que de tout revoir."),
+    ],
+    cta=[('ressources.html', 'Fiches à imprimer', 'Avec corrigé'),
+         ('exercices-gratuits.html', 'Exercices gratuits', 'Du CP à la 3e'),
+         ('entree-en-sixieme.html', "Préparer l'entrée en 6e", 'Guide parents')],
+    sources=['dunlosky'],
+))
+
 # ── Pages hub ─────────────────────────────────────────────────────────
 HUBS = {
     'parents': dict(
@@ -739,7 +1250,7 @@ HUBS = {
         slug='aide', icon='🆘', kicker='Aide élèves',
         title="Je n'y arrive pas ! L'aide aux élèves, du CP à la 3e",
         seo_title="Je n'y arrive pas : l'aide aux élèves (CP à 3e)",
-        description="Fractions, tables, problèmes : tu bloques ? Des explications simples, les erreurs à éviter et des exercices corrigés.",
+        description="Fractions, tables, divisions, Pythagore, homophones, participe passé : tu bloques ? Explications simples, erreurs à éviter, exercices corrigés.",
         intro="Tu bloques sur une notion ? Choisis-la : on t'explique simplement, on te montre les erreurs à éviter, puis tu t'entraînes avec des exercices corrigés.",
     ),
 }

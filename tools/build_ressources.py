@@ -276,6 +276,195 @@ add('checklist-entree-en-sixieme.pdf', doc('Entrée en 6e : la checklist des par
     title='Checklist entrée en 6e', desc='Pour les parents : avant la rentrée, les premières semaines, puis l\'autonomie.',
     public='Pour les parents de futurs 6e', icon='🏫', tags=['CM2', '6e', 'Parents'], group='Organisation et motivation')
 
+# ════════════════ VAGUE 2 ════════════════
+from decimal import Decimal
+import math
+
+def fr_num(x):
+    """Écriture française d'un nombre (virgule décimale, signe moins typographique)."""
+    s = format(x, 'f') if isinstance(x, Decimal) else str(x)
+    if '.' in s:
+        s = s.rstrip('0').rstrip('.') if isinstance(x, Decimal) and '.' in s else s
+    return s.replace('-', '−').replace('.', ',')
+
+def corr_grid(items, cols='c3'):
+    return f'<div class="grid {cols}">' + ''.join(f'<div class="q"><b>{i+1}.</b>{q} <span class="ans">{r}</span></div>' for i, (q, r) in enumerate(items)) + '</div>'
+
+def ex_grid(items, cols='c3', blank=True):
+    return f'<div class="grid {cols}">' + ''.join(f'<div class="q"><b>{i+1}.</b>{q} {"<span class=blank></span>" if blank else ""}</div>' for i, (q, _) in enumerate(items)) + '</div>'
+
+# ── 13. CP : additions et soustractions jusqu'à 20 ────────────────────
+rng = random.Random(2026)
+cp = []
+while len(cp) < 24:
+    if len(cp) % 2 == 0:
+        a, b = rng.randint(1, 12), rng.randint(1, 9)
+        if a + b > 20 or (f'{a} + {b} =', a + b) in cp: continue
+        cp.append((f'{a} + {b} =', a + b))
+    else:
+        a, b = rng.randint(5, 20), rng.randint(1, 9)
+        if a - b < 0 or (f'{a} − {b} =', a - b) in cp: continue
+        cp.append((f'{a} − {b} =', a - b))
+for q, r in cp:
+    x, op, y = re.match(r'(\d+) ([+−]) (\d+)', q).groups()
+    assert (int(x) + int(y) if op == '+' else int(x) - int(y)) == r and 0 <= r <= 20
+add('exercices-calcul-cp-corrige.pdf', doc('Je calcule jusqu\'à 20', '24 additions et soustractions — CP',
+    '<div class="tip">Astuce : pour 8 + 5, je fais 8 + 2 = 10, puis 10 + 3 = 13.</div>' + ex_grid(cp, 'c3') +
+    '<div class="pb"></div><h2>Corrigé</h2>' + corr_grid(cp, 'c3'), True),
+    title='24 calculs jusqu\'à 20 pour le CP (avec corrigé)', desc='Additions et soustractions jusqu\'à 20, en gros caractères, avec l\'astuce du passage à 10. Corrigé en page 2.',
+    public='Calcul CP avec corrigé', icon='🔢', tags=['CP', 'CE1', 'Maths'], group='Exercices à imprimer, avec corrigé')
+
+# ── 14. Homophones CE2 ────────────────────────────────────────────────
+HOMO = [
+    ('Lina ___ un chat.', 'a / à', 'a', 'Lina avait un chat.'),
+    ('Nous allons ___ la plage.', 'a / à', 'à', '« avait » ne marche pas.'),
+    ('Il ___ mangé une pomme.', 'a / à', 'a', 'Il avait mangé.'),
+    ('Je pense ___ toi.', 'a / à', 'à', '« avait » ne marche pas.'),
+    ('Le ciel ___ bleu.', 'et / est', 'est', 'Le ciel était bleu.'),
+    ("J'aime les pommes ___ les poires.", 'et / est', 'et', 'et puis les poires.'),
+    ('Mon frère ___ malade.', 'et / est', 'est', 'Mon frère était malade.'),
+    ('Il court ___ il saute.', 'et / est', 'et', 'Il court et puis il saute.'),
+    ('Les fleurs ___ jolies.', 'son / sont', 'sont', 'Les fleurs étaient jolies.'),
+    ('Tom range ___ vélo.', 'son / sont', 'son', 'Tom range mon vélo.'),
+    ('Ils ___ en retard.', 'son / sont', 'sont', 'Ils étaient en retard.'),
+    ('Elle cherche ___ livre.', 'son / sont', 'son', 'Elle cherche mon livre.'),
+    ('___ va au cinéma ce soir.', 'On / Ont', 'On', 'Il va au cinéma.'),
+    ('Les enfants ___ faim.', 'on / ont', 'ont', 'Les enfants avaient faim.'),
+    ('Mes parents ___ une voiture rouge.', 'on / ont', 'ont', 'Mes parents avaient une voiture.'),
+    ('Demain, ___ jouera au foot.', 'on / ont', 'on', 'Demain, il jouera au foot.'),
+    ('___ est ma trousse ?', 'Ou / Où', 'Où', 'On parle d\'un lieu.'),
+    ('Tu préfères le lait ___ le jus ?', 'ou / où', 'ou', 'le lait ou bien le jus.'),
+]
+for s_, ch, ans, why in HOMO:
+    assert s_.count('___') == 1 and ans in [c.strip() for c in ch.split('/')]
+hq = ''.join(f'<div class="q" style="white-space:normal"><b>{i+1}.</b>{s_.replace("___", "<span class=blank></span>")} <span class="small">({ch})</span></div>' for i, (s_, ch, _, _) in enumerate(HOMO))
+hc = ''.join(f'<div class="q" style="white-space:normal"><b>{i+1}.</b>{s_.replace("___", "<span class=ans>" + ans + "</span>")} <span class="small">— {why}</span></div>' for i, (s_, _, ans, why) in enumerate(HOMO))
+add('exercices-homophones-ce2-corrige.pdf', doc('Les homophones', 'a/à, et/est, son/sont, on/ont, ou/où — CE2', '''
+<div class="tip">Je remplace : <strong>a</strong> → avait · <strong>est</strong> → était · <strong>et</strong> → et puis · <strong>sont</strong> → étaient · <strong>son</strong> → mon · <strong>ont</strong> → avaient · <strong>on</strong> → il · <strong>ou</strong> → ou bien · <strong>où</strong> → un lieu.</div>
+<h2>Complète avec le bon mot</h2><div class="grid c2">''' + hq + '</div><div class="pb"></div><h2>Corrigé</h2><div class="grid c2">' + hc + '</div>', True),
+    title='Fiche homophones CE2 (avec corrigé)', desc='18 phrases à compléter : a/à, et/est, son/sont, on/ont, ou/où. Le corrigé explique le test à faire.',
+    public='Homophones CE1-CM1 avec corrigé', icon='🔤', tags=['CE1', 'CE2', 'CM1', 'Français'], group='Exercices à imprimer, avec corrigé')
+
+# ── 15. Divisions CM1 ────────────────────────────────────────────────
+DIVS = [(157, 6), (845, 4), (618, 3), (96, 8), (734, 5), (1209, 3), (508, 7), (365, 9), (1000, 8), (842, 2), (713, 6), (2525, 5)]
+divq = [(f'{a} ÷ {b}', divmod(a, b)) for a, b in DIVS]
+for (q, (qu, re_)), (a, b) in zip(divq, DIVS):
+    assert b * qu + re_ == a and 0 <= re_ < b
+dq = ''.join(f'<div class="box" style="height:225px;margin:0;font-size:13pt"><b style="color:#1f3c88">{i+1}.</b> {q}<div style="margin-top:165px;font-size:11pt">q = <span class="blank" style="min-width:44px"></span> r = <span class="blank" style="min-width:30px"></span></div></div>' for i, (q, _) in enumerate(divq))
+dc = ''.join(f'<div class="q"><b>{i+1}.</b>{q} → q = <span class="ans">{qu}</span>, r = <span class="ans">{r}</span> <span class="small">({b} × {qu} + {r} = {a})</span></div>' for i, ((q, (qu, r)), (a, b)) in enumerate(zip(divq, DIVS)))
+add('exercices-divisions-cm1-corrige.pdf', doc('La division posée', '12 divisions par un nombre à un chiffre : trouve le quotient (q) et le reste (r) — CM1 / CM2', '''
+<div class="tip">À chaque étape : combien de fois ? → je multiplie → je soustrais → j'abaisse. Le reste est toujours plus petit que le diviseur. Si le diviseur ne « rentre » pas, j'écris 0 au quotient.
+Pour vérifier : diviseur × quotient + reste = dividende.</div><div class="grid c4" style="gap:8px">''' + dq + '</div><div class="pb"></div><h2>Corrigé</h2><div class="grid c2">' + dc + '</div>', True),
+    title='12 divisions posées (avec corrigé)', desc='Quotient et reste, dont des divisions avec un 0 au quotient. Le corrigé montre la vérification.',
+    public='Divisions CM1-CM2 avec corrigé', icon='➗', tags=['CM1', 'CM2', '6e', 'Maths'], group='Exercices à imprimer, avec corrigé')
+
+# ── 16. Nombres décimaux CM2 ─────────────────────────────────────────
+D = Decimal
+CMP = [('3.5', '3.15'), ('2.7', '2.70'), ('0.9', '0.12'), ('12.08', '12.8'), ('5.45', '5.405'), ('7', '6.99'), ('0.5', '0.50'), ('4.1', '4.09')]
+cmpd = [(D(a), D(b), '<' if D(a) < D(b) else '>' if D(a) > D(b) else '=') for a, b in CMP]
+assert [c for _, _, c in cmpd] == ['>', '=', '>', '<', '>', '>', '=', '>']
+OPS = [('2.5', '+', '1.25'), ('3.7', '+', '4.6'), ('10', '−', '2.4'), ('6.05', '+', '0.9'), ('8.3', '−', '1.75'), ('12.5', '+', '7.5'), ('5', '−', '0.01'), ('0.25', '+', '0.75')]
+opd = [(D(a), op, D(b), D(a) + D(b) if op == '+' else D(a) - D(b)) for a, op, b in OPS]
+assert [str(r.normalize()) for *_, r in opd] == ['3.75', '8.3', '7.6', '6.95', '6.55', '2E+1', '4.99', '1']
+def fd(x):
+    s = format(x.normalize(), 'f')
+    return s.replace('.', ',')
+c1 = ''.join(f'<div class="q"><b>{chr(97+i)}.</b>{fd(a)} <span class="blank" style="min-width:30px"></span> {fd(b)}</div>' for i, (a, b, _) in enumerate(cmpd))
+c2 = ''.join(f'<div class="q"><b>{chr(97+i)}.</b>{fd(a)} {op} {fd(b)} = <span class="blank"></span></div>' for i, (a, op, b, _) in enumerate(opd))
+k1 = ''.join(f'<div class="q"><b>{chr(97+i)}.</b>{fd(a)} <span class="ans">{c}</span> {fd(b)}</div>' for i, (a, b, c) in enumerate(cmpd))
+k2 = ''.join(f'<div class="q"><b>{chr(97+i)}.</b>{fd(a)} {op} {fd(b)} = <span class="ans">{fd(r)}</span></div>' for i, (a, op, b, r) in enumerate(opd))
+add('exercices-nombres-decimaux-cm2-corrige.pdf', doc('Les nombres décimaux', 'Comparer, additionner et soustraire — CM2', '''
+<div class="tip">Pour comparer, j'écris les deux nombres avec autant de chiffres après la virgule : 3,5 = 3,50 et 3,50 &gt; 3,15. Pour additionner ou soustraire, j'aligne les virgules.</div>
+<h2>1. Compare avec &lt;, &gt; ou =</h2><div class="grid c2">''' + c1 + '</div><h2>2. Calcule</h2><div class="grid c2">' + c2 +
+    '</div><div class="pb"></div><h2>Corrigé</h2><h2>1.</h2><div class="grid c2">' + k1 + '</div><h2>2.</h2><div class="grid c2">' + k2 + '</div>', True),
+    title='Fiche nombres décimaux CM2 (avec corrigé)', desc='Comparer des décimaux (les pièges comme 3,5 et 3,15), additionner et soustraire. Corrigé en page 2.',
+    public='Décimaux CM2-6e avec corrigé', icon='🔟', tags=['CM2', '6e', 'Maths'], group='Exercices à imprimer, avec corrigé')
+
+# ── 17. Nombres relatifs 5e ──────────────────────────────────────────
+rng = random.Random(55)
+rel = []
+def wr(n):  # écriture d'un relatif dans un calcul
+    return f'(−{abs(n)})' if n < 0 else str(n)
+while len(rel) < 20:
+    a, b = rng.randint(-15, 15), rng.randint(-15, 15)
+    if a == 0 or b == 0: continue
+    if len(rel) % 2 == 0:
+        q, r = f'{wr(a)} + {wr(b)} =', a + b
+    else:
+        q, r = f'{wr(a)} − {wr(b)} =', a - b
+    if any(q == x for x, _ in rel): continue
+    rel.append((q, r))
+for q, r in rel:
+    expr = q.rstrip(' =').replace('−', '-')
+    assert eval(expr) == r
+relr = [(q, fr_num(r)) for q, r in rel]
+add('exercices-nombres-relatifs-5e-corrige.pdf', doc('Les nombres relatifs', '20 additions et soustractions — 5e', '''
+<div class="tip">Additionner : même signe → j'ajoute les distances à zéro et je garde le signe ; signes contraires → je soustrais les distances à zéro et je prends le signe de celui qui est le plus loin de zéro.
+Soustraire un nombre, c'est ajouter son opposé : 5 − (−3) = 5 + 3 = 8.</div>''' + ex_grid(relr, 'c3') + '<div class="pb"></div><h2>Corrigé</h2>' + corr_grid(relr, 'c3'), True),
+    title='20 calculs avec des nombres relatifs (avec corrigé)', desc='Additions et soustractions de nombres relatifs, avec la règle des signes rappelée. Corrigé en page 2.',
+    public='Relatifs 5e avec corrigé', icon='➖', tags=['5e', '4e', 'Maths'], group='Exercices à imprimer, avec corrigé')
+assert 5 - (-3) == 8
+
+# ── 18. Pythagore 4e ─────────────────────────────────────────────────
+PY = []
+for ab, ac in [(3, 4), (6, 8), (5, 12), (8, 15)]:
+    bc = math.isqrt(ab * ab + ac * ac); assert bc * bc == ab * ab + ac * ac
+    PY.append((f'ABC est rectangle en A, AB = {ab} cm et AC = {ac} cm. Calcule BC.',
+               f'BC² = AB² + AC² = {ab*ab} + {ac*ac} = {ab*ab+ac*ac}, donc BC = √{ab*ab+ac*ac} = <span class="ans">{bc} cm</span>'))
+for bc, ab in [(13, 5), (10, 6), (25, 7)]:
+    ac2 = bc * bc - ab * ab; ac = math.isqrt(ac2); assert ac * ac == ac2
+    PY.append((f'ABC est rectangle en A, BC = {bc} cm et AB = {ab} cm. Calcule AC.',
+               f'AC² = BC² − AB² = {bc*bc} − {ab*ab} = {ac2}, donc AC = √{ac2} = <span class="ans">{ac} cm</span>'))
+v = math.sqrt(13); assert round(v, 1) == 3.6
+PY.append(('ABC est rectangle en A, AB = 2 cm et AC = 3 cm. Calcule BC, arrondi au dixième.',
+           'BC² = 4 + 9 = 13, donc BC = √13 ≈ <span class="ans">3,6 cm</span>'))
+for sides in [(9, 12, 15), (5, 6, 8)]:
+    a, b, c = sides; rect = a * a + b * b == c * c
+    PY.append((f'Un triangle a pour côtés {a} cm, {b} cm et {c} cm. Est-il rectangle ?',
+               f'{c}² = {c*c} et {a}² + {b}² = {a*a} + {b*b} = {a*a+b*b}. ' + ('C\'est égal : <span class="ans">il est rectangle</span>.' if rect else 'Ce n\'est pas égal : <span class="ans">il n\'est pas rectangle</span>.')))
+assert 9*9+12*12 == 15*15 and 5*5+6*6 != 8*8
+pq = ''.join(f'<div class="q" style="white-space:normal;padding:6px 0 30px"><b>{i+1}.</b>{q}</div>' for i, (q, _) in enumerate(PY))
+pc = ''.join(f'<div class="q" style="white-space:normal"><b>{i+1}.</b>{a}</div>' for i, (_, a) in enumerate(PY))
+add('exercices-pythagore-4e-corrige.pdf', doc('Le théorème de Pythagore', 'Calculer une longueur et prouver qu\'un triangle est rectangle — 4e', '''
+<div class="tip">Dans un triangle ABC rectangle en A, l'hypoténuse est [BC] (en face de l'angle droit) et BC² = AB² + AC². Pour trouver une longueur, je n'oublie pas la racine carrée.</div>''' + pq + '<div class="pb"></div><h2>Corrigé</h2>' + pc, True),
+    title='Fiche théorème de Pythagore 4e (avec corrigé)', desc='Hypoténuse, côté de l\'angle droit, valeur arrondie et réciproque : 10 exercices avec un corrigé rédigé.',
+    public='Pythagore 4e avec corrigé', icon='📐', tags=['4e', '3e', 'Maths'], group='Exercices à imprimer, avec corrigé')
+
+# ── 19. Proportionnalité CM2 ─────────────────────────────────────────
+P = []
+# tableau : coefficient 3
+tab = [(2, 6), (5, None), (7, None), (None, 30)]
+k = Fraction(6, 2)
+tab_ans = [(x if x is not None else int(y / k), y if y is not None else int(x * k)) for x, y in tab]
+assert tab_ans == [(2, 6), (5, 15), (7, 21), (10, 30)]
+recette = Fraction(200, 4) * 6; assert recette == 300
+stylo = Decimal('4') / 5 * 8; assert stylo == Decimal('6.4')
+pct = [(10, 70, 7), (25, 40, 10), (50, 18, 9), (20, 150, 30)]
+for p_, n, r in pct: assert Fraction(p_ * n, 100) == r
+ech = 3 * 100000 / 100000; assert ech == 3
+row1 = ''.join(f'<td>{x if x is not None else ""}</td>' for x, _ in tab)
+row2 = ''.join(f'<td>{y if y is not None else ""}</td>' for _, y in tab)
+body = f'''
+<div class="tip">Deux grandeurs sont proportionnelles si on passe de l'une à l'autre en multipliant toujours par le même nombre. Passage à l'unité : je calcule pour 1, puis pour ce qu'on demande.</div>
+<h2>1. Complète le tableau de proportionnalité</h2>
+<table style="width:70%"><tr><th>Nombre de paquets</th>{row1}</tr><tr><th>Nombre de gâteaux</th>{row2}</tr></table>
+<h2>2. Recette</h2><p>Pour 4 personnes, il faut 200 g de farine. Combien en faut-il pour 6 personnes ? <span class="blank"></span></p>
+<h2>3. Passage à l'unité</h2><p>5 stylos coûtent 4 €. Combien coûtent 8 stylos ? <span class="blank"></span></p>
+<h2>4. Pourcentages</h2><div class="grid c2">{''.join(f'<div class="q">{p_} % de {n} = <span class="blank"></span></div>' for p_, n, _ in pct)}</div>
+<h2>5. Échelle</h2><p>Sur une carte à l'échelle 1/100 000, deux villages sont à 3 cm l'un de l'autre. Quelle est la distance réelle ? <span class="blank"></span></p>
+<h2>6. Proportionnel ou pas ?</h2><p>a. Le prix payé et le nombre de baguettes achetées (même prix pour chaque baguette). <span class="blank"></span><br>b. La taille d'un enfant et son âge. <span class="blank"></span></p>
+<div class="pb"></div><h2>Corrigé</h2>
+<p><strong>1.</strong> On multiplie par 3 : 5 → <span class="ans">15</span> ; 7 → <span class="ans">21</span> ; 30 ÷ 3 = <span class="ans">10</span>.</p>
+<p><strong>2.</strong> Pour 1 personne : 200 ÷ 4 = 50 g. Pour 6 : 6 × 50 = <span class="ans">300 g</span>.</p>
+<p><strong>3.</strong> 1 stylo : 4 ÷ 5 = 0,80 €. 8 stylos : 8 × 0,80 = <span class="ans">6,40 €</span>.</p>
+<p><strong>4.</strong> {' · '.join(f'{p_} % de {n} = <span class="ans">{r}</span>' for p_, n, r in pct)}</p>
+<p><strong>5.</strong> 1 cm représente 100 000 cm = 1 km, donc 3 cm représentent <span class="ans">3 km</span>.</p>
+<p><strong>6.</strong> a. <span class="ans">Oui</span> : 2 fois plus de baguettes coûtent 2 fois plus cher. b. <span class="ans">Non</span> : à 10 ans, on ne mesure pas le double de sa taille à 5 ans.</p>'''
+add('exercices-proportionnalite-cm2-corrige.pdf', doc('La proportionnalité', 'Tableau, recette, passage à l\'unité, pourcentages, échelle — CM2', body, True),
+    title='Fiche proportionnalité CM2 (avec corrigé)', desc='Tableau, recette, passage à l\'unité, pourcentages et échelle, avec un corrigé détaillé.',
+    public='Proportionnalité CM2-6e avec corrigé', icon='⚖️', tags=['CM2', '6e', 'Maths'], group='Exercices à imprimer, avec corrigé')
+
+
 # ── Impression PDF via Playwright ──────────────────────────────────────
 tmp = tempfile.mkdtemp(prefix='ef_res_')
 jobs = []

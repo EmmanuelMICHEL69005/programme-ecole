@@ -174,5 +174,112 @@
   "group": "Organisation et motivation",
   "bytes": 27489,
   "pages": 1
+ },
+ {
+  "file": "exercices-calcul-cp-corrige.pdf",
+  "title": "24 calculs jusqu'à 20 pour le CP (avec corrigé)",
+  "desc": "Additions et soustractions jusqu'à 20, en gros caractères, avec l'astuce du passage à 10. Corrigé en page 2.",
+  "public": "Calcul CP avec corrigé",
+  "icon": "🔢",
+  "tags": [
+   "CP",
+   "CE1",
+   "Maths"
+  ],
+  "group": "Exercices à imprimer, avec corrigé",
+  "bytes": 29602,
+  "pages": 2
+ },
+ {
+  "file": "exercices-homophones-ce2-corrige.pdf",
+  "title": "Fiche homophones CE2 (avec corrigé)",
+  "desc": "18 phrases à compléter : a/à, et/est, son/sont, on/ont, ou/où. Le corrigé explique le test à faire.",
+  "public": "Homophones CE1-CM1 avec corrigé",
+  "icon": "🔤",
+  "tags": [
+   "CE1",
+   "CE2",
+   "CM1",
+   "Français"
+  ],
+  "group": "Exercices à imprimer, avec corrigé",
+  "bytes": 33632,
+  "pages": 2
+ },
+ {
+  "file": "exercices-divisions-cm1-corrige.pdf",
+  "title": "12 divisions posées (avec corrigé)",
+  "desc": "Quotient et reste, dont des divisions avec un 0 au quotient. Le corrigé montre la vérification.",
+  "public": "Divisions CM1-CM2 avec corrigé",
+  "icon": "➗",
+  "tags": [
+   "CM1",
+   "CM2",
+   "6e",
+   "Maths"
+  ],
+  "group": "Exercices à imprimer, avec corrigé",
+  "bytes": 39301,
+  "pages": 2
+ },
+ {
+  "file": "exercices-nombres-decimaux-cm2-corrige.pdf",
+  "title": "Fiche nombres décimaux CM2 (avec corrigé)",
+  "desc": "Comparer des décimaux (les pièges comme 3,5 et 3,15), additionner et soustraire. Corrigé en page 2.",
+  "public": "Décimaux CM2-6e avec corrigé",
+  "icon": "🔟",
+  "tags": [
+   "CM2",
+   "6e",
+   "Maths"
+  ],
+  "group": "Exercices à imprimer, avec corrigé",
+  "bytes": 31586,
+  "pages": 2
+ },
+ {
+  "file": "exercices-nombres-relatifs-5e-corrige.pdf",
+  "title": "20 calculs avec des nombres relatifs (avec corrigé)",
+  "desc": "Additions et soustractions de nombres relatifs, avec la règle des signes rappelée. Corrigé en page 2.",
+  "public": "Relatifs 5e avec corrigé",
+  "icon": "➖",
+  "tags": [
+   "5e",
+   "4e",
+   "Maths"
+  ],
+  "group": "Exercices à imprimer, avec corrigé",
+  "bytes": 31560,
+  "pages": 2
+ },
+ {
+  "file": "exercices-pythagore-4e-corrige.pdf",
+  "title": "Fiche théorème de Pythagore 4e (avec corrigé)",
+  "desc": "Hypoténuse, côté de l'angle droit, valeur arrondie et réciproque : 10 exercices avec un corrigé rédigé.",
+  "public": "Pythagore 4e avec corrigé",
+  "icon": "📐",
+  "tags": [
+   "4e",
+   "3e",
+   "Maths"
+  ],
+  "group": "Exercices à imprimer, avec corrigé",
+  "bytes": 35018,
+  "pages": 2
+ },
+ {
+  "file": "exercices-proportionnalite-cm2-corrige.pdf",
+  "title": "Fiche proportionnalité CM2 (avec corrigé)",
+  "desc": "Tableau, recette, passage à l'unité, pourcentages et échelle, avec un corrigé détaillé.",
+  "public": "Proportionnalité CM2-6e avec corrigé",
+  "icon": "⚖️",
+  "tags": [
+   "CM2",
+   "6e",
+   "Maths"
+  ],
+  "group": "Exercices à imprimer, avec corrigé",
+  "bytes": 38249,
+  "pages": 2
  }
 ]

@@ -22,7 +22,10 @@ CLUSTERS = [
     ('parents', 'Accompagner les devoirs', ['aider-son-enfant-a-faire-ses-devoirs', 'motiver-son-enfant-pour-les-devoirs',
                                             'combien-de-temps-de-devoirs-par-age', 'mon-enfant-n-y-arrive-pas', 'comment-apprendre-une-lecon']),
     ('parents', 'Programme et ressources gratuites', ['exercices-gratuits', 'entree-en-sixieme']),
-    ('aide', 'Maths', ['je-ne-comprends-pas-les-fractions', 'apprendre-les-tables-de-multiplication', 'resoudre-un-probleme-de-maths']),
+    ('parents', 'Méthode et révisions', ['reviser-un-controle', 'reviser-pendant-les-vacances']),
+    ('aide', 'Maths', ['je-ne-comprends-pas-les-fractions', 'apprendre-les-tables-de-multiplication', 'resoudre-un-probleme-de-maths',
+                       'poser-une-division', 'proportionnalite-explication', 'theoreme-de-pythagore']),
+    ('aide', 'Français', ['homophones-a-a-et-est-son-sont', 'accord-du-participe-passe']),
 ]
 BY_SLUG = {a['slug']: a for a in ARTICLES}
 
