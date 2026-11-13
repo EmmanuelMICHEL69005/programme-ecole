@@ -65,6 +65,11 @@
     <div id="ex7"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 8</span> Mesurer le temps <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex8"></div>
+  </div>
+
 </main>
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div></footer>
 
@@ -125,6 +130,14 @@ buildQCM([
   { q:'Le soir, le soleil se couche du côté de…', correct:'L\'ouest', choices:['L\'ouest','L\'est','Le nord','Le sud'] },
   { q:'Quel objet indique toujours le nord ?', correct:'La boussole', choices:['La boussole','La montre','Le thermomètre','La règle'] },
 ], 'ex7');
+
+buildQCM([
+  { q:'Combien de jours y a-t-il dans une semaine ?', correct:'7', choices:['5','7','10','12'] },
+  { q:'Combien de mois y a-t-il dans une année ?', correct:'12', choices:['10','12','7','30'] },
+  { q:'Combien d\'heures y a-t-il dans une journée ?', correct:'24', choices:['12','24','60','7'] },
+  { q:'Combien de minutes y a-t-il dans une heure ?', correct:'60', choices:['24','60','100','30'] },
+  { q:'Quel jour vient après mercredi ?', correct:'jeudi', choices:['jeudi','mardi','vendredi','dimanche'] },
+], 'ex8');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

@@ -105,6 +105,11 @@
     <div id="ex10"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 11</span> Se repérer dans l'espace <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex11"></div>
+  </div>
+
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div></footer>
@@ -194,6 +199,14 @@ buildQCM([
   { q:'Il y a beaucoup d\'arbres serrés les uns contre les autres. C\'est…', correct:'La forêt', choices:['La forêt','Le désert','La plage','La ville'] },
   { q:'Qui travaille dans une ferme ?', correct:'L\'agriculteur', choices:['L\'agriculteur','Le pilote','Le boulanger','Le dentiste'] },
 ], 'ex10');
+
+buildQCM([
+  { q:'Le contraire de « devant », c\'est…', correct:'derrière', choices:['derrière','dessus','à droite','loin'] },
+  { q:'Le contraire de « dessus », c\'est…', correct:'dessous', choices:['dessous','devant','à gauche','près'] },
+  { q:'Le contraire de « près », c\'est…', correct:'loin', choices:['loin','dessous','derrière','à droite'] },
+  { q:'Le contraire de « à gauche », c\'est…', correct:'à droite', choices:['à droite','devant','dessus','loin'] },
+  { q:'🍎🍌🍐 Quel fruit est au milieu ?', correct:'🍌 la banane', choices:['🍎 la pomme','🍌 la banane','🍐 la poire'] },
+], 'ex11');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

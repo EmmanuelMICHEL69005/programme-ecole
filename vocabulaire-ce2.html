@@ -97,6 +97,11 @@
     <div id="ex11"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#dc2626">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#dc2626">Ex 12</span> L'ordre alphabétique <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex12"></div>
+  </div>
+
   <div style="background:#f5f3ff;border:1px solid #7c3aed55;border-radius:10px;padding:14px 16px;margin:16px 0">
     <div style="font-weight:900;color:#4c1d95;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CE2</div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
@@ -219,6 +224,14 @@ buildQCM([
   { q:'Avec le suffixe -eur, le verbe « nager » donne…', correct:'nageur', choices:['nageur','nageoire','nage','nager'] },
   { q:'Quel suffixe ajoute-t-on à « rapide » pour former « rapidement » ?', correct:'-ment', choices:['-ment','-age','-ette','-eur'] },
 ], 'ex11');
+
+buildQCM([
+  { q:'Quel mot vient en premier dans le dictionnaire ?', correct:'banane', choices:['banane','bateau','biche','bulle'] },
+  { q:'Quel mot vient en dernier dans le dictionnaire ?', correct:'poule', choices:['pomme','poire','porte','poule'] },
+  { q:'Quel mot vient en premier dans le dictionnaire ?', correct:'lait', choices:['lune','lapin','lait','loup'] },
+  { q:'Quel mot vient juste après « chat » dans le dictionnaire ?', correct:'chaton', choices:['chaton','chemin','cerise','cheval'] },
+  { q:'Quel mot vient en premier dans le dictionnaire ?', correct:'table', choices:['table','tapis','tarte','tasse'] },
+], 'ex12');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

@@ -81,6 +81,11 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#06b6d4">Ex 11</span> Compter les mots d'une phrase <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
     <div id="ex11"></div>
   </div>
+
+  <div class="exercice-block" style="--accent:#06b6d4">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#06b6d4">Ex 12</span> Les noms propres et la majuscule <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex12"></div>
+  </div>
   <div style="background:#f0fdf4;border:1px solid #16a34a55;border-radius:10px;padding:14px 16px;margin:16px 0">
     <div style="font-weight:900;color:#14532d;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CP</div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
@@ -187,6 +192,14 @@ buildQCM([
   { card:'"Il pleut."', q:'Combien de mots y a-t-il dans cette phrase ?', correct:'2', choices:['1','2','3','4'] },
   { card:'"Le petit chien joue dans le jardin."', q:'Combien de mots y a-t-il dans cette phrase ?', correct:'7', choices:['5','6','7','8'] },
 ], 'ex11');
+
+buildQCM([
+  { q:'Quel mot est un prénom ?', correct:'Léa', choices:['Léa','lit','lune','loup'] },
+  { q:'Quel mot prend toujours une majuscule ?', correct:'Paris', choices:['Paris','pomme','porte','pull'] },
+  { q:'Quel prénom est bien écrit ?', correct:'Tom', choices:['Tom','tom','tOm'] },
+  { q:'Quel mot est le nom d\'une ville ?', correct:'Lyon', choices:['Lyon','lion','lait','lapin'] },
+  { q:'Quelle phrase est bien écrite ?', correct:'Sami joue.', choices:['Sami joue.','sami joue.','Sami joue','sami Joue.'] },
+], 'ex12');
 </script>
 <script src="sync.js?v=f881f6bc"></script>
 <script src="firebase-keys.js?v=482e498d"></script>

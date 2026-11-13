@@ -106,6 +106,11 @@
     <div id="ex7"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#ec4899">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 8</span> Soustractions avec retenue <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex8"></div>
+  </div>
+
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div></footer>
@@ -176,6 +181,14 @@ buildTri([
     ]
   },
 ], 'ex7');
+
+buildQCM([
+  { q:'52 − 27 = ?', correct:'25', choices:['25','35','24','29'] },
+  { q:'81 − 46 = ?', correct:'35', choices:['35','45','34','25'] },
+  { q:'70 − 38 = ?', correct:'32', choices:['32','48','42','33'] },
+  { q:'63 − 19 = ?', correct:'44', choices:['44','56','54','43'] },
+  { q:'94 − 57 = ?', correct:'37', choices:['37','43','47','36'] },
+], 'ex8');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

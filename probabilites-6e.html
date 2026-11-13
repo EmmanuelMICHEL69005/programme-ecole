@@ -94,6 +94,11 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#9d174d;">Ex 5</span> Fréquence et probabilité</h2>
     <div id="ex5"></div>
   </div>
+
+  <div class="exercice-block">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#9d174d;">Ex 6</span> Tirer une boule dans un sac</h2>
+    <div id="ex6"></div>
+  </div>
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div></footer>
@@ -172,6 +177,14 @@ buildQ([
   { enonce: '📊 Dans une classe de 25 élèves, 10 ont les yeux bleus.', q: 'Quelle est la fréquence d\'élèves aux yeux bleus dans cette classe ?', correct: '2/5 = 40%', choices: ['1/5','2/5 = 40%','1/2','10%'] },
   { enonce: 'On tire au hasard une lettre du mot MATHEMATIQUES (13 lettres).', q: 'Quelle est la probabilité de tirer la lettre M ? (il y a 2 M)', correct: '2/13', choices: ['1/13','2/13','1/12','1/6'] },
 ], 'ex5');
+
+buildQ([
+  { q:'Un sac contient 3 boules rouges et 5 boules bleues. Quelle est la probabilité de tirer une boule rouge ?', correct:'3/8', choices:['3/8','3/5','5/8','1/3'] },
+  { q:'Un sac contient 3 boules rouges et 5 boules bleues. Quelle est la probabilité de tirer une boule bleue ?', correct:'5/8', choices:['5/8','5/3','3/8','1/5'] },
+  { q:'Un sac contient 2 boules vertes, 3 jaunes et 5 noires. Quelle est la probabilité de tirer une boule jaune ?', correct:'3/10', choices:['3/10','3/7','1/3','3/5'] },
+  { q:'Un sac contient 4 boules, toutes blanches. Quelle est la probabilité de tirer une boule blanche ?', correct:'1', choices:['1','0','1/4','4'] },
+  { q:'Un sac contient 2 boules rouges et 4 vertes. Quelle est la probabilité de tirer une boule bleue ?', correct:'0', choices:['0','1','1/6','2/6'] },
+], 'ex6');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

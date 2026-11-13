@@ -78,6 +78,11 @@
     <div id="ex7"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#10b981">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 8</span> Problèmes de durées <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex8"></div>
+  </div>
+
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div></footer>
@@ -141,6 +146,14 @@ buildPaires([
   { q:'Associe chaque calcul intermédiaire à son rôle.',
     pairs:[['Prix total ÷ quantité','Prix unitaire'],['Longueur × largeur','Aire rectangle'],['2 × (L + l)','Périmètre rectangle'],['Somme ÷ n','Moyenne']] },
 ], 'ex7');
+
+buildQCM([
+  { q:'Un film commence à 14 h 30 et dure 1 h 45. À quelle heure finit-il ?', correct:'16 h 15', choices:['16 h 15','15 h 75','16 h 75','15 h 15'] },
+  { q:'Le train part à 9 h 50 et arrive à 11 h 20. Combien de temps dure le trajet ?', correct:'1 h 30', choices:['1 h 30','1 h 70','2 h 30','1 h 10'] },
+  { q:'Léo lit 25 minutes par jour pendant 6 jours. Combien de temps lit-il en tout ?', correct:'2 h 30', choices:['2 h 30','1 h 50','2 h 50','3 h'] },
+  { q:'Une randonnée dure 3 h 15. Combien de minutes cela fait-il ?', correct:'195 min', choices:['195 min','315 min','180 min','165 min'] },
+  { q:'Un gâteau cuit 40 min. Il entre au four à 17 h 35. À quelle heure faut-il le sortir ?', correct:'18 h 15', choices:['18 h 15','17 h 75','18 h 05','18 h 25'] },
+], 'ex8');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

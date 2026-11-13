@@ -133,6 +133,11 @@
     <div id="ex10"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#b45309">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#b45309">Ex 11</span> Les grandes villes de France <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex11"></div>
+  </div>
+
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div></footer>
@@ -225,6 +230,14 @@ buildQCM([
   { q:'Quelle mer borde la ville de Dunkerque ?', correct:'La mer du Nord', choices:['La mer du Nord','La mer Méditerranée','La mer Baltique','La mer Noire'] },
   { q:'Quelle grande île française se trouve dans la mer Méditerranée ?', correct:'La Corse', choices:['La Corse','La Réunion','La Martinique','La Guadeloupe'] },
 ], 'ex10');
+
+buildQCM([
+  { q:'Combien de régions compte la France métropolitaine ?', correct:'13', choices:['13','22','27','101'] },
+  { q:'Quelle grande ville est un port au bord de la Manche ?', correct:'Le Havre', choices:['Le Havre','Lyon','Toulouse','Strasbourg'] },
+  { q:'Quelle grande ville est proche de la frontière avec la Belgique ?', correct:'Lille', choices:['Lille','Marseille','Toulouse','Nantes'] },
+  { q:'Quelle grande ville est proche de la frontière avec l\'Allemagne ?', correct:'Strasbourg', choices:['Strasbourg','Brest','Bordeaux','Nice'] },
+  { q:'Quelle ville est le chef-lieu de la région Occitanie ?', correct:'Toulouse', choices:['Toulouse','Lyon','Rennes','Lille'] },
+], 'ex11');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

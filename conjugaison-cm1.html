@@ -82,6 +82,11 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#dc2626">Ex 11</span> Passé composé avec être : l'accord <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
     <div id="ex11"></div>
   </div>
+
+  <div class="exercice-block" style="--accent:#dc2626">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#dc2626">Ex 12</span> L'impératif présent <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex12"></div>
+  </div>
   <div style="background:#eff6ff;border:1px solid #3b82f655;border-radius:10px;padding:14px 16px;margin:16px 0">
     <div style="font-weight:900;color:#1e3a8a;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CM1</div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
@@ -185,6 +190,14 @@ buildQCM([
   { card:'"Paul est ___ me voir." (venir)', q:'Choisis le participe passé bien accordé.', correct:'venu', choices:['venu','venue','venus','venues'] },
   { card:'"Mes tantes sont ___ à la maison." (rester)', q:'Choisis le participe passé bien accordé.', correct:'restées', choices:['resté','restée','restés','restées'] },
 ], 'ex11');
+
+buildQCM([
+  { q:'Chanter à l\'impératif, 2e personne du singulier :', correct:'chante', choices:['chante','chantes','chantez','chantons'] },
+  { q:'Finir à l\'impératif, 2e personne du pluriel :', correct:'finissez', choices:['finissez','finisez','finis','finissons'] },
+  { q:'Aller à l\'impératif, 2e personne du singulier :', correct:'va', choices:['va','vas','allez','vais'] },
+  { q:'Être à l\'impératif, 1re personne du pluriel :', correct:'soyons', choices:['soyons','sommes','soyez','étions'] },
+  { q:'Avoir à l\'impératif, 2e personne du singulier :', correct:'aie', choices:['aie','ais','as','aies'] },
+], 'ex12');
 </script>
 <script src="sync.js?v=f881f6bc"></script>
 <script src="firebase-keys.js?v=482e498d"></script>

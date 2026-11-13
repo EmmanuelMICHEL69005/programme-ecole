@@ -126,6 +126,11 @@
     <div id="ex6"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#10b981">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 7</span> Compter et comparer des collections <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex7"></div>
+  </div>
+
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div></footer>
@@ -176,6 +181,14 @@ buildQCM([
   { q:'Combien y a-t-il de voitures de PLUS que de ballons ?', correct:'3', choices:['2','3','4','5'] },
   { q:'Combien y a-t-il de jouets en tout ?', correct:'22', choices:['20','21','22','23'] },
 ], 'ex6');
+
+buildQCM([
+  { q:'Combien de 🍎 ? 🍎🍎🍌🍎🍌🍎', correct:'4', choices:['3','4','5','6'] },
+  { q:'Combien de 🍌 ? 🍎🍎🍌🍎🍌🍎', correct:'2', choices:['1','2','3','4'] },
+  { q:'Il y a plus de quoi ? ⭐⭐⭐⭐⭐ 🌙🌙🌙', correct:'⭐ les étoiles', choices:['⭐ les étoiles','🌙 les lunes','Autant des deux'] },
+  { q:'Combien d\'objets en tout ? 🚗🚗🚗 🚲🚲', correct:'5', choices:['3','4','5','6'] },
+  { q:'🐟🐟🐟🐟🐟🐟 🐢🐢 Combien de 🐟 de plus que de 🐢 ?', correct:'4', choices:['2','4','6','8'] },
+], 'ex7');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

@@ -101,6 +101,11 @@
     <div id="ex10"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 11</span> La course d'orientation <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex11"></div>
+  </div>
+
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div></footer>
@@ -193,6 +198,14 @@ buildQCM([
   { q:'Au judo, comment s\'appelle le tapis sur lequel on pratique ?', correct:'Le tatami', choices:['Le tatami','Le ring','Le court','Le parquet'] },
   { q:'Au judo, que fait-on au début et à la fin d\'un combat ?', correct:'On salue son partenaire', choices:['On salue son partenaire','On serre les poings','On tourne le dos','On s\'allonge'] },
 ], 'ex10');
+
+buildQCM([
+  { q:'En course d\'orientation, comment s\'appelle le point à trouver sur le terrain ?', correct:'une balise', choices:['une balise','un but','un panier','un filet'] },
+  { q:'Sur une carte, le nord est le plus souvent…', correct:'en haut', choices:['en haut','en bas','à gauche','à droite'] },
+  { q:'Pour bien lire ta carte, tu dois…', correct:'la tourner dans le même sens que le terrain', choices:['la tourner dans le même sens que le terrain','la tenir toujours à l\'envers','la plier sans la regarder','la laisser au départ'] },
+  { q:'À quoi sert la légende d\'une carte ?', correct:'à comprendre les symboles', choices:['à comprendre les symboles','à mesurer le temps','à compter les coureurs','à choisir son équipe'] },
+  { q:'À quoi sert le carton de contrôle ?', correct:'à prouver que tu es passé aux balises', choices:['à prouver que tu es passé aux balises','à trouver le nord','à mesurer ta vitesse','à dessiner la carte'] },
+], 'ex11');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

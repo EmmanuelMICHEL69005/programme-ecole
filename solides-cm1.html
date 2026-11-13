@@ -123,6 +123,11 @@
     <div id="ex6"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#ec4899">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Prismes et pyramides : compter <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex7"></div>
+  </div>
+
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div></footer>
@@ -184,6 +189,14 @@ buildTri([
     ]
   },
 ], 'ex6');
+
+buildQCM([
+  { q:'Combien de faces a un prisme à base triangulaire ?', correct:'5', choices:['3','5','6','9'] },
+  { q:'Combien d\'arêtes a un prisme à base triangulaire ?', correct:'9', choices:['6','8','9','12'] },
+  { q:'Combien de sommets a une pyramide à base carrée ?', correct:'5', choices:['4','5','6','8'] },
+  { q:'Combien de faces a une pyramide à base triangulaire ?', correct:'4', choices:['3','4','5','6'] },
+  { q:'Combien d\'arêtes a une pyramide à base triangulaire ?', correct:'6', choices:['4','6','8','9'] },
+], 'ex7');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>
