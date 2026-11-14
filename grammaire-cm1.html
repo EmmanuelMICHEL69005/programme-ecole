@@ -86,6 +86,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#dc2626">Ex 12</span> Trouver le verbe conjugué <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
     <div id="ex12"></div>
   </div>
+  <div class="exercice-block" style="--accent:#dc2626">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#dc2626">Ex 13</span> Le nom noyau du groupe nominal <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex13"></div>
+  </div>
   <div style="background:#eff6ff;border:1px solid #3b82f655;border-radius:10px;padding:14px 16px;margin:16px 0">
     <div style="font-weight:900;color:#1e3a8a;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CM1</div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
@@ -207,6 +211,14 @@ buildQCM([
   { card:'"Le boulanger a préparé des croissants."', q:'Quel est le verbe conjugué ?', correct:'a préparé', choices:['a préparé','boulanger','croissants','des'] },
   { card:'"Tu veux jouer avec nous ?"', q:'Quel est le verbe conjugué ?', correct:'veux', choices:['Tu','veux','jouer','nous'], hint:'Un verbe à l\'infinitif n\'est pas conjugué.' },
 ], 'ex12');
+
+buildQCM([
+  { card:'"un petit chien noir"', q:'Quel est le nom noyau du groupe nominal ?', correct:'chien', choices:['un','petit','chien','noir'] },
+  { card:'"la maison de mon oncle"', q:'Quel est le nom noyau du groupe nominal ?', correct:'maison', choices:['la','maison','mon','oncle'] },
+  { card:'"une grande table en bois"', q:'Quel est le nom noyau du groupe nominal ?', correct:'table', choices:['une','grande','table','bois'] },
+  { card:'"les jolies fleurs du jardin"', q:'Quel est le nom noyau du groupe nominal ?', correct:'fleurs', choices:['les','jolies','fleurs','jardin'] },
+  { card:'"mon vieux vélo rouge"', q:'Quel est le nom noyau du groupe nominal ?', correct:'vélo', choices:['mon','vieux','vélo','rouge'] },
+], 'ex13');
 </script>
 <script src="sync.js?v=f881f6bc"></script>
 <script src="firebase-keys.js?v=482e498d"></script>

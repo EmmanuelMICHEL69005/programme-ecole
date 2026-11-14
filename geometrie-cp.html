@@ -211,6 +211,12 @@
     </h2>
     <div id="ex9"></div>
   </div>
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <h2 class="ex-title">
+      <span class="ex-badge" style="background:#0ea5e9">Ex 10</span> Gauche, droite, entre <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span>
+    </h2>
+    <div id="ex10"></div>
+  </div>
 
 </main>
 
@@ -353,6 +359,14 @@ buildQCM([
   { q:'Un cornet de glace a la forme d\'un…', correct:'cône', choices:['cône','cube','boule','pavé'] },
   { q:'Combien de faces a un cube ?', correct:'6', choices:['4','5','6','8'] },
 ], 'ex9');
+
+buildQCM([
+  { card:'🔴 🟦 🟢 ⭐ 🔺', q:'Qu\'est-ce qui est tout à gauche ?', correct:'le rond rouge', choices:['le rond rouge','l\'étoile','le triangle','le carré bleu'] },
+  { card:'🔴 🟦 🟢 ⭐ 🔺', q:'Qu\'est-ce qui est juste à droite du carré bleu ?', correct:'le rond vert', choices:['le rond vert','le rond rouge','l\'étoile','le triangle'] },
+  { card:'🔴 🟦 🟢 ⭐ 🔺', q:'Qu\'est-ce qui est juste à gauche du triangle ?', correct:'l\'étoile', choices:['l\'étoile','le rond vert','le carré bleu','le rond rouge'] },
+  { card:'🔴 🟦 🟢 ⭐ 🔺', q:'Qu\'est-ce qui est entre le rond vert et le triangle ?', correct:'l\'étoile', choices:['l\'étoile','le carré bleu','le rond rouge'] },
+  { card:'🔴 🟦 🟢 ⭐ 🔺', q:'Combien d\'objets sont à droite du carré bleu ?', correct:'3', choices:['1','2','3','4'] },
+], 'ex10');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

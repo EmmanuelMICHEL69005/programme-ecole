@@ -88,6 +88,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Trier : proportionnel ou non ? <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">TRI</span></h2>
     <div id="ex7"></div>
   </div>
+  <div class="exercice-block" style="--accent:#ec4899">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 8</span> Problèmes de proportionnalité <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex8"></div>
+  </div>
 
 </main>
 
@@ -157,6 +161,14 @@ buildTri([
     ]
   },
 ], 'ex7');
+
+buildQCM([
+  { q:'4 cahiers coûtent 6 €. Combien coûtent 10 cahiers ?', correct:'15 €', choices:['12 €','15 €','20 €','24 €'] },
+  { q:'Une recette pour 6 personnes utilise 300 g de farine. Combien pour 2 personnes ?', correct:'100 g', choices:['100 g','150 g','200 g','600 g'] },
+  { q:'Un robinet verse 8 L d\'eau en 2 min. Combien de litres en 5 min ?', correct:'20 L', choices:['10 L','16 L','20 L','40 L'] },
+  { q:'3 kg de pommes coûtent 4,50 €. Prix de 1 kg ?', correct:'1,50 €', choices:['1,35 €','1,50 €','3 €','13,50 €'] },
+  { q:'Une voiture roule toujours à la même vitesse : 60 km en 1 h. Combien de km en 30 min ?', correct:'30 km', choices:['20 km','30 km','45 km','120 km'] },
+], 'ex8');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

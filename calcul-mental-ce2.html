@@ -77,6 +77,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Associer : calcul et résultat <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">PAIRES</span></h2>
     <div id="ex7"></div>
   </div>
+  <div class="exercice-block" style="--accent:#ec4899">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 8</span> Compléments à 100 <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex8"></div>
+  </div>
 
 </main>
 
@@ -146,6 +150,14 @@ buildPaires([
   { q:'Associe chaque calcul à son résultat.',
     pairs:[['32 × 10','320'],['5 × 100','500'],['640 ÷ 10','64'],['900 ÷ 100','9']] },
 ], 'ex7');
+
+buildQCM([
+  { card:'35 + ? = 100', q:'Complément à 100', correct:'65', choices:['55','65','75','135'] },
+  { card:'72 + ? = 100', q:'Complément à 100', correct:'28', choices:['28','38','18','32'] },
+  { card:'50 + ? = 100', q:'Complément à 100', correct:'50', choices:['40','50','60','150'] },
+  { card:'81 + ? = 100', q:'Complément à 100', correct:'19', choices:['9','19','21','29'] },
+  { card:'46 + ? = 100', q:'Complément à 100', correct:'54', choices:['44','54','56','64'] },
+], 'ex8');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

@@ -87,6 +87,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Vrai ou Faux — résultats <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">VRAI / FAUX</span></h2>
     <div id="ex7"></div>
   </div>
+  <div class="exercice-block" style="--accent:#ec4899">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 8</span> Problèmes de partage <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex8"></div>
+  </div>
 
 </main>
 
@@ -154,6 +158,14 @@ buildVF([
   { enonce:'🍕 5 pizzas × 8 parts', q:'Il y a 40 parts en tout.', correct:true },
   { enonce:'🏫 400 places − 253 enfants', q:'Il reste 147 places libres.', correct:true },
 ], 'ex7');
+
+buildQCM([
+  { enonce:'🍬 Léa partage 12 bonbons entre 3 enfants. Chacun en a autant.', q:'Combien de bonbons pour chaque enfant ?', correct:'4 bonbons', choices:['3 bonbons','4 bonbons','6 bonbons','9 bonbons'] },
+  { enonce:'🍪 On range 20 gâteaux dans des boîtes de 5 gâteaux.', q:'Combien de boîtes faut-il ?', correct:'4 boîtes', choices:['4 boîtes','5 boîtes','15 boîtes','25 boîtes'] },
+  { enonce:'⚽ 18 enfants font des équipes de 6 joueurs.', q:'Combien d\'équipes y a-t-il ?', correct:'3 équipes', choices:['2 équipes','3 équipes','4 équipes','12 équipes'] },
+  { enonce:'🍎 Tom partage 10 pommes entre 2 amis. Chacun en a autant.', q:'Combien de pommes pour chaque ami ?', correct:'5 pommes', choices:['5 pommes','8 pommes','12 pommes','20 pommes'] },
+  { enonce:'🌸 Maman fait des bouquets de 4 fleurs avec 24 fleurs.', q:'Combien de bouquets fait-elle ?', correct:'6 bouquets', choices:['4 bouquets','6 bouquets','8 bouquets','20 bouquets'] },
+], 'ex8');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

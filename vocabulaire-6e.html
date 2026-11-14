@@ -85,6 +85,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#d97706">Ex 12</span> Choisir le verbe précis <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
     <div id="ex12"></div>
   </div>
+  <div class="exercice-block" style="--accent:#d97706">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#d97706">Ex 13</span> Sens figuré : les expressions <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex13"></div>
+  </div>
   <div style="background:#fdf2f8;border:1px solid #ec489955;border-radius:10px;padding:14px 16px;margin:16px 0">
     <div style="font-weight:900;color:#831843;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français 6e</div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
@@ -201,6 +205,14 @@ buildQCM([
   { card:'"Ma tante a une boulangerie."', q:'Quel verbe plus précis peut remplacer « a » sans changer le sens ?', correct:'possède', choices:['possède','cherche','visite','quitte'] },
   { card:'"Les enfants mettent leurs jouets dans le coffre."', q:'Quel verbe plus précis peut remplacer « mettent » sans changer le sens ?', correct:'rangent', choices:['rangent','cassent','prêtent','perdent'] },
 ], 'ex12');
+
+buildQCM([
+  { card:'"Il a le cœur sur la main."', q:'Que signifie cette expression ?', correct:'Il est généreux.', choices:['Il est généreux.','Il est malade du cœur.','Il a mal à la main.','Il est maladroit.'] },
+  { card:'"Elle a une langue de vipère."', q:'Que signifie cette expression ?', correct:'Elle dit souvent du mal des autres.', choices:['Elle dit souvent du mal des autres.','Elle parle plusieurs langues.','Elle a peur des serpents.','Elle parle très vite.'] },
+  { card:'"Il pleut des cordes."', q:'Que signifie cette expression ?', correct:'Il pleut très fort.', choices:['Il pleut très fort.','Il pleut un peu.','Il va bientôt pleuvoir.','Il tombe des cordes du ciel.'] },
+  { card:'"Il a la tête dans les nuages."', q:'Que signifie cette expression ?', correct:'Il est distrait, il rêve.', choices:['Il est distrait, il rêve.','Il est très grand.','Il voyage en avion.','Il a mal à la tête.'] },
+  { card:'"Elle a un poil dans la main."', q:'Que signifie cette expression ?', correct:'Elle est paresseuse.', choices:['Elle est paresseuse.','Elle est très poilue.','Elle est courageuse.','Elle s\'est blessée à la main.'] },
+], 'ex13');
 </script>
 <script src="sync.js?v=f881f6bc"></script>
 <script src="firebase-keys.js?v=482e498d"></script>

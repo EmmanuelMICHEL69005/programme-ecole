@@ -63,6 +63,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 7</span> Les lieux du quartier <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
     <div id="ex7"></div>
   </div>
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 8</span> Les moyens de transport <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex8"></div>
+  </div>
 
 </main>
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div><div class="footer-levels"><a href="parents.html">Espace parents</a> · <a href="aide.html">Aide élèves</a> · <a href="ressources.html">Ressources gratuites</a> · <a href="a-propos.html">À propos</a></div></footer>
@@ -125,6 +129,14 @@ buildQCM([
   { q:'Où travaille le maire ?', correct:'À la mairie', choices:['À la mairie','À la boulangerie','À la piscine','Au stade'] },
   { q:'Où les pompiers rangent-ils leurs camions ?', correct:'À la caserne', choices:['À la gare','À la caserne','À la bibliothèque','Au marché'] },
 ], 'ex7');
+
+buildQCM([
+  { q:'Quel moyen de transport roule sur des rails ?', correct:'le train', choices:['le train','le bateau','l\'avion','le vélo'] },
+  { q:'Quel moyen de transport vole dans le ciel ?', correct:'l\'avion', choices:['le bus','l\'avion','le train','le bateau'] },
+  { q:'Pour traverser la mer, on peut prendre…', correct:'le bateau', choices:['le vélo','le bus','le bateau','la trottinette'] },
+  { q:'Quel véhicule a deux roues et des pédales ?', correct:'le vélo', choices:['la voiture','le camion','le bus','le vélo'] },
+  { q:'Quel véhicule emmène les malades à l\'hôpital ?', correct:'l\'ambulance', choices:['l\'ambulance','le tracteur','la moto','le bateau'] },
+], 'ex8');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

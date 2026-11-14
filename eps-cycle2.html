@@ -99,6 +99,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 10</span> Le matériel des sports <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
     <div id="ex10"></div>
   </div>
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 11</span> Orientation, danse et lutte <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex11"></div>
+  </div>
 
 </main>
 
@@ -193,6 +197,14 @@ buildQCM([
   { q:'Au handball, avec quoi joue-t-on le ballon ?', correct:'Avec les mains', choices:['Avec les mains','Avec les pieds','Avec une raquette','Avec une crosse'] },
   { q:'À la piscine, quel matériel aide à apprendre à battre des jambes ?', correct:'Une planche', choices:['Une planche','Une corde à sauter','Un plot','Un cerceau'] },
 ], 'ex10');
+
+buildQCM([
+  { q:'Dans une course d\'orientation, que cherche-t-on ?', correct:'des balises', choices:['des balises','des ballons','des raquettes','des cerceaux'] },
+  { q:'Quel document aide à se repérer pendant une course d\'orientation ?', correct:'une carte', choices:['une carte','un dictionnaire','un calendrier','un livre de recettes'] },
+  { q:'En danse, on se déplace souvent au rythme…', correct:'de la musique', choices:['de la musique','du sifflet','du chronomètre','de l\'arbitre'] },
+  { q:'En danse, pour montrer une émotion, on utilise…', correct:'son corps', choices:['son corps','un ballon','une raquette','un vélo'] },
+  { q:'Dans un jeu de lutte à l\'école, il est interdit de…', correct:'frapper ou faire mal', choices:['frapper ou faire mal','saluer son adversaire','écouter l\'arbitre','rester dans la zone de combat'] },
+], 'ex11');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

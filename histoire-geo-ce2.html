@@ -132,6 +132,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 10</span> Autrefois et aujourd'hui <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
     <div id="ex10"></div>
   </div>
+  <div class="exercice-block" style="--accent:#10b981">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 11</span> Mers, océans et fleuves de France <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex11"></div>
+  </div>
 
 </main>
 
@@ -232,6 +236,14 @@ buildQCM([
   { q:'Quel objet servait autrefois à écrire à l\'encre à l\'école ?', correct:'Le porte-plume', choices:['Le porte-plume','Le clavier','La tablette tactile','Le stylo-feutre'] },
   { q:'Avant le réfrigérateur, comment conservait-on certains aliments ?', correct:'En les salant ou en les séchant', choices:['En les salant ou en les séchant','En les mettant au congélateur','En les mettant au micro-ondes','En les emballant dans du plastique'] },
 ], 'ex10');
+
+buildQCM([
+  { q:'Quel océan borde la côte ouest de la France ?', correct:'l\'océan Atlantique', choices:['l\'océan Atlantique','l\'océan Pacifique','l\'océan Indien','l\'océan Arctique'] },
+  { q:'Quelle mer borde le sud de la France ?', correct:'la mer Méditerranée', choices:['la mer du Nord','la mer Méditerranée','la mer Rouge','la mer Noire'] },
+  { q:'Quelle mer sépare la France de l\'Angleterre ?', correct:'la Manche', choices:['la Manche','la mer Méditerranée','la mer Noire','la mer Rouge'] },
+  { q:'Quel fleuve passe à Lyon ?', correct:'le Rhône', choices:['la Seine','le Rhône','la Garonne','la Loire'] },
+  { q:'Quel fleuve passe à Bordeaux ?', correct:'la Garonne', choices:['la Garonne','la Seine','le Rhône','la Loire'] },
+], 'ex11');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

@@ -116,6 +116,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 7</span> Associer heure et durée <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">PAIRES</span></h2>
     <div id="ex7"></div>
   </div>
+  <div class="exercice-block" style="--accent:#ec4899">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 8</span> Jours, heures, minutes, secondes <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex8"></div>
+  </div>
 
 </main>
 
@@ -181,6 +185,14 @@ buildPaires([
   { q:'Associe chaque durée à sa conversion.',
     pairs:[['3h45','225 min'],['185 min','3h05'],['2 jours 6 h','54 h'],['4 min 30 s','270 s']] },
 ], 'ex7');
+
+buildQCM([
+  { q:'3 semaines = combien de jours ?', correct:'21 jours', choices:['14 jours','21 jours','24 jours','30 jours'] },
+  { q:'48 heures = combien de jours ?', correct:'2 jours', choices:['1 jour','2 jours','3 jours','4 jours'] },
+  { q:'1 h 15 min = combien de minutes ?', correct:'75 min', choices:['65 min','75 min','90 min','115 min'] },
+  { q:'90 secondes = ?', correct:'1 min 30 s', choices:['1 min 30 s','1 min 50 s','9 min','1 min 3 s'] },
+  { q:'Un quart d\'heure = combien de minutes ?', correct:'15 min', choices:['15 min','25 min','30 min','45 min'] },
+], 'ex8');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>
