@@ -82,6 +82,11 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#06b6d4">Ex 11</span> Trouver l'intrus <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
     <div id="ex11"></div>
   </div>
+
+  <div class="exercice-block" style="--accent:#06b6d4">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#06b6d4">Ex 12</span> Les petits des animaux <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex12"></div>
+  </div>
   <div style="background:#f0fdf4;border:1px solid #16a34a55;border-radius:10px;padding:14px 16px;margin:16px 0">
     <div style="font-weight:900;color:#14532d;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CP</div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
@@ -192,6 +197,13 @@ buildQCM([
   { card:'"voiture · bus · train · lit"', q:'Quel mot n\'est pas un moyen de transport ?', correct:'lit', choices:['voiture','bus','train','lit'] },
   { card:'"rouge · vert · chaise · bleu"', q:'Quel mot n\'est pas une couleur ?', correct:'chaise', choices:['rouge','vert','chaise','bleu'] },
 ], 'ex11');
+buildQCM([
+  { q:'Le petit de la vache, c\'est…', correct:'le veau', choices:['le veau','le poulain','l\'agneau','le chaton'] },
+  { q:'Le petit du cheval, c\'est…', correct:'le poulain', choices:['le poulain','le veau','le poussin','le chiot'] },
+  { q:'Le petit du mouton, c\'est…', correct:'l\'agneau', choices:['l\'agneau','le veau','le chaton','le poulain'] },
+  { q:'Le petit de la poule, c\'est…', correct:'le poussin', choices:['le poussin','le chiot','l\'agneau','le veau'] },
+  { q:'Le petit du chien, c\'est…', correct:'le chiot', choices:['le chiot','le chaton','le poussin','le poulain'] },
+], 'ex12');
 </script>
 <script src="sync.js?v=f881f6bc"></script>
 <script src="firebase-keys.js?v=482e498d"></script>

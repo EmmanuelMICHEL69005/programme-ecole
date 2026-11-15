@@ -121,6 +121,11 @@
     <div id="ex7"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#f59e0b">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#f59e0b">Ex 8</span> Angles et quarts de tour <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex8"></div>
+  </div>
+
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div><div class="footer-levels"><a href="parents.html">Espace parents</a> · <a href="aide.html">Aide élèves</a> · <a href="ressources.html">Ressources gratuites</a> · <a href="a-propos.html">À propos</a></div></footer>
@@ -189,6 +194,13 @@ buildTri([
     ]
   },
 ], 'ex7');
+buildQCM([
+  { q:'Un quart de tour forme un angle…', correct:'Droit', choices:['Droit','Plat','Aigu','Obtus'] },
+  { q:'Un demi-tour forme un angle…', correct:'Plat', choices:['Plat','Droit','Aigu','Obtus'] },
+  { q:'À 3 h pile, les aiguilles d\'une horloge forment un angle…', correct:'Droit', choices:['Droit','Aigu','Plat','Obtus'] },
+  { q:'À 6 h pile, les aiguilles d\'une horloge forment un angle…', correct:'Plat', choices:['Plat','Droit','Aigu','Obtus'] },
+  { q:'À 1 h pile, les aiguilles d\'une horloge forment un angle…', correct:'Aigu', choices:['Aigu','Droit','Obtus','Plat'] },
+], 'ex8');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

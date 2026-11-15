@@ -95,6 +95,11 @@
     <div id="ex7"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#ec4899">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 8</span> Résultat > ou < 100 ? <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span> Doubles et moitiés</h2>
+    <div id="ex8"></div>
+  </div>
+
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div><div class="footer-levels"><a href="parents.html">Espace parents</a> · <a href="aide.html">Aide élèves</a> · <a href="ressources.html">Ressources gratuites</a> · <a href="a-propos.html">À propos</a></div></footer>
@@ -170,6 +175,13 @@ buildTri([
     ]
   },
 ], 'ex7');
+buildQCM([
+  { q:'Quel est le double de 15 ?', correct:'30', choices:['30','25','17','45'] },
+  { q:'Quel est le double de 40 ?', correct:'80', choices:['80','42','60','20'] },
+  { q:'Quelle est la moitié de 30 ?', correct:'15', choices:['15','60','10','25'] },
+  { q:'Quelle est la moitié de 50 ?', correct:'25', choices:['25','100','20','30'] },
+  { q:'Quel est le double de 25 ?', correct:'50', choices:['50','27','40','75'] },
+], 'ex8');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

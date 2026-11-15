@@ -118,6 +118,11 @@
     <div id="ex7"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#ec4899">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 8</span> Décimaux et nombres entiers <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex8"></div>
+  </div>
+
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div><div class="footer-levels"><a href="parents.html">Espace parents</a> · <a href="aide.html">Aide élèves</a> · <a href="ressources.html">Ressources gratuites</a> · <a href="a-propos.html">À propos</a></div></footer>
@@ -189,6 +194,13 @@ buildTri([
     ]
   },
 ], 'ex7');
+buildQCM([
+  { q:'Entre quels nombres entiers se trouve 4,7 ?', correct:'entre 4 et 5', choices:['entre 4 et 5','entre 3 et 4','entre 5 et 6','entre 7 et 8'] },
+  { q:'Entre quels nombres entiers se trouve 0,6 ?', correct:'entre 0 et 1', choices:['entre 0 et 1','entre 1 et 2','entre 6 et 7','entre 5 et 6'] },
+  { q:'Quel est le nombre entier le plus proche de 3,8 ?', correct:'4', choices:['4','3','8','5'] },
+  { q:'Quel est le nombre entier le plus proche de 6,2 ?', correct:'6', choices:['6','7','2','5'] },
+  { q:'J\'ajoute 1 dixième à 2,9. J\'obtiens…', correct:'3', choices:['3','2,10','3,9','2,91'] },
+], 'ex8');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

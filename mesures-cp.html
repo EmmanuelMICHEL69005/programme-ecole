@@ -121,6 +121,10 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#f97316">Ex 8</span> Calculer avec des longueurs <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
     <div id="ex8"></div>
   </div>
+  <div class="exercice-block" style="--accent:#f97316">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#f97316">Ex 9</span> Payer et rendre la monnaie <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex9"></div>
+  </div>
 
 </main>
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div><div class="footer-levels"><a href="parents.html">Espace parents</a> · <a href="aide.html">Aide élèves</a> · <a href="ressources.html">Ressources gratuites</a> · <a href="a-propos.html">À propos</a></div></footer>
@@ -202,6 +206,13 @@ buildQCM([
   { q:'Léa saute 30 cm. Tom saute 50 cm. Qui saute le plus loin ?', correct:'Tom', choices:['Léa','Tom','Ils sautent aussi loin'] },
   { q:'Un trait mesure 6 cm. J\'en trace un autre de 3 cm de plus. Il mesure…', correct:'9 cm', choices:['3 cm','9 cm','18 cm','63 cm'] },
 ], 'ex8');
+buildQCM([
+  { q:'J\'ai un billet de 10 € et un billet de 5 €. Combien d\'argent ?', correct:'15 €', choices:['15 €','10 €','5 €','105 €'] },
+  { q:'Un jouet coûte 7 €. Je paie avec 10 €. On me rend…', correct:'3 €', choices:['3 €','17 €','7 €','4 €'] },
+  { q:'J\'ai 2 billets de 5 €. Combien d\'argent ?', correct:'10 €', choices:['10 €','7 €','25 €','5 €'] },
+  { q:'Un ballon coûte 9 € et une balle coûte 3 €. Prix total ?', correct:'12 €', choices:['12 €','6 €','93 €','11 €'] },
+  { q:'J\'ai 20 €. J\'achète un livre à 6 €. Il me reste…', correct:'14 €', choices:['14 €','26 €','16 €','6 €'] },
+], 'ex9');
 </script>
 <script src="sync.js?v=f881f6bc"></script>
 <script src="firebase-keys.js?v=482e498d"></script>

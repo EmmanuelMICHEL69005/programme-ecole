@@ -70,6 +70,11 @@
     <div id="ex8"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#0ea5e9">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#0ea5e9">Ex 9</span> Paysages et repères de France <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex9"></div>
+  </div>
+
 </main>
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div><div class="footer-levels"><a href="parents.html">Espace parents</a> · <a href="aide.html">Aide élèves</a> · <a href="ressources.html">Ressources gratuites</a> · <a href="a-propos.html">À propos</a></div></footer>
 
@@ -138,6 +143,13 @@ buildQCM([
   { q:'Combien de minutes y a-t-il dans une heure ?', correct:'60', choices:['24','60','100','30'] },
   { q:'Quel jour vient après mercredi ?', correct:'jeudi', choices:['jeudi','mardi','vendredi','dimanche'] },
 ], 'ex8');
+buildQCM([
+  { q:'Un paysage avec beaucoup d\'immeubles et de magasins est un paysage…', correct:'urbain (de ville)', choices:['urbain (de ville)','rural (de campagne)','de montagne','littoral (de bord de mer)'] },
+  { q:'Un paysage avec des champs et des fermes est un paysage…', correct:'rural (de campagne)', choices:['rural (de campagne)','urbain (de ville)','littoral (de bord de mer)','de montagne'] },
+  { q:'Un paysage au bord de la mer est un paysage…', correct:'littoral', choices:['littoral','rural','urbain','de montagne'] },
+  { q:'Quel est le plus long fleuve de France ?', correct:'la Loire', choices:['la Loire','la Seine','le Rhône','la Garonne'] },
+  { q:'Quelle est la capitale de la France ?', correct:'Paris', choices:['Paris','Lyon','Marseille','Lille'] },
+], 'ex9');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

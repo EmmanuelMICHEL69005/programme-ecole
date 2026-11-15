@@ -78,6 +78,11 @@
     <div id="ex7"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#10b981">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#10b981">Ex 8</span> Durées : jours, minutes et secondes <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex8"></div>
+  </div>
+
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div><div class="footer-levels"><a href="parents.html">Espace parents</a> · <a href="aide.html">Aide élèves</a> · <a href="ressources.html">Ressources gratuites</a> · <a href="a-propos.html">À propos</a></div></footer>
@@ -139,6 +144,13 @@ buildPaires([
   { q:'Associe chaque durée à sa conversion.',
     pairs:[['4h35','275 min'],['310 min','5h10'],['2 j 8 h','56 h'],['5 min 45 s','345 s']] },
 ], 'ex7');
+buildQCM([
+  { q:'Combien de jours y a-t-il dans une année bissextile ?', correct:'366', choices:['366','365','364','360'] },
+  { q:'Combien de secondes y a-t-il dans un quart d\'heure ?', correct:'900', choices:['900','15','150','1 500'] },
+  { q:'Une demi-heure plus trois quarts d\'heure, cela fait…', correct:'1h15', choices:['1h15','1h30','80 min','1h25'] },
+  { q:'Combien de jours y a-t-il dans 6 semaines ?', correct:'42', choices:['42','36','48','60'] },
+  { enonce:'Un film commence à 20h45 et dure 1h50.', q:'À quelle heure finit-il ?', correct:'22h35', choices:['22h35','21h35','22h95','22h05'] },
+], 'ex8');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>
