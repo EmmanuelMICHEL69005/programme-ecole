@@ -81,6 +81,11 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#dc2626">Ex 11</span> L'ordre alphabétique du dictionnaire <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
     <div id="ex11"></div>
   </div>
+
+  <div class="exercice-block" style="--accent:#dc2626">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#dc2626">Ex 12</span> Le mot générique <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex12"></div>
+  </div>
   <div style="background:#eff6ff;border:1px solid #3b82f655;border-radius:10px;padding:14px 16px;margin:16px 0">
     <div style="font-weight:900;color:#1e3a8a;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CM1</div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
@@ -183,6 +188,13 @@ buildQCM([
   { q:'Quel mot vient en premier dans le dictionnaire ?', correct:'cible', choices:['citron','cirque','cigale','cible'] },
   { q:'Quel mot vient en premier dans le dictionnaire ?', correct:'sol', choices:['soleil','sol','solide','soldat'] },
 ], 'ex11');
+buildQCM([
+  { card:'"pomme, poire, banane"', q:'Quel est le mot générique ?', correct:'des fruits', choices:['des fruits','des légumes','des fleurs','des arbres'] },
+  { card:'"chaise, table, armoire"', q:'Quel est le mot générique ?', correct:'des meubles', choices:['des meubles','des outils','des jouets','des vêtements'] },
+  { card:'"marteau, scie, tournevis"', q:'Quel est le mot générique ?', correct:'des outils', choices:['des outils','des meubles','des instruments de musique','des véhicules'] },
+  { card:'"rouge, vert, jaune"', q:'Quel est le mot générique ?', correct:'des couleurs', choices:['des couleurs','des fruits','des formes','des saisons'] },
+  { card:'"piano, guitare, violon"', q:'Quel est le mot générique ?', correct:'des instruments de musique', choices:['des instruments de musique','des outils','des sports','des meubles'] },
+], 'ex12');
 </script>
 <script src="sync.js?v=f881f6bc"></script>
 <script src="firebase-keys.js?v=482e498d"></script>

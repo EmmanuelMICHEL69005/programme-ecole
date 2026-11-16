@@ -207,6 +207,15 @@
     <div id="ex10"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#7c3aed">
+    <h2 class="ex-title">
+      <span class="ex-badge" style="background:#7c3aed">Ex 11</span>
+      Comparer avec &lt;, &gt; ou =
+      <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span>
+    </h2>
+    <div id="ex11"></div>
+  </div>
+
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div><div class="footer-levels"><a href="parents.html">Espace parents</a> · <a href="aide.html">Aide élèves</a> · <a href="ressources.html">Ressources gratuites</a> · <a href="a-propos.html">À propos</a></div></footer>
@@ -360,6 +369,13 @@ buildQCM([
   { q:'30 + 10 = ?', correct:'40', choices:['31','40','20','50'] },
   { q:'61 − 10 = ?', correct:'51', choices:['60','51','71','41'] },
 ], 'ex10');
+buildQCM([
+  { q:'Quel signe mettre ? 45 … 54', correct:'<', choices:['<','>','='] },
+  { q:'Quel signe mettre ? 72 … 27', correct:'>', choices:['<','>','='] },
+  { q:'Quel signe mettre ? 60 … 60', correct:'=', choices:['<','>','='] },
+  { q:'Quel signe mettre ? 89 … 98', correct:'<', choices:['<','>','='] },
+  { q:'Quel signe mettre ? 31 … 13', correct:'>', choices:['<','>','='] },
+], 'ex11');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

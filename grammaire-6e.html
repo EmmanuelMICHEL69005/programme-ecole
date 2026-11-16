@@ -81,6 +81,11 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#d97706">Ex 11</span> Le complément circonstanciel <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
     <div id="ex11"></div>
   </div>
+
+  <div class="exercice-block" style="--accent:#d97706">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#d97706">Ex 12</span> La classe grammaticale des mots <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex12"></div>
+  </div>
   <div style="background:#fdf2f8;border:1px solid #ec489955;border-radius:10px;padding:14px 16px;margin:16px 0">
     <div style="font-weight:900;color:#831843;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français 6e</div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
@@ -186,6 +191,13 @@ buildQCM([
   { card:'"Elle reste à l\'intérieur à cause de la pluie." → à cause de la pluie', q:'Ce complément circonstanciel indique…', correct:'la cause', choices:['le lieu','le temps','la manière','la cause'] },
   { card:'"Chaque matin, je bois un verre de lait." → Chaque matin', q:'Ce complément circonstanciel indique…', correct:'le temps', choices:['le lieu','le temps','la manière','la cause'] },
 ], 'ex11');
+buildQCM([
+  { card:'"Elle porte une jolie robe." → jolie', q:'Quelle est la classe grammaticale de ce mot ?', correct:'adjectif qualificatif', choices:['adjectif qualificatif','adverbe','nom commun','verbe'] },
+  { card:'"Nous partirons demain." → Nous', q:'Quelle est la classe grammaticale de ce mot ?', correct:'pronom personnel', choices:['pronom personnel','déterminant','nom commun','adverbe'] },
+  { card:'"Le chat dort sous la table." → sous', q:'Quelle est la classe grammaticale de ce mot ?', correct:'préposition', choices:['préposition','adverbe','conjonction de coordination','déterminant'] },
+  { card:'"Il pleut, mais il fait doux." → mais', q:'Quelle est la classe grammaticale de ce mot ?', correct:'conjonction de coordination', choices:['conjonction de coordination','préposition','adverbe','pronom personnel'] },
+  { card:'"Il court très vite." → très', q:'Quelle est la classe grammaticale de ce mot ?', correct:'adverbe', choices:['adverbe','adjectif qualificatif','préposition','verbe'] },
+], 'ex12');
 </script>
 <script src="sync.js?v=f881f6bc"></script>
 <script src="firebase-keys.js?v=482e498d"></script>

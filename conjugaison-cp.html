@@ -81,6 +81,11 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#06b6d4">Ex 11</span> Le verbe avec un nom sujet <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
     <div id="ex11"></div>
   </div>
+
+  <div class="exercice-block" style="--accent:#06b6d4">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#06b6d4">Ex 12</span> Hier, aujourd'hui ou demain ? <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex12"></div>
+  </div>
   <div style="background:#f0fdf4;border:1px solid #16a34a55;border-radius:10px;padding:14px 16px;margin:16px 0">
     <div style="font-weight:900;color:#14532d;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CP</div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
@@ -188,6 +193,13 @@ buildQCM([
   { card:'"Mes amis ___ au ballon." (jouer)', q:'Choisis la bonne forme du verbe.', correct:'jouent', choices:['joue','joues','jouons','jouent'] },
   { card:'"Les oiseaux ___." (chanter)', q:'Choisis la bonne forme du verbe.', correct:'chantent', choices:['chante','chantes','chantez','chantent'] },
 ], 'ex11');
+buildQCM([
+  { card:'"Hier, j\'ai mangé une pomme."', q:'Quand se passe l\'action ?', correct:'avant (passé)', choices:['avant (passé)','maintenant (présent)','plus tard (futur)'] },
+  { card:'"Demain, nous irons à la piscine."', q:'Quand se passe l\'action ?', correct:'plus tard (futur)', choices:['avant (passé)','maintenant (présent)','plus tard (futur)'] },
+  { card:'"Maintenant, je lis un livre."', q:'Quand se passe l\'action ?', correct:'maintenant (présent)', choices:['avant (passé)','maintenant (présent)','plus tard (futur)'] },
+  { card:'"Aujourd\'hui, il fait beau."', q:'Quand se passe l\'action ?', correct:'maintenant (présent)', choices:['avant (passé)','maintenant (présent)','plus tard (futur)'] },
+  { card:'"Plus tard, je serai pilote."', q:'Quand se passe l\'action ?', correct:'plus tard (futur)', choices:['avant (passé)','maintenant (présent)','plus tard (futur)'] },
+], 'ex12');
 </script>
 <script src="sync.js?v=f881f6bc"></script>
 <script src="firebase-keys.js?v=482e498d"></script>
