@@ -85,6 +85,11 @@
     <div id="ex5"></div>
   </div>
 
+  <div class="exercice-block">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#9d174d;">Ex 6</span> Températures de la semaine</h2>
+    <div id="ex6"></div>
+  </div>
+
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div><div class="footer-levels"><a href="parents.html">Espace parents</a> · <a href="aide.html">Aide élèves</a> · <a href="ressources.html">Ressources gratuites</a> · <a href="a-propos.html">À propos</a></div></footer>
@@ -163,6 +168,13 @@ buildQ([
   { tableau: `<table class="tableau"><tr><th>Mois</th><th>Janvier</th><th>Février</th><th>Mars</th><th>Avril</th></tr><tr><td>Livres lus</td><td>4</td><td>6</td><td>3</td><td>7</td></tr></table>`, q: 'Quel est le nombre moyen de livres lus par mois ?', correct: '5', choices: ['4','5','6','20'] },
   { tableau: `<table class="tableau"><tr><th>Mois</th><th>Janvier</th><th>Février</th><th>Mars</th><th>Avril</th></tr><tr><td>Livres lus</td><td>4</td><td>6</td><td>3</td><td>7</td></tr></table>`, q: 'Pendant combien de mois a-t-on lu au moins 5 livres ?', correct: '2', choices: ['1','2','3','4'] },
 ], 'ex5');
+buildQ([
+  { q: 'Températures à midi : lundi 12 °C, mardi 15 °C, mercredi 9 °C, jeudi 14 °C, vendredi 10 °C. Quel jour a-t-il fait le plus chaud ?', correct: 'mardi', choices: ['lundi', 'mardi', 'mercredi', 'jeudi'] },
+  { q: 'Températures à midi : lundi 12 °C, mardi 15 °C, mercredi 9 °C, jeudi 14 °C, vendredi 10 °C. Quel jour a-t-il fait le plus froid ?', correct: 'mercredi', choices: ['mercredi', 'vendredi', 'lundi', 'mardi'] },
+  { q: 'Températures à midi : lundi 12 °C, mardi 15 °C, mercredi 9 °C, jeudi 14 °C, vendredi 10 °C. Quel est l\'écart entre la plus haute et la plus basse température ?', correct: '6 °C', choices: ['6 °C', '5 °C', '3 °C', '24 °C'] },
+  { q: 'Températures à midi : lundi 12 °C, mardi 15 °C, mercredi 9 °C, jeudi 14 °C, vendredi 10 °C. Combien de jours la température a-t-elle dépassé 11 °C ?', correct: '3', choices: ['2', '3', '4', '5'] },
+  { q: 'Températures à midi : lundi 12 °C, mardi 15 °C, mercredi 9 °C, jeudi 14 °C, vendredi 10 °C. De combien de degrés la température a-t-elle baissé entre jeudi et vendredi ?', correct: '4 °C', choices: ['4 °C', '3 °C', '10 °C', '24 °C'] },
+], 'ex6');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

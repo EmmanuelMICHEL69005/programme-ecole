@@ -102,6 +102,11 @@
     <div id="ex12"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#dc2626">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#dc2626">Ex 13</span> Un mot, plusieurs sens <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex13"></div>
+  </div>
+
   <div style="background:#f5f3ff;border:1px solid #7c3aed55;border-radius:10px;padding:14px 16px;margin:16px 0">
     <div style="font-weight:900;color:#4c1d95;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CE2</div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
@@ -232,6 +237,13 @@ buildQCM([
   { q:'Parmi ces mots, lequel vient juste après « chat » dans l\'ordre alphabétique ?', correct:'chaton', choices:['chaton','chemin','cerise','cheval'] },
   { q:'Quel mot vient en premier dans le dictionnaire ?', correct:'table', choices:['table','tapis','tarte','tasse'] },
 ], 'ex12');
+buildQCM([
+  { card:'"Je mange une glace à la fraise."', q:'Ici, « glace » veut dire…', correct:'un dessert froid', choices:['un dessert froid','un miroir','de l\'eau gelée'] },
+  { card:'"Lina se regarde dans la glace."', q:'Ici, « glace » veut dire…', correct:'un miroir', choices:['un dessert froid','un miroir','de l\'eau gelée'] },
+  { card:'"Le vent fait tomber les feuilles."', q:'Ici, « feuilles » désigne…', correct:'les feuilles des arbres', choices:['les feuilles des arbres','les feuilles de papier','les feuilles de salade'] },
+  { card:'"La souris de l\'ordinateur ne marche plus."', q:'Ici, « souris » désigne…', correct:'un objet pour diriger l\'ordinateur', choices:['un objet pour diriger l\'ordinateur','un petit animal','un jouet en peluche'] },
+  { card:'"Il y a un bouchon sur l\'autoroute."', q:'Ici, « bouchon » veut dire…', correct:'un embouteillage', choices:['un embouteillage','un objet qui ferme une bouteille','un morceau de liège'] },
+], 'ex13');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>

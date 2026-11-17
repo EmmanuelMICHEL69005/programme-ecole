@@ -86,6 +86,11 @@
     <h2 class="ex-title"><span class="ex-badge" style="background:#06b6d4">Ex 12</span> Les noms propres et la majuscule <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
     <div id="ex12"></div>
   </div>
+
+  <div class="exercice-block" style="--accent:#06b6d4">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#06b6d4">Ex 13</span> Il, elle, ils ou elles ? <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex13"></div>
+  </div>
   <div style="background:#f0fdf4;border:1px solid #16a34a55;border-radius:10px;padding:14px 16px;margin:16px 0">
     <div style="font-weight:900;color:#14532d;font-size:0.9rem;margin-bottom:8px">📚 Voir aussi — Français CP</div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
@@ -200,6 +205,13 @@ buildQCM([
   { q:'Quel mot est le nom d\'une ville ?', correct:'Lyon', choices:['Lyon','lion','lait','lapin'] },
   { q:'Quelle phrase est bien écrite ?', correct:'Sami joue.', choices:['Sami joue.','sami joue.','Sami joue','sami Joue.'] },
 ], 'ex12');
+buildQCM([
+  { card:'"Léa chante."', q:'Par quel mot peux-tu remplacer « Léa » ?', correct:'elle', choices:['il','elle','ils','elles'] },
+  { card:'"Le lapin saute."', q:'Par quel mot peux-tu remplacer « Le lapin » ?', correct:'il', choices:['il','elle','ils','elles'] },
+  { card:'"Les garçons courent."', q:'Par quel mot peux-tu remplacer « Les garçons » ?', correct:'ils', choices:['il','elle','ils','elles'] },
+  { card:'"Les filles dansent."', q:'Par quel mot peux-tu remplacer « Les filles » ?', correct:'elles', choices:['il','elle','ils','elles'] },
+  { card:'"Papa cuisine."', q:'Par quel mot peux-tu remplacer « Papa » ?', correct:'il', choices:['il','elle','ils','elles'] },
+], 'ex13');
 </script>
 <script src="sync.js?v=f881f6bc"></script>
 <script src="firebase-keys.js?v=482e498d"></script>
