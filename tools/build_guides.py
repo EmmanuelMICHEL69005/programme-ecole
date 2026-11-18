@@ -35,7 +35,7 @@ FOOTER = ('<footer class="site-footer">Fait avec ❤️ pour Clémence<div class
           + ' · '.join(f'<a href="programme-{l}.html">{L}</a>' for l, L in
                        [('cp', 'CP'), ('ce1', 'CE1'), ('ce2', 'CE2'), ('cm1', 'CM1'), ('cm2', 'CM2'), ('6e', '6e'), ('5e', '5e'), ('4e', '4e'), ('3e', '3e')])
           + '</div><div class="footer-levels"><a href="parents.html">Espace parents</a> · <a href="aide.html">Aide élèves</a> · '
-          '<a href="ressources.html">Ressources gratuites</a> · <a href="a-propos.html">À propos</a></div></footer>')
+          '<a href="exercices-gratuits.html">Exercices gratuits</a> · <a href="ressources.html">Ressources gratuites</a> · <a href="a-propos.html">À propos</a></div></footer>')
 
 SCRIPTS = '\n'.join(f'<script src="{s}"></script>' for s in
                     ['sync.js', 'firebase-keys.js', 'auth.js', 'pages.js', 'gamification.js', 'nav.js', 'related.js', 'seo.js'])

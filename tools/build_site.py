@@ -8,6 +8,8 @@
 - pages.js     : window.EF_PAGES, généré depuis les pages elles-mêmes
                  (niveau, matière, titre, leçon associée). Utilisé par le menu,
                  le lien « Revoir la leçon » et le lien « Faire les exercices ».
+- contenu statique (tools/build_static.py) : introduction, corrigé et « Voir aussi »
+                 écrits dans le HTML des pages, pour les moteurs de recherche.
 - ?v=...       : empreinte du contenu de chaque fichier CSS/JS. Plus de numéros
                  à incrémenter à la main, et un conflit de version se règle en
                  relançant simplement ce script.
@@ -130,6 +132,11 @@ if __name__ == '__main__':
     issues = check(pages)
     if '--check' not in sys.argv:
         wrote = write_pages_js(pages)
+        sys.path.insert(0, os.path.join(ROOT, 'tools'))
+        import build_static   # corrigés, introductions et « Voir aussi » écrits dans le HTML
+        n_static = build_static.run(pages)
+        if n_static:
+            print(f'contenu statique : {n_static} pages mises à jour')
         changed = stamp_versions()   # après pages.js, pour que son empreinte soit à jour
         print(f"pages.js : {len(pages)} pages{' (mis à jour)' if wrote else ''} · versions mises à jour dans {changed} fichiers HTML")
     for i in issues:

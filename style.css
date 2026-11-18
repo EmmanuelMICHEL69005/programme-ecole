@@ -1342,3 +1342,19 @@ body.lvl-college .ex-badge { font-weight: 700; }
 body.lvl-college .feedback-line.fb-ok { font-weight: 700; }
 body.lvl-college ._xpf, body.lvl-college .gs-xp-toast, body.lvl-college .gs-streak-toast { display: none !important; }
 body.lvl-college .site-header .nav-back { font-weight: 700; }
+
+/* ===== CONTENU STATIQUE (tools/build_static.py) ===== */
+.ex-intro { background: #fff; border: 2px solid #e5e7eb; border-radius: var(--rayon); padding: 14px 18px; margin-bottom: 22px; font-size: 0.86rem; line-height: 1.6; color: #374151; }
+.ex-intro p + p { margin-top: 8px; }
+.ex-intro-links { font-weight: 800; }
+.ex-intro a, .ex-corrige a { color: #4f46e5; }
+.ex-corrige { margin: 32px 0 0; background: #fff; border: 2px solid #e5e7eb; border-radius: var(--rayon); padding: 16px 18px; font-size: 0.85rem; color: #374151; }
+.ex-corrige h2 { font-size: 1.05rem; font-weight: 900; color: var(--texte); margin-bottom: 6px; }
+.ex-corrige > p { margin-bottom: 10px; }
+.ex-corrige details { border-top: 1px solid #eef0f3; padding: 8px 0; }
+.ex-corrige summary { cursor: pointer; font-weight: 800; color: var(--texte); }
+.cr-list { margin: 8px 0 4px 1.3em; line-height: 1.55; }
+.cr-list li { margin: 3px 0; }
+.cr-list ul { margin: 2px 0 4px 1.1em; list-style: disc; }
+.cr-a { color: #166534; white-space: nowrap; }
+.cr-x { display: block; color: #6b7280; font-size: 0.8rem; }

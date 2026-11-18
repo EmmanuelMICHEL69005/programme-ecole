@@ -268,6 +268,7 @@
   });
   html += '</div></section>';
 
+  // Le bloc est normalement déjà écrit dans le HTML par tools/build_site.py : on ne le double pas.
   var main = document.querySelector('main');
-  if (main) main.insertAdjacentHTML('beforeend', html);
+  if (main && !document.querySelector('.related-section')) main.insertAdjacentHTML('beforeend', html);
 })();
