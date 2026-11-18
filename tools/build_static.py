@@ -140,21 +140,22 @@ def build_exercise_page(page_html, p, exs):
         if t and low not in GENERIC_TITLES and low not in seen:
             seen.add(low)
             first = low.split()[0].strip(',;:')
-            keep = p['subject'] == 'anglais' or first in KEEP_CAP or t[:2].isupper()
+            keep = first in KEEP_CAP or t[:2].isupper()
             skills.append(t if keep else t[0].lower() + t[1:])
     n_ex = len(blocks)
     s = 's' if n_ex > 1 else ''
     q_part = f', soit {n_q} questions' if n_q > n_ex else ''
-    skills_txt = html.escape(', '.join(skills[:8]) + ('…' if len(skills) > 8 else ''), quote=False)
+    skills_txt = html.escape(', '.join(skills[:8]).rstrip(' ?!.') + ('…' if len(skills) > 8 else '.'), quote=False)
     intro = (f'<p><strong>{n_ex} exercice{s} interactif{s} {subj} {level}</strong>{q_part}'
-             + (f' : {skills_txt}.' if skills else '.')
+             + (f' : {skills_txt}' if skills else '.')
              + ' Chaque réponse est corrigée tout de suite, avec une explication en cas d’erreur.'
              + ' Gratuit, sans inscription et sans publicité.</p>')
     links = []
     if p.get('lesson'):
         links.append(f'<a href="{p["lesson"]}">📖 Revoir la leçon</a>')
     if p['level'] and p['theme'] not in ('eps-cycle2', 'eps-cycle3'):
-        links.append(f'<a href="programme-{p["level"]}.html">🗂️ Programme du {LEVEL_LABEL[p["level"]]}</a>')
+        lvl_lab = LEVEL_LABEL[p['level']]
+        links.append(f'<a href="programme-{p["level"]}.html">🗂️ Programme {"de" if lvl_lab[0].isdigit() else "du"} {lvl_lab}</a>')
     if keyed:
         links.append('<a href="#corrige">✅ Corrigé pour les parents</a>')
     intro_html = ('<!-- ef:intro --><section class="ex-intro">' + intro
