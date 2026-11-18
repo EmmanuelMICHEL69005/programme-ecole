@@ -113,6 +113,11 @@
     <div id="ex8"></div>
   </div>
 
+  <div class="exercice-block" style="--accent:#ec4899">
+    <h2 class="ex-title"><span class="ex-badge" style="background:#ec4899">Ex 9</span> Calculer un périmètre <span style="margin-left:auto;font-size:0.8rem;color:#5f6472;font-weight:700">QCM</span></h2>
+    <div id="ex9"></div>
+  </div>
+
 </main>
 
 <footer class="site-footer">Fait avec ❤️ pour Clémence<div class="footer-levels"><a href="programme-cp.html">CP</a> · <a href="programme-ce1.html">CE1</a> · <a href="programme-ce2.html">CE2</a> · <a href="programme-cm1.html">CM1</a> · <a href="programme-cm2.html">CM2</a> · <a href="programme-6e.html">6e</a> · <a href="programme-5e.html">5e</a> · <a href="programme-4e.html">4e</a> · <a href="programme-3e.html">3e</a></div><div class="footer-levels"><a href="parents.html">Espace parents</a> · <a href="aide.html">Aide élèves</a> · <a href="ressources.html">Ressources gratuites</a> · <a href="a-propos.html">À propos</a></div></footer>
@@ -184,6 +189,13 @@ buildQCM([
   { q:'Une bouteille contient 1 L. Je verse 25 cL dans un verre. Combien reste-t-il ?', correct:'75 cL', choices:['75 cL','24 cL','85 cL','15 cL'] },
   { q:'Un paquet contient 1 kg de farine. Maman utilise 250 g. Combien reste-t-il ?', correct:'750 g', choices:['750 g','850 g','1 250 g','250 g'] },
 ], 'ex8');
+buildQCM([
+  { q:'Un carré a des côtés de 5 cm. Quel est son périmètre ?', correct:'20 cm', choices:['20 cm','25 cm','10 cm','15 cm'] },
+  { q:'Un rectangle mesure 7 cm de long et 3 cm de large. Quel est son périmètre ?', correct:'20 cm', choices:['10 cm','21 cm','20 cm','17 cm'] },
+  { q:'Un triangle a des côtés de 4 cm, 5 cm et 6 cm. Quel est son périmètre ?', correct:'15 cm', choices:['14 cm','15 cm','16 cm','10 cm'] },
+  { q:'Un carré a un périmètre de 12 cm. Combien mesure un côté ?', correct:'3 cm', choices:['4 cm','6 cm','3 cm','48 cm'] },
+  { q:'Un jardin rectangulaire mesure 20 m sur 10 m. Combien de mètres de clôture faut-il pour en faire le tour ?', correct:'60 m', choices:['30 m','200 m','40 m','60 m'] },
+], 'ex9');
 </script>
 
 <script src="sync.js?v=f881f6bc"></script>
