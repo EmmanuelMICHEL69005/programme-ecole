@@ -25,7 +25,8 @@ CLUSTERS = [
     ('parents', 'Méthode et révisions', ['reviser-un-controle', 'reviser-pendant-les-vacances']),
     ('parents', "Comprendre l'école", ['cned-cours-par-correspondance-primaire']),
     ('aide', 'Maths', ['je-ne-comprends-pas-les-fractions', 'apprendre-les-tables-de-multiplication', 'resoudre-un-probleme-de-maths',
-                       'poser-une-division', 'proportionnalite-explication', 'theoreme-de-pythagore']),
+                       'poser-une-division', 'proportionnalite-explication', 'theoreme-de-pythagore',
+                       'je-ne-comprends-pas-les-nombres-decimaux']),
     ('aide', 'Français', ['homophones-a-a-et-est-son-sont', 'accord-du-participe-passe']),
 ]
 BY_SLUG = {a['slug']: a for a in ARTICLES}

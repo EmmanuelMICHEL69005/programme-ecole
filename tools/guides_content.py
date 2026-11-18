@@ -45,6 +45,12 @@ S = {
                   'https://www.cned.fr/l-actualite-de-la-formation/ecole-primaire-college-et-lycee-au-cned-le-mode-d-emploi'),
     'cned_oblig': ("Cned — Informations sur l'obligation scolaire",
                    'https://www.cned.fr/l-actualite-de-la-formation/informations-sur-lobligation-scolaire'),
+    'prog_c3': ("Ministère de l'Éducation nationale — Programme de mathématiques pour le cycle 3 (annexe de l'arrêté du 10 avril 2025, Bulletin officiel n° 16 du 17 avril 2025)",
+                'https://www.education.gouv.fr/sites/default/files/ensel620_annexe2-v2.pdf'),
+    'bordeaux_c3': ("Académie de Bordeaux — Le programme de cycle 3 à partir de 2025",
+                    'https://ent2d.ac-bordeaux.fr/disciplines/mathematiques/le-programme-de-cycle-3-a-partir-de-2025/'),
+    'eval_cm2_dec': ("Éduscol — Évaluations nationales de début de CM2, fiche d'intervention mathématiques « Comparer des nombres décimaux » (août 2026)",
+                     'https://eduscol.education.gouv.fr/sites/default/files/document/2026evaluationdebutcm2mathematiquesficheinterventioncomparernombresdecimaux-129472.pdf'),
 }
 
 def stat(big, text, src):
@@ -1127,6 +1133,118 @@ ARTICLES.append(dict(
          ('ressources.html', 'Fiche Pythagore à imprimer', 'Avec corrigé'),
          ('aide.html', "Toute l'aide aux élèves", 'Maths et français')],
     sources=['programmes'],
+))
+
+ARTICLES.append(dict(
+    slug='je-ne-comprends-pas-les-nombres-decimaux', hub='aide', icon='🔟',
+    kicker='Aide élèves · Maths',
+    title="Je ne comprends pas les nombres décimaux : dixièmes, centièmes et virgule",
+    seo_title="Nombres décimaux expliqués simplement (CM1-6e)",
+    description="Les nombres décimaux expliqués simplement : dixièmes, centièmes, rôle de la virgule, comparer 2,5 et 2,45 sans se tromper. Pièges et exercices corrigés.",
+    intro="2,45 est-il plus grand que 2,5 ? Si tu hésites, tu n'es pas seul. Un nombre décimal, ce n'est pas deux nombres séparés par une virgule : c'est des unités, plus des morceaux d'unité. On reprend tout depuis le début.",
+    minutes=6,
+    updated='2026-11-18', updated_fr='18 novembre 2026',
+    tldr=[
+        "Un <strong>dixième</strong>, c'est une unité partagée en 10 parts égales : 1/10 = <strong>0,1</strong>. Un <strong>centième</strong>, c'est un dixième partagé en 10 : 1/100 = <strong>0,01</strong>.",
+        "La virgule se place <strong>juste après le chiffre des unités</strong> : dans 35,78, il y a 35 unités, 7 dixièmes et 8 centièmes.",
+        "Pour comparer, on compare <strong>rang par rang</strong> : d'abord les unités, puis les dixièmes, puis les centièmes. 2,5 &gt; 2,45 car 5 dixièmes &gt; 4 dixièmes.",
+        "Piège : le nombre <strong>le plus long n'est pas forcément le plus grand</strong> (1,9 &lt; 2).",
+        "Un zéro <strong>à la fin</strong> ne change rien (2,5 = 2,50), mais un zéro <strong>juste après la virgule</strong>, si (2,05 ≠ 2,5).",
+    ],
+    body=f"""
+<h2>C'est quoi, un dixième et un centième ?</h2>
+<p>Prends une unité (une barre de chocolat, 1 mètre, 1 euro…) et partage-la en <strong>10 parts égales</strong> : chaque part est <strong>un dixième</strong>. On l'écrit 1/10 ou <strong>0,1</strong>.</p>
+<p>Partage maintenant un dixième en 10 parts égales : chaque petite part est <strong>un centième</strong> de l'unité. On l'écrit 1/100 ou <strong>0,01</strong>. Au CM2, on va encore plus loin : un centième partagé en 10 donne <strong>un millième</strong> (1/1 000 = 0,001).</p>
+<ul>
+<li>10 dixièmes = 1 unité ;</li>
+<li>10 centièmes = 1 dixième ;</li>
+<li>100 centièmes = 1 unité.</li>
+</ul>
+<div class="g-tip"><strong>Avec l'argent :</strong> 1 € = 100 centimes. Une pièce de 1 centime, c'est 0,01 € (un centième d'euro) ; une pièce de 10 centimes, c'est 0,10 €, soit un dixième d'euro. Donc 2,45 €, c'est 2 euros et 45 centimes.</div>
+<div class="g-warn"><strong>Ne confonds pas :</strong> une <strong>dizaine</strong>, c'est 10 unités (à gauche de la virgule). Un <strong>dixième</strong>, c'est une unité partagée en 10 (à droite de la virgule). Même chose pour <strong>centaine</strong> (100 unités) et <strong>centième</strong>.</div>
+
+<h2>À quoi sert la virgule ?</h2>
+<p>La virgule est une façon rapide d'écrire des unités et des morceaux d'unité. Elle se place <strong>juste après le chiffre des unités</strong>. Ainsi, 35,78 veut dire : 35 + 7/10 + 8/100.</p>
+<div class="g-table-wrap"><table class="g-table">
+<thead><tr><th>Dizaines</th><th>Unités</th><th>,</th><th>Dixièmes</th><th>Centièmes</th></tr></thead>
+<tbody><tr><td>3</td><td>5</td><td>,</td><td>7</td><td>8</td></tr></tbody></table></div>
+<p>Chaque chiffre a une valeur qui dépend de sa place : dans 35,78, le 7 vaut 7 dixièmes et le 8 vaut 8 centièmes.</p>
+
+<h2>Comment lire un nombre décimal ?</h2>
+<p>Dans la vie de tous les jours, on dit souvent « deux virgule quarante-cinq ». Pour bien comprendre, entraîne-toi aussi à le dire avec les unités :</p>
+<ul>
+<li>2,45 : « 2 unités et 45 centièmes », ou « 2 unités, 4 dixièmes et 5 centièmes » ;</li>
+<li>0,8 : « 8 dixièmes » ;</li>
+<li>4,36 : « 4 unités et 36 centièmes », c'est aussi 436 centièmes.</li>
+</ul>
+<p>Dire les nombres de cette façon t'aide pour la suite, surtout pour les comparer.</p>
+
+<h2>Comment comparer 2,5 et 2,45 ?</h2>
+<p>On compare <strong>rang par rang</strong>, en partant de la gauche :</p>
+<ol class="g-steps">
+<li><strong>Les unités :</strong> 2 et 2, c'est pareil. On continue.</li>
+<li><strong>Les dixièmes :</strong> 2,5 a <strong>5</strong> dixièmes, 2,45 n'en a que <strong>4</strong>. 5 dixièmes, c'est plus que 4 dixièmes.</li>
+<li><strong>Conclusion :</strong> <strong>2,5 &gt; 2,45</strong>. Pas besoin de regarder les centièmes.</li>
+</ol>
+<p>Tu peux aussi le vérifier avec l'argent : 2,50 € (2 euros et 50 centimes), c'est plus que 2,45 € (2 euros et 45 centimes). Et 5 dixièmes, c'est la même chose que 50 centièmes : 50 centièmes, c'est plus que 45 centièmes.</p>
+<div class="g-warn"><strong>Piège n° 1 : comparer les chiffres après la virgule comme des nombres entiers.</strong> Dans 5,3 et 5,05, on peut être tenté de se dire « 3 est plus petit que 5 ». Faux ! 5,3, c'est 5 unités et <strong>3 dixièmes</strong> ; 5,05, c'est 5 unités, <strong>0 dixième</strong> et 5 centièmes. Donc <strong>5,3 &gt; 5,05</strong>.</div>
+<div class="g-warn"><strong>Piège n° 2 : croire que le nombre le plus long est le plus grand.</strong> C'est vrai pour les nombres entiers, mais pas pour les décimaux. 1,9 a plus de chiffres que 2, et pourtant <strong>1,9 &lt; 2</strong> : 1,9, c'est même moins que 2 unités.</div>
+
+<h3>Ranger des nombres décimaux</h3>
+<p><strong>Exemple :</strong> range dans l'ordre croissant 3,7 ; 3,54 ; 3,07 ; 3,5.</p>
+<p>Ils ont tous 3 unités. On regarde les dixièmes : 0 (dans 3,07), puis 5 (dans 3,5 et 3,54), puis 7 (dans 3,7). Entre 3,5 et 3,54, on regarde les centièmes : 0 et 4. Résultat : <strong>3,07 &lt; 3,5 &lt; 3,54 &lt; 3,7</strong>.</p>
+
+<h2>Le zéro change-t-il la valeur d'un nombre ?</h2>
+<ul>
+<li><strong>Un zéro à la fin</strong>, après la virgule, ne change rien : 2,5 = 2,50, car 5 dixièmes = 50 centièmes. Sur une étiquette, 2,50 € et 2,5 €, c'est le même prix.</li>
+<li><strong>Un zéro juste après la virgule</strong> change tout : 2,05 (2 unités et 5 centièmes) n'est pas égal à 2,5 (2 unités et 5 dixièmes).</li>
+</ul>
+
+<h2>Placer un nombre décimal sur une droite graduée</h2>
+<p>Entre 2 et 3, si on trace 10 petits intervalles égaux, chaque graduation avance d'<strong>un dixième</strong> : 2,1 ; 2,2 ; 2,3… jusqu'à 3. Le nombre 2,45 se trouve entre 2,4 et 2,5, <strong>exactement au milieu</strong>.</p>
+<p>La droite graduée aide aussi à comparer : 16,18 est tout près de 16, alors que 16,8 est plus près de 17. Donc <strong>16,8 &gt; 16,18</strong>.</p>
+
+<h2>Calculer avec des nombres décimaux</h2>
+<h3>Additionner et soustraire</h3>
+<p>On pose l'opération en <strong>alignant les virgules</strong>, pour que les unités soient sous les unités, les dixièmes sous les dixièmes, etc. Si besoin, on complète avec des zéros à la fin.</p>
+<ul>
+<li>2,5 + 1,25 : on écrit 2,50 + 1,25 = <strong>3,75</strong>.</li>
+<li>12,6 − 4,25 : on écrit 12,60 − 4,25 = <strong>8,35</strong>.</li>
+</ul>
+<h3>Multiplier ou diviser par 10</h3>
+<p>Quand on multiplie par 10, chaque chiffre prend une valeur <strong>10 fois plus grande</strong> : les dixièmes deviennent des unités, les centièmes des dixièmes. Ainsi, 3,45 × 10 = <strong>34,5</strong>. Et dans l'autre sens, 34,5 ÷ 10 = <strong>3,45</strong>.</p>
+<div class="g-tip"><strong>Vérifie toujours avec un ordre de grandeur :</strong> 3,45 × 10, c'est à peu près 3 × 10 = 30. Un résultat comme 3,450 ou 345 est donc faux.</div>
+
+<h2>En quelle classe apprend-on les nombres décimaux ?</h2>
+<p>Tu as d'abord rencontré des nombres à virgule avec l'argent, avant le CM1. Ensuite, d'après le programme officiel de mathématiques du cycle 3 :</p>
+<ul>
+<li><strong>au CM1</strong>, on étudie les dixièmes et les centièmes, d'abord avec des fractions (comme 7/10), puis avec la virgule ;</li>
+<li><strong>au CM2</strong>, on va jusqu'aux <strong>millièmes</strong> ;</li>
+<li><strong>en 6e</strong>, on consolide tout cela, on écrit aussi des nombres sous forme de pourcentage et on apprend à multiplier deux nombres décimaux.</li>
+</ul>
+{quote("Au CM1, les nombres décimaux rencontrés ne vont pas au-delà des centièmes et s'écrivent donc avec au plus deux chiffres après la virgule.", "Programme de mathématiques pour le cycle 3, Bulletin officiel n° 16 du 17 avril 2025")}
+<p>Si les fractions te posent encore problème, commence par notre explication <a href="je-ne-comprends-pas-les-fractions.html">Je ne comprends pas les fractions</a> : les dixièmes et les centièmes sont des fractions particulières.</p>
+
+<h2>Je m'entraîne</h2>
+<p>Choisis ta classe. Relis la leçon si tu as un doute, puis fais les exercices : la correction est immédiate.</p>
+<div class="g-cta">
+<a href="decimaux-ce2.html">Nombres décimaux CE2<small>Premiers pas</small></a>
+<a href="decimaux-cm1.html">Nombres décimaux CM1<small>Dixièmes, centièmes, comparer</small></a>
+<a href="decimaux-cm2.html">Nombres décimaux CM2<small>Millièmes, ranger, calculer</small></a>
+<a href="nombres-6e.html">Nombres et calculs 6e<small>Exercices corrigés</small></a>
+</div>
+<p>Leçons : <a href="cours-decimaux-cm1.html">cours CM1</a> · <a href="cours-decimaux-cm2.html">cours CM2</a> · <a href="cours-nombres-6e.html">cours 6e</a>. Sur papier : la <a href="ressources.html">fiche nombres décimaux CM2 avec corrigé</a>.</p>
+""",
+    faq=[
+        ("Comment savoir quel nombre décimal est le plus grand ?", "Compare rang par rang en partant de la gauche : d'abord les unités, puis les dixièmes, puis les centièmes. Dès qu'un chiffre est plus grand au même rang, le nombre est plus grand. Par exemple, 2,5 > 2,45 car 5 dixièmes est plus grand que 4 dixièmes."),
+        ("Est-ce que 2,5 et 2,50 sont égaux ?", "Oui. 5 dixièmes, c'est la même chose que 50 centièmes. Un zéro ajouté à la fin, après la virgule, ne change pas la valeur. Mais 2,05 n'est pas égal à 2,5."),
+        ("Quelle est la différence entre une dizaine et un dixième ?", "Une dizaine, c'est 10 unités. Un dixième, c'est une unité partagée en 10 parts égales, donc 0,1. Il faut 100 dixièmes pour faire une dizaine."),
+        ("Comment multiplier un nombre décimal par 10 ?", "Chaque chiffre prend une valeur 10 fois plus grande : les dixièmes deviennent des unités. Par exemple, 3,45 × 10 = 34,5. Vérifie avec un ordre de grandeur : environ 3 × 10 = 30."),
+    ],
+    cta=[('decimaux-cm1.html', 'Exercices décimaux CM1', 'Corrigés tout de suite'),
+         ('ressources.html', 'Fiche nombres décimaux à imprimer', 'Avec corrigé'),
+         ('je-ne-comprends-pas-les-fractions.html', 'Comprendre les fractions', "L'explication simple")],
+    sources=['prog_c3', 'bordeaux_c3', 'eval_cm2_dec'],
 ))
 
 # ════════════════════════════════════════════════════════════════════
