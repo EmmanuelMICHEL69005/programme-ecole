@@ -206,6 +206,104 @@ def build_exercise_page(page_html, p, exs):
     out = re.sub(r'(<meta name="description" content=")[^"]*(")', lambda m: m.group(1) + attr + m.group(2), out, count=1)
     out = re.sub(r'(<meta property="og:description" content=")[^"]*(")', lambda m: m.group(1) + attr + m.group(2), out, count=1)
     out = re.sub(r'(<meta property="og:title" content=")[^"]*(")', lambda m: m.group(1) + tattr + m.group(2), out, count=1)
+    p['_skills'], p['_desc'], p['_name'] = skills, desc, name
+    return out
+
+
+# ── Fil d'Ariane, H1 et données structurées (toutes les pages sauf l'accueil) ──────────
+BASE = 'https://ecolefacile.fr'
+SKIP_CRUMBS = {'index.html', '404.html', 'profile.html'}
+SUBJECT_NAME = {'maths': 'Mathématiques', 'francais': 'Français', 'histoire-geo': 'Histoire-géographie',
+                'anglais': 'Anglais', 'eps': 'Éducation physique et sportive'}
+H1_CTX = re.compile(r'<span class="h1-ctx">.*?</span>\s*', re.S)
+
+
+def h1_plain(page_html):
+    m = re.search(r'<h1[^>]*>(.*?)</h1>', page_html, re.S)
+    return plain(H1_CTX.sub('', m.group(1))) if m else ''
+
+
+def guide_hubs():
+    try:
+        from guides_content import ARTICLES
+        return {a['slug'] + '.html': a['hub'] for a in ARTICLES}
+    except Exception:
+        return {}
+
+
+def crumbs_for(f, p, h1, hubs):
+    """[(libellé, lien ou None)] du fil d'Ariane."""
+    c = [('Accueil', 'index.html')]
+    if p:
+        if p['theme'] in ('eps-cycle2', 'eps-cycle3'):
+            c.append(('EPS cycle ' + p['theme'][-1], None))
+            return c
+        if p['level']:
+            c.append((LEVEL_LABEL[p['level']], f'programme-{p["level"]}.html'))
+        if p['kind'] == 'cours':
+            c.append(('Leçons', 'cours.html'))
+    elif f in hubs:
+        c.append(('Espace parents', 'parents.html') if hubs[f] == 'parents' else ('Aide élèves', 'aide.html'))
+    c.append((h1 or f[:-5], None))
+    return c
+
+
+def crumbs_html(c):
+    parts = []
+    for i, (label, href) in enumerate(c):
+        sep = '<span class="ef-crumb-sep" aria-hidden="true">›</span>' if i else ''
+        lab = html.escape(label, quote=False)
+        parts.append(sep + (f'<a href="{href}">{lab}</a>' if href else f'<span aria-current="page">{lab}</span>'))
+    return '<nav class="ef-crumbs" aria-label="Fil d’Ariane">' + ''.join(parts) + '</nav>'
+
+
+def schema_json(f, p, c):
+    items = [{'@type': 'ListItem', 'position': i + 1, 'name': label,
+              'item': BASE + '/' + (href if href and href != 'index.html' else (f if not href else ''))}
+             for i, (label, href) in enumerate(c)]
+    out = [{'@context': 'https://schema.org', '@type': 'BreadcrumbList', 'itemListElement': items}]
+    if p and p['kind'] in ('exercices', 'cours'):
+        lvl = LEVEL_LABEL.get(p['level'] or '', '')
+        if p['theme'] in ('eps-cycle2', 'eps-cycle3'):
+            lvl = 'Cycle ' + p['theme'][-1]
+        res = {'@context': 'https://schema.org',
+               '@type': 'Quiz' if p['kind'] == 'exercices' else 'LearningResource',
+               'name': p.get('_name') or c[-1][0], 'url': f'{BASE}/{f}', 'inLanguage': 'fr',
+               'learningResourceType': 'Exercices interactifs corrigés' if p['kind'] == 'exercices' else 'Leçon',
+               'educationalLevel': lvl, 'about': SUBJECT_NAME.get(p['subject'], ''),
+               'isAccessibleForFree': True,
+               'provider': {'@type': 'Organization', 'name': 'École Facile', 'url': BASE + '/'}}
+        if p.get('_desc'):
+            res['description'] = p['_desc']
+        if p.get('_skills'):
+            res['teaches'] = p['_skills'][:10]
+        if p.get('lesson'):
+            res['isBasedOn'] = f'{BASE}/{p["lesson"]}'
+        out.append(res)
+    return ''.join('<script type="application/ld+json" data-ef-static>' + json.dumps(o, ensure_ascii=False) + '</script>' for o in out)
+
+
+def apply_crumbs(f, out, p, hubs):
+    """Fil d'Ariane visible, JSON-LD, mention du niveau dans le H1 et titre des leçons."""
+    out = re.sub(r'\n?<!-- ef:crumbs -->.*?<!-- /ef:crumbs -->', '', out, flags=re.S)
+    out = re.sub(r'\n?<!-- ef:schema -->.*?<!-- /ef:schema -->', '', out, flags=re.S)
+    out = H1_CTX.sub('', out, count=1)
+    h1 = h1_plain(out)
+    if p and p['kind'] in ('exercices', 'cours') and p['theme'] not in ('eps-cycle2', 'eps-cycle3'):
+        lvl = LEVEL_LABEL.get(p['level'] or '', '')
+        ctx = ('Exercices' if p['kind'] == 'exercices' else 'Leçon') + (f' · {lvl}' if lvl else '')
+        out = re.sub(r'(<h1[^>]*>)', lambda m: m.group(1) + f'<span class="h1-ctx">{ctx}</span> ', out, count=1)
+        if p['kind'] == 'cours':
+            name = h1 if (not lvl or lvl.lower() in h1.lower()) else f'{h1} {lvl}'
+            title = f'{name} : cours et exemples | École Facile'
+            t_esc = html.escape(title, quote=False)
+            out = re.sub(r'<title>.*?</title>', lambda m: f'<title>{t_esc}</title>', out, count=1, flags=re.S)
+            out = re.sub(r'(<meta property="og:title" content=")[^"]*(")', lambda m: m.group(1) + t_esc.replace('"', '&quot;') + m.group(2), out, count=1)
+            p['_name'] = name
+    c = crumbs_for(f, p, h1, hubs)
+    if '</header>' in out:
+        out = out.replace('</header>', '</header>\n<!-- ef:crumbs -->' + crumbs_html(c) + '<!-- /ef:crumbs -->', 1)
+    out = out.replace('</head>', '<!-- ef:schema -->' + schema_json(f, p, c) + '<!-- /ef:schema -->\n</head>', 1)
     return out
 
 
@@ -219,23 +317,33 @@ def node_json(script, files):
 
 
 def run(pages):
-    """Met à jour les pages ; renvoie le nombre de fichiers modifiés (ou None sans Node)."""
-    if not shutil.which('node'):
-        print('· Node.js absent : contenu statique (corrigés, « Voir aussi ») non régénéré')
-        return None
-    ex_pages = [p for p in pages if p['kind'] == 'exercices']
-    data = node_json('tools/extract_exercises.mjs', [p['href'] for p in ex_pages])
+    """Met à jour les pages ; renvoie le nombre de fichiers modifiés."""
     import os
-    with_related = [f for f in sorted(os.listdir('.')) if f.endswith('.html')
-                    and 'src="related.js' in open(f, encoding='utf-8').read()]
-    related = node_json('tools/render_related.mjs', with_related)
+    node = bool(shutil.which('node'))
+    if not node:
+        print('· Node.js absent : corrigés et « Voir aussi » non régénérés (fil d’Ariane et données structurées : oui)')
+    ex_pages = [p for p in pages if p['kind'] == 'exercices']
+    data = node_json('tools/extract_exercises.mjs', [p['href'] for p in ex_pages]) if node else {}
+    html_files = [f for f in sorted(os.listdir('.')) if f.endswith('.html')]
+    with_related = [f for f in html_files if 'src="related.js' in open(f, encoding='utf-8').read()]
+    with_seo = [f for f in html_files if 'src="seo.js' in open(f, encoding='utf-8').read() and f not in SKIP_CRUMBS]
+    related = node_json('tools/render_related.mjs', with_related) if node else {}
+    hubs = guide_hubs()
     changed = 0
     by_href = {p['href']: p for p in ex_pages}
-    for f in sorted(set(by_href) | set(with_related)):
+    reg = {p['href']: p for p in pages}
+    for f in sorted(set(by_href) | set(with_related) | set(with_seo)):
         src = open(f, encoding='utf-8').read()
         out = src
-        if f in by_href:
+        if f in by_href and node:
             out = build_exercise_page(out, by_href[f], data.get(f, {}))
+        if f in with_seo:
+            out = apply_crumbs(f, out, reg.get(f), hubs)
+        if not node:
+            if out != src:
+                open(f, 'w', encoding='utf-8').write(out)
+                changed += 1
+            continue
         out = re.sub(r'<!-- ef:related -->.*?<!-- /ef:related -->\n?', '', out, flags=re.S)
         if f in related:
             out = out.replace('</main>', '<!-- ef:related -->' + related[f] + '<!-- /ef:related -->\n</main>', 1)

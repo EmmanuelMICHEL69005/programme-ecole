@@ -3,6 +3,8 @@
 
   var BASE = 'https://ecolefacile.fr';
   var fname = location.pathname.split('/').pop() || 'index.html';
+  // Fil d'Ariane et données structurées sont normalement écrits dans le HTML par tools/build_site.py.
+  if (fname === 'index.html' || document.querySelector('script[data-ef-static]')) return;
 
   // ── Breadcrumb mapping ────────────────────────────────────────
   var LEVELS = {

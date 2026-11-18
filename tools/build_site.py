@@ -50,7 +50,10 @@ def split_name(base):
 
 def h1_of(text):
     m = re.search(r'<h1[^>]*>(.*?)</h1>', text, re.S)
-    return html.unescape(re.sub(r'<[^>]+>', '', m.group(1))).strip() if m else ''
+    if not m:
+        return ''
+    inner = re.sub(r'<span class="h1-ctx">.*?</span>\s*', '', m.group(1), flags=re.S)   # « Exercices · CE1 » ajouté par build_static
+    return html.unescape(re.sub(r'<[^>]+>', '', inner)).strip()
 
 def build_registry():
     pages, lessons_from_programme = [], {}

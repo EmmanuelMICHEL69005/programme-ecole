@@ -1358,3 +1358,4 @@ body.lvl-college .site-header .nav-back { font-weight: 700; }
 .cr-list ul { margin: 2px 0 4px 1.1em; list-style: disc; }
 .cr-a { color: #166534; white-space: nowrap; }
 .cr-x { display: block; color: #6b7280; font-size: 0.8rem; }
+.h1-ctx { display: block; font-size: 0.55em; font-weight: 800; letter-spacing: 0.4px; text-transform: uppercase; opacity: 0.85; margin-bottom: 2px; }
