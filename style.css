@@ -1359,3 +1359,11 @@ body.lvl-college .site-header .nav-back { font-weight: 700; }
 .cr-a { color: #166534; white-space: nowrap; }
 .cr-x { display: block; color: #6b7280; font-size: 0.8rem; }
 .h1-ctx { display: block; font-size: 0.55em; font-weight: 800; letter-spacing: 0.4px; text-transform: uppercase; opacity: 0.85; margin-bottom: 2px; }
+
+/* Version « papier » des exercices, écrite dans le HTML (visible sans JavaScript) */
+.ex-static { margin: 6px 0 4px; padding-left: 1.4em; line-height: 1.5; }
+.ex-static > li { margin: 0 0 10px; }
+.exs-choices { list-style: none; padding: 0; margin: 4px 0 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.exs-choices > li { border: 1px solid #d5dcf2; border-radius: 8px; padding: 2px 10px; background: #f8f9fd; font-size: .95em; }
+.exs-hint { color: #6b7280; font-size: .9em; }
+.js .ex-static { display: none; }

@@ -112,6 +112,68 @@ def item_html(ex, it):
     return ''
 
 
+def _alpha(vals):
+    """Ordre alphabétique stable : ne trahit pas la bonne réponse (souvent en tête dans les données)."""
+    return sorted(vals, key=lambda v: plain(v).lower())
+
+
+def question_html(ex, it):
+    """Version « papier » d'une question, sans la réponse (visible sans JavaScript)."""
+    t = ex['type']
+    if t in ('qcm', 'pb'):
+        q = join_q(text(it.get('enonce')), text(it.get('formule')), text(it.get('q') or it.get('question')), text(it.get('card')))
+        if it.get('tableau'):
+            q += ' ' + text(it['tableau'])
+        ch = it.get('choices') or []
+        opts = ''.join(f'<li>{text(c)}</li>' for c in _alpha([str(c) for c in ch]))
+        return f'<li>{q}' + (f'<ul class="exs-choices">{opts}</ul>' if opts else '') + '</li>'
+    if t == 'vf':
+        q = join_q(text(it.get('enonce')), text(it.get('q')), text(it.get('card')))
+        return f'<li>{q} <span class="exs-hint">Vrai ou faux ?</span></li>'
+    if t == 'ordre':
+        vals = ' · '.join(text(v) for v in _alpha([str(v) for v in it.get('items', [])]))
+        return f'<li>{text(it.get("q")) or "Remets dans l’ordre."}<ul class="exs-choices"><li>{vals}</li></ul></li>'
+    if t == 'paires':
+        pairs = it.get('pairs') or ([[it['left'], it['right']]] if 'left' in it else [])
+        left = ' · '.join(text(a) for a, _ in pairs)
+        right = ' · '.join(text(b) for b in _alpha([str(b) for _, b in pairs]))
+        return (f'<li>{text(it.get("q")) or "Relie chaque élément à celui qui lui correspond."}'
+                f'<ul class="exs-choices"><li>{left}</li><li>{right}</li></ul></li>')
+    if t == 'tri':
+        cats = ' / '.join(f'<strong>{text(c)}</strong>' for c in it.get('cats', []))
+        vals = ' · '.join(text(x.get('v')) for x in sorted(it.get('items', []), key=lambda x: plain(x.get('v')).lower()))
+        return f'<li>{text(it.get("q"))} ({cats})<ul class="exs-choices"><li>{vals}</li></ul></li>'
+    if t == 'op':
+        return f'<li>{it.get("a")} {OPS.get(ex.get("op"), "?")} {it.get("b")} = ?</li>'
+    return ''
+
+
+def insert_questions(out, keyed):
+    """Écrit les questions juste avant chaque conteneur d'exercice vide (<div id="exN"></div>).
+    La liste est masquée par CSS dès que JavaScript tourne (classe .js sur <html>)."""
+    out = re.sub(r'<!-- ef:q -->.*?<!-- /ef:q -->', '', out, flags=re.S)
+    n = 0
+    for _, k, ex in keyed:
+        items = ''.join(question_html(ex, it) for it in short_paires(ex))
+        if not items:
+            continue
+        cands = [k] + ([f'ex{k[3:]}-container', f'ex{k[3:]}'] if re.fullmatch(r'tab\d+', k) else [])
+        m = None
+        for c in cands:
+            m = re.search(r'<div\b[^>]*\bid="' + re.escape(c) + r'"[^>]*>\s*</div>', out)
+            if m:
+                break
+        if not m:
+            continue
+        block = f'<!-- ef:q --><ol class="ex-static">{items}</ol><!-- /ef:q -->'
+        out = out[:m.start()] + block + out[m.start():]
+        n += 1
+    return out, n
+
+
+JS_FLAG = '<!-- ef:js --><script>document.documentElement.classList.add(\'js\')</script><!-- /ef:js -->'
+
+
 def short_paires(ex):
     # Format court de buildPaires : une liste de {left, right} = un seul exercice
     if ex['type'] == 'paires' and ex['items'] and 'left' in ex['items'][0]:
@@ -184,6 +246,11 @@ def build_exercise_page(page_html, p, exs):
     out = re.sub(r'(<main[^>]*>)', lambda m: m.group(1) + '\n' + intro_html, out, count=1)
     if corrige_html:
         out = out.replace('</main>', corrige_html + '\n</main>', 1)
+    out, n_static = insert_questions(out, keyed)
+    out = re.sub(r'<!-- ef:js -->.*?<!-- /ef:js -->\n?', '', out, flags=re.S)
+    if n_static:
+        out = re.sub(r'(<meta charset="[^"]*">)', lambda m: m.group(1) + '\n' + JS_FLAG, out, count=1)
+    p['_nstatic'] = n_static
 
     # Titre et description propres à la page
     lvl = LEVEL_LABEL.get(p['level'] or '', '')
