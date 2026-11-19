@@ -249,14 +249,15 @@ def build_apropos():
 
 # Mentions légales (LCEN art. 6-III) — éditeur particulier non professionnel.
 EDITOR = 'Emmanuel MICHEL'
+EDITOR_URL = 'https://emmanuelmichel.fr'
 CONTACT = 'contact@ecolefacile.fr'
 
 def build_mentions():
     contact = f'<a href="mailto:{esc(CONTACT)}">{esc(CONTACT)}</a>'
     main = f'''
 <h2>Éditeur du site</h2>
-<p>Le site <strong>ecolefacile.fr</strong> (« École Facile ») est édité à titre personnel par <strong>{esc(EDITOR)}</strong>, particulier non professionnel. Il est gratuit, sans publicité et sans activité commerciale.</p>
-<p>Directeur de la publication : {esc(EDITOR)}.<br>Contact : {contact}</p>
+<p>Le site <strong>ecolefacile.fr</strong> (« École Facile ») est édité à titre personnel par <strong><a href="{EDITOR_URL}">{esc(EDITOR)}</a></strong>, particulier non professionnel. Il est gratuit, sans publicité et sans activité commerciale.</p>
+<p>Directeur de la publication : {esc(EDITOR)}.<br>Contact : {contact}<br>Site personnel : <a href="{EDITOR_URL}">emmanuelmichel.fr</a></p>
 <h2>Hébergement</h2>
 <p>Le site est hébergé par <strong>GitHub, Inc.</strong> (service GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis — <a href="https://github.com" rel="nofollow">github.com</a>.</p>
 <p>Les comptes facultatifs sont gérés par <strong>Google Firebase</strong> (Firebase Authentication et Realtime Database), service de Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irlande.</p>
@@ -273,7 +274,7 @@ def build_mentions():
 <p>Les exercices, leçons et guides du site sont des créations originales. Vous pouvez les utiliser librement en classe ou à la maison ; leur reproduction sur un autre site nécessite notre accord.</p>
 '''
     schemas = [{'@context': 'https://schema.org', '@type': 'WebPage', 'name': 'Mentions légales', 'url': f'{BASE}/mentions-legales.html',
-                'inLanguage': 'fr', 'publisher': {'@type': 'Person', 'name': EDITOR}}]
+                'inLanguage': 'fr', 'publisher': {'@type': 'Person', 'name': EDITOR, 'url': EDITOR_URL}}]
     return page('mentions-legales', 'Mentions légales et données personnelles',
                 'Mentions légales d\'École Facile : éditeur, hébergeur, données personnelles et cookies. Site gratuit, sans publicité ni traceur.',
                 'Informations', 'Mentions légales', 'Qui édite ce site, où il est hébergé, et ce que nous faisons (et ne faisons pas) de vos données.',
