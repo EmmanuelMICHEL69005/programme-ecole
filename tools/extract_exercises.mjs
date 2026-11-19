@@ -70,8 +70,26 @@ function extract(file) {
   for (const fn of Object.keys(TYPES)) ctx['__cap_' + fn] = ctx[fn];
   for (const s of scripts) {
     // On neutralise les redéfinitions locales des moteurs communs (function buildQCM(…) { … })
-    const code = s.replace(/function\s+(buildQCM|buildVF|buildOrdre|buildTri|buildPaires)\s*\(/g, 'function __local_$1(');
+    let code = s.replace(/function\s+(buildQCM|buildVF|buildOrdre|buildTri|buildPaires)\s*\(/g, 'function __local_$1(');
+    // Tableaux de données en « var » pour pouvoir les relire après coup (anciennes pages à moteur maison)
+    code = code.replace(/^(\s*)(?:const|let)\s+(\w+)\s*=\s*\[/gm, '$1var $2 = [');
     try { vm.runInContext(guard + '\n' + code, ctx, { timeout: 2000 }); } catch (e) { /* script non essentiel : ignoré */ }
+  }
+  // Anciennes pages : « const ex1Container = document.getElementById('ex1-container'); xxxData.forEach(… »
+  const all = scripts.join('\n');
+  for (const m of all.matchAll(/(\w+)\s*=\s*document\.getElementById\(['"]([\w-]+)['"]\);\s*(\w+)\.forEach\(/g)) {
+    const [, , id, dataVar] = m;
+    // Déjà capturé si la boucle appelle un moteur commun (buildQBlock…)
+    if (new RegExp(Object.keys(TYPES).join('|')).test(all.slice(m.index + m[0].length, m.index + m[0].length + 160))) continue;
+    const data = ctx[dataVar];
+    if (out[id] || !Array.isArray(data) || !data.length || typeof data[0] !== 'object') continue;
+    const items = clone(data).map(it => {
+      const q = it.q || it.txt || it.question || (it.h != null ? 'Quelle heure indique l’horloge ?' : '');
+      return typeof it.correct === 'boolean'
+        ? { q, correct: it.correct, ...(it.exp || it.expl ? { expl: it.exp || it.expl } : {}) }
+        : { q, correct: it.correct, choices: it.choices || [] };
+    }).filter(it => it.q && it.correct !== undefined);
+    if (items.length) out[id] = { type: typeof items[0].correct === 'boolean' ? 'vf' : 'qcm', items };
   }
   return out;
 }

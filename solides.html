@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
+<!-- ef:js --><script>document.documentElement.classList.add('js')</script><!-- /ef:js -->
 <meta name="apple-mobile-web-app-title" content="École Facile">
 <meta name="application-name" content="École Facile">
 <meta property="og:type" content="article">
@@ -72,7 +73,7 @@
 <!-- ef:crumbs --><nav class="ef-crumbs" aria-label="Fil d’Ariane"><a href="index.html">Accueil</a><span class="ef-crumb-sep" aria-hidden="true">›</span><a href="programme-ce2.html">CE2</a><span class="ef-crumb-sep" aria-hidden="true">›</span><span aria-current="page">Les solides</span></nav><!-- /ef:crumbs -->
 
 <main>
-<!-- ef:intro --><section class="ex-intro"><p><strong>4 exercices interactifs de maths au CE2</strong> : quel solide est décrit ?, quel solide ressemble à cet objet ?, faces, sommets et arêtes, vrai ou Faux. Chaque réponse est corrigée tout de suite, avec une explication en cas d’erreur. Gratuit, sans inscription et sans publicité.</p><p class="ex-intro-links"><a href="programme-ce2.html">🗂️ Programme du CE2</a></p></section><!-- /ef:intro -->
+<!-- ef:intro --><section class="ex-intro"><p><strong>4 exercices interactifs de maths au CE2</strong>, soit 21 questions : quel solide est décrit ?, quel solide ressemble à cet objet ?, faces, sommets et arêtes, vrai ou Faux. Chaque réponse est corrigée tout de suite, avec une explication en cas d’erreur. Gratuit, sans inscription et sans publicité.</p><p class="ex-intro-links"><a href="programme-ce2.html">🗂️ Programme du CE2</a> · <a href="#corrige">✅ Corrigé pour les parents</a></p></section><!-- /ef:intro -->
 
   <!-- JE RETIENS -->
   <div class="retiens-box">
@@ -115,27 +116,28 @@
   <div class="exercice-block">
     <h2 class="ex-title"><span class="ex-badge" style="background:#c2410c;">Ex 1</span> Quel solide est décrit ?</h2>
     <div class="score-bar" id="score-sol">Score : 0 / 6</div>
-    <div id="ex1-container"></div>
+    <!-- ef:q --><ol class="ex-static"><li>J'ai 6 faces carrées, 8 sommets et 12 arêtes.<ul class="exs-choices"><li>Cube</li><li>Cylindre</li><li>Pavé droit</li><li>Pyramide</li></ul></li><li>J'ai 2 faces circulaires et une face courbée. Pas de sommet.<ul class="exs-choices"><li>Boule</li><li>Cube</li><li>Cylindre</li><li>Cône</li></ul></li><li>J'ai 1 seule face courbée, 0 arête, 0 sommet.<ul class="exs-choices"><li>Boule</li><li>Cube</li><li>Cylindre</li><li>Cône</li></ul></li><li>J'ai une base carrée et 4 faces triangulaires.<ul class="exs-choices"><li>Cube</li><li>Pavé droit</li><li>Prisme</li><li>Pyramide</li></ul></li><li>J'ai 6 faces rectangulaires (pas toutes égales), 8 sommets.<ul class="exs-choices"><li>Cube</li><li>Pavé droit</li><li>Prisme</li><li>Pyramide</li></ul></li><li>J'ai 1 base circulaire, 1 face courbée et 1 sommet.<ul class="exs-choices"><li>Boule</li><li>Cylindre</li><li>Cône</li><li>Pyramide</li></ul></li></ol><!-- /ef:q --><div id="ex1-container"></div>
   </div>
 
   <!-- EXERCICE 2 : objets du quotidien -->
   <div class="exercice-block">
     <h2 class="ex-title"><span class="ex-badge" style="background:#c2410c;">Ex 2</span> Quel solide ressemble à cet objet ?</h2>
-    <div id="ex2-container"></div>
+    <!-- ef:q --><ol class="ex-static"><li>🎁 Une boîte cadeau ressemble à…<ul class="exs-choices"><li>Cube</li><li>Cylindre</li><li>Pavé droit</li><li>Pyramide</li></ul></li><li>🥫 Une boîte de conserve ressemble à…<ul class="exs-choices"><li>Boule</li><li>Cylindre</li><li>Cône</li><li>Prisme</li></ul></li><li>⚽ Un ballon ressemble à…<ul class="exs-choices"><li>Boule</li><li>Cube</li><li>Cylindre</li><li>Cône</li></ul></li><li>🍦 Un cornet de glace ressemble à…<ul class="exs-choices"><li>Cube</li><li>Cylindre</li><li>Cône</li><li>Pyramide</li></ul></li><li>🎲 Un dé ressemble à…<ul class="exs-choices"><li>Cube</li><li>Pavé droit</li><li>Pyramide</li><li>Sphère</li></ul></li></ol><!-- /ef:q --><div id="ex2-container"></div>
   </div>
 
   <!-- EXERCICE 3 : faces, sommets, arêtes -->
   <div class="exercice-block">
     <h2 class="ex-title"><span class="ex-badge" style="background:#c2410c;">Ex 3</span> Faces, sommets et arêtes</h2>
-    <div id="ex3-container"></div>
+    <!-- ef:q --><ol class="ex-static"><li>Combien de faces a un cube ?<ul class="exs-choices"><li>12</li><li>4</li><li>6</li><li>8</li></ul></li><li>Combien d'arêtes a un cube ?<ul class="exs-choices"><li>10</li><li>12</li><li>6</li><li>8</li></ul></li><li>Combien de sommets a un pavé droit ?<ul class="exs-choices"><li>10</li><li>4</li><li>6</li><li>8</li></ul></li><li>Combien de faces a une pyramide à base carrée ?<ul class="exs-choices"><li>4</li><li>5</li><li>6</li><li>8</li></ul></li><li>Combien de sommets a une pyramide à base carrée ?<ul class="exs-choices"><li>4</li><li>5</li><li>6</li><li>8</li></ul></li></ol><!-- /ef:q --><div id="ex3-container"></div>
   </div>
 
   <!-- EXERCICE 4 : VF propriétés -->
   <div class="exercice-block">
     <h2 class="ex-title"><span class="ex-badge" style="background:#c2410c;">Ex 4</span> Vrai ou Faux ?</h2>
-    <div id="ex4-container"></div>
+    <!-- ef:q --><ol class="ex-static"><li>Un cube est un cas particulier de pavé droit. <span class="exs-hint">Vrai ou faux ?</span></li><li>Une boule a des arêtes. <span class="exs-hint">Vrai ou faux ?</span></li><li>Un cylindre a 2 faces circulaires. <span class="exs-hint">Vrai ou faux ?</span></li><li>Une pyramide a des faces triangulaires. <span class="exs-hint">Vrai ou faux ?</span></li><li>Un cône a 2 sommets. <span class="exs-hint">Vrai ou faux ?</span></li></ol><!-- /ef:q --><div id="ex4-container"></div>
   </div>
 
+<!-- ef:corrige --><section class="ex-corrige" id="corrige"><h2>Corrigé des exercices</h2><p>Pour les parents : toutes les questions de la page avec leur réponse, pour vérifier ou refaire une séance sur papier. Ouvrez un exercice pour voir son corrigé.</p><details><summary>Ex 1 · Quel solide est décrit ?</summary><ol class="cr-list"><li>J'ai 6 faces carrées, 8 sommets et 12 arêtes. <span class="cr-a">→ <strong>Cube</strong></span></li><li>J'ai 2 faces circulaires et une face courbée. Pas de sommet. <span class="cr-a">→ <strong>Cylindre</strong></span></li><li>J'ai 1 seule face courbée, 0 arête, 0 sommet. <span class="cr-a">→ <strong>Boule</strong></span></li><li>J'ai une base carrée et 4 faces triangulaires. <span class="cr-a">→ <strong>Pyramide</strong></span></li><li>J'ai 6 faces rectangulaires (pas toutes égales), 8 sommets. <span class="cr-a">→ <strong>Pavé droit</strong></span></li><li>J'ai 1 base circulaire, 1 face courbée et 1 sommet. <span class="cr-a">→ <strong>Cône</strong></span></li></ol></details><details><summary>Ex 2 · Quel solide ressemble à cet objet ?</summary><ol class="cr-list"><li>🎁 Une boîte cadeau ressemble à… <span class="cr-a">→ <strong>Pavé droit</strong></span></li><li>🥫 Une boîte de conserve ressemble à… <span class="cr-a">→ <strong>Cylindre</strong></span></li><li>⚽ Un ballon ressemble à… <span class="cr-a">→ <strong>Boule</strong></span></li><li>🍦 Un cornet de glace ressemble à… <span class="cr-a">→ <strong>Cône</strong></span></li><li>🎲 Un dé ressemble à… <span class="cr-a">→ <strong>Cube</strong></span></li></ol></details><details><summary>Ex 3 · Faces, sommets et arêtes</summary><ol class="cr-list"><li>Combien de faces a un cube ? <span class="cr-a">→ <strong>6</strong></span></li><li>Combien d'arêtes a un cube ? <span class="cr-a">→ <strong>12</strong></span></li><li>Combien de sommets a un pavé droit ? <span class="cr-a">→ <strong>8</strong></span></li><li>Combien de faces a une pyramide à base carrée ? <span class="cr-a">→ <strong>5</strong></span></li><li>Combien de sommets a une pyramide à base carrée ? <span class="cr-a">→ <strong>5</strong></span></li></ol></details><details><summary>Ex 4 · Vrai ou Faux ?</summary><ol class="cr-list"><li>Un cube est un cas particulier de pavé droit. <span class="cr-a">→ <strong>Vrai</strong></span></li><li>Une boule a des arêtes. <span class="cr-a">→ <strong>Faux</strong></span> <span class="cr-x">0 arête</span></li><li>Un cylindre a 2 faces circulaires. <span class="cr-a">→ <strong>Vrai</strong></span></li><li>Une pyramide a des faces triangulaires. <span class="cr-a">→ <strong>Vrai</strong></span></li><li>Un cône a 2 sommets. <span class="cr-a">→ <strong>Faux</strong></span> <span class="cr-x">1 seul sommet</span></li></ol></details></section><!-- /ef:corrige -->
 <!-- ef:related --><section class="related-section"><div class="related-title">📚 Voir aussi</div><div class="related-links"><a href="geometrie.html" class="related-link"><span>Géométrie plane CE2</span><span class="related-link-arrow">›</span></a><a href="geometrie-ce2.html" class="related-link"><span>Géométrie CE2</span><span class="related-link-arrow">›</span></a><a href="solides-cm1.html" class="related-link"><span>Solides CM1 (étape suivante)</span><span class="related-link-arrow">›</span></a></div></section><!-- /ef:related -->
 </main>
 
