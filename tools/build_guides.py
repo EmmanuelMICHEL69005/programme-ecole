@@ -35,7 +35,7 @@ FOOTER = ('<footer class="site-footer">Fait avec ❤️ pour Clémence<div class
           + ' · '.join(f'<a href="programme-{l}.html">{L}</a>' for l, L in
                        [('cp', 'CP'), ('ce1', 'CE1'), ('ce2', 'CE2'), ('cm1', 'CM1'), ('cm2', 'CM2'), ('6e', '6e'), ('5e', '5e'), ('4e', '4e'), ('3e', '3e')])
           + '</div><div class="footer-levels"><a href="parents.html">Espace parents</a> · <a href="aide.html">Aide élèves</a> · '
-          '<a href="exercices-gratuits.html">Exercices gratuits</a> · <a href="ressources.html">Ressources gratuites</a> · <a href="a-propos.html">À propos</a></div></footer>')
+          '<a href="exercices-gratuits.html">Exercices gratuits</a> · <a href="ressources.html">Ressources gratuites</a> · <a href="a-propos.html">À propos</a> · <a href="mentions-legales.html">Mentions légales</a></div></footer>')
 
 SCRIPTS = '\n'.join(f'<script src="{s}"></script>' for s in
                     ['sync.js', 'firebase-keys.js', 'auth.js', 'pages.js', 'gamification.js', 'nav.js', 'related.js', 'seo.js'])
@@ -247,6 +247,38 @@ def build_apropos():
                 'À propos', 'À propos d\'École Facile', 'Un site gratuit, sans publicité, pour s\'entraîner du CP à la 3e. Voici comment nous travaillons.',
                 None, main, schemas, 'website')
 
+# Mentions légales (LCEN art. 6-III) — éditeur particulier non professionnel.
+EDITOR = 'Emmanuel MICHEL'
+CONTACT = 'contact@ecolefacile.fr'
+
+def build_mentions():
+    contact = f'<a href="mailto:{esc(CONTACT)}">{esc(CONTACT)}</a>'
+    main = f'''
+<h2>Éditeur du site</h2>
+<p>Le site <strong>ecolefacile.fr</strong> (« École Facile ») est édité à titre personnel par <strong>{esc(EDITOR)}</strong>, particulier non professionnel. Il est gratuit, sans publicité et sans activité commerciale.</p>
+<p>Directeur de la publication : {esc(EDITOR)}.<br>Contact : {contact}</p>
+<h2>Hébergement</h2>
+<p>Le site est hébergé par <strong>GitHub, Inc.</strong> (service GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis — <a href="https://github.com" rel="nofollow">github.com</a>.</p>
+<p>Les comptes facultatifs sont gérés par <strong>Google Firebase</strong> (Firebase Authentication et Realtime Database), service de Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irlande.</p>
+<h2>Données personnelles</h2>
+<ul>
+<li><strong>Sans compte</strong>, le site fonctionne sans aucune donnée personnelle : la progression est gardée uniquement dans le navigateur (stockage local), sur l'appareil de l'enfant.</li>
+<li><strong>Avec un compte</strong> (facultatif), nous conservons l'adresse e-mail du parent, et pour chaque profil enfant : un prénom ou pseudo, un avatar, la classe et la progression (étoiles, badges, séries). Ces données servent uniquement à retrouver la progression sur plusieurs appareils.</li>
+<li>Elles ne sont <strong>ni vendues, ni cédées, ni utilisées à des fins publicitaires</strong>.</li>
+<li>Le compte et toutes ses données peuvent être supprimés à tout moment depuis la page du profil. Pour exercer vos droits d'accès, de rectification ou d'effacement (RGPD), écrivez à {contact}. Vous pouvez aussi saisir la <a href="https://www.cnil.fr" rel="nofollow">CNIL</a>.</li>
+</ul>
+<h2>Cookies et mesure d'audience</h2>
+<p>Le site n'utilise <strong>aucun cookie publicitaire ni outil de mesure d'audience</strong>. Seul le stockage local du navigateur est utilisé, pour garder la progression et la dernière classe choisie. Les polices de caractères sont chargées depuis Google Fonts.</p>
+<h2>Propriété intellectuelle</h2>
+<p>Les exercices, leçons et guides du site sont des créations originales. Vous pouvez les utiliser librement en classe ou à la maison ; leur reproduction sur un autre site nécessite notre accord.</p>
+'''
+    schemas = [{'@context': 'https://schema.org', '@type': 'WebPage', 'name': 'Mentions légales', 'url': f'{BASE}/mentions-legales.html',
+                'inLanguage': 'fr', 'publisher': {'@type': 'Person', 'name': EDITOR}}]
+    return page('mentions-legales', 'Mentions légales et données personnelles',
+                'Mentions légales d\'École Facile : éditeur, hébergeur, données personnelles et cookies. Site gratuit, sans publicité ni traceur.',
+                'Informations', 'Mentions légales', 'Qui édite ce site, où il est hébergé, et ce que nous faisons (et ne faisons pas) de vos données.',
+                None, main, schemas, 'website')
+
 def update_sitemap(slugs):
     sm = open('sitemap.xml', encoding='utf-8').read()
     add = ''.join(f'  <url><loc>{BASE}/{s}.html</loc><lastmod>{BY_SLUG.get(s, {}).get("updated", UPDATED)}</lastmod><priority>{p}</priority><changefreq>monthly</changefreq></url>\n'
@@ -264,7 +296,9 @@ if __name__ == '__main__':
         out[HUBS[k]['slug']] = build_hub(k)
     out['ressources'] = build_ressources()
     out['a-propos'] = build_apropos()
+    if CONTACT:
+        out['mentions-legales'] = build_mentions()
     for slug, text in out.items():
         open(f'{slug}.html', 'w', encoding='utf-8').write(text)
-    n = update_sitemap([(s, '0.8' if s in ('parents', 'aide', 'ressources') or BY_SLUG.get(s, {}).get('pillar') else '0.7') for s in out])
+    n = update_sitemap([(s, '0.3' if s == 'mentions-legales' else '0.8' if s in ('parents', 'aide', 'ressources') or BY_SLUG.get(s, {}).get('pillar') else '0.7') for s in out])
     print(f'{len(out)} pages écrites · {n} URL ajoutées au sitemap')
