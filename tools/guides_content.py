@@ -51,6 +51,20 @@ S = {
                     'https://ent2d.ac-bordeaux.fr/disciplines/mathematiques/le-programme-de-cycle-3-a-partir-de-2025/'),
     'eval_cm2_dec': ("Éduscol — Évaluations nationales de début de CM2, fiche d'intervention mathématiques « Comparer des nombres décimaux » (août 2026)",
                      'https://eduscol.education.gouv.fr/sites/default/files/document/2026evaluationdebutcm2mathematiquesficheinterventioncomparernombresdecimaux-129472.pdf'),
+    'sp_inscr_elem': ("Service Public — Inscrire son enfant à l'école primaire (élémentaire) (fiche vérifiée le 19 novembre 2026)",
+                      'https://www.service-public.gouv.fr/particuliers/vosdroits/F1865'),
+    'sp_inscr_mat': ("Service Public — Inscription à l'école maternelle (fiche vérifiée le 6 novembre 2025)",
+                     'https://www.service-public.gouv.fr/particuliers/vosdroits/F1864'),
+    'sp_primaire': ("Service Public — École primaire (maternelle et élémentaire)",
+                    'https://www.service-public.gouv.fr/particuliers/vosdroits/F24490'),
+    'eduscol_elem': ("Éduscol — L'école élémentaire (février 2026)",
+                     'https://eduscol.education.gouv.fr/5229/l-ecole-elementaire'),
+    'eduscol_cal': ("Éduscol — Calendrier de la mise en œuvre des nouveaux programmes, par cycle et par classe (juillet 2026)",
+                    'https://eduscol.education.gouv.fr/sites/default/files/document/calendriernouveauxprogrammes-129025.pdf'),
+    'decret_cycles': ("Journal officiel du 28 juillet 2013 — Décret n° 2013-682 du 24 juillet 2013 relatif aux cycles d'enseignement à l'école primaire et au collège (copie de la circonscription de L'Arbresle, académie de Lyon)",
+                      'https://ien-arbresle.circo.ac-lyon.fr/spip/IMG/pdf/cyclesJO.pdf'),
+    'onisep_dnb': ("Onisep — Le diplôme national du brevet (session 2026)",
+                   'https://www.onisep.fr/orientation/le-college/le-diplome-national-du-brevet'),
 }
 
 def stat(big, text, src):
@@ -1451,6 +1465,95 @@ ARTICLES.append(dict(
          ('ressources.html', 'Fiches à imprimer', 'Avec corrigé'),
          ('aider-son-enfant-a-faire-ses-devoirs.html', 'Aider son enfant à faire ses devoirs', 'Le guide complet')],
     sources=['sp_ief', 'cned_ief', 'cned_mode', 'cned_oblig'],
+))
+
+ARTICLES.append(dict(
+    slug='classes-et-ages-ecole-primaire-college', hub='parents', icon='🗓️',
+    kicker="Guide parents · Comprendre l'école",
+    title="Classes, âges et cycles de l'école : CP, CE1, CE2… à quel âge, quel cycle ?",
+    seo_title="Classes et âges à l'école : CP, CE1, CE2, cycles",
+    description="Classes et âges de la maternelle à la 3e : à quel âge entre-t-on en CP, CE2 ou 6e, que veulent dire CP, CE1 et CM2, quels sont les cycles 1 à 4. Tableau clair.",
+    intro="CP, CE1, CM2, cycle 3… Les sigles de l'école ne sont pas toujours clairs. Voici, en un tableau, quelle classe correspond à quel âge et à quel cycle, de la petite section de maternelle à la 3e, avec les règles officielles qui fixent l'entrée à l'école.",
+    minutes=5,
+    updated='2026-11-25', updated_fr='25 novembre 2026',
+    tldr=[
+        "Ce qui compte, c'est l'<strong>année de naissance</strong>, pas le mois : un enfant entre au CP à la rentrée de l'année civile où il a <strong>6 ans</strong>.",
+        "L'instruction est obligatoire <strong>de 3 à 16 ans</strong> : l'école maternelle commence l'année civile des 3 ans.",
+        "CP = <strong>cours préparatoire</strong> ; CE1 et CE2 = <strong>cours élémentaire</strong> 1re et 2e année ; CM1 et CM2 = <strong>cours moyen</strong> 1re et 2e année.",
+        "Quatre cycles : <strong>cycle 1</strong> (maternelle), <strong>cycle 2</strong> (CP-CE1-CE2), <strong>cycle 3</strong> (CM1-CM2-6e), <strong>cycle 4</strong> (5e-4e-3e).",
+        "Pour la rentrée 2026, un enfant né en <strong>2020</strong> est en CP, un enfant né en <strong>2018</strong> en CE2, un enfant né en <strong>2015</strong> en 6e.",
+    ],
+    body=f"""
+<h2>Quelle classe à quel âge ? Le tableau de la maternelle à la 3e</h2>
+<p>Le tableau ci-dessous donne la classe <strong>habituelle</strong> selon l'année de naissance, pour l'année scolaire 2026-2027. La colonne « âge » indique l'âge que l'enfant atteint au cours de l'année civile 2026 : selon son mois de naissance, il peut avoir un an de moins le jour de la rentrée.</p>
+<div class="g-table-wrap"><table class="g-table">
+<thead><tr><th>Classe</th><th>Âge atteint dans l'année de la rentrée</th><th>Né en (rentrée 2026)</th><th>Cycle</th></tr></thead>
+<tbody>
+<tr><td>Petite section (maternelle)</td><td>3 ans</td><td>2023</td><td rowspan="3">Cycle 1</td></tr>
+<tr><td>Moyenne section</td><td>4 ans</td><td>2022</td></tr>
+<tr><td>Grande section</td><td>5 ans</td><td>2021</td></tr>
+<tr><td>CP</td><td>6 ans</td><td>2020</td><td rowspan="3">Cycle 2</td></tr>
+<tr><td>CE1</td><td>7 ans</td><td>2019</td></tr>
+<tr><td>CE2</td><td>8 ans</td><td>2018</td></tr>
+<tr><td>CM1</td><td>9 ans</td><td>2017</td><td rowspan="3">Cycle 3</td></tr>
+<tr><td>CM2</td><td>10 ans</td><td>2016</td></tr>
+<tr><td>6e (collège)</td><td>11 ans</td><td>2015</td></tr>
+<tr><td>5e</td><td>12 ans</td><td>2014</td><td rowspan="3">Cycle 4</td></tr>
+<tr><td>4e</td><td>13 ans</td><td>2013</td></tr>
+<tr><td>3e</td><td>14 ans</td><td>2012</td></tr>
+</tbody></table></div>
+<p>Pour l'année scolaire suivante, il suffit d'ajouter un an à chaque année de naissance. Un enfant peut bien sûr être dans une autre classe que celle du tableau, par exemple s'il a sauté ou refait une classe.</p>
+
+<h2>Pourquoi l'année de naissance compte plus que le mois ?</h2>
+<p>Parce que la règle officielle se base sur l'<strong>année civile</strong> (du 1er janvier au 31 décembre). Votre enfant doit être inscrit à l'école élémentaire, donc au CP, dès la rentrée scolaire de l'année civile où il atteint l'âge de 6 ans. Il en va de même pour la maternelle, qui est obligatoire à partir de la rentrée de l'année civile de ses 3 ans.</p>
+{stat("3 à 16 ans", "C'est la période pendant laquelle l'instruction est obligatoire : l'enfant doit être inscrit dans un établissement scolaire, public ou privé, ou, sous conditions et avec une autorisation, recevoir l'instruction dans la famille.", "Service Public, fiche « Instruction dans la famille »")}
+<p>Conséquence : un enfant né en janvier et un enfant né en décembre de la même année sont dans la même classe, avec parfois presque un an d'écart. C'est normal.</p>
+<ul>
+<li><strong>Avant 3 ans</strong> : un enfant de 2 ans peut être accueilli en maternelle sous certaines conditions et dans la limite des places disponibles. Renseignez-vous auprès de votre mairie.</li>
+<li><strong>Entrer au CP plus tôt</strong> : une demande peut être faite pour un enfant de moins de 6 ans, sous conditions. Parlez-en avec l'école.</li>
+<li><strong>Rester en maternelle après 6 ans</strong> : ce n'est pas la règle ; c'est seulement possible dans des cas particuliers, par exemple sur avis de la commission compétente.</li>
+</ul>
+
+<h2>Que veulent dire CP, CE1, CE2, CM1 et CM2 ?</h2>
+<p>Les cinq classes de l'école élémentaire portent des noms abrégés en sigles :</p>
+<ul>
+<li><strong>CP</strong> : cours préparatoire ;</li>
+<li><strong>CE1</strong> : cours élémentaire 1re année ;</li>
+<li><strong>CE2</strong> : cours élémentaire 2e année ;</li>
+<li><strong>CM1</strong> : cours moyen 1re année ;</li>
+<li><strong>CM2</strong> : cours moyen 2e année.</li>
+</ul>
+<p>En maternelle, on parle de <strong>petite section</strong>, <strong>moyenne section</strong> et <strong>grande section</strong>. Au collège, les classes se comptent à rebours : <strong>6e, 5e, 4e, 3e</strong> (on dit « la sixième », « la cinquième »…). À la fin de la 3e, les élèves passent le <strong>diplôme national du brevet</strong> (DNB), qui ne conditionne pas le passage en classe supérieure.</p>
+<p>L'ensemble maternelle + élémentaire s'appelle l'<strong>école primaire</strong>. Quand on parle de « primaire », on pense souvent seulement au CP-CM2, mais officiellement la maternelle en fait partie.</p>
+
+<h2>Qu'est-ce qu'un cycle, et pourquoi le CP est-il en cycle 2 ?</h2>
+<p>Depuis un décret de 2013, la scolarité de la maternelle à la fin du collège est organisée en <strong>quatre cycles</strong> de trois ans chacun. Un cycle regroupe des classes qui partagent les mêmes grands objectifs : cette organisation permet de tenir compte de la progressivité des apprentissages et des besoins de chaque élève.</p>
+<div class="g-table-wrap"><table class="g-table">
+<thead><tr><th>Cycle</th><th>Nom officiel</th><th>Classes</th></tr></thead>
+<tbody>
+<tr><td>Cycle 1</td><td>Cycle des apprentissages premiers</td><td>Petite, moyenne et grande section de maternelle</td></tr>
+<tr><td>Cycle 2</td><td>Cycle des apprentissages fondamentaux</td><td>CP, CE1, CE2</td></tr>
+<tr><td>Cycle 3</td><td>Cycle de consolidation</td><td>CM1, CM2, 6e</td></tr>
+<tr><td>Cycle 4</td><td>Cycle des approfondissements</td><td>5e, 4e, 3e</td></tr>
+</tbody></table></div>
+<p>Le CP est donc la <strong>première année du cycle 2</strong>, le cycle des apprentissages fondamentaux : lire, écrire, compter. La maternelle forme à elle seule le cycle 1, d'où ce décalage qui surprend souvent.</p>
+<div class="g-tip"><strong>Bon à savoir :</strong> le cycle 3 est à cheval sur l'école et le collège. La 6e appartient au même cycle que le CM1 et le CM2 : elle consolide ce qui a été vu à l'école. Pour bien préparer ce passage, lisez <a href="entree-en-sixieme.html">Réussir l'entrée en 6e</a>.</div>
+
+<h2>Que doit savoir mon enfant dans sa classe ?</h2>
+<p>Chaque classe a son programme officiel. De nouveaux programmes entrent progressivement en vigueur depuis la rentrée 2025 (notamment en français et en mathématiques). Pour savoir ce qui est attendu cette année, consultez notre page programme du niveau de votre enfant : <a href="programme-cp.html">CP</a>, <a href="programme-ce1.html">CE1</a>, <a href="programme-ce2.html">CE2</a>, <a href="programme-cm1.html">CM1</a>, <a href="programme-cm2.html">CM2</a>, <a href="programme-6e.html">6e</a>, <a href="programme-5e.html">5e</a>, <a href="programme-4e.html">4e</a> ou <a href="programme-3e.html">3e</a>. Chacune renvoie vers des <a href="exercices-gratuits.html">exercices gratuits et corrigés</a> et des <a href="cours.html">leçons courtes</a>.</p>
+<p>Vous envisagez une scolarité à la maison ou par correspondance ? Les règles sont expliquées dans <a href="cned-cours-par-correspondance-primaire.html">Cours par correspondance en primaire : CNED et règles</a>.</p>
+""",
+    faq=[
+        ("Quel âge a un enfant en CE2 ?", "En général, il atteint 8 ans au cours de l'année civile de la rentrée. Selon son mois de naissance, il a donc 7 ou 8 ans en septembre. Pour l'année 2026-2027, les élèves de CE2 sont en principe nés en 2018."),
+        ("Le CP, c'est quel cycle ?", "Le CP est la première année du cycle 2, le cycle des apprentissages fondamentaux, avec le CE1 et le CE2. Le cycle 1 correspond à la maternelle."),
+        ("Que signifie CE1 ?", "CE1 signifie cours élémentaire 1re année. C'est la deuxième classe de l'école élémentaire, après le CP et avant le CE2."),
+        ("Mon enfant est né en décembre, entrera-t-il au CP un an plus tard ?", "En principe, non. La règle se base sur l'année civile : il entre au CP à la rentrée de l'année où il a 6 ans, même s'il ne les fête qu'en décembre. Il sera simplement parmi les plus jeunes de sa classe."),
+        ("La 6e, c'est l'école ou le collège ?", "La 6e est la première année du collège, mais elle appartient au cycle 3, avec le CM1 et le CM2 de l'école élémentaire. Le cycle 4 regroupe ensuite la 5e, la 4e et la 3e."),
+    ],
+    cta=[('programme-cp.html', 'Le programme de CP', "Ce qu'il faut savoir en fin d'année"),
+         ('entree-en-sixieme.html', "Réussir l'entrée en 6e", 'Organisation, Devoirs faits'),
+         ('exercices-gratuits.html', 'Exercices gratuits du CP à la 3e', 'Corrigés, sans inscription')],
+    sources=['sp_ief', 'sp_inscr_elem', 'sp_inscr_mat', 'sp_primaire', 'eduscol_elem', 'eduscol_cal', 'decret_cycles', 'onisep_dnb'],
 ))
 
 # ── Pages hub ─────────────────────────────────────────────────────────

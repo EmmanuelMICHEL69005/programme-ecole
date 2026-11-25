@@ -255,7 +255,7 @@
   <url><loc>https://ecolefacile.fr/je-ne-comprends-pas-les-fractions.html</loc><lastmod>2026-11-13</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://ecolefacile.fr/apprendre-les-tables-de-multiplication.html</loc><lastmod>2026-11-13</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://ecolefacile.fr/resoudre-un-probleme-de-maths.html</loc><lastmod>2026-11-13</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://ecolefacile.fr/parents.html</loc><lastmod>2026-11-13</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ecolefacile.fr/parents.html</loc><lastmod>2026-11-25</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://ecolefacile.fr/aide.html</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://ecolefacile.fr/ressources.html</loc><lastmod>2026-11-13</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://ecolefacile.fr/a-propos.html</loc><lastmod>2026-11-13</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
@@ -273,4 +273,6 @@
   <url><loc>https://ecolefacile.fr/je-ne-comprends-pas-les-nombres-decimaux.html</loc><lastmod>2026-11-18</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
 
   <url><loc>https://ecolefacile.fr/mentions-legales.html</loc><lastmod>2026-11-19</lastmod><priority>0.3</priority><changefreq>monthly</changefreq></url>
+
+  <url><loc>https://ecolefacile.fr/classes-et-ages-ecole-primaire-college.html</loc><lastmod>2026-11-25</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
 </urlset>
